@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Market Basket Analysis (Apriori Algorithm) with OCI Data Science",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Get Started with OCI",
+            "description": "An Oracle Cloud tenancy is required for all labs in this workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Get Started with OCI Data Science",
+            "description": "Set up Data Science environment",
+            "filename": "../../getting-started/getting-started.md"
+        },
+        {
+            "title": "Lab 2: Upload Data Through ADW (Optional)",
+            "filename": "../../adw/adw.md"
+        },
+        {
+            "title": "Lab 3: Build the Model ",
+            "filename": "../../local/local.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

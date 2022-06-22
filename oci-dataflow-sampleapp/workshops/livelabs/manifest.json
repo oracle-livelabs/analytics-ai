@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Sample Applications with Oracle Cloud Infrastructure Data Flow",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+      },
+
+      {
+        "title":"Introduction",
+        "description" : "Introduction to the lab",
+        "filename": "../../intro/intro.md"
+    },
+
+    {
+        "title":"Lab 0: Setting up Oracle Cloud Infrastructure Data Flow",
+        "description" : "Setup Oracle Cloud Infrastructure Data Flow",
+        "filename": "../../dataflow-sampleapp/setupdf.md"
+    },
+    {
+        "title": "Lab 1: Sample Python Application to convert CSV into Parquet",
+        "description" : "Sample Python Application to conver CSV into Parquet",
+        "filename": "../../dataflow-sampleapp/sampleapp.md"
+    },
+
+    {
+        "title": "Lab 2: Build a Datapipeline with OCI DataFlow and Metastore",
+        "description" : "Build a Datapipeline with OCI DataFlow and Metastore",
+        "filename": "../../dataflow-sampleapp/samplehiveexternaltable.md"
+    }
+
+
+
+    ]
+}

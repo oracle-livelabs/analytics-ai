@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>samplehiveexternaltable.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Today, the most successful and fastest-growing companies are generally data-driven organizations. Taking advantage of data is pivotal to answering many pressing business problems; however, this can prove to be overwhelming and difficult to manage due to data’s increasing diversity, scale, and complexity. One of the most popular technologies that businesses use to overcome these challenges and harness the power of their growing data is OCI Data flow that provides serverless Apache Spark at scale.</p>
+<p>Oracle Cloud Infrastructure (OCI) Data Flow is a fully managed Apache Spark service to perform processing tasks on extremely large data sets without the infrastructure to deploy or manage. This enables rapid application delivery because developers can focus on app development, not infrastructure management.</p>
+<p>ETL stands for extract, transform, and load and ETL tools move data between systems. If ETL were for people instead of data, it would be akin to public and private transportation. Companies use ETL jobs to move data from a source, transform it to the form that is required, and load the resulting data and schema into a target system.</p>
+<p>OCI Data Flow integrates with OCI Data Catalog Metastore which acts as the platform’s centralized metadata store to enable different personas and applications to share data and metadata.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/lab-objective-data-pipeline.png" alt="Lab Overview" title=" "></p>
+<p><em>Estimated Lab Time</em>: 90 minutes</p>
+<h3 id="personas-for-this-lab">Personas for this lab</h3>
+<p>There are three important personas for the lab. Mentioned below are the details of each of them:</p>
+<h4 id="data-engineer">Data Engineer</h4>
+<p>A Data Engineer is involved in preparing data. Data Engineers are responsible for designing, building, integrating, and maintaining data from multiple sources. Data engineers usually know SQL, Big Data systems, Apache Spark, and Hadoop, as well as Python, R, Java, etc. This class of users uses some of the above-mentioned languages to perform extract (collecting and reading data), transform (converting data into a compatible format), and load (migrate into data warehouses) duties. They do not have any role in analysing data as their purpose is to make data readily available for other users.</p>
+<h4 id="data-scientist">Data Scientist</h4>
+<p>A Data Scientist is a specialist who applies their expertise in statistics and building machine learning models to make predictions and answer key business questions. They help uncover hidden insights by leveraging both supervised (e.g., classification, regression) and unsupervised learning (e.g., clustering, neural networks, anomaly detection) methods toward their machine learning models. They are essentially training mathematical models that will allow them to better identify patterns and derive accurate predictions.</p>
+<h4 id="data-analyst">Data Analyst</h4>
+<p>Data Analysts usually collect data by collaborating with stakeholders to streamline processes. This class of users spends a considerable amount of time on generating insights from the data by creating business intelligence reports for internal use and clients. They usually know at least OAC, Microsoft Excel, SQL, and Tableau as well as Python and/or R.</p>
+<h3 id="objectives">Objectives</h3>
+<p>In this workshop, you'll build an end-to-end data pipeline that performs extract, transform, and load (ETL) operations. The pipeline will use OCI Dataflow Apache Spark and OCI Data Catalog Metastore running on OCI for querying and manipulating the data. We will see how different personas (Data Engineer, Data Scientist, and Data Analyst) come together to share Data and Metadata. We'll see how the  three different personas (Data Engineer, Data Scientist, Data Analyst) in the enterprise come together as the data travel across pipelines. You'll also use technologies like OCI Object store for data storage, OCI Data Flow Interactive SQL Cluster, and Oracle Analytics Cloud (OAC) for visualization of the raw data. OCI Data Flow integrates with OCI Data Catalog Metastore which acts as the platform’s centralized metadata store to enable different personas and applications to share data and metadata.</p>
+<p>Here's the summary of what you’d do in the workshop :</p>
+<p>As a Data Engineer</p>
+<ul>
+<li>
+<p>Navigate to the Data Catalog Console and create a new Metastore Instance under a Compartment.</p>
+</li>
+<li>
+<p>As a Data engineer Build an OCI Data Flow Python batch application that does the following:</p>
+<ol>
+<li>
+<p>Read the raw JSON dataset from the object store bucket</p>
+</li>
+<li>
+<p>Cleanse and Transform the data into Parquet Format for efficiency</p>
+</li>
+<li>
+<p>Create a Database in OCI Data Catalog Metastore</p>
+</li>
+<li>
+<p>Load the data into an OCI Data Catalog Metastore Managed Table</p>
+</li>
+<li>
+<p>Create a view in OCI Data Catalog Metastore which is then made available to OAC.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Navigate to Data Flow Console and creates the Data Flow Application using the PySpark application created in #2 above and selects the metastore that needs to be associated with the template</p>
+</li>
+<li>
+<p>Navigate to Data Flow Console and runs the Application.</p>
+</li>
+<li>
+<p>Navigate to the Object store to inspect the transformed data in the Metastore.</p>
+</li>
+</ul>
+<p>As a Data Scientist</p>
+<ul>
+<li>
+<p>Build another OCI Data Flow Python batch application that does the following:</p>
+<ol>
+<li>
+<p>Queries the data and metadata that are stored in the metastore #2 above.</p>
+</li>
+<li>
+<p>Build a sample machine learning model to explore to predict sentiment given a review text</p>
+</li>
+<li>
+<p>Demonstrates that metastore acts like a unified store for data platform allowing applications and different personas to share data and metadata.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>As a data analyst navigate to :</p>
+<ul>
+<li>OAC to explore the data and build visualization</li>
+<li>Write custom queries to create reports</li>
+</ul>
+<p>Your dataset is the <a href="https://www.kaggle.com/yelp-dataset/yelp-dataset">Yelp Review and Business Dataset</a>, downloaded from the Kaggle website under the terms of the Creative Commons CC0 1.0 Universal (CC0 1.0) &quot;Public Domain Dedication&quot; license.</p>
+<p>The dataset is in JSON format and it is stored  in object store for downstream processing.</p>
+<p>This lab guides you step by step, and provides the parameters you need. The python application is uploaded to the <a href="https://console.us-ashburn-1.oraclecloud.com/object-storage/buckets/idehhejtnbtc/workshop-scripts/objects">Bucket</a></p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>
+<p>Python 3.6+ setup locally.</p>
+</li>
+<li>
+<p>An Oracle Cloud log in with the API Key capability enabled. Load your user under Identity/Users, and confirm you can create API Keys.</p>
+</li>
+</ul>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/api-keys-yes.png" alt="API Keys" title=" "></p>
+<ul>
+<li>
+<p>An API key registered and deployed to your local environment. See <a href="https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm">Register an API Key</a> for more information</p>
+</li>
+<li>
+<p>OCI Python SDK. See <a href="https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html#downloading-and-installing-the-sdk">Installing OCI python SDK</a></p>
+</li>
+<li>
+<p>A python IDE of your choice. The workshop uses <a href="https://code.visualstudio.com/download">Visual Studio Code (VSCode)</a></p>
+</li>
+<li>
+<p>Local environment setup with all the dependencies setup as described <a href="https://docs.oracle.com/en-us/iaas/data-flow/data-flow-tutorial/develop-apps-locally/front.htm#develop-locally-concepts">Here</a></p>
+</li>
+<li>
+<p>From the Console, click the hamburger menu to display the list of available services. Select Data Flow and click <code>Applications</code></p>
+</li>
+<li>
+<p>Basic understanding of Python and Spark.</p>
+</li>
+</ul>
+<h3 id="what-is-not-covered-in-the-lab">What is not covered in the lab</h3>
+<ul>
+<li>
+<p>Policies and other Identity management related setup for OCI Data Flow or OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the <a href="https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm">documentation</a>.</p>
+</li>
+<li>
+<p>OCI Data Flow Interactive SQL server cluster setup and the related policies.They are already setup in the lab tenancy. If you want to learn more, read the <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf">Guide</a></p>
+</li>
+<li>
+<p>Connection between OAC and  OCI Data Flow Interactive SQL server cluster is already setup. If you want to learn more, read the <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf">Guide</a></p>
+</li>
+</ul>
+<h2 id="step-1-inspect-the-input-json-files-and-the-scripts-for-the-lab"><strong>STEP 1</strong>: Inspect the Input JSON files and the scripts for the lab</h2>
+<ol>
+<li>
+<p>From the Console navigate to the object storage</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/upload_objecstorage.png" alt="Object Store" title=" "></p>
+</li>
+<li>
+<p>For this workshop, we are reusing existing buckets <code>workshop-scripts</code> that contains all the input python files and <code>workshop-data</code> that contains all the Input JSON files  in compartment  <code>dataflow-demo</code>. The process to upload the files is as described <a href="https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage">File Upload</a>.</p>
+</li>
+<li>
+<p>In the bucket <code>workshop-data</code> find the input JSON files <code>yelp_business_yelp_academic_dataset_business.json</code> in the folder <code>yelp_business</code> and the file <code>yelp_review_yelp_academic_dataset_review.json</code> in the folder <code>yelp_review</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Yelp-Input-JSON-Dataset.png" alt="Yelp JSON Files" title=" "></p>
+</li>
+<li>
+<p>In the bucket <code>workshop-scripts</code> find the scripts <code>oci-df-lab-script.py</code> and <code>query_metastore_and_model.py</code> that will be used for the workshop</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-Example.png" alt="Files" title=" "></p>
+</li>
+</ol>
+<h2 id="step-2-inspect-the-metastore"><strong>STEP 2</strong>: Inspect the MetaStore</h2>
+<ol>
+<li>
+<p>In the Console, open the navigation menu and click <code>Analytics &amp; AI</code>. Click <code>Data Catalog</code>.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/data-catalog.png" alt="Data Catalog" title=" "></p>
+</li>
+<li>
+<p>From the Data Catalog service page, click <code>Metastores</code>.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/MetaStore.png" alt="MetaStore" title=" "></p>
+</li>
+<li>
+<p>Change the Compartment to the <code>dataflow-demo</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Metastore-Change-Compartment.png" alt="MetaStore Compartment" title=" "></p>
+</li>
+<li>
+<p>Should list the MetaStores in  <code>dataflow-demo</code> Compartment and you should find the <code>DF-metastore</code> Metastore that we will use for the workshop</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/metastore-compartment.png" alt="Show MetaStore" title=" "></p>
+</li>
+<li>
+<p>Open the metastore <code>DF-metastore</code>  to inspect the location of the table for the MetaStore. This will hold the data for the tables that we create later.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/DF-metastore.png" alt="DF Metastore" title=" "></p>
+</li>
+</ol>
+<h2 id="step-3-create-a-python-data-flow-application-in-oracle-cloud-infrastructure-data-flow"><strong>STEP 3</strong>: Create a python Data Flow Application in Oracle Cloud Infrastructure Data Flow</h2>
+<p>As a Data engineer we start by building a Python based batch application the application calls a script that does the following :</p>
+<pre><code>  1. Reads the raw Yelp JSON data from Object Store into a spark dataframe
+  
+  2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
+  
+  3. Creates managed tables by the name yelp_business_raw and yelp_review in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
+  
+  4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data analayst to create visaulization and reports on top of the data.
+</code></pre>
+<p>Perform the following steps to create an application</p>
+<ol>
+<li>
+<p>Navigate to  ```Data Flow`` from the console</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/data-flow-console.png" alt="Files" title=" "></p>
+</li>
+<li>
+<p>Click <code>Create Application</code> from the page to launch the <code>Create Application</code>  page</p>
+<p>![Create Application](../images/Dataflow-Create-Application&quot; &quot;)</p>
+</li>
+<li>
+<p>On the <code>Create Application</code> page, provide a <code>Name</code> and <code>Description</code></p>
+</li>
+<li>
+<p>In the <code>Resource Configuration</code>. Leave the default values for <code>Spark Version</code>, <code>Driver Shape</code> , <code>Exexutor Shape</code> and <code>Number of Executors</code></p>
+</li>
+<li>
+<p>In the Application Configuration</p>
+<p>3.1 Choose <code>Language</code> as <code>Python</code></p>
+<p>3.2 In <code>Select a File</code> pick the Object Storage File Name bucket as <code>Field-Training</code> and file name as <code>oci-df-lab-script.py</code></p>
+<p>3.3 Leave the <code>Main class Name</code> and the <code>Archive URI</code> empty</p>
+<p>3.4 In the <code>Argument</code> field enter the path for the Input Yelp JSON files (seperated by space) that we saw in Step#1 above and also provide a unique name for the hive DB (for e.g the workshop participants can give your UUID + &quot;DB&quot;). The format of path is as following <code>oci://&lt;&lt;bucketname@namespace/folder-path&gt;&gt;</code></p>
+<p>for e.g. <code>oci://workshop-data@idehhejtnbtc/yelp_review/yelp_review_yelp_academic_dataset_review.json oci://workshop-data@idehhejtnbtc/yelp_business/yelp_business_yelp_academic_dataset_business.json aachandaDB</code></p>
+<p>3.5 In the <code>Metastore in dataflow-demo</code> choose <code>DF-metastore</code> and you should see the path of the Managed table getting populated automatically.</p>
+</li>
+<li>
+<p>Double-check your Application configuration, and confirm it is similar to the following</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Application.png" alt="Sample Application Configuration" title=" "></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Application-2.png" alt="Sample Application Configuration" title=" "></p>
+</li>
+<li>
+<p>When done, click <strong>Create</strong>. When the Application is created, you should see it in the Application list.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/MetaStore-App.png" alt="Sample Application" title=" "></p>
+</li>
+</ol>
+<h2 id="step-4-run-the-oracle-cloud-infrastructure-data-flow-application"><strong>STEP 4</strong>: Run the Oracle Cloud Infrastructure Data Flow application</h2>
+<ol>
+<li>
+<p>Launch the Application that was created in Step#3 above. The status of the application should be <code>Active</code></p>
+<p><a href="../images/Launch-Sample-Application.png" title=" ">Run Sample Application</a></p>
+<p>Notice the application has the correct values for <code>Metastore</code> and <code>Arguments</code></p>
+</li>
+<li>
+<p>Click <strong>Run</strong> to launch the run configuration screen</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Hive-MetaStore.png" alt="Run Sample Application" title=" "></p>
+</li>
+<li>
+<p>Click on <code>Run</code> and see all the applications. Initally the status of the run is <code>Accepted</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-Accepted.png" alt="Run Sample Application" title=" "></p>
+</li>
+<li>
+<p>Click launch the application and its status should change to <code>In Progress</code> in few seconds</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-InProgress.png" alt="Run Sample Application" title=" "></p>
+</li>
+<li>
+<p>While the Application is running, you can optionally load the <strong>Spark UI</strong>  to monitor progress. From the <strong>Actions</strong> icon for the run in question, select <strong>Spark UI</strong></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-SparkUI.png" alt="Run Spark UI" title=" "></p>
+</li>
+<li>
+<p>You are automatically redirected to the Apache Spark UI, which is useful for debugging and performance tuning.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore.png" alt="Spark UI" title=" "></p>
+<p>On the screen users can look at:</p>
+<ol>
+<li>
+<p>The list of the <code>Active Jobs</code></p>
+</li>
+<li>
+<p>The list of <code>Completed Jobs</code></p>
+</li>
+<li>
+<p>Navigate to the  <code>Executors</code> tab at the top to see the list of <code>Executors</code>
+<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore-Executors.png" alt="Spark UI" title=" "></p>
+</li>
+<li>
+<p>Navigate to the <code>SQL</code> tab at the top to see the SQL Queries
+<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore-SQL.png" alt="Spark UI" title=" "></p>
+</li>
+</ol>
+</li>
+<li>
+<p>After few mins the  <code>Data Flow Run</code>  should complete and the State should change to <code>Succeeded</code>:</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/hive-metastore-run-success.png" alt="Run Succeeded" title=" "></p>
+</li>
+<li>
+<p>Drill into the Run to see more details, and scroll to the bottom to see a listing of logs.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/hive-metastore-log-run.png" alt="Run logs" title=" "></p>
+</li>
+<li>
+<p>When you click the <code>spark_application_stdout.log.gz</code>  file, it should download a file <code>View</code> to your local file system.</p>
+</li>
+<li>
+<p>Click open the file and you should see the following output</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-log.png" alt="Application logs" title=" "></p>
+<p>The log file shows</p>
+<ol>
+<li>
+<p>The Count of Business Dataset before and after cleaning (dropping the restaurants that are closed)</p>
+</li>
+<li>
+<p>The list of managed tables that got created</p>
+</li>
+<li>
+<p>The schema of the both the managed tables</p>
+</li>
+<li>
+<p>The DDL of the view</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Navigate to the Object Store Bucket <code>DF-default-storage</code> that was used as location for the tables.</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Bucket.png" alt="Application logs" title=" "></p>
+</li>
+<li>
+<p>Click open the Bucket <code>DF-default-storage</code> to show the content of the bucket and scrolls to bottom of the page</p>
+</li>
+<li>
+<p>The content of the Bucket shows the table and the parquet files</p>
+</li>
+</ol>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/obj-store-bucket-content.png" alt="Application logs" title=" "></p>
+<p>You should see the following :</p>
+<ol>
+<li>
+<p>The folder corresponding to the the DB Name (for e.g. <code>aachandadb.db</code>) that was provided while running the application</p>
+</li>
+<li>
+<p>A folder corresponding to tables name for e.g. <code>yelp_business_raw</code> and <code>yelp_review</code> that was provided to the application.</p>
+</li>
+<li>
+<p>Expanding the folder should show the data split across different  <code>.parquet</code> files.</p>
+</li>
+</ol>
+<h2 id="step-5-create-and-run-a-sample-application-to-query-the-metastore-and-build-a-machine-learning-model"><strong>STEP 5</strong>  Create and Run a sample Application to Query the metastore and build a Machine learning Model</h2>
+<p>As a Data scientist, we create another OCI Data Flow Application. This application would do the following :</p>
+<ul>
+<li>
+<p>Query the review data  to get the count of review by avg rating from the table <code>yelp_review</code> which was created in Step#3 above. This makes metastore a central repository for applications across data platform.</p>
+</li>
+<li>
+<p>Build an NLP machine learning model to predict sentiment given a restaurant review text.</p>
+</li>
+<li>
+<p>Analyze which terms are most contributive to a positive or a negative restaurant review. We will be predicting whether a review is positive or negative using classifier algorithms Linear Support Vector Machine and Logistics Regression</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Navigate to OCI Data Flow and create another Python Application in OCI Dataflow similar to how it was done in Step #4 above. Launch the <code>Create Application</code> page :</p>
+</li>
+<li>
+<p>On the <code>Create Application</code> page, provide a <code>Name</code> and <code>Description</code></p>
+</li>
+<li>
+<p>In the <code>Resource Configuration</code>. Leave the default values for <code>Spark Version</code>, <code>Driver Shape</code>, <code>Executor Shape</code></p>
+</li>
+<li>
+<p>For the  <code>Number of Executors</code> select <code>4</code></p>
+</li>
+<li>
+<p>In the Application Configuration</p>
+<ol>
+<li>
+<p>Select the <code>query_metastore_and_model.py</code> from the bucket <code>workshop-scripts</code></p>
+</li>
+<li>
+<p>In the argument Pass the DBName that used to create the Managed Table.</p>
+</li>
+<li>
+<p>In the <code>Metastore in dataflow-demo</code> choose <code>DF-metastore</code> and you should the path of the Managed table getting populated automatically.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The configuration should look like as shown in the snapshot</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/query-metastore-application-1.png" alt="Query MetaStore Application " title=" "></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/query-metastore-application-2.png" alt="Query MetaStore Application " title=" "></p>
+</li>
+<li>
+<p>Click <code>Create</code> and save the application.</p>
+</li>
+<li>
+<p>Next Run the Application, by launching the application and clicking on <code>Run</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Query-metastore-run-application.png" alt="Query MetaStore Application Run " title=" "></p>
+</li>
+<li>
+<p>Application status changes from <code>Accepted</code> to <code>In-Progress</code> and <code>Succeeded</code></p>
+</li>
+<li>
+<p>Open the logs and you should see count of reviews by avg rating</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Query-metastore-run-application-log.png" alt="Query MetaStore Logs " title=" "></p>
+</li>
+<li>
+<p>Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithams. The higher the F1 score the better.</p>
+</li>
+</ol>
+<pre><code>![Query MetaStore Logs ](../images/Query-metastore-run-application-fscore.png &quot; &quot;)
+</code></pre>
+<h2 id="step-6-connect-to-the-metastore-from-oracle-analytics-cloud-oac"><strong>STEP 6</strong>: Connect to the Metastore from Oracle Analytics Cloud (OAC)</h2>
+<p>As a Data analyst, we want to build visualization on top of the raw data that was created by the data engineer. OAC can connect to the OCI Metastore via Data Flow Interactive (DFI) SQL Cluster. For this workshop DFI SQL Cluster is already setup. And the connection between DFI Cluster and OAC via Oracle Remote Data Gateway (RDG) is also established. At the time of writing this workshop OAC doesn't natively supports DFI as a data source instead uses JDBC to establish the connection vis RDG.</p>
+<ol>
+<li>
+<p>From the Console navigate to  <code>Analytics Cloud</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Navigation.png" alt="OAC Navigation " title=" "></p>
+</li>
+<li>
+<p>In the <code>dataflow-demo</code> compartment you should see the following instances created that are created for the workshop</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Instances.png" alt="OAC Instances " title=" "></p>
+</li>
+<li>
+<p>Click on the Instance <code>DFWorkshop1</code> and click open the <code>URL</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Instance-URL.png" alt="OAC Instances URL " title=" "></p>
+</li>
+<li>
+<p>You should be re-directed to the OAC Console</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Console.png" alt="OAC Console " title=" "></p>
+</li>
+<li>
+<p>On the console first we create a dataset</p>
+<ol>
+<li>
+<p>Click <code>Connect to Your Data</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Connect-to-your-Data.png" alt="OAC Console " title=" "></p>
+</li>
+<li>
+<p>Select the OAC instance <code>DF-Workshop-1</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Create-Data-Set.png" alt="OAC Console " title=" "></p>
+</li>
+<li>
+<p>It should show the databases that we created in step #3 above .</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-DB.png" alt="OAC Console " title=" "></p>
+</li>
+<li>
+<p>Drag and drop or double click <code>yelp_data</code> to the editor on the righthand side. It should load the data for <code>yelp_data</code>. It can take few mins for the data to show up</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/yelp-data-set.png" alt="OAC Console " title=" "></p>
+</li>
+<li>
+<p>Enter a name for Dataset and Save.</p>
+</li>
+<li>
+<p>Open the Dataset and it explore the data</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-yelp-dataset.png" alt="OAC DataSet " title=" "></p>
+</li>
+</ol>
+</li>
+<li>
+<p>(Optional) Create a project to Visualize the data in Map Interface as described in <a href="https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background">tutorial</a> and selecting <code>state</code> and <code>average_start</code> columns from  the</p>
+<ol>
+<li>
+<p>Add a new <code>calculation</code> by right clicking <code>My Calcuation</code> and then <code>Add Calculation</code></p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation.png" alt="OAC My Calculation " title=" "></p>
+</li>
+<li>
+<p>Name the calculation and enter the  below calculation on the editor</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation-Formula.png" alt="OAC My Calculation " title=" "></p>
+</li>
+<li>
+<p>Click <code>Save</code> and the new Calculation should be displayed under ```My Calculations``
+<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation-Save.png" alt="OAC My Calculation Save " title=" "></p>
+</li>
+<li>
+<p>Click on <code>Visualize</code> on the top left hand and drop the map on the right side</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Visualization.png" alt="OAC Map Visualization " title=" "></p>
+</li>
+<li>
+<p>On the <code>state layer</code> in the map drag the <code>state</code> column in the <code>Location</code> and drag the calculation <code>avg-star</code> on the <code>Color</code> field</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Columns.png" alt="OAC Map Visualization " title=" "></p>
+</li>
+<li>
+<p>On the <code>Filters</code>  drag <code>goodForKids</code>, <code>alchohol</code>, <code>years</code>,<code>takeout</code> columns</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Filter.png" alt="OAC Map Visualization " title=" "></p>
+</li>
+<li>
+<p>And save the map and visualize the data</p>
+<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map.png" alt="OAC Map Visualization " title=" "></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="step-6-advanced-lab-to-look-at-the-code-for-the-sample-application"><strong>STEP 6</strong>: Advanced lab to look at the code for the Sample Application</h2>
+<ol>
+<li>
+<p>Begin by importing the python modules</p>
+<pre class="hljs"><code><div>   &lt;copy&gt;
+   <span class="hljs-keyword">import</span> os
+   <span class="hljs-keyword">import</span> traceback
+   <span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkConf
+   <span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> SparkSession
+   <span class="hljs-keyword">from</span> pyspark.sql.context <span class="hljs-keyword">import</span> SQLContext
+   <span class="hljs-keyword">from</span> pyspark.sql.functions <span class="hljs-keyword">import</span> *
+   <span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> *
+ &lt;/copy&gt;
+</div></code></pre>
+</li>
+<li>
+<p>In the main function we start with the program logic. The main function is a starting point of any python program. When the program is run, the python interpreter runs the code sequentially. As input we pass the the location of the object storage location that has the  netflix csv file.</p>
+<pre class="hljs"><code><div> &lt;copy&gt;
+     <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+     main()
+ &lt;/copy&gt;
+</div></code></pre>
+<pre class="hljs"><code><div> &lt;copy&gt;
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+
+<span class="hljs-comment"># Input Parquet files</span>
+YELP_REVIEW_INPUT_PATH = sys.argv[<span class="hljs-number">1</span>]
+YELP_BUSINESS_INPUT_PATH = sys.argv[<span class="hljs-number">2</span>]
+db_name = sys.argv[<span class="hljs-number">3</span>]
+
+YELP_REVIEW_OUTPUT_PATH = os.path.dirname(YELP_REVIEW_INPUT_PATH) + <span class="hljs-string">"/parquet"</span>
+YELP_BUSINESS_OUTPUT_PATH = os.path.dirname(YELP_BUSINESS_INPUT_PATH) + <span class="hljs-string">"/parquet"</span>
+
+
+<span class="hljs-comment"># Set up Spark.</span>
+<span class="hljs-comment"># Set up Spark.</span>
+spark_session = get_dataflow_spark_session()
+
+<span class="hljs-comment"># Load our data.</span>
+
+review_input_dataframe = spark_session.read.option(<span class="hljs-string">"header"</span>, <span class="hljs-string">"true"</span>).option(
+    <span class="hljs-string">"mergeSchema"</span>, <span class="hljs-string">"true"</span>).json(YELP_REVIEW_INPUT_PATH)
+
+review_input_dataframe = flatten(review_input_dataframe)
+
+review_input_dataframe.printSchema()
+
+business_input_dataframe = spark_session.read.option(<span class="hljs-string">"header"</span>, <span class="hljs-string">"true"</span>).option(
+    <span class="hljs-string">"mergeSchema"</span>, <span class="hljs-string">"true"</span>).json(YELP_BUSINESS_INPUT_PATH)
+
+business_input_dataframe = flatten(business_input_dataframe)
+
+business_input_dataframe.printSchema()
+
+<span class="hljs-comment"># Create Hive External Table</span>
+createHiveTable(spark_session, review_input_dataframe,
+                business_input_dataframe, db_name)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flatten</span><span class="hljs-params">(df)</span>:</span>
+<span class="hljs-comment"># compute Complex Fields (Lists and Structs) in Schema</span>
+complex_fields=dict([(field.name, field.dataType)
+                       <span class="hljs-keyword">for</span> field <span class="hljs-keyword">in</span> df.schema.fields
+                       <span class="hljs-keyword">if</span> type(field.dataType) == ArrayType <span class="hljs-keyword">or</span> type(field.dataType) == StructType])
+<span class="hljs-keyword">while</span> len(complex_fields) != <span class="hljs-number">0</span>:
+    col_name=list(complex_fields.keys())[<span class="hljs-number">0</span>]
+    print(<span class="hljs-string">"Processing :"</span>+col_name+<span class="hljs-string">" Type : "</span> +
+          str(type(complex_fields[col_name])))
+
+    <span class="hljs-comment"># if StructType then convert all sub element to columns.</span>
+    <span class="hljs-comment"># i.e. flatten structs</span>
+    <span class="hljs-keyword">if</span> (type(complex_fields[col_name]) == StructType):
+        expanded=[col(col_name+<span class="hljs-string">'.'</span>+k).alias(col_name+<span class="hljs-string">'_'</span>+k)
+                    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> [n.name <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> complex_fields[col_name]]]
+        df=df.select(<span class="hljs-string">"*"</span>, *expanded).drop(col_name)
+
+    <span class="hljs-comment"># if ArrayType then add the Array Elements as Rows using the explode function</span>
+    <span class="hljs-comment"># i.e. explode Arrays</span>
+    <span class="hljs-keyword">elif</span> (type(complex_fields[col_name]) == ArrayType):
+        df=df.withColumn(col_name, explode_outer(col_name))
+
+    <span class="hljs-comment"># recompute remaining Complex Fields in Schema</span>
+    complex_fields=dict([(field.name, field.dataType)
+                           <span class="hljs-keyword">for</span> field <span class="hljs-keyword">in</span> df.schema.fields
+                           <span class="hljs-keyword">if</span> type(field.dataType) == ArrayType <span class="hljs-keyword">or</span> type(field.dataType) == StructType])
+<span class="hljs-keyword">return</span> df                
+ &lt;/copy&gt;
+</div></code></pre>
+</li>
+<li>
+<p>Next, create a spark session and in the session config, add the OCI configuration. We pass the following configuration</p>
+<ol>
+<li>
+<p>OCID of the user calling the API. To get the value, see <a href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs">Required Keys and OCIDs</a>.</p>
+</li>
+<li>
+<p>Fingerprint for the public key that was added to this user. To get the value, see<a href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs">Required Keys and OCIDs</a></p>
+</li>
+<li>
+<p>Full path and filename of the private key. The key pair must be in the PEM format. For instructions on generating a key pair in PEM forat, see <a href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs">Required Keys and OCIDs</a></p>
+</li>
+<li>
+<p>Passphrase used for the key, if it is encrypted.</p>
+</li>
+<li>
+<p>OCID of your tenancy. To get the value, see <a href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs">Required Keys and OCIDs</a></p>
+</li>
+<li>
+<p>An Oracle Cloud Infrastructure region. see <a href="https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top">Regions and Availability Domains</a></p>
+</li>
+</ol>
+<pre class="hljs"><code><div>&lt;copy&gt;
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_dataflow_spark_session</span><span class="hljs-params">(
+app_name=<span class="hljs-string">"DataFlow"</span>, file_location=None, profile_name=None, spark_config={}
+)</span>:</span>
+<span class="hljs-string">"""
+Get a Spark session in a way that supports running locally or in Data Flow.
+"""</span>
+<span class="hljs-keyword">if</span> in_dataflow():
+    spark_builder = SparkSession.builder.appName(app_name)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-comment"># Import OCI.</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">import</span> oci
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">raise</span> Exception(
+            <span class="hljs-string">"You need to install the OCI python library to test locally"</span>
+        )
+    <span class="hljs-comment"># Use defaults for anything unset.</span>
+    <span class="hljs-keyword">if</span> file_location <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        file_location = oci.config.DEFAULT_LOCATION
+    <span class="hljs-keyword">if</span> profile_name <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        profile_name = oci.config.DEFAULT_PROFILE
+
+    <span class="hljs-comment"># Load the config file.</span>
+    <span class="hljs-keyword">try</span>:
+        oci_config = oci.config.from_file(
+            file_location=file_location, profile_name=profile_name
+        )
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        print(<span class="hljs-string">"You need to set up your OCI config properly to run locally"</span>)
+        <span class="hljs-keyword">raise</span> e
+    conf = SparkConf()
+    conf.set(<span class="hljs-string">"fs.oci.client.auth.tenantId"</span>, oci_config[<span class="hljs-string">"tenancy"</span>])
+    conf.set(<span class="hljs-string">"fs.oci.client.auth.userId"</span>, oci_config[<span class="hljs-string">"user"</span>])
+    conf.set(<span class="hljs-string">"fs.oci.client.auth.fingerprint"</span>, oci_config[<span class="hljs-string">"fingerprint"</span>])
+    conf.set(<span class="hljs-string">"fs.oci.client.auth.pemfilepath"</span>, oci_config[<span class="hljs-string">"key_file"</span>])
+    conf.set(
+        <span class="hljs-string">"fs.oci.client.hostname"</span>,
+        <span class="hljs-string">"https://objectstorage.{0}.oraclecloud.com"</span>.format(oci_config[<span class="hljs-string">"region"</span>]),
+    )
+    spark_builder = SparkSession.builder.appName(app_name).config(conf=conf)
+
+<span class="hljs-comment"># Add in extra configuration.</span>
+<span class="hljs-keyword">for</span> key, val <span class="hljs-keyword">in</span> spark_config.items():
+    spark_builder.config(key, val)
+
+<span class="hljs-comment"># Create the Spark session. Enables Hive support, including connectivity to a persistent Hive metastore</span>
+ session = spark_builder.enableHiveSupport().getOrCreate()
+<span class="hljs-keyword">return</span> session
+&lt;/copy&gt;
+</div></code></pre>
+</li>
+<li>
+<p>Create Tables in Hive MetaStore.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>    &lt;copy&gt;
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createHiveTable</span><span class="hljs-params">(spark_session, review_input_dataframe, business_input_dataframe, db_name)</span>:</span>
+
+    <span class="hljs-keyword">try</span>:
+        spark_session.sql(<span class="hljs-string">"CREATE DATABASE IF NOT EXISTS "</span> + db_name)
+    <span class="hljs-keyword">except</span>:
+        print(traceback.format_exc())
+        print(traceback.print_stack())
+
+    spark_session.sql(<span class="hljs-string">"USE "</span> + db_name)
+
+    <span class="hljs-keyword">try</span>:
+        review_input_dataframe.write.mode(<span class="hljs-string">"overwrite"</span>).saveAsTable(
+            db_name + <span class="hljs-string">".yelp_review"</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> err:
+        print(traceback.format_exc())
+        print(traceback.print_stack())
+
+    <span class="hljs-keyword">try</span>:
+        business_input_dataframe.write.mode(<span class="hljs-string">"overwrite"</span>).saveAsTable(
+            db_name + <span class="hljs-string">".yelp_business_raw"</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> err:
+        print(traceback.format_exc())
+        print(traceback.print_stack())
+        print(<span class="hljs-string">"Table yelp_business_raw already exists"</span>)
+
+    spark_session.sql(<span class="hljs-string">"SHOW Tables"</span>).show()
+    spark_session.sql(<span class="hljs-string">"DESCRIBE TABLE yelp_review"</span>).show()
+    spark_session.sql(<span class="hljs-string">"DESCRIBE TABLE yelp_business_raw"</span>).show()
+
+    ddl = <span class="hljs-string">'CREATE OR REPLACE VIEW yelp_data AS SELECT business.name, year(date),business.state, business.attributes_Alcohol alcohol,attributes_GoodForKids goodForKids, business.attributes_RestaurantsTakeOut takeout, avg(review.stars) average_star FROM '</span> \
+          + db_name + <span class="hljs-string">'.yelp_review review,'</span> + db_name + <span class="hljs-string">'.yelp_business_raw business'</span> \
+          + <span class="hljs-string">' WHERE business.business_id = review.business_id GROUP BY business.name, year(date),business.state,business.attributes_Alcohol,business.attributes_GoodForKids, business.attributes_RestaurantsTakeOut ORDER BY average_star DESC '</span>
+
+    print(<span class="hljs-string">"view ddl"</span> + ddl)
+
+    <span class="hljs-keyword">try</span>:
+        spark_session.sql(ddl)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> err:
+
+    &lt;/copy&gt;
+</div></code></pre>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<ul>
+<li>
+<p><strong>Author</strong> - Anand Chandak</p>
+</li>
+<li>
+<p><strong>Adapted by</strong> -</p>
+</li>
+<li>
+<p><strong>Contributors</strong> -</p>
+</li>
+<li>
+<p><strong>Last Updated By/Date</strong> -</p>
+</li>
+</ul>
+<h2 id="need-help">Need Help?</h2>
+<p>Please submit feedback or ask for help using our [LiveLabs Support Forum](<a href="https://community.oracle.com/tech/developers/categories/Data">https://community.oracle.com/tech/developers/categories/Data</a> flow). Please click the <strong>Log In</strong> button and login using your Oracle Account. Click the <strong>Ask A Question</strong> button to the left to start a <em>New Discussion</em> or <em>Ask a Question</em>.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.</p>
+<p>If you do not have an Oracle Account, <a href="https://profile.oracle.com/myprofile/account/create-account.jspx">click</a> to create one.</p>
+
+</body>
+</html>

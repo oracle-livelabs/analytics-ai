@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "AI Services: Introduction to OCI Vision",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction: OCI Vision",
+            "description": "Learn about the features provided by Vision services",
+            "filename": "./intro.md"
+        },
+        {
+            "title": "Lab 1: Use Vision Service through the OCI Console",
+            "description": "Learn how to access AI vision using oci console",
+            "filename": "../../analyze-vision/analyze-vision.md"
+        },
+        {
+            "title": "Lab 2: Create a custom model through the OCI Console",
+            "description": "Learn how to create a custom model using the oci console",
+            "filename": "../../custom-model/custom-model.md"
+        },
+        {
+            "title": "Lab 3: Access OCI Vision in DataScience Notebook Session",
+            "description": "Learn how to access OCI Vision in DataScience Notebook Session",
+            "filename": "../../ai-vision-datascience/ai-vision-datascience.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

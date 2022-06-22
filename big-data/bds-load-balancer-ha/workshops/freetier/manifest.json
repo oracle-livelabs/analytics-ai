@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "Use a Load Balancer to Access Services on Big Data Service (HA Cluster)",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+      {
+         "title": "Lab 1: Introduction",
+         "description": "Introduction",
+         "filename": "./../../load-balancer-ha-intro/load-balancer-ha-intro.md"
+      },
+      {
+          "title": "Lab 2: Create the Load Balancer",
+          "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
+          "filename": "./../../load-balancer-ha/load-balancer-ha.md"
+      },
+      {
+          "title": "Lab 3: Use the Load Balancer to Access Services on the Cluster",
+          "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
+          "filename": "./../../load-balancer-ha-use/load-balancer-ha-use.md"
+      },
+      {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      }
+   ]
+}

@@ -1,0 +1,51 @@
+{
+    "workshoptitle": "AI Services: Introduction to OCI Speech",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Get started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction: OCI speech",
+            "description": "Learn how to generate text transcripts from audio files using OCI Speech",
+            "filename": "./intro.md"
+        },
+        {
+            "title": "Lab 0: Create a bucket and upload files",
+            "description": "Learn how to create an input bucket in object storage and upload files",
+            "filename": "../../object-storage/object-storage.md"
+        },
+        {
+            "title": "Lab 1: Transcribe audio with the console",
+            "description": "Learn how to transcribe audio files using oci console",
+            "filename": "../../transcribe-audio/transcribe-audio.md"
+        },
+        {
+            "title": "Lab 2: Access OCI speech with OCI SDKs",
+            "description": "Learn how to access OCI Speech with Speech SDKs",
+            "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
+        },
+        {
+            "title": "Lab 3: Access OCI speech with OCI CLI",
+            "description": "Learn how to access OCI Speech with CLI",
+            "filename": "../../ai-speech-cli/ai-speech-cli.md"
+        },
+        {
+            "title": "Lab 4: Access OCI speech with REST APIs",
+            "description": "Learn how to access OCI Speech with REST API.",
+            "filename": "../../oci-speech-rest/oci-speech-rest.md"
+        },
+        {
+            "title": "Lab 5: Use OCI speech with datascience notebook session",
+            "description": "Learn how to access OCI Speech in DataScience Notebook Session.",
+            "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

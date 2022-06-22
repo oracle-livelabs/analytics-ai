@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Introduction to Data Science",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "An Oracle Cloud tenancy is required for all labs in this workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Set up Data Science environment",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../data-science-setup/data-science-setup.md"
+        },
+        {
+            "title": "Lab 2: Wrap Data Science Job in Function as a Service",
+            "filename": "../../functions/functions.md"
+        },
+        {
+            "title": "Lab 3: Create Event",
+            "filename": "../../events/events.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

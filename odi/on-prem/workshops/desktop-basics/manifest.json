@@ -1,0 +1,49 @@
+{
+  "workshoptitle": "Oracle Data Integrator 12c",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction to ODI",
+      "description": "Introduction to ODI",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: Initialize Environment",
+      "filename": "../../setup-odi-rep/setup-odi-rep.md"
+    },
+    {
+      "title": "Lab 2: Getting Started",
+      "filename": "../../odi12c-lab/odi12c-lab.md"
+    },
+    {
+      "title": "Lab 3: Work with Mappings - 1",
+      "filename": "../../odi12c-mappings-1/odi12c-mappings-1.md"
+    },
+    {
+      "title": "Lab 4: Work with Mappings - 2",
+      "filename": "../../odi12c-mappings-2/odi12c-mappings-2.md"
+    },
+    {
+      "title": "Lab 5: Implementing Data Quality Control",
+      "filename": "../../odi12c-data-quality-control/odi12c-data-quality-control.md"
+    },
+    {
+      "title": "Lab 6: Work with Packages",
+      "filename": "../../odi12c-packages/odi12c-packages.md"
+    },
+    {
+      "title": "Lab 7: Deploying Integrated Applications ",
+      "filename": "../../odi12c-production/odi12c-production.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

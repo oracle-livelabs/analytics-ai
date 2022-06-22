@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Feature types for data exploration and validation",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Data Science Service",
+            "filename": "./../../common/odsc-intro.md"
+        },
+        {
+            "title": "Lab 1: Create a Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "./../../common/project-setup-green-button.md"
+        },
+        {
+            "title": "Lab 2: Create a Notebook Session",
+            "description": "Create a Notebook Session and launch it.",
+            "filename": "./../../common/notebook-setup-green-button.md"
+        },
+        {
+            "title": "Lab 3: Feature Type Tutorial",
+            "description": "Introduction to the Feature Type System in the Accelerated Data Science SDK.",
+            "filename": "./../feature-type.md"
+        },
+        {
+            "title": "Lab 4: Shutting Down a Notebook Session",
+            "description": "Deactivate or terminate a notebook session.",
+            "filename": "./../../common/notebook-shutdown.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

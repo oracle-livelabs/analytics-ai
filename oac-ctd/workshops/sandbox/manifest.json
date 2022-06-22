@@ -1,0 +1,45 @@
+{
+    "workshoptitle": "Oracle Analytics Cloud Virtual Test Drive - CTD Edition",
+    "help": "livelabs-help-analytics_us@oracle.com",
+      "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+          {
+              "title": "Lab 1: Access OAC and load data",
+              "filename": "./../../lab1-access-oac-and-load-data/access-oac-and-load-data.md"
+          },
+          {
+              "title": "Lab 2: Getting insights by search",
+              "filename": "./../../lab2-getting-insights-by-search/getting-insights-by-search.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 3: ML one right-click away",
+              "filename": "./../../lab3-ml-one-right-click-away/ml-one-right-click-away.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 4: Augmented Analytics",
+              "filename": "./../../lab4-augmented-analytics/augmented-analytics.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 5: Adding more Datasets",
+              "filename": "./../../lab5-adding-more-datasets/adding-more-datasets.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Summary",
+              "filename": "./../../summary/summary.md",
+              "type": "livelabs"
+          },
+          {
+             "title": "Need Help?",
+             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+             "filename":"../../need-help-freetier/need-help-freetier.md"
+          }
+      ]
+  }
+  

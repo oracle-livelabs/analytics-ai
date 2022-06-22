@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "AI Services: Introduction to OCI Language",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction: OCI Language",
+            "description": "Learn how to discovers insights in unstructured text using natural language processing",
+            "filename": "./intro.md"
+        },
+        {
+            "title": "Lab 1: Analyzing Text with the Console",
+            "description": "Learn how to access AI language using oci console",
+            "filename": "../../analyze-text/analyze-text.md"
+        },
+        {
+            "title": "Lab 2: Access OCI Language with OCI CLI",
+            "description": "Learn how to access OCI Language with CLI",
+            "filename": "../../ai-language-cli/ai-language-cli.md"
+        },
+        {
+            "title": "Lab 3: Access OCI Language with Language SDKs",
+            "description": "Learn how to access OCI Language with Language SDKs",
+            "filename": "../../ai-language-sdk/ai-language-sdk.md"
+        },
+        {
+            "title": "Lab 4: Access OCI Language with REST API.",
+            "description": "Learn how to access OCI Language with REST API.",
+            "filename": "../../oci-language-rest/oci-language-rest.md"
+        },
+        {
+            "title": "Lab 5: Access OCI Language in DataScience Notebook Session.",
+            "description": "Learn how to access OCI Language in DataScience Notebook Session.",
+            "filename": "../../ai-language-datascience/ai-language-datascience.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

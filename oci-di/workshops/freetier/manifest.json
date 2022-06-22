@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Get Started with Oracle Cloud Infrastructure Data Integration",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to OCI Data Integration LiveLab.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 0: Setting up the Data Integration prerequisites in OCI",
+            "filename": "../../prerequisites/prerequisites.md"
+        },
+        {
+            "title": "Lab 1: Create an OCI Data Integration Workspace",
+            "filename": "../../create-workspace/create-workspace.md"
+        },
+        {
+            "title": "Lab 2: Create the Object Storage and ADW Data Assets",
+            "filename": "../../create-data-assets/create-data-assets.md"
+        },
+        {
+            "title": "Lab 3: Create a Data Loader task, two Data Flows, Integration tasks and a SQL task",
+            "filename": "../../integration-tasks/integration-tasks.md"
+        },
+        {
+            "title": "Lab 4: Create an Application, a Pipeline and publish tasks",
+            "filename": "../../pipelines/pipelines.md"
+        },
+        {
+            "title": "Lab 5: Run Data Loader task, schedule and run Pipeline task",
+            "filename": "../../schedule-run/schedule-run.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+       
+    ]
+}

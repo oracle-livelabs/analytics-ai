@@ -1,0 +1,42 @@
+{
+  "workshoptitle": "Develop an Interactive Map of a Racetrack: Red Bull Racing Honda Win",
+  "help": "livelabs-help-analytics_us@oracle.com”",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "In this hands-on lab you will learn how to create this circuit with LineString and Points from GeoJSON, join it to data and present it with OAC",
+      "filename": "../../intro-redbull/intro-redbull.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision Analytics Cloud",
+      "filename": "../../oac-provisioning/oac-provisioning.md"
+    },
+    {
+      "title": "Lab 2: Build GeoJSON using LineString and Points",
+      "filename": "../../build-geojson/build-geojson.md"
+    },
+    {
+      "title": "Lab 3: Import your GeoJSON code into OAC",
+      "filename": "../../imp-geojson/imp-geojson.md"
+    },
+    {
+      "title": "Lab 4: Load Data and Assign to your Map Layers",
+      "filename": "../../map-layers/map-layers.md"
+    },
+    {
+      "title": "Lab 5: Configure Google maps as a Map background",
+      "filename": "../../google-maps/google-maps.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+    
+  ]
+}

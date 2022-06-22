@@ -1,0 +1,71 @@
+{
+  "workshoptitle": "Leveraging Oracle Analytics Cloud with Oracle Autonomous Data Warehouse",
+  "help": "livelabs-help-analytics_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Provision your Oracle Autonomous Data Warehouse Database (ADW) instance",
+      "filename": "../../provision-adw/provision-adw.md"
+    },
+    {
+      "title": "Lab 2: Provision your Oracle Analytics Cloud (OAC) instance",
+      "filename": "../../provision-oac/provision-oac.md"
+    },
+    {
+      "title": "Lab 3: Connect OAC to ADW and adjust Data Set properties",
+      "filename": "../../connect-oac-adw/connect-oac-adw.md"
+    },
+	{
+      "title": "Lab 4: Immediate basic insights on data",
+      "filename": "../../immediate-insights/immediate-insights.md"
+    },
+	{
+      "title": "Lab 5: Ask Direct Questions on Data",
+      "filename": "../../ask-direct-questions/ask-direct-questions.md"
+    },
+	{
+      "title": "Lab 6: Gain Insights with Visual Data Dialog",
+      "filename": "../../gain-insights/gain-insights.md"
+    },
+	{
+      "title": "Lab 7: Monitor ADW activity and OAC Query Logs",
+      "filename": "../../monitor-adw/monitor-adw.md"
+    },
+  	{
+      "title": "Lab 8: Build a simple Interactive Workbook",
+      "filename": "../../build-analysis/build-analysis.md"
+    },
+    {
+      "title": "Lab 9: Mash up additional Data Sets, Contextual Data Preparation",
+      "filename": "../../mash-datasets/mash-datasets.md"
+    },
+    {
+      "title": "Lab 10: Geo Maps and Custom Binning",
+      "filename": "../../geo-maps/geo-maps.md"
+    },
+    {
+      "title": "Lab 11: Leverage OAC Data Flow with ADW",
+      "filename": "../../data-flows/data-flows.md"
+    },
+    {
+      "title": "Lab 12: Leverage Database functions with OAC",
+      "filename": "../../db-functions/db-functions.md"
+    },
+    {
+      "title": "Next Steps",
+      "filename": "../../next/next.md"
+    },
+    {
+       "title": "Need Help?",
+       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+       "filename":"../../need-help-freetier/need-help-freetier.md"
+    }
+  ]
+}

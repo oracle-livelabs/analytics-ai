@@ -1,0 +1,54 @@
+{
+  "workshoptitle": "Oracle Data Integrator 12c",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction to ODI High Availability",
+      "description": "Introduction to ODI HA",
+      "filename": "../../odi12c-ha-introduction/introduction.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md",
+      "type": "basics"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
+    },
+    {
+      "title": "Lab 3: Initialize Environment",
+      "filename": "../../odi12-ha-initialize-environment/setup-odi-rep.md"
+    },
+    {
+      "title": "Lab 4: ODI High Availability Configuration",
+      "filename": "../../odi12c-ha-config/odi12c-ha-config.md"
+    },
+    {
+      "title": "Lab 5: Create and Configure Load Balancer",
+      "filename": "../../odi12c-ha-load-balancer/odi12c-ha-load-balancer.md"
+    },
+    {
+      "title": "Lab 6: Run ODI Job when both Nodes are Up",
+      "filename": "../../odi12c-ha-all-nodes-up/odi12c-ha-all-nodes-up.md"
+    },
+    {
+      "title": "Lab 7: Run ODI Job when a Node is Down",
+      "filename": "../../odi12c-ha-node1-down/odi12c-ha-node1-down.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

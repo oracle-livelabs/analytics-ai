@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Get started with Oracle Cloud Infrastructure Forecasting",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction: Forecasting Service",
+            "description": "Learn how to use Forecast Service",
+            "filename": "../../item-1-forecasting-service-intro/item-1-forecasting-service-intro.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Generate Forecast from OCI Console",
+            "description": "Learn how to generate Forecast from OCI Console",
+            "filename": "../../item-3-forecast-with-console/item-3-forecast-with-console.md"
+        },
+        {
+            "title": "Lab 2: (Optional) Generate Forecast using Data Science Notebook ",
+            "description": "Learn what data and format needed for training, and use the prepared sample data for next steps.",
+            "filename": "../../item-4-forecasting-service-create-ds-notebook/item-4-forecasting-service-create-ds-notebook.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

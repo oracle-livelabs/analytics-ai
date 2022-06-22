@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "031a3995-a6a8-4ade-a518-c7f6e05f0927",
+		"name": "OCI_SPEECH_REST_COLLECTION",
+		"description": "This is a sample collection for invoking OCI REST APIs via POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create_Transcription_Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaalllw7ms4ivcnbb5v4geayi7qaiosclhtvcnshaqwsipqpbxy56sa\",\n    \"definedTags\": null,\n    \"description\": \"This is newly created job from Postman\",\n    \"displayName\": \"bugbash_job\",\n    \"freeformTags\": null,\n    \"inputLocation\": {\n        \"locationType\": \"OBJECT_LIST_INLINE_INPUT_LOCATION\",\n        \"objectLocations\": [\n            {\n                \"bucketName\": \"example_audio_files\",\n                \"namespaceName\": \"axsjzgvicq5h\",\n                \"objectNames\": [\n                    \"0mqQwxp1-vWtoDxnH.wav\",\n                    \"0n63rr0sn8o34qr8p38q0083s0s88881.wav\",\n                    \"0o86599oo769s6p6n0sp9p7q04q72426.wav\"\n                ]\n            }\n        ]\n    },\n    \"modelDetails\": {\n        \"domain\": \"GENERIC\",\n        \"languageCode\": \"en-US\"\n    },\n    \"normalization\": null,\n    \"outputLocation\": {\n        \"bucketName\": \"bug_bash_output\",\n        \"namespaceName\": \"axsjzgvicq5h\",\n        \"prefix\": \"bugbash/\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs"
+					]
+				},
+				"description": "Creates Transcription Job with details provided"
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Transcription_Job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaawjbtbpyafhotnjemdtu3uprdl3apwavlfab5qxy5glwlbgkf6fpq",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						"ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaawjbtbpyafhotnjemdtu3uprdl3apwavlfab5qxy5glwlbgkf6fpq"
+					]
+				},
+				"description": "Gets Transcription Job with given Transcription job id"
+			},
+			"response": []
+		},
+		{
+			"name": "List_Transcription_Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs"
+					],
+					"query": [
+						{
+							"key": "compartmentId",
+							"value": "ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa"
+						}
+					]
+				},
+				"description": "Gets All Transcription Jobs from a particular compartment"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit_Transcription_Job",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"displayName\": \"<newNameOfJob>\",\n    \"description\": \"<newDescriptionOfJob>\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/:transcriptionJobId",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						":transcriptionJobId"
+					],
+					"variable": [
+						{
+							"key": "transcriptionJobId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move_Resource",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"compartmentId\": \"<targetCompartmentHere>\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/:transcriptionJobId/actions/changeCompartment",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						":transcriptionJobId",
+						"actions",
+						"changeCompartment"
+					],
+					"variable": [
+						{
+							"key": "transcriptionJobId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel_Transcription_Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/:transcriptionJobId/actions/cancel",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						":transcriptionJobId",
+						"actions",
+						"cancel"
+					],
+					"variable": [
+						{
+							"key": "transcriptionJobId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Transcription_Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/:transcriptionJobId/transcriptionTasks/:transcriptionTaskId",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						":transcriptionJobId",
+						"transcriptionTasks",
+						":transcriptionTaskId"
+					],
+					"variable": [
+						{
+							"key": "transcriptionJobId",
+							"value": ""
+						},
+						{
+							"key": "transcriptionTaskId",
+							"value": ""
+						}
+					]
+				},
+				"description": "Gets Transcription tasks under given transcription Job Id"
+			},
+			"response": []
+		},
+		{
+			"name": "List_Transcription_Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaawjbtbpyakohqy7kivr46n7ffkchckfdnt5yu5jtyrkmbfft64gya/transcriptionTasks",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						"ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaawjbtbpyakohqy7kivr46n7ffkchckfdnt5yu5jtyrkmbfft64gya",
+						"transcriptionTasks"
+					]
+				},
+				"description": "Gets a Transcription Task with given Transcription task id under given Transcription Job id"
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel_Transcription_Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/:transcriptionJobId/transcriptionTasks/:transcriptionTaskId/actions/cancel",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice-preprod",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"transcriptionJobs",
+						":transcriptionJobId",
+						"transcriptionTasks",
+						":transcriptionTaskId",
+						"actions",
+						"cancel"
+					],
+					"variable": [
+						{
+							"key": "transcriptionJobId",
+							"value": ""
+						},
+						{
+							"key": "transcriptionTaskId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var navigator = {};",
+					"var window = {};",
+					"eval(pm.globals.get(\"jsrsasign\"));",
+					"",
+					"var headersToSign = [",
+					"        \"(request-target)\",",
+					"        \"date\",",
+					"        \"host\"",
+					"    ];",
+					"",
+					"",
+					"var curr_date = new Date().toUTCString() ;",
+					"pm.request.headers.upsert({key:'Date',value:curr_date});",
+					"var host = pm.request.url.host.join(\".\") ;",
+					"var apiKeyId = pm.environment.get(\"tenancyId\") + \"/\" + pm.environment.get(\"authUserId\") +\"/\"+ pm.environment.get(\"keyFingerprint\");",
+					"var privateKey_var =  pm.environment.get(\"privateKey\").trim();",
+					"",
+					"var date_header = \"date: \"+ curr_date ;",
+					"var escapedTarget = encodeURI(request.url.split(pm.request.url.host.join(\".\"))[1]);",
+					"var request_target_header = \"(request-target): \"+ request.method.toLowerCase() + \" \" + escapedTarget;",
+					"var host_header = \"host: \" + host ;",
+					"",
+					"",
+					"var signing_string_array = [ ",
+					"                request_target_header,",
+					"                date_header,",
+					"                host_header];",
+					"",
+					"var methodsThatRequireExtraHeaders = [\"POST\", \"PUT\", \"PATCH\"];",
+					"var body = \"\";",
+					"",
+					"if(methodsThatRequireExtraHeaders.indexOf(request.method.toUpperCase()) !== -1) {",
+					"    body = pm.request.body.raw;",
+					"    ",
+					"    //pm.environment.set(\"length\", body.length);",
+					"    ",
+					"    var content_length_header = \"content-length: \"+ body.length ; ",
+					"    var content_type_header = \"content-type: application/json\";",
+					"    ",
+					" ",
+					"    ",
+					"    var body_hash = new KJUR.crypto.MessageDigest({\"alg\": \"sha256\", \"prov\": \"cryptojs\"});",
+					"    body_hash.updateString(body);",
+					"    var bHashVal = body_hash.digest();",
+					"    var base64_encoded_body_hash = Buffer.from(bHashVal, 'hex').toString('base64');",
+					"    ",
+					"    var x_content_sha256_header = \"x-content-sha256: \" + base64_encoded_body_hash ; ",
+					"    ",
+					"\tpm.request.headers.upsert({key:'x-content-sha256',value:base64_encoded_body_hash});",
+					"\tpm.request.headers.upsert({key:'Content-Type',value:'application/json'});",
+					"    ",
+					"    signing_string_array = signing_string_array.concat([",
+					"        x_content_sha256_header,",
+					"        content_type_header,",
+					"        content_length_header ",
+					"         ",
+					"        ]);",
+					"",
+					"    headersToSign = headersToSign.concat([",
+					"        \"x-content-sha256\",",
+					"        \"content-type\",",
+					"        \"content-length\"",
+					"        ",
+					"        ",
+					"    ]);",
+					"    ",
+					"}",
+					"",
+					"",
+					"",
+					"var headers=headersToSign.join(\" \"); ",
+					"//console.log(headers);",
+					"",
+					"",
+					"var signing_string =signing_string_array.join(\"\\n\");",
+					"//console.log(signing_string);",
+					"",
+					"var sig = new KJUR.crypto.Signature({\"alg\": \"SHA256withRSA\"});",
+					"var passphrase_var =  pm.environment.get(\"passphrase\");",
+					"if(passphrase_var) {",
+					"    sig.init(privateKey_var,passphrase_var);",
+					"}else{",
+					"    sig.init(privateKey_var);",
+					"}",
+					"sig.updateString(signing_string);",
+					"var hSigVal = sig.sign();",
+					"var base64_encoded_signature = Buffer.from(hSigVal, 'hex').toString('base64');",
+					"",
+					"",
+					"//var auth_string = 'Signature version=\"1\",headers=\"'+headers + '\",keyId=\"'+apiKeyId +'\",algorithm=\"rsa-sha256\",signature=\"' + base64_encoded_signature+ '\"' ;",
+					"var auth_string = 'Signature version=\"1\",keyId=\"'+apiKeyId  +'\",algorithm=\"rsa-sha256\",headers=\"'+headers+ '\",signature=\"' + base64_encoded_signature+ '\"' ;",
+					"pm.request.headers.upsert({key:'Authorization',value:auth_string});",
+					"",
+					"//console.log(auth_string);",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "transcription_job_id",
+			"value": "{transcription_job_id}"
+		}
+	]
+}

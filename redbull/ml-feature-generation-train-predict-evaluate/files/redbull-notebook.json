@@ -1,0 +1,1466 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%sql\n--This calculates the number of rounds that have a change of driver in the leading position.\ncreate or replace view laps_with_change_pos_1_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver <> current_driver\n        and position = 1\n        group by raceid, lap\n    )\n    group by raceid;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:08:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "YEAR": "string",
+                      "ROUND": "string",
+                      "CIRCUITID": "string",
+                      "NAME": "string",
+                      "F1DATE": "string",
+                      "TIME": "string",
+                      "URL": "string",
+                      "CHANGE_DELTA_BEFORE_AND_AFTER_RACE_P1": "string",
+                      "CHANGE_DELTA_BEFORE_AND_AFTER_RACE_P2": "string",
+                      "CHANGE_DELTA_BEFORE_AND_AFTER_RACE_P3": "string",
+                      "CHANGE_DELTA_BEFORE_AND_AFTER_RACE_P4": "string",
+                      "CHANGE_DELTA_BEFORE_AND_AFTER_RACE_P5": "string",
+                      "POSITION_CHANGES_TOTAL": "string",
+                      "OVERTAKEN_POSITIONS_REAL_TOTAL": "string",
+                      "SCORE": "string",
+                      "LAP_COUNT": "string",
+                      "PERCENTAGE_SEASON": "string",
+                      "OVERTAKEN_POSITIONS_TOTAL": "string",
+                      "OVERTAKEN_POSITIONS_DUE_TO_PITSTOP_TOTAL": "string",
+                      "OVERTAKEN_POSITIONS_1_2": "string",
+                      "OVERTAKEN_POSITIONS_DUE_TO_PITSTOP_1_2": "string",
+                      "OVERTAKEN_POSITIONS_REAL_1_2": "string",
+                      "OVERTAKEN_POSITIONS_3_5": "string",
+                      "OVERTAKEN_POSITIONS_DUE_TO_PITSTOP_3_5": "string",
+                      "OVERTAKEN_POSITIONS_REAL_3_5": "string",
+                      "OVERTAKEN_POSITIONS_6_UP": "string",
+                      "OVERTAKEN_POSITIONS_DUE_TO_PITSTOP_6_UP": "string",
+                      "OVERTAKEN_POSITIONS_REAL_6_UP": "string",
+                      "POSITION_CHANGES_6_UP": "string",
+                      "POSITION_CHANGES_3_5": "string",
+                      "POSITION_CHANGES_1_2": "string",
+                      "LAPS_WITH_CHANGE_POS_1": "string",
+                      "LAPS_WITH_CHANGE_POS_1_5": "string",
+                      "AVG_DELTA_POSITION_FIRST_LAP": "string",
+                      "VAR_DELTA_POSITION_FIRST_LAP": "string",
+                      "MAX_DELTA_POSITION_FIRST_LAP": "string",
+                      "WEATHER": "string",
+                      "WEATHER_WARM": "string",
+                      "WEATHER_COLD": "string",
+                      "WEATHER_DRY": "string",
+                      "WEATHER_WET": "string",
+                      "WEATHER_CLOUDY": "string",
+                      "AVG_POSITION_SPACE": "string",
+                      "VAR_POSITION_SPACE": "string",
+                      "MAX_POSITION_SPACE": "string",
+                      "AVG_COMEBACKSCORE": "string",
+                      "VAR_COMEBACKSCORE": "string",
+                      "MAX_COMEBACKSCORE": "string",
+                      "NATIONALITY_P1": "string",
+                      "NATIONALITY_P2": "string",
+                      "NATIONALITY_P3": "string",
+                      "DRIVER_1": "string",
+                      "DRIVER_2": "string",
+                      "DRIVER_3": "string",
+                      "DELTA_SECONDS_1_2_25PERC": "string",
+                      "DELTA_SECONDS_1_2_50PERC": "string",
+                      "DELTA_SECONDS_1_2_75PERC": "string",
+                      "DELTA_SECONDS_1_2_100PERC": "string",
+                      "DELTA_SECONDS_1_2_LAP1": "string",
+                      "VARIANCE_TOP5": "string",
+                      "RANK_VERSUS_POSITION": "string",
+                      "SAFETY_CAR": "string",
+                      "CIRCUITREF": "string",
+                      "DNF_DUE_TO_ACCIDENT_COUNT": "string",
+                      "DNF_COUNT": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1049989570",
+      "id": "20211111-095554_1044352613",
+      "dateCreated": "2021-09-22T14:43:37+0000",
+      "dateStarted": "2021-11-11T10:08:56+0000",
+      "dateFinished": "2021-11-11T10:08:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:40"
+    },
+    {
+      "text": "%sql\nselect * from laps_with_change_pos_1_v",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:08:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "LAPS": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "RACEID\tLAPS\n6\t2\n14\t2\n23\t3\n27\t8\n348\t1\n846\t3\n851\t9\n852\t9\n870\t5\n883\t4\n902\t2\n914\t3\n948\t3\n962\t4\n964\t2\n965\t2\n974\t1\n977\t2\n999\t5\n1013\t3\n1019\t1\n1039\t1\n1061\t1\n7\t2\n31\t2\n338\t3\n344\t6\n350\t3\n352\t3\n353\t1\n862\t4\n864\t6\n865\t4\n872\t2\n884\t7\n888\t5\n892\t2\n910\t8\n913\t4\n927\t5\n928\t4\n931\t1\n943\t4\n945\t4\n963\t4\n981\t2\n990\t3\n992\t2\n1000\t2\n1038\t3\n34\t2\n343\t5\n354\t2\n844\t2\n845\t8\n860\t4\n861\t4\n882\t9\n890\t8\n911\t4\n968\t6\n987\t3\n988\t2\n998\t4\n1007\t2\n1011\t4\n1025\t1\n1029\t6\n1041\t1\n1052\t3\n2\t4\n8\t2\n11\t4\n12\t6\n17\t1\n21\t3\n30\t7\n856\t2\n873\t3\n878\t1\n895\t5\n918\t5\n932\t2\n933\t3\n941\t1\n942\t5\n971\t3\n979\t3\n980\t2\n983\t3\n989\t1\n1004\t4\n1009\t3\n1022\t3\n1024\t3\n1026\t4\n1028\t4\n1032\t2\n1055\t3\n4\t7\n5\t5\n10\t3\n18\t4\n35\t5\n848\t2\n849\t1\n867\t1\n869\t2\n877\t1\n880\t10\n881\t9\n886\t2\n896\t5\n898\t2\n906\t6\n908\t3\n917\t7\n936\t2\n954\t3\n956\t6\n961\t2\n984\t3\n993\t2\n997\t1\n1008\t4\n1023\t2\n1033\t2\n1059\t4\n3\t5\n9\t6\n20\t3\n22\t7\n26\t3\n28\t6\n33\t10\n339\t2\n340\t2\n347\t3\n855\t10\n879\t6\n887\t2\n904\t4\n926\t2\n929\t5\n937\t2\n944\t6\n950\t1\n957\t2\n976\t2\n991\t3\n1006\t4\n1010\t2\n1018\t4\n1021\t3\n1040\t1\n1042\t5\n1044\t6\n1046\t3\n1057\t6\n1062\t5\n13\t5\n19\t5\n29\t6\n847\t3\n850\t9\n866\t6\n930\t4\n949\t2\n958\t4\n966\t3\n973\t4\n985\t4\n1002\t4\n1027\t3\n1045\t2\n1054\t3\n16\t1\n24\t6\n25\t3\n32\t3\n337\t1\n355\t2\n841\t2\n842\t4\n843\t8\n853\t1\n858\t4\n859\t8\n863\t4\n868\t3\n907\t7\n912\t3\n916\t5\n934\t6\n952\t7\n953\t3\n969\t4\n972\t2\n996\t2\n1003\t4\n1016\t3\n1020\t3\n1035\t4\n1043\t1\n1053\t2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1085664832",
+      "id": "20211111-095554_774201614",
+      "dateCreated": "2021-09-23T15:05:51+0000",
+      "dateStarted": "2021-11-11T10:08:57+0000",
+      "dateFinished": "2021-11-11T10:08:58+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:41"
+    },
+    {
+      "text": "%sql\n--This calculates the number of rounds that have a change of driver in the top 5 positions.\ncreate or replace view laps_with_change_pos_1_5_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap, count(*)\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver <> current_driver\n        and (position >= 1 and position <= 5)\n        group by raceid, lap\n        order by raceid, lap\n    )\n    group by raceid\n    order by raceid;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:08:58+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-491262967",
+      "id": "20211111-095554_1231209227",
+      "dateCreated": "2021-09-23T15:06:19+0000",
+      "dateStarted": "2021-11-11T10:08:58+0000",
+      "dateFinished": "2021-11-11T10:08:58+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:42"
+    },
+    {
+      "text": "%sql\nselect * from laps_with_change_pos_1_5_v;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:08:59+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "LAPS": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "RACEID\tLAPS\n1\t20\n2\t16\n3\t24\n4\t17\n5\t11\n6\t17\n7\t12\n8\t14\n9\t23\n10\t18\n11\t14\n12\t18\n13\t10\n14\t12\n15\t11\n16\t18\n17\t10\n18\t15\n19\t16\n20\t14\n21\t13\n22\t15\n23\t14\n24\t13\n25\t13\n26\t26\n27\t16\n28\t19\n29\t15\n30\t15\n31\t17\n32\t14\n33\t20\n34\t14\n35\t16\n337\t9\n338\t12\n339\t7\n340\t17\n341\t4\n342\t6\n343\t6\n344\t13\n345\t4\n346\t8\n347\t6\n348\t6\n349\t7\n350\t5\n351\t8\n352\t7\n353\t7\n354\t8\n355\t12\n841\t15\n842\t23\n843\t28\n844\t21\n845\t17\n846\t15\n847\t24\n848\t13\n849\t15\n850\t20\n851\t27\n852\t23\n853\t15\n854\t16\n855\t19\n856\t10\n857\t5\n858\t12\n859\t18\n860\t16\n861\t15\n862\t28\n863\t19\n864\t22\n865\t6\n866\t21\n867\t19\n868\t17\n869\t20\n870\t16\n871\t22\n872\t17\n873\t13\n874\t11\n875\t12\n876\t9\n877\t11\n878\t15\n879\t25\n880\t24\n881\t26\n882\t30\n883\t34\n884\t24\n885\t10\n886\t7\n887\t22\n888\t23\n890\t22\n891\t16\n892\t10\n893\t16\n894\t11\n895\t19\n896\t22\n897\t15\n898\t7\n899\t17\n900\t6\n901\t16\n902\t22\n903\t13\n904\t13\n905\t4\n906\t22\n907\t16\n908\t14\n909\t19\n910\t25\n911\t23\n912\t14\n913\t14\n914\t14\n915\t8\n916\t10\n917\t28\n918\t19\n926\t7\n927\t22\n928\t9\n929\t16\n930\t14\n931\t7\n932\t8\n933\t7\n934\t12\n936\t14\n937\t18\n938\t8\n939\t4\n940\t11\n941\t16\n942\t23\n943\t11\n944\t9\n945\t18\n948\t11\n949\t24\n950\t28\n951\t10\n952\t16\n953\t11\n954\t15\n955\t14\n956\t17\n957\t10\n958\t11\n959\t17\n960\t15\n961\t16\n962\t14\n963\t10\n964\t14\n965\t12\n966\t14\n967\t16\n968\t17\n969\t6\n970\t16\n971\t17\n972\t5\n973\t11\n974\t5\n975\t13\n976\t19\n977\t7\n978\t10\n979\t8\n980\t10\n981\t13\n982\t9\n983\t9\n984\t12\n985\t13\n986\t7\n987\t10\n988\t5\n989\t7\n990\t14\n991\t15\n992\t12\n993\t9\n994\t5\n995\t5\n996\t11\n997\t8\n998\t14\n999\t12\n1000\t13\n1001\t9\n1002\t12\n1003\t9\n1004\t11\n1005\t6\n1006\t14\n1007\t13\n1008\t18\n1009\t10\n1010\t7\n1011\t20\n1012\t12\n1013\t13\n1014\t10\n1015\t7\n1016\t13\n1017\t5\n1018\t14\n1019\t11\n1020\t23\n1021\t8\n1022\t12\n1023\t12\n1024\t11\n1025\t10\n1026\t14\n1027\t11\n1028\t14\n1029\t20\n1030\t9\n1031\t13\n1032\t14\n1033\t11\n1034\t6\n1035\t11\n1036\t13\n1037\t5\n1038\t11\n1039\t17\n1040\t12\n1041\t15\n1042\t19\n1043\t15\n1044\t18\n1045\t18\n1046\t22\n1047\t3\n1052\t21\n1053\t11\n1054\t11\n1055\t12\n1056\t4\n1057\t15\n1058\t8\n1059\t11\n1060\t10\n1061\t9\n1062\t15\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1554843697",
+      "id": "20211111-095554_1351972855",
+      "dateCreated": "2021-09-23T15:06:25+0000",
+      "dateStarted": "2021-11-11T10:08:59+0000",
+      "dateFinished": "2021-11-11T10:09:00+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:43"
+    },
+    {
+      "text": "%sql\n--This calculates the number of positions that a driver has lost during a lap. It separates those position changes in actual take overs and take overs that were a result of pit stops.\ncreate or replace view overtaken_positions_total\nas\n    select raceid, overtaken_positions_due_to_pitstop_total, (overtaken_positions_total - overtaken_positions_due_to_pitstop_total) as overtaken_positions_real_total\n    from\n    (\n        select raceid, sum(overtaken_positions_driver_lap) as overtaken_positions_total, sum(overtaken_positions_driver_lap_due_to_pitstop) as overtaken_positions_due_to_pitstop_total\n        from\n        (\n            select raceid, driverid, lap, overtaken_positions_driver_lap, nvl2(pitstop_raceid, overtaken_positions_driver_lap,0 ) overtaken_positions_driver_lap_due_to_pitstop\n            from\n            (\n                select ot.raceid, ot.driverid, ot.lap, sum(ot.overtaken_this_lap) as overtaken_positions_driver_lap, ps.raceid pitstop_raceid\n                from\n                (\n                    select ottl.raceid, ottl.driverid, ottl.lap, (ottl.current_position - ottl.prev_position) as overtaken_this_lap\n                    from\n                    (\n                        select lt.raceid, lt.driverid, lt.lap, lt.position as current_position, \n                          LAG (lt.position, 1) OVER (PARTITION BY lt.raceid, lt.driverid ORDER BY lt.lap) AS prev_position\n                        from lap_times lt\n                    ) ottl\n                    where ottl.prev_position is not null\n                    and ottl.prev_position < ottl.current_position\n                )   ot\n                ,   pit_stops ps\n                where ps.raceid (+) = ot.raceid\n                and   ps.driverid (+) = ot.driverid\n                and   ps.lap (+) = ot.lap\n                group by ot.raceid, ot.driverid, ot.lap, ps.raceid\n            )\n        )\n        group by raceid\n    );\n",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:00+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1765558780",
+      "id": "20211111-095554_303798054",
+      "dateCreated": "2021-09-23T15:07:52+0000",
+      "dateStarted": "2021-11-11T10:09:00+0000",
+      "dateFinished": "2021-11-11T10:09:00+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:44"
+    },
+    {
+      "text": "%sql\nselect * from overtaken_positions_total;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:00+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "OVERTAKEN_POSITIONS_DUE_TO_PITSTOP_TOTAL": "string",
+                      "OVERTAKEN_POSITIONS_REAL_TOTAL": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "RACEID\tOVERTAKEN_POSITIONS_DUE_TO_PITSTOP_TOTAL\tOVERTAKEN_POSITIONS_REAL_TOTAL\n6\t0\t92\n14\t0\t120\n23\t0\t147\n27\t0\t181\n348\t0\t53\n846\t131\t24\n851\t29\t199\n852\t42\t175\n870\t23\t136\n883\t72\t281\n893\t77\t152\n902\t41\t208\n914\t35\t173\n948\t108\t37\n960\t18\t129\n962\t67\t154\n964\t30\t197\n965\t14\t154\n974\t51\t5\n977\t8\t41\n999\t26\t145\n1013\t37\t115\n1019\t15\t110\n1039\t37\t37\n1061\t0\t117\n1\t0\t188\n7\t0\t171\n15\t0\t134\n31\t0\t215\n338\t0\t120\n344\t0\t246\n350\t0\t61\n351\t0\t104\n352\t0\t68\n353\t0\t113\n862\t64\t292\n864\t56\t262\n865\t100\t17\n872\t26\t189\n874\t16\t151\n876\t20\t87\n884\t54\t274\n885\t92\t20\n888\t38\t215\n892\t18\t127\n901\t34\t123\n903\t25\t133\n910\t39\t208\n913\t58\t143\n927\t42\t214\n928\t21\t107\n931\t26\t16\n940\t17\t122\n943\t10\t104\n945\t26\t148\n951\t26\t91\n963\t14\t123\n975\t61\t38\n981\t37\t95\n990\t33\t165\n992\t18\t74\n1000\t5\t62\n1014\t14\t92\n1017\t82\t28\n1038\t39\t114\n34\t0\t162\n342\t0\t98\n343\t0\t95\n345\t0\t123\n349\t0\t129\n354\t0\t174\n844\t28\t336\n845\t55\t220\n860\t108\t51\n861\t65\t297\n882\t77\t215\n890\t39\t158\n905\t51\t22\n911\t61\t146\n968\t22\t164\n978\t5\t111\n987\t15\t76\n988\t3\t76\n994\t74\t7\n998\t0\t124\n1007\t22\t114\n1011\t42\t148\n1025\t14\t83\n1029\t30\t175\n1031\t6\t86\n1041\t40\t125\n1052\t35\t204\n1056\t27\t2\n2\t0\t135\n8\t0\t142\n11\t0\t121\n12\t0\t125\n17\t0\t119\n21\t0\t128\n30\t0\t120\n856\t39\t155\n873\t90\t207\n875\t27\t101\n878\t7\t139\n894\t68\t189\n895\t32\t175\n909\t45\t181\n918\t13\t206\n932\t58\t43\n933\t12\t64\n941\t14\t102\n942\t18\t113\n955\t78\t166\n967\t49\t156\n971\t16\t101\n979\t8\t55\n980\t33\t100\n983\t16\t102\n989\t38\t11\n995\t59\t20\n1004\t20\t78\n1009\t7\t100\n1022\t18\t112\n1024\t64\t113\n1026\t26\t132\n1028\t12\t137\n1030\t18\t112\n1032\t17\t114\n1047\t7\t72\n1055\t31\t130\n1060\t32\t137\n4\t0\t177\n5\t0\t106\n10\t0\t176\n18\t0\t95\n35\t0\t183\n341\t0\t58\n848\t134\t54\n849\t1\t168\n857\t14\t87\n867\t199\t85\n869\t45\t180\n877\t14\t166\n880\t225\t64\n881\t42\t202\n886\t95\t44\n896\t37\t221\n898\t4\t96\n900\t49\t32\n906\t127\t45\n908\t10\t90\n917\t62\t306\n936\t32\t167\n954\t84\t35\n956\t75\t225\n961\t34\t141\n984\t16\t84\n993\t15\t79\n997\t9\t75\n1008\t27\t99\n1023\t40\t90\n1033\t27\t195\n1059\t112\t54\n3\t0\t234\n9\t0\t236\n20\t0\t148\n22\t0\t147\n26\t0\t137\n28\t0\t127\n33\t0\t146\n339\t0\t87\n340\t0\t203\n347\t0\t99\n854\t82\t143\n855\t30\t259\n879\t136\t231\n887\t40\t307\n891\t51\t141\n897\t20\t193\n904\t28\t201\n926\t33\t13\n929\t26\t141\n937\t25\t97\n938\t9\t78\n944\t42\t156\n950\t81\t341\n957\t2\t239\n959\t50\t178\n970\t22\t93\n976\t55\t81\n986\t22\t78\n991\t19\t141\n1006\t3\t88\n1010\t69\t14\n1018\t16\t109\n1021\t12\t95\n1037\t15\t52\n1040\t22\t97\n1042\t26\t158\n1044\t14\t131\n1046\t22\t149\n1057\t26\t104\n1062\t12\t85\n13\t0\t104\n19\t0\t137\n29\t0\t90\n847\t295\t126\n850\t33\t134\n866\t151\t48\n930\t29\t130\n939\t31\t98\n949\t61\t231\n958\t24\t142\n966\t25\t126\n973\t12\t74\n985\t1\t119\n1001\t10\t45\n1002\t21\t79\n1005\t20\t138\n1015\t70\t15\n1027\t34\t121\n1034\t6\t70\n1045\t23\t196\n1054\t12\t109\n1058\t25\t73\n16\t0\t177\n24\t0\t201\n25\t0\t169\n32\t0\t233\n337\t0\t76\n346\t0\t161\n355\t0\t133\n841\t117\t47\n842\t46\t209\n843\t65\t217\n853\t23\t79\n858\t15\t159\n859\t55\t123\n863\t41\t292\n868\t17\t201\n871\t44\t126\n899\t39\t158\n907\t33\t187\n912\t24\t117\n916\t7\t170\n934\t4\t80\n952\t39\t209\n953\t102\t42\n969\t26\t9\n972\t10\t36\n982\t16\t56\n996\t62\t48\n1003\t39\t66\n1012\t20\t94\n1016\t65\t30\n1020\t47\t213\n1035\t4\t211\n1036\t42\t133\n1043\t24\t101\n1053\t23\t86\n915\t24\t105\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1889630347",
+      "id": "20211111-095554_397654394",
+      "dateCreated": "2021-09-23T15:09:02+0000",
+      "dateStarted": "2021-11-11T10:09:01+0000",
+      "dateFinished": "2021-11-11T10:09:02+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:45"
+    },
+    {
+      "text": "%sql\n--The following calculates the come back score for a race. This is defined that the maximum distance that one of the top finishing drivers (positions 1-8) has recovered from a position back in the field. E.g. when a driver came back from position 18 to position 1, the come back score is 17. \ncreate or replace view comebackscores\nas\n    select ps.raceid, max(ps.driver_comebackscore) max_comebackscore\n    from (\n        select raceid, driverid, max(delta_position) as driver_comebackscore\n        from\n        (\n            select lt.raceid, lt.driverid, (ltbefore.position - lt.position) delta_position\n            from lap_times lt\n            , lap_times ltbefore\n            where ltbefore.raceid = lt.raceid\n            and ltbefore.driverid = lt.driverid\n            and ltbefore.lap < lt.lap\n        )\n        group by raceid, driverid) ps\n    ,   results r\n    where r.raceid = ps.raceid\n    and r.position in ('1', '2', '3', '4', '5', '6', '7', '8')\n    group by ps.raceid;\n",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:02+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "MAX_COMEBACKSCORE": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-164039107",
+      "id": "20211111-095554_1217813020",
+      "dateCreated": "2021-09-22T14:43:53+0000",
+      "dateStarted": "2021-11-11T10:09:02+0000",
+      "dateFinished": "2021-11-11T10:09:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:46"
+    },
+    {
+      "text": "%sql\nselect * from comebackscores",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:03+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "MAX_COMEBACKSCORE": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "RACEID\tMAX_COMEBACKSCORE\n1\t12\n2\t13\n3\t15\n4\t8\n5\t9\n6\t10\n7\t9\n8\t11\n9\t12\n10\t10\n11\t7\n12\t9\n13\t9\n14\t9\n15\t8\n16\t12\n17\t8\n18\t12\n19\t7\n20\t9\n21\t11\n22\t10\n23\t12\n24\t15\n25\t12\n26\t10\n27\t17\n28\t7\n29\t6\n30\t8\n31\t13\n32\t19\n33\t13\n34\t8\n35\t13\n337\t10\n338\t18\n339\t11\n340\t14\n341\t8\n342\t17\n343\t8\n344\t14\n345\t15\n346\t17\n347\t9\n348\t10\n349\t14\n350\t7\n351\t15\n352\t9\n353\t13\n354\t14\n355\t13\n841\t11\n842\t13\n843\t17\n844\t14\n845\t14\n846\t10\n847\t20\n848\t10\n849\t10\n850\t15\n851\t12\n852\t18\n853\t9\n854\t14\n855\t15\n856\t10\n857\t10\n858\t14\n859\t9\n860\t12\n861\t22\n862\t16\n863\t13\n864\t16\n865\t12\n866\t15\n867\t15\n868\t16\n869\t10\n870\t7\n871\t10\n872\t13\n873\t16\n874\t13\n875\t11\n876\t8\n877\t19\n878\t16\n879\t18\n880\t13\n881\t15\n882\t16\n883\t15\n884\t15\n885\t10\n886\t12\n887\t18\n888\t14\n890\t9\n891\t10\n892\t16\n893\t16\n894\t14\n895\t10\n896\t16\n897\t9\n898\t15\n899\t10\n900\t12\n901\t8\n902\t13\n903\t10\n904\t17\n905\t10\n906\t14\n907\t12\n908\t10\n909\t15\n910\t20\n911\t13\n912\t16\n913\t10\n914\t17\n915\t18\n916\t10\n917\t13\n918\t14\n926\t6\n927\t15\n928\t10\n929\t10\n930\t8\n931\t8\n932\t15\n933\t8\n934\t7\n936\t15\n937\t9\n938\t11\n939\t12\n940\t9\n941\t10\n942\t14\n943\t13\n944\t10\n945\t10\n948\t15\n949\t13\n950\t18\n951\t12\n952\t14\n953\t11\n954\t11\n955\t13\n956\t13\n957\t16\n958\t10\n959\t13\n960\t14\n961\t13\n962\t15\n963\t14\n964\t10\n965\t9\n966\t13\n967\t14\n968\t17\n969\t5\n970\t13\n971\t11\n972\t5\n973\t8\n974\t7\n975\t14\n976\t18\n977\t5\n978\t13\n979\t6\n980\t9\n981\t12\n982\t6\n983\t10\n984\t11\n985\t12\n986\t15\n987\t15\n988\t8\n989\t8\n990\t10\n991\t9\n992\t12\n993\t9\n994\t9\n995\t9\n996\t13\n997\t11\n998\t15\n999\t13\n1000\t12\n1001\t12\n1002\t14\n1003\t8\n1004\t12\n1005\t13\n1006\t13\n1007\t11\n1008\t9\n1009\t9\n1010\t11\n1011\t12\n1012\t8\n1013\t14\n1014\t10\n1015\t8\n1016\t10\n1017\t10\n1018\t11\n1019\t9\n1020\t17\n1021\t12\n1022\t10\n1023\t12\n1024\t12\n1025\t13\n1026\t14\n1027\t14\n1028\t15\n1029\t14\n1030\t11\n1031\t9\n1032\t13\n1033\t16\n1034\t11\n1035\t15\n1036\t11\n1037\t8\n1038\t14\n1039\t9\n1040\t9\n1041\t15\n1042\t15\n1043\t12\n1044\t16\n1045\t11\n1046\t17\n1047\t6\n1052\t16\n1053\t10\n1054\t10\n1055\t11\n1056\t6\n1057\t12\n1058\t11\n1059\t11\n1060\t12\n1061\t11\n1062\t12\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1434056382",
+      "id": "20211111-095554_860337718",
+      "dateCreated": "2021-09-22T15:36:46+0000",
+      "dateStarted": "2021-11-11T10:09:03+0000",
+      "dateFinished": "2021-11-11T10:09:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:47"
+    },
+    {
+      "text": "%sql\n--This calculates the difference between the ranking of the driver and his finishing position. For example, if a driver is ranked 20th and finishes 1st, this adds 19 to this metric. This can be seen as a measure of \"surprise\".\ncreate or replace view position_difference_top_5_v\nas\n    select result_raceid as raceid, sum(position_difference_top_5) as position_difference_top_5\n    from\n    (\n        select result_raceid, abs(position_result - position_ranking) position_difference_top_5\n        from\n        (\n            select ra.round, s.raceid ranking_raceid, r.raceid result_raceid, r.driverid, r.position position_result, nvl(s.position, 0) position_ranking\n            from   driver_standings s\n            ,      results r\n            ,      races ra\n            where  s.raceid  = (r.raceid - 1)\n            and    ra.raceid = r.raceid\n            and    s.driverid  = r.driverid\n            and    r.position in ('1', '2', '3', '4', '5')\n            order by r.raceid\n        )\n    )\n    group by result_raceid;\n",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:03+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-253155162",
+      "id": "20211111-095554_2108401119",
+      "dateCreated": "2021-09-23T15:09:56+0000",
+      "dateStarted": "2021-11-11T10:09:04+0000",
+      "dateFinished": "2021-11-11T10:09:04+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:48"
+    },
+    {
+      "text": "%sql\nselect * from position_difference_top_5_v",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:04+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "RACEID": "string",
+                      "POSITION_DIFFERENCE_TOP_5": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "RACEID\tPOSITION_DIFFERENCE_TOP_5\n823\t5\n817\t73\n815\t8\n659\t20\n463\t35\n781\t16\n770\t48\n734\t10\n722\t23\n690\t39\n685\t8\n648\t12\n535\t23\n521\t23\n490\t36\n411\t9\n391\t29\n313\t13\n232\t8\n166\t8\n135\t2\n64\t12\n27\t19\n23\t25\n6\t19\n846\t11\n837\t9\n832\t8\n813\t11\n774\t97\n763\t35\n754\t93\n703\t6\n706\t8\n663\t15\n579\t50\n534\t39\n471\t66\n457\t12\n410\t18\n418\t17\n405\t58\n400\t12\n359\t33\n328\t19\n318\t12\n290\t2\n281\t15\n277\t10\n237\t20\n161\t17\n58\t4\n51\t28\n852\t7\n883\t13\n902\t31\n1061\t10\n974\t6\n999\t8\n1039\t15\n554\t34\n522\t12\n510\t31\n493\t19\n496\t36\n459\t20\n465\t28\n424\t31\n433\t15\n173\t4\n113\t12\n57\t14\n50\t16\n960\t13\n1019\t6\n808\t44\n792\t108\n591\t39\n512\t52\n513\t27\n414\t21\n291\t0\n226\t2\n125\t2\n107\t16\n72\t17\n52\t11\n14\t29\n348\t19\n851\t10\n870\t16\n893\t5\n964\t7\n977\t6\n762\t30\n753\t26\n421\t35\n403\t47\n371\t57\n210\t34\n158\t11\n124\t7\n108\t20\n962\t6\n1013\t4\n667\t15\n592\t40\n578\t27\n561\t34\n511\t8\n497\t33\n965\t10\n501\t61\n647\t19\n430\t19\n814\t20\n793\t30\n772\t26\n756\t38\n724\t40\n712\t17\n702\t13\n705\t25\n660\t21\n627\t46\n612\t19\n567\t37\n569\t21\n531\t33\n504\t13\n478\t47\n472\t48\n441\t15\n395\t26\n329\t14\n282\t8\n244\t8\n198\t10\n168\t17\n134\t8\n99\t6\n59\t23\n43\t9\n40\t6\n353\t14\n876\t3\n865\t15\n888\t10\n885\t20\n931\t17\n827\t95\n807\t86\n795\t56\n798\t64\n744\t41\n727\t15\n691\t28\n693\t23\n666\t19\n655\t13\n637\t34\n611\t28\n594\t16\n568\t24\n556\t26\n536\t29\n509\t16\n487\t50\n481\t56\n377\t22\n315\t13\n300\t9\n268\t8\n162\t8\n105\t8\n85\t9\n68\t11\n31\t19\n7\t9\n350\t13\n862\t17\n872\t21\n864\t31\n892\t15\n884\t9\n903\t10\n928\t4\n1017\t4\n525\t16\n275\t5\n270\t23\n200\t10\n206\t8\n183\t15\n180\t23\n163\t1\n131\t12\n78\t26\n88\t16\n15\t16\n344\t8\n352\t8\n874\t22\n943\t11\n951\t9\n981\t4\n990\t33\n1014\t4\n1038\t28\n605\t8\n543\t16\n544\t45\n528\t27\n404\t30\n249\t14\n189\t14\n159\t5\n143\t18\n136\t6\n110\t9\n109\t10\n351\t9\n910\t13\n913\t10\n927\t25\n940\t0\n975\t9\n455\t17\n419\t24\n368\t41\n333\t10\n293\t5\n259\t58\n221\t21\n127\t3\n71\t28\n36\t23\n338\t19\n901\t35\n945\t9\n963\t11\n1000\t2\n992\t26\n737\t27\n736\t16\n699\t27\n665\t40\n589\t14\n437\t30\n305\t16\n172\t14\n98\t18\n79\t56\n42\t4\n483\t44\n635\t19\n571\t23\n759\t21\n732\t51\n662\t8\n638\t14\n634\t34\n598\t16\n595\t44\n586\t57\n488\t30\n378\t4\n380\t11\n358\t42\n298\t7\n280\t4\n278\t26\n246\t21\n196\t25\n184\t19\n82\t18\n63\t12\n342\t13\n905\t6\n1056\t21\n1041\t15\n831\t6\n801\t6\n806\t10\n797\t48\n787\t48\n771\t34\n720\t22\n711\t25\n718\t29\n701\t17\n668\t42\n629\t23\n617\t12\n596\t41\n588\t13\n564\t26\n549\t49\n520\t35\n502\t32\n495\t23\n460\t11\n432\t19\n412\t15\n394\t30\n401\t25\n379\t53\n267\t38\n264\t22\n261\t39\n250\t22\n243\t19\n203\t41\n204\t19\n179\t11\n118\t12\n104\t8\n44\t9\n34\t4\n349\t14\n343\t18\n845\t2\n844\t10\n882\t17\n911\t14\n994\t8\n462\t14\n442\t24\n450\t12\n429\t13\n386\t10\n370\t32\n279\t16\n262\t30\n271\t50\n245\t33\n253\t10\n255\t23\n190\t8\n129\t21\n41\t21\n45\t26\n345\t16\n978\t8\n998\t3\n1007\t8\n1011\t6\n1025\t3\n1052\t33\n784\t10\n620\t53\n577\t27\n499\t60\n420\t45\n306\t32\n240\t12\n185\t10\n354\t6\n861\t12\n1031\t15\n486\t44\n422\t33\n399\t14\n373\t7\n357\t31\n272\t34\n860\t6\n968\t6\n988\t6\n987\t8\n1029\t36\n745\t42\n707\t12\n688\t23\n654\t25\n642\t28\n631\t17\n574\t17\n434\t28\n360\t42\n62\t20\n482\t24\n546\t15\n796\t36\n749\t93\n704\t15\n614\t20\n597\t11\n480\t14\n838\t180\n779\t91\n747\t15\n714\t40\n674\t37\n650\t41\n636\t34\n600\t17\n580\t29\n565\t11\n551\t27\n477\t34\n454\t47\n362\t26\n324\t26\n260\t37\n216\t36\n76\t19\n856\t8\n875\t13\n894\t18\n909\t7\n829\t19\n824\t94\n811\t19\n816\t14\n769\t80\n740\t27\n735\t29\n723\t22\n713\t19\n675\t52\n678\t42\n657\t13\n646\t49\n652\t22\n613\t22\n608\t26\n599\t18\n602\t35\n585\t17\n552\t22\n425\t27\n408\t27\n383\t23\n375\t4\n366\t4\n369\t18\n316\t34\n297\t5\n292\t10\n285\t35\n219\t17\n212\t27\n195\t13\n187\t20\n155\t23\n145\t17\n121\t4\n73\t14\n86\t19\n75\t16\n84\t14\n30\t20\n21\t9\n12\t40\n8\t11\n1055\t3\n664\t25\n558\t33\n559\t21\n479\t37\n303\t17\n231\t6\n188\t35\n140\t20\n115\t10\n77\t21\n11\t23\n895\t12\n933\t6\n932\t4\n1060\t8\n941\t13\n971\t3\n980\t6\n1004\t4\n1022\t16\n1032\t32\n468\t34\n257\t24\n266\t37\n174\t6\n70\t8\n54\t7\n37\t5\n17\t15\n2\t13\n873\t20\n918\t12\n955\t11\n995\t11\n1026\t12\n470\t63\n417\t6\n387\t16\n320\t5\n302\t8\n288\t11\n269\t16\n238\t7\n191\t20\n194\t6\n177\t9\n141\t23\n90\t13\n56\t15\n967\t9\n979\t6\n983\t11\n1009\t5\n1030\t4\n1024\t12\n1047\t12\n989\t14\n607\t15\n545\t36\n557\t21\n526\t56\n466\t33\n289\t7\n878\t10\n942\t14\n1028\t8\n836\t22\n805\t47\n671\t53\n539\t8\n475\t22\n828\t49\n802\t11\n788\t29\n790\t50\n766\t8\n761\t48\n751\t43\n743\t16\n719\t19\n700\t20\n680\t22\n625\t27\n584\t16\n456\t20\n446\t15\n428\t22\n413\t9\n393\t24\n364\t7\n178\t3\n101\t9\n857\t3\n869\t20\n896\t20\n1059\t2\n819\t113\n791\t96\n783\t46\n782\t30\n716\t20\n708\t54\n696\t43\n673\t38\n644\t49\n622\t26\n572\t29\n550\t41\n516\t12\n505\t22\n489\t28\n464\t27\n427\t28\n363\t46\n331\t4\n310\t24\n251\t38\n215\t16\n199\t5\n186\t7\n151\t14\n137\t4\n103\t23\n81\t28\n66\t13\n49\t8\n48\t5\n4\t13\n5\t7\n341\t20\n849\t6\n908\t10\n715\t51\n639\t54\n603\t18\n587\t40\n570\t31\n573\t17\n507\t27\n402\t16\n309\t53\n295\t30\n287\t21\n220\t16\n222\t14\n197\t16\n157\t8\n116\t14\n848\t4\n867\t30\n886\t4\n906\t11\n961\t6\n993\t9\n1023\t23\n799\t66\n606\t9\n498\t55\n485\t34\n381\t13\n365\t13\n225\t2\n209\t22\n169\t5\n142\t3\n120\t9\n65\t37\n35\t14\n10\t29\n877\t16\n881\t25\n917\t10\n956\t9\n954\t15\n984\t6\n997\t29\n773\t25\n451\t13\n389\t38\n384\t14\n317\t17\n256\t41\n228\t11\n18\t31\n880\t8\n1008\t6\n1033\t16\n900\t25\n764\t25\n697\t43\n677\t35\n656\t47\n621\t36\n604\t40\n156\t23\n898\t10\n767\t27\n739\t17\n694\t29\n681\t26\n523\t33\n448\t18\n834\t38\n820\t8\n741\t30\n709\t21\n695\t11\n683\t36\n672\t25\n658\t23\n610\t24\n553\t22\n519\t51\n518\t26\n506\t25\n444\t36\n440\t36\n426\t21\n423\t30\n327\t26\n311\t16\n263\t20\n214\t7\n152\t37\n130\t28\n9\t14\n347\t17\n839\t20\n789\t27\n731\t28\n725\t12\n698\t29\n689\t10\n661\t24\n649\t14\n640\t39\n633\t24\n581\t14\n532\t24\n540\t21\n491\t29\n431\t20\n382\t13\n385\t27\n312\t9\n301\t11\n254\t4\n236\t10\n218\t21\n170\t7\n128\t16\n112\t11\n53\t15\n20\t4\n26\t20\n22\t6\n3\t41\n340\t13\n891\t4\n887\t11\n904\t8\n929\t8\n937\t19\n938\t6\n959\t6\n1046\t27\n630\t25\n618\t37\n601\t38\n397\t22\n361\t62\n325\t14\n319\t30\n227\t19\n213\t26\n146\t16\n148\t32\n149\t11\n96\t1\n33\t21\n855\t4\n957\t9\n950\t13\n970\t18\n986\t13\n991\t17\n1037\t15\n1040\t11\n1044\t19\n590\t3\n452\t22\n235\t8\n202\t15\n126\t5\n87\t7\n46\t7\n28\t28\n339\t26\n854\t4\n879\t17\n897\t12\n1062\t27\n1018\t12\n439\t18\n435\t64\n336\t9\n323\t26\n242\t5\n93\t4\n74\t27\n1057\t23\n944\t4\n1021\t5\n976\t24\n1010\t16\n1042\t9\n619\t17\n529\t42\n541\t48\n321\t33\n122\t27\n1006\t12\n530\t13\n515\t23\n825\t21\n758\t74\n729\t72\n721\t17\n555\t33\n822\t11\n730\t32\n615\t34\n537\t28\n503\t38\n374\t18\n248\t18\n234\t5\n201\t20\n181\t15\n164\t25\n119\t24\n114\t11\n95\t14\n850\t9\n742\t21\n687\t25\n670\t81\n609\t26\n593\t23\n566\t13\n533\t14\n524\t24\n476\t47\n458\t26\n390\t40\n392\t8\n367\t47\n326\t16\n258\t53\n247\t22\n233\t16\n230\t20\n171\t26\n133\t29\n60\t3\n67\t25\n38\t11\n13\t25\n930\t5\n1058\t5\n1015\t5\n686\t20\n641\t16\n575\t22\n538\t25\n542\t24\n409\t8\n376\t20\n335\t51\n167\t13\n132\t12\n97\t17\n69\t5\n29\t8\n847\t15\n866\t22\n949\t18\n966\t5\n973\t13\n1001\t10\n1002\t4\n1027\t8\n1045\t13\n1034\t13\n776\t53\n765\t15\n560\t57\n436\t32\n388\t29\n396\t30\n372\t24\n322\t54\n314\t3\n283\t27\n241\t5\n193\t14\n153\t4\n83\t16\n19\t13\n1005\t6\n286\t18\n207\t21\n144\t15\n111\t20\n55\t27\n1054\t8\n939\t13\n958\t5\n726\t19\n679\t35\n632\t47\n514\t35\n500\t43\n273\t75\n139\t9\n985\t6\n469\t42\n453\t23\n810\t42\n710\t31\n583\t15\n508\t15\n494\t21\n830\t10\n812\t56\n804\t25\n785\t23\n777\t0\n738\t9\n692\t23\n669\t5\n645\t24\n623\t29\n548\t10\n492\t22\n461\t49\n407\t10\n308\t45\n296\t23\n294\t9\n265\t82\n229\t46\n211\t17\n150\t9\n147\t22\n117\t10\n80\t18\n25\t15\n833\t40\n821\t7\n803\t73\n780\t79\n760\t40\n750\t61\n752\t81\n733\t21\n682\t68\n684\t10\n624\t55\n626\t12\n582\t32\n563\t58\n547\t15\n517\t24\n473\t27\n438\t40\n445\t20\n443\t46\n449\t71\n416\t14\n398\t5\n332\t7\n334\t12\n284\t12\n182\t13\n154\t14\n138\t18\n92\t9\n100\t12\n94\t7\n89\t18\n39\t10\n47\t10\n346\t16\n843\t16\n853\t6\n863\t19\n871\t30\n868\t16\n912\t11\n915\t13\n934\t2\n953\t22\n996\t11\n1020\t29\n775\t44\n676\t29\n651\t54\n653\t33\n628\t16\n616\t25\n474\t47\n447\t32\n415\t46\n239\t12\n223\t16\n165\t17\n123\t19\n106\t14\n61\t1\n24\t34\n907\t13\n952\t16\n972\t6\n1012\t6\n1036\t6\n746\t29\n576\t32\n527\t49\n484\t38\n330\t20\n299\t11\n274\t3\n208\t8\n217\t35\n192\t5\n176\t12\n102\t6\n91\t10\n32\t31\n16\t23\n355\t12\n858\t7\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1800179230",
+      "id": "20211111-095554_2002365305",
+      "dateCreated": "2021-09-22T15:39:00+0000",
+      "dateStarted": "2021-11-11T10:09:05+0000",
+      "dateFinished": "2021-11-11T10:09:06+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:49"
+    },
+    {
+      "text": "%sql\n--The safety car table is an externally aquired dataset that holds information on all races that had a safety car\nselect * from safety_car;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:09:06+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "YEAR": "string",
+                      "RACE": "string",
+                      "COUNT": "string",
+                      "LAPS": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "YEAR\tRACE\tCOUNT\tLAPS\n2018\tFrench Grand Prix\t2\t7\n2019\tFrench Grand Prix\t1\t1\n2013\tGerman Grand Prix\t1\t6\n2014\tGerman Grand Prix\t1\t2\n2018\tGerman Grand Prix\t1\t6\n2019\tGerman Grand Prix\t6\t19\n2010\tKorean Grand Prix\t3\t24\n2011\tKorean Grand Prix\t1\t4\n2013\tKorean Grand Prix\t2\t9\n2010\tMonaco Grand Prix\t4\t14\n2011\tMonaco Grand Prix\t2\t11\n2012\tMonaco Grand Prix\t1\t2\n2013\tMonaco Grand Prix\t3\t15\n2014\tMonaco Grand Prix\t2\t8\n2015\tMonaco Grand Prix\t1\t7\n2016\tMonaco Grand Prix\t5\t15\n2017\tMonaco Grand Prix\t1\t7\n2018\tMonaco Grand Prix\t1\t3\n2019\tMonaco Grand Prix\t1\t4\n2020\tTuscan Grand Prix\t3\t12\n2014\tBahrain Grand Prix\t1\t5\n2017\tBahrain Grand Prix\t1\t4\n2018\tBahrain Grand Prix\t1\t3\n2019\tBahrain Grand Prix\t1\t3\n2010\tBelgian Grand Prix\t2\t5\n2011\tBelgian Grand Prix\t1\t4\n2012\tBelgian Grand Prix\t1\t4\n2015\tBelgian Grand Prix\t1\t2\n2016\tBelgian Grand Prix\t2\t7\n2017\tBelgian Grand Prix\t1\t4\n2018\tBelgian Grand Prix\t1\t4\n2019\tBelgian Grand Prix\t1\t4\n2020\tBelgian Grand Prix\t1\t4\n2010\tBritish Grand Prix\t1\t3\n2013\tBritish Grand Prix\t2\t10\n2014\tBritish Grand Prix\t1\t2\n2015\tBritish Grand Prix\t2\t5\n2016\tBritish Grand Prix\t2\t6\n2017\tBritish Grand Prix\t1\t3\n2018\tBritish Grand Prix\t2\t8\n2019\tBritish Grand Prix\t1\t4\n2020\tBritish Grand Prix\t2\t10\n2010\tChinese Grand Prix\t2\t7\n2015\tChinese Grand Prix\t1\t4\n2016\tChinese Grand Prix\t1\t5\n2017\tChinese Grand Prix\t2\t6\n2018\tChinese Grand Prix\t1\t5\n2019\tChinese Grand Prix\t1\t2\n2011\tItalian Grand Prix\t1\t3\n2018\tItalian Grand Prix\t1\t3\n2019\tItalian Grand Prix\t2\t2\n2020\tItalian Grand Prix\t2\t8\n2015\tMexican Grand Prix\t1\t6\n2016\tMexican Grand Prix\t1\t3\n2017\tMexican Grand Prix\t1\t2\n2018\tMexican Grand Prix\t3\t5\n2019\tMexican Grand Prix\t1\t3\n2015\tRussian Grand Prix\t2\t8\n2016\tRussian Grand Prix\t1\t3\n2017\tRussian Grand Prix\t1\t3\n2019\tRussian Grand Prix\t3\t8\n2016\tSpanish Grand Prix\t1\t3\n2017\tSpanish Grand Prix\t1\t4\n2018\tSpanish Grand Prix\t2\t9\n2019\tSpanish Grand Prix\t1\t7\n2020\tStyrian Grand Prix\t1\t3\n2015\tAustrian Grand Prix\t1\t6\n2016\tAustrian Grand Prix\t1\t5\n2018\tAustrian Grand Prix\t1\t2\n2020\tAustrian Grand Prix\t3\t15\n2011\tCanadian Grand Prix\t5\t32\n2014\tCanadian Grand Prix\t2\t8\n2016\tCanadian Grand Prix\t1\t1\n2017\tCanadian Grand Prix\t2\t7\n2018\tCanadian Grand Prix\t1\t4\n2010\tEuropean Grand Prix\t1\t5\n2010\tJapanese Grand Prix\t1\t6\n2011\tJapanese Grand Prix\t1\t4\n2012\tJapanese Grand Prix\t1\t2\n2014\tJapanese Grand Prix\t2\t10\n2017\tJapanese Grand Prix\t3\t7\n2018\tJapanese Grand Prix\t2\t5\n2010\tAbu Dhabi Grand Prix\t1\t5\n2012\tAbu Dhabi Grand Prix\t2\t10\n2018\tAbu Dhabi Grand Prix\t2\t6\n2010\tBrazilian Grand Prix\t1\t5\n2012\tBrazilian Grand Prix\t2\t9\n2016\tBrazilian Grand Prix\t4\t34\n2017\tBrazilian Grand Prix\t1\t5\n2019\tBrazilian Grand Prix\t2\t10\n2010\tHungarian Grand Prix\t1\t3\n2014\tHungarian Grand Prix\t2\t9\n2015\tHungarian Grand Prix\t1\t7\n2017\tHungarian Grand Prix\t1\t5\n2018\tHungarian Grand Prix\t2\t4\n2010\tSingapore Grand Prix\t2\t7\n2011\tSingapore Grand Prix\t1\t4\n2012\tSingapore Grand Prix\t2\t9\n2013\tSingapore Grand Prix\t1\t6\n2014\tSingapore Grand Prix\t1\t7\n2015\tSingapore Grand Prix\t2\t10\n2016\tSingapore Grand Prix\t1\t2\n2017\tSingapore Grand Prix\t3\t12\n2018\tSingapore Grand Prix\t1\t4\n2019\tSingapore Grand Prix\t3\t11\n2010\tAustralian Grand Prix\t1\t4\n2012\tAustralian Grand Prix\t1\t5\n2014\tAustralian Grand Prix\t1\t4\n2015\tAustralian Grand Prix\t1\t3\n2016\tAustralian Grand Prix\t1\t3\n2018\tAustralian Grand Prix\t2\t10\n2017\tAzerbaijan Grand Prix\t3\t12\n2018\tAzerbaijan Grand Prix\t2\t13\n2019\tAzerbaijan Grand Prix\t1\t2\n2013\tUnited States Grand Prix\t1\t4\n2014\tUnited States Grand Prix\t1\t4\n2015\tUnited States Grand Prix\t4\t16\n2016\tUnited States Grand Prix\t1\t3\n2018\tUnited States Grand Prix\t1\t2\n2012\tMalaysian Grand Prix\t1\t7\n2015\tMalaysian Grand Prix\t1\t3\n2016\tMalaysian Grand Prix\t3\t7\n2012\tEuropean Grand Prix\t1\t5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1735244818",
+      "id": "20211111-095554_233134388",
+      "dateCreated": "2021-09-23T15:11:45+0000",
+      "dateStarted": "2021-11-11T10:09:06+0000",
+      "dateFinished": "2021-11-11T10:09:07+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:50"
+    },
+    {
+      "text": "%sql\nalter table races add laps_with_change_pos_1 number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:19+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1313150053",
+      "id": "20211111-095554_599285833",
+      "dateCreated": "2021-09-23T15:13:18+0000",
+      "dateStarted": "2021-11-11T10:32:19+0000",
+      "dateFinished": "2021-11-11T10:32:19+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:51"
+    },
+    {
+      "text": "%sql\nalter table races add laps_with_change_pos_1_5 number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:21+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-2016091634",
+      "id": "20211111-095554_419435812",
+      "dateCreated": "2021-09-23T15:14:28+0000",
+      "dateStarted": "2021-11-11T10:32:22+0000",
+      "dateFinished": "2021-11-11T10:32:22+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:52"
+    },
+    {
+      "text": "%sql\nalter table races add overtaken_positions_due_to_pitstop_total number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1839414062",
+      "id": "20211111-095554_1049347017",
+      "dateCreated": "2021-09-23T15:14:31+0000",
+      "dateStarted": "2021-11-11T10:32:24+0000",
+      "dateFinished": "2021-11-11T10:32:25+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:53"
+    },
+    {
+      "text": "%sql\nalter table races add overtaken_positions_real_total number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_696192150",
+      "id": "20211111-095554_1346237656",
+      "dateCreated": "2021-09-23T15:15:32+0000",
+      "dateStarted": "2021-11-11T10:32:27+0000",
+      "dateFinished": "2021-11-11T10:32:27+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:54"
+    },
+    {
+      "text": "%sql\nalter table races add max_comebackscore number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1174665710",
+      "id": "20211111-095554_820473022",
+      "dateCreated": "2021-09-23T15:15:43+0000",
+      "dateStarted": "2021-11-11T10:32:30+0000",
+      "dateFinished": "2021-11-11T10:32:30+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:55"
+    },
+    {
+      "text": "%sql\nalter table races add rank_versus_position number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:32+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1328041336",
+      "id": "20211111-095554_693630643",
+      "dateCreated": "2021-09-23T15:15:56+0000",
+      "dateStarted": "2021-11-11T10:32:32+0000",
+      "dateFinished": "2021-11-11T10:32:32+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:56"
+    },
+    {
+      "text": "%sql\nalter table races add safety_car number;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1389244161",
+      "id": "20211111-095554_1227025883",
+      "dateCreated": "2021-09-23T15:16:05+0000",
+      "dateStarted": "2021-11-11T10:32:35+0000",
+      "dateFinished": "2021-11-11T10:32:35+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:57"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_v) h\n        ON (e.raceid = h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1 = h.laps;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:38+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1127761520",
+      "id": "20211111-095554_2106543089",
+      "dateCreated": "2021-09-23T15:16:50+0000",
+      "dateStarted": "2021-11-11T10:32:39+0000",
+      "dateFinished": "2021-11-11T10:32:39+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:58"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_5_v) h\n        ON (e.raceid = h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1_5 = h.laps;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:40+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_481071507",
+      "id": "20211111-095554_1811663005",
+      "dateCreated": "2021-09-23T15:17:13+0000",
+      "dateStarted": "2021-11-11T10:32:41+0000",
+      "dateFinished": "2021-11-11T10:32:41+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:59"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM overtaken_positions_total) h\n        ON (e.raceid = h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.overtaken_positions_due_to_pitstop_total = h.overtaken_positions_due_to_pitstop_total\n        ,          e.overtaken_positions_real_total = h.overtaken_positions_real_total;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:43+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_448213519",
+      "id": "20211111-095554_896117772",
+      "dateCreated": "2021-09-23T15:17:22+0000",
+      "dateStarted": "2021-11-11T10:32:44+0000",
+      "dateFinished": "2021-11-11T10:32:44+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:60"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM comebackscores) h\n        ON (e.raceid = h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.max_comebackscore = h.max_comebackscore;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:45+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-598024353",
+      "id": "20211111-095554_1911797617",
+      "dateCreated": "2021-09-23T15:17:36+0000",
+      "dateStarted": "2021-11-11T10:32:46+0000",
+      "dateFinished": "2021-11-11T10:32:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:61"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM position_difference_top_5_v) h\n        ON (e.raceid = h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.rank_versus_position = h.position_difference_top_5;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:49+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1998870300",
+      "id": "20211111-095554_1982114429",
+      "dateCreated": "2021-09-23T15:17:55+0000",
+      "dateStarted": "2021-11-11T10:32:50+0000",
+      "dateFinished": "2021-11-11T10:32:50+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:62"
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM safety_car) h\n        ON (e.name = h.race AND e.year = h.year)\n      WHEN MATCHED THEN\n        UPDATE SET e.safety_car = 1;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:32:59+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-95597483",
+      "id": "20211111-095554_1135491844",
+      "dateCreated": "2021-09-23T15:18:09+0000",
+      "dateStarted": "2021-11-11T10:32:59+0000",
+      "dateFinished": "2021-11-11T10:32:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:63"
+    },
+    {
+      "text": "%sql\nupdate races set laps_with_change_pos_1 = 0 where laps_with_change_pos_1 is null;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:25:04+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-1002390744",
+      "id": "20211111-095554_1004533425",
+      "dateCreated": "2021-09-23T16:04:56+0000",
+      "dateStarted": "2021-11-11T10:25:05+0000",
+      "dateFinished": "2021-11-11T10:25:12+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:64"
+    },
+    {
+      "text": "%sql\nupdate races set laps_with_change_pos_1_5 = 0 where laps_with_change_pos_1_5 is null;\n",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:25:16+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-959676067",
+      "id": "20211111-095554_1467713156",
+      "dateCreated": "2021-10-01T15:49:42+0000",
+      "dateStarted": "2021-11-11T10:25:16+0000",
+      "dateFinished": "2021-11-11T10:25:16+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:65"
+    },
+    {
+      "text": "%sql\nupdate races set max_comebackscore = 0 where max_comebackscore is null;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:25:28+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_1078773925",
+      "id": "20211111-095554_73378132",
+      "dateCreated": "2021-10-01T15:49:49+0000",
+      "dateStarted": "2021-11-11T10:25:29+0000",
+      "dateFinished": "2021-11-11T10:25:29+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:66"
+    },
+    {
+      "text": "%sql\nupdate races set rank_versus_position = 0 where rank_versus_position is null;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:25:31+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_498395938",
+      "id": "20211111-095554_907793600",
+      "dateCreated": "2021-10-01T15:50:20+0000",
+      "dateStarted": "2021-11-11T10:25:32+0000",
+      "dateFinished": "2021-11-11T10:25:32+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:67"
+    },
+    {
+      "text": "%sql\nupdate races set safety_car = 0 where safety_car is null;",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:25:33+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-726936993",
+      "id": "20211111-095554_1924519628",
+      "dateCreated": "2021-10-01T15:50:31+0000",
+      "dateStarted": "2021-11-11T10:25:34+0000",
+      "dateFinished": "2021-11-11T10:25:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:68"
+    },
+    {
+      "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table. We will use this later to TRAIN the model on the years until 2019.\n--We will use the year 2020 to TEST the model later.\ncreate table races_train as select * from races where year >= 2011 and year <= 2019; --Exclude 2020",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T10:33:25+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636624554665_-714014091",
+      "id": "20211111-095554_2045850040",
+      "dateCreated": "2021-09-23T15:19:23+0000",
+      "dateStarted": "2021-11-11T10:33:25+0000",
+      "dateFinished": "2021-11-11T10:33:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:69"
+    },
+    {
+      "text": "%sql\n",
+      "user": "F1",
+      "dateUpdated": "2021-11-11T11:36:26+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1636630586750_339733403",
+      "id": "paragraph_1636630586750_339733403",
+      "dateCreated": "2021-11-11T11:36:26+0000",
+      "status": "READY",
+      "$$hashKey": "object:70"
+    }
+  ],
+  "name": "Red Bull Racing: Generate New Features",
+  "id": "999666",
+  "defaultInterpreterGroup": "spark",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {
+    "isRunning": false
+  }
+}
