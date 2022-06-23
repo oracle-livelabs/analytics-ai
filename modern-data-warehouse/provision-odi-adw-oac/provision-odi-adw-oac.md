@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-federation.png " ")	
+	![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/id-federation.png " ")	
 
 3. Click on the link to the **OracleIdentityCloudService**.
 
