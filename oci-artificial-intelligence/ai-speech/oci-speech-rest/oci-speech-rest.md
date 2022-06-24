@@ -10,7 +10,7 @@ Postman is a GUI-based REST API invocation tool that is very popular among devel
 *Estimated Lab Time*: 10 minutes
 
 ### Objectives:
-* Learn how to access Speech Service through REST APIs.
+* Learn how to access the OCI speech service through REST APIs.
 
 ### Prerequisites:
 * Basic knowledge of REST API calls.
@@ -28,18 +28,20 @@ We have provided some scripts and steps below that can be used to allow invoking
         ![](./images/set-active.png " ")
 
 2. Set the Variables
-    Open and edit the newly imported environment (OCI_Environment), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci/config file you created in the Lab 3.
 
-    Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
+    Open and edit the newly imported environment (OCI_Environment), and set the variables: tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci/config file you created in the Lab 3.
+
+    Make sure to set both Initial Value and Current Value of the variables (set both as the same value).
 
     Click the Save button to commit your changes to the environment.
-    (sensitive information redacted from below screenshot)
         ![](./images/set-var.png " ")
 
 3. Import the Collections
+
     Download and import [OCI REST INITIALIZATION](./files/OCI_REST_INITIALIZATION.postman_collection.json) and [OCI SPEECH REST COLLECTION](./files/OCI_SPEECH_REST_COLLECTION.postman_collection.json) into Postman using the 'Import' button at the top.
 
 4. Execute OCI REST Initializer
+
     From the OCI REST INITIALIZATION collection, invoke the Initializer GET for 'jsrsasign-all-min.js' , which imports and initializes a required library jsrsasign for encryption and digital signatures. This is a one-time setup task. 
         ![](./images/initialize-rest.png " ")
 
@@ -57,13 +59,10 @@ Just make sure that the OCI REST calls are executed as part of the OCI REST COLL
 
 Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
-Below in the example shown to invoke Create Transcription Job.
-
-Replace all <placeholder> values with the corresponding values of the job you want to create
+Below, in the example shown to invoke Create Transcription Job, replace all placeholder values with the corresponding values of the job you want to create
     ![](./images/postman-screenshot.png " ")
 
 OCI Speech Service EndPoints for all the services:
-NOTE: be sure to replace <placeholder> values with actual job values
 
 
 1. <u>Create Transcription Job</u>

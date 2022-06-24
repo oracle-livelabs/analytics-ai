@@ -31,23 +31,23 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 1. Navigate to Cloud Shell
 
-    Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
+    Log into OCI cloud console. Navigate to cloud shell icon on the top right and click it.
         ![](./images/cloud-shell-icon.png " ")
 
 2. Enter Speech CLI Command
 
-    Enter any one of the Speech Pre-Deployed CLI commands you want to execute.
+    Enter any one of the speech pre-deployed CLI commands you want to execute.
         ![](./images/cloud-shell-command.png " ")
 
 
 3. View Result
 
-    The Speech service displays the results as shown below:
+    The speech service displays the results as shown below:
         ![](./images/cloud-shell-results.png " ")
 
 
 
-## **Task 2:** To install OCI CLI in your local environment
+## **Task 2:** Install OCI CLI in your local environment
 
 Follow Lab 2 Task 2 setup for python, then in your python virtual environment, run:
 ```
@@ -57,10 +57,10 @@ pip install oci-cli
 ```
 
 
-## **Task 3:** Try issuing some of the OCI Speech commands
+## **Task 3:** Issue some of the OCI speech commands
 
 1. Create Transcription Job
-    Run this command : oci speech transcription-job create -c 
+    Run this command : <strong>oci speech transcription-job create -c</strong>
         ```
         <copy>
         oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
@@ -85,7 +85,7 @@ pip install oci-cli
         ```
 
 2. Cancel transcription job
-    Run this command : oci speech transcription-job cancel
+    Run this command : <strong>oci speech transcription-job cancel</strong>
         ```
         <copy>
         oci speech transcription-job cancel --transcription-job-id <job-ocid>
@@ -93,7 +93,7 @@ pip install oci-cli
         ```
 
 3. Get transcription job
-    Run this command : oci speech transcription-job get
+    Run this command : <strong>oci speech transcription-job get</strong>
         ```
         <copy>
         oci speech transcription-job get --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID>
@@ -101,7 +101,7 @@ pip install oci-cli
         ```
 
 4. Update transcription job
-    Run this command: oci speech transcription-job update
+    Run this command: <strong>oci speech transcription-job update</strong>
         ```
         <copy>
         oci speech transcription-job update --transcription-job-id <job_OCID>
@@ -109,7 +109,7 @@ pip install oci-cli
         ```
 
 4. Gets all transcription jobs from a particular compartment
-    Run this command : oci speech transcription-job list --all --compartment-id
+    Run this command : <strong>oci speech transcription-job list --all --compartment-id</strong>
         ```
         <copy> 
         oci speech transcription-job list --all --compartment-id ocid1.tenancy.oc1..<unique_ID>
@@ -117,7 +117,7 @@ pip install oci-cli
         ```
 
 5. Move transcription job 
-    Run this command : oci speech transcription-job change-compartment
+    Run this command : <strong>oci speech transcription-job change-compartment</strong>
         ```
         <copy>
         oci speech transcription-job change-compartment --transcription-job-id <job_OCID> --compartment-id <compartment_OCID>
@@ -125,7 +125,7 @@ pip install oci-cli
         ```
 
 6. Gets transcription tasks under given transcription Job Id
-    Run this command : oci speech transcription-task list --transcription-job-id 
+    Run this command : <strong>oci speech transcription-task list --transcription-job-id</strong>
         ```
         <copy>
         oci speech transcription-task list --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID> --all
@@ -133,7 +133,7 @@ pip install oci-cli
         ```
 
 7. Gets a transcription task with given transcription task id under transcription job id
-    Run this command : oci speech transcription-task get --transcription-job-id <jobID> --transcription-task-id <taskID>
+    Run this command : <strong>oci speech transcription-task get --transcription-job-id <jobID> --transcription-task-id <taskID></strong>
         ```
         <copy>
         oci speech transcription-task get --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID> --transcription-task-id ocid1.aispeechtranscriptiontask.oc1..<unique_ID>
@@ -141,14 +141,14 @@ pip install oci-cli
         ```
 
 8. Cancel transcription task
-    Run this command : oci speech transcription-task cancel
+    Run this command : <strong>oci speech transcription-task cancel</strong>
         ```
         <copy>
         oci speech transcription-task cancel --transcription-job-id <job-ocid> --transcription-task-id <task-ocid>
         </copy>
         ```
 
-To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
+Click [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm) to learn more about CLI, 
 
 Congratulations on completing this lab!
 

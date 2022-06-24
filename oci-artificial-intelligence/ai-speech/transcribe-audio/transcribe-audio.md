@@ -107,13 +107,14 @@ Under documentation you can find helpful links relevant to OCI speech service
     <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
         ![](./images/basic-information-page.png " ")
 
-    Filters allow you to remove tag or mask certain words from the transcription, such as profanity
+    Filters allow you to remove, tag or mask certain words from the transcription, such as profanity
         ![](./images/filters.png " ")
 
     Click "Next" to continue to file selection
 
 
 4. Select Which File(s) From Object Storage to Transcribe in this Job
+
     Use "Show wav files" toggle to filter input bucket for .wav files only
     Select one or more files to transcribe from the specified bucket in object storage then click "Submit"
         ![](./images/select-files.png " ")
@@ -132,7 +133,7 @@ Under documentation you can find helpful links relevant to OCI speech service
     Select "Edit" from the three dots menu on the right to change job information from this page
         ![](./images/kebab-edit.png " ")
 
-    Enter new job information in edit slider
+    Enter new job information in the edit slider
         ![](./images/edit-slider.png " ")
 
     To change the compartment of a job from this view select "Move Resource" from the right side three dots menu and choose the target compartment from the dialog
@@ -140,25 +141,24 @@ Under documentation you can find helpful links relevant to OCI speech service
 
 ## **Task 3:** Viewing the Results
 
-To view the result of the transcription we will navigate to each the job and task details page
+To view the result of the transcription we will navigate to each the job and task details pages
 
-1. Navigating to Job Details Page
+1. Navigating to the Job Details Page
 
-    On the transcription job list page we can see 
-    Click on the name of the job in the list or click "View details" via the three dots kebab menu on the far right of the job
+    On the transcription job list page, click on the name of the job in the list or click "View details" under the three dots  menu on the far right
         ![](./images/navigate-to-job-details.png " ")
 
 2. Job Details Page
 
     The job details page is split into two main sections, on top we can see various metadata relating to the job, such as description, the compartment the job is located in and the language of the transcribed audio
 
-    The second section is the <i>job tasks list</i> which shows all the files (now dubbed tasks) we had previously selected to transcribe
+    The second section is the <i>job tasks list</i> which shows all the files (now called tasks) we had previously selected to transcribe
         ![](./images/job-details-page.png " ")
 
-    Make Changes to Job
+    Make Changes to Transcription Job:
 
-        On the job details page click "Edit" to make changes to title, description and tags of the job. Click "Move Resource" to change the compartment that the job is located in (select target compartment form dialog)
-            ![](./images/edit-move-resource-details-page.png " ")
+    On the job details page click "Edit" to make changes to title, description and tags of the job. Click "Move Resource" to change the compartment that the job is located in
+        ![](./images/edit-move-resource-details-page.png " ")
 
 3. Navigate to Individual Task Details
 
@@ -173,10 +173,10 @@ To view the result of the transcription we will navigate to each the job and tas
 
 ## **Task 4:** Downloading and Viewing the Results in JSON
 
-You can click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
+Click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
     ![](./images/show-json-button.png " ")
 
-Click Show Standard Results button to leave the JSON view. 
+Click "Show Standard Results" button to leave the JSON view. 
     ![](./images/show-standard-results.png " ")
 
 
