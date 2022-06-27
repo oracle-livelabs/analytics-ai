@@ -9,11 +9,11 @@ The Datascience Notebook is a web application that contains code, results and vi
 *Estimated Lab Time*: 15 minutes
 
 ### Objectives:
-* Learn how to use Speech Services within a DataScience notebook.
+* Learn how to use OCI speech within a DataScience notebook.
 
 ## **Data Science Prerequisites** 
 
-Before you can start using Data Science, your tenancy administrator should set up the following networking, dynamic group, and policies.
+Before you can start using OCI data science, your tenancy administrator should set up the following networking, dynamic group, and policies.
 
 1. Create VCN and Subnets
 
@@ -57,10 +57,10 @@ Before you can start using Data Science, your tenancy administrator should set u
 
 ## **Task 1:** Navigate to the Data Science Notebook Session
 
-Follow the below steps to open Notebook in DataScience:
+Follow the below steps to open a notebook in OCI DataScience:
 1. Navigate to Data Science Service
 
-    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
+    Log into OCI Cloud Console. Using the burger menu on the top left corner, navigate to "Analytics and AI" menu and click it, and then select the "Data Science" item under Machine Learning.
         ![](./images/cloud-menu.png " ")
 
 2. Select Compartment
@@ -73,14 +73,14 @@ Follow the below steps to open Notebook in DataScience:
 
 3. Create Project
 
-    Click Create Project to create a new project.
+    Click "Create Project" to create a new project.
         ![](./images/create-project-1.png " ")
 <!-- Select the Project named 'oci-Speech-livelabs' -->
     
 
 4. Enter Project Details
 
-    Enter name and click Create Button.
+    Enter a name for the project and click the "Create" button.
         ![](./images/create-project-2.png " ")
 <!-- Select the Notebook named 'Livelabs Notebook' -->
     
@@ -88,7 +88,7 @@ Follow the below steps to open Notebook in DataScience:
 
 5. Create Notebook Session
 
-    Click Create Notebook Session to create a new Notebook session.
+    Click "Create Notebook Session" to create a new Notebook session.
         ![](./images/create-notebook-session.png " ")
 
 6. Enter Notebook Details
@@ -101,7 +101,8 @@ Follow the below steps to open Notebook in DataScience:
 
 7. Open the OCI Data Science notebook
 
-    The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
+    The Notebook Session VM will be created. This might take a few minutes. When created, you will see a screen like the following.
+
     Open the notebook session that was provisioned.
         ![](./images/open-notebook.png " ")
 
@@ -133,7 +134,7 @@ Follow the below steps to open Notebook in DataScience:
         <copy>mv <path of the private key> ~/.oci/</copy>
         ```
         
-    To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
+    To know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
         ![](./images/oci-folder.png " ")
 
 3. Execute the Notebooks

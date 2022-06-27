@@ -52,12 +52,11 @@ Generate an API signing key pair
 
 3. Generate API Key
 
-    In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
+    In the dialog, select "Generate API Key Pair." Click "Download Private Key" and save the key to your .oci directory. Finally, click "Add."
         ![](./images/gen-api.png " ")
 
-
-
 4. Generate Config File
+
     Copy the values shown on the console.
         ![](./images/conf.png " ")
 
@@ -72,7 +71,7 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 ## **Task 2:** Prerequisites and Setup for Python
 
 Please follow the steps in the order described.
-Before you go any further, make sure you have Python 3.x version and that it’s available from your command line. You can check this by simply running:
+Before you go any further, make sure you have Python 3.x installed and that it’s available from your command line. You can check this by simply running:
 ```
 <copy>python --version</copy>
 ```
@@ -82,10 +81,11 @@ Additionally, you’ll need to make sure you have pip available. You can check t
 ```
 <copy>pip --version</copy>
 ```
-If you installed Python from source, with an installer from python.org, or via Homebrew you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately.
+If you installed Python from source, with an installer from python.org, or via Homebrew, you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately.
 
 
 1. Create virtualenv
+
     To create a virtual environment, run the venv module as a script as shown below
     ```
     <copy>python3 -m venv <name of virtual environment></copy>
@@ -104,7 +104,7 @@ If you installed Python from source, with an installer from python.org, or via H
     ```
 3. Install OCI
 
-    Now Install oci by running:
+    Now, install oci by running:
     ```
     <copy>pip install oci</copy>
     ```
@@ -235,11 +235,11 @@ except Exception as e:
 
 </copy>
 ```
-Follow below steps to run Python SDK:
+Follow the steps below to run the Python SDK:
 
 1. Download Python Code.
 
-    Download [code](./files/speech-example.py) file and save it your directory.
+    Download [this](./files/speech-example.py) code file and save it your directory.
 
 2. Execute the Code.
 
@@ -247,10 +247,6 @@ Follow below steps to run Python SDK:
     ```
     <copy>python speech-example.py</copy>
     ```
-3. Result
-
-    You will see the result as below
-
 
 
 ## Learn More
