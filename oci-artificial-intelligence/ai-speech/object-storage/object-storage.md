@@ -83,7 +83,7 @@ You need to upload the audio files into Oracle object storage, to be used in the
     Click on Upload and then browse to file which you desire to upload.
 
 
-More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
+More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 
 Congratulations on completing this lab!

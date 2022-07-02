@@ -227,7 +227,7 @@ After downloading the dataset, we need to upload the sample training data into t
     - Browse to the file to upload and click the Upload button 
     ![](images/lab5-bucket-upload-files.png " ")
 
-    More details on OCI Object storage can be found [here](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
+    More details on OCI Object storage can be found [here](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 ## Task 5: Create a project 
 

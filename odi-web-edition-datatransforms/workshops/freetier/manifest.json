@@ -10,17 +10,17 @@
         {
           "title": "Getting Started",
           "description": "Getting an OCI Account",
-          "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/cloud-login/pre-register-free-tier-account.md"
+          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
           "title": "Lab 1: Provision an ADB Instance",
           "description": "Provisioning an Autonomous Database Instance",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+          "filename": "https://oracle-livelabs.github.io/adb/shared/adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 2: Create a Database User",
             "description": "Intro to MovieStream and Creating a Database User",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/workshops/adbs-tools/getting-started/getting-started.md"
+            "filename": "https://oracle-livelabs.github.io/adb/shared/workshops/adbs-tools/getting-started/getting-started.md"
         },
       {
           "title": "Lab 3: Load Data",
@@ -40,7 +40,7 @@
       {
           "title": "Need Help?",
           "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-          "filename":"https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/need-help/need-help-freetier.md"
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
       }
    ]
 }
