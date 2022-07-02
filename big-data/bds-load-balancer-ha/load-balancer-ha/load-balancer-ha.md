@@ -193,7 +193,7 @@ To copy the files:
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Load Balancer**.
 
-	![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/networking-loadbalance.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/networking-loadbalance.png " ")
 
 3. On the **Load Balancers in *&lt;compartment&gt;* Compartment** page, under **Compartment** in the panel on the left, select the compartment containing your cluster, and then click **Create Load Balancer**.
 

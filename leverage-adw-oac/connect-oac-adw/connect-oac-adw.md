@@ -29,7 +29,7 @@ Connect to your **Autonomous Database**.
 In the ADWH console, lets navigate to the Development tab and open the SQL Developer Web  
 
 1. In the **Oracle Console Home** Page, click on the hamburger **MENU** link at the upper left corner of the page and go to the ****Autonomous Data Warehouse**** section.  
-    ![Oracle Console SignIn](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/database-adw.png)
+    ![Oracle Console SignIn](https://oracle-livelabs.github.io/common/images/console/database-adw.png)
     
     You can see all the **ADW** instances that you have **created**.  
     **Select** the instance that we created before.  

@@ -22,7 +22,7 @@ You create a Data Science project to organize your notebook sessions and models 
 1. At the top of this page in the **Workshop Details** section, note the name of the compartment. It generally has the format ``LL####-COMPARTMENT`` where ``####`` is a number.
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
-	![Navigation to Data Science](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/analytics-ml-datascience.png " ")
+	![Navigation to Data Science](https://oracle-livelabs.github.io/common/images/console/analytics-ml-datascience.png " ")
 1. Select the compartment, generally, you will need to expand (click the + symbol) the ``root`` and ``Livelabs`` sections. Then select the compartment name that you noted earlier.
     ![Compartment dropdown](../common/images/compartment-green-button.png)
 1. Click **Create Project**.

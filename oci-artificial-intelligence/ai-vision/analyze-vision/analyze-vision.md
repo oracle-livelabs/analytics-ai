@@ -92,7 +92,7 @@ This is an optional set of steps if you want to test OCI Vision with your own sa
     ![](./images/upload-sample-file.png " ")
 
 
-  More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
+  More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 ## **Task 3:** Demo Vision Service using the OCI Console
 

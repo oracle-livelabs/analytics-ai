@@ -11,7 +11,7 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 
 1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
-	![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/marketplace.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/marketplace.png " ")
 2. OCI Marketplace hosts many applications ready to be deployed.
    Search for “Oracle Data Integrator”.
 
@@ -60,7 +60,7 @@ Make sure you have chosen the correct **COMPARTMENT**
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-	![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/compute-instances.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
 2. Search for your instance by *Display Name*. Ensure you have chosen the correct *Region* and *Compartment*
 

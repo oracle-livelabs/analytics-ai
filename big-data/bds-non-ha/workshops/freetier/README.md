@@ -5,7 +5,7 @@ The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series 
 ## Access the Labs Using Our Web Interface
 
 
-**[Click here](https://oracle.github.io/learning-library/data-management-library/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
+**[Click here](https://oracle-livelabs.github.io/analytics-ai/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
 
 
 ## Access the Labs on the Repo

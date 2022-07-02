@@ -11,9 +11,9 @@
 ### Prerequisites
 This lab assumes you have completed the following labs:
 [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb)
-* Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
-* Lab: [Provision an Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
-* Lab: [Connect to ADB with SQL Dev Web](https://oracle.github.io/learning-library/developer-library/rest-services-for-adb/livelabs/?lab=lab-3-connect-to-adb-with-sql-dev-web)
+* Lab: [Login to Oracle Cloud](https://oracle-livelabs.github.io/adb/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
+* Lab: [Provision an Autonomous Database](https://oracle-livelabs.github.io/adb/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
+* Lab: [Connect to ADB with SQL Dev Web](https://oracle-livelabs.github.io/developer/rest-services-for-adb-appDevLive/workshops/livelabs/?lab=lab-3-connect-to-adb-with-sql-dev-web)
 
 A Source database is needed. You may already have Virtual Box on your laptop, a database in your data centre, a Docker container running Oracle, and so on.
 
