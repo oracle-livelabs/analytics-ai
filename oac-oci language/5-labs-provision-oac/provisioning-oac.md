@@ -26,7 +26,7 @@ Click in **View Account** and **Sign in to Cloud**.
 
 1. Go to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
-    ![Oracle Analytics Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
+    ![Oracle Analytics Console](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
 
 2. Select **Create Instance**.
 
