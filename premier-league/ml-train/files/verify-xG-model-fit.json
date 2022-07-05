@@ -1,0 +1,295 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sql\nupdate predict_by_angle\nset predicted_goal \u003d prediction(XG_MODEL using angle)\n,   xg \u003d prediction_probability(XG_MODEL, \u0027Y\u0027 using angle);",
+      "user": "PL",
+      "dateUpdated": "2022-04-18T17:24:55+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1650301961078_849909113",
+      "id": "paragraph_1650301961078_849909113",
+      "dateCreated": "2022-04-18T17:12:41+0000",
+      "dateStarted": "2022-04-18T17:15:42+0000",
+      "dateFinished": "2022-04-18T17:15:42+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "select angle_bucket, (sum(goal_cnt)/sum(event_count)) as score_percentage\r\nfrom event\r\ngroup by angle_bucket;",
+      "user": "PL",
+      "dateUpdated": "2022-04-18T17:23:11+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "ANGLE_BUCKET": "number",
+                      "SCORE_PERCENTAGE": "number"
+                    }
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "ANGLE_BUCKET",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "SCORE_PERCENTAGE",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "ANGLE_BUCKET\tSCORE_PERCENTAGE\n14\t3.01204819277108433734939759036144578313E-02\n51\t2.05128205128205128205128205128205128205E-01\n52\t2.82051282051282051282051282051282051282E-01\n72\t3.57142857142857142857142857142857142857E-01\n27\t1.42857142857142857142857142857142857143E-01\n57\t4.44444444444444444444444444444444444444E-01\n50\t2.61904761904761904761904761904761904762E-01\n58\t3.33333333333333333333333333333333333333E-01\n23\t9.67741935483870967741935483870967741935E-02\n64\t0.4375\n125\t0.5\n6\t8.33333333333333333333333333333333333333E-02\n113\t0\n108\t1\n98\t1.66666666666666666666666666666666666667E-01\n40\t1.27906976744186046511627906976744186047E-01\n42\t0.125\n88\t0.6\n59\t0.2\n31\t1.57575757575757575757575757575757575758E-01\n15\t3.84615384615384615384615384615384615385E-02\n71\t4.61538461538461538461538461538461538462E-01\n36\t1.35922330097087378640776699029126213592E-01\n78\t0\n7\t0.1\n79\t6.66666666666666666666666666666666666667E-01\n68\t6.15384615384615384615384615384615384615E-01\n43\t2.22222222222222222222222222222222222222E-01\n85\t3.33333333333333333333333333333333333333E-01\n105\t1\n110\t0\n131\t1\n159\t1\n1\t0\n134\t1\n109\t1\n99\t0\n41\t2.04301075268817204301075268817204301075E-01\n45\t1.42857142857142857142857142857142857143E-01\n82\t6.66666666666666666666666666666666666667E-01\n34\t3.69942196531791907514450867052023121387E-01\n118\t1\n44\t1.2195121951219512195121951219512195122E-01\n62\t0.2\n104\t3.33333333333333333333333333333333333333E-01\n63\t0.25\n129\t0\n30\t1.18012422360248447204968944099378881988E-01\n21\t1.03333333333333333333333333333333333333E-01\n17\t3.41880341880341880341880341880341880342E-02\n77\t4.54545454545454545454545454545454545455E-01\n11\t2.77777777777777777777777777777777777778E-02\n12\t2.22772277227722772277227722772277227723E-02\n56\t3.21428571428571428571428571428571428571E-01\n141\t1\n37\t1.66666666666666666666666666666666666667E-01\n75\t3.33333333333333333333333333333333333333E-01\n70\t4.16666666666666666666666666666666666667E-01\n86\t3.33333333333333333333333333333333333333E-01\n115\t0\n8\t7.69230769230769230769230769230769230769E-02\n90\t0.2\n54\t3.52941176470588235294117647058823529412E-01\n76\t2.22222222222222222222222222222222222222E-01\n73\t3.33333333333333333333333333333333333333E-01\n84\t0\n2\t0\n48\t2.35294117647058823529411764705882352941E-01\n4\t8.82352941176470588235294117647058823529E-01\n49\t2.36363636363636363636363636363636363636E-01\n10\t1.20481927710843373493975903614457831325E-02\n35\t1.86915887850467289719626168224299065421E-01\n18\t5.80645161290322580645161290322580645161E-02\n81\t0.625\n65\t5.45454545454545454545454545454545454546E-01\n66\t3.07692307692307692307692307692307692308E-01\n5\t1.11111111111111111111111111111111111111E-01\n116\t1\n120\t1\n26\t1.2735849056603773584905660377358490566E-01\n20\t8.08080808080808080808080808080808080808E-02\n46\t2.29508196721311475409836065573770491803E-01\n33\t1.47540983606557377049180327868852459016E-01\n22\t1.11627906976744186046511627906976744186E-01\n74\t3.33333333333333333333333333333333333333E-01\n96\t1\n28\t1.53846153846153846153846153846153846154E-01\n87\t7.77777777777777777777777777777777777778E-01\n53\t0.21875\n9\t7.69230769230769230769230769230769230769E-02\n93\t0.8\n130\t1\n128\t1\n112\t1\n3\t0\n146\t1\n111\t6.66666666666666666666666666666666666667E-01\n19\t8.11808118081180811808118081180811808118E-02\n38\t1.22222222222222222222222222222222222222E-01\n13\t1.17647058823529411764705882352941176471E-02\n29\t1.27272727272727272727272727272727272727E-01\n55\t5.23809523809523809523809523809523809524E-01\n119\t1\n60\t2.22222222222222222222222222222222222222E-01\n69\t4.54545454545454545454545454545454545455E-01\n97\t1\n67\t3.33333333333333333333333333333333333333E-01\n83\t1\n95\t1\n133\t1\n132\t1\n16\t3.88513513513513513513513513513513513514E-02\n25\t0.09\n32\t1.68141592920353982300884955752212389381E-01\n47\t2.24137931034482758620689655172413793103E-01\n24\t7.65306122448979591836734693877551020408E-02\n39\t1.53153153153153153153153153153153153153E-01\n94\t6.66666666666666666666666666666666666667E-01\n117\t1\n61\t3.57142857142857142857142857142857142857E-01\n80\t5.71428571428571428571428571428571428571E-01\n102\t0.6\n100\t0.5\n91\t1\n106\t1\n92\t0.8\n154\t1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1650301234561_939467726",
+      "id": "20220418-170034_2072332404",
+      "dateCreated": "2022-04-18T17:00:38+0000",
+      "dateStarted": "2022-04-18T17:12:41+0000",
+      "dateFinished": "2022-04-18T17:12:51+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nselect * from predict_by_angle;",
+      "user": "PL",
+      "dateUpdated": "2022-04-18T17:22:01+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "ID": "number",
+                      "ANGLE": "number",
+                      "PREDICTED_GOAL": "string",
+                      "XG": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "ANGLE",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "XG",
+                  "index": 3.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "ID\tANGLE\tPREDICTED_GOAL\tXG\n1769\t2\tN\t0.03043785774746291\n1770\t4\tN\t0.034038729353683385\n1771\t6\tN\t0.038048875363813607\n1772\t8\tN\t0.042510670303648322\n1773\t10\tN\t0.047469857701058153\n1774\t12\tN\t0.052975562915337629\n1775\t14\tN\t0.059080230394591836\n1776\t16\tN\t0.065839465228466953\n1777\t18\tN\t0.073311756411375884\n1778\t20\tN\t0.081558057206976772\n1779\t22\tN\t0.090641196755863587\n1780\t24\tN\t0.10062509703570878\n1781\t26\tN\t0.11157377099502999\n1782\t28\tN\t0.12355008173429113\n1783\t30\tN\t0.13661424962114752\n1784\t32\tN\t0.15082210477179445\n1785\t34\tN\t0.16622309682504158\n1786\t36\tN\t0.18285809250535495\n1787\t38\tN\t0.20075701378772162\n1788\t40\tN\t0.21993639459510547\n1789\t42\tN\t0.24039696018176934\n1790\t44\tN\t0.26212135817946364\n1791\t46\tN\t0.28507219047335258\n1792\t48\tN\t0.30919050691703887\n1793\t50\tN\t0.33439492165451229\n1794\t52\tN\t0.36058149736918849\n1795\t54\tN\t0.38762451035917267\n1796\t56\tN\t0.4153781602322299\n1797\t58\tN\t0.44367922504547019\n1798\t60\tN\t0.47235059130662044\n1799\t62\tY\t0.50120551596537899\n1800\t64\tY\t0.53005241304625494\n1801\t66\tY\t0.55869990933379177\n1802\t68\tY\t0.58696188816557893\n1803\t70\tY\t0.61466224151773641\n1804\t72\tY\t0.64163907801983144\n1805\t74\tY\t0.66774818442047246\n1806\t76\tY\t0.69286560349010207\n1807\t78\tY\t0.71688926388771967\n1808\t80\tY\t0.73973966848683115\n1809\t82\tY\t0.76135970964020871\n1810\t84\tY\t0.78171372764710123\n1811\t86\tY\t0.80078595966929478\n1812\t88\tY\t0.81857854042945077\n1813\t90\tY\t0.83510921512526159\n1814\t92\tY\t0.85040891230726767\n1815\t94\tY\t0.86451930375360009\n1816\t96\tY\t0.87749045331964093\n1817\t98\tY\t0.88937863052561816\n1818\t100\tY\t0.90024433970719187\n1819\t102\tY\t0.91015059352364969\n1820\t104\tY\t0.91916144138369438\n1821\t106\tY\t0.92734074919369736\n1822\t108\tY\t0.93475121660190041\n1823\t110\tY\t0.94145361116922566\n1824\t112\tY\t0.94750619506397227\n1825\t114\tY\t0.95296431833346185\n1826\t116\tY\t0.95788015295901752\n1827\t118\tY\t0.96230254322976583\n1828\t120\tY\t0.96627695004289682\n1829\t122\tY\t0.96984546921295423\n1830\t124\tY\t0.97304690649645065\n1831\t126\tY\t0.97591689463129516\n1832\t128\tY\t0.97848804013504598\n1833\t130\tY\t0.98079008983138705\n1834\t132\tY\t0.98285010904553871\n1835\t134\tY\t0.98469266511684017\n1836\t136\tY\t0.986340011327695\n1837\t138\tY\t0.98781226756021168\n1838\t140\tY\t0.98912759498878344\n1839\t142\tY\t0.99030236292454787\n1840\t144\tY\t0.99135130657240145\n1841\t146\tY\t0.99228767496795189\n1842\t148\tY\t0.99312336875337071\n1843\t150\tY\t0.99386906774790462\n1844\t152\tY\t0.99453434848856037\n1845\t154\tY\t0.99512779207435287\n1846\t156\tY\t0.99565708275629383\n1847\t158\tY\t0.99612909778561809\n1848\t160\tY\t0.99654998907334302\n1849\t162\tY\t0.99692525723224679\n1850\t164\tY\t0.99725981857345403\n1851\t166\tY\t0.99755806561860838\n1852\t168\tY\t0.99782392166868983\n1853\t170\tY\t0.99806088994472142\n1854\t172\tY\t0.99827209778608561\n1855\t174\tY\t0.99846033636058584\n1856\t176\tY\t0.99862809630799954\n1857\t178\tY\t0.99877759970658897\n1858\t180\tY\t0.99891082872052683\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1650302142050_713431261",
+      "id": "paragraph_1650302142050_713431261",
+      "dateCreated": "2022-04-18T17:15:42+0000",
+      "dateStarted": "2022-04-18T17:18:38+0000",
+      "dateFinished": "2022-04-18T17:18:38+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n",
+      "user": "PL",
+      "dateUpdated": "2022-04-18T17:18:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1650302152508_796387802",
+      "id": "paragraph_1650302152508_796387802",
+      "dateCreated": "2022-04-18T17:15:52+0000",
+      "status": "READY"
+    }
+  ],
+  "name": "Verify xG model fit",
+  "id": "652",
+  "defaultInterpreterGroup": "spark",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "2BMEBP7AX:shared_process": [],
+    "2BNXGR7RV:shared_process": [],
+    "2BJV7EZ3Y:shared_process": [],
+    "2BPS2EJYY:shared_process": [],
+    "2BKYQ82ME:shared_process": [],
+    "2BKHBZP2Y:shared_process": [],
+    "2BP2SQT52:shared_process": [],
+    "2BNFPEGCH:shared_process": [],
+    "2BP4TWNZF:shared_process": [],
+    "2BP16A6NH:shared_process": [],
+    "2BP7C6CPC:shared_process": [],
+    "2BNJ72TWM:shared_process": [],
+    "2BKG2QG3C:shared_process": [],
+    "2BMEFUU1Y:shared_process": [],
+    "2BJWNGG3F:shared_process": [],
+    "2BKGZ6M6X:shared_process": [],
+    "2BKAC5W8U:shared_process": [],
+    "2BKZASDAM:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
