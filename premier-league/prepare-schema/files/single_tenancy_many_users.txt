@@ -1,0 +1,31 @@
+1. Create all 50 DB users with script in SQL tool (using ADMIN user)
+
+2. Through OML user admin, set the email address on all the 50 users.
+Maybe needs to be manual. No problem.
+
+3. Need to create real email addresses, because will receive email to activate it.
+
+
+3. Through OCI create the users.
+
+4. In OAC add the correct application role.
+
+Assumptions:
+- Users will use their own schema (on the same ADW instance)
+- Users will do their own data loading (so they can see benefits of ADW)
+- Users will do their own ML on ADW (again, so they can see the benefits)
+- Users will create their own connection from OAC to ADW
+
+To find out: 
+- Can users see each others stuff in OAC??
+
+Result:
+- Data load can be done by individual users:
+https://gda8def9ae64db4-redbull3.adb.eu-frankfurt-1.oraclecloudapps.com/ords/pl1/_sdw/
+(replace pl1 with the name of actual user)
+- OML can be access with:
+https://gda8def9ae64db4-redbull3.adb.eu-frankfurt-1.oraclecloudapps.com/oml/
+
+Questions:
+- Any problems running notebook server (Zeppelin) for this many users on same instance?
+- Any problems with running DBMS_DATA_MINING.CREATE_MODEL simultaneously from many users in difference schemas, on same instance?
