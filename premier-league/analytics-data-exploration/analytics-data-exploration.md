@@ -105,7 +105,7 @@ The EVENT dataset contains information on thousands of shots, of the full season
 
 2. Select the `PL` connection.
 
-   ![Select PL connection](images/select-pl-database.png)
+   ![Select PL connection](images/select-pl.png)
 
 3. Open the `PL` schema and **double click** on the `EVENT` table.
 

@@ -16,7 +16,7 @@ Estimated Time: 30 minutes
 - Autonomous Data Warehouse
 - You've completed the previous labs
 
-## Task 1: Refresh the EVENT Data Set in Oracle Analytics Cloud to Include ANGLE
+## Task 1: Refresh the EVENT Data Set in Oracle Analytics Cloud to Include the New Columns
 
 1. In case you don't have a window with Oracle Analytics Cloud open, you can open it as follows:
 
@@ -40,7 +40,7 @@ Estimated Time: 30 minutes
 
    ![Edit definition](images/edit-definition.png)
 
-5. Notice how the `ANGLE` and `ANGLE_BUCKET` fields are not yet part of the data set. 
+5. Notice how the `ANGLE` and `ANGLE_BUCKET`, `PREDICTED_GOAL` and `XG` fields are not yet part of the data set. 
 
    Click "Add All" to also add these new columns in the data set in Oracle Analytics Cloud and press "OK".
 
@@ -50,6 +50,7 @@ Estimated Time: 30 minutes
 
    ![Save and go to menu](images/save-and-menu.png)
 
+<!--
 ## Task 2: Import the Trained Model into Oracle Analytics Cloud
 
 Now we need to make the Machine Learning model that we built in the database available to Oracle Analytics Cloud.
@@ -139,8 +140,9 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
 8. Go back to the home page by clicking on the top-left icon.
 
    ![Go back to the home page](images/back-to-menu.png)
+-->
 
-## Task 4: Build the Visualizations to Analyze a Match
+## Task 2: Build the Visualizations to Analyze a Match
 
 1. First of all we will add a MATCH data set, which holds the team names and results of each match.
 
@@ -262,7 +264,7 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
 
    ![Save workbok](images/save-workbook.png)
 
-## Task 5: Analyze Liverpool - Manchester City on 03-10-2021
+## Task 3: Analyze Liverpool - Manchester City on 03-10-2021
 
 1. Have a look at the difference between the total of goals versus the total xG for both teams. 
 
@@ -298,7 +300,7 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
 
    ![High xG](images/high-xg.png)
 
-## Task 6: Analyze Manchester United - Watford on 26-02-2022
+## Task 4: Analyze Manchester United - Watford on 26-02-2022
 
 1. Change the filter to select the match between Manchester United - Watford on 26-02-2022.
 
@@ -316,7 +318,7 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
    
    Now, as a trainer for Manchester United, you could interpret this in different ways: Maybe the team was just unlucky, or maybe the team should improve their finishing skills. Another way of looking at it is that the goalkeeper of Watford did a great job. In any case, we cannot blame ManUnited for not creating opportunities!
 
-## Task 7 (Bonus): Find the Goal That Had the Lowest Chances According to Our xG model
+## Task 5 (Bonus): Find the Goal That Had the Lowest Chances According to Our xG model
 
 1. Remove the existing filter on match.
 

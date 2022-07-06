@@ -33,27 +33,23 @@ Estimated Time: 10 minutes
 
    ![ADW Menu](images/open-db.png)
 
-3. Open the **Service Console**.
+3. Open **Tools** and then **Open Oracle ML User Administration**.
 
-   ![pic1](images/open-service-console.png)
-
-4. Choose **Administration** > **Manage Oracle ML Users**.
-
-   ![pic1](images/manage-ml-users.png)
+   ![pic1](images/open-ml-admin.png)
 
    If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user.
 
-5. Check **Show All Users**, then click on the `PL` user.
+4. Check **Show All Users**, then click on the `PL` user.
 
    ![pic1](images/select-ml-user.png)
 
-6. Choose any email address (it's not relevant). **Don't update any of the other fields**.
+5. Choose any email address (it's not relevant). **Don't update any of the other fields**.
 
    ![pic1](images/save-ml-user.png)
 
    Press **Save**. You've now enabled the `PL` database user (schema) to use the Machine Learning functionality of Autonomous Data Warehouse.
 
-## Task 2: Run the Notebook to Calculate ANGLE and Build the xG model
+## Task 2: Run the Notebook to Calculate ANGLE, Build the xG model and Apply the xG model
 
 SQL is a useful language in the Machine Learning process. It allows you to work with data in databases in an efficient manner. 
 
@@ -69,13 +65,13 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
-2. In the console of the Autonomous Data Warehouse, open the **Service Console**.
+2. In the console of the Autonomous Data Warehouse, open the **Database Actions**.
 
    <!--![pic1](images/open-service-console.png)-->
 
-3. Choose **Development** > **Oracle Machine Learning User Interface**.
+3. Choose **Oracle Machine Learning**.
 
-   ![pic1](images/start-oml.png)
+   ![pic1](images/open-ml.png)
 
 4. Sign in with the user `PL` and the secure password for the PL user. 
 
@@ -102,6 +98,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 9. Inspect the notebook
 
    ![pic1](images/explain-notebook.png)
+   ![pic1](images/apply-xg.png)
 
    You will find the following sections in the notebook.
 
@@ -129,6 +126,10 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
    **d) Train the model**
 
    Once trained, the model will be stored as `XG_MODEL`. 
+
+   **e) Apply the model**
+
+   This code applies the newly created xG model to all of the shots. Effectively, every shot will now have a binary prediction of whether it will be a goal and a goal probability (the xG value).
 
 10. Run the notebook
 
@@ -175,6 +176,12 @@ We want to check the quality of our model. One way of doing this, is to visually
    We can see how the Score Percentage gradually increases as the angle increases. 
 
 4. Next, obtain the values *predicted by the xG model* for a range of angles. The table `PREDICT_BY_ANGLE` contains placeholders of between 0 and 180 degrees. We will enrich it with the xG prediction for all those angles.
+
+   Create a new cell by clicking on the icon on the right and selecting "Insert New".
+
+   ![pic1](images/create-new-cell.png)
+
+   Then, copy the following text into the cell.
 
 	```
 	<copy>
