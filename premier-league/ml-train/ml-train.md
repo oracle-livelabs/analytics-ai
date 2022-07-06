@@ -61,7 +61,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
 1. **Download** the prepared notebook that contain the SQL instructions:
 
-   [Notebook to calculate ANGLE and build the xG model](./files/calculate-ANGLE-and-build-xG-model.json)
+   [Notebook to calculate ANGLE and build the xG model](./files/calculate-angle-and-build-xgmodel.json)
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
