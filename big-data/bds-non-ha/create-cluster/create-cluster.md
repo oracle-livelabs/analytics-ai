@@ -156,7 +156,7 @@ Create the cluster as follows:
     Linux instances use an SSH key pair instead of a password to authenticate a remote user. A key pair file contains a private key and public key. You keep the private key on your computer and provide the public key when you create an instance. When you connect to the instance using SSH, you provide the path to the private key in the SSH command. Later in **Lab 6**, you will connect to your cluster's master node using the private SSH key that is associated with the public SSH key that you specify here for your cluster.
 
     > **Note:** If you already have an existing public key, you can use it in this Task; you don't have to create a new public key. If you need to create a new SSH key pair (using different formats), see the [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic and the
-    [Generate SSH key](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/generate-ssh-key/) lab.
+    [Generate SSH key](https://oracle-livelabs.github.io/common/labs/generate-ssh-key/) lab.
 
     Specify an SSH public key using one of the following methods:
      * Select **Choose SSH public key file**, and then either Drag and drop a public SSH key file into the box,

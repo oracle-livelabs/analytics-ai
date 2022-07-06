@@ -25,7 +25,7 @@ In this lab, you:
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
-	![Navigation menu to Data Science service](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/analytics-ml-datascience.png " ")
+	![Navigation menu to Data Science service](https://oracle-livelabs.github.io/common/images/console/analytics-ml-datascience.png " ")
 
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session.

@@ -43,7 +43,7 @@ _Estimated Time:_ 15 minutes
 1. Click on the hamburger **MENU (Navigator)** link at the upper left corner of the page.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**  
-    ![Oracle Cloud Web Console](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/database-adw.png)
+    ![Oracle Cloud Web Console](https://oracle-livelabs.github.io/common/images/console/database-adw.png)
 
     This will take you to the management console page.
 

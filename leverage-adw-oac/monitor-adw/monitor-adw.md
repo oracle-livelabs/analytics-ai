@@ -30,7 +30,7 @@ Log in to **Oracle Cloud Infrastructure Console**, select **Autonomous Data Ware
 2.  Click on the hamburger **MENU** link at the upper left corner of the page.  
 This will produce a drop-down menu, where you select **Autonomous Data Warehouse.** 
 
-    ![Autonomous Data Warehouse](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/database-adw.png)
+    ![Autonomous Data Warehouse](https://oracle-livelabs.github.io/common/images/console/database-adw.png)
 
 3.  Select your Compartment and Click on your ADW instance
 
