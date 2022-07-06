@@ -186,7 +186,7 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
 
    ![Add dataset](images/add-dataset3.png)
 
-10. Pick the "Event with xG" data set and click "Add to Workbook".
+10. Pick the "Event" data set and click "Add to Workbook".
 
    ![Pick Event with xG data set](images/pick-event-with-xg.png)
 

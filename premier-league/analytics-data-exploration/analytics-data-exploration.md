@@ -153,6 +153,13 @@ The EVENT dataset contains information on thousands of shots, of the full season
 
    The symbol next to the column header changes to `A`.
 
+11. Similarly, modify the `ID`, `X_REL_M_TEAM` and `Y_REL_M_TEAM` columns to be Attributes.
+
+   ![Changes to attribute](images/id-attribute.png)
+
+   ![Changes to attribute](images/coordinates-attributes.png)
+
+
 <!--9. Modify the aggregation type of `SCORE` (score that fans have given to the race)
 
    Later on, we will want to find out the average SCORE per season. Because of this, we want to set the default aggregation of the `SCORE` field to **Average**.
@@ -161,7 +168,7 @@ The EVENT dataset contains information on thousands of shots, of the full season
 
    ![Change aggregation to maximum](images/change-aggr-score.png)
 -->
-11. Save the data set
+12. Save the data set
 
     Click the **Save** icon and name the data set `Events`.
 
