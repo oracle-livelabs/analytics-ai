@@ -2,7 +2,7 @@
 
 ## Introduction
 
-OCI Speech enables developers to extract text from audio using production ready pre-trained ASR (Automatic Speech Recognition) models. OCI’s Speech service provides automated, accurate transcription at scale, without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs.
+OCI Speech enables developers to extract text from audio using production ready pre-trained ASR (Automatic Speech Recognition) models. OCI’s Speech service provides automated, accurate transcription at scale, without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs. OCI Speech currently supports transcription in English (US, GB, IN, AU), French, German, Italian and Spanish.
 
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 
