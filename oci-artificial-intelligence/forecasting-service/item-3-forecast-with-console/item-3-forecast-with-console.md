@@ -17,7 +17,7 @@ In this section, we will learn how to create the forecast project, upload data i
 
 ### Prerequisites
 - A free tier or paid tenancy account in OCI
-- Tenancy must be whitelisted to use OCI Forecasting Service
+- Tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: ![Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " ")
 - Tenancy must be subscribed to US West (Phoenix)
 - Completed ***Introduction and Getting Started*** sections
 
@@ -37,8 +37,9 @@ In this section, we will learn how to create the forecast project, upload data i
     - Fill in the below details in the relevant fields as shown in image:
         Name: DynamicGroupRPSTAccess 
         Rule: ANY {resource.type='aiforecastproject'}
+        DynamicGroupRPSTAccess is to allow Forecasting service to manage (read & write) Customer’s Object Storage
         ![](images/lab5-create-and-save-dynamic-group.png " ")
-
+        
     - We can verify that the dynamic group DynamicGroupRPSTAccess is created:
         ![](images/lab5-dynamic-group-created.png " ")
 
@@ -98,7 +99,7 @@ Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we
 * Check if there are any duplicate dates in time-series after grouping also (Check for both additional and primary data)
 
 ### **Data format requirements**
-The data should contain one timestamp column and other columns for target variable and series id (if using grouped data):
+The data should contain one timestamp column and other columns for target variable and series id (if using *grouped data*):
 - timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
@@ -107,7 +108,7 @@ The data should contain one timestamp column and other columns for target variab
 
 Currently, our APIs support datasets that can be in one of the following formats:
 
-1.  Single time series without any additional data:
+1.  Ungrouped Data (Single time series) without any additional data:
     Such datasets have only two columns in them. The first column should be a timestamp column and the second column should be the target column.
 
     **Here is a sample CSV-formatted data:**
@@ -119,8 +120,8 @@ Currently, our APIs support datasets that can be in one of the following formats
     ...
     ...
     ```
-2.  Multiple time series without any additional data: 
-    The input data can have multiple time series. Such datasets are called grouped data and there must be a column to identify different time series.
+2.  Grouped Data(Multiple time series) without any additional data
+    The input data can have multiple time series. Such datasets are called *grouped data* and there must be a column to identify different time series.
 
     **Here is a sample CSV-formatted data:**
     ```csv
@@ -141,7 +142,7 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ....
     ``` 
-3.  Time series with additional data:
+3.  Grouped Data(Multiple time series) with additional data:
     The input data can have additional influencers that help in forecasting. We call the two datasets primary and additional. The primary data should have three columns - timestamp, target column, and a column for the series id. The additional data should have a timestamp column, a series id column, and columns for additional influencers.   
 
     **Here is a sample CSV-formatted data:**
@@ -184,6 +185,61 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ....
     ```
+
+4.  Grouped Data(Multiple time series) with additional and meta data:
+    The input data can also have meta data that help multivariate algorithms in forecasting by identify homogeneous series. The primary data should have three columns - timestamp, target column, and a column for the series id. The additional data should have a timestamp column, a series id column, and columns for additional influencers. The meta data should have a series id column, and any number of columns for meta data information for that particular series. Each series will have one observation in meta data 
+
+    **Here is a sample CSV-formatted data:**
+
+    Primary data 
+    ```csv
+    timestamp,target_column,series_id
+    2020-07-13T00:00:00Z,20,A
+    2020-07-14T00:00:00Z,30,A
+    2020-07-15T00:00:00Z,28,A
+    ....
+    ....
+    2020-07-13T00:00:00Z,40,B
+    2020-07-14T00:00:00Z,50,B
+    2020-07-15T00:00:00Z,28,B
+    ....
+    ....
+    2020-07-13T00:00:00Z,10,C
+    2020-07-14T00:00:00Z,20,C
+    2020-07-15T00:00:00Z,30,C
+    ....
+    ....
+    ```
+    Additional data 
+    ```csv
+    timestamp,feature_1,series_id
+    2020-07-13T00:00:00Z,0,A
+    2020-07-14T00:00:00Z,1,A
+    2020-07-15T00:00:00Z,2,A
+    ....
+    ....
+    2020-07-13T00:00:00Z,0,B
+    2020-07-14T00:00:00Z,0,B
+    2020-07-15T00:00:00Z,1,B
+    ....
+    ....
+    2020-07-13T00:00:00Z,1,C
+    2020-07-14T00:00:00Z,0,C
+    2020-07-15T00:00:00Z,0,C
+    ....
+    ....
+    ```
+
+    Meta data 
+    ```csv
+    meta_feature_1,meta_feature_2,series_id
+    x,x1,A
+    x,x1,B
+    y,x2,C
+    ....
+    ....
+    ```
+
     **Note:**
     * Missing values are permitted (with empty), and boolean flag values should be converted to numeric (0/1)
 
@@ -191,9 +247,14 @@ Currently, our APIs support datasets that can be in one of the following formats
 
 Here is a sample dataset to help us easily understand what the input data looks like, Download the files to our local machine.
 
+Use Case 1 (With Primary and Additional Data):
 * [Primary data](files/primary-15-automotive.csv)
 * [Additional data](files/add-15-automotive.csv)
   
+Use Case 2 (With Primary, Additional and Meta Data):
+* [Primary data](files/favorita-20-primary.csv)
+* [Additional data](files/favorita-20-additional.csv)
+* [Meta data](files/favorita-20-metadata.csv)
 
 ## Task 4: Upload Data to Object Storage
 
@@ -254,6 +315,9 @@ A project is a way to organize multiple data assets and forecasts in the same wo
 
 ## Task 6: Create Forecast
 
+Below Forecast example is with **Use Case with Primary and Additional Data**. 
+If you wish to only try **Use Case with Primary, Additional and Meta Data** , skip this task and directly go to *Task 10*
+
 1.  Clicking on the Create Forecast button will take us to Create Forecast Page:
     ![](images/lab5-create-forecast.png " ")
 
@@ -269,7 +333,7 @@ A project is a way to organize multiple data assets and forecasts in the same wo
 
     ![](images/lab5-select-created-primary-data-asset.png " ")
     
-    Similarly, we can create Data Asset for Additional Data (Optional)
+    Similarly, we can create Data Asset for Additional Data. Additional Data is optional but for this demo, we recommend to use Additional Data if you are expecting same results as the below
     ![](images/lab5-select-additional-data.png " ")
     ![](images/lab5-additional-data-details.png " ")
 
@@ -286,7 +350,21 @@ A project is a way to organize multiple data assets and forecasts in the same wo
 
 4.  Configure Forecast :
 
+    We need to provide
+    - Forecast name and description
+    - Target Variable which we want to forecast. Eg. Sales for the current dataset
+    - Output Frequency for Forecast
+    - Forecast Horizon
+    - Prediction Interval: Select Prediction Interval from the list. Additionaly, there is an option to select custom prediction intervals by specifying the interval width. Example: If width 60 is specified, result will contain two symmetric lower and upper bounds around the median forecast (50th percentile), i.e. lower at 20 and upper at 80, which will correspond to 60% confidence of actual future value being lying within these bounds
+    - Error Measure: Error metric used to evaluate the performance of the forecasting models.
+    - Select whether data is grouped or ungrouped based on example explained above. Refer to data format requirements above in Task 2 for an example
+    - Select explainability if you want explainabiity
+    - Select algorithm you want to run. For this eg: We have selected *SMA, DMA, DES, PROPHET*
+
     ![](images/lab5-configure-forecast.png " ")
+
+
+
 
 5.  Review the Configuration for Forecast and click Submit :
     ![](images/lab5-review-config.png " ")
@@ -304,18 +382,16 @@ A project is a way to organize multiple data assets and forecasts in the same wo
 2. Review Forecast Results:
     
     Now, let's review the forecast results
-    1. We get general information like OCID (forecast ID), description, etc.
-    2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results in the download.zip
-    3. Dropdown list of series for which we want to see the visualization of forecast
-
+    1. We get general information like OCID (forecast ID), description, and Training Messages etc.
+    2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results by generating the download.zip
     ![](images/lab5-forecast-result-page.png " ")
 
 ## Task 8: Explore the Forecast and Explainability  
 1.  Forecast:
-
     The next step is to explore the forecast graph which has forecast and historical data along with prediction intervals
-    - Highlighted box 1 highlights the forecast for a particular time step
-    - Highlighted box 2 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
+    - Highlighted box 1 highlights to select series from dropdown list 
+    - Highlighted box 2 highlights the forecast for a particular time step
+    - Highlighted box 3 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
 
     ![](images/lab5-forecast-graph-page.png " ")
 
@@ -332,16 +408,124 @@ A project is a way to organize multiple data assets and forecasts in the same wo
     
     - Local Feature Importance:
        We can select the time step for which we want to see the local feature importance
-    ![](images/lab5-forecast-local.png " ")
+    ![](images/lab5-local-explain.png " ")
 
 ## Task 9 (Optional): Download the results zip file 
-1. Finally, we can download the results zip file **Download.zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
+1. Finally, we can download the results zip file **Download.zip**. 
+ **Download.zip** option will be available by selecting **Generate zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
+    ![](images/lab5-generate-zip.png " ")
 2. **Download.zip** contains three files:
     - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
     - **explanation\_results\_global.csv**: Global Explainability
     - **explanation\_results\_local.csv**: Local Explainability
 
-    ![](images/lab5-download-zip.png " ")
+
+## Task 10 (Optional): Forecast with Meta Data 
+
+**Creating Forecast for Use case with Primary, Additional and Meta Data**
+
+This examples shows how to use OCI Forecasting Serice for Use case with Primary, Additional and Meta Data.
+
+We will use the data already uploaded in bucket in *Task 4* above
+
+1.  Clicking on the Create Forecast button will take us to Create Forecast Page:
+    ![](images/lab5-create-forecast.png " ")
+
+2.  Create Data Asset:
+    We need to select a Data Asset needed to train a model and forecast. There are two types of Data Assets i.e. Primary and Additional. For each type of Data Asset, Either, we can select a previously existing Data Asset or create a new Data Asset. As we don't have any existing Data Asset, we will click on the Create New Data Asset 
+    ![](images/lab5-data-asset-create-directly.png " ")
+
+    In the Create Data Asset window, we can specify the bucket name of Object storage and select the data file. Next, Click Create Button.
+    ![](images/lab5-task10-create-prima-data.png " ")
+
+    After a few seconds, the data asset will be shown in the data asset main panel
+
+    Similarly, we can create Data Asset for Additional and Meta data
+
+    ![](images/lab5-lab5-task10-create-add-data-asset.png " ")
+   
+    ![](images/lab5-create-meta-data.png " ")
+
+    Now, select the Data Assets created just now, and click Next
+    ![](images/lab5-data-asset-prim-add.png " ")
+    ![](images/lab5-data-meta.png " ")
+
+3.  Configure Schema :
+
+    We need to provide a schema for the primary , additional and meta data in this window. In addition to schema, we also provide Timestamp format, Input data frequency, and Timestamp column
+
+    ![](images/lab5-task10-configure-schema.png " ")
+
+    After filling in the details, click Next
+
+4.  Configure Forecast :
+
+    We need to provide
+    - Forecast name and description
+    - Target Variable which we want to forecast. Eg. Sales for the current dataset
+    - Output Frequency for Forecast
+    - Forecast Horizon
+    - Prediction Interval: Select Prediction Interval from the list. Additionaly, there is an option to select custom prediction intervals by specifying the interval width. Example: If width 60 is specified, result will contain two symmetric lower and upper bounds around the median forecast (50th percentile), i.e. lower at 20 and upper at 80, which will correspond to 60% confidence of actual future value being lying within these bounds
+    - Error Measure: Error metric used to evaluate the performance of the forecasting models.
+    - Select whether data is grouped or ungrouped based on example explained above. Refer to data format requirements above in Task 2 for an example
+    - Select explainability if you want explainabiity
+    - Select algorithm you want to run. Meta Data will be used only by Multivariate algorithms :    PROBRNN,APOLLONET EFE
+
+    ![](images/lab5-task10-configure-forecast.png " ")
+
+
+5.  Review the Configuration for Forecast and click Submit :
+    <!-- ![](images/lab5-review-config.png " ") -->
+     
+    Once submitted, the model training and forecast are started and the status is **Creating**
+
+    <!-- ![](images/lab5-forecast-page.png " ") -->
+
+
+6.  Forecast Results
+    - Forecast Status:
+        After 3-4 minutes the status will change to **Active**. Now, click on the Forecast Link as we can see below
+        <!-- ![](images/lab5-forecast-active-page.png " ") -->
+
+    - Review Forecast Results:
+        
+        Now, let's review the forecast results
+        1. We get general information like OCID (forecast ID), description, and Training Messages etc.
+        2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results by generating the download.zip
+        <!-- ![](images/lab5-forecast-result-page.png " ") -->
+
+7.  Explore the Forecast and Explainability  
+    -  Forecast:
+        The next step is to explore the forecast graph which has forecast and historical data along with prediction intervals
+        - Highlighted box 1 highlights to select series from dropdown list 
+        - Highlighted box 2 highlights the forecast for a particular time step
+        - Highlighted box 3 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
+
+        <!-- ![](images/lab5-forecast-graph-page.png " ") -->
+
+    -  Explainability: 
+
+        The forecast will also give explainability for each of the target time series in the dataset. The explainability report includes both global and local level explanations. Explanations provide insights into the features that are influencing the forecast. Global explanation represents the general model behavior - e.g., which features does the model consider important? A local explanation tells the impact of each feature at a single time step level. The forecast provides local explanations for all the forecasts that it generates. Here we get a global and local explanation for the best model chosen by the forecast, to understand the features that are influencing the forecast
+
+        <!-- ![](images/lab5-explain-forecast-all.png " ") -->
+
+
+        - Global Feature Importance:
+        <!-- ![](images/lab5-global-explain.png " ") -->
+
+        
+        - Local Feature Importance:
+        We can select the time step for which we want to see the local feature importance
+        <!-- ![](images/lab5-local-explain.png " ") -->
+
+8. (Optional): Download the results zip file 
+    - Finally, we can download the results zip file **Download.zip**. 
+    **Download.zip** option will be available by selecting **Generate zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
+        <!-- ![](images/lab5-generate-zip.png " ") -->
+    - **Download.zip** contains three files:
+        - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
+        - **explanation\_results\_global.csv**: Global Explainability
+        - **explanation\_results\_local.csv**: Local Explainability
 
 
 Congratulations on completing this lab! 
