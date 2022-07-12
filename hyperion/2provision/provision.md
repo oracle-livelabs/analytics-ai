@@ -23,7 +23,7 @@ In this lab, you will:
 
 We've written a Terraform stack that is provided freely for your use.
 
-Go to the following URL and download the `oci-hyperion.zip` file from this link [HERE](https://objectstorage.ap-mumbai-1.oraclecloud.com/p/NW_ovSp5VHJh6AJuzfhZ7Twf6nGiDHIII_HkCN4ZXmru0MKDtH-De9IB-h5ABs-Y/n/bm47mpuvclcd/b/HyperionHOL/o/oci-hyperion.zip).
+Go to the following URL and download the `oci-hyperion.zip` file from this link [HERE](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/oci-hyperion.zip).
 
 **Note:** Terraform deployments can also be performed manually through a local computer. If you're curious about how to do this, we encourage reading up on Terraform as a tool; a link to their main page is cited below. In a manual deployment, you would unzip this file, install the Terraform command line tools onto your machine, and then utilize those commands in conjunction with manual editing of the `.tf` files to perform the deployment.
 
