@@ -49,7 +49,7 @@ The first thing we need to do is to open up the requisite ports on the security 
 
 4. Click "Add Ingress Rule". Here, we'll add an ingress rule that allows all connections from all incoming connections. (In a production scenario, we would be more selective about which ports we could enter from and only provision ports for SSH/VNC connections, but to ease the lab's completion, we open all ports here.) In the Source CIDR box, type in the string `0.0.0.0/0`, then click "Add Ingress Rules" to add this ingress rule.
 
-	![The bastion host security list](/images/vmconfig4.png " ")
+	![The bastion host security list](./images/vmconfig4.png " ")
 
 	![Opening all ports, part 1](images/vmconfig5.png " ")
 
