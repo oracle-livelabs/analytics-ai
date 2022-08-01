@@ -490,7 +490,7 @@ We will use the data already uploaded in bucket in *Task 4* above
         Now, let's review the forecast results
         1. We get general information like OCID (forecast ID), description, and Training Messages etc.
         2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results by generating the download.zip
-        <!-- ![](images/lab5-forecast-result-page.png " ") -->
+        ![](images/lab5-task10-forecast-result-page.png " ")
 
 7.  Explore the Forecast and Explainability  
     -  Forecast:
@@ -499,31 +499,19 @@ We will use the data already uploaded in bucket in *Task 4* above
         - Highlighted box 2 highlights the forecast for a particular time step
         - Highlighted box 3 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
 
-        <!-- ![](images/lab5-forecast-graph-page.png " ") -->
+        ![](images/lab5-task10-forecast-graph-page.png " ")
 
-    -  Explainability: 
-
-        The forecast will also give explainability for each of the target time series in the dataset. The explainability report includes both global and local level explanations. Explanations provide insights into the features that are influencing the forecast. Global explanation represents the general model behavior - e.g., which features does the model consider important? A local explanation tells the impact of each feature at a single time step level. The forecast provides local explanations for all the forecasts that it generates. Here we get a global and local explanation for the best model chosen by the forecast, to understand the features that are influencing the forecast
-
-        <!-- ![](images/lab5-explain-forecast-all.png " ") -->
-
-
-        - Global Feature Importance:
-        <!-- ![](images/lab5-global-explain.png " ") -->
+    -  Explainability: Currently, Explainability is not available for ProbRNN, Apollonet and EFE 
 
         
-        - Local Feature Importance:
-        We can select the time step for which we want to see the local feature importance
-        <!-- ![](images/lab5-local-explain.png " ") -->
-
 8. (Optional): Download the results zip file 
     - Finally, we can download the results zip file **Download.zip**. 
     **Download.zip** option will be available by selecting **Generate zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
-        <!-- ![](images/lab5-generate-zip.png " ") -->
+        ![](images/lab5-task10-forecast-download.png " ")
     - **Download.zip** contains three files:
         - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
-        - **explanation\_results\_global.csv**: Global Explainability
-        - **explanation\_results\_local.csv**: Local Explainability
+        - **explanation\_results\_global.csv**: Global Explainability - But will empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
+        - **explanation\_results\_local.csv**: Local Explainability - But will empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
 
 
 Congratulations on completing this lab! 
