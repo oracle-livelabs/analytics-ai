@@ -369,7 +369,7 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
 5.  Review the Configuration for Forecast and click Submit :
     ![](images/lab5-review-config.png " ")
      
-    Once submitted, the model training and forecast are started and the status is **Creating**
+    Once submitted, the model training and forecast is started and the status is **Creating**
 
     ![](images/lab5-forecast-page.png " ")
 
@@ -475,17 +475,15 @@ We will use the data already uploaded in bucket in *Task 4* above
 
 
 5.  Review the Configuration for Forecast and click Submit :
-    <!-- ![](images/lab5-review-config.png " ") -->
+    ![](images/lab5-task10-review-config.png " ")
      
-    Once submitted, the model training and forecast are started and the status is **Creating**
-
-    <!-- ![](images/lab5-forecast-page.png " ") -->
+    Once submitted, the model training and forecast is started and the status is **Creating**
 
 
 6.  Forecast Results
     - Forecast Status:
         After 3-4 minutes the status will change to **Active**. Now, click on the Forecast Link as we can see below
-        <!-- ![](images/lab5-forecast-active-page.png " ") -->
+        ![](images/lab5-task10-forecast-active-page.png " ")
 
     - Review Forecast Results:
         
