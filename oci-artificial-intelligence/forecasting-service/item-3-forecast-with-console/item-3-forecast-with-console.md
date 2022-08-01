@@ -357,6 +357,43 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
     - Forecast Horizon
     - Prediction Interval: Select Prediction Interval from the list. Additionaly, there is an option to select custom prediction intervals by specifying the interval width. Example: If width 60 is specified, result will contain two symmetric lower and upper bounds around the median forecast (50th percentile), i.e. lower at 20 and upper at 80, which will correspond to 60% confidence of actual future value being lying within these bounds
     - Error Measure: Error metric used to evaluate the performance of the forecasting models.
+      Best Practises for Error Metric selection:
+        - When your data has multiple series with different units of measurement or scale (for e.g., one series has data in tens, another series has data in thousands), try to use percentage dependent metrics. Use scale dependent metrics only if all the series have the same scale.
+        - Choose the metric based on your business objective. For example, you may want to penalize under-forecasting more than over-forecasting or vice versa or even weigh them equally. 
+        -  MAPE can be an appropriate choice, when you want to weigh both under-forecasting and over-forecasting equally.
+        - SMAPE can be more suitable, if under-forecasting needs to be penalized.
+        - The error metric should be in line with what the model is predicting. For example, the forecasts are closer to mean if RMSE or MSE is chosen as error measure, and closer to median when MAE is chosen.
+        - Sometime it is better to use many Error metrics and take an average or a weighted average to satisfy the need of a better understandable error technique. This also improves the model selection procedure. This technique has proven better than the simple method.
+        
+        - SCALE DEPENDENT MEASURES: These measures are dependent of scale hence can be used to evaluate the model only over series which are similar scale
+            -   MSE: 
+                It is known as Mean Square Error. 
+            Here e(t) is the difference between actual and predicted outcome.
+                It can be taken as an estimate for variance of model.
+                Pay attention to the scale of different series while using this metric.
+                It is very sensitive to outliers, therefore we remove the outliers while preprocessing the data in our forecasting service.
+            -  RMSE: 
+                It is known as Root mean square Error.
+                It is on the same scale at the data due to presence of the square root.
+                It is an estimate of standard deviation of model.
+                It is very sensitive to outliers, therefore we remove the outliers while preprocessing the data in our forecasting service.
+            -  MAE:
+                It is known as Mean Absolute Error.It is sensitive to intermittency. 
+        
+        - PERCENTAGE DEPENDANT MEASURES: These measures are independent of scale hence can be used to evaluate the model over various series without worrying about their scales.
+
+            -  MAE:
+                It is known as Mean Absolute Percentage Error.
+                Data with seasonality may also cause issue in MAPE.
+                The error is not symmetric that is interchanging y(t) with y^(t) changes the error. 
+                It is sensitive to both outliers and intermittency. 
+            -  SMAPE: 
+                It is known as Symmetric Mean Absolute Percentage Error.
+                It solves the symmetricity problem of MAPE. 
+                Notice that it penalizes underestimation more than over estimation.
+                It is sensitive to intermittency.
+
+
     - Select whether data is grouped or ungrouped based on example explained above. Refer to data format requirements above in Task 2 for an example
     - Select explainability if you want explainabiity
     - Select algorithm you want to run. For this eg: We have selected *SMA, DMA, DES, PROPHET*
