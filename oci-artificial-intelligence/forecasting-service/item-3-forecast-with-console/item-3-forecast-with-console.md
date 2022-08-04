@@ -17,7 +17,7 @@ In this section, we will learn how to create the forecast project, upload data i
 
 ### Prerequisites
 - A free tier or paid tenancy account in OCI
-- Tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: ![Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " ")
+- Tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: [Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " ")
 - Tenancy must be subscribed to US West (Phoenix)
 - Completed ***Introduction and Getting Started*** sections
 
