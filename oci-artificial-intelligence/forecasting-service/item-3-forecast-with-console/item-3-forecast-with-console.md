@@ -17,11 +17,12 @@ In this section, we will learn how to create the forecast project, upload data i
 
 ### Prerequisites
 - A free tier or paid tenancy account in OCI
-- Tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: [Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " ")
+- If user is using their own tenancy then tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: [Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " "). 
+- However, if user is using <b>LiveLabs Sandbox</b>, then user doesn't need to request for whitelisting and can skip <b>Task-1</b> as well.
 - Tenancy must be subscribed to US West (Phoenix)
 - Completed ***Introduction and Getting Started*** sections
 
-## Task 1: Set up pre-requisites for console
+## Task 1: Set up pre-requisites for console (Need only if user is using their own tenancy)
 
 1. If the user tenancy is not subscribed to US West (Phoenix) then we should look for the tenancy region drop-down for US West (Phoenix) and select it as shown below:
         ![](images/lab5-subscribe-us-west-phnx.png " ")
@@ -563,4 +564,4 @@ Please feel free to contact us if any additional questions.
     * Anku Pandey, Data Scientist - Oracle AI Services
     * Sirisha Chodisetty, Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha, Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, May 2022
+    * Last Updated By/Date: Ravijeet Kumar, July 2022
