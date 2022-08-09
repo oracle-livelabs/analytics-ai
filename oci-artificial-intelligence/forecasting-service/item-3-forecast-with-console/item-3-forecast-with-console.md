@@ -17,8 +17,8 @@ In this section, we will learn how to create the forecast project, upload data i
 
 ### Prerequisites
 - A free tier or paid tenancy account in OCI
-- If user is using their own tenancy then tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: [Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " "). 
-- However, if user is using <b>LiveLabs Sandbox</b>, then user doesn't need to request for whitelisting and can skip <b>Task-1</b> as well.
+- If user is using <b>LiveLabs Sandbox  button </b>, then skip <b>Task-1</b> and proceed directly from <b>Task-2</b>(Understand Data Requirements)
+- However, if user is using their own tenancy then tenancy must be whitelisted to use OCI Forecasting Service. Whitelisting request for your tenancy can be done by providing your details here: [Oracle Beta Programs](https://pdpm.oracle.com/pls/apex/f?p=108:501:108121904414715::::P501_SELF_NOMINATION:Self-Nomination " "). 
 - Tenancy must be subscribed to US West (Phoenix)
 - Completed ***Introduction and Getting Started*** sections
 
@@ -539,7 +539,8 @@ We will use the data already uploaded in bucket in *Task 4* above
 
         ![](images/lab5-task10-forecast-graph-page.png " ")
 
-    -  Explainability: Currently, Explainability is not available for ProbRNN, Apollonet and EFE 
+    -  Explainability (WIP): Explainability for ProbRNN, Apollonet and EFE would be available soon.
+
 
         
 8. (Optional): Download the results zip file 
@@ -548,8 +549,8 @@ We will use the data already uploaded in bucket in *Task 4* above
         ![](images/lab5-task10-forecast-download.png " ")
     - **Download.zip** contains three files:
         - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
-        - **explanation\_results\_global.csv**: Global Explainability - But will empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
-        - **explanation\_results\_local.csv**: Local Explainability - But will empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
+        - **explanation\_results\_global.csv**: Global Explainability - But will be empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
+        - **explanation\_results\_local.csv**: Local Explainability - But will be empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
 
 
 Congratulations on completing this lab! 
