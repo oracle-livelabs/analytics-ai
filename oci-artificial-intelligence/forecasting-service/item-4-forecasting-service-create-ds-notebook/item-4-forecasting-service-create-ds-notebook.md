@@ -423,7 +423,7 @@ In this task, we will learn how to use create and get forecast APIs.
     "projectId": project_id,
     "forecastCreationDetails": {
         "forecastHorizon": forecast_horizon,
-        "confidenceInterval": "CI_5_95",
+        "confidenceInterval": "90",
         "errorMeasure": "RMSE",
         "forecastTechnique": "ROCV",
         "forecastFrequency": forecast_frequency,
