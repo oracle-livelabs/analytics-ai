@@ -1,0 +1,47 @@
+{
+    "workshoptitle": "Real-time fan sentiment analysis during an Oracle Red Bull Race",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../1-introduction/introduction.md"
+        },
+        {
+            "title": "Login to Oracle Cloud",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Create a Twitter developer account",
+            "description": "",
+            "filename": "../../2-create-a-twitter-developer-account/create-a-twitter-developer-account.md"
+        },
+        {
+            "title": "Create an OCI Compute Instance and establish a connection",
+            "description": "",
+            "filename": "../../3-create-a-compute-instance-and-connect/create-a-compute-instance-and-connect.md"
+        },
+        {
+            "title": "Configure the Compute Instance",
+            "filename": "../../4-configure-the-compute-instance/configure-the-compute-instance.md"
+        },
+        {
+            "title": "Setup OCI API authentication",
+            "filename": "../../5-setup-oci-api-authentication/setup-oci-api-authentication.md"
+        },
+        {
+            "title": "Deploy the demo code to the Compute Instance",
+            "filename": "../../6-deploy-the-demo-code-to-the-ci/deploy-the-demo-code-to-the-ci.md"
+        },
+        {
+            "title": "Start your engines",
+            "filename": "../../7-start-your-engines/start-your-engines.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
