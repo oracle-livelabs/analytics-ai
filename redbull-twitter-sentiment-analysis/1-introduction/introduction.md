@@ -12,7 +12,8 @@ In this workshop, you will learn how to:
 
 * Login to Oracle Cloud.
 * Create a Twitter developer account.
-* Create and configure a Compute Instance.
+* Create and connect to an OCI Compute Instance.
+* Configure the Compute Instance.
 * Setup OCI API authentication.
 * Deploy the demo code to the Compute Instance.
 * Observe real-time results.
@@ -20,9 +21,12 @@ In this workshop, you will learn how to:
 ### Prerequisites
 
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful.
-* Basic familiarity with Linux command is recommended but not required.
+* Basic familiarity with Linux commands and using a shell/terminal is recommended but not required.
 * Basic familiarity with networking concepts is recommended but not required.
 * Understanding code (TypeScript or similar) is helpful.
 
+You may now **proceed to the next lab**.
+
 ## **Acknowledgements**
+
 * **Author** - Yanir Shahak - Senior Principal Software Engineer, Health & AI

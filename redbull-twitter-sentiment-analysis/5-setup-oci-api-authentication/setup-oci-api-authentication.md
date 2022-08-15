@@ -33,7 +33,7 @@ We will use your specific user in this demo for simplicity. In a production envi
     ![Click Download Private Key button](images/click-download-private-key.png "Click Download Private Key button")
 
     The key file should automatically download and saved (typically) to your `Download` folder. This file, along with some additional information will be used to authenticate the API calls.  
-    Keeping this file in the same folder where we keep the SSH connection key (downloaded in a [previous lab](?lab=create-a-compute-instance-and-connect#Task1:CreateanOCIComputeInstance)) will simplify our next steps.
+    Keeping this file in the same folder where we keep the SSH connection key (downloaded in a [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task1:CreateanOCIComputeInstance)) will simplify our next steps.
 
 6. After the file has successfully download, click the `Add` button at the bottom of the dialog.
 
@@ -54,22 +54,25 @@ You should see a new entry in the `API Keys` list which represents the newly cre
 
 To use our API key, we first need to copy it to our Compute Instance.  
 We will use the SCP (Secure Copy) command to copy the file. This command is very similar to the SSH command and uses the same key we used to connect to the Compute Instance.
-Please note: In this lab we are using the file name `08-01-21-03.pem` to refer to the `API Key` file. Your file name will be different and you will have to replace the file name place holder in the commands with the proper file name.
 
-1. This task requires a new terminal window. Please keep the existing terminal window active and start a new terminal window as discussed in a [previous lab](?lab=create-a-compute-instance-and-connect#Task2:ConnecttotheComputeInstanceusingSSH).
+> **Note:** In this lab we are using the file name `08-01-21-03.pem` to refer to the `API Key` file. Your file name will be different and you will have to replace the file name place holder in the commands with the proper file name.
+
+1. This task requires a new terminal window. Please keep the existing terminal window active and start a new terminal window as discussed in a [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
 2. Use the `cd` command to switch to the folder where the downloaded `API Key` was saved (`Downloads` in our example).
 
-    ![Change directory to Downloads](images/cd-downloads.png "Change directory to Downloads")
+![Change directory to Downloads](images/cd-downloads.png "Change directory to Downloads")
 
 3. Use the following `scp` command to copy the `API Key` file from your computer to the Compute Instance over the network:
 
-    * On a `Mac` computer, use the following command:
+    > **Note:** You will have to replace [key file name], [api key file name] and [compute instance IP] with the actual file names and Compute Instance IP):
+
+* On a `Mac` computer, use the following command:
 
     ```bash
     Downloads % <copy>scp -i ./[key file name].key ./[api key file name].pem opc@[compute instance IP]:~/.oci</copy>
     ```
 
-    * On a `Windows` computer, use the following command:
+* On a `Windows` computer, use the following command:
 
     ```bash
     C:\Users\username\Downloads><copy>scp -i ./[key file name].key ./[api key file name].pem opc@[compute instance IP]:~/.oci</copy>
@@ -95,13 +98,15 @@ In the connected terminal window, execute the following command:
     ```
 
     At this point we will need the text we copied in the [previous task](#Task1:CreateanAPIkey). Please copy this text and paste it directly into the terminal window (On `Mac` use `Command + V`. On `Windows` use `Ctrl+V`).  
-    Most of the information we need already exists in the text we copied from the OCI console. The only value we need to update is the `key_file`. Remove all of the placeholder text (`<path to your private keyfile> #TODO`) and replace it with the full path of `API Key` file as espablished in the previos step (`/.oci/[key file name].pem`).  
+    Most of the information we need already exists in the text we copied from the OCI console. The only value we need to update is the `key_file`. Remove all of the placeholder text (`<path to your private keyfile> #TODO`) and replace it with the full path of `API Key` file as espablished in the previos step (`~/.oci/[key file name].pem`).  
     The final result should look similar to this:
 
     ![Final config file](images/final-config-file.png "Final config file")
 
-    When done, press `Ctrl+X`, type `Y` as a response to the question `Save modified buffer?` and press `Enter`.  
+    When done, press `Ctrl+X`, type `y` as a response to the question `Save modified buffer?` and press `Enter`.  
     The configuration file will be saved and ready to use.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

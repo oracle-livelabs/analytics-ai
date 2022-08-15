@@ -7,7 +7,7 @@ In just a few steps we will be able to see the flow of tweets analyzed by the Or
 
 ### Objectives
 
-* Start the Senti-Meter consumer and processor.
+* Start the Senti-Meter `consumer` and `processor`.
 * Launch the Senti-Meter client.
 * Start the Vision AI image demo.
 * Launch the Vision AI image demo client.
@@ -16,8 +16,8 @@ In just a few steps we will be able to see the flow of tweets analyzed by the Or
 
 The Senti-Meter demo has three main components:
 
-1. The tweets `consumer` TypeScript/NodeJS program is designed to connect to the Twitter Filtered Stream API and receive the tweets specified by the filter in `.env`. Each tweet received is then saved in a text file on the Compute Instance's local disk in preparation for processing
-2. The tweets `processor` TypeScript/NodeJS program waits for tweet files to be created by the `consumer`, reads them from disk in batches of up to 100 files and sends them to the Oracle Language AI service to for sentiment analysis. In parallel, this program listens for incoming connections from clients. Each connected client will receive the results of the sentiment analysis as a stream of text messages.
+1. The tweets `consumer` TypeScript/NodeJS program is designed to connect to the Twitter Filtered Stream API and retrieve the tweets specified by the filter in `.env`. Each tweet received is then temporarily saved in a text file on the Compute Instance's local disk in preparation for processing
+2. The tweets `processor` TypeScript/NodeJS program waits for tweet files to be created by the `consumer`, reads them from disk in batches of up to 100 files and sends them to the Oracle Language AI service for sentiment analysis. In parallel, this program listens for incoming connections from clients. Each connected client will receive the results of the sentiment analysis as a stream of text messages. After a tweet files is processed, the `processor` deletes it from disk.
 3. The Senti-Meter `client` is an HTML/JavaScript client application designed to connect to the `processor` over the network, pull results of analyzed tweets and visualize them using a speedometer-like presentation.
 
 In this task we will launch each of these components.
@@ -33,7 +33,7 @@ In this task we will launch each of these components.
 
     ![npm run consumer result](images/npm-run-consumer-result.png "npm run consumer result")
 
-    The first command starts the `consumer`. The second command reads the output made by the `consumer` process. The output is made to a file called `consumer`. This command will continue reading this output until stopped by using `Ctrl+C`. After you have observed that several `Queued tweets #...` messages are shown, you can exit the command with `Ctrl+C`.  
+    The first command starts the `consumer`. The second command reads the output made by the `consumer` process. The output is written to a file called `consumer`. This command will continue reading this output until stopped by using `Ctrl+C`. After you have observed the `Retrieving tweets...` message, you can exit the command using `Ctrl+C`.  
 
     If you see a different output or error messages, please review the `Bearer Token` configuration steps [here](?lab=deploy-the-demo-code-to-the-ci#Task3:Configurethesourcecode).
 
@@ -48,9 +48,9 @@ In this task we will launch each of these components.
 
     ![npm run processor result](images/npm-run-processor-result.png "npm run processor result")
 
-    The first command starts the `processor`. The second command reads the output made by the `processor` process. The output is made to a file called `processor`. This command will continue reading the output made by the `processor` until stopped by using `Ctrl+C`. After you have observed following message: `The WebSocket server is listening on 0.0.0.0:9000` you can exit the command with `Ctrl+C`.
+    The first command starts the `processor`. The second command reads the output made by the `processor` process. The output is written to a file called `processor`. This command will continue reading the output made by the `processor` until stopped by using `Ctrl+C`. After you have observed following message: `The WebSocket server is listening on 0.0.0.0:9000` you can exit the command with `Ctrl+C`.
 
-3. (OPTIONAL) After you are done running the demo, you can use the following commands to stop the `consumer` or `processor` processes (if you intend to run the demo at the moment, please skip this section):
+3. (OPTIONAL) After you are done running the demo, you can use the following commands to stop the `consumer` and/or `processor` processes (if you intend to run the demo at the moment, please skip this section):
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>npm run stop-processor</copy>
@@ -59,7 +59,7 @@ In this task we will launch each of these components.
 
 ## Task 2: Launch the Senti-Meter client
 
-The client used to visualize the analysis results is an HTML file which can be opened on your browser to view the output from the `processor`. In this section we will extract the client file from the source code zip file (downloaded in a [previous lab](?lab=deploy-the-demo-code-to-the-ci#Task1:DownloadandcopythesourcecodetotheComputeInstance)), update the Compute Instance's IP address and launch the demo.
+The client used to visualize the analysis results is an HTML file which can be opened on your browser to view the output from the `processor`. In this section we will extract the client file from the source code zip file (downloaded in a [previous lab](?lab=deploy-the-demo-code-to-the-ci#Task1:DownloadandcopythesourcecodetotheComputeInstance)), update the Compute Instance's IP address and, launch the demo.
 
 1. Locate the previously downloaded `senti-meter-demo.zip` file (usually will be found in the `Downloads` folder).
 
@@ -69,7 +69,7 @@ The client used to visualize the analysis results is an HTML file which can be o
 2. The extraction process has created a folder called `senti-meter-demo`. In order to find the file we need to update, navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`):
 
     ```text
-    senti-meter-demo/src/senti-meter-demo/client/scripts
+    Downloads/senti-meter-demo/src/senti-meter-demo/client/scripts
     ```
 
 3. Using your favorite text file editor, open the file named: `senti-meter-client.js`, locate the string `localhost` within the file and replace it with the Compute Instance IP. Here are before and after screenshots of how this should look like:
@@ -78,7 +78,7 @@ The client used to visualize the analysis results is an HTML file which can be o
     ![Edit senti-meter-client.js before](images/edit-senti-meter-client-js-before.png "Edit senti-meter-client.js before")
     ![Edit senti-meter-client.js after](images/edit-senti-meter-client-js-after.png "Edit senti-meter-client.js after")
 
-    Please make sure that the single quotes remain at the beginning and end of the IP address without any spaces additional spacing. When done, save the file and exit the editor.
+    Please make sure that the single quotes remain at the beginning and end of the IP address without any additional spacing. When done, save the file and exit the editor.
 
 4. Before we load the client into the browser, we need to let the browser know we are aware that the TLS certificate used in the connection to our Compute Instance is a self-signed one (this was covered in a [previous lab](?lab=deploy-the-demo-code-to-the-ci#Task4:CreateaselfsignedTLScertificate)).  
 To do this, start your favorite browser and navigate to: `https://[Compute Instanec IP]:9000`. As an example, the address should look similar to this: `https://192.168.0.74:9000`.  
@@ -89,7 +89,7 @@ Depending on your browser, you should see a message similar to this:
     Despite the alarming message, it is expected in our case as we are using a self-signed TLS certificate.  
     In order to get passed this error, we need to let the browser know that we are aware of the risks. The solution is different for each browser:
 
-    * On `Chromium` based browsers (such as `Chrome` or `Edge`): Click the `Advanced` button. If see a link similar to `Continue to 192.168.0.74 (unsafe)` at the bottom of the page, click this link. If you do not see such a link, while the error message is being displayed, type: `thisisunsafe` (the words `this is unsafe` with no space between them).
+    * On `Chromium` based browsers (such as `Chrome` or `Edge`): Click the `Advanced` button. If see a link similar to `Continue to 192.168.0.74 (unsafe)` at the bottom of the page, click this link. If you do not see such a link, while the error message is being displayed, click anywhere on the screen (not on any of the buttons) to set focus to the page and type: `thisisunsafe` (the words `this is unsafe` with no space between them).
     * On `FireFox`: Click the `Advanced...` button and then the `Accept the Risk and Continue` button.
     * On `Safari`: Click the `Show Details` button and then the `visit this website` link and finally, click the `Visit Website` button in the confirmation dialog.
 
@@ -99,10 +99,10 @@ Depending on your browser, you should see a message similar to this:
 In order to load the client file, navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`)
 
     ```text
-    senti-meter-demo/src/senti-meter-demo/client/
+    Downloads/senti-meter-demo/src/senti-meter-demo/client/
     ```
 
-    The `senti-meter-client.html` file resides in this folder. Double click this file to open it in the default browser. Alternatively, you could launch your favorite browser, use the `File > Open` option, navigate to `senti-meter-demo/src/senti-meter-demo/client/` and select `senti-meter-client.html`.
+    The `senti-meter-client.html` file resides in this folder. Double click this file to open it in the default browser. Alternatively, you could launch your favorite browser, use the `File > Open` option, navigate to `Downloads/senti-meter-demo/src/senti-meter-demo/client/` and select `senti-meter-client.html`.
 
     Once the file is loaded, press `F12` to reveal the `Developer-Tools` pane.  
     If everything was configured successfully, you should see the message `Connected...` in the `Developer-Tools` `Console` tab like so:
@@ -113,7 +113,7 @@ In order to load the client file, navigate to the following folder (using `Finde
     If the stream of values is too slow, please consider using a different filter value by changing the current filter in the `.env` file on the Compute Instance. Consider replacing `@redbullracing` with `cats` for example. If you make a change to the filter, please don't forget to execute the filter update command: `npm run setup`. These concepts are covered in a [previous lab](?lab=deploy-the-demo-code-to-the-ci#Task3:Configurethesourcecode).
 
     If the `Console` shows error messages that indicate the client cannot connect, please review the steps for starting the `consumer` and `processor` in a [previous task](#Task1:StarttheSentiMeterconsumerandprocessor) as well as the steps for accepting the self-signed certificate earlier in this section.  
-    If the console shows errors regarding loading specific files, please try opening these files in the browser on different tabs.  
+    If the console shows errors regarding loading specific files, please try opening these files (using File > Open) in the browser on different tabs.  On Mac those files might be `Downloads/senti-meter-demo/src/scripts/client/web-socket-client.js` and `Downloads/senti-meter-demo/src/images/logo.png`.
     After each completed trouble shooting step, please refresh the browser page to see the results.
 
 ## Task 3: Start the Vision AI image demo
@@ -123,7 +123,7 @@ This demo extracts images from tweets, analyses them using the Vision AI service
 The components of the two demos are similar as both of them contain the `consumer`, `processor` and `client` components.
 Here are the steps to run the Vision AI demo:
 
-1. Since the demos use the same resource on the Compute Instance, they cannot be run in parallel.
+1. Since the demos use the same resources on the Compute Instance, they cannot be run in parallel.
 Use the following commands to stop the running Language demo using your connected terminal:
 
     ```bash
@@ -138,14 +138,15 @@ Use the following commands to stop the running Language demo using your connecte
     ```
 
     This process performs a query on past tweets using the filter defined in `.env` for the `IMAGE_QUERY` parameter. The default value queries for tweets which mention `@redbullracing`, contain images, and are not a retweet.  
-    Each image extracted is saved in the `~/senti-meter-demo/images` folder.  A maximum of 300 images will be downloaded before the process exists. Please note: we do not control the type of images being posted to Twitter. Some of the content might be unsavory.
-    You can exist the `image-consumer` process using `Ctrl+C` when you feel like you have enough image for the demo.  
+    Each image extracted is saved in the `~/senti-meter-demo/images` folder.  A maximum of 300 images will be downloaded before the process exists. You can exist the `image-consumer` process using `Ctrl+C` when you feel like you have enough image for the demo.
+
+    > **Note:** We do not control the type of images being posted to Twitter. Some of the content might be unsavory.
 
 2. Use the following command to start the `image-processor`:
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>npm run image-processor</copy>
-    [opc@senti-meter-server ~]$ <copy>tail -f consumer</copy>
+    [opc@senti-meter-server ~]$ <copy>tail -f image-processor</copy>
     ```
 
     The output from these two commands should look similar to this:
@@ -168,10 +169,20 @@ Please make sure you have completed the steps to approve the self-signed certifi
 1. In order to load the client file, navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`)
 
     ```text
-    senti-meter-demo/src/image-analysis-demo/client/
+    Downloads/senti-meter-demo/src/image-analysis-demo/client/scripts
     ```
 
-    The `image-analysis-demo.html` file resides in this folder. Double click this file to open it in the default browser. Alternatively, you could launch your favorite browser, use the `File > Open` option, navigate to `senti-meter-demo/src/image-analysis-demo/client/` and select `image-analysis-demo.html`.
+    Similar to the steps we've taken for the tweets client, we will need to update the Compute Instance IP for the Vision demo as well.
+    Using your favorite text file editor, open the file named: `image-analysis-demo.js`, locate the string `localhost` within the file and replace it with the Compute Instance IP.
+    Please make sure that the single quotes remain at the beginning and end of the IP address without any additional spacing. When done, save the file and exit the editor.
+
+2. Navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`):
+
+    ```text
+    Downloads/senti-meter-demo/src/image-analysis-demo/client
+    ```
+
+    The `image-analysis-demo.html` file resides in this folder. Double click this file to open it in the default browser. Alternatively, you could launch your favorite browser, use the `File > Open` option, navigate to `Downloads/senti-meter-demo/src/image-analysis-demo/client/` and select `image-analysis-demo.html`.
 
     Once the file is loaded, press `F12` to reveal the `Developer-Tools` pane.  
     If everything was configured successfully, you should see the message `Connected...` in the `Developer-Tools` `Console` tab like so:
@@ -184,7 +195,7 @@ Please make sure you have completed the steps to approve the self-signed certifi
     ![Large image details](images/large-image-details.png "Large image details")
 
     If the `Console` shows error messages that indicate the client cannot connect, please review the steps for starting the `image-consumer` and `image-processor` in a [previous task](#Task3:StarttheVisionAIimagedemo) as well as the steps for accepting the self-signed certificate in a [previous task](#Task2:LaunchtheSentiMeterclient).  
-    If the console shows errors regarding loading specific files, please try opening these files in the browser on different tabs.  
+    If the console shows errors regarding loading specific files, please try opening these files (using File > Open) in the browser on different tabs.  On Mac those files might be `Downloads/senti-meter-demo/src/scripts/client/lang.js` and `Downloads/senti-meter-demo/src/scripts/client/html.js`.
     After each completed trouble shooting step, please refresh the browser page to see the results.
 
 ## Acknowledgements

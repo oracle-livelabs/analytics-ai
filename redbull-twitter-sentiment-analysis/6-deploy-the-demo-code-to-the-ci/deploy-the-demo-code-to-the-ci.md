@@ -19,7 +19,7 @@ In the following steps, we will copy and configure the demo code on the Compute 
 
 2. As we did with the `API Key` file, we are going to copy the source code zip file to the Compute Instance.
 If you will have the two terminal windows active, please switch to terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files up until now).
-If you need to start a new terminal window, please refer to the [previous lab](?lab=create-a-compute-instance-and-connect#Task2:ConnecttotheComputeInstanceusingSSH).
+If you need to start a new terminal window, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
 
 3. If you have started a new terminal window,  use the `cd` command to switch to the folder where the downloaded source code zip file was saved (`Downloads` in our example).
 
@@ -49,13 +49,13 @@ If you need to start a new terminal window, please refer to the [previous lab](?
 
     ![SCP source to Compute Instance](images/scp-source-to-compute-instance.png "SCP source to Compute Instance")
 
-    At this point, the `API Key` file resides on the Compute Instance under the `~/.oci` folder (`~` means the home folder for the current user (`opc`) which in our case means `/home/opc`, therefore, the full path of the `API Key` file on the Compute Instance will be: `/home/opc/.oci/[key file name].pem`). We will use this information in the following step.
+    At this point, the source code zip file resides on the Compute Instance under the `~` folder (`~` means the home folder for the current user (`opc`) which in our case means `/home/opc`, therefore, the full path of the source code zip file on the Compute Instance will be: `/home/opc/senti-meter-demo.zip`). We will use this information in the following step.
 
 ## Task 2: Extract the source code
 
 As the source code was copied in a compressed zip file, we will now extract the contents of this file into the code's final form.
 
-1. Using the connected terminal (if you closed the connected terminal, please refer to the [previous lab](?lab=create-a-compute-instance-and-connect#Task2:ConnecttotheComputeInstanceusingSSH).), move to the home folder and list it's content using the following two commands:
+1. Using the connected terminal (if you closed the connected terminal, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).), move to the home folder and list it's content using the following two commands:
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>cd ~</copy>
@@ -81,7 +81,7 @@ As the source code was copied in a compressed zip file, we will now extract the 
 
 In just a few steps our demo is going to be ready to run. In this step we will install the software packages used by the demo code as well as perform some configuration in preparation for the demo execution.
 
-1. Using the connected terminal, move to the senti-meter-demo:
+1. Using the connected terminal, move to the `senti-meter-demo` folder:
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>cd ~/senti-meter-demo</copy>
@@ -97,8 +97,8 @@ In just a few steps our demo is going to be ready to run. In this step we will i
 
     ![NPM install result](images/npm-install-result.png "NPM install results")
 
-3. The demo uses a file called `.env` stored at the room of the source code to keep important parameters which control the demo's behavior.  
-   The source code includes a file called `.env.example` which contains defaults to many of those parameters but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly.  
+3. The demo uses a file called `.env` stored at the root of the source code to keep important parameters which control the demo's behavior.  
+   The source code includes a file called `.env.example` which contains defaults to many of those parameters but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly (covered in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)).  
    After updating `.env.example` we will rename it to `.env` for it to be picked up by the demo.  
    As we've done before with the authentication configuration file, we are going to use the `nano` text editor to edit this file:
 
@@ -114,9 +114,9 @@ In just a few steps our demo is going to be ready to run. In this step we will i
 
     |Parameter Name|Used For|
     |--------------|--------|
-    |`TWITTER_BEARER_TOKEN`|Authenticating with the Twitter API. This value was generated when we created our Twitter application [here](?lab=create-a-twitter-developer-account#Task3:Createyourfirstapp)|
+    |`TWITTER_BEARER_TOKEN`|Authenticating with the Twitter API. This value was generated when we created our Twitter application [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)|
     |`FILTERED_STREAM_FILTER_TAG`|Naming the filter rule by which we will filter the stream of tweets flowing from Twitter|
-    |`FILTERED_STREAM_FILTER_VALUE`|The filter expression by which we will tell the Twitter API which tweets we care about. The default value asks for tweets mentioning `@redbullracing` and written in English|
+    |`FILTERED_STREAM_FILTER_VALUE`|The filter expression used to tell the Twitter API which tweets we care about. The default value asks for tweets mentioning `@redbullracing` and written in English|
     |`TWEET_GENERATION_TYPE`|Controlling the sentiment of tweets generated by the tweet generator. 0 = Negative, 1 = Trending Negative, 2 = Balanced, 3 = Trending Positive, 4 = Positive|
     |`TWEETS_PER_SECOND`|Controlling the pace of tweets generated by the tweets generator|
     |`IMAGE_QUERY`|Controlling the query filter used in the Vision AI demo to download images attached to tweets|
@@ -126,13 +126,13 @@ In just a few steps our demo is going to be ready to run. In this step we will i
     |`CERT_FILE`|Naming the TLS certificate file used to secure the connection to the server|
     |`KEY_FILE`|Naming the TLS key file used to secure the connection to the server|
 
-    On the first line of the file, in the value for `TWITTER_BEARER_TOKEN`, please replace `[BEARER TOKEN VALUE]` with the `Bearer Token` value (keeping the double quotes) we've saved when we created the Twitter App [here](?lab=create-a-twitter-developer-account#Task3:Createyourfirstapp)
+    On the first line of the file, replace `[BEARER TOKEN VALUE]` (keeping the double quotes) with the `Bearer Token` value  we've saved when we created the Twitter App [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp).
 
     The end result should look similar to this:
 
     ![Edited .env.example file](images/edited-env-example-file.png "Edited .env.example file")
 
-    When done, press `Ctrl+X`, type `Y` as a response to the question `Save modified buffer?` and press `Enter`.  
+    When done, press `Ctrl+X`, type `y` as a response to the question `Save modified buffer?` and press `Enter`.  
     The parameters file will be saved and ready to use.
 
 4. Rename the `.env.example` file to `.env` as this is the file name expected by the demo:
@@ -145,7 +145,7 @@ In just a few steps our demo is going to be ready to run. In this step we will i
 
 In this step we will create the TLS certificate and key files required to establish a "secure connection". These files are similar to the ones used by production website to verify the authenticity of the website. Any website accessed using `https://` at the start of it's URL should have a valid TLS certificate. In our case, we will be generating a `self-signed` certificate which means we will be able to use it for the purposes of this demo but it will not be recognized by the browser as a valid certificate (more on that later).
 
-1. In you connected terminal, execute the following commands:
+1. In your connected terminal, execute the following commands:
 
     ```bash
     [opc@senti-meter-server senti-meter-demo]$ <copy>openssl genrsa -out key.pem</copy>
@@ -164,7 +164,7 @@ In this step we will create the TLS certificate and key files required to establ
 
     ```bash
     [opc@senti-meter-server senti-meter-demo]$ <copy>openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem</copy>
-    [opc@senti-meter-server senti-meter-demo]$ <copy>rm csr.pem/copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>rm csr.pem</copy>
     ```
 
     The at the end of the process, your terminal should look similar to this:
@@ -203,8 +203,8 @@ In the connected terminal, execute the following command:
     ![npm run setup unauthorized error](images/npm-run-setup-unauthorized-error.png "npm run setup unauthorized error")
 
     Please verify the following:
-    * `.env` file exists in `~/sentiment-demo/`
-    * `.env` contains a valid value for `TWITTER_BEARER_TOKEN` as copied from the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) in a [previous lab](?lab=create-a-twitter-developer-account#Task3:Createyourfirstapp). The value must be comprised from upper-case and lower-case letter only (no spaces or other special characters) and surrounded by double quotes like so: `TWITTER_BEARER_TOKEN="AAAAABfshjeBEGHGHSHFHdfhfehgf"`
+    * `.env` file exists in `~/senti-meter-demo/`
+    * `.env` contains a valid value for `TWITTER_BEARER_TOKEN` as copied from the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp). The value must be comprised from upper-case and lower-case letters as well as some special characters (but no spaces) and surrounded by double quotes like so: `TWITTER_BEARER_TOKEN="AAAAABfshjeBEGHGHSHFHdfhfehgf"`
     * If after validating the above steps the command still fails to execute, please re-generate the `Bearer Token` for your Twitter Application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and repeat the steps to update the new `Bearer Token` in `.env`.
 
 2. As our second validation step, we will test the OCI API authentication configuration.  
@@ -219,10 +219,12 @@ In the connected terminal, execute the following command:
     ![npm run test-oci result](images/npm-run-test-oci-result.png "npm run test-oci result")
 
     If the output in your terminal is different or you are seeing any error messages, please verify the following:
-    * `~/.oci/config` exists and contains all of the required information.
+    * Verify that `~/.oci/config` exists and contains all of the required information.
     * In `~/.oci/config`, the value for `key_file` looks similar to: `~/.oci/08-01-21-03.pem` (but ends with your `API Key` file name).
     * The file specified in the value to `key_file` exists.
     * If all else fails, please repeat the steps in the [previous lab](?lab=setup-oci-api-authentication) where we have configured the OCI API authentication.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

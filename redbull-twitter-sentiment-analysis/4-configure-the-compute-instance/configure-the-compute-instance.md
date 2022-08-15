@@ -52,7 +52,7 @@ In order to execute the demo code, we need to install Node.JS version 16 or abov
 
 ## Task 3: Create a folder to hold the OCI authentication information
 
-The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweets. To make those API calls, authentication information must also be sent. In a following lab we will configure the authentication, but for now, we will create a folder which will serve sa a placeholder for the authentication information.
+The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweets. To make those API calls, authentication information must be sent with the calls. In a following lab we will configure the authentication, but for now, we will create a folder which will serve sa a placeholder for the authentication information.
 
 1. We will use the `mkdir` command in the connected terminal to create the folder:
 
@@ -61,6 +61,10 @@ The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweet
     ```
 
     This command doesn't output anything in response when successful.
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
 
 * **Authors:**
 	* Yanir Shahak - Senior Principal Software Engineer, Health & AI

@@ -1,8 +1,8 @@
-# Create and an OCI Compute Instance and establish a connection
+# Create and connect to an OCI Compute Instance
 
 ## Introduction
 
-We will setup the demo to run from a OCI Compute Instance (aka VM). We will configure this Compute Instance as a "server" which will be sending real-time updates to the demo web client. The client will then visualize these updates.
+We will setup the demo to run from a OCI Compute Instance (aka VM). We will configure this Compute Instance as a "server" which will be sending real-time updates to the demo web client. The client will then visualize these updates. After creating the Compute Instance we will connect to it using SSH.
 
 ### Objectives
 
@@ -21,7 +21,7 @@ We will setup the demo to run from a OCI Compute Instance (aka VM). We will conf
 
    ![Click create instance](images/create-instance.png)
 
-4. On the Create Compute Instance page, name your instance (senti-meter-Server for example).
+4. On the Create Compute Instance page, name your instance (senti-meter-server for example).
 
    ![Name instance](images/name-instance.png)
 
@@ -32,9 +32,12 @@ We will setup the demo to run from a OCI Compute Instance (aka VM). We will conf
 
 6. Scroll down to the Add SSH keys section (we will accept most of the defaults on this page) and click the Save Private Key button. This will trigger a download of your SSH connection key file (typically to your downloads folder). We will use this file to connect to our Compute Instance.  
 It is recommended that you move the key file to a dedicated folder on your computer for safe keeping.  
-On a Mac/Linux machine, one possible location would be the `~/.ssh/` folder.
+On a Mac/Linux machine, one possible location would be the `~/.ssh/` folder.  
+
+   > **Note:** Please take note of where this file is saved as we will need it in upcoming steps.
 
    ![Download SSH key](images/download-ssh-key.png)
+
 
 7. Create the Create button at the bottom of the page.
 
@@ -50,7 +53,7 @@ On a Mac/Linux machine, one possible location would be the `~/.ssh/` folder.
 
 ## Task 2: Configure network access
 
-By default, the server will block any connection attempts over the network (except for SSH connections on port 22). In this task we will allow connections to be made on port 9000 as this will be the port the server will expect traffic to be sent on.
+By default, the server will block any connection attempts over the network (except for SSH connections on port 22). In this task we will allow connections to be made on port 9000 as this will be the port the server will expect traffic to be sent through.
 
 1. Click the newly created & running Compute Instance in the instances list.
 
@@ -79,7 +82,7 @@ By default, the server will block any connection attempts over the network (exce
 
 ## Task 2: Connect to the Compute Instance using SSH
 
-1. In order to connect to the newly created Compute Instance, we will need to know the public IP address assigned to it. Back at the Instances page (Main Menu > Compute > Instances), copy the IP address assigned to the Compute Instance. Save the IP address somewhere handy as we will need it in upcoming steps.
+1. In order to connect to the newly created Compute Instance, we will need to know the public IP address assigned to it. Back at the Instances page (Main Menu > Compute > Instances), copy the IP address assigned to the Compute Instance. Save the IP address somewhere handy (a text file for example) as we will need it in upcoming steps.
 
    ![Main menu, Compute Instances](images/copy-instance-ip.png)
 
@@ -94,10 +97,12 @@ By default, the server will block any connection attempts over the network (exce
       ![Mac spotlight search terminal](images/mac-spotlight-search-terminal.png)
 
 3. This step is only required on Mac and Linux, if you're using a Windows machine please skip to the next step.  
-In order to use the SSH key we've downloaded previously, we need to make sure the key file stored with secure access permissions.
-Please note: In this lab we are using the file name `ssh-key-2022-08-01.key` to refer to the key file. Your file name will be different and you will have to replace the file name place holder in the commands with the proper file name.
+In order to use the SSH key we've downloaded previously, we need to make sure the key file is stored with secure access permissions.
 
-      1. In the terminal window, change the current directory to the directory where you've stored the download key file. This is usually the `Download` folder or if you have saved the key file in a different location, use the following command to move to that location:
+      > **Note:** In this lab we are using the file name `ssh-key-2022-08-01.key` to refer to the key file. Your file name will be different and you will have to replace the file name place holder in the commands with the proper file name.
+
+
+      1. In the terminal window, change the current directory to the directory where you've stored the download key file. This is usually the `Downloads` folder  (if you saved the key file in a different location, please use that folder's name instead of Downloads). Use the following command to move to that location:
 
          ```bash
          % <copy>cd Downloads</copy>
@@ -171,8 +176,11 @@ In the terminal window, use the following command (replace [compute instance IP]
     ```
 
     The prompt `opc@senti-meter-server` shows that a connection was made using the user `opc` to a computer named `senti-meter-server`  (your Compute Instance might be named differently).  
-    From this moment on, we will refer to this terminal window as the `connected terminal` to differentiate it from other terminal windows we'll might require later on.  
-    Please note: The connection to the Compute Instance might break for various reasons. If the connected terminal becomes unresponsive or indicates that the connection has been broken, please repeat the steps in this section to re-establish the connection.
+    From this moment on, we will refer to this terminal window as the `connected terminal` to differentiate it from other terminal windows we'll might require.  
+    
+    > **Note:** The connection to the Compute Instance might break for various reasons. If the connected terminal becomes unresponsive or indicates that the connection has been broken, please repeat the steps in this section to re-establish the connection.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

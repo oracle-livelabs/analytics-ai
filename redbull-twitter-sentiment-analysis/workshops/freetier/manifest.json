@@ -8,7 +8,7 @@
             "filename": "../../1-introduction/introduction.md"
         },
         {
-            "title": "Login to Oracle Cloud",
+            "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
@@ -18,9 +18,9 @@
             "filename": "../../2-create-a-twitter-developer-account/create-a-twitter-developer-account.md"
         },
         {
-            "title": "Create an OCI Compute Instance and establish a connection",
+            "title": "Create and connect to an OCI Compute Instance",
             "description": "",
-            "filename": "../../3-create-a-compute-instance-and-connect/create-a-compute-instance-and-connect.md"
+            "filename": "../../3-create-and-connect-to-an-oci-compute-instance/create-and-connect-to-an-oci-compute-instance.md"
         },
         {
             "title": "Configure the Compute Instance",
