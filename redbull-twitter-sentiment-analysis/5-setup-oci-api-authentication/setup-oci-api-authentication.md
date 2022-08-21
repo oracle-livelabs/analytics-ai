@@ -41,7 +41,7 @@ We will use your specific user in this demo for simplicity. In a production envi
     The key file should automatically download and saved (typically) to your `Download` folder. This file, along with some additional information will be used to authenticate the API calls.  
     Keeping this file in the same folder where we keep the SSH connection key (downloaded in a [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task1:CreateanOCIComputeInstance)) will simplify our next steps.
 
-7. After the file has successfully download, click the `Add` button at the bottom of the dialog.
+7. After the file has successfully downloaded, click the `Add` button at the bottom of the dialog.
 
     ![Click Add button](images/click-add-button.png "Click Add button")
 
@@ -66,19 +66,19 @@ We will use the SCP (Secure Copy) command to copy the file. This command is very
 1. This task requires a new terminal window. Please keep the existing terminal window active and start a new terminal window as discussed in a [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
 2. Use the `cd` command to switch to the folder where the downloaded `API Key` was saved (`Downloads` in our example).
 
-![Change directory to Downloads](images/cd-downloads.png "Change directory to Downloads")
+    ![Change directory to Downloads](images/cd-downloads.png "Change directory to Downloads")
 
 3. Use the following `scp` command to copy the `API Key` file from your computer to the Compute Instance over the network:
 
     > **Note:** You will have to replace [key file name], [api key file name] and [compute instance IP] with the actual file names and Compute Instance IP):
 
-* On a `Mac` computer, use the following command:
+    * On a `Mac` computer, use the following command:
 
     ```bash
     Downloads % <copy>scp -i ./[key file name].key ./[api key file name].pem opc@[compute instance IP]:~/.oci</copy>
     ```
 
-* On a `Windows` computer, use the following command:
+    * On a `Windows` computer, use the following command:
 
     ```bash
     C:\Users\username\Downloads><copy>scp -i ./[key file name].key ./[api key file name].pem opc@[compute instance IP]:~/.oci</copy>
@@ -96,7 +96,7 @@ We will use the SCP (Secure Copy) command to copy the file. This command is very
 
     At this point, the `API Key` file resides on the Compute Instance under the `~/.oci` folder (`~` means the home folder for the current user (`opc`) which in our case means `/home/opc`, therefore, the full path of the `API Key` file on the Compute Instance will be: `/home/opc/.oci/[key file name].pem`). We will use this information in the following step.
 
-3. For this next step, we will go back to the connected terminal and create the configuration file with all of the authentication info we copied in previous steps. We will use the `nano` text editor to create and edit our configuration file.
+4. For this next step, we will go back to the connected terminal and create the configuration file with all of the authentication info we copied in previous steps. We will use the `nano` text editor to create and edit our configuration file.
 In the connected terminal window, execute the following command:
 
     ```bash
