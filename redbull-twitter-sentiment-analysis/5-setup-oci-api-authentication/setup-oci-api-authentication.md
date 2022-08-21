@@ -11,41 +11,47 @@ Throughout this workshop we will be making extensive use of the Oracle Cloud Inf
 
 ## Task 1: Create an API key
 
-1. From the `Main Menu`, select `Identity & Security` and then `Users` to the right.
+If you are not using an `Always Free` account, please skip the first step and start with step #2.
+
+1. For an `Always Free` account, click the `Profile` icon on the top right of the screen and then select `My profile`. Please skip to step #4.
+
+    ![Profile my profile](images/profile-my-profile.png "profile my profile")
+
+2. From the `Main Menu`, select `Identity & Security` and then `Users` to the right.
 
     ![Navigate to users page](images/navigate-to-users-page.png "Navigate to users page")
 
-2. On the `Users` page, click your user name.  
+3. On the `Users` page, click your user name.  
 We will use your specific user in this demo for simplicity. In a production environment, a specific user might be created for this task.
 
     ![Select user](images/select-user.png "Select user")
 
-3. On the `User Details` page, select the `API Keys` link on the bottom left.
+4. On the `User Details` page, select the `API Keys` link on the bottom left.
 
     ![Selec API keys](images/select-api-keys.png "Select API keys")
 
-4. On the right, under the `API Keys` section, click the `Add API Key` button.
+5. On the right, under the `API Keys` section, click the `Add API Key` button.
 
     ![Click Add API Key button](images/click-add-api-key-button.png "Click Add API Key button")
 
-5. On the Add `API Key dialog`, click the `Download Private Key` button.
+6. On the Add `API Key dialog`, click the `Download Private Key` button.
 
     ![Click Download Private Key button](images/click-download-private-key.png "Click Download Private Key button")
 
     The key file should automatically download and saved (typically) to your `Download` folder. This file, along with some additional information will be used to authenticate the API calls.  
     Keeping this file in the same folder where we keep the SSH connection key (downloaded in a [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task1:CreateanOCIComputeInstance)) will simplify our next steps.
 
-6. After the file has successfully download, click the `Add` button at the bottom of the dialog.
+7. After the file has successfully download, click the `Add` button at the bottom of the dialog.
 
     ![Click Add button](images/click-add-button.png "Click Add button")
 
-7. In the `Configuration File Preview` dialog, copy the configuration text displayed in the `Configuration File Preview` text box by selecting the text and copying it or by click the `Copy` link on the bottom right of the text box.
+8. In the `Configuration File Preview` dialog, copy the configuration text displayed in the `Configuration File Preview` text box by selecting the text and copying it or by click the `Copy` link on the bottom right of the text box.
 
     ![Select and copy configuration text](images/select-and-copy-configuration-text.png "Select and copy configuration text")
 
     After copying the text, please paste it to a location of your choice. This can be a text file, or any other document, but keep it handy as we are going to need this information shortly.
 
-8. When you have the configuration information safely stored, click the `Close` button to dismiss the dialog.  
+9. When you have the configuration information safely stored, click the `Close` button to dismiss the dialog.  
 You should see a new entry in the `API Keys` list which represents the newly created API key.
 
     ![Click Close button](images/click-close-button.png "Click Close button")
