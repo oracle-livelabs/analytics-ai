@@ -19,6 +19,8 @@ You will have to create both a Twitter user account (in case you do not have one
 
 Please make sure you can abide by the terms and conditions mentioned in these agreements.
 
+> **Note:** If creating a Twitter account or a Twitter developer account will not work for you, this demo includes a pseudo tweets generator that can be used to simulate the responses retrieved using the Twitter API. If you decide to go that route, you can skip the rest of this lab and ignore the instructions relating to the Twitter `Bearer Token`. Look for information about the tweets generated as part of the last lab in this workshop.
+
 ## Task 1: Create and/or login to your Twitter user account
 
 In the first step, we'll make sure you have a valid Twitter user account. If you already have a functioning Twitter account (one that you can login to), please skip to the next task.
