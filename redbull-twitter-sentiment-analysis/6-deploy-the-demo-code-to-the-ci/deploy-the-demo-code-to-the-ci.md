@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In pervious steps we have configured a Twitter developer account and a Compute Instance which will run our demo.
+In pervious steps we configured a Twitter developer account and a Compute Instance to run our demo.
 In the following steps, we will copy and configure the demo code on the Compute Instance.
 
 ### Objectives
@@ -18,7 +18,7 @@ In the following steps, we will copy and configure the demo code on the Compute 
 1. Using this [link](files/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
 
 2. As we did with the `API Key` file, we are going to copy the source code zip file to the Compute Instance.
-If you will have the two terminal windows active, please switch to terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files up until now).
+If you have the two terminal windows active, please switch to the terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files thus far).
 If you need to start a new terminal window, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
 
 3. If you have started a new terminal window,  use the `cd` command to switch to the folder where the downloaded source code zip file was saved (`Downloads` in our example).
@@ -39,13 +39,13 @@ If you need to start a new terminal window, please refer to the [previous lab](?
     C:\Users\username\Downloads><copy>scp -i ./[key file name].key ./senti-meter-demo.zip opc@[compute instance IP]:~</copy>
     ```
 
-    Here's an example of how this command might look like:
+    Here's an example of whats this command might look like:
 
     ```bash
     scp -i ./ssh-key-2022-08-01.key ./senti-meter-demo.zip opc@192.168.15.76:~
     ```
 
-    Here's an example of how the terminal output might look like for a successful copy:
+    Here's an example of how the terminal output might look for a successful copy:
 
     ![SCP source to Compute Instance](images/scp-source-to-compute-instance.png "SCP source to Compute Instance")
 
@@ -55,7 +55,7 @@ If you need to start a new terminal window, please refer to the [previous lab](?
 
 As the source code was copied in a compressed zip file, we will now extract the contents of this file into the code's final form.
 
-1. Using the connected terminal (if you closed the connected terminal, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).), move to the home folder and list it's content using the following two commands:
+1. Using the connected terminal (if you closed the connected terminal, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).), move to the home folder and list its content using the following two commands:
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>cd ~</copy>
@@ -79,7 +79,7 @@ As the source code was copied in a compressed zip file, we will now extract the 
 
 ## Task 3: Configure the source code
 
-In just a few steps our demo is going to be ready to run. In this step we will install the software packages used by the demo code as well as perform some configuration in preparation for the demo execution.
+Soon our demo will to be ready to run. In this step we will install the software packages used by the demo code as well as perform some configuration in preparation for the demo execution.
 
 1. Using the connected terminal, move to the `senti-meter-demo` folder:
 
@@ -98,7 +98,7 @@ In just a few steps our demo is going to be ready to run. In this step we will i
     ![NPM install result](images/npm-install-result.png "NPM install results")
 
 3. The demo uses a file called `.env` stored at the root of the source code to keep important parameters which control the demo's behavior.  
-   The source code includes a file called `.env.example` which contains defaults to many of those parameters but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly (covered in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)).  
+   The source code includes a file called `.env.example` which contains defaults to many of those parameters, but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly (covered in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)).  
    After updating `.env.example` we will rename it to `.env` for it to be picked up by the demo.  
    As we've done before with the authentication configuration file, we are going to use the `nano` text editor to edit this file:
 
@@ -126,7 +126,7 @@ In just a few steps our demo is going to be ready to run. In this step we will i
     |`CERT_FILE`|Naming the TLS certificate file used to secure the connection to the server|
     |`KEY_FILE`|Naming the TLS key file used to secure the connection to the server|
 
-    On the first line of the file, replace `[BEARER TOKEN VALUE]` (keeping the double quotes) with the `Bearer Token` value  we've saved when we created the Twitter App [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp).
+    On the first line of the file, replace `[BEARER TOKEN VALUE]` (keeping the double quotes) with the `Bearer Token` value  we saved when we created the Twitter App [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp).
 
     The end result should look similar to this:
 
@@ -143,7 +143,7 @@ In just a few steps our demo is going to be ready to run. In this step we will i
 
 ## Task 4: Create a self-signed TLS certificate
 
-In this step we will create the TLS certificate and key files required to establish a "secure connection". These files are similar to the ones used by production website to verify the authenticity of the website. Any website accessed using `https://` at the start of it's URL should have a valid TLS certificate. In our case, we will be generating a `self-signed` certificate which means we will be able to use it for the purposes of this demo but it will not be recognized by the browser as a valid certificate (more on that later).
+In this step we will create the TLS certificate and key files required to establish a "secure connection". These files are similar to the ones used by production website to verify the authenticity of the website. Any website accessed using `https://` at the start of its URL should have a valid TLS certificate. In our case, we will be generating a `self-signed` certificate which means we will be able to use it for the purposes of this demo but it will not be recognized by the browser as a valid certificate (more on that later).
 
 1. In your connected terminal, execute the following commands:
 

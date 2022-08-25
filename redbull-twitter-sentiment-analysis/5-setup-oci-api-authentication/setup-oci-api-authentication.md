@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Throughout this workshop we will be making extensive use of the Oracle Cloud Infrastructure (OCI) AI APIs. In order to issue API requests, we need to append authentication information to the requests. In this lab we will setup this authentication mechanism.
+Throughout this workshop we will be making extensive use of the Oracle Cloud Infrastructure (OCI) AI APIs. To issue API requests, we need to append authentication information to the requests. In this lab we will set up this authentication mechanism.
 
 ### Objectives
 
@@ -45,7 +45,7 @@ We will use your specific user in this demo for simplicity. In a production envi
 
     ![Click Add button](images/click-add-button.png "Click Add button")
 
-8. In the `Configuration File Preview` dialog, copy the configuration text displayed in the `Configuration File Preview` text box by selecting the text and copying it or by click the `Copy` link on the bottom right of the text box.
+8. In the `Configuration File Preview` dialog, copy the configuration text displayed in the `Configuration File Preview` text box by selecting the text and copying it, or by clicking the `Copy` link on the bottom right of the text box.
 
     ![Select and copy configuration text](images/select-and-copy-configuration-text.png "Select and copy configuration text")
 
@@ -58,7 +58,7 @@ You should see a new entry in the `API Keys` list which represents the newly cre
 
 ## Task 2: Setup the authentication environment on the Compute Instance
 
-To use our API key, we first need to copy it to our Compute Instance.  
+To use our API key, We'll need to copy it to our Compute Instance.  
 We will use the SCP (Secure Copy) command to copy the file. This command is very similar to the SSH command and uses the same key we used to connect to the Compute Instance.
 
 > **Note:** In this lab we are using the file name `08-01-21-03.pem` to refer to the `API Key` file. Your file name will be different and you will have to replace the file name place holder in the commands with the proper file name.
@@ -96,7 +96,7 @@ We will use the SCP (Secure Copy) command to copy the file. This command is very
 
     At this point, the `API Key` file resides on the Compute Instance under the `~/.oci` folder (`~` means the home folder for the current user (`opc`) which in our case means `/home/opc`, therefore, the full path of the `API Key` file on the Compute Instance will be: `/home/opc/.oci/[key file name].pem`). We will use this information in the following step.
 
-4. For this next step, we will go back to the connected terminal and create the configuration file with all of the authentication info we copied in previous steps. We will use the `nano` text editor to create and edit our configuration file.
+4. For this next step, we will go back to the connected terminal and create the configuration file with all the authentication info we copied in previous steps. We will use the `nano` text editor to create and edit our configuration file.
 In the connected terminal window, execute the following command:
 
     ```bash
@@ -104,7 +104,7 @@ In the connected terminal window, execute the following command:
     ```
 
     At this point we will need the text we copied in the [previous task](#Task1:CreateanAPIkey). Please copy this text and paste it directly into the terminal window (On `Mac` use `Command + V`. On `Windows` use `Ctrl+V`).  
-    Most of the information we need already exists in the text we copied from the OCI console. The only value we need to update is the `key_file`. Remove all of the placeholder text (`<path to your private keyfile> #TODO`) and replace it with the full path of `API Key` file as espablished in the previos step (`~/.oci/[key file name].pem`).  
+    Most of the information we need already exists in the text we copied from the OCI console. The only value we need to update is the `key_file`. Remove all of the placeholder text (`<path to your private keyfile> #TODO`) and replace it with the full path of `API Key` file as established in the previous step (`~/.oci/[key file name].pem`).  
     The final result should look similar to this:
 
     ![Final config file](images/final-config-file.png "Final config file")
