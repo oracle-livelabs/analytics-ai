@@ -124,7 +124,7 @@ Depending on your browser, you should see a message similar to this:
     ![Browser certificate error](images/browser-certificate-error.png "Browser certificate error")
 
     Despite the alarming message, it is expected in our case as we are using a self-signed TLS certificate.  
-    In order to get past this error, we need to let the browser know we are aware of the risks. The solution is different for each browser:
+    To get past this error, we need to let the browser know we are aware of the risks. The solution is different for each browser:
 
     * On `Chromium` based browsers (such as `Chrome` or `Edge`): Click the `Advanced` button. If see a link similar to `Continue to 192.168.0.74 (unsafe)` at the bottom of the page, click this link. If you do not see such a link, while the error message is being displayed, click anywhere on the screen (not on any of the buttons) to set focus to the page and type: `thisisunsafe` (the words `this is unsafe` with no space between them).
     * On `FireFox`: Click the `Advanced...` button and then the `Accept the Risk and Continue` button.
@@ -133,7 +133,7 @@ Depending on your browser, you should see a message similar to this:
     None of the browsers will show an indication that this step has succeeded. The only way to know for sure is by launching the client and trying to connect to the server. We will do this next.
 
 5. We will now load the client in the browser to observe the sentiment analysis results:
-In order to load the client file, navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`)
+To load the client file, navigate to the following folder (using `Finder` on `Mac` or `File Explorer` on `Windows`)
 
     ```text
     Downloads/senti-meter-demo/src/senti-meter-demo/client/

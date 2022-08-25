@@ -15,7 +15,7 @@ In the following steps, we will copy and configure the demo code on the Compute 
 
 ## Task 1: Download and copy the source code to the Compute Instance
 
-1. Using this [link](files/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
+1. Using this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
 
 2. As we did with the `API Key` file, we are going to copy the source code zip file to the Compute Instance.
 If you have the two terminal windows active, please switch to the terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files thus far).
