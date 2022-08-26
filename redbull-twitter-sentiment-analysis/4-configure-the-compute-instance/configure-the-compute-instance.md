@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In previous sections we have created the Compute Instance and established a connection to it.  
+In previous sections we created the Compute Instance and established a connection to it.  
 In this section we will make the necessary configurations for the demo to work properly.
 
 ### Objectives
@@ -31,9 +31,9 @@ In the Compute Instance network configuration step, port 9000 was enabled on the
 
     The terminal should output `success` when the command completes.
 
-## Task 1: Install Node.JS
+## Task 2: Install Node.JS
 
-In order to execute the demo code, we need to install Node.JS version 16 or above.
+To execute the demo code, we need to install Node.JS version 16 or above.
 
 1. In the terminal, type the following command:
 
@@ -45,14 +45,14 @@ In order to execute the demo code, we need to install Node.JS version 16 or abov
 
    ![Install Node.JS command result](images/install-node-js-command-output.png "Install Node.JS command result")
 
-   In response to the prompt asking you if you would like to proceed with the installation, type `y` (for `yes`) and press Enter.  
-   Once the installation completes, your terminal should look similar to the following:
+   Respond to the prompt asking you if you would like to proceed with the installation, type `y` (for `yes`) and press Enter.  
+   Once the installation completes, your terminal should look like the following:
 
    ![Install Node.JS command result](images/node-js-install-complete.png "Install Node.JS command result")
 
 ## Task 3: Create a folder to hold the OCI authentication information
 
-The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweets. To make those API calls, authentication information must be sent with the calls. In a following lab we will configure the authentication, but for now, we will create a folder which will serve sa a placeholder for the authentication information.
+The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweets. To make those API calls, authentication information must be sent with the calls. In a following lab we will configure the authentication, but for now, we will create a folder which will serve as a placeholder for the authentication information.
 
 1. We will use the `mkdir` command in the connected terminal to create the folder:
 
