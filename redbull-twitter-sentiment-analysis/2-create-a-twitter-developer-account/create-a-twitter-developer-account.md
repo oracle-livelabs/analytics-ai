@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This workshop makes extensive use of Twitter's [Filtered Steam API](https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/introduction) for retrieving public tweets in near real-time. In order to use this API, we need to have access to a Twitter developer account.
+This workshop uses Twitter's [Filtered Stream API](https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/introduction) for retrieving public tweets in near real-time. To use this API, we need access to a Twitter developer account.
 
 ### Objectives
 
@@ -17,11 +17,13 @@ You will have to create both a Twitter user account (in case you do not have one
 1. [Terms of Service](https://twitter.com/en/tos)
 2. [Developer Agreement and Policy](https://developer.twitter.com/en/developer-terms/agreement-and-policy)
 
-Please make sure you are able to abide by the terms and conditions mentioned in these agreements.
+Please make sure you can abide by the terms and conditions mentioned in these agreements.
+
+> **Note:** If creating a Twitter account or a Twitter developer account will not work for you, this demo includes a pseudo tweets generator that can be used to simulate the responses retrieved using the Twitter API. If you decide to go that route, you can skip the rest of this lab and ignore the instructions relating to the Twitter `Bearer Token`. Look for information about the tweets generated as part of the last lab in this workshop.
 
 ## Task 1: Create and/or login to your Twitter user account
 
-In the first step, we will need to make sure you have a valid Twitter user account. If you do already have a functioning Twitter account (one that you can login to), please skip to the next task.
+In the first step, we'll make sure you have a valid Twitter user account. If you already have a functioning Twitter account (one that you can login to), please skip to the next task.
 
 Please follow the Twitter sign-up process [here](https://twitter.com/i/flow/signup).
 
@@ -34,6 +36,7 @@ Please follow the Twitter sign-up process [here](https://twitter.com/i/flow/sign
 ## Task 3: Creating a Twitter app
 
 1. After verifying your email account, you will be asked to name your first app. This value can be changed later so choose a name that will work for now. The app name must be unique.
+
 2. You will be presented with a set of keys:
    * API Key
    * API Key Secret
@@ -41,7 +44,8 @@ Please follow the Twitter sign-up process [here](https://twitter.com/i/flow/sign
 
    **Please save these keys in a safe place as we will need them later**.  
    The Bearer token will be used in this demo to authenticate with the Twitter API.
-3. After your have copied and saved your keys in a safe place, you can proceed to the Developer Portal Dashboard where you will see summary information for your Developer Account.
+
+3. After you have copied and saved your keys in a safe place, you can proceed to the Developer Portal Dashboard where you will see summary information for your Developer Account.
 
 You may now **proceed to the next lab**.
 
