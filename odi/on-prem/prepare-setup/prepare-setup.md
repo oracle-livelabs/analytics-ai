@@ -81,13 +81,13 @@ This workshop requires a certain number of ports to be available, a requirement 
 8. Repeat steps [5-7] until a rule is created for each port listed in the table
 
 <if type="ha">
-  **Notes**: If you elect to use an existing VCN, then ensures that it's using the CIDR *10.0.0.0/16* and contains the following 3 subnets:
+  **Notes**: Using an existing VCN will likely lead to failure, unless certain conditions are met. You must ensure that it's using the CIDR *10.0.0.0/16* and contains the following 3 subnets:
 
     - subnet-llw-lb (10.0.0.0/29) - Dedicated to the load balancer
     - subnet-llw-1 (10.0.1.0/24)  - For Node1
     - subnet-llw-2 (10.0.2.0/24)  - For Node2
 
-  If these conditions can't be met, we highly recommend that revert to the default and let the stack create a dedicated VCN for your workshops
+  If these conditions can't be met, we highly recommend that you revert to the default and let ORM stack create a dedicated VCN for your workshops
 </if>
 
 ## Task 3: Setup Compute   
@@ -101,4 +101,4 @@ You may now proceed to the next lab.
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2022
