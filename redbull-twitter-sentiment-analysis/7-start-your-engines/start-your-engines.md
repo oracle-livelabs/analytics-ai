@@ -170,16 +170,16 @@ Use the following commands to stop the running Language demo using your connecte
 
 2. Use the following command to start the `image-consumer`:
 
+    > **Note:** We do not control the type of images being posted to Twitter. Some of the content might be unsavory. Several images have been bundled with the source code zip file under the `~/senti-meter-demo/images` folder. You can use the bundled images without starting the `image-consumer`.
+
     ```bash
     [opc@senti-meter-server ~]$ <copy>npm run image-consumer</copy>
     ```
 
     This process performs a query on past tweets using the filter defined in `.env` for the `IMAGE_QUERY` parameter. The default value queries for tweets which mention `@redbullracing`, contain images, and are not a retweet.  
-    Each image extracted is saved in the `~/senti-meter-demo/images` folder.  A maximum of 300 images will be downloaded before the process exists. You can exist the `image-consumer` process using `Ctrl+C` when you feel like you have enough image for the demo.
+    Each image extracted is saved in the `~/senti-meter-demo/images` folder.  A maximum of 300 images will be downloaded before the process exists. You can exist the `image-consumer` process using `Ctrl+C` when you feel like you have enough images for the demo.
 
-    > **Note:** We do not control the type of images being posted to Twitter. Some of the content might be unsavory.
-
-2. Use the following command to start the `image-processor`:
+3. Use the following command to start the `image-processor`:
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>npm run image-processor</copy>
@@ -192,7 +192,7 @@ Use the following commands to stop the running Language demo using your connecte
 
     Just like the tweets `processor`, the `image-processor` will act on the data extracted by the `image-consumer`. It will load the list of images in the `~/senti-meter-demo/images` folder, send them in randomly sized batched to the Oracle Vision AI service and return the results to the client. After you have observed following message: `The WebSocket server is listening on 0.0.0.0:9000` you can exit the command with `Ctrl+C` (the `image-processor` will continue to run in the background).
 
-3. (OPTIONAL) After you are done running the demo, you can use the following command to stop the `processor` process (if you intend to run the demo now, please skip this section):
+4. (OPTIONAL) After you are done running the demo, you can use the following command to stop the `processor` process (if you intend to run the demo now, please skip this section):
 
     ```bash
     [opc@senti-meter-server ~]$ <copy>npm run stop-image-processor</copy>
