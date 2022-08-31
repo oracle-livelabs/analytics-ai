@@ -44,7 +44,7 @@ This new user/schema will hold the football data.
 
     ![ADW Menu](images/open-sql.png)
 
-5. **Download** [pl-create-user.sql](/files/pl-create-user.sql) Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
+5. **Download** [pl-create-user.sql](./files/pl-create-user.sql) Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
 6. Open the `pl-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. 
 
