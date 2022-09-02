@@ -1,46 +1,41 @@
 {
     "workshoptitle": "AI Services: Introduction to OCI Language",
-    "help": "livelabs-help-oci_us@oracle.com",
+    "help": "oci_ocas_ops_ww_grp@oracle.com",
 	"tutorials": [
         {
-            "title": "Getting Started",
+            "title": "Before You Start",
             "description": "Sign up for and log into the Oracle Cloud",
             "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
         },
         {
-            "title": "Introduction: OCI Language",
+            "title": "About OCI Language Service",
             "description": "Learn how to discovers insights in unstructured text using natural language processing",
             "filename": "./intro.md"
         },
         {
-            "title": "Lab 1: Analyzing Text with the Console",
-            "description": "Learn how to access AI language using oci console",
+            "title": "Lab 1: Analyzing Text with Pre-Trained Models",
+            "description": "Learn how to use pre-trained models to analyze text",
             "filename": "../../analyze-text/analyze-text.md"
         },
         {
-            "title": "Lab 2: Access OCI Language with OCI CLI",
-            "description": "Learn how to access OCI Language with CLI",
+            "title": "Lab 2: Creating and Using Custom models to analyze text",
+            "description": "Learn how create, train and use Custom Models to analyze text",
             "filename": "../../ai-language-cli/ai-language-cli.md"
         },
         {
-            "title": "Lab 3: Access OCI Language with Language SDKs",
-            "description": "Learn how to access OCI Language with Language SDKs",
+            "title": "Lab 3: Translating text using OCI Language Service",
+            "description": "Learn how to use OCI Language API to translate text across langauges",
             "filename": "../../ai-language-sdk/ai-language-sdk.md"
-        },
-        {
-            "title": "Lab 4: Access OCI Language with REST API.",
-            "description": "Learn how to access OCI Language with REST API.",
-            "filename": "../../oci-language-rest/oci-language-rest.md"
-        },
-        {
-            "title": "Lab 5: Access OCI Language in DataScience Notebook Session.",
-            "description": "Learn how to access OCI Language in DataScience Notebook Session.",
-            "filename": "../../ai-language-datascience/ai-language-datascience.md"
         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Acknowledgements",
+            "description": "Contributors of this live lab.",
+            "filename": "../../oci-language-rest/oci-language-rest.md"
         }
     ]
 }

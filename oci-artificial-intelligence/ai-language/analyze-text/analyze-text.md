@@ -1,6 +1,7 @@
 # Lab 1: Analyzing Text with the Console
 
 ## Introduction
+
 In this session, we will help users to get familiar with our OCI Language and teach them to use our services via the cloud console.
 You can use one or more of these text analysis tools to analyze your text with the Language service:
 - Sentiment Analysis
@@ -56,7 +57,7 @@ If you want to limit access to a user group, create a new policy with the below 
 ### 1: Navigate to OCI Language
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
-    ![](./images/navigate-to-ai-langauge-menu.png " ")
+    ![](./images/navigate-to-ai-language-menu.png " ")
 
 ### 2: Enter Text
 
