@@ -28,6 +28,10 @@ Detects languages based on the given text, and includes a confidence score.
 
 Identifies the document category and subcategory that the text belongs to.
 
+### 6. PII identification and de-identification
+
+Detect presence of Personal Identifiable Information (PII) in unstructured text and de-identify by either masking, replacing or removing.
+
 ### **Custom Models**
 
 #### 1. Custom Text Classification

@@ -15,17 +15,17 @@
         {
             "title": "Lab 1: Analyzing Text with Pre-Trained Models",
             "description": "Learn how to use pre-trained models to analyze text",
-            "filename": "../../analyze-text/analyze-text.md"
+            "filename": "../../pre-trained/analyze-text.md"
         },
         {
             "title": "Lab 2: Creating and Using Custom models to analyze text",
             "description": "Learn how create, train and use Custom Models to analyze text",
-            "filename": "../../ai-language-cli/ai-language-cli.md"
+            "filename": "../../custom-models/ai-language-cli.md"
         },
         {
             "title": "Lab 3: Translating text using OCI Language Service",
             "description": "Learn how to use OCI Language API to translate text across langauges",
-            "filename": "../../ai-language-sdk/ai-language-sdk.md"
+            "filename": "../../text-translation/ai-language-sdk.md"
         },
         {
             "title": "Need Help?",
