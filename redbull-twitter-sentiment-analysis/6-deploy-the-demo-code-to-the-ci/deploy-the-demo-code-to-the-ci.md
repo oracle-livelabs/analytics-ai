@@ -198,6 +198,8 @@ In the connected terminal, execute the following command:
 
     ![npm run setup result](images/npm-run-setup-result.png "npm run setup result")
 
+    The above output is consistent with a Twitter developer account that already has a filter rule associated with it. If this is the first time you are configuring a filter rule on your Twitter developer account, the output will show: "Found 0 filter rules" followed by "Creating filter rule".  
+
     If the command execution fails with an error similar to:
 
     ![npm run setup unauthorized error](images/npm-run-setup-unauthorized-error.png "npm run setup unauthorized error")
