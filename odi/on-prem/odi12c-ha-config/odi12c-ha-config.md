@@ -288,8 +288,10 @@ Now, the Node manager and Admin server are started.
 
   ![ODI servers in running state](./images/config-44.png " ")
 
-Now, the ODI services are up and running. In the next lab you will configure load balancer to route the traffic between these two servers.
+Now, the ODI services are up and running. A load balancer is already configured with the terraform script, so in the next lab you will test the ODI high availability configuration.
 
+
+**Note:** 
 
 You may now [proceed to the next lab](#next).
 
