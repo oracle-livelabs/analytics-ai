@@ -1,0 +1,24 @@
+{
+    "workshoptitle": "Leverage Deep Learning Based Image Analysis at Scale",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Key",
+            "description": "Generate SSH Key",
+            "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 2: Leverage Deep Learning Based Image Analysis at Scale",
+            "filename": "./../../ocw-2022-oci9-session63/vision.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
