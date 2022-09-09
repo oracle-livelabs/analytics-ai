@@ -1,4 +1,4 @@
-# Oracle Vision Service - Pre-Built models
+# Leverage Deep Learning Based Image Analysis at Scale
 
 ## Introduction 
 
