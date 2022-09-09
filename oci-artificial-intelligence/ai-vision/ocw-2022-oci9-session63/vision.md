@@ -235,5 +235,3 @@ In the "review" step, you can verify that all of your information is correct and
 
 Congratulations on completing this lab!
 
-
-## Homework: ???
