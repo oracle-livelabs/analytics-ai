@@ -36,14 +36,12 @@ Before you start using OCI Vision, your tenancy administrator should set up the 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
 
 
-    ![](images/policy1.png " ")
+    ![Navigate to Policy Section](images/policy1.png " ")
 
 
-2. Create Policy
+2. Click Create Policy 
 
-   Click Create Policy 
-
-   ![](images/policy2.png " ")
+   ![Create Policy](images/policy2.png " ")
 
 3. Create a new policy with the following statements:
 
@@ -55,7 +53,7 @@ Before you start using OCI Vision, your tenancy administrator should set up the 
     </copy>
     ```
 
-    ![](images/policy3.png " ")
+    ![Setup policy for tenancy](images/policy3.png " ")
 
     If you want to limit access to a user group, create a new policy with the below statement:
 
@@ -65,7 +63,7 @@ Before you start using OCI Vision, your tenancy administrator should set up the 
     </copy>
     ```
 
-    ![](images/policy4.png " ")
+    ![Setup policy for users](images/policy4.png " ")
 
 
 ## Task 1: Understand the data requirements for OCI AI Vision service
@@ -86,15 +84,15 @@ The service offers sync and async APIs to analyze images, with data requirements
 
 a. First, From the OCI Services menu, click Object Storage.
 
-![](images/cloud-storage-bucket.png " ")
+![Navigate to Object Storage](images/cloud-storage-bucket.png " ")
 
 b. Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
 
-![](images/compartment.png " ")
+![Select Compartment](images/compartment.png " ")
 
 c. Next click Create Bucket
 
-![](images/bucket.png " ")
+![Create bucket](images/bucket.png " ")
 
 d. Next, fill out the dialog box:
 
@@ -103,18 +101,18 @@ d. Next, fill out the dialog box:
 
 e. Then click Create
 
-![](images/createBucket.png " ")
+![Click create](images/createBucket.png " ")
 
 2. Upload image files into Storage Bucket
 
 a. Switch to OCI Window and click the Bucket Name.
 b. Bucket detail window should be visible. Click Upload
 
-![](images/upload.png " ")
+![Upload images](images/upload.png " ")
 
 c. Click on Upload and then browse to file which you desire to upload.
 
-![](images/uploaded.png " ")
+![Click Upload](images/uploaded.png " ")
 
 More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
@@ -122,23 +120,23 @@ More details on Object storage can be found on this page. [Object Storage Upload
 
 1. Navigate to the Vision Page of OCI Console
 
-![](images/navigate-to-ai-vision-menu.png " ")
+![Navigate to Vision](images/navigate-to-ai-vision-menu.png " ")
 
 2. Use Document AI features
 
 a. On the Vision page, select “Document AI” on the left navigation menu and provide a document or image from OCI object storage. You can also upload from local storage. In order to upload image from Object Storage Bucket, you will need image's URL Path.
 
-![](images/template.png " ")
+![Document AI](images/template.png " ")
 
 b. Image URL path can be found in the Object Storage Bucket where your image resides. Navigate to the bucket to locate object details that has the image URL path, as shown below. 
 
-![](images/obj-details.png " ")
+![Image URL](images/obj-details.png " ")
 ![](images/path.png " ")
 
 
 c.  This invokes analyzeDocument API after the image is provided. Raw text extracted by our pre-trained multi-tenant model is displayed on the right.
 
-![](images/document-ai.png " ")
+![Invoke Document AI API](images/document-ai.png " ")
 
 
 | Feature | Description | Details on Console |
@@ -155,7 +153,7 @@ c.  This invokes analyzeDocument API after the image is provided. Raw text extra
 a. On the Vision page, select “Image Classification” or "Object Detection" on the left navigation menu and provide an image from local storage or OCI object storage. This invokes analyzeImage API after the image is provided.
 
 
-![](images/img-classification.png " ")
+![Image Analysis Features](images/img-classification.png " ")
 
 
 b. Features you can test out:
@@ -178,11 +176,11 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Vision Service item under AI services. Clicking the Vision Service Option will navigate one to the Vision Service Console. Once here, select Projects under "Custom Models" header on the left hand side of the console.
 
-![](images/project.png " ")
+![Custom model](images/project.png " ")
 
 2. The Create Project button navigates User to a form where they can specify the compartment in which to create a Vision Project. The project we create here is named "CareClinicsDemo".
 
-![](images/create-project.png " ")
+![Create a Project](images/create-project.png " ")
 
 3. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.
 
@@ -193,45 +191,45 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 2. You will need to select Create Model within your project. 
 
-![](images/create-model.png " ")
+![Create Model](images/create-model.png " ")
 
 3. AI Vision Service supports training of an on-demand custom model for Object Detection, Image Classification, and Document Image Classification features. You can select one of these three options in the drop down.
 
- ![](images/select-model.png " ")
+ ![Choose Model](images/select-model.png " ")
 
 
 ## Task 6: Select Training Data 
 
  1. To train a custom model, you will need training data. There are two main options depending on if you already have an annotated dataset, or only have raw (unlabeled) images.
 
- ![](images/model-type.png " ")
+ ![Two options for traning data](images/model-type.png " ")
 
 
 2. Create a New dataset: If you do not have any annotated images (you only have raw images you'd like to train your model on), select "Create a New Dataset".
 
-![](images/dataset.png " ")
+![Choose Existing Dataset](images/dataset.png " ")
 
 
 This will drive you to OCI Data Labeling service, where you can easily add labels or draw bounding boxes over your image content. To learn more about how to annotate images using OCI Data Labeling service, you can review documentation here [Adding and Editing Labels](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/labels.htm).
 
-![](images/dls.png " ")
+![Data Labelling Service](images/dls.png " ")
 
 Choose existing dataset: If you have an existing annotated dataset, you can select it by clicking "Choose Existing Dataset." If you've previously annotated images using OCI Data Labeling service, select that button and select the dataset file of your choice. If you have annotated your images using some 3rd party tool, you can upload that dataset file to object storage and select via the "object storage" button.
 
-![](images/training-data.png " ")
+![Training Data](images/training-data.png " ")
 
 ## Task 7: Train your Custom Model
 
 1. In the "train model" step, you will name your model, add a description of it, and optionally, specify a training duration.
 
-![](images/train-model1.png " ")
+![Training Duration](images/train-model1.png " ")
 
 
 ## Task 8: Review and Submit
 
 In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments (on training time, for example). When you want to start training, click "submit" and this will kick of the process. You can then check on the status of your model in the project where you created it.
 
-![](images/review.png " ")
+![Review and Submit](images/review.png " ")
 
 Congratulations on completing this lab!
 
