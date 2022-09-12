@@ -1,4 +1,4 @@
-# Build ML model using Oracle Data Science Platform 
+# Leveraging Data Science for Predictive Modeling 
 
 ## Introduction 
 
@@ -37,7 +37,7 @@ This process is automated. However, if you prefer a manual approach, to control 
 
 1. Press this button below to open the Resource Manager. 
 
-[![](images/deploy-to-oracle-cloud.svg " ")](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
+[![Resource Manager](images/deploy-to-oracle-cloud.svg " ")](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
 
 You may have to log in first in case you were not logged into to Oracle Cloud Infrastructure already.
 
@@ -50,35 +50,35 @@ You may have to log in first in case you were not logged into to Oracle Cloud In
 
     * Click Next.
 
-    ![](images/autostack.png " ")
+    ![Auto Stack](images/autostack.png " ")
 
 3. **Important** In the section "ODS Configuration" uncheck "Create a Project and Notebook Session" (we will create them using the console later).
 
-![](images/disable-ods-creation.png " ")
+![Disable ODS](images/disable-ods-creation.png " ")
 
 4. In the section "Vault Configuration" uncheck "Enable Vault Support".
 
-![](images/enable-vault.png " ")
+![Enable Vault](images/enable-vault.png " ")
 
 5. In the section "Functions/API Gateway Configuration", uncheck "Provision Functions and API Gateway".
 
-![](images/disablefunctions.png " ")
+![Disable Functions](images/disablefunctions.png " ")
 
 6. Click "Next".
 
-![](images/next.png " ")
+![Next](images/next.png " ")
 
 7. Make sure that that the "Run Apply" option is checked.
 
-![](images/autoapply.png " ")
+![Auto apply](images/autoapply.png " ")
 
 8. Click "Create".
 
-![](images/create.png " ")
+![Create](images/create.png " ")
 
 Provisioning should take about 5 minutes after which the status of the Job should become "Succeeded".
 
-![](images/job-succeeded.png " ")
+![Job Succeeded](images/job-succeeded.png " ")
 
 ## Task 2: Upload data in Object Storage 
 
@@ -90,7 +90,7 @@ Provisioning should take about 5 minutes after which the status of the Job shoul
 
 Here is the meta-data for the data we will be using. Synthea creates below csv files. Of these "patients.csv" is the key file with "ID" column as the primary key to link all other csvs
 
-![](images/metadata.png " ")
+![Metadata](images/metadata.png " ")
 
 
 ## Task 3: Load CSVs and create features in OCI Autonomous Data Warehouse (ADW)
@@ -106,18 +106,18 @@ Refer to this [livelab](https://oracle.github.io/learning-library/data-managemen
 
 1. Open the OCI Data Science projects and choose "Create Project".
 
-![](images/open-ods.png " ")
+![Create Project](images/open-ods.png " ")
 
-![](images/create-project-1.png " ")
+![Create Project](images/create-project-1.png " ")
 
 * Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
 * Choose a name, e.g. "Data Science Project" and press "Create".
 
-![](images/create-project-2.png " ")
+![Create Project](images/create-project-2.png " ")
 
 2. The newly created project will now be opened. Within this project, provision an Oracle Data Science notebook by clicking "Create notebook session".
 
-![](images/create-notebook-1.png " ")
+![Create Notebook](images/create-notebook-1.png " ")
 
 * Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
 * Select a name, e.g. "Data Science Notebook"
@@ -125,7 +125,7 @@ Refer to this [livelab](https://oracle.github.io/learning-library/data-managemen
 * Set blockstorage to 50 GByte.
 * Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
 
-![](images/create-notebook-3.png " ")
+![Create Notebook](images/create-notebook-3.png " ")
 
 Finally click "Create". The process should finish after about 5 minutes and the status of the notebook will change to "Active".
 
@@ -133,13 +133,13 @@ Finally click "Create". The process should finish after about 5 minutes and the 
 
 The name of the notebook may be different than shown here in the screenshot.
 
-![](images/open-notebook.png " ")
+![Open Notebook](images/open-notebook.png " ")
 
-![](images/open-notebook2.png " ")
+![Open Notebook](images/open-notebook2.png " ")
 
 You should now see the Jupyter environment
 
-![](images/notebook.png " ")
+![Notebook](images/notebook.png " ")
 
 
 ## Task 5: Install the required pre-requisites on OCI Data Science
@@ -151,19 +151,19 @@ You should now see the Jupyter environment
 
     i.  To install a pre-built Conda environment, launch the environment explorer.
     
-    ![](images/env-explorer.png " ")
+    ![Environment Explorer](images/env-explorer.png " ")
 
    ii.  Next, select 'generalml_p37_cpu_v1' environment from the available list.
 
-    ![](images/general-ml.png " ")
+    ![General ML](images/general-ml.png " ")
 
    iii. Once you have selected a Conda environment to install, copy the install command that is provided in Environment Explorer.
 
-   ![](images/install-conda.png " ")
+   ![Install Conda](images/install-conda.png " ")
 
    iv.  Paste the install command into a Terminal and run. You may have to enter additional information once the service is running. For example, it may ask for a version.
 
-   ![](images/download-conda.png " ")
+   ![Download Conda](images/download-conda.png " ")
 
 3. Upgrade ads package using by copy-pasting the commands in terminal below:
 
