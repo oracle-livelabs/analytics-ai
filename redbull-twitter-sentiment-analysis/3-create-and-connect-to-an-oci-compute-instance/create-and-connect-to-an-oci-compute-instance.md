@@ -17,7 +17,7 @@ We will set up the demo to run from an OCI Compute Instance (aka VM). We will co
 
    ![Main menu, Compute Instances](images/main-menu-compute-instances.png)
 
-3. Make sure you have the right Compartment selected and click the Create instance button.
+3. Make sure you have the right Compartment (any Compartment you have access to would do, this could be the root Compartment as well) selected and click the Create instance button.
 
    ![Click create instance](images/create-instance.png)
 
@@ -30,14 +30,13 @@ We will set up the demo to run from an OCI Compute Instance (aka VM). We will co
    ![Oracle Linux selected](images/oracle-linux-selected.png)
    ![Assign IPv4 address selected](images/assign-ipv4-address.png)
 
-6. Scroll down to the Add SSH keys section (we will accept most of the defaults on this page) and click the Save Private Key button. This will trigger a download of your SSH connection key file (typically to your downloads folder). We will use this file to connect to our Compute Instance.  
+6. Scroll down to the Add SSH keys section and click the Save Private Key button. This will trigger a download of your SSH connection key file (typically to your downloads folder). We will use this file to connect to our Compute Instance.  
 It is recommended that you move the key file to a dedicated folder on your computer for safe keeping.  
 On a Mac/Linux machine, one possible location would be the `~/.ssh/` folder.  
 
-   > **Note:** Please take note of where this file is saved as we will need it in upcoming steps.
-
    ![Download SSH key](images/download-ssh-key.png)
 
+   > **Note:** Please take note of where this file is saved as we will need it in upcoming steps.
 
 7. Create the Create button at the bottom of the page.
 
