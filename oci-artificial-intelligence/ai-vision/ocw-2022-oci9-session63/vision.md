@@ -106,7 +106,8 @@ e. Then click Create
 2. Upload image files into Storage Bucket
 
 a. Switch to OCI Window and click the Bucket Name.
-b. Bucket detail window should be visible. Click Upload
+
+b. Bucket detail window should be visible. Click Upload.
 
 ![Upload images](images/upload.png " ")
 
@@ -119,9 +120,10 @@ More details on Object storage can be found on this page. [Object Storage Upload
 d. Image URL path can be found in the Object Storage Bucket where your image resides. Next to each object, click the three dots and click “View Object Details” button.
 
 ![Image URL](images/obj-details.png " ")
-![](images/path.png " ")
 
-Copy the URL Path (URL) of each object into a separate notepad text file so you can easily access these links later in the lab.
+e. Copy the URL Path (URL) of each object into a separate notepad text file so you can easily access these links later in the lab.
+
+![](images/path.png " ")
 
 ## Task 3: Demo Vision Service using the OCI Console
 
@@ -155,9 +157,9 @@ b. This invokes analyzeDocument API after the image is provided. Raw text extrac
 | Image classification | Categorizes object(s) within an image | Select "Image Classification." Labels and confidence scores will appear under the Results pane. [Reference](images/img-detection.png)|
 | Object detection | Locates and identifies objects within an image | Select "Object Detection." Objects, confidence score, and highlighted bounding box will all appear under the Results pane. Clicking on one of the labels on the results pane will also highlight where on the image that object was detected.|
 
-4. Use Image Analysis Features
+4. Use Object detection feature
 
-a. On the Vision page, select “Image Classification” or "Object Detection" on the left navigation menu and provide an image from local storage or OCI object storage. This invokes analyzeImage API after the image is provided.
+a. On the Vision page, select "Object detection" on the left navigation menu and provide an image from local storage or OCI object storage. This invokes analyzeImage API after the image is provided.
 
 
 ![Image Analysis Features](images/img-classification.png " ")
