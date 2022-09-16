@@ -202,7 +202,7 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
  1. To train a custom model, you will need training data. There are two main options depending on if you already have an annotated dataset, or only have raw (unlabeled) images.
 
- ![Two options for traning data](images/model-type.png " ")
+ ![Two options for training data](images/model-type.png " ")
 
 
 2. Create a New dataset: If you do not have any annotated images (you only have raw images you'd like to train your model on), select "Create a New Dataset".
