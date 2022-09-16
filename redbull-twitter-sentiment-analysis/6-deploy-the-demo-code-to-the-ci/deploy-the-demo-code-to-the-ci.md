@@ -217,7 +217,7 @@ In the connected terminal, execute the following command:
 2. As our second validation step, we will test the OCI API authentication configuration.  
 To do this we will use `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`.  
 This program is a tiny example of how to call the Oracle Language & Vision AI API using JavaScript (we have an equivalent program written in Python in the same folder `~/senti-meter-demo/src/senti-meter-demo/test-oci.py`).  
-Take a look at the `Learn More` section for link to API references samples in other languages.  
+Take a look at the `Learn More` section for links to API references and samples in other languages.  
 
     To run the program, in the connected terminal, execute the following command:
 
@@ -248,7 +248,7 @@ Take a look at the `Learn More` section for link to API references samples in ot
     ```
 
 3. Let's take a look at the code in `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`:  
-After importing the required parts of the OCI SDK (installed with `npm i --save oci-sdk`), we start by creating the authentication info:
+After importing the required parts of the OCI SDK, we start by creating the authentication info:
 
     ```typescript
     const authenticationDetailsProvider = new common.ConfigFileAuthenticationDetailsProvider();
@@ -260,7 +260,7 @@ After importing the required parts of the OCI SDK (installed with `npm i --save 
 
     ```typescript
     const languageClient = new aiLanguage.AIServiceLanguageClient({ authenticationDetailsProvider });
-    
+
     const languageResponse = await languageClient.detectLanguageSentiments({
       detectLanguageSentimentsDetails: {
         text: 'What a wonderful day here at Oracle CloudWorld!'
@@ -298,7 +298,7 @@ After importing the required parts of the OCI SDK (installed with `npm i --save 
     }
     ```
 
-    In this response we can see that two aspects were detected in the text. Both returned with their position in the text (`offset` & `length`), the scores given by the model for each sentiment possibility and the final sentiment.  
+    In this response we can see that two sentiment aspects were detected in the text. Both returned with their position in the text (`offset` & `length`), the scores given by the model for each sentiment possibility and the final sentiment.  
 
     The program continues to execute a similar patter for the Vision API.
 
