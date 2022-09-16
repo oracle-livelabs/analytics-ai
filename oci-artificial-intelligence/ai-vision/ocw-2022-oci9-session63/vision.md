@@ -116,28 +116,14 @@ c. Click on Upload and then browse to file which you desire to upload.
 
 More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
-## Task 3: Demo Vision Service using the OCI Console
-
-1. Navigate to the Vision Page of OCI Console
-
-![Navigate to Vision](images/navigate-to-ai-vision-menu.png " ")
-
-2. Use Document AI features
-
-a. On the Vision page, select “Document AI” on the left navigation menu and provide a document or image from OCI object storage. You can also upload from local storage. In order to upload image from Object Storage Bucket, you will need image's URL Path.
-
-![Document AI](images/template.png " ")
-
-b. Image URL path can be found in the Object Storage Bucket where your image resides. Navigate to the bucket to locate object details that has the image URL path, as shown below. 
+d. Image URL path can be found in the Object Storage Bucket where your image resides. Next to each object, click the three dots and click “View Object Details” button.
 
 ![Image URL](images/obj-details.png " ")
 ![](images/path.png " ")
 
+Copy the URL Path (URL) of each object into a separate notepad text file so you can easily access these links later in the lab.
 
-c.  This invokes analyzeDocument API after the image is provided. Raw text extracted by our pre-trained multi-tenant model is displayed on the right.
-
-![Invoke Document AI API](images/document-ai.png " ")
-
+## Task 3: Demo Vision Service using the OCI Console
 
 | Feature | Description | Details on Console |
 | -------- |:-------:| -----:|
@@ -147,8 +133,29 @@ c.  This invokes analyzeDocument API after the image is provided. Raw text extra
 |Table extraction|Extracts content in tabular format, maintaining row/column relationships of cells| Toggle to the Table tab to get table information |
 |Searchable PDF output|Embeds a transparent layer on top of document image in PDF format to make it searchable by keywords|You need to test on a PDF document to use this feature. When you've selected a PDF, the searchable PDF button will be clickable. Clicking on it will download an OCR PDF to your computer. [Reference](images/pdf.png)|
 
+1. Navigate to the Vision Page of OCI Console
 
-3. Use Image Analysis Features
+![Navigate to Vision](images/navigate-to-ai-vision-menu.png " ")
+
+2. Use Document AI features
+
+a. On the Vision page, select “Document AI” on the left navigation menu and provide a document or image from OCI object storage. You can also upload from local storage. In order to upload image from Object Storage Bucket, you will need image's URL Path. Refer back to the URL Path links that you copy and pasted into your notepad from Task 2. You will now paste these into the “Enter Image URL” field and click “Upload”.
+
+![Document AI](images/template.png " ")
+
+b. This invokes analyzeDocument API after the image is provided. Raw text extracted by our pre-trained multi-tenant model is displayed on the right.
+
+![Invoke Document AI API](images/document-ai.png " ")
+
+
+3. Features you can test out:
+
+| Feature | Description | Details on Console |
+| -------- |:-------:| -----:|
+| Image classification | Categorizes object(s) within an image | Select "Image Classification." Labels and confidence scores will appear under the Results pane. [Reference](images/img-detection.png)|
+| Object detection | Locates and identifies objects within an image | Select "Object Detection." Objects, confidence score, and highlighted bounding box will all appear under the Results pane. Clicking on one of the labels on the results pane will also highlight where on the image that object was detected.|
+
+4. Use Image Analysis Features
 
 a. On the Vision page, select “Image Classification” or "Object Detection" on the left navigation menu and provide an image from local storage or OCI object storage. This invokes analyzeImage API after the image is provided.
 
@@ -156,14 +163,8 @@ a. On the Vision page, select “Image Classification” or "Object Detection" o
 ![Image Analysis Features](images/img-classification.png " ")
 
 
-b. Features you can test out:
 
-| Feature | Description | Details on Console |
-| -------- |:-------:| -----:|
-| Image classification | Categorizes object(s) within an image | Select "Image Classification." Labels and confidence scores will appear under the Results pane. [Reference](images/img-detection.png)|
-| Object detection | Locates and identifies objects within an image | Select "Object Detection." Objects, confidence score, and highlighted bounding box will all appear under the Results pane. Clicking on one of the labels on the results pane will also highlight where on the image that object was detected.|
-
-With this information, you can now succesfully leverage OCI Vision service through the OCI console.
+With this information, you can now successfully leverage OCI Vision service through the OCI console.
 
 Next, we will show you how to create a Custom Vision model through the console. 
 
