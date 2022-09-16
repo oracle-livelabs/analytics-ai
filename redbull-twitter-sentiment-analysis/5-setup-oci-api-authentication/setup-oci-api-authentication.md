@@ -2,7 +2,12 @@
 
 ## Introduction
 
+Estimated time - 15 minutes
+
 Throughout this workshop we will be making extensive use of the Oracle Cloud Infrastructure (OCI) AI APIs. To issue API requests, we need to append authentication information to the requests. In this lab we will set up this authentication mechanism.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_n1rffcvj)
 
 ### Objectives
 
