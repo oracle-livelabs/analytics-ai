@@ -131,7 +131,7 @@ d. Image URL path can be found in the Object Storage Bucket where your image res
 
 e. Copy the URL Path (URL) of each object into a separate notepad text file so you can easily access these links later in the lab.
 
-![](images/get-url-path.png " ")
+![Copy and paste URL paths into separate notepad](images/get-url-path.png " ")
 
 ## Task 3: Demo Vision Service using the OCI Console
 
