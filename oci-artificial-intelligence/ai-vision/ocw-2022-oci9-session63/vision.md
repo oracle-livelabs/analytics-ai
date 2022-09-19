@@ -133,6 +133,8 @@ e. Copy the URL Path (URL) of each object into a separate notepad text file so y
 
 ![Copy and paste URL paths into separate notepad](images/get-url-path.png " ")
 
+![Notepad](images/text-pad.png " ")
+
 ## Task 3: Demo Vision Service using the OCI Console
 
 | Feature | Description | Details on Console |
