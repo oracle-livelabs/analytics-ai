@@ -220,18 +220,35 @@ Choose existing dataset: If you have an existing annotated dataset, you can sele
 
 ![Training Data](images/training-data.png " ")
 
-## Task 7: Train your Custom Model
+# Task 7: Train your Custom Model and Submit
 
 1. In the "train model" step, you will name your model, add a description of it, and optionally, specify a training duration.
 
 ![Training Duration](images/train-model1.png " ")
 
-
-## Task 8: Review and Submit
-
 In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments (on training time, for example). When you want to start training, click "submit" and this will kick of the process. You can then check on the status of your model in the project where you created it.
 
 ![Review and Submit](images/review.png " ")
 
-Congratulations on completing this lab!
+## Task 8: Test the model on new images
 
+1. Navigate to the Project Details page and click on the model just created.
+
+![Test Model](images/test-model.png " ")
+
+2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HTMmO7ndSl_UUwuJu2dKfWu4l5DsaYjZRqutq90atlQQIq6gtPRue5xWeGMYDGtb/n/orasenatdpltintegration03/b/CareClinics-bucket/o/test-images.zip)to download sample test images to your local machine. 
+
+3. Upload one image from the test dataset on your local machine to test the newly created model.
+
+a. Select 'Local file' under 'Image source'
+
+b. Select 'select one…' in the 'Upload image' section. Navigate to the folder containing the test images on your local machine and select an image to upload.
+
+![Analyze images](images/analyze-images.png " ")
+
+c. Examine confidence measurements under the 'Results' pane. You can see our Vision model correctly predicted this image as an insurance card. You can test out with other images as well. 
+
+![Analyze results](images/analyze-results.png " ")
+
+
+Congratulations on completing this lab!
