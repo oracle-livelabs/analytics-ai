@@ -2,7 +2,12 @@
 
 ## Introduction
 
+Estimated time - 20 minutes
+
 We will set up the demo to run from an OCI Compute Instance (aka VM). We will configure this Compute Instance as a "server" which will send real-time updates to the demo web client. The client will then visualize these updates. After creating the Compute Instance we will connect to it using SSH.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_2uwwnol4)
 
 ### Objectives
 
@@ -25,7 +30,7 @@ We will set up the demo to run from an OCI Compute Instance (aka VM). We will co
 
    ![Name instance](images/name-instance.png)
 
-5. We are going to accept most of the defaults on this page. Please make sure that under the Image and shape section, Oracle Linux is selected and under the Networking section, the Assign a public IPv4 address is selected.
+5. We are going to accept most of the defaults on this page. Please make sure that under the Image and shape section, Oracle Linux is selected and under the Networking section, Assign a public IPv4 address is selected.
 
    ![Oracle Linux selected](images/oracle-linux-selected.png)
    ![Assign IPv4 address selected](images/assign-ipv4-address.png)
@@ -183,4 +188,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Authors:**
-	* Yanir Shahak - Senior Principal Software Engineer, Health & AI
+   * Yanir Shahak - Senior Principal Software Engineer, Health & AI
