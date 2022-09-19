@@ -103,7 +103,13 @@ e. Then click Create
 
 ![Click create](images/createBucket.png " ")
 
-2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/dFREAN2I7xPSaGTaLUt6bqRLjxk6ErJZ5pIt3mjbAmKcHJIl7cY3oyzMl5er23Iv/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Vision%20Photos.zip)to download sample images that will be used during this lab. Please download and then unzip the folder "Vision Photos" from your local drive.
+2. Click this [link] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/dFREAN2I7xPSaGTaLUt6bqRLjxk6ErJZ5pIt3mjbAmKcHJIl7cY3oyzMl5er23Iv/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Vision%20Photos.zip) to download sample images that will be used during this lab. Please download and then unzip the folder "Vision Photos" from your local drive.
+
+![Open the folder where you downloaded images](images/photo-unzip.png " ")
+
+![Unzip the folder](images/photo-unzip-2.png " ")
+
+![List of Vision Photos](images/vision-photo-list.png " ")
 
 3. Upload image files into Storage Bucket
 
@@ -115,17 +121,17 @@ b. Bucket detail window should be visible. Click Upload.
 
 c. Click on Upload and then browse to the Vision Photos you downloaded previously. There are 10 insurance card photos in total.
 
-![Click Upload](images/uploaded.png " ")
+![Click Upload](images/photo-upload.png " ")
 
 More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 d. Image URL path can be found in the Object Storage Bucket where your image resides. Next to each object, click the three dots and click “View Object Details” button.
 
-![Image URL](images/obj-details.png " ")
+![Image URL](images/view-object-details.png " ")
 
 e. Copy the URL Path (URL) of each object into a separate notepad text file so you can easily access these links later in the lab.
 
-![](images/path.png " ")
+![](images/get-url-path.png " ")
 
 ## Task 3: Demo Vision Service using the OCI Console
 
