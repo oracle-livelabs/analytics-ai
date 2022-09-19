@@ -196,8 +196,7 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 ![Create Model](images/create-model.png " ")
 
-3. AI Vision Service supports training of an on-demand custom model for Object Detection, Image Classification, and Document Image Classification features. You can select one of these three options in the drop down.
-
+3. AI Vision Service supports training of an on-demand custom model for Object Detection, Image Classification, and Document Image Classification features. We will select **image classification** out of the three options in the drop down.
  ![Choose Model](images/select-model.png " ")
 
 
