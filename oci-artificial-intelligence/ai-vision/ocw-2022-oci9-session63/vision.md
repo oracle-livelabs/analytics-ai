@@ -103,7 +103,9 @@ e. Then click Create
 
 ![Click create](images/createBucket.png " ")
 
-2. Upload image files into Storage Bucket
+2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/dFREAN2I7xPSaGTaLUt6bqRLjxk6ErJZ5pIt3mjbAmKcHJIl7cY3oyzMl5er23Iv/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Vision%20Photos.zip)to download sample images that will be used during this lab. Please download and then unzip the folder "Vision Photos" from your local drive.
+
+3. Upload image files into Storage Bucket
 
 a. Switch to OCI Window and click the Bucket Name.
 
@@ -111,7 +113,7 @@ b. Bucket detail window should be visible. Click Upload.
 
 ![Upload images](images/upload.png " ")
 
-c. Click on Upload and then browse to file which you desire to upload.
+c. Click on Upload and then browse to the Vision Photos you downloaded previously. There are 10 insurance card photos in total.
 
 ![Click Upload](images/uploaded.png " ")
 
