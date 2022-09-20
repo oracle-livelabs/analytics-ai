@@ -2,8 +2,13 @@
 
 ## Introduction
 
+Estimated time - 25 minutes
+
 After completing the hard work of configuring the demo, now it's time to sit back, relax and observe the results.
 In just a few steps we will be able to see the flow of tweets analyzed by the Oracle AI APIs sent directly to our screen.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_lm0mekqt)
 
 ### Objectives
 
@@ -27,8 +32,8 @@ In this task we will launch each of these components.
 1. In your connected terminal, execute the following two commands to start the tweets `consumer` and observe its operation:
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run consumer</copy>
-    [opc@senti-meter-server ~]$ <copy>tail -f consumer</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run consumer</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>tail -f consumer</copy>
     ```
 
     The output from these two commands should look similar to this:
@@ -42,8 +47,8 @@ In this task we will launch each of these components.
 2. In your connected terminal, execute the following two commands to start the tweets `processor` and observe its operation:
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run processor</copy>
-    [opc@senti-meter-server ~]$ <copy>tail -f processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>tail -f processor</copy>
     ```
 
     The output from these two commands should look similar to this:
@@ -55,8 +60,8 @@ In this task we will launch each of these components.
 3. (OPTIONAL) After you are done running the demo, you can use the following commands to stop the `consumer` and/or `processor` processes (if you intend to run the demo right now, please skip this section):
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run stop-processor</copy>
-    [opc@senti-meter-server ~]$ <copy>npm run stop-consumer</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-consumer</copy>
     ```
 
 4. (OPTIONAL) This demo includes a `random tweets generator` which can be used as a stand-in replacement for the tweets `consumer`. You can use the generator in case you ran into issues or were unable to setup a Tweeter developer account or for generating pseudo tweets with a specific sentiment. Using the tweets generator you can control the rate at which the tweets are generated (the default being 10 tweets per second).  
@@ -75,8 +80,8 @@ In this task we will launch each of these components.
     3. To start the tweets generator, use the following command:
 
         ```bash
-        [opc@senti-meter-server ~]$ <copy>npm run random-generator</copy>
-        [opc@senti-meter-server ~]$ <copy>tail -f random-generator</copy>
+        [opc@senti-meter-server senti-meter-demo]$ <copy>npm run random-generator</copy>
+        [opc@senti-meter-server senti-meter-demo]$ <copy>tail -f random-generator</copy>
         ```
 
         The output from these two commands should look similar to:
@@ -90,7 +95,7 @@ In this task we will launch each of these components.
     5. To stop the `random tweets generator`, use the following command:
 
         ```bash
-        [opc@senti-meter-server ~]$ <copy>npm run stop-random-generator</copy>
+        [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-random-generator</copy>
         ```
 
 
@@ -118,7 +123,7 @@ The client used to visualize the analysis results is an HTML file which can be o
     Please make sure that the single quotes remain at the beginning and end of the IP address without any additional spacing. When done, save the file and exit the editor.
 
 4. Before we load the client into the browser, we need to let the browser know we are aware that the TLS certificate used to connect to our Compute Instance is a self-signed one (this was covered in a [previous lab](?lab=deploy-the-demo-code-to-the-ci#Task4:CreateaselfsignedTLScertificate)).  
-To do this, start your favorite browser and navigate to: `https://[Compute Instanec IP]:9000`. As an example, the address should look similar to this: `https://192.168.0.74:9000`.  
+To do this, start your favorite browser and navigate to: `https://[Compute Instance IP]:9000`. As an example, the address should look similar to this: `https://192.168.0.74:9000`.  
 Depending on your browser, you should see a message similar to this:
 
     ![Browser certificate error](images/browser-certificate-error.png "Browser certificate error")
@@ -164,8 +169,8 @@ Here are the steps to run the Vision AI demo:
 Use the following commands to stop the running Language demo using your connected terminal:
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run stop-processor</copy>
-    [opc@senti-meter-server ~]$ <copy>npm run stop-consumer</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-consumer</copy>
     ```
 
 2. Use the following command to start the `image-consumer`:
@@ -173,7 +178,7 @@ Use the following commands to stop the running Language demo using your connecte
     > **Note:** We do not control the type of images being posted to Twitter. Some of the content might be unsavory. Several images have been bundled with the source code zip file under the `~/senti-meter-demo/images` folder. You can use the bundled images without starting the `image-consumer`.
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run image-consumer</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run image-consumer</copy>
     ```
 
     This process performs a query on past tweets using the filter defined in `.env` for the `IMAGE_QUERY` parameter. The default value queries for tweets which mention `@redbullracing`, contain images, and are not a retweet.  
@@ -182,8 +187,8 @@ Use the following commands to stop the running Language demo using your connecte
 3. Use the following command to start the `image-processor`:
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run image-processor</copy>
-    [opc@senti-meter-server ~]$ <copy>tail -f image-processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run image-processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>tail -f image-processor</copy>
     ```
 
     The output from these two commands should look similar to this:
@@ -195,10 +200,10 @@ Use the following commands to stop the running Language demo using your connecte
 4. (OPTIONAL) After you are done running the demo, you can use the following command to stop the `processor` process (if you intend to run the demo now, please skip this section):
 
     ```bash
-    [opc@senti-meter-server ~]$ <copy>npm run stop-image-processor</copy>
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run stop-image-processor</copy>
     ```
 
-## Task 3: Launch the Vision AI image demo client
+## Task 4: Launch the Vision AI image demo client
 
 We will now load the client in the browser to observe the results of image analysis.
 Please make sure you have completed the steps to approve the self-signed certificate covered in a [previous task](#Task2:LaunchtheSentiMeterclient).

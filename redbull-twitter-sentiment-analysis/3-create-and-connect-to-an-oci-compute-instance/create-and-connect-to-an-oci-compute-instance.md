@@ -2,7 +2,12 @@
 
 ## Introduction
 
+Estimated time - 20 minutes
+
 We will set up the demo to run from an OCI Compute Instance (aka VM). We will configure this Compute Instance as a "server" which will send real-time updates to the demo web client. The client will then visualize these updates. After creating the Compute Instance we will connect to it using SSH.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_2uwwnol4)
 
 ### Objectives
 
@@ -17,7 +22,7 @@ We will set up the demo to run from an OCI Compute Instance (aka VM). We will co
 
    ![Main menu, Compute Instances](images/main-menu-compute-instances.png)
 
-3. Make sure you have the right Compartment selected and click the Create instance button.
+3. Make sure you have the right Compartment (any Compartment you have access to would do, this could be the root Compartment as well) selected and click the Create instance button.
 
    ![Click create instance](images/create-instance.png)
 
@@ -25,19 +30,18 @@ We will set up the demo to run from an OCI Compute Instance (aka VM). We will co
 
    ![Name instance](images/name-instance.png)
 
-5. We are going to accept most of the defaults on this page. Please make sure that under the Image and shape section, Oracle Linux is selected and under the Networking section, the Assign a public IPv4 address is selected.
+5. We are going to accept most of the defaults on this page. Please make sure that under the Image and shape section, Oracle Linux is selected and under the Networking section, Assign a public IPv4 address is selected.
 
    ![Oracle Linux selected](images/oracle-linux-selected.png)
    ![Assign IPv4 address selected](images/assign-ipv4-address.png)
 
-6. Scroll down to the Add SSH keys section (we will accept most of the defaults on this page) and click the Save Private Key button. This will trigger a download of your SSH connection key file (typically to your downloads folder). We will use this file to connect to our Compute Instance.  
+6. Scroll down to the Add SSH keys section and click the Save Private Key button. This will trigger a download of your SSH connection key file (typically to your downloads folder). We will use this file to connect to our Compute Instance.  
 It is recommended that you move the key file to a dedicated folder on your computer for safe keeping.  
 On a Mac/Linux machine, one possible location would be the `~/.ssh/` folder.  
 
-   > **Note:** Please take note of where this file is saved as we will need it in upcoming steps.
-
    ![Download SSH key](images/download-ssh-key.png)
 
+   > **Note:** Please take note of where this file is saved as we will need it in upcoming steps.
 
 7. Create the Create button at the bottom of the page.
 
@@ -184,4 +188,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Authors:**
-	* Yanir Shahak - Senior Principal Software Engineer, Health & AI
+   * Yanir Shahak - Senior Principal Software Engineer, Health & AI

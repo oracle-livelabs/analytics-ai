@@ -2,6 +2,8 @@
 
 ## Introduction
 
+Estimated time - 20 minutes
+
 This workshop uses Twitter's [Filtered Stream API](https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/introduction) for retrieving public tweets in near real-time. To use this API, we need access to a Twitter developer account.
 
 ### Objectives
