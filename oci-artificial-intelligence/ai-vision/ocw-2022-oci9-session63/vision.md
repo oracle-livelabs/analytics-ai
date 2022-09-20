@@ -68,7 +68,7 @@ Before you start using OCI Vision, your tenancy administrator should set up the 
 
 ## Task 1: Understand the data requirements for OCI AI Vision service
 
-The vision service works with multiple formats of image data in order to detect objects, assign labels to images, extract text, and more. The service accepts data through Object Storage and locally stored images (if using via OCI console).
+The purpose of **Task 1** is to understand what file types you can use to leverage the Vision service. The vision service works with multiple formats of image data in order to detect objects, assign labels to images, extract text, and more. The service accepts data through Object Storage and locally stored images (if using via OCI console).
 
 The service offers sync and async APIs to analyze images, with data requirements for each detailed below:
 
@@ -264,9 +264,9 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 ## Task 6: Select Model Type
 
-1. Click on the project that you just created. Next, we will go ahead and create a model. 
+1. Drill into the project that you just created. Next, we will create a model. 
 
-2. You will need to select Create Model within your project. 
+2. You will need to select 'Create Model' within your project. 
 
 ![Create Model](images/create-model.png " ")
 
@@ -281,18 +281,18 @@ A Project is a way to organize multiple models in the same workspace. It is the 
  ![Two options for training data](images/model-type.png " ")
 
 
-2. Create a New dataset: If you do not have any annotated images (you only have raw images you'd like to train your model on), select "Create a New Dataset".
+2. Choose Existing Dataset
+
+In **Task 4**, we created a dataset that will now be leveraged in the training model. 
+
+Choose existing dataset: If you have an existing annotated dataset, you can select it by clicking "Choose Existing Dataset." If you've previously annotated images using OCI Data Labeling service, select that button and select the dataset file of your choice. If you have annotated your images using some 3rd party tool, you can upload that dataset file to object storage and select via the "object storage" button.
 
 ![Choose Existing Dataset](images/dataset.png " ")
 
 
-This will drive you to OCI Data Labeling service, where you can easily add labels or draw bounding boxes over your image content. To learn more about how to annotate images using OCI Data Labeling service, you can review documentation here [Adding and Editing Labels](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/labels.htm).
-
-![Data Labelling Service](images/dls.png " ")
-
-Choose existing dataset: If you have an existing annotated dataset, you can select it by clicking "Choose Existing Dataset." If you've previously annotated images using OCI Data Labeling service, select that button and select the dataset file of your choice. If you have annotated your images using some 3rd party tool, you can upload that dataset file to object storage and select via the "object storage" button.
-
 ![Training Data](images/training-data.png " ")
+
+If you would like to learn more about Adding and Editing labels in the future, you can find more information by reviewing documentation here [Adding and Editing Labels](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/labels.htm).
 
 ## Task 8: Train your Custom Model and Submit
 
