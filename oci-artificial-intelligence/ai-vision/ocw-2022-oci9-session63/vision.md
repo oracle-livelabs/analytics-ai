@@ -209,7 +209,7 @@ c. Annotation Class: Multiple Label
 
 d. Click 'Next'
 
-![Choose Dataset Images](images/choose-dataset-images.png" ")
+![Choose Dataset Images](images/choose-dataset-images.png " ")
 
 e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
 
