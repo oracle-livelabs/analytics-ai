@@ -209,13 +209,13 @@ c. Annotation Class: Multiple Label
 
 d. Click 'Next'
 
-![Choose Dataset Images](images/choose-dataset-images.png " ")
-
 e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
 
 f. Choose the name of compartment where your Bucket exists
 
 g. Choose your Bucket by name
+
+![Choose Dataset Images](images/choose-dataset-images.png " ")
 
 h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be: ‘insurance card’ and ‘health insurance card’.
 
