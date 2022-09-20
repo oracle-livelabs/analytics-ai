@@ -31,10 +31,10 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 ## **Task 1:** Reserve your workshop environment though LiveLabs
 
-> Note - you may be seeing these procedures because you've already reserved a workshop environment through LiveLabs. However, if you are attending an event that uses this workshop, you may need to reserve your environment now.
+> **Note:** you may be seeing these procedures because you've already reserved a workshop environment through LiveLabs. However, if you are attending an event that uses this workshop, you may need to reserve your environment now.
 
-1. Open this workshop in LiveLabs.
-    https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=673  TODO - update
+1. Open this workshop in LiveLabs (or search for *11181*).
+    https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=11181  TODO - verify
 
 1. Click the **Sign In** button in the upper right corner of the LiveLabs page then sign in with your existing Oracle account or create an account if you don't have one. 
 
@@ -58,31 +58,12 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 1. Click **Submit Reservation**. 
 
-1. The LiveLabs *My Reservations* page will appear showing the status of your reservation. An environment will now be provisioned for you. This will take a few minutes.
-    TODO add screen shot
+1. The LiveLabs *My Reservations* page will appear showing the status of your reservation. An environment will now be provisioned for you. This will take a few minutes. Wait until provisioning is complete and the status changes to *Available*.
 
-1. When provisioning is complete and the status changes to *Available*, click the link labeled **Launch the workshop**. This takes you to the workshop procedures.
-    TODO add screen shot
+**Please proceed to the next lab.**
 
-1. On the workshop procedures page, click **View Login Info** in the upper left corner.
-    ![](./images/ll-view-login-info.png)
+## Acknowledgements
 
-1. On the *Reservation Information* dialog, important information is provided that you will need to access your sandbox environment and continue the workshop. **Record the following information** on your local machine for easy access throughout the workshop.
-
-    TODO add screen shot
-        
-    a. Username
-
-    b. Password
-
-    c. Compartment
-
-In the next lab you will sign-in to your environment.
-
-## Please proceed to the next lab.
-
-***
-### Acknowledgements
 * **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
 * **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
 * **Last Updated By/Date** - <Name, Month Year>

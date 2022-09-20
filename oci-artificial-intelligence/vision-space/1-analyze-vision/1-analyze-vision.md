@@ -15,9 +15,7 @@ In this lab, you will:
 - Access to a LiveLabs sandbox environment
 
 
-> **Note**
-> 
-> To use OCI Vision in a new tenancy, there are policies that need to be configured that give user groups access to the service. By using the LiveLabs sandbox environment, this configuration has already been performed.
+> **Note:** To use OCI Vision in a new tenancy, there are policies that need to be configured that give user groups access to the service. By using the LiveLabs sandbox environment, this configuration has already been performed.
 For additional information about Vision policies, see the [product documentation](https://docs.oracle.com/en-us/iaas/vision/vision/using/policies_quick_set_up.htm#policies_quick_set_up).
 
 
@@ -34,7 +32,7 @@ Sign-in and get familiar with the user interface.
     
     ![](./images/oci-sign-in.png)
 
-1. If prompted to reset your password, **enter a new password** that meets the following characteristics, and **save it on the local machine** for later reference:
+1. If prompted to reset your password, **enter a new password** that meets the following characteristics, and **save it on your local machine** for later reference:
     - The password must have at least 12 characters.
     - The password cannot exceed 40 characters.
     - The password cannot contain the First Name of the user.
@@ -46,7 +44,11 @@ Sign-in and get familiar with the user interface.
 
 1. On the home page of the OCI Console, you will use the 3-bar "hamburger" icon in the upper left corner to navigate to different services.
 
-1. In the upper right corner is the user icon where you can logout if needed. (But don't logout now.)
+    ![](./images/oci-hamburger.png)
+
+1. In the upper right corner is the profile icon where you can logout if needed. (But don't logout now.)
+
+    ![](./images/oci-profile.png)
 
 
 ## **Task 2:** Use OCI Vision in the OCI Console
@@ -60,7 +62,7 @@ Try out OCI Vision in the console.
 
     ![](./images/document-ai-features.png " ")
 
-1. Select one of the sample documents displayed on the page then view the results on the right side of the screen.
+1. A sample image is displayed by default. View the results on the right side of the screen. (There are also another sample image available for selection at the bottom of the page.)
 
 1. Features of Document AI you can test out: 
 
@@ -90,10 +92,10 @@ Try out OCI Vision in the console.
 
 Congratulations, you now know how to navigate to OCI Vision in the OCI Console and use it to analyze images.
 
-## Please proceed to the next lab
+**Please proceed to the next lab**
 
-***
-### Acknowledgements
+## Acknowledgements
+
 * **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
 * **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
 * **Last Updated By/Date** - <Name, Month Year>

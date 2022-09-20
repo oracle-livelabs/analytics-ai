@@ -3,7 +3,7 @@
 ## Introduction
 Training a custom OCI Vision model requires a set of images that have been labeled for the type of model that is to be created. For example, if you want to train a model to detect sharks, you need pictures of sharks and then the shark(s) in each image must be identified with a bounding box and the box is labeled with the name "shark". If you want to train a model to classify an image according to the contents of the scene, you will need to assign labels to each image in the training dataset.
 
-In this lab, you will get some experience with labeling images. You will label some of the space telescope images to identify the galaxies that appear in the images.
+In this lab, you will get some experience with labeling images. You will label some of the space telescope images to identify the galaxies that appear in the images. 
 
 *Estimated Time*: 15 minutes
 
@@ -19,16 +19,15 @@ In this lab, you will get some experience with labeling images. You will label s
 The images to be labeled have already been staged in an object storage bucket in the LiveLabs sandbox environment. You'll create a dataset from those images.
 
 1. From the OCI services menu, select *Analytics & AI*, then under *Machine Learning* click **Data Labeling**.
-![OCI services menu](./images/dls.png)
+
+    ![OCI services menu](./images/dls.png)
 
 1. On the *Data Labeling* page, click **Datasets**.
 ![Clicking on datasets from Data Labeling Service](./images/datasets.png)
 
-1. On the *Dataset list* page, set your Compartment to **vision_galaxy_ws**.
+1. On the *Dataset list* page, select the *Compartment* you were assigned in your LiveLabs *Reservation Information*. Then begin creating your dataset by clicking the **Create dataset** button.
 
-    ![Selecting the compartment](./images/compartment-dls.png)
-
-1. Begin creating your dataset by clicking the **Create dataset** button.
+    ![Selecting the compartment](./images/compartment-dls.png) 
 
 1. In the *Create Dataset* dialog, set the following values:
 
@@ -48,30 +47,30 @@ The images to be labeled have already been staged in an object storage bucket in
  
     a. Retrieve files from Object Storage by choosing **Select from Object Storage**.
  
-    b. Choose compartment **vision_galaxy_ws_read_only**, if not already selected.
+    b. Choose compartment **vision\_galaxy\_ws\_read\_only**, if not already selected.
     
     c. Choose Bucket **labeling-read-only**
 
-    d. Add Labels: type the word ***spiral galaxy*** in the box, then click the **galaxy (New)** in the drop-down list
+    d. Add Labels: type the word ***spiral galaxy*** in the box, then click  **spiral galaxy (New)** in the drop-down list
 
-    ![Adding labels](./images/dataset-labels.png) TODO update
+    ![Adding labels](./images/dataset-labels.png)
 
 1. Click 'Next'
   
     ![Clicking next](./images/dataset-next.png)
 
-1. In the next page of the *Create dataset* dialog, review the information and click **Create**.
+1. On the next page of the *Create dataset* dialog, review the information and click **Create**.
   ![Create dataset window - review information](./images/click-create-dataset.png)
 
 1. You will return to the *Dataset list* page. Wait until your new dataset's status is **Active**. This will take about 4-5 minutes.
 
-    ![](./images/dataset-active.png) TODO update?
+    ![](./images/dataset-active.png)
 
 
 ## **Task 2:** Label the images in your dataset
-Now that you have a dataset created for the data labeleing services, you'll proceed with labeling those images.
+Now that you have a dataset created for the data labeling services, you'll proceed with labeling those images.
 
-1. On the page showing your active dataset, the data record view is listed by default. This is a list of all the image files in the dataset. (Note - there is also a *Gallery view* that displays the files as images.) **Click the top file name** to open it.
+1. On the page showing your active dataset, the data record view is listed by default. This is a list of all the image files in the dataset. (There is also a *Gallery view* that displays the files as images.) **Click the top file name** to open it.
 
     ![](./images/start-labeling.png)
 
@@ -99,10 +98,10 @@ Now that you have a dataset created for the data labeleing services, you'll proc
 
 Congratulations, you have completed labeling a set of images for object detection.
 
-## Please proceed to the next lab.
+**Please proceed to the next lab.**
 
-***
-### Acknowledgements
+
+## Acknowledgements
 * **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
 * **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
 * **Last Updated By/Date** - <Name, Month Year>

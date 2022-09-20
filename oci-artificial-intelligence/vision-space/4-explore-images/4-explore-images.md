@@ -15,18 +15,17 @@ The features of OCI Vision are exposed through an API, which makes those feature
 
 ### Prerequisites
 * You are using a LiveLabs sandbox environment
-* You successfully built a custom Vision model in a previous lab and the model is *Active*.
 
-> Note - the LiveLabs sandbox environment has a pre-configured OAC instance that is used for this lab. In other environments, OAC would need to be provisioned and configured.
+> **Note:** the LiveLabs sandbox environment has a pre-configured OAC instance that is used for this lab. In other environments, OAC would need to be provisioned and configured.
 
 ## **Task 1:** Download a file representing the source dataset
-You'll download a csv file that contains the name and location of the space images to be processed through the OCI Vision custom model you previously created. This file is needed for the dataflow that will be created in this lab.
+You'll download a csv file that contains the name and location of the space images to be processed through the OCI Vision custom model. This file is needed for the data flow that will be created in this lab.
 
 1. Use the OCI console to navigate to Storage > Buckets
 
     ![](./images/console-storage-buckets.png)
 
-1. Set compartment to **vision_galaxy_ws_read_only**, then click the bucket named **data-flow**.
+1. Set compartment to **vision\_galaxy\_ws\_read\_only**, then click the bucket named **data-flow**.
 
     ![](./images/buckets-data-flow.png)
 
@@ -40,13 +39,13 @@ You'll download a csv file that contains the name and location of the space imag
 
     b. The url for the bucket, i.e. *https://cloud.oracle.com/object-storage/buckets/idxv5eebn2fx/object-detection-read-only/objects?region=us-ashburn-1*
 
-    > Note - the bucket containing the images was prepared in advance, as was the csv file.
+    > **Note:** the bucket containing the images was prepared in advance, as was the csv file.
 
 1. Close the csv file.
 
 
 ## **Task 2:** Collect tenancy data for the OAC connection
-You'll need the tenancy ID and user ID for your LiveLabs tenancy to be able to connect to the Vision model from OAC.
+You'll need the tenancy ID and user ID for your LiveLabs tenancy to be able to connect to the Vision model from OAC. TODO - if we can have the users use the administrator's OCI connection, we can skip this step.
 
 1. In the OCI Console, click the Profile icon in the upper right corner of the page, then click *Tenancy: livelab*
 
@@ -72,24 +71,22 @@ Login to OAC.
 
 1. Keep your OCI tab/window open and open the url below in a new tab in your web browser to access the OAC user interface: 
 
-    https://analyticscloudlivelabs-idxv5eebn2fx-ia.analytics.ocp.oraclecloud.com/ui/
+    ![https://analyticscloudlivelabs-idxv5eebn2fx-ia.analytics.ocp.oraclecloud.com/ui/](https://analyticscloudlivelabs-idxv5eebn2fx-ia.analytics.ocp.oraclecloud.com/ui/)
 
     ![](./images/oac-home.png)
 
-> Note 
->
-> If you are prompted to login, use the same credentials as you used for the OCI console.
+> **Note:** If you are prompted to login, use the same credentials as you used for the OCI console.
 > 
-> You'll later need to switch back and forth between the OCI and OAC tabs.
+> Later you'll need to switch back and forth between the OCI and OAC tabs, so it's handy to have both tabs open.
 
 
 ## **Task 4:** Create an OAC connection to OCI
-Create a connection to the tenancy containing the Vision model to be used.
+Create a connection to the tenancy containing the Vision model to be used. TODO - if we can have the users use the administrator's OCI connection, we can skip this step.
 
-1. On the OAC home page, click the *Create* button and then click *Connection*. 
+1. On the OAC home page, click the **Create** button and then click **Connection**. 
     ![](./images/oac-create-connection1.png)
 
-1. In the *Create Connection* dialog, select *OCI Resource*.
+1. In the *Create Connection* dialog, select **OCI Resource**.
 
     ![](./images/oac-create-connection-ociresource.png)
 
@@ -134,7 +131,7 @@ Create a connection to the tenancy containing the Vision model to be used.
 
 
 ## **Task 5:** Ensure that model training has successfully completed
-Verify that the custom model you created in Lab 2 has completed training and is now active.
+Verify that the custom model you created in Lab 2 has completed training and is now active. TODO - no longer requried since we are using a prebuilt model.
 
 1. From the OCI services menu, click **Analytics & AI** then, under *AI Services*, click **Vision**.
   
@@ -154,7 +151,7 @@ Verify that the custom model you created in Lab 2 has completed training and is 
 
 
 ## **Task 6:** Register the Vision model in OAC
-Register the OCI Vision model with OAC so that it can be used in a data flow to process images.
+Register the OCI Vision model with OAC so that it can be used in a data flow to process images. 
 
 1. In OAC, click the 3 dot icon (page menu) next to *Create* button in the upper right corner, then select **Register Model/Function**, and in the submenu select **OCI Vision Models**. 
     
@@ -229,11 +226,15 @@ Create a dataflow that ingests the space images from object storage, submites th
 
     ![](./images/oac-data-flow-add-final.png)
 
-1. In the *Save Dataset* configuration, change the *Dataset* to **Galaxy Object Detection Results**.
+1. In the *Save Dataset* configuration, set the configuration as follows.
 
     ![](./images/oac-save-data-configure.png)
 
-1. Under *Columns*, change *Treat As* for *ID* to **Attribute**. Then, under *Columns*, change *Default Aggregation* for *Confidence* to **Maximum**.
+    a. Change the *Dataset* to **Galaxy Object Detection Results**.
+
+    b. Under *Columns*, change *Treat As* for *ID* to **Attribute**. 
+    
+    c. Under *Columns*, change *Default Aggregation* for *Confidence* to **Maximum**.
 
 1. Click the **Save** icon on the top bar of the page and set the Data Flow *Name* to **Galaxy Object Detection Data Flow**. Then click **OK**  
 
@@ -300,51 +301,17 @@ Create an OAC workbook to view the objects detected in the space images.
 
     todo ![](./images
 
-
-`TODO
-Optionl - Add # of objects to viz
-Need a table with the list of images or gallery of images
-click Image File from Bucket - adds table viz
-add Object Name and Confidence to table
-See confidence for every object detected in each image`
-
-    Edit a calculation for Field ID to get the image file name from the url string
-        replace{
-            replace{
-                Right(Image File from Bucket, 12)
-                ,'/',''}
-            ,'.jpg',''
-        }
-    validate & save
-    add field ID to table 
-    drop the full URL string from the table
-    make map vizualization by duplicating the table then changing it to...
-
-`Add Vision Plugin to canvas (from custom visualizations)
-Drag "Image File from Bucket" to Image Location.
-Drag Vertex 1 and Vertex 3 to Vertices`
-
-`To show all images, drag ImageGalleryViz plugin to canvas. Drag "Image File from Bucket" to "Image URL". Drag "Image Name" to description". (Need image name extracted to a field for this. Use Add Column in data flow.)
-    ex
-    cast(left(right(Image File from Bucket, 19), 10) as date)
-    RIGHT(Image File from Bucket, 19)
-    Name it: Image Name 
-https://www.youtube.com/watch?v=uYIo4XURymI`
-
-> Note
->
-> If you want to add the Vision Plugin to your own environment, you can download it from the Analytics vizualization extensions page available here:
+> **Note:** If you want to add the Vision Plugin to your own environment, you can download it from the Analytics vizualization extensions page available here:
 https://www.oracle.com/business-analytics/data-visualization/extensions/
 >
 >This video shows how to install the visualization (or any) plugin:
 https://www.youtube.com/watch?v=JjuOWm8whgQ
 
 
+**Congratulations, you have completed this lab and the workshop!**
 
-## Congratulations, you have completed this lab and the workshop!
+## Acknowledgements
 
-***
-### Acknowledgements
 * **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
 * **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
 * **Last Updated By/Date** - <Name, Month Year>

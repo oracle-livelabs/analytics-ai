@@ -5,28 +5,33 @@
         "../../variables/variables-in-another-file.json"],
     "tutorials": [
         {
+            "title": "Introduction",
+            "description": "Workshop introduction and reserving LiveLabs sandbox",
+            "filename": "../../0-introduction/0-introduction.md"
+        },
+        {
             "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Introduction",
-            "filename": "../../0-introduction/0-introduction.md"
-        },
-        {
             "title": "Lab 1: Use OCI Vision through the OCI Console",
+            "description": "The user gets familiar with the OCI console and OCI Vision",
             "filename": "../../1-analyze-vision/1-analyze-vision.md"
         },
         {
             "title": "Lab 2: Use OCI Data Labeling to label images",
+            "description": "The user labels space images using OCI Data Labeling",
             "filename": "../../2-label-images/2-label-images.md"
         },
         {
             "title": "Lab 3: Create a Custom AI Vision Model",
+            "description": "The user trains a custom object detection model",
             "filename": "../../3-custom-model/3-custom-model.md"
         },
         {
             "title": "Lab 4: Explore space images",
+            "description": "The user creates a data flow and workbook in Analytic Cloud to detect objects in space images then view them",
             "filename": "../../4-explore-images/4-explore-images.md"
         },
         {

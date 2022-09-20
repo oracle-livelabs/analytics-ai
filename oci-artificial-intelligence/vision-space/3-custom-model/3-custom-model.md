@@ -29,15 +29,19 @@ For this lab, we've already collected a set of images for training the model tha
   
     ![OCI services menu](./images/vision.png)
 
-1. On left side of the Vision page, click **Projects** under *Custom models*.
+1. On left side of the Vision page, under *Custom models*, click **Projects**.
 
     ![Vision AI page](./images/click-on-projects.png)
 
-1. Click *Create Project* and enter details for your Project.
+1. Select the compartment you were assigned in your LiveLabs *Reservation Information*. This is where your project will be created. Then click **Create Project**.
+
+    ![Vision AI page](./images/vision-create-project.png)
+
+1. In the *Create Project* dialog, enter details for your Project.
     
     ![Create project window](./images/create-project.png)
 
-    a. Select the compartment you were assigned in your LiveLabs *Reservation Information*. This is where your project will be created. 
+    a. Confirm the compartment is the one you were assigned in your LiveLabs *Reservation Information*. If it's not correct, change it. This is where your project will be created. 
 
     b. Enter a name for your project, e.g. **galaxy-detection**.
 
@@ -58,7 +62,6 @@ For this lab, we've already collected a set of images for training the model tha
 1. In the *Create and train model* dialog, set the required inputs.
 
     ![Create and train model window - select data](./images/model-details.png)
-    TODO - update image
 
     a. For *Type*: select **Object Detection**
 
@@ -68,11 +71,11 @@ For this lab, we've already collected a set of images for training the model tha
 
     d. For *Choose a dataset...*, click **Change compartment**
     
-    e. Select compartment **vision_galaxy_ws_read_only**
+    e. Select compartment **vision\_galaxy\_ws\_read\_only**
 
     f. When the dataset picklist populates, choose: **dataset-read-only**
 
-   1. Click **Next**
+1. Click **Next**
   
 1. In the next page of the *Create and train model* dialog, enter training details for the model.
 
@@ -80,7 +83,7 @@ For this lab, we've already collected a set of images for training the model tha
 
     a. Enter a *Model display name* that you will recognize later: **galaxy-detection-model-1**
 
-    b. Select *Training duration*: **Recommended training (May take up to 24 hours)**
+    b. Select *Training duration*: **Recommended training (May take up to 24 hours)** (this is the default).
 
 1. Click **Next**
 
@@ -88,14 +91,14 @@ For this lab, we've already collected a set of images for training the model tha
 
     ![Create and train model window - review](./images/create-and-train.png)
 
-> **Note:** Training may take 15 to 20 (TODO) minutes. Training is complete when the model status becomes 'Active'. Proceed to the next lab while the model is training.
+> **Note:** Training may take 30 minutes or more. Training is complete when the model status becomes 'Active'. Proceed to the next lab while the model is training.
 
 Congratulations, you have trained a custom Vision object detection model.
 
-## Please proceed to the next lab
+**Please proceed to the next lab**
 
-***
-### Acknowledgements
+## Acknowledgements
+
 * **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
 * **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
 * **Last Updated By/Date** - <Name, Month Year>
