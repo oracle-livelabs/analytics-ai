@@ -197,15 +197,19 @@ During Task 4, we will be creating a dataset that will have labels associated wi
 
 4.	Create your dataset by clicking 'Create dataset.'
 
+![Click Create Dataset](images/create-dataset-button.png " ")
+
 a. Name: enter a name for your DLS Dataset that you can recognize, e.g. careclinics-dataset
 
 b. Dataset format: Images
 
 c. Annotation Class: Multiple Label
 
+![Create Dataset](images/create-dataset.png " ")
+
 d. Click 'Next'
 
-![Create Dataset](images/create-dataset.png " ")
+![Choose Dataset Images](images/choose-dataset-images.png" ")
 
 e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
 
@@ -215,11 +219,9 @@ g. Choose your Bucket by name
 
 h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be: ‘insurance card’ and ‘health insurance card’.
 
-![Create Labels](images/create-labels.png " ")
-
 i. Click ‘Next’
 
-![Choose Dataset Images](images/choose-dataset-images.png" ")
+![Create Labels](images/create-labels.png " ")
 
 j. Review the information and deploy your Dataset by clicking 'Create'
 
