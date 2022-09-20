@@ -26,14 +26,14 @@ This lab assumes you have:
 
 1. Open the terminal in Node1 and provide the below command to launch the ODI configuration wizard.
 
-   ```
-    <copy>
-    cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
-    ./config.sh
-    </copy>
-   ```
+    ```
+     <copy>
+      cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
+      ./config.sh
+     </copy>
+    ```
 
-  ![Config command](./images/config-1.png " ")
+      ![Config command](./images/config-1.png " ")
 
 2. Select update an existing domain and verify if the odi_domain is selected. Click "Next".
 
@@ -49,9 +49,9 @@ This lab assumes you have:
 
 5. The wizard will connect to the database user and verify the details. "Successfully Done" message will be displayed in the result log. Click "Next".
 
-**Note:** If you get network adapter error message. Refer to appendix to start the listener services.
+  **Note:** If you get network adapter error message. Refer to appendix to start the listener services.
 
-  ![RCU Window](./images/config-5.png " ")
+    ![RCU Window](./images/config-5.png " ")
 
 6. Keep the default values and click Next in the Component datasources tab.
     
@@ -128,20 +128,20 @@ This completes the configuration.
 ## Task 2: Pack the New Configuration
 1. Navigate to the below path and issue the pack command as given below.
    
-   ```
-    <copy>
-    cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
-    ./pack.sh -domain=/u02/app/Oracle/Middleware/Oracle_Home/user_projects/domains/odi_domain -template=V12214.jar -template_name=V12214 -managed=true
-    </copy>
-   ```   
+    ```
+      <copy>
+      cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
+      ./pack.sh -domain=/u02/app/Oracle/Middleware/Oracle_Home/user_projects/domains/odi_domain -template=V12214.jar -template_name=V12214 -managed=true
+      </copy>
+    ```   
 
-  ![Pack configuration](./images/config-28.png " ")
+    ![Pack configuration](./images/config-28.png " ")
 
-This pack command will pack all the existing configuration which we need to unpack in the secondary host.
+  This pack command will pack all the existing configuration which we need to unpack in the secondary host.
 
-The above command will create the V12214.jar file in the same path.
+  The above command will create the V12214.jar file in the same path.
 
-  ![V12214.jar file](./images/config-29.png " ")
+    ![V12214.jar file](./images/config-29.png " ")
 
 The pack command is executed successfully.
 
@@ -156,35 +156,35 @@ Open the Terminal in Node2 and execute below commands.
 
   ![Open the terminal](./images/config-30a.png " ") 
 
-  ```
-    <copy>
-    cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
-    ls
-    cd /tmp
-    rm -rf odi_ha_file
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u9H2k21aUrZmkwzY9lNXe0pxbzmobdeLMP4CngZ32tUaH0QJAUyPUQHNiMbzyxKp/n/natdsecurity/b/labs-files/o/odi_ha_file.zip
-    unzip -o  odi_ha_file.zip 
-    cd odi_ha_file
-    cp V12214.jar /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
-    cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
-    ls
-    </copy>
-  ```
+    ```
+      <copy>
+      cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
+      ls
+      cd /tmp
+      rm -rf odi_ha_file
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u9H2k21aUrZmkwzY9lNXe0pxbzmobdeLMP4CngZ32tUaH0QJAUyPUQHNiMbzyxKp/n/natdsecurity/b/labs-files/o/odi_ha_file.zip
+      unzip -o  odi_ha_file.zip 
+      cd odi_ha_file
+      cp V12214.jar /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
+      cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
+      ls
+      </copy>
+    ```
 
-  ![Download V12214.jar from object storage](./images/config-31a.png " ") 
+    ![Download V12214.jar from object storage](./images/config-31a.png " ") 
 
    **Note:** You can even use other tools to transfer the file from primary node to the secondary node like Winscp, scp etc.
 
 2. Login to **odiha-2(Node2)** terminal.Navigate to the configuration path and provide below command to unpack the configuration and create the domain in secondary node(odiha-2).
 
-   ```
-    <copy>
-    cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
-    ./unpack.sh -domain=/u02/app/Oracle/Middleware/Oracle_Home/user_projects/domains/odi_domain -template=V12214.jar
-    </copy>
-   ```
+    ```
+      <copy>
+      cd /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
+      ./unpack.sh -domain=/u02/app/Oracle/Middleware/Oracle_Home/user_projects/domains/odi_domain -template=V12214.jar
+      </copy>
+    ```
 
-   ![Unpack the configuration](./images/config-32.png " ")
+    ![Unpack the configuration](./images/config-32.png " ")
 
 
 ## Task 4: Start the Node Manager and Admin Server
@@ -199,45 +199,45 @@ Open the Terminal in Node2 and execute below commands.
 
 2. Use below command to start the node manager in odiha-1 and odiha-2. Press Enter to come out of nohup.
    
-   ```
-    <copy>
-    nohup sh startNodeManager.sh &
-    </copy>
-   ```
+    ```
+      <copy>
+      nohup sh startNodeManager.sh &
+      </copy>
+    ```
 
-   ![nohup sh startNodeManager.sh &](./images/config-33.png " ")
+    ![nohup sh startNodeManager.sh &](./images/config-33.png " ")
 
 3. Node manager status can be viewed using below command. "Listener started on port 5556" indicates that the nodemanager started. Press "ctrl+c" to come out of tailf command.
 
-   ```
-    <copy>
-    tailf nohup.out
-    </copy>
-   ```
+    ```
+      <copy>
+      tailf nohup.out
+      </copy>
+    ```
 
-   ![tailf nohup.out](./images/config-34.png " ")
+    ![tailf nohup.out](./images/config-34.png " ")
 
 Node Manager should be started on odiha-1 and odiha-2 hosts.
 
 4. Now, start the Admin server **only in odiha-1**.  Below command will start the Admin server in node 1. Press Enter to come out of nohup.
    
-   ```
-    <copy>
-    nohup sh startWebLogic.sh &
-    </copy>
-   ```
+    ```
+      <copy>
+      nohup sh startWebLogic.sh &
+      </copy>
+    ```
 
-   ![nohup sh startWebLogic.sh &](./images/config-35.png " ")
+    ![nohup sh startWebLogic.sh &](./images/config-35.png " ")
 
 5. Admin server status should change to RUNNING state. The status can be viewed using below command. Press "ctrl+c" to come out of tailf command.
 
-   ```
-    <copy>
-    tailf nohup.out
-    </copy>
-   ```
+    ```
+      <copy>
+      tailf nohup.out
+      </copy>
+    ```
 
-   ![tailf nohup.out](./images/config-36.png " ")
+    ![tailf nohup.out](./images/config-36.png " ")
 
 
 Now, the Node manager and Admin server are started.
@@ -251,24 +251,24 @@ Now, the Node manager and Admin server are started.
 
 2. Navigate to weblogic console using below url.
 
-   ```
-    <copy>
-    http://odiha-1:7005/console
-    </copy>
-   ```
+    ```
+      <copy>
+      http://odiha-1:7005/console
+      </copy>
+    ```
 
-  ![Weblogic console](./images/config-38.png " ")
+    ![Weblogic console](./images/config-38.png " ")
 
 3. Provide the weblogic user name, password and login into weblogic home page.
 
-   ```
-    <copy>
-    username: weblogic
-    password: Welcome1#
-    </copy>
-   ```
+    ```
+      <copy>
+      username: weblogic
+      password: Welcome1#
+      </copy>
+    ```
 
-  ![Weblogic console](./images/config-39.png " ")
+    ![Weblogic console](./images/config-39.png " ")
 
 4. Weblogic home page will be displayed on screen. Click on "servers" option.
 

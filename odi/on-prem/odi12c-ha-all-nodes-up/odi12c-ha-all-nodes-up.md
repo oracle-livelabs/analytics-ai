@@ -56,14 +56,14 @@ This lab assumes you have:
 ## Task 2: Access Target Table and Truncate the Data in it
 1. Open the "SQL Developer" window on desktop in any of the node, right click on "target DB" and click on connect. A connection to target DB is already created in the SQL developer. You can test the connections to the target database. The database credentials are given below.
    
-   ```
-    <copy>
-    username: target
-    password: Welcome1#
-    </copy>
-   ```   
+    ```
+      <copy>
+      username: target
+      password: Welcome1#
+      </copy>
+    ```   
 
-  ![Connect to target DB in SQL Developer](./images/sql-developer-1.png " ")
+    ![Connect to target DB in SQL Developer](./images/sql-developer-1.png " ")
 
 2. Query Builder window will be displayed on screen. Run the below commands in the query builder window.
 
@@ -174,12 +174,12 @@ Now, you have logged into the ODI Studio.
 
 7. Verify the data in target table by running the below SQL query.
 
-   ```
-    <copy>
-    select * from target.user_login;
-    </copy>
-   ```
-  ![SQL Developer query window](./images/sql-developer-3.png " ")
+    ```
+      <copy>
+      select * from target.user_login;
+      </copy>
+    ```
+    ![SQL Developer query window](./images/sql-developer-3.png " ")
 
   Hostname in above screenshot is "odiha-2". This clearly indicates that the above job is executed by Node2 ODI agent. The output may be different in your lab as the load balancer routes the traffic to the ODI hosts randomly.
 

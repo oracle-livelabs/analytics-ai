@@ -26,25 +26,25 @@ This lab assumes you have:
 
 1. Open the chrome browser in desktop and navigate to *Weblogic Server Administration Console* login page using below URL, click on the *Username* field and provide the credentials below to login. The weblogic is configured on 7005 for this labs.
 
-  - URL
+    - URL
 
-  ```
-    <copy>http://odiha-1:7005/console</copy>
-  ```  
+    ```
+      <copy>http://odiha-1:7005/console</copy>
+    ```  
 
-  - Username
+    - Username
 
-  ```
-    <copy>weblogic</copy>
-  ```
+    ```
+      <copy>weblogic</copy>
+    ```
 
-  - Password
+    - Password
 
-  ```
-    <copy>Welcome1#</copy>
-  ```
-
-  ![Weblogic login page](images/weblogic-login.png " ")
+    ```
+      <copy>Welcome1#</copy>
+    ```
+    
+    ![Weblogic login page](images/weblogic-login.png " ")
 
 2. In the weblogic home page, click on "Servers".
 
