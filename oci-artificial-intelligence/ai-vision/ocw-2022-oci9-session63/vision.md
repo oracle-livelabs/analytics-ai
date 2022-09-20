@@ -175,15 +175,77 @@ a. On the Vision page, select "Object detection" on the left navigation menu and
 ![Image Analysis Features](images/img-classification.png " ")
 
 
-
 With this information, you can now successfully leverage OCI Vision service through the OCI console.
 
 Next, we will show you how to create a Custom Vision model through the console. 
 
 In the following steps, we will show you how to create a vision project, select your training data, and train a custom model.
 
+## Task 4: Create a Data Labeling Service Dataset
 
-## Task 4: Create a Project
+During Task 4, we will be creating a dataset that will have labels associated with the ten insurance card images we have uploaded and analyzed thus far. The dataset will be used later in the lab when we create a Vision model in **Task 7**.
+
+1.	From the OCI services menu, click ‘Analytics & AI’, navigate to 'Data Labeling' under 'Machine Learning’ section.
+
+![Navigate to Data Labeling](images/navigate-to-data-labeling.png " ")
+
+2.	Click on 'Datasets.'
+
+![Click Dataset](images/click-dataset.png " ")
+
+3.	If you are **not** using the Root compartment, set your Compartment to the same Compartment where you created your Bucket using the drop down under List Scope.
+
+4.	Create your dataset by clicking 'Create dataset.'
+
+a. Name: enter a name for your DLS Dataset that you can recognize, e.g. careclinics-dataset
+
+b. Dataset format: Images
+
+c. Annotation Class: Multiple Label
+
+d. Click 'Next'
+
+![Create Dataset](images/create-dataset.png " ")
+
+e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
+
+f. Choose the name of compartment where your Bucket exists
+
+g. Choose your Bucket by name
+
+h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be: ‘insurance card’ and ‘health insurance card’.
+
+![Create Labels](images/create-labels.png " ")
+
+i. Click ‘Next’
+
+![Choose Dataset Images](images/choose-dataset-images.png" ")
+
+j. Review the information and deploy your Dataset by clicking 'Create'
+
+![Review and Create Dataset](images/review-and-create-dataset.png " ")
+
+5. From the CareClinicsDataset page, add labels to each data record i.e. insurance card.
+
+![Dataset Homepage](images/unlabeled-dataset-list.png " ")
+
+a. Click the three dot icon on each data record
+
+b. Choose 'label'
+
+![Click label](images/click-label.png " ")
+
+c. Check both label boxes 'insurance card' and 'health insurance card'
+
+d.	Click ‘Save & next’ when finished and repeat this process for all images
+
+![Choose labels and click 'Save & next'](images/choose-label.png " ")
+
+e.	The dataset is complete when all images have a Status of ‘Labeled’ with a green dot.
+
+![Labeled Dataset](images/labeled-dataset-list.png " ")
+
+## Task 5: Create a Project
 
 A Project is a way to organize multiple models in the same workspace. It is the first step to start.
 
@@ -198,7 +260,7 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 3. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.
 
 
-## Task 5: Select Model Type
+## Task 6: Select Model Type
 
 1. Click on the project that you just created. Next, we will go ahead and create a model. 
 
@@ -210,7 +272,7 @@ A Project is a way to organize multiple models in the same workspace. It is the 
  ![Choose Model](images/select-model.png " ")
 
 
-## Task 6: Select Training Data 
+## Task 7: Select Training Data 
 
  1. To train a custom model, you will need training data. There are two main options depending on if you already have an annotated dataset, or only have raw (unlabeled) images.
 
@@ -230,7 +292,7 @@ Choose existing dataset: If you have an existing annotated dataset, you can sele
 
 ![Training Data](images/training-data.png " ")
 
-# Task 7: Train your Custom Model and Submit
+## Task 8: Train your Custom Model and Submit
 
 1. In the "train model" step, you will name your model, add a description of it, and optionally, specify a training duration.
 
@@ -240,7 +302,7 @@ In the "review" step, you can verify that all of your information is correct and
 
 ![Review and Submit](images/review.png " ")
 
-## Task 8: Test the model on new images
+## Task 9: Test the model on new images
 
 1. Navigate to the Project Details page and click on the model just created.
 
