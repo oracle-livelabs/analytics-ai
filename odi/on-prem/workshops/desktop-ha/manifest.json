@@ -21,15 +21,11 @@
       "filename": "../../odi12c-ha-config/odi12c-ha-config.md"
     },
     {
-      "title": "Lab 3: Create and Configure Load Balancer",
-      "filename": "../../odi12c-ha-load-balancer/odi12c-ha-load-balancer.md"
-    },
-    {
-      "title": "Lab 4: Run ODI Job when both Nodes are Up",
+      "title": "Lab 3: Run ODI Job when both Nodes are Up",
       "filename": "../../odi12c-ha-all-nodes-up/odi12c-ha-all-nodes-up.md"
     },
     {
-      "title": "Lab 5: Run ODI Job when a Node is Down",
+      "title": "Lab 4: Run ODI Job when a Node is Down",
       "filename": "../../odi12c-ha-node1-down/odi12c-ha-node1-down.md"
     },
     {
