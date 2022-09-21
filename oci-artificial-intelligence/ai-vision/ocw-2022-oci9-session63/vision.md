@@ -80,17 +80,17 @@ The service offers sync and async APIs to analyze images, with data requirements
 
 ## Task 2: Upload Data to Object Storage 
 
-1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+1. Create an Object Storage Bucket
 
-a. First, From the OCI Services menu, click Object Storage.
+a. First, From the OCI Services menu, click 'Object Storage'.
 
 ![Navigate to Object Storage](images/cloud-storage-bucket.png " ")
 
-b. Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
+b. Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name. If you are the **only** user of the tenancy, you can use the Root compartment for purposes of this lab.
 
 ![Select Compartment](images/compartment.png " ")
 
-c. Next click Create Bucket
+c. Next click 'Create Bucket'
 
 ![Create bucket](images/bucket.png " ")
 
@@ -99,7 +99,7 @@ d. Next, fill out the dialog box:
 * Bucket Name: Provide a name
 * Storage Tier: STANDARD
 
-e. Then click Create
+e. Then click 'Create'
 
 ![Click create](images/createBucket.png " ")
 
@@ -125,7 +125,7 @@ c. Click on Upload and then browse to the Vision Photos you downloaded previousl
 
 More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
-d. Image URL path can be found in the Object Storage Bucket where your image resides. Next to each object, click the three dots and click “View Object Details” button.
+d. Image URL path can be found in the Object Storage Bucket where your image resides. Next to each object, click the three dots and click 'View Object Details' button.
 
 ![Image URL](images/view-object-details.png " ")
 
@@ -151,7 +151,7 @@ e. Copy the URL Path (URL) of each object into a separate notepad text file so y
 
 2. Use Document AI features
 
-a. On the Vision page, select “Document AI” on the left navigation menu and provide a document or image from OCI object storage. You can also upload from local storage. In order to upload image from Object Storage Bucket, you will need image's URL Path. Refer back to the URL Path links that you copy and pasted into your notepad from Task 2. You will now paste these into the “Enter Image URL” field and click “Upload”.
+a. On the Vision page, select “Document AI” on the left navigation menu and provide a document or image from OCI object storage. You can also upload from local storage. In order to upload image from Object Storage Bucket, you will need image's URL Path. Refer back to the URL Path links that you copy and pasted into your notepad from Task 2. You will now paste these into the 'Enter Image URL' field and click 'Upload'.
 
 ![Document AI](images/template.png " ")
 
@@ -310,7 +310,7 @@ In the "review" step, you can verify that all of your information is correct and
 
 ![Test Model](images/test-model.png " ")
 
-2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HTMmO7ndSl_UUwuJu2dKfWu4l5DsaYjZRqutq90atlQQIq6gtPRue5xWeGMYDGtb/n/orasenatdpltintegration03/b/CareClinics-bucket/o/test-images.zip)to download sample test images to your local machine. 
+2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HTMmO7ndSl_UUwuJu2dKfWu4l5DsaYjZRqutq90atlQQIq6gtPRue5xWeGMYDGtb/n/orasenatdpltintegration03/b/CareClinics-bucket/o/test-images.zip) to download sample test images to your local machine. 
 
 3. Upload one image from the test dataset on your local machine to test the newly created model.
 
