@@ -143,6 +143,82 @@ And there are additional views to see the details about the jobs and application
 Now let's go back to OCI Data Integrations because we setup some other data sources to load as part of our data integration into the Data Lakehouse and use for additional queries as par of our analysis.
 
 
+## Task 2: Create OCI Data Integration - Load
+
+First we want to download the customer sales csv file that we can put into our object storage. This will show how you can do integrations from your object storage directly into your ADW or we can use the object storage to filter and change the files and stora back into our object storage without even going to the database.
+
+Download the CSV file:
+
+```
+<copy>
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
+</copy>
+```
+
+Upload this file to your object storage bucket dataflow-warehouse:
+
+![Upload to object storage](./images/upload-object-storage.png " ")
+
+Select the custsales_custsales-2020-01.csv file from your downloaded folder and click upload.
+
+Navigate from the Hamburger menu to Analytics & AI, select Data Integration, and from the left menu select **Workspaces**. Here we will see our Workspace Lakehouse that we created as part of our configuration. We are going to then create a data loader task.
+
+![Load Data Task](./images/create-data-loader-task.png " ")
+
+Lets give this task the name of LoadCustomerCSV, and before we create we need to select the project - Project_lakehouse.
+
+![Create Load Data Task](./images/create-data-loader-task2.png " ")
+
+Now we have to just put in the Source, any transformations and Target for the load process. Click on Source and provide the data asset, dataflow\_warehouse\_bucket, and default connection, bucket would be the dataflow-warehouse, and finally the file type is CSV.
+
+![Create Load Data Source](./images/create-data-loader-task3.png " ")
+
+![Create Select File](./images/create-data-loader-task5.png " ")
+
+![Create Load Data Type of Source](./images/create-data-loader-task4.png " ")
+
+Now click on Configure Transformations, and here we are going to filter out, extract all of the APPs that are like chrome. This will then pull in just the data for those choices and if you wanted you can also exclude columns here.
+
+![Create Extract Data](./images/create-data-loader-task6.png " ")
+
+Before you select Target to fill in the details about the file, you want to **check** Create new data entity. After this first time, the target is created and when scheduling you will just need to either choose insert or overwrite, but the box only needs to be checked the first time loading a new entity.
+
+![Create New Target](./images/create-data-loader-task7a.png " ")
+
+Finally, select Target and here we are going to put the file back into object storage so that we can use it in an analytics query as an external table. 
+
+![Create Load Data Target](./images/create-data-loader-task7.png " ")
+
+Create and close the data loader task. We will put it into an application to run the job and load the data as part of the data integration tasks.
+
+## Task 3: Create an application for automation
+
+Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
+
+![Create Application](./images/create-app.png " ")
+
+Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application. Navigate to the Project_lakehouse, from the menu select Tasks. LoadCustomerCSV will be seen in the list and you will need to expand the three dot menu and add it to the application.
+
+![Add Task to Application](./images/create-app2.png " ")
+
+![Publish to application](./images/create-app3.png " ")
+
+Select the application name, lakehouseapp:
+
+![Select Application and Publish](./images/create-app4.png " ")
+
+## Task 4: Run and schedule apps for automation
+
+Now under the application select the menu at the end of the LoadCustomerCSV task. 
+
+![View Task Added](./images/create-app5.png " ")
+
+Now select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
+
+![Run Task](./images/create-app6.png " ")
+
+
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
