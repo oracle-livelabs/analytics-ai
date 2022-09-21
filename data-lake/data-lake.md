@@ -218,6 +218,7 @@ Now select **Run** task. After this runs successfully, you can return here to sc
 ![Run Task](./images/create-app6.png " ")
 
 
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
