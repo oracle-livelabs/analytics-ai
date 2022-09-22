@@ -115,9 +115,9 @@ Under documentation you can find helpful links relevant to OCI speech service
 
 4. Select Which File(s) From Object Storage to Transcribe in this Job
 
-    Use "Show wav files" toggle to filter input bucket for .wav files only
+    Use "Show media files" toggle to filter input bucket for supported audio files (WAV, MP3, OGG, OGA, WEBM, MKV, AC3, AAC, M4A, MP4, FLAC, AMR).
     Select one or more files to transcribe from the specified bucket in object storage then click "Submit"
-        ![](./images/select-files.png " ")
+        ![media selection page](./images/select-media-files.png " ")
 
 5. View Newly Created Job in Transcription Jobs List
 

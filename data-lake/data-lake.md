@@ -142,6 +142,7 @@ And there are additional views to see the details about the jobs and application
 
 Now let's go back to OCI Data Integrations because we setup some other data sources to load as part of our data integration into the Data Lakehouse and use for additional queries as par of our analysis.
 
+
 ## Task 2: Create OCI Data Integration - Load
 
 First we want to download the customer sales csv file that we can put into our object storage. This will show how you can do integrations from your object storage directly into your ADW or we can use the object storage to filter and change the files and stora back into our object storage without even going to the database.
@@ -216,10 +217,12 @@ Now select **Run** task. After this runs successfully, you can return here to sc
 
 ![Run Task](./images/create-app6.png " ")
 
+
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Contributors** - 
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2022

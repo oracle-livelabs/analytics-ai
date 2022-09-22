@@ -36,9 +36,11 @@ The main components of the high availability setup are given below:
 
 ### Objectives
 
-- Access an ODI instance
+In this lab you will learn
+
+- Accessing an ODI instance
 - Job Execution when both Nodes are Running
-- ODI Agent Crash
+- ODI high availability functionality when an agent is down
 
 
 ### Prerequisites
@@ -52,7 +54,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, January 2022
+- **Author** - Srivishnu Gullapalli, September 2022
 - **Contributors** - Amit Kotarkar
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
 
