@@ -2,8 +2,13 @@
 
 ## Introduction
 
+Estimated time - 20 minutes
+
 In pervious steps we configured a Twitter developer account and a Compute Instance to run our demo.
 In the following steps, we will copy and configure the demo code on the Compute Instance.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_0hszsv2k)
 
 ### Objectives
 
@@ -167,7 +172,7 @@ In this step we will create the TLS certificate and key files required to establ
     [opc@senti-meter-server senti-meter-demo]$ <copy>rm csr.pem</copy>
     ```
 
-    The at the end of the process, your terminal should look similar to this:
+    At the end of the process, your terminal should look similar to this:
 
     ![Create TLS certificate terminal output](images/create-tls-certificate-terminal-output.png "Create TLS certificate terminal output")
 
@@ -210,7 +215,11 @@ In the connected terminal, execute the following command:
     * If after validating the above steps the command still fails to execute, please re-generate the `Bearer Token` for your Twitter Application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and repeat the steps to update the new `Bearer Token` in `.env`.
 
 2. As our second validation step, we will test the OCI API authentication configuration.  
-In the connected terminal, execute the following command:
+To do this we will use `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`.  
+This program is a tiny example of how to call the Oracle Language & Vision AI API using JavaScript (we have an equivalent program written in Python in the same folder `~/senti-meter-demo/src/senti-meter-demo/test-oci.py`).  
+Take a look at the `Learn More` section for links to API references and samples in other languages.  
+
+    To run the program, in the connected terminal, execute the following command:
 
     ```bash
     [opc@senti-meter-server senti-meter-demo]$ <copy>npm run test-oci</copy>
@@ -226,7 +235,94 @@ In the connected terminal, execute the following command:
     * The file specified in the value to `key_file` exists.
     * If all else fails, please repeat the steps in the [previous lab](?lab=setup-oci-api-authentication) where we have configured the OCI API authentication.
 
+    To see the output of the Language & Vision API calls, you can use the `--print` parameter:
+
+    ```bash
+    [opc@senti-meter-server senti-meter-demo]$ <copy>npm run test-oci -- --print</copy>
+    ```
+
+    To run the Python version:
+
+    ```bash
+    [opc@senti-meter-server senti-meter-demo]$ <copy>python src/senti-meter-demo/test-oci.py</copy>
+    ```
+
+3. Let's take a look at the code in `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`:  
+After importing the required parts of the OCI SDK, we start by creating the authentication info:
+
+    ```typescript
+    const authenticationDetailsProvider = new common.ConfigFileAuthenticationDetailsProvider();
+    ```
+
+    This line of code will read the `config` file we've previously created in `~/.oci/` and load all of the required authentication information.  
+
+    Next we will create the  language client (passing the authentication information to it) and call the Sentiment Analysis API:
+
+    ```typescript
+    const languageClient = new aiLanguage.AIServiceLanguageClient({ authenticationDetailsProvider });
+
+    const languageResponse = await languageClient.detectLanguageSentiments({
+      detectLanguageSentimentsDetails: {
+        text: 'What a wonderful day here at Oracle CloudWorld!'
+      }
+    });
+    ```
+
+    The call is leveraging the OCI SDK's internal support for the async/await pattern. Any failed requests will be automatically retried by the SDK up to the default maximum (see the `Learn More` section for more information).  
+    The response will be stored in `languageResponse`. Here's a sample response:
+
+    ```json
+    {
+      "aspects": [{
+        "length": 3,
+        "offset": 17,
+        "scores": {
+          "Negative": 7.862009561745389e-07,
+          "Neutral": 0.0,
+          "Positive": 0.9999992137990438
+        },
+        "sentiment": "Positive",
+        "text": "day"
+      },
+      {
+        "length": 17,
+        "offset": 29,
+        "scores": {
+          "Negative": 0.0,
+          "Neutral": 7.328266953885117e-07,
+          "Positive": 0.9999992671733046
+        },
+        "sentiment": "Positive",
+        "text": "Oracle CloudWorld"
+      }]
+    }
+    ```
+
+    In this response we can see that two sentiment aspects were detected in the text. Both returned with their position in the text (`offset` & `length`), the scores given by the model for each sentiment possibility and the final sentiment.  
+
+    The program continues to execute a similar patter for the Vision API.
+
 You may now **proceed to the next lab**.
+
+## Learn More
+
+OCI SDK
+
+* [Software Development Kits and Command Line Interface](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdks.htm)
+
+Language AI
+
+* [Language AI Documentation](https://docs.oracle.com/en-us/iaas/language/using/language.htm)
+* [Language AI API](https://docs.oracle.com/en-us/iaas/api/#/en/language/20210101/)
+* [Sentiment Analysis API](https://docs.oracle.com/en-us/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments)
+* [LiveLab - Perform Sentiment Analysis with OCI AI Language Service and OAC](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3214&clear=RR,180&session=114878582023421)
+
+Vision AI
+
+* [Vision AI Documentation](https://docs.oracle.com/en-us/iaas/vision/vision/using/home.htm)
+* [Vision AI API](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/)
+* [Analyze Image API](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/AnalyzeImageResult/AnalyzeImage)
+* [LiveLab - Introduction to OCI Vision](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=931)
 
 ## Acknowledgements
 
