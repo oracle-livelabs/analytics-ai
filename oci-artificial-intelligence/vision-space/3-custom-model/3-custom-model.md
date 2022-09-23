@@ -1,7 +1,7 @@
 # Create a Custom AI Vision Model
 
 ## Introduction
-In this lab, you will use a pre-labeled set of images to train a custom object detection model. It will take about 15 minutes for the model training to occur so we will start the model training in this lab and then learn to label images in the next lab while the model is being trained.
+In this lab, you will use a pre-labeled set of images to train a custom object detection model. It will take about 30 minutes for the model training to complete, so we will start the model training in this lab and then continue with the next lab. (We have a previously-trained model to use in the next lab.)
 
 *Estimated Time*: 15 minutes
 
@@ -12,18 +12,7 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
 - Access to a LiveLabs sandbox environment
 
-## **Task 1:** Understand Data Requirements
-
-OCI Vision supports multiple formats of image data in order to detect objects, assign labels to images, extract text, and more. Of particular importance are the limits on file type and file size. The service offers synchronous and asynchronous APIs to analyze images, with data requirements for each detailed below:
-
-| API | Description | Supported Input Format |
-| --- | --- | --- |
-| sync API (analyzeImage, analyzeDocument) | Analyzes individual images | * JPG, PNG, (PDF and Tiff for analyzeDocument)<br>* Up to 8 MB<br>* Single image input |
-| async API  <br>/jobs/startImageAnalysisjob  <br>/jobs/start | Analyze multiple images or multi-page PDFs | * JPG, PNG, (PDF and Tiff for Document AI)<br>* Up to 2000 images per batch<br>* Supports multi-page PDF |
-
-For this lab, we've already collected a set of images for training the model that meet the data requirements. We labeled those ahead of time so the workshop can be completed in 90 minutes.
-
-## **Task 2:** Create a Vision Project
+## **Task 1:** Create a Vision Project
 
 1. From the OCI services menu, click **Analytics & AI** then, under *AI Services*, click **Vision**.
   
@@ -33,7 +22,7 @@ For this lab, we've already collected a set of images for training the model tha
 
     ![Vision AI page](./images/click-on-projects.png)
 
-1. Select the compartment you were assigned in your LiveLabs *Reservation Information*. This is where your project will be created. Then click **Create Project**.
+1. Select the **Compartment** you were assigned in your LiveLabs *Reservation Information*. This is where your project will be created. Then click **Create Project**.
 
     ![Vision AI page](./images/vision-create-project.png)
 
@@ -49,11 +38,11 @@ For this lab, we've already collected a set of images for training the model tha
   
 
 
-## **Task 3:** Create a Custom Object Detection Model
+## **Task 2:** Create a Custom Object Detection Model
 
-1. Click the active project you just created.
+1. Click the active project you just created to open the project.
 
-    ![](./images/select-vision-project.png)
+    ![Open project](./images/select-vision-project.png)
 
 1. On the *Project details* page, click **Create Model**.
     
@@ -76,6 +65,8 @@ For this lab, we've already collected a set of images for training the model tha
     f. When the dataset picklist populates, choose: **dataset-read-only**
 
 1. Click **Next**
+
+> **Note:** The data being used to train the model contains more images than the dataset that you labeled in the previous lab to produce better results.
   
 1. In the next page of the *Create and train model* dialog, enter training details for the model.
 
@@ -99,6 +90,6 @@ Congratulations, you have trained a custom Vision object detection model.
 
 ## Acknowledgements
 
-* **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
-* **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
-* **Last Updated By/Date** - <Name, Month Year>
+- **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
+- **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
+- **Last Updated By/Date** - Name, Month Year

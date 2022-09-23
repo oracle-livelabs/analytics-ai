@@ -47,11 +47,11 @@ The images to be labeled have already been staged in an object storage bucket in
  
     a. Retrieve files from Object Storage by choosing **Select from Object Storage**.
  
-    b. Choose compartment **vision\_galaxy\_ws\_read\_only**, if not already selected.
+    b. Choose compartment **vision\_galaxy\_ws\_read\_only**.
     
     c. Choose Bucket **labeling-read-only**
 
-    d. Add Labels: type the word ***spiral galaxy*** in the box, then click  **spiral galaxy (New)** in the drop-down list
+    d. Add Labels: type the word ***Spiral Galaxy*** in the box, then click  **Spiral Galaxy (New)** in the drop-down list
 
     ![Adding labels](./images/dataset-labels.png)
 
@@ -62,13 +62,13 @@ The images to be labeled have already been staged in an object storage bucket in
 1. On the next page of the *Create dataset* dialog, review the information and click **Create**.
   ![Create dataset window - review information](./images/click-create-dataset.png)
 
-1. You will return to the *Dataset list* page. Wait until your new dataset's status is **Active**. This will take about 4-5 minutes.
+1. You will return to the *Dataset list* page. Wait until your new dataset's status is **Active**. This will take about 2-3 minutes. The progress is shown in the page.
 
     ![](./images/dataset-active.png)
 
 
 ## **Task 2:** Label the images in your dataset
-Now that you have a dataset created for the data labeling services, you'll proceed with labeling those images.
+Now that you have a dataset created, you'll proceed with labeling those images.
 
 1. On the page showing your active dataset, the data record view is listed by default. This is a list of all the image files in the dataset. (There is also a *Gallery view* that displays the files as images.) **Click the top file name** to open it.
 
@@ -78,23 +78,24 @@ Now that you have a dataset created for the data labeling services, you'll proce
     
     ![](./images/add-labels1.png)
 
-1. Add a bounding box tightly around each distinguishable galaxy. If you make a mistake, use *Remove box* (under Tools). Don't put a box around bright spots that have no shape. **Label at least 10** of the larger galaxies with different shapes and orientations that don't overlap other objects. When done, click **Save & next**.
+1. The bounding box tool is enabled by default. Add a bounding box tightly around each distinguishable spiral galaxy. Don't put a box around bright spots that have no shape. When done, click **Save & next**.
+    >**Note:** If you make a mistake when placing the bounding box, you can click **Bounding box** (under *Tools*) and then move the sides of the box, or you can click **Remove box** and then add a new one.
 
-    ![](./images/label-galaxies1.png) TODO update?
+    ![](./images/label-galaxies1.png)
 
 1. Add bounding boxes to galaxies in the remaining images in the dataset. There are galaxies of different sizes in the other images. For larger galaxies with a faint halo, put the box around the inner structure. Positioning the box is a judgement call but it can affect how the model detects galaxies in new images.
 
-    ![](./images/label-galaxies2.png) TODO update?
+    ![](./images/label-galaxies2.png) 
 
-    ![](./images/label-galaxies3.png) 
+    ![](./images/label-galaxies3.png) TODO update
 
-    ![](./images/label-galaxies4.png)
+    ![](./images/label-galaxies4.png) TODO update
 
-    ![](./images/label-galaxies5.png)
+    ![](./images/label-galaxies5.png) TODO update
 
 1. After the last image is labeled, the data set page is displayed, but this time, the image status for each is listed as *Labeled*.
 
-    ![](./images/dataset-labeled.png)
+    ![](./images/dataset-labeled.png) TODO update
 
 Congratulations, you have completed labeling a set of images for object detection.
 
@@ -102,6 +103,7 @@ Congratulations, you have completed labeling a set of images for object detectio
 
 
 ## Acknowledgements
-* **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
-* **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
+- **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
+- **Last Updated By/Date** - Name, Month Year

@@ -38,17 +38,17 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 1. Click the **Sign In** button in the upper right corner of the LiveLabs page then sign in with your existing Oracle account or create an account if you don't have one. 
 
-    ![](./images/ll-sign-in.png)
+    ![Sign in](./images/ll-sign-in.png)
 
 1. Click the **Start** button
     
-    ![](./images/ll-start.png)
+    ![Start](./images/ll-start.png)
 
 1. Click the green button labeled **Run on LiveLabs Sandbox**. Login with your Oracle account if prompted. Create an Oracle account if you don't already have one.
-    ![](./images/ll-green-button.png)
+    ![Click green button](./images/ll-green-button.png)
 
 1. Complete the fields in the reservation form
-    ![](./images/ll-reserve-workshop.png)
+    ![Reserve workshop](./images/ll-reserve-workshop.png)
 
     a. Confirm your correct **timezone** is set.
 
@@ -64,6 +64,6 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 ## Acknowledgements
 
-* **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
-* **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
-* **Last Updated By/Date** - <Name, Month Year>
+- **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
+- **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
+- **Last Updated By/Date** - Name, Month Year

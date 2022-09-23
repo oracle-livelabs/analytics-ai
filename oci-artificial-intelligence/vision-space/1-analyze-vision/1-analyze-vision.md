@@ -24,13 +24,13 @@ Sign-in and get familiar with the user interface.
 
 1. Navigate to your LiveLabs *Reservation Information* if you are not still there from the previous lab.
     
-    ![](./images/ll-reservation-info.png)
+    ![View reservation information](./images/ll-reservation-info.png)
 
 1. Click the **Launch OCI** button. 
 
 1. On the *Oracle Cloud Account Sign In* page enter the **username** and **password** provided to you on *Reservation Information*, then click **Sign In**.
     
-    ![](./images/oci-sign-in.png)
+    ![Sign-in page](./images/oci-sign-in.png)
 
 1. If prompted to reset your password, **enter a new password** that meets the following characteristics, and **save it on your local machine** for later reference:
     - The password must have at least 12 characters.
@@ -42,13 +42,9 @@ Sign-in and get familiar with the user interface.
     - The password must have at least 1 uppercase characters.
     - The password must have at least 1 numeric characters.
 
-1. On the home page of the OCI Console, you will use the 3-bar "hamburger" icon in the upper left corner to navigate to different services.
+1. On the home page of the OCI Console, if the Region displayed in the upper right is not *US East (Ashburn)*, then change it to that.
 
-    ![](./images/oci-hamburger.png)
-
-1. In the upper right corner is the profile icon where you can logout if needed. (But don't logout now.)
-
-    ![](./images/oci-profile.png)
+    ![Confirm OCI region](./images/oci-region.png)
 
 
 ## **Task 2:** Use OCI Vision in the OCI Console
@@ -56,27 +52,31 @@ Try out OCI Vision in the console.
 
 1. Navigate to the Vision Page of OCI Console by clicking the **3-bar hamburger icon**, then clicking **Analytics & AI**, then, under *AI Services*, click **Vision**
 
-    ![](./images/navigate-to-ai-vision-menu.png " ")
+    ![3-bar hamburger icon](./images/oci-hamburger.png)
 
-1. To use Document AI, select **Document AI** on the left navigation menu
+    ![Navigate to AI Vision](./images/navigate-to-ai-vision-menu.png " ")
 
-    ![](./images/document-ai-features.png " ")
+1. To use Document AI, select **Document AI** on the left navigation menu. You might see a *404 error* because your using a compartment you don't have access to. Under *Model Scope*, set your *Compartment* to the one assigned with your sandbox registration.
 
-1. A sample image is displayed by default. View the results on the right side of the screen. (There are also another sample image available for selection at the bottom of the page.)
+    ![Select Vision compartment](./images/document-ai-compartment.png " ")
+
+1. A sample image is displayed by default. View the results on the right side of the screen. (There is also another sample image available for selection at the bottom of the page.)
+
+    ![View Document AI features](./images/document-ai-features.png " ")
 
 1. Features of Document AI you can test out: 
 
     | Feature | Description | Details on Console |
     | --- | --- | --- |
-    | OCR (Optical Character Recognition) | Locates and digitizes text information from images | Text will appear under the "raw text" header of the results pane of the console [\[Reference\]](./images/ocr.png) |
-    | Document Image Classification | Classifies documents into different types based on their visual appearance, high-level features, and extracted keywords | Classification along with confidence score appears directly under "Results" pane [\[Reference\]](./images/dic.png) |
-    | Language Classification | Classifies the language of document based on visual features | Classification along with confidence score appears under document classification in Results pane [\[Reference\]](./images/language-classification.png) |
-    | Table extraction | Extracts content in tabular format, maintaining row/column relationships of cells | Toggle to the Table tab to get table information [\[Reference\]](./images/table-extraction.png) |
-    | Searchable PDF output | Embeds a transparent layer on top of document image in PDF format to make it searchable by keywords | You need to test on a PDF document to use this feature. When you've selected a PDF, the searchable PDF button will be clickable. Clicking on it will download an OCR PDF to your computer. [\[Reference\]](./images/searchable-pdf-output.png) |
+    | OCR (Optical Character Recognition) | Locates and digitizes text information from images | Text will appear under the "raw text" header of the results pane of the console |
+    | Document Image Classification | Classifies documents into different types based on their visual appearance, high-level features, and extracted keywords | Classification along with confidence score appears directly under "Results" pane |
+    | Language Classification | Classifies the language of document based on visual features | Classification along with confidence score appears under document classification in Results pane |
+    | Table extraction | Extracts content in tabular format, maintaining row/column relationships of cells | Toggle to the Table tab to get table information |
+    | Searchable PDF output | Embeds a transparent layer on top of document image in PDF format to make it searchable by keywords | You need to test on a PDF document to use this feature. When you've selected a PDF, the searchable PDF button will be clickable. Clicking on it will download an OCR PDF to your computer. |
 
 1. To use Image Analysis, start by selecting **Image Classification** on the left navigation. A sample image is displayed by default.
 
-    ![](./images/image-features.png " ")
+    ![View image classification features](./images/image-features.png " ")
 
     > Image classification provides labels describing describing the scene in an image. Labels and confidence scores will appear under the Results pane.
 
@@ -84,7 +84,7 @@ Try out OCI Vision in the console.
 
 1. Now select **Object Detection** on the left navigation menu. A sample image is displayed by default.
 
-    ![](./images/object-detection.png)
+    ![View object detection features](./images/object-detection.png)
 
     > Object Detection locates and identifies objects within an image. Objects, confidence scores, and highlighted bounding boxes will all appear under the Results pane. Clicking on one of the labels on the results pane will also highlight where on the image that object was detected.
 
@@ -96,6 +96,6 @@ Congratulations, you now know how to navigate to OCI Vision in the OCI Console a
 
 ## Acknowledgements
 
-* **Author** - <Wes Prichard, Sr Principal Product Manager, Data Science & AI>
-* **Contributors** -  <Mark Heffernan, Sr Principal Product Manager, Data Science & AI>
-* **Last Updated By/Date** - <Name, Month Year>
+- **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
+- **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
+- **Last Updated By/Date** - Name, Month Year
