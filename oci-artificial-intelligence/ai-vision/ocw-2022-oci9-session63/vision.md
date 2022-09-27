@@ -308,7 +308,7 @@ In the "review" step, you can verify that all of your information is correct and
 
 1. Navigate to the Project Details page and click on the model just created.
 
-![Test Model](images/test-model.png " ")
+![Test Model](images/project-model.png " ")
 
 2. Click the [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HTMmO7ndSl_UUwuJu2dKfWu4l5DsaYjZRqutq90atlQQIq6gtPRue5xWeGMYDGtb/n/orasenatdpltintegration03/b/CareClinics-bucket/o/test-images.zip) to download sample test images to your local machine. 
 
@@ -318,7 +318,7 @@ a. Select 'Local file' under 'Image source'
 
 b. Select 'select one…' in the 'Upload image' section. Navigate to the folder containing the test images on your local machine and select an image to upload.
 
-![Analyze images](images/analyze-images.png " ")
+![Analyze images](images/model-results.png " ")
 
 c. Examine confidence measurements under the 'Results' pane. You can see our Vision model correctly predicted this image as an insurance card. You can test out with other images as well. 
 
