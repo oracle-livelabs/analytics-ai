@@ -87,15 +87,11 @@ Now that you have a dataset created, you'll proceed with labeling those images.
 
     ![](./images/label-galaxies2.png) 
 
-    ![](./images/label-galaxies3.png) TODO update
-
-    ![](./images/label-galaxies4.png) TODO update
-
-    ![](./images/label-galaxies5.png) TODO update
+    ![](./images/label-galaxies3.png)
 
 1. After the last image is labeled, the data set page is displayed, but this time, the image status for each is listed as *Labeled*.
 
-    ![](./images/dataset-labeled.png) TODO update
+    ![](./images/dataset-labeled.png)
 
 Congratulations, you have completed labeling a set of images for object detection.
 

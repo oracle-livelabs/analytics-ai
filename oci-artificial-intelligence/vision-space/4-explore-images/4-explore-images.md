@@ -41,7 +41,7 @@ You'll download a csv file that contains the name and location of the space imag
 
     > **Note:** The bucket containing the images was prepared in advance, as was the csv file.
 
-1. Close the csv file.
+1. Close the csv file (and don't save if prompted).
 
 
 ## **Task 2:** Access Oracle Analytics Cloud (OAC) and register the Vision model

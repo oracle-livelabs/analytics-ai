@@ -56,7 +56,7 @@ Try out OCI Vision in the console.
 
     ![Navigate to AI Vision](./images/navigate-to-ai-vision-menu.png " ")
 
-1. To use Document AI, select **Document AI** on the left navigation menu. You might see a *404 error* because your using a compartment you don't have access to. Under *Model Scope*, set your *Compartment* to the one assigned with your sandbox registration.
+1. To use Document AI, select **Document AI** on the left navigation menu. You might see a *404 error* because you're using a compartment you don't have access to. Under *Model Scope*, set your *Compartment* to the one assigned with your sandbox registration. You will find it under *livelab (root)* > *LiveLabs*
 
     ![Select Vision compartment](./images/document-ai-compartment.png " ")
 
@@ -68,11 +68,11 @@ Try out OCI Vision in the console.
 
     | Feature | Description | Details on Console |
     | --- | --- | --- |
-    | OCR (Optical Character Recognition) | Locates and digitizes text information from images | Text will appear under the "raw text" header of the results pane of the console |
-    | Document Image Classification | Classifies documents into different types based on their visual appearance, high-level features, and extracted keywords | Classification along with confidence score appears directly under "Results" pane |
-    | Language Classification | Classifies the language of document based on visual features | Classification along with confidence score appears under document classification in Results pane |
-    | Table extraction | Extracts content in tabular format, maintaining row/column relationships of cells | Toggle to the Table tab to get table information |
-    | Searchable PDF output | Embeds a transparent layer on top of document image in PDF format to make it searchable by keywords | You need to test on a PDF document to use this feature. When you've selected a PDF, the searchable PDF button will be clickable. Clicking on it will download an OCR PDF to your computer. |
+    | OCR (Optical Character Recognition) | Locates and digitizes text information from images | Text will appear under the *Raw text* tab of the results pane of the console |
+    | Document Type | Classifies documents into different types based on their visual appearance, high-level features, and extracted keywords | Classification along with confidence score appears directly under *Results* pane as *Document type* |
+    | Document Language | Classifies the language of document based on visual features | Classification along with confidence score listed as *Document language* in *Results* pane |
+    | Table extraction | Extracts content in tabular format, maintaining row/column relationships of cells | Select the *Table* tab to get table information |
+    | Searchable PDF output | Embeds a transparent layer on top of document image in PDF format to make it searchable by keywords | You need to test on a PDF document to use this feature. When you've selected a PDF, the searchable PDF button will be clickable. Clicking on it will download an OCR'd PDF to your computer. |
 
 1. To use Image Analysis, start by selecting **Image Classification** on the left navigation. A sample image is displayed by default.
 
