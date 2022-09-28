@@ -10,7 +10,7 @@
         {
             "title": "Get Started",
             "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../item-2-pre-register-free-tier-account/item-2-pre-register-free-tier-account.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Lab 1: Generate Forecast from OCI Console",
