@@ -10,14 +10,14 @@ By default, a tenancy is not configured to work with the Data Science service. I
 
 You only need to complete the instructions in the **Quick Start Tenancy Configuration** or the **Advanced Configuration of a Tenancy** if the tenancy is not configured to work with the Data Science service. If you are not sure which set of instructions to follow, start with the **Quick Start Tenancy Configuration**.
 
-*Estimated Time:* 30 minutes
+*Estimated Time:* 20 minutes
 
 ### Objectives
 
 In this lab, you:
 * Use the Oracle Resource Manager Solution Hub to create a stack
 * Become familiar with the options available to configure a tenancy to work with the Data Science service.
-* Apply a stack to create the policies, groups, dynamic groups, VCN, subnet, and other resources need to access the Data Science service.
+* Apply a stack to create the policies, groups, dynamic groups and other resources need to access the Data Science service.
 * Destroy a stack if the stack fails to be applied.
 
 ### Prerequisites
@@ -41,20 +41,16 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
 
     ![Create a stack](./../common/images/orm-create-stack.png)
 
-1. Click **Sample Solution**, and then click **Select Solution**.
-    ![Select solution](./../common/images/orm-select-solution.png)
+1. Click **Template**, and then click **Select template**. 
+    ![Select template](./../common/images/orm-select-template.png)
 
-1. Select **Data Science**, and then click **Select Solution**.
+1. Select **Data Science**, and then click **Select template**.
     ![Select Data Science](./../common/images/orm-select-data-science.png)
 
 1. Click **Next**. The **Configure Variables** panel displays variables that are automatically populated from the Terraform configuration for the Data Science solution.
     ![Configure variables](./../common/images/orm-configure-variables.png)
 
-1. By default the **Use Existing VCN** is unchecked. If you have not created a VCN then leave this option unchecked.  If you have already set up a VCN you will need to use it. Free Trial accounts have a default limit of two VCNs and the stack will fail to build if this box is not checked.
-1. Deselect **Create a Project and Notebook Session?**
 1. Deselect **Enable Vault Support?**
-1. Deselect  **Provision Functions and API Gateway?**
-    ![uncheck options](./../common/images/orm-create-stack-uncheck.png)
 
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
@@ -76,12 +72,12 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 
 1. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you are not sure which compartment to use, contact an administrator.
 1. Click **Create Stack**.
-    ![Create stack](./../common/imagesorm-create-stack.png)
+    ![Create stack](./../common/images/orm-create-stack.png)
 
-1. Click **Sample Solution**, and then click **Select Solution**.
-    ![Select solution](./../common/images/orm-select-solution.png)
+1. Click **Template**, and then click **Select template**.
+    ![Select template](./../common/images/orm-select-template.png)
 
-1. Select **Data Science**, and then click **Select Solution**.
+1. Click **Service**, and then select **Data Science**, and then click **Select template**.
     ![Select Data Science](./../common/images/orm-select-data-science.png)
 
 1. Enter a **Name** for the new stack, or use the default.
@@ -94,10 +90,7 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
     ![Configure variables](./../common/images/orm-configure-variables.png)
 
 1. Change the IAM variables as necessary.
-1. Enter the network information or use the defaults to create a VCN, or select **Use Existing VCN** to enter the information to connect to an existing network.
-1. Optionally, select **Create a Project and Notebook Session?** and enter a project and notebook configuration. We recommend that you do not create a project or notebook session until you need them, see [Creating Projects](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/manage-projects.htm#create-project) and [Creating Notebook Sessions](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/manage-notebook-sessions.htm#create-notebooks).
 1. Select **Enable Vault Support?** to enable storing secrets, encrypted passwords, and keys, and then enter vault values to create a vault.
-1. Select **Provision Functions and API Gateway?** to enable deploying models to Oracle Functions and use the API gateway.
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
     ![Stack details](./../common/images/orm-stack-detail.png)
@@ -110,6 +103,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
+* **Author**: [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
+    * [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist, Sept 2022
