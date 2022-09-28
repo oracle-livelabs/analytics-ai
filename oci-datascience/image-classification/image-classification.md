@@ -12,12 +12,12 @@ In this lab, you’ll learn how to create your own deep learning model to diagno
 
 In this lab, you will:
 
-* Learn how to work with a JupyterLab notebook
-* Perform data exploration with Accelerated Data Science (ADS) SDK
-* Define a custom deep learning model and train the model
-* Apply transfer learning on a pre-trained model
-* Save a trained model to the Data Science Model Catalog
-* Deploy a model with Data Science Model Deployment
+* Learn how to work with a JupyterLab notebook.
+* Perform data exploration with Accelerated Data Science (ADS) SDK.
+* Define a custom deep learning model and train the model.
+* Apply transfer learning on a pre-trained model.
+* Save a model to the Data Science Model Catalog.
+* Deploy a model with Data Science Model Deployment.
 
 ### Prerequisites
 
@@ -78,7 +78,7 @@ This is the notebook where we will work through an image classification problem.
 
 ![Select tensorflow conda](images/select_tensorflow_conda.png " ")
 
-4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".T
+4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
 
 **Congratulations! You have successfully completed the lab**
 
