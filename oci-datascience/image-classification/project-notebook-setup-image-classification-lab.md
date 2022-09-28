@@ -62,7 +62,7 @@ You can create a Data Science project to organize your notebook sessions and mod
 1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard3.Flex. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard3.Flex**.  VM.Standard3.Flex is a flexible compute shape, meaning the number OCPUs and memory are not fixed and can be specified by the user.  You can select 24 OCPU and 384 GB in memory which is a 1 OCPU to 16 GB ratio.  Then click **Select**.
     ![Select OCPU and memory](images/select_ocpu_memory.png)
 
-1. Enter the block volume in GB. The suggested size is 100 Gb or larger.
+1. Enter the block volume in GB. The suggested size is 100 GB or larger.
 1. In the networking resources section, select the default networking option.
     ![Select Default Networking](images/default_networking.png)
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
