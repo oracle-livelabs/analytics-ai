@@ -2,8 +2,13 @@
 
 ## Introduction
 
+Estimated time - 10 minutes
+
 In previous sections we created the Compute Instance and established a connection to it.  
 In this section we will make the necessary configurations for the demo to work properly.
+
+Watch the video below for a quick walk through of the lab.
+[](videohub:1_4d415278)
 
 ### Objectives
 
