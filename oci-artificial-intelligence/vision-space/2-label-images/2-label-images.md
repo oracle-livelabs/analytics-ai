@@ -43,7 +43,7 @@ The images to be labeled have already been staged in an object storage bucket in
   
 1. In the next page of the *Create dataset* dialog, set the following values:
 
-     ![](./images/create-dataset-p2.png)
+     ![Add dataset details](./images/create-dataset-p2.png)
  
     a. Retrieve files from Object Storage by choosing **Select from Object Storage**.
  
@@ -64,7 +64,7 @@ The images to be labeled have already been staged in an object storage bucket in
 
 1. You will return to the *Dataset list* page. Wait until your new dataset's status is **Active**. This will take about 2-3 minutes. The progress is shown in the page.
 
-    ![](./images/dataset-active.png)
+    ![Dataset is active](./images/dataset-active.png)
 
 
 ## **Task 2:** Label the images in your dataset
@@ -72,26 +72,26 @@ Now that you have a dataset created, you'll proceed with labeling those images.
 
 1. On the page showing your active dataset, the data record view is listed by default. This is a list of all the image files in the dataset. (There is also a *Gallery view* that displays the files as images.) **Click the top file name** to open it.
 
-    ![](./images/start-labeling.png)
+    ![Start labeling images](./images/start-labeling.png)
 
 1. The *Add labels* page is displayed for the selected image.
     
-    ![](./images/add-labels1.png)
+    ![Add labels](./images/add-labels1.png)
 
-1. The bounding box tool is enabled by default. Add a bounding box tightly around each distinguishable spiral galaxy. Don't put a box around bright spots that have no shape. When done, click **Save & next**.
+1. The bounding box tool is enabled by default. Add a bounding box tightly around each distinguishable spiral galaxy. When done, click **Save & next**.
     >**Note:** If you make a mistake when placing the bounding box, you can click **Bounding box** (under *Tools*) and then move the sides of the box, or you can click **Remove box** and then add a new one.
 
-    ![](./images/label-galaxies1.png)
+    ![Place bounding box](./images/label-galaxies1.png)
 
 1. Add bounding boxes to galaxies in the remaining images in the dataset. There are galaxies of different sizes in the other images. For larger galaxies with a faint halo, put the box around the inner structure. Positioning the box is a judgement call but it can affect how the model detects galaxies in new images.
 
-    ![](./images/label-galaxies2.png) 
+    ![Bounding box example 2](./images/label-galaxies2.png) 
 
     ![](./images/label-galaxies3.png)
 
 1. After the last image is labeled, the data set page is displayed, but this time, the image status for each is listed as *Labeled*.
 
-    ![](./images/dataset-labeled.png)
+    ![Bounding box example 3](./images/dataset-labeled.png)
 
 Congratulations, you have completed labeling a set of images for object detection.
 

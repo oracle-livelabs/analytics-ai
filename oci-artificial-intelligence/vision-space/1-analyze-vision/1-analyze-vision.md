@@ -22,11 +22,11 @@ For additional information about Vision policies, see the [product documentation
 ## **Task 1:** Get familiar with the OCI Console
 Sign-in and get familiar with the user interface.
 
-1. Navigate to your LiveLabs *Reservation Information* if you are not still there from the previous lab.
+1. Click **View Login Info** to navigate to your LiveLabs *Reservation Information* if you are not still there from the previous lab.
     
     ![View reservation information](./images/ll-reservation-info.png)
 
-1. Click the **Launch OCI** button. 
+1. Click the **Launch OCI** button. This opens the OCI Console in a separate browser tab.
 
 1. On the *Oracle Cloud Account Sign In* page enter the **username** and **password** provided to you on *Reservation Information*, then click **Sign In**.
     
@@ -56,7 +56,7 @@ Try out OCI Vision in the console.
 
     ![Navigate to AI Vision](./images/navigate-to-ai-vision-menu.png " ")
 
-1. To use Document AI, select **Document AI** on the left navigation menu. You might see a *404 error* because you're using a compartment you don't have access to. Under *Model Scope*, set your *Compartment* to the one assigned with your sandbox registration. You will find it under *livelab (root)* > *LiveLabs*
+1. To use Document AI, select **Document AI** on the left navigation menu. (You might see a *404 error* because you're using a compartment you don't have access to.) Under *Model Scope*, set your *Compartment* to the one assigned with your sandbox registration. You will find it under *livelab (root)* > *LiveLabs*.
 
     ![Select Vision compartment](./images/document-ai-compartment.png " ")
 

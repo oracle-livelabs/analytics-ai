@@ -59,7 +59,7 @@ Login to OAC then register the OCI Vision model with OAC so that it can be used 
     
     ![Register model](./images/oac-register-model1.png)
 
-1. In the *Register a Vision Model* dialog, select the **Livelabs Galaxy** connection that you previously configured. (Wait several seconds for the connection to be listed.)
+1. In the *Register a Vision Model* dialog, select the **Livelabs Galaxy** connection. (You may need to wait several seconds for the connection to be listed.)
 
     ![Select OCI connection](./images/oac-register-model2.png)
 
@@ -158,11 +158,11 @@ Create an OAC workbook to view the objects detected in the space images.
 
     ![Click results dataset](./images/oac-results-dataset.png)
 
-1. You now see a new workbook with the dataset contents listed on the left and an empty visualization pallete on the right.
+1. You now see a new workbook with the dataset contents listed on the left and an empty visualization palette on the right.
 
     ![View new workbook](./images/oac-new-workbook.png)
 
-1. In the data listing on the left, click and drag **Image File from Bucket** onto the vizualization palette on the right. This adds a table visualization. These are the images processed by the data flow.
+1. In the data listing on the left, click and drag **Image File from Bucket** onto the visualization palette on the right. This adds a table visualization. These are the images processed by the data flow.
 
     ![Add table of image files](./images/oac-workbook-table.png)
 
@@ -195,7 +195,7 @@ Create an OAC workbook to view the objects detected in the space images.
     ![Save workbook](./images/oac-workbook-save-icon.png)
 
 
-1. In the *Save Workbook* dialog, provide a *Name* such as **My Galaxy Workbook** and cick **Save**.
+1. In the *Save Workbook* dialog, provide a *Name* such as **My Galaxy Workbook** and click **Save**.
 
     ![Enter workbook name](./images/oac-save-workbook.png)
 
@@ -203,7 +203,7 @@ Create an OAC workbook to view the objects detected in the space images.
 
     ![View images with object detection](./images/oac-workbook-final.png)
 
-> **Note:** If you want to add the Vision Plugin to your own environment, you can download it from the Analytics vizualization extensions page available here:
+> **Note:** If you want to add the Vision Plugin to your own environment, you can download it from the Analytics visualization extensions page available here:
 https://www.oracle.com/business-analytics/data-visualization/extensions/
 >
 >This video shows how to install the visualization (or any) plugin:
@@ -211,6 +211,12 @@ https://www.youtube.com/watch?v=JjuOWm8whgQ
 
 
 **Congratulations, you have completed this lab and the workshop!**
+
+## **Bonus Task:** Analyze images with your custom model
+If you have time after completing the workshop, test your learning to see if you can complete the following task without being given all the steps in detail.
+
+1. Go the custom-trained model you created in Lab 3 (galaxy-detection-model-1) and see if it is now active. If it is, use it to analyze one or more images in object storage. You can copy an image URL from the table visualization in your Galaxy Workbook in OAC. Then paste that URL into the Image URL box in Vision to analyze that image. 
+
 
 ## Acknowledgements
 
