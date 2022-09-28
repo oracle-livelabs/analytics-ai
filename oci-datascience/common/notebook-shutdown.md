@@ -52,7 +52,7 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 1. Click the name of the notebook session and open the Notebook Session page.
     ![Click on Notebook Session](./../common/images/click-notebook-session.png)
 
-1. Click **Terminate**.
+1. Click **More Actions**, then click **Terminate**.
     ![Terminate button](./../common/images/terminate-notebook-session.png)
 
 1. Click **Terminate** to confirm the termination. The status changes to **Deleting** and then **Deleted**.
@@ -63,4 +63,4 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2022
