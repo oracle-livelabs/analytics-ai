@@ -296,7 +296,7 @@ A project is a way to organize multiple models in the same workspace. It is the 
 2. In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments (on training time, for example). When you want to start training, click "submit" and this will kick of the process. You can then check on the status of your model in the project where you created it.
     ![Review and Submit](images/review.png " ")
 
-## Task 9: Test the model on new images
+## Task 9: Test the Model on New Images
 
 1. Navigate to the Project Details page and click on the model just created.
 
