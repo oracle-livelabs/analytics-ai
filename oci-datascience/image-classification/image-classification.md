@@ -45,7 +45,7 @@ This lab assumes that you have:
 
 ## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
 
-1. To access the image classification JupyterLab notebook, first open a new terminal window.  Go to **File**, select **New**, choose **Terminal**. Copy and paste the following commands one by one in the terminal window and press Enter after each command. The commands will create a folder named **demo** inside the directory `/home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1/` and get the image classification notebook and related files in a folder called **xray_diagnostics_hol** from Object Storage.
+1. To access the image classification JupyterLab notebook, first open a new terminal window.  Go to **File**, select **New**, choose **Terminal**. Copy and paste the following commands one by one in the terminal window and press Enter after each command. The commands will create a folder named **demo** inside the directory `/home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1/` and get the image classification notebook and related files in a folder called **xray\_diagnostics\_hol** from Object Storage.
 
     ```
     cd /home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1
