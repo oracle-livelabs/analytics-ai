@@ -203,7 +203,7 @@ a. Name: enter a name for your DLS Dataset that you can recognize, e.g. careclin
 
 b. Dataset format: Images
 
-c. Annotation Class: Multiple Label
+c. Annotation Class: Single Label
 
 ![Create Dataset](images/create-dataset.png " ")
 
@@ -217,17 +217,17 @@ g. Choose your Bucket by name
 
 ![Choose Dataset Images](images/choose-dataset-images.png " ")
 
-h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be: ‘insurance card’ and ‘health insurance card’.
+h. Add Label: We will be using one label for this lab. In our case, the label will be: ‘insurance card’
 
 i. Click ‘Next’
 
-![Create Labels](images/create-labels.png " ")
+![Create Label](images/create-labels.png " ")
 
 j. Review the information and deploy your Dataset by clicking 'Create'
 
 ![Review and Create Dataset](images/review-and-create-dataset.png " ")
 
-5. From the CareClinicsDataset page, add labels to each data record i.e. insurance card.
+5. From the CareClinicsDataset page, add label to each data record i.e. insurance card.
 
 ![Dataset Homepage](images/unlabeled-dataset-list.png " ")
 
@@ -237,7 +237,7 @@ b. Choose 'label'
 
 ![Click label](images/click-label.png " ")
 
-c. Check both label boxes 'insurance card' and 'health insurance card'
+c. Check label box 'insurance card'
 
 d.	Click ‘Save & next’ when finished and repeat this process for all images
 
