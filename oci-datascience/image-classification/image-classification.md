@@ -27,7 +27,7 @@ This lab assumes that you have:
 
 ## Task 1: Set up Conda Environment
 
-1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to `File` and select `New Launcher`.  You will see the `Environment Explorer`. When you click on `Environment Explorer`, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. 
+1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to **File** and select **New Launcher**.  You will see the **Environment Explorer**. When you click on **Environment Explorer**, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. 
 
     ![Conda Environment Explorer](images/conda_environment_explorer.png " ")
 
@@ -35,7 +35,7 @@ This lab assumes that you have:
 
     ![Tensorflow Conda](images/tensorflow_conda.png " ")
 
-3.  Under `Install`, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
+3.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
 
     ![Open Termina](images/open_terminal.png " ")
 
@@ -45,7 +45,7 @@ This lab assumes that you have:
 
 ## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
 
-1. To access the image classification JupyterLab notebook, first open a new terminal window.  Go to `File`, select `New`, choose `Terminal`. Copy and paste the following commands one by one in the terminal window and press “Enter” after each command. The commands will create a folder named 'demo' inside the directory `/home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1/` and get the image classification notebook and related files in a folder called *xray_diagnostics_hol* from Object Storage.
+1. To access the image classification JupyterLab notebook, first open a new terminal window.  Go to **File**, select **New**, choose **Terminal**. Copy and paste the following commands one by one in the terminal window and press Enter after each command. The commands will create a folder named **demo** inside the directory `/home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1/` and get the image classification notebook and related files in a folder called **xray_diagnostics_hol** from Object Storage.
 
     ```
     cd /home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1
@@ -54,23 +54,23 @@ This lab assumes that you have:
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/PvQLld5XzyJkAjW3DdvR7nLliOv4g8MB6gz2MEmRjkQLZdn1P9wOkNnUozAkPSUe/n/bigdatadatasciencelarge/b/hosted-datascience-docs/o/Cloudworld22hol/xray_diagnostics_pneumonia/xray_diagnostics_hol.zip
     unzip xray_diagnostics_hol.zip
     ```
-2.  Navigate to the xray_diagnostics_hol folder
+2.  Navigate to the **xray\_diagnostics\_hol** folder
 
 Go to the home directory
 
 ![Navigate home directory](images/navigate_home_directory.png " ")
 
-Click on the *conda* folder
+Click on the **conda** folder
 
-Click on the *notebooks* folder
+Click on the **notebooks** folder
 
-Click on the *tensorflow_27_p37_cpu_v1* folder
+Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
 
-Click on the *demo* folder
+Click on the **demo** folder
 
-Click on the *xray_diagnostics_hol* folder
+Click on the **xray\_diagnostics\_hol** folder
 
-Open *ChestXrays_Train.ipynb* file 
+Open **ChestXrays\_Train.ipynb** file 
 
 This is the notebook where we will work through an image classification problem.  
 
@@ -78,7 +78,7 @@ This is the notebook where we will work through an image classification problem.
 
 ![Select tensorflow conda](images/select_tensorflow_conda.png " ")
 
-4.  Go through the *ChestXrays_Train.ipynb*.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".T
+4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".T
 
 **Congratulations! You have successfully completed the lab**
 
