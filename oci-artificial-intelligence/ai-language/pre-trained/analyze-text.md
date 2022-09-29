@@ -4,8 +4,7 @@
 
 In this session will introduce you to OCI Language Pre-trained models and also help you to get familiar with various ways of consuming the services viz OCI Console, SDK and REST API.
 
-TODO update time
-> ***Estimated Lab Time***: 20 minutes
+> ***Estimated Lab Time***: 40 minutes
 
 ### Objectives
 
@@ -68,7 +67,6 @@ Log into OCI Cloud Console. Using the Burger Menu on the top left corner, naviga
 Enter your text into the dialog box to analyze.
     ![OCI Language Text Analytics Screen](./images/text-box.png " ")
 
-TODO: add text with PII and sentiment analysis
 Below are some of the examples for the text:
     ```
 
@@ -121,12 +119,6 @@ Lists, by confidence percentage, the languages detected.
 
 Lists the word, identified document category, and the confidence score.
     ![Text classification Result](./images/text-result.png " ")
-
-#### 6: PII Result
-
-Lists Personal Identifiable Information entities present in the text and displays the masked output.
-TODO: update screenshots for PII in next line
-    ![PII Result](./images/text-result.png " ")
 
 ## **Task 2** Analyze Text with Python SDK
 
@@ -239,7 +231,6 @@ Now Install oci by running:
 
 #### Python Code
 
-TODO - check if compartment ID changes required in  python language.py as well as below code
 ```Python
 <copy>
 import oci
@@ -298,8 +289,6 @@ batch_detect_language_sentiment_details = oci.ai_language.models.BatchDetectLang
 output = ai_client.batch_detect_language_sentiments(batch_detect_language_sentiment_details,  level=["ASPECT","SENTENCE"])
 print(output.data)
 
-#TODO
-#Add code for PII
 </copy>
 ```
 
@@ -541,7 +530,6 @@ Below is the example shown to invoke Detect Language Service.
 OCI Language service endpoints:
 
 ```
-# TODO check for latest version of these APIs
 
 # Language Detection
 https://language.aiservice.us-phoenix-1.oci.oraclecloud.com/20210101/actions/batchDetectDominantLanguage
@@ -558,15 +546,12 @@ https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/bat
 # Sentiment Analysis
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/batchDetectLanguageSentiments
 
-# PII Identification and de-identification
-#TODO
-
 ```
-
 
 ## **Summary**
 
-TODO add what has been learnt
+Congratulations! </br>
+In this lab you have learnt how to setup required policies for Language, using different ways such as OCI Console, SDK and REST APIs to to analyze text.
 
 [Proceed to the next section](#next)
 

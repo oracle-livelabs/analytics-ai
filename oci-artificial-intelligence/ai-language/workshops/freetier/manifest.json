@@ -18,16 +18,6 @@
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
-            "title": "Lab 2: Creating and Using Custom models to analyze text",
-            "description": "Learn how create, train and use Custom Models to analyze text",
-            "filename": "../../custom-models/ai-language-cli.md"
-        },
-        {
-            "title": "Lab 3: Translating text using OCI Language Service",
-            "description": "Learn how to use OCI Language API to translate text across langauges",
-            "filename": "../../text-translation/ai-language-sdk.md"
-        },
-        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
@@ -35,7 +25,7 @@
         {
             "title": "Acknowledgements",
             "description": "Contributors of this live lab.",
-            "filename": "../../oci-language-rest/oci-language-rest.md"
+            "filename": "../../acknowledgements/ack.md"
         }
     ]
 }

@@ -28,10 +28,6 @@ Detects languages based on the given text, and includes a confidence score.
 
 Identifies the document category and subcategory that the text belongs to.
 
-### 6. PII identification and de-identification
-
-Detect presence of Personal Identifiable Information (PII) in unstructured text and de-identify by either masking, replacing or removing.
-
 ### **Custom Models**
 
 #### 1. Custom Text Classification
@@ -72,7 +68,7 @@ OCI Language now provides an API to automatically translate text across 21 langu
 [Proceed to the next section](#next)
 
 ### Acknowledgements:
-TODO remove acknowledgements from individual labs and have it at one place here
+
 * **Authors**
   * Raja Pratap Kondamari - Product Manager, OCI Language Service
   * Rajat Chawla  - Oracle AI OCI Language Services
