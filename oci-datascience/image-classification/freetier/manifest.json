@@ -20,7 +20,11 @@
         {
             "title": "Lab 2: Create a Project and a Notebook Session",
             "description": "Create a project and a notebook session.",
+<<<<<<< HEAD
             "filename": "./../project-notebook-setup-image-classification-lab.md"
+=======
+            "filename": "./../project-notebook-setup-free-tier.md"
+>>>>>>> upstream/main
         },
         {
             "title": "Lab 3: Training an Image Classification model",
