@@ -19,7 +19,7 @@ In this lab, you:
 
 * (Optional) An active notebook session that can be deactivated or terminated.
 
-## Deactivating Notebook Sessions
+## Task 1: Deactivating Notebook Sessions
 
 Before deactivating a notebook session, save all your work to the attached block volume. Any data or files stored on the compute boot volume or held in memory are deleted when the notebook session is deactivated. The data and files saved on the block volume, which is mounted at ``/home/datascience``, are maintained while the notebook session is inactive. Access to the block volume is restored when the notebook session is activated.
 
@@ -38,7 +38,7 @@ Before deactivating a notebook session, save all your work to the attached block
 
     ![Click deactivate](./../common/images/deactivate-notebook-session-confirmation.png)
 
-## Terminating Notebook Sessions
+## Task 2: Terminating Notebook Sessions
 
 To keep the file changes in a notebook session’s boot volume and attached block volume, you must back them up before the notebook session is terminated. For example, copy the files to an object storage bucket, or commit and push changes to a Git repository outside the notebook session. Otherwise, all file changes in the notebook session’s boot volume and attached block volume are deleted.
 
