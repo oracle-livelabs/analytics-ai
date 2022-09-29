@@ -235,7 +235,7 @@ Now Install oci by running:
 <copy>
 import oci
  
-ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file(), service_endpoint="https://language.aiservice.us-ashburn-1.oci.oraclecloud.com")
+ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file())
 #Input Text
 text1 = "The Indy Autonomous Challenge is the worlds first head-to-head, high speed autonomous race taking place at the Indianapolis Motor Speedway"
 text2 = "Using high-performance GPU systems in the Oracle Cloud, OCI will be the cloud engine for the artificial intelligence models that drive the MIT Driverless cars competing in the Indy Autonomous Challenge."
@@ -326,126 +326,124 @@ To know more about the Java Script SDK visit [Java Script OCI-Language](https://
 To know more about the DOT NET SDK visit [DOT NET OCI-Language](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
 
 
-## **TASK 3** Analyze text using OCI Data Science Notebook 
+## **TASK 3** Analyze text using OCI Data Science Notebook
 
-### 1. About OCI Data Science 
+### 1. **About OCI Data Science**
 
 OCI Data Science Notebook is a web application that contains code, results and visualizations that makes testing and sharing ML pipelines simple.
 
 
-### 2. Setting up Data Science Prerequisites
+### 2. **Setting up Data Science Prerequisites**
 
 Before you can start using Data Science, your tenancy administrator should set up the following networking, dynamic group, and policies.
 
-#### 1. Create VCN and Subnets
+  1. Create VCN and Subnets
 
-Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option.
-The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
+    Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option.
+    The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
 
-#### 2. Create Dynamic Group
+  1. Create Dynamic Group
 
-Create a dynamic group with the following matching rule:
-ALL { resource.type = 'datasciencenotebooksession' }
+    Create a dynamic group with the following matching rule:</br>
+    ALL { resource.type = 'datasciencenotebooksession' }
 
-#### 3. Create Policies
+  1. Create Policies
 
-Create a policy in the root compartment with the following statements:
+    Create a policy in the root compartment with the following statements:
 
-##### 3.1 Service Policies
+* Service Policies
 
     ```
     <copy>allow service datascience to use virtual-network-family in tenancy</copy>
     ```
 
-##### 3.2 Non-Administrator User Policies
+* Non-Administrator User Policies
 
     ```
     <copy>
-    allow group <data-scientists> to use virtual-network-family in tenancy
+    allow group <data-scientists > to use virtual-network-family in tenancy
     </copy>
     ```
     ```
     <copy>
-    allow group <data-scientists> to manage data-science-family in tenancy
+    allow group <data-scientists > to manage data-science-family in tenancy
     </copy>
     ```
 
-where data-scientists represents the name of your user group.
+    where `<data-scientists>` represents the name of your user group.
 
-##### 3.3 Dynamic Group Policies
+ * Dynamic Group Policies
 
     ```
     <copy>allow dynamic-group <dynamic-group> to manage data-science-family in tenancy</copy>
     ```
 
-where dynamic-group represents the name of your dynamic group.
+    where `<dynamic-group>` represents the name of your dynamic group.
+</br></br>
 
-### 4. Navigate to the Data Science Notebook Session
+### 3. **Navigate to the Data Science Notebook Session**
 
 Follow the below steps to open Notebook in DataScience:
-#### 4.1. Navigate to Data Science Service
+  1. Navigate to Data Science Service
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
+    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
     ![OCI Hamburger menu](./images/cloudMenu.png " ")
 
-#### 4.2. Select Compartment
+  1. Select Compartment
 
-Select the Compartment in which want to create your project.
+    Select the Compartment in which want to create your project.
     ![Select compartment](./images/selectComp.png " ")
-<!-- Click Create Project to create a new project. -->
-<!-- Select the Root Compartment -->
 
-#### 4.3. Create Project
+  1. Create Project
 
-Click Create Project to create a new project.
+    Click Create Project to create a new project.
     ![create data science project](./images/createProject1.png " ")
-<!-- Select the Project named 'oci-language-livelabs' -->
 
-#### 4.4. Enter Project Details
+  1. Enter Project Details
 
-Enter name and click Create Button.
+    Enter name and click Create Button.
     ![Data Science project details](./images/createProject2.png " ")
-<!-- Select the Notebook named 'Livelabs Notebook' -->
 
-#### 4.5. Create Notebook Session
+  1. Create Notebook Session
 
-Click Create Notebook Session to create a new Notebook session.
+    Click Create Notebook Session to create a new Notebook session.
     ![](./images/createNotebookSession.png " ")
 
-#### 4.6. Enter Notebook Details
+  1. Enter Notebook Details
 
-Select a name.
-We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
-Set block storage to 50 GB.
-Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
+    Select a name.
+    We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
+    Set block storage to 50 GB.
+    Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
     ![](./images/createNotebookSession2.png " ")
 
-#### 4.7. Open the OCI Data Science notebook
+  1. Open the OCI Data Science notebook
 
-The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
-Open the notebook session that was provisioned.
+    The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
+    Open the notebook session that was provisioned.
     ![](./images/openNotebook.png " ")
+</br></br>
 
-### 5. Invoke the Language Service
+### 4. **Invoke the Language Service**
 
-#### 5.1. Download and Upload the Files
+  1. Download and Upload the Files
 
-Download this [Sentiment Analysis](./files/Sentiment_Batch.ipynb) and [Named Entitiy Recognition](./files/NER_Batch.ipynb) files and upload it in the Notebook. 
-Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
+    Download this [Sentiment Analysis](./files/Sentiment_Batch.ipynb) and [Named Entitiy Recognition](./files/NER_Batch.ipynb) files and upload it in the Notebook. 
+    Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
     ![uploading files](./images/uploadFiles.png " ")
 
-#### 5.2. Setup API Signing Key and Config File
+  1. Setup API Signing Key and Config File
 
-Open the Terminal by clicking the Terminal icon in the Launcher Tab.
+    Open the Terminal by clicking the Terminal icon in the Launcher Tab.
 
-In the terminal, create a .oci directory in the Data Science notebook session.
+    In the terminal, create a .oci directory in the Data Science notebook session.
     ```
     <copy>mkdir ~/.oci</copy>
     ```
 
-Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
+    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
 
-In the terminal, move those files to the .oci folder.
+    In the terminal, move those files to the .oci folder.
     ```
     <copy>mv <path of the config file> ~/.oci/</copy>
     ```
@@ -453,10 +451,10 @@ In the terminal, move those files to the .oci folder.
     <copy>mv <path of the private key> ~/.oci/</copy>
     ```
 
-To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
+    To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
     ![OCI Folder](./images/ociFolder.jpg " ")
 
-#### 6. Execute the Notebooks
+### 5. **Execute the Notebooks**
 
 Open the Notebook that you've just uploaded
 
@@ -467,44 +465,44 @@ These notebooks demonstrates how you can be more productive by using the various
 
 ## **TASK 4**: Analyze Text using REST API
 
-### 1. Setting Up Postman tool to access OCI REST API
+### 1. **Setting Up Postman tool to access OCI REST API**
 
-#### 1.1 Installation
+  1. Installation
 
-Postman is a utility used to invoke REST APIs. If you do not have the utlity installed, please download and install from [POSTMAN](https://www.postman.com/downloads/).
+    Postman is a utility used to invoke REST APIs. If you do not have the utlity installed, please download and install from [POSTMAN](https://www.postman.com/downloads/).
 
-Once installed, please follow below to configure Postman.
+    Once installed, please follow below to configure Postman.
 
-#### 1.2. Fork OCI Postman workspace
+  2. Fork OCI Postman workspace
 
-##### 1.2.1 Visit the [OCI Postman workspace](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/api/79bbefd7-4bba-4370-b741-3724bf3c9325) and login with your credentials
+   Visit the [OCI Postman workspace](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/api/79bbefd7-4bba-4370-b741-3724bf3c9325) and login with your credentials
 
-##### 1.2.2 Fork the Language APIs and OCI Credentials Environment
+  3. Fork the Language APIs and OCI Credentials Environment
 
-Fork the Language API collection in your workspace by navigating to Language API collection and clicking the "Fork" option.
-![](./images/forkLangugeApi1.png)
+    Fork the Language API collection in your workspace by navigating to Language API collection and clicking the "Fork" option.
+    ![](./images/forkLangugeApi1.png)
 
-Enter name to indentify forked Language API collection, select the workspace you want to fork the collection to and click "Fork Collection".
-![](./images/forkLangugeApi2.png)
+    Enter name to indentify forked Language API collection, select the workspace you want to fork the collection to and click "Fork Collection".
+    ![](./images/forkLangugeApi2.png)
 
-Fork the OCI Credentials Environment in your workspace by navigating to Environments and clicking the "Fork" option.
-![](./images/forkOciCred1.png)
+    Fork the OCI Credentials Environment in your workspace by navigating to Environments and clicking the "Fork" option.
+    ![](./images/forkOciCred1.png)
 
-Enter name to indentify forked OCI credentials environment, select the workspace you want to fork the collection to and click "Fork Collection".
-![](./images/forkOciCred2.png)
+    Enter name to indentify forked OCI credentials environment, select the workspace you want to fork the collection to and click "Fork Collection".
+    ![](./images/forkOciCred2.png)
 
 
-##### 1.2.3 Set up variables
+  4. Set up variables
 
-Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Lab 3 (Task 1 -> Step 4).
+* Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Lab 3 (Task 1 -> Step 4).
 
-Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
+* Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
 
-Click the Save button to commit your changes to the environment.
+* Click the Save button to commit your changes to the environment.
     ![](./images/setVariable.png " ")
 
 
-### 2. Invoke Language OCI REST API
+### 2. **Invoke Language OCI REST API**
 
 Invoke Language OCI REST APIs by clicking any one of the requests in the Language API COLLECTION. Enter the text you want to analyze in the body as shown below:
 
