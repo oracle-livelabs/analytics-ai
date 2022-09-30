@@ -2,7 +2,7 @@
 
 ## Introduction
 
-When a notebook session is in an active state there is a boot volume, block storage, and compute attached to it. When the notebook is not being used it is possible to detach the computing resource and thus reduce costs. There are two methods for shutting down a notebook session. If a notebook session is deactivated, then the underlying computing resource is shut down and the boot volume and block storage are detached. However, the block storage, which is mounted at ``/home/datascience``, is persisted for later use. The boot volume is *not* persisted. Deactivated notebooks can be activated again and the block volume is automatically reattached. During activation, you can change the compute shape, increase the size of the block volume, change the VCN, and the subnet.
+When a notebook session is in an active state, there is a boot volume, block storage, and compute attached to it. When the notebook is not being used, it is possible to detach the computing resource and thus reduce costs. There are two methods for shutting down a notebook session. If a notebook session is deactivated, then the underlying computing resource is shut down and the boot volume and block storage are detached. However, the block storage, which is mounted at ``/home/datascience``, is persisted for later use. The boot volume is *not* persisted. Deactivated notebooks can be activated again and the block volume is automatically reattached. During activation, you can change the compute shape, increase the size of the block volume, change the VCN, and the subnet.
 
 If the notebook session and its block storage are no longer needed, then the notebook session can be terminated. Terminating a notebook session releases the underlying compute, boot volume and block storage. Since the boot volume and block storage are not persisted, any data on these volumes will be lost. It is not possible to reactivate a terminated notebook session.
 
@@ -46,13 +46,13 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 1. Open the navigation menu.
 1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
-1. Click the name of the project to contain the notebook session and open the Projects page.
+1. Click the name of the project that contains the notebook session.
     ![Select a project](./../common/images/select-project.png)
 
 1. Click the name of the notebook session and open the Notebook Session page.
     ![Click on Notebook Session](./../common/images/click-notebook-session.png)
 
-1. Click **More Actions**, then click **Terminate**.
+1. Click **More Actions**, then click **Delete**.
     ![Terminate button](./../common/images/terminate-notebook-session.png)
 
 1. Click **Terminate** to confirm the termination. The status changes to **Deleting** and then **Deleted**.

@@ -78,7 +78,7 @@ This is the notebook where we will work through an image classification problem.
 
 ![Select tensorflow conda](images/select-tensorflow-conda.png " ")
 
-4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
+4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and pressing *shift + enter*. That will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
 
 You may now **proceed to the next lab**.
 
