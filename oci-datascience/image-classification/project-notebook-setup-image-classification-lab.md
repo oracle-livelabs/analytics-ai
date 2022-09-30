@@ -59,17 +59,17 @@ You can create a Data Science project to organize your notebook sessions and mod
 
 1. Select the compartment that you want to contain the notebook session.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
-1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard3.Flex. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard3.Flex**.  VM.Standard3.Flex is a flexible compute shape, meaning the number OCPUs and memory are not fixed and can be specified by the user.  You can select 24 OCPU and 384 GB in memory which is a 1 OCPU to 16 GB ratio.  Then click **Select**.
-    ![Select OCPU and memory](images/select_ocpu_memory.png)
+1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard3.Flex shape. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box besides **VM.Standard3.Flex**.  VM.Standard3.Flex is a flexible compute shape, meaning the number of OCPUs and memory are not fixed and can be specified by the user.  Select 24 OCPU and 384 GB in memory which is a 1 OCPU to 16 GB ratio.  Then click **Select**.
+    ![Select OCPU and memory](images/select-ocpu-memory.png)
 
 1. Enter the block volume in GB. The suggested size is 100 GB or larger.
 1. In the networking resources section, select the default networking option.
-    ![Select Default Networking](images/default_networking.png)
+    ![Select Default Networking](images/default-networking.png)
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
-1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**.
+1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE**.
 1. Click **Create**.
-    ![Create a notebook session](images/create_notebook_session_vmstandard3.png)
-1. When the notebook session status changes to **Active**, click **Open**
+    ![Create a notebook session](images/create-notebook-session-vmstandard3.png)
+1. When the notebook session status changes to **Active**, click **Open**.
 
 You may now **proceed to the next lab**.
 
