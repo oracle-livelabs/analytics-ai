@@ -29,19 +29,19 @@ This lab assumes that you have:
 
 1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to **File** and select **New Launcher**.  You will see the **Environment Explorer**. When you click on **Environment Explorer**, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. 
 
-    ![Conda Environment Explorer](images/conda_environment_explorer.png " ")
+    ![Conda Environment Explorer](images/conda-environment-explorer.png " ")
 
 2.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
 
-    ![Tensorflow Conda](images/tensorflow_conda.png " ")
+    ![Tensorflow Conda](images/tensorflow-conda.png " ")
 
 3.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
 
-    ![Open Termina](images/open_terminal.png " ")
+    ![Open Terminal](images/open-terminal.png " ")
 
 4.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the TensorFlow 2.7 for CPU on Python 3.7 conda for the notebook session.
 
-    ![Select Conda](images/select_conda_environ.png " ")
+    ![Select Conda](images/select-conda-environ.png " ")
 
 ## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
 
@@ -58,7 +58,7 @@ This lab assumes that you have:
 
 Go to the home directory
 
-![Navigate home directory](images/navigate_home_directory.png " ")
+![Navigate to home directory](images/navigate-home-directory.png " ")
 
 Click on the **conda** folder
 
@@ -76,11 +76,11 @@ This is the notebook where we will work through an image classification problem.
 
 3.  Select TensorFlow 2.7 for CPU on Python 3.7 conda in the top right corner of the notebook
 
-![Select tensorflow conda](images/select_tensorflow_conda.png " ")
+![Select tensorflow conda](images/select-tensorflow-conda.png " ")
 
-4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
+4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and pressing *shift + enter*. That will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
 
-**Congratulations! You have successfully completed the lab**
+You may now **proceed to the next lab**.
 
 ## References
 

@@ -24,12 +24,12 @@
         },
 
         {
-            "title": "Lab 3: Training an Image Classification model",
+            "title": "Lab 3: Train an Image Classification model",
             "description": "Train an image classifier in Data Science notebook and deploy with Data Science model deployment.",
             "filename": "./../image-classification.md"
         },
         {
-            "title": "Lab 4: Shutting Down a Notebook Session",
+            "title": "Lab 4: Shut Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
             "filename": "./../../common/notebook-shutdown.md"
         },

@@ -22,7 +22,7 @@ In this lab, you:
 
 * Log into the tenancy using an administrator account.
 
-## Tenancy Configuration
+## Task 1: Tenancy Configuration
 
 Configuring a tenancy using Oracle Resource Manager includes creating a solution stack, selecting the solution, providing identifying information for the new stack, and updating variables. For most tenancies, the default options are sufficient. These instructions outline the minimal requirements needed for configuring a tenancy to work with the Data Science service. 
 
