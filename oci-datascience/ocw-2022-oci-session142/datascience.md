@@ -42,7 +42,7 @@ Review the following concepts and terms to help you get started with the Data Sc
 
 * **Notebook Session**: Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions come with many pre-installed open source and Oracle developed machine learning and data science packages.
 
-* **Accelerated Data Science SDK**: The Oracle Accelerated Data Science (ADS) SDK is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the Oracle Accelerated Data Science Library documentation.
+* **Accelerated Data Science SDK**: The [Oracle Accelerated Data Science (ADS) SDK](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/index.html) is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the Oracle Accelerated Data Science Library documentation.
 
 * **Model**: Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
 
@@ -170,7 +170,9 @@ We'll create a user, a group, a dynamic group and security policies.
 7. Create a **Dynamic Group**
 
     a) Open the **navigation menu** and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
+
     b) Click **Create Dynamic Group**.
+
     c) Enter the following:
     * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
     * **Description**: A friendly description.
@@ -178,7 +180,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
     ```
     <copy>
-    Any {datasciencenotebooksession.compartment.id='<OCID of compartment PatientReadmissionCompartment>'}
+    Any {datasciencenotebooksession.compartment.id='<OCID of compartment Demo>'}
     </copy>
     ```
 
@@ -197,7 +199,7 @@ We'll create a user, a group, a dynamic group and security policies.
     </copy>
     ```
 
-## Task 2: Create Object Storage for storing training data
+## Task 3: Create Object Storage for storing training data
 
 1. From the OCI services menu, click 'Buckets' under 'Object Storage & Archive Storage.'
 
@@ -219,7 +221,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
     ![Create Bucket](images/create-bucket.png " ")  
 
-4. Now, upload the [training data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ftX3M2_QGo28G7UnT12ZfdPhL4NFCiIEoDSd5xeDL1eHxj9UhWUzJjywHzypHvma/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Train-Data-v2.csv) into your bucket that you just created. Clicking this link would download a csv file on your local machine. 
+4. Now, upload the [training data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GglWgyHo0jwjXtzZsbOaXbU816JFsbT6FNhIRkiUkT7uzB9SkTCAC6snDNZGQSLa/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Train-Data.csv) into your bucket that you just created. Clicking this link would download a csv file on your local machine. 
 
 5. Select your bucket. 
 
@@ -301,7 +303,7 @@ This page is known as the **Autonomous Database Details Page**. It provides you 
 
 ## Task 4: Download Wallet file
 
-**Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL*NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL*Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
+**Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL-NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL-Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from OCI Data Science to the **Autonomous Database**.
 
 1. Download your Autonomous Database wallet
     You need first to download the wallet file containing your credentials. There are two types of wallet:
@@ -335,9 +337,7 @@ This page is known as the **Autonomous Database Details Page**. It provides you 
 Save the wallet file in your local machine, as we will later make use of it to create connection between OCI Data Science Platform and OCI Autonomous Data Warehouse. 
 
 
-## Task 4: Configure the Data Science Service using Quick Start Tenancy Configuration
-
-To use the Oracle Cloud Infrastructure (OCI) Data Science service, your tenancy has to be configured to grant permission to users and resources. If your tenancy is not already configured, you need administrator permissions to configure it. If you created a free tier account, your account has administrator permissions . There are two ways to configure the tenancy. It can be manually configured or configured via the Oracle Resource Manager. 
+## Task 5: Configure the Data Science Service using Quick Start Tenancy Configuration
 
 In this lab, your tenancy is configured using the Data Science Solution Hub, which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
 
@@ -387,7 +387,7 @@ However, if you prefer a manual approach, to control all the aspects of the prov
 
 
 
-## Task 5: Create a Project 
+## Task 6: Create a Project 
 
 Projects are used to collect related data science resources and artifacts, such that it enables you to organize your work. They contain a collection of notebook sessions and models. You create a Data Science project to organize your notebook sessions and models within your project.
 
@@ -397,13 +397,13 @@ Projects are used to collect related data science resources and artifacts, such 
 
 3. Select the compartment where the project is to be created.
 
-![Compartment](images/compartment.png " ")
+    ![Compartment](images/compartment.png " ")
 
 4. Click Create Project.
 
-![Create Project](images/create-project.png " ")
+    ![Create Project](images/create-project.png " ")
 
-5. Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
+5. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
 
 6. (Optional, but recommended) Enter a description (400 character limit) for the project. If you do not add a description, it remains empty.
 
@@ -411,16 +411,16 @@ Projects are used to collect related data science resources and artifacts, such 
 
 8. (Optional) To view the details for your project immediately after creation, select **VIEW DETAIL PAGE ON CLICKING CREATE**.
 
-![Create Project](images/create-project-detail.png " ")
+    ![Create Project](images/create-project-detail.png " ")
 
 9. Click **Create**.
 
-![Create](images/project-page.png " ")
+    ![Create](images/project-page.png " ")
 
 This creates the project and opens the project page.
 
 
-## Task 6: Create a Notebook Session
+## Task 7: Create a Notebook Session
 
 Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. All notebook sessions run in the Data Science service tenancy.
 
@@ -436,11 +436,11 @@ When a notebook session is activated or created, the compute instance shape, blo
 
 4. Click the name of the project to contain the notebook session.
 
-![Select Project](images/select-project.png " ")
+    ![Select Project](images/select-project.png " ")
 
 5. Click **Create Notebook Session**.
 
-![Create notebook](images/create-notebook.png " ")
+    ![Create notebook](images/create-notebook.png " ")
 
 6. Select the compartment that you want to contain the notebook session.
 
@@ -458,26 +458,26 @@ When a notebook session is activated or created, the compute instance shape, blo
 
 13. Click **Create**.
 
-![Create notebook](images/create-notebook-session-vm-standard24.png " ")
+    ![Create notebook](images/create-notebook-session-vm-standard24.png " ")
 
 14. While the notebook session is being created, you can navigate away from the current page.
 
-![Create notebook](images/create-notebook-session.png " ")
+    ![Create notebook](images/creating-notebook-session.png " ")
 
 
-## Task 7: Opening a Notebook Session
+## Task 8: Opening a Notebook Session
 
 Once the notebook session has been created the notebook session page shows the notebook in an Active or Inactive state. To open the notebook:
 
 1. Click the name of the notebook session. This will open the Notebook Session page.
 
-![Create notebook](images/click-notebook-session.png " ")
+    ![Create notebook](images/click-notebook-session.png " ")
 
 2. If the notebook is in the **Creating state**, then wait until it is in the **Active** state.
 
 3. If the notebook is in an **Active** state, then click **Open**.
 
-![Open Notebook](images/open-notebook-session.png " ")
+    ![Open Notebook](images/open-notebook-session.png " ")
 
 4. If the notebook is in an **Inactive** state, then:
 Activate
@@ -488,7 +488,7 @@ Activate
     * Click **Activate** and the notebook session status changes to **Updating**.
     * When the notebook session status changes to **Active**, click **Open**.
 
-## Task 8: Working with Jupyter Lab
+## Task 9: Working with Jupyter Lab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc.
 
@@ -496,11 +496,11 @@ Now that JupyterLab is open, it can be seen that the screen is split into two se
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
-## Task 9: Setup API keys for authenticating with other OCI Services 
+## Task 10: Setup API keys for authenticating with other OCI Services 
 
 1. Scroll down on the Welcome page, and select **'Terminal'** under the '**Other**' options. This will open up a terminal session. 
 
-![Terminal](images/dsc-terminal.png " ")
+    ![Terminal](images/dsc-terminal.png " ")
 
 2. We will use the [OpenSSL](http://www.openssl.org/) commands to generate the key pair in the required PEM format.
 
@@ -551,15 +551,18 @@ There is a menu across the top of the screen. For this lab, the most interesting
 3. Now we will upload the PEM public keys in the console. 
 
     a. Open the Console, and sign in.
+
     b. View the details for the user who will be calling the API with the key pair:
 
-        * If you're signed in as the user:
+    * If you're signed in as the user:
         Open the Profile menu (User menu icon) and click User Settings.
 
-        * If you're an administrator doing this for another user: Open the navigation menu and click Identity & Security. Under Identity, click Users. Select the user from the list.
+    * If you're an administrator doing this for another user: Open the navigation menu and click Identity & Security. Under Identity, click Users. Select the user from the list.
 
     c. Click Add Public Key.
+
     d. Paste the contents of the PEM public key in the dialog box and click Add.
+
     e. You will see the **Configuration File Preview**. Copy the content under **Configuration File Preview** and paste it in your local machine. We will later use this config information. 
 
     The key's fingerprint is displayed (for example, 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
@@ -600,7 +603,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
     ```
     <copy>
-    ~/.oci/oci_api_key.pem
+    key_file= ~/.oci/oci_api_key.pem
     </copy>
     ```
 
@@ -611,25 +614,27 @@ There is a menu across the top of the screen. For this lab, the most interesting
     Now you close the config file, once you hve pasted your information.
 
 
-## Task 10: Install Conda Environment
+## Task 11: Install Conda Environment
 
 A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
-    a. Open a terminal window by clicking on **File, New** and then **Terminal**.
-    b. Run the command: 
+a. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
 
-    ```
-    <copy>
-    odsc conda install -s generalml_p37_cpu_v1
-    </copy>
+b. Run the command: 
 
-    ```
+```
+<copy>
+odsc conda install -s generalml_p37_cpu_v1
+</copy>
 
-    c. You will receive a prompt related to what version number you want. Press **Enter** to select the default.
-    d. Wait for the conda environment to be installed.
+```
+
+c. You will receive a prompt related to what version number you want. Press **Enter** to select the default.
+
+d. Wait for the conda environment to be installed.
 
 
-## Task 11: Summary of commands
+## Task 12: Summary of commands
 
 The following is a summary of the steps that are covered in this lab along with the most important Python commands. You can use it as a reference guide for when you build your own models.
 
@@ -645,11 +650,9 @@ The following is a summary of the steps that are covered in this lab along with 
 10. **Feature important:** global_explainer.feature_importance_summary() and global_explainer.compute_feature_importance()
 
 
-## Task 12: Accelerated Data Science SDK/Machine Learning Model ---add steps from ADS lab to show different steps 
+## Task 13: Accelerated Data Science(ADS) SDK for training Machine Learning Model 
 
-The [Oracle Accelerated Data Science (ADS) SDK](https://docs.cloud.oracle.com/iaas/tools/ads-sdk/latest/index.html) is a Python library that is included as part of the Oracle Cloud Infrastructure (OCI) Data Science service. ADS offers a friendly user interface, with objects and methods that cover all the steps involved in the life cycle of machine learning models, from data acquisition to model evaluation and interpretation.  
-
-Download the complete notebook ![here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SVgHpFBvntVvV6xPMZ28dls4KcJO8CgLiKUCcBOcAfan6a2bRIQl9QGtovh3qvet/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Patient_Readmission_Classifier-final.ipynb) that walks through the different steps to create a machine learning model that will predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit. 
+Download the complete notebook [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SVgHpFBvntVvV6xPMZ28dls4KcJO8CgLiKUCcBOcAfan6a2bRIQl9QGtovh3qvet/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Patient_Readmission_Classifier-final.ipynb) that walks through the different steps to create a machine learning model using Oracle ADS SDK that will predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit. 
 
 1. Import all the necessary packages that we will need for building our model. 
 
@@ -659,43 +662,43 @@ Download the complete notebook ![here](https://objectstorage.us-ashburn-1.oracle
 
 3. Connect to Object Storage and download training data in OCI Data Science notebook
 
-    Run the **'Read training data from OCI Object store buckets'** block of code. This will allow us to read our training data from Object Storage into a Pandas DataFrame. For authentication purposes, we will be using the API keys and config file we generated in the earlier step. 
+Run the **'Read training data from OCI Object store buckets'** block of code. This will allow us to read our training data from Object Storage into a Pandas DataFrame. For authentication purposes, we will be using the API keys and config file we generated in the earlier step. 
 
-    ![Read Data](images/read-training-data.png " ")
+![Read Data](images/read-training-data.png " ")
 
-    Replace the values for **'bucket_name'** and **'namespace'** parameters with your respective **bucket_name** and **tenancy_namespace**, something like this:
+Replace the values for 'bucket-name'and 'namespace' parameters with your respective **bucket-name** and **tenancy-namespace**, something like this:
 
-    ![Sample Read Data](images/sample-read.png " ")
+![Sample Read Data](images/sample-read.png " ")
 
 
-   * The Oracle JupyterLab environment is pre-installed with default storage options for reading from and writing to OCI Object Storage. However, you can load your datasets into ADS from almost anywhere including:
+The Oracle JupyterLab environment is pre-installed with default storage options for reading from and writing to OCI Object Storage. However, you can load your datasets into ADS from almost anywhere including:
 
-    Oracle Cloud Infrastructure Object Storage
-    Oracle Autonomous Data Warehouse
-    Oracle Database
-    Hadoop Distributed File System
-    Amazon S3
-    Google Cloud Service
-    Microsoft Azure
-    Blob
-    MongoDB
-    NoSQL DB instances
-    Elastic Search instances
-    Your local files
+    1. Oracle Cloud Infrastructure Object Storage
+    2. Oracle Autonomous Data Warehouse
+    3. Oracle Database
+    4. Hadoop Distributed File System
+    5. Amazon S3
+    6. Google Cloud Service
+    7. Microsoft Azure
+    8. Blob
+    9. MongoDB
+    10. NoSQL DB instances
+    11. Elastic Search instances
+    12. Your local files
 
-    * Some of the supported file formats include:
+Some of the supported file formats include:
 
-    csv
-    tsv
-    Parquet
-    libsvm
-    JSON
-    Excel
-    SQL
-    HDF5
-    XML
-    Apache server log files
-    arff
+    1. csv
+    2. tsv
+    3. Parquet
+    4. libsvm
+    5. JSON
+    6. Excel
+    7. SQL
+    8. HDF5
+    9. XML
+    10. Apache server log files
+    11. arff
 
 4. Next step is to process our raw training data to make it suitable for training purposes. Execute the 'Data Processing' block of code. 
 
@@ -735,9 +738,9 @@ Download the complete notebook ![here](https://objectstorage.us-ashburn-1.oracle
 
     * Ensure the model performs well on unseen data (also called generalization).
 
-Execute **'Model Training using Oracle AutoML'** block to train our model using AutoML, as shown below. 
+    Execute **'Model Training using Oracle AutoML'** block to train our model using AutoML, as shown below. 
 
-The AutoML API is quite simple to work with. Create an instance of Oracle AutoML (```oracle_automl```). Then the training data is passed to the ```fit()``` function that does the following:
+    The AutoML API is quite simple to work with. Create an instance of Oracle AutoML (```oracle_automl```). Then the training data is passed to the ```fit()``` function that does the following:
 
     a. Preprocesses the training data.
 
@@ -747,54 +750,54 @@ The AutoML API is quite simple to work with. Create an instance of Oracle AutoML
 
     d. Identifies the best set of hyperparameters for this data.
 
-![Model Training](images/model-training.png " ")
+    ![Model Training](images/model-training.png " ")
 
-A model is then generated that can be used for prediction tasks. ADS uses the roc_auc scoring metric to evaluate the performance of this model on unseen data (X_test).
+A model is then generated that can be used for prediction tasks. ADS uses the roc-auc scoring metric to evaluate the performance of this model on unseen data (X_test).
 
 8. Machine learning Explainability: Machine learning explainability (MLX) is the process of explaining and interpreting machine learning and deep learning models.
 
-MLX can help machine learning developers to:
+    MLX can help machine learning developers to:
 
-* Better understand and interpret the model’s behavior.
+    * Better understand and interpret the model’s behavior.
 
-    * Which features does the model consider important?
+        * Which features does the model consider important?
 
-    * What is the relationship between the feature values and the target predictions?
+        * What is the relationship between the feature values and the target predictions?
 
-* Debug and improve the quality of the model.
+    * Debug and improve the quality of the model.
 
-    * Did the model learn something unexpected?
+        * Did the model learn something unexpected?
 
-    * Does the model generalize or did it learn something specific to the training dataset?
+        * Does the model generalize or did it learn something specific to the training dataset?
 
-* Increase trust in the model and confidence in deploying the model.
+    * Increase trust in the model and confidence in deploying the model.
 
-![Model Explainability](images/model-expl.png " ")
+    ![Model Explainability](images/model-expl.png " ")
 
-In this workshop, we will just be looking at **global explainations**, where we try to understand the general behavior of a machine learning model as a whole.
+    In this workshop, we will just be looking at **global explainations**, where we try to understand the general behavior of a machine learning model as a whole.
 
-You can also view the **local explainations** to understand why the machine learning model made a specific prediction about a specific row. Read more about it [here](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/model_explainability/overview.html).
+    You can also view the **local explainations** to understand why the machine learning model made a specific prediction about a specific row. Read more about it [here](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/model_explainability/overview.html).
 
-9. Now we will use the **predict** function to predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit **(Y for Yes and N for No)**, and save the results in the **final_output** dataframe under **preds** column.
+9. Now we will use the **predict** function to predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit **(Y for Yes and N for No)**, and save the results in the **final-output** dataframe under **preds** column.
 
 ![Inference](images/inference.png " ")
 
-10. Lastly, we will store the results (**final_output dataframe**) in the **OCI Autonomous Data Warehouse** as a table. We will create a connection between OCI Data Science and OCI Autonomous Data Warehouse using the wallet file that we downloaded in Step 4. 
+10. Lastly, we will store the results (**final-output dataframe**) in the **OCI Autonomous Data Warehouse** as a table. We will create a connection between OCI Data Science and OCI Autonomous Data Warehouse using the wallet file that we downloaded in Step 4. 
 
-    a. Create a ```<path_to_wallet_folder>``` folder for your wallet on the notebook environment environment.
+    a. Create a ```<path-to-wallet-folder>``` folder for your wallet on the notebook environment environment.
 
-    b. Upload your wallet files into the ```<path_to_wallet_folder>``` folder using the Jupyterlab **Upload Files**:
+    b. Upload your wallet files into the ```<path-to-wallet-folder>``` folder using the Jupyterlab **Upload Files**:
 
     ![Upload wallet](images/Upload-Wallet.png " ")
 
-    c. Open the ```sqlnet.ora``` file from the wallet files, then configure the ```METHOD_DATA```:
+    c. Open the ```sqlnet.ora``` file from the wallet files, then configure the ```METHOD-DATA```:
 
     ```
     METHOD_DATA = (DIRECTORY="<path_to_wallet_folder>")
 
     ```
 
-    d. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user_name"**, **"password"**, **"service_name"** and **"wallet_location"** with your own credentials. 
+    d. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user-name"**, **"password"**, **"service-name"** and **"wallet-location"** with your own credentials. 
 
     ![Send to ADW](images/send-to-adw.png " ")
 
@@ -802,168 +805,6 @@ You can also view the **local explainations** to understand why the machine lear
 
     ![Sample ADW](images/sample-adw.png " ")
 
-
-Congratulations on completing this lab!
-
-
-
-
-a. Upload link to this notebook  --done
-b. Change link to dataset. Include 1M dataset   --done
-b. Test the entire lab
-c. Push it to Main
-d. Create a pull request
-
-
-## Task 1: Configure prerequisites for the OCI Data Science service
-
-This guide shows how to use the Resource Manager to provision the prerequisites for the OCI Data Science service. This includes the configuration network (VCN) and security configuration (groups, dynamic groups and policies).
-
-This process is automated. However, if you prefer a manual approach, to control all the aspects of the provisioning, you can find those instructions here OCI Data Science: [manual provisioning steps](https://docs.cloud.oracle.com/en-us/iaas/data-science/data-science-tutorial/tutorial/get-started.htm#concept_tpd_33q_zkb). In all other cases, please continue with the steps below for automated provisioning.
-
-1. Press this button below to open the Resource Manager. 
-
-[Resource Manager](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
-
-You may have to log in first in case you were not logged into to Oracle Cloud Infrastructure already.
-
-
-2. Configure the Stack.
-
-    * Check "I have reviewed and accepted the Oracle Terms of Use".
-
-    * Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
-
-    * Click Next.
-
-    ![Auto Stack](images/autostack.png " ")
-
-3. **Important** In the section "ODS Configuration" uncheck "Create a Project and Notebook Session" (we will create them using the console later).
-
-![Disable ODS](images/disable-ods-creation.png " ")
-
-4. In the section "Vault Configuration" uncheck "Enable Vault Support".
-
-![Enable Vault](images/enable-vault.png " ")
-
-5. In the section "Functions/API Gateway Configuration", uncheck "Provision Functions and API Gateway".
-
-![Disable Functions](images/disablefunctions.png " ")
-
-6. Click "Next".
-
-![Next](images/next.png " ")
-
-7. Make sure that that the "Run Apply" option is checked.
-
-![Auto apply](images/autoapply.png " ")
-
-8. Click "Create".
-
-![Create](images/create.png " ")
-
-Provisioning should take about 5 minutes after which the status of the Job should become "Succeeded".
-
-![Job Succeeded](images/job-succeeded.png " ")
-
-## Task 2: Upload data in Object Storage 
-
-1. For building the predictive modeling of readmission use case, synthetic patient data from [Synthea](https://github.com/synthetichealth/synthea) is used. Download the [training dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pjoa0G84rC3DkMCY47qH5_rCMOsW8-KI0cNJQhMZhlg2QzC35xU0gb4ZzvXHC5vS/n/orasenatdpltintegration03/b/Synthea/o/csv2.zip) . Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .csv, in some cases the browser may try to save it as .xls instead.
-
-2. Upload this dataset to Object storage in your bucket, as explained in previous labs on this workshop. 
-
-3. Review the dataset (e.g. use a text editor).
-
-Here is the meta-data for the data we will be using. Synthea creates below csv files. Of these "patients.csv" is the key file with "ID" column as the primary key to link all other csvs
-
-![Metadata](images/metadata.png " ")
-
-
-## Task 3: Load CSVs and create features in OCI Autonomous Data Warehouse (ADW)
-
-1. Use this [SQL-based script](https://objectstorage.us-ashburn-1.oraclecloud.com/p/XkSvrJfzo0BweQfgJp6RRVBnmCTY0ecaJfgxzT8TgRAvo1xFw-pxfd7riGU6VXZr/n/orasenatdpltintegration03/b/Synthea/o/001_load_tables.sql) to load training data files to OCI ADW. 
-
-2. In the ADW SQL Worksheet, run this [SQL script](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mMMkTw6PEDbnhLgKmGgWJU6C2-WKhcn0dVi5XK9NMRONjohuByDqTWIXdVu_IfiW/n/orasenatdpltintegration03/b/Synthea/o/002_create_features.sql) to create features from our training data. 
-
-Refer to this [livelab](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-indepth/?lab=adb-query) for more information. 
-
-
-## Task 4: Create a Project and Notebook
-
-1. Open the OCI Data Science projects and choose "Create Project".
-
-![Create Project](images/open-ods.png " ")
-
-![Create Project](images/create-project-1.png " ")
-
-* Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
-* Choose a name, e.g. "Data Science Project" and press "Create".
-
-![Create Project](images/create-project-2.png " ")
-
-2. The newly created project will now be opened. Within this project, provision an Oracle Data Science notebook by clicking "Create notebook session".
-
-![Create Notebook](images/create-notebook-1.png " ")
-
-* Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
-* Select a name, e.g. "Data Science Notebook"
-* We recommend you choose VM.Standard2.2 (under Intel SKYLAKE) as the shape.
-* Set blockstorage to 50 GByte.
-* Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
-
-![Create Notebook](images/create-notebook-3.png " ")
-
-Finally click "Create". The process should finish after about 5 minutes and the status of the notebook will change to "Active".
-
-3. Open the notebook that was provisioned
-
-The name of the notebook may be different than shown here in the screenshot.
-
-![Open Notebook](images/open-notebook.png " ")
-
-![Open Notebook](images/open-notebook2.png " ")
-
-You should now see the Jupyter environment
-
-![Notebook](images/notebook.png " ")
-
-
-## Task 5: Install the required pre-requisites on OCI Data Science
-
-
-1. On desktop machine, install [OCI Command Line Interface](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
-
-2. Install pre-built 'generalml\_p37\_cpu\_v1' conda environment in datascience notebook. 
-
-    i.  To install a pre-built Conda environment, launch the environment explorer.
-    
-    ![Environment Explorer](images/env-explorer.png " ")
-
-   ii.  Next, select 'generalml\_p37\_cpu\_v1' environment from the available list.
-
-    ![General ML](images/general-ml.png " ")
-
-   iii. Once you have selected a Conda environment to install, copy the install command that is provided in Environment Explorer.
-
-   ![Install Conda](images/install-conda.png " ")
-
-   iv.  Paste the install command into a Terminal and run. You may have to enter additional information once the service is running. For example, it may ask for a version.
-
-   ![Download Conda](images/download-conda.png " ")
-
-3. Upgrade ads package using by copy-pasting the commands in terminal below:
-
-```
-pip uninstall  oracle-ads==2.5.9
-pip Install oracle_ads==2.5.9
-
-```
-
-## Task 6: Create ML Model
-
-1. Download [003_combine_features.ipynb](https://objectstorage.us-ashburn-1.oraclecloud.com/p/91NbrFHdr8IAeLSEs7YsyCgk3xH-spjY-4z-J7uktOm2K9emM8Filh9f0zfN5Wmx/n/orasenatdpltintegration03/b/CareClinics-bucket/o/003_combine_features.ipynb). Run 003_combine_features.ipynb to create ML ready dataframe. Refer to [livelab](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-indepth/?lab=adw-connection-wallet) for getting ADW wallets
-
-2. Download [004_build_model.ipynb](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GvsWfwwmCYRsnHLmjunWS2BInvFrV9njLw5MZYR1PR9SD73RU6yamkNqbM81ANcH/n/orasenatdpltintegration03/b/CareClinics-bucket/o/004_build_model.ipynb). Run 004_build_model.ipynb to create , catalog and deploy a ML model using Oracle ADS
 
 
 Congratulations on completing the lab!
