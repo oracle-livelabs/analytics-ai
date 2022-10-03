@@ -19,7 +19,7 @@ Terraform is an Open Source tool to deploy resources in the cloud with code. You
 
 Ansible is an Open Source tool to provision on top of the created resources. It automates the dependency installation, copies the source code, and config files so everything is ready for you to use.
 
-Do you want to learn more? Feel free to check the code for terraform and ansible after the workshop.
+Do you want to learn more? Feel free to check the code for [terraform and ansible](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/livelabs/dev/) after the workshop.
 
 
 ### Prerequisites
