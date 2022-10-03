@@ -234,7 +234,7 @@ We'll create a user, a group, a dynamic group and security policies.
     ![Upload Data](images/upload-file.png " ")
 
 
-## Task 3: Create Autonomous Data Warehouse for storing model-inference results
+## Task 4: Create Autonomous Data Warehouse for storing model-inference results
 
 1. Click on the hamburger **MENU (Navigator)** link at the upper left corner of the page.
 
@@ -252,7 +252,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
     **Compartment:** Verify that a compartment ( <tenancy_name> ) is selected.
 
-    By default, any OCI tenancy has a default *root* compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use *root* or create your own *Compartment* under the **root** folder.
+    By default, any OCI tenancy has a default *root* compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use *Demo* compartment.
 
     **Display Name:** Enter the display name for your ADW Instance. Use a user-friendly name to help you easily identify the resource. You can leave the name provided. That field is not a mandatory one. **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. For this demo purpose, I have called my database **ADWH**. **Workload Type:** Autonomous Data Warehouse **Deployment Type:** Shared Infrastructure **Always Free:** Off
 
@@ -265,7 +265,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
 3. Under **Create administration credentials** section:
 
-    **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password is ADWwelcome-1234. **Reminder:** Note your password in a safe location as this cannot be easily reset.
+    **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
     Under **Choose network access** section:
 
@@ -301,7 +301,7 @@ This page is known as the **Autonomous Database Details Page**. It provides you 
 ![adw-details](images/adw-details.png " ")
 
 
-## Task 4: Download Wallet file
+## Task 5: Download Wallet file
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL-NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL-Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from OCI Data Science to the **Autonomous Database**.
 
@@ -337,7 +337,7 @@ This page is known as the **Autonomous Database Details Page**. It provides you 
 Save the wallet file in your local machine, as we will later make use of it to create connection between OCI Data Science Platform and OCI Autonomous Data Warehouse. 
 
 
-## Task 5: Configure the Data Science Service using Quick Start Tenancy Configuration
+## Task 6: Configure the Data Science Service using Quick Start Tenancy Configuration
 
 In this lab, your tenancy is configured using the Data Science Solution Hub, which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
 
@@ -387,7 +387,7 @@ However, if you prefer a manual approach, to control all the aspects of the prov
 
 
 
-## Task 6: Create a Project 
+## Task 7: Create a Project 
 
 Projects are used to collect related data science resources and artifacts, such that it enables you to organize your work. They contain a collection of notebook sessions and models. You create a Data Science project to organize your notebook sessions and models within your project.
 
@@ -420,7 +420,7 @@ Projects are used to collect related data science resources and artifacts, such 
 This creates the project and opens the project page.
 
 
-## Task 7: Create a Notebook Session
+## Task 8: Create a Notebook Session
 
 Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. All notebook sessions run in the Data Science service tenancy.
 
@@ -465,7 +465,7 @@ When a notebook session is activated or created, the compute instance shape, blo
     ![Create notebook](images/creating-notebook-session.png " ")
 
 
-## Task 8: Opening a Notebook Session
+## Task 9: Opening a Notebook Session
 
 Once the notebook session has been created the notebook session page shows the notebook in an Active or Inactive state. To open the notebook:
 
@@ -488,7 +488,7 @@ Activate
     * Click **Activate** and the notebook session status changes to **Updating**.
     * When the notebook session status changes to **Active**, click **Open**.
 
-## Task 9: Working with Jupyter Lab
+## Task 10: Working with Jupyter Lab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc.
 
@@ -496,7 +496,7 @@ Now that JupyterLab is open, it can be seen that the screen is split into two se
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
-## Task 10: Setup API keys for authenticating with other OCI Services 
+## Task 11: Setup API keys for authenticating with other OCI Services 
 
 1. Scroll down on the Welcome page, and select **'Terminal'** under the '**Other**' options. This will open up a terminal session. 
 
@@ -614,7 +614,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
     Now you close the config file, once you hve pasted your information.
 
 
-## Task 11: Install Conda Environment
+## Task 12: Install Conda Environment
 
 A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
