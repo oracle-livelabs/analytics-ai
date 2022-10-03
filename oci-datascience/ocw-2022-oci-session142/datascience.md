@@ -37,7 +37,7 @@ This process is automated. However, if you prefer a manual approach, to control 
 
 1. Press this button below to open the Resource Manager. 
 
-[![Resource Manager](images/deploy-to-oracle-cloud.svg " ")](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
+[Resource Manager](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
 
 You may have to log in first in case you were not logged into to Oracle Cloud Infrastructure already.
 
@@ -147,13 +147,13 @@ You should now see the Jupyter environment
 
 1. On desktop machine, install [OCI Command Line Interface](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
 
-2. Install pre-built 'generalml_p37_cpu_v1' conda environment in datascience notebook. 
+2. Install pre-built 'generalml\_p37\_cpu\_v1' conda environment in datascience notebook. 
 
     i.  To install a pre-built Conda environment, launch the environment explorer.
     
     ![Environment Explorer](images/env-explorer.png " ")
 
-   ii.  Next, select 'generalml_p37_cpu_v1' environment from the available list.
+   ii.  Next, select 'generalml\_p37\_cpu\_v1' environment from the available list.
 
     ![General ML](images/general-ml.png " ")
 
