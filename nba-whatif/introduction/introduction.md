@@ -36,6 +36,6 @@ If you are interested in learning more about this topic, the below blogs are ava
 
 ## Acknowledgements
 * **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Carrie Nielsen, Analytics Product Strategy>
+* **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
                    -  <Luke Wheless, Data Analyst BI-SCF>
 * **Last Updated By/Date** - <Andres Quintana, September 2022>
