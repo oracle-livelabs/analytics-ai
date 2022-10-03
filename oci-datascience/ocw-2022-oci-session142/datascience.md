@@ -393,7 +393,7 @@ Projects are used to collect related data science resources and artifacts, such 
 
 1. Open the navigation menu.
 
-2. Under **Data and AI** and select **Data Sciences**. This will open the **Projects** page.
+2. Under **Analytics and AI** and select **Data Sciences**. This will open the **Projects** page.
 
 3. Select the compartment where the project is to be created.
 
