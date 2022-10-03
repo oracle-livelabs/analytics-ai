@@ -155,6 +155,14 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/cu
 </copy>
 ```
 
+Navigate to your object storage buckets. (Hamburger Menu, Storage, Buckets):
+
+![Navigate to object storage](./images/object-storage-menu.png " ")
+
+Select your dataflow-warehouse bucket to see the contents and to perform an upload of the csv file to that bucket.
+
+![Select dataflow-warehouse bucket](./images/object-storage-select-bucket.png " ")
+
 Upload this file to your object storage bucket dataflow-warehouse:
 
 ![Upload to object storage](./images/upload-object-storage.png " ")
@@ -163,33 +171,54 @@ Select the custsales_custsales-2020-01.csv file from your downloaded folder and 
 
 Navigate from the Hamburger menu to Analytics & AI, select Data Integration, and from the left menu select **Workspaces**. Here we will see our Workspace Lakehouse that we created as part of our configuration. We are going to then create a data loader task.
 
+![Select Workspaces](./images/data-integration-workspaces-menu.png " ")
+
+Select the workspace where you are creating the data integration, in this case it is the Lakehouse workspace.
+
+![Select the Lakehouse workspace](./images/data-integration-workspace-select.png " ")
+
+Select create data loader task, because we are going to use this as a data flow to take our csv file, perform transformations against and save it back into the object storage as json. This is a way to process data from files, to files, or to and from databases. We have already seen the loads to the database, and we know we have data that is going to be files that need filtering or transformations and we don't even have to put them in the database to do that.
+
+![Select Create data loader task](./images/create-data-loader-task1.png " ")
+
+Let's call this task LoadCustomerCSV
+
 ![Load Data Task](./images/create-data-loader-task.png " ")
 
-Lets give this task the name of LoadCustomerCSV, and before we create we need to select the project - Project_lakehouse.
+Now we have to just put in the Source, any transformations and Target for the load process. 
+Here you can see the options for source and target data. Click on File Storage for Source and File Storage for Target. We only have one file, so make sure that Single data entity is selected. Enter the name of LoadCustomerCSV, and before clicking next select the project - Project_lakehouse. Click Next.
 
-![Create Load Data Task](./images/create-data-loader-task2.png " ")
+![Select source and target type](./images/create-data-loader-task3.png " ")
 
-Now we have to just put in the Source, any transformations and Target for the load process. Click on Source and provide the data asset, dataflow\_warehouse\_bucket, and default connection, bucket would be the dataflow-warehouse, and finally the file type is CSV.
 
-![Create Load Data Source](./images/create-data-loader-task3.png " ")
+
+Now provide information about the Source. There is the ability to create a new source, or select from those available. Be sure to choose the compartment lakehouse1 and the Bucket that the file was just uploaded to, dataflow-warehouse.
 
 ![Create Select File](./images/create-data-loader-task5.png " ")
 
-![Create Load Data Type of Source](./images/create-data-loader-task4.png " ")
+Provide the file settings, such as CSV for file type, if the data has a header, and make sure the delimiter is set to COMMA, and uncheck the Trailing delimiter.
 
-Now click on Configure Transformations, and here we are going to filter out, extract all of the APPs that are like chrome. This will then pull in just the data for those choices and if you wanted you can also exclude columns here.
+![Source file information](./images/create-data-loader-task4.png " ")
 
-![Create Extract Data](./images/create-data-loader-task6.png " ")
+Last step for the source is to select the data entity because there can be multiple files in bucket. Select the custsales_custsales-2020-01.csv file that was uploaded to the bucket. Then click on Set as Source. Click next to setup the target.
 
-Before you select Target to fill in the details about the file, you want to **check** Create new data entity. After this first time, the target is created and when scheduling you will just need to either choose insert or overwrite, but the box only needs to be checked the first time loading a new entity.
+![Provide file settings](./images/create-data-loader-task6.png " ")
 
-![Create New Target](./images/create-data-loader-task7a.png " ")
+Now it is time to fille out the information for the Target. This lab is just taking a CSV file and transforming to JSON as an example of what you can do outside of the database because we all know you have these files for loading and integrations either coming from other APIs or systems. So our target is going to be an object storage bucket and setting of JSON.
 
-Finally, select Target and here we are going to put the file back into object storage so that we can use it in an analytics query as an external table. 
+![Create Target and file settings](./images/create-data-loader-target.png " ")
 
-![Create Load Data Target](./images/create-data-loader-task7.png " ")
+Create new data entities for the Target. Create an output as a single file. Not to confuse the source and target, set a prefix of New.
 
-Create and close the data loader task. We will put it into an application to run the job and load the data as part of the data integration tasks.
+![Set target information](./images/create-data-loader-target2.png " ")
+
+Next step are the transformations and filters on the source data set. This time the file just changing format from CSV to JSON. Click Next.
+
+![See transformation](./images/create-data-loader-transformation.png " ")
+
+The last view is the validation of the source, target and data entities selected. If there are any errors in the files or formats, they will appear here and need to be corrected before the ability to run the loading task. Click on Create and Close if the validation result is Successful. You can Create if it still needs errors corrected.
+
+![Validation of the data loader task](./images/create-data-loader-validate.png " ")
 
 ## Task 3: Create an application for automation
 
