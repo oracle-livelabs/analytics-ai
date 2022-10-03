@@ -430,7 +430,7 @@ When a notebook session is activated or created, the compute instance shape, blo
 
 1. Open the navigation menu.
 
-2. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
+2. Under **Analytics and AI** and select **Data Science**. This will open the **Projects** page.
 
 3. Select the compartment for the project.
 
