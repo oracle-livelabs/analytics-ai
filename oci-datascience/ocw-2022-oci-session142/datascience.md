@@ -659,9 +659,13 @@ Run the **'Read training data from OCI Object store buckets'** block of code. Th
 
 ![Read Data](images/read-training-data.png " ")
 
-Replace the values for 'bucket-name'and 'namespace' parameters with your respective **bucket-name** and **tenancy-namespace**, something like this:
+Replace the values for 'bucket-name'and 'namespace' parameters with your respective **bucket-name** and **object storage namespace**, something like this:
 
 ![Sample Read Data](images/sample-read.png " ")
+
+You can get the object storage namespace from your console. Navigate to your bucket, i.e, **patient-readmission-demo** where you uploaded the training data. Under that bucket, you can find the **object storage namespace**, as shown below:
+
+![Obj namespace](images/obj-namespace.png " ")
 
 
 The Oracle JupyterLab environment is pre-installed with default storage options for reading from and writing to OCI Object Storage. However, you can load your datasets into ADS from almost anywhere including:
