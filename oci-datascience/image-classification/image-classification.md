@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Image classification with a machine learning model is the task of training a model with a set of images labeled in different classes and using the model to predict the label of an image the model has not encountered before.  It has many broad applications ranging from quality control for manufacturing to crop monitoring for precision agriculture. An important application is using machien learning models to classify medical images for disease diagnosis.  
+Image classification with a machine learning model is the task of training a model with a set of images labeled in different classes and using the model to predict the label of an image the model has not encountered before.  It has many broad applications ranging from quality control for manufacturing to crop monitoring for precision agriculture. An important application is using machine learning models to classify medical images for disease diagnosis.  
 
-In this lab, you’ll learn how to create your own deep learning model to diagnose pneumonia on chest x-ray images of patients. You’ll use Data Science Notebook Sessions to train a custom deep learning model and also use transfer learning to tune a pre-trained model on the x-ray images. You will learn how to deploy your model for consumption by third-party applications.
+In this lab, you’ll learn how to create your own deep learning model to diagnose pneumonia on chest x-ray images of patients. You’ll use Data Science notebook sessions to train a custom deep learning model and also use transfer learning to tune a pre-trained model on the x-ray images. You will learn how to deploy your model for consumption by third-party applications.
 
 *Estimated Time*: 60 minutes
 
@@ -16,8 +16,8 @@ In this lab, you will:
 * Perform data exploration with Accelerated Data Science (ADS) SDK.
 * Define a custom deep learning model and train the model.
 * Apply transfer learning on a pre-trained model.
-* Save a model to the Data Science Model Catalog.
-* Deploy a model with Data Science Model Deployment.
+* Save a model to the Data Science model catalog.
+* Deploy a model with Data Science model deployment.
 
 ### Prerequisites
 
@@ -56,21 +56,21 @@ This lab assumes that you have:
     ```
 2.  Navigate to the **xray\_diagnostics\_hol** folder
 
-Go to the home directory
+* Go to the home directory
 
 ![Navigate to home directory](images/navigate-home-directory.png " ")
 
-Click on the **conda** folder
+* Click on the **conda** folder
 
-Click on the **notebooks** folder
+* Click on the **notebooks** folder
 
-Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
+* Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
 
-Click on the **demo** folder
+* Click on the **demo** folder
 
-Click on the **xray\_diagnostics\_hol** folder
+* Click on the **xray\_diagnostics\_hol** folder
 
-Open **ChestXrays\_Train.ipynb** file 
+* Open **ChestXrays\_Train.ipynb** file 
 
 This is the notebook where we will work through an image classification problem.  
 
