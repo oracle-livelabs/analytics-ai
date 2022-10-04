@@ -86,4 +86,4 @@ You may now *proceed to the next lab*.
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao
-- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021
+- **Last Updated By/Date** - Andres Quintana, October 2022
