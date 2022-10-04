@@ -12,13 +12,10 @@ In this lab, you will:
 * Download [background image](files/basketballcourt.jpg " ") file 
 * Customize the background and layout of the dashboard you have already created. 
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
-
-*Below, is the "fold"--where items are collapsed by default.*
 
 ## Task 1: Concise Task Description
 

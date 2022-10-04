@@ -10,22 +10,16 @@ Estimated Workshop Time: 45 Minutes (This estimate is for the entire workshop - 
 
 ### Objectives
 
-*List objectives for the workshop*
-
 In this workshop, you will learn how to:
 * Format data and create calculations
 * Create an analytics workbook 
 * Develop a custom dashboard
 * Perform a what-if analysis 
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle account
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Learn More
 
@@ -38,4 +32,4 @@ If you are interested in learning more about this topic, the below blogs are ava
 * **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
                    -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Last Updated By/Date** - <Andres Quintana, October 2022>

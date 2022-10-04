@@ -16,32 +16,21 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
 
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Establish the Filters
 
-(optional) Task 1 opening paragraph.
+1. Select the Filter Elements. Ctrl + Click to select Season, Game Date, and Home Team Name 
 
-1. Select the Filter Elements 
-    - Ctrl + Click to select Season, Game Date, and Home Team Name 
-    - Drag the selection to the filter bar. 
+2. Drag the selection to the filter bar. 
 
 	![Drag to add filters](images/dashboard1.png)
 
-2. Modify the Filters 
-    - Hover the mouse over Game Date in the filter bar 
-    - Click the 3 dots 
-    - Select “Filter Type” and change selection to **List** 
+3. Modify the Filters. Hover the mouse over Game Date in the filter bar. Click the 3 dots. Select “Filter Type” and change selection to **List** 
 
   ![Modify the Filter](images/dashboard2.png)
 
-3. Set the Filters 
-    - Change Season to 2020
-    - Select Golden State Warriors in Home Team Name 
-    - In Game Date, select 05/21/2021
+4. Set the Filters: Change Season to 2020, Select Golden State Warriors in Home Team Name. In the Game Date filter, select 05/21/2021
 
 ## Task 2: Build the Table 
 
@@ -140,4 +129,4 @@ This concludes the Build a Dashboard lab. You may proceed to the next lab.
 * **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
                    -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Last Updated By/Date** - <Andres Quintana, October 2022>

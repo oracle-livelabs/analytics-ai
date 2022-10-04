@@ -16,10 +16,6 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
-
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Perform What If Analysis 
 A what-if analysis is the process of adjusting known values to observe how those small changes can affect an outcome. These scenario tests have a variety of real-world applications. To be successful in the what-if analysis you must have certain questions that you are trying to answer. 
@@ -46,4 +42,4 @@ A what-if analysis is the process of adjusting known values to observe how those
 * **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
                    -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Last Updated By/Date** - <Andres Quintana, October 2022>

@@ -8,8 +8,6 @@ Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 * Upload a provided dataset 
 * Clean and format the data
@@ -20,26 +18,22 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle Cloud account
 * Downloaded the attached dataset: [NBA Data](files/nbalivelab2020data.xlsx)
-* All previous labs successfully completed
-
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Upload Dataset 
 
 To begin this lab you will upload the provided dataset, and format the data. These steps are essential in ensuring that the future analyses are successful. The data format steps are the foundation that supports all analytic processes. 
 
-1. Create the Dataset by navigating to the top right corner of the screen and clicking **Create** 
+1. Create the Dataset by navigating to the top right corner of the screen and clicking Create 
 
 2. Select Create Dataset
 
 	![Select Create dataset](images/createdataset.png)
 
-3. Browse to Upload the Data on the option screen displayed, click on Drop Data File Here or Click to Browse. Select the file you downloaded called **nbalivelab2020data.xlsx**. 
+3. Browse to Upload the Data on the option screen displayed, click on Drop Data File Here or Click to Browse. Select the excel file you downloaded called nbalivelab2020data. 
 
   ![Upload your dataset file](images/createdataset2.png)
 
-4. Preview the Data once the file is uploaded and click *OK*
+4. Preview the Data once the file is uploaded and click OK
 
   ![The uploaded dataset](images/createdataset3.png)
 
@@ -47,25 +41,25 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 1. Prepare the Data 
 
-2. Convert 3-point Pct column to Measure by navigating to the bottom left corner of the page. Look for the label that says *Treat As*. Click on Attribute and change the selection to **Measure**.
+2. Convert 3-point Pct column to Measure by navigating to the bottom left corner of the page. Look for the label that says *Treat As*. Click on Attribute and change the selection to Measure.
 
-3. Below that in *Data Type* change the selection to **Number** and Aggregation to **Average** from Count. 
+3. Below that in Data Type change the selection to Number and Aggregation to Average from Count. 
 
   ![Use the menu at the bottom of the page](images/createdataset4.png)
 
 2. Format Shooting Percentages
 
-3. Click on the numeric symbol in that menu "#" and change Number Format from Auto to **Percent**
+3. Click on the numeric symbol in that menu "#" and change Number Format from Auto to Percent.
 
 4. Repeat those steps for the 2-point Pct Column. 
 
   ![Change to Percent](images/createdataset5.png)
 
 3. Convert Attribute Types 
-    - Convert Visitor Team Score column to a **Measure** from an attribute. 
+    - Convert Visitor Team Score column to a Measure from an attribute. 
     - Select the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to Measure 
-    - Change the Data Type from Text to **Number**
-    - Change Aggregation to **Average**
+    - Change the Data Type from Text to Number
+    - Change Aggregation to Average
     - Repeat these steps for the Home Team Score column. 
 
 ## Task 3: Create the Workbook 
@@ -74,7 +68,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
   ![Save the Dataset](images/createdataset6.png)
 
-2. Create the Workbook. Click on **Create Workbook**. This will bring you to a blank workbook page. 
+2. Create the Workbook. Click on Create Workbook. This will bring you to a blank workbook page. 
 
   ![Create the workbook](images/createworkbook.png)
 
@@ -84,7 +78,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 2. Click on the + sign to the right of the search field at the top left of the workbook. 
 
-3. Select **Add Calculation** this will bring up a calculation box. 
+3. Select Add Calculation this will bring up a calculation box. 
 
   ![Add a calculation](images/addcalculation1.png)
 
@@ -98,14 +92,14 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
   ![Validate your calculation](images/addcalculation2.png)
 
-3. Repeat that process for the next calculations. 
+7. Repeat that process for the next calculations. 
 
-4. **2-point Potential**
+8. **2-point Potential**
     ``` 
     <copy>((3-point missed)*(2-point Pct)) *2</copy></copy>
     ```
     
-5. **Potential Home Team Score** 
+9. **Potential Home Team Score** 
     ```
      
     <copy>((2-point Potential) + (3-point Potential)) + home team score</copy></copy>
@@ -114,16 +108,8 @@ To begin this lab you will upload the provided dataset, and format the data. The
 This concludes the setup and preparation lab. You may proceed to the next lab.
 
 
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
 * **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
                    -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Last Updated By/Date** - <Andres Quintana, October 2022>
