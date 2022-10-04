@@ -133,7 +133,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
 5. Add Default User to a Group.
 
-    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that was assigned to you while creating this account.
+    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that was assigned to you while creating this account (**Note:** Select the non-federated user).
 
     ![ID Users](images/users.png " ")
 
@@ -156,7 +156,7 @@ We'll create a user, a group, a dynamic group and security policies.
     b) Click **Create Dynamic Group**.
 
     c) Enter the following:
-    * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
+    * **Name**: A unique name for the group. For this workshop, we will name it as **'dynamic group'**. You can't change this later. 
     * **Description**: A friendly description.
     d) Enter the Matching Rules, as below. Add OCID for your compartment in the below statement. Resources that meet the rule criteria are members of the group.
 
@@ -385,9 +385,9 @@ Projects are used to collect related data science resources and artifacts, such 
 
     ![Create Project](images/create-project.png " ")
 
-5. (Optional, but recommended) Enter a unique name (255 character limit) for the project. If you do not provide a name, a name is automatically generated for you.
+5. Enter **'Demo Project'** as the name for the project. If you do not provide a name, a name is automatically generated for you.
 
-6. (Optional, but recommended) Enter a description (400 character limit) for the project. If you do not add a description, it remains empty.
+6. (Optional, but recommended) Enter 'Demo Project as the description (400 character limit) for the project. If you do not add a description, it remains empty.
 
 7. (Optional) Add tags to easily locate and track the project by selecting a tag namespace, then entering the key and value. To add more than one tag, click **+Additional Tags**. [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) describes the various tags that you can use organize and find projects including [cost-tracking tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm).
 
@@ -426,11 +426,11 @@ When a notebook session is activated or created, the compute instance shape, blo
 
 6. Select the compartment that you want to contain the notebook session.
 
-7. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
+7. (Optional, but recommended) Enter **datasciencenotebooksession** as the unique name for the notebook session. If you do not provide a name, name is automatically generated for you.
 
-8. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard2.4. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard2.4**, and finally click **Select**.
+8. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, it is recommended that you use an Intel VM.Standard2.1. Click the **Select** button in the compute shape. This will open the select shape window. To choose the shape, click **Intel**, then check the box beside **VM.Standard2.4**, and finally click **Select**.
 
-9. Enter the block volume in GB. The suggested size is 100 Gb or larger.
+9. Enter the block volume in GB. We will specify 50 GB as the block volume storage .
 
 10. In the networking resources section, select the default networking option.
 
@@ -521,7 +521,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
     ```
     ![Public Keys](images/public-key.png " ")
 
-    e. Copy the contents of the public key using ctrl-v to the clipboard using pbcopy, xclip or a similar tool (you'll need to paste the value into the Console later):
+    e. Copy the contents of the public key using ctrl-c to the clipboard -- pbcopy is not available (you'll need to paste the value into the Console later):
 
     ```
     <copy>
@@ -701,6 +701,8 @@ Some of the supported file formats include:
 
     ![Feature Engineering](images/feature-engineering.png " ")
 
+    This step takes several minutes to complete. 
+
 6. The ADS **show_in_notebook()** method creates a comprehensive preview of all the basic information about a dataset including:
 
     * The predictive data type (for example, regression, binary classification, or multinomial classification).
@@ -745,6 +747,8 @@ Some of the supported file formats include:
 
     ![Model Training](images/model-training.png " ")
 
+    Model training will take several minutes to execute and completed. 
+
 A model is then generated that can be used for prediction tasks. ADS uses the roc-auc scoring metric to evaluate the performance of this model on unseen data (X_test).
 
 9. Machine learning Explainability: Machine learning explainability (MLX) is the process of explaining and interpreting machine learning and deep learning models.
@@ -777,20 +781,13 @@ A model is then generated that can be used for prediction tasks. ADS uses the ro
 
 11. Lastly, we will store the results (**final-output dataframe**) in the **OCI Autonomous Data Warehouse** as a table. We will create a connection between OCI Data Science and OCI Autonomous Data Warehouse using the wallet file that we downloaded in Step 4. 
 
-    a. Create a ```<path-to-wallet-folder>``` folder for your wallet on the notebook environment environment.
 
-    b. Upload your wallet files into the ```<path-to-wallet-folder>``` folder using the Jupyterlab **Upload Files**:
+    a. Upload your zipped wallet files into the default ds directory folder using the Jupyterlab **Upload Files**:
 
     ![Upload wallet](images/Upload-Wallet.png " ")
 
-    c. Open the ```sqlnet.ora``` file from the wallet files, then configure the ```METHOD-DATA```:
 
-    ```
-    METHOD_DATA = (DIRECTORY="<path_to_wallet_folder>")
-
-    ```
-
-    d. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user-name"**, **"password"**, **"service-name"** and **"wallet-location"** with your own credentials. 
+    b. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user-name"** with **"admin"**, **"password"** with your own password, **"service-name"** with **"adw_high"** and **"wallet-location"** with **"/home/datascience/Wallet_ADWH.zip"**. 
 
     ![Send to ADW](images/send-to-adw.png " ")
 
