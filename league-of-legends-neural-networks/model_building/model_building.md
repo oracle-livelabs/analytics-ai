@@ -19,7 +19,7 @@ League of Legends fortunately has an API that allows us to extract huge amounts 
 - Post-match data: analysis of a match after it's finished, including events that happened, kills, deaths, assists, vision score, baron and dragon kills, etc...
 - Real-time in-match data: real-time data about a player's statistics.
 
-We'll in turn create two models, one that focuses on **post-match** data (which we'll call "offline dataset") and another one that works in rela-time (which we'll call "live client dataset").
+We'll in turn create two models, one that focuses on **post-match** data (which we'll call "offline dataset") and another one that works in real-time (which we'll call "live client dataset").
 
 > **Note**: API returns all data from a match in JSON format. For that, we've used OCI Autonomous JSON Database to store all data events directly, without applying any transformation during data ingestion.
 
