@@ -22,15 +22,17 @@ A what-if analysis is the process of adjusting known values to observe how those
 
 1. Keep the following questions in mind as you work through the next steps of this lab: Does your lineup strategy change if you choose to recover more 2-point opportunities? What happens if you tell your players to recover more 3-point chances? Does your coaching strategy change as you look at potential point recovery?
 
-2. Perform the Analysis. Select the 3-point and 2-point Potential filters and set both values to minimum. 
+2. Perform the Analysis. Select the 3-point and 2-point Potential filters and set both values to minimum. To do this, drag the selection arrows all the way to the left hand side of the pane. 
 
-  ![Use the filter controls on your dashboard](images/filtercontrol1.png)
+  ![Set filter to minimum](images/filtercontrol2.png)
 
 3. See the potential home team score tile change back to white with the conditional format settings. 
 
 4. Reset the filters by clicking on “Max”
 
 5. Select the 3-Point Potential filter and lower the top end to 5.
+
+  ![Use the filter controls on your dashboard](images/filtercontrol1.png)
     
 6. Select the 2-point Potential filter, change the top end to 6.
 
@@ -39,7 +41,7 @@ A what-if analysis is the process of adjusting known values to observe how those
 8. Now, move the 3-point Potential slider to 9 possible recovered points. Knowing that you can only play 5 players, which 5 players give you the best chance to recover the most points by shooting more 3-point shots?
 
 ## Acknowledgements
-* **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
-                   -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, October 2022>
+* **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
+* **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
+                   -  Luke Wheless, Data Analyst BI-SCF
+* **Last Updated By/Date** - Andres Quintana, October 2022
