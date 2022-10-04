@@ -2,19 +2,21 @@
 
 ## Introduction
 
-Projects are used to collect related data science resources and artifacts, such that it enables you to organize your work. They contain a collection of notebook sessions and models.  Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. All notebook sessions run in the Data Science service tenancy.
+Projects are used to organize related data science resources and artifacts, including notebook sessions, models, and model deployments.
 
-A notebook session is associated with a compute instance, VCN, subnet, and block storage. There are two block storage drives that are associated with a notebook session. There is a boot volume that is initialized each time the notebook session is activated. Any data on the boot volume is lost when the notebook session is deactivated or terminated. There is an additional block storage that is persisted when a notebook session is deactivated, but it is not persisted when a notebook session is terminated. This block volume is mounted in the ``/home/datascience`` directory and it is where the JupyterLab notebooks, data files, installed custom software, and other files should be stored.
+Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. 
 
-When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session, and then changing the configuration while activating the notebook session again. The size of the block storage can only be increased.
+All notebook sessions run in the Data Science service tenancy.  A notebook session is associated with a compute instance, VCN, subnet, and block storage.  When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session and then changing the configuration while activating the notebook session again. 
+
+There is a block storage that is persisted when a notebook session is deactivated, but it is not persisted when a notebook session is terminated. This block volume is mounted in the ``/home/datascience directory``, and it is where the JupyterLab notebooks, data files, installed custom software, and other files should be stored. When updating the configuration during deactivation/reactivation, the size of the block storage can only be increased. There is additionally a boot volume that is initialized each time the notebook session is activated. Any data on the boot volume is lost when the notebook session is deactivated or terminated.
 
 *Estimated Time*: 15 minutes
 
 ### Objective
 
 In this lab, you will:
-* Use the Console to create a Data Science Project.
-* Use the Console to create a Data Science notebook
+* Use the Console to create a Data Science project.
+* Use the Console to create a Data Science notebook session.
 
 ### Prerequisites
 
@@ -24,7 +26,7 @@ In this lab, you will:
 
 ## Task 1: Creating a Project
 
-You can create a Data Science project to organize your notebook sessions and models within your project.
+You can create a Data Science project to organize your work.
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
