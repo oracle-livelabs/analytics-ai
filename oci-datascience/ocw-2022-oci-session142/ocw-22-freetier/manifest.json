@@ -3,9 +3,15 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "./../../ocw-2022-oci-session142/introduction/introduction.md"
+        },
+        {
             "title": "Get Started",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
+        
         {
             "title": "Lab 1: Create SSH Key",
             "description": "Generate SSH Key",
