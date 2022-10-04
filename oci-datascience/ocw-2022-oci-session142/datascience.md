@@ -130,28 +130,10 @@ We'll create a user, a group, a dynamic group and security policies.
 
     ![Create Policy](images/create-policy.png " ")
 
-5. Create a New User
 
-    a) Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Users**.
+5. Add Default User to a Group.
 
-
-    ![ID Users](images/add-user.png " ")
-
-    b. Click **Create User**.
-
-    In the **Create User** dialog box, enter the following:
-
-    * **Name:** Enter a unique name or email address for the new user (for example, **User01**). *This value is the user's login name for the Console and it must be unique across all other users in your tenancy.*
-    * **Description**: Enter a description (for example, **New oci user**).
-    * **Email:** Preferably use a personal email address to which you have access (GMail, Yahoo, etc).
-
-    Click **Create**.
-
-    ![ID Users](images/user-form.png " ")
-
-6. Add User to a Group.
-
-    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that you just created (for example, User01) to go to the User Details page.
+    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that was assigned to you while creating this account.
 
     ![ID Users](images/users.png " ")
 
@@ -167,7 +149,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
     ![Add Users to Group](images/add-user-to-group.png " ")
 
-7. Create a **Dynamic Group**
+6. Create a **Dynamic Group**
 
     a) Open the **navigation menu** and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
@@ -184,7 +166,7 @@ We'll create a user, a group, a dynamic group and security policies.
     </copy>
     ```
 
-8. After you have created a dynamic group, you need to create policies to permit the dynamic groups to access Oracle Cloud Infrastructure services.
+7. After you have created a dynamic group, you need to create policies to permit the dynamic groups to access Oracle Cloud Infrastructure services.
 
     a. Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
@@ -539,11 +521,11 @@ There is a menu across the top of the screen. For this lab, the most interesting
     ```
     ![Public Keys](images/public-key.png " ")
 
-    e. Copy the contents of the public key to the clipboard using pbcopy, xclip or a similar tool (you'll need to paste the value into the Console later):
+    e. Copy the contents of the public key using ctrl-v to the clipboard using pbcopy, xclip or a similar tool (you'll need to paste the value into the Console later):
 
     ```
     <copy>
-    cat ~/.oci/oci_api_key_public.pem | pbcopy     
+    cat ~/.oci/oci_api_key_public.pem    
     </copy>
     ```
     ![Copy Public Keys](images/copy-pub.png " ")
@@ -564,6 +546,9 @@ There is a menu across the top of the screen. For this lab, the most interesting
     d. Paste the contents of the PEM public key in the dialog box and click Add.
 
     e. You will see the **Configuration File Preview**. Copy the content under **Configuration File Preview** and paste it in your local machine. We will later use this config information. 
+
+    ![Conifg Preview](images/config-preview.png " ")
+
 
     The key's fingerprint is displayed (for example, 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
 
@@ -634,33 +619,41 @@ c. You will receive a prompt related to what version number you want. Press **En
 d. Wait for the conda environment to be installed.
 
 
-## Task 12: Summary of commands
+## Task 13: Summary of commands
 
 The following is a summary of the steps that are covered in this lab along with the most important Python commands. You can use it as a reference guide for when you build your own models.
 
 1. **Open dataset:** ds = DatasetFactory.open()
-2. **Visualize dataset:** ds.show_in_notebook()
-3. **Automatic feature engineering:** transformed_ds = ds.auto_transform()
-4. **Split data into train and test sets:** train, test = transformed_ds.train_test_split()
+2. **Visualize dataset:** ds.show\_in\_notebook()
+3. **Automatic feature engineering:** transformed_ds = ds.auto\_transform()
+4. **Split data into train and test sets:** train, test = transformed\_ds.train\_test\_split()
 5. **Train the model with AutoML:** model, baseline = automl.train()
 6. **Evaluate the model:** evaluator = ADSEvaluator()
 7. **Explain the model:** explainer = ADSExplainer(test, model)
-8. **Global explanations:** global_explainer = explainer.global_explanation()
-9. **Local explanations:** local_explainer = explainer.local_explanation()
-10. **Feature important:** global_explainer.feature_importance_summary() and global_explainer.compute_feature_importance()
+8. **Global explanations:** global_explainer = explainer.global\_explanation()
+9. **Local explanations:** local_explainer = explainer.local\_explanation()
+10. **Feature important:** global_explainer.feature\_importance\_summary() and global\_explainer.compute\_feature\_importance()
 
 
-## Task 13: Accelerated Data Science(ADS) SDK for training Machine Learning Model 
+## Task 14: Accelerated Data Science(ADS) SDK for training Machine Learning Model 
 
-Download the complete notebook [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SVgHpFBvntVvV6xPMZ28dls4KcJO8CgLiKUCcBOcAfan6a2bRIQl9QGtovh3qvet/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Patient_Readmission_Classifier-final.ipynb) that walks through the different steps to create a machine learning model using Oracle ADS SDK that will predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit. 
+Download the complete notebook [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wEM8Nt-fEIlxk9BsOhosbI-XWw0gQV7_QvS6y2yqaoAK52HPPVrmcVzItfq2D_QZ/n/orasenatdpltintegration03/b/CareClinics-bucket/o/Patient_Readmission_Classifier-v2.ipynb) that walks through the different steps to create a machine learning model using Oracle ADS SDK that will predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit. 
 
-1. Import all the necessary packages that we will need for building our model. 
+1. Upload the notebook in the Data Science platform by clicking the '+' on the toolbar.
+
+![Upload Notebook](images/upload-notebook.png " ")
+
+After uploading the notebook, very first thing that needs to be done is to activate the conda enviroment for this notebook, that you just installed in **Step 12**, similar to this. 
+
+![Activate Conda](images/activate-conda.png " ")
+
+2. Import all the necessary packages that we will need for building our model. 
 
 ![Import Packages](images/import-packages.png " ")
 
-2. Set the required parameters
+3. Set the required parameters
 
-3. Connect to Object Storage and download training data in OCI Data Science notebook
+4. Connect to Object Storage and download training data in OCI Data Science notebook
 
 Run the **'Read training data from OCI Object store buckets'** block of code. This will allow us to read our training data from Object Storage into a Pandas DataFrame. For authentication purposes, we will be using the API keys and config file we generated in the earlier step. 
 
@@ -700,7 +693,7 @@ Some of the supported file formats include:
     10. Apache server log files
     11. arff
 
-4. Next step is to process our raw training data to make it suitable for training purposes. Execute the 'Data Processing' block of code. 
+5. Next step is to process our raw training data to make it suitable for training purposes. Execute the 'Data Processing' block of code. 
 
     ![Data Processing](images/data-processing.png " ")
 
@@ -708,7 +701,7 @@ Some of the supported file formats include:
 
     ![Feature Engineering](images/feature-engineering.png " ")
 
-5. The ADS **show_in_notebook()** method creates a comprehensive preview of all the basic information about a dataset including:
+6. The ADS **show_in_notebook()** method creates a comprehensive preview of all the basic information about a dataset including:
 
     * The predictive data type (for example, regression, binary classification, or multinomial classification).
 
@@ -724,11 +717,11 @@ Some of the supported file formats include:
 
     ![Exploratory Data Analysis](images/exploratory-data.png " ")
 
-6. The ADSDataset object comes with a comprehensive plotting API. It allows you to explore data visually using automatic plotting or create your own custom plots.Example of a bar-graph plotted between our target variable, i.e, **'Readmission_Flg'** and **'age'**
+7. The ADSDataset object comes with a comprehensive plotting API. It allows you to explore data visually using automatic plotting or create your own custom plots.Example of a bar-graph plotted between our target variable, i.e, **'Readmission_Flg'** and **'age'**
     
     ![Data Visualization](images/data-visualization.png " ")
 
-7. In this step, we will be training our model using Oracle AutoML. Oracle AutoML automates the machine learning experience. It replaces the laborious and time consuming tasks of the data scientist whose workflow is as follows:
+8. In this step, we will be training our model using Oracle AutoML. Oracle AutoML automates the machine learning experience. It replaces the laborious and time consuming tasks of the data scientist whose workflow is as follows:
 
     * Select a model from a large number of viable candidate models.
 
@@ -754,7 +747,7 @@ Some of the supported file formats include:
 
 A model is then generated that can be used for prediction tasks. ADS uses the roc-auc scoring metric to evaluate the performance of this model on unseen data (X_test).
 
-8. Machine learning Explainability: Machine learning explainability (MLX) is the process of explaining and interpreting machine learning and deep learning models.
+9. Machine learning Explainability: Machine learning explainability (MLX) is the process of explaining and interpreting machine learning and deep learning models.
 
     MLX can help machine learning developers to:
 
@@ -778,11 +771,11 @@ A model is then generated that can be used for prediction tasks. ADS uses the ro
 
     You can also view the **local explainations** to understand why the machine learning model made a specific prediction about a specific row. Read more about it [here](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/model_explainability/overview.html).
 
-9. Now we will use the **predict** function to predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit **(Y for Yes and N for No)**, and save the results in the **final-output** dataframe under **preds** column.
+10. Now we will use the **predict** function to predict if a given patient is likely to get admitted within a specific time period, 30 days following the previous hospital visit **(Y for Yes and N for No)**, and save the results in the **final-output** dataframe under **preds** column.
 
 ![Inference](images/inference.png " ")
 
-10. Lastly, we will store the results (**final-output dataframe**) in the **OCI Autonomous Data Warehouse** as a table. We will create a connection between OCI Data Science and OCI Autonomous Data Warehouse using the wallet file that we downloaded in Step 4. 
+11. Lastly, we will store the results (**final-output dataframe**) in the **OCI Autonomous Data Warehouse** as a table. We will create a connection between OCI Data Science and OCI Autonomous Data Warehouse using the wallet file that we downloaded in Step 4. 
 
     a. Create a ```<path-to-wallet-folder>``` folder for your wallet on the notebook environment environment.
 
