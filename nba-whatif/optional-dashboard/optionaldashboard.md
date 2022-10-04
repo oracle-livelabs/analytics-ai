@@ -12,13 +12,10 @@ In this lab, you will:
 * Download [background image](files/basketballcourt.jpg " ") file 
 * Customize the background and layout of the dashboard you have already created. 
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
-
-*Below, is the "fold"--where items are collapsed by default.*
 
 ## Task 1: Concise Task Description
 
@@ -30,25 +27,21 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 3. Navigate to the bottom left of the page in the “General” (Gear Icon) tab. 
 
-4. Scroll to “Background” 
+4. Scroll to “Background” and change “Auto” to “Custom”
 
-5. Change “Auto” to “Custom”
-
-6. Scroll to and click “Fill Color”
+5. Scroll to and click “Fill Color”
 
   ![Change Fill Color](images/optional1.png) 
 
-7. Change the Color Pallet 
+6. Change the Color Pallet 
 
-8. Change color pallet to Golden State Warriors colors. Blue - # 1D428A, Gold - # FFC72C
+7. Change color pallet to Golden State Warriors colors. Choose either Blue or Gold. Blue - # 1D428A, Gold - # FFC72C
   
-9. In the same bottom left panel scroll up to “Label Font” 
+8. In the same bottom left panel scroll up to “Label Font”. Click on the font color and change it to either Blue or Gold (opposite to what you chose above). 
 
-10. Change “Auto” to “Custom" and change the font color. 
-
-11. Adjust Colors: Select 2-Point Missed, 2-Point Potential by Player Name visualization. Right click and select Color > Manage Assignments 
+9. Adjust Colors: Select 2-Point Missed, 2-Point Potential by Player Name visualization. Right click and select Color > Manage Assignments 
      
-12. Click on one of the color icons and change the colors to the Golden State Warriors colors 
+10. Click on one of the color icons and change the colors to the Golden State Warriors colors 
   
 
 ## Task 2: Background Image
@@ -64,9 +57,7 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 4. Upload the Image
 
-5. Scroll to background and click on “Auto”, click on “Custom”, and select “None” next to Image Source 
-
-  ![Canvas Properties](images/optional2.png)
+5. Scroll to background and click on “Auto”, click on “Custom”, and select “None” next to Image Source  
 
 6. Modify the Image
 
@@ -74,13 +65,17 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 8. Next to “Image Align” Click the center square in the grid, click on “Locked” next to Image Aspect Ratio, change to “Unlocked”.
 
+  ![Canvas Properties](images/optional2.png)
+
 9. Click on “Original" next to Image Width
 
 10. Change to “Auto Fit” 
 
+11. Click OK
+
 ## Task 3: Change the Fonts 
 
-1. Change the Text Style, click on the 2-point missed, 2-point potential visualization 
+1. To change the Text Style, click on the 2-point missed, 2-point potential visualization 
   
 2. Change the style and color of the title font to Bold and White (# ffffff)
 
@@ -116,7 +111,7 @@ You have now completed all of the steps in this lab!
 
 
 ## Acknowledgements
-* **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
-                   -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
+* **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
+                   -  Luke Wheless, Data Analyst BI-SCF
+* **Last Updated By/Date** - Andres Quintana, October 2022
