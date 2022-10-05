@@ -31,15 +31,22 @@ This lab assumes that you have:
 
     ![Conda Environment Explorer](images/conda-environment-explorer.png " ")
 
-2.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
+1.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
+
+    ![Tensorflow Conda](images/tensorflow-conda-expand-details.png " ")
+
+1.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
 
     ![Tensorflow Conda](images/tensorflow-conda.png " ")
 
-3.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
-
     ![Open Terminal](images/open-terminal.png " ")
 
-4.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the TensorFlow 2.7 for CPU on Python 3.7 conda for the notebook session.
+1.  When prompted for the version number, press Enter.
+
+    ![Open Terminal](images/conda-version-number.png " ")
+
+
+1.  After you have set up your conda environment, when you start a new notebook, choose tensorflow27_p37_cpu_v1 for the Kernel.
 
     ![Select Conda](images/select-conda-environ.png " ")
 
