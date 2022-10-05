@@ -16,32 +16,23 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
 
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Establish the Filters
 
-(optional) Task 1 opening paragraph.
+1. Select the Filter Elements. Ctrl + Click to select Season, Game Date, and Home Team Name 
 
-1. Select the Filter Elements 
-    - Ctrl + Click to select Season, Game Date, and Home Team Name 
-    - Drag the selection to the filter bar. 
+2. Drag the selection to the filter bar. 
 
 	![Drag to add filters](images/dashboard1.png)
 
-2. Modify the Filters 
-    - Hover the mouse over Game Date in the filter bar 
-    - Click the 3 dots 
-    - Select “Filter Type” and change selection to **List** 
+3. Modify the Filters. Hover the mouse over Game Date in the filter bar. Click the 3 dots. Select “Filter Type” and change selection to **List** 
 
   ![Modify the Filter](images/dashboard2.png)
 
-3. Set the Filters 
-    - Change Season to 2020
-    - Select Golden State Warriors in Home Team Name 
-    - In Game Date, select 05/21/2021
+4. Set the Filters: Change Season to 2020, Select Golden State Warriors in Home Team Name. In the Game Date filter, select 05/21/2021
+
+  ![Set the Filters](images/dashboard8.png)
 
 ## Task 2: Build the Table 
 
@@ -87,20 +78,28 @@ This lab assumes you have:
 
 5. 3-Point Missed and 3-Point Potential should be in the Values (X-Axis) and Player Name should be in the Category (Y-Axis)
 
+  ![The horizontal bar chart](images/dashboard9.png)
+
 6. Select and Move the following to Tooltips
     - 3-point Pct
     - 2-point Pct
     - 3-point Potential 
     - 2-point Potential 
 
-7. Complete the 2nd Bar Chart. Repeat the step 1 process in a second Horizontal Bar with 
+  ![Set the tooltips](images/dashboard10.png)
+
+7. Complete the 2nd Bar Chart. Repeat steps 1 through 6 to create a second Horizontal Bar chart with:
     - 2-Point Missed
     -	2-Point Potential 
     - Player Name 
 
+8. Your canvas should now look like this.
+
+  ![Your canvas](images/dashboard11.png)
+
 ## Task 4: Add a Tile
 
-1. Add a Tile. Select and drag Potential Home Team Score to the visualization pane to create a til. 
+1. Add a Tile. Select and drag Potential Home Team Score to the visualization pane to create a tile. 
   
 2. With the tile selected navigate to the bottom left corner of the screen and click on the numeric symbol “#” 
 
@@ -118,11 +117,11 @@ This lab assumes you have:
 
   ![Create a conditional formatting rule](images/conditionalformat1.png)
 
-8. Select “New Rule” and create a rule that changes the color of the tile to: Gold - # FFC72C when Potential Home Team Score > Visitor Team Score 
-
-9. Click Save
+8. Select "Add Rule” and create a rule that changes the color of the tile to: Gold - # FFC72C when Potential Home Team Score > Visitor Team Score 
 
   ![Save the conditional formatting rule](images/conditionalformat2.png)
+
+9. Click Save
 
 ## Task 5: Set Filter Controls
 
@@ -130,14 +129,16 @@ This lab assumes you have:
 
 2. Select and Drag 3-point Potential and 2-point Potential to the visualization pane 
 
-3. Select “filter controls” as the visualization type. 
+3. Select “Dashboard Filters” as the visualization type. 
+
+  ![Dashboard Filters](images/dashboard12.png)
 
   ![Your Dashboard](images/dashboard7.png)
 
 This concludes the Build a Dashboard lab. You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Carrie Nielsen, Senior Director, Analytics Product Strategy>
-                   -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
+* **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
+                   -  Luke Wheless, Data Analyst BI-SCF
+* **Last Updated By/Date** - Andres Quintana, October 2022

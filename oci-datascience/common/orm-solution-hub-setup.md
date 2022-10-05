@@ -2,9 +2,9 @@
 
 ## Introduction
 
-To use the Oracle Cloud Infrastructure (OCI) Data Science service, your tenancy has to be configured to grant permission to users and resources. If your tenancy is not configured, you will need administrator permissions to configure it. If you created a free tier account, your account has administrator permissions . There are two ways to configure the tenancy. It can be [manually configured](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm) or configured via the [Oracle Resource Manager](https://www.oracle.com/cloud/systems-management/resource-manager/). In this lab, your tenancy is configured using the [Data Science Solution Hub](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/orm-configure-tenancy.htm), which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
+To use the Oracle Cloud Infrastructure (OCI) Data Science service, your tenancy has to be configured to grant permission to users and resources. If your tenancy is not configured, you will need administrator permissions to configure it. If you created a free tier account, your account has administrator permissions . There are two ways to configure the tenancy. It can be [manually configured](https://docs.oracle.com/en-us/iaas/data-science/data-science-tutorial/get-started.htm#get-started) or configured via the [Oracle Resource Manager](https://www.oracle.com/cloud/systems-management/resource-manager/). In this lab, your tenancy is configured using the [Data Science Solution Hub](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/orm-configure-tenancy.htm), which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that configure a tenancy to work with the Data Science service.
 
-The instructions below allow you to set up a basic configuration to work with the Data Science service. We recommend this path for free tier accounts and other tenancies that have a standard configuration. For more elaborate tenancy configurations, you can [manually configure the resources](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm).
+The instructions below allow you to set up a basic configuration to work with the Data Science service. We recommend this path for free tier accounts and other tenancies that have a standard configuration. For more elaborate tenancy configurations, you can [manually configure the resources](https://docs.oracle.com/en-us/iaas/data-science/data-science-tutorial/get-started.htm#get-started).
 
 By default, a tenancy is not configured to work with the Data Science service. If the tenancy is already configured to work with the service, then you can skip the following setup instructions and move to the next lab. If you do not know if your account is configured for the service or not, ask your system administrator.
 
@@ -12,7 +12,7 @@ By default, a tenancy is not configured to work with the Data Science service. I
 
 ### Objectives
 
-In this lab, you:
+In this lab, you will:
 * Use the Oracle Resource Manager Solution Hub to create a stack
 * Become familiar with the options available to configure a tenancy to work with the Data Science service.
 * Apply a stack to create the policies, groups, dynamic groups and other resources need to access the Data Science service.
@@ -52,7 +52,7 @@ Select **Enable Vault Support?** to enable storing secrets, encrypted passwords,
 
 
 1. Click **Next** and review the stack configuration.
-1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
+1. Click **Create** to create your stack. This creates the stack but does not create any Data Science resources. The **Stack Details** page appears.
     ![Stack details](./../common/images/orm-stack-detail.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues, and then repeat this step.
