@@ -49,9 +49,9 @@ The Data Science Service:
 
 In this lab, you will complete the following steps:
 
-&check; Understanding what a Neural Network is and how it works
+&check; Understand what a Neural Network is and how it works
 
-&check; Creating a ML model
+&check; Creating an ML model
 
 &check; Web Sockets / Data Streaming Techniques 
 
@@ -60,7 +60,7 @@ In this lab, you will complete the following steps:
 
 ## OCI Elements
 
-This solution is designed to work with several OCI services, allowing you to quickly be up-and-running. You can read more about the services used in the lab here:
+This solution is designed to work with several OCI services, allowing you to quickly be up and running. You can read more about the services used in the lab here:
 
 - [OCI Data Science](https://www.oracle.com/artificial-intelligence/data-science/)
 - [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
@@ -84,4 +84,4 @@ If you have extra time after this workshop and want to get to know more about Le
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** -  Victor Martin, Product Strategy Director
-* **Last Updated By/Date** - October 3rd, 2022
+* **Last Updated By/Date** - October 4th, 2022
