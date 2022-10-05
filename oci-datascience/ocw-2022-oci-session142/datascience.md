@@ -791,15 +791,14 @@ A model is then generated that can be used for prediction tasks. ADS uses the ro
     ![Upload wallet](images/Upload-Wallet.png " ")
 
 
-    b. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user-name"** with **"admin"**, **"password"** with your own password, **"service-name"** with **"adw_high"** and **"wallet-location"** with **"/home/datascience/Wallet_ADWH.zip"**. 
-
-    ![Send to ADW](images/send-to-adw.png " ")
+    b. Execute this block of code to upload our final_output dataframe as a table to ADW. Replace the **"user-name"** with **"admin"**, **"password"** with your own password, **"service-name"** with **"adw/_high"** and **"wallet-location"** with **"/home/datascience/Wallet/_ADWH.zip"**. 
 
     It should look similar to this:
 
     ![Sample ADW](images/sample-adw.png " ")
 
 
+    ![Read SQL](images/read-sql.png " ")
 
 Congratulations on completing the lab!
 
