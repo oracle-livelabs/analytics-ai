@@ -17,7 +17,7 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle Cloud account
 
-## Task 1: Concise Task Description
+## Task 1: Create a Visually Impactful Dashboard
 
 A visually impactful dashboard is captivating. Customizing your dashboard can make the insights from your presentation far more memorable. Follow these steps to develop a customized dashboard. 
 
