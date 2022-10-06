@@ -44,7 +44,13 @@ Review the following concepts and terms to help you get started with the Data Sc
 
 * **Accelerated Data Science SDK**: The [Oracle Accelerated Data Science (ADS) SDK](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/index.html) is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the Oracle Accelerated Data Science Library documentation.
 
+<<<<<<< HEAD
 * **Model**: Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
+=======
+[Resource Manager](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oracle-quickstart/oci-ods-orm/releases/download/1.0.6/oci-ods-orm-v1.0.6.zip)
+
+You may have to log in first in case you were not logged into to Oracle Cloud Infrastructure already.
+>>>>>>> 021953f524741d18e765c69f5ce915118ce0c79e
 
 
 ## Task 1: Create Compartments
@@ -218,6 +224,7 @@ We'll create a user, a group, a dynamic group and security policies.
 
 ## Task 4: Create Autonomous Data Warehouse for storing model-inference results
 
+<<<<<<< HEAD
 1. Click on the hamburger **MENU (Navigator)** link at the upper left corner of the page.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
@@ -293,11 +300,18 @@ This page is known as the **Autonomous Database Details Page**. It provides you 
     * **Instance Wallet:** Wallet for a single database only; this provides a database-specific wallet
     * **Regional Wallet:** Wallet for all Autonomous Databases for a given tenant and region (this includes all service instances that a cloud account owns)
     Note: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
+=======
+2. Install pre-built 'generalml\_p37\_cpu\_v1' conda environment in datascience notebook. 
+>>>>>>> 021953f524741d18e765c69f5ce915118ce0c79e
 
     
 2. Go back to* ***"Autonomous Database Details"*** page for your Autonomous Database, click the **DB Connection** button.
 
+<<<<<<< HEAD
     You can access to the ***'Autonomous Database Details'*** page using the cloud console page.
+=======
+   ii.  Next, select 'generalml\_p37\_cpu\_v1' environment from the available list.
+>>>>>>> 021953f524741d18e765c69f5ce915118ce0c79e
 
     ![adw-details](images/db-connection.png " ")
 

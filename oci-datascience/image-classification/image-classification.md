@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Image classification with a machine learning model is the task of training a model with a set of images labeled in different classes and using the model to predict the label of an image the model has not encountered before.  It has many broad applications ranging from quality control for manufacturing to crop monitoring for precision agriculture. An important application is using machien learning models to classify medical images for disease diagnosis.  
+Image classification with a machine learning model is the task of training a model with a set of images labeled in different classes and using the model to predict the label of an image the model has not encountered before.  It has many broad applications ranging from quality control for manufacturing to crop monitoring for precision agriculture. An important application is using machine learning models to classify medical images for disease diagnosis.  
 
-In this lab, you’ll learn how to create your own deep learning model to diagnose pneumonia on chest x-ray images of patients. You’ll use Data Science Notebook Sessions to train a custom deep learning model and also use transfer learning to tune a pre-trained model on the x-ray images. You will learn how to deploy your model for consumption by third-party applications.
+In this lab, you’ll learn how to create your own deep learning model to diagnose pneumonia on chest x-ray images of patients. You’ll use Data Science notebook sessions to train a custom deep learning model and also use transfer learning to tune a pre-trained model on the x-ray images. You will learn how to deploy your model for consumption by third-party applications.
 
 *Estimated Time*: 60 minutes
 
@@ -16,8 +16,8 @@ In this lab, you will:
 * Perform data exploration with Accelerated Data Science (ADS) SDK.
 * Define a custom deep learning model and train the model.
 * Apply transfer learning on a pre-trained model.
-* Save a model to the Data Science Model Catalog.
-* Deploy a model with Data Science Model Deployment.
+* Save a model to the Data Science model catalog.
+* Deploy a model with Data Science model deployment.
 
 ### Prerequisites
 
@@ -29,19 +29,26 @@ This lab assumes that you have:
 
 1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to **File** and select **New Launcher**.  You will see the **Environment Explorer**. When you click on **Environment Explorer**, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. 
 
-    ![Conda Environment Explorer](images/conda_environment_explorer.png " ")
+    ![Conda Environment Explorer](images/conda-environment-explorer.png " ")
 
-2.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
+1.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
 
-    ![Tensorflow Conda](images/tensorflow_conda.png " ")
+    ![Tensorflow Conda](images/tensorflow-conda-expand-details.png " ")
 
-3.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
+1.  Under **Install**, copy the command and execute it in a terminal.  You can launch a new terminal by going to the Launcher and finding the icon for terminal.
 
-    ![Open Termina](images/open_terminal.png " ")
+    ![Tensorflow Conda](images/tensorflow-conda.png " ")
 
-4.  After you have set up your conda environment, when you start a new notebook, go to the top right corner and select the TensorFlow 2.7 for CPU on Python 3.7 conda for the notebook session.
+    ![Open Terminal](images/open-terminal.png " ")
 
-    ![Select Conda](images/select_conda_environ.png " ")
+1.  When prompted for the version number, press Enter.
+
+    ![Open Terminal](images/conda-version-number.png " ")
+
+
+1.  After you have set up your conda environment, when you start a new notebook, choose tensorflow27_p37_cpu_v1 for the Kernel.
+
+    ![Select Conda](images/select-conda-environ.png " ")
 
 ## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
 
@@ -56,31 +63,31 @@ This lab assumes that you have:
     ```
 2.  Navigate to the **xray\_diagnostics\_hol** folder
 
-Go to the home directory
+* Go to the home directory
 
-![Navigate home directory](images/navigate_home_directory.png " ")
+![Navigate to home directory](images/navigate-home-directory.png " ")
 
-Click on the **conda** folder
+* Click on the **conda** folder
 
-Click on the **notebooks** folder
+* Click on the **notebooks** folder
 
-Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
+* Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
 
-Click on the **demo** folder
+* Click on the **demo** folder
 
-Click on the **xray\_diagnostics\_hol** folder
+* Click on the **xray\_diagnostics\_hol** folder
 
-Open **ChestXrays\_Train.ipynb** file 
+* Open **ChestXrays\_Train.ipynb** file 
 
 This is the notebook where we will work through an image classification problem.  
 
 3.  Select TensorFlow 2.7 for CPU on Python 3.7 conda in the top right corner of the notebook
 
-![Select tensorflow conda](images/select_tensorflow_conda.png " ")
+![Select tensorflow conda](images/select-tensorflow-conda.png " ")
 
-4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and press *shift + enter*. It will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
+4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and pressing *shift + enter*. That will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
 
-**Congratulations! You have successfully completed the lab**
+You may now **proceed to the next lab**.
 
 ## References
 
