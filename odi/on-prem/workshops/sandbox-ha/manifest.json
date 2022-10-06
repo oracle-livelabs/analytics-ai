@@ -8,34 +8,30 @@
       "filename": "../../odi12c-ha-introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://oracle-livelabs.github.io/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
+      "title": "Get Started",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "filename": "../../odi12-ha-initialize-environment/setup-odi-rep.md"
     },
     {
-      "title": "Lab 3: ODI High Availability Configuration",
+      "title": "Lab 2: ODI High Availability Configuration",
       "filename": "../../odi12c-ha-config/odi12c-ha-config.md"
     },
     {
-      "title": "Lab 4: Create and Configure Load Balancer",
-      "filename": "../../odi12c-ha-load-balancer/odi12c-ha-load-balancer.md"
-    },
-    {
-      "title": "Lab 5: Run ODI Job when both Nodes are Up",
+      "title": "Lab 3: Run ODI Job when both Nodes are Up",
       "filename": "../../odi12c-ha-all-nodes-up/odi12c-ha-all-nodes-up.md"
     },
     {
-      "title": "Lab 6: Run ODI Job when a Node is Down",
+      "title": "Lab 4: Run ODI Job when a Node is Down",
       "filename": "../../odi12c-ha-node1-down/odi12c-ha-node1-down.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
