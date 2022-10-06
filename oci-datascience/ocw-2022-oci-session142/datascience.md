@@ -156,7 +156,7 @@ We'll create a user, a group, a dynamic group and security policies.
     b) Click **Create Dynamic Group**.
 
     c) Enter the following:
-    * **Name**: A unique name for the group. For this workshop, we will name it as **'dynamic group'**. You can't change this later. 
+    * **Name**: A unique name for the group. For this workshop, we will name it as **'oci-dynamic-group'**. You can't change this later. 
     * **Description**: A friendly description.
     d) Enter the Matching Rules, as below. Add OCID for your compartment in the below statement. Resources that meet the rule criteria are members of the group.
 
