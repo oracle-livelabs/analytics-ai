@@ -6,11 +6,9 @@ Coaching staffs in sports and business leaders around the world rely on Oracle A
 
 Not only does "what if" analysis provide an opportunity to test scenarios using real world data, but it also affords users the chance to predict and mitigate potentially unforeseen risks. Using this technique to develop strategies proves to be invaluable in time-critical decision making such as NBA coaching and disaster preparedness. 
 
-Estimated Workshop Time: 45 Minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 45 Minutes 
 
 ### Objectives
-
-*List objectives for the workshop*
 
 In this workshop, you will learn how to:
 * Format data and create calculations
@@ -18,24 +16,19 @@ In this workshop, you will learn how to:
 * Develop a custom dashboard
 * Perform a what-if analysis 
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle account
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Learn More
 
 If you are interested in learning more about this topic, the below blogs are available:
 
 * [NBA What If Analysis - placeholder until blog is published](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Andres Quintana, Senior Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Carrie Nielsen, Analytics Product Strategy>
-                   -  <Luke Wheless, Data Analyst BI-SCF>
-* **Last Updated By/Date** - <Andres Quintana, September 2022>
+* **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
+* **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
+                   -  Luke Wheless, Data Analyst BI-SCF
+* **Last Updated By/Date** - Andres Quintana, October 2022

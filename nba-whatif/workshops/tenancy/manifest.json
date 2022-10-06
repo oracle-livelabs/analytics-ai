@@ -15,19 +15,23 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Setup Data and Workbook",
+            "title": "Lab 1: Provision Analytics Cloud",
+            "filename": "../../oac-provisioning/oac-provisioning.md"
+        },
+        {
+            "title": "Lab 2: Setup Data and Workbook",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 2: Build the Dashboard",
+            "title": "Lab 3: Build the Dashboard",
             "filename": "../../build-dashboard/builddashboard.md"
         },
         {
-            "title": "Lab 3: Perform What-If Test",
+            "title": "Lab 4: Perform What-If Test",
             "filename": "../../whatif-test/whatiftest.md"
         },
         {
-            "title": "Lab 4: Optional: Customize Dashboard",
+            "title": "Lab 5: Optional: Customize Dashboard",
             "filename": "../../optional-dashboard/optionaldashboard.md"
         },
         {
