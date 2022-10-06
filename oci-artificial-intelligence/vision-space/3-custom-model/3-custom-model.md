@@ -34,7 +34,7 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
     b. Enter a name for your project, e.g. **galaxy-detection**.
 
-1. Click the **Create project** button. Wait for the project to become "Active".
+1. Click the **Create project** button. Wait for the project to become "Active". This usually takes less than a minute.
   
 
 
@@ -56,7 +56,7 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
     b. For *Training Data*: select **Choose existing dataset**
 
-    c. For *Data Source*: select **Data Lableing Service**
+    c. For *Data Source*: select **Data Labeling Service**
 
     d. For *Choose a dataset...*, click **Change compartment**
     

@@ -21,7 +21,7 @@ The features of OCI Vision are exposed through an API, which makes those feature
 ## **Task 1:** Download a file representing the source dataset
 You'll download a csv file that contains the name and location of the space images to be processed through the OCI Vision custom model. This file is needed for the data flow that will be created in this lab.
 
-1. Use the OCI console to navigate to Storage > Buckets
+1. Use the OCI console to navigate to **Storage** and then **Buckets**.
 
     ![Navigate to storage buckets](./images/console-storage-buckets.png)
 
@@ -142,7 +142,7 @@ Create a dataflow that ingests the space images from object storage, submits the
 
     ![Save the data flow](./images/oac-save-data-flow.png)
 
-1. Click the **Run** icon on the top bar of the page to run the dat flow. Wait for the data flow to complete. This may take 1-2 minutes.
+1. Click the **Run** icon on the top bar of the page to run the data flow. Wait for the data flow to complete. This may take 1-2 minutes.
 
     ![Run the data flow](./images/oac-run-data-flow.png)
 
@@ -166,7 +166,7 @@ Create an OAC workbook to view the objects detected in the space images.
 
     ![Add table of image files](./images/oac-workbook-table.png)
 
-1. Switch to the visualizations list by clicking the **Vizualizations** icon.
+1. Switch to the visualizations list by clicking the **Visualizations** icon.
 
     ![Switch to visualizations](./images/oac-workbook-viz-icon.png)
 

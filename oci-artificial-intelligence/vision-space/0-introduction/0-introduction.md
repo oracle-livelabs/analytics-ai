@@ -33,8 +33,8 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 > **Note:** you may be seeing these procedures because you've already reserved a workshop environment through LiveLabs. However, if you are attending an event that uses this workshop, you may need to reserve your environment now.
 
-1. Open this workshop in LiveLabs (or search for *11181*).
-    https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=11181  TODO - verify
+1. Open this workshop in [LiveLabs](developer.oracle.com/livelabs
+) using a provided URL or event code. (If this lab is listed you can search for it using *ID:3448*).
 
 1. Click the **Sign In** button in the upper right corner of the LiveLabs page then sign in with your existing Oracle account or create an account if you don't have one. 
 
