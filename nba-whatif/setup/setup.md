@@ -53,7 +53,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 5. Repeat those steps for the 2-point Pct Column. 
   
-6. Convert Visitor Team Score column to a Measure from an attribute -by selecting- the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to MeasureConvert Visitor Team Score column to a Measure from an attribute -by selecting- the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to Measure. 
+6. Convert Visitor Team Score column to a Measure from an attribute -by selecting- the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to Measure. 
     - Change the Data Type from Text to Number
     - Change Aggregation to Average
     - Repeat these steps for the Home Team Score column. 

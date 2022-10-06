@@ -2,6 +2,9 @@
 
 Here we will work with OCI Lake which is a new service which service provides a unified access control of both structured and unstructured data in Data Lake. Using the service, customers can easily ingest, secure, and govern data in their Data Lake. The service allows customer to create logical schemas, tables, and views on top of Object Storage and those entities can be access via other OCI service such as ADW, Big Data Service, Data Flow and Data Science Notebook while honoring the defined access control in OCI Lake service. 
 
+Safe harbor statement
+The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, timing, and pricing of any features or functionality described for Oracle's products may change and remains at the sole discretion of Oracle Corporation.
+
 Estimated Time: 15 minutes
 
 ### About Product
