@@ -34,6 +34,12 @@ Weather data provides the following data channels per sample:
 - WindSpeed (float): Wind speed in km/h
 
 
+> **Note**: Before you proceed, make sure you select the correct environment on the right. Select the `conda` environment and click **Select**.
+
+![Select Conda Env](images/select_conda_env_rbr.png)
+
+First, we read the dataset:
+
 We load our previously-concatenated data (in the last chapter) and add an additional column called eventYear:
 
 ![event year](./images/task1_event_year.png)

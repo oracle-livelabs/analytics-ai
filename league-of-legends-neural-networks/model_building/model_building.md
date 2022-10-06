@@ -48,6 +48,10 @@ These will be the features of our live client model. We'll want to predict the _
 
 Now that we have the most basic concepts about Neural Networks, it's time to build one. We want our NN to predict whether a player has won or lost given their post-match statistics.
 
+Before you proceed, make sure you select the correct environment on the right. Select the `conda` environment and click **Select**.
+
+![Select Conda Env](images/select_conda_env.png)
+
 First, we read the dataset:
 
 ![reading the dataset](images/read_dataset.png)
@@ -307,4 +311,4 @@ If you’re curious about the goings-on of Oracle Developers in their natural ha
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin, Product Strategy Director
-* **Last Updated By/Date** - October 4th, 2022
+* **Last Updated By/Date** - October 6th, 2022
