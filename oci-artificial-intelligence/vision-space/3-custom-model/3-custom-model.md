@@ -58,11 +58,9 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
     c. For *Data Source*: select **Data Labeling Service**
 
-    d. For *Choose a dataset...*, click **Change compartment**
-    
-    e. Select compartment **vision\_galaxy\_ws\_read\_only**
+    d. Next to *Choose a dataset*, ensure the compartment is your assigned user compartment
 
-    f. When the dataset picklist populates, choose: **dataset-read-only**
+    f. In the dataset picklist, choose: **dl-lab-dataset**
 
 1. Click **Next**
 
