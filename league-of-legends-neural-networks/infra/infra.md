@@ -14,7 +14,7 @@ Terraform is an Open Source tool to deploy resources in the cloud with code. You
 
 > **Note**: in the figure above, there's also a compute instance and autonomous database deployed automatically by Terraform. These resources are completely optional and you can run the workshop without them. However, if you're interested in integrating everything that we'll talk about in the workshop with **your own datasets**, this is the way to do it. You can check out more information on this [in this workshop](https://oracle-devrel.github.io/leagueoflegends-optimizer/hols/workshops/dataextraction/index.html).
 
-Do you want to learn more? Feel free to check [Terraform's code in this repository](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/livelabs/dev/terraform) after the workshop.
+Do you want to learn more? Feel free to check [Terraform's code in this repository](../../../dev/terraform/) after the workshop.
 
 Estimated Lab Time: 15 minutes
 
@@ -57,14 +57,22 @@ Estimated Lab Time: 15 minutes
 
 3. The file will open and you can copy values you will get from running commands on Cloud Shell and paste it on the Code Editor.
 
-4. Copy the output of the following command as the tenancy OCID:
+4. Copy the output of the following command as the region:
+
+    ```
+    <copy>echo $OCI_REGION</copy>
+    ```
+
+    ![Paste Region](images/paste-region.png)
+
+5. Copy the output of the following command as the tenancy OCID:
     ```
     <copy>echo $OCI_TENANCY</copy>
     ```
 
     ![Paste Tenancy OCID](images/paste-tenancy-ocid.png)
 
-5. Copy the output of the same command as the compartment OCID:
+6. Copy the output of the same command as the compartment OCID:
     ```
     <copy>echo $OCI_TENANCY</copy>
     ```
@@ -81,7 +89,30 @@ Estimated Lab Time: 15 minutes
     > <copy>oci iam compartment list --all --compartment-id-in-subtree true --query "data[].id" --name COMPARTMENT_NAME</copy>
     > ```
 
-6. Save the file in the Code Editor.
+7. Generate a SSH key pair, by default it will create a private key on _`~/.ssh/id_rsa`_ and a public key _`~/.ssh/id_rsa.pub`_.
+    It will ask to enter the path, a passphrase and confirm again the passphrase; type _[ENTER]_ to continue all three times.
+
+    ```
+    <copy>ssh-keygen -t rsa</copy>
+    ```
+
+    > **Note**: If there isn't a public key already created, run the following command to create one:
+    > ```
+    > <copy>ssh-keygen</copy>
+    > ```
+    > And select all defaults. Then, try running the command again.
+
+8. We need the public key in our notes, so keep the result of the content of the following command in your notes.
+
+    ```
+    <copy>cat ~/.ssh/id_rsa.pub</copy>
+    ```
+
+    ![Paste Public SSH Key](images/paste-public-ssh-key.png)
+
+9. You can leave `riotgames_api_key` as it is. We are not using the API key for this specific workshop.
+
+10. Save the file in the Code Editor.
     ![Code Editor Save](images/code-editor-save.png)
 
 
@@ -146,12 +177,24 @@ We now need to load our notebook into our environment.
 
     ![open terminal](./images/open_terminal.png)
 
-2. Then, we re-clone the repository and install required Python dependencies:
+2. Then, we re-clone the repository:
 
     ```
     <copy>
     git clone --branch livelabs https://github.com/oracle-devrel/leagueoflegends-optimizer.git
+    </copy>
+    ```
+
+3. Install the conda environment
+    ```
+    <copy>
     conda install -y python=3.8
+    </copy>
+    ```
+    
+4. Install the dependencies
+    ```
+    <copy>
     pip install -r leagueoflegends-optimizer/requirements_nn.txt
     </copy>
     ```
@@ -177,7 +220,7 @@ wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPITlcIlqhE3VuDjIxeX
 ![unzip result](./images/unzip_result.png)
 
 
-## Task 6: Accessing our Notebooks
+## Task 7: Accessing our Notebooks
 
 We should now see the repository / files in our file explorer:
 
@@ -196,4 +239,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director
-* **Last Updated By/Date** - October 3rd, 2022
+* **Last Updated By/Date** - October 6th, 2022
