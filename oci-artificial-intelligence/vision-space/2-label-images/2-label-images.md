@@ -71,6 +71,7 @@ The images to be labeled have already been staged in an object storage bucket in
 Now that you have a dataset created, you'll proceed with labeling those images.
 
 1. On the page showing your active dataset, the data record view is listed by default. This is a list of all the image files in the dataset. (There is also a *Gallery view* that displays the files as images.) **Click the top file name** to open it.
+    >**Note:** You can label the images in any order.
 
     ![Start labeling images](./images/start-labeling.png)
 
