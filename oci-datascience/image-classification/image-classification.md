@@ -58,8 +58,7 @@ This lab assumes that you have:
     cd /home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1
     mkdir demo
     cd demo 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/PvQLld5XzyJkAjW3DdvR7nLliOv4g8MB6gz2MEmRjkQLZdn1P9wOkNnUozAkPSUe/n/bigdatadatasciencelarge/b/hosted-datascience-docs/o/Cloudworld22hol/xray_diagnostics_pneumonia/xray_diagnostics_hol.zip
-    unzip xray_diagnostics_hol.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/1WQi6Uy62t-z1EcgFBTQf7QusdKn9xImkI8c1q7XYjjT1DMVqllFx7QX_mnaXsvl/n/bigdatadatasciencelarge/b/hosted-datascience-docs/o/Cloudworld22hol/xray_diagnostics_pneumonia/xray_diagnostics_hol.zip
     ```
 2.  Navigate to the **xray\_diagnostics\_hol** folder
 
