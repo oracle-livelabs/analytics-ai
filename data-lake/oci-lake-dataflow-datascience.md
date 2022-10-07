@@ -2,6 +2,9 @@
 
 Here we will work with OCI Lake which is a new service which service provides a unified access control of both structured and unstructured data in Data Lake. Using the service, customers can easily ingest, secure, and govern data in their Data Lake. The service allows customer to create logical schemas, tables, and views on top of Object Storage and those entities can be access via other OCI service such as ADW, Big Data Service, Data Flow and Data Science Notebook while honoring the defined access control in OCI Lake service. 
 
+### Safe harbor statement
+The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, timing, and pricing of any features or functionality described for Oracle's products may change and remains at the sole discretion of Oracle Corporation.
+
 Estimated Time: 15 minutes
 
 ### About Product
@@ -160,7 +163,9 @@ For the Application configuration section, set the parameters as shown below. En
 For Arguments you can copy paste with modification the following string. 
 
 ```
+<copy>
 readFromTable1FilterAndWriteToTable2 <YourUniqueDBName> <ExternalTableYouCreatedEarlier> <YourUniqueDBName> <NewUniqueTableName>
+</copy>
 ```
 
 For example, 
@@ -354,7 +359,9 @@ This will open a bash terminal which we will use to do the installation of packa
 First copy paste the following command on the terminal and press enter to execute. 
 
 ```
+<copy>
 echo|odsc conda install -s pyspark30_p37_cpu_v5
+</copy>
 ```
 
 This will download the download and install conda pack for pyspark.  ![Conda Install](./images/lake-dsci-pyspark-start.png " ")
@@ -368,7 +375,9 @@ Next, we will activate this package.
 First copy paste the following command on the terminal and press enter to execute.  This will happen immediately.
 
 ```
+<copy>
 conda activate /home/datascience/conda/pyspark30_p37_cpu_v5
+</copy>
 ```
 
 ![Conda Activate](./images/lake-dsci-conda-activate.png " ")
@@ -382,7 +391,9 @@ Next we will install sparkmagic. Copy paste the following command on the termina
 
 
 ```
+<copy>
 pip install https://objectstorage.us-ashburn-1.oraclecloud.com/p/xmPutsVak8sVl2B0D0Aw8v0e8Wnq1OgZjQ0z5aSx5QYeY4IJ9bwd8Q4k977JwQ6Y/n/ociodscdev/b/ads_preview_sdk/o/DataFlow/sparkmagic-1.0_ds_integ_la_common.6.d4a7b580da0-py3-none-any.whl --upgrade
+<\copy>
 ```
 
 This will take a couple of seconds and result in successful installation as shown below.
@@ -408,9 +419,11 @@ In the first cell, copy paste and run these commands. This will import the ADS l
 This will also load the sparkmagic extension required to connect with Data Flow.  
 
 ```
+<copy>
 import ads
 ads.set_auth("resource_principal")
 %load_ext sparkmagic.df_magics
+</copy>
 ```
 
 You can ignore the warning.
@@ -428,7 +441,9 @@ Copy the following command and replace these parameters
 You don't need to change the lakehouseId.
 
 ```
+<copy>
 create_session -l python -c '{"compartmentId":"YourCompartmentOCID","displayName":"YourUniquenameForIdentification","sparkVersion":"3.2.1","driverShape":"VM.Standard2.1","executorShape":"VM.Standard2.1","numExecutors":1, "lakehouseId": "ocid1.lakehouse.oc1.iad.amaaaaaaetlj22iatvcmtt2agibixejwhhdhn7jblpahzdlqg55fii2qzwda"}'
+</copy>
 ```
 
 This will create a Data Flow cluster in the background and will connect to that cluster for queries. This will take about 5 minutes. Please be patient. 
@@ -444,8 +459,10 @@ This will create a Data Flow cluster in the background and will connect to that 
 Now the session is ready for interactive queries. Let's run a query again. Copy paste the following and replace the placeholders with your unique database name and tables you created in earlier steps.  
 
 ```
+<copy>
 %%spark
 sqlContext.sql("select count(*) from <YourUniqueDBName>.<YourUniqueTableName>").show()
+</copy>
 ```
 
 This should show you the number of rows in the table. 
@@ -455,8 +472,10 @@ This should show you the number of rows in the table.
 Let's run a query with some actual data selection. Let's say we want to see all the transactions related to movieid 16219. 
 
 ```
+<copy>
 %%spark
 sqlContext.sql("select * from <YourUniqueDBName>.<YourUniqueTableName> where movieid = '16219'").show()
+</copy>
 ```
 
 ![](./images/lake-dsci-nb-select2.png " ")
@@ -468,7 +487,9 @@ This will show 20 rows of transactions.
 Now we will stop this interactive session. Copy past the following command and run it. Once you run this command, you cannot execute any more queries, as expected. 
 
 ```
+<copy>
 %stop_session
+</copy>
 ```
 
 ![Stop Session](./images/lake-dsci-nb-stop-session.png)
