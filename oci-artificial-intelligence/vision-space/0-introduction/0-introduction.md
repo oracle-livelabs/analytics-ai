@@ -45,9 +45,11 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
     ![Start](./images/ll-start.png)
 
 1. Click the green button labeled **Run on LiveLabs Sandbox**. Login with your Oracle account if prompted. Create an Oracle account if you don't already have one.
+    
     ![Click green button](./images/ll-green-button.png)
 
 1. Complete the fields in the reservation form
+    
     ![Reserve workshop](./images/ll-reserve-workshop.png)
 
     a. Confirm your correct **timezone** is set.
