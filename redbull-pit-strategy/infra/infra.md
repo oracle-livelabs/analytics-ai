@@ -143,21 +143,20 @@ Having just created our OCI Data Science environment, we need to install the nec
 
 
 
-
 ## Task 5: Setting up Data Science Environment
 
-We now need to load our notebook into our environment. For that, we have two options:
-1. **Option 1 (Recommended)**: Opening a **Terminal** inside the _'Other'_ section the console and re-downloading the repository again:
+We now need to load our notebook into our environment.
+1. Opening a **Terminal** inside the _'Other'_ section the console and re-downloading the repository again:
 
     ![open terminal](./images/open_terminal.png)
 
-    Then, we re-clone the repository using this command:
+2. Then, we re-clone the repository:
 
     ```
     <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy --branch dev</copy>
     ```
 
-    Then, executing the following command, which will setup an ODCS conda environment.
+3. Install the conda environment
 
     ```
     <copy>odsc conda create -n myconda</copy>
@@ -165,24 +164,33 @@ We now need to load our notebook into our environment. For that, we have two opt
 
     ![proceed](./images/proceed.png)
 
-    Finally, execute these commands to install required Python dependencies:
+4. Activate the newly-created conda environment:
 
     ```
     <copy>
     conda activate /home/datascience/conda/mycondav1_0
+    </copy>
+    ```
+
+5. Install Python 3.8 within the conda environment:
+
+    ```
+    <copy>
     conda install -y python=3.8
+    </copy>
+    ```
+
+6. Install Python dependencies:
+
+    ```
+    <copy>
     pip install -r redbull-pit-strategy/requirements.txt
     </copy>
     ```
 
-    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked.
+> Note: make sure to accept prompts by typing 'y' as in 'Yes' when asked.
 
-    After this command, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
-
-    
-2. **Option 2**: Using the upload button to transfer the [repository's contents](https://github.com/oracle-devrel/redbull-pit-strategy/tree/dev) from our own computer locally, we use the upload button to transfer the files:
-
-    ![upload](./images/upload.jpg)
+After these commands, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
 
 
 ## Task 6: Accessing our Notebooks

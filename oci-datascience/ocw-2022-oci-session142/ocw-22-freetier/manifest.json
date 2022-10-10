@@ -13,12 +13,7 @@
         },
         
         {
-            "title": "Lab 1: Create SSH Key",
-            "description": "Generate SSH Key",
-            "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
-        },
-        {
-            "title": "Lab 2: Leveraging Data Science for Predictive Modeling",
+            "title": "Lab 1: Leveraging Data Science for Predictive Modeling",
             "filename": "./../../ocw-2022-oci-session142/datascience.md"
         },
         {

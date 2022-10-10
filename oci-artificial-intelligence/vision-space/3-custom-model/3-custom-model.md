@@ -34,7 +34,7 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
     b. Enter a name for your project, e.g. **galaxy-detection**.
 
-1. Click the **Create project** button. Wait for the project to become "Active".
+1. Click the **Create project** button. Wait for the project to become "Active". This usually takes less than a minute.
   
 
 
@@ -56,13 +56,11 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
     b. For *Training Data*: select **Choose existing dataset**
 
-    c. For *Data Source*: select **Data Lableing Service**
+    c. For *Data Source*: select **Data Labeling Service**
 
-    d. For *Choose a dataset...*, click **Change compartment**
-    
-    e. Select compartment **vision\_galaxy\_ws\_read\_only**
+    d. Next to *Choose a dataset*, ensure the compartment is your assigned user compartment
 
-    f. When the dataset picklist populates, choose: **dataset-read-only**
+    f. In the dataset picklist, choose: **dl-lab-dataset**
 
 1. Click **Next**
 
