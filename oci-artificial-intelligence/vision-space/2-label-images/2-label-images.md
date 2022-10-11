@@ -7,7 +7,11 @@ In this lab, you will get some experience with labeling images. You will label s
 
 *Estimated Time*: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Use OCI Data Labeling to label images](videohub:1_u3l9fxrf)
+
 ### Objectives
+
 - Create an OCI Data Labeling dataset containing images to be labeled
 - Label the images in the dataset
 
