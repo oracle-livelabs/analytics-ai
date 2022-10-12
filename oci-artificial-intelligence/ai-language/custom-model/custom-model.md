@@ -18,34 +18,37 @@ In this lab, you will:
 
 ## **Policy Setup**
 
-Before you start using OCI Language, your tenancy administrator should set up the following policies by following below steps:
+Before you start using OCI Language, OCI policies should be setup for allowing you to access OCI Language Services. Follow these steps to configure required policies.
 
-1. Navigate to Policies
+### 1. Navigate to Policies
 
-    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
-        ![](./images/policy1.png " ")
-
-
-2. Create Policy
-
-    Click Create Policy
-        ![](./images/policy2.png " ")
+Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+    ![OCI Hamburger menu](./images/policy1.png " ")
 
 
-3. Create a new policy with the following statements:
+### 2. Create Policy
 
-    If you want to allow all the users in your tenancy to use vision service, create a new policy with the below statement:
+Click Create Policy
+    ![OCI Create policy](./images/policy2.png " ")
+
+
+### 3. Create a new policy with the following statements:
+
+If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
     ```
-    <copy>allow any-user to use ai-service-vision-family in tenancy</copy>
+
+    <copy>allow any-user to use ai-service-language-family in tenancy</copy>
     ```
-    ![](./images/policy3.png " ")
+
+    ![OCI Create policy screen](./images/policy3.png " ")
 
 
-    If you want to limit access to a user group, create a new policy with the below statement:
+If you want to limit access to a user group, create a new policy with the below statement:
     ```
-    <copy>allow group <group-name> to use ai-service-vision-family in tenancy</copy>
+
+    <copy>allow group <group-name> to use ai-service-language-family in tenancy</copy>
     ```
-    ![](./images/policy4.png " ")
+    ![OCI create policy screen](./images/policy4.png " ")
 
 ## **Task 1:** Create a Project
 
