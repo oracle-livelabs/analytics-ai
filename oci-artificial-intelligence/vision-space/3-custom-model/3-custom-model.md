@@ -5,7 +5,11 @@ In this lab, you will use a pre-labeled set of images to train a custom object d
 
 *Estimated Time*: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create a Custom AI Vision Model](videohub:1_kuwlsydy)
+
 ### Objectives
+
 - Create a custom object detection model using the OCI Vision AI service
 
 ### Prerequisites
