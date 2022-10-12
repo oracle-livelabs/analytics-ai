@@ -110,7 +110,7 @@ allow group data-lakehouse-admin to use object-family in compartment lakehouse1
 
 ## Task 2: Create Object Storage buckets
 
-Creating Object Storage Buckets allows for various types of data to be stored. For this lab, we are using a couple of buckets. Two are created for our data flow process which includes a place for the data and another one for the logs. Also we will create a moviestream bucket for placing the JSON file in which we will read later.
+Creating Object Storage Buckets allows for various types of data to be stored. For this lab, we are using a couple of buckets. Two are created for our data flow process which includes a place for the data and another one for the logs. 
 
 From the Home Menu click on Storage and then click on Buckets.
 
@@ -124,7 +124,7 @@ From the Home Menu click on Storage and then click on Buckets.
     
    ![Create Storage Bucket](./images/create_bucket2.png " ")
 
-The dataflow buckets are for the processing of the data and logs and the moviestream-bucket will allow you to keep copies of the data for loading and processing.
+The dataflow buckets are for the processing of the data and logs.
 
 
 ## Task 3: Create ADW
