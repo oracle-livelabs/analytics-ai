@@ -18,6 +18,11 @@
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
+            "title": "Lab 2: Create a custom model through the OCI Console",
+            "description": "Learn how to create a custom model using the oci console",
+            "filename": "../../custom-model/custom-model.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
