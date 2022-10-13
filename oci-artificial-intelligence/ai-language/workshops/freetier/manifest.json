@@ -18,6 +18,11 @@
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
+            "title": "Lab 3: Translating Text with Language Translate Model",
+            "description": "Learn how to use language translate to translate text",
+            "filename": "../../translation/translation.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
