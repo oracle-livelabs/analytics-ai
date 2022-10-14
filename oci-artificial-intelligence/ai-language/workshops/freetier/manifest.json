@@ -18,7 +18,7 @@
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
-            "title": "Lab 2: Create a custom model through the OCI Console",
+            "title": "Lab 2: Creating and training a custom model",
             "description": "Learn how to create a custom model using the oci console",
             "filename": "../../custom-model/custom-model.md"
         },
