@@ -70,15 +70,19 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 
 A Project is a way to organize multiple models in the same workspace. It is the first step to start.
 
-1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services. Clicking the Language Service Option will navigate one to the Language Service Console. Once here, select Projects under "Custom models" header on the left hand side of the console.
+1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services.
+
+    ![OCI Language Screen](./images/navigation-to-ailanguage.png " ")
+
+2. Select Projects under "Custom models" header on the left hand side of the console.
 
     ![](./images/project-list.png " ")
 
-2. The Create Project button navigates User to a form where they can specify the compartment in which to create a Language Project.
+3. The Create Project button navigates User to a form where they can specify the compartment in which to create a Language Project.
 
     ![](./images/create-project.png " ")
 
-3. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
+4. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
 
 ## **Task 2:** Train and Analyze on Custom NER Model
 
@@ -395,3 +399,14 @@ Congratulations! </br>
 In this lab you have learnt how to create and train custom NER and TXTC models and analyze text on trained models through language endpoing using OCI Console and Python SDK.
 
 [Proceed to the next section](#next).
+
+## Acknowledgements
+
+**Authors**
+  * Raja Pratap Kondamari - Product Manager, OCI Language Service
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Sahil Kalra - Oracle AI OCI Language Services
+
+**Last Updated By/Date**
+* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022

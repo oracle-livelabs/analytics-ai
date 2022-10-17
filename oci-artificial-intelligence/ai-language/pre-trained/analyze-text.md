@@ -39,11 +39,10 @@ Click Create Policy
 
 If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
     ```
-
     <copy>allow any-user to use ai-service-language-family in tenancy</copy>
     ```
 
-    ![OCI Create policy screen](./images/policy3.png " ")
+  ![OCI Create policy screen](./images/policy3.png " ")
 
 
 If you want to limit access to a user group, create a new policy with the below statement:
@@ -51,7 +50,7 @@ If you want to limit access to a user group, create a new policy with the below 
 
     <copy>allow group <group-name> to use ai-service-language-family in tenancy</copy>
     ```
-    ![OCI create policy screen](./images/policy4.png " ")
+  ![OCI create policy screen](./images/policy4.png " ")
 
 
 
@@ -552,4 +551,15 @@ Congratulations! </br>
 In this lab you have learnt how to setup required policies for Language, using different ways such as OCI Console, SDK and REST APIs to to analyze text.
 
 [Proceed to the next section](#next)
+
+## Acknowledgements
+
+**Authors**
+  * Raja Pratap Kondamari - Product Manager, OCI Language Service
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Sahil Kalra - Oracle AI OCI Language Services
+
+**Last Updated By/Date**
+* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022
 
