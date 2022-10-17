@@ -8,6 +8,9 @@ In this lab, you’ll learn how to create your own deep learning model to diagno
 
 *Estimated Time*: 60 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Image Classification Model](videohub:1_awn9ur86)
+
 ### Objectives
 
 In this lab, you will:
