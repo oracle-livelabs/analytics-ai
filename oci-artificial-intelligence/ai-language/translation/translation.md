@@ -1,4 +1,4 @@
-# Lab 1: Translating Text with the Language Translate Model
+# Lab 3: Translating Text with the Language Translate Model
 
 ## Introduction
 
@@ -11,16 +11,16 @@ In this session will introduce you to OCI Language Translation and also help you
 
 In this lab, you will:
 
-- Understand a high level overview of the OCI Language Translation.
+- Use OCI Console to perform text translation.
 - Show how to use OCI Console to translate text.
 
 ### Prerequisites
 
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Tenancy is whitelisted to be able to use OCI Language
+- Language policies are configured as per [Lab 1](?lab=analyze-text#PolicySetup)
 
 
-## **TASK 1:** Translate Text through OCI Console
+## **TASK 1:** Translate Text using OCI Console
 
 
 1. **Navigate to OCI Language Translation**: 
@@ -33,9 +33,9 @@ In this lab, you will:
 
     ![OCI Language Screen](./images/navigate-to-translation.png " ")
 
-2. **Enter Text:** 
+2. **Specify text details:** 
 
-    Select source lanaguge and enter your text into the text box to translate.
+    Specify the text, source language and target language.
     
     ![OCI Language Text Translation Screen](./images/enter-text.png " ")
 
@@ -54,7 +54,7 @@ In this lab, you will:
 
 3. **Click Translate:** 
 
-    You can translate text selecting the target language from the drop down menu and by clicking Translate button.
+    Click on Translate button to see translated text.
     
     ![OCI Language Text Analytics - Translate button](./images/translate-button.png " ")
 
@@ -67,7 +67,9 @@ In this lab, you will:
 
 ## **TASK 2:** Translate Text with Python SDK
 
-For setup, please refer Lab 1
+Please refer to the sample code below and update required variables to translate text using Python SDK
+
+Pre-requisites: For using Python SDK, please follow steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
 
 Follow below steps to run Python SDK:
 
@@ -77,8 +79,7 @@ Follow below steps to run Python SDK:
 <copy>
 import oci
 
-ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file(),
-                                                    service_endpoint="https://language.aiservice-preprod.us-ashburn-1.oci.oraclecloud.com")
+ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file())
 
 key1 = "doc1"
 key2 = "doc2"
@@ -89,7 +90,7 @@ doc1 = oci.ai_language.models.TextDocument(key=key1, text=text1, language_code="
 doc2 = oci.ai_language.models.TextDocument(key=key2, text=text2, language_code="en")
 documents = [doc1, doc2]
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaaih4krf4od5g2ym7pffbp6feof3rx64522aoxxvv3iuw3tam6fvea" #TODO Provide your compartmentId here
+compartment_id = "<COMPARTMENT_ID>" #TODO Provide your compartmentId here
 
 batch_language_translation_details = oci.ai_language.models.BatchLanguageTranslationDetails(documents=documents, compartment_id=compartment_id, target_language_code="de")
 output = ai_client.batch_language_translation(batch_language_translation_details)
@@ -98,16 +99,6 @@ print(output.data)
 ```
 
 Download [code](./files/translationPythonSDK.py) file and save it your directory.
-
-#### 2. Execute the Code.
-Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
-
-```
-<copy>python translationPythonSDK.py</copy>
-```
-#### 3. Result
-You will see the result as below
-    ![](./images/translationResult.png " ")
 
 ### Learn More
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)

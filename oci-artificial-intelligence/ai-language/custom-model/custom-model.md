@@ -1,4 +1,4 @@
-# Create a custom model through the console
+# Creating and Training a Custom Language Model
 
 ## Introduction
 In this session, we will show you how to create a language project, select your training data, train a custom model, create an endpoint and analyze text through endpoint.
@@ -10,7 +10,7 @@ In this session, we will show you how to create a language project, select your 
 In this lab, you will:
 - Learn how to create language project.
 - Understand the schema for training data.
-- Learn how to train a named entity recognition model or text classification model through the OCI console and Python SDK.
+- Learn how to train a custom NER and custom Text Classification model
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
@@ -20,44 +20,50 @@ In this lab, you will:
 
 Before you start using OCI Language, OCI policies should be setup for allowing you to access OCI Language Services. Follow these steps to configure required policies.
 
-Please refer Lab 1 to setup Language policies and add this additional policy for accessing Custom Models.
+### 1. Policies required in [Lab 1](?lab=analyze-text#PolicySetup) are required
 
-### 1. Navigate to Dynamic Groups
+### 2. Policies required for allowing access to Object Storage:
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Dynamic Groups item under Identity.
- ![OCI Hamburger menu](./images/dynamicgroup1.png " ")
+-   #### 1. Navigate to Dynamic Groups
 
-### 2. Create Dynamic Group
+    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Dynamic Groups item under Identity.
+    
+    ![OCI Hamburger menu](./images/dynamicgroup1.png " ")
 
-Click Create Dynamic Group
+-   #### 2. Create Dynamic Group
 
-![OCI Create policy](./images/dynamicgroup2.png " ")
-```
-<copy>all {resource.type='ailanguagemodel'}</copy>
-```
+    Click Create Dynamic Group
+
+    ![OCI Create policy](./images/dynamicgroup2.png " ")
+    ```
+    <copy>all {resource.type='ailanguagemodel'}</copy>
+    ```
 
 
-### 3. Navigate to Policies
+-   #### 3. Navigate to Policies
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
     ![OCI Hamburger menu](./images/policy1.png " ")
 
 
-### 4. Create Policy
+-   #### 4. Create Policy
 
-Click Create Policy
-    ![OCI Create policy](./images/policy2.png " ")
+    Click Create Policy
+        ![OCI Create policy](./images/policy2.png " ")
 
 
-### 5. Create a new policy with the following statements:
+-   #### 5. Create a new policy with the following statements:
 
-If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
+
+    To allow dynamic group created above to access object storage in your tenancy, create a new policy with the below statement:
     ```
-
     <copy>Allow dynamic-group language-service-dyn-grp-for-custom-models to manage objects in tenancy</copy>
     ```
 
     ![OCI Create policy screen](./images/policy3.png " ")
+
+
+    [About Language Policies](https://docs.oracle.com/en-us/iaas/language/using/overview.htm#policies)
 
 
 ## **Task 1:** Create a Project
@@ -74,63 +80,87 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 3. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
 
-## **Task 2:** Create and Train Custom NER Model
+## **Task 2:** Train and Analyze on Custom NER Model
 
-1. **Navigate to Models**: Under models, click on create and train model.
+- ### 1. **Create and Train Custom NER Model**
 
-2. **Choose model type**: Choose  Named entity recognition for model type.
+    1. **Navigate to Models**: Under models, click on create and train model.
 
-    ![](./images/ner-model-type.png " ")
+    2. **Choose model type**: Choose  Named entity recognition for model type.
 
-3. **Select training data**: Choose existing labeled data from Object Storate or Data Labeling service or you can choose to create new dataset by clicking Data science labeling link, which will drive you to OCI Data Labeling service, where you can easily add labels.
+        ![](./images/ner-model-type.png " ")
 
-     ![](./images/ner-training-data.png " ")
+    3. **Select training data**: 
+        - 1. Download Custom NER offerletter dataset from this [link](https://oradocs.oracle.com/documents/link/LF47C825FFF2D18E51185EF47A27A81AC346CA04ECE4/folder/FF88E8262D137CD41F66D4DD5E97C8665B175150E2AF/_CNER_Offerletter). 
+        
+        - 2. Upload downloaded data to object storage:
+            - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+                 ![](./images/object-storage-navigation.png " ")
+            - Create bucket with default selections and upload Custom NER offerletter data.
+                 ![](./images/upload-data.png " ")
 
-4. **Model details**: In the "Model details" step, you will name your model, add a description of it and optionally add tags.
+        - 3. Choose existing labeled dataset and Object Storage under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
 
-    ![](./images/add-model-details.png " ")
+            ![](./images/ner-training-data.png " ")
 
-5. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
+    4. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
 
-    ![](./images/ner-review.png " ")
+        ![](./images/ner-review.png " ")
 
-## **Task 3:** Create and Train Custom TXTC Model
+- ### 2. **Create an Endpoint and Analyze through endpoint**
 
-1. **Navigate to Models**: Under models, click on create and train model.
-
-2. **Choose model type**: Choose Text classification for model type. Select Single label or multi label as classification model type depending on your labeled data.
-
-    ![](./images/txtc-model-type.png " ")
-
-3. **Select training data**: Choose existing labeled data from Object Storate or Data Labeling service or you can choose to create new dataset by clicking Data science labeling link, which will drive you to OCI Data Labeling service, where you can easily add labels.
-
-     ![](./images/txtc-training-data.png " ")
-
-4. **Model details**: In the "Model details" step, you will name your model, add a description of it and optionally add tags.
-
-    ![](./images/add-model-details.png " ")
-
-5. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
-
-    ![](./images/txtc-review.png " ")
-
-## **Task 4:** Create an Endpoint and Analyze through endpoint.
-
-1. Under Model endpoints, click on create model endpoint
-2. Specify the name of the endpoint (e.g., ticket_classification_endpoint1)
+    1. Under Model endpoints, click on create model endpoint
+    2. Specify the name of the endpoint
     
-    ![](./images/create-model-endpoint.png " ")
+        ![](./images/create-model-endpoint.png " ")
 
-3. Once endpoint is active, Under Resources, click on Analyze link.
-4. Enter text, and click on Analyze to see the result
+    3. Once endpoint is active, Under Resources, click on Analyze link.
+    4. Enter text, and click on Analyze to see the result
 
-    ![](./images/analyze.png " ")
+        ![](./images/analyze.png " ")
 
-## **Task 5:** Create Custom Models and analyzing through endpoint with Python SDK.
+## **Task 3:** Train and Analyze on Custom TXTC Model
 
-For setup, please refer Lab 1
+ - ### 1. **Create and Train Custom TXTC Model**
 
-[Proceed to the next section](#next).
+    1. **Navigate to Models**: Under models, click on create and train model.
+
+    2. **Choose model type**: Choose Text classification for model type. Select Single label or multi label as classification model type depending on your labeled data.
+
+        ![](./images/txtc-model-type.png " ")
+
+    3. **Select training data**: 
+        - 1. Download Custom TXTC ticket dataset from this [link](https://oradocs.oracle.com/documents/link/LFF3EB38D072D0CF92D7CB6889D9183A8A623137D96F/folder/FA8283A1191E637C61C447A5EA6B982C6232A5855278/_CTXTC_TicketData). 
+        
+        - 2. Upload downloaded data to object storage:
+            - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+                 ![](./images/object-storage-navigation.png " ")
+            - Create bucket with default selections and upload Custom NER offerletter data.
+                 ![](./images/upload-data.png " ")
+
+        - 3. Select bucket created in preview step and choose TicketData\_train.csv in date file drop down.
+                 ![](./images/txtc-training-data.png " ")
+
+    4. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
+
+        ![](./images/txtc-review.png " ")
+
+ - ### 2. **Create an Endpoint and Analyze through endpoint**
+
+    1. Under Model endpoints, click on create model endpoint
+    2. Specify the name of the endpoint
+    
+        ![](./images/create-model-endpoint.png " ")
+
+    3. Once endpoint is active, Under Resources, click on Analyze link.
+    4. Enter text, and click on Analyze to see the result
+
+        ![](./images/analyze.png " ")
+
+## **Task 4:** Create Custom Models and analyzing through endpoint with Python SDK.
+
+Pre-requisites: For using Python SDK, please follow steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+
 Follow below steps to run Python SDK:
 
 #### 1. Download Python Code.
@@ -144,7 +174,10 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 config = oci.config.from_file()
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaaih4krf4od5g2ym7pffbp6feof3rx64522aoxxvv3iuw3tam6fvea"  #TODO Provide your compartmentId here
+compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
+bucket_name = "<BUCKET_NAME>" #TODO Specify name of your training data bucket here
+namespace_name = "<NAMESPACE_NAME>" #TODO Specify the namespace here
+object_names = ["<OBJECT_FILE_NAME>"] #TODO Specify name of your training data file
 
 project_name = None #"custom-NER-project"
 model_name = None #"custom-NER-model"
@@ -152,15 +185,13 @@ endpoint_name = None #"custom_NER_endpoint"
 
 #assuming ashburn endpoint.
 # For other regions, use below end points
-endpoint = "https://language.aiservice-preprod.us-ashburn-1.oci.oraclecloud.com"
 #Ashburn: https://language.aiservice.us-ashburn-1.oci.oraclecloud.com
 #Phoenix: https://language.aiservice.us-phoenix-1.oci.oraclecloud.com
 #Frankfurt: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 #London: https://language.aiservice.uk-london-1.oci.oraclecloud.com
 #Mumbai: https://language.aiservice.ap-mumbai-1.oci.oraclecloud.com
-print(f"Instantiating AI Services client with end point: {endpoint}")
 
-ai_client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=endpoint)
+ai_client = oci.ai_language.AIServiceLanguageClient(config)
 
 #create ailanguageproject
 project_details = oci.ai_language.models.CreateProjectDetails(compartment_id=compartment_id,display_name=project_name)
@@ -257,7 +288,10 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 config = oci.config.from_file()
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaaih4krf4od5g2ym7pffbp6feof3rx64522aoxxvv3iuw3tam6fvea"
+compartment_id = "" #TODO Specify your compartmentId here
+bucket_name = "" #TODO Specify name of your training data bucket here
+namespace_name = "" #TODO Specify the namespace here
+object_names = [""] #TODO Specify name of your training data file
 
 project_name = None #"custom-TXTC-project"
 model_name = None #"custom-TXTC-model"
@@ -265,15 +299,13 @@ endpoint_name = None #"custom_TXTC_endpoint"
 
 #assuming ashburn endpoint.
 # For other regions, use below end points
-endpoint = "https://language.aiservice-preprod.us-ashburn-1.oci.oraclecloud.com"
 #Ashburn: https://language.aiservice.us-ashburn-1.oci.oraclecloud.com
 #Phoenix: https://language.aiservice.us-phoenix-1.oci.oraclecloud.com
 #Frankfurt: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 #London: https://language.aiservice.uk-london-1.oci.oraclecloud.com
 #Mumbai: https://language.aiservice.ap-mumbai-1.oci.oraclecloud.com
-print(f"Instantiating AI Services client with end point: {endpoint}")
 
-ai_client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=endpoint)
+ai_client = oci.ai_language.AIServiceLanguageClient(config)
 
 #create ailanguageproject
 project_details = oci.ai_language.models.CreateProjectDetails(compartment_id=compartment_id,display_name=project_name)
@@ -294,7 +326,7 @@ project_status = project.data.lifecycle_state
 print(f"Project status changed from CREATING to {project_status}")
 
 #creating ailanguagemodel
-location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name="idngwwc5ajp5", bucket_name="txtc_csv_datasets", object_names=["physics_chemistry_biology_train.csv"])
+location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name=namespace_name, bucket_name=bucket_name, object_names=object_names)
 # For Text classification, multi-class and multi-labe classification types are supported
 classification_mode = oci.ai_language.models.ClassificationType(classification_mode="MULTI_CLASS")
 model_details = oci.ai_language.models.CreateModelDetails(
@@ -353,22 +385,6 @@ print(txtc_inference_result.data)
 ```
 
 Download [code](./files/customTXTCPythonSDK.py) file and save it your directory.
-
-#### 2. Provide TODO marked details
-Provide your compartmentId and model training data details. These parameters are marked with TODO
-
-#### 3. Execute the Code.
-Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
-
-For Custom NER
-```
-<copy>python customNERPythonSDK.py</copy>
-```
-
-For Custom TXTC
-```
-<copy>python customTXTCPythonSDK.py</copy>
-```
 
 ### Learn More
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)

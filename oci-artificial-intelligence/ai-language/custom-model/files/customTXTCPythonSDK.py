@@ -3,7 +3,10 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 config = oci.config.from_file()
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaaih4krf4od5g2ym7pffbp6feof3rx64522aoxxvv3iuw3tam6fvea"
+compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
+bucket_name = "<BUCKET_NAME>" #TODO Specify name of your training data bucket here
+namespace_name = "<NAMESPACE_NAME>" #TODO Specify the namespace here
+object_names = ["<OBJECT_FILE_NAME>"] #TODO Specify name of your training data file
 
 project_name = None #"custom-TXTC-project"
 model_name = None #"custom-TXTC-model"
@@ -41,7 +44,7 @@ print(f"Project status changed from CREATING to {project_status}")
 
 project_id = "ocid1.ailanguageproject.oc1.iad.amaaaaaac4idruiagbwaof4pxwsji2oftlybzpxtztizxcnpqcuxudvsjiaa"
 #creating ailanguagemodel
-location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name="idngwwc5ajp5", bucket_name="txtc_csv_datasets", object_names=["physics_chemistry_biology_train.csv"])
+location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name=namespace_name, bucket_name=bucket_name, object_names=object_names)
 # For Text classification, multi-class and multi-labe classification types are supported
 classification_mode = oci.ai_language.models.ClassificationType(classification_mode="MULTI_CLASS")
 model_details = oci.ai_language.models.CreateModelDetails(
