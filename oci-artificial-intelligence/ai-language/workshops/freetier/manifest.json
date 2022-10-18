@@ -18,14 +18,19 @@
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
+            "title": "Lab 2: Creating and training custom models",
+            "description": "Learn how to create a custom model using the oci console",
+            "filename": "../../custom-model/custom-model.md"
+        },
+        {
+            "title": "Lab 3: Translating Text using OCI Console and Python SDK",
+            "description": "Learn how to use language translate to translate text",
+            "filename": "../../translation/translation.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
-        },
-        {
-            "title": "Acknowledgements",
-            "description": "Contributors of this live lab.",
-            "filename": "../../acknowledgements/ack.md"
         }
     ]
 }
