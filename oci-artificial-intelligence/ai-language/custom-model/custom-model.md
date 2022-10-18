@@ -133,7 +133,7 @@ A Project is a way to organize multiple models in the same workspace. It is the 
         ![](./images/txtc-model-type.png " ")
 
     3. **Select training data**: 
-        1. Download Custom TXTC ticket dataset from this [link](./files/CTXTC.zip). 
+        1. Download Custom TXTC ticket dataset from this [link](./files/TicketData_train.csv.zip). 
         
         2. Upload downloaded data to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
