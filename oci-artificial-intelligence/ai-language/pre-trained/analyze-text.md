@@ -241,7 +241,7 @@ key2 = "doc2"
 text1 = "The Indy Autonomous Challenge is the worlds first head-to-head, high speed autonomous race taking place at the Indianapolis Motor Speedway"
 text2 = "Using high-performance GPU systems in the Oracle Cloud, OCI will be the cloud engine for the artificial intelligence models that drive the MIT Driverless cars competing in the Indy Autonomous Challenge."
  
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaaih4krf4od5g2ym7pffbp6feof3rx64522aoxxvv3iuw3tam6fvea"
+compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
  
 #language Detection of Input Documents
 doc1 = oci.ai_language.models.DominantLanguageDocument(key=key1, text=text1)

@@ -42,7 +42,6 @@ project = ai_client.get_project(project_id)
 project_status = project.data.lifecycle_state
 print(f"Project status changed from CREATING to {project_status}")
 
-project_id = "ocid1.ailanguageproject.oc1.iad.amaaaaaac4idruiagbwaof4pxwsji2oftlybzpxtztizxcnpqcuxudvsjiaa"
 #creating ailanguagemodel
 location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name=namespace_name, bucket_name=bucket_name, object_names=object_names)
 # For Text classification, multi-class and multi-labe classification types are supported
@@ -92,7 +91,6 @@ while (end_point_details.data.lifecycle_state == "CREATING"):
 
 print(f"End point status changed from CREATING to {end_point_details.data.lifecycle_state}")
 
-endpoint_id = "ocid1.ailanguageendpoint.oc1.iad.amaaaaaac4idruia4kaj5zszfsaqdbqjisdvtnzvl3445ljzjkuj3p3ltnaq"
 text_to_analyze = "\n\nDear Bryan Hernandez,\n \nGilmore  Kennedy and Lloyd is delighted to offer you the position of Chief Strategy Officer with an anticipated start date of 06/16/17, contingent upon background check, drug screening and work permit verification. \n \nYou will report directly to Jeffrey Zamora at Unit 6709 Box 6713,DPO AP 11187. Working hours are decided based on your assigned business unit. \n \nThe starting salary for this position is $216053 per annum. Payment is on a monthly basis by direct deposit done on the last working day of the moth. \n \nGilmore  Kennedy and Lloyd offers a comprehensive benefits program, which includes medical insurance, 401(k), paid time off and gym facilities at work location. \n \nYour employment with Gilmore  Kennedy and Lloyd will be on an at-will basis, which means you and the company are free to terminate employment at any time, with or without cause or advance notice. This letter is not a contract indicating employment terms or duration.\n \nPlease confirm your acceptance of this offer by signing and returning this letter before 7 days from 06/16/17. \n \nSincerely,\n \nCarlos Banks\n(Country Leader, Human Resources)"
 
 print(f"Analyzing the text: {text_to_analyze}")
