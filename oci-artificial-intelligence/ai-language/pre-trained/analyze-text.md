@@ -17,7 +17,6 @@ In this lab, you will:
 ### Prerequisites
 
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Tenancy is whitelisted to be able to use OCI Language
 
 ## **Policy Setup**
 
@@ -142,7 +141,6 @@ You can invoke OCI Language capabilities through the OCI SDKs. This section will
 
 ### **2. Setup API Signing Key and Config File**
 
-*Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials.*
 
 Mac OS / Linux:
 
@@ -241,7 +239,7 @@ key2 = "doc2"
 text1 = "The Indy Autonomous Challenge is the worlds first head-to-head, high speed autonomous race taking place at the Indianapolis Motor Speedway"
 text2 = "Using high-performance GPU systems in the Oracle Cloud, OCI will be the cloud engine for the artificial intelligence models that drive the MIT Driverless cars competing in the Indy Autonomous Challenge."
  
-compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
+compartment_id = <COMPARTMENT_ID> #TODO Specify your compartmentId here
  
 #language Detection of Input Documents
 doc1 = oci.ai_language.models.DominantLanguageDocument(key=key1, text=text1)
@@ -260,7 +258,7 @@ batch_detect_language_text_classification_details = oci.ai_language.models.Batch
 output = ai_client.batch_detect_language_text_classification(batch_detect_language_text_classification_details)
 print(output.data)  
  
-#Named Entity Recoginiton of Input Documents
+#Named Entity Recognition of Input Documents
 batch_detect_language_entities_details = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_entities(batch_detect_language_entities_details)
 print(output.data)  

@@ -26,7 +26,7 @@ batch_detect_language_text_classification_details = oci.ai_language.models.Batch
 output = ai_client.batch_detect_language_text_classification(batch_detect_language_text_classification_details)
 print(output.data)  
  
-#Named Entity Recoginiton of Input Documents
+#Named Entity Recognition of Input Documents
 batch_detect_language_entities_details = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_entities(batch_detect_language_entities_details)
 print(output.data)  

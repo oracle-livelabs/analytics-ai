@@ -1,16 +1,16 @@
 # Lab 2: Creating and training Custom Models
 
 ## Introduction
-In this session, we will show you how to create a language project, select your training data, train a custom model, create an endpoint and analyze text through endpoint.
+In this session, you will learn how to create projects, train a custom model and analyze text through endpoints.
 
 *Estimated Time*: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-- Learn how to create language project.
+- Learn how to create project.
 - Learn how to train a custom NER and custom Text Classification model.
-- Learn how to create language endpoint and analyze text through it.
+- Learn how to create endpoint and analyze text using OCI console and Python SDK
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
@@ -18,11 +18,11 @@ In this lab, you will:
 
 ## **Policy Setup**
 
-Before you start using OCI Language, OCI policies should be setup for allowing you to access OCI Language Services. Follow these steps to configure required policies.
+Follow these steps to configure required policies.
 
-### 1. Setup Policies required in [Lab 1](?lab=analyze-text#PolicySetup) for using Language Service API
+### 1. Setup policies required in [Lab 1](?lab=analyze-text#PolicySetup) for using Language Service API
 
-### 2. Policies to allow custom model training jobs to access  OCI Object Storage:
+### 2. Setup policies to allow model training jobs to access OCI Object Storage:
 
 -   #### 1. Navigate to Dynamic Groups
 
@@ -67,7 +67,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 
 ## **Task 1:** Create a Project
 
-A Project is a way to organize multiple models in the same workspace. It is the first step to start.
+A Project is a way to organize multiple models in the same workspace. Follow below steps to create a project.
 
 1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services.
 
@@ -83,89 +83,94 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 4. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
 
-## **Task 2:** Create Custom NER Model for analyzing text
+## **Task 2:** Create Custom NER Model
 
 1. **Create and Train Custom NER Model**
 
-    1. **Navigate to Models**: Under models, click on create and train model.
-
-    2. **Choose model type**: Choose  Named entity recognition for model type.
-
-        ![](./images/ner-model-type.png " ")
-
-    3. **Select training data**: 
-        1. Download Custom NER offerletter dataset from this [link](./files/CNER.zip). 
-        
-        2. Upload downloaded data to object storage:
+    1. Upload the training data to Object Storage:
+        - Download Custom NER offerletter dataset from this [link](./files/CNER.zip).
+        - Extract the zip file contents into a directory
+        - Upload the training dataset files to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                  ![](./images/object-storage-navigation.png " ")
-            - Create bucket with default selections and upload Custom NER offerletter data.
+            - Create bucket and upload Custom NER offerletter data extracted above.
                  ![](./images/upload-data.png " ")
 
-        3. Choose existing labeled dataset and Object Storage under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
+    2. **Navigate to Project**: Navigate to the project you created in Task 1.
+    3. **Navigate to Models**: Under models, click on create and train model.
+    4. **Choose model type**: Choose  Named entity recognition for model type.
 
-            ![](./images/ner-training-data.png " ")
+        ![](./images/ner-model-type.png " ")
+    5. **Specify training dataset details**: *Choose existing labeled dataset* and *Object Storage* under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
 
-    4. **Review and Submit**: Verify that all of your information is correct and go back if you want to make adjustments. Click "Create and train" and this will kick of the process. You can then check on the status of your model and wait until training is complete and Model is in ACTIVE state.
+        ![](./images/ner-training-data.png " ")
+
+    7. **Specifiy model properties**: Specify model name, compartment details and click Next
+    8. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state.
 
         ![](./images/active-model.png " ")
 
-2. **Create an Endpoint and Analyze through endpoint**
+2. **Create an Endpoint**
 
-    1. Under Model endpoints, click on create model endpoint
-    2. Specify the name of the endpoint
-    
+    1. Ensure the model status is *ACTIVE*
+ ![](./images/active-model.png " ")
+    2. Under Model endpoints, click on create model endpoint
+    3. Specify the name of the endpoint and click on Create
         ![](./images/create-model-endpoint.png " ")
 
-    3. Once endpoint is active, Under Resources, click on Analyze link.
-    4. Enter text, and click on Analyze to see the result
+    4. Wait till the endpoint status changes to *ACTIVE*
+    5. Under Resources, click on *Analyze* link.
+    6. Enter text, and click on Analyze to see the result
 
         ![](./images/analyze.png " ")
 
-## **Task 3:** Create Custom TXTC Model for analyzing text
+## **Task 3:** Create Custom Classification Model
 
-1. **Create and Train Custom TXTC Model**
+1. **Create and Train Custom Classification Model**
 
-    1. **Navigate to Models**: Under models, click on create and train model.
+    1. **Upload the training data to Object Storage**:
+        1. Download and extract the ticket dataset from this [link](./files/TicketData_train.csv.zip).
 
-    2. **Choose model type**: Choose Text classification for model type. Select Single label or multi label as classification model type depending on your labeled data.
+        2. Upload training data to object storage:
+            - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+                 ![](./images/object-storage-navigation.png " ")
+            - Create bucket and upload the extracted data.
+                 ![](./images/upload-data.png " ")
+
+    2. **Navigate to Project**: Navigate to the project you created in Task 1.
+    3. **Navigate to Models**: Under models, click on *Create and train model*.
+    4. **Choose model type**: Choose *Text classification* for model type. Select *Single label* as classification model type
 
         ![](./images/txtc-model-type.png " ")
 
-    3. **Select training data**: 
-        1. Download Custom TXTC ticket dataset from this [link](./files/TicketData_train.csv.zip). 
-        
-        2. Upload downloaded data to object storage:
-            - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
-                 ![](./images/object-storage-navigation.png " ")
-            - Create bucket with default selections and upload Custom NER offerletter data.
-                 ![](./images/upload-data.png " ")
-
-        3. Select bucket created in preview step and choose TicketData\_train.csv in date file drop down.
+    5. Select bucket created in preview step and choose TicketData_train.csv in date file drop down and click on Next
                  ![](./images/txtc-training-data.png " ")
 
-    4. **Review and Submit**: Verify that all of your information is correct and go back if you want to make adjustments. Click "Create and train" and this will kick of the process. You can then check on the status of your model and wait until training is complete and Model is in ACTIVE state.
+    6. **Specify Model properties**: specify the model name and the compartment for creation and click on Next
+    7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state.
 
         ![](./images/active-model.png " ")
 
-2. **Create an Endpoint and Analyze through endpoint**
+2. **Create Endpoint and Analyze text**
 
-    1. Under Model endpoints, click on create model endpoint.
-    2. Select the model to associate and click create model endpoint.
-    
+    1. Wait till the model training completes and status is changed to *ACTIVE*
+   ![](./images/active-model.png " ")
+    1. Under Model endpoints, click on *Create model endpoint*.
+    2. Select the model to associate and click *Create model endpoint*.
         ![](./images/create-model-endpoint.png " ")
 
-    3. Once endpoint is active, Under Resources, click on Analyze link.
-    4. Enter text, and click on Analyze to see the result
+    3. Under Resources, click on *Analyze* link.
+    4. Enter text, and click on *Analyze* to see the result
 
         ![](./images/analyze.png " ")
 
 ## **Task 4:** Using Python SDK to Create Custom Models
-
+All the above tasks performed to create custom models and analyzing text can be done through Python code.
 **Pre-requisites**:
+<br/>
 For using Python SDK, please follow setup steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
 
-#### 1. **Custom NER Python Code**
+#### **Python code to create custom NER model and analyze text**
 
 ```Python
 <copy>
@@ -174,26 +179,18 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 config = oci.config.from_file()
 
-compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
-bucket_name = "<BUCKET_NAME>" #TODO Specify name of your training data bucket here
-namespace_name = "<NAMESPACE_NAME>" #TODO Specify the namespace here
-object_names = ["<OBJECT_FILE_NAME>"] #TODO Specify name of your training data file
+compartment_id = <COMPARTMENT_ID> #TODO Specify your compartmentId here
+bucket_name = <BUCKET_NAME> #TODO Specify name of your training data bucket here
+namespace_name = <NAMESPACE_NAME> #TODO Specify the namespace here
+object_names = ["CNER_offer_trainset_01_labels.jsonl"]
 
-project_name = None #"custom-NER-project"
-model_name = None #"custom-NER-model"
-endpoint_name = None #"custom_NER_endpoint"
-
-#assuming ashburn endpoint.
-# For other regions, use below end points
-#Ashburn: https://language.aiservice.us-ashburn-1.oci.oraclecloud.com
-#Phoenix: https://language.aiservice.us-phoenix-1.oci.oraclecloud.com
-#Frankfurt: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-#London: https://language.aiservice.uk-london-1.oci.oraclecloud.com
-#Mumbai: https://language.aiservice.ap-mumbai-1.oci.oraclecloud.com
+project_name = <PROJECT_NAME> #TODO specify project name here
+model_name = <MODEL_NAME> #TODO specify the model name here
+endpoint_name = <ENDPOINT_NAME> #TODO specify endpoint name
 
 ai_client = oci.ai_language.AIServiceLanguageClient(config)
 
-#create ailanguageproject
+#create project
 project_details = oci.ai_language.models.CreateProjectDetails(compartment_id=compartment_id,display_name=project_name)
 print(f"Creating project with details:{project_details}")
 project = ai_client.create_project(project_details)
@@ -211,17 +208,17 @@ project = ai_client.get_project(project_id)
 project_status = project.data.lifecycle_state
 print(f"Project status changed from CREATING to {project_status}")
 
-#creating ailanguagemodel
+#creating model
 location_details = oci.ai_language.models.ObjectListDataset(
-    location_type="OBJECT_LIST", 
-    namespace_name="idngwwc5ajp5",  #TODO specify the namespace here
-    bucket_name="canary-bucket", #TODO specify the name your training data bucket here
-    object_names=["small_portableJosnl.jsonl"]  #TODO specify the name your train label file
+    location_type="OBJECT_LIST",
+    namespace_name=namespace_name,
+    bucket_name=bucket_name,
+    object_names=object_names
 )
 
 model_details = oci.ai_language.models.CreateModelDetails(
     project_id = project.data.id,
-    model_details = oci.ai_language.models.ModelDetails(model_type="NAMED_ENTITY_RECOGNITION", language_code="en"),
+    model_details = oci.ai_language.models.ModelDetails(model_type="NAMED_ENTITY_RECOGNITION"),
     display_name = model_name,
     compartment_id = compartment_id,
     training_dataset = oci.ai_language.models.ObjectStorageDataset(dataset_type="OBJECT_STORAGE", location_details=location_details)
@@ -278,7 +275,7 @@ print(ner_inference_result.data)
 Download [code](./files/customNERPythonSDK.py) file and save it your directory.
 
 
-#### 2. **Custom TXTC Python Code**
+#### 2. **Python code to create custom Classification model and analyze text**
 
 ```Python
 <copy>
@@ -287,26 +284,18 @@ import oci
 print(f'OCI Client SDK version: {oci.__version__}')
 config = oci.config.from_file()
 
-compartment_id = "" #TODO Specify your compartmentId here
-bucket_name = "" #TODO Specify name of your training data bucket here
-namespace_name = "" #TODO Specify the namespace here
-object_names = [""] #TODO Specify name of your training data file
+compartment_id = <COMPARTMENT_ID> #TODO Specify your compartmentId here
+bucket_name = <BUCKET_NAME> #TODO Specify name of your training data bucket here
+namespace_name = <NAMESPACE> #TODO Specify the namespace here
+object_names = ["TicketData_train.csv"]
 
-project_name = None #"custom-TXTC-project"
-model_name = None #"custom-TXTC-model"
-endpoint_name = None #"custom_TXTC_endpoint"
-
-#assuming ashburn endpoint.
-# For other regions, use below end points
-#Ashburn: https://language.aiservice.us-ashburn-1.oci.oraclecloud.com
-#Phoenix: https://language.aiservice.us-phoenix-1.oci.oraclecloud.com
-#Frankfurt: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-#London: https://language.aiservice.uk-london-1.oci.oraclecloud.com
-#Mumbai: https://language.aiservice.ap-mumbai-1.oci.oraclecloud.com
+project_name = <PROJECT_NAME> #"custom-TXTC-project"
+model_name = <MODEL_NAME> #"custom-TXTC-model"
+endpoint_name = <ENDPOINT_NAME> #"custom_TXTC_endpoint"
 
 ai_client = oci.ai_language.AIServiceLanguageClient(config)
 
-#create ailanguageproject
+#create project
 project_details = oci.ai_language.models.CreateProjectDetails(compartment_id=compartment_id,display_name=project_name)
 print(f"Creating project with details:{project_details}")
 project = ai_client.create_project(project_details)
@@ -324,7 +313,7 @@ project = ai_client.get_project(project_id)
 project_status = project.data.lifecycle_state
 print(f"Project status changed from CREATING to {project_status}")
 
-#creating ailanguagemodel
+#creating model
 location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name=namespace_name, bucket_name=bucket_name, object_names=object_names)
 # For Text classification, multi-class and multi-labe classification types are supported
 classification_mode = oci.ai_language.models.ClassificationType(classification_mode="MULTI_CLASS")
@@ -373,7 +362,7 @@ while (end_point_details.data.lifecycle_state == "CREATING"):
 
 print(f"End point status changed from CREATING to {end_point_details.data.lifecycle_state}")
 
-text_to_analyze = "I like Physics over chemistry"
+text_to_analyze = "I am unable to use printer, seeing printer error."
 
 print(f"Analyzing the text: {text_to_analyze}")
 txtc_text_for_testing = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(endpoint_id = end_point_details.data.id, documents = [oci.ai_language.models.TextDocument(key = "1", text = text_to_analyze)])
@@ -391,7 +380,7 @@ To know more about the Python SDK visit [Python OCI-Language](https://docs.oracl
 ## **Summary**
 
 Congratulations! </br>
-In this lab you have learnt how to create and train custom NER and TXTC models and analyze text on trained models through language endpoint using OCI Console and Python SDK.
+In this lab you have learnt how to create custom NER and Classification models and analyze text using OCI Console and Python SDK.
 
 [Proceed to the next section](#next).
 
@@ -399,8 +388,6 @@ In this lab you have learnt how to create and train custom NER and TXTC models a
 
 **Authors**
   * Raja Pratap Kondamari - Product Manager, OCI Language Service
-  * Rajat Chawla  - Oracle AI OCI Language Services
-  * Ankit Tyagi -  Oracle AI OCI Language Services
   * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
