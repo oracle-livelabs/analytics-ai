@@ -1,4 +1,4 @@
-# Creating and Training a Custom Language Model
+# Lab 2: Creating and training Custom Models
 
 ## Introduction
 In this session, we will show you how to create a language project, select your training data, train a custom model, create an endpoint and analyze text through endpoint.
@@ -9,8 +9,8 @@ In this session, we will show you how to create a language project, select your 
 
 In this lab, you will:
 - Learn how to create language project.
-- Understand the schema for training data.
-- Learn how to train a custom NER and custom Text Classification model
+- Learn how to train a custom NER and custom Text Classification model.
+- Learn how to create language endpoint and analyze text through it.
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)

@@ -42,7 +42,6 @@ project = ai_client.get_project(project_id)
 project_status = project.data.lifecycle_state
 print(f"Project status changed from CREATING to {project_status}")
 
-project_id = "ocid1.ailanguageproject.oc1.iad.amaaaaaac4idruiagbwaof4pxwsji2oftlybzpxtztizxcnpqcuxudvsjiaa"
 #creating ailanguagemodel
 location_details = oci.ai_language.models.ObjectListDataset(location_type="OBJECT_LIST", namespace_name=namespace_name, bucket_name=bucket_name, object_names=object_names)
 model_details = oci.ai_language.models.CreateModelDetails(

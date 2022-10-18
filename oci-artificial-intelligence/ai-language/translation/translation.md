@@ -1,4 +1,4 @@
-# Lab 3: Translating Text with the Language Translate Model
+# Lab 3: Translating Text using OCI Console and Python SDK
 
 ## Introduction
 
