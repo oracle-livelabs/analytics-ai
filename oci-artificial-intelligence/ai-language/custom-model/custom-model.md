@@ -3,7 +3,7 @@
 ## Introduction
 In this session, we will show you how to create a language project, select your training data, train a custom model, create an endpoint and analyze text through endpoint.
 
-*Estimated Time*: 15 minutes
+*Estimated Time*: 45 minutes
 
 ### Objectives
 
@@ -20,9 +20,9 @@ In this lab, you will:
 
 Before you start using OCI Language, OCI policies should be setup for allowing you to access OCI Language Services. Follow these steps to configure required policies.
 
-### 1. Policies required in [Lab 1](?lab=analyze-text#PolicySetup) are required
+### 1. Setup Policies required in [Lab 1](?lab=analyze-text#PolicySetup) for using Language Service API
 
-### 2. Policies required for allowing access to Object Storage:
+### 2. Policies to allow custom model training jobs to access  OCI Object Storage:
 
 -   #### 1. Navigate to Dynamic Groups
 
@@ -62,8 +62,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 
     ![OCI Create policy screen](./images/policy3.png " ")
 
-
-    [About Language Policies](https://docs.oracle.com/en-us/iaas/language/using/overview.htm#policies)
+    For more details on policies required for Language Service, please refer [Language Service documentation](https://docs.oracle.com/en-us/iaas/language/using/overview.htm#policies)
 
 
 ## **Task 1:** Create a Project
@@ -84,9 +83,9 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
 4. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
 
-## **Task 2:** Train and Analyze on Custom NER Model
+## **Task 2:** Create Custom NER Model for analyzing text
 
-- ### 1. **Create and Train Custom NER Model**
+1. **Create and Train Custom NER Model**
 
     1. **Navigate to Models**: Under models, click on create and train model.
 
@@ -95,23 +94,23 @@ A Project is a way to organize multiple models in the same workspace. It is the 
         ![](./images/ner-model-type.png " ")
 
     3. **Select training data**: 
-        - 1. Download Custom NER offerletter dataset from this [link](https://oradocs.oracle.com/documents/link/LF47C825FFF2D18E51185EF47A27A81AC346CA04ECE4/folder/FF88E8262D137CD41F66D4DD5E97C8665B175150E2AF/_CNER_Offerletter). 
+        1. Download Custom NER offerletter dataset from this [link](./files/CNER.zip). 
         
-        - 2. Upload downloaded data to object storage:
+        2. Upload downloaded data to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                  ![](./images/object-storage-navigation.png " ")
             - Create bucket with default selections and upload Custom NER offerletter data.
                  ![](./images/upload-data.png " ")
 
-        - 3. Choose existing labeled dataset and Object Storage under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
+        3. Choose existing labeled dataset and Object Storage under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
 
             ![](./images/ner-training-data.png " ")
 
-    4. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
+    4. **Review and Submit**: Verify that all of your information is correct and go back if you want to make adjustments. Click "Create and train" and this will kick of the process. You can then check on the status of your model and wait until training is complete and Model is in ACTIVE state.
 
-        ![](./images/ner-review.png " ")
+        ![](./images/active-model.png " ")
 
-- ### 2. **Create an Endpoint and Analyze through endpoint**
+2. **Create an Endpoint and Analyze through endpoint**
 
     1. Under Model endpoints, click on create model endpoint
     2. Specify the name of the endpoint
@@ -123,9 +122,9 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
         ![](./images/analyze.png " ")
 
-## **Task 3:** Train and Analyze on Custom TXTC Model
+## **Task 3:** Create Custom TXTC Model for analyzing text
 
- - ### 1. **Create and Train Custom TXTC Model**
+1. **Create and Train Custom TXTC Model**
 
     1. **Navigate to Models**: Under models, click on create and train model.
 
@@ -134,25 +133,25 @@ A Project is a way to organize multiple models in the same workspace. It is the 
         ![](./images/txtc-model-type.png " ")
 
     3. **Select training data**: 
-        - 1. Download Custom TXTC ticket dataset from this [link](https://oradocs.oracle.com/documents/link/LFF3EB38D072D0CF92D7CB6889D9183A8A623137D96F/folder/FA8283A1191E637C61C447A5EA6B982C6232A5855278/_CTXTC_TicketData). 
+        1. Download Custom TXTC ticket dataset from this [link](./files/CTXTC.zip). 
         
-        - 2. Upload downloaded data to object storage:
+        2. Upload downloaded data to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                  ![](./images/object-storage-navigation.png " ")
             - Create bucket with default selections and upload Custom NER offerletter data.
                  ![](./images/upload-data.png " ")
 
-        - 3. Select bucket created in preview step and choose TicketData\_train.csv in date file drop down.
+        3. Select bucket created in preview step and choose TicketData\_train.csv in date file drop down.
                  ![](./images/txtc-training-data.png " ")
 
-    4. **Review and Submit**: In the "review" step, you can verify that all of your information is correct and go back if you want to make adjustments. When you want to start training, click "Create and train" and this will kick of the process. You can then check on the status of your model in the project where you created it.
+    4. **Review and Submit**: Verify that all of your information is correct and go back if you want to make adjustments. Click "Create and train" and this will kick of the process. You can then check on the status of your model and wait until training is complete and Model is in ACTIVE state.
 
-        ![](./images/txtc-review.png " ")
+        ![](./images/active-model.png " ")
 
- - ### 2. **Create an Endpoint and Analyze through endpoint**
+2. **Create an Endpoint and Analyze through endpoint**
 
-    1. Under Model endpoints, click on create model endpoint
-    2. Specify the name of the endpoint
+    1. Under Model endpoints, click on create model endpoint.
+    2. Select the model to associate and click create model endpoint.
     
         ![](./images/create-model-endpoint.png " ")
 
@@ -161,15 +160,12 @@ A Project is a way to organize multiple models in the same workspace. It is the 
 
         ![](./images/analyze.png " ")
 
-## **Task 4:** Create Custom Models and analyzing through endpoint with Python SDK.
+## **Task 4:** Using Python SDK to Create Custom Models
 
-Pre-requisites: For using Python SDK, please follow steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+**Pre-requisites**:
+For using Python SDK, please follow setup steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
 
-Follow below steps to run Python SDK:
-
-#### 1. Download Python Code.
-
-#### Custom NER Python Code
+#### 1. **Custom NER Python Code**
 
 ```Python
 <copy>
@@ -282,8 +278,7 @@ print(ner_inference_result.data)
 Download [code](./files/customNERPythonSDK.py) file and save it your directory.
 
 
-
-#### Custom TXTC Python Code
+#### 2. **Custom TXTC Python Code**
 
 ```Python
 <copy>
@@ -396,7 +391,7 @@ To know more about the Python SDK visit [Python OCI-Language](https://docs.oracl
 ## **Summary**
 
 Congratulations! </br>
-In this lab you have learnt how to create and train custom NER and TXTC models and analyze text on trained models through language endpoing using OCI Console and Python SDK.
+In this lab you have learnt how to create and train custom NER and TXTC models and analyze text on trained models through language endpoint using OCI Console and Python SDK.
 
 [Proceed to the next section](#next).
 
