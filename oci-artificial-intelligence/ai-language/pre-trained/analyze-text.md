@@ -22,50 +22,50 @@ In this lab, you will:
 
 Before you start using OCI Language, OCI policies should be setup for allowing you to access OCI Language Services. Follow these steps to configure required policies.
 
-### 1. Navigate to Policies
+1. Navigate to Policies
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+  Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
     ![OCI Hamburger menu](./images/policy1.png " ")
 
 
-### 2. Create Policy
+2. Create Policy
 
-Click Create Policy
+  Click Create Policy
     ![OCI Create policy](./images/policy2.png " ")
 
 
-### 3. Create a new policy with the following statements:
+3. Create a new policy with the following statements:
 
-If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
+  Leave the compartment to default value and add below statement to allow all the users in your tenancy to use language:
     ```
     <copy>allow any-user to use ai-service-language-family in tenancy</copy>
     ```
 
-  ![OCI Create policy screen](./images/policy3.png " ")
+    ![OCI Create policy screen](./images/policy3.png " ")
 
 
-If you want to limit access to a user group, create a new policy with the below statement:
+  If you want to limit access to a user group, create a new policy with the below statement:
     ```
 
     <copy>allow group <group-name> to use ai-service-language-family in tenancy</copy>
     ```
-  ![OCI create policy screen](./images/policy4.png " ")
+    ![OCI create policy screen](./images/policy4.png " ")
 
 
 
 ## **TASK 1:** Use the Console to analyze text
 
-### 1: Navigate to OCI Language
+### 1. Navigate to OCI Language
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
+  Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
     ![OCI Language Screen](./images/navigate-to-ai-language-menu.png " ")
 
-### 2: Enter Text
+### 2. Enter Text
 
-Enter your text into the dialog box to analyze.
+  Navigate to Text analytics under Pretrained models and enter your text into the dialog box to analyze.
     ![OCI Language Text Analytics Screen](./images/text-box.png " ")
 
-Below are some of the examples for the text:
+  Below are some of the examples for the text:
     ```
 
     <copy>The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities.</copy>
@@ -79,9 +79,9 @@ Below are some of the examples for the text:
     ```
 
 
-### 3: Click Analyze
+### 3. Click Analyze
 
-You can analyze text by clicking Analyze button.
+  You can analyze text by clicking Analyze button.
     ![OCI Language Text Analytics - Analyze button](./images/analyze-button.png " ")
 
 <!-- ### 5: Click Reset
@@ -93,27 +93,27 @@ You can reset the page by clicking Reset button.
 
 After you analyze your text, the Language service displays the results by category for the selected tools as follows:
 
-#### 1: Sentiment Analysis
+#### 1. Sentiment Analysis
 
 Renders the document level, aspect based and sentence level sentiment with score.
     ![Text Analysis Results](./images/sentiment-result.png " ")
 
-#### 2: Named Entity Recognition
+#### 2. Named Entity Recognition
 
 Identifies the named entities that were found and their categories are indicated.
     ![NER Result](./images/ner-result.png " ")
 
-#### 3: Key Phrase Extraction
+#### 3. Key Phrase Extraction
 
 Lists the key phrases detected from the text.
     ![KPE result](./images/kpe-result.png " ")
 
-#### 4: Language Detection
+#### 4. Language Detection
 
 Lists, by confidence percentage, the languages detected.
     ![Language Detection Result](./images/lang-result.png " ")
 
-#### 5: Text Classification
+#### 5. Text Classification
 
 Lists the word, identified document category, and the confidence score.
     ![Text classification Result](./images/text-result.png " ")
