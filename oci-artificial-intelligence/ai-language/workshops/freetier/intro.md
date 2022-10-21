@@ -8,6 +8,8 @@ OCI Language Service key features:
 
 ### **Pre-Trained Models**
 
+OCI Language pre-trained APIs uses AI models trained for most common use cases.
+
 #### 1. Sentiment Analysis
 
 Identifies sentiment at the document, sentence and aspect level.
@@ -29,6 +31,9 @@ Detects languages based on the given text, and includes a confidence score.
 Identifies the document category and subcategory that the text belongs to.
 
 ### **Custom Models**
+
+OCI Language custom models enables you to customize Text Classification and Named Entity Recognition with your own data
+
 
 #### 1. Custom Text Classification
 
