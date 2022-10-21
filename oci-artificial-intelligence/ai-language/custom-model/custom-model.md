@@ -161,10 +161,10 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 30 minutes.
 
         ![](./images/active-model.png " ")
-    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
+    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and navigate to Log messages. 
         ![](./images/work-request-navigation.png " ")
         ![](./images/work-requests.png " ")
-    9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to view review model metrics.
+    9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
          ![](./images/txtc-metrics.png " ")
 
 2. **Create Endpoint and Analyze text**

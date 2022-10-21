@@ -36,7 +36,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 
 3. Create a new policy with the following statements:
 
-  If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
+  Leave the compartment to default value and add below statement to allow all the users in your tenancy to use language:
     ```
     <copy>allow any-user to use ai-service-language-family in tenancy</copy>
     ```
