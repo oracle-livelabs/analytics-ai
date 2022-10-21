@@ -81,7 +81,9 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
     ![](./images/create-project.png " ")
 
-4. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
+4. Once the details are entered click the Create Button. Wait until project is in ACTIVE state. If the project is successfully created it will show up in projects pane.  
+    ![](./images/active-project.png " ")
+
 
 ## **Task 2:** Create Custom NER Model
 
@@ -96,19 +98,26 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload Custom NER offerletter data extracted above.
                  ![](./images/upload-data.png " ")
 
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on create and train model.
     4. **Choose model type**: Choose  Named entity recognition for model type.
 
         ![](./images/ner-model-type.png " ")
-    5. **Specify training dataset details**: *Choose existing labeled dataset* and *Object Storage* under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set.
+    5. **Specify training dataset details**: *Choose existing labeled dataset* and *Object Storage* under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set. Skip Validation data and Test data to default values, so that the system chooses random samples from train set.
 
         ![](./images/ner-training-data.png " ")
 
     7. **Specifiy model properties**: Specify model name, compartment details and click Next
-    8. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state.
+    8. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 15 minutes.
 
         ![](./images/active-model.png " ")
+    9. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
+        ![](./images/work-request-navigation.png " ")
+        ![](./images/work-requests.png " ")
+    10. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
+         ![](./images/ner-metrics.png " ")
 
 2. **Create an Endpoint**
 
@@ -137,19 +146,26 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload the extracted data.
                  ![](./images/upload-data.png " ")
 
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on *Create and train model*.
     4. **Choose model type**: Choose *Text classification* for model type. Select *Single label* as classification model type
 
         ![](./images/txtc-model-type.png " ")
 
-    5. Select bucket created in preview step and choose TicketData_train.csv in date file drop down and click on Next
+    5. Select bucket created in preview step and choose TicketData_train.csv in date file drop down. Skip Validation data and Test data to default values, so that the system chooses random samples from train set.
                  ![](./images/txtc-training-data.png " ")
 
     6. **Specify Model properties**: specify the model name and the compartment for creation and click on Next
-    7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state.
+    7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 30 minutes.
 
         ![](./images/active-model.png " ")
+    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
+        ![](./images/work-request-navigation.png " ")
+        ![](./images/work-requests.png " ")
+    9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to view review model metrics.
+         ![](./images/txtc-metrics.png " ")
 
 2. **Create Endpoint and Analyze text**
 
