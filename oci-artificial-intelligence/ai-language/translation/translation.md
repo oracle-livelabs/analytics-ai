@@ -1,4 +1,4 @@
-# Lab 3: Translating Text using OCI Console and Python SDK
+# Lab 3: Translate text using OCI Console and python SDK
 
 ## Introduction
 
@@ -90,7 +90,7 @@ print(output.data)
 </copy>
 ```
 
-Download [code](./files/translationPythonSDK.py) file and save it your directory.
+Download [code](./files/translationpythonsdk.py) file and save it your directory.
 
 ### Learn More
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
@@ -108,6 +108,7 @@ In this lab you have learnt how to use Language Service to translate text with O
 **Authors**
   * Raja Pratap Kondamari - Product Manager, OCI Language Service
   * Sahil Kalra - Oracle AI OCI Language Services
+  * Rajat Chawla - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
 * Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022

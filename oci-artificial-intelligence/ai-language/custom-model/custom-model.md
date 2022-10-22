@@ -1,4 +1,4 @@
-# Lab 2: Creating and training Custom Models
+# Lab 2: Create and train custom models
 
 ## Introduction
 In this session, you will learn how to create projects, train a custom model and analyze text through endpoints.
@@ -75,14 +75,14 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
 2. Select Projects under "Custom models" header on the left hand side of the console.
 
-    ![](./images/project-list.png " ")
+    ![Project List](./images/project-list.png " ")
 
 3. The Create Project button navigates User to a form where they can specify the compartment in which to create a Language Project.
 
-    ![](./images/create-project.png " ")
+    ![Create Project Panel](./images/create-project.png " ")
 
 4. Once the details are entered click the Create Button. Wait until project is in ACTIVE state. If the project is successfully created it will show up in projects pane.  
-    ![](./images/active-project.png " ")
+    ![Active Project](./images/active-project.png " ")
 
 
 ## **Task 2:** Create Custom NER Model
@@ -94,9 +94,9 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
         - Extract the zip file contents into a directory
         - Upload the training dataset files to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
-                 ![](./images/object-storage-navigation.png " ")
+                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
             - Create bucket and upload Custom NER offerletter data extracted above.
-                 ![](./images/upload-data.png " ")
+                 ![Upload Objects](./images/upload-data.png " ")
 
             For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
 
@@ -104,34 +104,34 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     3. **Navigate to Models**: Under models, click on create and train model.
     4. **Choose model type**: Choose  Named entity recognition for model type.
 
-        ![](./images/ner-model-type.png " ")
+        ![Model type](./images/ner-model-type.png " ")
     5. **Specify training dataset details**: *Choose existing labeled dataset* and *Object Storage* under training data section. Choose the bucket created in previous step and choose CNER\_offer\_trainset\_01\_labels.jsonl as training data set. Skip Validation data and Test data to default values, so that the system chooses random samples from train set.
 
-        ![](./images/ner-training-data.png " ")
+        ![Training data](./images/ner-training-data.png " ")
 
     7. **Specifiy model properties**: Specify model name, compartment details and click Next
     8. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 15 minutes.
 
-        ![](./images/active-model.png " ")
+        ![Active model](./images/active-model.png " ")
     9. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
-        ![](./images/work-request-navigation.png " ")
-        ![](./images/work-requests.png " ")
+        ![Work request list](./images/work-request-navigation.png " ")
+        ![Create model work request](./images/work-requests.png " ")
     10. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
-         ![](./images/ner-metrics.png " ")
+         ![Model metrics](./images/ner-metrics.png " ")
 
 2. **Create an Endpoint**
 
     1. Ensure the model status is *ACTIVE*
- ![](./images/active-model.png " ")
+ ![Active model](./images/active-model.png " ")
     2. Under Model endpoints, click on create model endpoint
     3. Specify the name of the endpoint and click on Create
-        ![](./images/create-model-endpoint.png " ")
+        ![Create model endpoint panel](./images/create-model-endpoint.png " ")
 
     4. Wait till the endpoint status changes to *ACTIVE*
     5. Under Resources, click on *Analyze* link.
     6. Enter text, and click on Analyze to see the result
 
-        ![](./images/analyze.png " ")
+        ![Analyze screen](./images/analyze.png " ")
 
 ## **Task 3:** Create Custom Classification Model
 
@@ -142,9 +142,9 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
         2. Upload training data to object storage:
             - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
-                 ![](./images/object-storage-navigation.png " ")
+                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
             - Create bucket and upload the extracted data.
-                 ![](./images/upload-data.png " ")
+                 ![Upload Objects](./images/upload-data.png " ")
 
             For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
 
@@ -152,33 +152,33 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     3. **Navigate to Models**: Under models, click on *Create and train model*.
     4. **Choose model type**: Choose *Text classification* for model type. Select *Single label* as classification model type
 
-        ![](./images/txtc-model-type.png " ")
+        ![Model type](./images/txtc-model-type.png " ")
 
-    5. Select bucket created in preview step and choose TicketData_train.csv in date file drop down. Skip Validation data and Test data to default values, so that the system chooses random samples from train set.
-                 ![](./images/txtc-training-data.png " ")
+    5. **Specify training dataset details**: Select bucket created in preview step and choose TicketData_train.csv in date file drop down. Skip Validation data and Test data to default values, so that the system chooses random samples from train set.
+                 ![Training data](./images/txtc-training-data.png " ")
 
     6. **Specify Model properties**: specify the model name and the compartment for creation and click on Next
     7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 30 minutes.
 
-        ![](./images/active-model.png " ")
+        ![Active model](./images/active-model.png " ")
     8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and navigate to Log messages. 
-        ![](./images/work-request-navigation.png " ")
-        ![](./images/work-requests.png " ")
+        ![Work request list](./images/work-request-navigation.png " ")
+        ![Create model work request](./images/work-requests.png " ")
     9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
-         ![](./images/txtc-metrics.png " ")
+         ![Model metrics](./images/txtc-metrics.png " ")
 
 2. **Create Endpoint and Analyze text**
 
     1. Wait till the model training completes and status is changed to *ACTIVE*
-   ![](./images/active-model.png " ")
-    1. Under Model endpoints, click on *Create model endpoint*.
-    2. Select the model to associate and click *Create model endpoint*.
-        ![](./images/create-model-endpoint.png " ")
+   ![Active model](./images/active-model.png " ")
+    2. Under Model endpoints, click on *Create model endpoint*.
+    3. Select the model to associate and click *Create model endpoint*.
+        ![Create model endpoint panel](./images/create-model-endpoint.png " ")
 
-    3. Under Resources, click on *Analyze* link.
-    4. Enter text, and click on *Analyze* to see the result
+    4. Under Resources, click on *Analyze* link.
+    5. Enter text, and click on *Analyze* to see the result
 
-        ![](./images/analyze.png " ")
+        ![Analyze screen](./images/analyze.png " ")
 
 ## **Task 4:** Using Python SDK to Create Custom Models
 All the above tasks performed to create custom models and analyzing text can be done through Python code.
@@ -288,7 +288,7 @@ print(ner_inference_result.data)
 </copy>
 ```
 
-Download [code](./files/customNERPythonSDK.py) file and save it your directory.
+Download [code](./files/customnerpythonsdk.py) file and save it your directory.
 
 
 #### 2. **Python code to create custom Classification model and analyze text**
@@ -302,7 +302,7 @@ config = oci.config.from_file()
 
 compartment_id = <COMPARTMENT_ID> #TODO Specify your compartmentId here
 bucket_name = <BUCKET_NAME> #TODO Specify name of your training data bucket here
-namespace_name = <NAMESPACE> #TODO Specify the namespace here
+namespace_name = <NAMESPACE_NAME> #TODO Specify the namespace here
 object_names = ["TicketData_train.csv"]
 
 project_name = <PROJECT_NAME> #"custom-TXTC-project"
@@ -388,7 +388,7 @@ print(txtc_inference_result.data)
 </copy>
 ```
 
-Download [code](./files/customTXTCPythonSDK.py) file and save it your directory.
+Download [code](./files/customtxtcpythonsdk.py) file and save it your directory.
 
 ### Learn More
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)

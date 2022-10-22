@@ -1,4 +1,4 @@
-# Lab 1: Analyzing Text with the Pre-Trained Models
+# Lab 1: Analyze text with pre-trained models
 
 ## Introduction
 
@@ -84,11 +84,6 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
   You can analyze text by clicking Analyze button.
     ![OCI Language Text Analytics - Analyze button](./images/analyze-button.png " ")
 
-<!-- ### 5: Click Reset
-
-You can reset the page by clicking Reset button.
-![](./images/reset-button.png " ") -->
-
 ### 4 Viewing Results
 
 After you analyze your text, the Language service displays the results by category for the selected tools as follows:
@@ -157,17 +152,17 @@ Generate an API signing key pair
 #### 1. Open User Settings
 
 Open the Profile menu (User menu icon) and click User Settings.
-    ![user profile](./images/userProfileIcon.png " ")
+    ![user profile](./images/user-profile-icon.png " ")
 
 #### 2. Open API Key
 
 Navigate to API Key and then Click Add API Key.
-    ![add API button](./images/addAPIButton.png " ")
+    ![add API button](./images/add-api-button.png " ")
 
 #### 3. Generate API Key
 
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
-    ![Generate API](./images/genAPI.png " ")
+    ![Generate API](./images/gen-api.png " ")
 
 #### 4. Generate Config File
 
@@ -290,7 +285,7 @@ Navigate to the directory where you saved the above file (by default, it should 
 
 #### 3. Result
 You will see the result as below
-    ![](./images/result.png " ")
+    ![SDK Result](./images/result.png " ")
 
 
 
@@ -370,50 +365,50 @@ Follow the below steps to open Notebook in DataScience:
   1. Navigate to Data Science Service
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
-    ![OCI Hamburger menu](./images/cloudMenu.png " ")
+    ![OCI Hamburger menu](./images/cloud-menu.png " ")
 
-  1. Select Compartment
+  2. Select Compartment
 
     Select the Compartment in which want to create your project.
-    ![Select compartment](./images/selectComp.png " ")
+    ![Select compartment](./images/select-comp.png " ")
 
-  1. Create Project
+  3. Create Project
 
     Click Create Project to create a new project.
-    ![create data science project](./images/createProject1.png " ")
+    ![create data science project](./images/create-project1.png " ")
 
-  1. Enter Project Details
+  4. Enter Project Details
 
     Enter name and click Create Button.
-    ![Data Science project details](./images/createProject2.png " ")
+    ![Data Science project details](./images/create-project2.png " ")
 
-  1. Create Notebook Session
+  5. Create Notebook Session
 
     Click Create Notebook Session to create a new Notebook session.
-    ![](./images/createNotebookSession.png " ")
+    ![Create notebook session](./images/create-notebook-session.png " ")
 
-  1. Enter Notebook Details
+  6. Enter Notebook Details
 
     Select a name.
     We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
     Set block storage to 50 GB.
     Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
-    ![](./images/createNotebookSession2.png " ")
+    ![Notebook details](./images/create-notebook-session2.png " ")
 
-  1. Open the OCI Data Science notebook
+  7. Open the OCI Data Science notebook
 
     The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
     Open the notebook session that was provisioned.
-    ![](./images/openNotebook.png " ")
+    ![Open notebook](./images/open-notebook.png " ")
 </br></br>
 
 ### 4. **Invoke the Language Service**
 
   1. Download and Upload the Files
 
-    Download this [Sentiment Analysis](./files/Sentiment_Batch.ipynb) and [Named Entitiy Recognition](./files/NER_Batch.ipynb) files and upload it in the Notebook. 
-    Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
-    ![uploading files](./images/uploadFiles.png " ")
+    Download this [Sentiment Analysis](./files/sentiment_batch.ipynb) and [Named Entitiy Recognition](./files/ner_batch.ipynb) files and upload it in the Notebook. 
+    Download this [Dataset](./files/data.csv) and upload it in the Notebook.
+    ![uploading files](./images/upload-files.png " ")
 
   1. Setup API Signing Key and Config File
 
@@ -435,7 +430,7 @@ Follow the below steps to open Notebook in DataScience:
     ```
 
     To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
-    ![OCI Folder](./images/ociFolder.jpg " ")
+    ![OCI Folder](./images/oci-folder.jpg " ")
 
 ### 5. **Execute the Notebooks**
 
@@ -463,16 +458,16 @@ These notebooks demonstrates how you can be more productive by using the various
   3. Fork the Language APIs and OCI Credentials Environment
 
     Fork the Language API collection in your workspace by navigating to Language API collection and clicking the "Fork" option.
-    ![](./images/forkLangugeApi1.png)
+    ![Fork Language API collection](./images/fork-language-api1.png)
 
     Enter name to indentify forked Language API collection, select the workspace you want to fork the collection to and click "Fork Collection".
-    ![](./images/forkLangugeApi2.png)
+    ![Enter name for Language API collection](./images/fork-language-api2.png)
 
     Fork the OCI Credentials Environment in your workspace by navigating to Environments and clicking the "Fork" option.
-    ![](./images/forkOciCred1.png)
+    ![Fork OCI Credentials Environment](./images/fork-oci-cred1.png)
 
     Enter name to indentify forked OCI credentials environment, select the workspace you want to fork the collection to and click "Fork Collection".
-    ![](./images/forkOciCred2.png)
+    ![Enter name for OCI crendentials environment](./images/fork-oci-cred2.png)
 
 
   4. Set up variables
@@ -482,7 +477,7 @@ These notebooks demonstrates how you can be more productive by using the various
 * Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
 
 * Click the Save button to commit your changes to the environment.
-    ![](./images/setVariable.png " ")
+    ![Save variables](./images/set-variable.png " ")
 
 
 ### 2. **Invoke Language OCI REST API**
@@ -506,7 +501,7 @@ Invoke Language OCI REST APIs by clicking any one of the requests in the Languag
 
 
 Below is the example shown to invoke Detect Language Service.
-    ![](./images/detectLanguage.png " ")
+    ![Invoke Detect Language Service](./images/detect-language.png " ")
 
 OCI Language service endpoints:
 
