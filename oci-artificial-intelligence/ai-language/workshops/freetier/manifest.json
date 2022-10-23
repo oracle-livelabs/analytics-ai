@@ -3,7 +3,7 @@
     "help": "oci_ocas_ops_ww_grp@oracle.com",
 	"tutorials": [
         {
-            "title": "Before You Start",
+            "title": "Before you start",
             "description": "Sign up for and log into the Oracle Cloud",
             "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
         },
@@ -13,17 +13,17 @@
             "filename": "./intro.md"
         },
         {
-            "title": "Lab 1: Analyzing Text with Pre-Trained Models",
+            "title": "Lab 1: Analyze text with pre-trained models",
             "description": "Learn how to use pre-trained models to analyze text",
             "filename": "../../pre-trained/analyze-text.md"
         },
         {
-            "title": "Lab 2: Creating and training custom models",
+            "title": "Lab 2: Create and train custom models",
             "description": "Learn how to create a custom model using the oci console",
             "filename": "../../custom-model/custom-model.md"
         },
         {
-            "title": "Lab 3: Translating Text using OCI Console and Python SDK",
+            "title": "Lab 3: Translate text using OCI Console and python SDK",
             "description": "Learn how to use language translate to translate text",
             "filename": "../../translation/translation.md"
         },
