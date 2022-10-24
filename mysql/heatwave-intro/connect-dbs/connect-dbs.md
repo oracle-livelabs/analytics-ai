@@ -70,6 +70,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     Note in the output there are two files, a *private key:* `id_rsa` and a *public key:* `id_rsa.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 ## Task 2: Create Compute instance
+
 You will need a compute Instance to connect to your brand new MySQL database. 
 
 1. Before creating the Compute instance open a notepad 
@@ -136,6 +137,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 15.	The state 'Running' indicates that the Virtual Machine is ready to use. 
 
     ![CONNECT](./images/05compute08-a.png " ")
+
 ## Task 3: Connect to MySQL Database System
 
 1. Copy the public IP address of the active Compute Instance to your notepad
@@ -193,15 +195,36 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ```
     ![CONNECT](./images/06connect02-shell.png " ")
 
+ 
+## Task 4: Install airportdb
+
+ The installation procedure involves downloading the airportdb database to a Compute instance and importing the data from the Compute instance into the MySQL DB System using the MySQL Shell Dump Loading utility. For information about this utility, see Dump Loading Utility.
+
+ To install the airportdb database:
+
+1. Download the airportdb sample database and unpack it. The airportdb sample database is provided for download as a compressed tar or Zip archive. The download is approximately 640 MBs in size.
+
+    a. Get sample file
+
+    ```
+    <copy>wget https://downloads.mysql.com/docs/airport-db.zip unzip airport-db.zip</copy>
+    ```
+  
+    b. Unzip sample file
+
+    ```
+    <copy>unzip airport-db.zip</copy>
+    ```
+
    **Connect to MySQL Database Service**
 
-6. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
+2. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
    
    The endpoint (IP Address) can be found in your notepad or  the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
     ![CONNECT](./images/06connect03.png " ")
 
-7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
+3.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
 
@@ -210,9 +233,18 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ```
     <copy>mysqlsh -uadmin -p -h 10.0.1.... --sql</copy>
     ```
+
     ![CONNECT](./images/06connect04-myslqsh.png " ")
 
-9. View  the airportdb total records per table in 
+4. Load the airportdb database into the MySQL DB System using the MySQL Shell Dump Loading Utility.
+
+    
+    ```
+    <copy>util.loadDump("airport-db", {threads: 16, deferTableIndexes: "all", ignoreVersion: true})</copy>
+    ```
+
+
+5. View  the airportdb total records per table in 
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
