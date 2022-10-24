@@ -100,4 +100,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, May 2022

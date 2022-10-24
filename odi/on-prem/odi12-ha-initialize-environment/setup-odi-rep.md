@@ -6,6 +6,7 @@ This lab will show you how to access an ODI instance using NoVNC and configure O
 *Estimated Lab Time*: 10 minutes
 
 ### Objectives
+In this lab you will learn
 * Validate the Database Processes are Up and Running
 * Validate the ODI Installation
 
@@ -135,6 +136,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, January 2022
+- **Author** - Srivishnu Gullapalli, September 2022
 - **Contributors** - Amit Kotarkar
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
