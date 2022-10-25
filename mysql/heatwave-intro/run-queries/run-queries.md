@@ -1,5 +1,5 @@
 # Run Queries with MySQL Shell
-![INTRO](./images/00_mds_heatwave_2.png " ")
+![INTRO](./images/00_mds_heatwave_2.png "mds heatwave ")
 
 ## Introduction
 
@@ -64,9 +64,10 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10\G</copy>
     ```
-    ![RUN](./images/heatwave-qeury-02.png " ")
+    ![RUN](./images/heatwave-qeury-02.png "heatwave query ")
 
 6. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
+
      ```
     <copy>SELECT
     airline.airlinename,
@@ -86,7 +87,7 @@ ORDER BY
 LIMIT 10;
 </copy>
     ```
-     ![Connect](./images/heatwave-qeury-03.png " ")
+     ![Connect](./images/heatwave-qeury-03.png "query execution time ")
 
 7. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
@@ -114,7 +115,7 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10;</copy>
     ```
-    ![RUN](./images/heatwave-qeury-04.png " ")
+    ![RUN](./images/heatwave-qeury-04.png " query compare")
 
 9. To see if `use_secondary_engine` is enabled (=ON)
 
@@ -232,7 +233,7 @@ GROUP BY firstname , lastname;</copy>
     ```
 16. The final results should look like the following:
 
-    ![RUN](./images/final-result.png " ")
+    ![RUN](./images/final-result.png "final result ")
 
 ## Learn More
 

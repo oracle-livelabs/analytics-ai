@@ -5,7 +5,7 @@
 
 A HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
-![Connect](./images/10addheat00.png " ")
+![Connect](./images/10addheat00.png "heatwave architect ")
 
 _Estimated Time:_ 10 minutes
 
@@ -39,16 +39,16 @@ In this lab, you will be guided through the following task:
 
 3. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
 
-    ![Connect](./images/heatwave-load-01-shell.png " ")
+    ![Connect](./images/heatwave-load-01-shell.png "auto parallel load ")
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
 4. The completed load cluster screen should look like this:
 
-    ![Connect](./images/heatwave-load-02.png " ")
+    ![Connect](./images/heatwave-load-02.png "load cluster ")
 
-    ![Connect](./images/heatwave-load-03.png " ")
+    ![Connect](./images/heatwave-load-03.png "completed load cluster ")
 
 5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
@@ -58,7 +58,7 @@ In this lab, you will be guided through the following task:
     ```
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ```
-    ![Connect](./images/heatwave-load-04.png " ")
+    ![Connect](./images/heatwave-load-04.png "table load verification ")
 
 ## Learn More
 
