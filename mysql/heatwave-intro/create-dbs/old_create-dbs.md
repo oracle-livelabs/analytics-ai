@@ -92,7 +92,7 @@ In this lab, you will be guided through the following tasks:
 13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
-## Task 2: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+## Task 2: Create MySQL Database for HeatWave (DB System) instance
 
 1. Go to Navigation Menu
          Databases

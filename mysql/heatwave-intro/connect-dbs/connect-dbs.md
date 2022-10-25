@@ -21,6 +21,7 @@ In this lab, you will be guided through the following tasks:
 - Create SSH Key on OCI Cloud 
 - Create Compute Instance
 - Setup Compute Instance with MySQL Shell
+- Install airportdb sample data
 - Connect to MySQL DB System
 
 ### Prerequisites
@@ -196,7 +197,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ![CONNECT](./images/06connect02-shell.png "mysql shell install ")
 
  
-## Task 4: Install airportdb
+## Task 4: Install airportdb sample data
 
  The installation procedure involves downloading the airportdb database to a Compute instance and importing the data from the Compute instance into the MySQL DB System using the MySQL Shell Dump Loading utility. For information about this utility, see Dump Loading Utility.
 
@@ -207,13 +208,13 @@ You will need a compute Instance to connect to your brand new MySQL database.
     a. Get sample file
 
     ```
-    <copy>wget https://downloads.mysql.com/docs/airport-db.zip unzip airport-db.zip</copy>
+    <copy> sudo wget https://downloads.mysql.com/docs/airport-db.zip unzip airport-db.zip</copy>
     ```
   
     b. Unzip sample file
 
     ```
-    <copy>unzip airport-db.zip</copy>
+    <copy>sudo unzip airport-db.zip</copy>
     ```
 
    **Connect to MySQL Database Service**

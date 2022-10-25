@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
+In this lab, you will create and configure a MySQL DB System and  will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
 
 _Estimated Time:_ 20 minutes
 
@@ -16,7 +16,7 @@ Watch the video below for a quick walk through of the lab.
 In this lab, you will be guided through the following tasks:
 
 - Create Virtual Cloud Network
-- Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+- Create MySQL Database for HeatWave (DB System) instance
 - Add a HeatWave Cluster to MySQL Database System
 
 ### Prerequisites
@@ -92,7 +92,7 @@ In this lab, you will be guided through the following tasks:
 13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png "show ingres rule")
 
-## Task 2: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+## Task 2: Create MySQL Database for HeatWave (DB System) instance
 
 1. Go to Navigation Menu
          Databases
