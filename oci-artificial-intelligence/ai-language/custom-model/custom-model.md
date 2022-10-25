@@ -90,7 +90,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 1. **Create and Train Custom NER Model**
 
     1. Upload the training data to Object Storage:
-        - Download Custom NER offerletter dataset from this [link](./files/CNER.zip).
+        - Download Custom NER offerletter dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
         - Extract the zip file contents into a directory
         - Upload the training dataset files to object storage:
             - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
@@ -109,14 +109,14 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
         ![Training data](./images/ner-training-data.png " ")
 
-    7. **Specifiy model properties**: Specify model name, compartment details and click Next
-    8. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 15 minutes.
+    6. **Specifiy model properties**: Specify model name, compartment details and click Next
+    7. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 15 minutes.
 
         ![Active model](./images/active-model.png " ")
-    9. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
+    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
         ![Work request list](./images/work-request-navigation.png " ")
         ![Create model work request](./images/work-requests.png " ")
-    10. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
+    9.  **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
          ![Model metrics](./images/ner-metrics.png " ")
 
 2. **Create an Endpoint**
@@ -138,7 +138,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 1. **Create and Train Custom Classification Model**
 
     1. **Upload the training data to Object Storage**:
-        1. Download and extract the ticket dataset from this [link](./files/TicketData_train.csv.zip).
+        1. Download and extract the ticket dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/TicketData_train.csv.zip).
 
         2. Upload training data to object storage:
             - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
