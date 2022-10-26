@@ -1,5 +1,5 @@
 # Run MySQL Autopilot
-![INTRO](./images/00_mds_heatwave_2.png "mds heatwave ")
+![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave ")
 
 ## Introduction
 
@@ -146,7 +146,7 @@ GROUP BY firstname , lastname;
 9.	Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
 
     **Your results should look like this:**
-    ![INTRO](./images/pilot01.png "results ")
+    ![results](./images/pilot01.png "results ")
 
 ## Task 2: Improve Query performance using Auto Data Placement
 
@@ -155,7 +155,9 @@ GROUP BY firstname , lastname;
     ```
 <copy>call sys.heatwave_advisor(json_object('target_schema', JSON_ARRAY('airportdb'), 'auto_dp', json_object('benefit_threshold',0) ));</copy>
     ```
-![INTRO](./images/pilot02.png "data placement")
+
+![data placement](./images/pilot02.png "data placement")
+    
 
 2. To apply the suggestion, access the auto-generated script
 
@@ -169,7 +171,7 @@ SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatw
 
 4.	Run the query in Task 1 step 1 again. You can see that total query runtime has improved.
 
-    ![INTRO](./images/pilot03.png "improved query runtime  ")
+    ![improved query runtime](./images/pilot03.png "improved query runtime  ")
 
 ## Learn More
 

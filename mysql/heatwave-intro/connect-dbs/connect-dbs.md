@@ -1,5 +1,5 @@
 # CONNECT TO MYSQL DATABASE SYSTEM
-![INTRO](./images/00_mds_heatwave_2.png "mds heatwave") 
+![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave") 
 
 
 ## Introduction
@@ -36,9 +36,9 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page. This will open the Cloud Shell in the browser, the first time it takes some time to generate it.
 
-    ![CONNECT](./images/cloudshellopen.png "cloud shell button ")
+    ![cloud shell button](./images/cloudshellopen.png "cloud shell button ")
 
-    ![CONNECT](./images/cloudshell01.png "open cloud shell")
+    ![open cloud shell](./images/cloudshell01.png "open cloud shell")
 
     *Note: You can use the icons in the upper right corner of the Cloud Shell window to minimize, maximize, restart, and close your Cloud Shell session.*
 
@@ -52,7 +52,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     
     Here is what it should look like.  
 
-    ![CONNECT](./images/ssh-key01.png "ssh key ")
+    ![ssh key](./images/ssh-key01.png "ssh key ")
 
 3.  The public  and  private SSH keys  are stored in ~/.ssh/id_rsa.pub.
 
@@ -66,7 +66,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     <copy>ls</copy>
     ```
 
-    ![CONNECT](./images/ssh-ls-01.png "list .ssh ")
+    ![list .ssh ](./images/ssh-ls-01.png "list .ssh ")
 
     Note in the output there are two files, a *private key:* `id_rsa` and a *public key:* `id_rsa.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
@@ -79,28 +79,28 @@ You will need a compute Instance to connect to your brand new MySQL database.
 2. Do the followings steps to copy the public SSH key to the  notepad 
 
     Open the Cloud shell
-    ![CONNECT](./images/cloudshell-10.png "open cloud shell ")    
+    ![open cloud shell](./images/cloudshell-10.png "open cloud shell ")    
 
     Enter the following command  
 
     ```
     <copy>cat ~/.ssh/id_rsa.pub</copy>
     ``` 
-    ![CONNECT](./images/cloudshell-11.png "type into cloud shell ") 
+    ![type into cloud shell](./images/cloudshell-11.png "type into cloud shell ") 
 
 3. Copy the id_rsa.pub content the notepad
         
     Your notepad should look like this
-    ![CONNECT](./images/notepad-rsa-key-1.png "show ssh key")  
+    ![show ssh key](./images/notepad-rsa-key-1.png "show ssh key")  
 
 4. To launch a Linux Compute instance, go to 
     Navigation Menu
     Compute
     Instances
-    ![CONNECT](./images/05compute01.png "launch linux ")
+    ![launch linux](./images/05compute01.png "launch linux ")
 
 5. On Instances in **(root)** Compartment, click  **Create Instance**
-    ![CONNECT](./images/05compute02_00.png "compute compartment ")
+    ![compute compartment](./images/05compute02_00.png "compute compartment ")
 
 6. On Create Compute Instance 
 
@@ -114,30 +114,30 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 9. On Image and Shape, keep the selected Image, Oracle Linux 8 
 
-      ![CONNECT](./images/05compute03.png "compute image ")  
+      ![compute image](./images/05compute03.png "compute image ")  
 
 10. Select Instance Shape: VM.Standard.E2.2
 
-      ![CONNECT](./images/05compute-shape.png "compute shape ")  
+      ![compute shape](./images/05compute-shape.png "compute shape ")  
 
 11. On Networking, make sure '**MDS-VCN**' is selected
 
     'Assign a public IP address' should be set to Yes 
    
-    ![CONNECT](./images/05compute04.png "assign public ip ")
+    ![assign public ip](./images/05compute04.png "assign public ip ")
 
 12. On Add SSH keys, paste the public key from the notepad. 
   
-    ![CONNECT](./images/05compute-id-rsa-paste.png "passte ssh key ")
+    ![paste ssh key](./images/05compute-id-rsa-paste.png "paste ssh key ")
 
 13. Click '**Create**' to finish creating your Compute Instance. 
 
 14. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
-    ![CONNECT](./images/05compute07.png "vm provisioning ")
+    ![vm provisioning](./images/05compute07.png "vm provisioning ")
 
 15.	The state 'Running' indicates that the Virtual Machine is ready to use. 
 
-    ![CONNECT](./images/05compute08-a.png "vm ready")
+    ![vm ready](./images/05compute08-a.png "vm ready")
 
 ## Task 3: Connect to MySQL Database System
 
@@ -146,11 +146,11 @@ You will need a compute Instance to connect to your brand new MySQL database.
     - Go to Navigation Menu 
             Compute 
             Instances
-    ![CONNECT](./images/db-list.png "vompute menu ")
+    ![compute menu](./images/db-list.png "compute menu ")
 
     - Click the `MDS-Client` Compute Instance link
     
-    ![CONNECT](./images/05compute08-b.png "compute instance link ")
+    ![compute instance link](./images/05compute08-b.png "compute instance link ")
     
     - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
 
@@ -159,16 +159,16 @@ You will need a compute Instance to connect to your brand new MySQL database.
     - Go to Navigation Menu 
             Databases 
             MySQL
-     ![](./images/db-list.png " mysql menu")
+     ![mysql menu](./images/db-list.png " mysql menu")
 
     - Click the `MDS-HW` Database System link
 
-     ![CONNECT](./images/db-active.png "batabse instance link ")
+     ![mysql menu](./images/db-active.png "batabse instance link ")
     
     - Copy `MDS-HW` plus the `Private IP Address` to the notepad
 
 3. Your notepad should look like the following:
-     ![CONNECT](./images/notepad-rsa-key-compute-mds-1.png "show notepad ")
+     ![show notepad](./images/notepad-rsa-key-compute-mds-1.png "show notepad ")
     
 4. Indicate the location of the private key you created earlier with **MDS-Client**. 
     
@@ -181,7 +181,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ```
     <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
     ```
-    ![CONNECT](./images/06connect01-signin.png "vm connect ")
+    ![vm connect](./images/06connect01-signin.png "vm connect ")
 
     **Install MySQL Shell on the Compute Instance**
 
@@ -194,7 +194,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
      ```
     <copy>sudo yum install mysql-shell -y</copy>
     ```
-    ![CONNECT](./images/06connect02-shell.png "mysql shell install ")
+    ![mysql shell install](./images/06connect02-shell.png "mysql shell install ")
 
  
 ## Task 4: Install airportdb sample data
@@ -223,7 +223,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
    
    The endpoint (IP Address) can be found in your notepad or  the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
-    ![CONNECT](./images/06connect03.png "compute ip ")
+    ![compute ip](./images/06connect03.png "compute ip ")
 
 3.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
@@ -235,7 +235,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>mysqlsh -uadmin -p -h 10.0.1.... --sql</copy>
     ```
 
-    ![CONNECT](./images/06connect04-myslqsh.png "connect mysql ")
+    ![connect mysql](./images/06connect04-myslqsh.png "connect mysql ")
 
 4. Load the airportdb database into the MySQL DB System using the MySQL Shell Dump Loading Utility.
 
@@ -250,7 +250,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
         
-    ![CONNECT](./images/airportdb-list.png "airportdb total records ") 
+    ![airportdb total records](./images/airportdb-list.png "airportdb total records ") 
     
 You may now proceed to the next lab.
 
