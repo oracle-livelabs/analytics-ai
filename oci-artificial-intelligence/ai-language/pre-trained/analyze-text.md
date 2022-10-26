@@ -362,6 +362,7 @@ Before you can start using Data Science, your tenancy administrator should set u
 ### 3. **Navigate to the Data Science Notebook Session**
 
 Follow the below steps to open Notebook in DataScience:
+
   1. Navigate to Data Science Service
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
@@ -460,14 +461,14 @@ These notebooks demonstrates how you can be more productive by using the various
     Fork the Language API collection in your workspace by navigating to Language API collection and clicking the "Fork" option.
     ![Fork Language API collection](./images/fork-language-api1.png)
 
-    Enter name to indentify forked Language API collection, select the workspace you want to fork the collection to and click "Fork Collection".
+    Enter name to identify forked Language API collection, select the workspace you want to fork the collection to and click "Fork Collection".
     ![Enter name for Language API collection](./images/fork-language-api2.png)
 
     Fork the OCI Credentials Environment in your workspace by navigating to Environments and clicking the "Fork" option.
     ![Fork OCI Credentials Environment](./images/fork-oci-cred1.png)
 
-    Enter name to indentify forked OCI credentials environment, select the workspace you want to fork the collection to and click "Fork Collection".
-    ![Enter name for OCI crendentials environment](./images/fork-oci-cred2.png)
+    Enter name to identify forked OCI credentials environment, select the workspace you want to fork the collection to and click "Fork Collection".
+    ![Enter name for OCI credentials environment](./images/fork-oci-cred2.png)
 
 
   4. Set up variables

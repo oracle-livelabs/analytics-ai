@@ -288,7 +288,7 @@ print(ner_inference_result.data)
 </copy>
 ```
 
-Download [code](./files/customnerpythonsdk.py) file and save it your directory.
+Download [code](./files/custom_ner_python_sdk.py) file and save it your directory.
 
 
 #### 2. **Python code to create custom Classification model and analyze text**
@@ -388,7 +388,7 @@ print(txtc_inference_result.data)
 </copy>
 ```
 
-Download [code](./files/customtxtcpythonsdk.py) file and save it your directory.
+Download [code](./files/custom_classification_python_sdk.py) file and save it your directory.
 
 ### Learn More
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
