@@ -5,6 +5,9 @@ In this lab, you will use the OCI Console to become familiar with the features o
 
 *Estimated Time*: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Use OCI Vision through the OCI Console](videohub:1_06s2g4ie)
+
 ### Objectives
 
 In this lab, you will:

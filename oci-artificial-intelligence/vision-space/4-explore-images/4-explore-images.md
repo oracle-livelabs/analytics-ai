@@ -8,7 +8,11 @@ The features of OCI Vision are exposed through an API, which makes those feature
 
 *Estimated Time*: 30 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Explore space images](videohub:1_8nka97yh)
+
 ### Objectives
+
 * Create a source dataset of images to be processed by OAC
 * Create an OAC data flow to process the images through OCI VIsion
 * Create an OAC workbook to view images processed through OCI Vision
@@ -213,10 +217,13 @@ https://www.youtube.com/watch?v=JjuOWm8whgQ
 **Congratulations, you have completed this lab and the workshop!**
 
 ## **Bonus Task:** Analyze images with your custom model
+
 If you have time after completing the workshop, test your learning to see if you can complete the following task without being given all the steps in detail.
 
-1. Go the custom-trained model you created in Lab 3 (galaxy-detection-model-1) and see if it is now active. If it is, use it to analyze one or more images in object storage. You can copy an image URL from the table visualization in your Galaxy Workbook in OAC. Then paste that URL into the Image URL box in Vision to analyze that image. 
+1. Go the custom-trained model you created in Lab 3 (galaxy-detection-model-1) and see if it is now active. If it is, use it to analyze one or more images in object storage. You can copy an image URL from the table visualization in your Galaxy Workbook in OAC. Then paste that URL into the Image URL box in Vision to analyze that image.
 
+    Watch the video below for a quick walk-through to complete the bonus task.
+    [Analyze images with your custom model](videohub:1_hnrkiv5f)
 
 ## Acknowledgements
 
