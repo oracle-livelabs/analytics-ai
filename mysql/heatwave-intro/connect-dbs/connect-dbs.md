@@ -34,7 +34,7 @@ In this lab, you will be guided through the following tasks:
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the Oracle Cloud Console (Homepage). You will start the Cloud Shell and generate a SSH Key to use  for the Bastion  session.
 
-1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page. This will open the Cloud Shell in the browser, the first time it takes some time to generate it.
+1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page. This will open the Cloud Shell in the browser, the first time it takes some time to generate it.
 
     ![cloud shell button](./images/cloudshellopen.png "cloud shell button ")
 
@@ -42,7 +42,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     *Note: You can use the icons in the upper right corner of the Cloud Shell window to minimize, maximize, restart, and close your Cloud Shell session.*
 
-2.  Once the cloud shell has started, create the SSH Key using the following command:
+2. Once the cloud shell has started, create the SSH Key using the following command:
 
     ```
     <copy>ssh-keygen -t rsa</copy>
@@ -194,6 +194,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
      ```
     <copy>sudo yum install mysql-shell -y</copy>
     ```
+
     ![mysql shell install](./images/06connect02-shell.png "mysql shell install ")
 
  
@@ -208,7 +209,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     a. Get sample file
 
     ```
-    <copy> sudo wget https://downloads.mysql.com/docs/airport-db.zip unzip airport-db.zip</copy>
+    <copy>sudo wget https://downloads.mysql.com/docs/airport-db.zip </copy>
     ```
   
     b. Unzip sample file
@@ -227,17 +228,21 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 3.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
-    (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
+    (Example  **mysqlsh -uadmin -p -h10.0.1.. **)
 
     **[opc@...]$**
 
     ```
-    <copy>mysqlsh -uadmin -p -h 10.0.1.... --sql</copy>
+    <copy>mysqlsh -uadmin -p -h 10.0.1.... </copy>
     ```
 
     ![connect mysql](./images/06connect04-myslqsh.png "connect mysql ")
 
 4. Load the airportdb database into the MySQL DB System using the MySQL Shell Dump Loading Utility.
+
+    ```
+    <copy>\js</copy>
+    ```
 
     
     ```
@@ -245,7 +250,12 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ```
 
 
-5. View  the airportdb total records per table in 
+5. View  the airportdb total records per table 
+
+    ```
+    <copy>\sql</copy>
+    ```
+
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
