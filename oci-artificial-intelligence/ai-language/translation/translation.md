@@ -20,7 +20,7 @@ In this lab, you will learn to:
 - Language policies are configured as per [Lab 1](?lab=analyze-text#PolicySetup)
 
 
-## **TASK 1:** Translate Text using OCI Console
+## TASK 1: Translate Text using OCI Console
 
 
 1. **Navigate to OCI Language Translation**: 
@@ -56,7 +56,7 @@ In this lab, you will learn to:
     ![Translation result](./images/translate-result.png " ")
 
 
-## **TASK 2:** Translate Text with Python SDK
+## TASK 2: Translate Text with Python SDK
 
 Please refer to the sample code below and update required variables to translate text using Python SDK
 
@@ -100,8 +100,6 @@ To know more about the Python SDK visit [Python OCI-Language](https://docs.oracl
 
 Congratulations! </br>
 In this lab you have learnt how to use Language Service to translate text with OCI Console and Python SDK.
-
-[Proceed to the next section](#next)
 
 ## Acknowledgements
 

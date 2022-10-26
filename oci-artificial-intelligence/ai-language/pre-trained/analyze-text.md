@@ -53,7 +53,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 
 
 
-## **TASK 1:** Use the Console to analyze text
+## TASK 1: Use the Console to analyze text
 
 ### 1. Navigate to OCI Language
 
@@ -113,7 +113,7 @@ Lists, by confidence percentage, the languages detected.
 Lists the word, identified document category, and the confidence score.
     ![Text classification Result](./images/text-result.png " ")
 
-## **Task 2** Analyze Text with Python SDK
+## Task 2: Analyze Text with Python SDK
 
 ### 1. **About OCI SDK**
 
@@ -304,7 +304,7 @@ To know more about the Java Script SDK visit [Java Script OCI-Language](https://
 To know more about the DOT NET SDK visit [DOT NET OCI-Language](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
 
 
-## **TASK 3** Analyze text using OCI Data Science Notebook
+## TASK 3: Analyze text using OCI Data Science Notebook
 
 ### 1. **About OCI Data Science**
 
@@ -406,7 +406,7 @@ Follow the below steps to open Notebook in DataScience:
 
   1. Download and Upload the Files
 
-    Download this [Sentiment Analysis](./files/sentiment_batch.ipynb) and [Named Entitiy Recognition](./files/ner_batch.ipynb) files and upload it in the Notebook. 
+    Download this [Sentiment Analysis](./files/sentiment-batch.ipynb) and [Named Entitiy Recognition](./files/ner-batch.ipynb) files and upload it in the Notebook. 
     Download this [Dataset](./files/data.csv) and upload it in the Notebook.
     ![uploading files](./images/upload-files.png " ")
 
@@ -441,7 +441,7 @@ Now go through each of the cells and run them one by one. You can click Shift+En
 These notebooks demonstrates how you can be more productive by using the various Language services.
 
 
-## **TASK 4**: Analyze Text using REST API
+## TASK 4: Analyze Text using REST API
 
 ### 1. **Setting Up Postman tool to access OCI REST API**
 
@@ -506,7 +506,7 @@ Below is the example shown to invoke Detect Language Service.
 OCI Language service endpoints:
 
 ```
-
+<copy>
 # Language Detection
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectDominantLanguage
 
@@ -521,7 +521,7 @@ https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/bat
 
 # Sentiment Analysis
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguageSentiments
-
+<copy>
 ```
 
 ## **Summary**
@@ -529,7 +529,7 @@ https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/bat
 Congratulations! </br>
 In this lab you have learnt how to setup required policies for Language, using different ways such as OCI Console, SDK and REST APIs to to analyze text.
 
-[Proceed to the next section](#next)
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

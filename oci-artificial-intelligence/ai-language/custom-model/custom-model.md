@@ -65,7 +65,7 @@ Follow these steps to configure required policies.
     For more details on policies required for Language Service, please refer [Language Service documentation](https://docs.oracle.com/en-us/iaas/language/using/overview.htm#policies)
 
 
-## **Task 1:** Create a Project
+## Task 1: Create a Project
 
 A Project is a way to organize multiple models in the same workspace. Follow below steps to create a project.
 
@@ -85,7 +85,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     ![Active Project](./images/active-project.png " ")
 
 
-## **Task 2:** Create Custom NER Model
+## Task 2: Create Custom NER Model
 
 1. **Create and Train Custom NER Model**
 
@@ -133,7 +133,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
         ![Analyze screen](./images/analyze.png " ")
 
-## **Task 3:** Create Custom Classification Model
+## Task 3: Create Custom Classification Model
 
 1. **Create and Train Custom Classification Model**
 
@@ -180,7 +180,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
         ![Analyze screen](./images/analyze.png " ")
 
-## **Task 4:** Using Python SDK to Create Custom Models
+## Task 4: Using Python SDK to Create Custom Models
 All the above tasks performed to create custom models and analyzing text can be done through Python code.
 **Pre-requisites**:
 <br/>
@@ -398,7 +398,7 @@ To know more about the Python SDK visit [Python OCI-Language](https://docs.oracl
 Congratulations! </br>
 In this lab you have learnt how to create custom NER and Classification models and analyze text using OCI Console and Python SDK.
 
-[Proceed to the next section](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
