@@ -68,4 +68,4 @@ This workshop assumes you are using a reserved Oracle LiveLabs sandbox environme
 
 - **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
 - **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
-- **Last Updated By/Date** - Name, Month Year
+- **Last Updated By/Date** - Wes Prichard, 7 Oct 2022
