@@ -208,7 +208,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     a. Get sample file
 
     ```
-    <copy> sudo wget https://downloads.mysql.com/docs/airport-db.zip unzip airport-db.zip</copy>
+    <copy>sudo wget https://downloads.mysql.com/docs/airport-db.zip</copy>
     ```
   
     b. Unzip sample file
@@ -227,25 +227,34 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 3.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
-    (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
+    (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
     **[opc@...]$**
 
     ```
-    <copy>mysqlsh -uadmin -p -h 10.0.1.... --sql</copy>
+    <copy>mysqlsh -uadmin -p -h 10.0.1... </copy>
     ```
 
     ![connect mysql](./images/06connect04-myslqsh.png "connect mysql ")
 
 4. Load the airportdb database into the MySQL DB System using the MySQL Shell Dump Loading Utility.
 
-    
+
+    ```
+    <copy>\js</copy>
+    ```
+
     ```
     <copy>util.loadDump("airport-db", {threads: 16, deferTableIndexes: "all", ignoreVersion: true})</copy>
     ```
 
 
-5. View  the airportdb total records per table in 
+5. View  the airportdb total records per table
+
+    ```
+    <copy>\sql</copy>
+    ```
+
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
