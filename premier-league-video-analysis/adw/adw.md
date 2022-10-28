@@ -72,7 +72,7 @@ We assume you are connect to your OCI Data Science notebook. If not, please open
 
 3. We're going to work on an updated version of the notebook, which has all the work of the previous labs, and some additional code to connect to a database. Download the new version here.
 
-   [Notebook with connection to ADW](./files/connect_to_adw_starting_point.ipynb.ipynb)
+   [Notebook with connection to ADW](./files/connect_to_adw_starting_point.ipynb)
 
   Upload the notebook by dragging it to the explorer section.
 
