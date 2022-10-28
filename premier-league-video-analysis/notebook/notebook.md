@@ -237,19 +237,19 @@ json.dump(res_json, f)
     ```python
     <copy>import cv2
 def draw_bounding_boxes(objects, img):
-    width = img.shape[1]
-    height = img.shape[0]
-    # Loop through all of the players found
-    for obj in objects:
-        point1 = (int(obj["bounding_polygon"]["normalized_vertices"][0]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][0]["y"] * height))
-        point2 = (int(obj["bounding_polygon"]["normalized_vertices"][1]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][1]["y"] * height))
-        point3 = (int(obj["bounding_polygon"]["normalized_vertices"][2]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][2]["y"] * height))
-        point4 = (int(obj["bounding_polygon"]["normalized_vertices"][3]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][3]["y"] * height))
-        color = (255, 255, 255)
-        cv2.line(img, point1, point2, color, 2)
-        cv2.line(img, point2, point3, color, 2)
-        cv2.line(img, point3, point4, color, 2)
-        cv2.line(img, point4, point1, color, 2)
+        width = img.shape[1]
+        height = img.shape[0]
+        # Loop through all of the players found
+        for obj in objects:
+            point1 = (int(obj["bounding_polygon"]["normalized_vertices"][0]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][0]["y"] * height))
+            point2 = (int(obj["bounding_polygon"]["normalized_vertices"][1]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][1]["y"] * height))
+            point3 = (int(obj["bounding_polygon"]["normalized_vertices"][2]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][2]["y"] * height))
+            point4 = (int(obj["bounding_polygon"]["normalized_vertices"][3]["x"] * width), int(obj["bounding_polygon"]["normalized_vertices"][3]["y"] * height))
+            color = (255, 255, 255)
+            cv2.line(img, point1, point2, color, 2)
+            cv2.line(img, point2, point3, color, 2)
+            cv2.line(img, point3, point4, color, 2)
+            cv2.line(img, point4, point1, color, 2)
 img = cv2.imread('example-football-pitch-image.jpg')
 draw_bounding_boxes(res_json["image_objects"], img)
 draw_bounding_boxes(res_json["image_text"]["lines"], img)
