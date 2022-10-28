@@ -286,32 +286,32 @@ We will solve this challenge by checking which texts are within the bounding box
 
     ```python
     <copy>def is_point_within_rectangle(object_rectangle, text_rectangle):
-    minX = 1
-    maxX = 0
-    minY = 1
-    maxY = 0
-    for coordinate in object_rectangle:
-        if coordinate["x"] < minX:
-            minX = coordinate["x"]
-        if coordinate["y"] < minY:
-            minY = coordinate["y"]
-        if coordinate["x"] > maxX:
-            maxX = coordinate["x"]
-        if coordinate["y"] > maxY:
-            maxY = coordinate["y"]
-    result = text_rectangle[0]["x"] > minX and text_rectangle[0]["y"] > minY and text_rectangle[0]["x"] < maxX and text_rectangle[0]["y"] < maxY and text_rectangle[1]["x"] > minX and text_rectangle[1]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[1]["y"] < maxY and text_rectangle[2]["x"] > minX and text_rectangle[2]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[2]["y"] < maxY and text_rectangle[3]["x"] > minX and text_rectangle[3]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[3]["y"] < maxY
-    return result
+        minX = 1
+        maxX = 0
+        minY = 1
+        maxY = 0
+        for coordinate in object_rectangle:
+            if coordinate["x"] < minX:
+                minX = coordinate["x"]
+            if coordinate["y"] < minY:
+                minY = coordinate["y"]
+            if coordinate["x"] > maxX:
+                maxX = coordinate["x"]
+            if coordinate["y"] > maxY:
+                maxY = coordinate["y"]
+        result = text_rectangle[0]["x"] > minX and text_rectangle[0]["y"] > minY and text_rectangle[0]["x"] < maxX and text_rectangle[0]["y"] < maxY and text_rectangle[1]["x"] > minX and text_rectangle[1]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[1]["y"] < maxY and text_rectangle[2]["x"] > minX and text_rectangle[2]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[2]["y"] < maxY and text_rectangle[3]["x"] > minX and text_rectangle[3]["y"] > minY and text_rectangle[1]["x"] < maxX and text_rectangle[3]["y"] < maxY
+        return result
 def add_shirt_number_to_players(vision_response):
-    # Loop through all of the players found
-    for image_object in vision_response["image_objects"]:
-        # Loop through all of the texts found
-        # Check if it is within the bounds of this player
-        # If it is, then set it as the shirt number
-        for line in vision_response["image_text"]["lines"]:
-            result = is_point_within_rectangle(image_object["bounding_polygon"]["normalized_vertices"], line["bounding_polygon"]["normalized_vertices"])
-            if (result is True):
-                image_object["shirt_number"] = line["text"]
-                print(image_object)
+        # Loop through all of the players found
+        for image_object in vision_response["image_objects"]:
+            # Loop through all of the texts found
+            # Check if it is within the bounds of this player
+            # If it is, then set it as the shirt number
+            for line in vision_response["image_text"]["lines"]:
+                result = is_point_within_rectangle(image_object["bounding_polygon"]["normalized_vertices"], line["bounding_polygon"]["normalized_vertices"])
+                if (result is True):
+                    image_object["shirt_number"] = line["text"]
+                    print(image_object)
 add_shirt_number_to_players(res_json)
 f = open('vision_response_enriched_with_shirt_numbers.json', 'w')
 json.dump(res_json, f)
