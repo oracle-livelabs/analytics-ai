@@ -128,11 +128,10 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
     Execute the following in the terminal.
 
     ```
-    <copy>pip install oci==2.75.1 pandas==1.1.5 oci-cli==3.11.1
+    <copy>source activate /home/datascience/conda/computervision_p37_cpu_v1
+    pip install oci==2.75.1 pandas==1.1.5 oci-cli==3.11.1
     </copy>
     ```
-
-
 
 ## Task 5: Create the first version of the notebook to run Object Detection and Text Detection
 
