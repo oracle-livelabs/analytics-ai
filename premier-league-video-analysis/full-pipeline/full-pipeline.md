@@ -46,11 +46,11 @@ Estimated Time: 20 minutes
    The new notebook with the full pipeline contains all the code from the labs so far, and adds some additional logic. We will now review that logic.
 
    The notebook contains all the logic that we implemented before, including:
-   - Object recognition and text recognition by calling the OCI Vision service for each frame
-   - Calculation of the homography translation matrix for each frame
-   - Translation player and ball coordinates from camera coordinates to field coordinates for each frame
-   - Removal of any objects outside of the field limits for each frame
-   - Connecting shirt numbers to players for each frame
+    - Object recognition and text recognition by calling the OCI Vision service for each frame
+    - Calculation of the homography translation matrix for each frame
+    - Translation player and ball coordinates from camera coordinates to field coordinates for each frame
+    - Removal of any objects outside of the field limits for each frame
+    - Connecting shirt numbers to players for each frame
 
    The notebook is basically a loop that processes all the frames, and goes through all of the steps mentioned above. Have a look at the last cell of the notebook, and see if you can recognize all of these elements. 
 

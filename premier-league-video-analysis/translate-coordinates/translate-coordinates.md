@@ -96,26 +96,26 @@ We will need this for tracking purposes. Any statistics that we want to calculat
 
 1. Add the following code to a cell and inspect it.
 
-   ```python
-   <copy>def add_object_world_coordinates(image_objects, img, camera_to_field):
-    for image_object in image_objects:
-        width = img.shape[1]
-        height = img.shape[0]
-        vertices = image_object["bounding_polygon"]["normalized_vertices"]
-        vertex_x = vertices[0]['x'] * width
-        vertex_y = vertices[0]['y'] * height
-        box_width = (vertices[2]['x'] - vertices[0]['x']) * width
-        box_height = (vertices[2]['y'] - vertices[0]['y']) * height
-        camera_location = np.array([[int(vertex_x + (box_width / 2)), int(vertex_y + box_height)]], dtype='float32')
-        camera_location = np.array([camera_location])
-        world_location = cv2.perspectiveTransform(camera_location, camera_to_field)
-        world_location = [float(world_location[0][0][0]), float(world_location[0][0][1])]
-        image_object["world_coordinates"] = world_location
+    ```python
+    <copy>def add_object_world_coordinates(image_objects, img, camera_to_field):
+        for image_object in image_objects:
+            width = img.shape[1]
+            height = img.shape[0]
+            vertices = image_object["bounding_polygon"]["normalized_vertices"]
+            vertex_x = vertices[0]['x'] * width
+            vertex_y = vertices[0]['y'] * height
+            box_width = (vertices[2]['x'] - vertices[0]['x']) * width
+            box_height = (vertices[2]['y'] - vertices[0]['y']) * height
+            camera_location = np.array([[int(vertex_x + (box_width / 2)), int(vertex_y + box_height)]], dtype='float32')
+            camera_location = np.array([camera_location])
+            world_location = cv2.perspectiveTransform(camera_location, camera_to_field)
+            world_location = [float(world_location[0][0][0]), float(world_location[0][0][1])]
+            image_object["world_coordinates"] = world_location
 add_object_world_coordinates(res_json["image_objects"], img, camera_to_field)
 f = open('vision_response_enriched_with_world_coordinates.json', 'w')
 json.dump(res_json, f)
-   </copy>
-   ```
+    </copy>
+    ```
 
    Notice how this takes the pixels coordinates of the bottom middle of the bounding box, between the feet of the players. It translates these coordinates to real world coordinates on the pitch using the **camera\_to\_field** translation matrix that we calculated earlier.
 
@@ -131,27 +131,27 @@ json.dump(res_json, f)
  
    Copy the following code into a new cell. Don't run it yet, because it's not finished!
 
-   ```python
-   <copy>def draw_player_field_markers(image_objects, img, field_to_camera):
-    for image_object in image_objects:
-        world_coordinates = image_object["world_coordinates"]
-        if "display" in image_object and image_object["name"] == "Person":
-            draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]], [world_coordinates[0]+0.5, world_coordinates[1]], img, field_to_camera)
-            draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]], [world_coordinates[0]-0.5, world_coordinates[1]+1], img, field_to_camera)
-            draw_line_with_field_coordinates([world_coordinates[0]+0.5, world_coordinates[1]], [world_coordinates[0]+0.5, world_coordinates[1]+1], img, field_to_camera)
-            draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]+1], [world_coordinates[0]+0.5, world_coordinates[1]+1], img, field_to_camera)
-def remove_unwanted_objects(image_objects):
-    for index, image_object in enumerate(image_objects):
-        world_coordinate = image_object["world_coordinates"]
-        if image_object["name"] == "Person":
-            if <YOUR CODE GOES HERE>:
-                image_object["display"] = "Y"
+    ```python
+    <copy>def draw_player_field_markers(image_objects, img, field_to_camera):
+        for image_object in image_objects:
+            world_coordinates = image_object["world_coordinates"]
+            if "display" in image_object and image_object["name"] == "Person":
+                draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]], [world_coordinates[0]+0.5, world_coordinates[1]], img, field_to_camera)
+                draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]], [world_coordinates[0]-0.5, world_coordinates[1]+1], img, field_to_camera)
+                draw_line_with_field_coordinates([world_coordinates[0]+0.5, world_coordinates[1]], [world_coordinates[0]+0.5, world_coordinates[1]+1], img, field_to_camera)
+                draw_line_with_field_coordinates([world_coordinates[0]-0.5, world_coordinates[1]+1], [world_coordinates[0]+0.5, world_coordinates[1]+1], img, field_to_camera)
+    def remove_unwanted_objects(image_objects):
+        for index, image_object in enumerate(image_objects):
+            world_coordinate = image_object["world_coordinates"]
+            if image_object["name"] == "Person":
+                if <YOUR CODE GOES HERE>:
+                    image_object["display"] = "Y"
 remove_unwanted_objects(res_json["image_objects"])
 draw_player_field_markers(res_json["image_objects"], img, field_to_camera)
 plt.imshow(img)
 plt.show()
-   </copy>
-   ```
+    </copy>
+    ```
 
    Adapt the placeholder **YOUR CODE GOES HERE** by including a condition to only display players that are **inside** of the football pitch limits. We will do this to filter out all of the objects outside of the field.
 
