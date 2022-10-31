@@ -71,7 +71,7 @@ This process is automated.  However, **if you prefer a manual** approach, to con
     - Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
     - Select a name, e.g. "Data Science Notebook"
     - We recommend you choose **VM.Standard2.2** as the shape. In practice this makes the processing of the video of this workshop fast enough.
-    - Set blockstorage to 50 GByte.
+    - Set block storage to 50 GByte.
     - Keep the defaults for the Networking Resources.
 
     ![](./images/create-notebook-4.png)

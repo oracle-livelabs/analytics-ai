@@ -119,7 +119,7 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 
 6. Wait for the conda package to be installed.
 
-   There may be an apparant pause when extracting the libraries. Please be patient.
+   There may be an apparent pause when extracting the libraries. Please be patient.
 
    This will take about 10 minutes.
 

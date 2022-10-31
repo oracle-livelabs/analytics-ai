@@ -144,7 +144,7 @@ By default, the database tracking is turned off in the notebook. Optionally, you
 
     ![Result](images/download-video.png)
 
-    Watch the video with your favourite video player.
+    Watch the video with your favorite video player.
 
     If you had any problems creating the video, you can also download it here:
     [Augmented video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-soccer_out.avi)

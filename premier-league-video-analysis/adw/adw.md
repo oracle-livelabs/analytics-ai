@@ -80,11 +80,11 @@ We assume you are connect to your OCI Data Science notebook. If not, please open
 
 4. Go to the last cell and adapt the values to match your Autonomous Data Warehouse.
 
-   If you used the default values as instructured in the previous labs, the only values you should have to adapt are the two passwords. The first password is the one you used when you provisioned Autonomous Data Warehouse. The second password is the one you used when you created and downloaded the wallet.
+   If you used the default values as instructed in the previous labs, the only values you should have to adapt are the two passwords. The first password is the one you used when you provisioned Autonomous Data Warehouse. The second password is the one you used when you created and downloaded the wallet.
 
    ![Upload notebook](images/configure-connection.png)
 
-5. Run the notebook in its entireity.
+5. Run the notebook in its entirety.
 
    ![Upload notebook](images/run-entire-notebook.png)
 

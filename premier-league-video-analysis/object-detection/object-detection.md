@@ -60,7 +60,7 @@ Estimated Time: 10 minutes
 
 4. Now, click on the "Raw Text" tab.
 
-   Notice how the shirt number of the player in posession of the ball is recognized. 
+   Notice how the shirt number of the player in possession of the ball is recognized. 
    Just like with the object detection, the exact position of the text is marked on the image by OCI Vision.
 
    ![Result](images/text.png)

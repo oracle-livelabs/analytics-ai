@@ -6,7 +6,7 @@
 
 In this challenge, you'll learn how computer vision and AI algorithms can be used to extract information from videos of football matches. The end goal of this is to help coaches, football analysts, and fans by supplying them with insights about player and team performance.
 
-Let’s first imagine a situation where we don’t have automatic extraction of information from videos: In this situation, if a football analysist wants to understand the performance of a player, he would be forced to manually watch many matches of that player. He would have to manually tag every moment in those matches where a player performs some action (e.g. pass, shot, free kick) and then analyze that information later. You can imagine that that is a very cumbersome process.
+Let’s first imagine a situation where we don’t have automatic extraction of information from videos: In this situation, if a football analysts wants to understand the performance of a player, he would be forced to manually watch many matches of that player. He would have to manually tag every moment in those matches where a player performs some action (e.g. pass, shot, free kick) and then analyze that information later. You can imagine that that is a very cumbersome process.
 
 In this workshop we will automate that process. You will create a system that examines a video feed and automatically creates tracking information: we will have a record of where each player and the ball are on the pitch at any moment in the match. 
 
@@ -35,7 +35,7 @@ In this workshop, you will:
 - Use a deep learning model to identify individual players with their shirt number.
 - Augment the input video by adding graphical tracking information.
 
-We will write the tracking data to a database (Autonomous Data Warehouse). You will use a number of services, such as Autonomous Datawarehouse, OCI Data Science and OCI Vision.
+We will write the tracking data to a database (Autonomous Data Warehouse). You will use a number of services, such as Autonomous Data Warehouse, OCI Data Science and OCI Vision.
 
 Estimated Workshop Time: 120 minutes
 
