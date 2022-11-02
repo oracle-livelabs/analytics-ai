@@ -4,7 +4,7 @@
 
 This lab will show you how to provision the OCI Data Science service.
 
-Estimated lab time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -86,7 +86,7 @@ This process is automated.  However, **if you prefer a manual** approach, to con
 
     ![](./images/environment.png)
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Olivier Perard - Iberia Technology Software Engineers Director, Jeroen Kloosterman - Product Strategy Director

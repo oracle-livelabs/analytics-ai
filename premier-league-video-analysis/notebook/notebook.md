@@ -4,7 +4,7 @@
 
 So far, we have used OCI Vision through the OCI Console (web user interface). In this lab we will call the OCI Vision Object Detection models programmatically using OCI Data Science. Our goal is to build up a solid pipeline that can process an entire video and produce tracking data.
 
-Estimated lab time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -335,7 +335,7 @@ json.dump(res_json, f)
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Olivier Perard - Iberia Technology Software Engineers Director, Jeroen Kloosterman - Product Strategy Director

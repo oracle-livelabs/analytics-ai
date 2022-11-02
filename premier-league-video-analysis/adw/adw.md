@@ -6,7 +6,7 @@ Once we have the tracking information, we will want to extract all kinds of stat
 
 In this lab we will set up the connection between our OCI Data Science notebook and Autonomous Data Warehouse
 
-Estimated lab time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -154,7 +154,7 @@ At this point we have the basic ingredients to be able to extract tracking infor
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Olivier Perard - Iberia Technology Software Engineers Director, Jeroen Kloosterman - Product Strategy Director
