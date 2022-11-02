@@ -230,7 +230,7 @@ json.dump(res_json, f)
 
    Now we are going to visualize the boxes. 
    
-   Create a new cell with this contents.
+   Create a new cell with this content.
 
    Notice how this loops through a) The recognized objects and b) The recognized texts. It will draw a bounding box for each of the detection by drawing lines between all of the corners ("vertices"). 
 

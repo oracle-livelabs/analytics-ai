@@ -12,7 +12,7 @@ We will find out what the shirt numbers of the players are by using Optical Char
 
 Both Object Recognition and Optical Character Recognition can mark the objects/numbers that were found with bounding boxes, so we will know where in the image the occurrences are located.
  
-The OCI Vision service is a serverless service, meaning that it requires no installation/provisioning, but is "simple there" for you to use. When you need a Machine Learning model for a particular task, you basically have two options: 1) Build it yourself or 2) Reuse a packaged model. OCI Vision offers both of these options. First of all, it makes it very easy for you to train new models by facilitating the process of labelling, training and testing. Secondly, it comes with prebuilt models for Object Detection and Optical Character Recognition (known as Document AI), that you can easily leverage. We will use these prebuilt models for this exercise.
+The OCI Vision service is a serverless service, meaning that it requires no installation/provisioning, but is "simply there" for you to use. When you need a Machine Learning model for a particular task, you basically have two options: 1) Build it yourself or 2) Reuse a packaged model. OCI Vision offers both of these options. First of all, it makes it very easy for you to train new models by facilitating the process of labelling, training and testing. Secondly, it comes with prebuilt models for Object Detection and Optical Character Recognition (known as Document AI), that you can easily leverage. We will use these prebuilt models for this exercise.
 
 In this lab, you will use the OCI console (web interface) to access the OCI Vision service and apply the Object Detection and Document AI models on an image from a football match. 
 
@@ -45,7 +45,7 @@ Estimated Time: 10 minutes
 
 	![Example image of football pitch](images/example-football-pitch-image.jpg)
 
-3. In OCI Vision, choosing "select one" and select the image that you just downloaded.
+3. In OCI Vision, choose "select one" and select the image that you just downloaded.
 
 	![Upload example image](images/upload-example-image.png)
 

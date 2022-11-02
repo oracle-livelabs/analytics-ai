@@ -87,7 +87,7 @@ Estimated Time: 30 minutes
 
    ![Frame with field lines](images/field-with-lines-and-penalty-area.png)
 
-   Ask your workshop instructor in case you would like some help.
+   Ask your workshop instructor if you would like some help.
 
 ## Task 2: Translate player coordinates to real world coordinates
 
@@ -161,7 +161,7 @@ plt.show()
 
    ![Result](images/result-draw-player-world-coordinates.png)
 
-   Ask your workshop instructor in case you would like some help.
+   Ask your workshop instructor if you would like some help.
 
 Congratulations on completing this lab!
 

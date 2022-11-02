@@ -6,9 +6,9 @@
 
 In this challenge, you'll learn how computer vision and AI algorithms can be used to extract information from videos of football matches. The end goal of this is to help coaches, football analysts, and fans by supplying them with insights about player and team performance.
 
-Let’s first imagine a situation where we don’t have automatic extraction of information from videos: In this situation, if a football analysts wants to understand the performance of a player, he would be forced to manually watch many matches of that player. He would have to manually tag every moment in those matches where a player performs some action (e.g. pass, shot, free kick) and then analyze that information later. You can imagine that that is a very cumbersome process.
+Let’s first imagine a situation where we don’t have automatic extraction of information from videos: In this situation, if a football analyst wants to understand the performance of a player, he/she would be forced to manually watch many matches of that player. He/she would have to manually tag every moment in those matches where a player performs some action (e.g. pass, shot, free kick) and then analyze that information later. You can imagine that is a very cumbersome process.
 
-In this workshop we will automate that process. You will create a system that examines a video feed and automatically creates tracking information: we will have a record of where each player and the ball are on the pitch at any moment in the match. 
+In this workshop we will automate that process. You will create a system that examines a video feed and automatically creates tracking information; we will have a record of where each player and the ball are on the pitch at any moment in the match. 
 
 For our challenge we will use the video from one single camera. The benefits of using one single camera, is that you don’t need any special expensive hardware. We also hope that this will make the system usable for any match that you see on TV.
 
@@ -21,7 +21,7 @@ However, we cannot rely on one single algorithm that will do everything we need 
 - Player identification: How do we take “any” player from the object detection step and recognize the individual player from it? For this we'll have to be able to recognize the shirt numbers.
 - Player tracking: How can we keep track of a player's identification even when his shirt number is not facing the camera?
 
-We will be creating a pipeline (a process) for which the input will be the raw video of the camera. A sequence of actions (see above) will be performed on each frame (image). The output will of the process will be a) an augmented video, showing the position of players, shirt numbers and the ball, and b) the tracking data stored in a database.
+We will be creating a pipeline (a process) for which the input will be the raw video of the camera. A sequence of actions (see above) will be performed on each frame (image). The output of the process will be a) an augmented video, showing the position of players, shirt numbers and the ball, and b) the tracking data stored in a database.
 
 This image shows the augmentation that we will be performing in this workshop.
 

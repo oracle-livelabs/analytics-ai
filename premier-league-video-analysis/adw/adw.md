@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Once we have the tracking information, we will want to extract all kinds of statistics from it. For example, a scout may want to calculate statistics on Player Performance. A coach may want to look at Expected Goals, et cetera. In order to give analysts like the scout and the coach an easy access to the data for their analysis, we will store all the information that we extract (from the videos) in the Autonomous Data Warehouse. 
+Once we have the tracking information, we will want to extract all kinds of statistics from it. For example, a scout may want to calculate statistics on Player Performance. A coach may want to look at Expected Goals, et cetera. In order to give analysts like the scout and the coach easy access to the data for their analysis, we will store all the information that we extract (from the videos) in the Autonomous Data Warehouse. 
 
 In this lab we will set up the connection between our OCI Data Science notebook and Autonomous Data Warehouse
 
@@ -39,7 +39,7 @@ In this lab you will:
 
 ## Task 2: Configure OCI Data Science
 
-We assume you are connect to your OCI Data Science notebook. If not, please open it first.
+We assume you are connected to your OCI Data Science notebook. If not, please open it first.
 
 1. First, we are going to install the wallet. 
 
