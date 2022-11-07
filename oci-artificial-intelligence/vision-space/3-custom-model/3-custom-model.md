@@ -94,4 +94,4 @@ Congratulations, you have trained a custom Vision object detection model.
 
 - **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
 - **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
-- **Last Updated By/Date** - Name, Month Year
+- **Last Updated By/Date** - Wes Prichard, 7 October 2022
