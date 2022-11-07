@@ -1,0 +1,44 @@
+{
+  "workshoptitle": "Premier League Video Analysis with Deep Learning",
+  "help": "livelabs-help-oci_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "In this challenge, you'll learn how computer vision and AI algorithms can be used to analyze football matches automatically. You'll learn how to take video footage of a match and extract player and ball position from it. From this data, we will be able to produce insights that are useful for players, teams and fans.",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "These are the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision OCI Data Science",
+      "filename": "../../provision-ocids/provision-ocids.md"
+    },
+    {
+      "title": "Lab 2: Provision Autonomous Data Warehouse",
+      "filename": "../../adw-provisioning/adw-provisioning.md"
+    },
+    {
+      "title": "Lab 3: Recognize Players and Shirt Numbers - OCI console",
+      "filename": "../../object-detection/object-detection.md"
+    },
+    {
+      "title": "Lab 4: Recognize Players and Shirt Numbers - Programmatically",
+      "filename": "../../notebook/notebook.md"
+    },
+    {
+      "title": "Lab 5: Translate Camera Coordinates to Football Pitch Coordinates",
+      "filename": "../../translate-coordinates/translate-coordinates.md"
+    },
+    {
+      "title": "Lab 6: Connecting to Autonomous Data Warehouse",
+      "filename": "../../adw/adw.md"
+    },
+    {
+      "title": "Lab 7: Processing the entire video",
+      "filename": "../../full-pipeline/full-pipeline.md"
+    }
+  ]
+}
