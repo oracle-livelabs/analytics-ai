@@ -22,21 +22,21 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 
 1. From the cloud console, open the user menu (top right) and click My Profile.
 
-   ![](./images/user-profile.png)
+   ![User profile](./images/user-profile.png)
 
 2. Navigate to API Key and then click "Add API Key".
 
-   ![](./images/add-api.png)
+   ![Add API](./images/add-api.png)
 
 3. In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your local machine and then click Add.
 
-   ![](./images/download-key.png)
+   ![Download key](./images/download-key.png)
 
 4. Now look for the file that you saved on your harddrive. By default the key file has a long name, similar to the following: **oracleidentitycloudservice_mytenancyname-12-17-12-50.pem**. Rename your local file to **key.pem**.
 
 5. Select the text in the contents field and copy it to the clipboard.
 
-   ![](./images/config.png)
+   ![Configuration 1](./images/config.png)
 
 6. Create a file on your local machine called "config" (no extension)
 
@@ -46,35 +46,35 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 
    Save your changes.
 
-   ![](./images/config2.png)
+   ![Configuration 2](./images/config2.png)
 
 ## Task 2: Open the OCI Data Science notebook
 
 1. From the OCI console, go to "Analytics & AI", then choose "Data Science".
 
-    ![](./images/open-ods.png)
+    ![Open OCI Data Science](./images/open-ods.png)
 
 2. Select the OCI Data Science project that you created earlier.
 
-    ![](./images/open-ods2.png)
+    ![Open the project](./images/open-ods2.png)
 
 3. Select the notebook that you created earlier.
 
-    ![](./images/open-nb.png)
+    ![Open the notebook](./images/open-nb.png)
 
 4. Open the notebook.
 
-    ![](./images/open-nb2.png)
+    ![Open the notebook](./images/open-nb2.png)
 
 ## Task 3: Setup API Signing Key and Config File in OCI Data Science
 
 1. Drag and drop the "config" and "key.pem" files from your local machine to the notebook session.
 
-    ![](./images/drag-key.png)
+    ![Drag the files](./images/drag-key.png)
 
 2. Open the Terminal by clicking the Terminal icon in the Launcher Tab.
 
-    ![](./images/open-terminal.png)
+    ![Open a terminal](./images/open-terminal.png)
 
 3. Create a new directory **.oci** and move the "config" and "key.pem" files to here by executing the following commands in the terminal.
 
@@ -137,11 +137,11 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 
 1. Create a new notebook by selecting File -> New -> Notebook.
 
-    ![](./images/create-notebook2.png)
+    ![Create notebook](./images/create-notebook2.png)
 
 2. Select the Conda environment that you installed earlier (Computer Vision), and choose "Create Notebook".
 
-    ![](./images/select-conda.png)
+    ![Select Conda](./images/select-conda.png)
 
 3. Download the [Test image](./images/example-football-pitch-image.jpg). This is the same image that you used in the earlier lab.
 

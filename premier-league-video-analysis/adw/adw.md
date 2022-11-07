@@ -31,7 +31,7 @@ In this lab you will:
 
 2. We will download the wallet file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible.
 
-    ![ADW databases list](images/download-wallet.png)
+    ![Download wallet](images/download-wallet.png)
 
     Choose a password for the wallet and press Download.
 
@@ -82,11 +82,11 @@ We assume you are connected to your OCI Data Science notebook. If not, please op
 
    If you used the default values as instructed in the previous labs, the only values you should have to adapt are the two passwords. The first password is the one you used when you provisioned Autonomous Data Warehouse. The second password is the one you used when you created and downloaded the wallet.
 
-   ![Upload notebook](images/configure-connection.png)
+   ![Configure connection](images/configure-connection.png)
 
 5. Run the notebook in its entirety.
 
-   ![Upload notebook](images/run-entire-notebook.png)
+   ![Run notebook](images/run-entire-notebook.png)
 
    If all is well, after a short while, the run completes, and no error messages are shown. This means that a connection was made to Autonomous Data Warehouse, and the TRACKING table was created in the database.
 
@@ -120,7 +120,7 @@ connection.commit()
 
 1. In Oracle Cloud, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
-	![Oracle Console SignIn](images/adw-menu.png)
+	![ADW menu](images/adw-menu.png)
 
     You can see all the **ADW** instances that you have **created**.
     **Select** the instance `PL` that we created before.
@@ -144,11 +144,11 @@ connection.commit()
     </copy>
     ```
 
-    ![Open SQL](images/select.png)
+    ![SQL](images/select.png)
 
 5. You should see the following:
 
-    ![Open SQL](images/query-result.png)
+    ![Results](images/query-result.png)
 
 At this point we have the basic ingredients to be able to extract tracking information from videos. In the next lab we will take this to the next level by processing a video.
 

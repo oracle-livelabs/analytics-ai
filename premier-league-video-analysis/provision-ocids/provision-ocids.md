@@ -34,39 +34,39 @@ This process is automated.  However, **if you prefer a manual** approach, to con
     * Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
     * Click Next.
 
-    ![](./images/autostack.png)
+    ![Autostack](./images/autostack.png)
 
 3. On the "Configure variables" screen, press Next.
 
-    ![](./images/provision-ocids-step2.png)
+    ![Configure variables](./images/provision-ocids-step2.png)
 
 4. On the "Review" screen, press Create.
 
-    ![](./images/provision-ocids-step3.png)
+    ![Review screen](./images/provision-ocids-step3.png)
 
 5. After about a minute, the state of the Job should change to "Succeeded" 
 
-    ![](./images/provision-ocidsprereq-success.png)
+    ![Job succeeded](./images/provision-ocidsprereq-success.png)
 
 
 ## Task 2: Create a Project and Notebook
 
 1. Click on the top left "hamburger" menu, go to "Analytics and AI", then choose "Data Science".
 
-    ![](./images/open-ods.png)
+    ![Open OCI Data Science](./images/open-ods.png)
 
 2. Click "Create Project"
 
-    ![](./images/create-project-1.png)
+    ![Create project](./images/create-project-1.png)
 
     - Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
     - Choose a name, e.g. "Data Science Project" and press "Create".
 
-    ![](./images/create-project-2.png)
+    ![Create](./images/create-project-2.png)
 
 2. The newly created project will now be opened. Within this project, provision an Oracle Data Science notebook by clicking "Create notebook session".
 
-    ![](./images/create-notebook-1.png)
+    ![Create](./images/create-notebook-1.png)
 
     - Select the right compartment. If you have just created your Oracle cloud account you may choose the root compartment.
     - Select a name, e.g. "Data Science Notebook"
@@ -74,17 +74,17 @@ This process is automated.  However, **if you prefer a manual** approach, to con
     - Set block storage to 50 GByte.
     - Keep the defaults for the Networking Resources.
 
-    ![](./images/create-notebook-4.png)
+    ![Create](./images/create-notebook-4.png)
 
     Finally click "Create". The process should finish after 5-10 minutes and the status of the notebook will change to "Active".
 
 3. Open the notebook that was provisioned
 
-    ![](./images/open-notebook.png)
+    ![Open notebook](./images/open-notebook.png)
 
     You may be asked to log in again. After this you will see the Data Science Jupyter environment
 
-    ![](./images/environment.png)
+    ![Environment](./images/environment.png)
 
 You may now proceed to the next lab.
 
