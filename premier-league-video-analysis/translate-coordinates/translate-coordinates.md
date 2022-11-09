@@ -114,6 +114,7 @@ We will need this for tracking purposes. Any statistics that we want to calculat
 add_object_world_coordinates(res_json["image_objects"], img, camera_to_field)
 f = open('vision_response_enriched_with_world_coordinates.json', 'w')
 json.dump(res_json, f)
+f.close()
     </copy>
     ```
 

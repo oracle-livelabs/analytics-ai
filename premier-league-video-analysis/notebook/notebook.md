@@ -1,4 +1,4 @@
-# Lab: Recognizing Players and Shirt Numbers - Programmatically
+# Lab: Recognizing Players and Shirt Numbers - Python
 
 ## Introduction
 
@@ -209,6 +209,7 @@ res = ai_service_vision_client.analyze_image(analyze_image_details=analyze_image
 res_json = json.loads(repr(res.data))
 f = open('vision_response.json', 'w')
 json.dump(res_json, f)
+f.close()
     </copy>
     ```
     
@@ -315,7 +316,7 @@ def add_shirt_number_to_players(vision_response):
 add_shirt_number_to_players(res_json)
 f = open('vision_response_enriched_with_shirt_numbers.json', 'w')
 json.dump(res_json, f)
-
+f.close()
     </copy>
     ```
 

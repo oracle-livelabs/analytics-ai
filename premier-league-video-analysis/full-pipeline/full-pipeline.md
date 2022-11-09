@@ -148,7 +148,29 @@ By default, the database tracking is turned off in the notebook. Optionally, you
 
     If you had any problems creating the video, you can also download it here:
     [Augmented video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-soccer_out.avi)
-  
+
+## Task 4: (Optional) Run the notebook for another video
+
+This video contains a fragment of a match between Liverpool and Tottenham Hotspur.
+
+1. Download the new video as follows:
+
+   Open a terminal.
+
+   ![Open a new terminal](images/new-terminal.png)
+
+   And execute the following:
+
+   ```
+   <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/U4c38N1vkSezFW9TYqt6yfs70atBdeReiQA009FuMYxkN6ycSHK7J4K4iSYCvh1L/n/c4u04/b/livelabsfiles/o/ai-ml-library/video2.mp4 -O video2.mp4</copy>
+   ```
+   
+2. You can download the new coordinate pairs file from [here.](./files/coordinate_pairs2.json)
+
+   Make sure to save the file with extension .json.
+
+3. Adapt the notebook to reference the new input video (video2.mp4) and the new coordinate pairs file (coordinate\_pairs2.json), and run it.
+
 Congratulations on completing this workshop! We hope you have learned many new things and that you are excited to continue working on more data science challenges.
 
 ## Acknowledgements
