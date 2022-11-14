@@ -43,7 +43,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
       - Select **SQL** from **Development** section.  
       ![](./images/sql.png)
 
-   - Download the [starter file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/c_PgI7AIzbn3bkEkqbZAhAUuNjMVw2KE6dvITNOtj9AVRJ_sNiCub6nRaR2kJApp/n/idbwmyplhk4t/b/LiveLabs/o/starter-file.sql) SQL code, _Copy_ the content and _Paste_ to the _SQL Worksheet_.  
+   - Download the [starter file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/starter-file.sql) SQL code, _Copy_ the content and _Paste_ to the _SQL Worksheet_.  
    ![SQL Developer Web worksheet](./images/sql-worksheet.png)    
 
     - Click **Run Script** ![Run Script](./images/lab300_3d.png)

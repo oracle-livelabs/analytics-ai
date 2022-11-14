@@ -1,11 +1,11 @@
 # Use MySQL HeatWave For Development  
-![INTRO](./images/00_mds_heatwave_2.png " ") 
+![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave ") 
 
 ## Introduction
 
 MySQL HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
 
-![Connect](./images/architecture-oac-heatwave.png " ")
+![heatwave lamp architecture](./images/architecture-oac-heatwave.png "heatwave lamp architecture ")
 
 _Estimated Lab Time:_ 40 minutes
 
@@ -32,10 +32,10 @@ Estimated Time: 5 minutes
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH.
 
     **MySQL Workbench Configuration for MDS HeatWAve**
-    ![MDS](./images/13workbench01.png " ")
+    ![workbench](./images/13workbench01.png "workbench ")
 
     **MySQL Workbench Use  for MDS HeatWAve**
-    ![MDS](./images/13workbench02.png " ")
+    ![MDS](./images/13workbench02.png "workbench configured ")
 
 ## **TASK 2:** Create PHP MySQL Application
 
@@ -65,7 +65,7 @@ Subtask 1 – Add HTTP port for Web Application
     <copy>HTTP port</copy>
      ````
 
-    ![VCN](./images/03vcn12.png " ")
+    ![destination port](./images/03vcn12.png " destination port")
 
 Subtask 2 – Install App Server (APACHE)
 
@@ -275,10 +275,10 @@ In order to build analytics dashboard using OAC on MDS HeatWave, we need to do t
 
 **Subtask 2 - Provision an OAC instance**
 1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds
- ![MDS](./images/15oac01.png " ")
+    ![oracle analytics clouds](./images/15oac01.png "oracle analytics clouds ")
 
 2. Click Create Instance
- ![MDS](./images/15oac02.png " ")
+    ![create oracle analytics clouds](./images/15oac02.png "create oracle analytics clouds ")
 
 3.	On the Create Analytics Instance enter the required information as shown below
 
@@ -299,11 +299,11 @@ License Type: select **License Included**
 
 Click the **Create** button
 
- ![MDS](./images/15oac03.png " ")
+    ![create button](./images/15oac03.png " create button")
 
 4.	Wait 30 minutes for OAC instance creation to complete.
 
-![MDS](./images/15oac04.png " ")
+    ![creating oac instance](./images/15oac04.png "creating oac instance ")
 
 5.	Go down to the resources page and click on the **Configure Private Access Channel**  button
 
@@ -327,10 +327,10 @@ Description:
 **Remove second  DNS Zone entry**
 
 8.	Click the **Create** button
-![MDS](./images/15oac05.png " ")
+    ![dnz zone ](./images/15oac05.png "dnz zone ")
 
 9.	Wait 30 minutes for the process to finish, then continue to Subtask 3
-![MDS](./images/15oac06.png " ")
+    ![creating oac private access](./images/15oac06.png "creating oac private access ")
 
 
 **Subtask 3 - Get HeatWave DB Hostname **
@@ -340,7 +340,7 @@ Description:
 2. Select HeatWave database: MDS-HW  
 
 3. Go to Resources and click on the Endpoinst Link
-![MDS](./images/15oac10.png " ")
+    ![heatwave endpoint](./images/15oac10.png " heatwave endpoint")
 
 4. Save the Hostname for use with OAC
 
@@ -352,13 +352,13 @@ Example : **mdshw.sub09012.....mdsvcn.oraclevcn.com**
 1.	Navigate to hamburger->Analytics->Analytics Clouds
 
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
-![MDS](./images/15oac07.png " ")
+    ![select oac](./images/15oac07.png " select oac")
 
 3.	Create a Connection to HeatWave to build a dashboard
-![MDS](./images/15oac08.png " ")
+    ![MDS](./images/15oac08.png " ")
 
 4.	Search for mysql and select mysql as the database
-![MDS](./images/15oac09.png " ")
+    ![select database ](./images/15oac09.png "select database ")
 
 5.	Specify the connections details
 Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
