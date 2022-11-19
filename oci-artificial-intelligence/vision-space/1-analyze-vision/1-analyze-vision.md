@@ -101,4 +101,4 @@ Congratulations, you now know how to navigate to OCI Vision in the OCI Console a
 
 - **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
 - **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
-- **Last Updated By/Date** - Name, Month Year
+- **Last Updated By/Date** - Wes Prichard, 28 September 2022

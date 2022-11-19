@@ -1,0 +1,7 @@
+Solution to draw penalty area:
+draw_line_with_field_coordinates([0, 40.3 / 2], [16.5, 40.3 / 2], img, field_to_camera)
+draw_line_with_field_coordinates([16.5, 40.3 / 2], [16.5, -40.3 / 2], img, field_to_camera)
+draw_line_with_field_coordinates([16.5, -40.3 / 2], [0, -40.3 / 2], img, field_to_camera)
+
+Solution to only include players within the field bounds:
+            if world_coordinate[0] > 0 and world_coordinate[0] < FIELD_WIDTH and world_coordinate[1] > (-FIELD_HEIGHT / 2) and world_coordinate[1] < (FIELD_HEIGHT / 2):
