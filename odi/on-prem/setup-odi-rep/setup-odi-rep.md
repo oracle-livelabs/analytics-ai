@@ -144,7 +144,7 @@ This lab assumes you have:
 
 ## Task 4: Test the environment
 
-1. Expand **Model** and right-click on **`SRC_AGE_GROUP`** and select **View Data**
+1. Expand **Model**, **Parameters** and right-click on **`SRC_AGE_GROUP`** and select **View Data**
 
   ![](./images/odi_models_1.png " ")   
 

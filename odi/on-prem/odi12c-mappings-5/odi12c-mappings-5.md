@@ -300,7 +300,7 @@ This section describes how to define joins between the source datastores. To cre
 
   ```
   <copy>
-  Load Customer.SALES\_PERS\_ID=SRC\_SALES\_PERSON.SALES\_PERS\_ID
+  Load Customer.SALES_PERS_ID=SRC_SALES_PERSON.SALES_PERS_ID
   </copy>
   ```
 
@@ -336,7 +336,7 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
   ```
   <copy>
-  InitCap(rtrim(SRC_SALES_PERSON.FIRST_NAME)) || ' ' || InitCap(rtrim(SRC_SALES_PERSON.LAST_NAME)
+  InitCap(rtrim(SRC.FIRST_NAME)) || ' ' || InitCap(rtrim(SRC.LAST_NAME))
   </copy>
 
   ```
@@ -389,9 +389,9 @@ To define the loading strategies:
 
   ![](./images/Capture29.PNG)
 
-3. Click on SRC\_AP.In the Property Inspector, set the LKM to **LKM File to SQL** using the LKM Selector list as shown:
+3. Click on SRC\_AP.In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
-  ![](./images/Capture28.PNG)
+  ![](./images/Capture28_1.png)
 
 4. Click on SRC\_AP\_L.In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
@@ -409,9 +409,9 @@ To define the integration strategies:
 
 1. In the Physical tab of the Mapping Editor, select the Target object, TRG\_CUSTOMER. The Property Inspector should display the properties of the target.
 
-2. In the Property Inspector, set the IKM to **IKM Oracle Merge.GLOBAL** using the IKM Selector list.
+2. In the Property Inspector, set the IKM to **IKM Oracle Incremental Update** using the IKM Selector list.
 
-  ![](./images/Capture32.PNG)
+  ![](./images/Capture32_1.png)
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
@@ -456,4 +456,4 @@ This concludes the lab on Reusable Mappings. You may now [proceed to the next la
 
 - **Author** - Narayanan Ramakrishnan, December 2020
 - **Contributors** - Srivishnu Gullapalli
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Sri Vishnu Gullapalli, Senior Solution Engineer, NA Technology, November 2022

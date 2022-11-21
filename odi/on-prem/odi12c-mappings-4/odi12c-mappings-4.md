@@ -122,7 +122,7 @@ This section describes how to create the Load TRG\_REGION mapping. To create the
 
  ![](./images/Capture1.PNG)
 
-2. Enter the name of your mapping (Load TRG\_REGION) in the Name field:
+2. Enter the name of your mapping (Load REGION) in the Name field:
 
   ![](./images/Capture2.PNG)
 
@@ -241,6 +241,21 @@ To define the integration strategies:
 
 1.  In the Physical tab of the Mapping Editor, select the Target object, first(**NAM**). The Property Inspector should display the properties of the target.
 
+2. Right click on Knowledge Modules and select Import Knowledge Modules.
+
+  ![](./images/KM-1.png)
+
+3. Provide below path in file import directory and select **IKM SQL to File Append**.
+
+    ```
+    <copy>
+    /home/oracle/Oracle/Middleware/Oracle_Home/odi/sdk/xml-reference
+    </copy>
+
+    ```
+
+    ![](./images/KM-2.png)
+
 2. In the Property Inspector, set the IKM to **IKM SQL to File Append** using the IKM Selector list.
 
   ![](./images/Capture27.PNG)
@@ -297,4 +312,4 @@ This concludes the lab on Using Split and Sort Components. You may now [proceed 
 
 - **Author** - Narayanan Ramakrishnan, December 2020
 - **Contributors** - Srivishnu Gullapalli
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Sri Vishnu Gullapalli, Senior Solution Engineer, NA Technology, November 2022
