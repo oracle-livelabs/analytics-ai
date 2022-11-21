@@ -169,7 +169,7 @@ This section describes how to define a join between the source datastores. To cr
 
 ***Source Diagram of the Load TRG\_CUSTOMER Mapping with a Lookup and a Join***
 
-  ![](./images/diagram_of_TRG_CUSTOMER_mapping.png)
+  ![](./images/diagram_of_trg_customer_mapping.png)
 
 ## **Step 7:** Define the Target Expressions
 
@@ -381,9 +381,9 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 
- - **Author** - Jayant Mahto, July 2020
- - **Contributors** - Troy Anthony
- - **Last Updated By/Date** - Jayant Mahto, September 2020
+ - **Author** - Narayanan Ramakrishnan, December 2020
+ - **Contributors** - Srivishnu Gullapalli
+ - **Last Updated By/Date** - Srivishnu Gullapalli, November 2022
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

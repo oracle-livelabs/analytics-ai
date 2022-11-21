@@ -243,7 +243,7 @@ To define the integration strategies:
 
 2. Right click on Knowledge Modules and select Import Knowledge Modules.
 
-  ![](./images/KM-1.png)
+  ![](./images/import-knowledge-module-1.png)
 
 3. Provide below path in file import directory and select **IKM SQL to File Append**.
 
@@ -254,7 +254,7 @@ To define the integration strategies:
 
     ```
 
-    ![](./images/KM-2.png)
+    ![](./images/import-knowledge-module-1.png)
 
 2. In the Property Inspector, set the IKM to **IKM SQL to File Append** using the IKM Selector list.
 

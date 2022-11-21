@@ -391,7 +391,7 @@ To define the loading strategies:
 
 3. Click on SRC\_AP.In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
-  ![](./images/Capture28_1.png)
+  ![](./images/trg_customer_lkm_sql_to_sql.png)
 
 4. Click on SRC\_AP\_L.In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
@@ -411,7 +411,7 @@ To define the integration strategies:
 
 2. In the Property Inspector, set the IKM to **IKM Oracle Incremental Update** using the IKM Selector list.
 
-  ![](./images/Capture32_1.png)
+  ![](./images/trg_customer_ikm_incremental_update.png)
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
