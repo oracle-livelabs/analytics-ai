@@ -20,7 +20,7 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
 * Completed all the tasks in Getting Started
-* Download the sample python [notebook](files/forecasting-api-sample-notebook.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
+* Download the sample python [notebook](files/forecasting-api-sample-notebook-la.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
 
 
 ## Task 1: API key generation  
@@ -412,92 +412,94 @@ In this task, we will learn how to use create and get forecast APIs.
       - Multivariate: "PROBRNN","APOLLONET","EFE"               
 
     ```Python
-    %%time
+      %%time
 
-    url = "https://forecasting.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/forecasts"
+      url = "https://forecasting.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/forecasts"
 
-    payload = simplejson.dumps(
-    {
-    "displayName": forecast_name,
-    "compartmentId": compartment_id,
-    "projectId": project_id,
-    "forecastCreationDetails": {
-        "forecastHorizon": forecast_horizon,
-        "confidenceInterval": "90",
-        "errorMeasure": "RMSE",
-        "forecastTechnique": "ROCV",
-        "forecastFrequency": forecast_frequency,
-        "isForecastExplanationRequired": True,
-        "modelDetails": {
-            "models": [
-                    "SMA",
-                    "DMA",
-                    "HWSM",
-                    "HWSA",
-                    "SES",
-                    "DES",
-                    "PROPHET"
-            ]
-        },
-        "dataSourceDetails": {
-            "type": "INLINE",
-            "primaryDataSource": {
-                "columnData": prim_load,
-                "isDataGrouped": True,
-                "tsColName": date_col,
-                "tsColFormat": "yyyy-MM-dd HH:mm:ss",
-                "dataFrequency": data_frequency,
-                "columnSchema": [
-                        {
-                            "columnName": id_col,
-                            "dataType": "STRING"
-                        },
-                        {
-                            "columnName": date_col,
-                            "dataType": "DATE"
-                        },
-                        {
-                            "columnName": target_col,
-                            "dataType": "INT"
-                        }
-                    ]
-            },
-            "additionalDataSource": {
-                "columnData": add_load,
-                "isDataGrouped": True,
-                "tsColName": date_col,
-                "tsColFormat": "yyyy-MM-dd HH:mm:ss",
-                "dataFrequency": data_frequency,
-                "columnSchema": [
-                        {
-                            "columnName": id_col,
-                            "dataType": "STRING"
-                        },
-                        {
-                            "columnName": "date",
-                            "dataType": "DATE"
-                        },
-                        {
-                            "columnName": "onpromotion",
-                            "dataType": "INT"
-                        }
-                    ]
-            }
-              
-        },
-        "targetVariables": [
-            target_col
-        ]
-    }
-    }
-        , ignore_nan=True
-    )
+      payload = simplejson.dumps(
+      {
+      "displayName": forecast_name,
+      "compartmentId": compartment_id,
+      "projectId": project_id,
+      "forecastCreationDetails": {
+          "areCSVResultFilesRequired": True,
+          "forecastHorizon": forecast_horizon,
+          "confidenceInterval": "90",
+          "errorMeasure": "RMSE",
+          "forecastTechnique": "ROCV",
+          "forecastFrequency": forecast_frequency,
+          "isForecastExplanationRequired": True,
+          "modelDetails": {
+              "models": [
+                      "SMA",
+                      "DMA",
+                      "HWSM",
+                      "HWSA",
+                      "SES",
+                      "DES",
+                      "PROPHET"
+              ]
+          },
+          "dataSourceDetails": {
+              "type": "INLINE",
+              "primaryDataSource": {
+                  "columnData": prim_load,
+                  "isDataGrouped": True,
+                  "tsColName": date_col,
+                  "tsColFormat": "yyyy-MM-dd HH:mm:ss",
+                  "dataFrequency": data_frequency,
+                  "columnSchema": [
+                          {
+                              "columnName": id_col,
+                              "dataType": "STRING"
+                          },
+                          {
+                              "columnName": date_col,
+                              "dataType": "DATE"
+                          },
+                          {
+                              "columnName": target_col,
+                              "dataType": "INT"
+                          }
+                      ]
+              },
+              "additionalDataSource": {
+                  "columnData": add_load,
+                  "isDataGrouped": True,
+                  "tsColName": date_col,
+                  "tsColFormat": "yyyy-MM-dd HH:mm:ss",
+                  "dataFrequency": data_frequency,
+                  "columnSchema": [
+                          {
+                              "columnName": id_col,
+                              "dataType": "STRING"
+                          },
+                          {
+                              "columnName": "date",
+                              "dataType": "DATE"
+                          },
+                          {
+                              "columnName": "onpromotion",
+                              "dataType": "INT"
+                          }
+                      ]
+              }
 
-    headers = {
-      'Content-Type': 'application/json'
-    }
-          
-    response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
+          },
+          "targetVariables": [
+              target_col
+          ]
+      }
+      }
+          , ignore_nan=True
+      )
+
+      headers = {
+        'Content-Type': 'application/json'
+      }
+
+      response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
+
     ```
 
   We store the response and get forecast id 
@@ -528,105 +530,63 @@ In this task, we will learn how to use create and get forecast APIs.
     ```  
     Forecast Response below :
     ```json
-    {'description': None,
-    'id': 'ocid1.aiforecast.oc1.phx.amaaaaaasxs7gpyaqsmsy5gcfhfwjgvdxhmg35z2ba4eiifnw6i6eepeahpq',
+    {
+    'description': None,
+    'id': 'ocid1.aiforecast.oc1.phx.rwerweugg2dyrwerewrxf5wd3gc2xgrxxoxkrmjeddyoxyrs3wztaqlwfya',
     'responseType': None,
-    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaaadany3y6wdh3u3jcodcmm42ehsdno525pzyavtjbpy72eyxcu5f7q',
-    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaasxs7gpyacbbt7zdx4qw25qw52k3ibgu7avcth37cgyvdpxw5qa4a',
-    'displayName': 'Inline Forecasting Service API BETA V3 ',
+    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaarewrewjuzo25wt7vosv4inc6ib5efqiyvon4dqwijssvyaxw6ivqa',
+    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaaugg2dyyagczklwmq76gcuaseewrewraknse25zybjfatjpeyks2q',
+    'displayName': 'Inline Forecasting Service API LA Live Labs ',
     'createdBy': None,
-    'timeCreated': '2022-05-16T15:58:08.334Z',
-    'timeUpdated': '2022-05-16T15:58:08.334Z',
-    'lifecyleDetails': None,
+    'timeCreated': '2022-11-25T03:44:25.920Z',
+    'timeUpdated': '2022-11-25T04:17:49.913Z',
+    'lifeCyleDetails': None,
     'lifecycleState': 'ACTIVE',
     'failureMessage': None,
-    'trainingMessages': ['Seasonal models (HWSM, HWSA) cannot be run for non-seasonal series (e.g., 15_AUTOMOTIVE) and have been excluded'],
-    'forecastCreationDetails': None,
-    'forecastResult': {'dataSourceType': 'INLINE',
-      'forecastHorizon': 14,
-      'forecast': [{'targetColumn': '15_AUTOMOTIVE',
-        'dates': ['2017-07-29 00:00:00',
-        '2017-07-30 00:00:00',
-        '2017-07-31 00:00:00',
-        '2017-08-01 00:00:00',
-        '2017-08-02 00:00:00',
-        '2017-08-03 00:00:00',
-        '2017-08-04 00:00:00',
-        '2017-08-05 00:00:00',
-        '2017-08-06 00:00:00',
-        '2017-08-07 00:00:00',
-        '2017-08-08 00:00:00',
-        '2017-08-09 00:00:00',
-        '2017-08-10 00:00:00',
-        '2017-08-11 00:00:00'],
-    'forecast': [2.6539671,
-      5.7804775,
-      2.6559596,
-      4.222537,
-      4.224941,
-      2.6589296,
-      5.7995687,
-      2.6608968,
-      5.8071876,
-      4.236923,
-      8.965763,
-      5.8185964,
-      4.2440825,
-      4.246464],
-    'predictionInterval': {'CI_5_95': [{'upper': 4.8414516,
-        'lower': 0.44878063},
-      {'upper': 7.95075, 'lower': 3.8090208},
-      {'upper': 4.7923, 'lower': 0.512749},
-      {'upper': 6.2729483, 'lower': 1.9829913},
-      {'upper': 6.320279, 'lower': 2.0972533},
-      {'upper': 4.7976575, 'lower': 0.50803226},
-      {'upper': 7.932148, 'lower': 3.699345},
-      {'upper': 4.697771, 'lower': 0.5560552},
-      {'upper': 7.8081274, 'lower': 3.7081277},
-      {'upper': 6.2549844, 'lower': 2.0798554},
-      {'upper': 11.018603, 'lower': 7.0713277},
-      {'upper': 7.9401455, 'lower': 3.69675},
-      {'upper': 6.482114, 'lower': 1.9990458},
-      {'upper': 6.480421, 'lower': 2.0199952}]}}],
-    'metrics': {'trainingMetrics': {'numberOfFeatures': 1,
-    'totalDataPoints': 1670,
-    'generationTime': '78 seconds'},
-    'targetColumns': [{'targetColumn': '15_AUTOMOTIVE',
-      'bestModel': 'ProphetModel',
-      'errorMeasureValue': 0.683359,
-      'errorMeasureName': 'RMSE',
-      'numberOfMethodsFitted': 8,
-      'seasonality': 1,
-      'seasonalityMode': 'ADDITIVE',
-      'modelValidationScheme': 'ROCV',
-      'preprocessingUsed': {'aggregation': 'NONE',
-      'outlierDetected': 15,
-      'missingValuesImputed': 0,
-      'transformationApplied': 'NONE'}}]}},
-  'freeformTags': {},
-  'definedTags': {},
-  'systemTags': None
-  }
-  ```
+    'trainingMessages': [],
+    'forecastCreationDetails': {'targetVariables': ['sales'],
+      'modelDetails': {'models': ['SMA',
+        'DMA',
+        'HWSM',
+        'HWSA',
+        'SES',
+        'DES',
+        'PROPHET']},
+      'dataSourceDetails': {'type': 'INLINE',
+      'primaryDataSource': {'isDataGrouped': True,
+        'tsColName': 'date',
+        'dataFrequency': 'DAY',
+    show more (open the raw output data in a text editor) ...
+
+    'inputSeriesCount': 1,
+    'forecastSeriesCount': 1,
+    'freeformTags': {},
+    'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
+      'CreatedOn': '2022-11-25T03:44:25.525Z'}},
+    'systemTags': {}
+      }
+    ```
      
 Using below code, we can save the forecast as tabular data in a csv file with prediction intervals.
 
 ```Python
 df_forecasts = pd.DataFrame({'forecast_dates':[],'upper':[],'lower':[],'forecast':[], 'series_id':[]})
-  for i in range(len(get_forecast_response['forecastResult']['forecast'])):
-      group = get_forecast_response['forecastResult']['forecast'][i]['targetColumn']
-      point_forecast = get_forecast_response['forecastResult']['forecast'][i]['forecast']
-      pred_intervals = pd.DataFrame(get_forecast_response['forecastResult']
-                                ['forecast'][i]['predictionInterval'],dtype=float)
-      out = pred_intervals
-      out['forecast'] = point_forecast
-      forecast_dates = pd.DataFrame({'forecast_dates':get_forecast_response['forecastResult']['forecast'][i]['dates']})
-      forecasts = pd.concat([forecast_dates,out],axis=1)
-      forecasts['series_id'] = group
-      df_forecasts = df_forecasts.append(forecasts, ignore_index = False)
+for i in range(len(get_forecast_response['forecastResult']['forecastSeries'])):
+    group = get_forecast_response['forecastResult']['forecastSeries'][i]['targetColumn']
+    point_forecast = get_forecast_response['forecastResult']['forecastSeries'][i]['values']
+    pred_intervals = pd.DataFrame(get_forecast_response['forecastResult']
+                            ['forecastSeries'][i]['predictionInterval'],dtype=float)
+    out = pd.DataFrame({"lower" : list(pred_intervals.lower.tolist()[0]),"upper" : list(pred_intervals.upper.tolist()[0])}) #pred_intervals.explode(['lower','upper'])
+    out['forecast'] = point_forecast
+    out.reset_index(inplace=True, drop=True)
+    forecast_dates = pd.DataFrame({'forecast_dates':get_forecast_response['forecastResult']['forecastSeries'][i]['dates']})
+    forecasts = pd.concat([forecast_dates,out],axis=1)
+    forecasts['series_id'] = group
+    df_forecasts = df_forecasts.append(forecasts, ignore_index = False)
+
 file_name = 'forecast_demo.csv'
 df_forecasts.to_csv(file_name, index = None)
-df_forecasts        
+df_forecasts      
 ```
 The forecast.csv will be saved in the same folder as the notebook file.
   ![](images/lab1-task2.png " ")
@@ -643,15 +603,15 @@ The forecast.csv will be saved in the same folder as the notebook file.
     Output:
     ```Json
   [{'targetColumn': '15_AUTOMOTIVE',
-    'bestModel': 'ProphetModel',
-    'errorMeasureValue': 0.683359,
+    'bestModel': 'prophet',
+    'errorMeasureValue': 1.1582192,
     'errorMeasureName': 'RMSE',
-    'numberOfMethodsFitted': 8,
+    'numberOfMethodsFitted': 5,
     'seasonality': 1,
     'seasonalityMode': 'ADDITIVE',
     'modelValidationScheme': 'ROCV',
     'preprocessingUsed': {'aggregation': 'NONE',
-    'outlierDetected': 15,
+    'outlierDetected': 0,
     'missingValuesImputed': 0,
     'transformationApplied': 'NONE'}}]
     ```
@@ -668,7 +628,7 @@ Here is a example on using the forecast explanation API to get the global and lo
 
 1. Call the explanation API using below code as shown below
     ```Python
-    url = "https://forecasting----.------.------.---.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
+    url = "https://forecasting.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
 
     payload={}
     headers = {}
@@ -683,80 +643,38 @@ Here is a example on using the forecast explanation API to get the global and lo
 
     ```Json
     {'dataSourceType': 'INLINE',
-    'freeformTags': {},
-    'definedTags': {},
-    'systemTags': None,
     'explanations': [{'targetColumn': '15_AUTOMOTIVE',
     'bestModel': 'PROPHET',
-    'bestHyperParameters': {'changepoint_range': '0.9300000000000002',
-      'seasonality_mode': 'multiplicative',
-      'changepoint_prior_scale': '0.46415888336127775',
-      'seasonality_prior_scale': '0.03280877564642348',
-      'holidays_prior_scale': '0.21544346900318823'},
-    'hyperparameterSearchMethod': 'OPTUNA',
+    'bestHyperParameters': {'seasonality_prior_scale': 0.43401502145728005,
+    'seasonality_mode': 'additive',
+    'changepoint_prior_scale': 1.0,
+    'changepoint_range': 0.8600000000000001,
+    'holidays_prior_scale': 0.1},
+    'hyperparameterSearchMethod': 'BAYESOPT',
     'bestModelSelectionMetric': 'RMSE',
-    'globalFeatureImportance': {'influencingFeatures': {'onpromotion': {'normalizedScore': 0.94157904,
-        'rawScore': 1.8250475},
-      'trend': {'normalizedScore': 0.04112942, 'rawScore': 0.07972049},
-      'AgeFeature': {'normalizedScore': 0.017291514, 'rawScore': 0.033515863}}},
-      'localFeatureImportance': {'forecastHorizon': 14,
-      'influencingFeatures': [{'onpromotion': {'normalizedScore': -0.033462785,
-        'rawScore': -0.8380138},
-        'trend': {'normalizedScore': 0.0057607493, 'rawScore': 0.14426737},
-        'AgeFeature': {'normalizedScore': -0.0027470351,
-        'rawScore': -0.06879444}},
-      {'onpromotion': {'normalizedScore': 0.08841861, 'rawScore': 2.2142813},
-        'trend': {'normalizedScore': 0.008780366, 'rawScore': 0.21988809},
-        'AgeFeature': {'normalizedScore': -0.0028031594,
-        'rawScore': -0.07019997}},
-      {'onpromotion': {'normalizedScore': -0.033493843, 'rawScore': -0.8387916},
-        'trend': {'normalizedScore': 0.005983676, 'rawScore': 0.14985014},
-        'AgeFeature': {'normalizedScore': -0.0028593347,
-        'rawScore': -0.07160677}},
-      {'onpromotion': {'normalizedScore': 0.027495557, 'rawScore': 0.6885756},
-        'trend': {'normalizedScore': 0.0076055946, 'rawScore': 0.19046812},
-        'AgeFeature': {'normalizedScore': -0.0029155605,
-        'rawScore': -0.07301485}},
-      {'onpromotion': {'normalizedScore': 0.027508264, 'rawScore': 0.6888938},
-        'trend': {'normalizedScore': 0.007745165, 'rawScore': 0.1939634},
-        'AgeFeature': {'normalizedScore': -0.0029718373,
-        'rawScore': -0.07442419}},
-      {'onpromotion': {'normalizedScore': -0.03354043, 'rawScore': -0.8399583},
-        'trend': {'normalizedScore': 0.006317684, 'rawScore': 0.15821476},
-        'AgeFeature': {'normalizedScore': -0.0030281649,
-        'rawScore': -0.07583481}},
-      {'onpromotion': {'normalizedScore': 0.08862331, 'rawScore': 2.2194076},
-        'trend': {'normalizedScore': 0.009619388, 'rawScore': 0.24089986},
-        'AgeFeature': {'normalizedScore': -0.0030845432,
-        'rawScore': -0.0772467}},
-      {'onpromotion': {'normalizedScore': -0.03357149, 'rawScore': -0.8407361},
-        'trend': {'normalizedScore': 0.006540102, 'rawScore': 0.16378482},
-        'AgeFeature': {'normalizedScore': -0.0031409722,
-        'rawScore': -0.07865987}},
-      {'onpromotion': {'normalizedScore': 0.08870519, 'rawScore': 2.2214582},
-        'trend': {'normalizedScore': 0.009954642, 'rawScore': 0.24929567},
-        'AgeFeature': {'normalizedScore': -0.0031974523,
-        'rawScore': -0.0800743}},
-      {'onpromotion': {'normalizedScore': 0.02757179, 'rawScore': 0.69048476},
-        'trend': {'normalizedScore': 0.008442255, 'rawScore': 0.21142071},
-        'AgeFeature': {'normalizedScore': -0.0032539829,
-        'rawScore': -0.08149001}},
-      {'onpromotion': {'normalizedScore': 0.2111922, 'rawScore': 5.28892},
-        'trend': {'normalizedScore': 0.013706036, 'rawScore': 0.34324244},
-        'AgeFeature': {'normalizedScore': -0.0033105647,
-        'rawScore': -0.08290699}},
-      {'onpromotion': {'normalizedScore': 0.088828005, 'rawScore': 2.2245338},
-        'trend': {'normalizedScore': 0.01045714, 'rawScore': 0.26187983},
-        'AgeFeature': {'normalizedScore': -0.003367197,
-        'rawScore': -0.08432525}},
-      {'onpromotion': {'normalizedScore': 0.027609907, 'rawScore': 0.6914393},
-        'trend': {'normalizedScore': 0.008859898, 'rawScore': 0.22187984},
-        'AgeFeature': {'normalizedScore': -0.00342388,
-        'rawScore': -0.085744776}},
-      {'onpromotion': {'normalizedScore': 0.027622612, 'rawScore': 0.69175744},
-        'trend': {'normalizedScore': 0.0089990115, 'rawScore': 0.22536367},
-        'AgeFeature': {'normalizedScore': -0.0034806142,
-        'rawScore': -0.08716557}}]}}]}
+    'globalFeatureImportance': {'influencingFeatures': {'trend': {'rawScore': 0.0031412507,
+    'normalizedScore': 0.002469764},
+    'onpromotion': {'rawScore': 1.2687416, 'normalizedScore': 0.9975302}}},
+    'localFeatureImportance': {'forecastHorizon': 14,
+    'dates': ['2017-02-09 00:00:00',
+    '2017-02-10 00:00:00',
+    '2017-02-11 00:00:00',
+    '2017-02-12 00:00:00',
+    '2017-02-13 00:00:00',
+    '2017-02-14 00:00:00',
+    '2017-02-15 00:00:00',
+    '2017-02-16 00:00:00',
+    '2017-02-17 00:00:00',
+    '2017-02-18 00:00:00',
+    '2017-02-19 00:00:00',
+    show more (open the raw output data in a text editor) ...
+
+    'onpromotion': {'rawScore': 2.1349018,
+    'normalizedScore': 0.9962766}}]}}],
+    'freeformTags': {},
+    'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
+    'CreatedOn': '2022-11-25T03:44:25.525Z'}},
+    'systemTags': {}}
     ```
 *The above explanation shows features contributing towards the model output/prediction from the base value. The base value is nothing but the average model output computed over the most recent 100-time steps in the training data. If the dataset size is less than 100, then the base value is computed over the whole dataset. The features which have positive feature importance scores, push the prediction higher and the features that have negative feature importance scores, push the prediction lower. The feature importance scores are raw scores and those features with high magnitude influence the prediction most and the sign of the scores indicates whether the influence is positive or negative.*
 
@@ -765,22 +683,23 @@ Here is a example on using the forecast explanation API to get the global and lo
     Here is a simple function to plot the global feature importance from the above json output.
 
     ```Python
-    import plotly.express as px
-    import plotly.graph_objects as go
-    def plot_global_feature_importance(get_forecast_explanations, time_step):
-        df_imps = pd.DataFrame()
-        global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
-        df_imps['Feature_Importance'] = local_feature_importance.values()
-        df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
-        feature_names = local_feature_importance.keys()
-        df_imps['Features'] = feature_names
+  import plotly.express as px
+  import plotly.graph_objects as go
 
-        title = "Global Feature Importance for Timestep " + str(time_step)
-        fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
-        fig.update_traces(marker_color='lightsalmon')
-        fig.show()
+  def plot_global_feature_importance(get_forecast_explanations):
+      df_imps = pd.DataFrame()
+      global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
+      df_imps['Feature_Importance'] = global_feature_importance.values()
+      df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
+      feature_names = global_feature_importance.keys()
+      df_imps['Features'] = feature_names
 
-    plot_global_feature_importance(get_forecast_explanations, time_step)
+      title = "Global Feature Importance"
+      fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
+      fig.update_traces(marker_color='lightsalmon')
+      fig.show()
+
+  plot_global_feature_importance(get_forecast_explanations)
     ```
 
   ### Sample Global feature importance plot
@@ -813,7 +732,7 @@ Here is a example on using the forecast explanation API to get the global and lo
         fig.update_traces(marker_color='lightsalmon')
         fig.show()
 
-    time_step = 1 
+    time_step = 2
 
     plot_local_feature_importance(get_forecast_explanations, time_step)
     ```
@@ -829,9 +748,9 @@ Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
-    * Ravijeet Kumar, Senior Data Scientist - Oracle AI Services
-    * Anku Pandey, Data Scientist - Oracle AI Services
-    * Sirisha Chodisetty, Senior Data Scientist - Oracle AI Services
+    * Ravijeet Kumar, Senior Applied Scientist - Oracle AI Services
+    * Anku Pandey, Applied Scientist - Oracle AI Services
+    * Sirisha Chodisetty, Senior Applied Scientist - Oracle AI Services
     * Sharmily Sidhartha, Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, May 2022
+    * Last Updated By/Date: Ravijeet Kumar, Nov 2022
 
