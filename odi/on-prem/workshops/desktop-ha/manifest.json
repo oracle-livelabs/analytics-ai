@@ -4,7 +4,7 @@
   "tutorials": [
     {
       "title": "Introduction to ODI High Availability",
-      "description": "Introduction to ODI HA",
+      "description": "Introduction",
       "filename": "../../odi12c-ha-introduction/introduction.md"
     },
     {
