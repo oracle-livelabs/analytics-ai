@@ -32,7 +32,7 @@ Before you start using OCI Document Understanding, OCI policies should be setup 
 
 3. Set compartment to your root compartment and toggle on the manual editor
 
-    ![OCI Create policy](./images/policy3.png " ")
+    ![OCI Create policy](./images/policy3.PNG " ")
 
 4. Create Policy to grant users Document APIs access (Required)
 
@@ -42,7 +42,7 @@ Before you start using OCI Document Understanding, OCI policies should be setup 
     <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
     ```
 
-    ![OCI Create policy screen](./images/policy4.png " ")
+    ![OCI Create policy screen](./images/policy4.PNG " ")
 
 
     If you want to limit access to a user group, create a policy with the below statement:
