@@ -51,7 +51,7 @@ If you want to limit access to a user group, create a policy with the below stat
 
 If your want to analyze documents stored in your tenancy's object storage bucket, add the below statement to grant object storage access permissions to the group:
 ```
-<copy> allow group <group_in_tenancy> to use object-family in tenancy </copy>
+allow group <group_in_tenancy> to use object-family in tenancy
 ```
     
 If you want to restrict access to a specific compartment, you can use the following policy instead: 
