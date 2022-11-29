@@ -19,13 +19,13 @@ Before you start using OCI Document Understanding, OCI policies should be setup 
 ### 1. Navigate to Policies
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
 
-![OCI Hamburger menu](./images/policy1.PNG)
+![OCI Hamburger menu](./images/policy1.png)
 
 ### 2. Create Policy
 
 Click Create Policy
 
-![OCI Create policy](./images/policy2.PNG)
+![OCI Create policy](./images/policy2.png)
 
 ### 3. Set compartment to your root compartment and toggle on the manual editor
     
