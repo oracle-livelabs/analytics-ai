@@ -17,25 +17,25 @@ In this workshop, you will:
 Before you start using OCI Document Understanding, OCI policies should be setup for allowing you to access OCI Document Understanding Service. Follow these steps to configure required policies.
 
 ### 1. Navigate to Policies
-    Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
 
     ![OCI Hamburger menu](./images/policy1.PNG)
 
 
 ### 2. Create Policy
 
-  Click Create Policy
+Click Create Policy
 
     ![OCI Create policy](./images/policy2.PNG)
 
 
-### 3. Set compartment to your root compartment and toggle on the manual editor
+3. Set compartment to your root compartment and toggle on the manual editor
     
-    Configure as shown below: 
+Configure as shown below: 
 
-        ![OCI Create policy](./images/policy3.PNG)
+    ![OCI Create policy](./images/policy3.PNG)
 
-### 4. Create Policy to grant users Document APIs access (Required)
+4. Create Policy to grant users Document APIs access (Required)
 
     Add the below statement to allow all the users in your tenancy to use document understanding:
 
