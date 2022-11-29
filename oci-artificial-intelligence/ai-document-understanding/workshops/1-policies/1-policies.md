@@ -36,9 +36,9 @@ Configure as shown below:
 ### 4. Create Policy to grant users Document APIs access (Required)
 
 Add the below statement to allow all the users in your tenancy to use document understanding:
-        ```
-        <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
-        ```
+```
+<copy>allow any-user to manage ai-service-document-family in tenancy</copy>
+```
 
 ![OCI Create policy screen](./images/policy4.PNG)
 
