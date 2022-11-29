@@ -37,7 +37,7 @@ Configure as shown below:
 
 Add the below statement to allow all the users in your tenancy to use document understanding:
 ```
-<copy>allow any-user to manage ai-service-document-family in tenancy</copy>
+allow any-user to manage ai-service-document-family in tenancy
 ```
 
 ![OCI Create policy screen](./images/policy4.PNG)
@@ -56,7 +56,7 @@ allow group <group_in_tenancy> to use object-family in tenancy
     
 If you want to restrict access to a specific compartment, you can use the following policy instead: 
 ```
-<copy> allow group <group_in_tenancy> to use object-family in compartment <input_bucket_located_object_storage_compartment> </copy>
+allow group <group_in_tenancy> to use object-family in compartment <input_bucket_located_object_storage_compartment>
 ```
 
 ### 6. Policy to access output location in object storage (Required)
@@ -64,7 +64,7 @@ If you want to restrict access to a specific compartment, you can use the follow
 Document Understanding Service stores results in your tenancy's object store. Add the following policy to grant object storage access permissions to the user group who requested the analysis to documents:
 
 ```
-<copy> allow group <group_in_tenancy> to manage object-family in compartment <output_bucket_located_object_storage_compartment> </copy>
+allow group <group_in_tenancy> to manage object-family in compartment <output_bucket_located_object_storage_compartment>
 ```
 ## **Summary**
 
