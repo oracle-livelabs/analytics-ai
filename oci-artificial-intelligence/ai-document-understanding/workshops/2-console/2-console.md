@@ -1,37 +1,10 @@
 # Use OCI Document Understanding in the Console
 
 ## Introduction
-In this lab, we will provide a ZIP file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this ZIP file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
+In this lab, we will learn how to use OCI Document Understanding in the OCI Console in order to test various features on demo documents as well as your own documents.
 
 *Estimated Time*: 20 minutes
 
-### Objectives
-
-In this lab, you will:
-- Create an Object Storage Bucket and load images from your local machine into the Bucket
-- Create a Data Labeling Service dataset and bulk label the images that were loaded into Object Storage
-
-### Prerequisites
-
-- An Oracle Free Tier, or Paid Cloud Account
-- Ensure that you have OCI-CLI installed. If unsure, run the following in your local command line and make sure your namespace is returned.
-    ```
-    <copy>oci os ns get</copy>
-    ```
-    Else, refer to the [OCI-CLI setup instructions](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
-- Ensure that you have Python SDK installed on your machine by following the steps [here](https://docs.oracle.com/en-us/iaas/tools/python/2.57.0/installation.html#install)
-  * Note that if you have a Python version of less than 3, it is necessary to replace all instances of 'python3' in the CLI operations mentioned in this lab with 'python'. In these lab instructions, we will assume that the user has Python3.
-
-**Required Download:**
-
-Mac Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
-
-Windows Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/PN4oCX_LSj-gkGIciVxpHVpW36-Vh_wj8VVEk7q-5VR5sO_bGR_IY4XPvOvVFg89/n/orasenatdpltintegration03/b/all-images-live-lab/o/windows-biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
-
-## **Policy Setup**
-
-Before you start using OCI Data Labeling Service, you or your tenancy administrator should set up the following policies by following below steps:
-      ```
 ## **Task 1:** Upload data to Object Storage (Optional)
 This is an optional set of steps if you want to test OCI Document Understanding with a variety of sample documents
 
