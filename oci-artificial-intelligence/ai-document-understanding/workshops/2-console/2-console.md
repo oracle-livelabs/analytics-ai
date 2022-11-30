@@ -70,23 +70,23 @@ This is an optional set of steps if you want to test OCI Document Understanding 
 
   **b. Test with a demo image**
   On the panel under Document Understanding, select a feature page like text detection. Toggle between sample image buttons to see the different extraction results on the right hand Results panel. 
-  ![DUS demo window](./images/DUS2.png)
+  ![DUS demo window](./images/DUS2.PNG)
 
   If you're curious about the raw JSON response, select the dropdown button under "Response"
-  ![Results panel](./images/DUS3.png)
+  ![Results panel](./images/DUS3.PNG)
 
   You can repeat these steps across the Table detection, key value detection, and document classification panels in the console.
-  ![DUS navigation panel](./images/DUS4.png)
+  ![DUS navigation panel](./images/DUS4.PNG)
 
   **c. Test with your own documents**
   To test with your own documents, you have two options: either select a local file from your machine or a document in Object storage. To select either option, click either radio button next to "Demo Files" at the top of the page:
-  ![Local file panel](./images/DUS5.png)
+  ![Local file panel](./images/DUS5.PNG)
 
   You'll be prompted to choose an output location in Object Storage for Document Understanding service to store the JSON result. On this prompt window, choose a compartment, bucket, and prefix. Then select submit.
-  ![Local file panel](./images/DUS6.png)
+  ![Local file panel](./images/DUS6.PNG)
 
   Now you can select a local file or file you uploaded to object storage in Task 1.
-  ![Local file panel](./images/DUS7.png)
+  ![Local file panel](./images/DUS7.PNG)
 
 ## **Summary**
 
@@ -103,112 +103,3 @@ You may now **proceed to the next lab**.
 
 
 * **Last Updated By/Date**
-
-
-
-
-## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
-**Note:** These instructions are Mac OS compatible
-1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
-    ```
-    <copy>export DL_BucketName="<your bucket name>"</copy>
-    ```
-    ```
-    <copy>export DL_Compartment=<OCID of your Compartment></copy>
-    ```
-
-2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your JPG/JPEG image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
-    ```
-    <copy>export DL_LabelDirectory="<path to Cell folder>"</copy>
-    ```
-
-3. Execute the following command to bulk-upload the JPG/JPEG image files to your bucket from the "Cell" folder, appending the prefix "c" to the objects that will be created from this bulk-upload command, which will be used to bulk-label the records in our Dataset later in this lab.
-    ```
-    <copy>oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir $DL_LabelDirectory --content-type 'image/jpeg' --object-prefix c</copy>
-    ```
-4. Repeat Steps 2 and 3, replacing "Cell" and "c" with "Stripe" and "s", which represent another category into which our images will be classified.
-
-5. Repeat Steps 2 and 3, replacing "Stripe" and "s" with "Debris" and "d", which represent another category into which our images will be classified.
-
-6. Confirm that the images have been uploaded to object storage and have been prepended with the appropriate letter.
-![Inspecting that images were uploaded to object storage](./images/obj-storage-upload-confirm.png)
-
-## **Task 3:** Create a Data Labeling Service Dataset
-1. From the OCI services menu, click 'Data Labeling' under 'Machine Learning.'
-![OCI services menu](./images/dls.png)
-
-2. Click on 'Datasets.'
-![Clicking on datasets from Data Labeling Service](./images/datasets.png)
-
-3. Set your Compartment to the same Compartment where you created your Bucket using the drop down under List Scope.
-![Selecting the compartment](./images/compartment-dls.png)
-
-4. Create your dataset by clicking 'Create dataset.'
-
-  a. Name: enter a name for your DLS Dataset that you can recognize, e.g. image-classification-demo
-
-  b. Dataset format: Images
-
-  c. Annotation Class: Single Label
-
-  d. Click 'Next'
-  ![Create dataset window - add dataset details](./images/create-dataset.png)
-
-  e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
-  ![Create dataset window - select from object storage](./images/select-from-obj-storage.png)
-
-  f. Choose the name of compartment where your Bucket exists
-  ![Create dataset window - select compartment where bucket resides](./images/select-dataset-compartment.png)
-
-  g. Choose your Bucket by name
-  ![Create dataset window - select bucket](./images/select-dataset-bucket.png)
-
-  h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be:
-    * cell
-    * stripe
-    * debris
-  ![Adding labels](./images/dataset-labels.png)
-
-  i. Click 'Next'
-  ![Clicking next](./images/dataset-next.png)
-
-  j. Review the information and deploy your Dataset by clicking 'Create'
-  ![Create dataset window - review information](./images/click-create-dataset.png)
-
-5. Retrieve the Dataset OCID- you will need this during the next Task. Dataset OCID can be found here:
-  ![Identifying dataset OCID](./images/dataset-OCID.png)
-
-## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
-1. Click into your new Dataset. When all of the data has been imported into your DLS Dataset from your Object Storage Bucket, it will be time to perform a bulk-labeling operation on your data.
-
-2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
-![GitHub repository where bulk data labeling code resides](./images/download-bulk-labeling-code.png)
-
-3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config\_file\_path, region\_identifier, compartment\_id, dataset\_id, labels).
-
-  **Note:** Enter "cell", "stripe", "debris" as the 3 labels.
-
-4. Modify the labeling\_algorithm to "first\_letter" from "first\_match"
-
-5. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
-
-6. Bulk-label the records in your DLS Dataset by running the following command:
-    ```
-    <copy>python3 main.py</copy>
-    ```
-
-7. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
-![Pointing to an image in the dataset](./images/verify-label1.png)
-![Verifying image has label](./images/verify-label2.png)
-
-Congratulations on completing this lab!
-
-[You may now **proceed to the next lab**](#next).
-
-## Acknowledgements
-* **Authors**
-    * Samuel Cacela - Staff Cloud Engineer
-    * Gabrielle Prichard - Cloud Solution Engineer
-
-* **Last Updated By/Date**
-    * Gabrielle Prichard - Cloud Solution Engineer, April 2022
