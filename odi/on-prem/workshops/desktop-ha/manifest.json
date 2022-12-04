@@ -3,8 +3,8 @@
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
-      "title": "Introduction to ODI High Availability",
-      "description": "Introduction",
+      "title": "Introduction",
+      "description": "Introduction to ODI HA",
       "filename": "../../odi12c-ha-introduction/introduction.md"
     },
     {
