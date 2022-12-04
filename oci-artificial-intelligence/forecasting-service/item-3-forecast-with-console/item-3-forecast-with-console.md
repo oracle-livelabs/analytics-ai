@@ -57,7 +57,7 @@ In this section, we will learn how to create the forecast project, upload data i
         Name: FC_POLICY
 
         Option 1: 
-        If you want to add policy only at tenancy level then please add below policy statements,adding policy  at tenancy level will let the user access to all resources in the tenancy
+        If you want to add policy only at tenancy level then please add below policy statements. Adding policy  at tenancy level will let the user access to all resources in the tenancy
         
         ```
         Allow dynamic-group DynamicGroupRPSTAccess to manage objects in tenancy
@@ -67,7 +67,7 @@ In this section, we will learn how to create the forecast project, upload data i
         ![](images/lab5-create-policy.png " ")
 
         Option 2: 
-        If you want to add policy ONLY at compartment level then please replace above policy statements as mentioned below, adding policy ONLY at compartment level will limit the user to access resources only in their compartment:
+        If you want to add policy ONLY at compartment level then please replace above policy statements as mentioned below. Adding policy ONLY at compartment level will limit the user to access resources only in their compartment:
         ```
         Allow dynamic-group DynamicGroupRPSTAccess to manage objects in compartment <compartment-name>
         Allow dynamic-group DynamicGroupRPSTAccess to read buckets in compartment <compartment-name>
@@ -102,9 +102,6 @@ For a successful forecast, the input data should pass the following data validat
 * If the ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
 * Number of missing values for 5 consecutive time steps is not allowed
-* Input Data Frequency : Currently, OCI Forecasting service allows data with  'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom freqency depending on frequency of input data
-* Forecast Frequency: Currently, OCI Forecasting service allows to forecast with 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency. For custom frequency: If the input data frequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
-Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we want Forecast Frequency to be a DAY level
 * All the timestamps in the primary data source should exist in the secondary data source
 * The number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
 * There should be no duplicate dates in the time-series in either the additional and primary data files.
@@ -112,9 +109,11 @@ Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we
 ### **Data format requirements**
 
 - **Primary Data:**
-The input data should contain one timestamp column and other column for target variable (which you would like to forecast) and series id
+The input data should contain Series id, timestamp, and target variable which you want to forecast
+
 - **Additional Data:**
-The data should contain one timestamp column, and additional influencer as columns that help in forecasting and series id 
+The data should contain Series id, timestamp, and additional influencer that help in forecasting the target variable, given primary data
+
 - **Meta Data:**
 The input data can also have meta data that help multivariate algorithms in forecasting by identify homogeneous series. The primary data should have three columns - timestamp, target column, and a column for the series id. The additional data should have a timestamp column, a series id column, and columns for additional influencers. The meta data should have a series id column, and any number of columns for meta data information for that particular series. Each series will have one observation in meta data 
 
@@ -371,7 +370,9 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
     We need to provide
     - Forecast name and description
     - Target Variable which we want to forecast. Eg. Sales for the current dataset
-    - Output Frequency for Forecast
+    - Input Data Frequency: Currently, OCI Forecasting service allows data with  'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on frequency of input data
+    - Forecast Frequency: Currently, OCI Forecasting service allows to forecast with 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency. For custom frequency: If the input data frequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
+    Eg. If Input Data Frequency: 2HOUR , then the forecast frequency: 24HOUR if we want Forecast Frequency to be a DAY level
     - Forecast Horizon
     - Prediction Interval: Select Prediction Interval from the list. Additionaly, there is an option to select custom prediction intervals by specifying the interval width. Example: If width 60 is specified, result will contain two symmetric lower and upper bounds around the median forecast (50th percentile), i.e. lower at 20 and upper at 80, which will correspond to 60% confidence of actual future value being lying within these bounds
     - Error Measure: Error metric used to evaluate the performance of the forecasting models.
