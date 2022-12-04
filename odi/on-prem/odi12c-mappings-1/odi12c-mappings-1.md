@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1:  Load TRG\_PROD\_FAMILY Mapping Example
 
-1. Purpose and Integration Requirements
+1. Purpose and Integration Requirements <br />
 The purpose of the Load TRG\_PROD\_FAMILY mapping is to load the data from the SRC\_PRODUCT table in the *Orders Application* model into the TRG\_PROD\_FAMILY target table in the *Sales Administration* model.
 
   However, the SRC\_PRODUCT table does not contain all of the data that is required for this operation. The following information has to be added to the target table:
@@ -32,7 +32,7 @@ The purpose of the Load TRG\_PROD\_FAMILY mapping is to load the data from the S
 
   The functional details for these rules and the procedure to follow are described later in this lab.
 
-2. Mapping Definition
+2. Mapping Definition <br />
 This section describes the mapping Load TRG\_CUSTOMER that will be created in this example. See *Creating the Mapping* for more information.
 
   The Load TRG\_PROD\_FAMILY mapping uses the following data and transformations:
@@ -65,7 +65,7 @@ This section describes the mapping Load TRG\_CUSTOMER that will be created in th
 
 ## Task 2: Creating the Mapping
 
-This section describes how to create the Load TRG\_PROD\_FAMILY mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
+This section describes how to create the Load TRG\_PROD\_FAMILY mapping. To create the Load TRG\_PROD\_FAMILY mapping perform the following procedure:
 1. Insert a New Mapping
 
   To create a new mapping:
