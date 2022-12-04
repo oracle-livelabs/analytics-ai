@@ -16,6 +16,7 @@ We have put together a Postman Collection to help you get started with calling t
 1. Install [POSTMAN](https://www.postman.com/downloads/) to your local computer if you don't already have it. Once installed, run it.
 
 2. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/overview) to download the **Document Understanding API Collection**. The link opens Postman on the web. Select **Collections** on the left side of the screen. Hover over *Document Understanding Service API* and click the 3 dots to open the popup menu. Select **Export** to export the collection file and save it to your local computer.
+  ![](./images/documentcollection.png)
 
 3. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/environment/29850-eab82db8-e9a1-4200-9f39-de10b4a0f371) to download the **OCI Credentials Environment**. The link opens Postman on the web. Select **Environmments** on the left side of the screen then select **OCI Credentials**. One the right side of the screen find the 3 dots and click it to open a popup menu. On the menu click **Export** to export the credentials file and save it to your local computer.
   ![](./images/postman-exportoci.png)
@@ -44,6 +45,8 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 
   ![](./images/tenancy-ocid.png " ")
 
+
+
   ![](./images/postman-tenancy-ocid.png " ")
 
 #### user_ocid ####
@@ -54,6 +57,8 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 1. The *User Details* page opens. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **user_ocid CURRENT VALUE** field.
 
   ![](./images/user-ocid.png " ")
+
+
 
   ![](./images/postman-user-ocid.png " ")
 
@@ -87,6 +92,8 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 8. Copy the **fingerprint** for the API Key that you just created and add it to the **fingerprint CURRENT VALUE** field of the Postman Environment.
 
   ![](./images/add-api-key-fingerprint.png " ")
+
+  
 
   ![](./images/postman-fingerprint.png " ")
 
