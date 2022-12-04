@@ -162,6 +162,7 @@ The information in the table is found here: https://docs.oracle.com/en-us/iaas/C
 In this task you'll call the Processor Job REST API.
 
 1. In POSTMAN, select **Collections**, then expand *Document Understanding API* then *actions* then click **processor Jobs**. Then select the **Body** tab under *POST*.
+
   ![](./images/processorjobapirequest.png " ")
 
 2. Replace the contents of the **Body** with the following:
