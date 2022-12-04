@@ -40,16 +40,19 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 1. To get the **tenancy_ocid**, open the OCI Console, click the **Profile** icon in the upper right corner, then select **Tenancy: *name***
   ![](./images/selecttenancy.png " ")
 
-1. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
+2. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
+
   ![](./images/tenancy-ocid.png " ")
 
   ![](./images/postman-tenancy-ocid.png " ")
 
 #### user_ocid ####
 1. To get the **user_ocid**, go back to the OCI Console, click the **Profile** icon, then select **your user name**
+
   ![](./images/new-profilename.png " ")
 
 1. The *User Details* page opens. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **user_ocid CURRENT VALUE** field.
+
   ![](./images/user-ocid.png " ")
 
   ![](./images/postman-user-ocid.png " ")
@@ -82,11 +85,13 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 
 
 8. Copy the **fingerprint** for the API Key that you just created and add it to the **fingerprint CURRENT VALUE** field of the Postman Environment.
+
   ![](./images/add-api-key-fingerprint.png " ")
 
   ![](./images/postman-fingerprint.png " ")
 
 9. On your local computer, navigate to the **private key file (*username-date*.pem)** that you downloaded when getting the fingerprint. Open it in a text editor, copy it's contents, and paste them into the **private_key CURRENT VALUE** field of the Postman Environment.
+
   ![](./images/postman-privatekey.png " ")
 
 #### region ####
@@ -129,6 +134,7 @@ Now we will set the variables in the OCI Credentials in your local POSTMAN and y
 |US West (San Jose) |	us-sanjose-1 |	San Jose, CA |
 
   ![](./images/postman-region.png " ")
+
 The information in the table is found here: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 
 #### compartment_ocid ####
@@ -142,9 +148,11 @@ The information in the table is found here: https://docs.oracle.com/en-us/iaas/C
   ![](./images/compartment-copy.png " ")
 
 4. Paste the OCID into the **compartment_ocid CURRENT VALUE** field of the Postman Environment.
+
   ![](./images/postman-compartment-ocid.png " ")
 
 #### save ####
+
 1. In POSTMAN, click the **Persist All** button to save the Current Value to the Initial Value.
 
 2. In POSTMAN, click the **Save** button to save all of the OCI Credentials that you just entered.
