@@ -20,7 +20,7 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
 * Completed all the tasks in Getting Started
-* Download the sample python [notebook](files/forecasting-api-sample-notebook-la.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
+* Download the sample python [notebook](files/forecasting-api-sample-la-notebook.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
 
 
 ## Task 1: API key generation  
