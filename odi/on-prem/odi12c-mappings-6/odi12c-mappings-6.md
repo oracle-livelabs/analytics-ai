@@ -160,7 +160,7 @@ This section describes how to define joins between the source datastores. To cre
 
   ```
   <copy>
-  SRC\_ORDERS.ORDER\_ID=SRC\_ORDER\_LINES.ORDER\_ID
+  SRC_ORDERS.ORDER_ID=SRC_ORDER_LINES.ORDER_ID
   </copy>
   ```
 
