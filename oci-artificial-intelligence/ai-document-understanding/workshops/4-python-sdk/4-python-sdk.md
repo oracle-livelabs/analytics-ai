@@ -78,7 +78,7 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 
 ## **TASK 2:** Add Sample Documents to Object Storage
 
-1. Download the [Lab-4 sample documents](./Sample-Documents/Lab4).
+1. Download the [Lab-4 sample documents](./sample-documents/lab4).
 
 2. Login to the OCI Console and navigate to your Object Storage Buckets
 
