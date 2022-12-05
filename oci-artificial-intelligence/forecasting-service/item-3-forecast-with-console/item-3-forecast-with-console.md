@@ -476,12 +476,12 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
     - **explanation\_results\_local.csv**: Local Explainability
 
 3. You can also download the files from bucket where you have your uploaded your input csv files
-       - The folder name in the bucket is of format as below:
+       - The folder name in the bucket is of format as ***fs-{last_string_of_ocid}***
 
-            `***fs-{last_string_of_ocid}***`
+       - For eg: if your ocid is 
+       ***ocid1.aiforecast.oc1.phx.amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq***,
+       then files will be in ***fs-amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq*** folder
 
-       - For eg: if your ocid is `ocid1.aiforecast.oc1.phx.amaaaaaaug************x4smflo6jrubfflwrcs4evkbxwkfiq`,
-       then files will be in `fs-amaaaaaaug************x4smflo6jrubfflwrcs4evkbxwkfiq` folder
      ![](images/lab5-task10-results-object-storage.png " ")
 
     - **explainability**:  Explainability files for each series    
@@ -592,12 +592,11 @@ We will use the data already uploaded in bucket in *Task 4* above
         - **explanation\_results\_global.csv**: Global Explainability - But will be empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
         - **explanation\_results\_local.csv**: Local Explainability - But will be empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
     - You can also download the files from bucket where you have your uploaded your input csv files
-       - The folder name in the bucket is of format as below:
+       - The folder name in the bucket is of format as ***fs-{last_string_of_ocid}***
 
-            `***fs-{last_string_of_ocid}***`
-
-       - For eg: if your ocid is `ocid1.aiforecast.oc1.phx.amaaaaaaug************x4smflo6jrubfflwrcs4evkbxwkfiq`,
-       then files will be in `fs-amaaaaaaug************x4smflo6jrubfflwrcs4evkbxwkfiq` folder
+       - For eg: if your ocid is 
+       ***ocid1.aiforecast.oc1.phx.amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq***,
+       then files will be in ***fs-amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq*** folder
 
         ![](images/lab5-task10-results-object-storage.png " ")
 
