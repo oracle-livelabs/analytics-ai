@@ -14,6 +14,7 @@ In this lab you will use the OCI Python SDK to extract information from document
 
 
 ## **TASK 1:** Setup API Signing Key and Config File
+If this is your first time using the OCI SDK, you'll need to create a config file. If you've already done this, you can skip to the next step.
 
 1. Create the .oci folder. Open an admin command prompt or Terminal and run the following command.
 
@@ -94,9 +95,9 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 #### Python Code
 
 The following sample code involves essentially three steps:
--call CreateProcessorJob to process your sample invoice
--call GetProcessorJob to get the status of the job (until final status)
--call GetObject to get the response from Object Storage
+* call CreateProcessorJob to process your sample invoice
+* call GetProcessorJob to get the status of the job (until final status)
+* call GetObject to get the response from Object Storage
 
 ```Python
 ### Import Packages
