@@ -24,7 +24,7 @@ This lab assumes you have:
 
 ## Task 1:  Load TRG\_PRODUCT Mapping Example
 
-1. Purpose and Integration Requirements
+1. Purpose and Integration Requirements <br />
 The purpose of the Load TRG\_PRODUCT mapping is to load the data from the SRC\_PRODUCT table in the *Orders Application* model into the TRG\_PRODUCT target table in the *Sales Administration* model.
 
 However, the SRC\_PRODUCT table does not contain all of the data that is required for this operation. The following information has to be added to the target table:
@@ -33,7 +33,7 @@ However, the SRC\_PRODUCT table does not contain all of the data that is require
 
 The functional details for these rules and the procedure to follow are described later in this lab.
 
-2. Mapping Definition
+2. Mapping Definition <br />
 This section describes the mapping Load TRG\_PRODUCT that will be created in this example. See *Creating the Mapping* for more information.
 
 The Load TRG\_PRODUCT mapping uses the following data and transformations:
@@ -75,7 +75,7 @@ This section describes how to create the Load TRG\_PRODUCT mapping. To create th
 
   ![](./images/new_mapping.png)
 
-2. Enter the name of your mapping (Load TRG\_PROD\_FAMILY) in the Name field:
+2. Enter the name of your mapping (Load TRG\_PRODUCT) in the Name field:
 
   ![](./images/mapping_name.png)
 
@@ -91,7 +91,7 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
 2.  In the Designer Navigator, expand the Models accordion and the *Sales Administration* model.
 
-3.  Select TRG\_CUSTOMER datastore under the *Sales Administration* model and drag it into the mapping editor
+3.  Select TRG\_PRODUCT datastore under the *Sales Administration* model and drag it into the mapping editor
 
   ![](./images/models_tgt.png)
 
