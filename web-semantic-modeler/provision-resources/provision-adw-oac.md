@@ -6,27 +6,6 @@
 
 This lab walks you through the steps of creating an Autonomous Data Warehouse and an Oracle Analytics Cloud instance. You will provision a new database and an OAC instance in less than 10 minutes.
 
-Oracle Autonomous Databases have the following characteristics:
-
-**Self-driving**
-Automates database provisioning, tuning, and scaling.
-
-- Provisions highly available databases, configures and tunes for specific workloads, and scales compute resources when needed, all done automatically.
-
-**Self-securing**
-Automates data protection and security.
-
-- Protect sensitive and regulated data automatically, patch your database for security vulnerabilities, and prevent unauthorized access—all with Oracle Autonomous Database.
-
-**Self-repairing**
-Automates failure detection, failover, and repair.
-
-- Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
-
-Watch our short video that explains Lab 1 - Provision your Autonomous Database and Oracle Analytics Cloud instance in detail:
-
-[](youtube:rpKwrm-7eCk)
-
 _Estimated Time:_ 15 minutes
 
 ### Objectives
