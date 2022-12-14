@@ -200,6 +200,6 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 * [Plan the Physical Layer](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/plan-physical-layer.html#GUID-D7D6E064-F9C8-4B8B-A02F-B9E0358063F1)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Contributors** -  Lucian Dinescu, Peter Monteiro
+* **Last Updated By/Date** -

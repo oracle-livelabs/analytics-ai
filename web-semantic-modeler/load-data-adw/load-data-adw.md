@@ -147,6 +147,6 @@ You have just created the connection to the Autonomous Data Warehouse.
 *
 
 ## Acknowledgements
-* **Author** - <Nagwang, Product Manager, Analytics>
-* **Contributors** -  <Peter Monteiro, Lucian Dinescu>
-* **Last Updated By/Date** - <Nagwang, December 2022>
+* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Contributors** -  Lucian Dinescu, Peter Monteiro
+* **Last Updated By/Date** -

@@ -106,7 +106,7 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-- **Author** - Nagwang Gyamtso, Product Strategy, Analytics
-- **Contributors** - Lucian Dinescu, Product Strategy, Peter Monteiro, Product Management
+* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Contributors** -  Lucian Dinescu, Peter Monteiro
 - **Reviewed by** -
 - **Last Updated By/Date** -
