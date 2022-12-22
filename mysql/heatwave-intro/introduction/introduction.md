@@ -27,7 +27,7 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 
 *Lab Setup*
 
-  ![INTRO](./images/heatwave-bastion-architecture-compute.png " ") 
+  ![heatwave architecture](./images/heatwave-bastion-architecture-compute.png "heatwave bastion -architecture compute ") 
 
 
 *Introduction to HeatWave*
@@ -40,9 +40,9 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 In this lab, you will be guided through the following steps:
 
 - Create SSH Key on Oracle Cloud Infrastructure Cloud Shell
-- Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+- Create MySQL Database for HeatWave (DB System) instance 
 - Setup Compute instance
-- Connect to DB System using MySQL Shell through Compute Instance / Cloud Shell
+- Connect to DB System using MySQL Shell through Compute Instance / Cloud Shell and add sample data (airportdb)
 - Add HeatWave cluster to DB System
 - Load sample data to HeatWave Cluster
 - Run queries in HeatWave and MySQL and see the performance improvement in HeatWave!

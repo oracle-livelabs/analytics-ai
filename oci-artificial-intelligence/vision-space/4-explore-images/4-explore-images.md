@@ -8,7 +8,11 @@ The features of OCI Vision are exposed through an API, which makes those feature
 
 *Estimated Time*: 30 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Explore space images](videohub:1_8nka97yh)
+
 ### Objectives
+
 * Create a source dataset of images to be processed by OAC
 * Create an OAC data flow to process the images through OCI VIsion
 * Create an OAC workbook to view images processed through OCI Vision
@@ -21,7 +25,7 @@ The features of OCI Vision are exposed through an API, which makes those feature
 ## **Task 1:** Download a file representing the source dataset
 You'll download a csv file that contains the name and location of the space images to be processed through the OCI Vision custom model. This file is needed for the data flow that will be created in this lab.
 
-1. Use the OCI console to navigate to Storage > Buckets
+1. Use the OCI console to navigate to **Storage** and then **Buckets**.
 
     ![Navigate to storage buckets](./images/console-storage-buckets.png)
 
@@ -142,7 +146,7 @@ Create a dataflow that ingests the space images from object storage, submits the
 
     ![Save the data flow](./images/oac-save-data-flow.png)
 
-1. Click the **Run** icon on the top bar of the page to run the dat flow. Wait for the data flow to complete. This may take 1-2 minutes.
+1. Click the **Run** icon on the top bar of the page to run the data flow. Wait for the data flow to complete. This may take 1-2 minutes.
 
     ![Run the data flow](./images/oac-run-data-flow.png)
 
@@ -166,7 +170,7 @@ Create an OAC workbook to view the objects detected in the space images.
 
     ![Add table of image files](./images/oac-workbook-table.png)
 
-1. Switch to the visualizations list by clicking the **Vizualizations** icon.
+1. Switch to the visualizations list by clicking the **Visualizations** icon.
 
     ![Switch to visualizations](./images/oac-workbook-viz-icon.png)
 
@@ -213,13 +217,16 @@ https://www.youtube.com/watch?v=JjuOWm8whgQ
 **Congratulations, you have completed this lab and the workshop!**
 
 ## **Bonus Task:** Analyze images with your custom model
+
 If you have time after completing the workshop, test your learning to see if you can complete the following task without being given all the steps in detail.
 
-1. Go the custom-trained model you created in Lab 3 (galaxy-detection-model-1) and see if it is now active. If it is, use it to analyze one or more images in object storage. You can copy an image URL from the table visualization in your Galaxy Workbook in OAC. Then paste that URL into the Image URL box in Vision to analyze that image. 
+1. Go the custom-trained model you created in Lab 3 (galaxy-detection-model-1) and see if it is now active. If it is, use it to analyze one or more images in object storage. You can copy an image URL from the table visualization in your Galaxy Workbook in OAC. Then paste that URL into the Image URL box in Vision to analyze that image.
 
+    Watch the video below for a quick walk-through to complete the bonus task.
+    [Analyze images with your custom model](videohub:1_hnrkiv5f)
 
 ## Acknowledgements
 
 - **Author** - Wes Prichard, Sr Principal Product Manager, Data Science & AI
 - **Contributors** -  Mark Heffernan, Sr Principal Product Manager, Data Science & AI
-- **Last Updated By/Date** - Name, Month Year
+- **Last Updated By/Date** - Wes Prichard, 7 October 2022

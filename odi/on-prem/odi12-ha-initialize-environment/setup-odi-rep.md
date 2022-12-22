@@ -1,23 +1,21 @@
-# Access and Configure ODI Instance
+# Access and configure ODI instance
 
 ## Introduction
 This lab will show you how to access an ODI instance using NoVNC and configure ODI Studio
 
-*Estimated Lab Time*: 10 minutes
+*Estimated Time*: 10 minutes
 
 ### Objectives
-In this lab you will learn
+In this lab, you will learn
 * Validate the Database Processes are Up and Running
 * Validate the ODI Installation
 
 ### Prerequisites
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+This lab assumes you have completed:
+    - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## Task 1: Validate the Database Processes are Up and Running.
+## Task 1: Validate the database processes are up and running.
 1. Now with access to your remote desktop sessions, proceed as indicated below to validate your environment before you start executing the subsequent labs. 
 
     ```
@@ -49,7 +47,7 @@ The following Processes should be up and running in Node1:
 
   ![Check listener and db process](./images/db-processes2.png " ")
 
-The above screenshot clearly indicates that the listener and Oracle database processes are running.
+The above screenshot indicates that the listener and Oracle database processes are running.
 
 
 3. If you see questionable output(s), failure or down component(s), restart the service accordingly.
@@ -60,11 +58,11 @@ The above screenshot clearly indicates that the listener and Oracle database pro
     sudo systemctl restart oracle-database
     </copy>
     ```
-4. ODI Livelabs webpage, ODI Studio and SQL Developer are also launched with the instance. You can minimize these screens for now.
+4. ODI Livelabs webpage, ODI Studio, and SQL Developer are also launched with the instance. You can minimize these screens for now.
 
   ![NoVNC Home Page](./images/odi-novnc-landing.png " ")  
 
-## Task 2: Validate the ODI Installation.
+## Task 2: Validate the ODI installation.
 
 Below is the ODI installation path
 
@@ -84,9 +82,9 @@ Below is the ODI installation path
    ![ODI Middleware Home Directory](./images/odi2-list.png " ") 
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
-## Appendix 1: Managing Startup Services
+## Appendix 1: Managing startup services
 
 1. Database service (Database and Standard Listener).
 
@@ -136,6 +134,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
