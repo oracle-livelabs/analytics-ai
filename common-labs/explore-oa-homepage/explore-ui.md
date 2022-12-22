@@ -6,7 +6,7 @@ In this lab, you will get familiar with the Oracle Analytics homepage and learn 
 
   ![Overview of homepage](images/homepage-overview.png)
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
