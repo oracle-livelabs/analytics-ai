@@ -26,18 +26,6 @@
             "filename": "../../connect-to-adw/connect-adw.md"
         },
         {
-            "title": "Lab 4: Create the Logical Layer",
-            "filename": "../../logical-layer/create-logical-layer.md"
-        },
-        {
-            "title": "Lab 5: Create the Presentation Layer",
-            "filename": "../../presentation-layer/create-presentation-layer.md"
-        },
-        {
-            "title": "Lab 6: Test, Deploy, and Validate a Semantic Model",
-            "filename": "../../test-deploy-validate/test-deploy-validate.md"
-        },
-        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
