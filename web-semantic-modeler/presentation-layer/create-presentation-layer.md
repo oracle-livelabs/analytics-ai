@@ -28,63 +28,63 @@ In this section, you create the Sample Sales subject area that displays in Oracl
 
 Begin with step 3 if you're continuing this lab directly after completing the steps in Create the Logical Layer lab.
 
-1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the Navigator Navigator icon, and then click Semantic Models.
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or Service Administrator credentials. On the **Home page**, click the **Navigator** icon, and then click **Semantic Models**.
 
 	![Navigate to Semantic Modler](./images/nav-semantic-modeler.png)
 
-2. In the Semantic Models page, select Sample Sales, click Actions menu Actions menu icon, and then select Open.
+2. In the **Semantic Models** page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 
 	![Open Sample Sales](./images/open-sample-sales.png)
 
-3. Click Presentation Layer Presentation Layer icon. Click Create Create icon, and then select Create Subject Area.
+3. Click the **Presentation Layer** icon. Click the **Create** icon, and then select **Create Subject Area**.
 
-	![Create subject area](./images/create-sa.png)
+	![Create subject area](./images/create-sa.png =500x*)
 
-4. In Create Subject Area, enter Sample Sales in Name, and then click OK.
+4. In **Create Subject Area**, enter <code>Sample Sales</code> in **Name**, and then click **OK**.
 
-	![Subject area name](./images/sa-name.png)
+	![Subject area name](./images/sa-name.png =500x*)
 
-5. In the Sample Sales subject area on the Tables tab, click Add Tables Table, and then select Create Presentation Table.
+5. In the **Sample Sales** subject area on the **Tables** tab, click **Add Tables**, and then select **Create Presentation Table**.
 
 	![Create presentation table](./images/create-pres-table.png)
 
-6. In Create Presentation Table, enter Time in Name, and then click OK. Close the Time tab.
+6. In **Create Presentation Table**, enter <code>Time</code> in **Name**, and then click **Add**. Close the Time tab.
 
-	![Create Time presentation table](./images/create-time-table.png)
+	![Create Time presentation table](./images/create-time-table.png =500x*)
 
-7. In the Sample Sales subject area, click Add Tables icon.
+7. In the **Sample Sales** subject area, click the **Add Tables** icon and select **Add Tables**.
 
 	![Image](./images/add-table.png)
 
-8. In Select Logical Table, click D2 Products, and then click Select
+8. In **Select Logical Table**, click **D2 Products**, and then click **Select**.
 
-	![Select D2 Products](./images/select-d2.png)
+	![Select D2 Products](./images/select-d2.png =500x*)
 
-9. Double-click D2 Products.
+9. Double-click **D2 Products**.
 
 ![Double click D2 Products](./images/dc-products.png)
 
-10. Click the General tab. In Name, enter Products, and then click Save Save icon.
+10. Click the **General** tab. In **Name**, enter <code>Products</code>, and then click the **Save** icon.
 
 	![Enter Products for name](./images/enter-products.png)
 
-11. In the Sample Sales subject area, click Add Tables, and select Create Presentation Table.
+11. In the **Sample Sales** subject area, click **Add Tables**, and select **Create Presentation Table**.
 
 	![Create presentation table](./images/create-presentation-table.png)
 
-12. In Create Presentation Table, enter Customers in Name, and then click OK.
+12. In **Create Presentation Table**, enter <code>Customers</code> in **Name**, and then click **OK**.
 
-	![Presentation table name](./images/pres-table-name.png)
+	![Presentation table name](./images/pres-table-name.png =500x*)
 
-13. Add another Presentation Table and name this one Base Facts, and then click OK.
+13. Add another **Presentation Table** and name this one <code>Base Facts</code>, and then click **Add**.
 
-	![Base facts presentation table](./images/base-facts.png)
+	![Base facts presentation table](./images/base-facts.png =500x*)
 
-14. Click the Presentation Layer's table tabs, and then click and open each table to review the table columns.
+14. Click the Presentation Layer's **Table** tabs, and then click and open each table to review the table columns.
 
 	![Tables tab](./images/open-each-table.png)
 
-15. The Products table contains columns imported from the D2 Products table in the business model. The Time, Customers, and Base Facts tables don't yet have columns because they aren't connected to a source table.
+15. The **Products** table contains columns imported from the **D2 Products** table in the business model. The **Time**, **Customers**, and **Base Facts** tables don't yet have columns because they aren't connected to a source table.
 
 	![Products table](./images/products-table.png)
 
@@ -93,11 +93,11 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 
 In this section, you select columns from the logical tables to use in the presentation tables.
 
-1. In the Presentation Layer Presentation Layer icon, double-click Time in the Sample Sales subject area. Click the Logical Layer Logical Layer icon, expand Sample Sales BM, and then expand D1 Time.
+1. In the **Presentation Layer**, double-click **Time** in the **Sample Sales** subject area. Click the **Logical Layer** icon, expand **Sample Sales BM**, and then expand **D1 Time**.
 
 	![Expand D1 Time](./images/expand-d1-time.png)
 
-2. Hold down the Ctrl or Command key, and select and drag the following columns to the Time Columns tab:
+2. Hold down the **Ctrl** or **Command** key, and select and drag the following columns to the **Time Columns** tab:
 	* Calendar date
 	* Per name half
 	* per name month
@@ -107,27 +107,27 @@ In this section, you select columns from the logical tables to use in the presen
 
 	![Drag and drop columns](./images/drag-drop-cols.png)
 
-3. Click Save Save icon.
+3. Click **Save**.
 
 	![Save](./images/save-time.png)
 
-4. Double-click Customers in the Sample Sales subject area.
+4. Double-click **Customers** in the **Sample Sales** subject area.
 
 	![Customers in Sample Sales](./images/dc-customers.png)
 
-5. In the Logical Layer, expand D3 Customers. Hold down the Ctrl key, select Cust key and Name, and then drag them to the Customer Columns tab.
+5. In the **Logical Layer**, expand **D3 Customers**. Hold down the **Ctrl** key, select **Cust Key** and **Name**, and then drag them to the  **Columns** tab in the **Customers** table.
 
 	![Customers in Sample Sales](./images/dd-cust.png)
 
-6. Click Save Save icon.
+6. Click **Save**.
 
 	![Save](./images/save-dd.png)
 
-7. Double-click Base Facts in the Sample Sales subject area. In the Logical Layer Logical Layer icon, expand F1 Revenue. Hold down the Ctrl key, select Revenue and Units, and then drag them to the Base Facts Columns tab.
+7. Double-click **Base Facts** in the **Sample Sales** subject area. In the **Logical Layer** icon, expand **F1 Revenue**. Hold down the **Ctrl** key, select **Revenue** and **Units**, and then drag them to the **Columns** tab.
 
 	![Drag and drop Revenue and Units](./images/dd-rev-units.png)
 
-8. Click Save Save icon.
+8. Click **Save**.
 
 	![Save](./images/save-rev-units.png)
 
@@ -135,23 +135,23 @@ In this section, you select columns from the logical tables to use in the presen
 
 In this section, you change the names of some columns, remove columns, and reorder columns in the semantic model's presentation tables.
 
-1. Click the Products tab. Hold down the Ctrl key, select the Prod key, Attribute 1, Attribute 2, and Total value columns, and then click Delete Delete icon.
+1. Click the **Products** tab. Hold down the **Ctrl** key, select the **Prod key**, **Attribute 1**, **Attribute 2**, and **Total Value** columns, and then click the **Delete** icon.
 
 	![Delete](./images/delete-icon.png)
 
-2. Double-click Prod dsc. Enter Product in Name.
+2. Double-click **Prod Dsc**. Enter <code>Product</code> in **Name**.
 
 	![Product name](./images/product-name.png)
 
-3. Double-click Lob. Enter Line of Business in Name.
+3. Double-click **Lob**. Enter <code>Line of Business</code> in **Name**.
 
 	![Line of Business in name](./images/lob-name.png)
 
-4. Click Save Save icon.
+4. Click **Save**.
 
 	![Save](./images/save-lob.png)
 
-4. Select a column, and then click the Move Up Move Up arrow icon and Move Down Move Down arrow icon arrows to arrange the Products columns in the following order:
+4. Select a column, and then click the **Move Up** arrow icon and **Move Down** arrow icon to arrange the Products columns in the following order:
 
 	* Brand
 	* Product
@@ -164,7 +164,7 @@ In this section, you change the names of some columns, remove columns, and reord
 
 	![Move columns](./images/move-cols.png)
 
-5. Click Save Save icon.
+5. Click **Save** icon.
 
 	![Save move](./images/save-move.png)
 
@@ -175,5 +175,5 @@ In this section, you change the names of some columns, remove columns, and reord
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro
+* **Contributors** -
 * **Last Updated By/Date** -
