@@ -159,5 +159,5 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** - 
+* **Contributors** -
 * **Last Updated By/Date** -

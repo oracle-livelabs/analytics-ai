@@ -196,5 +196,5 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro
+* **Contributors** - 
 * **Last Updated By/Date** -
