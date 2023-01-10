@@ -121,7 +121,7 @@ In this section, you define joins between alias tables to express relationships 
 
 	![Add physical table](./images/add-physical-table.png =500x*)
 
-3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_DATE** column. Click **Add**.
+3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_ DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_ DATE** column. Click **Add**.
 
 	![Add join conditions](./images/join-conditions.png =500x*)
 
