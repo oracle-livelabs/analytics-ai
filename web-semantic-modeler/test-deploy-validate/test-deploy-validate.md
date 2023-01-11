@@ -26,15 +26,15 @@ This lab assumes you have:
 
 Begin with step 3 if you're continuing this tutorial directly after completing the steps in Create the Presentation Layer tutorial.
 
-1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the Navigator Navigator icon, and then click Semantic Models.
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or Service Administrator credentials. On the **Home page**, click the **Navigator** icon, and then click **Semantic Models**.
 
 	![Navigate to Semantic Modeler](images/nav-semantic-modeler.png)
 
-2. In the Semantic Models page, select Sample Sales, click Actions menu Actions menu icon, and then select Open.
+2. In the **Semantic Models** page, select **Sample Sales**, click the **Actions menu** icon, and then select **Open**.
 
 	![Open Sample Sales](images/open-sample-sales.png)
 
-3. Click Check Consistency Consistency Checker icon and select Errors and Warnings.
+3. Click the **Check Consistency** icon and select **Errors and Warnings**.
 
 	![Consistency Checker](images/consistency-checker.png)
 
@@ -44,49 +44,49 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 ## Task 2: Deploy the Semantic Modeler
 
-1. In the semantic model, click the Page Menu Page Menu icon, and select Deploy. Click Deploy when asked to confirm.
+1. In the semantic model, click the **Page Menu** icon, and select **Deploy**. Click **Deploy** when asked to confirm.
 
-	![Deploy](images/deploy.png)
+	![Deploy](images/deploy.png =300x*)
 
 2. The message, "Deploy successful" appears when the deployment process is complete.
 
-	![Deploy successful](images/deploy-successful.png)
+	![Deploy successful](images/deploy-successful.png =500x*)
 
-3. Click Go back icon.
+3. Click the **Go back** icon.
 
-	![Go back](images/go-back.png)
+	![Go back](images/go-back.png =400x*)
 
 ## Task 3: Validate the Semantic Model
 
-1. Refresh your OAC metadata by signing out and signing back in. Sign out of your OAC instance by clicking the Page menu and selecting **Sign Out**.
+1. Refresh your OAC metadata by signing out and signing back in. Sign out of your OAC instance by clicking your **User** and selecting **Sign Out**.
 
-	![Sign out](./images/sign-out.png)
+	![Sign out](./images/sign-out.png =300x*)
 
 2. Enter your Oracle Cloud credentials and click **Sign In**.
 
-	![Sign in](./images/sign-in.png)
+	![Sign in](./images/sign-in.png =500x*)
 
-3. On the OAC homepage, click Create, and then click Workbook.
+3. On the OAC homepage, click **Create**, and then click **Workbook**.
 
-	![Create workbook](images/create-workbook.png)
+	![Create workbook](images/create-workbook.png =300x*)
 
-4. In Add Dataset, click Select Data, and select Subject Areas. In Subject Areas, click Sample Sales, and then click Add to Workbook.
+4. In **Add Dataset**, click **Select Data**, and select **Subject Areas**. In Subject Areas, click **Sample Sales**, and then click **Add to Workbook**.
 
 	![Sample Sales subject area](images/add-sample-sales.png)
 
-5. In the Data pane, expand Time, Base Facts, and Products. Hold down the Ctrl key, select Per Name Year from Time, select Revenue from Base Facts, and select Type from Products. Right-click, select Pick Visualization.
+5. In the **Data pane**, expand **Time**, **Base Facts**, and **Products**. Hold down the **Ctrl key**, select **Per Name Year** from Time, select **Revenue** from Base Facts, and select **Type** from Products. Right-click, select **Pick Visualization**.
 
 	![Pick visualization](./images/pick-viz.png)
 
-6. Select the Table visualization type.
+6. Select the **Table visualization** type.
 
-	![Select table](images/select-table.png)
+	![Select table](images/select-table.png =300x*)
 
 7. The data has been populated which means that the subject area is validated.
 
 	![Data in table](./images/data-table.png)
 
-6. Click Save. In Save Workbook, enter Validate SM in Name, and then click Save.
+8. Click **Save**. In Save Workbook, enter <code>Validate SM</code> in **Name**, and then click **Save**.
 
 	![Save workbook](./images/save-workbook.png)
 
@@ -98,5 +98,5 @@ You have just learned how to create a semantic model user the Semantic Modeler i
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro
+* **Contributors** -
 * **Last Updated By/Date** - <Name, Month Year>

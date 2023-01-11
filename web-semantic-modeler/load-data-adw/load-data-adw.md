@@ -32,23 +32,23 @@ In this section we will create the necessary user/schema required for this lab.
 
 2. Scroll down to **Administration** and select **DATABASE USERS**.
 
-	![DB Users](./images/db-users.png)
+	![DB Users](./images/db-users.png =500x*)
 
 3. Click **Create User**.
 
-	![Create user](./images/create-user.png)
+	![Create user](./images/create-user.png =500x*)
 
-4. Enter the following information in the **User** tab.
-		* User Name: BISAMPLE
-		* Password: Choose a valid password (You will need this to log in to the BISAMPLE user in the next task)
-		* Quota on tablespace DATA: Unlimited
-		* Web Access: Enable
+4. Enter the following information in the **User** tab:
+	* User Name: BISAMPLE
+	* Password: Choose a valid password (You will need this to log in to the BISAMPLE user in the next task)
+	* Quota on tablespace DATA: Unlimited
+	* Web Access: Enable
 
-	![User info](./images/user-info.png)
+	![User info](./images/user-info.png =500x*)
 
 5. Click the **Granted Roles** tab and grant the role **"DWROLE"** and check all three options. Then click **Create User**.
 
-	![Grant roles](./images/grant-roles.png)
+	![Grant roles](./images/grant-roles.png =600x*)
 
 You have just created the BISAMPLE user role in the SemanticModelerDB.
 
@@ -57,43 +57,43 @@ In this section, you will login to the BISAMPLE user you just created and load t
 
 1. Sign out of the ADMIN user by clicking **ADMIN** on the top right of the page and selecting **Sign Out**.
 
-	![Sign out of admin](./images/sign-out-admin.png)
+	![Sign out of admin](./images/sign-out-admin.png =300x*)
 
 2. Once you are signed out, click **Sign in**, enter the username, BISAMPLE and click **Next**. The enter the password you created for the BISAMPLE and **Sign in**.
 
-	![Sign in](./images/sign-in.png)
+	![Sign in](./images/sign-in.png =300x*)
 
 3. Under **Data Studio**, click **DATA LOAD**.
 
-	![Data Load](./images/data-load.png)
+	![Data Load](./images/data-load.png =500x*)
 
 4. Choose **LOAD DATA** and **LOCAL FILE**, then click **Next**.
 
 	![Local file](./images/local-file.png)
 
-4. Drag and drop or select the BISAMPLE_date.xlsx file from your local machine.
+5. Drag and drop or select the BISAMPLE_date.xlsx file from your local machine.
 
 	![Select data](./images/select-data.png)
 
-5. Once your files are ready, click the green **Start** button to start the data load. This should take about a minute.
+6. Once your files are ready, click the green **Start** button to start the data load. This should take about a minute.
 
 	![Start data load](./images/start-load.png)
 
-6. Click **Done** on the bottom of the page once the data load is complete.
+7. Click **Done** on the bottom of the page once the data load is complete.
 
 	![Load done](./images/load-done.png)
 
-7. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
+8. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
 
-	![SQL Development](./images/sql.png)
+	![SQL Development](./images/sql.png =500x*)
 
-8. All your tables should be listed here under the BISAMPLE user/schema. Right click SAMP_REVENUE_F and select **Open**. We'll take a closer look to confirm all the data is there.
+9. All your tables should be listed here under the BISAMPLE user/schema. Right click SAMP_ REVENUE _F and select **Open**. We'll take a closer look to confirm all the data is there.
 
 	![Open revenue](./images/open-revenue.png)
 
-9. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
+10. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
 
-	![Row count](./images/row-count.png)
+	![Row count](./images/row-count.png =300x*)
 
 You have just loaded data into the BISAMPLE schema using the Data Load feature in the ADW.
 
@@ -121,15 +121,15 @@ In this section, you define a connection to the data source to use for the Seman
 
 2. On the Home page, click **Create**, and then select **Connection**.
 
-	![Create connection](./images/create-connection.png)
+	![Create connection](./images/create-connection.png =300x*)
 
-3. In Create Connection, click a relational database connection type to use such as Oracle Database.
+3. In **Create Connection**, select a **relational database** connection type to use such as Oracle Database.
 
-	![DB type](./images/db-type.png)
+	![DB type](./images/db-type.png =500x*)
 
 4. In the connection dialog, enter the following:
 
-	* Connection Name: Semantic Modeler
+	* Connection Name: BISAMPLE
 	* Description:
 	* Client Credentials: Select the wallet zip file you downloaded in task 3
 	* Username: ADMIN
@@ -137,14 +137,15 @@ In this section, you define a connection to the data source to use for the Seman
 	* Service Name: This will auto load once you upload the wallet
 	* System connection: Check
 
-	![Connection details](./images/connection-details.png)
+	![Connection details](./images/connection-details.png =500x*)
 
-5. Select System Connection, and then click Save.
+5. Select **System Connection**, and then click **Save**.
 
 You have just created the connection to the Autonomous Data Warehouse.
 
 ## Learn More
-*
+* [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/)
+* [OAC Connect to Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/upload-data.html)
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
