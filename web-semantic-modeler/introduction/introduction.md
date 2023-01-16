@@ -8,13 +8,8 @@ In the Oracle Analytics Semantic Modeler, you define the physical, logical, and 
 
 Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
-
-*List objectives for the workshop*
 
 In this workshop, you will learn how to:
 * Provision an ADW and OAC instance
@@ -24,13 +19,10 @@ In this workshop, you will learn how to:
 
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Introduction to Semantic Models](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/introduction-semantic-models.html)
+* [The Semantic Modeler in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/post/the-semantic-modeler-in-oracle-analytics-cloud)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - <Nagwang Gyamtso, Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

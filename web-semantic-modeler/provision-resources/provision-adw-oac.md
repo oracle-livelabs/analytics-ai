@@ -29,27 +29,27 @@ _Estimated Time:_ 15 minutes
 
 3. Choose a compartment and enter <code> SemanticModelerDB </code> for the display name. Choose Data Warehouse for the workload type.
 
-    >**Note:** Verify that a compartment (&lt;tenancy_name&gt;) is selected. By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root*** or create your own _Compartment_ under the **root** folder.
+    >**Note:** Verify that a compartment is selected. By default, any OCI tenancy has a default root compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use **root** or create your own **Compartment** under the **root** folder.
 
-  ![ADW info](./images/adw-name.png "")
+  ![ADW info](./images/adw-name.png =700x*)
 
 4. Under Configure the database, choose the following options:
 
-  ![Config adw](./images/config-db.png)
+  ![Config adw](./images/config-db.png =700x*)
 
     >**Note:** **Not recommended for this lab**, but you can select Always Free configuration to start enjoying your free Autonomous Database. With the Always Free option you will not be able to scale the database when needed.
 
-  [If you select 'Always Free Tier On', please check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
+  If you select 'Always Free Tier On', please click this [link](https://www.oracle.com/uk/cloud/free/#always-free).
 
 5. Enter a password under **Create administration credentials**. Select Secure access from everywhere under **Choose network access**.
 
     >**Reminder:** Record your password in a safe location as this cannot be easily reset.
 
-  ![ADB Creation Password](./images/admin-pwd.png)
+  ![ADB Creation Password](./images/admin-pwd.png =700x*)
 
 6. Under **Choose a license type**, select **License Type: License Included**. When you have completed the required fields, scroll down and click on the blue **Create Autonomous Database** button.  
 
-  ![License Type](./images/license-type.png)
+  ![License Type](./images/license-type.png =700x*)
 
 6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning.**  
 
