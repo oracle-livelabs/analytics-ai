@@ -10,9 +10,7 @@ In this lab, you will learn how to use two of the MySQL Autopilot advisors (Auto
 
 _Estimated Time:_ 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:aC2R0qI1Dx8)
+[//]:   [](youtube:aC2R0qI1Dx8)
 
 ### Objectives
 
