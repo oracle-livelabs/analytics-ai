@@ -9,7 +9,7 @@ Estimated Time: __ minutes
 ### Objectives
 
 In this lab, you will:
-* Clean a messy dataset using Data Data capabilities
+* Clean a messy dataset using Data Prep capabilities
 * Create a multi-table dataset
 
 
