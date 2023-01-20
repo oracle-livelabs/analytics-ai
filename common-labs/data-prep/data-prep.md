@@ -86,6 +86,7 @@ In this section, you will upload the Sample Order Lines DS and apply data transf
 
   ![](images/save-ok.png =500x*)
 
+
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [Prepare Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/prepare-data.html)
