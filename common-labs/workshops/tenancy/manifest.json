@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Model Your Data Using the Web Semantic Modeler in Oracle Analytics Cloud",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "variables": ["../../variables/variables.json",
+                 "../../variables/variables-in-another-file.json"],
+    "help": "livelabs-help-analytics_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Lab 1: Provision OAC",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../provision-oac-instance/provision-oac.md"
+        },
+        {
+            "title": "Lab 2: Explore the OA Hompage",
+            "filename": "../../explore-oa-homepage/explore-ui.md"
+        },
+        {
+            "title": "Lab 3: Connect to ADW",
+            "filename": "../../connect-to-adw/connect-adw.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
