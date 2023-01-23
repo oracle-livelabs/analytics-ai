@@ -4,7 +4,7 @@
 
 In this lab, you will learn how easy it is to create data visualizations in Oracle Analytics Cloud.
 
-  ![](images/)
+  ![](images/dv-overview.png)
 
 Estimated Time: __ minutes
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 * Sample Order Lines DS dataset
 
 
-## Task 1: Basic data visualization
+## Task 1: Basic Data Visualization
 In this section, you will upload the Sample Order Lines DS and apply data transformations to enhance your dataset.
 
 1. Log in to your Oracle Analytics instance.
@@ -92,11 +92,12 @@ In this section, you will upload the Sample Order Lines DS and apply data transf
 
 You just learned how to create basic visualizations and filters in Oracle Analytics.
 
+
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [About Visualizaton Types](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/visualization-types.html)
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Contributors -
+* Contributors - 
 * Last Updated By/Date -
