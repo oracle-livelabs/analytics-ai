@@ -206,13 +206,13 @@ You will need a compute Instance to connect to your brand new MySQL database.
     a. Get sample file
 
     ```
-    <copy>sudo wget https://downloads.mysql.com/docs/airport-db.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/MdFkX2s2_x9Miktl08UoorNTIyE-bIULjDXcbYuU1ukSfw1g48AEUkmH0-UcN5bQ/n/idazzjlcjqzj/b/irportdb-bucket-20230123-2124/o/airportdb_ysqlsh_331.zip</copy>
     ```
   
     b. Unzip sample file
 
     ```
-    <copy>sudo unzip airport-db.zip</copy>
+    <copy>unzip airportdb_ysqlsh_331.zip</copy>
     ```
 
    **Connect to MySQL Database Service**
