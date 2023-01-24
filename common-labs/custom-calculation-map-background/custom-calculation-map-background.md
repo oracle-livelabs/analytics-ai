@@ -21,7 +21,7 @@ This lab assumes you have:
 * Sample Order Lines DS dataset
 
 
-## Task 1: Custom Calculations
+## Task 1: Create a Custom Calculation
 In this section, we will explore how easy it is to create a custom calculation using the metrics available.
 
 1. Scroll down on the Data Panel and right-click **My Calculations**. Click **Add Calculation...**
@@ -40,7 +40,7 @@ In this section, we will explore how easy it is to create a custom calculation u
 
   ![Validate calculation](images/validate.png =600x*)
 
-## Task 2: Map Backgrounds
+## Task 2: Create a Map Background
 In this section, we will create a map background and explore a few customization options.
 
 1. Click the **Add Canvas** button. We will create a map visualization using the new calculation in another canvas.
