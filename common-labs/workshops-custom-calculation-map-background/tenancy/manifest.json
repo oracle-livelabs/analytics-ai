@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Explore the Oracle Analytics Homepage",
+    "workshoptitle": "Custom Calculations and Map Backgrounds",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -8,8 +8,8 @@
     "help": "livelabs-help-analytics_us@oracle.com",
     "tutorials": [
         {
-            "title": "Lab 1: Explore the OA Hompage",
-            "filename": "../../explore-oa-homepage/explore-ui.md"
+            "title": "Lab 1: Custom Calculations",
+            "filename": "../../custom-calculation-map-background/custom-calculation-map-background.md"
         },
         {
             "title": "Need Help?",
