@@ -4,7 +4,7 @@
 
 In this lab, you will learn how easy it is to create data visualizations in Oracle Analytics Cloud.
 
-  ![](images/dv-overview.png)
+  ![DV Overview](images/dv-overview.png)
 
 Estimated Time: __ minutes
 
@@ -28,67 +28,67 @@ In this section, you will upload the Sample Order Lines DS and apply data transf
 
 2. From the homepage, click **Create** and then select  **Workbook**.
 
-  ![](images/create-workbook.png =400x*)
+  ![Create workbook](images/create-workbook.png =400x*)
 
 3. Select the **Sample Order Lines DS** dataset and click **Add to Workbook**.
 
-  ![](images/add-to-workbook.png =600x*)
+  ![Add to workbook](images/add-to-workbook.png =600x*)
 
 4. If auto-insights are enabled for your dataset, you will get auto-generated visualizations as suggestions on the right side of your screen. We won't focus on Auto-Insights in this lab but feel free to explore the suggested visualizations. Close the auto-insights pane.
 
-  ![](images/close-auto-insights.png =400x*)
+  ![Close auto insights](images/close-auto-insights.png =400x*)
 
 5. CTRL + click **Sales** and **Customer Segment**. Right-click and select **Create Best Visualization**. This lets Oracle Analytics pick the best visualization based on the metrics selected.
 
-  ![](images/create-best-viz.png =400x*)
+  ![Create best viz](images/create-best-viz.png =400x*)
 
 6. A Vertical Bar Chart is created based on the preconfigured logic, and we understand that Corporate is the Top Performing Customer Segment.
 
-  ![](images/bar-chart.png)
+  ![Bar chart](images/bar-chart.png)
 
 7. Now, let's create our own visualization and pick from the vast number of visualization types available. CTRL+click **Sales**, **Profit**, and **Customer Segment**. Right-click and select **Pick Visualization...**.
 
-  ![](images/pick-viz.png =400x*)
+  ![Pick visualization](images/pick-viz.png =400x*)
 
 8. Oracle Analytics has over 40 visualizations types out of the box. Select the **Scatter** plot.
 
-  ![](images/select-scatter.png =400x*)
+  ![Select scatter](images/select-scatter.png =400x*)
 
 9. A **Scatter** plot is added as a second visual in the canvas.
 
-  ![](images/scatter-result.png)
+  ![Scatter results](images/scatter-result.png)
 
 10. Click the drop-down on **Order Date**. Select **Year** and drag it to the canvas filter pane to create a year filter for all the visualizations on the canvas.
 
-  ![](images/year-filter.png)
+  ![Year filter](images/year-filter.png)
 
 11. From the list of years, select **2022**. This will give us the visualizations using 2022 data. Click on the canvas to exit the filter.
 
-  ![](images/year-2022.png =400x*)
+  ![Filter year 2022](images/year-2022.png =400x*)
 
 12. Now let's create a filter for our Sales by Customer Segment visualization. Click the Bar chart visualization. Select **Product Category** and drag it to the **Filters** section of the grammar pane.
 
-  ![](images/product-category-filter.png)
+  ![Product category filter](images/product-category-filter.png)
 
 13. From the filter values, select **Office Supplies**. This will filter our Sales by Customer Segment visualization to show us the data for the Office Supplies Product Category. Click on the canvas to exit the filter selection.
 
-  ![](images/office-supplies.png =400x*)
+  ![Office supplies](images/office-supplies.png =400x*)
 
 14. Your canvas now has a canvas filter for the year 2022 and the Sales by Customer Segment visualization is filtered to the Office Supplies Product Categories.
 
-  ![](images/office-supplies-result.png)
+  ![Office supplies filter results](images/office-supplies-result.png)
 
 15. Rename the canvas by clicking the canvas option drop-down and selecting **Rename**. Enter <code>Sales Analysis</code> as the canvas name.
 
-  ![](images/rename-canvas.png)
+  ![Rename canvas](images/rename-canvas.png)
 
 16. Save the workbook by clicking the save icon.
 
-  ![](images/save-icon.png =500x*)
+  ![Save workbook](images/save-icon.png =500x*)
 
 17. Enter <code>Sample Analysis</code> for **Name** and click **Save**.
 
-  ![](images/save-workbook.png =600x*)
+  ![Save workbook](images/save-workbook.png =600x*)
 
 You just learned how to create basic visualizations and filters in Oracle Analytics.
 
@@ -99,5 +99,5 @@ You just learned how to create basic visualizations and filters in Oracle Analyt
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Contributors - 
+* Contributors -
 * Last Updated By/Date -
