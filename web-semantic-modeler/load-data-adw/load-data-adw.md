@@ -4,7 +4,7 @@
 
 In this lab, you will walk through the steps to create a database user, load data into the ADW using Data Load, and connect your ADW to your OAC instance.
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 

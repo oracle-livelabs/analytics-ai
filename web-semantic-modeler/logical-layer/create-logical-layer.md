@@ -4,7 +4,7 @@
 
 In this lab, you create your business model in the logical layer using the physical table aliases and the joins from the physical layer. You modify the tables by removing unnecessary columns and renaming columns.
 
-Estimated Time: -- minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -113,7 +113,7 @@ In this section, you set preferences for the names of tables and columns in the 
 
 7. If you don't see the logical joins, close the **Logical Diagram** and take the following steps:
 
-	* In the **Logical Layer**, hold the **Ctrl key**, select **D1 Time**, **D2 Products**, **D3 Customers**, and **F1 Revenue**.
+	* In the **Logical Layer**, hold the **Ctrl (Command for Mac) key**, select **D1 Time**, **D2 Products**, **D3 Customers**, and **F1 Revenue**.
 	* Right-click on any of the tables, select **Show Logical Diagram**, and then select **Selected Tables Only**.
 	* Hover over to **F1 Revenue**, grab the **Connector** icon and drag to **D1 Time**, and then in the **Add Join** dialog, click **Add**. **Repeat** this step by grabbing the **Connector** icon from **F1 Revenue** and adding joins to **D2 Products** and **D3 Customers**.
 	* Click **Save**.
@@ -130,7 +130,7 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 
 	![Double click F1 Revenue](./images/dc-f1-rev.png)
 
-2. In the **Columns** tab, keep the **UNITS** and the **REVENUE** columns. Hold down the **Shift key** and use the **Down Arrow** icon to select the remaining columns.
+2. In the **Columns** tab, keep the **UNITS** and the **REVENUE** columns. Hold down the **Shift key** and press the **Down Arrow** on your keyboard to select the remaining columns.
 
 	![Select columns using the down arrow](./images/select-col-down-arrow.png)
 
@@ -159,5 +159,5 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
 * **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

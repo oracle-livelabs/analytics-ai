@@ -6,7 +6,7 @@ In this lab, you will crate the presentation layer using the tables that you mod
 
 The presentation layer provides the tables, relationships, and hierarchies using terms understood by business users. The presentation layer's subject area contains the business data that closely aligns with user roles and goals. For customers in sales and sales support roles, you could create a subject area that has tables and columns related to product sales, revenue, and customer orders. For customers in human resources, the subject area tables and columns could include employee retention, promotion, and hire data.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 
@@ -76,7 +76,7 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 
 	![Presentation table name](./images/pres-table-name.png =500x*)
 
-13. Add another **Presentation Table** and name this one <code>Base Facts</code>, and then click **Add**.
+13. Add another **Presentation Table** and name this one <code>Base Facts</code>, and then click **OK**.
 
 	![Base facts presentation table](./images/base-facts.png =500x*)
 
@@ -115,7 +115,7 @@ In this section, you select columns from the logical tables to use in the presen
 
 	![Customers in Sample Sales](./images/dc-customers.png)
 
-5. In the **Logical Layer**, expand **D3 Customers**. Hold down the **Ctrl** key, select **Cust Key** and **Name**, and then drag them to the **Columns** tab in the **Customers** table.
+5. In the **Logical Layer**, expand **D3 Customers**. Hold down the **Ctrl (Command for Mac)** key, select **Cust Key** and **Name**, and then drag them to the **Columns** tab in the **Customers** table.
 
 	![Customers in Sample Sales](./images/dd-cust.png)
 
@@ -123,7 +123,7 @@ In this section, you select columns from the logical tables to use in the presen
 
 	![Save](./images/save-dd.png)
 
-7. Double-click **Base Facts** in the **Sample Sales** subject area. In the **Logical Layer** icon, expand **F1 Revenue**. Hold down the **Ctrl** key, select **Revenue** and **Units**, and then drag them to the **Columns** tab.
+7. Double-click **Base Facts** in the **Sample Sales** subject area. In the **Logical Layer** icon, expand **F1 Revenue**. Hold down the **Ctrl (Command for Mac)** key, select **Revenue** and **Units**, and then drag them to the **Columns** tab.
 
 	![Drag and drop Revenue and Units](./images/dd-rev-units.png)
 
@@ -135,7 +135,7 @@ In this section, you select columns from the logical tables to use in the presen
 
 In this section, you change the names of some columns, remove columns, and reorder columns in the semantic model's presentation tables.
 
-1. Click the **Products** tab. Hold down the **Ctrl** key, select the **Prod key**, **Attribute 1**, **Attribute 2**, and **Total Value** columns, and then click the **Delete** icon.
+1. Click the **Products** tab. Hold down the **Ctrl (Command for Mac)** key, select the **Prod key**, **Attribute 1**, **Attribute 2**, and **Total Value** columns, and then click the **Delete** icon.
 
 	![Delete](./images/delete-icon.png)
 
@@ -175,5 +175,5 @@ In this section, you change the names of some columns, remove columns, and reord
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
 * **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
