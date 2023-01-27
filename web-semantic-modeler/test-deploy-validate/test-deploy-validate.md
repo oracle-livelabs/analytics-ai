@@ -99,4 +99,4 @@ You have just learned how to create a semantic model user the Semantic Modeler i
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

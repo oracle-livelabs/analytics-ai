@@ -36,7 +36,7 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 
 	![Create business model](./images/create-bm.png)
 
-4. In Create Business Model, enter <code>Sample Sales BM</code> in **Name**, and then click **Add**. The Semantic Modeler opens an empty business model.
+4. In Create Business Model, enter <code>Sample Sales BM</code> in **Name**, and then click **OK**. The Semantic Modeler opens an empty business model.
 
 	![Enter BM name](./images/sample-sales-bm.png =500x*)
 
@@ -77,11 +77,11 @@ In this section, you set preferences for the names of tables and columns in the 
 
 	![Toggle enable preferences](./images/toggle-preferences.png)
 
-8. From the **Physical Layer**, select **D1 Time** and drag it to **Dimensions** in the **Sample Sales BM** business model.
+9. From the **Physical Layer**, select **D1 Time** and drag it to **Dimensions** in the **Sample Sales BM** business model.
 
 	![Drag D1 to Dimensions](./images/drag-d1-dimensions.png)
 
-9. Double-click **D1 Time** to see the renamed columns.
+10. Double-click **D1 Time** to see the renamed columns.
 
 	![D1 renamed](./images/dc-d1-renamed.png)
 
@@ -160,4 +160,4 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

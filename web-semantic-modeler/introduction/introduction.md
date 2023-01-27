@@ -25,4 +25,4 @@ In this workshop, you will learn how to:
 ## Acknowledgements
 * **Author** - <Nagwang Gyamtso, Product Manager, Analytics Product Strategy>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Nagwang Gyamtso, January, 2023>

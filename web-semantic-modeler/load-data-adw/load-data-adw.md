@@ -150,4 +150,4 @@ You have just created the connection to the Autonomous Data Warehouse.
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -  Lucian Dinescu, Peter Monteiro
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

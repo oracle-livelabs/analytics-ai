@@ -165,7 +165,7 @@ In this section, you define joins between alias tables to express relationships 
 
 	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
 
-12. Click the **Save** icon.
+14. Click the **Save** icon.
 
 	![Save](./images/save-diagram.png)
 
@@ -196,5 +196,5 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** - 
-* **Last Updated By/Date** -
+* **Contributors** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

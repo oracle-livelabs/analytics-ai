@@ -48,7 +48,7 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 
 	![Create presentation table](./images/create-pres-table.png)
 
-6. In **Create Presentation Table**, enter <code>Time</code> in **Name**, and then click **Add**. Close the Time tab.
+6. In **Create Presentation Table**, enter <code>Time</code> in **Name**, and then click **OK**. Close the Time tab.
 
 	![Create Time presentation table](./images/create-time-table.png =500x*)
 
@@ -115,7 +115,7 @@ In this section, you select columns from the logical tables to use in the presen
 
 	![Customers in Sample Sales](./images/dc-customers.png)
 
-5. In the **Logical Layer**, expand **D3 Customers**. Hold down the **Ctrl** key, select **Cust Key** and **Name**, and then drag them to the  **Columns** tab in the **Customers** table.
+5. In the **Logical Layer**, expand **D3 Customers**. Hold down the **Ctrl** key, select **Cust Key** and **Name**, and then drag them to the **Columns** tab in the **Customers** table.
 
 	![Customers in Sample Sales](./images/dd-cust.png)
 
@@ -151,7 +151,7 @@ In this section, you change the names of some columns, remove columns, and reord
 
 	![Save](./images/save-lob.png)
 
-4. Select a column, and then click the **Move Up** arrow icon and **Move Down** arrow icon to arrange the Products columns in the following order:
+5. Select a column, and then click the **Move Up** arrow icon and **Move Down** arrow icon to arrange the Products columns in the following order:
 
 	* Brand
 	* Product
@@ -164,7 +164,7 @@ In this section, you change the names of some columns, remove columns, and reord
 
 	![Move columns](./images/move-cols.png)
 
-5. Click **Save** icon.
+6. Click **Save** icon.
 
 	![Save move](./images/save-move.png)
 
@@ -176,4 +176,4 @@ In this section, you change the names of some columns, remove columns, and reord
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
