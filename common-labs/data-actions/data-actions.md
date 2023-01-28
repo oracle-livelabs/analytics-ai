@@ -6,7 +6,7 @@ In this lab, you will build two simple canvases and learn how to create data act
 
   ![Data actions overview](images/data-actions-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
