@@ -5,7 +5,7 @@
 This lab shows you how to create an initial semantic model in Oracle Analytics Cloud, starting with the physical layer.
 
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 25 minutes
 
 ### About
 This lab describes how to build governed semantic models using the Semantic Modeler. Ask your administrator to enable the Semantic Modeler preview feature in Console.
@@ -45,7 +45,7 @@ In this section, you create an empty semantic model.
 
 	![Start with empty model](./images/empty-model.png)
 
-4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. Click **Save**.
+4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select Oracle ADW and click **Save**.
 
 	![DB name](./images/db-name.png)
 
@@ -65,7 +65,7 @@ In this section, you add physical tables from the data source to the empty seman
 
 	![Expand BISAMPLE](images/expand-bisample.png =400x*)
 
-4. Hold down the Ctrl key and select these tables:
+4. Hold down the Ctrl (Command for Mac users) key and select these tables:
 	* SAMP_ ADDRESSES_D
 	* SAMP_ CUSTOMERS_D
 	* SAMP_ PRODUCTS_D
@@ -84,7 +84,7 @@ In this section, you create physical table aliases that enables reusing the phys
 
 	![create physical table alias](./images/create-physical-table-alias.png)
 
-2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **Add**. Close D1 Time.
+2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **OK**. Close D1 Time.
 
 	![D1 Time](./images/d1-time.png =500x*)
 
@@ -92,18 +92,18 @@ In this section, you create physical table aliases that enables reusing the phys
 
 	![SAMP_PRODUCTS_D alias](./images/product-alias.png)
 
-4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **Add**. Close D2 Products.
+4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **OK**. Close D2 Products.
 
 	![D2 products](images/d2-products.png =500x*)
 
-5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ ADDRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
+5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ OKRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
 
 	* Right-click **SAMP_ CUSTOMERS_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **Add**. Close D3 Customers.
+		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **OK**. Close D3 Customers.
 	* Right-click **SAMP_ ADDRESSES_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **Add**. Close D4 Addresses.
+		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **OK**. Close D4 Addresses.
 	* Right-click **SAMP_ REVENUE_F** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **Add**. Close F1 Revenue
+		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **OK**. Close F1 Revenue
 
 6. You should now have the D1 Time, D2 Products, D3 Customers, D4 Addresses, and F1 Revenue tables.
 
@@ -165,7 +165,7 @@ In this section, you define joins between alias tables to express relationships 
 
 	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
 
-12. Click the **Save** icon.
+14. Click the **Save** icon.
 
 	![Save](./images/save-diagram.png)
 
@@ -196,5 +196,5 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** - 
-* **Last Updated By/Date** -
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

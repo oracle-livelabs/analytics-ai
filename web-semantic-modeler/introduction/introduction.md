@@ -6,7 +6,7 @@ This workshop describes how to build governed semantic models using the Semantic
 
 In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 2 hours 50 minutes
 
 
 ### Objectives
@@ -23,6 +23,6 @@ In this workshop, you will learn how to:
 * [The Semantic Modeler in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/post/the-semantic-modeler-in-oracle-analytics-cloud)
 
 ## Acknowledgements
-* **Author** - <Nagwang Gyamtso, Product Manager, Analytics Product Strategy>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** -  Lucian Dinescu, Peter Monteiro, Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

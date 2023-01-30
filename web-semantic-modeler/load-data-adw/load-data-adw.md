@@ -4,7 +4,7 @@
 
 In this lab, you will walk through the steps to create a database user, load data into the ADW using Data Load, and connect your ADW to your OAC instance.
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator role
-* Downloaded the BISAMPLE.data.xlsx(Enter object storage URL here) file
+* Downloaded the [BISAMPLE.data.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/BISAMPLE_data.xlsx) file
 * All previous labs successfully completed
 
 ## Task 1: Create a BISAMPLE user
@@ -72,6 +72,8 @@ In this section, you will login to the BISAMPLE user you just created and load t
 	![Local file](./images/local-file.png)
 
 5. Drag and drop or select the BISAMPLE_date.xlsx file from your local machine.
+
+	>**Note**: Find the BISAMPLE_data excel file download in the prerequisites section above.
 
 	![Select data](./images/select-data.png)
 
@@ -150,4 +152,4 @@ You have just created the connection to the Autonomous Data Warehouse.
 ## Acknowledgements
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -  Lucian Dinescu, Peter Monteiro
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
