@@ -7,9 +7,7 @@ In this lab, you will create and configure a MySQL DB System and  will add a Hea
 
 _Estimated Time:_ 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:Uz_PXHzO9ac)
+[//]:    [](youtube:Uz_PXHzO9ac)
 
 ### Objectives
 
@@ -17,7 +15,6 @@ In this lab, you will be guided through the following tasks:
 
 - Create Virtual Cloud Network
 - Create MySQL Database for HeatWave (DB System) instance
-- Add a HeatWave Cluster to MySQL Database System
 
 ### Prerequisites
 
@@ -194,30 +191,7 @@ In this lab, you will be guided through the following tasks:
 
     ![mds endpoint](./images/04mysql11-3.png"mds endpoint")
 
-## Task 3: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-1. Open the navigation menu  
-    Databases
-    MySQL
-    DB Systems
-2. Choose the root Compartment. A list of DB Systems is displayed.
-    ![mysql menu](./images/10addheat01.png "mysql menu ")
-3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
-    ![db list](./images/10addheat02.png " db list")
-4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
-5. Click “Estimate Node Count” button
-    ![node count estimate](./images/10addheat03.png "node count estimate ")
-6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
-provisioning advisor to sample the data stored in InnoDB and based on machine learning
-algorithm, it will predict the number of nodes needed.
-    ![predict number of nodes](./images/10addheat04.png "predict number of nodes ")
-7. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
-8. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
-    ![apply node count](./images/10addheat05.png "apply node count ")
-9. Click “Add HeatWave Cluster” to create the HeatWave cluster
-    ![create heatwave cluster](./images/10addheat06.png " create heatwave cluster")
-10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
-    ![completed heatatwave cluster](./images/10addheat07.png "completed heatatwave cluster ")
 
 ## Acknowledgements
 

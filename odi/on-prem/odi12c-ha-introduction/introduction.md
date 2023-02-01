@@ -13,7 +13,7 @@ The figure below shows a two-node Oracle Data Integrator cluster running on two 
 
 The main components of the high availability setup are given below:
   * Load Balancer
-  * Weblogic Server
+  * WebLogic Server
   * ODI on Host 1
   * ODI on Host 2
   * Oracle RAC database
@@ -53,7 +53,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
 
