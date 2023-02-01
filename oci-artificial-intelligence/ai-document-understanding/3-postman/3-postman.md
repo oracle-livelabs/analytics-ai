@@ -153,7 +153,7 @@ The information in the table is found here: https://docs.oracle.com/en-us/iaas/C
 2. The *Compartments* page is displayed and lists all of the compartments. If you are using a new trial tenancy, you will have a root compartment and *ManagedCompartmentForPaaS*. **Click the name of the root compartment** you configured in Lab 2 to access the OCI Document Understanding service.
 
 3. On the *Compartment details* page, click **Copy** next to the compartment OCID.
-  ![OCI comparment details page](./images/compartment-copy.png " ")
+  ![OCI comparment details page](./images/compartment-ocid.png " ")
 
 4. Paste the OCID into the **compartment_ocid CURRENT VALUE** field of the Postman Environment.
 
