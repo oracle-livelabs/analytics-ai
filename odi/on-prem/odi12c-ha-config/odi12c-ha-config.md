@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you high-availability configuration steps for existing ODI installation.
 
-*Estimated Lab Time*: 1 hour
+*Estimated Time*: 1 hour
 
 ### Objectives
 In this lab, you will learn
@@ -14,10 +14,7 @@ In this lab, you will learn
 * Start the ODI Services
 
 ### Prerequisites
-This lab assumes you have completed:
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
+This lab assumes you have completed all the previous labs.
 
 
 ## Task 1: Configure ODI for High Availability
@@ -255,7 +252,7 @@ Now, the Node manager and Admin server are started.
       </copy>
     ```
 
-    ![Weblogic console](./images/config-38.png " ")
+    ![WebLogic console](./images/config-38.png " ")
 
 3. Provide the WebLogic user name, and password and login into the WebLogic home page.
 
@@ -266,11 +263,11 @@ Now, the Node manager and Admin server are started.
       </copy>
     ```
 
-    ![Weblogic console](./images/config-39.png " ")
+    ![WebLogic console](./images/config-39.png " ")
 
 4. Weblogic home page will be displayed on the screen. Click on the "servers" option.
 
-  ![Weblogic home page](./images/config-40.png " ")
+  ![WebLogic home page](./images/config-40.png " ")
 
 5. Configuration tab will be displayed on the screen. Click on the control tab.
 
@@ -315,6 +312,6 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
