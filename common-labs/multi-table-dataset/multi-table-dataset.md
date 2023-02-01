@@ -20,7 +20,7 @@ This lab assumes you have:
 * Sample Order Lines and Customer Subscription Type DS dataset
 
 
-## Task 1: Prepare Basic Visualization Canvases
+## Task 1: Create a Multi-Table Dataset
 In this section, we will create a multi-table dataset using the Sample Order Lines and Customer Subscription Type DS data files.
 
 1. From the homepage, click **Create.** Then select **Dataset.**
