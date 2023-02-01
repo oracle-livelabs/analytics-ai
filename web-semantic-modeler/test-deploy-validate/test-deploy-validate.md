@@ -97,6 +97,6 @@ You have just learned how to create a semantic model user the Semantic Modeler i
 * [Work with the Consistency Checker](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-consistency-checker.html#GUID-DBBDF46F-2CB0-4EBD-BD98-0B75D9F0FD3E)
 
 ## Acknowledgements
-* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
