@@ -16,73 +16,73 @@ We have put together a Postman Collection to help you get started with calling t
 1. Install [POSTMAN](https://www.postman.com/downloads/) to your local computer if you don't already have it. Once installed, run it.
 
 2. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/overview) to download the **Document Understanding API Collection**. The link opens Postman on the web. Select **Collections** on the left side of the screen. Hover over *Document Understanding Service API* and click the 3 dots to open the popup menu. Select **Export** to export the collection file and save it to your local computer.
-  ![](./images/documentcollectionscreen.png)
+  ![Postman OCI Collection](./images/documentcollectionscreen.png)
 
 3. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/environment/29850-eab82db8-e9a1-4200-9f39-de10b4a0f371) to download the **OCI Credentials Environment**. The link opens Postman on the web. Select **Environmments** on the left side of the screen then select **OCI Credentials**. One the right side of the screen find the 3 dots and click it to open a popup menu. On the menu click **Export** to export the credentials file and save it to your local computer.
-  ![](./images/postman-exportoci-credentials.png)
+  ![Postman OCI Credentials](./images/postman-exportoci-credentials.png)
 
 ## **TASK 2:** Set up your OCI credentials
 
 1. Import the OCI Credentials file into Postman running on your local machine by using the **Import** button at the top.
-  ![](./images/postman-importoci1.png)
+  ![Postman import button](./images/postman-importoci1.png)
 
 2. In the *Import* dialog, click the **Upload Files** button and select the json file you exported in the previous step. (**OCI Credentials.postman_environment.json**) 
 
 3. Set OCI Credentials as the active environment by **clicking the check** next to *OCI Credentials*
-  ![](./images/postman-activateoci.png)
+  ![Postman activate environment](./images/postman-activateoci.png)
 
 4. Now we will set the variables in the OCI Credentials in your local POSTMAN and you'll obtain the needed values from your OCI tenancy.
 
 Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it contains multiple variables with empty values. We need to set 6 of those variables.
-![](./images/postman-ocicredentialsblank.png)
+![OCI Credentials template](./images/postman-ocicredentialsblank.png)
 
   #### a. tenancy_ocid ####
 
   1. To get the **tenancy_ocid**, open the OCI Console, click the **Profile** icon in the upper right corner, then select **Tenancy: *name***
-    ![](./images/selecttenancy.png " ")
+    ![OCI profile menu](./images/selecttenancy.png " ")
 
   2. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
 
-  ![](./images/tenancy-ocid.png " ")
+  ![OCI tenancy details page](./images/tenancy-ocid.png " ")
 
 
 
-  ![](./images/postman-tenancy-ocid.png " ")
+  ![OCI tenancy value in postman](./images/postman-tenancy-ocid.png " ")
 
 #### b. user_ocid ####
   1. To get the **user_ocid**, go back to the OCI Console, click the **Profile** icon, then select **your user name**
 
-  ![](./images/new-profilename.png " ")
+  ![OCI profile menu](./images/new-profilename.png " ")
 
   2. The *User Details* page opens. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **user_ocid CURRENT VALUE** field.
 
-  ![](./images/user-ocid.png " ")
+  ![OCI user details page](./images/user-ocid.png " ")
 
 
 
-  ![](./images/postman-user-ocid.png " ")
+  ![OCI user ocid value in postman](./images/postman-user-ocid.png " ")
 
 #### c. fingerprint & private_key ####
 
   1. Open the OCI Console, click the **Profile** icon, then select **your user name**.
 
-  ![](./images/new-profilename.png " ")
+  ![OCI profile menu](./images/new-profilename.png " ")
 
   2. The User Details page opens. Under Resources, on the lower left side of the page, select **API Keys**
 
-  ![](./images/selectapikeys.png " ")
+  ![OCI selecting API keys](./images/selectapikeys.png " ")
 
   3. Click the **Add API Key** button
 
-  ![](./images/add-api-key.png " ")
+  ![OCI add API key button](./images/add-api-key.png " ")
 
   4. The Add API Key dialog box opens. Select option: **Generate API Key Pair**
 
-  ![](./images/add-api-key-dialog1.png " ")
+  ![OCI generate API key pair button](./images/add-api-key-dialog1.png " ")
 
   5. Click the **Download Private Key** button and save the file to you local computer. Remember the location where you saved the private key file (*username-date*.pem).
 
-  ![](./images/add-api-key-dialog2.png " ")
+  ![OCI add API key button](./images/add-api-key-dialog2.png " ")
 
   6. Click the **Add** button in the *Add API Key* dialog. The *Configuration File Preview* dialog opens.
 
@@ -91,21 +91,22 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
 
   8. Copy the **fingerprint** for the API Key that you just created and add it to the **fingerprint CURRENT VALUE** field of the Postman Environment.
 
-  ![](./images/add-api-key-fingerprint.png " ")
+  ![OCI API key](./images/add-api-key-fingerprint.png " ")
 
   
 
-  ![](./images/postman-fingerprint.png " ")
+  ![Postman value for fingerprint](./images/postman-fingerprint.png " ")
 
   9. On your local computer, navigate to the **private key file (*username-date*.pem)** that you downloaded when getting the fingerprint. Open it in a text editor, copy it's contents, and paste them into the **private_key CURRENT VALUE** field of the Postman Environment.
 
-  ![](./images/postman-privatekey.png " ")
+  ![Postman value for private key](./images/postman-privatekey.png " ")
 
 #### d. region ####
 
 1. In the OCI Console, note the **home region** displayed near the upper right corner of the page (e.g. US East (Ashburn)). Find the corresponding **Region Identifier** displayed in the table below (e.g. us-ashburn-1) and copy and paste it into the **region CURRENT VALUE** field of the Postman Environment. Overwrite the default value if your region is different.
 
-  ![](./images/region.png " ")
+  ![OCI menu region](./images/region.png " ")
+
 
 | Region Name |	Region Identifier |	Region Location |
 |-------------|-------------------|-----------------|
@@ -140,39 +141,39 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
 |US West (Phoenix) |	us-phoenix-1 |	Phoenix, AZ |
 |US West (San Jose) |	us-sanjose-1 |	San Jose, CA |
 
-  ![](./images/postman-region.png " ")
+  ![Postman value for region](./images/postman-region.png " ")
 
 The information in the table is found here: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 
 #### e. compartment_ocid ####
 
 1. Go to the OCI Console and use the hamburger menu to select **Identity & Security**, then, under *Identity*, select **Compartments**.
-  ![](./images/i-s-compartments.png " ")
+  ![OCI navigation menu](./images/i-s-compartments.png " ")
 
 2. The *Compartments* page is displayed and lists all of the compartments. If you are using a new trial tenancy, you will have a root compartment and *ManagedCompartmentForPaaS*. **Click the name of the root compartment** you configured in Lab 2 to access the OCI Document Understanding service.
 
 3. On the *Compartment details* page, click **Copy** next to the compartment OCID.
-  ![](./images/compartment-copy.png " ")
+  ![OCI comparment details page](./images/compartment-copy.png " ")
 
 4. Paste the OCID into the **compartment_ocid CURRENT VALUE** field of the Postman Environment.
 
-  ![](./images/postman-compartment-ocid.png " ")
+  ![Postman value for compartment ID](./images/postman-compartment-ocid.png " ")
 
 #### f. save ####
 
 1. In POSTMAN, click the **Persist All** button to save the Current Value to the Initial Value.
 
-![](./images/persist-button.PNG " ")
+![Postman persist all button](./images/persist-button.PNG " ")
 
 2. In POSTMAN, click the **Save** button to save all of the OCI Credentials that you just entered.
 
-![](./images/save-button.PNG " ")
+![Postman save button](./images/save-button.PNG " ")
 
 ## **TASK 3:** Import the Document Understanding API collection
 
 1. Import the Document Understanding API Collection file (**DocumentUnderstanding API.postman_collection.json**) into Postman running on your local machine by selecting **Collections** on the left side of the  screen then clicking the **Import** button at the top.
 
-  ![](./images/postman-importoci1.png)
+  ![Postman import button](./images/postman-importoci1.png)
 
 2. In the *Import* dialog, click the **Upload Files** button and select the json file you exported in Task 1 (**DocumentUnderstanding API.postman_collection.json**).
 
@@ -182,7 +183,7 @@ In this task you'll call the Processor Job REST API.
 
 1. In POSTMAN, select **Collections**, then expand *Document Understanding API* then *actions* then click **processor Jobs**. Then select the **Body** tab under *POST*.
 
-  ![](./images/persist-button.PNG " ")
+  ![Document Understanding API samples in postman](./images/processorjobapirequest.png " ")
 
 2. Replace the contents of the **Body** with the following:
 
@@ -219,14 +220,14 @@ In this task you'll call the Processor Job REST API.
 
 In the next steps, you will insert your location details for the document you want to analyze
 1. To get the namespace name, open the OCI Console, click the **Profile** icon and select **Tenancy: *name***
-  ![](./images/selecttenancy.png " ")
+  ![OCI profile menu](./images/selecttenancy.png " ")
 
 2. Copy the **Object Storage Namespace** value and paste it into the Body in POSTMAN as the value for *namespaceName*
-  ![](./images/objstor-namespace.png " ")
+  ![Object storage namespace details](./images/objstor-namespace.png " ")
 
 3. *bucketName* should be the name of the bucket where you uploaded the sample image for this lab.
 
-4. *objectName* should be **"text_detection_sample.jpg"** unless you have renamed it in your bucket.
+4. *objectName* should be **"invoice-sample.jpg"** unless you have renamed it in your bucket.
 
 
 Now, you will insert your location details for where you want your results to be stored. For this demo, we are testing out Text Extraction, which will return a JSON object to the object storage location of your choosing. Below is what you need to define:
@@ -248,7 +249,7 @@ In this task, you'll call the Document AI synchronous REST API using POSTMAN.
 1. In the Document Understanding collection, under Processor Jobs click **Get Details of a processor Job**.
 
 2. Add the JobId response from the previous step to the end of the URL and click Send
- ![](./images/getprocessordetails.png)
+ ![Postman get job details sample](./images/getprocessordetails.png)
 
 1. Review the response and notice the structure of the data including lifecycleDetails and percentComplete
 
@@ -282,6 +283,6 @@ In this task, you'll call the Document AI synchronous REST API using POSTMAN.
 }
 ```
 1. Now, in your object storage output bucket look under the "results" folder. You'll find a JSON file that includes all the text extracted from the original document
- ![](./images/documentoutput.png)
+ ![Object storage bucket](./images/documentoutput.png)
 
 You have completed this lab!
