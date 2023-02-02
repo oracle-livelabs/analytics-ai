@@ -25,4 +25,4 @@ In this workshop, you will learn how to:
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** -  Lucian Dinescu, Peter Monteiro, Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023

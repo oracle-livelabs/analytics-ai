@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Model Your Data Using the Web Semantic Modeler in Oracle Analytics Cloud",
+    "workshoptitle": "Model Your Data with the Semantic Modeler in Oracle Analytics Cloud",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
