@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop is the hands-on component of the course "Getting Started with Oracle Analytics" delivered by the Oracle Analytics Enablement team. This is an introductory workshop to help users get familiar with Oracle Analytics.
+This workshop is the hands-on component of the course "Getting Started with Oracle Analytics" delivered by the Oracle Analytics Enablement team. This is an introductory workshop to help users get familiar with Oracle Analytics and OAC instances will be provided during the live session.
 
 Estimated Workshop Time: ___
 
