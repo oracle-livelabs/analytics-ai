@@ -5,7 +5,7 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
 
 *Estimated Time*: 20 minutes
 
-## **Task 1:** Upload data to Object Storage (Optional)
+## Task 1: Upload data to Object Storage (Optional)
 This is an optional set of steps if you want to test OCI Document Understanding with a variety of sample documents
 
 1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
@@ -34,7 +34,7 @@ This is an optional set of steps if you want to test OCI Document Understanding 
   b.Click on Upload and then click Select Files to browse to select your desired files to upload. 
   ![Console navigation window](./images/consolebucketupload.png)
 
-## **Task 2:** Analyze Document Data
+## Task 2: Analyze Document Data
 
   **1. Navigate to the Document Understanding page**
   Using the Burger Menu on the top left corner, navigate to Analytics and AI and click it, and then select Document Understanding
@@ -69,8 +69,6 @@ Congratulations! </br>
 In this lab you have learnt how use OCI Document Understanding in the conosle.
 
 You may now **proceed to the next lab**.
-
-[Proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**

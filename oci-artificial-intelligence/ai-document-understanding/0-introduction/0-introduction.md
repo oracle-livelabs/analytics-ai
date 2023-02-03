@@ -24,7 +24,7 @@ In this workshop, you will:
 * Python 3.6, 3.7, 3.8 or 3.9 installed (for Lab 3)
 * Familiar with Python programming for SDK usage is strongly recommended.
 
-[Proceed to the next section](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Authors**
@@ -32,3 +32,4 @@ In this workshop, you will:
 
 
 * **Last Updated By/Date**
+    * Kate D'Orazio, Feb 2023

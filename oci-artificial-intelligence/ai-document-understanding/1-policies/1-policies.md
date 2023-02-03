@@ -13,7 +13,7 @@ In this workshop, you will:
 
 * Get familiar with the OCI Console and be able to configure your policies for OCI Document Understanding
 
-## **Task 1:** Policy Setup
+## Task 1: Policy Setup
 Before you start using OCI Document Understanding, OCI policies should be setup for allowing you to access OCI Document Understanding Service. Follow these steps to configure required policies.
 
 ### 1. Navigate to Policies
@@ -73,7 +73,6 @@ In this lab you have learnt how to set up your OCI Document Understanding polici
 
 You may now **proceed to the next lab**.
 
-[Proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**

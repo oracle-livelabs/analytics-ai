@@ -13,7 +13,7 @@ In this lab you will use the OCI Python SDK to extract information from document
 * Learn how to use OCI Python SDK to communicate with our Document Understanding service.
 
 
-## **TASK 1:** Setup API Signing Key and Config File
+## TASK 1: Setup API Signing Key and Config File
 If this is your first time using the OCI SDK, you'll need to create a config file. If you've already done this, you can skip to the next step.
 
 1. Create the .oci folder. Open an admin command prompt or Terminal and run the following command.
@@ -76,7 +76,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
 
-## **TASK 2:** Add Sample Documents to Object Storage
+## TASK 2: Add Sample Documents to Object Storage
 
 1. Download the [Lab-4 sample documents](./sample-documents/lab4) and upload them to your Object Storage bucket.
 
@@ -86,7 +86,7 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 
 3. Choose an existing bucket or create a new bucket called "DocumentDemo".
 
-## **TASK 3:** OCI Document Understanding Service SDK Code Sample
+## TASK 3: OCI Document Understanding Service SDK Code Sample
 
 1. Create a new file on your local machine called "invoicekv.py" and add it to C:\Users\<user>\AppData\Local\Programs\Python\<Python version>\Scripts folder or add it to your Desktop if you are using a Mac.
 
