@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Multi-Table Dataset",
+    "workshoptitle": "Data Blending",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -8,8 +8,8 @@
     "help": "livelabs-help-analytics_us@oracle.com",
     "tutorials": [
         {
-            "title": "Lab 1: Multi-Table Datasets",
-            "filename": "../../multi-table-dataset/multi-table-dataset.md"
+            "title": "Lab 1: Data Blending",
+            "filename": "../../data-blending/data-blending.md"
         },
         {
             "title": "Need Help?",
