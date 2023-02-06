@@ -2,16 +2,17 @@
 
 ## Introduction
 
-In this lab, you will learn how easy it is to create data visualizations in Oracle Analytics Cloud.
+In this lab, you will learn how easy it is to create data visualizations and understand how brushing works in Oracle Analytics Cloud.
 
   ![DV Overview](images/dv-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Create basic visualizations
+* Understand how Brushing works in Oracle Analytics
 
 
 ### Prerequisites
@@ -82,22 +83,64 @@ In this section, you will upload the Sample Order Lines DS and apply data transf
 
   ![Rename canvas](images/rename-canvas.png)
 
-16. Save the workbook by clicking the save icon.
 
-  ![Save workbook](images/save-icon.png =500x*)
+## Task 2: Brushing
+In this section, we will explore brushing, which automatically highlights datapoints that are selected in one visualization in other visualizations.
 
-17. Enter <code>Sample Analysis</code> for **Name** and click **Save**.
+1. Click the **Add Canvas** button to add a new canvas.
 
-  ![Save workbook](images/save-workbook.png =600x*)
+  ![Add canvas](images/add-canvas.png)
 
-You just learned how to create basic visualizations and filters in Oracle Analytics.
+2. Ctrl (Command on Mac) + Select  **Sales** and **Customer Segment** from the **Sample Order Lines DS** dataset. Right-click and select **Pick Visualization**.
 
+  ![Pick visualization](images/pick-visualization.png =300x*)
+
+3. Select the **Donut** chart.
+
+  ![Select donut chart](images/donut-chart.png =300x*)
+
+4. Ctrl (Command on Mac) + Select  **Sales**, **Customer Segment**, and **Product Category** from the **Sample Order Lines DS** dataset. Right-click and select **Pick Visualization**.
+
+  ![Pick visualization](images/pick-viz-again.png)
+
+5. Choose the **Horizontal Stacked** chart.
+
+  ![Select Horizontal Stacked chart](images/pick-horizontal.png =300x*)
+
+6. Swap **Customer Segment** with **Product Category**.
+
+  ![Swap attributes](images/swap-cus-seg-prod-cat.png)
+
+7. Your final canvas will look like the following:
+
+  ![Final canvas](images/results.png)
+
+8. Click on the **Small Business** customer segment in the donut chart. When you click on one data point in a visual, the same data point gets highlighted in the other visual. We understand that out of 6M Sales generated, the Small Business Customer Segment generates 19.05% of Sales.
+
+    >**Note:** Brushing is enabled by default. You can enable/disable this in the [Canvas Properties](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/update-canvas-properties.html).
+
+  ![Highlight visuals](images/highlight.png)
+
+9. If you hover over the highlight in **Furniture** on the second visual, we also understand that the **Furniture Product Category** contributes **$341,098** to the **Small Business Customer Segment**. Brushing helps us learn more about our data points in other contexts.
+
+  ![Highlight visuals](images/highlight2.png)
+
+10. Save the workbook by clicking the save icon.
+
+  ![Save workbook](images/save-workbook.png =500x*)
+
+11. Enter <code>Sample Analysis</code> for **Name** and click **Save**.
+
+  ![Save workbook](images/save.png =600x*)
+
+You just learned how to create basic visualizations, filters, and use brushing in Oracle Analytics.
 
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [About Visualizaton Types](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/visualization-types.html)
+* [About Brushing Between Visualizations on a Canvas](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/brushing-visualizations-canvas.html)
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Contributors -
-* Last Updated By/Date -
+* Contributors - Shiva Oleti
+* Last Updated By/Date - Nagwang Gyamtso, February 2023
