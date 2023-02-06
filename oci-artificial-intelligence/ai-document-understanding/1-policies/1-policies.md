@@ -1,4 +1,4 @@
-# Configure Document Understanding Policies
+# Configure Document Understanding policies
 
 ## Introduction
 
