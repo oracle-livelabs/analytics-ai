@@ -6,7 +6,7 @@ In this lab, you will learn how easy it is to create data visualizations and und
 
   ![DV Overview](images/dv-overview.png)
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -125,20 +125,69 @@ In this section, we will explore brushing, which automatically highlights datapo
 
   ![Highlight visuals](images/highlight2.png)
 
-10. Save the workbook by clicking the save icon.
+
+## Task 3: Reorder and Format Your Visualizations
+
+1. Select **Product Category**, **Sales**, and **Month (Order Date)**. Drag these three columns to under the two visuals and drop it when a green bar appears under both existing visualizations.
+
+  ![Line chart placement](images/line-chart-placement.png)
+
+2. To reorder your visualizations, you can drag them by the title and drop them anywhere on the canvas as long as a green bar appears indicating where the visualization will be placed. Drag the horizontal stacked chart to the right side of the donut chart. Make sure you drop the chart where the shorter green bar which aligns with the donut chart appears.
+
+  ![Align charts](images/align-charts.png)
+
+3. Let's change the title of our line chart. Select the **Sales by Order Date (Month), Product Category** line chart and click the **Properties** panel.
+
+  ![Properties panel](images/properties-panel.png)
+
+4. This is the properties panel which allows your to format your visualizations. You can format things like the title, font, legend, axis labels, values, date format, filters, and add statistics to your visualizations. For this lab, we will only change the title.
+
+  ![Properties](images/properties-options.png =300x*)
+
+5. Click the **Title** setting and choose **Custom**. Here, you can input your custom title but for now, let's just input "How are sales for the product categories trending over time?" and hit Enter.
+
+  ![Input new title](images/new-title.png)
+
+6. Save the workbook by clicking the **Save** icon.
 
   ![Save workbook](images/save-workbook.png =500x*)
 
-11. Enter <code>Sample Analysis</code> for **Name** and click **Save**.
+7. Enter <code>Sample Analysis</code> for **Name** and click **Save**.
 
-  ![Save workbook](images/save.png =600x*)
+  ![Save workbook](images/save.png =500x*)
 
-You just learned how to create basic visualizations, filters, and use brushing in Oracle Analytics.
+## Task 4: Share Your Insights
+
+1. To share your insights, click the **Export** icon on the top right of the page.
+  ![Export icon](images/export-icon.png =500x*)
+
+2. You have the option to export a digital **File** or **Print** a physical copy. Select **File**.
+
+  ![Export file](images/export-file.png =200x*)
+
+3. Here, you have a few options such as the format, which canvas you want to export, where you want to include filters, titles, the size, and orientation of the file.
+
+  ![File options](images/file-options.png =300x*)
+
+4. Click the dropdown for **Format** options. Oracle Analytics currently allows you to export five different formats. PowerPoint, Acrobat, and Image are all visual options while Data and Package allows you to export the underlying data and the whole workbook.
+
+  ![Format options](images/format-options.png =300x*)
+
+5. The **Include** setting lets you either choose the active visualization, the active canvas, or all canvases depending on the type of format you select.
+
+  ![Active canvas](images/include-options.png =300x*)
+
+6. The other options allow you to include filters used in the visualization, include titles, choose the size and finally the orientation of your file. Choose the following settings and click **Save**. This will export the file which you can distribute to your audience to share your insights!
+
+  ![Save](images/save-file.png =300x*)
+
+Congratulations, you have completed the basic data visualizations in Oracle Analytics lab. To learn more, check out the resources listed below!
 
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [About Visualizaton Types](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/visualization-types.html)
 * [About Brushing Between Visualizations on a Canvas](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/brushing-visualizations-canvas.html)
+* [Export Content from Analyses and Dashboards](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/export-content-analyses-and-dashboards.html#GUID-317A5C27-0C7C-4026-9D4D-3AF4773C9725)
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy

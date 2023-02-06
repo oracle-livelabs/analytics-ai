@@ -87,7 +87,11 @@ This lab assumes you have:
 
   ![Cluster created](images/cluster-created.png)
 
-4. Let's rename our canvas. Click the drop-down option for the canvas name and click **Rename.** Type **Clusters** for the name and click Enter.
+4. Hover your mouse over the **Cluster 4** from the key and you'll notice that you can easily highlight all of your most profitable customers.
+
+  ![Highlight cluster 4](images/highlight-cluster.png)
+
+5. Let's rename our canvas. Click the drop-down option for the canvas name and click **Rename.** Type **Clusters** for the name and click Enter.
 
   ![Rename canvas](images/rename-clusters.png)
 

@@ -6,7 +6,7 @@ In this lab, you will learn how to create a multi-table dataset in Oracle Analyt
 
   ![Data actions overview](images/multi-table-ds-overview.png)
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 

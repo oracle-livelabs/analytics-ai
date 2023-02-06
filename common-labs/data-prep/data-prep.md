@@ -6,7 +6,7 @@ In this lab, you will utilize Oracle Analytics' data prep capabilities to clean 
 
   ![](images/data-prep-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
