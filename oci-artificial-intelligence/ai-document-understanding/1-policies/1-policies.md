@@ -37,7 +37,7 @@ Configure as shown below:
 
 Add the below statement to allow all the users in your tenancy to use document understanding:
 ```
-allow any-user to manage ai-service-document-family in tenancy
+<copy>allow any-user to manage ai-service-document-family in tenancy</copy>
 ```
 
 ![OCI Create policy screen](./images/policycompleted.PNG)
@@ -51,12 +51,12 @@ If you want to limit access to a user group, create a policy with the below stat
 
 If your want to analyze documents stored in your tenancy's object storage bucket, add the below statement to grant object storage access permissions to the group:
 ```
-allow group <group_in_tenancy> to use object-family in tenancy
+<copy>allow group <group_in_tenancy> to use object-family in tenancy</copy>
 ```
     
 If you want to restrict access to a specific compartment, you can use the following policy instead: 
 ```
-allow group <group_in_tenancy> to use object-family in compartment <input_bucket_located_object_storage_compartment>
+<copy>allow group <group_in_tenancy> to use object-family in compartment <input_bucket_located_object_storage_compartment></copy>
 ```
 
 ### 6. Policy to access output location in object storage (Required)
@@ -64,9 +64,8 @@ allow group <group_in_tenancy> to use object-family in compartment <input_bucket
 Document Understanding Service stores results in your tenancy's object store. Add the following policy to grant object storage access permissions to the user group who requested the analysis to documents:
 
 ```
-allow group <group_in_tenancy> to manage object-family in compartment <output_bucket_located_object_storage_compartment>
+<copy>allow group <group_in_tenancy> to manage object-family in compartment <output_bucket_located_object_storage_compartment></copy>
 ```
-## **Summary**
 
 Congratulations! </br>
 In this lab you have learnt how to set up your OCI Document Understanding policies.
@@ -80,3 +79,4 @@ You may now **proceed to the next lab**.
 
 
 * **Last Updated By/Date**
+    * Kate D'Orazio, Feb 2023
