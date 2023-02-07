@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-This workshop is the hands-on component of the course "Getting Started with Oracle Analytics" delivered by the Oracle Analytics Enablement team. This is an introductory workshop to help users get familiar with Oracle Analytics and OAC instances will be provided during the live session.
+This workshop is the hands-on component of the course "Getting Started with Oracle Analytics" delivered by the Oracle Analytics Enablement team. This is an introductory workshop to help users get familiar with Oracle Analytics. Oracle Analytics Cloud instances will be provided during the live session.
 
-Estimated Workshop Time: ___
+Estimated Workshop Time: 50 minutes
 
 
 ### Objectives
@@ -12,14 +12,14 @@ Estimated Workshop Time: ___
 In this workshop, you will:
 * Explore the Oracle Analytics UI
 * Create basic data visualizations
-* Utilize Data Actions
+* Leverage Augmented Analytics capabilities
 * Leverage Advanced Analytics
 
 
 ## Learn More
-* [Introduction to Oracle Analytics]()
+* [What Is Oracle Analytics Cloud?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html)
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** -  
+* **Contributors** - Shiva Oleti, Lucian Dinescu
 * **Last Updated By/Date** - Nagwang Gyamtso, February, 2023

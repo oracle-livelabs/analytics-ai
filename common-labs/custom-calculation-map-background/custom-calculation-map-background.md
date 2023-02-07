@@ -6,7 +6,7 @@ In this lab, you will create a custom Return on Sales calculation and create a m
 
   ![](images/custom-calculation-map-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
