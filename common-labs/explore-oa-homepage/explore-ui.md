@@ -133,5 +133,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Contributors -
-* Last Updated By/Date -
+* Last Updated By/Date - Nagwang Gyamtso, February 2023
