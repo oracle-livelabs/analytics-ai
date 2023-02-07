@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to create a connection to the Oracle Autonomous Data Warehouse from your Oracle Analytics Cloud instance.
 
-Estimated Time: -- minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -65,9 +65,9 @@ You have just created a connection to an Autonomous Data Warehouse.
 
 
 ## Learn More
-*
+* [Connecting Oracle Analytics Cloud to Your Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsds/connect-oracle-analytics-cloud-your-data.html)
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** -
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, February 2023

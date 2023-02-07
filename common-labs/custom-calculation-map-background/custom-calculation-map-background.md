@@ -6,7 +6,7 @@ In this lab, you will create a custom Return on Sales calculation and create a m
 
   ![](images/custom-calculation-map-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* Sample Order Lines DS dataset
+* [Sample Order Lines DS](https://objectstorage.us-phoenix-1.oraclecloud.com/p/TBMVACa7qZgj8ijJ3j5wlILzaVVtw1jo6n4rO8mREaAKjRoWAPX0OVTaEL39buPQ/n/idbwmyplhk4t/b/LiveLabsFiles/o/Sample%20Order%20Lines%20DS.xlsx) dataset
 
 
 ## Task 1: Create a Custom Calculation
