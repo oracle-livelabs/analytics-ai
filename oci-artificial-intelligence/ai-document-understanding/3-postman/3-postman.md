@@ -1,4 +1,4 @@
-# Lab 3: Access OCI Document Understanding with REST APIs
+# Access OCI Document Understanding with REST APIs
 
 ## Introduction
 
