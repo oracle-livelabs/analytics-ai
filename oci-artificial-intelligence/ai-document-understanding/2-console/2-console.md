@@ -11,7 +11,7 @@ This is an optional set of steps if you want to test OCI Document Understanding 
 1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
   a. First, From the OCI Services menu, click Storage then Buckets.
-  ![Console navigation window](./images/consolebucketbutton.png.png)
+  ![Console navigation window](./images/consolebucketbutton.png)
 
   b. Then, Select Compartment from the left dropdown menu. Choose the compartment that you gave rights to according to your policies in Lab 1. If you have a new trial tenancy, you can select the root compartment.
   ![Create object storage compartment window](./images/consolecompartmentsearch.png)
@@ -38,7 +38,7 @@ This is an optional set of steps if you want to test OCI Document Understanding 
 
   **1. Navigate to the Document Understanding page**
   Using the Burger Menu on the top left corner, navigate to Analytics and AI and click it, and then select Document Understanding
-  ![Console navigation window](./images/ocianavigationmenu.png)
+  ![Console navigation window](./images/ocinavigationmenu.png)
 
   **2. Test with a demo image**
   On the panel under Document Understanding, select a feature page like text detection. Toggle between sample image buttons to see the different extraction results on the right hand Results panel. 

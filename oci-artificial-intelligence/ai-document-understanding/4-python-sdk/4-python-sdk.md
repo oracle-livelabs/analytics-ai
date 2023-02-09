@@ -1,4 +1,4 @@
-# Lab 4: Access OCI Document Understanding with the OCI Python SDK
+# Access OCI Document Understanding with the OCI Python SDK
 
 ## Introduction
 
@@ -13,19 +13,19 @@ In this lab you will use the OCI Python SDK to extract information from document
 * Learn how to use OCI Python SDK to communicate with our Document Understanding service.
 
 
-## TASK 1: Setup API Signing Key and Config File
+## Task 1: Setup API Signing Key and Config File
 If this is your first time using the OCI SDK, you'll need to create a config file. If you've already done this, you can skip to the next step.
 
 1. Create the .oci folder. Open an admin command prompt or Terminal and run the following command.
 
     Windows:
     ```
-    mkdir %HOMEDRIVE%%HOMEPATH%\.oci
+    <copy>mkdir %HOMEDRIVE%%HOMEPATH%\.oci</copy>
     ```
 
     Mac OS / Linux:
     ```
-    mkdir ~/.oci
+    <copy>mkdir ~/.oci</copy>
     ```
 
 1. Generate an API signing key pair
@@ -36,19 +36,19 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
     Open the **Profile** menu (User menu icon) and click **your user name**.
 
-      ![](./images/new-profilename.png " ")
+      ![Profile menu](./images/new-profilename.png " ")
 
     b. Open API Keys
 
     Navigate to **API keys** and then Click **Add API Key**.
 
-      ![](./images/addAPIButton.png " ")
+      ![Add API button](./images/add-api-button.png " ")
 
     c. Generate API Key
 
     In the dialog, select **Generate API key pair**. Click **Download Private Key**.
 
-      ![](./images/downloadprivatekey.png " ")
+      ![Generate API key button](./images/downloadprivatekey.png " ")
 
     d. Save Private Key
 
@@ -58,35 +58,35 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
     Click **Add**.
 
-      ![](./images/addapikey.png " ")
+      ![Add API key button](./images/add-api-key.png " ")
 
     f. Generate Config File
 
     Use the 3 dots on the row where the key is listed and select **View Configuration file**. Copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
 
-      ![](./images/conf.png " ")      
+      ![View configuration file](./images/conf.png " ")      
 
 3. Create a file with the name *config* (with no extension) in the .oci folder and paste the values previously copied. Save your changes.
 
      Replace the **key_file value** with the path of your generated private key.
 
-      ![](./images/config2.png " ")
+      ![Updated config file](./images/config2.png " ")
 
 
 To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
 
-## TASK 2: Add Sample Documents to Object Storage
+## Task 2: Add Sample Documents to Object Storage
 
 1. Download the [Lab-4 sample documents](./sample-documents/lab4) and upload them to your Object Storage bucket.
 
 2. Login to the OCI Console and navigate to your Object Storage Buckets
 
-  ![](./images/object-storage-link.png " ")
+  ![Object storage bucket](./images/object-storage-link.png " ")
 
 3. Choose an existing bucket or create a new bucket called "DocumentDemo".
 
-## TASK 3: OCI Document Understanding Service SDK Code Sample
+## Task 3: OCI Document Understanding Service SDK Code Sample
 
 1. Create a new file on your local machine called "invoicekv.py" and add it to C:\Users\<user>\AppData\Local\Programs\Python\<Python version>\Scripts folder or add it to your Desktop if you are using a Mac.
 
@@ -99,7 +99,8 @@ The following sample code involves essentially three steps:
 * call GetProcessorJob to get the status of the job (until final status)
 * call GetObject to get the response from Object Storage
 
-```Python
+```python
+<copy>
 ### Import Packages
 import oci
 import uuid
@@ -163,13 +164,15 @@ get_object_response = object_storage_client.get_object(namespace_name=output_loc
                                                            object_location.bucket_name,
                                                            object_location.object_name))
 print(str(get_object_response.data.content.decode()))
+</copy>
 ```
 
 3. Update variables
 
     Open the python script and update all of the below variables.
 
-      ```Python
+      ```python
+      <copy>
       COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"
       object_location.namespace_name = "<enter-your-objectstorage-namespsace-here>"  # e.g. "axhh9gizbq5x"
       object_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "demo_examples"
@@ -177,6 +180,7 @@ print(str(get_object_response.data.content.decode()))
       output_location.namespace_name = "<enter-your-objectstorage-namespsace-here>"  # e.g. "axk2tfhlrens"
       output_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "output"
       output_location.prefix = "<enter-your-prefix-here>"  # e.g "demo"
+      </copy>
       ```
 
 4. Execute the code
@@ -185,12 +189,16 @@ print(str(get_object_response.data.content.decode()))
     
     Windows:
     ```
+    <copy>
     python invoicekv.py
+    </copy>
     ```
     
     Mac OS / Linux:
     ```
+    <copy>
     python3 invoicekv.py
+    </copy>
     ```
 
 5. Result
@@ -198,6 +206,7 @@ print(str(get_object_response.data.content.decode()))
     You will see the following results (edited for brevity):
 
     ```
+    <copy>
     Calling create_processor with create_processor_job_details_key_value_extraction: {
     "compartment_id": "",
     "display_name": "",
@@ -290,8 +299,8 @@ print(str(get_object_response.data.content.decode()))
                 ],
                 "value": "657 Clifford Street Allentown, PA"
             }
-            },
-
+        },
+    </copy>
     ```
 
 Confirm the results by looking at each image.
@@ -302,3 +311,11 @@ You can also take a look at the JSON output in your Oracle Object Storage bucket
 * To try other features, you can refer to the full collection of sample python code [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
 
 Congratulations on completing this lab!
+
+## Acknowledgements
+* **Authors**
+    * Kate D'Orazio - Product Manager
+
+
+* **Last Updated By/Date**
+    * Kate D'Orazio, Feb 2023
