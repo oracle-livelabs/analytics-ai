@@ -23,7 +23,15 @@
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-prep/data-prep.md"
         },
         {
-            "title": "Lab 2: Basic Data Visualizations",
+            "title": "Lab 2: Blend Data",
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/basic-data-visualization/basic-data-visualization.md"
+        },
+        {
+            "title": "Lab 3: BI Ask",
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/basic-data-visualization/basic-data-visualization.md"
+        },
+        {
+            "title": "Lab 4: Dashboard Filters and Export",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/basic-data-visualization/basic-data-visualization.md"
         },
         {
