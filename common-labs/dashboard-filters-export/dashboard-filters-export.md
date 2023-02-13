@@ -21,33 +21,49 @@ This lab assumes you have:
 * [Sample Order Lines DS](https://objectstorage.us-phoenix-1.oraclecloud.com/p/TBMVACa7qZgj8ijJ3j5wlILzaVVtw1jo6n4rO8mREaAKjRoWAPX0OVTaEL39buPQ/n/idbwmyplhk4t/b/LiveLabsFiles/o/Sample%20Order%20Lines%20DS.xlsx)
 
 ## Task 1: Dashboard Filters
-In this section, we will explore different ways to create and apply dashboard filters.
+In this section, we will explore the dashboard filter visualization.
 
-1. Click and drag **Customer Segment** from **Sample Order Lines DS** to the canvas filter bar.
+1. To add the **Dashboard Filters** visualization, click **Visualizations** from the **Data Panel** and scroll down to the **Dashboard Controls** section.
 
-  ![Click and drag](images/cus-seg-filter.png)
+  ![Dashboard Controls](images/dashboard-controls.png)
 
-2. Select the values you want to filter for. For this lab, select **Consumer**.
+2. Click and drag the **Dashboard Filters** visualization onto the canvas above the map visualization. The benefit of using dashboard filters is that we can filter the dashboard based on the attributes we want to explore directly on the canvas.
 
-  ![Select Consumer](images/consumer-filter.png)
+  ![Dashboard Filters](images/drag-dashboard-filters.png)
 
-3. To add another filter, click the **Add Filter** button. Expand the **Sample Order Lines DS** data file and select **Product Category**.
+3. To add filters, double-click or drag and drop one or more dates, attributes, or measure columns to the dashboard filter. For this lab, double-click the **Product Category** column.
 
-  ![Add filter](images/add-filter.png)
+  ![Product Category](images/product-category.png)
 
-4. Select **Office Supplies** and click away to apply the filter.
+4. Then double-click **Sales** to add this measure as a filter.
 
-  ![Office Supplies filter](images/office-supplies-filter.png)
+  ![Double-click Sales](images/dc-sales.png)
 
-5. If you want to apply a filter to all canvases, hover over the filter and click **Pin to All Canvases,** represented by the pin icon. Your dashboard now as filters applied to **Customer Segment** and **Product Category**.
+5. Let's say we wanted to see the top 10 cities by sales. Click **Full Range** under **Sales** to open the Sales filter options.
 
-  ![Pin filter](images/pin-filter.png)
+  ![Click full range](images/full-range.png)
 
-6. Rename the canvas as **BI Ask** and **Save** the workbook.
+6. Here you have two options: You can either filter the Sales by **Range** if you want to filter for a specific range of sales or you can filter for the top or bottom counts. Since we want to look at the top 10, click **Top Bottom N**.
+
+  ![Click Top Bottom N](images/top-bottom-n.png)
+
+7. Here, you can modify the settings for this filter. You can choose Top or Bottom for **Method**, change the **Count** and select which attributes you want the filter to be based on. We'll stick with the default settings.
+
+  ![Top Bottom options](images/top-bottom-options.png)
+
+8. Let's say that instead of looking at the top 10 sales for all products, we want to filter for Office Supplies. Click the **Product Category** filter drop-down and select **Office Supplies**. Click away to apply the filter.
+
+  ![Select Office Supplies](images/select-office-supplies.png)
+
+9. The result shows the Top 10 Sales by City for **Office Supplies**.
+
+  ![Top 10 results](images/top-ten-results.png)
+
+10. Rename the canvas as **BI Ask** and **Save** the workbook.
 
   ![Rename workbook](images/rename-save.png)
 
-7. Name the workbook **BI Ask** and click **Save**.
+11. Name the workbook **BI Ask** and click **Save**.
 
   ![Save workbook](images/save-workbook.png)
 
