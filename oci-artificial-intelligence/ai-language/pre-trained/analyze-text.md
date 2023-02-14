@@ -390,22 +390,22 @@ Follow the below steps to open Notebook in DataScience:
   1. Navigate to Data Science Service
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
-    ![OCI Hamburger menu](./images/cloud-menu.png " ")
+    ![OCI Hamburger menu](./images/navigate-to-datascience.png " ")
 
   2. Select Compartment
 
     Select the Compartment in which want to create your project.
-    ![Select compartment](./images/select-comp.png " ")
+    ![Select compartment](./images/select-ds-comp.png " ")
 
   3. Create Project
 
     Click Create Project to create a new project.
-    ![create data science project](./images/create-project1.png " ")
+    ![create data science project](./images/create-ds-project1.png " ")
 
   4. Enter Project Details
 
     Enter name and click Create Button.
-    ![Data Science project details](./images/create-project2.png " ")
+    ![Data Science project details](./images/create-ds-project2.png " ")
 
   5. Create Notebook Session
 
@@ -566,5 +566,5 @@ You may now **proceed to the next lab**.
   * Ankit Tyagi -  Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022
+* Sahil Kalra - OCI Language Service, February 2022
 
