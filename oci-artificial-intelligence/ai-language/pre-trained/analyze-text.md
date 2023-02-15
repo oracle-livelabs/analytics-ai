@@ -444,7 +444,7 @@ Follow the below steps to open Notebook in DataScience:
     <copy>mkdir ~/.oci</copy>
     ```
 
-    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
+    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Task 2 (Step2: Setup API Signing Key and Config File)
 
     In the terminal, move those files to the .oci folder.
     ```
@@ -497,7 +497,7 @@ These notebooks demonstrates how you can be more productive by using the various
 
   4. Set up variables
 
-* Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Lab 3 (Task 1 -> Step 4).
+* Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Task 2 (Step2: Setup API Signing Key and Config File).
 
 * Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
 
