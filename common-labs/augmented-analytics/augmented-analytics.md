@@ -105,7 +105,7 @@ This lab assumes you have:
 
   ![Rename canvas](images/rename-nlg.png)
 
-In this lab, you have successfully learned how to use Oracle Analytics' Augmented Analytics capabilities.
+In this lab, you have successfully learned how to use Oracle Analytics' Augmented Analytics capabilities. You may now **proceed to the next lab**.
 
 ## Learn More
 * [Let Oracle Analytics Suggest the Best Visualizations for a Dataset Using Auto Insights](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/let-oracle-analytics-suggest-best-visualizations-dataset.html)

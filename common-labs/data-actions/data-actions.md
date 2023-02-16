@@ -169,7 +169,7 @@ In this section, we will create a data actions to pass values to the target canv
 
   ![Nav to target bar](images/nav-to-target-bar.png)
 
-In this lab, you have successfully learned how to create data actions.
+In this lab, you have successfully learned how to create data actions. You may now **proceed to the next lab**.
 
 ## Learn More
 * [Use Data Actions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-data-actions.html)

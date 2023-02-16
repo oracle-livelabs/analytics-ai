@@ -126,7 +126,7 @@ In this section, you will explore the different tabs that live in the Hamburger 
 
   ![Console](images/console.png)
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)

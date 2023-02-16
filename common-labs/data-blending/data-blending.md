@@ -78,7 +78,7 @@ In this section, we will blend the Sample Order Lines DS and Customer Subscripti
 
   ![Click save](images/enter-name.png =600x*)
 
-With this lab, you have learned how to create a multi-table dataset in Oracle Analytics.
+With this lab, you have learned how to create a multi-table dataset in Oracle Analytics. You may now **proceed to the next lab**.
 
 ## Learn More
 * [Create a Dataset with Multiple Tables in Oracle Analytics](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-mutli-table-data-set/#before_you_begin)

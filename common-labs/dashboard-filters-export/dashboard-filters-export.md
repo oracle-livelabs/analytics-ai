@@ -82,7 +82,7 @@ In this section, we will explore export options for sharing your insights with y
 
   ![File options](images/export-options.png =300x*)
 
-With this lab, you have learned how to blend two datasets together, apply dashboard filters and export your file for sharing in Oracle Analytics.
+With this lab, you have learned how to blend two datasets together, apply dashboard filters and export your file for sharing in Oracle Analytics. You may now **proceed to the next lab**.
 
 ## Learn More
 * [Add Joins Between Dataset Tables](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/add-joins-dataset-tables.html)

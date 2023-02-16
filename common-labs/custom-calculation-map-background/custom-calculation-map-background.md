@@ -95,6 +95,8 @@ In this section, we will create a map background and explore a few customization
 
   ![Oracle Maps viz](images/oracle-maps-viz.png)
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [About Map Backgrounds](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/map-backgrounds.html)
