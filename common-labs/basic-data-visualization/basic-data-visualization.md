@@ -183,6 +183,8 @@ In this section, we will explore brushing, which automatically highlights datapo
 
 Congratulations, you have completed the basic data visualizations in Oracle Analytics lab. To learn more, check out the resources listed below!
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [About Visualizaton Types](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/visualization-types.html)
