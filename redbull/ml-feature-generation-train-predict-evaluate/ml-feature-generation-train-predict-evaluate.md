@@ -38,25 +38,25 @@ Estimated Lab Time: 20 minutes
 
    ![ADW Menu](images/open-redbull.png)
 
-3. Open the **Service Console**.
+3. Click on **DB Connection**.
 
-   ![pic1](images/open-service-console.png)
+   If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user
 
-4. Choose **Administration** > **Manage Oracle ML Users**.
+   ![pic1](images/select-db-conn.png)
 
-   ![pic1](images/manage-ml-users.png)
+4. Choose **Administration** > **Database Users**.
 
-   If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user.
+   ![pic1](images/select-db-users.png)
 
-5. Check **Show All Users**, then click on the `F1` user.
 
-   ![pic1](images/select-ml-user.png)
+5. Find the `F1` user, then select edit
 
-6. Choose any email address (it's not relevant). **Don't update any of the other fields**.
+   ![pic1](images/edit-f1-user.png)
 
-   ![pic1](images/save-f1.png)
+6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the SAILOR user to use the Machine Learning functionality of Autonomous Data Warehouse.
 
-   Press **Save**. You've now enabled the `F1` database user (schema) to use the Machine Learning functionality of Autonomous Data Warehouse.
+   ![pic1](images/add-oml-f1-user.png)
+
 
 ## **Task 2:** Generate New Features
 
@@ -161,7 +161,7 @@ Now we're ready to train the ML model.
 
    ![pic1](images/train-header.png)
 
-4. Open the "Additional Settings" section, and select "Negative Mean Absolute Error". This is a measurement of how close the predicted values are to the actual values. The training process will try to minimize this value.
+4. Open the "Additional Settings" section, and select "Mean Absolute Error". This is a measurement of how close the predicted values are to the actual values. The training process will try to minimize this value.
 
    ![pic1](images/mae.png)
 
@@ -215,7 +215,7 @@ Now we're ready to train the ML model.
 
    ![pic1](images/lgm.png)
 
-   The value under Negative Mean Absolute Error is an indicator of the accuracy of the model.
+   The value under Mean Absolute Error is an indicator of the accuracy of the model.
 
    The exact values and order of the models may be slightly different on your environment due to randomness in the process. However, if the difference is significant (e.g. > 10%), it is likely that you have done something different along the way. For example, training on different columns would result in a significantly different NMAE.
 
