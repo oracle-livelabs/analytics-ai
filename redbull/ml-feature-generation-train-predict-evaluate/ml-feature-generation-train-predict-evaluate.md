@@ -42,7 +42,7 @@ Estimated Lab Time: 20 minutes
 
    If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user
 
-   ![pic1](images/select-db-conn.png)
+   ![pic1](images/open-db-actions.png)
 
 4. Choose **Administration** > **Database Users**.
 
@@ -72,13 +72,15 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
-2. In the console of the Autonomous Data Warehouse, open the **Service Console**.
+2. In the console of the Autonomous Data Warehouse, open the **DB Actions**.
+   
+   Sign In with the **F1** user
 
-   ![pic1](images/open-service-console.png)
+   ![pic1](images/open-db-actions.png)
 
-3. Choose **Development** > **Oracle Machine Learning User Interface**.
+3. Choose **Development** > **Oracle Machine Learning**.
 
-   ![pic1](images/start-oml.png)
+   ![pic1](images/open-oml.png)
 
 4. Sign in with the user `F1` and the secure password for the F1 user.
 
