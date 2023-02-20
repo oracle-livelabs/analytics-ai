@@ -30,6 +30,10 @@ Detects languages based on the given text, and includes a confidence score.
 
 Identifies the document category and subcategory that the text belongs to.
 
+#### 6. Personal Identifiable Information
+
+Detects various entities of personal information.
+
 ### **Custom Models**
 
 OCI Language custom models enables you to customize Text Classification and Named Entity Recognition with your own data

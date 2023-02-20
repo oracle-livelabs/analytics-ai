@@ -30,11 +30,11 @@ This lab assumes that you have:
 
 ## Task 1: Set up Conda Environment
 
-1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to **File** and select **New Launcher**.  You will see the **Environment Explorer**. When you click on **Environment Explorer**, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. 
+1.  After you log into OCI Data Science and create a notebook, open the notebook.  Once inside, go to **File** and select **New Launcher**.  You will see the **Environment Explorer**. When you click on **Environment Explorer**, you will see a list of pre-built conda environments you can install. A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment.
 
     ![Conda Environment Explorer](images/conda-environment-explorer.png " ")
 
-1.  For this lab, we are going to use the TensorFlow 2.7 for CPU on Python 3.7 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
+1.  For this lab, we are going to use the TensorFlow 2.8 for CPU on Python 3.8 conda v 1.0.  Scroll through the list of pre-built conda environments to find it.
 
     ![Tensorflow Conda](images/tensorflow-conda-expand-details.png " ")
 
@@ -46,48 +46,39 @@ This lab assumes that you have:
 
 1.  When prompted for the version number, press Enter.
 
-    ![Open Terminal](images/conda-version-number.png " ")
-
-
-1.  After you have set up your conda environment, when you start a new notebook, choose tensorflow27_p37_cpu_v1 for the Kernel.
-
-    ![Select Conda](images/select-conda-environ.png " ")
-
 ## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
 
-1. To access the image classification JupyterLab notebook, first open a new terminal window.  Go to **File**, select **New**, choose **Terminal**. Copy and paste the following commands one by one in the terminal window and press Enter after each command. The commands will create a folder named **demo** inside the directory `/home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1/` and get the image classification notebook and related files in a folder called **xray\_diagnostics\_hol** from Object Storage.
+1. To access the image classification JupyterLab notebook, we are going to clone the Oracle Data Science and AI repository.  Navigate to the Oracle Data Science and AI repository https://github.com/oracle-samples/oci-data-science-ai-samples/
 
-    ```
-    cd /home/datascience/conda/notebooks/tensorflow27_p37_cpu_v1
-    mkdir demo
-    cd demo 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/1WQi6Uy62t-z1EcgFBTQf7QusdKn9xImkI8c1q7XYjjT1DMVqllFx7QX_mnaXsvl/n/bigdatadatasciencelarge/b/hosted-datascience-docs/o/Cloudworld22hol/xray_diagnostics_pneumonia/xray_diagnostics_hol.zip
-    ```
-2.  Navigate to the **xray\_diagnostics\_hol** folder
+1.  Click on **Code** and copy the link under **HTTPS**
 
-* Go to the home directory
+    ![Copy repository link](images/copy-git-repo-link.png " ")
 
-![Navigate to home directory](images/navigate-home-directory.png " ")
+1.  Navigate to the git extension icon on the left and then click **Clone a Repository**.
 
-* Click on the **conda** folder
+    ![Open Git Extension](images/git-extension.png " ")
 
-* Click on the **notebooks** folder
+1.  Paste the HTTPS link and click **Clone**.  
 
-* Click on the **tensorflow\_27\_p37\_cpu\_v1** folder
+    ![Clone Repository ](images/clone-repository.png " ")
 
-* Click on the **demo** folder
+1.  After you have cloned the repository, you will see the **oci\_data\_science\_ai\_samples** folder. Click on the folder.
 
-* Click on the **xray\_diagnostics\_hol** folder
+    ![Navigate to directory](images/navigate-directory.png " ")
 
-* Open **ChestXrays\_Train.ipynb** file 
+    * Click on the **labs** folder
 
-This is the notebook where we will work through an image classification problem.  
+    * Click on the **xray-diagnostics** folder
 
-3.  Select TensorFlow 2.7 for CPU on Python 3.7 conda in the top right corner of the notebook
+    * Click on the **notebooks** folder
 
-![Select tensorflow conda](images/select-tensorflow-conda.png " ")
+    * Click on the file **ChestXrays\_Train.ipynb**
 
-4.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and pressing *shift + enter*. That will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
+1.  After you have opened the notebook, select TensorFlow 2.8 for CPU on Python 3.8 conda.
+
+![Select tensorflow conda](images/select-conda-environ.png " ")
+
+1.  Go through the **ChestXrays\_Train.ipynb**.  You can run each cell in the JupyterLab notebook by clicking on it and pressing *shift + enter*. That will execute the cell and advance to the next cell. Or you can go to the `Run` tab and choose "Run Selected Cells".
 
 You may now **proceed to the next lab**.
 
@@ -102,5 +93,4 @@ For more information, please refer to our:
 
 * **Author**: [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist
 * **Last Updated By/Date**:
-    * [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist, Sept 2022
-
+    * [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610/), Data Scientist, Jan 2023
