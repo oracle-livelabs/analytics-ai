@@ -38,7 +38,7 @@ Estimated Lab Time: 20 minutes
 
    ![ADW Menu](images/open-redbull.png)
 
-3. Click on **DB Connection**.
+3. Click on **DB Actions**.
 
    If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user
 
