@@ -1,6 +1,6 @@
 # Infrastructure
 
-Estimated Lab Time: 15-20 minutes
+Estimated Time: 15-20 minutes
 
 ## Introduction
 
@@ -19,7 +19,7 @@ Terraform is an Open Source tool to deploy resources in the cloud with code. You
 
 Ansible is an Open Source tool to provision on top of the created resources. It automates the dependency installation, copies the source code, and config files so everything is ready for you to use.
 
-Do you want to learn more? Feel free to check the code for [terraform and ansible](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/livelabs/dev/) after the workshop.
+Do you want to learn more? Feel free to check the code for terraform and ansible after the workshop.
 
 
 ### Prerequisites
@@ -47,10 +47,16 @@ Do you want to learn more? Feel free to check the code for [terraform and ansibl
     <copy>cd leagueoflegends-optimizer/dev</copy>
     ```
 
-5. Terraform uses a file called `tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to copy a template we provide to use your own values. Run on Cloud Shell the following command.
+5. Terraform uses a file called `tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to copy a template we provide to use your own values. Run on Cloud Shell the following command:
+   
     ```
-    <copy>cp terraform/terraform.tfvars.template terraform/terraform.tfvars</copy>
+    <copy>
+    cp terraform/terraform.tfvars.template terraform/terraform.tfvars
+    </copy>
+
     ```
+
+
 
 ## Task 2: Deploy with Terraform and Ansible
 
@@ -205,4 +211,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin, Product Strategy Director
-* **Last Updated By/Date** - October 3rd, 2022
+* **Last Updated By/Date** - February 20th, 2023
