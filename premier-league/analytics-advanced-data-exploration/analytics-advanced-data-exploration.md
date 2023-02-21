@@ -71,25 +71,29 @@ Therefore, let’s plot the shots on a football pitch (helicopter view). We hope
 
    ![Reopen workbook](images/reopen-workbook.png)
 
-2. To create space for new visualizations, create a new canvas by clicking on the "+" icon at the bottom of the screen (next to "Canvas 1").
+2. Select **Edit mode** at the top right hand corner
+
+   ![New canvas](images/edit-workbook.png)
+
+3. To create space for new visualizations, create a new canvas by clicking on the "+" icon at the bottom of the screen (next to "Canvas 1").
 
    ![New canvas](images/new-canvas.png)
 
-3. Create a new visualization of a football pitch. The `FOOTBALL_PITCH_CELL` attribute can be used to pick the right cell (location) on the pitch of each shot. 
+4. Create a new visualization of a football pitch. The `FOOTBALL_PITCH_CELL` attribute can be used to pick the right cell (location) on the pitch of each shot. 
 
    Create a Map visualization on the fields `FOOTBALL_PITCH_CELL` and the previously created calculation `Score Percentage`. 
 
    ![Pick map](images/pick-map.png)
 
-4. Change the background to show our football pitch by going to the Map settings icon (see section at bottom left of the screen), then choose "football\_pitch" as the Background Map.
+5. Change the background to show our football pitch by going to the Map settings icon, then choose "football\_pitch" as the Background Map.
 
    ![Configure map](images/configure-map.png)
 
-5. Finally, remove penalties and own goals by setting the filters (as you've done previously on the first canvas). 
+6. Finally, remove penalties and own goals by setting the filters (as you've done previously on the first canvas). 
 
    ![Filter](images/filters.png)
 
-6. The result looks like this. Hover over the cells to see the Score Percentage for that part of the pitch.
+7. The result looks like this. Hover over the cells to see the Score Percentage for that part of the pitch.
 
    ![Map result](images/map-result.png)
 
@@ -99,7 +103,7 @@ Therefore, let’s plot the shots on a football pitch (helicopter view). We hope
    
    ![Narrow angle](images/narrow-angle.png)
 
-7. The reason for this pattern is that the player has a very small "window" between the left and right pole from these areas.
+8. The reason for this pattern is that the player has a very small "window" between the left and right pole from these areas.
    
    We can measure this by calculating the **ANGLE between the LEFT and the RIGHT goal pole**.
 
@@ -111,7 +115,7 @@ Therefore, let’s plot the shots on a football pitch (helicopter view). We hope
 
    What do we learn from all this? That we should include the angle when we train our model, because this is likely to influence the chance of scoring a goal. 
    
-8. Go back to the homepage by clicking on the top left icon. Save the workbook in case you're being asked to.
+9. Go back to the homepage by clicking on the top left icon. Save the workbook in case you're being asked to.
 
    ![Back to menu](images/back-to-menu4.png)
 
