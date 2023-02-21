@@ -43,11 +43,11 @@ Estimated Time: 10 minutes
 
    ![pic1](images/select-db-users.png)
 
-5. Find the `PL` user, then select edit
+5. Find the **PL** user, then select edit
 
    ![pic1](images/edit-pl-user.png)
 
-6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the SAILOR user to use the Machine Learning functionality of Autonomous Data Warehouse. Sign out now as admin user.
+6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the **PL** user to use the Machine Learning functionality of Autonomous Data Warehouse. Sign out now as admin user.
 
    ![pic1](images/add-oml-pl-user.png)
 
