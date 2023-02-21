@@ -69,7 +69,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
 2. In the console of the Autonomous Data Warehouse, open the **Database Actions** and sign in as the PL user
 
-   <!--![pic1](images/open-database-actions.png)-->
+   ![pic1](images/open-actions.png)
 
 3. Choose **Oracle Machine Learning**.
 
