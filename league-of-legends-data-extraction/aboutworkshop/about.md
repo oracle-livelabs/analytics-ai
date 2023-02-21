@@ -1,6 +1,6 @@
 # About This Workshop
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ## Introduction
 
@@ -64,4 +64,4 @@ You may now [proceed to the next lab](#next).
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Editor** - Erin Dawson, DevRel Communications Manager
 * **Contributors** -  Victor Martin, Product Strategy Director
-* **Last Updated By/Date** - October 3rd, 2022
+* **Last Updated By/Date** - February 20th, 2023

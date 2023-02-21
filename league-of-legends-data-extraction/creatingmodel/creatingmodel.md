@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, we're creating a very primitive ML model. This model will use very few variables and will only have one target variable. It'll be useful to us as it introduces the most basic and fundamental ML concepts.
 
-Estimated Lab Time: 45 minutes
+Estimated Time: 45 minutes
 
 ### Prerequisites
 
@@ -14,7 +14,7 @@ Estimated Lab Time: 45 minutes
 
 ## Task 1: Set up OCI Data Science Environment
 
-[Having previously created our OCI Data Science environment](../infra/infra.md), we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
+[Having previously created our OCI Data Science environment](https://github.com/oracle-devrel/leagueoflegends-optimizer/blob/livelabs/hols/dataextraction/infra/infra.md), we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
 
 1. We open the notebook that was provisioned:
 
@@ -282,7 +282,7 @@ You may now [proceed to the next lab](#next).
 
 ## Annex: Using your Own DataSets
 
-If you're using your own data instead of the datasets provided by default (having generated them by following the workshop), and you have [all the aforementioned prerequisites](../intro/intro.md) installed, you can check out the notebook called _`notebooks/hol1_online_analysis.ipynb`_ which connects directly to the Autonomous DB through Instant Client and the database's wallet and creates a model from scratch.
+If you're using your own data instead of the datasets provided by default (having generated them by following the workshop), and you have [all the aforementioned prerequisites](https://github.com/oracle-devrel/leagueoflegends-optimizer/blob/livelabs/hols/dataextraction/intro/intro.md) installed, you can check out the notebook called _`notebooks/hol1_online_analysis.ipynb`_ which connects directly to the Autonomous DB through Instant Client and the database's wallet and creates a model from scratch.
 
 > **Note**: this notebook is already downloaded to your Data Science environment if you've followed all steps. The path is _`/home/datascience/leagueoflegends-optimizer/notebooks/hol1_online_analysis.ipynb`_.
 
@@ -291,4 +291,4 @@ If you're using your own data instead of the datasets provided by default (havin
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** -  Victor Martin, Product Strategy Director
-* **Last Updated By/Date** - October 3rd, 2022
+* **Last Updated By/Date** - February 20th, 2023
