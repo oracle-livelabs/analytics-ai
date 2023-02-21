@@ -1,6 +1,6 @@
 # Introduction
 
-![](./images/Intro.png)
+![Intro Banner](./images/Intro.png)
 
 ## About this Workshop
 
