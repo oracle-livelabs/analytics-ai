@@ -1,4 +1,4 @@
-# Use OCI Document Understanding in the Console
+# Lab 2: Use OCI Document Understanding in the Console
 
 ## Introduction
 In this lab, we will learn how to use OCI Document Understanding in the OCI Console in order to test various features on demo documents as well as your own documents.

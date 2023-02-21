@@ -1,4 +1,4 @@
-# Access OCI Document Understanding with the OCI Python SDK
+# Lab 4: Access OCI Document Understanding with the OCI Python SDK
 
 ## Introduction
 
