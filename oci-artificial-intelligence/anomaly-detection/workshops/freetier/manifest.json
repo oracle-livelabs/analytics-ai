@@ -23,22 +23,27 @@
             "filename": "../../anomalies/anomaly-detection-project.md"
         },
         {
-            "title": "Lab 3: Train Anomaly Detection Model And Detect",
-            "description": "Learn how to create data asset, build and deploy model, and perform detection",
-            "filename": "../../anomalies/anomaly-detection-model.md"
+            "title": "Lab 3: Train Univariate Anomaly Detection Model And Detect",
+            "description": "Learn how to create data asset, build and deploy model, and perform detection on univariate datasets",
+            "filename": "../../anomalies/anomaly-detection-model-univariate.md"
         },
         {
-            "title": "Lab 4: (Advanced) Access Anomaly Detection Service with Python SDKs",
+            "title": "Lab 4: Train Multivariate Anomaly Detection Model And Detect",
+            "description": "Learn how to create data asset, build and deploy model, and perform detection on multivariate datasets",
+            "filename": "../../anomalies/anomaly-detection-model-multivariate.md"
+        },
+        {
+            "title": "Lab 5: (Advanced) Access Anomaly Detection Service with Python SDKs",
             "description": "Using Python SKD to call the AD services",
             "filename": "../../anomalies/anomaly-detection-rest-api.md"
         },
         {
-            "title": "Lab 5: (Advanced) Access Anomaly Detection Service with OCI CLI",
+            "title": "Lab 6: (Advanced) Access Anomaly Detection Service with OCI CLI",
             "description": "Using OCI CLI to call the AD services",
             "filename": "../../anomalies/anomaly-detection-oci-cli.md"
         },
         {
-            "title": "Lab 6: (Advanced) How to Preprocess Raw Data",
+            "title": "Lab 7: (Advanced) How to Preprocess Raw Data",
             "description": "How to preprocess your raw dataset for training the model and detecting",
             "filename": "../../anomalies/anomaly-detection-data-preprocessing.md"
         },
@@ -47,6 +52,6 @@
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
-        
+
     ]
 }

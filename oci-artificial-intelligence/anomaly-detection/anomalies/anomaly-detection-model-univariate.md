@@ -1,8 +1,10 @@
-# Train Anomaly Detection Model And Detect
+# Train Anomaly Detection Univariate Model And Detect
 
 ## Introduction
 
 In this session, we will show you how to train an anomaly detection model, and make predictions with new data.
+
+[Anomaly Detection Univariate Demonstration Video](youtube:xTJBpAhaIcs)
 
 ***Estimated Time***: 30 minutes
 
@@ -62,12 +64,14 @@ Train Fraction Ratio specifies the ratio of the whole training data used for our
 In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
 ![](../images/create_and_train_model.png " ")
 
+![](../images/create_and_train_model_2.png " ")
+
 Click Submit. For this demo dataset, it takes **10-15 minutes** to finish training a model.
 ![](../images/model_creation.png " ")
 
 Once the model is trained successfully, it is automatically ready for detecting anomalies from new data. User can either use the cloud Console (next step) or the endpoint to send new testing data.
 
-## Task 2: Detect Anomaly with new Data
+## Task 2: Detect Anomaly synchronously with new Data
 
 ### Upload to UI
 
@@ -84,7 +88,7 @@ Once the test file is uploaded, now click Detect button.
 The detection result will return immediately, and you have the option to select the column to see related anomalies.
 
 Use the drop wizard to select a column to see anomalies.
-![](../images/detect-result-select-column-droplist.png " ")
+![](../images/detect-result-select-column-droplist-univariate.png " ")
 
 **Explanation of the Graph**
 
@@ -92,137 +96,174 @@ Each signal in your detection data can be selected to show a separate graph.
 
 In the graph, horizontal axis represents the timestamp (or indexes if no timestamp was provied), and the vertical axis represents sensor values.
 
-In each subgraph, orange line indicates the actual input value of a signal, purple line indicates the predicted value by the machine learning model, and red line indicates anomaly being detected at that timestamp.
+In each subgraph, orange line indicates the actual input value of a signal, purple line indicates the predicted value by the machine learning model, and red line indicates anomaly being detected at that timestamp. If more than one signals exist in the dataset, a dropdown for all the signal names will be available.
 
 There are two additional subgraphs after sensor subgraphs:
 
 * The Anomaly Score Per Signal shows the significance of anomaly at individual signal level for a given timestamp. Not all the signals flag anomalies at the same time.
-* The Aggregated Anomaly Score indicates the significance of anomaly for a given timestamp by considering the anomaly from all signals together.
+* The Aggregated Anomaly Score is only available for a multivariate model, we can only look at the  to get a cleaner layout.
 
 You can move your mouse over the graph, the actual value & estimated value at a certain timestamp will show at the upper right corner of the graph.
 
 Lets select temperature_3 to see where the model has detected an anomaly.
 
-![](../images/anomaly-result-graph.png " ")
+![](../images/anomaly-result-graph-univaraite-sen0.5.png " ")
 
 The part of the signal where the model has determined to be an anomaly is highlighted. There is also an option to download the anomaly detection result.
 
 Click the "Download JSON" button, it will download a file named anomalies.json, with the following content after pretty formatting.
  ```json
- [{
-   "timestamp": "2019-01-07T21:28:10.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_3",
-     "actualValue": -2.3941492028804823,
-     "estimatedValue": -1.3968646982446573,
-     "anomalyScore": 0.6991412894059958
-   }],
-   "score": 0.17062950252018466
- }, {
-   "timestamp": "2019-01-07T21:30:09.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_3",
-     "actualValue": -2.969391704072731,
-     "estimatedValue": -2.2280378569031987,
-     "anomalyScore": 0.44132450938143
-   }],
-   "score": 0.15049852136852282
- }, {
-   "timestamp": "2019-01-07T21:31:07.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_3",
-     "actualValue": -2.8692496787296853,
-     "estimatedValue": -0.9000745817440916,
-     "anomalyScore": 0.6888888888888889
-   }],
-   "score": 0.3324823947982064
- }, {
-   "timestamp": "2019-01-07T21:32:07.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_3",
-     "actualValue": -2.6463618772188724,
-     "estimatedValue": -1.1883816883039726,
-     "anomalyScore": 0.6444444444444445
-   }],
-   "score": 0.26424069902395886
- }, {
-   "timestamp": "2019-01-07T21:33:07.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_2",
-     "actualValue": -3.2061627022001513,
-     "estimatedValue": -1.9734666104961938,
-     "anomalyScore": 0.6
-   }],
-   "score": 0.2827533417975129
- }, {
-   "timestamp": "2019-01-07T21:34:09.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_3",
-     "actualValue": -2.6708890607848206,
-     "estimatedValue": -1.5134377236108654,
-     "anomalyScore": 0.6
-   }],
-   "score": 0.16854638238128244
- }, {
-   "timestamp": "2019-01-07T22:03:05.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_2",
-     "actualValue": 3.083887035191133,
-     "estimatedValue": 1.3737587686565504,
-     "anomalyScore": 0.6444444444444445
-   }, {
-     "signalName": "temperature_3",
-     "actualValue": 2.9912405995536164,
-     "estimatedValue": 1.5717138197392095,
-     "anomalyScore": 0.6444444444444445
-   }],
-   "score": 0.2646869126037501
- }, {
-   "timestamp": "2019-01-07T22:04:03.000+00:00",
-   "anomalies": [{
-     "signalName": "temperature_2",
-     "actualValue": 3.0544769126601294,
-     "estimatedValue": 1.629371737935325,
-     "anomalyScore": 0.6
-   }, {
-     "signalName": "temperature_3",
-     "actualValue": 3.296416780034894,
-     "estimatedValue": 1.7698354655336326,
-     "anomalyScore": 0.6
-   }],
-   "score": 0.26224293915437363
- }, {
-   "timestamp": "2019-01-07T22:13:05.000+00:00",
-   "anomalies": [{
-     "signalName": "pressure_2",
-     "actualValue": 7.592321707893466,
-     "estimatedValue": 3.2019284312239957,
-     "anomalyScore": 0.6888888888888889
-   }],
-   "score": 0.21415093574406247
- }, {
-   "timestamp": "2019-01-07T22:14:03.000+00:00",
-   "anomalies": [{
-     "signalName": "pressure_2",
-     "actualValue": 9.960204074915126,
-     "estimatedValue": 3.530785021250325,
-     "anomalyScore": 0.6444444444444445
-   }],
-   "score": 0.17395422335011604
- }, {
-   "timestamp": "2019-01-07T22:15:04.000+00:00",
-   "anomalies": [{
-     "signalName": "pressure_2",
-     "actualValue": 8.957698832423487,
-     "estimatedValue": 3.938389507449287,
-     "anomalyScore": 0.6
-   }],
-   "score": 0.26877693556170257
- }]
+ [
+  {
+    "timestamp": "2021-03-18T00:00:00.000+00:00",
+    "anomalies": [
+      {
+        "signalName": "value",
+        "actualValue": 3132364.34206113,
+        "estimatedValue": 818404.8901145846,
+        "anomalyScore": 0.91
+      }
+    ]
+  },
+  {
+    "timestamp": "2021-03-18T01:00:00.000+00:00",
+    "anomalies": [
+      {
+        "signalName": "value",
+        "actualValue": 1980697.672616325,
+        "estimatedValue": 951127.7037798172,
+        "anomalyScore": 0.5438586438042919
+      }
+    ]
+  }
+]
  ```
 
 The results return an array of anomalies grouped by timestamp. Each timestamp could have anomalies generated by single or multiple signals. Anomaly generated by one signal contains a tuple of signal name, actual value, estimate value, and an anomaly score with in the range of 0 to 1 that indicate the significance of anomaly. Meanwhile, each timestamp also have a normalized score that combines the significance scores across single or multiple alerted signals.
 
+**Sensitivity Tuning**
+
+Sensitivity is a parameter ranging from 0 and 1 that controls how sensitivity the algorithm is outputting the anomalies. The default value is 0.5. The higher the sensitivity parameter, the more anomalies our solution will flag. As an example, if we customize the sensitivity as 0.51 rather than the default value 0.5 for the same test data.
+
+![](../images/detect-anomaly-upload-data-form-univariate-sensitivity.png " ")
+
+![](../images/anomaly-result-graph-univaraite-sen0.51.png " ")
+
+This is the results file downloaded:
+ ```json
+ [
+   {
+     "timestamp": "2021-03-17T14:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 1133639.109484883,
+         "estimatedValue": 1010844.540918226,
+         "anomalyScore": 0.2572041523905171
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-18T00:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 3132364.34206113,
+         "estimatedValue": 818404.8901145846,
+         "anomalyScore": 0.91
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-18T01:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 1980697.672616325,
+         "estimatedValue": 951127.7037798172,
+         "anomalyScore": 0.5438586438042919
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-18T14:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 1150601.718048229,
+         "estimatedValue": 1034970.7609649705,
+         "anomalyScore": 0.26274424377191463
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-19T17:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 847211.507556418,
+         "estimatedValue": 710136.3783229797,
+         "anomalyScore": 0.7300000000000001
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-19T18:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 694509.175506408,
+         "estimatedValue": 606504.5548762243,
+         "anomalyScore": 0.7400000000000001
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-19T19:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 518569.690032113,
+         "estimatedValue": 502872.73142946884,
+         "anomalyScore": 0.7500000000000001
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-19T20:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 378591.76660394,
+         "estimatedValue": 399240.9079827134,
+         "anomalyScore": 0.7600000000000001
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-23T14:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 1192612.395582294,
+         "estimatedValue": 1067845.9858714943,
+         "anomalyScore": 0.27646518720251817
+       }
+     ]
+   },
+   {
+     "timestamp": "2021-03-24T14:00:00.000+00:00",
+     "anomalies": [
+       {
+         "signalName": "value",
+         "actualValue": 1142870.44081043,
+         "estimatedValue": 1024345.733837085,
+         "anomalyScore": 0.2602191614868185
+       }
+     ]
+   }
+ ]
+  ```
 
 **Congratulations on completing this lab!**
 
