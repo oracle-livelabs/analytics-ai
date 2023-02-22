@@ -83,7 +83,7 @@ The kernel only treats one signal at a time so collective anomalies among multip
 
 ### **Multivariate Kernel**
 
-The multivariate kernel uses MSET2 to detect multivariate time-series anomalies with the same data input format as the univariate kernel. Given multivariate kernel is specified at model creation, for signals considered as low correlations by Intelligent Data Preprocessor are automatically treated as univariate signals using the univariate kernel. 
+The multivariate kernel uses MSET2 to detect multivariate time-series anomalies with the same data input format as the univariate kernel. Given multivariate kernel is specified at model creation, for signals considered as low correlations by Intelligent Data Preprocessor are automatically treated as univariate signals using the univariate kernel.
 
 MSET2 stand for three techniques:
 
@@ -117,13 +117,13 @@ In order for users to create and manage the resource used in Anomaly Detection s
 ### 1. Navigate to Policies
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
-![](../images/policy-on-menu.png " ")
+![policy on menu](../images/policy-on-menu.png " ")
 
 ### 2. Create Policy
 
 Click Create Policy button. **Note only tenancy administrators or user in administrator group have permissions to create new policies.**
 
-![](../images/policy-create-button.png " ")
+![policy create button](../images/policy-create-button.png " ")
 
 ### 3. Create a new policy with the following statements:
 
@@ -133,7 +133,7 @@ If you want to allow all the users in your tenancy to use anomaly detection serv
 <copy>allow any-user to manage ai-service-anomaly-detection-family in tenancy</copy>
 ```
 
-![](../images/policy-creating-process.png " ")
+![policy creating process](../images/policy-creating-process.png " ")
 
 If you want to limit access to a user group, you can create a new policy with the below statement:
 

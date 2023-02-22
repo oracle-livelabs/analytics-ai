@@ -29,13 +29,13 @@ Creating a model is requiring the 3 actions to kick off training the AD model.
 * Train a model
 
 Select the proper compartment(e.g, the compartment matching your name or company name), and then the project you have created.
-![](../images/selectCompartmentModelTrain.png " ")
+![select compartment](../images/selectCompartmentModelTrain.png " ")
 
 Once the project ad_demo is selected, it will navigate the User to Created Anomaly Detection Project, then click "Create and Train Model".
-![](../images/5_create_a_new_model.png " ")
+![create model](../images/5_create_a_new_model.png " ")
 
 The data asset created in previous lab session should be pop up in the drop down menu. Click "Next" button.
-![](../images/choose_an_existing_dataset.png " ")
+![choose an existing dataset](../images/choose_an_existing_dataset.png " ")
 
 This takes us to "Train Model" form with parameter selections.
 
@@ -51,7 +51,7 @@ Typically, FAP can be set to be around the same level of percentage of anomalies
 
 ###How to calculate FAP
 
-![](../images/fap-formula.png " ")
+![fap formula](../images/fap-formula.png " ")
 
 **FAP = sum(number of anomalies in each signal) / (number of signals * number of timestamps)**
 
@@ -62,12 +62,12 @@ As can be inferred from the formula, the more the number of false alarms allowed
 Train Fraction Ratio specifies the ratio of the whole training data used for our algorithm to learn the pattern and train the model. The rest (1-ratio) of training data will be used for our algorithm to evaluate and report model performance (e.g., FAP). The default value 0.7 or 70% specifies the model to use 70% of the data for training, and the rest 30% is used to produce model performance.
 
 In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
-![](../images/create_and_train_model.png " ")
+![create and train univariate model](../images/create_and_train_model.png " ")
 
-![](../images/create_and_train_model_2.png " ")
+![review model creation](../images/create_and_train_model_2.png " ")
 
 Click Submit. For this demo dataset, it takes **10-15 minutes** to finish training a model.
-![](../images/model_creation.png " ")
+![model creating](../images/model_creation.png " ")
 
 Once the model is trained successfully, it is automatically ready for detecting anomalies from new data. User can either use the cloud Console (next step) or the endpoint to send new testing data.
 
@@ -76,10 +76,10 @@ Once the model is trained successfully, it is automatically ready for detecting 
 ### Upload to UI
 
 To start the  process of anomaly detection select "Detect Anomalies" on the Model listing page.
-![](../images/click-detect-anomalies.png " ")
+![click detect anomalies](../images/click-detect-anomalies.png " ")
 
 Select a file from local filesystem or drag and drop the desired file.
-![](../images/detect-anomaly-upload-data-form.png " ")
+![upload data to detect anomaly](../images/detect-anomaly-upload-data-form.png " ")
 
 **Note: The detection data can have up to 30,000 data points (number of signals times number of timestamps).**
 
@@ -88,7 +88,7 @@ Once the test file is uploaded, now click Detect button.
 The detection result will return immediately, and you have the option to select the column to see related anomalies.
 
 Use the drop wizard to select a column to see anomalies.
-![](../images/detect-result-select-column-droplist-univariate.png " ")
+![select column droplist for univariate detection results](../images/detect-result-select-column-droplist-univariate.png " ")
 
 **Explanation of the Graph**
 
@@ -107,7 +107,7 @@ You can move your mouse over the graph, the actual value & estimated value at a 
 
 Lets select value and anomaly score per signal to have a cleaner layout to see where the model has detected an anomaly.
 
-![](../images/anomaly-result-graph-univaraite-sen0.5.png " ")
+![univariate anomaly result graph](../images/anomaly-result-graph-univaraite-sen0.5.png " ")
 
 The part of the signal where the model has determined to be an anomaly is highlighted. There is also an option to download the anomaly detection result.
 
@@ -145,9 +145,9 @@ The results return an array of anomalies grouped by timestamp. Each timestamp co
 
 Sensitivity is a parameter ranging from 0 and 1 that controls how sensitivity the algorithm is outputting the anomalies. The default value is 0.5. The higher the sensitivity parameter, the more anomalies our solution will flag. As an example, if we customize the sensitivity as 0.51 rather than the default value 0.5 for the same test data.
 
-![](../images/detect-anomaly-upload-data-form-univariate-sensitivity.png " ")
+![upload data to detect anomaly with sensitivity 0.51](../images/detect-anomaly-upload-data-form-univariate-sensitivity.png " ")
 
-![](../images/anomaly-result-graph-univaraite-sen0.51.png " ")
+![univariate anomaly result graph with sensitivity 0.51](../images/anomaly-result-graph-univaraite-sen0.51.png " ")
 
 This is the results file downloaded:
  ```json

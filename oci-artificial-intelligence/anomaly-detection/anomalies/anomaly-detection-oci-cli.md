@@ -25,11 +25,11 @@ We need to generate proper authentication configuration (API Signing Key pair) i
 
 ### 1. Open User Settings
 Open the Profile menu (User menu icon) on the top right corner and click User Settings.
-![](../images/user-profile-icon.png " ")
+![user profile icon](../images/user-profile-icon.png " ")
 
 ### 2. Open API Key
 Navigate to API Key and then Click Add API Key.
-![](../images/add-api-button.png " ")
+![add api button](../images/add-api-button.png " ")
 
 ### 3. Generate API Key
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your local computer, and we will upload it later to the Cloud Shell.
@@ -37,13 +37,13 @@ In the dialog, select Generate API Key Pair. Click Download Private Key and save
 **You can rename this `pem` file as `oci-api-key.pem` .**
 
 Then click the Add button.
-![](../images/generate-api.png " ")
+![generate api](../images/generate-api.png " ")
 
 ### 4. Generate Config File
 After click the Add button, a configuration file window pop up.
 Copy the values shown on the console, and save in your local computer, again later it will be used in the Cloud Shell.
 
-![](../images/oci-config-sample.png " ")
+![oci config sample](../images/oci-config-sample.png " ")
 
 The configuration content will be like the following:
 ```
@@ -70,10 +70,10 @@ For details, you can refer to the [Cloud Shell Doc](https://docs.oracle.com/en-u
 ### 2. Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-![](../images/cloud-shell-position.png " ")
+![cloud shell position](../images/cloud-shell-position.png " ")
 
 It may take up to 30 seconds for the Cloud Shell to be ready, like the following screenshot.
-![](../images/cloud-shell-activated.png " ")
+![cloud shell activated](../images/cloud-shell-activated.png " ")
 
 ### 3. Set up API Key and Configuration File
 
@@ -83,7 +83,7 @@ On the Cloud Shell, type the following command to create `.oci` folder and Enter
 ```
 
 Now, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
-![](../images/cloud-shell-upload-pem.png " ")
+![cloud shell upload pem](../images/cloud-shell-upload-pem.png " ")
 
 Once it is uploaded, it may landed in the home folder, you can move it to the `.oci` folder with the following command and change it permission to be accessible by owner ONLY:
 ```
@@ -105,7 +105,7 @@ chmod 600 .oci/config </copy>
 ```
 
 The final structure of `.oci` folder will be like this:
-![](../images/cloud-shell-oci-folder.png " ")
+![cloud shell oci folder](../images/cloud-shell-oci-folder.png " ")
 
 ## TASK 3: Execute OCI Anomaly Detection Commands
 
