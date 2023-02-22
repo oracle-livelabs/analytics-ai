@@ -27,7 +27,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 2. Select Create Dataset
 
-	![Select Create dataset](images/createdataset.png)
+	![Select Create dataset](images/createdatasetqa1.png)
 
 3. Browse to Upload the Data on the option screen displayed, click on Drop Data File Here or Click to Browse. Select the excel file you downloaded called nbalivelab2020data. 
 
@@ -53,7 +53,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 5. Repeat those steps for the 2-point Pct Column. 
   
-6. Convert Visitor Team Score column to a Measure from an attribute -by selecting- the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to Measure. 
+6. Convert Visitor Team Score column to a Measure from an attribute by selecting the Visitor Team Score column and change the treat as selection (in the bottom left menu) from Attribute to Measure. 
     - Change the Data Type from Text to Number
     - Change Aggregation to Average
     - Repeat these steps for the Home Team Score column. 
@@ -80,7 +80,7 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 4. First Calculation. The first will be the Potential 3 point shots based on missed 2 point shots. 
 
-5. Title the calculation *3-point Potential*. In the calculation dialog box type two open parentheses "((". Click select 2-point missed and drag it to the calculation dialog box and type one closed parentheses ")" and an asterisk "*" followed by an open parentheses "(" click and drag 3-point PCT and drag it to the open parentheses and type two closed parentheses "))" followed by asterisk "*" 3. 
+5. Title the calculation *3-point Potential*. In the calculation dialog box type two open parentheses '(('. Click select 2-point missed and drag it to the calculation dialog box and type one closed parentheses ')' and an asterisk '\*' followed by an open parentheses '(' click and drag 3-point PCT and drag it to the open parentheses and type two closed parentheses '))' followed by asterisk '\*' 3. 
     
     **((2-point missed)*(3-point Pct)) *3**
     
@@ -92,12 +92,14 @@ To begin this lab you will upload the provided dataset, and format the data. The
 
 8. **2-point Potential**
     
-    ((3-point missed)*(2-point Pct)) *2
+    **((3-point missed)*(2-point Pct)) *2**
     
 9. **Potential Home Team Score** 
     - To create this calculation you will follow the above steps and drag the previous calculations from the calculations tab. This calculation will show the previous two formulas within the dialog box.  
-     
-    ((2-point Potential) + (3-point Potential)) + home team score
+  
+  ![Potential Home Team Score calculation](images/addcalculation3.png)
+
+    **((2-point Potential) + (3-point Potential)) + home team score**
     
 This concludes the setup and preparation lab. You may proceed to the next lab.
 
@@ -106,4 +108,4 @@ This concludes the setup and preparation lab. You may proceed to the next lab.
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
 * **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
                    -  Luke Wheless, Data Analyst BI-SCF
-* **Last Updated By/Date** - Andres Quintana, October 2022
+* **Last Updated By/Date** - Andres Quintana, February 2023
