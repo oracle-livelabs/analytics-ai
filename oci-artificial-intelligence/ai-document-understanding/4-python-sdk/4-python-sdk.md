@@ -92,13 +92,12 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
 2. Copy the python code from below into "invoicekv.py".
 
-#### Python Code
+    #### Python Code
 
-  The following sample code involves essentially three steps:
-  * call CreateProcessorJob to process your sample invoice
-  * call GetProcessorJob to get the status of the job (until final status)
-  * call GetObject to get the response from Object Storage
-
+    The following sample code involves essentially three steps:
+        * call CreateProcessorJob to process your sample invoice
+        * call GetProcessorJob to get the status of the job (until final status)
+        * call GetObject to get the response from Object Storage
         ```python
         <copy>
         ### Import Packages
@@ -170,7 +169,6 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 3. Update variables
 
     Open the python script and update all of the below variables.
-
         ```python
         <copy>
         COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"
@@ -200,7 +198,6 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 5. Result
 
     You will see the following results (edited for brevity):
-
         ```
         <copy>
         Calling create_processor with create_processor_job_details_key_value_extraction: {
