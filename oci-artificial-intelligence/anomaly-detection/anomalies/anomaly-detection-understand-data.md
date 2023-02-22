@@ -88,9 +88,16 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 ## Task 2: Download Sample Data
 
-Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
+Here are two sets of prepared sample data to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
+Univaraite datasets
 * [training csv data](../files/demo-training-data.csv)
+    - 1 signals with timestamp column, with 1,032 observations
+* [testing csv data](../files/demo-testing-data.csv)
+    - same 1 signals with timestamp column, 242 observations
+
+Multivaraite datasets
+* [training csv data](../files/demo-training-data-multivariate.csv)
     - 10 signals with timestamp column, with 10,000 observations
 * <a href="../files/demo-testing-data.json" target="_blank" download>testing json data for detection</a>
     - same 10 signals with timestamp column, 100 observations
