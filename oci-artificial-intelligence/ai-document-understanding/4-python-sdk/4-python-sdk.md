@@ -188,18 +188,14 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
     Navigate to the directory where you saved the above file using your terminal or the command line and execute the file by running the following command (from the /Scripts folder):
     
     Windows:
-        ```
-        <copy>
-        python invoicekv.py
-        </copy>
-        ```
+    ```
+    <copy>python invoicekv.py</copy>
+    ```
         
     Mac OS / Linux:
-        ```
-        <copy>
-        python3 invoicekv.py
-        </copy>
-        ```
+    ```
+    <copy>python3 invoicekv.py</copy>
+    ```
 
 5. Result
 
