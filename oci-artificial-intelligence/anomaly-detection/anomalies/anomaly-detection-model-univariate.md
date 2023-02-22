@@ -4,7 +4,7 @@
 
 In this session, we will show you how to train an anomaly detection model, and make predictions with new data.
 
-[Anomaly Detection Univariate Demonstration Video](youtube:xTJBpAhaIcs)
+[Step by step walkthrough of a univariate anomaly detection example](youtube:xTJBpAhaIcs)
 
 ***Estimated Time***: 30 minutes
 
@@ -101,11 +101,11 @@ In each subgraph, orange line indicates the actual input value of a signal, purp
 There are two additional subgraphs after sensor subgraphs:
 
 * The Anomaly Score Per Signal shows the significance of anomaly at individual signal level for a given timestamp. Not all the signals flag anomalies at the same time.
-* The Aggregated Anomaly Score is only available for a multivariate model, we can only look at the  to get a cleaner layout.
+* The Aggregated Anomaly Score is only available for a multivariate model. Only looking at the anomaly score per signal is sufficient.
 
 You can move your mouse over the graph, the actual value & estimated value at a certain timestamp will show at the upper right corner of the graph.
 
-Lets select temperature_3 to see where the model has detected an anomaly.
+Lets select value and anomaly score per signal to have a cleaner layout to see where the model has detected an anomaly.
 
 ![](../images/anomaly-result-graph-univaraite-sen0.5.png " ")
 

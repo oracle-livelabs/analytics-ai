@@ -99,7 +99,7 @@ Univaraite datasets
 Multivaraite datasets
 * [training csv data](../files/demo-training-data-multivariate.csv)
     - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>testing json data for detection</a>
+* <a href="../files/demo-testing-data-multivariate.json" target="_blank" download>testing json data for detection</a>
     - same 10 signals with timestamp column, 100 observations
 
 ## Task 3: Upload Data to Object Storage
