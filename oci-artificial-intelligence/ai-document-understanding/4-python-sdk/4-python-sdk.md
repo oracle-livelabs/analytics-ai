@@ -94,10 +94,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
     #### Python Code
 
-    The following sample code involves essentially three steps:
-        * call CreateProcessorJob to process your sample invoice
-        * call GetProcessorJob to get the status of the job (until final status)
-        * call GetObject to get the response from Object Storage
+    The following sample code involves essentially three steps. First, it calls CreateProcessorJob to process your sample invoice. Second, it calls GetProcessorJob to get the status of the job. Third, it calls GetObject to get the response from Object Storage.
         ```python
         <copy>
         ### Import Packages
