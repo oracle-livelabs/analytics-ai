@@ -73,7 +73,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
       ![Updated config file](./images/config2.png " ")
 
 
-To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
+    To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
 
 ## Task 2: Add Sample Documents to Object Storage
@@ -94,10 +94,10 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 
 #### Python Code
 
-    The following sample code involves essentially three steps:
-    * call CreateProcessorJob to process your sample invoice
-    * call GetProcessorJob to get the status of the job (until final status)
-    * call GetObject to get the response from Object Storage
+  The following sample code involves essentially three steps:
+  * call CreateProcessorJob to process your sample invoice
+  * call GetProcessorJob to get the status of the job (until final status)
+  * call GetObject to get the response from Object Storage
 
         ```python
         <copy>
@@ -187,14 +187,14 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 
     Navigate to the directory where you saved the above file using your terminal or the command line and execute the file by running the following command (from the /Scripts folder):
     
-        Windows:
+    Windows:
         ```
         <copy>
         python invoicekv.py
         </copy>
         ```
         
-        Mac OS / Linux:
+    Mac OS / Linux:
         ```
         <copy>
         python3 invoicekv.py
@@ -303,9 +303,9 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
         </copy>
         ```
 
-Confirm the results by looking at each image.
+    Confirm the results by looking at each image.
 
-You can also take a look at the JSON output in your Oracle Object Storage bucket.
+    You can also take a look at the JSON output in your Oracle Object Storage bucket.
 
 ## Learn More
 * To try other features, you can refer to the full collection of sample python code [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
