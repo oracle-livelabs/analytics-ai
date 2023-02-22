@@ -24,7 +24,7 @@ In this lab, you will:
 
 The core algorithm of our Anomaly Detection service is a multivariate anomaly detection algorithm, which has two major data quality requirements on the training data:
 
-* The training data should be anomaly-free (without outliers), containing observations that have normal conditions ONLY.
+* For multivariate use case, the training data should be anomaly-free (without outliers) containing observations that have normal conditions. For univariate use case, the kernel can handle a small proportion of outliers.
 * The training data should cover all the normal scenarios which contain the full value ranges on all attributes.
 
 Additionally, the algorithm also has some requirements on data type, minimum number of attributes and observations on the training data as follows:
@@ -33,7 +33,7 @@ Additionally, the algorithm also has some requirements on data type, minimum num
     - columns containing one timestamp, and other numeric attributes/signals/sensors
     - rows representing observations of those attributes/signals/sensors at the given timestamps in the first column.
     - rows that are strictly ordered by timestamp, without duplicated timestamps.
-* The training data can have 1 or more attributes, up to 300 attributes in the current release as of Jan 2022.
+* The training data can have 1 or more attributes, up to 300 attributes in the current release as of Feb 2023.
 * At least one attribute does not have a missing value.
 * The number of observations/timestamps in training data should be at least eight times the number of attributes or 80, whichever is greater.
 
@@ -90,13 +90,13 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 Here are two sets of prepared sample data to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
-Univaraite datasets
+Univariate datasets
 * [training csv data](../files/demo-training-data.csv)
-    - 1 signals with timestamp column, with 1,032 observations
+    - 1 signal with timestamp column, with 1,032 observations
 * [testing csv data](../files/demo-testing-data.csv)
-    - same 1 signals with timestamp column, 242 observations
+    - same 1 signal with timestamp column, 242 observations
 
-Multivaraite datasets
+Multivariate datasets
 * [training csv data](../files/demo-training-data-multivariate.csv)
     - 10 signals with timestamp column, with 10,000 observations
 * <a href="../files/demo-testing-data-multivariate.json" target="_blank" download>testing json data for detection</a>
@@ -146,5 +146,7 @@ Congratulations on completing this lab!
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
+    * Marianne Liu - Senior Data Scientist Feb 2023
+    * Longjiao Zhang - Senior Data Scientist Feb 2023
     * Ganesh Radhakrishnan - Product Manager, May 2022
     * Jason Ding - Principal Data Scientist, Jan 2022

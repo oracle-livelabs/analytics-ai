@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this session, we will show you how to train an anomaly detection model, and make predictions with new data.
+In this session, we will show you how to train an univariate anomaly detection model, and make predictions with new data.
 
 [Step by step walkthrough of a univariate anomaly detection example](youtube:xTJBpAhaIcs)
 
@@ -81,7 +81,7 @@ To start the  process of anomaly detection select "Detect Anomalies" on the Mode
 Select a file from local filesystem or drag and drop the desired file.
 ![](../images/detect-anomaly-upload-data-form.png " ")
 
-**Note: The detection data can have up to 30,000 data points (number of signals times number of timestamps). If the trained model contains univariate models, it requires at least 20 timestamps to generate anomaly.**
+**Note: The detection data can have up to 30,000 data points (number of signals times number of timestamps).**
 
 Once the test file is uploaded, now click Detect button.
 
@@ -276,5 +276,8 @@ The next 2 sessions are optional for advanced users, which cover the topic on us
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
+    * Marianne Liu - Senior Data Scientist - Oracle AI Services
+    * Longjiao Zhang - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Senior Data Scientist, Jan 2022
+* Marianne Liu - Senior Data Scientist Feb 2023
+* Longjiao Zhang - Senior Data Scientist Feb 2023

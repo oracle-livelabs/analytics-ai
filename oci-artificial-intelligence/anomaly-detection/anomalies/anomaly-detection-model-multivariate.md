@@ -1,8 +1,8 @@
-# Train Anomaly Detection Model And Detect
+# Train Anomaly Detection Multivariate Model And Detect
 
 ## Introduction
 
-In this session, we will show you how to train an anomaly detection model, and make predictions with new data.
+In this session, we will show you how to train a multivariate anomaly detection model, and make predictions with new data.
 
 ***Estimated Time***: 30 minutes
 
@@ -60,7 +60,7 @@ As can be inferred from the formula, the more the number of false alarms allowed
 Train Fraction Ratio specifies the ratio of the whole training data used for our algorithm to learn the pattern and train the model. The rest (1-ratio) of training data will be used for our algorithm to evaluate and report model performance (e.g., FAP). The default value 0.7 or 70% specifies the model to use 70% of the data for training, and the rest 30% is used to produce model performance.
 
 In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
-![](../images/create_and_train_model.png " ")
+![](../images/create_and_train_model_multivariate.png " ")
 
 ![](../images/create_and_train_model_2.png " ")
 
