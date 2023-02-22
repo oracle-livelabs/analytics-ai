@@ -33,8 +33,8 @@ We have put together a Postman Collection to help you get started with calling t
 
 4. Now we will set the variables in the OCI Credentials in your local POSTMAN and you'll obtain the needed values from your OCI tenancy.
 
-Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it contains multiple variables with empty values. We need to set 6 of those variables.
-![OCI Credentials template](./images/postman-ocicredentialsblank.png)
+  Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it contains multiple variables with empty values. We need to set 6 of those variables.
+    ![OCI Credentials template](./images/postman-ocicredentialsblank.png)
 
   #### a. tenancy_ocid ####
 
@@ -43,46 +43,46 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
 
   2. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
 
-  ![OCI tenancy details page](./images/tenancy-ocid.png " ")
+    ![OCI tenancy details page](./images/tenancy-ocid.png " ")
 
 
 
-  ![OCI tenancy value in postman](./images/postman-tenancy-ocid.png " ")
+    ![OCI tenancy value in postman](./images/postman-tenancy-ocid.png " ")
 
 #### b. user_ocid ####
   1. To get the **user_ocid**, go back to the OCI Console, click the **Profile** icon, then select **your user name**
 
-  ![OCI profile menu](./images/new-profilename.png " ")
+    ![OCI profile menu](./images/new-profilename.png " ")
 
   2. The *User Details* page opens. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **user_ocid CURRENT VALUE** field.
 
-  ![OCI user details page](./images/user-ocid.png " ")
+    ![OCI user details page](./images/user-ocid.png " ")
 
 
 
-  ![OCI user ocid value in postman](./images/postman-user-ocid.png " ")
+    ![OCI user ocid value in postman](./images/postman-user-ocid.png " ")
 
 #### c. fingerprint & private_key ####
 
   1. Open the OCI Console, click the **Profile** icon, then select **your user name**.
 
-  ![OCI profile menu](./images/new-profilename.png " ")
+    ![OCI profile menu](./images/new-profilename.png " ")
 
   2. The User Details page opens. Under Resources, on the lower left side of the page, select **API Keys**
 
-  ![OCI selecting API keys](./images/selectapikeys.png " ")
+    ![OCI selecting API keys](./images/selectapikeys.png " ")
 
   3. Click the **Add API Key** button
 
-  ![OCI add API key button](./images/add-api-key.png " ")
+    ![OCI add API key button](./images/add-api-key.png " ")
 
   4. The Add API Key dialog box opens. Select option: **Generate API Key Pair**
 
-  ![OCI generate API key pair button](./images/add-api-key-dialog1.png " ")
+    ![OCI generate API key pair button](./images/add-api-key-dialog1.png " ")
 
   5. Click the **Download Private Key** button and save the file to you local computer. Remember the location where you saved the private key file (*username-date*.pem).
 
-  ![OCI add API key button](./images/add-api-key-dialog2.png " ")
+    ![OCI add API key button](./images/add-api-key-dialog2.png " ")
 
   6. Click the **Add** button in the *Add API Key* dialog. The *Configuration File Preview* dialog opens.
 
@@ -91,15 +91,15 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
 
   8. Copy the **fingerprint** for the API Key that you just created and add it to the **fingerprint CURRENT VALUE** field of the Postman Environment.
 
-  ![OCI API key](./images/add-api-key-fingerprint.png " ")
+    ![OCI API key](./images/add-api-key-fingerprint.png " ")
 
   
 
-  ![Postman value for fingerprint](./images/postman-fingerprint.png " ")
+    ![Postman value for fingerprint](./images/postman-fingerprint.png " ")
 
   9. On your local computer, navigate to the **private key file (*username-date*.pem)** that you downloaded when getting the fingerprint. Open it in a text editor, copy it's contents, and paste them into the **private_key CURRENT VALUE** field of the Postman Environment.
 
-  ![Postman value for private key](./images/postman-privatekey.png " ")
+    ![Postman value for private key](./images/postman-privatekey.png " ")
 
 #### d. region ####
 
@@ -163,11 +163,11 @@ The information in the table is found here: https://docs.oracle.com/en-us/iaas/C
 
 1. In POSTMAN, click the **Persist All** button to save the Current Value to the Initial Value.
 
-![Postman persist all button](./images/persist-button.PNG " ")
+  ![Postman persist all button](./images/persist-button.PNG " ")
 
 2. In POSTMAN, click the **Save** button to save all of the OCI Credentials that you just entered.
 
-![Postman save button](./images/save-button.PNG " ")
+  ![Postman save button](./images/save-button.PNG " ")
 
 ## Task 3: Import the Document Understanding API collection
 
@@ -187,38 +187,38 @@ In this task you'll call the Processor Job REST API.
 
 2. Replace the contents of the **Body** with the following:
 
-```http
-<copy>
-{
-  "processorConfig": {
-    "processorType": "GENERAL",
-    "features": [
-      {
-        "featureType": "TEXT_EXTRACTION",
-        "generateSearchablePdf": true
-      }
-    ]
-  },
-  "inputLocation": {
-    "sourceType": "OBJECT_STORAGE_LOCATIONS",
-    "objectLocations": [
-      {
-        "source": "OBJECT_STORAGE",
-        "namespaceName": ##todo
-        "bucketName": ##todo
-        "objectName": ##todo
-      }
-    ]
-  },
-  "compartmentId": "{{compartmentId}}"
-  "outputLocation": {
-    "namespaceName": ##todo
-    "bucketName": ##todo
-    "prefix": ##todo
+  ```http
+  <copy>
+  {
+    "processorConfig": {
+      "processorType": "GENERAL",
+      "features": [
+        {
+          "featureType": "TEXT_EXTRACTION",
+          "generateSearchablePdf": true
+        }
+      ]
+    },
+    "inputLocation": {
+      "sourceType": "OBJECT_STORAGE_LOCATIONS",
+      "objectLocations": [
+        {
+          "source": "OBJECT_STORAGE",
+          "namespaceName": ##todo
+          "bucketName": ##todo
+          "objectName": ##todo
+        }
+      ]
+    },
+    "compartmentId": "{{compartmentId}}"
+    "outputLocation": {
+      "namespaceName": ##todo
+      "bucketName": ##todo
+      "prefix": ##todo
+    }
   }
-}
-</copy>
-```
+  </copy>
+  ```
 
 In the next steps, you will insert your location details for the document you want to analyze
 1. To get the namespace name, open the OCI Console, click the **Profile** icon and select **Tenancy: *name***
@@ -251,43 +251,43 @@ In this task, you'll call the Document AI synchronous REST API using POSTMAN.
 1. In the Document Understanding collection, under Processor Jobs click **Get Details of a processor Job**.
 
 2. Add the JobId response from the previous step to the end of the URL and click Send
- ![Postman get job details sample](./images/getprocessordetails.png)
+  ![Postman get job details sample](./images/getprocessordetails.png)
 
 1. Review the response and notice the structure of the data including lifecycleDetails and percentComplete
 
-```http
-<copy>
-{
-  "compartmentId": "eu sunt id est",
-  "features": [
-    {
-      "featureType": "TEXT_EXTRACTION"
-    }
-  ],
-  "id": "pariat",
-  "lifecycleState": "IN_PROGRESS",
-  "outputLocation": {
-    "bucketName": "sed Duis",
-    "namespaceName": "in pariatur mollit ut",
-    "prefix": "Duis laborum deserunt"
-  },
-  "timeAccepted": "1967-10-23T03:20:17.411Z",
-  "displayName": "amet est qui",
-  "documentType": "OTHERS",
-  "inputLocation": {
-    "sourceType": "OBJECT_LIST_INLINE_INPUT_LOCATION"
-  },
-  "isZipOutputEnabled": false,
-  "language": "ENG",
-  "lifecycleDetails": "SUCCEEDED",
-  "percentComplete": 71.68026659053332,
-  "timeFinished": "1944-01-15T08:55:51.710Z",
-  "timeStarted": "1987-12-05T05:34:39.081Z"
-}
-</copy>
-```
+  ```http
+  <copy>
+  {
+    "compartmentId": "eu sunt id est",
+    "features": [
+      {
+        "featureType": "TEXT_EXTRACTION"
+      }
+    ],
+    "id": "pariat",
+    "lifecycleState": "IN_PROGRESS",
+    "outputLocation": {
+      "bucketName": "sed Duis",
+      "namespaceName": "in pariatur mollit ut",
+      "prefix": "Duis laborum deserunt"
+    },
+    "timeAccepted": "1967-10-23T03:20:17.411Z",
+    "displayName": "amet est qui",
+    "documentType": "OTHERS",
+    "inputLocation": {
+      "sourceType": "OBJECT_LIST_INLINE_INPUT_LOCATION"
+    },
+    "isZipOutputEnabled": false,
+    "language": "ENG",
+    "lifecycleDetails": "SUCCEEDED",
+    "percentComplete": 71.68026659053332,
+    "timeFinished": "1944-01-15T08:55:51.710Z",
+    "timeStarted": "1987-12-05T05:34:39.081Z"
+  }
+  </copy>
+  ```
 1. Now, in your object storage output bucket look under the "results" folder. You'll find a JSON file that includes all the text extracted from the original document
- ![Object storage bucket](./images/documentoutput.png)
+  ![Object storage bucket](./images/documentoutput.png)
 
 You have completed this lab!
 
