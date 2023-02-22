@@ -162,29 +162,33 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/restart-project.png)
 
-2. Click the ribbon icon next to the map configuration and choose **Add Layer**.
+2. Go to Edit Mode.
+
+   ![pic2](images/edit-workbook.png)
+
+3. Click the ribbon icon next to the map configuration and choose **Add Layer**.
 
    ![pic2](images/add-layer.png)
 
-3. Drag the `BDE_LEG_NUM_UNK` column to the _Category (Location)_ field of the new layer.
+4. Drag the `BDE_LEG_NUM_UNK` column to the _Category (Location)_ field of the new layer.
 
    ![pic2](images/drag-leg.png)
 
-4. Select the `bermuda` layer.
+5. Select the `bermuda` layer.
 
    ![pic2](images/select-bermuda-map-layer.png)
 
-5. You should now see the starting line as follows:
+6. You should now see the starting line as follows:
 
    ![pic2](images/starting-line.png)
 
-6. Our next goal is to highlight the positions of the teams at the very start of the race.
+7. Our next goal is to highlight the positions of the teams at the very start of the race.
 
 	 Right click on the `TIME_GRP` column and select **Create Best Visualization**.
 
    ![pic2](images/time-grp-viz.png)
 
-7. In the resulting table, click on the **0** to highlight the positions at `TIME_GRP` = 0.
+8. In the resulting table, click on the **0** to highlight the positions at `TIME_GRP` = 0.
 
    ![pic2](images/select-time-grp-0.png)
 

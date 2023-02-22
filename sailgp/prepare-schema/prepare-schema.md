@@ -32,15 +32,17 @@ This new user/schema will hold the SailGP data.
 
    ![ADW Menu](images/open-sailgp.png)
 
-3. Go to **Tools** tab and click **Open Database Actions**.
+3. Click on **Database Actions**.
 
    ![ADW Menu](images/open-database-actions.png)
 
-   Login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   If necessary, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
 4. Click the **SQL** tile under **Development** section.
 
     ![ADW Menu](images/open-sql.png)
+
+    Close the help wizard. 
 
 5. **Download** the <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ijzGhbd3fUi9JT-w47vGh27ORql8IFOOA_IkR_uePH-p4rvGN0uw5_AkVSi_xnZJ/n/fruktknlrefu/b/workshop-sailgp/o/sailgp_create_user.sql" target="\_blank">`sailgp_create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
@@ -91,14 +93,18 @@ This new user/schema will hold the SailGP data.
 
    Save the files on your local machine. Make sure that the files are saved with extension `.csv`.
 
-
-2. Next, come back to your `SAILGP` ADW console, go to **Tools** tab and click **Open Database Actions**.
+2. Next, come back to your `SAILGP` ADW console. Open **Database Actions**.
 
    You should still have a browser tab open with the main page of the Autonomous Data Warehouse service. If not, navigate to this page first. Then, open Database Actions.
 
-   **_IMPORTANT_: This time, login with user `SAILOR`, password `Oracle_12345` (Don't login with ADMIN)**
-
    ![Open Database Actions](images/open-database-actions.png)
+
+3. Login as the `SAILOR` user, as follows:
+
+   - Click "Sign Out"
+   - Login with user `SAILOR`, password `Oracle_12345`
+
+   **_IMPORTANT_: Execute the following with the user `SAILOR`, (Don't use `ADMIN`)**
 
 3. Click the **Data Load** option, under the **Data Tools** section.
 
@@ -112,7 +118,7 @@ This new user/schema will hold the SailGP data.
 
     ![Select Files](images/select-files.png)
 
-6. Click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+6. Click the **Start** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 

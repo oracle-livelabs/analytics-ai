@@ -136,7 +136,7 @@ In this lab, you will:
 	```
     <copy>ll</copy>
     ```
-  ![](./images/Lab1-task3.2-1.png)
+  ![Cloud Shell list files](./images/Lab1-task3.2-1.png)
 
 3. Copy the _**Public IP Address**_ of the compute instance you have just created.
 
@@ -196,7 +196,9 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
 1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon in the top right hand side of your screen. If your username is shown as:
 
 	```
+	<copy>
     oracleidentitycloudservice/<your username>
+	</copy>
 	```
 
 	Then you are **connected** as a **Single Sign On** user.
@@ -206,7 +208,9 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
   	If your username is shown as:
 
 	```
+	<copy>
     <your username>
+	</copy>
 	```
 
 	Then you are **signed in** as an **Oracle Cloud Infrastructure** user and you may proceed to the **Task 4.2**.
@@ -232,10 +236,10 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
     Name: <copy>OACDemo</copy>
   	```
   	```
-    OCPU: 2
+    OCPU: <copy>2</copy>
   	```	
   	```
-    License Type: License Included
+    License Type: <copy>License Included<copy>
   	```
 
   ![Analytics Creation](./images/Lab1-task4.3-1.png)
@@ -256,9 +260,9 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
   ![MySQL DB System creation](./images/Lab1-task5.2.png)
 
 3. Start creating the DB System. Cross check again the compartment and assign to the DB System the name:
-    ```
-    <copy> mysql-analytics-test</copy>
-    ```
+   ```
+   <copy>mysql-analytics-test</copy>
+   ```
    Select the HeatWave box, this will allow to create a MySQL DB System which will be HeatWave-ready. 
     
   ![MySQL DB System](./images/Lab1-task5.3.png)
@@ -266,7 +270,7 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
 4. In the _**Create Administrator Credentials**_ section enter the username and choose a password of your own, but make sure to note it as you will be using it later through the workshop:
     
     ```
-    username: admin
+    username: <copy>admin</copy>
  
     password: **PASSWORD**
     ```
@@ -287,7 +291,7 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
 
   	- Go to the Networking tab, in the Hostname field enter (same as DB System Name):
 		```
-		<copy> mysql-analytics-test</copy> 
+		<copy>mysql-analytics-test</copy> 
 		```
 		Check that port configuration corresponds to the following:
 
