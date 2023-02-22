@@ -12,14 +12,15 @@ The Oracle Cloud Infrastructure Anomaly Detection will create customized Machine
 
 The *OCI Anomaly Detection Service* which is serverless, multi-tenant service, will cover multivariate *time series data, accessible over public REST APIs* by authenticated users via OCI CLI, missing or Cloud Console.
 
-This workshop contains 3 required lab sessions for user to get familiar with required data, and the full cycle of building the anomaly detection model and make predictions, and 2 optional advanced sessions that help in-depth users to seamlessly integrate our services and understand how the training data should be prepared.
+This workshop contains 7 required lab sessions for user to get familiar with required data, and the full cycle of building the anomaly detection model and make predictions, and 2 optional advanced sessions that help in-depth users to seamlessly integrate our services and understand how the training data should be prepared.
 
-*Estimated Time*: 70 minutes (3 regular sessions) + 120 minutes (2 advanced sessions)
+*Estimated Time*: 120 minutes (7 regular sessions) + 120 minutes (2 advanced sessions)
 
 ### Objectives
 
 * Understand a high level overview of the OCI Anomaly Detection Service
-* Understand the full cycle/workflow of services provided in the OCI Anomaly Detection
+* Understand the full cycle/workflow of univariate anomaly detection service provided in the OCI Anomaly Detection
+* Understand the full cycle/workflow of multivariate anomaly detection service provided in the OCI Anomaly Detection
 * Hand-on activities to experience the whole pipeline of machine learning model development from training to detecting
 * (In Advanced Sessions) Learn to use REST API to interact with Anomaly Detection service
 * (In Advanced Sessions) Learn basic data analysis preprocessing techniques to prepare data for model training
@@ -54,13 +55,13 @@ Note that one project can have multiple data assets and multiple models.
 
 ## Anomaly Detection Univariate and Multivariate Kernels
 
-Anomaly Detection provides two types of machine learning (ML) kernels to learn the patterns and detect anomalies from your dataset. One type for univariate independent signals and one for multivariate correlated signals.
+Anomaly Detection provides two types of machine learning (ML) kernels to learn the patterns and detect anomalies from your dataset. One for univariate independent signals and another multivariate correlated signals.
 
-Users are able to select the type of kernel based on the nature of your datasets when creating the model. Without specification univariate model training will be conducted by default. If the multivariate kernel is selected, any signals considered as low correlations by the kernel are automatically treated as univariate using the univariate kernel. The ML engine embedded in the service automatically chooses the appropriate window size and optimize the parameters to produce the best model and result.
+Users are able to select the type of kernel based on the nature of their datasets when creating the model. Without specification, univariate model training will be conducted by default. If the multivariate kernel is selected, any signals considered as low correlations by the data preprocessor are automatically treated as univariate signals monitored using the univariate models. The ML engine embedded in the service automatically chooses the appropriate window size and optimizes the parameters to produce the best model and result.
 
 ### **Univariate Kernel**
 
-The Anomaly Detection service uses OCSVM as the main kernel to detect uncorrelated signal-wise time-series anomalies from datasets.The univariate kernel builds one model per signal. For each univariate signal, the model is built, optimized, and saved independently. Therefore, the models are used for inferencing separately.
+The Anomaly Detection service uses OCSVM (One-class SVM) as the main kernel to detect uncorrelated signal-wise time-series anomalies from datasets.The univariate kernel builds one model per signal. For each univariate signal, the model is built, optimized, and saved independently. Therefore, the models are used for inferencing separately.
 
 #### Capability
 It detects anomalies in a signal by considering its time-series patterns, and works well on point or contextual anomalies. It can handle dataset with a moderate level of missing values, and provides estimated values.
@@ -70,7 +71,7 @@ It detects anomalies in a signal by considering its time-series patterns, and wo
 - It uses a window-based feature engineering approach so it requires at least window size rows of data before the actual training or detecting data to learn the patterns or inference anomalies. If window size is determined automatically in training, it will be in the model details in the console.
     - The window size will be in range of 1 to 100. It will be determined automatically based on periodicity detection mechanism. The minimum total number of timestamps for model training is 80.
 
-- The training dataset must be anomaly free.
+- The training dataset must be anomaly free or contain only a small proportion of anomalies.
 - All of the different normal business scenarios are included in the training dataset. For example, at least one business cycle in the training portion.
 
 #### Use Cases
@@ -82,7 +83,9 @@ The kernel only treats one signal at a time so collective anomalies among multip
 
 ### **Multivariate Kernel**
 
-The multivariate kernel uses MSET2 to detect multivariate time-series anomalies with the same data input format as the univariate kernel. Given multivariate kernel is specified at model creation, for signals considered as low correlations by MSET2 are automatically treated as univariate using the univariate kernel. MSET2 stand for three techniques:
+The multivariate kernel uses MSET2 to detect multivariate time-series anomalies with the same data input format as the univariate kernel. Given multivariate kernel is specified at model creation, for signals considered as low correlations by Intelligent Data Preprocessor are automatically treated as univariate signals using the univariate kernel. 
+
+MSET2 stand for three techniques:
 
 * Multivariate State Estimation Technique (MSET)
 * Sequential Probability Ratio Test (SPRT)
@@ -91,12 +94,12 @@ The multivariate kernel uses MSET2 to detect multivariate time-series anomalies 
 All of these techniques were invented by Oracle Labs. The MSET2 algorithm is successfully used in several industries for prognosis analysis.
 
 #### Capability
-It works well to detect pointy, contextual, and collective anomalies in multivariate datasets with highly correlated numerical signals. It can handle dataset with a moderate level of missing values, and provides estimated values.
+It works well to detect point, contextual, and collective anomalies in multivariate datasets with highly correlated numerical signals. It can handle dataset with a moderate level of missing values, and provides estimated values.
 
 #### Requirements
 - The training and inferencing dataset can contain numerical values only. Categorical or nominal values aren't supported.
 The correlations between signals are relatively high.
-    - For example, the average pair-wise Pearson correlation between one signal to the rest of signals is no less than 0.1. The kernel excludes signals with lower correlations and treats them with univariate modeling.
+    - For example, the average pair-wise Pearson correlation between one signal to the rest of signals should be no less than 0.1. The kernel excludes signals with lower correlations and treats them with univariate modeling.
 
 - The training dataset must be anomaly free. For example, the dataset contains normal business scenarios and data values without rare anomaly events.
 - All of the different normal business scenarios are included in the training dataset. For example, at least one business cycle in the training portion. Missing some normal business patterns may lead to false positives during inferencing.
