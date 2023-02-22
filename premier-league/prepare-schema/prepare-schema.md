@@ -34,8 +34,6 @@ This new user/schema will hold the football data.
 
 3. Click **Database Actions**.
 
-   (if your Autonomous Data Warehouse was created earlier, you can find the Database Actions under "Tools")
-
    ![ADW Menu](images/open-database-actions.png)
 
    If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
@@ -107,7 +105,7 @@ This new user/schema will hold the football data.
 
    Press "Close" after you've changed the option for each file.
 
-7. After you have changed the load option of **all** files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+7. After you have changed the load option of **all** files, click the **Start** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 

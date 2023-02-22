@@ -142,52 +142,57 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![ADW Menu](images/open-sailgp.png)
 
-3. Open the **Service Console**.
-
-   ![pic1](images/open-service-console.png)
-
-4. Choose **Administration** > **Manage Oracle ML Users**.
-
-   ![pic1](images/manage-ml-users.png)
+3. Open the **Database Actions**.
 
    If sign-in is requested, sign in with `ADMIN`, password `Oracle_12345`.
 
-5. Check **Show All Users**, then click on the `SAILOR` user.
+   ![ADW Menu](images/select-db-actions.png)
 
-   ![pic1](images/select-ml-user.png)
+4. Choose **Administration** > **Database Users**.
 
-6. Choose any email address (it's not relevant). **Don't update any of the other fields**.
+   ![ADW Menu](images/select-db-users.png)
+
+5. Find the **SAILOR** user and Edit the user.
+
+   ![ADW Menu](images/edit-sailor.png)
+
+6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
+
+   ![ADW Menu](images/enable-oml.png)
+
+<!--6. Choose any email address (it's not relevant). **Don't update any of the other fields**.
 
    ![pic1](images/save-sailor.png)
+-->
 
-   Press **Save**. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
+<!--
+   Click on the icon on the bottom-right to get the URL to access Machine Learning for the SAILOR user.
+
+   Keep this URL save (e.g. place it in your bookmarks or save it in a text file).
+
+   ![ADW Menu](images/oml-enabled.png)
+-->
 
 ## Task 4: Build the Machine Learning Model
 
-<!--1. Open the Autonomous Data Warehouse.
+1. In the console of the Autonomous Data Warehouse, go to **Database Actions**.
 
-   From the Oracle Console, click **Oracle Database** > **Autonomous Data Warehouse**.
+   ![pic1](images/select-db-actions.png)
 
-   ![ADW Menu](images/adw-menu.png)
+2. Look at the top right to see which user is logged in.
 
-2. Click on the SAILGP database that you created earlier.
+   If it is not SAILOR (e.g. ADMIN), then first Sign Out and log in as SAILOR.
 
-   ![ADW Menu](images/open-sailgp.png)
--->
+   Username: `SAILOR`
+   Password: `Oracle_12345`
 
-1. In the console of the Autonomous Data Warehouse, open the **Service Console**.
+3. Choose "Oracle Machine Learning"
 
-   ![pic1](images/open-service-console.png)
+   ![pic1](images/start-oml2.png)
 
-2. Choose **Development** > **Oracle Machine Learning Notebooks**.
+   If you are asked to login again, login with the SAILOR user.
 
-   ![pic1](images/start-oml.png)
-
-3. Sign in with the user `sailor`, password `Oracle_12345`.
-
-   ![pic1](images/sign-in-sailor.png)
-
-4. Start AutoML by clicking on the ribbon and `AutoML`.
+4. Start AutoML by clicking on the ribbon and `AutoML Experiments`.
 
    ![pic1](images/start-automl.png)
 
@@ -220,13 +225,13 @@ In the past we've gone onto the water with our boat many times in different wind
 
     ![pic1](images/save-start.png)
 
-9. Use the three small dots to open the window with progress of the training process.
+9. The progress window opens automatically.
 
     ![pic1](images/learning-summary.png)
 
 10. The training will take several minutes. During this time, AutoML tries out several different ML algorithms, with different configurations.
 
-    The value under **Negative Mean Squared Error** is an indicator of the accuracy of the model.
+    The value under **Mean Squared Error** is an indicator of the accuracy of the model.
 
     ![pic1](images/svmg.png)
 
@@ -268,10 +273,10 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
 7. Now we need to make the Machine Learning model that we built in the database available to Oracle Analytics Cloud.
 
-   Click the **ribbon**, then **Register ML Model**. Then select `SAILGP` connection.
+   Click the **ribbon**, then **Register Model/Function** and **Machine Learning Models**. Then select `SAILGP` connection.
    ![pic1](images/register-ml-model.png)
 
-8. Now select the model starting with `SVMG`. Check that it has the same name that you created earlier. Then press **Register**.
+8. Now select the model starting with `SVMG`. Check that it has the same name that you created earlier (in your environment the numbers will be different from this screenshot). Then press **Register**.
 
    ![pic1](images/register3.png)
 

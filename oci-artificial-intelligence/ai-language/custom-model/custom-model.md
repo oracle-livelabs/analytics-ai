@@ -71,7 +71,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 
 1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services.
 
-    ![OCI Language Screen](./images/navigation-to-ailanguage.png " ")
+    ![OCI Language Screen](./images/navigate-to-ai-language.png " ")
 
 2. Select Projects under "Custom models" header on the left hand side of the console.
 
@@ -407,4 +407,4 @@ You may now **proceed to the next lab**.
   * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022
+* Sahil Kalra - Oracle AI OCI Language Services, February 2023

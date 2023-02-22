@@ -25,11 +25,11 @@ We need to generate proper authentication configuration (API Signing Key pair) i
 
 ### 1. Open User Settings
 Open the Profile menu (User menu icon) on the top right corner and click User Settings.
-![](../images/user-profile-icon.png " ")
+![user profile icon](../images/user-profile-icon.png " ")
 
 ### 2. Open API Key
 Navigate to API Key and then Click Add API Key.
-![](../images/add-api-button.png " ")
+![add api button](../images/add-api-button.png " ")
 
 ### 3. Generate API Key
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your local computer, and we will upload it later to the Cloud Shell.
@@ -37,13 +37,13 @@ In the dialog, select Generate API Key Pair. Click Download Private Key and save
 **You can rename this `pem` file as `oci-api-key.pem` .**
 
 Then click the Add button.
-![](../images/generate-api.png " ")
+![generate api](../images/generate-api.png " ")
 
 ### 4. Generate Config File
 After click the Add button, a configuration file window pop up.
 Copy the values shown on the console, and save in your local computer, again later it will be used in the Cloud Shell.
 
-![](../images/oci-config-sample.png " ")
+![oci config sample](../images/oci-config-sample.png " ")
 
 The configuration content will be like the following:
 ```
@@ -70,10 +70,10 @@ For details, you can refer to the [Cloud Shell Doc](https://docs.oracle.com/en-u
 ### 2. Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-![](../images/cloud-shell-position.png " ")
+![cloud shell position](../images/cloud-shell-position.png " ")
 
 It may take up to 30 seconds for the Cloud Shell to be ready, like the following screenshot.
-![](../images/cloud-shell-activated.png " ")
+![cloud shell activated](../images/cloud-shell-activated.png " ")
 
 ### 3. Set up API Key and Configuration File
 
@@ -83,7 +83,7 @@ On the Cloud Shell, type the following command to create `.oci` folder and Enter
 ```
 
 Now, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
-![](../images/cloud-shell-upload-pem.png " ")
+![cloud shell upload pem](../images/cloud-shell-upload-pem.png " ")
 
 Once it is uploaded, it may landed in the home folder, you can move it to the `.oci` folder with the following command and change it permission to be accessible by owner ONLY:
 ```
@@ -105,7 +105,7 @@ chmod 600 .oci/config </copy>
 ```
 
 The final structure of `.oci` folder will be like this:
-![](../images/cloud-shell-oci-folder.png " ")
+![cloud shell oci folder](../images/cloud-shell-oci-folder.png " ")
 
 ## TASK 3: Execute OCI Anomaly Detection Commands
 
@@ -153,12 +153,14 @@ First, let use `nano` to create a file named `create_model.json` to configure so
 Again update the DATA-ASSET-ID with id collected above:
 ```
 <copy>{
-    "targetFap" : 0.01,
-    "trainingFraction" : 0.7,
-    "dataAssetIds" :
-    [
-        "<DATA-ASSET-ID>"
-    ]
+  "dataAssetIds": [
+    "string",
+    "string"
+  ],
+  "targetFap": 0.01,
+  "trainingFraction": 0.7,
+  "windowSize": 1,
+  "algorithmHint": "MSET",
 }</copy>
 ```
 Now run the following command with the previous project id:
@@ -168,11 +170,11 @@ Now run the following command with the previous project id:
 
 Now, in the output, record the id value, which is the model id.
 
-### 5. Detect Anomaly with the Model
+### 5. Sync Detect Anomaly with the Model
 
-Finally, you can use the following command example to make detection with the model built earlier.
+You can use the following command example to make detection with the model built earlier.
 ```
-<copy>oci anomaly-detection model detect-anomalies-inline --model-id <MODEL-ID>  --data file://data.json --signal-names file://signal_names.json </copy>
+<copy>oci anomaly-detection model detect-anomalies-inline --model-id <MODEL-ID> --sensitivity 0.5 --data file://data.json --signal-names file://signal_names.json </copy>
 ```
 
 The content of signal_names.json can be like the following:
@@ -205,6 +207,66 @@ The content of data.json can be like the following:
 ]
 ```
 
+### 6. Async Detect Anomaly Job
+
+Anomaly Detection supports Async Detection jobs and the command below can be used to perform async detection
+
+```
+oci anomaly-detection detect-anomaly-job create --compartment-id ocid1.tenancy.oc1..aaaaaaaa.... --input-details file://path/to/input.json --model-id <MODEL-ID>  --output-details  file://path/to/output.json --sensitivity 0.5
+```
+
+The content of input.json should have the below format
+```
+{
+        "inputType": "INLINE",
+        "data": [
+            {
+                "timestamp": "2020-07-13T20:44:46Z",
+                "values": [
+                    1,
+                    0.8885,
+                    0.6459,
+                    -0.0016,
+                    -0.9061,
+                    0.1349,
+                    -0.4967,
+                    0.4335,
+                    0.4813,
+                    -1.0798,
+                    0.2734
+                ]
+            },
+            {
+                "timestamp": "2020-07-13T20:45:46Z",
+                "values": [
+                    1,
+                    0.1756,
+                    1,
+                    -0.1524,
+                    -0.0804,
+                    -0.2209,
+                    0.4321,
+                    -0.6206,
+                    0.3386,
+                    0.0082,
+                    -0.3083
+                ]
+            }]}
+```
+
+The content of output.json should have the below format
+```
+{
+            "outputType": "OBJECT_STORAGE",
+            "namespaceName": NAMESPACE,
+            "bucketName": BUCKET_NAME,
+            "prefix": "liveLabJobOutput"
+    }
+```
+
+The result of the Async Detection job can be found in the Object storage with the namespace and bucket specified.
+The file would have a prefix of liveLabJobOutput.
+
 Congratulations on completing this lab session!
 
 ## Acknowledgements
@@ -212,5 +274,6 @@ Congratulations on completing this lab session!
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
+    * Ochuko Adiotomre - Software Engineer - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, Nov 2021
+    * Ochuko Adiotomre - Software Engineer, Feb 2023

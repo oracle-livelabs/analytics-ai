@@ -52,12 +52,13 @@ In this lab, you will:
 
 3. Fill the web form with the following information and click **Create**:
 
-   - **Compartment**: `root` compartment, unless you have permissions and experience selecting a different one.
    - **Name**: `PLAnalytics`
-   - **Description**: `Analytics Instance for Premier League workshop`
-   - **Feature Set**: `Enterprise Analytics`
-   - **Capacity**: `OCPU` and `1 - Non Production`
-   - **License Type**: `License Included`
+   - **Description**: `Analytics Instance for PL Workshop`
+   - **Compartment**: `root` compartment, unless you have permissions and experience selecting a different one.
+   - **Capacity**: `OCPU`
+   - **OCPU Count**: `1 (Non-Procuction)`
+   - **License**: `License Included`
+   - **Edition**: `Enterprise Edition`
 
    ![OAC Form](images/oac-form.png)
 

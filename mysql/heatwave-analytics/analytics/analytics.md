@@ -88,7 +88,7 @@ In this lab, you will:
     Connection Name: <copy>MySQL_Connection</copy>
     ```
     ```
-    Host: Copy the information from Internal FQDN here. ex: mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com
+    Host: Copy the information from Internal FQDN here. ex: <copy>mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com</copy>
     ```
     ```
     Port: Copy the information from MySQL Port. It should be <copy>3306</copy>
@@ -100,7 +100,7 @@ In this lab, you will:
     Username: <copy>admin</copy>
     ```
     ```
-    Password: **PASSWORD**
+    Password: <copy>**PASSWORD**</copy>
     ```
   
   	After you filled out the information, click _**Save**_.
