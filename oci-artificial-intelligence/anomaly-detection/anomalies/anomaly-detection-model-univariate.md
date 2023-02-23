@@ -265,6 +265,42 @@ This is the results file downloaded:
  ]
   ```
 
+## Task 3: Detect Anomaly asynchronously with new Data
+For dataset with size larger than 30,000 data points, the asynchronous pipeline leveraged on load balancing and autoscaling architecture in order to chunk and process data in parallel. Asynchronous job can be created to generate inference results for a dataset up to 300 MB at one setting.
+
+Users can:
+* Customize sensitivity just like synchronous detection.
+* Input data by uploading a file from local file system (inline) or through object storage.
+  - Inline detection support a dataset size up to 10 MB.
+  - Object storage detection requires users to upload the file to the bucket first(Details see Lab 1 Task 3), it supports a dataset up to 300 MB.
+* Specify a "Prefix" which will be the name of the folder contains the detection results (optional).
+* Choose to "Require all estimates" which will return estimated values and anomaly Scores for all input data instead of just the anomalous points.
+
+Navigate to the project ad_demo we created earlier, click Jobs.
+![click jobs](../images/click-jobs.png " ")
+
+It will navigate the user to create asynchronous jobs, then click "Create job".
+![create job](../images/create-job.png " ")
+
+All models trained successfully appears in the drop down list, select a model for your detection dataset.
+Specify a sensitivity value, if leave it empty, the default value is 0.5.
+If Input type "Inline" being selected, users can upload a file from local filesystem or drag and drop the desired file (size up to 10 MB).
+Select the bucket we created at Lab 1 Task 3 as the Output bucket.
+Check the "Require all estimates" box, the anomaly scores for all data points will be return. Otherwise, only anomalous points are requested.
+Click "Create job".
+![create job form](../images/create-job-form.png " ")
+
+If your detection dataset is greater than 10 MB, you may want to first upload the file to the bucket we created previously and select "Object store" as the Input type.
+![create job through object store](../images/create-job-through-object-store.png " ")
+
+![job succeeded](../images/job-succeeded.png " ")
+
+Navigate to the bucket, the folder named with the job id contains all the result files, a parent folder will be created if a prefix has been given.
+![job results](../images/job-results.png " ")
+
+**Since asynchronous detection chunk the datsets automatically, a number of results json files could be outputted. you will need to download them and concatenate them back together for visualizing anomalies in datasets (it does not provide console UI visualization yet).**
+
+
 **Congratulations on completing this lab!**
 
 You now have completed the full cycle of using the training data to create a model and deploy, and also making predictions with testing data.
@@ -279,5 +315,5 @@ The next 2 sessions are optional for advanced users, which cover the topic on us
     * Marianne Liu - Senior Data Scientist - Oracle AI Services
     * Longjiao Zhang - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-* Marianne Liu - Senior Data Scientist Feb 2023
-* Longjiao Zhang - Senior Data Scientist Feb 2023
+    * Marianne Liu - Senior Data Scientist Feb 2023
+    * Longjiao Zhang - Senior Data Scientist Feb 2023
