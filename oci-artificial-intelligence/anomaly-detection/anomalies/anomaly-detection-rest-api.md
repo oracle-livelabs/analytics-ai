@@ -32,11 +32,11 @@ We need to generate proper authentication configuration (API Signing Key pair) i
 
 ### 1. Open User Settings
 Open the Profile menu (User menu icon) on the top right corner and click User Settings.
-![](../images/user-profile-icon.png " ")
+![user profile icon](../images/user-profile-icon.png " ")
 
 ### 2. Open API Key
 Navigate to API Key and then Click Add API Key.
-![](../images/add-api-button.png " ")
+![add api key button](../images/add-api-button.png " ")
 
 ### 3. Generate API Key
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your local computer, and we will upload it later to the Cloud Shell.
@@ -44,13 +44,13 @@ In the dialog, select Generate API Key Pair. Click Download Private Key and save
 **You can rename this `pem` file as `oci-api-key.pem` .**
 
 Then click the Add button.
-![](../images/generate-api.png " ")
+![generate api key](../images/generate-api.png " ")
 
 ### 4. Generate Config File
 After click the Add button, a configuration file window pop up.
 Copy the values shown on the console, and save in your local computer, again later it will be used in the Cloud Shell.
 
-![](../images/oci-config-sample.png " ")
+![oci config sample](../images/oci-config-sample.png " ")
 
 The configuration content will be like the following:
 ```
@@ -77,10 +77,10 @@ For details, you can refer to the [Cloud Shell Doc](https://docs.oracle.com/en-u
 ### 2. Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-![](../images/cloud-shell-position.png " ")
+![cloud shell position](../images/cloud-shell-position.png " ")
 
 It may take up to 30 seconds for the Cloud Shell to be ready, like the following screenshot.
-![](../images/cloud-shell-activated.png " ")
+![cloud shell activated](../images/cloud-shell-activated.png " ")
 
 ### 3. Set up API Key and Configuration File
 
@@ -90,7 +90,7 @@ On the Cloud Shell, type the following command to create `.oci` folder and Enter
 ```
 
 Now, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
-![](../images/cloud-shell-upload-pem.png " ")
+![cloud shell upload pem](../images/cloud-shell-upload-pem.png " ")
 
 Once it is uploaded, it may landed in the home folder, you can move it to the `.oci` folder with the following command and change it permission to be accessible by owner ONLY:
 ```
@@ -112,7 +112,7 @@ Then save the file (CTRL+X), and update the file permission to be accessible by 
 ```
 
 The final structure of `.oci` folder will be like this:
-![](../images/cloud-shell-oci-folder.png " ")
+![cloud shell oci folder](../images/cloud-shell-oci-folder.png " ")
 
 ## **TASK 3:** Python SDK Code Snippets
 
@@ -240,7 +240,8 @@ print("-*-*-*-MODEL-*-*-*-")
 # CREATE CALL
 dataAssetIds = [da_id]
 mTrainDetails = ModelTrainingDetails(
-    target_fap=0.02, training_fraction=0.7, data_asset_ids=dataAssetIds
+    target_fap=0.02, training_fraction=0.7, window_size=1, algorithmHint="MSET",
+  data_asset_ids=dataAssetIds
 )
 mDetails = CreateModelDetails(
     display_name="DisplayNameModel",
@@ -268,34 +269,118 @@ while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
 
 ```
 
-### 5. Detection with the Model
+### 5. Sync Detection with the Model
 ```Python
 print("-*-*-*-DETECT-*-*-*-")
-# ## Method 1: Load the data from a csv file with first column as timestamp
-# df = pd.read_csv(filename)
-# signalNames = [e for e in df.columns if e != 'timestamp']
 
-# ## Method 2: create a random dataframe with the appropriate header
-num_rows = 200
-signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
-df = pd.DataFrame(np.random.rand(num_rows, len(signalNames)), columns=signalNames)
-df.insert(0, 'timestamp', pd.date_range(start=date.today(), periods=num_rows, freq='min'))
-df['timestamp'] = df['timestamp'].apply(lambda x: x.strftime('%Y-%m-%dT%H:%M:%SZ'))
+signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1",
+               "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
+timestamp = datetime.strptime("2020-07-13T20:44:46Z", "%Y-%m-%dT%H:%M:%SZ")
+values = [
+  1.0,
+  0.4713,
+  1.0,
+  0.5479,
+  1.291,
+  0.8059,
+  1.393,
+  0.0293,
+  0.1541,
+  0.2611,
+]
 
-# Now create the Payload from the dataframe
-payloadData = []
-for index, row in df.iterrows():
-    timestamp = datetime.strptime(row['timestamp'], "%Y-%m-%dT%H:%M:%SZ")
-    values = list(row[signalNames])
-    dItem = DataItem(timestamp=timestamp, values=values)
-    payloadData.append(dItem)
+# creating detect payload
+dItem = DataItem(timestamp=timestamp, values=values)
+payloadData = [dItem]
 
-inline = InlineDetectAnomaliesRequest( model_id=model_id, request_type="INLINE", signal_names=signalNames, data=payloadData)
+print("*********** Detect Payload ************")
+print(payloadData)
+print("***************************************")
 
+#creating detect request
+inline = InlineDetectAnomaliesRequest(model_id=model_id,
+                                      request_type="INLINE",
+                                      signal_names=signalNames,
+                                      sensitivity=0.5,
+                                      data=payloadData)
+#detecting anomalies
 detect_res = ad_client.detect_anomalies(detect_anomalies_details=inline)
 print("----DETECTING----")
 print(detect_res.data)
 ```
+
+### 5. Async Detection with the Model
+```Python
+create_job_data = {
+    "compartmentId": compartment_id,
+    "displayName": "Python SDK for Livelabs",
+    "description": "This is for Livelabs",
+    "modelId": model_id,
+    "sensitivity": 0.5,
+    "inputDetails": {
+        "inputType": "INLINE",
+        "data": [
+            {
+                "timestamp": "2019-01-07T21:00:08Z",
+                "values": [
+                    1,
+                    0.8885,
+                    0.6459,
+                    -0.0016,
+                    -0.9061,
+                    0.1349,
+                    -0.4967,
+                    0.4335,
+                    0.4813,
+                    -1.0798,
+                    0.2734
+                ]
+            },
+            {
+                "timestamp": "2019-01-07T21:01:03Z",
+                "values": [
+                    1,
+                    0.1756,
+                    1,
+                    -0.1524,
+                    -0.0804,
+                    -0.2209,
+                    0.4321,
+                    -0.6206,
+                    0.3386,
+                    0.0082,
+                    -0.3083
+                ]
+            }],
+        "outputDetails": {
+            "outputType": "OBJECT_STORAGE",
+            "namespaceName": NAMESPACE,
+            "bucketName": BUCKET_NAME,
+            "prefix": "liveLabJobOutput"
+        }
+    }
+}
+print("*********** Async Detect Payload ************")
+print(create_job_data)
+print("***************************************")
+
+job = ad_client.create_detect_anomaly_job(create_detect_anomaly_job_details=create_job_data).data
+job_id = job.id
+print(f"Created job: {job.id}")
+lifecycle = job.lifecycle_state
+print(f"lifecycle: {lifecycle}. Please wait...")
+while lifecycle not in ['SUCCEEDED', 'PARTIALLY_SUCCEEDED', 'FAILED', 'CANCELED']:
+    time.sleep(120)
+    job = ad_client.get_detect_anomaly_job(detect_anomaly_job_id=job_id).data
+    lifecycle = job.lifecycle_state
+    print(f"lifecycle: {lifecyle}.")
+print(f"Create Async Job Completed")
+```
+The result of the async detection can be found in the object storage
+namespace and bucketname specified. This output should start with the prefix
+liveLabJobOutput.
+
+
 
 Congratulations on completing this lab!
 
@@ -306,5 +391,6 @@ Congratulations on completing this lab!
     * Haad Khan - Senior Data Scientist - Oracle AI Services
     * Ganesh Radhakrishnan - Product Manager - Oracle AI Services
 * **Last Updated By/Date**
+    * Ochuko Adiotomre - Software Engineer, Feb 2023
     * Ganesh Radhakrishnan - Product Manager, May 2022
     * Jason Ding - Principal Data Scientist, Jan 2022

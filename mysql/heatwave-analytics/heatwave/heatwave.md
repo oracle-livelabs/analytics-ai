@@ -48,18 +48,20 @@ In this lab, you will:
 
   	Using MySQL DB private IP address and fill in the password you used creating the DB system at Lab1/Task5.4, Connect to MySQL DB System with MySQL Shell with the following command:
     
-	```
+	  ```
     <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --js</copy>
     ```
   	![connect to mysql shell](./images/Lab3-task1.1-3.png)
 
-	> **Note:**  For the best practice it is recommended to remove the password from the command line as follows:
+	  > **Note:**  For the best practice it is recommended to remove the password from the command line as follows:
 	
-	```
-	export PASSWORD=**PASSWORD**
+    ```
+	  <copy>export PASSWORD=**PASSWORD**</copy>
+    ```
 
-	mysqlsh --user=admin --password=`echo $PASSWORD` --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql
-	```
+    ```
+	  <copy>mysqlsh --user=admin --password=`echo $PASSWORD` --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
+	  ```
 2. From the MySQL Shell connection, import the data set into MySQL DB System.
   
   	This command will commit a dry run of the import.
