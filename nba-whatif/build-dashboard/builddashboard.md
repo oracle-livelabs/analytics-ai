@@ -9,13 +9,13 @@ Estimated Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Use Oracle Analytics Cloud to build a dashboard 
+* Use Oracle Analytics Cloud to build a dashboard
 * Begin to see the relationships in the data 
 
 ### Prerequisites 
 
 This lab assumes you have:
-* An Oracle Cloud account
+* Completed the previous labs
 
 
 ## Task 1: Establish the Filters
@@ -55,26 +55,28 @@ This lab assumes you have:
 
   ![Build the table](images/dashboard3.png)
 
-3. Modify the Table. With the table selected, navigate to the bottom left of the page to the Gear shaped “General” icon 
+3. Modify the Table. With the table selected, navigate to the top of the Grammar panel, click on the Properties icon and then select the Gear shaped “General” icon 
+
+  ![Select the properties panel](images/dashboardqa13.png)
 
 4. Click on “Auto” next to “Title”, select “Custom” and change the title to “Home Team In-Game Stats”
 
-  ![Change the Title](images/dashboard6.png)
+  ![Change the Title](images/dashboardqa6.png)
 
 ## Task 3: Add Bar Charts 
 
-1. Develop Bar Charts. CTRL click to select: 
+1. Develop Bar Charts. CTRL click to select:
     - 3-Point Missed
-    - 3-Point Potential 
-    - Player Name 
+    - 3-Point Potential
+    - Player Name
 
 2. Drag to visualization pane above the table 
 
-3. A green bar will appear indicating that a new visualization is being created 
+3. A green bar will appear indicating that a new visualization is being created
 
-  ![Green bar indicating a new visualization](images/dashboard4.png)
+  ![Green bar indicating a new visualization](images/dashboardqa4.png)
 
-4. Change visualization type to Horizontal Bar 
+4. Change visualization type to Horizontal Bar
 
 5. 3-Point Missed and 3-Point Potential should be in the Values (X-Axis) and Player Name should be in the Category (Y-Axis)
 
@@ -86,7 +88,7 @@ This lab assumes you have:
     - 3-point Potential 
     - 2-point Potential 
 
-  ![Set the tooltips](images/dashboard10.png)
+  ![Set the tooltips](images/dashboardqa10.png)
 
 7. Complete the 2nd Bar Chart. Repeat steps 1 through 6 to create a second Horizontal Bar chart with:
     - 2-Point Missed
@@ -95,13 +97,13 @@ This lab assumes you have:
 
 8. Your canvas should now look like this.
 
-  ![Your canvas](images/dashboard11.png)
+  ![Your canvas](images/dashboardqa11.png)
 
 ## Task 4: Add a Tile
 
 1. Add a Tile. Select and drag Potential Home Team Score to the visualization pane to create a tile. 
   
-2. With the tile selected navigate to the bottom left corner of the screen and click on the numeric symbol “#” 
+2. With the tile selected navigate to the Properties menu to the left of the filter bar and click on the numeric symbol “#” 
 
 3. Click on “Auto” next to Number Format 
 
@@ -111,7 +113,7 @@ This lab assumes you have:
 
 6. Change “2” to “O”
 
-  ![Change number format](images/dashboard5.png)
+  ![Change number format](images/dashboardqa5.png)
 
 7. Establish Conditional Formatting. Right click on the tile and select “Conditional “Formatting”
 
@@ -131,9 +133,9 @@ This lab assumes you have:
 
 3. Select “Dashboard Filters” as the visualization type. 
 
-  ![Dashboard Filters](images/dashboard12.png)
+  ![Dashboard Filters](images/dashboardqa12.png)
 
-  ![Your Dashboard](images/dashboard7.png)
+  ![Your Dashboard](images/dashboardqa7.png)
 
 This concludes the Build a Dashboard lab. You may proceed to the next lab.
 
@@ -141,4 +143,4 @@ This concludes the Build a Dashboard lab. You may proceed to the next lab.
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
 * **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
                    -  Luke Wheless, Data Analyst BI-SCF
-* **Last Updated By/Date** - Andres Quintana, October 2022
+* **Last Updated By/Date** - Andres Quintana, February 2023
