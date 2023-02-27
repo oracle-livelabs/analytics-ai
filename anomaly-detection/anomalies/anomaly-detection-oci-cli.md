@@ -69,8 +69,11 @@ For details, you can refer to the [Cloud Shell Doc](https://docs.oracle.com/en-u
 
 ### 2. Navigate to Cloud Shell
 
-Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
+Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right.
 ![](../images/cloud-shell-position.png " ")
+
+Clicking the Cloud Shell Icon will reveal a drop down menu. Select the option "Cloud Shell"
+![](../images/cloud-shell-position-create.png " ")
 
 It may take up to 30 seconds for the Cloud Shell to be ready, like the following screenshot.
 ![](../images/cloud-shell-activated.png " ")
@@ -82,8 +85,12 @@ On the Cloud Shell, type the following command to create `.oci` folder and Enter
 <copy>mkdir .oci</copy>
 ```
 
-Now, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
+On the right side select the gear icon to reveal a drop down menu. Press the upload button.
 ![](../images/cloud-shell-upload-pem.png " ")
+
+ow, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
+![](../images/cloud-shell-upload-pem-created.png " ")
+
 
 Once it is uploaded, it may landed in the home folder, you can move it to the `.oci` folder with the following command and change it permission to be accessible by owner ONLY:
 ```
