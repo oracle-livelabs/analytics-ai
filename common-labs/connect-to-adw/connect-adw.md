@@ -63,6 +63,7 @@ In this section, you define a connection to the data source to use for the Seman
 
 You have just created a connection to an Autonomous Data Warehouse.
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 * [Connecting Oracle Analytics Cloud to Your Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsds/connect-oracle-analytics-cloud-your-data.html)

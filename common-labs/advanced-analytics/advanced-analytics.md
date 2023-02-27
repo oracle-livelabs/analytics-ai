@@ -95,7 +95,7 @@ This lab assumes you have:
 
   ![Rename canvas](images/rename-clusters.png)
 
-In this lab, you have successfully learned how to use Oracle Analytics' Advanced Analytics capabilities.
+In this lab, you have successfully learned how to use Oracle Analytics' Advanced Analytics capabilities. You may now **proceed to the next lab**.
 
 ## Learn More
 * [Enhance Data in Visualizations with Advanced Analytics Functions](https://docs.oracle.com/en/middleware/bi/analytics-desktop/bidvd/enhance-data-visualizations-advanced-analytics-functions.html#GUID-87DD71E5-9AFC-405C-A812-6EF9FEE96454)
