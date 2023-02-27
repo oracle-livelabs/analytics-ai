@@ -240,7 +240,7 @@ print("-*-*-*-MODEL-*-*-*-")
 # CREATE CALL
 dataAssetIds = [da_id]
 mTrainDetails = ModelTrainingDetails(
-    target_fap=0.02, training_fraction=0.7, window_size=1, algorithmHint="MSET",
+    target_fap=0.02, training_fraction=0.7, window_size=1, algorithmHint="MULTIVARIATE_MSET",
   data_asset_ids=dataAssetIds
 )
 mDetails = CreateModelDetails(
