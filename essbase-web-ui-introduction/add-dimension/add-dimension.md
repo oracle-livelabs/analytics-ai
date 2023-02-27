@@ -17,9 +17,9 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
-
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -51,7 +51,7 @@ This lab assumes you have:
 
 ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
 
-10.	Select **FY2024**, and under **Operator**, choose **~ (Ignore)**.
+10. Select **FY2024**, and under **Operator**, choose **~ (Ignore)**.
 
 11. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
 
@@ -67,35 +67,35 @@ This lab assumes you have:
 
 2. Select **Inspect**.
 
-3.	In the cube inspector, select the **Scripts** tab.
+3. In the cube inspector, select the **Scripts** tab.
 
 4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
 
-5.	For the **Rule Name**, enter **Addprods**.
+5. For the **Rule Name**, enter **Addprods**.
 
-6.	For the **Source Type**, select **File**.
+6. For the **Source Type**, select **File**.
 
-7.	For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder.
+7. For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder.
 
 In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild_dataload**. Select **add_products_with_aliases.txt** and then click **Select**.
 
-8.	For **File Type**, select **Delimited**.
+8. For **File Type**, select **Delimited**.
 
 9. For **Delimiter**, change to **Tab** delimited.
 
 ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
 
-10.	Click **Preview data** and check that the results look right, and then click **Proceed**.
+10. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
 ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
 
-11.	In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
+11. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
-12.	Set the **Type** in field 1 to be **Parent**.
+12. Set the **Type** in field 1 to be **Parent**.
 
-13.	In **Field - 2** set **Type** to **Alias**.
+13. In **Field - 2** set **Type** to **Alias**.
 
-14.	In **Field - 3** set **Type** to **Child**.
+14. In **Field - 3** set **Type** to **Child**.
 
 15.	In **Field - 4** set **Type** to **Alias**.
 
@@ -111,45 +111,45 @@ In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Fi
 
 2. Select the **Sample** application and the **Basic** cube.
 
-3.	For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
+3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
 
 4. For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder, and select it.
 *Do I need to select a restructure option here?*
 
 ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
 
-5.	Click **OK**.
+5. Click **OK**.
 
-6.	Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
+6. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
 
-7.	Open the outline and see that the new product 500 group was created.
+7. Open the outline and see that the new product 500 group was created.
 
 ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
 
 ## Task 4: Analyze data for the newly created product group
 
-1.	On the **Applications** page, click the **Actions** menu next to the **Basic** cube and select **Analyze Data**.
+1. On the **Applications** page, click the **Actions** menu next to the **Basic** cube and select **Analyze Data**.
 
-2.	On the **Reports** tab, click **Create**.
+2. On the **Reports** tab, click **Create**.
 
-3.	Enter a **Name** for the report, such as **Products**.
+3. Enter a **Name** for the report, such as **MDX_500**.
 
-4.	In the **Query** field, paste the following MDX query:
+4. In the **Query** field, paste the following MDX query:
 
 <copy>SELECT
   {[Measures].[Sales]}
 ON COLUMNS,
-CrossJoin ({[New York]}, {Descendants([Product])})
+CrossJoin ({[New York]}, {Descendants([Product].[500])})
 ON ROWS
 FROM Sample.Basic
-WHERE ([Scenario].[Actual], [Year].[Qtr1])
+WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])
 </copy>
 
 5. **Validate** and then **Save** the query.
 
-6.	Click the query name in the left-hand panel to run the query.
+6. Click the query name in the left-hand panel to run the query.
 
-7.	Notice that data for the 500 product group is #Missing.
+7. Notice that data for the 500 product group is #Missing.
 
 ![Image of the query showing #Missing data for the 500 product group.](images/missing-product-data.png)
 
@@ -164,6 +164,7 @@ Next, we’ll load data to the Product dimension.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+
+* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

@@ -1,85 +1,95 @@
-# Title of the Lab
+# Load and analyze data
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, you’ll create a data load rule file and load data into the cube, then you’ll calculate and analyze the data.
 
 Estimated Time: -- minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
-
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+
+* Create a data load rule file
+* Run a data load job
+* Calculate and analyze the newly loaded data
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Create a data load rule file
 
-(optional) Task 1 opening paragraph.
+1. Go to Sample Basic cube inspector > **Scripts** and create a new data load rule.
 
-1. Step 1
+![Image alt text](images/sample1.png)
 
-	![Image alt text](images/sample1.png)
+> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+2. For the **Rule Name**, use **Data500**.
 
-2. Step 2
+3. For **Source Type**, select **File**.
 
-  ![Image alt text](images/sample1.png)
+4. Navigate to the **load_sales_cogs.txt** data load file. The file is in the **Catalog** under **All Files** > **shared** > **load_sales_cogs.txt**.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+5. Change **Data Load Record** number to 1 because row 0 is the header row in the data file.
 
-5. Example with bold **text**.
+6. Leave as **Comma** delimited because this source file is comma delimited.
 
-   If you add another paragraph, add 3 spaces before the line.
+  ![Image of the New Rule dialog box, with entries as described in the preceding steps.](images/new_data_load_rule.png)
 
-## Task 2: Concise Task Description
+7. Click **Preview data** to be sure it looks as expected.
 
-1. Step 1 - tables sample
+  ![Image of Preview Data in the New Rule dialog box, showing columns for the 500-10 product group, New York, Year and Scenario members, with Sales and COGS columns containing numeric data values.](images/load_rule_preview_data.png)
 
-  Use tables sparingly:
+8. Click **Proceed**. The Data500 data load rule file is displayed.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+  ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500_rule.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+8. Click **Verify**.
 
-    - List item 1
-    - List item 2
+9. Click **Save and Close**.
 
-3. Code examples
+## Task 2: Run the data load job
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+1. On the **Jobs** page, select **New Job** > **Load Data**.
 
-4. Code examples that include variables
+2. Select the **Application** and **Database**.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+3. Keep **File** as the **Load Type**.
+
+4. Click **Select files from catalog**.
+
+5. Select the **load_sales_cogs.txt** data load file and the **Data500** data load rule file and click **OK**.
+
+6. Look for the green checkmark under **Status** to confirm success. You may need to refresh the page.
+
+7. Open **Analyze Data** and re-run the **MDX_500** MDX query (On the **Reports** tab, double click the query name).
+
+Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
+
+  ![Image of an analyze data grid with existing data for 500-10 and 500-20 and #Missing for 500.](images/analyze_missing_500.png)
+
+## Task 3: Calculate and analyze the newly loaded data
+
+1. On the **Jobs** page, select **New Job** and **Run Calculation**.
+
+2. Select the **Sample** application, the **Basic** database, and the **CalcAll** calculation script.
+
+3. Click **OK**.
+
+4. Look for the green check mark under **Status** to check the status of the job.
+
+5. Open **Analyze Data** and re-run the MDX query.
+
+Data now exists for product 500.
+
+  ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze_data_in_500.png)
 
 ## Learn More
 
@@ -89,6 +99,7 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+
+* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
