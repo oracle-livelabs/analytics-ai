@@ -27,10 +27,6 @@ This lab assumes you have:
 
 1. Go to Sample Basic cube inspector > **Scripts** and create a new data load rule.
 
-![Image alt text](images/sample1.png)
-
-> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
-
 2. For the **Rule Name**, use **Data500**.
 
 3. For **Source Type**, select **File**.
@@ -87,7 +83,7 @@ Data exists for 500-10 and 500-20, but not 500. This is because we have not calc
 
 5. Open **Analyze Data** and re-run the MDX query.
 
-Data now exists for product 500.
+    Data now exists for product 500.
 
   ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze_data_in_500.png)
 
@@ -100,6 +96,6 @@ Data now exists for product 500.
 
 ## Acknowledgements
 
-* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
+* **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

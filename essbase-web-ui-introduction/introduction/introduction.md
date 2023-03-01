@@ -37,6 +37,6 @@ In general, the Introduction does not have Steps.
 
 ## Acknowledgements
 
-* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
+* **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
