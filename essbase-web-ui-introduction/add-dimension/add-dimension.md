@@ -136,7 +136,8 @@ In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Fi
 
 4. In the **Query** field, paste the following MDX query:
 
-<copy>SELECT
+<copy>
+SELECT
   {[Measures].[Sales]}
 ON COLUMNS,
 CrossJoin ({[New York]}, {Descendants([Product].[500])})
@@ -165,6 +166,6 @@ Next, we’ll load data to the Product dimension.
 
 ## Acknowledgements
 
-* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
+* **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
