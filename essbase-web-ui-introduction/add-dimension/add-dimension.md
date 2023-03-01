@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you’ll manually add a dimension to the outline in the application and cube you created in Lab 2, then you’ll create a dimension rule and perform a dimension build to add products to the outline, and finally, you’ll use an MDX query to analyze the data build in the cube.
+In this lab, you’ll manually add a dimension to the outline in the application and cube you created in the previous lab, then you’ll create a dimension rule and perform a dimension build to add products to the outline, and finally, you’ll use an MDX query to analyze the data in the cube.
 
 Estimated Lab Time: -- minutes
 
@@ -12,7 +12,7 @@ In this lab, you will:
 * Manually add a dimension to the outline, in the outline editor
 * Create a dimension build rule file
 * Perform a dimension build job
-* Analyze the dimension
+* Analyze data using an MDX query
 
 ### Prerequisites
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
 13. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
 
-![Image of the Restructure Database Outline dialog box, with All Data and FY2023 selected.](images/restructure-database-outline.png)
+![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
 
 ## Task 2: Create a dimension build rule file
 
