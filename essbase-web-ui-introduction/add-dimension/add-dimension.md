@@ -136,15 +136,13 @@ This lab assumes you have:
 
 4. In the **Query** field, paste the following MDX query:
 
-<copy>
-```SELECT
+<copy>SELECT
   {[Measures].[Sales]}
 ON COLUMNS,
 CrossJoin ({[New York]}, {Descendants([Product].[500])})
 ON ROWS
 FROM Sample.Basic
-WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])```
-</copy>
+WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])</copy>
 
 5. **Validate** and then **Save** the query.
 
