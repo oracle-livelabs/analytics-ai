@@ -49,7 +49,7 @@ This lab assumes you have:
 
 9. Select **FY2023**, and under **Operator**, choose **~ (Ignore)**.
 
-![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
+    ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
 
 10. Select **FY2024**, and under **Operator**, choose **~ (Ignore)**.
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
 13. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
 
-![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
+    ![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
 
 ## Task 2: Create a dimension build rule file
 
@@ -83,11 +83,11 @@ This lab assumes you have:
 
 10. For **Delimiter**, change to **Tab** delimited.
 
-![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
+    ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
 
 11. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
-![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
+    ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
 
 12. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
@@ -99,7 +99,7 @@ This lab assumes you have:
 
 16.	In **Field - 4** set **Type** to **Alias**.
 
-![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
+    ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
 
 17. Click **Verify**.
 
@@ -116,7 +116,7 @@ This lab assumes you have:
 4. For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder, and select it.
 *Do I need to select a restructure option here?*
 
-![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
+    ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
 
 5. Click **OK**.
 
@@ -124,7 +124,7 @@ This lab assumes you have:
 
 7. Open the outline and see that the new product 500 group was created.
 
-![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
+    ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
 
 ## Task 4: Analyze data for the newly created product group
 
@@ -150,7 +150,7 @@ This lab assumes you have:
 
 7. Notice that data for the 500 product group is #Missing.
 
-![Image of the query showing #Missing data for the 500 product group.](images/missing-product-data.png)
+    ![Image of the query showing #Missing data for the 500 product group.](images/missing-product-data.png)
 
 Next, we’ll load data to the Product dimension.
 
