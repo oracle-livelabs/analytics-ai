@@ -37,15 +37,15 @@ This lab assumes you have:
 
 6. Leave as **Comma** delimited because this source file is comma delimited.
 
-  ![Image of the New Rule dialog box, with entries as described in the preceding steps.](images/new_data_load_rule.png)
+  ![Image of the New Rule dialog box, with entries as described in the preceding steps.](images/new-data-load-rule.png)
 
 7. Click **Preview data** to be sure it looks as expected.
 
-  ![Image of Preview Data in the New Rule dialog box, showing columns for the 500-10 product group, New York, Year and Scenario members, with Sales and COGS columns containing numeric data values.](images/load_rule_preview_data.png)
+  ![Image of Preview Data in the New Rule dialog box, showing columns for the 500-10 product group, New York, Year and Scenario members, with Sales and COGS columns containing numeric data values.](images/load-rule-preview-data.png)
 
 8. Click **Proceed**. The Data500 data load rule file is displayed.
 
-  ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500_rule.png)
+  ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500-rule.png)
 
 8. Click **Verify**.
 
@@ -67,9 +67,9 @@ This lab assumes you have:
 
 7. Open **Analyze Data** and re-run the **MDX_500** MDX query (On the **Reports** tab, double click the query name).
 
-Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
+    Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
 
-  ![Image of an analyze data grid with existing data for 500-10 and 500-20 and #Missing for 500.](images/analyze_missing_500.png)
+  ![Image of an analyze data grid with existing data for 500-10 and 500-20 and #Missing for 500.](images/analyze-missing-500.png)
 
 ## Task 3: Calculate and analyze the newly loaded data
 
@@ -85,7 +85,7 @@ Data exists for 500-10 and 500-20, but not 500. This is because we have not calc
 
     Data now exists for product 500.
 
-  ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze_data_in_500.png)
+  ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze-data-in-500.png)
 
 ## Learn More
 
