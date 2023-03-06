@@ -31,13 +31,13 @@ This lab assumes you have:
 
 3. Under **Actions**, select **Add a sibling below the selected member**.
 
-   ![Image of the outline editor toolbar, actions group, with the Add sibling below the selected member icon selected.](images/add-sibling.png)
+    ![Image of the outline editor toolbar, actions group, with the Add sibling below the selected member icon selected.](images/add-sibling.png)
 
 4. Type **Calendar**, press Enter, and then Escape.
 
 5. Under **Actions**, press **Add a child to the selected member**.
 
- ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
+    ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
 
 6. Type **FY3023** and press Enter.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 8. Select **Calendar**, and under **Data storage type**, select **Label Only**.
 
-![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
+    ![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
 
 9. Select **FY2023**, and under **Operator**, choose **~ (Ignore)**.
 
