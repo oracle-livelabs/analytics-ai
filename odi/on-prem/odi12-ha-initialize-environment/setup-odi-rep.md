@@ -1,4 +1,4 @@
-# Access and Configure ODI Instance
+# Access and configure ODI instance
 
 ## Introduction
 This lab will show you how to access an ODI instance using NoVNC and configure ODI Studio
@@ -15,7 +15,7 @@ This lab assumes you have completed:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## Task 1: Validate the Database Processes are Up and Running.
+## Task 1: Validate the database processes are up and running.
 1. Now with access to your remote desktop sessions, proceed as indicated below to validate your environment before you start executing the subsequent labs. 
 
     ```
@@ -62,7 +62,7 @@ The above screenshot indicates that the listener and Oracle database processes a
 
   ![NoVNC Home Page](./images/odi-novnc-landing.png " ")  
 
-## Task 2: Validate the ODI Installation.
+## Task 2: Validate the ODI installation.
 
 Below is the ODI installation path
 
@@ -82,9 +82,9 @@ Below is the ODI installation path
    ![ODI Middleware Home Directory](./images/odi2-list.png " ") 
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
-## Appendix 1: Managing Startup Services
+## Appendix 1: Managing startup services
 
 1. Database service (Database and Standard Listener).
 
@@ -134,6 +134,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
