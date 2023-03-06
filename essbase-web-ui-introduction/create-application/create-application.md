@@ -26,13 +26,13 @@ This lab assumes you have:
 
 1. On the **Applications** page, click **Import**.
 
- ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button selected.](images/application-import.png)
+    ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button selected.](images/application-import.png)
 
 2. In the **Import** dialog box, click **Catalog**.
 
 3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click Sample_Basic.xlsx and click **Select**.
 
-  ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
+    ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
 
 4. In the **Import** dialog box, click **OK**.
 
@@ -46,16 +46,16 @@ This lab assumes you have:
 
 4. In the outline toolbar, click **Display selected columns in the table**.
 
-![Image of the outline toolbar with the Display selected columns in the table icon selected.](images/outline-toolbar.png)
+    ![Image of the outline toolbar with the Display selected columns in the table icon selected.](images/outline-toolbar.png)
 
 5. In the **Select the member properties to display** dialog box, scroll down and select the check box next to **Active alias name**, and select **Apply and Close**.
 
 6. Product aliases are displayed in the outline.
 
-![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)
+    ![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)
 
 ## Acknowledgements
 
-* **Author** - <Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team>
+* **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
