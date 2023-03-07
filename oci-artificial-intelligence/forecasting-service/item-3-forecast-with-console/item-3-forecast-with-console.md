@@ -60,8 +60,10 @@ In this section, we will learn how to create the forecast project, upload data i
         If you want to add policy only at tenancy level then please add below policy statements. Adding policy  at tenancy level will let the user access to all resources in the tenancy
         
         ```
+        <copy>
         Allow dynamic-group DynamicGroupRPSTAccess to manage objects in tenancy
         Allow dynamic-group DynamicGroupRPSTAccess to read buckets in tenancy
+        </copy>
         ```
 
         ![Create Policy](images/lab5-create-policy.png " ")
@@ -69,8 +71,10 @@ In this section, we will learn how to create the forecast project, upload data i
         Option 2: 
         If you want to add policy ONLY at compartment level then please replace above policy statements as mentioned below. Adding policy ONLY at compartment level will limit the user to access resources only in their compartment:
         ```
+        <copy>
         Allow dynamic-group DynamicGroupRPSTAccess to manage objects in compartment <compartment-name>
         Allow dynamic-group DynamicGroupRPSTAccess to read buckets in compartment <compartment-name>
+        </copy>
         ```
 
 
@@ -82,8 +86,10 @@ In this section, we will learn how to create the forecast project, upload data i
     - Administrator user policies :
     In addition to the above, the **tenancy admin** should allow the group to manage the OCI forecasting service. Admin can do so by modifying the existing policy for the user group or new policy for the user group
         ```
+        <copy>
         Allow group <group-name> to manage ai-service-forecasting-family in tenancy
         Allow group <group-name> to manage ai-service-forecasting-family in compartment <compartment-name>
+        </copy>
         ```
         ``` <group-name> ``` is the name of the group to which user is added
 
@@ -424,8 +430,6 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
      
     Once submitted, the model training and forecast is started and the status is **Creating**
 
-    ![Forecast Page](images/lab5-forecast-page.png " ")
-
 
 ## Task 7: Forecast Results
 1. Forecast Status:
@@ -506,14 +510,9 @@ We will use the data already uploaded in bucket in *Task 4* above
     In the Create Data Asset window, we can specify the bucket name of Object storage and select the data file. Next, Click Create Button.
     ![Create Primary Data Asset](images/lab5-task10-create-prima-data.png " ")
 
-
     After a few seconds, the data asset will be shown in the data asset main panel
 
     Similarly, we can create Data Asset for Additional and Meta data
-
-    ![Create Additional Data Asset](images/lab5-lab5-task10-create-add-data-asset.png " ")
-   
-    ![Create Meta Data Asset](images/lab5-create-meta-data.png " ")
 
     Now, select the Data Assets created just now, and click Next
     ![Select Primary and Meta Data Assets](images/lab5-data-asset-prim-add.png " ")
