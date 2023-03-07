@@ -25,32 +25,32 @@ In this section, we will learn how to create the forecast project, upload data i
 ## Task 1: Set up pre-requisites for console (Need only if user is using their own tenancy)
 
 1. If the user tenancy is not subscribed to US West (Phoenix) then we should look for the tenancy region drop-down for US West (Phoenix) and select it as shown below:
-        ![](images/lab5-subscribe-us-west-phnx.png " ")
+        ![Subscribe to Region US-West Phoenix](images/lab5-subscribe-us-west-phnx.png " ")
 
 2. Create a Dynamic group in the user tenancy by below steps:
 
     - Go to Identity & Security from the Sidebar Menu of the OCI console and select Dynamic Groups
-        ![](images/lab5-select-dynamic-group.png " ")
+        ![Select Dynamic Group](images/lab5-select-dynamic-group.png " ")
 
     - Create Dynamic Group
-        ![](images/lab5-click-create-dynamic-group.png " ")
+        ![Create Dynamic Group](images/lab5-click-create-dynamic-group.png " ")
 
     - Fill in the below details in the relevant fields as shown in image:
         Name: DynamicGroupRPSTAccess (This name is an Eg. , you can keep your name)
         Rule: ANY {resource.type='aiforecastproject'}
         DynamicGroupRPSTAccess is to allow Forecasting service to manage (read & write) Customer’s Object Storage
-        ![](images/lab5-create-and-save-dynamic-group.png " ")
+        ![Fill Details for Dynamic Group](images/lab5-create-and-save-dynamic-group.png " ")
         
     - We can verify that the dynamic group DynamicGroupRPSTAccess is created:
-        ![](images/lab5-dynamic-group-created.png " ")
+        ![Verify Dynamic Group](images/lab5-dynamic-group-created.png " ")
 
 3. Create a Policy in the user tenancy by following below steps:
 
     - Go to Identity & Security from Sidebar Menu of the OCI console and select Policies
-        ![](images/lab5-navigate-to-policy.png " ")
+        ![Select Policy](images/lab5-navigate-to-policy.png " ")
 
     - Create policy
-        ![](images/lab5-click-on-create-policy.png " ")
+        ![Click Create Policy](images/lab5-click-on-create-policy.png " ")
 
     - Fill in the below details in the relevant fields as shown in the image:
 
@@ -64,7 +64,7 @@ In this section, we will learn how to create the forecast project, upload data i
         Allow dynamic-group DynamicGroupRPSTAccess to read buckets in tenancy
         ```
 
-        ![](images/lab5-create-policy.png " ")
+        ![Create Policy](images/lab5-create-policy.png " ")
 
         Option 2: 
         If you want to add policy ONLY at compartment level then please replace above policy statements as mentioned below. Adding policy ONLY at compartment level will limit the user to access resources only in their compartment:
@@ -75,7 +75,7 @@ In this section, we will learn how to create the forecast project, upload data i
 
 
     - We can verify that the FC_POLICY policy has been created:     
-        ![](images/lab5-policy-created.png " ")
+        ![Verify Policy](images/lab5-policy-created.png " ")
 
     - Now, we are ready to use Object Storage for the OCI Forecasting service   
     
@@ -279,28 +279,28 @@ After downloading the dataset, we need to upload the sample training data into t
 
     - Navigate to the OCI Services menu, select Object Storage
 
-    ![](images/lab5-switch-to-cloudstoragebucket.png " ")
+    ![Storage Bucket](images/lab5-switch-to-cloudstoragebucket.png " ")
 
     - Select compartment from the left dropdown menu and choose the compartment and select create bucket 
 
-    ![](images/lab5-compartment-create-bucket.png " ")
+    ![Create Bucket](images/lab5-compartment-create-bucket.png " ")
 
     - Fill out the dialog box, fill in bucket Name & select the STANDARD option for storage tier and create bucket
-    ![](images/lab5-fill-bucket-details.png " ")
+    ![Fill Bucket](images/lab5-fill-bucket-details.png " ")
 
 
 2.  Upload the downloaded training CSV data file into Storage Bucket:
 
     - Switch to OCI window and select the bucket name that we created just now.
-    ![](images/lab5-check-bucket-created.png " ")
+    ![Bucket Created](images/lab5-check-bucket-created.png " ")
     
 
     - Bucket detail window should be visible. Scroll down and click Upload
-    ![](images/lab5-bucket-details-window.png " ")
+    ![Bucket Details](images/lab5-bucket-details-window.png " ")
 
 
     - Browse to the file to upload and click the Upload button 
-    ![](images/lab5-bucket-upload-files.png " ")
+    ![Upload Files](images/lab5-bucket-upload-files.png " ")
 
     More details on OCI Object storage can be found [here](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
@@ -310,22 +310,22 @@ A project is a way to organize multiple data assets and forecasts in the same wo
 
 1.  Log into the OCI Cloud Console. Using the Ham Burger Menu on the top left corner, navigate to Analytics and AI, then select the Forecasting  under AI services
 
-    ![](images/lab5-project-select-forecast-service.png " ")
+    ![Select Forecasting Service](images/lab5-project-select-forecast-service.png " ")
 
 2.  Selecting the Forecasting option will navigate us to the OCI Forecast Console.
     
     Under Projects, select compartment and click create Project
 
-    ![](images/lab5-project-details.png " ")
+    ![Click Create Project](images/lab5-project-details.png " ")
 
 3.  The Create Project button navigates us to a form where we can specify the compartment we want to create a Forecast Project. Once the details are entered click the create button.
-    ![](images/lab5-create-new-project.png " ")
+    ![Create Project](images/lab5-create-new-project.png " ")
 
 4.  If the project is successfully created it will show up in the projects pane. From here onwards, select livelabs_forecast_demo.
-    ![](images/lab5-project-created.png " ")
+    ![Project Created](images/lab5-project-created.png " ")
 
 5.  Select the project we just created and go to project page.
-    ![](images/lab5-project-page.png " ")
+    ![Navigate to Project Page](images/lab5-project-page.png " ")
 
 ## Task 6: Create Forecast
 
@@ -333,32 +333,32 @@ Below Forecast example is with **Use Case with Primary and Additional Data**.
 If you wish to only try **Use Case with Primary, Additional and Meta Data** , skip this task and directly go to *Task 10*
 
 1.  Clicking on the Create Forecast button will take us to Create Forecast Page:
-    ![](images/lab5-create-forecast.png " ")
+    ![Create Forecast](images/lab5-create-forecast.png " ")
 
 2.  Create Data Asset:
     We need to select a Data Asset needed to train a model and forecast. There are two types of Data Assets i.e. Primary and Additional. For each type of Data Asset, Either, we can select a previously existing Data Asset or create a new Data Asset. As we don't have any existing Data Asset, we will click on the Create New Data Asset 
-    ![](images/lab5-data-asset-create-directly.png " ")
+    ![Create Data Asset](images/lab5-data-asset-create-directly.png " ")
 
     In the Create Data Asset window, we can specify the bucket name of Object storage and select the data file. Next, Click Create Button.
-    ![](images/lab5-primary-data-details.png " ")
+    ![Fill Primary Data Details](images/lab5-primary-data-details.png " ")
 
     After a few seconds, the data asset will be shown in the data asset main panel, select the
     data that we just created now
 
-    ![](images/lab5-select-created-primary-data-asset.png " ")
+    ![Create Primary Data Asset](images/lab5-select-created-primary-data-asset.png " ")
     
     Similarly, we can create Data Asset for Additional Data. Additional Data is optional but for this demo, we recommend to use Additional Data if you are expecting same results as the below
-    ![](images/lab5-select-additional-data.png " ")
-    ![](images/lab5-additional-data-details.png " ")
+    ![Create Additional Data](images/lab5-select-additional-data.png " ")
+    ![Fill Additional Data Details](images/lab5-additional-data-details.png " ")
 
     Now, select the Addtional Data Asset created just now, and click Next
-    ![](images/lab5-select-created-additional-data-asset.png " ")
+    ![Create Additional Data Asset](images/lab5-select-created-additional-data-asset.png " ")
 
 3.  Configure Schema :
 
     We need to provide a schema for the primary and additional data in this window. In addition to schema, we also provide Timestamp format, Input data frequency, and Timestamp column
 
-    ![](images/lab5-data-schema.png " ")
+    ![Provide Scehma](images/lab5-data-schema.png " ")
 
     After filling in the details, click Next
 
@@ -414,30 +414,30 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
     - Select explainability if you want explainabiity
     - Select algorithm you want to run. For this eg: We have selected *SMA, DMA, DES, PROPHET*
 
-    ![](images/lab5-configure-forecast.png " ")
+    ![Configure Forecast](images/lab5-configure-forecast.png " ")
 
 
 
 
 5.  Review the Configuration for Forecast and click Submit :
-    ![](images/lab5-review-config.png " ")
+    ![Review Configuration ](images/lab5-review-config.png " ")
      
     Once submitted, the model training and forecast is started and the status is **Creating**
 
-    ![](images/lab5-forecast-page.png " ")
+    ![Forecast Page](images/lab5-forecast-page.png " ")
 
 
 ## Task 7: Forecast Results
 1. Forecast Status:
     After 3-4 minutes the status will change to **Active**. Now, click on the Forecast Link as we can see below
-    ![](images/lab5-forecast-active-page.png " ")
+    ![Forecast Status](images/lab5-forecast-active-page.png " ")
 
 2. Review Forecast Results:
     
     Now, let's review the forecast results
     1. We get general information like OCID (forecast ID), description, and Training Messages etc.
     2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results by generating the download.zip
-    ![](images/lab5-forecast-result-page.png " ")
+    ![Review Forecast Results](images/lab5-forecast-result-page.png " ")
 
 ## Task 8: Explore the Forecast and Explainability  
 1.  Forecast:
@@ -446,27 +446,27 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
     - Highlighted box 2 highlights the forecast for a particular time step
     - Highlighted box 3 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
 
-    ![](images/lab5-forecast-graph-page.png " ")
+    ![Forecast Graph](images/lab5-forecast-graph-page.png " ")
 
 2.  Explainability: 
 
     The forecast will also give explainability for each of the target time series in the dataset. The explainability report includes both global and local level explanations. Explanations provide insights into the features that are influencing the forecast. Global explanation represents the general model behavior - e.g., which features does the model consider important? A local explanation tells the impact of each feature at a single time step level. The forecast provides local explanations for all the forecasts that it generates. Here we get a global and local explanation for the best model chosen by the forecast, to understand the features that are influencing the forecast
 
-    ![](images/lab5-explain-forecast-all.png " ")
+    ![Explainability](images/lab5-explain-forecast-all.png " ")
 
 
     - Global Feature Importance:
-    ![](images/lab5-global-explain.png " ")
+    ![Global Feature Importance](images/lab5-global-explain.png " ")
 
     
     - Local Feature Importance:
        We can select the time step for which we want to see the local feature importance
-    ![](images/lab5-local-explain.png " ")
+    ![Local Feature Importance](images/lab5-local-explain.png " ")
 
 ## Task 9 (Optional): Download the results file 
 1. Finally, we can download the results zip file **Download.zip**. 
  **Download.zip** option will be available by selecting **Generate zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
-    ![](images/lab5-generate-zip.png " ")
+    ![Generate zip](images/lab5-generate-zip.png " ")
 2. **Download.zip** contains three files:
     - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
     - **explanation\_results\_global.csv**: Global Explainability
@@ -479,7 +479,7 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
        ***ocid1.aiforecast.oc1.phx.amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq***,
        then files will be in ***fs-amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq*** folder
 
-     ![](images/lab5-task10-results-object-storage.png " ")
+     ![Results Object Storage Location](images/lab5-task10-results-object-storage.png " ")
 
     - **explainability**:  Explainability files for each series    
     - **forecast**: nput and Forecast, Upper Bound and Lower Bound Prediction Intervals
@@ -494,30 +494,30 @@ This examples shows how to use OCI Forecasting Service for Use case with Primary
 We will use the data already uploaded in bucket in *Task 4* above
 
 1.  Clicking on the Create Forecast button will take us to Create Forecast Page:
-    ![](images/lab5-create-forecast.png " ")
+    ![Create Forecast](images/lab5-create-forecast.png " ")
 
 
 
 2.  Create Data Asset:
     We need to select a Data Asset needed to train a model and forecast. There are two types of Data Assets i.e. Primary and Additional. For each type of Data Asset, Either, we can select a previously existing Data Asset or create a new Data Asset. As we don't have any existing Data Asset, we will click on the Create New Data Asset 
-    ![](images/lab5-data-asset-create-directly.png " ")
+    ![Create Data Asset](images/lab5-data-asset-create-directly.png " ")
 
 
     In the Create Data Asset window, we can specify the bucket name of Object storage and select the data file. Next, Click Create Button.
-    ![](images/lab5-task10-create-prima-data.png " ")
+    ![Create Primary Data Asset](images/lab5-task10-create-prima-data.png " ")
 
 
     After a few seconds, the data asset will be shown in the data asset main panel
 
     Similarly, we can create Data Asset for Additional and Meta data
 
-    ![](images/lab5-lab5-task10-create-add-data-asset.png " ")
+    ![Create Additional Data Asset](images/lab5-lab5-task10-create-add-data-asset.png " ")
    
-    ![](images/lab5-create-meta-data.png " ")
+    ![Create Meta Data Asset](images/lab5-create-meta-data.png " ")
 
     Now, select the Data Assets created just now, and click Next
-    ![](images/lab5-data-asset-prim-add.png " ")
-    ![](images/lab5-data-meta.png " ")
+    ![Select Primary and Meta Data Assets](images/lab5-data-asset-prim-add.png " ")
+    ![Select Meta Data](images/lab5-data-meta.png " ")
 
 
 
@@ -525,7 +525,7 @@ We will use the data already uploaded in bucket in *Task 4* above
 
     We need to provide a schema for the primary , additional and meta data in this window. In addition to schema, we also provide Timestamp format, Input data frequency, and Timestamp column
 
-    ![](images/lab5-task10-configure-schema.png " ")
+    ![Configure Schema](images/lab5-task10-configure-schema.png " ")
 
     After filling in the details, click Next
 
@@ -542,11 +542,11 @@ We will use the data already uploaded in bucket in *Task 4* above
     - Select explainability if you want explainabiity
     - Select algorithm you want to run. Meta Data will be used only by Multivariate algorithms :    PROBRNN,APOLLONET EFE
 
-    ![](images/lab5-task10-configure-forecast.png " ")
+    ![Configure Forecast](images/lab5-task10-configure-forecast.png " ")
 
 
 5.  Review the Configuration for Forecast and click Submit :
-    ![](images/lab5-task10-review-config.png " ")
+    ![Review Forecast Configuration ](images/lab5-task10-review-config.png " ")
      
     Once submitted, the model training and forecast is started and the status is **Creating**
 
@@ -554,14 +554,14 @@ We will use the data already uploaded in bucket in *Task 4* above
 6.  Forecast Results
     - Forecast Status:
         After 3-4 minutes the status will change to **Active**. Now, click on the Forecast Link as we can see below
-        ![](images/lab5-task10-forecast-active-page.png " ")
+        ![Forecast Active](images/lab5-task10-forecast-active-page.png " ")
 
     - Review Forecast Results:
         
         Now, let's review the forecast results
         1. We get general information like OCID (forecast ID), description, and Training Messages etc.
         2. We get the generation time of the forecast, the total number of series provided for the forecast, and the forecast horizon, we can also download the forecast results by generating the download.zip
-        ![](images/lab5-task10-forecast-result-page.png " ")
+        ![Review Forecast Results](images/lab5-task10-forecast-result-page.png " ")
 
 7.  Explore the Forecast and Explainability  
     -  Forecast:
@@ -570,26 +570,26 @@ We will use the data already uploaded in bucket in *Task 4* above
         - Highlighted box 2 highlights the forecast for a particular time step
         - Highlighted box 3 highlights information on forecast metrics like lowest error metric measure, the number of methods ran, etc.
 
-        ![](images/lab5-task10-forecast-graph-page.png " ")
+        ![Forecast Graph](images/lab5-task10-forecast-graph-page.png " ")
 
     -  Explainability : 
         The forecast will also give explainability for each of the target time series in the dataset. The explainability report includes both global and local level explanations. Explanations provide insights into the features that are influencing the forecast. Global explanation represents the general model behavior - e.g., which features does the model consider important? A local explanation tells the impact of each feature at a single time step level. The forecast provides local explanations for all the forecasts that it generates. Here we get a global and local explanation for the best model chosen by the forecast, to understand the features that are influencing the forecast
 
-        ![](images/lab5-task10-explain-graph-all.png " ")
+        ![Explainability](images/lab5-task10-explain-graph-all.png " ")
 
 
         - Global Feature Importance:
-        ![](images/lab5-task10-global-explain-dl.png " ")
+        ![Global Feature Importance](images/lab5-task10-global-explain-dl.png " ")
         
 
         - Local Feature Importance: We can select the time step for which we want to see the local feature importance
-        ![](images/lab5-task10-local-explain-dl.png " ")
+        ![Local Feature Importance](images/lab5-task10-local-explain-dl.png " ")
 
         
 8. (Optional): Download the results file 
     - Finally, we can download the results zip file **Download.zip**. 
     **Download.zip** option will be available by selecting **Generate zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
-        ![](images/lab5-task10-forecast-download.png " ")
+        ![Generate zip](images/lab5-task10-forecast-download.png " ")
     - **Download.zip** contains three files:
         - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
         - **explanation\_results\_global.csv**: Global Explainability - But will be empty until explainabiltiy is made available for PROBRNN, Apollonet and EFE 
@@ -601,7 +601,7 @@ We will use the data already uploaded in bucket in *Task 4* above
        ***ocid1.aiforecast.oc1.phx.amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq***,
        then files will be in ***fs-amaaaaaaugxxxxxxxxxx4smflo6jrubfflwrcs4evkbxwkfiq*** folder
 
-        ![](images/lab5-task10-results-object-storage.png " ")
+        ![Results Object Storage Location](images/lab5-task10-results-object-storage.png " ")
 
     - **explainability**:  Explainability files for each series    
     - **forecast**: nput and Forecast, Upper Bound and Lower Bound Prediction Intervals
