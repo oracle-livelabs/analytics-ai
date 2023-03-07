@@ -96,11 +96,8 @@ OCI forecasting service provides an AutoML solution with multiple univariate/mul
 ### **Data Validations**
 For a successful forecast, the input data should pass the following data validations:
 
-* Number of rows for a time series >= 5 and <= 5000
-* Series length >= 2 X Major Seasonality
-* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
-* If the ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
+* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
 * Number of missing values for 5 consecutive time steps is not allowed
 * All the timestamps in the primary data source should exist in the secondary data source
 * The number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
@@ -492,19 +489,23 @@ If you wish to only try **Use Case with Primary, Additional and Meta Data** , sk
 
 **Creating Forecast for Use case with Primary, Additional and Meta Data**
 
-This examples shows how to use OCI Forecasting Serice for Use case with Primary, Additional and Meta Data.
+This examples shows how to use OCI Forecasting Service for Use case with Primary, Additional and Meta Data.
 
 We will use the data already uploaded in bucket in *Task 4* above
 
 1.  Clicking on the Create Forecast button will take us to Create Forecast Page:
     ![](images/lab5-create-forecast.png " ")
 
+
+
 2.  Create Data Asset:
     We need to select a Data Asset needed to train a model and forecast. There are two types of Data Assets i.e. Primary and Additional. For each type of Data Asset, Either, we can select a previously existing Data Asset or create a new Data Asset. As we don't have any existing Data Asset, we will click on the Create New Data Asset 
     ![](images/lab5-data-asset-create-directly.png " ")
 
+
     In the Create Data Asset window, we can specify the bucket name of Object storage and select the data file. Next, Click Create Button.
     ![](images/lab5-task10-create-prima-data.png " ")
+
 
     After a few seconds, the data asset will be shown in the data asset main panel
 
@@ -517,6 +518,8 @@ We will use the data already uploaded in bucket in *Task 4* above
     Now, select the Data Assets created just now, and click Next
     ![](images/lab5-data-asset-prim-add.png " ")
     ![](images/lab5-data-meta.png " ")
+
+
 
 3.  Configure Schema :
 
@@ -616,4 +619,4 @@ Please feel free to contact us if any additional questions.
     * Anku Pandey, Applied Scientist - Oracle AI Services
     * Sirisha Chodisetty, Senior Applied Scientist - Oracle AI Services
     * Sharmily Sidhartha, Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, Nov'2022
+    * Last Updated By/Date: Ravijeet Kumar, March'2022

@@ -530,41 +530,39 @@ In this task, we will learn how to use create and get forecast APIs.
     ```  
     Forecast Response below :
     ```json
-    {
-    'description': None,
-    'id': 'ocid1.aiforecast.oc1.phx.rwerweugg2dyrwerewrxf5wd3gc2xgrxxoxkrmjeddyoxyrs3wztaqlwfya',
+    {'description': None,
+    'id': 'ocid1.aiforecast.oc1.phx.amaaaaaaugg2dyyahh2cclvq7cxk6sywjsqkfftk4fta2mzyfx7otvexcubq',
     'responseType': None,
-    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaarewrewjuzo25wt7vosv4inc6ib5efqiyvon4dqwijssvyaxw6ivqa',
-    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaaugg2dyyagczklwmq76gcuaseewrewraknse25zybjfatjpeyks2q',
+    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaaabkxgxjuzo25wt7vosv4inc6ib5efqiyvon4dqwijssvyaxw6ivqa',
+    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaaugg2dyya5gctalqoe3b7jgr76ohkxffm3tn7mnwgfeczh3mth3ja',
     'displayName': 'Inline Forecasting Service API LA Live Labs ',
     'createdBy': None,
-    'timeCreated': '2022-11-25T03:44:25.920Z',
-    'timeUpdated': '2022-11-25T04:17:49.913Z',
-    'lifeCyleDetails': None,
+    'timeCreated': '2023-03-07T03:39:56.581Z',
+    'timeUpdated': '2023-03-07T04:16:24.701Z',
+    'lifeCycleDetails': 'Forecast completed',
+    'lifeCyleDetails': 'Forecast completed',
     'lifecycleState': 'ACTIVE',
     'failureMessage': None,
     'trainingMessages': [],
     'forecastCreationDetails': {'targetVariables': ['sales'],
-      'modelDetails': {'models': ['SMA',
+    'modelDetails': {'models': ['SMA',
         'DMA',
         'HWSM',
         'HWSA',
         'SES',
         'DES',
         'PROPHET']},
-      'dataSourceDetails': {'type': 'INLINE',
-      'primaryDataSource': {'isDataGrouped': True,
+    'dataSourceDetails': {'type': 'INLINE',
+    'primaryDataSource': {'isDataGrouped': True,
         'tsColName': 'date',
-        'dataFrequency': 'DAY',
     show more (open the raw output data in a text editor) ...
 
-    'inputSeriesCount': 1,
+    'validatedSeriesCount': 1,
     'forecastSeriesCount': 1,
     'freeformTags': {},
     'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
-      'CreatedOn': '2022-11-25T03:44:25.525Z'}},
-    'systemTags': {}
-      }
+    'CreatedOn': '2023-03-07T03:39:55.865Z'}},
+    'systemTags': {}}
     ```
      
 Using below code, we can save the forecast as tabular data in a csv file with prediction intervals.
@@ -602,9 +600,9 @@ The forecast.csv will be saved in the same folder as the notebook file.
     ```
     Output:
     ```Json
-  [{'targetColumn': '15_AUTOMOTIVE',
+    [{'targetColumn': '15_AUTOMOTIVE',
     'bestModel': 'prophet',
-    'errorMeasureValue': 1.1582192,
+    'errorMeasureValue': 1.1511183,
     'errorMeasureName': 'RMSE',
     'numberOfMethodsFitted': 5,
     'seasonality': 1,
@@ -645,35 +643,35 @@ Here is a example on using the forecast explanation API to get the global and lo
     {'dataSourceType': 'INLINE',
     'explanations': [{'targetColumn': '15_AUTOMOTIVE',
     'bestModel': 'PROPHET',
-    'bestHyperParameters': {'seasonality_prior_scale': 0.43401502145728005,
-    'seasonality_mode': 'additive',
-    'changepoint_prior_scale': 1.0,
-    'changepoint_range': 0.8600000000000001,
-    'holidays_prior_scale': 0.1},
+    'bestHyperParameters': {'seasonality_prior_scale': 0.515702360143489,
+        'seasonality_mode': 'additive',
+        'changepoint_prior_scale': 1.0,
+        'changepoint_range': 0.8800000000000001,
+        'holidays_prior_scale': 0.1},
     'hyperparameterSearchMethod': 'BAYESOPT',
     'bestModelSelectionMetric': 'RMSE',
-    'globalFeatureImportance': {'influencingFeatures': {'trend': {'rawScore': 0.0031412507,
-    'normalizedScore': 0.002469764},
-    'onpromotion': {'rawScore': 1.2687416, 'normalizedScore': 0.9975302}}},
-    'localFeatureImportance': {'forecastHorizon': 14,
-    'dates': ['2017-02-09 00:00:00',
-    '2017-02-10 00:00:00',
-    '2017-02-11 00:00:00',
-    '2017-02-12 00:00:00',
-    '2017-02-13 00:00:00',
-    '2017-02-14 00:00:00',
-    '2017-02-15 00:00:00',
-    '2017-02-16 00:00:00',
-    '2017-02-17 00:00:00',
-    '2017-02-18 00:00:00',
-    '2017-02-19 00:00:00',
+    'globalFeatureImportance': {'influencingFeatures': {'trend': {'rawScore': 0.0010241447,
+        'normalizedScore': 0.0006554309},
+        'onpromotion': {'rawScore': 1.2742214, 'normalizedScore': 0.8154747},
+        'yearly': {'rawScore': 0.16981193, 'normalizedScore': 0.10867604},
+        'weekly': {'rawScore': 0.11749427, 'normalizedScore': 0.07519384},
+        'daily': {'rawScore': 0.0, 'normalizedScore': 0.0}},
+        'influencingFeaturesUnified': {'primary': [{'name': 'Daily seasonality',
+        'description': 'The model finds the target values to follow daily cycles. This bar displays the importance of daily seasonality for the forecast.',
+        'rawScore': 0.0,
+        'normalizedScore': 0.0},
+        {'name': 'Lag effects (level and trend)',
+        'description': 'Lag effects are impacts of previous periods on the target values. Lag effects explain the upward or downward movements of the target variable (trend) and the average value for a specific time period (level). This bar shows how important lag effects are for this forecast.',
+        'rawScore': 0.0010241447,
+        'normalizedScore': 0.0006554309},
+        {'name': 'Weekly seasonality',
     show more (open the raw output data in a text editor) ...
 
-    'onpromotion': {'rawScore': 2.1349018,
-    'normalizedScore': 0.9962766}}]}}],
+            'rawScore': 2.1441226,
+            'normalizedScore': 0.98800904}]}]}}],
     'freeformTags': {},
     'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
-    'CreatedOn': '2022-11-25T03:44:25.525Z'}},
+    'CreatedOn': '2023-03-07T03:39:55.865Z'}},
     'systemTags': {}}
     ```
 *The above explanation shows features contributing towards the model output/prediction from the base value. The base value is nothing but the average model output computed over the most recent 100-time steps in the training data. If the dataset size is less than 100, then the base value is computed over the whole dataset. The features which have positive feature importance scores, push the prediction higher and the features that have negative feature importance scores, push the prediction lower. The feature importance scores are raw scores and those features with high magnitude influence the prediction most and the sign of the scores indicates whether the influence is positive or negative.*
@@ -683,23 +681,23 @@ Here is a example on using the forecast explanation API to get the global and lo
     Here is a simple function to plot the global feature importance from the above json output.
 
     ```Python
-  import plotly.express as px
-  import plotly.graph_objects as go
+    import plotly.express as px
+    import plotly.graph_objects as go
 
-  def plot_global_feature_importance(get_forecast_explanations):
-      df_imps = pd.DataFrame()
-      global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
-      df_imps['Feature_Importance'] = global_feature_importance.values()
-      df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
-      feature_names = global_feature_importance.keys()
-      df_imps['Features'] = feature_names
+    def plot_global_feature_importance(get_forecast_explanations):
+        df_imps = pd.DataFrame()
+        global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
+        df_imps['Feature_Importance'] = global_feature_importance.values()
+        df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
+        feature_names = global_feature_importance.keys()
+        df_imps['Features'] = feature_names
 
-      title = "Global Feature Importance"
-      fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
-      fig.update_traces(marker_color='lightsalmon')
-      fig.show()
+        title = "Global Feature Importance"
+        fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
+        fig.update_traces(marker_color='lightsalmon')
+        fig.show()
 
-  plot_global_feature_importance(get_forecast_explanations)
+    plot_global_feature_importance(get_forecast_explanations)
     ```
 
   ### Sample Global feature importance plot
@@ -715,26 +713,25 @@ Here is a example on using the forecast explanation API to get the global and lo
     Here is a simple function to plot the local feature importance from the above json output.
 
     ```Python
-    import plotly.express as px
-    import plotly.graph_objects as go
-    import numpy as np
+        import plotly.express as px
+        import plotly.graph_objects as go
+        import numpy as np
 
-    def plot_local_feature_importance(get_forecast_explanations, time_step):
-        df_imps = pd.DataFrame()
-        local_feature_importance = get_forecast_explanations['explanations'][0]['localFeatureImportance']['influencingFeatures'][time_step]
-        df_imps['Feature_Importance'] = local_feature_importance.values()
-        df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
-        feature_names = local_feature_importance.keys()
-        df_imps['Features'] = feature_names
+        def plot_local_feature_importance(get_forecast_explanations, time_step):
+            df_imps = pd.DataFrame()
+            local_feature_importance = get_forecast_explanations['explanations'][0]['localFeatureImportance']['influencingFeatures'][time_step]
+            df_imps['Feature_Importance'] = local_feature_importance.values()
+            df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
+            feature_names = local_feature_importance.keys()
+            df_imps['Features'] = feature_names
 
-        title = "Local Feature Importance for Timestep " + str(time_step)
-        fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
-        fig.update_traces(marker_color='lightsalmon')
-        fig.show()
+            title = "Local Feature Importance for Timestep " + str(time_step)
+            fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
+            fig.update_traces(marker_color='lightsalmon')
+            fig.show()
 
-    time_step = 2
-
-    plot_local_feature_importance(get_forecast_explanations, time_step)
+        time_step = 2
+        plot_local_feature_importance(get_forecast_explanations, time_step)
     ```
 
     ### Sample Local feature importance plot for step 1 forecast
