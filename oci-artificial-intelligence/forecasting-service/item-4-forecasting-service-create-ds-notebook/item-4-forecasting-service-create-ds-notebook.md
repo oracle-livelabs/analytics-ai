@@ -1,5 +1,6 @@
 # Lab 2: (Optional) Forecast using Data Science Notebook 
 
+## Introduction
 In this lab, we will learn how to Forecast using Data Science Notebook. We will also learn about data requirements and data formats required by the OCI Forecasting Service APIs through some examples.
 
 *Estimated Time*: 50 minutes
@@ -25,19 +26,19 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 ## Task 1: API key generation  
 1.  Log in to the OCI account, expand the Profile menu and click on User Settings:
-    ![](images/lab1-task1-step1-login.png " ")
+    ![Log in Step](images/lab1-task1-step1-login.png " ")
 
 2.  Under User Settings, click on the API Keys under Resources on the left:
-    ![](images/lab1-task1-step2-apikey.png " ")
+    ![Click on API key](images/lab1-task1-step2-apikey.png " ")
 
 3. Click on Add API Key:
-    ![](images/lab1-task1-step3-addkey.png " ")
+    ![Add API Key](images/lab1-task1-step3-addkey.png " ")
 
 4. Download the private key. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
-    ![](images/lab1-task1-step4-savekey.png " ")
+    ![Save Key](images/lab1-task1-step4-savekey.png " ")
 
 5. Save the contents of the configuration file preview in a text file. Details such as user, fingerprint, tenancy, region etc. will be needed when setting up authorization for using the forecasting APIs.
-    ![](images/lab1-task1-step5-configurationfile.png " ")
+    ![Configuration File](images/lab1-task1-step5-configurationfile.png " ")
 
 
 
@@ -45,13 +46,13 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 
 1.  Search for data science in the top search bar. Click on the Data Science under Services:
-    ![](images/lab1-task2-step1-login.png " ")
+    ![Search Data Science](images/lab1-task2-step1-data-science.png " ")
 
 2.  Select the root compartment and press the create project button. 
-    ![](images/lab1-task2-step2-createproject.png " ")
+    ![Create Project](images/lab1-task2-step2-createproject.png " ")
 
 3.  Fill the name and description field and press the create button: 
-    ![](images/lab1-task2-step3-project-details.png " ")
+    ![Fill details for Project](images/lab1-task2-step3-project-details.png " ")
 
 
 
@@ -59,25 +60,25 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 1.  Select the project which we created now to create a notebook session
     
-    ![](images/lab1-task3-step2-access.png " ")
+    ![Select Project](images/lab1-task3-step2-select-project.png " ")
 
 2.  Click on the create a notebook session
-    ![](images/lab1-task3-step3-notebooksession.png " ")
+    ![Notebook Session](images/lab1-task3-step3-notebooksession.png " ")
 
 3.  Give a name to the notebook session. Select appropriate compute, storage, VCN and subnet. Press the create button
     
-    ![](images/lab1-task3-step4-sessiondetails.png " ")
+    ![Session Details](images/lab1-task3-step4-sessiondetails.png " ")
 
 4.  It takes a few minutes (5-10 minutes) for the newly created notebook session to become active. It can be seen under the project. Once it has become active, open it
 
-    ![](images/lab1-task3-step5-wait.png " ")
+    ![Wait for forecast to complete](images/lab1-task3-step5-wait.png " ")
 
 5.  Click on the open button
     
-    ![](images/lab1-task3-step6-open.png " ")
+    ![Click on Open](images/lab1-task3-step6-open.png " ")
 
 6.  A new notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
-    ![](images/lab1-task3-step7-python3.png " ")
+    ![Python3](images/lab1-task3-step7-python3.png " ")
 
 7.  Now, we will set up authorization to use forecasting APIs. Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that we downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
@@ -94,7 +95,7 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
     ```
 
-    ![](images/lab1-task3-step9-authorization.png " ")
+    ![Authorization](images/lab1-task3-step9-authorization.png " ")
 
 
 ## Task 4: Understand Data, Download Samples, Prepare data, Create Project
@@ -220,7 +221,7 @@ Currently, OCI Forecasting Service APIs support datasets that can be in one of t
 2.  Next, we need to upload the sample training data into data science notebook, to be used for *inline data* preparation for model training in next steps.
 
 Click on upload and then browse to file to be uploaded:
-![](images/lab1-task3-upload-data.png " ")
+![Upload Data](images/lab1-task3-upload-data.png " ")
 
 ## Task 6: Inline Data preparation
 
@@ -585,7 +586,7 @@ df_forecasts.to_csv(file_name, index = None)
 df_forecasts      
 ```
 The forecast.csv will be saved in the same folder as the notebook file.
-  ![](images/lab1-task2.png " ")
+  ![Saved CSV file](images/lab1-task2.png " ")
 
 3. Get Training Metrics report from the response
 
