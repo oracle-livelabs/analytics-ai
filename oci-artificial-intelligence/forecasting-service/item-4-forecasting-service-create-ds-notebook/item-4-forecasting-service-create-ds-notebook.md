@@ -103,7 +103,7 @@ OCI forecasting service provides an AutoML solution with multiple univariate/mul
 
 **Data Validations**
 
-FFor a successful forecast, the input data should pass the following data validations:
+For a successful forecast, the input data should pass the following data validations:
 
 * Number of missing values <= 10% of series length
 * If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
