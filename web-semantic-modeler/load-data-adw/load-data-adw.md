@@ -150,6 +150,6 @@ You have just created the connection to the Autonomous Data Warehouse.
 * [OAC Connect to Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/upload-data.html)
 
 ## Acknowledgements
-* **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro
-* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Lucian Dinescu, Peter Monteiro
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023

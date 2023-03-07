@@ -158,6 +158,6 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 * [Automatically Rename Logical Layer Objects](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/automatically-rename-logical-layer-objects.html)
 
 ## Acknowledgements
-* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
 * **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

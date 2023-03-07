@@ -174,6 +174,6 @@ In this section, you change the names of some columns, remove columns, and reord
 * [About Presentation Tables](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-presentation-tables-and-columns.html#GUID-B5109E7A-314C-4DF5-BCDD-CD2374084AE9)
 
 ## Acknowledgements
-* **Author** - Nagwang, Product Manager, Analytics Product Strategy
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023

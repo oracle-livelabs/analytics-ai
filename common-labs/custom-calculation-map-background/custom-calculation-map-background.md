@@ -6,7 +6,7 @@ In this lab, you will create a custom Return on Sales calculation and create a m
 
   ![](images/custom-calculation-map-overview.png)
 
-Estimated Time: __ minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* Sample Order Lines DS dataset
+* [Sample Order Lines DS](https://objectstorage.us-phoenix-1.oraclecloud.com/p/TBMVACa7qZgj8ijJ3j5wlILzaVVtw1jo6n4rO8mREaAKjRoWAPX0OVTaEL39buPQ/n/idbwmyplhk4t/b/LiveLabsFiles/o/Sample%20Order%20Lines%20DS.xlsx) dataset
 
 
 ## Task 1: Create a Custom Calculation
@@ -94,6 +94,8 @@ In this section, we will create a map background and explore a few customization
 13. The background map is now using Oracle Maps. You can manage your background maps and add additional mapping services in the Console.
 
   ![Oracle Maps viz](images/oracle-maps-viz.png)
+
+You may now **proceed to the next lab**.
 
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)

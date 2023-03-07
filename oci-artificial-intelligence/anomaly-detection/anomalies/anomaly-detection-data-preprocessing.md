@@ -331,7 +331,7 @@ Use the following function to plot the distribution of every attribute to unders
 sensor_cols = [e for e in example_df.columns if e != 'timestamp']
 example_df[sensor_cols].hist(bins=100, figsize=(15, 6))
 ```
-![](../images/lab2-data-distribution-image.png)
+![data distribution plots for all attributes](../images/lab2-data-distribution-image.png)
 
 In this above example, the sensor10 seems to have a much wider range than other, more deeper check may reveal what happens.
 
@@ -365,7 +365,7 @@ For time-series data, it is necessary to plot each attribute on the timestamp ax
 ```Python
 example_df.plot(x='timestamp', figsize=(14,3), ylim=[-3, 3]) # Plot all numeric data
 ```
-![](../images/lab2-time-series-plot.png)
+![time-series plot](../images/lab2-time-series-plot.png)
 
 **Recommendations:**
 
@@ -380,7 +380,7 @@ Based on the graph of time-series, one may identify monotonic features, which ma
 ```Python
 example_df[['timestamp', 'sensor8', 'sensor9']].plot(x='timestamp', figsize=(14,3)) # Plot individual column
 ```
-![](../images/lab2-time-series-plot2-motonic-signals.png)
+![plot of two monotonic signals](../images/lab2-time-series-plot2-motonic-signals.png)
 
 **Example**
 
@@ -411,7 +411,7 @@ plt.yticks(rotation=0, fontsize=12)
 plt.title('Correlation Heatmap', fontsize=20)
 plt.show()
 ```
-![](../images/lab2-feature-correlation-heatmap.png =800x800)
+![feature correlation heatmap](../images/lab2-feature-correlation-heatmap.png =800x800)
 In this heatmap, it seems that sensor8 and sensor9 have a strong correlation; and it was found to be true in real business scenario (the two sensors are physically close).
 
 ## Task 3: Preprocessing Data
@@ -568,9 +568,9 @@ def convert_df_to_json(df, outfile_name):
 
 After those above steps, you should now be able to transform the raw data provided earlier to be like the following:
 
-* [processed training csv data](../files/demo-training-data.csv)
+* [processed training csv data](../files/demo-training-data-multivariate.csv)
     - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+* <a href="../files/demo-testing-data-multivariate.json" target="_blank" download>processed testing json data</a>
     - same 10 signals with timestamp column, 100 observations
 
 Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
