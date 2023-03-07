@@ -733,9 +733,9 @@ Here is a example on using the forecast explanation API to get the global and lo
         plot_local_feature_importance(get_forecast_explanations, time_step)
     ```
 
-    ### Sample Local feature importance plot for step 1 forecast
+    ### Sample Local feature importance plot for step 2 forecast
 
-    ![Local Feature Importance for step 1 forecast](images/lab1-task2-local-feature-importance.png)
+    ![Local Feature Importance for step 2 forecast](images/lab1-task2-local-feature-importance.png)
 
     Similarly, by changing the time step, we can get the local feature importance for that corresponding forecast.
 
