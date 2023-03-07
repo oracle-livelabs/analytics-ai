@@ -22,9 +22,7 @@ _Estimated Time_: 15 minutes
 Lets bring in a new Data Set with Customer demographics to analyze the issue further.
 
 1.  Copy file to your local drive.  
-**Download** [customers.xlsx file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/gInS_5IWhulIoFENkRIQdnCA9-IYCDgtnAoxxre95fC7fKUClBft8y15UQA9SUmF/n/idbwmyplhk4t/b/LiveLabs/o/customers.xlsx) and copy it to your local drive.
-
-    ![Copy file](../mash-datasets/images/copy-customers.png)
+**Download** [customers.xlsx file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JdAyKGZxJe7WND5Dntvfd3uRJlGHSzFpdnIhuS3yKl41jEHigKjnI7WqeN_kL3G-/n/idbwmyplhk4t/b/LiveLabs/o/customers.xlsx) and copy it to your local drive.
 
 2.  **Add Data Set**.  
 Go to Data Pane and Click + icon (Add button) and

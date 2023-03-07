@@ -34,7 +34,7 @@ This lab assumes you have:
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
 
 ## Acknowledgements
-* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Last Updated By/Date** - Jitender Singh, September 2021
+* **Author** - Amal Sharma, Principal Cloud Architect, NA Cloud Engineering
+* **Contributors** -  Mukund Bhashkar, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Amal Sharma, February 2023
 

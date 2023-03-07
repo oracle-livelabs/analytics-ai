@@ -1,4 +1,4 @@
-# Run ODI Mapping when both Nodes are Up
+# Run ODI mapping when both nodes are up
 
 ## Introduction
 This lab will show you steps to access an ODI instance, execute an ODI job and observe the high availability functionality of ODI.
@@ -14,11 +14,7 @@ In this lab, you will learn
 * Run ODI Mapping in HA setup
 
 ### Prerequisites
-This lab assumes you have completed:
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
-    - Lab: ODI High Availability Configuration 
+This lab assumes you have completed all the previous labs.
 
 
 ## Task 1: Verify the Flatfile Data in Node1 and Node2
@@ -190,8 +186,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
 
 

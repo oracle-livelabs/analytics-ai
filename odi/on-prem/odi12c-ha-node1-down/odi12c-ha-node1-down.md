@@ -1,4 +1,4 @@
-# Run ODI Job when Primary ODI Server is Down
+# Run ODI job when primary ODI server is down
 
 ## Introduction
 In this lab user will bring down the primary ODI services and understand how the secondary ODI agent will execute the job and vice versa.
@@ -20,9 +20,9 @@ This lab assumes you have completed:
     - Lab: Run ODI Job when both Nodes are Up
 
 
-## Task 1: Shutdown the Primary ODI Server
+## Task 1: Shutdown the primary ODI server
 
-1. Open the chrome browser on your desktop and navigate to the *Weblogic Server Administration Console* login page using the below URL, click on the *Username* field, and provide the credentials below to log in. The WebLogic is configured on 7005 for this lab.
+1. Open the chrome browser on your desktop and navigate to the *WebLogic Server Administration Console* login page using the below URL, click on the *Username* field, and provide the credentials below to log in. The WebLogic is configured on 7005 for this lab.
 
     - URL
 
@@ -42,7 +42,7 @@ This lab assumes you have completed:
       <copy>Welcome1#</copy>
     ```
     
-    ![Weblogic login page](images/weblogic-login.png " ")
+    ![WebLogic login page](images/weblogic-login.png " ")
 
 2. On the WebLogic home page, click on "Servers".
 
@@ -63,7 +63,7 @@ This lab assumes you have completed:
 Now, the primary ODI server is down, you can execute the ODI mapping and observe that the ODI server in node2 will execute the ODI jobs and will act as the primary node.
 
 
-## Task 2: Run ODI Job when Primary Agent is Down
+## Task 2: Run ODI job when primary agent is down
 
 1. Open ODI Studio in Node1 or Node2, navigate to Designer tab and drill down on "HA_Demo".
 
@@ -112,11 +112,11 @@ Now, the primary ODI server is down, you can execute the ODI mapping and observe
   the hostname in the above screenshot is "odiha-2". This indicates that the above job is executed by the Node2 ODI agent. As the primary ODI server is down the job is routed to the Node2 ODI server.
 
 
-## Task 3: Start the Primary ODI Server
+## Task 3: Start the primary ODI server
 
-1. Login to **Weblogic Admin page** and go to the control tab in the **Summary of Servers** page. Select **ODI_server1** and click on start.
+1. Login to **WebLogic Admin page** and go to the control tab in the **Summary of Servers** page. Select **ODI_server1** and click on start.
 
-  ![Summary of servers in weblogic window](./images/weblogic-odi1-start.png " ")
+  ![Summary of servers in WebLogic window](./images/weblogic-odi1-start.png " ")
 
 2. Refresh the page after some time and the ODI server state will be changed to "RUNNING".
 
@@ -137,8 +137,8 @@ Congratulations, you have completed the workshop!
 
 ## Acknowledgements
 
-- **Author** - Srivishnu Gullapalli, September 2022
-- **Contributors** - Amit Kotarkar
+- **Author** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, September 2022
+- **Contributors** - Amit Kotarkar, Senior Solution Engineer, NA Technology, September 2022
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2022
 
 

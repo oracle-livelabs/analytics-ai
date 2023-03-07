@@ -75,7 +75,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
     <copy>The Seattle Sounders Football Club recently announced it was looking for a technology partner to provide a reliable, scalable, and secure solution that could ingest, process, and store game and player data. </copy>
     ```
     ```
-    <copy>In 2020 people worldwide moved to working remotely because of the COVID-19 pandemic. As a result, collaborative tools like video conferencing, email and chat have become critical, as they allow employees to perform their jobs from home. </copy>
+    <copy>Hello Support Team, I am reaching out to seek help with my credit card number 1234 5678 9873 2345 expiring on 11/23. There was a suspicious transaction on 12-Aug-2022 which I reported by calling from my mobile number +1 (423) 111-9999 also I emailed from my email id sarah.jones1234@hotmail.com. Would you please let me know the refund status?Regards,Sarah</copy>
     ```
 
 
@@ -112,6 +112,20 @@ Lists, by confidence percentage, the languages detected.
 
 Lists the word, identified document category, and the confidence score.
     ![Text classification Result](./images/text-result.png " ")
+
+#### 6. Personal Identifiable Information
+Detects various entities of personal information.
+    ![PII Masking Result](./images/pii-mask-result.png " ")
+
+- Click on Configure mask to mask, replace or remove identified PII entities.
+    ![PII Configure Masking](./images/configure-masking.png " ")
+
+- Select Replace and click on Save changes to replace identified entities with &lt;ENTITY_TYPE&gt;
+    ![PII Replace Result](./images/pii-replace.png " ")
+
+- Select Remove and click Save changes to remove identified entities.
+    ![PII Remove Result](./images/pii-remove.png " ")
+
 
 ## Task 2: Analyze Text with Python SDK
 
@@ -226,46 +240,56 @@ Now Install oci by running:
 ```Python
 <copy>
 import oci
- 
+
 ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file())
- 
+
 key1 = "doc1"
 key2 = "doc2"
-text1 = "The Indy Autonomous Challenge is the worlds first head-to-head, high speed autonomous race taking place at the Indianapolis Motor Speedway"
+text1 = "Hello Support Team, I am reaching out to seek help with my credit card number 1234 5678 9873 2345 expiring on 11/23. There was a suspicious transaction on 12-Aug-2022 which I reported by calling from my mobile number +1 (423) 111-9999 also I emailed from my email id sarah.jones1234@hotmail.com. Would you please let me know the refund status? Regards, Sarah"
 text2 = "Using high-performance GPU systems in the Oracle Cloud, OCI will be the cloud engine for the artificial intelligence models that drive the MIT Driverless cars competing in the Indy Autonomous Challenge."
- 
-compartment_id = <COMPARTMENT_ID> #TODO Specify your compartmentId here
- 
+
+compartment_id = "<COMPARTMENT_ID>" #TODO Specify your compartmentId here
+
 #language Detection of Input Documents
 doc1 = oci.ai_language.models.DominantLanguageDocument(key=key1, text=text1)
 doc2 = oci.ai_language.models.DominantLanguageDocument(key=key2, text=text2)
 documents = [doc1, doc2]
 batch_detect_dominant_language_details = oci.ai_language.models.BatchDetectDominantLanguageDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_dominant_language(batch_detect_dominant_language_details)
-print(output.data)  
- 
-doc1 = oci.ai_language.models.TextDocument(key=key1, text=text1)
-doc2 = oci.ai_language.models.TextDocument(key=key2, text=text2)
+print(output.data)
+
+doc1 = oci.ai_language.models.TextDocument(key=key1, text=text1, language_code="en")
+doc2 = oci.ai_language.models.TextDocument(key=key2, text=text2, language_code="en")
 documents = [doc1, doc2]
- 
+
 #Text Classification of Input Documents
 batch_detect_language_text_classification_details = oci.ai_language.models.BatchDetectLanguageTextClassificationDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_text_classification(batch_detect_language_text_classification_details)
-print(output.data)  
- 
+print(output.data)
+
 #Named Entity Recognition of Input Documents
 batch_detect_language_entities_details = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_entities(batch_detect_language_entities_details)
-print(output.data)  
- 
+print(output.data)
+
 #Key Phrase Detection of Input Documents
 batch_detect_language_key_phrases_details = oci.ai_language.models.BatchDetectLanguageKeyPhrasesDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_key_phrases(batch_detect_language_key_phrases_details)
-print(output.data)  
- 
+print(output.data)
+
 #Aspect based and Sentence level Sentiment Analysis of Input Documents
 batch_detect_language_sentiment_details = oci.ai_language.models.BatchDetectLanguageSentimentsDetails(documents=documents, compartment_id=compartment_id)
 output = ai_client.batch_detect_language_sentiments(batch_detect_language_sentiment_details,  level=["ASPECT","SENTENCE"])
+print(output.data)
+
+#Personal Identifiable Information Entities Recognition
+piiEntityMasking = oci.ai_language.models.PiiEntityMask(mode="MASK", masking_character="*", leave_characters_unmasked=4,
+                                                        is_unmasked_from_end=True)
+masking = {"ALL": piiEntityMasking}
+
+batch_detect_language_pii_entities_details = oci.ai_language.models.BatchDetectLanguagePiiEntitiesDetails(
+    documents=documents, compartment_id=compartment_id, masking=masking)
+output = ai_client.batch_detect_language_pii_entities(batch_detect_language_pii_entities_details)
 print(output.data)
 </copy>
 ```
@@ -366,22 +390,22 @@ Follow the below steps to open Notebook in DataScience:
   1. Navigate to Data Science Service
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
-    ![OCI Hamburger menu](./images/cloud-menu.png " ")
+    ![OCI Hamburger menu](./images/navigate-to-datascience.png " ")
 
   2. Select Compartment
 
     Select the Compartment in which want to create your project.
-    ![Select compartment](./images/select-comp.png " ")
+    ![Select compartment](./images/select-ds-comp.png " ")
 
   3. Create Project
 
     Click Create Project to create a new project.
-    ![create data science project](./images/create-project1.png " ")
+    ![create data science project](./images/create-ds-project1.png " ")
 
   4. Enter Project Details
 
     Enter name and click Create Button.
-    ![Data Science project details](./images/create-project2.png " ")
+    ![Data Science project details](./images/create-ds-project2.png " ")
 
   5. Create Notebook Session
 
@@ -420,7 +444,7 @@ Follow the below steps to open Notebook in DataScience:
     <copy>mkdir ~/.oci</copy>
     ```
 
-    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
+    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Task 2 (Step2: Setup API Signing Key and Config File)
 
     In the terminal, move those files to the .oci folder.
     ```
@@ -473,7 +497,7 @@ These notebooks demonstrates how you can be more productive by using the various
 
   4. Set up variables
 
-* Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Lab 3 (Task 1 -> Step 4).
+* Navigate to your workspace and open newly forked environment (OCI Credentials), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Task 2 (Step2: Setup API Signing Key and Config File).
 
 * Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
 
@@ -506,24 +530,25 @@ Below is the example shown to invoke Detect Language Service.
 
 OCI Language service endpoints:
 
-```
-<copy>
+```<copy>
 # Language Detection
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectDominantLanguage
-
+    
 # Key Phrase Extraction
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguageKeyPhrases
-
+    
 # Named Entity Recognition
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguageEntities
-
+    
 # Text Classification
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguageTextClassification
-
+    
 # Sentiment Analysis
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguageSentiments
-<copy>
-```
+
+# Personal Identifiable Information
+https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguagePiiEntities
+</copy>```
 
 ## **Summary**
 
@@ -536,10 +561,10 @@ You may now **proceed to the next lab**.
 
 **Authors**
   * Raja Pratap Kondamari - Product Manager, OCI Language Service
+  * Sahil Kalra - Oracle AI OCI Language Services
   * Rajat Chawla  - Oracle AI OCI Language Services
   * Ankit Tyagi -  Oracle AI OCI Language Services
-  * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022
+* Sahil Kalra - OCI Language Service, February 2022
 

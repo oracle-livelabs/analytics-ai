@@ -15,7 +15,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
+* Completed the previous lab steps
 
 ## Task 1: Create a Visually Impactful Dashboard
 
@@ -25,13 +25,13 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 2. Select filter controls visualization
 
-3. Navigate to the bottom left of the page in the “General” (Gear Icon) tab. 
+3. Navigate to the Properties panel at the top of the Grammar panel and select the “General” (Gear Icon) tab. 
 
 4. Scroll to “Background” and change “Auto” to “Custom”
 
 5. Scroll to and click “Fill Color”
 
-  ![Change Fill Color](images/optional1.png) 
+  ![Change Fill Color](images/optionalqa1.png) 
 
 6. Change the Color Pallet 
 
@@ -65,7 +65,7 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 8. Next to “Image Align” Click the center square in the grid, click on “Locked” next to Image Aspect Ratio, change to “Unlocked”.
 
-  ![Canvas Properties](images/optional2.png)
+  ![Canvas Properties](images/canvaspropqa1.png)
 
 9. Click on “Original" next to Image Width
 
@@ -75,13 +75,13 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 ## Task 3: Change the Fonts 
 
-1. To change the Text Style, click on the 2-point missed, 2-point potential visualization 
+1. To change the Text Style, click on the 2-point missed, 2-point potential visualization, select the Properties Panel and the General tab
   
 2. Change the style and color of the title font to Bold and White (# ffffff)
 
 3. Do the same for: Legend Labels, Axis Titles, Axis Labels 
 
-  ![Axis titles and labels](images/optional3.png)
+  ![Axis titles and labels](images/optionalqa3.png)
 
 4. Repeat this process for the 3-point missed, 3-point potential
    
@@ -101,11 +101,11 @@ A visually impactful dashboard is captivating. Customizing your dashboard can ma
 
 10. Scroll to Spacer (under Dashboard Controls). Click and drag to the left of the bar graph on the left side of your dashboard
 
-  ![Place the spacer](images/optional6.png)
+  ![Place the spacer](images/optionalqa6.png)
 
 11. Adjust the size of the spacer so that all the Axis Labels are clearly legible. At the end your dashboard should look like this 
 
-  ![Final dashboard](images/final.png)
+  ![Final dashboard](images/finalqa.png)
 
 You have now completed all of the steps in this lab! 
 
@@ -114,4 +114,4 @@ You have now completed all of the steps in this lab!
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
 * **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
                    -  Luke Wheless, Data Analyst BI-SCF
-* **Last Updated By/Date** - Andres Quintana, October 2022
+* **Last Updated By/Date** - Andres Quintana, February 2023

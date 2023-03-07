@@ -7,9 +7,7 @@ In this lab, you will run queries in HeatWave and in MySQL. You will see the que
 
 _Estimated Time:_ 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:fOcDBTf-KqE)
+[//]:   [](youtube:fOcDBTf-KqE)
 
 ### Objectives
 
