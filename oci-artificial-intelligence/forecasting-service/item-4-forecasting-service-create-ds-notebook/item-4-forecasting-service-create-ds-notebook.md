@@ -102,29 +102,27 @@ OCI forecasting service provides an AutoML solution with multiple univariate/mul
 
 **Data Validations**
 
-For a successful forecast, the input data should pass the following data validations:
+FFor a successful forecast, the input data should pass the following data validations:
 
-* Number of rows for a time series >= 5 and <= 5000
-* Series length >= 2 X Major Seasonality
-* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
-* If the ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
-* If there are missing values for 5 consecutive time steps, throw an error.
-* Input Data Frequency: 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
-* Forecast Frequency: 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required. For custom frequency: If the input data frequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
-Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we want Forecast Frequency to be a DAY level
-* All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
-* Check if there are any duplicate dates in time-series after grouping also (Check for both additional and primary data)
+* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
+* Number of missing values for 5 consecutive time steps is not allowed
+* All the timestamps in the primary data source should exist in the secondary data source
+* The number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
+* There should be no duplicate dates in the time-series in either the additional and primary data files.
 
-**Data format requirements**
 
-The data should contain one timestamp column and other columns for target variable and series id (if using grouped data):
+- **Primary Data:**
+The input data should contain Series id, timestamp, and target variable which you want to forecast
+
+- **Additional Data:**
+The data should contain Series id, timestamp, and additional influencer that help in forecasting the target variable, given primary data
+
 - timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
-- If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 3 of Task 6 in this lab for  "yyyy-MM-dd HH:mm:ss"
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
-**Note**: The column names used in the examples here are just for representation and actual data can have different custom names.  
+**Note**: The column names used in the examples here are just for representation and actual data can have different custom names. 
 
 Currently, OCI Forecasting Service APIs support datasets that can be in one of the following formats:
 
