@@ -136,6 +136,7 @@ This lab assumes you have:
 
 4. In the **Query** field, paste the following MDX query:
 
+    ```
     <copy>SELECT
       {[Measures].[Sales]}
     ON COLUMNS,
@@ -143,6 +144,7 @@ This lab assumes you have:
     ON ROWS
     FROM Sample.Basic
     WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])</copy>
+    ```
 
 5. **Validate** and then **Save** the query.
 

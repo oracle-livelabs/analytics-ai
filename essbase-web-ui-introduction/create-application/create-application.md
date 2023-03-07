@@ -10,7 +10,7 @@ Estimated Time: -- 10 minutes
 
 In this lab, you will:
 
-* Import the Sample_Basic.xlsx application workbook to create an application
+* Import the **Sample_Basic.xlsx** application workbook to create an application
 * Display active alias names in an outline
 
 ### Prerequisites
