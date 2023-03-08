@@ -160,7 +160,7 @@ Again update the DATA-ASSET-ID with id collected above:
   "targetFap": 0.01,
   "trainingFraction": 0.7,
   "windowSize": 1,
-  "algorithmHint": "MSET",
+  "algorithmHint": "MULTIVARIATE_MSET",
 }</copy>
 ```
 Now run the following command with the previous project id:

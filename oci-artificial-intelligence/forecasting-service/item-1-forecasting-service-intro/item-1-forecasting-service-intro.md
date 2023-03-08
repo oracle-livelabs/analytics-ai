@@ -35,7 +35,7 @@ At the end of the workshop, users will understand how the data should be prepare
 * Familiar with Python/Java programming is strongly recommended (Optional for API integration)
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
-## Forecasting Service Concepts
+### Forecasting Service Concepts
 * OCI Forecasting Service Console: Learn how to use the OCI Forecasting Service from the OCI Console 
 * Data Science Notebook Session: Learn how to use the OCI Forecasting Service with [Data Science Notebook Session](https://docs.oracle.com/en-us/iaas/data-science/using/use-notebook-sessions.htm)
 * Projects: Projects are collaborative workspaces for organizing data assets, models, and forecasting portals.
@@ -43,7 +43,7 @@ At the end of the workshop, users will understand how the data should be prepare
 * Models: The model that is trained by forecasting algorithms and can forecast using univariate/multivariate time-series data along with meta data. A few parameters with default values are exposed so that user can choose to select.
 * Forecasts: Once a model is trained successfully, it is automatically deployed with an endpoint ready to generate forecast.
 
-## Forecasting Service Process
+### Forecasting Service Process
 
 At a high level, here is the process for completing full cycle of using the OCI Forecasting Service using the OCI Console or Data Science Notebook Session:
 
@@ -56,7 +56,7 @@ Note that one project can have multiple data assets and multiple forecasts.
 
 We can now proceed to the next section 
 
-## Acknowledgements
+## Acknowledgements 
 * **Authors**
     * Ravijeet Kumar, Senior Data Scientist - Oracle AI Services
     * Anku Pandey, Data Scientist - Oracle AI Services
