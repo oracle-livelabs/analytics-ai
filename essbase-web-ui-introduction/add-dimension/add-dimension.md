@@ -9,6 +9,7 @@ Estimated Lab Time: -- minutes
 ### Objectives
 
 In this lab, you will:
+
 * Manually add a dimension to the outline, in the outline editor
 * Create a dimension build rule file
 * Perform a dimension build job
@@ -20,8 +21,6 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 * All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Add a dimension manually
 
@@ -97,7 +96,7 @@ This lab assumes you have:
 
 15. In **Field - 3** set **Type** to **Child**.
 
-16.	In **Field - 4** set **Type** to **Alias**.
+16. In **Field - 4** set **Type** to **Alias**.
 
     ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
 
@@ -158,10 +157,7 @@ This lab assumes you have:
 
 Next, we’ll load data to the Product dimension.
 
-
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)

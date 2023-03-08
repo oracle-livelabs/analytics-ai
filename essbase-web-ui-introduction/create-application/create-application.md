@@ -20,8 +20,6 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Import the Sample_Basic.xlsx application workbook
 
 1. On the **Applications** page, click **Import**.

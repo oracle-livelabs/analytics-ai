@@ -24,13 +24,7 @@ This lab assumes you have:
 * An Oracle account
 * Familiarity with Essbase is desirable, but not required
 
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
-
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
