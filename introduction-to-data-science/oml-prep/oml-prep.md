@@ -54,7 +54,7 @@ In this lab you will:
     In order to have an equal performance over all of the ATP instances of all the workshop participants, we recommend that:
     - Keep the Always Free option turned off
     - Keep defaults for OCPU (1) and storage (1 TB)
-    - __Disable__ Auto Scaling
+    - __Disable__ OCPU Auto Scaling
 
     ![](./images/create-atp-autoscalingoff.png)
 
@@ -78,7 +78,7 @@ In this lab you will:
 
 We will develop the machine learning model using Zeppelin, which comes included in the autonomous database. Zeppelin is a web-based notebook environment that allows us to analyze and experiment with data. In our case we will be using it to build a machine learning model. First we will set up a user for Zeppelin.
 
- 1. On the main page of your ATP instance, go to Tools, then "Oracle ML User Administration"
+ 1. On the main page of your ATP instance, select "Database Actions"
 
     ![](images/manage-ml-users.png)
 
@@ -89,19 +89,30 @@ We will develop the machine learning model using Zeppelin, which comes included 
 
     ![](images/sign-in.png)
 
- 3. Create a new user
+ 3. Select DB Users
+
+    ![](images/select-db-users.png)
+
+ 4. Create a new user
 
     ![](images/create.png)
 
- 3. Create a user called "MLUSER1".
+ 4. Create a user called "MLUSER1".
 
     - Username: MLUSER1
-    - First Name: Zeppelin
-    - Last Name: User
-    - Email address: Use any email address (it is not relevant)
-    - _Deselect_ "Generate password..." and enter a password yourself: Oracle_12345
+    - Enter and confirm password: Oracle_12345
 
     ![](images/create-ml-user.png)
+
+ ## Task 3: Give access to data for MLUSER1
+
+ 1. Go back to the home page within Database Actions and select SQL
+
+    ![](images/open-sql.png)
+
+ 2. Enter "alter user mluser1 quota unlimited on data" and click run and should see the result at the bottom showing succeded.
+
+    ![](images/add-access.png)
 
 Congratulations on completing this lab!
 
