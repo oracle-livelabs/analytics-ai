@@ -87,7 +87,6 @@ We will develop the machine learning model using Zeppelin, which comes included 
     - Username: ADMIN
     - Password: Oracle_12345
 
-    ![](images/sign-in.png)
 
  3. Select DB Users
 
@@ -101,10 +100,12 @@ We will develop the machine learning model using Zeppelin, which comes included 
 
     - Username: MLUSER1
     - Enter and confirm password: Oracle_12345
+    - Select OML to be on
 
     ![](images/create-ml-user.png)
 
- ## Task 3: Give access to data for MLUSER1
+
+## Task 3: Assign resources for MLUSER1
 
  1. Go back to the home page within Database Actions and select SQL
 
