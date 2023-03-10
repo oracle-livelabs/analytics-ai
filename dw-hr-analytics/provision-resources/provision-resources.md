@@ -4,11 +4,10 @@
 
 In this lab you will provision the resources required for this workshop.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
-<!--Provision a stack comprising of an Autonomous Datawarehouse and an Analytics Cloud instance.-->
 Provision an Autonomous Datawarehouse instance and an Analytics Cloud instance.
 
 ### Prerequisites
@@ -28,29 +27,29 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/id-federation.png " ")
+	![OCI Console Federation](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-federation.png " ")
 
 3. Click on the link to the **OracleIdentityCloudService**.
 
-    ![](./images/1.3.png " ")
+    ![Identity Domain](./images/select-idcs.png " ")
 
 4. In the page that opens, click on the Service Console URL.
 
-    ![](./images/1.4.png " ")
+    ![IDCS Service Console URL](./images/go-to-service-console.png " ")
 
 5. In the Identity Cloud Service Console, click on the user icon in the top right corner and select **My Access Tokens**.
 
-    ![](./images/1.5.png " ")
+    ![IDCS Access Token](./images/go-to-idcs-access-token-page.png " ")
 
-6. If you have access to the relevant APIs, you should be able to select them, under the **Invokes Identity Cloud Service** radio button. Thereafter, enter the duration of validity of the token in minutes and click on the **Download Token** button.
+6. If you have access to the relevant APIs, you should be able to select them, under the **Invokes Identity Cloud Service APIs** radio button. Thereafter, enter the duration of validity of the token in minutes and click on the **Download Token** button.
 
-    ![](./images/1.6.png " ")
+    ![Download Access Token](./images/download-access-token.png " ")
 
 **Note:** If you don't have access to the required APIs, follow **Method 2**.
 
 7. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
 
-    ![](./images/1.7.png " ")
+    ![Keep the token handy](./images/open-the-token-file.png " ")
 
 **Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
@@ -60,55 +59,55 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/developer-resmgr-stacks.png " ")
+	![OCI Console Stacks](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
 2. Click on the **Create Stack** button.
 
-    ![](./images/1.14.png " ")
+    ![Create Stack](./images/create-stack.png " ")
 
-3. Select the **Sample Solution** radio button. Then, click on the **Select Solution** button.
+3. Select the **Template** radio button. Then, click on the **Select template** button.
 
-    ![](./images/1.15.png " ")
+    ![Select Template](./images/select-template.png " ")
 
-4. In the side menu that opens up, check the **Departmental Data Warehousing** solution and hit the **Select Solution** button.
+4. In the side menu that opens up, select the **Architecture** tab and then check the **Departmental Data Warehousing** template and hit the **Select template** button.
 
-    ![](./images/1.16.png " ")
+    ![Departmental Data Warehouse Template](./images/select-departmental-data-warehousing.png " ")
 
 5. Provide a name to the stack and hit **Next**.
 
-    ![](./images/1.17.png " ")
+    ![Provide Name](./images/configure-stack-variables.png " ")
 
-6. On the **Configure Variables** screen, enter the admin password, database name and database display name.![](./images/1.18.png " ")
+6. On the **Configure Variables** screen, enter the admin password, database name and database display name.![Configure Variables](./images/configure-stack-variables2.png " ")
 
 7. Check the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. Also, enter 0.0.0.0/0 in the public IP address field.
 
-    ![](./images/1.19.png " ")
+    ![Computer's Public IP Address](./images/configure-stack-variables3.png " ")
 
-8. Scroll down and provide a name to the analytics instance and paste the access token that you had downloaded, earlier. Now, hit **Next**.
+8. Scroll down and provide a name to the analytics instance and paste the access token that you had downloaded earlier. Now, hit **Next**.
 
-    ![](./images/1.20.png " ")
+    ![Paste IDCS Access Token](./images/configure-stack-variables4.png " ")
 
 9. Review all the details and click on the **Create** button.
 
-    ![](./images/1.21.png " ")
+    ![Review and Create](./images/review-create-stack.png " ")
 
-10. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the iframe that pops-up, click on **Apply**, again.
+10. Now that the stack has been created, click on **Apply**. In the iframe that pops-up, click on **Apply**, again.
 
-    ![](./images/1.22.png " ")
+    ![Apply Terraform](./images/apply-terraform.png " ")
 
-    ![](./images/1.23.png " ")
+    ![Approve Job](./images/start-job.png " ")
 
 **Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed.
 
-![](./images/1.30.png " ")
+![Monitor Terraform Logs](./images/monitor-logs.png " ")
 
 11. If everything goes to plan, you will see the following message at the bottom of the logs.
 
-    ![](./images/1.31.png " ")
+    ![Success Message](./images/successful-resource-creation.png " ")
 
-12. On the same page, you will find the **Associated Resources** under the **Resources** menu. Click on it to get the links to the provisioned resources.
+12. On the same page, you will find the **Job resources** under the **Resources** menu. Click on it to get the links to the provisioned resources.
 
-    ![](./images/1.25.png " ")
+    ![Links to Associated Resources](./images/links-to-provisioned-resources.png " ")
 
 13. Clicking on the links to the resources should take you to their pages.
 
@@ -116,45 +115,41 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 14. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
-	![](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
+	![OCI Console Analytics Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
-15. Click on the analytics instance to get to its page. Thereafter, click on the **Open URL** button to access the instance.
+15. Click on the analytics instance to get to its page. Thereafter, click on the **Analytics Home Page** button to access the instance.
 
-    ![](./images/1.28.png " ")
+    ![Access Instance](./images/access-analytics-instance.png " ")
 
-    ![](./images/1.29.png " ")
+    ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png " ")
 
 ## **METHOD 2:** Independently Provision the Resources
 
 ### Task 1: Provision the Autonomous Data Warehouse
 
-1. Login to the OCI console and go the navigation menu using the Menu button in the top left.
-
-    ![](./images/2.1.png " ")
-
-2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
-	![](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
+	![OCI COnsole Autonomous Data Warehouse](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-3. Click on the **Create Autonomous Database** button.
+2. Click on the **Create Autonomous Database** button.
 
-    ![](./images/2.3.png " ")
+    ![Create Autonomous Data Warehouse](./images/create-autonomous-database.png " ")
 
-4. Choose a compartment, enter the **Display Name** and also enter a name for the **Database**. Leave everything else set to the default values.
+3. Choose a compartment, enter the **Display Name** and also enter a name for the **Database**. Leave everything else set to the default values.
 
-    ![](./images/2.4.png " ")
+    ![Configure Variables](./images/configure-adw-variables.png " ")
 
-5. Scroll down and provide a password for the administrator.
+4. Scroll down and provide a password for the administrator.
 
-    ![](./images/2.5.png " ")
+    ![Provide Password](./images/provide-adw-password.png " ")
 
-6. Thereafter, hit **Create Autonomous Database**.
+5. Choose an appropriate licence type and thereafter, hit **Create Autonomous Database**.
 
-    ![](./images/2.6.png " ")
+    ![Select Licence and Create](./images/choose-adw-licence.png " ")
 
-7. The database should be up and running in a couple of minutes.
+6. The database should be up and running in a couple of minutes.
 
-    ![](./images/2.7.png " ")
+    ![Database Home Page](./images/access-adw-home-page.png " ")
 
 **Note:** Keep this page open or make note of how to get here, since you would need to visit this page for information needed to connect to the database.
 
@@ -162,24 +157,24 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
-	![](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
+	![OCI Console Analytics Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 2. On the next page, click on the **Create Instance** button.
 
-    ![](./images/1.28.png " ")
+    ![Create Analytics Instance](./images/create-analytics-instance.png " ")
 
 3. Choose a compartment and provide a name for the instance. Let everything else stay the same. Then click on **Create**.
 
-    ![](./images/2.10.png " ")
+    ![Configure Variables](./images/set-analytics-variables.png " ")
 
 4. The instance will be up in 12-14 minutes. Once the instance is available, click on the **Open URL** button to gain access to the instance.
 
-    ![](./images/2.11.png " ")
+    ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png " ")
 
-You may now proceed to Lab 2.
+You may now proceed to the next lab.
 
 ## Acknowledgements
- - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, September 2020
- - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
- - **Last Updated By/Date** - Kay Malcolm, October 2020
+ - **Author** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, March 2023
+ - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
+ - **Last Updated By/Date** - Yash Lamba, March 2023
 

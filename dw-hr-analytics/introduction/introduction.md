@@ -10,7 +10,7 @@ This solution uses data in an Oracle Autonomous Data Warehouse (ADW) and then us
 
 This workshop will guide you through the installation of HR schema, available on the Oracle Autonomous Database. Thereafter, you will learn how to connect ADW to OAC and show a sample analysis with some refined data.
 
-Estimated workshop time: 75 minutes
+Estimated Time: 75 minutes
 
 ### Objectives
 1. Provision the infrastructure required for HR analytics.
@@ -37,7 +37,7 @@ Lab 2 - Run Analytics - Create Dashboards (45 minutes)
 
 ## Acknowledgements
 
- - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, September 2020
+ - **Author** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, March 2023
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
- - **Last Updated By/Date** - Kay Malcolm, October 2020
+ - **Last Updated By/Date** - Yash Lamba, March 2023
 
