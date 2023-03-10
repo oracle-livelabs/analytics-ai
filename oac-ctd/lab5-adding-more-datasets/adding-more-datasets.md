@@ -26,12 +26,12 @@ Estimated Lab Time: 30 minutes
 Download the file: [OAC_TD_Agreements.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Agreements.xlsx)
 
 To confirm that Hotel had already an agreement and the savings they have to claim to the hotel chain, you need to add that information from another excel with the list of vendor agreements.
-1. Click on the plus icon at the top right of the Data menu and select “Add Data Set”
+1. Click on the plus icon at the top right of the Data menu and select “Add Data”
 
 ![](images/1_add_data_set.png " ")
 
 You need to upload this new file.
-2. Click “Create Data Set”
+2. Click “Create Data Set”. A new browser tab will open.
 
 ![](images/2_create_data_set.png " ")
 
@@ -45,30 +45,41 @@ You need to upload this new file.
 ![](images/4_upload_file.png " ")
 
 
-You see a preview of the data. Note that this file has the country column with ISO3 code. It is really good that we got the recommendation to add ISO3 code to the expenses one.
-5. Change the Name of the dataset adding your initials at the end, to avoid clashing with other attendees, for instance: OAC_TD_Agreements_JAMP .Click on “Add”.
+A pop-up window shows preview of the data. 
 
+![](images/4a_upload_file.png " ")
+
+You see a preview of the data. Note that this file has the country column with ISO3 code. It is really good that we got the recommendation to add ISO3 code to the expenses one.
+
+5. Click OK
+
+The Editor window for the new dataset appears. This time no changes are needed. 
+
+![](images/4b_upload_file.png " ")
+
+1. Click on the Save icon 
+
+2. Change the Name of the dataset adding your initials at the end, to avoid clashing with other attendees, for instance: OAC_TD_Agreements_IF 
+
+3. Click OK
+
+Dataset gets saved and ready. You can get back to the workbook. 
+1. Click on the previous browser tab. It should have the name you used to save the workbook.
 
 ![](images/5_add_dataset.png " ")
 
+The list of datasets gets updated and the new added one appears selected.
+ 1. Click “Add to Workbook”
+
+![](images/5a_add_dataset.png " ")
+
 ## **Task 2**: Join different datasets
 
-New Data Set gets uploaded to instance.
-Navigate to previous tab in browser.
-
-1. Click on the plus icon at the top right of the Data menu and select “Add Data Set”.
-
-![](images/1_add_data_set.png " ")
-
-2. Select OAC_TD_Agreements_ yourName.xlsx file from list. Click on Add to Project button.
-
-![](images/6_select_data_set_agreements.png " ")
-
-3. New Data set gets added to project. Navigate to Data tab.
+New Data set gets added to project. Navigate to Data tab.
 
 ![](images/6_navigate_data_tab.png " ")
 
-4. Click on “Data Diagram” tab
+4. “Data Diagram” tab will be active
 
 ![](images/6_add_data.png " ")
 
@@ -111,6 +122,7 @@ On the Data menu at the left you note that the new Data Set has been added.
 ![](images/13_explorer_data_set.png " ")
 
 You want to compare the total Hotel Expenses with the amount that can be saved if the company claims the Hotel Chain to apply the agreement.
+
 12. Click and Drag “Expenses Amount” to the top of the canvas. Check that a green bar appears at the top covering the whole canvas and not only a small part of it.
 
 ![](images/14_tile.png " ")
@@ -120,7 +132,7 @@ You want to compare the total Hotel Expenses with the amount that can be saved i
 ## **Task 3**: Use calculations on your datasets
 
 To obtain the savings you need to calculate the expenses multiplied by the agreement discount (that has not been applied).
-1. Select “My Calculations” and Right-click on it.Select “Add Calculation”
+1. Select “My Calculations” and Right-click on it. Select “Add Calculation”
 
 My calculations are at the bottom of the Data Pane, use the slider to find it if your screen resolution is too small and it is not appearing.
 
@@ -145,6 +157,7 @@ Check that the vertical green bar only covers the “Expenses Amount” right bo
 ![](images/18_drag_saving.png " ")
 
 Great. Now you would like to make this more appealing so you will work on the look and feel.
+
 5. On the properties box select the 2nd tab with the hash icon.
 
 ![](images/19_select_properties.png " ")
@@ -202,6 +215,7 @@ Repeat the steps for the “Expense Amount” tile (remember to first select the
 ![](images/31_select_value_font_color.png " ")
 
 Great. This is a nice dashboard now. You can save your work.
+
 17. Click on “Save” at the top right corner.
 
 ![](images/32_save_project.png " ")
@@ -219,6 +233,6 @@ Great. This is a nice dashboard now. You can save your work.
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forlafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023
