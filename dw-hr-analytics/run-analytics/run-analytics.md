@@ -28,7 +28,7 @@ Estimated Time: 45 minutes
 
 2. Run the following code to create the HR user. You should replace MYpassword12 in the statement below with a password of your choosing.
 
-    ```
+    ```sql
     <copy>
     CREATE USER HR IDENTIFIED BY MYpassword12;
     
