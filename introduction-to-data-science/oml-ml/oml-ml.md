@@ -17,15 +17,11 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## Task 1: Open the machine learning notebook
+## Task 1: Open the Oracle machine learning 
 
-1. Back in the ATP console, Open the Machine Learning Notebooks.
+1. Back in the Datbase Actions home page, select Oracle Machine Learning.
 
-   Click on Service Console, then Development, then Oracle Machine Learning Notebooks.
-
-   ![](images/service-console.png)
-
-   ![](images/open-notebook.png)
+   ![](images/open-ml.png)
 
 2. Sign in
 
