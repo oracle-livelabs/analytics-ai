@@ -98,7 +98,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload Custom NER offerletter data extracted above.
                  ![Upload Objects](./images/upload-data.png " ")
 
-            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on create and train model.
@@ -146,7 +146,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload the extracted data.
                  ![Upload Objects](./images/upload-data.png " ")
 
-            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on *Create and train model*.
