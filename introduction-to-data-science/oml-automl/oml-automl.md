@@ -24,11 +24,7 @@ This video covers a walkthrough of the lab.
 
 ## Task 1: Open the machine learning notebook
 
-1. Back in the ATP console, Open the Machine Learning Notebooks.
-
-   Click on Service Console, then Development, then Oracle Machine Learning Notebooks.
-
-   ![](images/service-console.png)
+1. Back in the Datbase Actions home page, select Oracle Machine Learning.
 
    ![](images/open-notebook.png)
 
@@ -42,7 +38,7 @@ This video covers a walkthrough of the lab.
 
 Our goal is again to predict which customers are interested in buying Y Box Games, but this time using AutoML.
 
-1. Open AutoML
+1. Open AutoML Experiments
 
    In the main menu, click on the upper left icon to bring back the menu. Then select "AutoML".
 
