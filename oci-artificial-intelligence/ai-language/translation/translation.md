@@ -109,5 +109,5 @@ In this lab you have learnt how to use Language Service to translate text with O
   * Rajat Chawla - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Sahil Kalra - Oracle AI OCI Language Services, February 2023
+* Sahil Kalra - Oracle AI OCI Language Services, March 2023
 

@@ -3,7 +3,7 @@
 ## Introduction
 In this session, you will learn how to create projects, train a custom model and analyze text through endpoints.
 
-*Estimated Time*: 45 minutes
+> ***Estimated Lab Time***: 45 minutes
 
 ### Objectives
 
@@ -407,4 +407,4 @@ You may now **proceed to the next lab**.
   * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Sahil Kalra - Oracle AI OCI Language Services, February 2023
+* Sahil Kalra - Oracle AI OCI Language Services, March 2023

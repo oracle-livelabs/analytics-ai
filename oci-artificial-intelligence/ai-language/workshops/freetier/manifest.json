@@ -15,7 +15,7 @@
         {
             "title": "Lab 1: Analyze text with pre-trained models",
             "description": "Learn how to use pre-trained models to analyze text",
-            "filename": "../../pre-trained/analyze-text.md"
+            "filename": "../../pre-trained/pre-trained.md"
         },
         {
             "title": "Lab 2: Create and train custom models",
