@@ -5,7 +5,7 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
-            "filename": "./../../introduction/introduction.md"
+            "filename": "./../introduction/introduction.md"
         },        {
             "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
@@ -14,17 +14,17 @@
         {
             "title": "Lab 1: Create Application",
             "description": "Import an application using a sample application workbook.",
-            "filename": "./../../create-application/create-application.md"
+            "filename": "./../create-application/create-application.md"
         },
         {
             "title": "Lab 2: Add Dimensions",
             "description": "Add two dimensions to your outline; build one manually and build another using a text file and rule file.",
-            "filename": "./../../add-dimension/add-dimension.md"
+            "filename": "./../add-dimension/add-dimension.md"
         },
         {
             "title": "Lab 3: Load Data",
             "description": "Load product data to your application using a text file and data load rule file.",
-            "filename": "./../../load-data/load-data.md"
+            "filename": "./../load-data/load-data.md"
         },
         {
             "title": "Need Help?",
