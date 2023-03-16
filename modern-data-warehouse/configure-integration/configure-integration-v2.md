@@ -185,7 +185,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![Select Other Database](./images/select-other-database.png "Select Other Database")
     
-    ![](./images/save-connection-to-database2.png "Save Connection to Database")
+    ![Save Connection to Database](./images/save-connection-to-database2.png "Save Connection to Database")
 
 4. **Right Click** on the newly created **Data Server** and click on **New Physical Schema** to create a **Physical schema**. Choose the schema containing the tables that have to be transferred.
 
