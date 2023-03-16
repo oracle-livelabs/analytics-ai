@@ -276,7 +276,7 @@ Now that you have configured your connections to your source and destination, yo
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, April 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management, April 2021
 - **Contributor** - Srinidhi Koushik
 - **Last Updated By/Date** - Yash Lamba, March 2023
 

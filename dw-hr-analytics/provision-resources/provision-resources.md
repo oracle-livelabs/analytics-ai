@@ -25,7 +25,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 ### Task 1: Obtain IDCS Access Token
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
 	![OCI Console Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png "OCI Console Federation")
 
@@ -57,7 +57,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 ### Task 2: Provision the Stack
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
 	![OCI Console Stacks](https://oracle-livelabs.github.io/common/images/console/developer-resmgr-stacks.png "OCI Console Stacks")
 
@@ -99,7 +99,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Monitor Terraform Logs](./images/monitor-logs.png "Monitor Terraform Logs")
 
-**Note:**  If you have followed the steps above, the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
+**Note:**  If you have followed the steps above, the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on the **Edit** dropdown and select **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
 
 ![View Stack Details](./images/see-stack-details.png "View Stack Details")
     
@@ -117,7 +117,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 **Note:** In case there is no link to get to analytics instance, follow the two steps given below, else proceed to the next lab.
 
-14. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+14. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
 	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
@@ -155,11 +155,11 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Autonomous Database Home Page](./images/access-adw-home-page.png "Autonomous Database Home Page")
 
-**Note:** Keep this page open or make note of how to get here, since you would need to visit this page for information needed to connect to the database.
+**Note:** Keep this page open or make note of how to get here, since you will need to visit this page for the information required to connect to the database.
 
 ### Task 2: Provision the Analytics Cloud Instance
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
 	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
@@ -178,7 +178,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
- - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020
+ - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
  - **Last Updated By/Date** - Yash Lamba, March 2023
 

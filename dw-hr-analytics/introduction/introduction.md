@@ -8,7 +8,7 @@ Lines of business like the Human Resources department, typically, don't have tim
 
 This solution uses data in an Oracle Autonomous Data Warehouse (ADW) and then uses Oracle Analytics Cloud (OAC) to analyze the data to provide actionable insights.
 
-This workshop will guide you through the installation of HR schema, available on the Oracle Autonomous Database. Thereafter, you will learn how to connect ADW to OAC and show a sample analysis with some refined data.
+This workshop will guide you through the installation of HR schema on the Oracle Autonomous Database. Thereafter, you will learn how to connect ADW to OAC and then perform analysis with some refined data.
 
 Estimated Time: 75 minutes
 
@@ -20,24 +20,22 @@ Estimated Time: 75 minutes
 - Access to a paid or a Livelabs Oracle Cloud account.
 - Necessary permissions to be able to provision the stack in a compartment.
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
-
 ## Labs
 Lab 1 - Provision Resources (30 minutes)
 
 - Login to the OCI console and provision the required resources.
 
-Lab 2 - Run Analytics - Create Dashboards (45 minutes)
+Lab 2 - Perform Analysis - Create Dashboards (45 minutes)
 
 - Connect Analytics instance to ADW.
-- Run analytics.
 - Upload DVA file to OAC.
+- Perform analysis.
 
 **You are all set. Let us begin!**
 
 ## Acknowledgements
 
- - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020
- - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
+ - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
+ - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar Sharma, Shikhar Mishra,
  - **Last Updated By/Date** - Yash Lamba, March 2023
 

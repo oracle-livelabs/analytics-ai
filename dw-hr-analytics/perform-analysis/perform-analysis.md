@@ -15,7 +15,7 @@ Estimated Time: 45 minutes
 ### Prerequisites
 
 - Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC) instances.
-- Access to the files needed to recreate this demo. 
+- Access to the files needed to recreate the dashboard. 
     - [attritionprediction.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/AttritionPrediction.csv)
     - [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/HumanResource.dva)
     - [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/hr.sql)
@@ -50,8 +50,10 @@ Estimated Time: 45 minutes
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
-2. Click on the ellipses menu on the right-side, select **Import Workbook/Flow**. Then click on **Select File** and choose the HumanResources.dva file.
+2. Click on the ellipses menu in the top right corner, select **Import Workbook/Flow**. Then click on **Select File** and choose the HumanResources.dva file.
 
+    ![OAC Home Page](./images/oac-home-page.png "OAC Home Page")
+    
     ![Import Workbook](./images/import-workbook.png "Import Workbook")
 
     ![Select File](./images/select-file.png "Select File")
@@ -62,13 +64,13 @@ Estimated Time: 45 minutes
 
     ![Import Successful](./images/dva-import-successful.png "Import Successful")
 
-4. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named 'adw_hr'. 
+4. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named **adw_hr**. 
 
     ![Go to Data](./images/go-to-data-page.png "Go to Data")
 
     ![Select Connections](./images/go-to-connections-tab.png "Select Connections")
 
-5. Click on the ellipses menu on the extreme right of the connection’s name and select inspect.
+5. Click on the ellipses menu on the extreme right of the connection entry and select inspect.
 
      ![Inspect Connection](./images/inspect-connection.png "Inspect Connection")
 
@@ -76,17 +78,17 @@ Estimated Time: 45 minutes
 
     ![Update Connection Credentials](./images/update-connection-credentials.png "Update Connection Credentials")
 
-7. You will now refresh the data sets to utilize the connection. Select the **Data Sets** tab and you will see all our tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**. Wait until the reload for all the data sets is complete.
+7. You will now refresh the data sets to utilise the connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set entry and selecting **Reload Data**. Wait until the reload for all the data sets is complete.
 
     ![Reload Data Sets](./images/reload-data-sets.png "Reload Data Sets")
 
-8. Now proceed to the hamburger menu and select **Catalog** and open your project. The visualizations should load, but click **Refresh Data** if needed to refresh the visuals.
+8. Now proceed to the hamburger menu and select **Catalog** and open your project. The visualisations should load, but click **Refresh Data** if needed to refresh the visuals.
 
     ![Go to Catalog](./images/go-to-catalog.png "Go to Catalog")
 
     ![HR Dashboard](./images/hr-dashboard.png "HR Dashboard")
 
-## Task 3: Uploading a file to the Datawarehouse using OAC
+## Task 3: Uploading a file to the Data Warehouse using OAC
 
 1. Return to the home page. Click on the **Create** button and then select **Data Set**.
 
@@ -115,7 +117,7 @@ Estimated Time: 45 minutes
 
     ![Save Data Set to Database](./images/save-to-database.png "Save Data Set to Database")
 
-5. Click on **Select connection** and choose the adw_hr connection. Thereafter, also give a name that would be used for the table in the database.
+5. Click on **Select connection** and choose the **adw_hr** connection. Thereafter, also give a name that would be used for the table in the database.
 
     ![Choose Connection](./images/choose-connection.png "Choose Connection")
 
@@ -129,7 +131,7 @@ The data flow should run and upon successful execution you should be able to see
 
 ## Task 4: Using Attrition Data set in the Human Resource project
 
-1. Open the Human Resource workflow. Click on the edit button to enter into the edit mode. From the data panel, click on the 'plus' sign and select **Add Data Set**.
+1. Open the Human Resource workflow. Click on the edit button to enter into the edit mode. From the data panel, click on the encircled **+** sign and select **Add Data Set**.
 
     ![Edit Dashboards](./images/edit-dashboard.png "Edit Dashboards")
     
@@ -139,24 +141,24 @@ The data flow should run and upon successful execution you should be able to see
     
     ![Select AttritionPrediction Data Set from Database](./images/select-data-set-from-database.png "Select AttritionPrediction Data Set from Database")
 
-3. Click on the '+' sign next to the canvas names at the bottom of the screen to add a new canvas. 
+3. Click on the **+** sign next to the canvas names at the bottom of the screen to add a new canvas. 
 
     ![Create New Canvas](./images/create-canvas.png "Create New Canvas")
 
-4. Right click on the name of the new canvas and choose **Rename**. Give the canvas a meaning full name.
+4. Right click on the name of the new canvas and choose **Rename**. Give the canvas a meaningful name.
 
     ![Rename Canvas](./images/rename-canvas.png "Rename Canvas")
 
-5. Now drag the **Employee Count** data item under Attrtion Prediction to this canvas to get you first visualisation. 
+5. Now drag the **Employee Count** data item under Attrition Prediction to this canvas to get you first visualisation. 
 
     ![Create Visualisation](./images/create-visualisation.png "Create Visualisation")
 
-We will now leave it upto your imagination to analyse the data sets that have been provided to you.
+We will now leave it to your imagination to analyse the data sets that have been provided to you.
 
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
- - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020
- - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
+ - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
+ - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar Sharma, Shikhar Mishra
  - **Last Updated By/Date** - Yash Lamba, March 2023
 
