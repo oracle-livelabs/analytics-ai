@@ -19,103 +19,101 @@ Estimated Lab Time: 30 minutes
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/id-federation.png " ")	
+	![OCI Console Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png "OCI Console Federation")
 
-3. Click on the link to the **OracleIdentityCloudService**.
+2. Click on the link to the **OracleIdentityCloudService**.
 
-    ![](./images/1.3.png " ")
+    ![Identity Domain](./images/select-idcs.png "Identity Domain")
 
-4. In the page that opens, click on the Service Console URL.
+3. In the page that opens, click on the Service Console URL.
 
-    ![](./images/1.4.png " ")
+    ![IDCS Service Console URL](./images/go-to-service-console.png "IDCS Service Console URL")
 
-5. In the Identity Cloud Service Console, click on the user icon in the top right corner and select **My Access Tokens**.
+4. In the Identity Cloud Service Console, click on the user icon in the top right corner and select **My Access Tokens**.
 
-    ![](./images/1.5.png " ")
+    ![IDCS Access Token](./images/go-to-idcs-access-token-page.png "IDCS Access Token")
 
-6. If you have access to the relevant APIs, you should be able to select them, under the **Invokes Identity Cloud Service** radio button. Thereafter, enter the duration of validity of the token in minutes and click on the **Download Token** button.
+5. If you have access to the relevant APIs, you should be able to select them, under the **Invokes Identity Cloud Service APIs** radio button. Thereafter, enter the duration of validity of the token in minutes and click on the **Download Token** button.
 
-    ![](./images/1.6.png " ")
+    ![Download Access Token](./images/download-access-token.png "Download Access Token")
 
-7. Open the **token.tok** file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
+6. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
 
-    ![](./images/1.7.png " ")
+    ![Keep the token handy](./images/open-the-token-file.png "Keep the token handy")
 
-8. You may now close the Identity Cloud Service Console.
+**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
-**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
+7. You may now close the Identity Cloud Service Console.
 
 ## Task 2: Provision the Stack
 
 1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the stack creation page. If you are prompted to login to OCI instead, then login to proceed.
 
-    ![](./images/1.13.png " ")
+    ![Deploy OCI EBS Analysis Stack](./images/deploy-to-oci.png "Deploy OCI EBS Analysis Stack")
 
 2. On the next screen, review and accept the Oracle Terms of Use by selecting the check box. Doing so will auto-populate the description section and select the terraform version. Provide a name for the stack and choose a compartment for it. Then, hit **Next**.
 
-    ![](./images/1.17.png " ")
+    ![Configure Variables](./images/configure-stack-variables.png "Configure Variables")
 
 3. On the **Configure Variables** screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Select the check box to reveal the advanced options.
 
-    ![](./images/1.18.png " ")
+    ![](./images/configure-stack-variables2.png "")
 
-    ![](./images/1.19.png " ")
+    ![](./images/configure-stack-variables3.png "")
 
 4. Enter an appropriate display name and database name for the ADW instance. We also recommend checking the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. You can leave everything else, as it is.
 
-    ![](./images/1.20.png " ")
+    ![](./images/configure-stack-variables4.png "")
     
 5. Scroll down and provide a name for the analytics instance. Now, hit **Next**.
 
-    ![](./images/1.21.png " ")
+    ![](./images/configure-stack-variables5.png "")
 
 6. Review all the details and click on the **Create** button.
 
-    ![](./images/1.22.png " ")
+    ![Review and Create](./images/review-create-stack.png "Review and Create")
     
-7. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the panel that appears, click on **Apply**, again.
+7. Now that the stack has been created, click on **Apply**. In the panel that appears, click on **Apply**, again.
 
-    ![](./images/1.23.png " ")
+    ![Apply Terraform](./images/apply-terraform.png "Apply Terraform")
     
-    ![](./images/1.24.png " ")
+    ![Approve Job](./images/start-job.png "Approve Job")
     
-    ![](./images/1.25.png " ")
+    ![Monitor Terraform Logs](./images/monitor-logs.png "Monitor Terraform Logs")
 
 **Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
 
-![](./images/1.26.png " ")
+![View Stack Details](./images/see-stack-details.png "View Stack Details")
     
-![](./images/1.27.png " ")
+![Edit Stack Details](./images/edit-stack.png "Edit Stack Details")
 
-8. If everything goes to plan, the status of the job will change to **SUCCEEDED** and you will see the following message at the bottom of the logs.
+8. If everything goes to plan, the status of the job will change to **SUCCEEDED**.
 
-    ![](./images/1.28.png " ")
-    
-    ![](./images/1.29.png " ")
+    ![Success Message](./images/successful-resource-creation.png "Success Message")
 
-9. On the same page, you will find **Outputs** and **Associated Resources** under the **Resources** menu. Click on **Outputs**. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi\_adw\_oac** in a folder named **odi-adw-oac**.
+9. On the same page, you will find the **Outputs** under the **Resources** menu. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi-adw-oac** in a folder named **odi-adw-oac**.
 
-    ![](./images/1.30.png " ")
+    ![Make Note of Stack Outputs](./images/note-stack-outputs.png "Make Note of Stack Outputs")
     
 **Note:** You may use any names for the files and folders. We will be using the names that we mentioned above.
 
 ## Task 3: Download Autonomous Data Warehouse wallet file
 
-1. Go to the **Associated Resources** tab to get the links to the provisioned resources.
+1. Go to the **Job Resources** tab to get the links to the provisioned resources.
 
-    ![](./images/1.31.png " ")
+    ![Links to Associated Resources](./images/links-to-provisioned-resources.png "Links to Associated Resources")
 
-2. Scroll down to moderndw and open the page in a new tab, since you would need access to the current page from time-to-time.
+2. Scroll down to the **oci_database_autonomous_database** and open the page in a new tab, since you would need access to the current page from time-to-time.
 
-    ![](./images/1.32.png " ")
+    ![Go to Autonomous Database](./images/go-to-autonomous-database.png "Go to Autonomous Database")
   
-3. Click on the **DB Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation with any of the passwords that you provided while provisioning the stack. Hit **Download**.
+3. Click on the **Database Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation with any of the passwords that you provided while provisioning the stack. Hit **Download**.
 
-    ![](./images/1.33.png " ")
+    ![Open Database Connection Panel](./images/database-connection.png "Open Database Connection Panel")
     
-    ![](./images/1.34.png " ")
+    ![Download Wallet](./images/download-wallet.png "Download Wallet")
     
-    ![](./images/1.35.png " ")
+    ![Protect Wallet with Password](./images/wallet-password.png "Protect Wallet with Password")
 
 4. Move the downloaded file to the **odi-adw-oac** folder, as well.
 
@@ -124,5 +122,5 @@ Estimated Lab Time: 30 minutes
 You may now proceed to Lab 2.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
-- **Last Updated By/Date** - Yash Lamba, May 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Last Updated By/Date** - Yash Lamba, March 2023

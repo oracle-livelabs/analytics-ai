@@ -62,7 +62,7 @@ Lab 6 - Perform Analysis - Import Dashboards (15 minutes)
 
 ## Acknowledgements
 
- - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, February 2021
+ - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, February 2021
  - **Contributors** - Srinidhi Koushik, Clarence Ondieki, Maharshi Desai
- - **Last Updated By/Date** - Yash Lamba, May 2021
+ - **Last Updated By/Date** - Yash Lamba, March 2023
 

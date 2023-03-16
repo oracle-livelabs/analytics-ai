@@ -37,7 +37,7 @@ Lab 2 - Run Analytics - Create Dashboards (45 minutes)
 
 ## Acknowledgements
 
- - **Author** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, March 2023
+ - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
  - **Last Updated By/Date** - Yash Lamba, March 2023
 

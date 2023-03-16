@@ -68,37 +68,37 @@ Estimated Lab Time: 15 minutes
 
 1. Start VNC Viewer on your local machine. Since, we have a tunnel from the local machine to the ODI node, we will use the IP **localhost:1** as the URL.  **Enter** or click on **Connect** depending on the application you are using.
 
-    ![](./images/3.1.png " ")
+    ![Connect to ODI Instance](./images/connect-to-odi-instance.png "Connect to ODI Instance")
     
 2. The application will prompt you to enter the VNC password that we had provided while provisioning the stack. Enter that password.
     
-    ![](./images/3.2.png " ")
+    ![Enter VNC Password](./images/enter-vnc-password.png "Enter VNC Password")
     
 3. If this is the first time you have logged in, the Operating System might take you through a few setup steps. Make the appropriate selections and skip the ones not needed.
     
-    ![](./images/3.3.png " ")
+    ![First time Setup 1](./images/setup1.png "First time Setup 1")
     
-    ![](./images/3.4.png " ")
+    ![First time Setup 2](./images/setup2.png "First time Setup 2")
     
-    ![](./images/3.5.png " ")
+    ![First time Setup 3](./images/setup3.png "First time Setup 3")
     
-    ![](./images/3.6.png " ")
+    ![First time Setup 4](./images/setup4.png "First time Setup 4")
     
-    ![](./images/3.7.png " ")
+    ![First time Setup 5](./images/setup5.png "First time Setup 5")
     
 4. Now, click on **Applications** on the menu bar at the top. Go to programming and select **ODI Studio**.
     
-    ![](./images/3.8.png " ")
+    ![Launch ODI](./images/launch-odi.png "Launch ODI")
     
 5. If prompted to import preferences, just click **No**. You have successfully connected to the ODI instance and started ODI.
 
-    ![](./images/3.9.png " ")
+    ![Decline Import Preferences](./images/decline-import-preferences.png "Decline Import Preferences")
     
-    ![](./images/3.10.png " ")
+    ![ODI Home Screen](./images/odi-home-screen.png "ODI Home Screen")
 
 You may now proceed to Lab 4.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
-- **Last Updated By/Date** - Yash Lamba, May 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Last Updated By/Date** - Yash Lamba, March 2023
 

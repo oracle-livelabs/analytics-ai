@@ -27,7 +27,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
-	![OCI Console Federation](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-federation.png "OCI Console Federation")
+	![OCI Console Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png "OCI Console Federation")
 
 2. Click on the link to the **OracleIdentityCloudService**.
 
@@ -69,7 +69,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Select Template](./images/select-template.png "Select Template")
 
-4. In the side menu that opens up, select the **Architecture** tab and then check the **Departmental Data Warehousing** template and hit the **Select template** button.
+4. In the side menu that opens, select the **Architecture** tab and then check the **Departmental Data Warehousing** template and hit the **Select template** button.
 
     ![Departmental Data Warehouse Template](./images/select-departmental-data-warehousing.png "Departmental Data Warehouse Template")
 
@@ -91,17 +91,21 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Review and Create](./images/review-create-stack.png "Review and Create")
 
-10. Now that the stack has been created, click on **Apply**. In the iframe that pops-up, click on **Apply**, again.
+10. Now that the stack has been created, click on **Apply**. In the panel that appears, click on **Apply**, again.
 
     ![Apply Terraform](./images/apply-terraform.png "Apply Terraform")
 
     ![Approve Job](./images/start-job.png "Approve Job")
 
-**Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed.
+    ![Monitor Terraform Logs](./images/monitor-logs.png "Monitor Terraform Logs")
 
-![Monitor Terraform Logs](./images/monitor-logs.png "Monitor Terraform Logs")
+**Note:**  If you have followed the steps above, the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
 
-11. If everything goes to plan, you will see the following message at the bottom of the logs.
+![View Stack Details](./images/see-stack-details.png "View Stack Details")
+    
+![Edit Stack Details](./images/edit-stack.png "Edit Stack Details")
+
+11. If everything goes to plan, the status of the job will change to **SUCCEEDED**.
 
     ![Success Message](./images/successful-resource-creation.png "Success Message")
 
@@ -119,7 +123,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 15. Click on the analytics instance to get to its page. Thereafter, click on the **Analytics Home Page** button to access the instance.
 
-    ![Access Instance](./images/access-analytics-instance.png "Access Instance")
+    ![Access Analytics Instance](./images/access-analytics-instance.png "Access Analytics Instance")
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
@@ -174,7 +178,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 You may now proceed to the next lab.
 
 ## Acknowledgements
- - **Author** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, March 2023
+ - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
  - **Last Updated By/Date** - Yash Lamba, March 2023
 
