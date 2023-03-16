@@ -54,13 +54,11 @@ In this lab, you will:
    ![OAC Create Button](images/oac_create_button.png)
 
 3. Fill the web form with the following information and click **Create**:
-
-   - **Compartment**: `root` compartment, unless you have permissions and experience selecting a different one.
    - **Name**: `WorkshopAnalytics`
    - **Description**: `Analytics Instance for Data Science workshop`
-   - **Feature Set**: `Enterprise Analytics`
+   - **Compartment**: `root` compartment, unless you have permissions and experience selecting a different one.
    - **Capacity**: `OCPU` and `1 - Non Production`
-   - **License Type**: `License Included`
+   - **License and Edition**: `License Included and Enterprsie edition`
 
    ![OAC Form](images/oac_form.png)
 
