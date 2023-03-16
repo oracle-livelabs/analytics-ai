@@ -4,7 +4,7 @@
 
 In this lab, you will create and connect to an ODI work repository and prepare the E-Business Suite data source in ODI. You will be using an Autonomous database to emulate EBS. If you have access to an EBS environment, please feel free to bring in data from there.
 
-Estimated Lab Time: 40 minutes
+Estimated Time: 40 minutes
 
 ### Objectives
 
@@ -188,7 +188,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
     ![](./images/3.35.png " ")
 
-You may now proceed to Lab 4.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021

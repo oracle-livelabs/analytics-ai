@@ -8,7 +8,7 @@ Lines of business, typically, don't have timely or efficient access to data and 
 
 This workshop uses Oracle Data Integrator (ODI) to load data from an EBS instance into an ADW using smart import and will guide you through the process. You will also learn how to create mappings and load data from other data sources, in this case another database, into the aforementioned ADW. Thereafter, you will learn how to connect ADW to OAC, create data sets and import a prebuilt sample analysis with refined data into OAC.
 
-Estimated workshop time: 3.5 hours
+Estimated Time: 3.5 hours
 
 ### Objectives
 

@@ -59,7 +59,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
-	![OCI Console Stacks](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png "OCI Console Stacks")
+	![OCI Console Stacks](https://oracle-livelabs.github.io/common/images/console/developer-resmgr-stacks.png "OCI Console Stacks")
 
 2. Click on the **Create Stack** button.
 
@@ -119,7 +119,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 14. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
-	![OCI Console Analytics Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
+	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
 15. Click on the analytics instance to get to its page. Thereafter, click on the **Analytics Home Page** button to access the instance.
 
@@ -133,7 +133,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
-	![OCI Console Autonomous Data Warehouse](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "OCI Console Autonomous Data Warehouse")
+	![OCI Console Autonomous Data Warehouse](https://oracle-livelabs.github.io/common/images/console/database-adw.png "OCI Console Autonomous Data Warehouse")
 
 2. Click on the **Create Autonomous Database** button.
 
@@ -161,7 +161,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
-	![OCI Console Analytics Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
+	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
 2. On the next page, click on the **Create Instance** button.
 
@@ -175,7 +175,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
  - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, September 2020

@@ -4,7 +4,7 @@
 
 In this lab, you will provision Data Integrator, Autonomous Data Warehouse, Oracle Analytics and all of the required networking components that are needed to complete this workshop.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -57,17 +57,17 @@ Estimated Lab Time: 30 minutes
 
 3. On the **Configure Variables** screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Select the check box to reveal the advanced options.
 
-    ![](./images/configure-stack-variables2.png "")
+    ![Configure Variables](./images/configure-stack-variables2.png "Configure Variables")
 
-    ![](./images/configure-stack-variables3.png "")
+    ![Configure Variables](./images/configure-stack-variables3.png "Configure Variables")
 
 4. Enter an appropriate display name and database name for the ADW instance. We also recommend checking the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. You can leave everything else, as it is.
 
-    ![](./images/configure-stack-variables4.png "")
+    ![Configure Variables](./images/configure-stack-variables4.png "Configure Variables")
     
 5. Scroll down and provide a name for the analytics instance. Now, hit **Next**.
 
-    ![](./images/configure-stack-variables5.png "")
+    ![Configure Variables](./images/configure-stack-variables5.png "Configure Variables")
 
 6. Review all the details and click on the **Create** button.
 
@@ -119,7 +119,7 @@ Estimated Lab Time: 30 minutes
 
 **Note:** In the **Associated Resources** tab, clicking on the links to the resources takes you to their respective pages. However, there could be some resources that do not have links. To get to those resources, you will have to use the navigation menu. The instructions will be provided when needed. 
 
-You may now proceed to Lab 2.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021

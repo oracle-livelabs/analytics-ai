@@ -4,7 +4,7 @@
 
 In this lab, you will provision an EBS instance and the associated networking resources. Thereafter, you will configure the EBS instance and insert data into the EBS database. You will also provision an Autonomous Database and load data into it.
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -43,7 +43,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     
     ![Configure Security List](./images/configure-security-list.png "Configure Security List")
     
-4. Create 2 ingress rules as shown in the images below. 
+4. Create two ingress rules as shown in the images below. 
 
     ![Create Ingress Rule 1](./images/create-ingress-rule1.png "Create Ingress Rule 1")
     
@@ -75,7 +75,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     
 1. Go to navigation menu using the menu button in the top left. Scroll down to the **Solutions and Platform** section. Under **Marketplace**, select **All Applications**.
     
-    ![Go to Marketplace](https://github.com/oracle-livelabs/common/blob/main/images/console/marketplace.png "Go to Marketplace")
+    ![Go to Marketplace](https://oracle-livelabs.github.io/common/images/console/marketplace.png "Go to Marketplace")
 
 2. Once on the marketplace home page, type **Oracle E-Business Suite** in the search bar and click on the search button. Thereafter, select an **Oracle E-Business Suite Demo Install Image**. At the time of writing, version 12.2.8 and 12.2.9 were available and 12.2.8 was selected.
 
@@ -119,7 +119,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     </copy>
     ```
         
-3. Now, switch to the root user and move the **etl_audit_tbl.sql** file into the home directory of the **oracle** user and make oracle user the owner of the file. The file will be used towards the end of this lab. 
+3. Now, switch to the root user and move the **etl\_audit\_tbl.sql** file into the home directory of the **oracle** user and make oracle user the owner of the file. The file will be used towards the end of this lab. 
 
      ```bash
     <copy>    
@@ -187,10 +187,19 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     
     ./scripts/startdb.sh
     
+    </copy>
+    ```
+
+    ```
+    <copy>
     chmod 744 EBSapps.env
     
     ./EBSapps.env run
-    
+    </copy>
+    ```
+
+    ```
+    <copy>
     mkdir -p ~/logs
 
     cd  ~/logs
@@ -282,18 +291,22 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
         
     ![Login to SQLPlus](./images/login-to-sqlplus.png "Login to SQLPlus")
 
-16. Execute the SQL script etl_audit_tbl.sql to create the required tables. 
+16. Execute the SQL script **etl\_audit\_tbl.sql** to create the required tables. 
     
     
+    ```sql
+    <copy>
         @/home/oracle/etl_audit_tbl.sql
+    </copy>
+    ```
 
     ![Execute ETL Audit Table](./images/execute-etl-audit-tbl.png "Execute ETL Audit Table")
     
 ## Task 4: Provision Autonomous Data Warehouse
 
 1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
-	![OCI Console Autonomous Data Warehouse](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "OCI Console Autonomous Data Warehouse")
+    
+	![OCI Console Autonomous Data Warehouse](https://oracle-livelabs.github.io/common/images/console/database-adw.png "OCI Console Autonomous Data Warehouse")
 
 2. Click on the **Create Autonomous Database** button.
 
@@ -333,7 +346,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
 
 **Note:** If you haven't completed step 3, please return and complete it now.
 
-You may now proceed to Lab 3.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Author** - Srinidhi Koushik, Manager, Technology Hub, April 2021

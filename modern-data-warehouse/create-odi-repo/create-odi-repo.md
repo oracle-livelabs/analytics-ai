@@ -4,7 +4,7 @@
 
 In this lab, you will create a master and a work repository, both of which are needed to run data integrations. After creating the work repository, you will connect to it. 
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -113,7 +113,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
 4. Now, select the **Login Name** that you just created. Enter **SUPERVISOR** in the user field and enter the password. Click on **OK**. You may be prompted to enter the ADW wallet's password. If so, then provide the password, click **OK** and you will find yourself logged into the Master Repository.
 
-    ![Login to Master Repository](./images/4.14.png "Login to Master Repository")
+    ![Login to Master Repository](./images/login-to-master-repo.png "Login to Master Repository")
     
     ![Enter Wallet Password](./images/enter-wallet-password-to-access-credentials.png "Enter Wallet Password")
     
@@ -161,7 +161,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
     ![Connect to Work Repository](./images/connect-to-work-repo.png "Connect to Work Repository")
 
-You may now proceed to Lab 5.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Senior Cloud Engineer, January 2021

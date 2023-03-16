@@ -4,7 +4,7 @@
 
 In this lab, you will configure and run the ODI integrations. For the EBS data source, you will use smart import in ODI and use an available mapping. For the ADW data source, you will create the mapping between the source and destination databases.  
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -273,7 +273,7 @@ Now that you have configured your connections to your source and destination, yo
 
     ![Monitor Integration](./images/monitor-integration.png "Monitor Integration")
 
-You may now proceed to Lab 6.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, April 2021

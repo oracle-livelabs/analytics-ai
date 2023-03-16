@@ -6,7 +6,7 @@ In this lab, you will connect to the Data Integrator that we provisioned in Lab 
 
 **Note:** Below you will find instructions on how to establish the connection if you are using a terminal in Unix/Linux. If you are using a program such as Putty on Windows, please make sure that you perform the same operations, accordingly.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -96,7 +96,7 @@ Estimated Lab Time: 15 minutes
     
     ![ODI Home Screen](./images/odi-home-screen.png "ODI Home Screen")
 
-You may now proceed to Lab 4.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021

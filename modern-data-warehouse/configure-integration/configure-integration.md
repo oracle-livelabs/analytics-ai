@@ -4,7 +4,7 @@
 
 In this lab, you will configure the ODI integration, create the mapping between source and destination, and run the integration. 
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -145,7 +145,7 @@ Now that you have configured your connections to your source and destination, yo
 
     ![](./images/4.33.png " ")
 
-You may now proceed to Lab 5.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
