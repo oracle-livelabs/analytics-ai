@@ -41,7 +41,7 @@ This lab assumes you have:
 
     ![Connection Creation - ADW](./images/select-adwh-connection.png)
 
-5.	Enter the credentials to the data warehouse (target database) you created in **Lab 3: Prepare data sources > Task 3: Prepare Target Database**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access).  
+5.	Enter the credentials to the data warehouse (target database) you created in **Lab 3: Prepare data sources > Task 3: Prepare Target Database**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-download-credentials.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1).  
 Click **Save** to save your new connection **information**.
 
   ![Define Connection](./images/adw-conn.png " ")
@@ -283,7 +283,7 @@ This is [Pattern Brushing](https://docs.oracle.com/en/cloud/paas/analytics-cloud
 
     ![Pattern Brushing](./images/pattern-brushing-select.png " ")
 
-18.	Create a [Dashboard Filter](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/create-dashboard-filters.html)
+18.	Create a [Dashboard Filter](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/filter-data-using-dashboard-filter-visualization.html)
   Drag **Dashboard Filters** from **Visualizations** tab
 
     ![Dashboard Filters](./images/dashboard-filter.png " ")
@@ -319,9 +319,9 @@ This concludes this **workshop**
 * [Five Ways to Quickly Discover and Repair Data Issues in Oracle Analytics](https://blogs.oracle.com/analytics/post/five-ways-to-quickly-discover-and-repair-data-issues-in-oracle-analytics)
 * [Begin every data journey with Auto Insights](https://blogs.oracle.com/analytics/post/begin-every-data-journey-with-auto-insights)  
 * [Analyze Data with Explain](https://docs.oracle.com/en/middleware/bi/analytics-desktop/bidvd/analyze-data-explain.html#GUID-D1C86E85-5380-4566-B1CB-DC14E0D3919E)  
-* [Leveraging Oracle Analytics Cloud with Autonomous Data Warehouse](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=812&p210_type=1&session=103781572075661)
+* [Leveraging Oracle Analytics Cloud with Autonomous Data Warehouse](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=812&clear=180&session=9585530339306)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
 * **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - Lucian Dinescu, Product Strategy, Analytics, April 2022
+* **Last Updated By/Date** - Chenai Jarimani, Analytics & AI, March 2023

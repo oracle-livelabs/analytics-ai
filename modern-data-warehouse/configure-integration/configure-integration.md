@@ -4,7 +4,7 @@
 
 In this lab, you will configure the ODI integration, create the mapping between source and destination, and run the integration. 
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -83,7 +83,7 @@ A data server stores information according to a specific technical logic which i
     
 ## Task 3: Create Models for Source and Destination Schemas
 
-We will now create models based on the logical schema we created. 
+You will now create models based on the created logical schema. 
 
 1. Click on the **Designer** tab. Go down to the **Models** panel. Click on the **Folder Icon** to the right of **Models** and select **New Model**.
 
@@ -99,7 +99,7 @@ We will now create models based on the logical schema we created.
 
 ## Task 4: Setting up an Integration Project
 
-Now that you have configured your connections to your source and destination, we will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings or variables.
+Now that you have configured your connections to your source and destination, you will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings or variables.
 
 1. Under **Designer**, click **New Project** in the toolbar of the **Projects** section. Enter a Name for the project, and hit **Save**.
 
@@ -145,7 +145,7 @@ Now that you have configured your connections to your source and destination, we
 
     ![](./images/4.33.png " ")
 
-You may now proceed to Lab 5.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021

@@ -1,10 +1,10 @@
-# Run Analytics - Create Dashboards
+# Perform Analysis - Create Dashboards
 
 ## Introduction
 
-In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualizations. You will then connect to the destination ADW to explore the data.
+In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, you will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualizations. You will then connect to the destination ADW to explore the data.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -22,100 +22,94 @@ Estimated Lab Time: 15 minutes
 
 ## Task 1: Set up the Analytics Project in OAC 
 
-As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
+While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Analytics instance. Directly open that URL in the browser and proceed to step 3. In case the URL wasn't present then follow steps 1 and 2.
 
-![](./images/6.1.png " ")
+![No Link to Analytics Instance](./images/no-link-to-oac.png "No Link to Analytics Instance")
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
+	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
-2. Choose the right compartment and then select your analytics instance. In the page that opens up, click on **Analytics Home Page** to login to the analytics cloud instance.
+2. Choose the right compartment and then select your analytics instance. In the page that opens, click on **Analytics Home Page** to login to the analytics cloud instance.
 
-    ![](./images/6.3.png " ")
+    ![Access Analytics Instance](./images/access-analytics-instance.png "Access Analytics Instance")
 
-    ![](./images/6.4.png " ")
+    ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
 3. Click on the ellipses menu in the top right, select **Import Project/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
 
-    ![](./images/6.5.png " ")
+    ![Import Workbook](./images/import-workbook.png "Import Workbook")
 
-    ![](./images/6.6.png " ")
+    ![Select File](./images/select-file.png "Select File")
 
 4.  Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog.
 
-    ![](./images/6.7.png " ")
+    ![Import](./images/import-dva.png "Import")
 
-    ![](./images/6.8.png " ")
+    ![Import Successful](./images/dva-import-successful.png "Import Successful")
 
 5. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named **EBS\_ADW\_OAC**.
 
-    ![](./images/6.9.png " ")
+    ![Go to Data](./images/go-to-data-page.png "Go to Data")
 
-    ![](./images/6.10.png " ")
+    ![Select Connections](./images/go-to-connections-tab.png "Select Connections")
 
 6. Click on the ellipses menu on the extreme right of the connection’s name and select inspect.
 
-     ![](./images/6.11.png " ")
+    ![Inspect Connection](./images/inspect-connection.png "Inspect Connection")
 
 7. Click on the **Select** button in front of Client Credentials and select the wallet to your Source ADW instance. Enter the username as **ADMIN** and provide the schema password. Click **Save**.
 
-    ![](./images/6.12.png " ")
+    ![Update Connection Credentials](./images/update-connection-credentials.png "Update Connection Credentials")
 
-8. We will now refresh our data sets to utilize our connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**.
+8. You will now refresh the data sets to utilize the connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**.
 
-    ![](./images/6.13.png " ")
+    ![Reload Data Sets](./images/reload-data-sets.png "Reload Data Sets")
 
 9. Now, proceed to the hamburger menu and select **Catalog** and open your project. The visualizations should load, but click **Refresh Data** if needed, to refresh the visuals.
 
-    ![](./images/6.14.png " ")
+    ![Go to Catalog](./images/go-to-catalog.png "Go to Catalog")
 
-    ![](./images/6.15.png " ")
+    ![EBS Dashboard](./images/ebs-dashboard.png "EBS Dashboard")
 
 ## Task 2: Establish a connection to the Destination Database as ADMIN
 
-As you might remember, we loaded the data from the EBS instance into the **ADMIN** schema of the destination ADW and from the Source ADW into the **EBS** schema. We will now create a connection to the database as the **ADMIN** user.
+As you might remember, you loaded the data from the EBS instance into the **ADMIN** schema of the destination ADW and from the Source ADW into the **EBS** schema. You will now create a connection to the database as the **ADMIN** user.
 
-1. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab.
+1. Click on the navigation menu icon in the top left. Go to **Data** and then open the **Connections** tab. Click on the **Create** button in the top right of the screen and select **Connection**. Choose **Autonomous Data Warehouse**.
 
-    ![](./images/6.9.png " ")
+    ![Select Connections](./images/go-to-connections-tab.png "Select Connections")
 
-2. Click on the **Create** button in the top right of the screen and select **Connection**. Choose **Autonomous Data Warehouse**.
+    ![Create Connection](./images/create-connection.png "Create Connection")
 
-    ![](./images/6.16.png " ")
-
-    ![](./images/6.17.png " ")
+    ![Choose Autonomous Data Warehouse](./images/choose-connection-type.png "Choose Autonomous Data Warehouse")
 
 3. Provide a name to the connection. Click on the **Select** button in front of Client Credentials and select the wallet to your destination ADW instance. Let the username be **ADMIN** and provide the schema password. Select the high service from the **Service Name** dropdown and click on **Save** to establish the connection.
 
-    ![](./images/6.18.png " ")
+    ![Enter Connection Details](./images/enter-connection-details.png "Enter Connection Details")
 
-    ![](./images/6.19.png " ")
+    ![Created Connections](./images/connections.png "Created Connections")
 
 ## Task 3: Create Data Sets in OAC
 
-1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**. On the next page, you will see all the available schemas including the **ADMIN** and **EBS** schemas.
+1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**. 
 
-    ![](./images/6.20.png " ")
+    ![Create Data Set](./images/create-data-set.png "Create Data Set")
 
-    ![](./images/6.21.png " ")
+2. You will see all the available schemas including the **ADMIN** and **EBS** schemas. You may now choose any data set to see its columns and play with it. Thereafter, give the data set a name and click on the save button to save it.
 
-2. You may now choose any data set to see its columns and play with it. Thereafter, give the data set a name and click on the **Add** button to save it.
+    ![Choose Table under ADMIN Schema](./images/choose-table-under-admin-schema.png "Choose Table under ADMIN Schema")
 
-    ![](./images/6.22.png " ")
-
-    ![](./images/6.23.png " ")
-
-    ![](./images/6.24.png " ")
+    ![Save Data Set](./images/save-data-set.png "Save Data Set")
 
 3. The data set can now be seen under the **Data Sets** tab. Feel free to repeat the process to create more data sets.
 
-    ![](./images/6.25.png " ")
+    ![All Data Sets](./images/all-datasets.png "All Data Sets")
 
 We will now leave it up to your imagination to analyse the data sets that have been provided to you and to use them in visualisations.
 
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
-- **Last Updated By/Date** - Yash Lamba, May 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Last Updated By/Date** - Yash Lamba, March 2023
