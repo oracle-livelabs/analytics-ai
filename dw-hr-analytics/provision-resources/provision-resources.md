@@ -8,7 +8,7 @@ Estimated Time: 30 minutes
 
 ### Objectives
 
-Provision an Autonomous Datawarehouse instance and an Analytics Cloud instance.
+Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 
 ### Prerequisites
 
