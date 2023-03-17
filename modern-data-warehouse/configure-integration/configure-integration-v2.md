@@ -72,22 +72,22 @@ A data server stores information according to specific technical logic which is 
     
     ![Confirmation of Successful Connection](./images/confirmation-of-successful-connection-to-ebs-instance.png "Confirmation of Successful Connection")
     
-**Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:  
-    
-```bash
-<copy>  
-sudo su - oracle
+**Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:    
 
-export ORACLE_HOME=/u01/install/APPS/12.1.0
+    ```
+    <copy>  
+    sudo su - oracle
 
-export ORACLE_SID=ebsdb
+    export ORACLE_HOME=/u01/install/APPS/12.1.0
 
-export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
+    export ORACLE_SID=ebsdb
 
-sqlplus
-</copy>
-```    
-        
+    export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
+
+    sqlplus
+    </copy>
+    ```
+
 Now, try logging in as the **apps** user. If you are successfully able to login, test the connection again. If not then you might have to debug the issue.
 
 ## Task 3: Update Target Configuration

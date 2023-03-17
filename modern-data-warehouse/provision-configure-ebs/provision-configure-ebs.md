@@ -121,7 +121,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
         
 3. Now, switch to the root user and move the **etl\_audit\_tbl.sql** file into the home directory of the **oracle** user and make oracle user the owner of the file. The file will be used towards the end of this lab. 
 
-     ```bash
+    ```bash
     <copy>    
     sudo su
         
@@ -171,7 +171,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     </copy>
     ```
 
-     ```bash
+    ```bash
     <copy>
     ssh -i <path_to_private_key> opc@<ebs_instance_public_ip>
     </copy>
