@@ -91,7 +91,7 @@ This process is automated.  However, **if you prefer a manual** approach, to con
     - Select a name, e.g. "Data Science Notebook"
     - We recommend you choose VM.Standard2.2 (under Intel SKYLAKE) as the shape.
     - Set blockstorage to 50 GByte.
-    - Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
+    - Select defaults for Networking resources. These should point to the resources that were created earlier by the resource manager.
 
     ![](./images/create-notebook-3.png)
 

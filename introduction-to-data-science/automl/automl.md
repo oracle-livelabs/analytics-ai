@@ -28,6 +28,7 @@ In this lab you will:
 
 2. Search for a Conda environment that suits the type of development that we're going to do.
 
+   - Select "Show Deprecated" at top right hand corner (The package we use still works as intended for this trianing scenario)
    - Search for the environments with the "automl" libraries with the search field at top right.
    - Open the details of the "General Machine Learning for CPUs" by clicking on the down arrow at the right.
    - Copy the installation command to the clipboard by clicking on the Copy button.
