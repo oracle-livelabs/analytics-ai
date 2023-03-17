@@ -74,7 +74,7 @@ A data server stores information according to specific technical logic which is 
     
 **Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:    
 
-    ```
+    ```bash
     <copy>  
     sudo su - oracle
 

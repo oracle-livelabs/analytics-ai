@@ -95,7 +95,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
     ![Create Wallet Password](./images/create-wallet-password.png "Create Wallet Password")
 
-2. Click on the pencil sign in the login prompt to edit the displayed login information. 
+2. Click on the pencil sign in the login prompt to edit the details of the displayed login profile. 
     
     ![Edit Master Repository Connection Details](./images/edit-master-connection-details.png "Edit Master Repository Connection Details")
     
