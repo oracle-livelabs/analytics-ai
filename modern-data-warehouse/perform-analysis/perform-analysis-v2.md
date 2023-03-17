@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-- Import analytics project.
+- Import analytics workbook.
 - Connect to ADW and create data sets.
 - Analyse data.
 
@@ -36,7 +36,7 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
-3. Click on the ellipses menu in the top right, select **Import Project/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
+3. Click on the ellipses menu in the top right, select **Import Workbook/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
 
     ![OAC Home Page](./images/oac-home-page.png "OAC Home Page")
 
