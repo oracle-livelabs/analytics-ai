@@ -77,7 +77,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
     
     ![Go to Marketplace](https://oracle-livelabs.github.io/common/images/console/marketplace.png "Go to Marketplace")
 
-2. Once on the marketplace home page, type **Oracle E-Business Suite** in the search bar and click on the search button. Thereafter, select an **Oracle E-Business Suite Demo Install Image**. At the time of writing, version 12.2.8 and 12.2.9 were available and 12.2.8 was selected.
+2. Once on the marketplace home page, type **Oracle E-Business Suite** in the search bar and click on the search button. Thereafter, select an **Oracle E-Business Suite Demo Install Image**. At the time of writing, versions 12.2.8 and 12.2.9 were available and 12.2.8 was selected.
 
     ![Search for EBS in Marketplace](./images/search-for-ebs.png "Search for EBS in Marketplace")
     
@@ -103,7 +103,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
 
 ## Task 3: SSH into the EBS instance and configure EBS
 
-1. Open a terminal and scp the **etl_audit_tbl.sql** file onto the EBS instance with the following command:
+1. Open a terminal and scp the **etl\_audit\_tbl.sql** file onto the EBS instance with the following command:
 
     ```bash
     <copy>
@@ -141,7 +141,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
         
     ![Update Hosts](./images/update-hosts.png "Update Hosts")
     
-5. Use **vi** to add the public ip of the EBS instance against the hostname in the hosts file, as shown in the image below. The vi keyboard command to edit is **i**. After the edit, save the file by pressing **escape + :wq**. 
+5. Use **vi** to add the public IP address of the EBS instance against the hostname in the hosts file, as shown in the image below. The vi keyboard command to edit is **i**. After the edit, save the file by pressing **escape + :wq**. 
     
     ```bash
     <copy>
@@ -151,7 +151,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
 
     ![Edit Hosts File](./images/edit-hosts-file.png "Edit Hosts File")
     
-6. Update all the presently installed packages to their latest available versions using the yum command. You will be asked to agree to the download in a couple of minutes. Enter **y** to agree to the download. The entire process should take approximately 20 minutes. While you wait, you can proceed to Step 4 and Step 5 of this lab. If you choose to do so, please remember to come back and finish the rest of Step 3.
+6. Update all the installed packages to their latest available versions using the yum command. You will be asked to agree to the download in a couple of minutes. Enter **y** to agree to the download. The entire process should take approximately 20 minutes. While you wait, you can proceed to Step 4 and Step 5 of this lab. If you choose to do so, please remember to come back and finish the rest of Step 3.
         
     ```bash
     <copy>    
@@ -328,7 +328,7 @@ In order to keep the ODI instance and the EBS instance that you are about to pro
 
     ![Autonomous Database Home Page](./images/access-adw-home-page.png "Autonomous Database Home Page")
 
-7. Click on the **Database Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation with any of the passwords that you provided while provisioning the stack. Hit **Download**.
+7. Click on the **Database Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation to any of the passwords that you provided while provisioning the stack. Hit **Download**.
 
     ![Open Database Connection Panel](./images/database-connection.png "Open Database Connection Panel")
     

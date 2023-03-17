@@ -19,7 +19,7 @@ Estimated Time: 30 minutes
     
 ## Task 1: Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
 
-1. Connect to the Autonomous Data Warehouse that you had created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. You downloaded the wallet to the local machine in an earlier lab.
+1. Connect to the Autonomous Data Warehouse that you had created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. You downloaded the wallet to the local machine in Lab 1.
 
 2. Run the commands below to create a schema for the metadata repository. You will call this schema **ODI**. Replace **MyPassword** in the first command with a password of your choosing.
     
@@ -53,7 +53,7 @@ Estimated Time: 30 minutes
    
 ## Task 2: Create ODI Master Repository
 
-In order to use ODI, you need to create a master and a work repository. For this, you are going to use the Autonomous Data Warehouse that was created as part of the stack.
+In order to use ODI, you need to create a master and a work repository. For this, you are going to continue using the same Autonomous Data Warehouse.
 
 1. Return to ODI Studio.
 
@@ -95,7 +95,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
     ![Create Wallet Password](./images/create-wallet-password.png "Create Wallet Password")
 
-2. Click on the pencil sign in the login prompt to edit the displayed login information. create a new login. 
+2. Click on the pencil sign in the login prompt to edit the displayed login information. 
     
     ![Edit Master Repository Connection Details](./images/edit-master-connection-details.png "Edit Master Repository Connection Details")
     
@@ -107,7 +107,7 @@ In order to use ODI, you need to create a master and a work repository. For this
 
     ![Update Connection Details](./images/edit-master-repo-connection-info.png "Update Connection Details")
     
-3. Test and connection and make sure that the test is successful, fixing any errors encountered along the way.
+3. Test the connection and make sure that it is successful, fixing any errors encountered along the way.
 
     ![Test Connection to Master Repository](./images/test-connection-to-master-repository.png "Test Connection to Master Repository")
 
