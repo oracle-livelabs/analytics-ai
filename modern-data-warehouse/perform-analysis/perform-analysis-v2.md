@@ -38,6 +38,8 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
 3. Click on the ellipses menu in the top right, select **Import Project/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
 
+    ![OAC Home Page](./images/oac-home-page.png "OAC Home Page")
+
     ![Import Workbook](./images/import-workbook.png "Import Workbook")
 
     ![Select File](./images/select-file.png "Select File")
@@ -54,7 +56,7 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
     ![Select Connections](./images/go-to-connections-tab.png "Select Connections")
 
-6. Click on the ellipses menu on the extreme right of the connection’s name and select inspect.
+6. Click on the ellipses menu on the extreme right of the row with the connection entry and select inspect.
 
     ![Inspect Connection](./images/inspect-connection.png "Inspect Connection")
 
@@ -62,11 +64,11 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
     ![Update Connection Credentials](./images/update-connection-credentials.png "Update Connection Credentials")
 
-8. You will now refresh the data sets to utilize the connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**.
+8. You will now refresh the data sets to utilise the connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu on the right of the row with the data set entry and selecting **Reload Data**.
 
     ![Reload Data Sets](./images/reload-data-sets.png "Reload Data Sets")
 
-9. Now, proceed to the hamburger menu and select **Catalog** and open your project. The visualizations should load, but click **Refresh Data** if needed, to refresh the visuals.
+9. Now, proceed to the hamburger menu and select **Catalog** and open your project. The visualisations should load, but click **Refresh Data** if needed, to refresh the visuals.
 
     ![Go to Catalog](./images/go-to-catalog.png "Go to Catalog")
 
@@ -96,7 +98,7 @@ As you might remember, you loaded the data from the EBS instance into the **ADMI
 
     ![Create Data Set](./images/create-data-set.png "Create Data Set")
 
-2. You will see all the available schemas including the **ADMIN** and **EBS** schemas. You may now choose any data set to see its columns and play with it. Thereafter, give the data set a name and click on the save button to save it.
+2. You will see all the available schemas including the **ADMIN** and **EBS** schemas. You may now choose any data set to see its columns and play with it. Thereafter, click on the save button, give the data set a name and click on **OK** to save it.
 
     ![Choose Table under ADMIN Schema](./images/choose-table-under-admin-schema.png "Choose Table under ADMIN Schema")
 
@@ -111,5 +113,5 @@ We will now leave it up to your imagination to analyse the data sets that have b
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. January 2021
 - **Last Updated By/Date** - Yash Lamba, March 2023
