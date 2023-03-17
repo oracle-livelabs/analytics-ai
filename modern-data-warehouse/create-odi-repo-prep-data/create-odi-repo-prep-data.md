@@ -28,7 +28,7 @@ Note: Please download the above file before continuing. Normally, while working 
 
 If you are using an Autonomous Database to emulate the EBS database, please follow Step 1, else proceed to Step 2.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
 	![](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
