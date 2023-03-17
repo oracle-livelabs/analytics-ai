@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, you will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualizations. You will then connect to the destination ADW to explore the data.
+In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, you will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualisations. You will then connect to the destination ADW to explore the data.
 
 Estimated Time: 15 minutes
 
@@ -36,7 +36,7 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 
-3. Click on the ellipses menu in the top right, select **Import Workbook/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
+3. Click on the ellipses menu in the top right corner, select **Import Workbook/Flow**. Then, click on **Select File** and choose the ModernDW.dva file.
 
     ![OAC Home Page](./images/oac-home-page.png "OAC Home Page")
 

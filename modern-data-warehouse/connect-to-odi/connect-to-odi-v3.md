@@ -74,7 +74,7 @@ Estimated Time: 15 minutes
 	</copy>
 	```
 
-5. In the ODI node, move the wallet file to the Oracle folder from the OPC folder, as follows:
+5. In the ODI node, move the wallet file from the OPC folder to the Oracle folder with the following command:
 
 	```bash
 	<copy>
@@ -116,7 +116,7 @@ Estimated Time: 15 minutes
     
     ![First time Setup 5](./images/setup5.png "First time Setup 5")
     
-4. Now, click on **Applications** on the menu bar at the top. Go to programming and select **ODI Studio** or **ADVANCED**.
+4. Now, click on **Applications** on the menu bar at the top. Go to programming and select **ADVANCED** or **ODI Studio**.
     
     ![Launch ODI](./images/launch-odi.png "Launch ODI")
     

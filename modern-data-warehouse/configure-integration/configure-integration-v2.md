@@ -56,7 +56,7 @@ A data server stores information according to specific technical logic which is 
     
     ![Find Imported Data Servers](./images/find-imported-data-servers.png "Find Imported Data Servers")
     
-2. **Right click** on **EBS_SRC** and select **Open**.
+2. **Right click** on **EBS\_SRC** and select **Open**.
 
     ![Open EBS_SRC](./images/open-ebs-src.png "Open EBS_SRC")
     
@@ -85,7 +85,6 @@ export ORACLE_SID=ebsdb
 export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
 
 sqlplus
-
 </copy>
 ```    
         
@@ -111,7 +110,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
     ![Confirmation of Successful Connection](./images/confirmation-of-successful-connection-to-ebs-instance.png "Confirmation of Successful Connection")
     
-4. Expand the **ADWC_TRG** data server and double click on the physical schema. 
+4. Expand the **ADWC\_TRG** data server and double click on the physical schema. 
 
     ![Double Click on Physical Schema in the ADWC_TRG Data Server](./images/select-adwc-trg-admin-schema.png "Double Click on Physical Schema in the ADWC_TRG Data Server")
     
@@ -199,7 +198,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
 ## Task 6: Set up the Destination Data Server
 
-1.  Right click on the **ADWC_TRG** data server and then click on **New Physical Schema** to create one. Choose the **EBS** schema, since that is where you have created the empty target tables.
+1.  Right click on the **ADWC\_TRG** data server and then click on **New Physical Schema** to create one. Choose the **EBS** schema, since that is where you have created the empty target tables.
 
     ![Create New Physical Schema on Target](./images/create-new-physical-schema-target.png "Create New Physical Schema on Target")
     
