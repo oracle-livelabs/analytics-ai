@@ -3,14 +3,14 @@
     "help": "oci_ocas_ops_ww_grp@oracle.com",
 	"tutorials": [
         {
-            "title": "Before you start",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
-        },
-        {
-            "title": "About OCI Language Service",
+            "title": "Introduction",
             "description": "Learn how to discovers insights in unstructured text using natural language processing",
             "filename": "./intro.md"
+        },
+        {
+            "title": "Get started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Analyze text with pre-trained models",
@@ -23,7 +23,7 @@
             "filename": "../../custom-model/custom-model.md"
         },
         {
-            "title": "Lab 3: Translate text using OCI Console and python SDK",
+            "title": "Lab 3: Translate text through OCI Console and python SDK",
             "description": "Learn how to use language translate to translate text",
             "filename": "../../translation/translation.md"
         },

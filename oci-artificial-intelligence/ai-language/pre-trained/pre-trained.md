@@ -510,7 +510,8 @@ These notebooks demonstrates how you can be more productive by using the various
 Invoke Language OCI REST APIs by clicking any one of the requests in the Language API COLLECTION. Enter the text you want to analyze in the body as shown below:
 
 ```
-    <copy>{
+<copy>
+    {
   "documents": [
     {
       "key": "doc1",
@@ -521,8 +522,9 @@ Invoke Language OCI REST APIs by clicking any one of the requests in the Languag
       "text": "Red Bull Racing Honda, the four-time Formula-1 World Champion team, has chosen Oracle Cloud Infrastructure (OCI) as their infrastructure partner."
     }
   ]
-}<copy>
-    ```
+}
+<copy>
+```
 
 
 Below is the example shown to invoke Detect Language Service.
@@ -530,7 +532,8 @@ Below is the example shown to invoke Detect Language Service.
 
 OCI Language service endpoints:
 
-```<copy>
+```
+<copy>
 # Language Detection
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectDominantLanguage
     
@@ -548,7 +551,8 @@ https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/bat
 
 # Personal Identifiable Information
 https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20221001/actions/batchDetectLanguagePiiEntities
-</copy>```
+</copy>
+```
 
 ## **Summary**
 

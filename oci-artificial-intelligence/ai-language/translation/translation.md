@@ -1,4 +1,4 @@
-# Lab 3: Translate text using OCI Console and python SDK
+# Lab 3: Translate text through OCI Console and python SDK
 
 ## Introduction
 
