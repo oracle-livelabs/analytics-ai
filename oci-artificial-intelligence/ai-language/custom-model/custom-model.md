@@ -20,7 +20,7 @@ In this lab, you will:
 
 Follow these steps to configure required policies.
 
-### 1. Setup policies required in [Lab 1](?lab=analyze-text#PolicySetup) for using Language Service API
+### 1. Setup policies required in [Lab 1](?lab=pre-trained#PolicySetup) for using Language Service API
 
 ### 2. Setup policies to allow model training jobs to access OCI Object Storage:
 
@@ -184,7 +184,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 All the above tasks performed to create custom models and analyzing text can be done through Python code.
 **Pre-requisites**:
 <br/>
-For using Python SDK, please follow setup steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+For using Python SDK, please follow setup steps described in [Lab 1: Task 2](?lab=pre-trained#Task2:AnalyzeTextwithPythonSDK)
 
 #### **Python code to create custom NER model and analyze text**
 

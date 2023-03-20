@@ -17,7 +17,7 @@ In this lab, you will learn to:
 ### Prerequisites
 
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Language policies are configured as per [Lab 1](?lab=analyze-text#PolicySetup)
+- Language policies are configured as per [Lab 1](?lab=pre-trained#PolicySetup)
 
 
 ## TASK 1: Translate Text using OCI Console
@@ -60,7 +60,7 @@ In this lab, you will learn to:
 
 Please refer to the sample code below and update required variables to translate text using Python SDK
 
-Pre-requisites: For using Python SDK, please follow steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+Pre-requisites: For using Python SDK, please follow steps described in [Lab 1: Task2](?lab=pre-trained#Task2:AnalyzeTextwithPythonSDK)
 
 
 #### Python Code to translate text usign OCI SDK

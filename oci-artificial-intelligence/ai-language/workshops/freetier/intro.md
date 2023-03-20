@@ -78,9 +78,9 @@ OCI Language now provides an API to automatically translate text across 21 langu
 
 **Authors**
   * Raja Pratap Kondamari - Product Manager, OCI Language Service
+  * Sahil Kalra - Oracle AI OCI Language Services
   * Rajat Chawla  - Oracle AI OCI Language Services
   * Ankit Tyagi -  Oracle AI OCI Language Services
-  * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Raja Pratap Kondamari - Product Manager OCI Language Service, October 2022
+* Sahil Kalra - OCI Language Service, March 2022
