@@ -27,7 +27,7 @@ In this lab, you will learn to:
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
 
-    ![OCI Menu Screen](./images/navigate-to-ai-language-menu.png " ")
+    ![OCI Menu Screen](./images/navigate-to-ai-language.png " ")
 
     Using the Navigation Menu on the top left corner, navigate to Text Translation menu under Pretrained models.
 

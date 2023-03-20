@@ -90,7 +90,7 @@ If you already have a cloud account, skip to **STEP 2**.
 
 4. You are now signed in to Oracle Cloud!
 
-    ![](https://oracle-livelabs.github.io/common/labs/cloud-login/images/oci-console-home-page.png " ")
+    ![](https://oracle-livelabs.github.io/common/images/console/home-page.png " ")
 
 You may now [proceed to the next lab](#next).
 
