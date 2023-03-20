@@ -1,6 +1,4 @@
-# Intoduction
-
-## Introduction
+# Introduction
 
 This live lab demonstrates how to extract insights from unstructured text with no machine-learning knowledge. OCI Language Service provides suite of services to distill a deeper understanding of opinions with sentiment analysis, identify key phrases and extract named entities such as people, places and organizations to understand common subjects and patterns. You can use out of the box pre-trained models and also customize the models to suite a specific domain.
 

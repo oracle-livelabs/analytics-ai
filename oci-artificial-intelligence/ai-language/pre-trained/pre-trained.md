@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this session will introduce you to OCI Language Pre-trained models and also help you to get familiar with various ways of consuming the services viz OCI Console, SDK and REST API.
+This session will introduce you to OCI Language Pre-trained models and also help you to get familiar with various ways of consuming the services viz OCI Console, SDK and REST API.
 
 > ***Estimated Lab Time***: 40 minutes
 
