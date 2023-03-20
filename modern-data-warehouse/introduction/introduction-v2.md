@@ -4,7 +4,7 @@
 
 **Modern Data Warehouse with EBS Integration**
 
-Lines of business, typically, don't have timely or efficient access to data and information. Analysts gather the data manually, work with it on an individual basis, and then share files through emails or file servers. With Oracle Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC), you can load and optimize data from Oracle E-Business Suite (EBS) and other sources into a centralized data warehouse for analysis, so departments can gain actionable insights.
+Lines of business, typically, don't have timely or efficient access to data and information. Analysts gather the data manually, work with it on an individual basis, and then share files through emails or file servers. With Oracle Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC), you can load and optimise data from Oracle E-Business Suite (EBS) and other sources into a centralised data warehouse for analysis, so departments can gain actionable insights.
 
 This workshop uses Oracle Data Integrator (ODI) to load data from an EBS instance into an ADW using smart import and will guide you through the process. You will also learn how to create mappings and load data from other data sources, in this case another database, into the aforementioned ADW. Thereafter, you will learn how to connect ADW to OAC, create data sets and import a prebuilt sample analysis with refined data into OAC.
 
@@ -21,8 +21,6 @@ Estimated Time: 3.5 hours
 - Access to a paid or a Livelabs Oracle Cloud account.
 - Permission to manage the following types of resources in your tenancy: vcns, internet-gateways, route-tables, network-security-groups, subnets, autonomous-database-family, analytics-instance and instances.
 - Quota to create the following resources: 1 VCN, 3 subnets, 1 Internet Gateway, 1 NAT Gateway, 2 route rules, 2 ADW database instances, 1 DataCatalog instance, 1 Oracle Analytics Cloud (OAC) instance, and 3 compute instances (bastion + ODI compute node).
-
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Labs
 Lab 1 - Deploy the Stack to provision Data Integrator, Autonomous Data Warehouse and Oracle Analytics (30 minutes)
