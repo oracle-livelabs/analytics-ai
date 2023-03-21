@@ -76,7 +76,7 @@ In this step, you will set three variables using the **`export`** command. The v
 
   In our example, we replaced the **_``ip-address``_** with the private IP address of our first master node that we identified in **STEP 1** of this lab.
 
-    ``   $ export PRIVATE_IP="10.0.0.18"     ``
+    ``$ export PRIVATE_IP="10.0.0.18"  ``
 
 5. At the **$** command line prompt, click **Copy** to copy the following command exactly as it's shown below **_without any line breaks_**, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
 
@@ -275,7 +275,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
   In our example, we used the reserved public IP address that is associated with our second utility node as follows:
 
-    ``   https://193.122.171.29:8888   ``
+    ``https://193.122.171.29:8888``
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
 
@@ -313,6 +313,109 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
    **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
+## Task 8: Use Ranger to add user and config  Hive writer permission
+
+In this step, you log into Ranger as an administrator and add the **`hwriter`** user and config hive table write permission to this user. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 4, Access a BDS Node Using a Public IP Address**.
+
+1. Open a Web browser window.
+2. Enter the following URL. Substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in **Lab 4**.
+
+   ```
+   https://<ip-address>:6182
+   ```
+
+  **Note:**
+
+  In our example, we used the reserved public IP address that is associated with our second utility node as follows:
+
+    ``https://129.80.253.156:6182``
+
+3. Login to Ranger, Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+   ![1679405988475](image/create-hadoop-user/1679405988475.png)
+4. After login to the Ranger,Navigate to **Settings**>**Users/Groups/Roles**.
+   ![1679406046543](image/create-hadoop-user/1679406046543.png)
+5. Click the **Group** tab and click the "**Add New Group**" button,
+   ![1679406253389](image/create-hadoop-user/1679406253389.png)
+6. Input the **Group Name** as `writergroup1`.And click the **Save** button to complete add group.
+   ![1679406327236](image/create-hadoop-user/1679406327236.png)
+7. Click the **Users** tab and click the "**Add new User"**.
+   ![1679406556538](image/create-hadoop-user/1679406556538.png)
+8. Input the **User Name** as `hwriter` and **Password**, and choose the **Group** as `writergroup1` . And click the **Save** button to complete add user.
+   ![1679406600393](image/create-hadoop-user/1679406600393.png)
+9. Preapare the Hive database named as bdws and create t_employee table under bdws database. ssh to **Utility node 0**, And use the **hive** cli to create database and table. Following are the script we should prepared.
+
+   ```
+   create database bdws;
+   use bdws;
+   drop table t_employee;
+   create table t_employee(
+   emp_no string,
+   gender int,
+   age int,
+   hire_date string,
+   salary double,
+   country string
+   )stored as orc;
+   insert into t_employee values('Justin',1,30,'2010-03-01',3600,'US');
+   insert into t_employee values('Bob',1,32,'2013-07-01',4500,'US');
+   insert into t_employee values('Runcy',1,40,'2018-10-01',3700,'CN');
+   insert into t_employee values('Zhongfan',1,29,'2016-09-01',3000,'CN');
+   ```
+10. Navigate to **Access Manager**>**Resource Based Policies**, and click **traningcl_hive** in the HADOOP SQL.
+    ![1679407907642](image/create-hadoop-user/1679407907642.png)
+11. Click the "**Add New Policy**",
+    ![1679408012751](image/create-hadoop-user/1679408012751.png)
+12. Setting the policy info as below ,then click the "**Add**" button.
+    ![1679408074631](image/create-hadoop-user/1679408074631.png)
+
+![1679408156052](image/create-hadoop-user/1679408156052.png)
+
+![1679408183078](image/create-hadoop-user/1679408183078.png)
+
+
+13.After add the hive policy, there have new policy named as `writerpolicy1` in the list.
+
+![1679409759654](image/create-hadoop-user/1679409759654.png)
+
+14.Following the Task **4: Create the training Administrator Kerberos Principal** to create the `hwriter1` principal.
+
+
+## Task 9: Use the Ranger user to access Hive table
+
+In this step, you ssh to Utility node 0 to select/insert data to hive table via Ranger `hwriter` user.
+
+1. Use the root user ssh login to **Utility Node 0**.
+2. Request a Kerberos ticket for the **`hwriter`** user using the **`kinit`** tool. Enter **`Training123`** for the password when prompted. See [kinit](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html) for additional details.
+
+```
+#kinit hwriter
+#klist
+```
+
+![1679408902548](image/create-hadoop-user/1679408902548.png)
+
+3. Input the `beeline` command, and executing following command:
+
+```
+use bdws;
+show tables;
+select * from t_employee;
+set hive.stats.autogather=false;
+insert into t_employee values('Justin2',1,30,'2016-09-01',3200,'CN');
+```
+
+Here is the **beeline** command output:
+![1679409173404](image/create-hadoop-user/1679409173404.png)
+
+Here is the `use bdws` and `show tables` output.
+![1679409275190](image/create-hadoop-user/1679409275190.png)
+
+Here is the `select * from t_employee` output.
+![1679409311626](image/create-hadoop-user/1679409311626.png)
+
+Here is the `insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN')` output.
+![1679409473418](image/create-hadoop-user/1679409473418.png)
+![1679409500815](image/create-hadoop-user/1679409500815.png)
 
 You may now [proceed to the next lab](#next).
 

@@ -1,4 +1,4 @@
-# eCreate a BDS Hadoop Cluster
+# Create a BDS Hadoop Cluster
 
 ## Introduction
 
