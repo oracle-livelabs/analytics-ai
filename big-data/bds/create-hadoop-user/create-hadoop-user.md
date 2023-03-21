@@ -372,13 +372,11 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 
 ![1679408183078](image/create-hadoop-user/1679408183078.png)
 
-
 13.After add the hive policy, there have new policy named as `writerpolicy1` in the list.
 
 ![1679409759654](image/create-hadoop-user/1679409759654.png)
 
 14.Following the Task **4: Create the training Administrator Kerberos Principal** to create the `hwriter1` principal.
-
 
 ## Task 9: Use the Ranger user to access Hive table
 
@@ -394,14 +392,14 @@ In this step, you ssh to Utility node 0 to select/insert data to hive table via 
 
 ![1679408902548](image/create-hadoop-user/1679408902548.png)
 
-3. Input the `beeline` command, and executing following command:
+3. Use the `beeline` command, and executing following command:
 
 ```
 use bdws;
 show tables;
 select * from t_employee;
 set hive.stats.autogather=false;
-insert into t_employee values('Justin2',1,30,'2016-09-01',3200,'CN');
+insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN');
 ```
 
 Here is the **beeline** command output:
@@ -438,4 +436,5 @@ You may now [proceed to the next lab](#next).
   * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
   * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+* **Last Updated By/Date:** Justin Zou, March 2023
