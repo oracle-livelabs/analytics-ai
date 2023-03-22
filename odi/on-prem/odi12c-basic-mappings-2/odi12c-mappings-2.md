@@ -7,7 +7,7 @@ This chapter describes how to work with mappings in Oracle Data Integrator. The 
   * Load TRG\_CUSTOMER: This mapping loads the data from the SRC\_CUSTOMER table in the *Orders Application* model into the TRG\_ CUSTOMER target table in the *Sales Administration* model. (details in Lab *ODI12c: Working with Mappings - 1*)
   * Load TRG\_SALES: This mapping loads the data from the SRC\_ ORDERS table and from the SRC\_ORDER\_LINES table in the *Orders Application* model into the TRG\_SALES target table in the *Sales Administration* model.
 
-## **Step 1:** Load TRG\_SALES Mapping Example
+## Task 1: Load TRG_SALES Mapping Example
 
 This section contains the following topics:
 
@@ -71,7 +71,7 @@ The Load TRG\_SALES mapping uses the following data and transformations:
   |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC\_ORDER\_LINES.AMOUNT)    |
   |PROD\_AVG\_PRICE       |Average amount from the order lines                 | AVG(SRC\_ORDER\_LINES.AMOUNT)    |
 
-## **Step 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load TRG\_SALES mapping. To create the Load TRG\_SALES mapping perform the following procedure:
 
@@ -105,9 +105,9 @@ To add source datastores to the Load TRG\_SALES mapping:
   1. In the Mapping tab, drag the following source datastores into the Source Diagram:
   * SRC\_ORDERS from the *Orders Application* model
   * SRC\_ORDER\_LINES from the *Orders Application* model
-  ![](./images/load_trg_sales_mapping.png)
+  ![Load TRG\_SALES mapping](./images/load_trg_sales_mapping.png)
 
-## **Step 3:** Define the Order Filter
+## Task 3: Define the Order Filter
 
 In this example, only completed orders should be retrieved. A filter needs to be defined on the SRC\_ORDERS datastore.
 
@@ -117,7 +117,7 @@ In this example, only completed orders should be retrieved. A filter needs to be
 
 2.  The filter appears as shown:
 
-  ![](./images/filter_on_src_orders.png)
+  ![Filter on src\_orders](./images/filter_on_src_orders.png)
 
 3.  Select the filter in the Source Diagram to display the filter properties in the Property Inspector.
 
@@ -127,7 +127,7 @@ In this example, only completed orders should be retrieved. A filter needs to be
   SRC_ORDERS.STATUS = 'CLO'
   </copy>
   ````
-## **Step 4:** Define Joins between the Source Datastores
+## Task 4: Define Joins between the Source Datastores
 
 This section describes how to define joins between the source datastores. To create the join defined earlier:
 
@@ -140,7 +140,7 @@ This section describes how to define joins between the source datastores. To cre
 A join linking the two datastores appears. This is the join on the order number. The join has the following expression:
     SRC\_ORDERS.ORDER\_ID=SRC\_ORDER\_LINES.ORDER\_ID
 
-## **Step 5:** Define the Transformation Rules
+## Task 5: Define the Transformation Rules
 
 Many of the transformations used for this mapping will use an aggregate function. These functions are implemented using the AGGREGATE Component.
 
@@ -148,7 +148,7 @@ Many of the transformations used for this mapping will use an aggregate function
 
 2. Drag the AGGREGATE output connector point to the TRG\_SALES input connector point. This action will start an Automap, selecting OK will backfill the AGGREGATE from the Target attributes.
 
-  ![](./images/transformation_aggregate.png)
+  ![Aggregate transformation](./images/transformation_aggregate.png)
 
 Define the following transformation rules in the **Aggregate component**:
 
@@ -199,18 +199,18 @@ Define the following transformation rules in the **Aggregate component**:
  This transformation rule maps the average of the product prices to the PROD\_ AVG\_PRICE column in your target table.
 
 Review carefully your Aggregate rules and make sure that you have defined the rules as shown:
-  ![](./images/aggregate_properties.png)
+  ![Aggregate properties](./images/aggregate_properties.png)
 
 **Note** that even though this example uses aggregation functions, you do not have to specify the group by rules: Oracle Data Integrator will infer that from the mappings, applying SQL standard coding practices.
-  ![](./images/mapping_logical_view.png)
+  ![Mapping logical view](./images/mapping_logical_view.png)
 
-## **Step 6:** Setting the Integration Type
+## Task 6: Setting the Integration Type
 Click on the TRG\_SALES datastore in the mapping, in the *Properties* panel under Target set the Integration Type to Incremental Update.
 
-  ![](./images/trg_integration_type.png)
+  ![Setting integration type](./images/trg_integration_type.png)
 
 
-## **Step 7:** Define the Data Loading Strategies (LKM)
+## Task 7: Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -222,11 +222,11 @@ To define the loading strategies:
 
 2.  In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
-  ![](./images/physical_tab_load_trg_sales.png)
+  ![Load TRG\_SALES physical tab](./images/physical_tab_load_trg_sales.png)
 
-  ![](./images/aggregate_ap_lkm_selection.png)
+  ![Aggregate LKM selection](./images/aggregate_ap_lkm_selection.png)
 
-## **Step 8:** Define the Data Integration Strategies (IKM)
+## Task 8: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -238,7 +238,7 @@ To define the integration strategies:
 
 3.  In the knowledge module options, leave the default values.
 
-## **Step 9:** Define the Data Control Strategy
+## Task 9: Define the Data Control Strategy
 
 In "Define the Data Loading Strategies (LKM)"and "Define the Data Integration Strategies (IKM)" you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
@@ -246,7 +246,7 @@ To define the data control strategy:
 
 1.  In the Physical tab of the Mapping Editor for the Target, verify that the **CKM Oracle** is selected.
 
-  ![](./images/load_trg_sales_mapping.png)
+  ![Load TRG\_SALES mapping](./images/load_trg_sales_mapping.png)
 
 2.  In the Logical tab of TRG\_SALES, select Constraints. Set the constraints that you wish to verify to true:
 
@@ -256,17 +256,19 @@ To define the data control strategy:
 
 ***Figure 4-28 Constraint Definition for TRG\_SALES***
 
-  ![](./images/trg_sales_constraints.png)
+  ![TRG\_SALES constraints](./images/trg_sales_constraints.png)
 
 3.  From **File** main menu, select **Save**.
 
 The Load **TRG\_SALES** mapping is now ready to be executed.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Narayanan Ramakrishnan, December 2020
  - **Contributors** - Srivishnu Gullapalli
- - **Last Updated By/Date** - Srivishnu Gullapalli, November 2022
+ - **Last Updated By/Date** - Srivishnu Gullapalli, March 2023
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

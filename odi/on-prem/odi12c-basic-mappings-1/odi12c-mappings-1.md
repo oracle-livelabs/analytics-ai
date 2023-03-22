@@ -7,7 +7,7 @@ This chapter describes how to work with mappings in Oracle Data Integrator. The 
   * Load TRG\_CUSTOMER: This mapping loads the data from the SRC\_CUSTOMER table in the *Orders Application* model into the TRG\_ CUSTOMER target table in the *Sales Administration* model.
   * Load TRG\_SALES: This mapping loads the data from the SRC\_ ORDERS table and from the SRC\_ORDER\_LINES table in the *Orders Application* model into the TRG\_SALES target table in the *Sales Administration* model. (details in Lab *ODI12c: Working with Mappings - 2*)
 
-## **Step 1:**  Load TRG\_CUSTOMER Mapping Example
+## Task 1:  Load TRG_CUSTOMER Mapping Example
 
 1. Purpose and Integration Requirements
 The purpose of the Load TRG\_CUSTOMER mapping is to load the data from the SRC\_ CUSTOMER table in the *Orders Application* model into the TRG\_CUSTOMER target table in the *Sales Administration* model.
@@ -71,7 +71,7 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 | CRE\_DATE      | Today's date                         | SYSDATE                 |
 | UPD\_DATE      | Today's date            | SYSDATE                 |
 
-## **Step 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load TRG\_CUSTOMER mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
 1. Insert a New Mapping
@@ -81,29 +81,29 @@ To create a new mapping:
    2. Expand the Sales Administration node.
    3. In the Sales Administration folder, right-click the Mapping node and select **New Mapping**:
 
- ![](./images/mapping_new_instance.png)
+ ![New mapping](./images/mapping_new_instance.png)
 
    4. Enter the name of your mapping (Load TRG\_CUSTOMER) in the Name field:
 
-  ![](./images/mapping_editor.png)
+  ![Load TRG_CUSTOMER](./images/mapping_editor.png)
 
  Ensure the *Create Empty Dataset* option is not selected.
 
-## **Step 3:** Define the Target
+## Task 3: Define the Target
 
 The target is the element that will be loaded by the mapping.
 
 **To insert the target in the Load TRG\_CUSTOMER mapping:**
 
-1.  Verify you are in the Logical tab of the Mapping Editor.
+  1.  Verify you are in the Logical tab of the Mapping Editor.
 
-2.  In the Designer Navigator, expand the Models accordion and the *Sales Administration* model.
+  2.  In the Designer Navigator, expand the Models accordion and the *Sales Administration* model.
 
-3.  Select TRG\_CUSTOMER datastore under the *Sales Administration* model and drag it into the mapping editor
+  3.  Select TRG\_CUSTOMER datastore under the *Sales Administration* model and drag it into the mapping editor
 
-  ![](./images/selecting_the_target.png)
+  ![Drag and drop TRG\_CUSTOMER](./images/selecting_the_target.png)
 
-## **Step 4:** Define the Source
+## Task 4: Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Parameters* models.
 
@@ -116,9 +116,9 @@ The source datastores contain data used to load the target datastore. Two types 
 
 2.  The Mapping should look like:
 
-  ![](./images/adding_data_stores.png)
+  ![Load TRG_CUSTOMER mapping](./images/adding_data_stores.png)
 
-## **Step 5:** Define the Lookup
+## Task 5: Define the Lookup
 
 This section describes how to create a lookup that defines that the customer's age must be between the minimum and maximum ages in the file.
 A lookup is a datastore (from a model or the target datastore of a map) - called the *lookup table* - associated to a source datastore - the *driving table* - via a join expression and from which data can be fetched and used in mappings.
@@ -127,80 +127,80 @@ Lookup tables are added with the Lookup Component.
 
 **To create a lookup in the Load TRG\_CUSTOMER mapping:**
 
-1.  From the Components panel, drag **Lookup into the mapping** as shown:
+  1.  From the Components panel, drag **Lookup into the mapping** as shown:
 
-  ![](./images/insert_a_lookup.png)
+  ![Use lookup transformation](./images/insert_a_lookup.png)
 
-2.  From the Parameters model, drag the SRC\_AGE\_GROUP datastore into the Mapping. The SRC\_AGE\_GROUP datastore will be used as a lookup table.
+  2.  From the Parameters model, drag the SRC\_AGE\_GROUP datastore into the Mapping. The SRC\_AGE\_GROUP datastore will be used as a lookup table.
 
-3.  Drag the following source columns into the Lookup:
+  3.  Drag the following source columns into the Lookup:
 
-  * Age from the SRC\_CUSTOMER source datastore
-  * AGE\_MIN from the SRC\_AGE\_GROUP datastore
-  * AGE\_MAX from the SRC\_AGE\_GROUP datastore
+    * Age from the SRC\_CUSTOMER source datastore
+    * AGE\_MIN from the SRC\_AGE\_GROUP datastore
+    * AGE\_MAX from the SRC\_AGE\_GROUP datastore
 
-  ![](./images/select_the_lookup.png)
+    ![](./images/select_the_lookup.png)
 
-4.  Select the LOOKUP, click **Condition** in the LOOKUP -- Properties as shown:
+  4.  Select the LOOKUP, click **Condition** in the LOOKUP -- Properties as shown:
 
-  ![](./images/lookup_condition.png)
+    ![Lookup condition](./images/lookup_condition.png)
 
-5.  Modify the Condition by replacing the '=' with the string 'between'. You should have the following in the Lookup Condition:
+  5.  Modify the Condition by replacing the '=' with the string 'between'. You should have the following in the Lookup Condition:
 
-  * SRC\_CUSTOMER.AGE between SRC\_AGE\_GROUP.AGE\_MIN and SRC\_AGE\_GROUP.AGE\_MAX
+    * SRC\_CUSTOMER.AGE between SRC\_AGE\_GROUP.AGE\_MIN and SRC\_AGE\_GROUP.AGE\_MAX
 
-This corresponds to a join between the SRC\_CUSTOMER and the SRC\_AGE\_GROUP datastore and defines that the customer's age must between the minimum and maximum ages in the file.
+  This corresponds to a join between the SRC\_CUSTOMER and the SRC\_AGE\_GROUP datastore and defines that the customer's age must between the minimum and maximum ages in the file.
 
-  ![](./images/modified_expression.png)
+    ![Lookup condition](./images/modified_expression.png)
 
-6.  Click **Save**.
+  6.  Click **Save**.
 
-## **Step 6:** Define the Join between the Source Datastores
+## Task 6: Define the Join between the Source Datastores
 
 This section describes how to define a join between the source datastores. To create the join defined in Step 1 above:
 
-1.  Drag the JOIN component into the mapping.
+  1.  Drag the JOIN component into the mapping.
 
-2.  In the mapping, drag the SALES\_PERS\_ID column from the SRC\_CUSTOMER datastore into the JOIN.
+  2.  In the mapping, drag the SALES\_PERS\_ID column from the SRC\_CUSTOMER datastore into the JOIN.
 
-3.  In the mapping, drag the SALES\_PERS\_ID column from the SRC\_SALES\_PERSON datastore into the join.
+  3.  In the mapping, drag the SALES\_PERS\_ID column from the SRC\_SALES\_PERSON datastore into the join.
 
-  ![](./images/join_properties.png)
+    ![Join properties](./images/join_properties.png)
 
-***Source Diagram of the Load TRG\_CUSTOMER Mapping with a Lookup and a Join***
+  ***Source Diagram of the Load TRG\_CUSTOMER Mapping with a Lookup and a Join***
 
-  ![](./images/diagram_of_trg_customer_mapping.png)
+    ![Join in Mapping](./images/diagram_of_trg_customer_mapping.png)
 
-## **Step 7:** Define the Target Expressions
+## Task 7: Define the Target Expressions
 
 The following columns are mapped in this section: CUST\_ID, DEAR, CUST\_NAME, AGE\_RANGE, SALES\_PERS, CRE\_DATE and UPD\_DATE.
 To Auto Map from the sources to the target, the connector points need to be dragged and dropped between components.
 
-1.  From the JOIN component, drag the connector point, holding and dragging to the target input connector point. An Attribute matching dialog is displayed, keep the defaults and click **OK**.
+  1.  From the JOIN component, drag the connector point, holding and dragging to the target input connector point. An Attribute matching dialog is displayed, keep the defaults and click **OK**.
 
-  ![](./images/attribute_matching.png)
+  ![Attribute matching](./images/attribute_matching.png)
 
 **The transformation rules, defined as *expressions*, are listed on the target column.**
 
-2. To complete the custom mappings.
+  2. To complete the custom mappings.
 
 Click on the TRG\_CUSTOMER datastore in the mapping to display the properties.
 
-  ![](./images/trg_customer_properties.png)
+  ![TRG_CUSTOMER properties](./images/trg_customer_properties.png)
 
-## **Step 8:** CUST\_ID Mapping Expression
+## Task 8: CUST_ID Mapping Expression
 
 The CUST\_ID mapping expression maps the SRC\_CUSTOMER.CUSTID source column to the TRG\_CUSTOMER.CUST\_ID target column. Note that these 2 columns have not been automatically mapped, since their names are slightly different.
 
 To define the expression for the CUST\_ID target column:
 
-1.  In the SRC\_CUSTOMER data source, select the CUSTID column.
+  1.  In the SRC\_CUSTOMER data source, select the CUSTID column.
 
-2.  Drag it into the CUST\_ID field in the Target Datastore as shown:
+  2.  Drag it into the CUST\_ID field in the Target Datastore as shown:
 
-  ![](./images/cust_id_mapping_expr.png)
+    ![Customer id mapping expression](./images/cust_id_mapping_expr.png)
 
-3.  Select the mapped field, CUST\_ID in the Target Datastore to display its properties in the Property Inspector.
+  3.  Select the mapped field, CUST\_ID in the Target Datastore to display its properties in the Property Inspector.
 
 **DEAR Mapping Expression**
 
@@ -212,15 +212,15 @@ To define the expression for the DEAR target column:
 
 2.  In the Expression field, enter the following mapping expression:
 
-  ````
-  <copy>
-  CASE
-    WHEN SRC_CUSTOMER.DEAR = 0 THEN 'Mr'
-    WHEN SRC_CUSTOMER.DEAR = 1 THEN 'Mrs'
-  ELSE 'Ms'
-  END
-  </copy>
-  ````
+    ````
+    <copy>
+    CASE
+      WHEN SRC_CUSTOMER.DEAR = 0 THEN 'Mr'
+      WHEN SRC_CUSTOMER.DEAR = 1 THEN 'Mrs'
+    ELSE 'Ms'
+    END
+    </copy>
+    ````
 **Tip:** You can drag source columns, for example the SRC\_CUSTOMER.DEAR column, into the Expression field. You can also use the Expression Editor.
 
 **CUST\_NAME Mapping Expression**
@@ -235,12 +235,12 @@ To define the expression for the CUST\_NAME target column:
 
 2.  In the Expression field, enter the following mapping expression:
 
-  ````
-  <copy>
-  TRIM(SRC_CUSTOMER.FIRST_NAME) || ' ' ||
-  UPPER(TRIM(SRC_CUSTOMER.LAST_NAME))
-  </copy>
-  ````
+    ````
+    <copy>
+    TRIM(SRC_CUSTOMER.FIRST_NAME) || ' ' ||
+    UPPER(TRIM(SRC_CUSTOMER.LAST_NAME))
+    </copy>
+    ````
 **Tip:** Use the Expression Editor to create this rule. By using the Expression Editor, you can avoid most common syntax errors.
 
 **AGE\_RANGE Mapping Expression**
@@ -255,7 +255,7 @@ This mapping expression maps the SRC\_AGE\_GROUP.AGE\_RANGE to the TRG\_CUSTOMER
 
 **Tip:** Auto-completion functions are available in ODI Studio. In the Expression, type SRC\_ and then press <CTRL-SPACE\>, a pop-up window displays available fields as shown:
 
-  ![](./images/auto_completion.png)
+   ![Auto Completion](./images/auto_completion.png)
 
 You can also drag and drop the AGE\_RANGE column from SRC\_AGE\_GROUP into AGE\_RANGE in TRG\_CUSTOMER.
 
@@ -269,12 +269,13 @@ To define the mapping expression for the SALES\_PERS target column:
 
 2.  In the Expression field, enter the following mapping expression:
 
-  ````
-  <copy>
-  TRIM(SRC_SALES_PERSON.FIRST_NAME) || ' ' ||
-  UPPER(TRIM(SRC_SALES_PERSON.LAST_NAME))
-  </copy>
-  ````
+    ````
+    <copy>
+    TRIM(SRC_SALES_PERSON.FIRST_NAME) || ' ' ||
+    UPPER(TRIM(SRC_SALES_PERSON.LAST_NAME))
+    </copy>
+    ````
+
 **CRE\_DATE Mapping Expression**
 
 To define the mapping expression for the CRE\_DATE target column:
@@ -291,7 +292,7 @@ To define the mapping expression for the CRE\_DATE target column:
 
 5.  The Property Inspector of the CRE\_DATE attribute appears as shown:
 
-  ![](./images/property_inspector_cr_date_mapping.png)
+  ![Property inspector of CRE\_DATE](./images/property_inspector_cr_date_mapping.png)
 
 **UPD\_DATE Mapping Expression**
 
@@ -315,13 +316,14 @@ To define the mapping expression for the UPD\_DATE target column:
 
 Your transformation rules appear in the Target Datastore Attributes panel:
 
-  ![](./images/target_datastore_mappings.png)
+  ![Target datastore mapping](./images/target_datastore_mappings.png)
 
 **Set the Integration Type**
 
 Finally click on TRG\_CUSTOMER datastore in the Mapping and in the Properties panel under Target set the Integration Type to Incremental Update.
 
-## **Step 9:** Define the Data Loading Strategies (LKM)
+
+## Task 9: Define the Data Loading Strategies (LKM)
 
 The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowldege Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
@@ -335,11 +337,11 @@ To define the loading strategies:
 
 2.  In the Property Inspector, verify that the **LKM SQL to SQL (Built-In)** is selected in the Loading Knowledge Module Selector list:
 
-  ![](./images/load_mapping_editor.png)
+  ![Load mapping editor](./images/load_mapping_editor.png)
 
 3.  Use **LKM SQL to SQL (Built-In)** for the access point corresponding to SRC\_CUSTOMER as well.
 
-## **Step 10:** Define the Data Integration Strategies (IKM)
+## Task 10: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -351,26 +353,26 @@ To define the integration strategies:
 
 3.  In the knowledge module options, leave the default values. The Property Inspector appears as shown:
 
-  ![](./images/property_insp_trg_customer.png)
+  ![TRG\_CUSTOMER integration knowledge module](./images/property_insp_trg_customer.png)
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator*.
 
-## **Step 11:** Define the Data Control Strategy
+## Task 11: Define the Data Control Strategy
 
 In the preceeding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
 To define the data control strategy:
 
-1.  In the Mapping Physical tab under the TRG\_CUSTOMER Properties, select Check Knowledge Module, verify that the **CKM Oracle** is selected for Check Knowledge Module.
+  1.  In the Mapping Physical tab under the TRG\_CUSTOMER Properties, select Check Knowledge Module, verify that the **CKM Oracle** is selected for Check Knowledge Module.
 
-2.  In the Logical view, select the target datastore TRG\_CUSTOMER and verify the Constraints panel. Set the constraints that you wish to verify to true.
+  2.  In the Logical view, select the target datastore TRG\_CUSTOMER and verify the Constraints panel. Set the constraints that you wish to verify to true.
 
-  * PK\_TRG\_CUSTOMER
-  * FK\_CUST\_CITY
+    * PK\_TRG\_CUSTOMER
+    * FK\_CUST\_CITY
 
 The Constraints tab appears as shown:
 
-  ![](./images/constr_trg_cusomer.png)
+  ![Constraints tab](./images/constr_trg_cusomer.png)
 
 3.  From **File** main menu, select **Save**.
 
@@ -383,7 +385,7 @@ You may proceed to the next lab.
 
  - **Author** - Narayanan Ramakrishnan, December 2020
  - **Contributors** - Srivishnu Gullapalli
- - **Last Updated By/Date** - Srivishnu Gullapalli, November 2022
+ - **Last Updated By/Date** - Srivishnu Gullapalli, March 2023
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

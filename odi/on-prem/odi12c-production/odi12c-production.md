@@ -33,13 +33,13 @@ To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sale
 
 2.  Right click on Load Sales Administration and select **Generate Scenario...** The New Scenario dialog appears
 
-  ![](./images/new_scenario_dialog.png)
+  ![New Scenario](./images/new_scenario_dialog.png)
 
 3.  The Name and Version fields of the Scenario are preset. Leave these values and click **OK**.
 
 4.  Oracle Data Integrator processes and generates the scenario. The new scenario appears on the Scenarios tab of the Package Editor and in the Demo Project:
 
-  ![](./images/load_sales_admin.png)
+  ![Load sales administration scenario](./images/load_sales_admin.png)
 
 ## Task 2:Run the Scenario
 Scenarios can be executed in several ways:
@@ -54,7 +54,7 @@ You can start a scenario from Oracle Data Integrator Studio from Designer or Ope
 
 To start the LOAD\_SALES\_ADMINISTRATION scenario from Oracle Data Integrator Studio:
 
-1. Select the LOAD\_SALES\_ADMINISTRATION scenario in the Projects accordion (in Designer Navigator) or the Load Plans and Scenarios accordion (in Designer and Operator Navigator.
+1. Select the LOAD\_SALES\_ADMINISTRATION scenario in the Projects accordion (in Designer Navigator) or the Load Plans and Scenarios accordion in Designer and Operator Navigator.
 
 2. Right-click, then select **Run**.
 
@@ -74,7 +74,7 @@ To view the execution results of the LOAD\_SALES\_ADMINISTRATION scenario in Des
 
 3.  The log for the execution session of the LOAD\_SALES\_ADMINISTRATION scenario appears as shown:
 
-  ![](./images/load_sales_admin_log.png)
+  ![Operator log](./images/load_sales_admin_log.png)
 
 ## Summary
 Congratulations! You have now completed an ETL project and learned about the fundamentals of Oracle Data Integrator.
@@ -95,4 +95,4 @@ Congratulations, you have completed the workshop!
 
 - **Author** - Narayanan Ramakrishnan, December 2020
 - **Contributors** - Srivishnu Gullapalli
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Srivishnu Gullapalli, Senior Solution Engineer, NA Technology, March 2023
