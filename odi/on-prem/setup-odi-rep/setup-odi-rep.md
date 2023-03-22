@@ -12,11 +12,7 @@ This lab will show you how to access an ODI instance using Apache Guacamole and 
 * Test the Environment
 
 ### Prerequisites
-This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
+This lab assumes you have completed all the previous labs.
 
 ## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:

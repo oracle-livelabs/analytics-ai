@@ -7,6 +7,9 @@ This chapter describes how to work with mappings in Oracle Data Integrator. The 
   * Load TRG\_CUSTOMER: This mapping loads the data from the SRC\_CUSTOMER table in the *Orders Application* model into the TRG\_ CUSTOMER target table in the *Sales Administration* model. (details in Lab *ODI12c: Working with Mappings - 1*)
   * Load TRG\_SALES: This mapping loads the data from the SRC\_ ORDERS table and from the SRC\_ORDER\_LINES table in the *Orders Application* model into the TRG\_SALES target table in the *Sales Administration* model.
 
+### Prerequisites
+This lab assumes you have completed all the previous labs.
+
 ## Task 1: Load TRG_SALES Mapping Example
 
 This section contains the following topics:

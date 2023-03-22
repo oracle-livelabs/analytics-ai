@@ -18,13 +18,7 @@ Lab *Working with Packages* describes the first part of the automation process: 
 This Lab describes the second part: how to produce a scenario that runs automatically the Load Sales Administration Package in a production environment.
 
 ### Prerequisites
-This lab assumes you have:
-- Basic knowledge of Oracle Database
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
+This lab assumes you have completed all the previous labs.
 
 ## Task 1: Scenario Creation
 To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sales Administration Package:
