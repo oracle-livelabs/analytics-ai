@@ -149,7 +149,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
    $ <copy>sudo bash</copy>
    ```
 
-   ![](./images/sudo-bash.png " ")
+   ![img](./images/sudo-bash.png " ")
 2. Connect to the **Kerberos Key Distribution Center (KDC)**. The **kadmin.local** utility enables the **root** user of the KDC server to directly access and modify the Kerberos database. See [MIT Kerberos Documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html#list-principals) and [Securing the Oracle Big Data Appliance](https://apexapps.oracle.com/pls/apex/f?p=44785:112:102721520016911::::P112_CONTENT_ID,P112_PREV_PAGE:12907).
 
    At **`#`** the command line prompt, enter the following command:
@@ -159,7 +159,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
    ```
 
    ![](./images/kadmin-local.png " ")
-3. At the **`kadmin.local`** command line prompt, use the **`addprinc`** command to add a new Kerberos principal named **`training`**. When you are prompted for a password, specify **Training123**, and then confirm the password. You will need the password later in this step. See [addprinc](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html#add-principal) in the Kerberos Documentation.
+3. At the **`kadmin.local`** command line prompt, use the **`addprinc`** command to add a new Kerberos principal named **`training`**. When you are prompted for a password, specify **Training#123**, and then confirm the password. You will need the password later in this step. See [addprinc](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html#add-principal) in the Kerberos Documentation.
 
    ```
    kadmin.local: <copy>addprinc training</copy>
@@ -223,7 +223,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
    You are now connected as the **`training`** administrator user.
 
-   ![](./images/connect-as-training.png " ")
+   ![img](./images/connect-as-training.png " ")
 2. Perform a file listing of HDFS using the following command:
 
    ```
@@ -233,7 +233,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
    ![](./images/no-ticket.png " ")
 
    The command fails. This is a secure and HA cluster; therefore, before you as user **`training`** can access HDFS, you will need to request a Kerberos ticket (authentication request) using the **`kinit`** tool.
-3. Request a Kerberos ticket for the **`training`** user using the **`kinit`** tool. Enter **`Training123`** for the password when prompted. See [kinit](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html) for additional details.
+3. Request a Kerberos ticket for the **`training`** user using the **`kinit`** tool. Enter **`Training#123`** for the password when prompted. See [kinit](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html) for additional details.
 
    ```
    # <copy>kinit training</copy>
@@ -277,7 +277,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
     ``https://193.122.171.29:8888``
 
-3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
   ![](./images/hue-login-page.png " ")
 
@@ -291,23 +291,23 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
 5. In the **User Admin** page, in the **Users** tab, click **Add user**.
 
-   ![](./images/add-users.png " ")
+   ![img](./images/add-users.png " ")
 6. In the **Hue Users - Create user** page, in **Step 1: Credentials (required)** of the wizard, enter the following information:
 
    + **Username:** **`training`**
-   + **New Password:** **`Training123`**
-   + **Password confirmation:** **`Training123`**
+   + **New Password:** **`Training#123`**
+   + **Password confirmation:** **`Training#123`**
    + **Create home directory:** `Checked`
 
-   ![](./images/hue-step1-credentials.png " ")
+   ![img](./images/hue-step1-credentials.png " ")
 7. Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
 
-   ![](./images/hue-step3-Advanced.png " ")
+   ![img](./images/hue-step3-Advanced.png " ")
 
    The **Hue Users** page is re-displayed. The newly added **`training`** user is displayed in the list of Hue users.
 
    ![](./images/user-added.png " ")
-8. Exit Hue. From the **admin** drop-down menu, select **Sign out**. You can now login to Hue using the new **`training`** user with **`Training123`** as the password.
+8. Exit Hue. From the **admin** drop-down menu, select **Sign out**. You can now login to Hue using the new **`training`** user with **`Training#123`** as the password.
 
    ![](./images/hue-logout.png " ")
 
@@ -330,7 +330,7 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 
     ``https://129.80.253.156:6182``
 
-3. Login to Ranger, Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. Login to Ranger, Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
    ![1679405988475](image/create-hadoop-user/1679405988475.png)
 4. After login to the Ranger,Navigate to **Settings**>**Users/Groups/Roles**.
    ![1679406046543](image/create-hadoop-user/1679406046543.png)
@@ -383,7 +383,7 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 In this step, you ssh to Utility node 0 to select/insert data to hive table via Ranger `hwriter` user.
 
 1. Use the root user ssh login to **Utility Node 0**.
-2. Request a Kerberos ticket for the **`hwriter`** user using the **`kinit`** tool. Enter **`Training123`** for the password when prompted. See [kinit](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html) for additional details.
+2. Request a Kerberos ticket for the **`hwriter`** user using the **`kinit`** tool. Enter **`Training#123`** for the password when prompted. See [kinit](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html) for additional details.
 
 ```
 #kinit hwriter

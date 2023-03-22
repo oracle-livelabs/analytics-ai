@@ -82,7 +82,6 @@ In this step, you will add ingress security rules to the default security list i
 
 ![img](./images/add-ingress-rules.png " ")
 
-
 11.Click **+Additional Ingress Rule** to add an ingress security rule for Ranger.
 
 * At the bottom of the **Add Ingress Rules** dialog box, the **Ingress Rule 3** section is displayed. Provide the following information:
@@ -100,7 +99,6 @@ In this step, you will add ingress security rules to the default security list i
 The three ingress rules are added to the **Default Security List**.
 
 ![1679390320209](image/use-cm-hue-access-cluster/1679390320209.png)
-
 
 ## Task 2: Use Ambari to Access the Cluster
 
@@ -120,7 +118,7 @@ In this step, you will use Ambari to access the cluster. In an HA-cluster, Ambar
    ```
    https://193.122.201.162:7183
    ```
-3. On the Ambari Login screen, enter your **`username`** which is **`admin`** by default in Ambari. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. On the Ambari Login screen, enter your **`username`** which is **`admin`** by default in Ambari. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
   ![1679388718302](image/use-cm-hue-access-cluster/1679388718302.png)
 
@@ -166,11 +164,11 @@ In this step, you will use Hue to access the cluster. In an HA cluster, Hue runs
    ```
    https://150.136.16.64:8888
    ```
-3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
    **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
-   ![](./images/hue-login-page.png " ")
+   ![img](./images/hue-login-page.png " ")
 
    The **Hue Editor** page is displayed.
 

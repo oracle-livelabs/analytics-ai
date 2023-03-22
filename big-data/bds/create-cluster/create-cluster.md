@@ -78,7 +78,7 @@ update_ambari_config
 
 ```
 
-You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2V1fcQ_M105F9Ug_fVL3GpMllnvCzSSfHszBAkiBLD1HNLvJ2qZUF2MmszxqabKZ/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh).
+You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh).
 
 ### Upload the bootstrap script to object storage
 
@@ -144,7 +144,7 @@ Pre-Authenticated Request Details page display. And Copy the Pre-Authenticated R
 
 Here is the URL sample:
 
-[https://objectstorage.us-ashburn-1.oraclecloud.com/p/2V1fcQ_M105F9Ug_fVL3GpMllnvCzSSfHszBAkiBLD1HNLvJ2qZUF2MmszxqabKZ/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2V1fcQ_M105F9Ug_fVL3GpMllnvCzSSfHszBAkiBLD1HNLvJ2qZUF2MmszxqabKZ/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh)
+[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh)
 
 ## Task 1: Create a Cluster
 
@@ -173,7 +173,7 @@ Create the HA cluster as follows:
 4. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
 
    * **Cluster Name:** **`training-cluster`**.
-   * **Cluster Admin Password:** Enter a `cluster admin password` of your choice such as **`Training123`**. You'll need this password to sign into Ambari and to perform certain actions on the cluster through the Cloud Console.
+   * **Cluster Admin Password:** Enter a `cluster admin password` of your choice such as **`Training#123`**. You'll need this password to sign into Ambari and to perform certain actions on the cluster through the Cloud Console.
    * **Confirm Cluster Admin Password:** Confirm your password.
    * **Secure & Highly Available (HA):** Select this checkbox, if not already selected, to make the cluster secure and highly available. A secure cluster has the full Hadoop security stack, including HDFS Transparent Encryption, Kerberos, and Apache Sentry. This setting can't be changed for the life of the cluster.
    * **Cluster Version:** This read-only field displays the latest version of ODH that is available to Oracle which is deployed by BDS.

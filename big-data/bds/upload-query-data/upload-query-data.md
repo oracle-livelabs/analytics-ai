@@ -214,9 +214,9 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   In our example, we used the reserved public IP address that is associated with our **second utility node** as follows:
 
-    ``    https://150.136.16.64:8888    ``
+    ``   https://150.136.16.64:8888   ``
 
-3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
   ![](./images/hue-login-page.png " ")
 
