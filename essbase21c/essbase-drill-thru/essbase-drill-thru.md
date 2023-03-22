@@ -40,11 +40,11 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    Change application name Sample to **SampleDT**.
    
-   ![](./images/imageDT_01.png " ")
+   ![Import File](./images/imageDT_01.png " ")
 
 4. Go to home. Expand application SampleDT<StudentID>, cube Basic, select Actions and click **Outline**. Click on the Market dimension and check that regions are at leaf level.
    
-   ![](./images/imageDT_02.png " ")
+   ![Outline](./images/imageDT_02.png " ")
 
 
 5.  Close the outline browser tab.
@@ -58,11 +58,11 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    Click **OK**.
 
-   ![](./images/imageDT_03.png " ")
+   ![Smartview Options](./images/imageDT_03.png " ")
 
 8. Refresh the sheet in Smart View. Notice data cells E2 to E11 representing Sales figures for different Regions are all color coded green.
    
-   ![](./images/imageDT_04.png " ")
+   ![Sales Figure for different regions](./images/imageDT_04.png " ")
 
 
 ## Task 2: Check the data in relational table (optional)
@@ -73,7 +73,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    Enter the details: Connection Name, Username, Password, Hostname(IP), Port, Service name.
 
-   ![](./images/imageDT_05.png " ")
+   ![SQL Developer Details](./images/imageDT_05.png " ")
 
    Password for Esscs Schema: **Admin123**.
 
@@ -84,7 +84,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
           select product, market, statename, scenario, year, sales from SALES_BREAKDOWN_SB order by product, market, scenario, year, sales;
 	</copy>
     ````
-   ![](./images/imageDT_06.png " ")
+   ![SQL query worksheet](./images/imageDT_06.png " ")
 
    Notice for example: For the month April, under the Central region, there are 6 Sales figures, one each for the 6 States under the Central region. These 6 Sales numbers are getting accumulated into the Sales for Central region for the month of April.
 
@@ -95,7 +95,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
           Select * from SALES_BREAKDOWN_SB
 	</copy>
     ````
-   ![](./images/imageDT_07.png " ")
+   ![SQL query result](./images/imageDT_07.png " ")
 
 
 ## Task 3: Define a Drill-through Connection
@@ -103,13 +103,13 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 2. Launch application inspector, by clicking the icon under Actions for the application selected and choose **Inspect**.
    
-   ![](./images/imageDT_08.png " ")
+   ![Inspect Application](./images/imageDT_08.png " ")
 
 3. Click Sources on the application inspector.
 
 4. Click **Connections** and click **Create Connection** -> choose Oracle Database.
    
-   ![](./images/imageDT_09.png " ")
+   ![Create Connection](./images/imageDT_09.png " ")
 
 5. Provide the connection details under Create Connection:   
    Name, Host, User, Password, Port, Service Name.
@@ -120,7 +120,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 6. Click **Test** to check that the connection to the database is successful. Click **Create**.
    
-   ![](./images/imageDT_10.png " ")
+   ![Create Connection Details](./images/imageDT_10.png " ")
 
 ## Task 4: Define Drill-through Datasource
 
@@ -136,23 +136,23 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
         </copy>
 
 
-   ![](./images/imageDT_11.png " ")
+   ![Create Datasource](./images/imageDT_11.png " ")
 
 3. The next page displays the Columns. Click **Next**.
    
-   ![](./images/imageDT_12.png " ")
+   ![Display Column Details](./images/imageDT_12.png " ")
 
 4. Next page is Parameters. Click **Next**.
    
-   ![](./images/imageDT_13.png " ")
+   ![Display Parameters](./images/imageDT_13.png " ")
 
 5. In the next page you can preview the results of the query, which is the same as what you saw with SQL Developer in Step2. Click **Create**.
    
-   ![](./images/imageDT_14.png " ")
+   ![Preview Details](./images/imageDT_14.png " ")
 
 6. Datasource **SalesTable** and Connection **SAMPLEDT.esscs** you created above are listed under Datasources.
    
-   ![](./images/imageDT_15.png " ")
+   ![Listed Datasources](./images/imageDT_15.png " ")
 
 7. Close the application inspector.
 
@@ -160,7 +160,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 1. Navigate to the database inspector for the application SampleDT and database Basic. Click **Scripts**.   
 
 2. Select **Drill Through Reports** in left navigation section. On the Create menu to the right, select **Datasource**.
-   ![](./images/imageDT_16.png " ")
+   ![Create Datasource](./images/imageDT_16.png " ")
 
 3. Enter Name "SalesBreakdown".
 
@@ -175,18 +175,18 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
          * SCENARIO – Scenario -> Level0 [Level]   
          * YEAR – Year -> Months[Generation]   
 
-   ![](./images/imageDT_17.png " ")
+   ![Drill Through Reports Mapping](./images/imageDT_17.png " ")
 
 4. Select Drillable Regions on the left navigation bar, click the **+** icon and enter **@Children("Market")**.
    
-   ![](./images/imageDT_18.png " ")         
+   ![Select Drillable Regions](./images/imageDT_18.png " ")         
 
 5. Click **Save and Close**. Click **Close** to close the database inspector.
 
 ## Task 6: Drill-through Color Coding
 1. Go back to Smart View and open the query worksheet **QueryDT.Sample** within Sample\_Basic\_DT.xlsx.
    
-   ![](./images/imageDT_04.png " ")
+   ![Smartview query worksheet](./images/imageDT_04.png " ")
 
 2. We are now checking drill-through color coding (blue color) to see if drill-through reports are defined.   
 
@@ -196,7 +196,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    This is the same region where we created the drill-through report through Essbase UI and represent summarized Sales for the different Regions.  
    
-   ![](./images/imageDT_19.png " ")
+   ![Sales for the different Regions](./images/imageDT_19.png " ")
 
    Next, we are loading data and drill through to the detailed breakdown of data in the Oracle Database table.
 
@@ -209,14 +209,14 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
       * Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.
 
-   ![](./images/imageDT_20.png " ")
+   ![Create Data load](./images/imageDT_20.png " ")
 
       * In the drop-down menu, select **Data Load**.    
       * In the Name field, provide the name of the rules file as **SalesDataload**.  
       * For Source Type, select Datasource.  
       * Click **Proceed**.   
 
-   ![](./images/imageDT_21.png " ")
+   ![Rule details](./images/imageDT_21.png " ")
 
 2. Click **Create** and select **Regular** from the drop-down options. Do the same 4 more times to have 5 fields.
 
@@ -229,8 +229,8 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    Edit on Field 5- Sales. Select Data Field and set the Storage Type as **Sum**. Click **OK**.
 
-   ![](./images/imageDT_22.png " ")
-   ![](./images/imageDT_22_0.png " ")
+   ![Data Field details](./images/imageDT_22.png " ")
+   ![Data Field details](./images/imageDT_22_0.png " ")
 
 4. Click **Source Properties** at the top. In SQL Properties, set Properties as SQL Data Sources (DSN) and in the Name field, enter the connection string – **$OCI$IP:1521/ORCL**.
 
@@ -242,7 +242,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
         </copy>
 
 
-   ![](./images/imageDT_24.png " ")
+   ![SQL properties details](./images/imageDT_24.png " ")
 
 6.	Click **Verify**. Click **Save and Close**. Close the database inspector.
 
@@ -258,17 +258,17 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
     * Enter the user name and password of your SQL database schema. Click **OK**.
 
-   ![](./images/imageDT_25.png " ")
+   ![Load Data](./images/imageDT_25.png " ")
 
 8. Click **Refresh** to update the status. Once the job is completed, click **Job Details** from the right side dropdown to check Job execution status.
    
-   ![](./images/imageDT_26.png " ")
+   ![Job Details - Load Data](./images/imageDT_26.png " ")
 
 
 ## Task 8: Execute Drill-through
 1.	Go back to Smart View. Refresh the query sheet. Observe the Sales figure for the Central region.
    
-   ![](./images/imageDT_27.png " ")
+   ![Smartview query sheet](./images/imageDT_27.png " ")
 
 2.	The sales for the month of April in Central region is 1207.
 
@@ -285,7 +285,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
     3) The column names A1 to F1 for the drill-through table matches the Alias you specified in the drill-through datasource definition.
 
-   ![](./images/imageDT_28.png " ")
+   ![Drill through table details](./images/imageDT_28.png " ")
 
 
 You may [proceed to the next lab](#next).

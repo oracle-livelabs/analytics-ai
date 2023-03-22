@@ -3,14 +3,14 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Get Started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
-        },
-        {
             "title": "Introduction: Anomaly Detection",
             "description": "Learn how to build anomaly detection model and use it for detection",
             "filename": "../../anomalies/anomaly-detection-intro.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Understand Data And Download Samples",
