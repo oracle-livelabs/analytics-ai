@@ -45,28 +45,28 @@ Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on
     ```
     Password : <copy>Oracle_4U</copy>
     ```
-    ![](./images/image14_7.png " ")
+    ![Essbase login page](./images/image14_7.png " ")
 2.	On the Applications tab, click **Import** option in the Essbase web interface as shown below.
 
-    ![](./images/image14_1.png " ")
+    ![Import button](./images/image14_1.png " ")
 
 3.	Click **Catalog**.
 
-    ![](./images/image14_2.png " ")
+    ![Select Catalog](./images/image14_2.png " ")
 
 4.	Select **Sample_Basic.xlsx** file from:
 
     All Files -> Gallery -> Applications ->Demo Samples-> Block Storage.
 
-    ![](./images/image14_3.png " ")
+    ![Select files from catalog](./images/image14_3.png " ")
 
 5.	Name the application **DynamicCorp** and the cube **Sales**. Click **OK**.
 
-    ![](./images/image14_4.png " ")
+    ![Import details dialogue box](./images/image14_4.png " ")
 
 6.	Once the application is deployed, it is visible under the **Applications** tab.
 
-    ![](./images/image14_5.png " ")
+    ![Applications tab](./images/image14_5.png " ")
 
 This concludes the creation of sample application from the **Catalog** in the Essbase 21c web interface.
 
@@ -78,7 +78,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
 2. On the Smart View Panel, select the Private Connections from the list.
 
-    ![](./images/image14_6.png " ")
+    ![Select Private Connections](./images/image14_6.png " ")
 
 3. Enter the URL to create a connection.
 
@@ -91,14 +91,14 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 5. On the login window, enter your login credentials.
    Note: Log in with your IP address.
 
-    ![](./images/image14_7.png " ")
+    ![Login window](./images/image14_7.png " ")
 
 6. After successful login, you can now begin working with data in Essbase. Expand **EssbaseCluster** and navigate to the **DynamicCorp** application.    
 
     - Click **Sales** and **Connect**.  
     - Click **Ad hoc analysis**. 
  
-    ![](./images/image14_8.png " ")
+    ![Smartview Private connection list](./images/image14_8.png " ")
 
 ## Task 3: Create Ad Hoc Grids
 
@@ -113,50 +113,50 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
    - **Smart View Panel** - 
     You use Smart View panel to connect to your Smart View data sources and manage connections.
-    ![](./images/smartview.png " ")
+    ![Smartview panel](./images/smartview.png " ")
 
 1. Open a new Excel. Click 'Smart View – Panel – Private Connections'. Enter the Smart View URL and the credentials.
 
 2. In the Connection Manager panel to your right, Click **DynamicCorp** – **Sales**. Click **Connect** and then **Ad hoc analysis**.
 
-    ![](./images/image14_8.png " ")
+    ![Select application for adhoc analysis](./images/image14_8.png " ")
 
 3. After connecting to an Essbase server, you can initiate ad Hoc reports against databases on the connected server. The ad hoc report on a blank worksheet returns data from the top levels of each database dimension.
 
-    ![](./images/image14_12.png " ")
+    ![Adhoc report on year](./images/image14_12.png " ")
 
 4. Double-click on year or Zoom in to next level. Now you can see the Quarter level data.
 
-    ![](./images/image14_14.png " ")
+    ![Adhoc report on quarter](./images/image14_14.png " ")
 
 5. Go to Year. Navigate to 'Essbase' ribbon and click **Keep only**. Using this option, only the Year dimension is displayed and all the quarters are removed.
     
-    ![](./images/image14_14.0.png " ")
+    ![Essbase ribbon keep only option](./images/image14_14.0.png " ")
 
 6. Go to Year. Click on **Zoom in- All Levels**. Now you can see the numbers drill down to leaf level (Months).
 
-    ![](./images/image14_15.png " ")
+    ![Zoom in](./images/image14_15.png " ")
 
-    ![](./images/image14_16.png " ")
+    ![Zoom in](./images/image14_16.png " ")
 
 7. Double-click on 'Measures'. It will zoom into next level.
 
-    ![](./images/image14_17.0.png " ")
+    ![Expand measures](./images/image14_17.0.png " ")
 
     - Now double-click on 'Profit', it will take you to a further to the next level.
 
-    ![](./images/image14_17.1.png " ")
+    ![Expand profit](./images/image14_17.1.png " ")
 
        - Now double-click on 'Margin', it will take you further to the next level (i.e, at sales level).
 
-    ![](./images/image14_17.2.png " ")
+    ![Expand margin](./images/image14_17.2.png " ")
 
        - Select 'Sales' and click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
 
-    ![](./images/image14_17.png " ")
+    ![Keep Only](./images/image14_17.png " ")
 
 8. In the 'Smart View' ribbon click **Undo**. Undo reverses the last change you made to the data.
-    ![](./images/image14_18.png " ")
+    ![Reverse changes](./images/image14_18.png " ")
 
 9.  In the 'Smart View ribbon' click **Redo**. It will take you back to the sheet prior to the Undo.
 
@@ -164,23 +164,23 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     - Create the below report by zooming into next level of Year dimension and Measures dimension.
 
-    ![](./images/image14_99.png " ")
+    ![Zoom year and measures dimension](./images/image14_99.png " ")
 
 11.  Pivot to POV:
 
     - Click 'POV' in 'Essbase' ribbon.
 
-    ![](./images/image14_19.png " ")
+    ![Click POV](./images/image14_19.png " ")
 
     - Click the down arrow next to Market. Select 'New York'.
   
-    ![](./images/image14_20.png " ")
+    ![Select market](./images/image14_20.png " ")
 
-    ![](./images/image14_21.png " ")
+    ![Member selection](./images/image14_21.png " ")
 
     - Select 'New York' in the POV toolbar, and click **Refresh** to see the figures refreshed in the sheet for New York.
 
-    ![](./images/image14_22.png " ")
+    ![Refresh sheet](./images/image14_22.png " ")
 
 12. Member Selection:
 
@@ -188,15 +188,15 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     - Click 'POV' in 'Essbase' ribbon again.
 
-    ![](./images/image14_23.png " ")
+    ![Check POV](./images/image14_23.png " ")
 
     - Click on 'Scenario'.
 
     - Click on Member Selection in the Essbase ribbon. Select 'Actual' and 'Refresh'.
 
-    ![](./images/image14_25.png " ")
+    ![Actual member selection](./images/image14_25.png " ")
 
-    ![](./images/image14_24.png " ")
+    ![Refresh sheet](./images/image14_24.png " ")
 
 13. Free Form processing:
 
@@ -206,26 +206,26 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     - Create the below report by zooming into the Year and Measures dimension.
 
-    ![](./images/image14_26.png " ")
+    ![Zoom in report](./images/image14_26.png " ")
 
 14. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
 15. Click on the 'Profit' cell, and write 'Sales', hit enter and refresh.
 
-    ![](./images/image14_27.0.png " ")
+    ![Profit refresh](./images/image14_27.0.png " ")
 
-    ![](./images/image14_27.png " ")
+    ![Refresh data](./images/image14_27.png " ")
 
 
 ## Task 4: Install the Smart View Cube Designer Extension
 
 1. On the 'Smart View' ribbon, select 'Options', and then 'Extensions'.
 
-    ![](./images/image14_38.png " ")
+    ![Smartview options](./images/image14_38.png " ")
 
 2. Click the 'Check for updates' link. Smart View checks for all extensions that your administrator has made available to you.
 
-    ![](./images/image14_39.png " ")
+    ![Extensions](./images/image14_39.png " ")
 
 3. Locate the extension named Oracle 'Cube Designer' and click 'install' to start the installer.
 

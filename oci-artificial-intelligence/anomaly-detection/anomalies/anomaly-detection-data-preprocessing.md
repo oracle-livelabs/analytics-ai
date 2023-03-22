@@ -235,7 +235,7 @@ Other column is representing a signal/sensor or attribute.
 
 Each row represents an observation of the system, with values of those signals/sensors/attributes aligned properly. We also support JSON format, which later will explain what that format looks like.
 
-##  TASK 2: Exploring Data
+##  Task 2: Exploring Data
 
 After the data being loaded, we now can start basic exploration to validate and identify potential issues of the data.
 
@@ -482,7 +482,7 @@ For example, if in the actual business case, such anomaly or fault indeed happen
 
 Generally speaking, the user should not remove no more than ~1%-5% outliers/anomalies from the data. If more than this, they need to double-check what conditions being used and be more conservative to remove.
 
-##  TASK 4: Final Splitting and Formatting
+##  Task 4: Final Splitting and Formatting
 
 Typically in general ML model development, data is split into training and testing set, so that ML models are trained from training set, and to be fair, performance are evaluated on the testing set.
 
