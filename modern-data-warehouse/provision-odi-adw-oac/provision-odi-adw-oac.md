@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will provision Data Integrator, Autonomous Data Warehouse, Oracle Analytics and all of the required networking components that are needed to complete this workshop.
+In this lab you will provision Data Integrator, Autonomous Data Warehouse, Oracle Analytics and all of the required networking components that are needed to complete this workshop.
 
 Estimated Time: 30 minutes
 
@@ -17,7 +17,7 @@ Estimated Time: 30 minutes
 
 ## Task 1: Obtain IDCS Access Token
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
 	![OCI Console Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png "OCI Console Federation")
 
@@ -65,7 +65,7 @@ Estimated Time: 30 minutes
 
     ![Configure Variables](./images/configure-stack-variables4.png "Configure Variables")
     
-5. Scroll down and provide a name for the analytics instance. Now, hit **Next**.
+5. Scroll down and provide a name for the analytics instance. Now hit **Next**.
 
     ![Configure Variables](./images/configure-stack-variables5.png "Configure Variables")
 
@@ -81,7 +81,7 @@ Estimated Time: 30 minutes
     
     ![Monitor Terraform Logs](./images/monitor-logs.png "Monitor Terraform Logs")
 
-**Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
+**Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on the **Edit** dropdown and select **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
 
 ![View Stack Details](./images/see-stack-details.png "View Stack Details")
     
@@ -91,7 +91,7 @@ Estimated Time: 30 minutes
 
     ![Success Message](./images/successful-resource-creation.png "Success Message")
 
-9. On the same page, you will find the **Outputs** under the **Resources** menu. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi-adw-oac** in a folder named **odi-adw-oac**.
+9. On the same page, you will find the **Outputs** under the **Resources** panel. Make a note of all the outputs marked in red in the image below. You will need all of them in the coming labs. Also copy the ssh\_private\_key and save it in a file. You will need the file to ssh into both, the bastion and the ODI instance. Save this key as **odi-adw-oac** in a folder named **odi-adw-oac**.
 
     ![Make Note of Stack Outputs](./images/note-stack-outputs.png "Make Note of Stack Outputs")
     
@@ -103,11 +103,11 @@ Estimated Time: 30 minutes
 
     ![Links to Associated Resources](./images/links-to-provisioned-resources.png "Links to Associated Resources")
 
-2. Scroll down to the **oci_database_autonomous_database** and open the page in a new tab, since you would need access to the current page from time-to-time.
+2. Scroll down to the **oci\_database\_autonomous\_database** and open the page in a new tab, since you would need access to the current page from time-to-time.
 
     ![Go to Autonomous Database](./images/go-to-autonomous-database.png "Go to Autonomous Database")
   
-3. Click on the **Database Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation with any of the passwords that you provided while provisioning the stack. Hit **Download**.
+3. Click on the **Database Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation to any of the passwords that you provided while provisioning the stack. Hit **Download**.
 
     ![Open Database Connection Panel](./images/database-connection.png "Open Database Connection Panel")
     
@@ -122,5 +122,5 @@ Estimated Time: 30 minutes
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. January 2021
 - **Last Updated By/Date** - Yash Lamba, March 2023

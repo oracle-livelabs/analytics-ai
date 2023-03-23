@@ -18,7 +18,7 @@ Estimated Time: 60 minutes
 
 ## Task 1: Use Smart Import to import mappings and other objects
 
-1. Click on the **Designer** tab. Press the dropdown in the top right of the **Designer** pane as shown in the image below. Then, select **Import**.
+1. Click on the **Designer** tab. Press the dropdown button in the top right of the **Designer** pane as shown in the image below. Then, select **Import**.
 
     ![Start Import Wizard](./images/start-import-wizard.png "Start Import Wizard")
     
@@ -26,7 +26,7 @@ Estimated Time: 60 minutes
 
     ![Select Smart Import](./images/select-smart-import.png "Select Smart Import")
     
-3.	Click on the magnifying glass icon to select the path to the **EBS_ODI_ADW.xml** file. You downloaded it to the home folder of the oracle user earlier. Hence, the path should be **/home/oracle/EBS_ODI_ADW.xml**. After finding the file, click on the **Next** button.
+3.	Click on the magnifying glass icon to select the path to the **EBS\_ODI\_ADW.xml** file. You downloaded it to the home folder of the oracle user earlier. Hence, the path should be **/home/oracle/EBS\_ODI\_ADW.xml**. After finding the file, click on the **Next** button.
 
     ![Search for Mapping XML](./images/search-for-xml-mapping.png "Search for Mapping XML")
 
@@ -56,15 +56,15 @@ A data server stores information according to specific technical logic which is 
     
     ![Find Imported Data Servers](./images/find-imported-data-servers.png "Find Imported Data Servers")
     
-2. **Right click** on **EBS_SRC** and select **Open**.
+2. **Right click** on **EBS\_SRC** and select **Open**.
 
     ![Open EBS_SRC](./images/open-ebs-src.png "Open EBS_SRC")
     
-3. In the **Definition** tab, enter the **User** and **Password** as **apps**. 
+3. In the **Definition** tab, enter **apps** as the **User** and **Password**. 
 
     ![Enter Connection Credentials](./images/enter-connection-credentials.png "Enter Connection Credentials")
     
-4. Click on **JDBC** and replace the IP address in the JDBC URL with the IP address of your EBS instance. Select **Test Connection**. Hit **Test** in the dialog box that appears. A prompt stating **Successful Connection** should appear, if everything has been set up correctly. 
+4. Click on **JDBC** and replace the IP address in the JDBC URL with the IP address of your EBS instance. Select **Test Connection**. Hit **Test** in the dialog box that appears. If everything has been set up correctly, a prompt stating **Successful Connection** should appear. 
 
     ![Update EBS Instance IP Address](./images/update-ebsdb-ip.png "Update EBS Instance IP Address")
     
@@ -72,8 +72,8 @@ A data server stores information according to specific technical logic which is 
     
     ![Confirmation of Successful Connection](./images/confirmation-of-successful-connection-to-ebs-instance.png "Confirmation of Successful Connection")
     
-**Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:  
-    
+**Note:** In case the connection is not successful, ssh into the EBS instance as the oracle user and execute the following commands:    
+
     ```bash
     <copy>  
     sudo su - oracle
@@ -83,17 +83,16 @@ A data server stores information according to specific technical logic which is 
     export ORACLE_SID=ebsdb
 
     export PATH=$ORACLE_HOME:$ORACLE_HOME/bin:$PATH
-    
-    sqlplus
 
+    sqlplus
     </copy>
-    ```    
-        
+    ```
+
 Now, try logging in as the **apps** user. If you are successfully able to login, test the connection again. If not then you might have to debug the issue.
 
 ## Task 3: Update Target Configuration
 
-1. Similar to how you opened **EBS_SRC** in step 2, **right click** on **ADWC_TRG** and select **Open**. An error will appear complaining about missing credentials. Click on **OK** to close the dialog. Here you will be entering the details of the ADW that was created as part of the stack. On the **Definition** tab, enter the details of the **ADMIN** user. Click on the **magnifying glass** icon to select the ADW wallet file that you had secure copied (scp) onto the Desktop and select **Open**.
+1. Similar to how you opened **EBS\_SRC** in step 2, **right click** on **ADWC\_TRG** and select **Open**. An error will appear complaining about missing credentials. Click on **OK** to close the dialog. Here you will be entering the details of the ADW that was created as part of the stack. On the **Definition** tab, enter the details of the **ADMIN** user. Click on the **magnifying glass** icon to select the ADW wallet file that you had secure copied (scp) onto the Desktop and select **Open**.
 
     ![Missing Credentials Error](./images/missing-credentials-error.png "Missing Credentials Error")
 
@@ -111,7 +110,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
     ![Confirmation of Successful Connection](./images/confirmation-of-successful-connection-to-ebs-instance.png "Confirmation of Successful Connection")
     
-4. Expand the **ADWC_TRG** data server and double click on the physical schema. 
+4. Expand the **ADWC\_TRG** data server and double click on the physical schema. 
 
     ![Double Click on Physical Schema in the ADWC_TRG Data Server](./images/select-adwc-trg-admin-schema.png "Double Click on Physical Schema in the ADWC_TRG Data Server")
     
@@ -125,7 +124,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
 ## Task 4: Configure and run the integration
 
-1.  Return to the **Designer** tab and click on the refresh button. A project name **EBS_ADWC_Data_Migration** will appear.
+1.  Return to the **Designer** tab and click on the refresh button. A project name **EBS\_ADWC\_Data\_Migration** will appear.
 
     ![Refresh Projects](./images/refresh-projects.png "Refresh Projects")
     
@@ -133,7 +132,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![Expand Project Mappings](./images/expand-project-mappings.png "Expand Project Mappings")
 
-3. **Right click** on the mapping **m_Full_d_V_MTL_CAT_B_KFV** and then click on ** Run** to execute the mapping. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. This has to be repeated for the following 2 packages: **m_Full_d_V_PO_VENDORS**, **m_Full_d_V_PO_VENDOR_SITES**.
+3. **Right click** on the mapping **m\_Full\_d\_V\_MTL\_CAT\_B\_KFV** and then click on **Run** to execute the mapping. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. This has to be repeated for the following 2 packages: **m\_Full\_d\_V\_PO\_VENDORS**, **m\_Full\_d\_V\_PO\_VENDOR\_SITES**.
 
     ![Run Mappings](./images/run-mappings.png "Run Mappings")
     
@@ -145,7 +144,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![Monitor Status](./images/monitor-run-status-mappings.png "Monitor Status")
     
-5. Return to the **Designer** tab and expand **Packages**. **Right click** on a package and then click on ** Run** to execute the package. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. This has to be repeated for each of the packages, one-by-one.
+5. Return to the **Designer** tab and expand **Packages**. **Right click** on a package and then click on **Run** to execute the package. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. This has to be repeated one-by-one for each of the packages.
     
     ![Run Packages](./images/run-packages.png "Run Packages")
     
@@ -157,7 +156,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![Monitor Status](./images/monitor-run-status-packages.png "Monitor Status")
     
-7. On the **Designer** tab, expand **Procedures**. **Right click** on **CREATE_VIEW_ADW** procedure and then click on ** Run** to execute it. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. You can monitor the status of the execution to know when it is complete.
+7. On the **Designer** tab, expand **Procedures**. **Right click** on **CREATE\_VIEW\_ADW** procedure and then click on **Run** to execute it. Press **OK** in the dialog box that appears. After a few seconds, another dialog box stating that the session has started will appear. Press **OK** again. You can monitor the status of the execution to know when it gets completed.
     
     ![Run Procedure](./images/run-procedure.png "Run Procedure")
     
@@ -177,7 +176,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
     ![Create New Data Server](./images/create-new-data-server.png "Create New Data Server")
     
-2. Click on the **Discover ADBs**, next to the **Test Connection**. This will detect all ADBs in the same compartment as the ODI instance, which is why you were asked to create the source ADW in the same compartment.
+2. Click on the **Discover ADBs** button, next to **Test Connection**. This will detect all ADBs in the same compartment as the ODI instance, which is why you were asked to create the source ADW in the same compartment.
 
     ![Discover ADBs](./images/discover-adbs.png "Discover ADBs")
     
@@ -199,7 +198,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
 ## Task 6: Set up the Destination Data Server
 
-1.  Right click on the **ADWC_TRG** data server and then click on **New Physical Schema** to create one. Choose the **EBS** schema, since that is where you have created the empty target tables.
+1.  Right click on the **ADWC\_TRG** data server and then click on **New Physical Schema** to create one. Choose the **EBS** schema, since that is where you have created the empty target tables.
 
     ![Create New Physical Schema on Target](./images/create-new-physical-schema-target.png "Create New Physical Schema on Target")
     
@@ -227,7 +226,7 @@ You will now create models based on the created logical schema.
 
 ## Task 8: Set up another Integration Project
 
-Now that you have configured your connections to your source and destination, you will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings or variables.
+Now that you have configured the connections to your source and destination, you will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings and variables.
 
 1. Under **Designer**, click **New Project** in the toolbar of the **Projects** section. Enter a Name for the project, and hit **Save**.
 
@@ -276,7 +275,7 @@ Now that you have configured your connections to your source and destination, yo
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management, April 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. April 2021
 - **Contributor** - Srinidhi Koushik
 - **Last Updated By/Date** - Yash Lamba, March 2023
 
