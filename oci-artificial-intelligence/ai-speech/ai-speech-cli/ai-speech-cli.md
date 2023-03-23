@@ -32,18 +32,18 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 1. Navigate to Cloud Shell
 
     Log into OCI cloud console. Navigate to cloud shell icon on the top right and click it.
-        ![](./images/cloud-shell-icon.png " ")
+        ![Cloud shell icon](./images/cloud-shell-icon.png " ")
 
 2. Enter Speech CLI Command
 
     Enter any one of the speech pre-deployed CLI commands you want to execute.
-        ![](./images/cloud-shell-command.png " ")
+        ![Cloud shell window](./images/cloud-shell-command.png " ")
 
 
 3. View Result
 
     The speech service displays the results as shown below:
-        ![](./images/cloud-shell-results.png " ")
+        ![Cloud shell results](./images/cloud-shell-results.png " ")
 
 
 

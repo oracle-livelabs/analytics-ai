@@ -43,26 +43,26 @@ Generate an API signing key pair
 1. Open User Settings
 
     Open the Profile menu (User menu icon) and click User Settings.
-        ![](./images/user-profile-icon.png " ")
+        ![User profile window](./images/user-profile-icon.png " ")
 
 2. Open API Key
 
     Navigate to API Key and then Click Add API Key.
-        ![](./images/add-api-button.png " ")
+        ![User settings page and API keys button](./images/add-api-button.png " ")
 
 3. Generate API Key
 
     In the dialog, select "Generate API Key Pair." Click "Download Private Key" and save the key to your .oci directory. Finally, click "Add."
-        ![](./images/gen-api.png " ")
+        ![Generate API key window](./images/gen-api.png " ")
 
 4. Generate Config File
 
     Copy the values shown on the console.
-        ![](./images/conf.png " ")
+        ![Config file preview](./images/config-preview.png " ")
 
     Create a config file in the .oci folder and paste the values copied.
     Replace the key_file value with the path of your generated API Key.
-        ![](./images/config-2.png " ")
+        ![confile file preview from local setup](./images/config-local.png " ")
 
 
 

@@ -21,6 +21,7 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 <!-- * Learn to access OCI Language Service in Data Flow. -->
 
 ### Prerequisites:
+
 * An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with OCI Policy and SDK/CLI setup.
@@ -41,7 +42,7 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 
 You may now **proceed to the next lab**
 
-## Acknowledgements:
+## Acknowledgements
 * **Authors**
     * Alex Ginella - Oracle AI OCI Speech Services
     * Rajat Chawla  - Oracle AI OCI Speech Services

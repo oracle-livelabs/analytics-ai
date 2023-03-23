@@ -22,10 +22,10 @@ We have provided some scripts and steps below that can be used to allow invoking
 1. Import the environment into Postman
 
     Download the [OCI Environment](./files/OCI_Environment.postman_environment.json) and import the environment into Postman using the 'Import' button at the top.
-        ![](./images/import-env.png " ")
+        ![POSTMAN import environment window](./images/import-env.png " ")
 
     Make sure to set OCI_Environment as the active environment.
-        ![](./images/set-active.png " ")
+        ![OCI environment window](./images/set-active.png " ")
 
 2. Set the Variables
 
@@ -34,7 +34,7 @@ We have provided some scripts and steps below that can be used to allow invoking
     Make sure to set both Initial Value and Current Value of the variables (set both as the same value).
 
     Click the Save button to commit your changes to the environment.
-        ![](./images/set-var.png " ")
+        ![OCI environment variables](./images/set-var.png " ")
 
 3. Import the Collections
 
@@ -43,7 +43,7 @@ We have provided some scripts and steps below that can be used to allow invoking
 4. Execute OCI REST Initializer
 
     From the OCI REST INITIALIZATION collection, invoke the Initializer GET for 'jsrsasign-all-min.js' , which imports and initializes a required library jsrsasign for encryption and digital signatures. This is a one-time setup task. 
-        ![](./images/initialize-rest.png " ")
+        ![OCI REST initialization collection](./images/initialize-rest.png " ")
 
 <!-- ### 5. Add Request in OCI REST COLLECTION
 
@@ -60,7 +60,7 @@ Just make sure that the OCI REST calls are executed as part of the OCI REST COLL
 Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
 Below, in the example shown to invoke Create Transcription Job, replace all placeholder values with the corresponding values of the job you want to create
-    ![](./images/postman-screenshot.png " ")
+    ![Create Transcription Job example](./images/postman-screenshot.png " ")
 
 OCI Speech Service EndPoints for all the services:
 
