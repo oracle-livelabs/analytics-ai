@@ -18,11 +18,6 @@ This lab assumes you have completed:
 ## Task 1: Validate the database processes are up and running.
 1. Now with access to your remote desktop sessions, proceed as indicated below to validate your environment before you start executing the subsequent labs. 
 
-    ```
-    <copy>
-    Sample NoVNC URL: http://Node1_ip_address/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
-    </copy>
-    ```  
 
 The following Processes should be up and running in Node1:
 

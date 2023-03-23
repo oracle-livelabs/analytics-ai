@@ -33,21 +33,23 @@ Estimated Time: 10 minutes
 
    ![ADW Menu](images/open-db.png)
 
-3. Open **Tools** and then **Open Oracle ML User Administration**.
+3. Open **DB Actions**.
 
-   ![pic1](images/open-ml-admin.png)
+   ![pic1](images/open-actions.png)
 
    If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user.
 
-4. Check **Show All Users**, then click on the `PL` user.
+4. Choose **Administration** > **Database Users**.
 
-   ![pic1](images/select-ml-user.png)
+   ![pic1](images/select-db-users.png)
 
-5. Choose any email address (it's not relevant). **Don't update any of the other fields**.
+5. Find the **PL** user, then select edit
 
-   ![pic1](images/save-ml-user.png)
+   ![pic1](images/edit-pl-user.png)
 
-   Press **Save**. You've now enabled the `PL` database user (schema) to use the Machine Learning functionality of Autonomous Data Warehouse.
+6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the **PL** user to use the Machine Learning functionality of Autonomous Data Warehouse. Sign out now as admin user.
+
+   ![pic1](images/add-oml-pl-user.png)
 
 ## Task 2: Run the Notebook to Calculate ANGLE, Build the xG model and Apply the xG model
 
@@ -65,9 +67,9 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
-2. In the console of the Autonomous Data Warehouse, open the **Database Actions**.
+2. In the console of the Autonomous Data Warehouse, open the **Database Actions** and sign in as the PL user
 
-   <!--![pic1](images/open-service-console.png)-->
+   ![pic1](images/open-actions.png)
 
 3. Choose **Oracle Machine Learning**.
 
