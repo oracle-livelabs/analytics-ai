@@ -272,3 +272,4 @@ You may now **proceed to the next lab**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
+    * Veluvarthi Narasimha Reddy - Oracle AI Services

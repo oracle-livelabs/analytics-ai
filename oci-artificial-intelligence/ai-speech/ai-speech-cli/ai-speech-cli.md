@@ -61,28 +61,86 @@ pip install oci-cli
 
 1. Create Transcription Job
     Run this command : <strong>oci speech transcription-job create -c</strong>
+
+    If your Location type is Inline input location
         ```
         <copy>
         oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
-        "location_type": "OBJECT_LIST_INLINE_INPUT_LOCATION",
-        "object_locations": [
-        {
-            "bucket_name": <your_bucket_here>,
-            "namespace_name": <namespace_here>,
-            "object_names": [
-                <object_file_name>
-                <object_file_name>
+        "compartmentId": "ocid1.compartment.oc1..<uniqueID>",
+        "definedTags": null,
+        "description": "<descriptionPlaceholder>",
+        "displayName": "<displayNamePlaceholder>",
+        "freeformTags": null,
+        "inputLocation": {
+            "locationType": "OBJECT_LIST_INLINE_INPUT_LOCATION",
+            "objectLocations": [
+                {
+                    "bucketName": "<bucketNamePlaceholder>",
+                    "namespaceName": "<namespacePlaceholder>",
+                    "objectNames": [
+                        "<filename1>",
+                        "<filename2>",
+                        "<filename3>"
+                    ]
+                }
             ]
+        },
+        "modelDetails": {
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        },
+        "normalization": {
+            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
+            "isPunctuationEnabled": true
+        },
+        "outputLocation": {
+            "bucketName": "<outputBucketPlaceholder>",
+            "namespaceName": "<namespacePlaceholder>",
+            "prefix": "<examplePrefix>/"
         }
-        ]
-    }' --model-details '{"domain": "GENERIC","language_code": "en-US"}' --output-location '{
-        "bucket_name": <output_bucket_placeholder>,
-        "namespace_name": <namespace_here>,
-        "prefix": <job_prefix>
     }' --defined-tags null --description "This is newly created Job from CLI" --display-name "cli_test_job" --freeform-tags null
-    
         </copy>
         ```
+
+     If your Location type is File input location
+        ```
+        <copy>
+        oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
+        "compartmentId": "ocid1.compartment.oc1..<uniqueID>",
+        "definedTags": null,
+        "description": "<descriptionPlaceholder>",
+        "displayName": "<displayNamePlaceholder>",
+        "freeformTags": null,
+        "inputLocation": {
+            "locationType": "OBJECT_LIST_FILE_INPUT_LOCATION",
+            "objectLocation": {
+                    "bucketName": "<bucketNamePlaceholder>",
+                    "namespaceName": "<namespacePlaceholder>",
+                    "objectNames": [
+                        "<filename1>.json",
+                        "<filename2>.json",
+                        "<filename3>.json"
+                    ]
+                }
+        },
+        "modelDetails": {
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        },
+        "normalization": {
+            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
+            "isPunctuationEnabled": true
+        },
+        "outputLocation": {
+            "bucketName": "<outputBucketPlaceholder>",
+            "namespaceName": "<namespacePlaceholder>",
+            "prefix": "<examplePrefix>/"
+        }
+    }' --defined-tags null --description "This is newly created Job from CLI" --display-name "cli_test_job" --freeform-tags null
+        </copy>
+        ```
+
+        
 
 2. Cancel transcription job
     Run this command : <strong>oci speech transcription-job cancel</strong>
@@ -159,3 +217,4 @@ You may now **proceed to the next lab**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
+    * Veluvarthi Narasimha Reddy - Oracle AI Services
