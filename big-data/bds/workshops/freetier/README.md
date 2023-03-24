@@ -1,6 +1,6 @@
 # Welcome to the Getting Started with Oracle Big Data Service Hands-on Workshop!
 
-The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster. You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Cloudera Manager and Hue to access the cluster, and creating a Hadoop administrator user.
+The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster. You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Ambari and Hue to access the cluster, and creating a Hadoop administrator user.
 
 ## Access the Labs Using Our Web Interface
 
@@ -17,7 +17,7 @@ Alternatively, you can follow the individual workshop labs on this repo:
 - [Create a BDS Hadoop Cluster](../bds-create-cluster/bds-create-cluster.md)
 - [Add Oracle Cloud SQL to the Cluster](../bds-add-cloud-sql/bds-add-cloud-sql.md)
 - [Access a BDS Node Using a Public IP Address](../bds-access-utility-node/bds-access-utility-node.md)
-- [Use Cloudera Manager and Hue to Access a BDS Cluster](../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md)
+- [Use Ambari and Hue to Access a BDS Cluster](../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md)
 - [Create a Hadoop Administrator User](../bds-create-hadoop-user/bds-create-hadoop-user.md)
 
 
