@@ -89,12 +89,12 @@ We will pick Map visualization and start creating project.
 
 1. Hover over the right top corner of Map visualization and click on “Explore as Project”
 
-![](images/8_exlore_as_project.png " ")
+![](images/8_explore_as_project.png " ")
 
 ## End of Exercise 2
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forlafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023

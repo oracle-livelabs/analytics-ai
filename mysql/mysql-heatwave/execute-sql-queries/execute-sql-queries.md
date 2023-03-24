@@ -77,6 +77,6 @@ As you have experienced that HeatWave Engine accelerates MySQL performance for q
 **Hope you enjoyed this Lab - Happy Learnning OCI**
 
 ## Acknowledgements
-* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Last Updated By/Date** - Jitender Singh, September 2021
+* **Author** - Amal Sharma, Principal Cloud Architect, NA Cloud Engineering
+* **Contributors** -  Mukund Bhashkar, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Amal Sharma, February 2023
