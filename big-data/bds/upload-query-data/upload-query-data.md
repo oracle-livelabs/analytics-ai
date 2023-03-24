@@ -214,7 +214,7 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   In our example, we used the reserved public IP address that is associated with our **second utility node** as follows:
 
-    ``   https://150.136.16.64:8888   ``
+    ``  https://150.136.16.64:8888  ``
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
@@ -354,7 +354,7 @@ In this step, you will download two scripts that will set up your Object Storage
 ## Acknowledgements
 
 * **Author:**
-  + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-* **Contributor:**
-  + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+
+  + Anand Chandak, Principal Product Manager, Big Data Services
+  + Justin Zou, Principal Data Engineer,Japan & APAC Hub
+* **Last Updated By/Date:** Justin Zou, March 2023

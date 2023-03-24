@@ -195,8 +195,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author:**
-  + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-* **Contributor:**
-  + Martin Gubar, Director, Oracle Big Data Product Management
+
+  + Anand Chandak, Principal Product Manager, Big Data Services
   + Justin Zou, Principal Data Engineer,Japan & APAC Hub
 * **Last Updated By/Date:** Justin Zou, March 2023

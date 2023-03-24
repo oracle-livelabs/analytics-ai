@@ -93,7 +93,7 @@ In this step, you will set three variables using the **`export`** command. The v
 
   In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **STEP 1** of this lab.
 
-    ``    $ export PRIVATE_IP="10.0.0.22"      ``
+    ``   $ export PRIVATE_IP="10.0.0.22"     ``
 
 5. At the **$** command line prompt, click **Copy** to copy the following command exactly as it's shown below **_without any line breaks_**, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
 
@@ -114,30 +114,26 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
 1. In the **Cloud Shell**, at the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line.
 
-    ``    $ <copy>export DISPLAY_NAME="traininun1-public-ip"</copy>    ``
+   ``   $ <copy>export DISPLAY_NAME="traininun1-public-ip"</copy>   ``
 
-    **Note:**
-    In the previous step, you already set the**`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab; therefore, you don't need to set this variable again.
-
+   **Note:**
+   In the previous step, you already set the**`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab; therefore, you don't need to set this variable again.
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the **second utility node** that you want to map to a reserved public IP address. Substitute the **_`ip-address`_** shown with your own **second utility** node's private IP address that you identified in **STEP 1** of this lab. Press the **`[Enter]`** key to run the command.
 
-    ``    <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>    ``
+   ``   <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>   ``
 
-    In our example, we replaced the**_``ip-address``_** with the private IP address of our second utility node that we identified in **STEP 1** of this lab.
+   In our example, we replaced the**_``ip-address``_** with the private IP address of our second utility node that we identified in **STEP 1** of this lab.
 
-    ``    $ export PRIVATE_IP="10.0.0.19"    ``
-
+   ``   $ export PRIVATE_IP="10.0.0.19"   ``
 3. At the **$** command line prompt, click **Copy** to copy the following command exactly as it's shown below **_without any line breaks_**, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
 
-    ``    $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>    ``
-
+   ``   $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>   ``
 4. In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.16.64`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
 
-    ![](./images/output-white-ip-address-2.png " ")
-
+   ![](./images/output-white-ip-address-2.png " ")
 5. To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
-    ![](./images/reserved-public-ip-un1.png " ")
+   ![](./images/reserved-public-ip-un1.png " ")
 
 ## Task 4: Map the Private IP Address of the Cloud SQL Node to a Reserved Public IP Address
 
@@ -181,8 +177,7 @@ In this step, you will learn how to edit a reserved public IP address using both
 
 3. Change the name of the reserved public IP address associated with the Cloud SQL node from `traininqs0` to **`traininqs0-public-ip`**. On the row for `traininqs0`, click the **Actions** button, and then select **Edit** from the context menu.
 
-    ![](./images/rename-ip-name.png " ")
-
+   ![](./images/rename-ip-name.png " ")
 4. In the **Edit** dialog box, in the **RESERVED PUBLIC IP NAME** field, enter **`traininqs0-public-ip`**, and then click **Save Changes**.
 
    ![](./images/rename-dialog.png " ")
@@ -223,8 +218,7 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author:**
-  + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-* **Contributors:**
-  + Martin Gubar, Director, Oracle Big Data Product Management
-  + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
+
+  + Anand Chandak, Principal Product Manager, Big Data Services
+  + Justin Zou, Principal Data Engineer,Japan & APAC Hub
 * **Last Updated By/Date:** Justin Zou, March 2023
