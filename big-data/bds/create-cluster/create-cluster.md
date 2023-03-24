@@ -24,7 +24,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
 ## Prerequisites（Optional）
 
-If you want to use the bootstrap script to create the BDS cluster, please prepare the bootstrap script and upload the bootstrap script to object storage. If you don't want to use bootstrap script to create the BDS cluster, you can skip this task.
+If you want to use the bootstrap script to create the BDS cluster, please prepare the bootstrap script and upload the bootstrap script to object storage. If you don't want to use bootstrap script to create the BDS cluster, you can skip this prerequisties.
 
 **Task 1:Prepare the bootstrap**
 
