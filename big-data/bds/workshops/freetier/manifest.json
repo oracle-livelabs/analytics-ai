@@ -40,8 +40,8 @@
       }
       ,
       {
-            "title": "Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster",
-            "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
+            "title": "Lab 5: Use Ambari and Hue to Access a BDS Cluster",
+            "description": "This lab shows you how to use Ambari and Hue to access a Big Data Service (BDS) cluster.",
             "filename": "./../../use-cm-hue-access-cluster/use-cm-hue-access-cluster.md"
       }
       ,
