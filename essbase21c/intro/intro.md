@@ -34,7 +34,7 @@ Oracle Essbase helps you to build your company’s On-Premise strategy efficient
 
 ### Essbase 21c Architecture
 
-  ![](./images/notionalarchitecture21c.png " ")
+  ![Essbase Architecture](./images/notionalarchitecture21c.png " ")
 
 ### Objectives
 
