@@ -157,7 +157,7 @@ On the pop-up window you can define the formula of the calculation using the edi
 
 Great. Now you would like to make this more appealing so you will work on the look and feel.
 
-5. Click on the the properties box. 
+5. On the properties box select the 2nd tab with the hash icon.
 
 ![](images/19_select_properties.png " ")
 

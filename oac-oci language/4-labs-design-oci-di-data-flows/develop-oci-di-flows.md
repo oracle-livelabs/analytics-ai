@@ -71,7 +71,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - **Identifier**: Auto-generated based on the value you enter for Name. You can change the auto-generated value, but after you save the data asset, you cannot update the identifier again.
     - **Description**: Optional
     - **Type**: Oracle Autonomous Data Warehouse
-    - **Wallet File**: Drag and drop or browse to select the wallet file. See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
+    - **Wallet File**: Drag and drop or browse to select the wallet file. See [Download a Wallet](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-download-credentials.html)
     - **Service Name**: Service level to connect to your Autonomous Data Warehouse database
 
     ![Target Data Asset](./images/targetdataasset.png " ")

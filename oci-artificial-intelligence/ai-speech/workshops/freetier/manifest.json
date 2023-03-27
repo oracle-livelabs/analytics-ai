@@ -3,14 +3,14 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Get started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
-        },
-        {
             "title": "Introduction: OCI speech",
             "description": "Learn how to generate text transcripts from audio files using OCI Speech",
             "filename": "./intro.md"
+        },
+        {
+            "title": "Get started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 0: Create a bucket and upload files",

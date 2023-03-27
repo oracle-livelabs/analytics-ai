@@ -14,13 +14,7 @@ This chapter includes the following sections:
   * Load Sales Administration Package Example
 
 ### Prerequisites
-This lab assumes you have:
-- Basic knowledge of Oracle Database
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
+This lab assumes you have completed all the previous labs.
 
 ## Task 1: Load Sales Administration Package Example
 This section contains the following topics:
@@ -47,7 +41,7 @@ This section contains the following topics:
   **One procedure:**
   The **Delete Targets** procedure empties all of the tables in the *Sales Administration* application. This operation is performed by using a *Delete* statement on each table.
 
-  ![](./images/demo_project_mappings.png)
+  ![Demo project mappings](./images/demo_project_mappings.png)
 
 2. Problem Analysis
 
@@ -72,7 +66,7 @@ This section contains the following topics:
     - Expand the Sales Administration node.
     - In the Sales Administration folder, right-click the Packages node and select **New Package** as shown:
 
-  ![](./images/insert_new_package.png)  
+  ![Insert new package](./images/insert_new_package.png)  
 
   The Package Editor is started.
 
@@ -116,7 +110,7 @@ This section contains the following topics:
   To define the next steps on success:
     - In the Package toolbar tab, select **Next Step on Success**.
 
-    ![](./images/ok.png)   
+    ![ok](./images/ok.png)   
 
     - Select the Delete Targets step.
     - Keep the mouse button pressed and move the cursor to the icon of the step that must follow in case of a success (here the Load TRG\_COUNTRY step) and release the mouse button. A green arrow representing the success path between the steps, with an ok label on it appears.
@@ -132,11 +126,11 @@ This section contains the following topics:
 
   The resulting sequence appears in the Package diagram as shown:
 
-  ![](./images/sales_admin_package.png)   
+  ![Load Sales Administration package](./images/sales_admin_package.png)   
 
   5.  From the File main menu, select **Save**. The package is now ready to be executed.
 
-## Task 3: Executing Your Development
+## Task 2: Executing Your Development
 This section describes how to execute the Load Sales Administration Package you have just created and the mappings Load TRG\_CUSTOMER and Load TRG\_SALES you have created in the lab *Working with Mappings*. This section also describes how to follow the execution and how to interpret the execution results.
 
 1. Executing the Load Sales Administration Package
@@ -156,13 +150,13 @@ This section describes how to execute the Load Sales Administration Package you 
     - In the Session List accordion in Operator Navigator, expand the All Executions node.
     - Refresh the displayed information by clicking **Refresh** in the Operator Navigator toolbar. The Refresh button is:
 
-  ![](./images/refresh.png)
+  ![Refresh](./images/refresh.png)
 
     - The log for the execution session of the Load Sales Administration Package appears as shown:
 
-  ![](./images/load_package_session_log.png)
+  ![Load package session log](./images/load_package_session_log.png)
 
-## Task 4: Reviewing your Results
+## Task 3: Reviewing your Results
 
 **Interpreting the Results of the Load TRG\_CUSTOMER Session Step**
 
@@ -178,7 +172,7 @@ This section describes how to determine the invalid records detected by the Load
 
   **Note** Your individual results may vary. This is fine as long as the overall execution is successful.
 
-  ![](./images/record_statistics.png)
+  ![Record statistics](./images/record_statistics.png)
 
 2. Viewing the Resulting Data
   In this example, the resulting data are the 31 rows that have been inserted in the TRG\_ CUSTOMER table during the mapping run. To view the data resulting of your mapping run:
@@ -188,7 +182,7 @@ This section describes how to determine the invalid records detected by the Load
 
   Note that you can also select **Data\...** to view and edit the data of the target table. The View Data Editor is displayed as shown
 
-  ![](./images/view_data_editor.png)
+  ![View data editor](./images/view_data_editor.png)
 
 3. Reviewing the Invalid Records and Incorrect Data
   You can access the invalid records by right-clicking on the datastore in your model and selecting **Control** \> **Errors\...**
@@ -199,14 +193,14 @@ This section describes how to determine the invalid records detected by the Load
     - Right-click and select **Control** \> **Errors\...**
     -  The Error Table Editor is displayed:
 
-  ![](./images/error_table_trg_cust.png)
+  ![ODI error table data](./images/error_table_trg_cust.png)
 
   The mapping that you have executed has identified and isolated **2** invalid records in an error table that was automatically created for you. In this error table, you can see that the mapping rejected:
     * Records that did not satisfy the FK\_CUST\_CITY constraint (for example, the CITY\_ID value does not exist in the table of cities TRG\_CITY table).
 
     You can use the ODI\_CHECK\_DATE field to identify the records rejected for your latest execution. The invalid records were saved into an error table and were not integrated into the target table.
 
-## **Appendix 1:**  More on Automating Data Integration using Package
+## Appendix 1:  More on Automating Data Integration using Package
 This section provides an introduction to automating data integration using packages in Oracle Data Integrator.
 
 1. Automating Data Integration Flows
@@ -234,7 +228,7 @@ Refer to *Working with Scenarios* in the *Oracle Fusion Middleware Developer's G
 
 In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)
