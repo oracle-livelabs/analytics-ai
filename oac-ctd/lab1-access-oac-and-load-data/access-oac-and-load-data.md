@@ -74,7 +74,7 @@ NOTE that you probably won’t have the same list of projects and datasets.
 
 ## **Task 3**: Load an excel file
 
-Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
+Donwload the file: [OAC\_TD\_Expenses.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
 
 1. Click on “Create”
 
@@ -147,7 +147,7 @@ Again, preparation preview gets applied and new column is highlighted.
 
 This is enough for the exercise needs.
 1. Click “Save” 
-2. Give it a name adding your name as suffix, ie: OAC_TD_Expenses_IF 
+2. Give it a name adding your name as suffix, ie: OAC\_TD\_Expenses\_IF 
 3. Click OK
 
 ![](images/11_save_data_set.png " ")
@@ -175,7 +175,8 @@ The one at the top should be the file you just created.
 This menu allows you to configure the access to the file and data.
 
 Here is were you can allow the search engine to run on the data and be “searchable” through the BIAsk bar.
-1. Click on Search
+1. Confirm that “Enable Insights” checkbox is market 
+2. Click on “Search” tab
 
 ![](images/14_search_inspect.png " ")
 
@@ -201,7 +202,7 @@ File configuration is done. Go to home screen to start analysing.
 ![](images/17_home.png " ")
 
 
-## End of Exercise 1
+### End of Exercise 1
 
 ## Acknowledgements
 
