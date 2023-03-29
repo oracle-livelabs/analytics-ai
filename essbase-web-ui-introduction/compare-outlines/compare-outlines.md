@@ -1,4 +1,4 @@
-# Title of the Lab
+# Compare Outlines
 
 ## Introduction
 
@@ -35,13 +35,13 @@ This lab assumes you have:
 
 2. In the **Import** dialog box, click **Catalog**.
 
-3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click Sample_Basic.xlsx and click **Select**.
+3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click **Sample_Basic.xlsx** and click **Select**.
 
     ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
 
-4. In the **Import** dialog box, rename the application, Sample to Target and click OK to create the cube.
+4. In the **Import** dialog box, rename the application to **Target** and click **OK** to create the cube.
 
-5. Repeat steps 1-4, this time selecting Demo_Basic.xlsx and renaming it to Source.Basic.
+5. Repeat steps 1-4, this time selecting **Demo_Basic.xlsx** and renaming it to **Source.Basic**.
 
 ## Task 2: Open two outlines side-by-side
 
@@ -101,7 +101,7 @@ Alternatively, you can select a connection to another server in the **Connection
 
 1. In the outline toolbar, under **Actions**, click the **Search members in the outline** icon.
 
-2. Notice that search bars open for both Source.Basic and Target.Basic, allowing you to search either one.
+2. Notice that search bars open for both **Source.Basic** and **Target.Basic**, allowing you to search either one.
 
 
 Note: The search bar does not open for the target outline when it is from an Essbase version prior to 21c.
