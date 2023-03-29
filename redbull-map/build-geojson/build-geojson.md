@@ -6,7 +6,7 @@ In this exercise, you will generate GeoJSON code and see how easy it is create m
 
 _Estimated time:_ 20 minutes
 
-![](./images/racing-track2.png)
+![Image showing LineString map layer created using GeoJSON](./images/racing-track2.png)
 
 ### Objectives
 
@@ -28,17 +28,16 @@ This lab assumes you have:
 
 2. Search for your location, in this instance we will search for “2041 KP Zandvoort, Netherlands”.
 
-    ![](./images/track-zandvoort.png)
+    ![Display of the map location search results on GeoJSON platform](./images/track-zandvoort.png)
 
-    > **Note:** Use the [Circuit
-Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find your three sectors, colored red (sector 1), blue (sector 2), and yellow (sector 3).
+     >**Note:** Use the [Circuit Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find your three sectors, colored red (sector 1), blue (sector 2), and yellow (sector 3).
 
      You will use the line tool to draw each sector     
-     ![](./images/circuit-schema.png)
+     ![Image showing the the sectors of the race circuit](./images/circuit-schema.png)
 
 3. Start drawing your first LineString of sector 1, the red sector, by choosing the polyline option
 
-    ![](./images/polyline.png)  
+    ![Select the polyline tool to begin the LineString](./images/polyline2.png)  
 
     Your JSON code will contain a top level FeatureCollection and  multiple Features nested below it. Add a “name”:”\[unique name\]” to each “LineString” property.  
 
@@ -89,7 +88,7 @@ Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) lay
     </copy>
      ```
 
-    ![](./images/code-snippit2.png)
+    ![Add a name to each LineString property](./images/code-snippit2.png)
 
 
 4. Draw the two remaining LineStrings for sector 2 and sector 3 to complete the circuit.
@@ -100,7 +99,7 @@ Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) lay
 
     > **Note:** properties cannot be empty. You must add a unique value for each property. Example: change the syntax of “properties": {} to “properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer in OAC.
 
-    ![](./images/save-geojson.png)
+    ![Save the LineString layer to export the file](./images/save-geojson.png)
 
 6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors.geojson_
 
@@ -112,19 +111,18 @@ Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) lay
 
     > **Note:** Use the [Circuit Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find each turn. You will find turns labeled 1-14.
 
-3. Create a GeoJSON file with Points using the “**Draw a Marker**” option. Add the 14 turns to your map.
+3. Create a GeoJSON file with Points using the “**Draw Point**” option. Add the 14 turns to your map.
 
-    ![](./images/draw-marker.png)  
-    ![](./images/circuit-zandvoort.png)
+    ![Select the draw point tool](./images/draw-marker2.png)  
+    ![Image showing how points on each turn will look](./images/circuit-zandvoort.png)
 
 4. Add unique values for each properties option. In this example you will have 14 lines you update.
 
 5. Choose **Save**, **GeoJSON** to export the file.
 
-    > **Note:** you must add a unique properties value to each “Point” for the
-file to successfully upload as a map layer in OAC.
+    > **Note:** you must add a unique properties value to each “Point” for the file to successfully upload as a map layer in OAC.
 
-    ![](./images/save-geojson.png)
+    ![Save the point layer to export](./images/save-geojson.png)
 
 6. **Rename** the file to the map layer name.
 
@@ -140,4 +138,4 @@ You may now *proceed to the next lab*.
 
 - **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
 - **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021)
+- **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023
