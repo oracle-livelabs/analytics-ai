@@ -331,17 +331,17 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
     ``https://129.80.253.156:6182``
 
 3. Login to Ranger, Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
-   ![1679405988475](image/create-hadoop-user/1679405988475.png)
+   ![login_ranger](image/create-hadoop-user/01-login_ranger.png)
 4. After login to the Ranger,Navigate to **Settings**>**Users/Groups/Roles**.
-   ![1679406046543](image/create-hadoop-user/1679406046543.png)
-5. Click the **Group** tab and click the "**Add New Group**" button,
-   ![1679406253389](image/create-hadoop-user/1679406253389.png)
+   ![login_ranger_main](image/create-hadoop-user/02-login_ranger_main.png)
+5. Click the **Group** tab and click the "**Add New Group**" button.
+   ![ranger_add_group01](image/create-hadoop-user/03-ranger_add_group01.png)
 6. Input the **Group Name** as `writergroup1`.And click the **Save** button to complete add group.
-   ![1679406327236](image/create-hadoop-user/1679406327236.png)
+   ![ranger_add_group02](image/create-hadoop-user/03-ranger_add_group02.png)
 7. Click the **Users** tab and click the "**Add new User"**.
-   ![1679406556538](image/create-hadoop-user/1679406556538.png)
+   ![ranger_add_user02](image/create-hadoop-user/04-ranger_add_user02.png)
 8. Input the **User Name** as `hwriter` and **Password**, and choose the **Group** as `writergroup1` . And click the **Save** button to complete add user.
-   ![1679406600393](image/create-hadoop-user/1679406600393.png)
+   ![ranger_add_user03](image/create-hadoop-user/04-ranger_add_user03.png)
 9. Preapare the Hive database named as bdws and create t_employee table under bdws database. ssh to **Utility node 0**, And use the **hive** cli to create database and table. Following are the script we should prepared.
 
    ```
@@ -362,19 +362,19 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
    insert into t_employee values('Zhongfan',1,29,'2016-09-01',3000,'CN');
    ```
 10. Navigate to **Access Manager**>**Resource Based Policies**, and click **traningcl_hive** in the HADOOP SQL.
-    ![1679407907642](image/create-hadoop-user/1679407907642.png)
+    ![ranger_hive_policy01](image/create-hadoop-user/05-ranger_hive_policy01.png)
 11. Click the "**Add New Policy**",
-    ![1679408012751](image/create-hadoop-user/1679408012751.png)
+    ![ranger_hive_policy02](image/create-hadoop-user/05-ranger_hive_policy02.png)
 12. Setting the policy info as below ,then click the "**Add**" button.
-    ![1679408074631](image/create-hadoop-user/1679408074631.png)
+    ![ranger_hive_policy03](image/create-hadoop-user/05-ranger_hive_policy03.png)
 
-![1679408156052](image/create-hadoop-user/1679408156052.png)
+![ranger_hive_policy04](image/create-hadoop-user/05-ranger_hive_policy04.png)
 
-![1679408183078](image/create-hadoop-user/1679408183078.png)
+![ranger_hive_policy05](image/create-hadoop-user/05-ranger_hive_policy05.png)
 
 13.After add the hive policy, there have new policy named as `writerpolicy1` in the list.
 
-![1679409759654](image/create-hadoop-user/1679409759654.png)
+![ranger_hive_policy06](image/create-hadoop-user/05-ranger_hive_policy06.png)
 
 14.Following the Task **4: Create the training Administrator Kerberos Principal** to create the `hwriter` principal.
 
@@ -390,7 +390,7 @@ In this step, you ssh to Utility node 0 to select/insert data to hive table via 
 #klist
 ```
 
-![1679408902548](image/create-hadoop-user/1679408902548.png)
+![klist01](image/create-hadoop-user/06-klist01.png)
 
 3. Use the `beeline` command, and executing following command:
 
@@ -403,17 +403,17 @@ insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN');
 ```
 
 Here is the **beeline** command output:
-![1679409173404](image/create-hadoop-user/1679409173404.png)
+![hive_beeline_login](image/create-hadoop-user/07-hive_beeline_login.png)
 
 Here is the `use bdws` and `show tables` output.
-![1679409275190](image/create-hadoop-user/1679409275190.png)
+![hive_beeline_showtables](image/create-hadoop-user/07-hive_beeline_showtables.png)
 
 Here is the `select * from t_employee` output.
-![1679409311626](image/create-hadoop-user/1679409311626.png)
+![hive_beeline_select_table](image/create-hadoop-user/07-hive_beeline_select_table.png)
 
 Here is the `insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN')` output.
-![1679409473418](image/create-hadoop-user/1679409473418.png)
-![1679409500815](image/create-hadoop-user/1679409500815.png)
+![hive_beeline_insert01](image/create-hadoop-user/08-hive_beeline_insert01.png)
+![hive_beeline_insert02](image/create-hadoop-user/08-hive_beeline_insert02.png)
 
 You may now [proceed to the next lab](#next).
 
