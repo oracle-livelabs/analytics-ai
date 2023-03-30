@@ -1,4 +1,4 @@
-#  (Advanced Session) Access Anomaly Detection Service with REST API
+#  (Advanced Session) Access Anomaly Detection Service with Python SDKs
 
 ## Introduction
 
@@ -26,7 +26,7 @@ You can set up those configuration and execute those codes in the Oracle Cloud S
 
 > **Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
-## TASK 1: Setup API Signing Key
+## Task 1: Setup API Signing Key
 
 We need to generate proper authentication configuration (API Signing Key pair) in order to use OCI CLI to communicate properly to the services on your behalf.
 
@@ -64,7 +64,7 @@ key_file=<path to your private keyfile> # TODO </copy>
 
 To know more about API key and config file, please visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
-## TASK 2: Activate Cloud Shell with Configuration
+## Task 2: Activate Cloud Shell with Configuration
 
 ### 1. Get permission to Use Cloud shell
 
@@ -114,7 +114,7 @@ Then save the file (CTRL+X), and update the file permission to be accessible by 
 The final structure of `.oci` folder will be like this:
 ![cloud shell oci folder](../images/cloud-shell-oci-folder.png " ")
 
-## **TASK 3:** Python SDK Code Snippets
+## Task 3: Python SDK Code Snippets
 
 The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 

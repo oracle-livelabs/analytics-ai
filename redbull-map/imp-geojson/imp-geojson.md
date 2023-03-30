@@ -24,31 +24,31 @@ This lab assumes you have:
 
 1. Select the triple bar icon (**Navigator**)
 
-    ![](./images/navigator.png)
+    ![Select the triple bar "navigator" icon](./images/navigator2.png)
 
 2. Select **Console**  
 
-    ![](./images/console.png)
+    ![Navigate down to "Console"](./images/console2.png)
 
 
 3. Select **Maps**  
 
-    ![](./images/maps.png)
+    ![Select "Maps"](./images/maps.png)
 
 4. Select **Map Layers**  
 
-    ![](./images/map-layers.png)
+    ![Select "Map Layers"](./images/map-layers.png)
 
 5. **Add Custom** **Map Layer**  
 
-    ![](./images/custom-map-layers.png)
+    ![Add a custom map layer](./images/custom-map-layers.png)
 
 6. Browse to your geoJSON file you created. If successful, you will see  a window asking for your layer name and which field you will use to map to your data. 
 
     In case you haven't created your own geoJSON, you can download [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
     > **Note:** if your file does not upload successfully, ensure you entered in a unique id for each property.  
 
-    ![](./images/zandvoort-sector-line.png)
+    ![Upload your geoJSON LineString file](./images/zandvoort-sector-linestring2.png)
 
 7. Click **add Custom Map Layer** to load your second map layer
 
@@ -56,15 +56,15 @@ This lab assumes you have:
 
     In case you haven't created your own geoJSON, you can download [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
-    ![](./images/zandvoort-sector-point.png)
+    ![Upload your geoJSON point file](./images/zandvoort-sector-point2.png)
 
 9. Click **Go back** arrow from top left
 
-    ![](./images/go-back.png)
+    ![Click the arrow to go back](./images/go-back.png)
 
 10. Click **Navigator** and select **Home**
 
-    ![](./images/home-page.png)
+    ![Navigate to Home](./images/home-page2.png)
 
 You have now loaded your custom **Map Layers** into OAC.  
 Next we will associate the LineStrings and Points to your data.
@@ -77,4 +77,4 @@ You may now *proceed to the next lab*.
 
 - **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
 - **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021)
+- **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023

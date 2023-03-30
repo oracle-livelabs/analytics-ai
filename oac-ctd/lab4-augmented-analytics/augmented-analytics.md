@@ -121,6 +121,7 @@ A wide variety of visualization are available to you.
 ![](images/13_horizontal_bar.png " ")
 
 The list of Hotel vendors appears. Now you need to filter it to Porto and to find the related ones.
+
 6. Click “Destination City” and drag it to “Filters”. Please note this filter is specific to visualization and not to entire canvas.
 
 ![](images/14_destination_city_filter.png " ")
@@ -143,8 +144,15 @@ was highlighted by the Explain).
 
 Someone could say you have finish, but you are a professional that looks for outstanding results.
 You try to walk the extra mile in the next exercise.
+But before, let’s save our work.
+1.	Click on the Save Icon.
 
 ![](images/17_root_cause_final.png " ")
+
+2.	Give it a name, ie: OAC\_TD\_Analysis\_IF
+3.	Click Save
+
+![](images/18_save_project.png " ")
 
 ## End of Exercise 4
 

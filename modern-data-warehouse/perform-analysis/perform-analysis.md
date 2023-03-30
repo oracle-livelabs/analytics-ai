@@ -22,7 +22,7 @@ Note: Please download the file above before continuing.
 
 ## Task 1: Setting up the EBS Analytics Project in OAC
 
-As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
+As previously mentioned, when you create the stack the links to some resources do not appear in the **Associated Resources** tab. In our case, you want to get to the Analytics Cloud instance, but the link is not provided.
 
 ![](./images/5.31.png " ")
 
@@ -30,7 +30,7 @@ As previously mentioned, when you spin up the stack the links to some resources 
 	
 	![](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
 
-2. Choose the right compartment and then select your analytics instance. In the page that opens up, click on **Analytics Home Page** to login to the analytics cloud instance.
+2. Choose the right compartment and then select your analytics instance. In the page that opens, click on **Analytics Home Page** to login to the analytics cloud instance.
 
     ![](./images/5.35.png " ")
 
@@ -62,7 +62,7 @@ As previously mentioned, when you spin up the stack the links to some resources 
 
     ![](./images/5.8.png " ")
 
-7. We will now refresh our data sets to utilize our connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**.
+7. You will now refresh our data sets to utilize our connection. Select the **Data Sets** tab and you will see all the tables appear below. Go ahead and reload each data set by clicking on the ellipses menu to the right of the data set's name and selecting **Reload Data**.
 
     ![](./images/5.9.png " ")
 

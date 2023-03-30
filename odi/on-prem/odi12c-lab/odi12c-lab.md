@@ -1,4 +1,4 @@
-# Getting Started
+# Get Started
 
 ## Understanding the Environment  
 
@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 The examples in this getting started tutorial track sales from various heterogeneous data sources issued from the production systems. This diagram illustrates the sample environment:
-   ![](./images/odi_demo_architecture.png)
+   ![ODI demo architecture](./images/odi_demo_architecture.png)
 
 Refer to the Appendix for more.
 
@@ -46,10 +46,10 @@ This section describes how to start Oracle Data Integrator Studio. You can skip 
 
     Upon launching Studio the first time, you will be prompted with an Import Preferences screen. Proceed to click **No**. The ODI Studio client will continue to load. Click on Connect to Repository then ensure the Login Name is set to ODI Getting Started and click OK.
 
-   ![](./images/odi_studio.png)
+   ![Connect To Repository](./images/odi_studio.png)
 
-3. When prompted for a wallet password enter *welcome1*
-   ![](./images/odi_password.png)
+3. When prompted for a wallet password enter *Welcome1#*
+   ![ODI Studio login](./images/odi_password.png)
 
 ## Task 2: Designer Navigator
 Designer Navigator is used to manage metadata, to design data integrity checks, and to build transformations.
@@ -58,7 +58,7 @@ The main objects you handle through Designer Navigator are *models* and *project
   * The projects contain all of the loading and transformation rules for your data servers (mappings, procedures, variables, etc.)
 
 The Designer Navigator appears as:
-   ![](./images/odi_navigator.png)
+   ![Designer tab](./images/odi_navigator.png)
 
 The Designer Navigator has the following accordions:
 
@@ -88,7 +88,9 @@ The Operator Navigator has the following accordions:
 | Load Plans and Scenarios | The Scenarios accordion displays the list of scenarios available. |
 | Solutions                | The Solutions accordion contains the Solutions that have been created when working with version management. |
 
-## **Appendix:**  Sample ODI Environment
+You may now proceed to the next lab.
+
+## Appendix:  Sample ODI Environment
 The example environment described in this lab uses the following elements:
 
   * *The Repository:* The Repository contains all of the metadata required for the getting started demo examples.
@@ -119,7 +121,7 @@ technology and includes six datastores:
 
 A schema diagram of this data model:
 
-   ![](./images/odi_oders_schema_diagram.png)
+   ![Data model schema diagram](./images/odi_oders_schema_diagram.png)
 
 Note that this data model does not enforce any foreign key constraints,
 even if some functional relations exist between the data.
@@ -131,7 +133,7 @@ two datastores:
   * SRC\_SALES \_PERSON
   * SRC\_AGE\_GROUP
 
-   ![](./images/parameters_schema_diagram.png)
+   ![Data stores](./images/parameters_schema_diagram.png)
 
 4. Sales Administration -- Oracle
 
@@ -144,7 +146,7 @@ The *Sales Administration* data model is based on the Oracle RDBMS technology an
   * TRG\_REGION
   * TRG\_SALES
 
-   ![](./images/salesadmin_schema_diagram.png)
+   ![Sales Administration data model](./images/salesadmin_schema_diagram.png)
 
 4. Integration Challenges
 
@@ -170,7 +172,6 @@ The examples used in this tutorial illustrate how to address these issues. Durin
 
 **Note:** In this tutorial, we will be looking at processes that focus on ETL. While it is beyond the scope of this workshop, implementing different integration patterns (real-time, for example) can be carried out in the same fashion.
 
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)
