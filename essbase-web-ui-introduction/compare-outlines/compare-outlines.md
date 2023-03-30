@@ -51,7 +51,7 @@ This lab assumes you have:
 
 3. In the **Compare outline** dialog box, keep the **(Current)** connection and select the **Source** application and the **Basic** database.
 
-Alternatively, you can select a connection to another server in the **Connection** drop down menu, and compare two outlines on different servers.
+   Alternatively, you can select a connection to another server in the **Connection** drop down menu, and compare two outlines on different servers.
 
 4. Click **Open**, and **Source.Basic** is opened to the right of **Target.Basic**. Notice that **Source.Basic** is read only. The read only outline is the source outline. The writeable outline is the target outline.
 
