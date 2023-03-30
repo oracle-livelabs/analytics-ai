@@ -133,14 +133,14 @@ Select files from you local machine, and upload the odh_bootstrap_update_config.
 
 11. Right click the bootstrap file, and click “**Create Pre-Authenticated Request**”.
 
-![creat_par01](image/create-cluster/09-creat_par01.png)
+![create_par01](image/create-cluster/09-create_par01.png)
 
-![creat_par02](image/create-cluster/09-creat_par02.png)
+![create_par02](image/create-cluster/09-create_par02.png)
 
 12.Click the“**Create Pre-Authenticated Request**” button to finish it. There will have
 Pre-Authenticated Request Details page display. And Copy the Pre-Authenticated Request URL. You can use this URL in the **Task 1: Create a cluster 's step 10**.
 
-![copy_par](image/create-cluster/10-copy_par.png)
+![copy_par01](image/create-cluster/10-copy_par01.png)
 
 Here is the URL sample:
 
