@@ -25,8 +25,6 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Import two sample cubes
 
 1. On the **Applications** page, click **Import**.
@@ -52,7 +50,6 @@ This lab assumes you have:
     ![Image of the outline toolbar with the To compare outlines icon selected](images/compare-outlines-toolbar-icon.png)
 
 3. In the **Compare outline** dialog box, keep the **(Current)** connection and select the **Source** application and the **Basic** database.
-
 
 Alternatively, you can select a connection to another server in the **Connection** drop down menu, and compare two outlines on different servers.
 
@@ -114,6 +111,6 @@ Note: The search bar does not open for the target outline when it is from an Ess
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
