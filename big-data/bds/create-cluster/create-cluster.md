@@ -78,7 +78,7 @@ update_ambari_config
 
 ```
 
-You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh).
+You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh).
 
 **Task 2:Upload the bootstrap script to object storage**
 
@@ -133,18 +133,18 @@ Select files from you local machine, and upload the odh_bootstrap_update_config.
 
 11. Right click the bootstrap file, and click “**Create Pre-Authenticated Request**”.
 
-![Creat_PAR01](image/create-cluster/09-Creat_PAR01.png)
+![creat_par01](image/create-cluster/09-creat_par01.png)
 
-![Creat_PAR02](image/create-cluster/09-Creat_PAR02.png)
+![creat_par02](image/create-cluster/09-creat_par02.png)
 
 12.Click the“**Create Pre-Authenticated Request**” button to finish it. There will have
 Pre-Authenticated Request Details page display. And Copy the Pre-Authenticated Request URL. You can use this URL in the **Task 1: Create a cluster 's step 10**.
 
-![Copy_PAR](image/create-cluster/10-Copy_PAR.png)
+![copy_par](image/create-cluster/10-copy_par.png)
 
 Here is the URL sample:
 
-[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh)
+[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh)
 
 ## Task 1: Create a Cluster
 
