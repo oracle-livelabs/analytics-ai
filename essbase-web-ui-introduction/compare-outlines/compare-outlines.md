@@ -91,8 +91,7 @@ This lab assumes you have:
 
 5. Right click **Product**, and select **Paste**, and then **As child**.
 
-
-**Audio** and its children are added as children of **Product**.
+   **Audio** and its children are added as children of **Product**.
 
 ## Task 7: Search either the source or the target outline
 
@@ -100,8 +99,7 @@ This lab assumes you have:
 
 2. Notice that search bars open for both **Source.Basic** and **Target.Basic**, allowing you to search either one.
 
-
-Note: The search bar does not open for the target outline when it is from an Essbase version prior to 21c.
+   Note: The search bar does not open for the target outline when it is from an Essbase version prior to 21c.
 
 ## Learn More
 
