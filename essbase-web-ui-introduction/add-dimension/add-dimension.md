@@ -76,7 +76,7 @@ This lab assumes you have:
 
 7. For **File**, navigate to **add\_products\_with\_aliases.txt** in the **Shared** folder.
 
-8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild_dataload**. Select **add_products_with_aliases.txt** and then click **Select**.
+8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild\_dataload**. Select **add\_products\_with\_aliases.txt** and then click **Select**.
 
 9. For **File Type**, select **Delimited**.
 
