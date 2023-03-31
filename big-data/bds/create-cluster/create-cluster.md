@@ -28,6 +28,7 @@ If you want to use the bootstrap script to create the BDS cluster, please prepar
 
 **Task 1:Prepare the bootstrap**
 
+
 When you create BDS cluster, you can use the Bootstrap script to install, configure , and manage custom components in a cluster. You can config the following parameter in YARN and Hive:
 yarn.scheduler.maximum-allocation-mb:4096
 yarn.scheduler.maximum-allocation-vcores:2
@@ -82,17 +83,16 @@ You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-a
 
 **Task 2:Upload the bootstrap script to object storage**
 
+
 You can create the bucket and upload the bootstrap script to it. Following are the steps:
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 2. Click the **Navigation** menu and navigate to **Storage > Buckets.**
-
-  ![reate-bucket-navigate](./images/02-create-bucket-navigate.png " ")
+![reate-bucket-navigate](./images/02-create-bucket-navigate.png " ")
 
 3. On the **Buckets** page, click **Create Bucket**.
-
-   ![Create_bucket01](image/create-cluster/01-create_bucket01.png)
-
+ ![Create_bucket01](image/create-cluster/01-create_bucket01.png)
+ 
 4.At the **Create Bucket** wizard, provide the Bucket details as follows:
 
 ·**Bucket Name:**  **traning-bucket** .
@@ -179,6 +179,7 @@ Create the HA cluster as follows:
    * **Cluster Version:** This read-only field displays the latest version of ODH that is available to Oracle which is deployed by BDS.
 
    ![cluster_cluster](image/create-cluster/17-ceate_cluster01.png)
+
 5. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
    * **Choose Instance Type:** **`Virtual Machine`**.
@@ -225,9 +226,11 @@ Create the HA cluster as follows:
    **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
    ![img](./images/create-cluster-5.png " ")
-10. (Optional)In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（Optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
 
+10. (Optional)In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（Optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
+    You can can use the Bootstrap script to install, configure, and manage custom components in a cluster.
     ![img](./images/01-create-cluster-bootstrap.png " ")
+    
 11. Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 
 ![img](./images/status-creating.png " ")
@@ -317,6 +320,7 @@ To add nodes to a cluster as follows:
 1. On the cluster details page, click the **Add Nodes** button.
 
    ![add_node01](image/create-cluster/11-add_node01.png)
+
 2. In **Add Nodes** panel that appears, enter the following details:
 
 * **Node type**: Select the node type. The available options are as follows:
@@ -328,6 +332,7 @@ To add nodes to a cluster as follows:
 * **Block storage per node** : This read-only field displays the block storage used for the existing worker nodes. The same amount of storage is used for all the nodes you add.
 * **Number of worker nodes**: Enter the number of worker nodes or compute only worker nodes to be added to the cluster. A cluster can have from 3 to 256 worker nodes. An ODH cluster can have from 0 to 256 compute worker nodes.
 * **Cluster admin password**: Enter the administration password for the cluster.
+
 
   ![add_node02](image/create-cluster/11-add_node02.png)
 

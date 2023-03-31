@@ -113,7 +113,7 @@ You should have something like the screenshot. Then click OK.
 Once the join has been defined you can go back to the Visualize tab to continue your analysis.
 10. Click on “Visualize” at the top center.
 
-![](images/12_vizualise.png " ")
+![](images/12_visualize.png " ")
 
 On the Data menu at the left you note that the new Data Set has been added.
 
@@ -134,7 +134,7 @@ You want to compare the total Hotel Expenses with the amount that can be saved i
 To obtain the savings you need to calculate the expenses multiplied by the agreement discount (that has not been applied).
 1. Select “My Calculations” and Right-click on it. Select “Add Calculation”
 
-My calculations are at the bottom of the Data Pane, use the slider to find it if your screen resolution is too small and it is not appearing.
+My calculations are at the bottom of the explorer, use the slider to find it if your screen resolution is too small and it is not appearing.
 
 ![](images/15_Add_Calculation.png " ")
 
@@ -151,8 +151,7 @@ On the pop-up window you can define the formula of the calculation using the edi
 ![](images/17_validate_save.png " ")
 
 
-4. Click and Drag the new calculation “Saving” to the top right part of the canvas.
-Check that the vertical green bar only covers the “Expenses Amount” right border. This means the visual will be placed next to it.
+4. Click and Drag the new calculation “Savings” below the “Expense mount” tile.
 
 ![](images/18_drag_saving.png " ")
 
@@ -162,7 +161,7 @@ Great. Now you would like to make this more appealing so you will work on the lo
 
 ![](images/19_select_properties.png " ")
 
-6. Look for the “Number Format” parameter and click on “Auto” . Select “Currency”
+6. Select the 2nd tab with the hash icon and look for the “Number Format” parameter and click on “Auto” . Select “Currency”
 
 ![](images/20_select_currency.png " ")
 
@@ -178,55 +177,79 @@ Repeat the steps for the “Expense Amount” tile (remember to first select the
 
 ![](images/23_tiles.png " ")
 
-9. Click on the Map and Drag it to the right border of the canvas.
+9.	Click on “Savings” tile and drag it to the right of the “Expense Amount” tile.
 
-![](images/24_select_map.png " ")
+![](images/23_1_select_savings.png " ")
 
-10. Drop it when the green bar shows that Map will be placed next to the Horizontal Bar visual but not covering the whole right border.
+10. The visualization will disappear and move. Drop it when you see the green bar close to the “Expense Amount” tile
 
-![](images/25_drag_map.png " ")
+![](images/23_2_drag_savings.png " ")
 
-11. Click on the Horizontal Bar visual and drag it to the bottom left, under the Line Chart
-
-![](images/26_drag_bar_graph.png " ")
-
-12. Drop it when the green bar shows that will be under the line chart but not the whole bottom line.
-
-![](images/27_drop_bar_graph._bottom.png " ")
-
-13. Click on the Savings visual to select it.
+11. Click on the Savings visual to select it.
 
 ![](images/28_select_savings.png " ")
 
-14. On the properties box, search for the “Background” parameter and click on “Auto” to switch to “Custom”.
+12. On the properties box, search for the “Background” parameter and click on “Auto” to switch to “Custom”.
 
 ![](images/29_background.png " ")
 
-15. Under the new options of “Custom” search for the “Fill Color” parameter and click on the white box.
-    Select a blue color (no need to be the same, but if you like you can copy the code on the hex box: #659aad)
+13. Under the new options of “Custom” search for the “Fill Color” parameter and click on the white box.
+    Select a green color (no need to be the same, but if you like you can copy the code on the hex box: #317a45)
     Click on OK to apply the changes.
 
 ![](images/30_fill_color.png " ")
 
 
-16. On the properties box, search now for the “Value Font” parameter and click on “Auto”.
-    On the pop-up click on the Font Color Icon and choose appropriate color from the available colors.
+14. On the properties box, search now for the “Value Font” parameter and click on “Auto”.
 
 ![](images/31_select_value_font_color.png " ")
 
-Great. This is a nice dashboard now. You can save your work.
+15. On the pop-up click on the Font Color Icon and assign a white color, ie: #ffffff.
 
-17. Click on “Save” at the top right corner.
+![](images/31__1_fill_color.png " ") 
 
-![](images/32_save_project.png " ")
 
-18. Put a name to your project. Click on “Save”
+Now our Workbook is ready to be shared.
+To make it even more easy for others to follow our discovery journey we can add comments to collaborate and better explain.
 
-![](images/33_name_save.png " ")
+16. Click on the Notes drop-down arrow and select “Add Note”
+
+![](images/35_add_note.png " ") 
+
+17. A new note will appear on the center of the canvas.
+Add a text to the note, for example:
+“Porto City Center Hotel” is the outlier as its not applying the agreement discount
+Click outside the note to save it.
+
+![](images/36_note_text.png " ") 
+
+18. Notes can be linked to datapoints to relate the information and explanations.
+
+Hover close to the note boundaries to see connection dots. Click on one of the dots and drag the line up to the top Scatter Plot point belonging to “Porto City Center”
+
+![](images/37_link_note.png " ") 
+
+19. Notes can also be moved to other places in the canvas.
+To see how the resulting workbook will look, a preview option is provided.
+
+Click on the Play Icon
+
+![](images/38_preview_workbook.png " ") 
+
+20. Interactivity is still available in the Preview mode.
+
+Click on the scatter point and see how related data is highlighted on all the visualizations. This clearly indicates that is the biggest outlier and expenses from this hotel are processed as out-of-policy.
+
+![](images/39_preview_mode.png " ") 
+
 
 **Well done!** You have completed all exercises. Now you are ready to show this info to your manager.
 
-![](images/34_final_project.png " ")
+![](images/40_final_project.png " ")
+
+
+
+
 
 
 ## End of Exercise 5

@@ -342,6 +342,7 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
    ![ranger_add_user02](image/create-hadoop-user/04-ranger_add_user02.png)
 8. Input the **User Name** as `hwriter` and **Password**, and choose the **Group** as `writergroup1` . And click the **Save** button to complete add user.
    ![ranger_add_user03](image/create-hadoop-user/04-ranger_add_user03.png)
+
 9. Preapare the Hive database named as bdws and create t_employee table under bdws database. ssh to **Utility node 0**, And use the **hive** cli to create database and table. Following are the script we should prepared.
 
    ```
@@ -362,6 +363,7 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
    insert into t_employee values('Zhongfan',1,29,'2016-09-01',3000,'CN');
    ```
 10. Navigate to **Access Manager**>**Resource Based Policies**, and click **traningcl_hive** in the HADOOP SQL.
+
     ![ranger_hive_policy01](image/create-hadoop-user/05-ranger_hive_policy01.png)
 11. Click the "**Add New Policy**",
     ![ranger_hive_policy02](image/create-hadoop-user/05-ranger_hive_policy02.png)
@@ -389,7 +391,6 @@ In this step, you ssh to Utility node 0 to select/insert data to hive table via 
 #kinit hwriter
 #klist
 ```
-
 ![klist01](image/create-hadoop-user/06-klist01.png)
 
 3. Use the `beeline` command, and executing following command:
@@ -403,6 +404,7 @@ insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN');
 ```
 
 Here is the **beeline** command output:
+
 ![hive_beeline_login](image/create-hadoop-user/07-hive_beeline_login.png)
 
 Here is the `use bdws` and `show tables` output.
