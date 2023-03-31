@@ -74,9 +74,9 @@ This lab assumes you have:
 
 6. For the **Source Type**, select **File**.
 
-7. For **File**, navigate to **add\_products\_with\_aliases.txt** in the **Shared** folder.
+7. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder.
 
-8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild\_dataload**. Select **add\_products\_with\_aliases.txt** and then click **Select**.
+8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild-dataload**. Select **add-products-with-aliases.txt** and then click **Select**.
 
 9. For **File Type**, select **Delimited**.
 
@@ -112,7 +112,7 @@ This lab assumes you have:
 
 3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
 
-4. For **File**, navigate to **add\_products\_with\_aliases.txt** in the **Shared** folder, and select it.
+4. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder, and select it.
 *Do I need to select a restructure option here?*
 
     ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
@@ -131,7 +131,7 @@ This lab assumes you have:
 
 2. On the **Reports** tab, click **Create**.
 
-3. Enter a **Name** for the report, such as **MDX_500**.
+3. Enter a **Name** for the report, such as **MDX-500**.
 
 4. In the **Query** field, paste the following MDX query:
 
