@@ -54,6 +54,6 @@ This lab assumes you have:
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
-* **Last Updated By/Date** - Jitender Singh, September 2021
+* **Author** - Amal Sharma, Principal Cloud Architect, NA Cloud Engineering
+* **Contributors** -  Mukund Bhashkar, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Amal Sharma, February 2023

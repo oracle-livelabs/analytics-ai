@@ -71,24 +71,10 @@ On the OAC Home Page
 
 NOTE that you probably won’t have the same list of projects and datasets.
 
-Try Out or Switch to Oracle's Redwood Theme
-
-On the home page you will presented with the pop up box with option to preview Oracle Analytics Redwood look.
-Click on Preview it.
-
-![](images/2a_redwood_preview.png " ")
-
-To switch on the Redwood theme for everyone, go to the System Settings page and set the Preview Redwood Theme property.
-
-Click on Preview option in system setting page.
-
-![](images/2b_preview_redwood_theme.png " ")
-
-Note:In the future, Oracle's Redwood theme will be the default look and feel and you won't be able to switch it on or off.
 
 ## **Task 3**: Load an excel file
 
-Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
+Donwload the file: [OAC\_TD\_Expenses.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
 
 1. Click on “Create”
 
@@ -113,10 +99,14 @@ The explorer window appears.
 
 The file gets uploaded and parsed.
 
-
 On the screen you have a preview of the data.
-1. Change the Name of the dataset adding your initials at the end, to avoid clashing with other attendees, for instance: OAC_TD_Expenses_JAMP
-2. Click on “Add”
+1. Click OK
+
+![](images/5a_upload_file.png " ")
+
+
+You are redirected to the Dataset definition screen. Here you could create a compound dataset made of several sources. 
+1. Click on the bottom tab to edit the dataset.
 
 ![](images/6_data_prep_step.png " ")
 
@@ -156,14 +146,19 @@ The engine detected this field as a Geo-country info so it suggests enhancements
 Again, preparation preview gets applied and new column is highlighted.
 
 This is enough for the exercise needs.
-1. Click “Apply Script” Once the steps are applied to your data the button will get grayed out.
+1. Click “Save” 
+2. Give it a name adding your name as suffix, ie: OAC\_TD\_Expenses\_IF 
+3. Click OK
 
-![](images/11_apply_script.png " ")
+![](images/11_save_data_set.png " ")
 
 Data is now ready to be used, however, to have access to one of the easiest methods, you need to enable searching on the dataset.
 
 To do so:
 1. Naviagte to home screen by clicking Go back arrow from top left corner.
+
+![](images/11a_navigate_home_page.png " ")
+
 2. Click on the Navigator menu (“burger” icon) on the top left corner.
 3. Click on “Data”
 
@@ -180,7 +175,8 @@ The one at the top should be the file you just created.
 This menu allows you to configure the access to the file and data.
 
 Here is were you can allow the search engine to run on the data and be “searchable” through the BIAsk bar.
-1. Click on Search
+1. Confirm that “Enable Insights” checkbox is market 
+2. Click on “Search” tab
 
 ![](images/14_search_inspect.png " ")
 
@@ -190,22 +186,26 @@ Search option can be configured in detail and for several Languages.
 ![](images/15_index_searching.png " ")
 
 Default settings are enough as your data is in English and searching by names fits with the needs of the exercise.
-1. Click on “Save”
-2. Click on “Close”
+
+1. Click on Run Now button
+2. Click on “Save”
+3. Click on “Close”
 
 ![](images/16_save_close.png " ")
 
-Search engine daemon runs in background every 2-3 minutes. You need to wait that time to be sure data is crawled.
+Search engine daemon runs in background every 2-3 minutes. 
 
-So, time for a coffee or a short talk from your instructor.
+File configuration is done. Go to home screen to start analysing. 
+1. Click on the Navigator menu (“burger” icon) on the top left corner. 
+2. Click on “Home”
 
 ![](images/17_home.png " ")
 
 
-## End of Exercise 1
+### End of Exercise 1
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023

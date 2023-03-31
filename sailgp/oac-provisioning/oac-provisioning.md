@@ -68,9 +68,9 @@ This lab assumes you have:
    - **Name**: `SailGPAnalytics`
    - **Description**: `Analytics Instance for SailGP Workshop`
    - **Create in Compartment**: `root` compartment, unless you have permissions and experience selecting a different one
-   - **Feature Set**: `Enterprise Analytics`
    - **Capacity**: `OCPU` and `1 - Non Production`
    - **License Type**: `License Included`
+   - **Edition**: `Enterprise Edition`
 
    ![OAC Form](images/oac-form.png)
 
