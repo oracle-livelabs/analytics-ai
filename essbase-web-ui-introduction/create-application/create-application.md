@@ -10,7 +10,7 @@ Estimated Time: -- 10 minutes
 
 In this lab, you will:
 
-* Import the **Sample_Basic.xlsx** application workbook to create an application
+* Import the **Sample\_Basic.xlsx** application workbook to create an application
 * Display active alias names in an outline
 
 ### Prerequisites
@@ -20,7 +20,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Import the Sample_Basic.xlsx application workbook
+## Task 1: Import the Sample\_Basic.xlsx application workbook
 
 1. On the **Applications** page, click **Import**.
 
@@ -28,9 +28,9 @@ This lab assumes you have:
 
 2. In the **Import** dialog box, click **Catalog**.
 
-3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click Sample_Basic.xlsx and click **Select**.
+3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click Sample\_Basic.xlsx and click **Select**.
 
-    ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
+    ![Image of the Select files from catalog dialog box with Sample\_Basic.xlsx selected](images/select-files-from-catalog.png)
 
 4. In the **Import** dialog box, click **OK**.
 

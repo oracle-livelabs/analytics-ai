@@ -16,6 +16,7 @@ In this workshop, you will learn how to:
 * Create a dimension build rule file and build a dimension using Jobs
 * Load data
 * Analyze data in the Essbase web interface
+* Compare two outlines side-by-side
 
 ### Prerequisites
 
