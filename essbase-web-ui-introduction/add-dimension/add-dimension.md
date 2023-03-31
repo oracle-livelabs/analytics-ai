@@ -38,7 +38,7 @@ This lab assumes you have:
 
     ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
 
-6. Type **FY3023** and press Enter.
+6. Type **FY2023** and press Enter.
 
 7. Type **FY2024** and press Enter, then press Escape.
 
@@ -74,7 +74,7 @@ This lab assumes you have:
 
 6. For the **Source Type**, select **File**.
 
-7. For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder.
+7. For **File**, navigate to **add\_products\_with\_aliases.txt** in the **Shared** folder.
 
 8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild_dataload**. Select **add_products_with_aliases.txt** and then click **Select**.
 
@@ -112,7 +112,7 @@ This lab assumes you have:
 
 3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
 
-4. For **File**, navigate to **add_products_with_aliases.txt** in the **Shared** folder, and select it.
+4. For **File**, navigate to **add\_products\_with\_aliases.txt** in the **Shared** folder, and select it.
 *Do I need to select a restructure option here?*
 
     ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
