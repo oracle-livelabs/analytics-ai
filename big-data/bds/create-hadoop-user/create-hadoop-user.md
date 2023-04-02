@@ -313,7 +313,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
    **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
-## Task 8: Use Ranger to add user and config  Hive writer permission
+## (Optional) Task 8: Use Ranger to add user and config  Hive writer permission
 
 In this step, you log into Ranger as an administrator and add the **`hwriter`** user and config hive table write permission to this user. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -342,7 +342,6 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
    ![ranger_add_user02](image/create-hadoop-user/04-ranger_add_user02.png)
 8. Input the **User Name** as `hwriter` and **Password**, and choose the **Group** as `writergroup1` . And click the **Save** button to complete add user.
    ![ranger_add_user03](image/create-hadoop-user/04-ranger_add_user03.png)
-
 9. Preapare the Hive database named as bdws and create t_employee table under bdws database. ssh to **Utility node 0**, And use the **hive** cli to create database and table. Following are the script we should prepared.
 
    ```
@@ -380,7 +379,7 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 
 14.Following the Task **4: Create the training Administrator Kerberos Principal** to create the `hwriter` principal.
 
-## Task 9: Use the Ranger user to access Hive table
+## (Optional) Task 9: Use the Ranger user to access Hive table
 
 In this step, you ssh to Utility node 0 to select/insert data to hive table via Ranger `hwriter` user.
 
@@ -391,6 +390,7 @@ In this step, you ssh to Utility node 0 to select/insert data to hive table via 
 #kinit hwriter
 #klist
 ```
+
 ![klist01](image/create-hadoop-user/06-klist01.png)
 
 3. Use the `beeline` command, and executing following command:
