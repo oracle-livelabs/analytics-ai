@@ -22,7 +22,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
 [](youtube:zpASc1xvKOY)
 
-## Prerequisites（Optional）
+## Prerequisites（optional）
 
 If you want to use the bootstrap script to create the BDS cluster, please prepare the bootstrap script and upload the bootstrap script to object storage. If you don't want to use bootstrap script to create the BDS cluster, you can skip this prerequisties.
 
@@ -223,7 +223,7 @@ Create the HA cluster as follows:
    **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
    ![img](./images/create-cluster-5.png " ")
-10. **(Optional)** In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（Optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
+10. **(optional)** In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
     You can can use the Bootstrap script to install, configure, and manage custom components in a cluster.
     ![img](./images/01-create-cluster-bootstrap.png " ")
 11. Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
@@ -306,7 +306,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/cluster-details-breadcrumb.png " ")
 
-## （Optional）Task 4: Adding Worker and Edge Nodes to a Cluster
+## Task 4: Adding Worker and Edge Nodes to a Cluster（optional）
 
 When you add worker, compute only worker, or edge nodes to a cluster, you expand both compute and storage. The new nodes use the same instance shape and amount of block storage as the existing worker nodes in the cluster.
 
@@ -343,7 +343,7 @@ To add nodes to a cluster as follows:
 
 ![add_node_list](image/create-cluster/14-add_node_list.png)
 
-## （Optional）Task 5: Adding Block Storage to Worker Nodes
+## Task 5: Adding Block Storage to Worker Nodes（optional）
 
 Block storage is a network-attached storage volume that you can use like a regular hard drive. You can attach extra block storage to the worker nodes of a cluster.
 
