@@ -31,7 +31,7 @@ This lab assumes you have:
 
 3. For **Source Type**, select **File**.
 
-4. Navigate to the **load_sales_cogs.txt** data load file. The file is in the **Catalog** under **All Files** > **shared** > **load_sales_cogs.txt**.
+4. Navigate to the **load-sales-cogs.txt** data load file. The file is in the **Catalog** under **All Files** > **shared** > **load-sales-cogs.txt**.
 
 5. Change **Data Load Record** number to 1 because row 0 is the header row in the data file.
 
@@ -61,11 +61,11 @@ This lab assumes you have:
 
 4. Click **Select files from catalog**.
 
-5. Select the **load_sales_cogs.txt** data load file and the **Data500** data load rule file and click **OK**.
+5. Select the **load-sales-cogs.txt** data load file and the **Data500** data load rule file and click **OK**.
 
 6. Look for the green checkmark under **Status** to confirm success. You may need to refresh the page.
 
-7. Open **Analyze Data** and re-run the **MDX_500** MDX query (On the **Reports** tab, double click the query name).
+7. Open **Analyze Data** and re-run the **MDX-500** MDX query (On the **Reports** tab, double click the query name).
 
     Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
 

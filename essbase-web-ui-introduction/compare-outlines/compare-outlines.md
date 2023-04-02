@@ -18,7 +18,7 @@ In this lab, you will:
 * Copy members from the source to the target outline
 * Search the source or the target outline
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
@@ -33,7 +33,7 @@ This lab assumes you have:
 
 2. In the **Import** dialog box, click **Catalog**.
 
-3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click **Sample_Basic.xlsx** and click **Select**.
+3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click **Sample\_Basic.xlsx** and click **Select**.
 
     ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
 
