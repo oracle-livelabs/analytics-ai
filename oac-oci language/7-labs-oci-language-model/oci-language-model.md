@@ -9,9 +9,9 @@ Estimated Time: 60 minutes
 ### Objectives
 
 In this lab, you will:
-* Register OCI Language models in OAC
-* Create Data Flow to run sentiment analysis
-* Create a Workbook to visualize the data
+* Register OCI Language Models in OAC
+* Create Data Flow to Run Sentiment Analysis
+* Create a Workbook to Visualize the Data
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ This lab assumes you have:
 
     ![Register Model One](./images/registerocimodelone.png)
 
-4.  On the **Register a Model** dialog, **click** the name of the connection to your OCI tenancy.
+4.  On the **Register a Language Model** dialog, **click** the name of the connection to your OCI tenancy.
 
     ![Select OCI Tenancy](./images/registerocimodelconnection.png)
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 **Optional**: To confirm that the model was registered successfully, from the **Home** page, click **Navigator**, click **Machine Learning**, then click **Models** to display registered models and confirm that the model was registered successfully. Click **Inspect** to check that you've configured the model correctly
 
  
-## **Task 2**: Create a Data Flow to run sentiment analysis 
+## **Task 2**: Create a Data Flow to Run Sentiment Analysis 
 
 Performing analysis requires the laborious curation, combining, organizing, and regular updating of large spreadsheets and other data sources. Oracle Analytics Cloud simplifies the manual effort of data preparation with the **Data Flows** feature, which enables you to easily create and maintain sophisticated data preparation workstreams that transform raw data sets into exactly what is needed for further analysis. Data flows can be scheduled, easily modified as needed with a visual editor, and enriched with custom calculations. We can also use data flows to train machine learning models, apply AI models such as Language, Vision and etc.
 
@@ -69,17 +69,17 @@ Performing analysis requires the laborious curation, combining, organizing, and 
 
    ![Apply AI Model](./images/applyaimodel.png " ")
    
-4. Now let's choose the model we registered as part of **Task 1** .Choose **Pretrained Sentiment Analysis**. OCI Language models include Language Detection, Text Classification, Key Phrase Extraction, Named Entity etc. For more reading Language Overview [Language Overview](https://docs.oracle.com/en-us/iaas/language/using/overview.htm)
+4. Now let's choose the model we registered as part of **Task 1** .Choose **Pretrained Sentiment Analysis**. OCI Language models include Language Detection, Text Classification, Key Phrase Extraction, Named Entity etc. For more reading check out Language Overview [Language Overview](https://docs.oracle.com/en-us/iaas/language/using/overview.htm)
 
-     ![Choose Model](./images/selectsentimentmodelpng " ")
+    ![Choose Model](./images/selectsentimentmodel.png " ")
 
 5.	Verify the **Output** fields. By default the system generated below output fields. You can select and unselect fields as needed.
-    - Analysis level
-    - Sentiment text
-    - Offset
-    - Length
-    - Sentiment
-    - Scores 
+    - Analysis level - what is being analyzed in the data (a word, phrase, sentence)
+    - Sentiment text - the field in which the model is being applied, in this case reviews
+    - Offset - 
+    - Length - the total charaters of the word, phrase or sentence being analyzed
+    - Sentiment - polarity results such as positive, negative, neutral or mixed
+    - Scores - confi
     - Status Summary 
 
     ![Review Output](./images/reviewoutputcolumns.png " ")
