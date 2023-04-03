@@ -76,33 +76,31 @@ This lab assumes you have:
 
 7. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder.
 
-8. In the **Preview Data** dialog box, click **Catalog**, then navigate to **All Files** > **shared** > **dimbuild-dataload**. Select **add-products-with-aliases.txt** and then click **Select**.
+8. For **File Type**, select **Delimited**.
 
-9. For **File Type**, select **Delimited**.
-
-10. For **Delimiter**, change to **Tab** delimited.
+9. For **Delimiter**, change to **Tab** delimited.
 
     ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
 
-11. Click **Preview data** and check that the results look right, and then click **Proceed**.
+10. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
     ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
 
-12. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
+11. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
-13. Set the **Type** in field 1 to be **Parent**.
+12. Set the **Type** in field 1 to be **Parent**.
 
-14. In **Field - 2** set **Type** to **Alias**.
+13. In **Field - 2** set **Type** to **Alias**.
 
-15. In **Field - 3** set **Type** to **Child**.
+14. In **Field - 3** set **Type** to **Child**.
 
-16. In **Field - 4** set **Type** to **Alias**.
+15. In **Field - 4** set **Type** to **Alias**.
 
     ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
 
-17. Click **Verify**.
+16. Click **Verify**.
 
-18. Click **Save and Close**.
+17. Click **Save and Close**.
 
 ## Task 3: Create a dimension build job
 
