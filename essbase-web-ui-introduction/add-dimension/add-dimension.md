@@ -111,15 +111,16 @@ This lab assumes you have:
 3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
 
 4. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder, and select it.
-*Do I need to select a restructure option here?*
+
+5. For **Restructure Options**, choose **Preserve All Data**.
 
     ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
 
-5. Click **OK**.
+6. Click **OK**.
 
-6. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
+7. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
 
-7. Open the outline and see that the new product 500 group was created.
+8. Open the outline and see that the new product 500 group was created.
 
     ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
 

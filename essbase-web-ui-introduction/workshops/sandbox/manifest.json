@@ -28,6 +28,10 @@
             "filename": "../../load-data/load-data.md"
         },
         {
+            "title": "Lab 4: Compare Outlines",
+        }   "description": "This lab walks you through how to compare two outlines in the Essbase web interface.",
+            "filename": "../../compare-outlines/compare-outlines.md"
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"

@@ -14,14 +14,12 @@ In this lab, you will:
 * Run a data load job
 * Calculate and analyze the newly loaded data
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * An Oracle Cloud account
 * All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Create a data load rule file
 
