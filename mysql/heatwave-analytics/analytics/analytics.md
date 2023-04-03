@@ -27,7 +27,7 @@ In this lab, you will:
     <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
     ```
   
-  	![connect to mysql shell](./images/Lab4-task1.1.png)
+  	![connect to mysql shell](./images/lab4-task1.1.png)
 
   	Run the following query to create a virtual table **`view_analytics`** that will include data from other tables from the database:
 
