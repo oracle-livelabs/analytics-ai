@@ -41,6 +41,10 @@
             "filename": "../../6-labs-visualize-the-data/visualize-the-data.md"
         },
         {
+            "title": "Lab 7: Use OCI Language models in OAC",
+            "filename": "../../7-labs-oci-language-model/oci-language-model.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
