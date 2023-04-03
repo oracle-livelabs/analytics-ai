@@ -1,6 +1,6 @@
 
 {
-      "workshoptitle": "Get Started with Oracle Big Data Service (BDS) HA Using Oracle Distribution of Hadoop(ODH)",
+      "workshoptitle": "Oracle Big Data Service (BDS) HA with Oracle Distribution of Hadoop(ODH)",
       "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
@@ -10,7 +10,7 @@
       }
       ,
       {
-         "title": "Getting Started",
+         "title": "Start with Oracle Big Data Service",
          "description": "Get a Free Trial",
          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
       }
@@ -34,7 +34,7 @@
       }
       ,
       {
-            "title": "Lab 4: Access a BDS Node Using a Public IP Address",
+            "title": "Lab 4: Make BDS Nodes Accessible with Public IP Address",
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../../access-utility-node/access-utility-node.md"
       }

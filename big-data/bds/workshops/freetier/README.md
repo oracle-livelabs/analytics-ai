@@ -1,8 +1,6 @@
-# Welcome to the Getting Started with ODH Hands-on Workshop!
+# Welcome to Oracle Big Data Services using Oracle Distribution of Hadoop(ODH) Hands-on Workshop!
 
-
-The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster using Oracle Distribution of Hadoop(ODH). You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Ambari and Hue to access the cluster, and creating a Hadoop administrator user.
-
+The **Oracle Big Data Service (BDS) using ODH workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster using Oracle Distribution of Hadoop(ODH). You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Ambari and Hue to access the cluster, and creating a Hadoop administrator user.
 
 ## Access the Labs Using Our Web Interface
 

@@ -6,7 +6,6 @@ Estimated Workshop Time: 6 hours
 
 ## What is Oracle Big Data Service?
 
-
 **Oracle Big Data Service (BDS)** provides enterprise-grade Hadoop as a service, with end-to-end security, high performance, and ease of management and upgradeability.
 
 BDS is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, BDS scales to meet an organization’s requirements at a low cost and with the highest levels of security. It includes :
@@ -38,7 +37,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 1:** Prepare your Big Data Service Environment
 - **Lab 2:** Create a BDS Hadoop Cluster
 - **Lab 3:** Add Oracle Cloud SQL to the Cluster
-- **Lab 4:** Access a BDS Utility Node Using a Public IP Address
+- **Lab 4**: Make BDS Nodes Accessible with Public IP Address
 - **Lab 5:** Use Ambari and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
 - **Lab 7:** Upload Data to Hadoop Distributed File System and Object Storage

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. In **Lab 4: Access a BDS Node Using a Public IP Address**, you learned about the different methods that you can use to make the nodes in the cluster publicly available on the internet.
+Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. In **Lab 4: Make BDS Nodes Accessible with Public IP Address**, you learned about the different methods that you can use to make the nodes in the cluster publicly available on the internet.
 
 In this lab, you will map the private IP address of the **first master node** to a new public IP address to make this node publicly available on the internet. _**This assumes that making the IP address public is an acceptable security risk.**_ You will also create a Hadoop Administrator (superuser) that will be used for the Big Data Service Cluster. This user will have full access to all the data and metadata on the cluster.
 
@@ -26,7 +26,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
++ **Lab 4: Make BDS Nodes Accessible with Public IP Address**
 + **Lab 5: Use Ambari and Hue to Access a BDS Cluster**
 
 ## Task 1: Gather Information About the Cluster
