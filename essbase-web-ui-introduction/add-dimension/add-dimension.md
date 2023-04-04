@@ -4,7 +4,7 @@
 
 In this lab, you’ll manually add a dimension to the outline in the application and cube you created in the previous lab, then you’ll create a dimension rule and perform a dimension build to add products to the outline, and finally, you’ll use an MDX query to analyze the data in the cube.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 15 minutes
 
 ### Objectives
 
@@ -164,5 +164,4 @@ Next, we’ll load data to the Product dimension.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

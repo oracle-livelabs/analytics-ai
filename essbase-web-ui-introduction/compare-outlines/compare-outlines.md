@@ -4,7 +4,7 @@
 
 This lab walks you through how to compare two outlines in the Essbase web interface. The outlines must be of the same type, both aggregate storage, or both block storage. They can be on the same Essbase server, or on different Essbase servers.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 10 minutes
 
 ### Objectives
 
@@ -99,7 +99,7 @@ This lab assumes you have:
 
 2. Notice that search bars open for both **Source.Basic** and **Target.Basic**, allowing you to search either one.
 
-   Note: The search bar does not open for the target outline when it is from an Essbase version prior to 21c.
+   > **Note:** The search bar does not open for the target outline when it is from an Essbase version prior to 21c.
 
 ## Learn More
 
@@ -110,5 +110,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

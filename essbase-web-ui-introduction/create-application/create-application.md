@@ -4,7 +4,7 @@
 
 In this lab, you’ll learn how to create an Essbase application by importing a structured Excel file called an application workbook. After you create the application, you’ll view the outline and set it to display active alias names.
 
-Estimated Time: -- 10 minutes
+Estimated Time: -- 5 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Import the Sample\_Basic.xlsx application workbook
+## Task 1: Import an application workbook
 
 1. On the **Applications** page, click **Import**.
 
@@ -28,7 +28,7 @@ This lab assumes you have:
 
 2. In the **Import** dialog box, click **Catalog**.
 
-3. In the **Select Files from Catalog** dialog box, navigate to gallery > Applications > Demo Samples > Block Storage, click Sample\_Basic.xlsx and click **Select**.
+3. In the **Select Files from Catalog** dialog box, navigate to **gallery** > **Applications** > **Demo Samples** > **Block Storage**, click **Sample\_Basic.xlsx** and click **Select**.
 
     ![Image of the Select files from catalog dialog box with Sample\_Basic.xlsx selected](images/select-files-from-catalog.png)
 
@@ -55,5 +55,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

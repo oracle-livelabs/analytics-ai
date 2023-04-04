@@ -4,7 +4,7 @@
 
 In this lab, you’ll create a data load rule file and load data into the cube, then you’ll calculate and analyze the data.
 
-Estimated Time: -- minutes
+Estimated Time: -- 10 minutes
 
 ### Objectives
 
@@ -63,7 +63,7 @@ This lab assumes you have:
 
 6. Look for the green checkmark under **Status** to confirm success. You may need to refresh the page.
 
-7. Open **Analyze Data** and re-run the **MDX-500** MDX query (On the **Reports** tab, double click the query name).
+7. Open **Analyze Data** and re-run the **MDX-500** MDX query.
 
     Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
 
@@ -95,5 +95,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
