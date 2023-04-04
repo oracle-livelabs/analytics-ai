@@ -36,6 +36,7 @@ Click **Create Data Set** button, Click 'Drop data file here or click to browse'
 
     ![Add Data Set](../mash-datasets/images/add-dataset2.png)  
     ![Add Data Set](../mash-datasets/images/add-dataset-3.png)
+    ![Add Data Set](../mash-datasets/images/add-dataset-4.png)
 
 4.  Lets change the properties of the Data Set.  
 Set **CUST\_ID** as an **Attribute** so that we can join to our existing Data Set.  
@@ -48,57 +49,52 @@ Click on **AGE** column, go to **General Property Pane** from bottom left, click
 
     ![Treat As Attribute](../mash-datasets/images/prepscript-ageasattribute.png)
 
-6.  Add the new Data Set.  
-Click **Add** button from top right.
 
-    ![Add Data Set](../mash-datasets/images/add-dataset3.png)
-
-7.  Recommendations on columns are available for the new Data Set as well.  
+6.  Recommendations on columns are available for the new Data Set as well.  
 Lets enhance the city column with population.  
 Select **CITY** column and choose **Enrich CITY with Population** from recommendations.
 
     ![Enhance City with Population](../mash-datasets/images/prepscript-enhancewithpopulation.png)
 
-8.  Lets **group** **Income** into **3 bins**.  
+7.  Lets **group** **Income** into **3 bins**.  
 _Below 70_ in one group, _70-130_ in another and the last group in _Above 130_.  
 Select **INCOME_LEVEL** column, go to **Options** and Click **Group**.
 
     ![Group](../mash-datasets/images/prepscript-group.png)
 
-9.  First group **Below 70**.  
+8.  First group **Below 70**.  
 Type **Below 70** (instead of Group 1) and select A, B and C.
 
     ![Below 70](../mash-datasets/images/prepscript-group1.png)
 
-10.  Add second group. 
+9.  Add second group.
 Click on '+' sign
 
-     ![Add 1st Group](../mash-datasets/images/add-group.png)
+     ![Add 1st Group](../mash-datasets/images/add-group.png =250x*)
 
-11.  Type group name.  
+10.  Type group name.  
 Type **From 70 to 130**  (instead of Group 2)  and select D, E and F
 
      ![From 70 to 130](../mash-datasets/images/prepscript-group2.png)
 
-12.  Add third group.  
+11.  Add third group.  
 Click on '+' sign
 
-     ![Add 2nd Group](../mash-datasets/images/add-group2.png)
+     ![Add 2nd Group](../mash-datasets/images/add-group2.png =250x*)
 
-13.  Type group name.  
+12.  Type group name.  
 Type **Above 130**  (instead of Group 3), select **Add All**.
 
      ![Above 130](../mash-datasets/images/prepscript-group3.png)
 
-14. Type **Income Group** to Name, Click **OK** and Click **Add Step**.
+13. Type **Income Group** to Name, Click **OK** and Click **Add Step**.
 
      ![Add Income Group](../mash-datasets/images/prepscript-group4.png)
 
-14. Apply Script to activate the changes.  
-Click **Apply Script** and **Save**.
+14. Save the workbook dataset as **Customers** and click **OK**.
 
-     ![Apply Script](../mash-datasets/images/apply-script.png)
-     ![Save](../mash-datasets/images/save-script.png)
+     ![Save](../mash-datasets/images/save-dataset.png)
+     ![Save](../mash-datasets/images/save-dataset2.png =300x*)
 
 ## Task 2: Join the Data Sets
 
