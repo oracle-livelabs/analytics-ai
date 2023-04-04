@@ -79,7 +79,7 @@ This lab assumes you have:
 
 2. In the **Select member properties to display** dialog box, clear the selections for **operator** and **data storage type** and click **Apply and Close**. Notice that the displayed columns in both **Target.Basic** and **Source.Basic** change accordingly.
 
-## Task 6: To copy members from the Source outline to the Target outline
+## Task 6: Copy members from the source outline to the target outline
 
 1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/edit-outline-icon.png).
 

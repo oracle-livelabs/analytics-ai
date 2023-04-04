@@ -1,7 +1,7 @@
 {
     "workshoptitle": "Introduction to the Essbase Web Interface",
+    "help": "livelabs-help-essbase_us@oracle.com",
     "tutorials": [
-
         {
             "title": "Introduction",
             "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
