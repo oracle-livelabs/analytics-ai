@@ -27,11 +27,10 @@ This lab assumes you have:
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
+* [Get Started with Essbase 21c](?lab=<essbase-21c>)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
