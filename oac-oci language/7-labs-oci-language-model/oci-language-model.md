@@ -23,13 +23,13 @@ This lab assumes you have:
 
 1.	Sign into Oracle Analytics Cloud.  
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
-    **Navigate** to **Analytics** and then **Analytics Cloud**.  
+    **Navigate** to **Analytics & AI** and then **Analytics Cloud**.  
 
-    ![OAC Web Console](./images/analytics-cloud.png)
+    ![OAC Web Console](./images/ocianalyticscloud.png)
 
 2. **Open** the Cloud Analytics **URL** associated with your instance by using the three dots menu button on the right-hand side of your instance information and select **Analytics Home Page**.  
 
-    ![Cloud Analytics URL](./images/oac-instance.png)  
+    ![Cloud Analytics URL](./images/openanalyticscloud.png)  
     > The **Oracle Analytic**s page will open in a new browser **window/tab**.
 
 3.	On the top right-hand side of the screen, click **3 dots**, then **Register Model/Function**, and then **OCI Language Models**
@@ -76,11 +76,11 @@ Performing analysis requires the laborious curation, combining, organizing, and 
 5.	Verify the **Output** fields. By default the system generated below output fields. You can select and unselect fields as needed.
     - Analysis level - what is being analyzed in the data (a word, phrase, sentence)
     - Sentiment text - the field in which the model is being applied, in this case reviews
-    - Offset - 
+    - Offset - the location where the aspect/sentence starts in the original text
     - Length - the total charaters of the word, phrase or sentence being analyzed
     - Sentiment - polarity results such as positive, negative, neutral or mixed
-    - Scores - confi
-    - Status Summary 
+    - Scores - confidence score for the sentiment. Scores closer to 1 indicate a higher confidence in the label's classification
+    - Status Summary - whether a row from csv was processed or was there any error
 
     ![Review Output](./images/reviewoutputcolumns.png " ")
 
@@ -122,7 +122,7 @@ Before we start visualizing the data let's inspect the output data from the data
     ![Review Dataset](./images/inspectdataset.png " ")
    
 
-3. Now we can create the workbook to analyze the results of sentiment analysis. For this step you can reference **Lab 6** above on various ways of creating visualizations. If needed use the **Data Editor** to massage your data further or combine with other data sets you may have. See below examples of how we can slice and dice the data. Oracle Analytics Cloud has over 45 visuazations available to use, in addition we provide custom extensions to further your visualization capabilities such as the **Text Highlighter** that is being used to highlight sentiment in the below visualizations. [**Oracle Analytics Extensions**](https://www.oracle.com/business-analytics/data-visualization/extensions/)
+3. Now we can create the workbook to analyze the results of sentiment analysis. For this step you can reference **Lab 6** above on various ways of creating visualizations. If needed use the **Data Editor** to massage your data further or combine with other data sets you may have. See below examples of how we can slice and dice the data. Oracle Analytics Cloud has over 45 visualizations available to use, in addition we provide custom extensions to further your visualization capabilities such as the **Text Highlighter** that is being used to highlight sentiment in the below visualizations. [**Oracle Analytics Extensions**](https://www.oracle.com/business-analytics/data-visualization/extensions/)
 
     ![Visualize Data One](./images/visualizedataone.png " ")
 
