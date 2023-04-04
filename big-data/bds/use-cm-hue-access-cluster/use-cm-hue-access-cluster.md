@@ -24,7 +24,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
++ **Lab 4: Make BDS Nodes Accessible with Public IP Address**
 
 ### Video Preview
 
@@ -94,13 +94,11 @@ In this step, you will add ingress security rules to the default security list i
   + For the **DESCRIPTION**, enter **`For Ranger Access on Port 6182`**.
 * Click **Add Ingress Rules**.
 
-
 ![vcn_add_ingressport01](image/use-cm-hue-access-cluster/08-vcn_add_ingressport01.png)
 
 The three ingress rules are added to the **Default Security List**.
 
 ![vcn_add_ingressport02](image/use-cm-hue-access-cluster/08-vcn_add_ingressport02.png)
-
 
 ## Task 2: Use Ambari to Access the Cluster
 
@@ -122,7 +120,6 @@ In this step, you will use Ambari to access the cluster. In an HA-cluster, Ambar
    ```
 3. On the Ambari Login screen, enter your **`username`** which is **`admin`** by default in Ambari. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
-
   ![ambari_login](image/use-cm-hue-access-cluster/01-ambari_login.png)
 
 4. In the Ambari Home page, note the name of the cluster, and the services running on the cluster.
@@ -133,11 +130,9 @@ In this step, you will use Ambari to access the cluster. In an HA-cluster, Ambar
 
   ![ambari_hosts](image/use-cm-hue-access-cluster/03-ambari_hosts.png)
 
-
 The hosts of the cluster are displayed. Hosts are configured with one or more role instances, each of which corresponds to a service. The role indicates which daemon, also known as service, runs on the host. Typically, a host will run multiple roles in support of the various services running in the cluster.
 
 6. Drill-down on the roles associated with the first Master node in the cluster, **`traininmn0`**.
-
 
    ![ambari_one_host](image/use-cm-hue-access-cluster/04-ambari_one_host.png)
 

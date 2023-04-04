@@ -24,9 +24,9 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
 ## Prerequisites（optional）
 
-If you want to use the bootstrap script to create the BDS cluster, please prepare the bootstrap script and upload the bootstrap script to object storage. If you don't want to use bootstrap script to create the BDS cluster, you can skip this prerequisties.
+If you want to use the bootstrap script to create the BDS cluster, please config the bootstrap and upload the bootstrap to object storage.You can use following two steps to do this.
 
-**Task 1:Prepare the bootstrap**
+**1.Config the bootstrap**
 
 When you create BDS cluster, you can use the Bootstrap script to install, configure , and manage custom components in a cluster. You can config the following parameter in YARN and Hive:
 yarn.scheduler.maximum-allocation-mb:4096
@@ -80,7 +80,7 @@ update_ambari_config
 
 You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh).
 
-**Task 2:Upload the bootstrap script to object storage**
+**2.Upload the bootstrap script to object storage**
 
 You can create the bucket and upload the bootstrap script to it. Following are the steps:
 
