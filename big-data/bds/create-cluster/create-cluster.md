@@ -22,7 +22,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
 [](youtube:zpASc1xvKOY)
 
-## Prerequisites（optional）
+### Prerequisites（optional）
 
 If you want to use the bootstrap script to create the BDS cluster, please config the bootstrap and upload the bootstrap to object storage.You can use following two steps to do this.
 
@@ -159,16 +159,17 @@ Your simple HA cluster will have the following profile:
 
 Create the HA cluster as follows:
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
-2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+1.Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+
+2.Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
   ![](./images/big-data.png " ")
 
-3. On the **Clusters** page, click **Create Cluster**.
+3.On the **Clusters** page, click **Create Cluster**.
 
   ![](./images/clusters-page.png " ")
 
-4. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
+4.At the top of the **Create Cluster** wizard, provide the cluster details as follows:
 
    * **Cluster Name:** **`training-cluster`**.
    * **Cluster Admin Password:** Enter a `cluster admin password` of your choice such as **`Training#123`**. You'll need this password to sign into Ambari and to perform certain actions on the cluster through the Cloud Console.
@@ -176,8 +177,9 @@ Create the HA cluster as follows:
    * **Secure & Highly Available (HA):** Select this checkbox, if not already selected, to make the cluster secure and highly available. A secure cluster has the full Hadoop security stack, including HDFS Transparent Encryption, Kerberos, and Apache Sentry. This setting can't be changed for the life of the cluster.
    * **Cluster Version:** This read-only field displays the latest version of ODH that is available to Oracle which is deployed by BDS.
 
-   ![cluster_cluster](image/create-cluster/17-ceate_cluster01.png)
-5. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
+   ![cluster_cluster](image/create-cluster/17-ceate_cluster01.png " ")
+
+5.In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
    * **Choose Instance Type:** **`Virtual Machine`**.
    * **Choose Master/Utility Node Shape:** **`VM.Standard2.4`**. This is the minimum shape allowed for Master and Utility nodes.
@@ -185,7 +187,8 @@ Create the HA cluster as follows:
    * **Number of Master & Utility Nodes** _READ-ONLY_ **:** Since you are creating an HA cluster, this field shows **4** nodes: **2** Master nodes and **2** Utility nodes. For a non-HA cluster, this field would show only **2** nodes: **1** Master node and  **1** Utility node.
 
    ![img](./images/create-cluster-2.png " ")
-6. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
+
+6.In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
    * **Choose Instance Type:** **`Virtual Machine`**.
    * **Choose Worker Node Shape:** **`VM.Standard2.1`**.  This is the minimum allowed shape for Worker nodes.
@@ -193,12 +196,14 @@ Create the HA cluster as follows:
    * **Number of Worker Nodes:** **`3`**. This is the minimum allowed for a cluster.
 
    ![img](./images/create-cluster-3.png " ")
-7. In the **Network Setting > Cluster Private Network** section, provide the following details:
+
+7.In the **Network Setting > Cluster Private Network** section, provide the following details:
 
    * **CIDR Block:** **`10.1.0.0/16`**. This CIDR block assigns the range of contiguous IP addresses available for the cluster's private network that BDS creates for the cluster. This private network is created in the Oracle tenancy and not in your customer tenancy. It is used exclusively for private communication among the nodes of the cluster. No other traffic travels over this network, it isn't accessible by outside hosts, and you can't modify it once it's created. All ports are open on this private network.
 
    **Note:** Use CIDR block **`10.1.0.0/16`** instead of the already displayed **`10.0.0.0/16`** CIDR block range. This avoids overlapping IP addresses since you already used the **`10.0.0.0/16`** CIDR block range for the **`training-vcn`** VCN that you created in **Lab 1**. A CIDR block of **`10.1.0.0/16`** provides you with **`65,536`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.255.255`**. You can decrease the range of available IP addresses to free them for other uses by choosing a CIDR block such as **`10.1.0.0/24`**. This provides you with only **`256`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.0.255`**.
-8. In the **Network Setting > Customer Network** section, provide the following details:
+
+8.In the **Network Setting > Customer Network** section, provide the following details:
 
    * **Choose VCN in `training-compartment`:** **`training-vcn`**. The VCN must contain a regional subnet.   **Note:** Make sure that **`training-compartment`** is selected; if it's not, click the _CHANGE COMPARTMENT_ link, and then search for and select your **`training-compartment`**.
    * **Choose Regional Subnet in `training-compartment`:** **`Public Subnet-training-vcn`**. This is the public subnet that was created for you when you created your **`training-vcn`** VCN in **Lab 1**.
@@ -207,7 +212,8 @@ Create the HA cluster as follows:
    **Note:** Select the **`USE THE GATEWAYS IN YOUR SELECTD CUSTOMER VCN (CUSTOMIZABLE)`** option if you want more control over the networking configuration.
 
    ![img](./images/create-cluster-4.png " ")
-9. In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
+
+9.In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
 
    Linux instances use an SSH key pair instead of a password to authenticate a remote user. A key pair file contains a private key and public key. You keep the private key on your computer and provide the public key when you create an instance. When you connect to the instance using SSH, you provide the path to the private key in the SSH command. Later in **Lab 6**, you will connect to your cluster's master node using the private SSH key that is associated with the public SSH key that you specify here for your cluster.
 
@@ -223,11 +229,12 @@ Create the HA cluster as follows:
    **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
    ![img](./images/create-cluster-5.png " ")
-10. **(optional)** In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
+
+10.**(optional)** In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
     You can can use the Bootstrap script to install, configure, and manage custom components in a cluster.
     ![img](./images/01-create-cluster-bootstrap.png " ")
-11. Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
-
+    
+11.Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 ![img](./images/status-creating.png " ")
 
 ## Task 2: Monitor the Cluster Creation

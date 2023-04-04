@@ -264,8 +264,8 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 4, Access a BDS Node Using a Public IP Address**.
 
-1. Open a Web browser window.
-2. Enter the following URL. Substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **second utility node** in your cluster, **`traininun1`**, which you created in **Lab 4**.
+1.Open a Web browser window.
+2.Enter the following URL. Substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **second utility node** in your cluster, **`traininun1`**, which you created in **Lab 4**.
 
    ```
    https://<ip-address>:8888
@@ -277,7 +277,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
     ``https://193.122.171.29:8888``
 
-3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
+3.If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
   ![](./images/hue-login-page.png " ")
 
@@ -285,14 +285,15 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
   ![](./images/hue-home-page.png " ")
 
-4. From the **admin** drop-down menu, select **Manage Users**.
+4.From the **admin** drop-down menu, select **Manage Users**.
 
   ![](./images/manage-users.png " ")
 
-5. In the **User Admin** page, in the **Users** tab, click **Add user**.
+5.In the **User Admin** page, in the **Users** tab, click **Add user**.
 
    ![img](./images/add-users.png " ")
-6. In the **Hue Users - Create user** page, in **Step 1: Credentials (required)** of the wizard, enter the following information:
+
+6.In the **Hue Users - Create user** page, in **Step 1: Credentials (required)** of the wizard, enter the following information:
 
    + **Username:** **`training`**
    + **New Password:** **`Training#123`**
@@ -300,14 +301,16 @@ In this step, you log into Hue as an administrator and add the **`training`** us
    + **Create home directory:** `Checked`
 
    ![img](./images/hue-step1-credentials.png " ")
-7. Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
+
+7.Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
 
    ![img](./images/hue-step3-Advanced.png " ")
 
    The **Hue Users** page is re-displayed. The newly added **`training`** user is displayed in the list of Hue users.
 
    ![](./images/user-added.png " ")
-8. Exit Hue. From the **admin** drop-down menu, select **Sign out**. You can now login to Hue using the new **`training`** user with **`Training#123`** as the password.
+
+8.Exit Hue. From the **admin** drop-down menu, select **Sign out**. You can now login to Hue using the new **`training`** user with **`Training#123`** as the password.
 
    ![](./images/hue-logout.png " ")
 
@@ -332,16 +335,22 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 
 3. Login to Ranger, Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training#123`**.
    ![login_ranger](image/create-hadoop-user/01-login_ranger.png)
+
 4. After login to the Ranger,Navigate to **Settings**>**Users/Groups/Roles**.
    ![login_ranger_main](image/create-hadoop-user/02-login_ranger_main.png)
+
 5. Click the **Group** tab and click the "**Add New Group**" button.
    ![ranger_add_group01](image/create-hadoop-user/03-ranger_add_group01.png)
+
 6. Input the **Group Name** as `writergroup1`.And click the **Save** button to complete add group.
    ![ranger_add_group02](image/create-hadoop-user/03-ranger_add_group02.png)
+
 7. Click the **Users** tab and click the "**Add new User"**.
    ![ranger_add_user02](image/create-hadoop-user/04-ranger_add_user02.png)
+
 8. Input the **User Name** as `hwriter` and **Password**, and choose the **Group** as `writergroup1` . And click the **Save** button to complete add user.
    ![ranger_add_user03](image/create-hadoop-user/04-ranger_add_user03.png)
+
 9. Preapare the Hive database named as bdws and create t_employee table under bdws database. ssh to **Utility node 0**, And use the **hive** cli to create database and table. Following are the script we should prepared.
 
    ```
@@ -364,18 +373,19 @@ In this step, you log into Ranger as an administrator and add the **`hwriter`** 
 10. Navigate to **Access Manager**>**Resource Based Policies**, and click **traningcl_hive** in the HADOOP SQL.
 
     ![ranger_hive_policy01](image/create-hadoop-user/05-ranger_hive_policy01.png)
+
 11. Click the "**Add New Policy**",
     ![ranger_hive_policy02](image/create-hadoop-user/05-ranger_hive_policy02.png)
+
 12. Setting the policy info as below ,then click the "**Add**" button.
-    ![ranger_hive_policy03](image/create-hadoop-user/05-ranger_hive_policy03.png)
+   ![ranger_hive_policy03](image/create-hadoop-user/05-ranger_hive_policy03.png)
 
-![ranger_hive_policy04](image/create-hadoop-user/05-ranger_hive_policy04.png)
+   ![ranger_hive_policy04](image/create-hadoop-user/05-ranger_hive_policy04.png)
 
-![ranger_hive_policy05](image/create-hadoop-user/05-ranger_hive_policy05.png)
+   ![ranger_hive_policy05](image/create-hadoop-user/05-ranger_hive_policy05.png)
 
 13.After add the hive policy, there have new policy named as `writerpolicy1` in the list.
-
-![ranger_hive_policy06](image/create-hadoop-user/05-ranger_hive_policy06.png)
+   ![ranger_hive_policy06](image/create-hadoop-user/05-ranger_hive_policy06.png)
 
 14.Following the Task **4: Create the training Administrator Kerberos Principal** to create the `hwriter` principal.
 
@@ -405,17 +415,18 @@ insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN');
 
 Here is the **beeline** command output:
 
-![hive_beeline_login](image/create-hadoop-user/07-hive_beeline_login.png)
+   ![hive_beeline_login](image/create-hadoop-user/07-hive_beeline_login.png)
 
 Here is the `use bdws` and `show tables` output.
-![hive_beeline_showtables](image/create-hadoop-user/07-hive_beeline_showtables.png)
+   ![hive_beeline_showtables](image/create-hadoop-user/07-hive_beeline_showtables.png)
 
 Here is the `select * from t_employee` output.
-![hive_beeline_select_table](image/create-hadoop-user/07-hive_beeline_select_table.png)
+   ![hive_beeline_select_table](image/create-hadoop-user/07-hive_beeline_select_table.png)
 
 Here is the `insert into t_employee values('Justin3',1,30,'2016-09-01',3200,'CN')` output.
-![hive_beeline_insert01](image/create-hadoop-user/08-hive_beeline_insert01.png)
-![hive_beeline_insert02](image/create-hadoop-user/08-hive_beeline_insert02.png)
+   ![hive_beeline_insert01](image/create-hadoop-user/08-hive_beeline_insert01.png)
+
+   ![hive_beeline_insert02](image/create-hadoop-user/08-hive_beeline_insert02.png)
 
 You may now [proceed to the next lab](#next).
 
