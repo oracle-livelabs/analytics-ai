@@ -22,11 +22,11 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
 [](youtube:zpASc1xvKOY)
 
-## Prerequisites
+### Prerequisites（optional）
 
-If you want to use the bootstrap script to create the BDS cluster, please config the bootstrap and upload the bootstrap to object storage.
+If you want to use the bootstrap script to create the BDS cluster, please config the bootstrap and upload the bootstrap to object storage.You can use following two steps to do this.
 
-### Prepare the bootstrap
+**1.Config the bootstrap**
 
 When you create BDS cluster, you can use the Bootstrap script to install, configure , and manage custom components in a cluster. You can config the following parameter in YARN and Hive:
 yarn.scheduler.maximum-allocation-mb:4096
@@ -78,20 +78,18 @@ update_ambari_config
 
 ```
 
-You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh).
+You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh).
 
-### Upload the bootstrap script to object storage
+**2.Upload the bootstrap script to object storage**
 
 You can create the bucket and upload the bootstrap script to it. Following are the steps:
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 2. Click the **Navigation** menu and navigate to **Storage > Buckets.**
-
-  ![](./images/02-create-bucket-navigate.png " ")
-
+   ![reate-bucket-navigate](./images/02-create-bucket-navigate.png " ")
 3. On the **Buckets** page, click **Create Bucket**.
 
-   ![1679373227858](image/create-cluster/1679373227858.png)
+   ![Create_bucket01](image/create-cluster/01-create_bucket01.png)
 
 4.At the **Create Bucket** wizard, provide the Bucket details as follows:
 
@@ -99,52 +97,52 @@ You can create the bucket and upload the bootstrap script to it. Following are t
 
 ·**Default Storage Tier:** choose **Standard** .
 
-![1679373281418](image/create-cluster/1679373281418.png)
+![create_bucket02](image/create-cluster/01-create_bucket02.png)
 
 5.Click the“**Create**” button, then there have “training-bucket” list as below:
 
-![1679373313672](image/create-cluster/1679373313672.png)
+![bucket_list](image/create-cluster/02-bucket_list.png)
 
 6.Click the “training-bucket”, it will display the bucket details.
 
-![1679383883802](image/create-cluster/1679383883802.png)
+![bucket_display](image/create-cluster/03-bucket_display.png)
 
 7.Navigate to  **Objects** >**Create New Folder**
 
-![1679383896957](image/create-cluster/1679383896957.png)
+![bucket_create_folder01](image/create-cluster/04-bucket_create_folder01.png)
 
 8.In the “**Create New Folder**”page ,set the Name as “**odh**” as below:
 
-![1679383915160](image/create-cluster/1679383915160.png)
+![bucket_create_folder02](image/create-cluster/05-bucket_create_folder02.png)
 
-![1679383933518](image/create-cluster/1679383933518.png)
+![bucket_upload_object01](image/create-cluster/06-bucket_upload_object01.png)
 
 9.Click “**odh**” folder and Upload the bootstrap shell file.
 
-![1679383965557](image/create-cluster/1679383965557.png)
+![bucket_upload_object02](image/create-cluster/07-bucket_upload_object02.png)
 
 Select files from you local machine, and upload the odh_bootstrap_update_config.sh.
 
-![1679383981205](image/create-cluster/1679383981205.png)
+![bucket_upload_object03](image/create-cluster/07-bucket_upload_object03.png)
 
 10.Click “**Upload**”button, there will bootstrap file list.
 
-![1679384020554](image/create-cluster/1679384020554.png)
+![bucket_after_upload](image/create-cluster/08-bucket_after_upload.png)
 
 11. Right click the bootstrap file, and click “**Create Pre-Authenticated Request**”.
 
-![1679384037317](image/create-cluster/1679384037317.png)
+![create_par01](image/create-cluster/09-create_par01.png)
 
-![1679384046583](image/create-cluster/1679384046583.png)
+![create_par02](image/create-cluster/09-create_par02.png)
 
 12.Click the“**Create Pre-Authenticated Request**” button to finish it. There will have
 Pre-Authenticated Request Details page display. And Copy the Pre-Authenticated Request URL. You can use this URL in the **Task 1: Create a cluster 's step 10**.
 
-![1679384077000](image/create-cluster/1679384077000.png)
+![copy_par01](image/create-cluster/10-copy_par01.png)
 
 Here is the URL sample:
 
-[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zgSEUmDpIiWGLgbhGvwWMoQrhu5hBRsnAsAE0ox4mMM7iIc8yFmjc22qyqWaL4d0/n/hktwlab/b/training-bucket/o/odh/odh_bootstrap_update_config.sh)
+[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh)
 
 ## Task 1: Create a Cluster
 
@@ -161,16 +159,17 @@ Your simple HA cluster will have the following profile:
 
 Create the HA cluster as follows:
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
-2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+1.Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+
+2.Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
   ![](./images/big-data.png " ")
 
-3. On the **Clusters** page, click **Create Cluster**.
+3.On the **Clusters** page, click **Create Cluster**.
 
   ![](./images/clusters-page.png " ")
 
-4. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
+4.At the top of the **Create Cluster** wizard, provide the cluster details as follows:
 
    * **Cluster Name:** **`training-cluster`**.
    * **Cluster Admin Password:** Enter a `cluster admin password` of your choice such as **`Training#123`**. You'll need this password to sign into Ambari and to perform certain actions on the cluster through the Cloud Console.
@@ -178,8 +177,9 @@ Create the HA cluster as follows:
    * **Secure & Highly Available (HA):** Select this checkbox, if not already selected, to make the cluster secure and highly available. A secure cluster has the full Hadoop security stack, including HDFS Transparent Encryption, Kerberos, and Apache Sentry. This setting can't be changed for the life of the cluster.
    * **Cluster Version:** This read-only field displays the latest version of ODH that is available to Oracle which is deployed by BDS.
 
-   ![1679391052145](image/create-cluster/1679391052145.png)
-5. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
+   ![cluster_cluster](image/create-cluster/17-ceate_cluster01.png " ")
+
+5.In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
    * **Choose Instance Type:** **`Virtual Machine`**.
    * **Choose Master/Utility Node Shape:** **`VM.Standard2.4`**. This is the minimum shape allowed for Master and Utility nodes.
@@ -187,7 +187,8 @@ Create the HA cluster as follows:
    * **Number of Master & Utility Nodes** _READ-ONLY_ **:** Since you are creating an HA cluster, this field shows **4** nodes: **2** Master nodes and **2** Utility nodes. For a non-HA cluster, this field would show only **2** nodes: **1** Master node and  **1** Utility node.
 
    ![img](./images/create-cluster-2.png " ")
-6. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
+
+6.In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
    * **Choose Instance Type:** **`Virtual Machine`**.
    * **Choose Worker Node Shape:** **`VM.Standard2.1`**.  This is the minimum allowed shape for Worker nodes.
@@ -195,12 +196,14 @@ Create the HA cluster as follows:
    * **Number of Worker Nodes:** **`3`**. This is the minimum allowed for a cluster.
 
    ![img](./images/create-cluster-3.png " ")
-7. In the **Network Setting > Cluster Private Network** section, provide the following details:
+
+7.In the **Network Setting > Cluster Private Network** section, provide the following details:
 
    * **CIDR Block:** **`10.1.0.0/16`**. This CIDR block assigns the range of contiguous IP addresses available for the cluster's private network that BDS creates for the cluster. This private network is created in the Oracle tenancy and not in your customer tenancy. It is used exclusively for private communication among the nodes of the cluster. No other traffic travels over this network, it isn't accessible by outside hosts, and you can't modify it once it's created. All ports are open on this private network.
 
    **Note:** Use CIDR block **`10.1.0.0/16`** instead of the already displayed **`10.0.0.0/16`** CIDR block range. This avoids overlapping IP addresses since you already used the **`10.0.0.0/16`** CIDR block range for the **`training-vcn`** VCN that you created in **Lab 1**. A CIDR block of **`10.1.0.0/16`** provides you with **`65,536`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.255.255`**. You can decrease the range of available IP addresses to free them for other uses by choosing a CIDR block such as **`10.1.0.0/24`**. This provides you with only **`256`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.0.255`**.
-8. In the **Network Setting > Customer Network** section, provide the following details:
+
+8.In the **Network Setting > Customer Network** section, provide the following details:
 
    * **Choose VCN in `training-compartment`:** **`training-vcn`**. The VCN must contain a regional subnet.   **Note:** Make sure that **`training-compartment`** is selected; if it's not, click the _CHANGE COMPARTMENT_ link, and then search for and select your **`training-compartment`**.
    * **Choose Regional Subnet in `training-compartment`:** **`Public Subnet-training-vcn`**. This is the public subnet that was created for you when you created your **`training-vcn`** VCN in **Lab 1**.
@@ -209,7 +212,8 @@ Create the HA cluster as follows:
    **Note:** Select the **`USE THE GATEWAYS IN YOUR SELECTD CUSTOMER VCN (CUSTOMIZABLE)`** option if you want more control over the networking configuration.
 
    ![img](./images/create-cluster-4.png " ")
-9. In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
+
+9.In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
 
    Linux instances use an SSH key pair instead of a password to authenticate a remote user. A key pair file contains a private key and public key. You keep the private key on your computer and provide the public key when you create an instance. When you connect to the instance using SSH, you provide the path to the private key in the SSH command. Later in **Lab 6**, you will connect to your cluster's master node using the private SSH key that is associated with the public SSH key that you specify here for your cluster.
 
@@ -225,12 +229,12 @@ Create the HA cluster as follows:
    **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
    ![img](./images/create-cluster-5.png " ")
-10. (Optional)In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage.
 
+10.**(optional)** In the **Additional Options > Bootstrap script URL** section, should provide the bootstrap URL from Object Storage. If you want to use the bootstrap script to create the BDS cluster,  you should following **Prerequisites（optional）** steps to prepare the bootstrap script, and  upload the bootstrap script to object storage, input the bootstrap script Pre-Authenticated Request URL to **Bootstrap script URL**.
     You can can use the Bootstrap script to install, configure, and manage custom components in a cluster.
     ![img](./images/01-create-cluster-bootstrap.png " ")
-11. Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
-
+    
+11.Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 ![img](./images/status-creating.png " ")
 
 ## Task 2: Monitor the Cluster Creation
@@ -309,7 +313,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/cluster-details-breadcrumb.png " ")
 
-## Task 4: Adding Worker and Edge Nodes to a Cluster
+## Task 4: Adding Worker and Edge Nodes to a Cluster（optional）
 
 When you add worker, compute only worker, or edge nodes to a cluster, you expand both compute and storage. The new nodes use the same instance shape and amount of block storage as the existing worker nodes in the cluster.
 
@@ -317,7 +321,7 @@ To add nodes to a cluster as follows:
 
 1. On the cluster details page, click the **Add Nodes** button.
 
-   ![1679386864463](image/create-cluster/1679386864463.png)
+   ![add_node01](image/create-cluster/11-add_node01.png)
 2. In **Add Nodes** panel that appears, enter the following details:
 
 * **Node type**: Select the node type. The available options are as follows:
@@ -330,23 +334,23 @@ To add nodes to a cluster as follows:
 * **Number of worker nodes**: Enter the number of worker nodes or compute only worker nodes to be added to the cluster. A cluster can have from 3 to 256 worker nodes. An ODH cluster can have from 0 to 256 compute worker nodes.
 * **Cluster admin password**: Enter the administration password for the cluster.
 
-  ![1679387338901](image/create-cluster/1679387338901.png)
+  ![add_node02](image/create-cluster/11-add_node02.png)
 
 3.Click "**Add**" button, the cluster is **UPDATING.**
 
-![1679387525814](image/create-cluster/1679387525814.png)
+![add_node_updating](image/create-cluster/12-add_node_updating.png)
 
 4.You can navigate to **Work requests**, It will dispaly the add node processing.
 
-![1679387571517](image/create-cluster/1679387571517.png)
+![add_node_request](image/create-cluster/13-add_node_request.png)
 
 5.After the processing done, the new work node named as **traininwn3** will be added in the cluster nodes.
 
-![1679390436168](image/create-cluster/1679390436168.png)
+![add_node_active](image/create-cluster/14-add_node_active.png)
 
-![1679387830740](image/create-cluster/1679387830740.png)
+![add_node_list](image/create-cluster/14-add_node_list.png)
 
-## Task 5: Adding Block Storage to Worker Nodes
+## Task 5: Adding Block Storage to Worker Nodes（optional）
 
 Block storage is a network-attached storage volume that you can use like a regular hard drive. You can attach extra block storage to the worker nodes of a cluster.
 
@@ -354,18 +358,18 @@ To add a block volume to the cluster as following steps:
 
 1. On the cluster details page, click the **Add Block Storage** button.
 
-![1679390462275](image/create-cluster/1679390462275.png)
+![add_block_storage01](image/create-cluster/15-add_block_storage01.png)
 
 2. In the **Add Block Storage** dialog box, enter information, as follows:
 
 * **Additional Block Storage per Node (in GB)** - Enter a number to indicate how many gigabytes of block storage to add, between 150GB and 32TB, in increments of 50GB.
 * **Cluster Admin Password** - Enter the administration password for the cluster.
 
-![1679390737317](image/create-cluster/1679390737317.png)
+![add_block_storge02](image/create-cluster/16-add_block_storge02.png)
 
 3. Click **Add**.
 
-## Task 5: Review Locations of Services in the Cluster
+## Task 6: Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 

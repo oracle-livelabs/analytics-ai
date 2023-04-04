@@ -6,10 +6,12 @@ Estimated Workshop Time: 6 hours
 
 ## What is Oracle Big Data Service?
 
-Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
+**Oracle Big Data Service (BDS)** provides enterprise-grade Hadoop as a service, with end-to-end security, high performance, and ease of management and upgradeability.
 
-* Vertically integrated for Hadoop, Kafka, and Spark using Oracle Distribution
-  including Apache Hadoop(ODH).
+BDS is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, BDS scales to meet an organization’s requirements at a low cost and with the highest levels of security. It includes :
+
+* Choice of distribution of hadoop Oracle Distribution of Hadoop(ODH) or Cloudera Distribution of Hadoop (CDH) .
+* Offers a range of Hadoop technology stack including HDFS, Yarn and other Open source Apache service such Kafka, Flink, and Spark.
 * Highly secure and highly available clusters provisioned in minutes.
 * Expand on premise Hadoop; deploy test and development to the cloud.
 * Any scale using high performance bare metal or cost effective virtual machine (VM) shapes.
@@ -23,7 +25,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 ## Workshop Objectives
 
 - Prepare for using Oracle Big Data Service (BDS).
-- Create a Highly-Available (HA) Oracle Distribution including Apache Hadoop(ODH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
+- Create a Highly-Available (HA) BDS cluster using Oracle Distribution including Apache Hadoop(ODH) from the Oracle Cloud Infrastructure Console (OCI).
 - Add Cloud SQL to the cluster and maintain your cluster.
 - Access a BDS utility node using a public IP address.
 - Use Ambari and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both Ambari and Hue.
@@ -35,7 +37,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 1:** Prepare your Big Data Service Environment
 - **Lab 2:** Create a BDS Hadoop Cluster
 - **Lab 3:** Add Oracle Cloud SQL to the Cluster
-- **Lab 4:** Access a BDS Utility Node Using a Public IP Address
+- **Lab 4**: Make BDS Nodes Accessible with Public IP Address
 - **Lab 5:** Use Ambari and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
 - **Lab 7:** Upload Data to Hadoop Distributed File System and Object Storage
