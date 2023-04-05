@@ -17,8 +17,8 @@ Estimated Workshop Time: 60 minutes.
 
 In this workshop, you will learn how to:
 * Provision OCI artifacts
-* Register OCI AI models in Oracle Analytics Cloud(OAC)
-* Use Data Flows to apply OCI AI models to Data sets
+* Register OCI AI Models in Oracle Analytics Cloud(OAC)
+* Use Data Flows to apply OCI AI Models to Data sets
 * Visualize and Analyze data using Oracle Analytics Cloud(OAC)
 
 
