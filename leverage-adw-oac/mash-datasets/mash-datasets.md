@@ -137,4 +137,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
 - **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu, March 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, April 2023
