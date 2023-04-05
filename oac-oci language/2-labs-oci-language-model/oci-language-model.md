@@ -1,15 +1,15 @@
-# Use OCI Language models in OAC
+# Use OCI Language Models in Oracle Analytics(OAC)
 
 ## Introduction
 
 This lab walks you through the steps to apply OCI Language models built in OCI with data flows to perform sentiment analysis on raw reviews data directly in Oracle Analytics Cloud.
 
-Estimated Time: 60 minutes
+Estimated Time: 40 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Register OCI Language Models in OAC
+* Register OCI Language Models in Oracle Analytics(OAC)
 * Create Data Flow to Run Sentiment Analysis
 * Create a Workbook to Visualize the Data
 
