@@ -52,6 +52,11 @@ This lab assumes you have:
 
     ![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)
 
+## Learn More
+
+* [About Application Workbooks](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-create-cubes-using-application-workbooks.html#GUID-15D76E2D-7302-4F77-B0BC-062305E3538E)
+* [URL text 2](http://docs.oracle.com)
+
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team

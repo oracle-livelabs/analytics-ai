@@ -27,7 +27,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Get Started with Essbase 21c](?lab=<essbase-21c>)
+* [Essbase Documentation](https://docs.oracle.com/en/database/other-databases/essbase/21/books.html)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
