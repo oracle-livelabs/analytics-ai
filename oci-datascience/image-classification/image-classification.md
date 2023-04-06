@@ -52,19 +52,19 @@ This lab assumes that you have:
 
 1.  Click on **Code** and copy the link under **HTTPS**
 
-    ![Copy repository link](images/copy-git-repo-link.png " ")
+    ![Copy repository link](./../common/images/copy-git-repo-link.png " ")
 
 1.  Navigate to the git extension icon on the left and then click **Clone a Repository**.
 
-    ![Open Git Extension](images/git-extension.png " ")
+    ![Open Git Extension](./../common/images/git-extension.png " ")
 
 1.  Paste the HTTPS link and click **Clone**.  
 
-    ![Clone Repository ](images/clone-repository.png " ")
+    ![Clone Repository ](./../common/images/clone-repository.png " ")
 
 1.  After you have cloned the repository, you will see the **oci\_data\_science\_ai\_samples** folder. Click on the folder.
 
-    ![Navigate to directory](images/navigate-directory.png " ")
+    ![Navigate to directory](./../common/images/navigate-directory.png " ")
 
     * Click on the **labs** folder
 
