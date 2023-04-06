@@ -24,7 +24,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
++ **Lab 4: Make BDS Nodes Accessible with Public IP Address**
 
 ### Video Preview
 
@@ -94,11 +94,11 @@ In this step, you will add ingress security rules to the default security list i
   + For the **DESCRIPTION**, enter **`For Ranger Access on Port 6182`**.
 * Click **Add Ingress Rules**.
 
-![1679390165596](image/use-cm-hue-access-cluster/1679390165596.png)
+![vcn_add_ingressport01](image/use-cm-hue-access-cluster/08-vcn_add_ingressport01.png)
 
 The three ingress rules are added to the **Default Security List**.
 
-![1679390320209](image/use-cm-hue-access-cluster/1679390320209.png)
+![vcn_add_ingressport02](image/use-cm-hue-access-cluster/08-vcn_add_ingressport02.png)
 
 ## Task 2: Use Ambari to Access the Cluster
 
@@ -120,31 +120,31 @@ In this step, you will use Ambari to access the cluster. In an HA-cluster, Ambar
    ```
 3. On the Ambari Login screen, enter your **`username`** which is **`admin`** by default in Ambari. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
-  ![1679388718302](image/use-cm-hue-access-cluster/1679388718302.png)
+  ![ambari_login](image/use-cm-hue-access-cluster/01-ambari_login.png)
 
 4. In the Ambari Home page, note the name of the cluster, and the services running on the cluster.
 
-  ![1679388941900](image/use-cm-hue-access-cluster/1679388941900.png)
+  ![ambari_main_page](image/use-cm-hue-access-cluster/02-ambari_main_page.png)
 
 5. From the **Hosts** drop-down menu.
 
-  ![1679388983789](image/use-cm-hue-access-cluster/1679388983789.png)
+  ![ambari_hosts](image/use-cm-hue-access-cluster/03-ambari_hosts.png)
 
 The hosts of the cluster are displayed. Hosts are configured with one or more role instances, each of which corresponds to a service. The role indicates which daemon, also known as service, runs on the host. Typically, a host will run multiple roles in support of the various services running in the cluster.
 
 6. Drill-down on the roles associated with the first Master node in the cluster, **`traininmn0`**.
 
-   ![1679389082187](image/use-cm-hue-access-cluster/1679389082187.png)
+   ![ambari_one_host](image/use-cm-hue-access-cluster/04-ambari_one_host.png)
 
    The services and roles that are running on the first Master node are displayed such as the `HDFS NameNode`, `Spark History Server`, `YARN's Job History Server`, and `Yarn's ResourceManager` among other services and gateways. A gateway is a type of role that typically provides client access to specific cluster services. For example, Hive and Spark each have gateway roles to provide access for their clients to their respective services.
 
-   ![1679389146742](image/use-cm-hue-access-cluster/1679389146742.png)
+   ![ambari_one_host_components](image/use-cm-hue-access-cluster/05-ambari_one_host_components.png)
 7. Click the `traininmn0`, it will display all of the running services in this node.
 
-   ![1679389257159](image/use-cm-hue-access-cluster/1679389257159.png)
+   ![ambari_one_host_services](image/use-cm-hue-access-cluster/06-ambari_one_host_services.png)
 8. Exit Ambari. From the **User** drop-down menu, select **Sign out**.
 
-   ![1679389343277](image/use-cm-hue-access-cluster/1679389343277.png)
+   ![ambari_logout](image/use-cm-hue-access-cluster/07-ambari_logout.png)
 
 ## Task 3: Use Hue to Access the Cluster
 
