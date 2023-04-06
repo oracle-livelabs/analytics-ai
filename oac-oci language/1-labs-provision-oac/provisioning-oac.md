@@ -17,7 +17,7 @@ Estimated Time 15 minutes.
 ### Objectives
 - Create an Oracle Analytics Cloud Instance
 
-## **Task 1**: Create an Oracle Analytics Cloud (OAC) Instance
+## Task 1: Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.
@@ -62,8 +62,8 @@ Click in **View Account** and **Sign in to Cloud**.
 
 This concludes this lab. You may now **proceed to the next lab**.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Chenai Jarimani, May 2022O
+- **Last Updated By/Date** - Chenai Jarimani, April 2023

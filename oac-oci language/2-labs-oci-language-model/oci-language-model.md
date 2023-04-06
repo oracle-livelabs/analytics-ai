@@ -19,7 +19,7 @@ This lab assumes you have:
 * An Oracle account
 
 
-## **Task 1**: Register OCI Language Models in Oracle Analytics Cloud
+## Task 1: Register OCI Language Models in Oracle Analytics Cloud
 
 1.	Sign into Oracle Analytics Cloud.  
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
@@ -53,7 +53,7 @@ This lab assumes you have:
 **Optional**: To confirm that the model was registered successfully, from the **Home** page, click **Navigator**, click **Machine Learning**, then click **Models** to display registered models and confirm that the model was registered successfully. Click **Inspect** to check that you've configured the model correctly
 
  
-## **Task 2**: Create a Data Flow to Run Sentiment Analysis 
+## Task 2: Create a Data Flow to Run Sentiment Analysis 
 
 Performing analysis requires the laborious curation, combining, organizing, and regular updating of large spreadsheets and other data sources. Oracle Analytics Cloud simplifies the manual effort of data preparation with the **Data Flows** feature, which enables you to easily create and maintain sophisticated data preparation workstreams that transform raw data sets into exactly what is needed for further analysis. Data flows can be scheduled, easily modified as needed with a visual editor, and enriched with custom calculations. We can also use data flows to train machine learning models, apply AI models such as Language, Vision and etc.
 
@@ -118,9 +118,9 @@ Before we start visualizing the data let's inspect the output data from the data
     ![Review Dataset](./images/inspectdataset.png " ")
 
 
-## **Task 3**: Create the Visualization (Workbook) - Auto Insights
+## Task 3: Create the Visualization (Workbook) - Auto Insights
 
-When you create a **Workbook** out of a **Dataset**, you have a blank canvas to start with.  
+When you create a **Workbook** out of a **Dataset**, you have a blank canvas to start with. 
 You can avoid _blank canvas syndrome_  using the new [**Auto Insights**](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/let-oracle-analytics-suggest-best-visualizations-dataset.html) capability, which provides automatic visualization suggestions that give you great insights and a starting point into your key data elements within a Dataset.  
 
 1.  An empty **Canvas** is presented in **Visualize** tab.  
@@ -133,24 +133,22 @@ On the toolbar, the Auto Insights icon is white when Oracle Analytics is calcula
    ![Relevant Insights](./images/selectedinsights.png)
 
 
-## **Task 4**: Create the Visualization (Workbook) - Explain
+## Task 4: Create the Visualization (Workbook) - Explain
 
-Another way to let the system generate useful insights about your data is **Explain**.  
-It works on both **Attributes** and **Measures** columns and helps to analyze important and non-obvious patterns in data.  
-The insights that Explain delivers are based on the column type or aggregation that you chose and will vary according to the aggregation rule set for the chosen metric. Explain generates only the insights that make sense for the column type that you chose.
+Another way to let the system generate useful insights about your data is **Explain**. It works on both **Attributes** and **Measures** columns and helps to analyze important and non-obvious patterns in data. The insights that Explain delivers are based on the column type or aggregation that you chose and will vary according to the aggregation rule set for the chosen metric. Explain generates only the insights that make sense for the column type that you chose.
 
 1.  Open a new **Canvas**  
 Click on **Add new Canvas** icon ![New Canvas](./images/addcanvas.png)
 
 2. Explain for **Attributes**  
-    **_Basic Facts_** insights (distribution across categories)  
-    **_Key Drivers_** list columns that influence attribute values and their distribution  
-    **_Segment_** tab visualizes segments where the value for the attribute can be identified with certain confidence based on other columns in the dataset  
-    **_Anomalies_** tab performs combinatorial analysis between selected attribute and other attribute columns and shows groups that exhibit unexpected behavior
+    - **Basic Facts** - insights (distribution across categories)  
+    - **Key Drivers** - list columns that influence attribute values and their distribution  
+    - **Segment** - tab visualizes segments where the value for the attribute can be identified with certain confidence based on other columns in the dataset  
+    - **Anomalies** - tab performs combinatorial analysis between selected attribute and other attribute columns and shows groups that exhibit unexpected behavior
 
 3. Explain for **Measures**  
-    **_Basic Facts_**  
-    **_Anomalies_** insights based on the aggregation rule
+    - **Basic Facts** - insights (distribution across categories) 
+    - **Anomalies** insights based on the aggregation rule
 
 4. Let's start to explain **SENTIMENT**  
 In Data Pane Select **SENTIMENT**, Right-Click, and select **Explain SENTIMENT**
@@ -185,7 +183,7 @@ Note that the canvas name has changed to **Explain SENTIMENT** and under _My Cal
 
    ![Explain Canvas](./images/explaincanvas.png)
 
-## **Task 5**: Create the Visualization (Workbook)
+## Task 5: Create the Visualization (Workbook)
 
 In this task, we'll create a new **Canvas** from scratch to visualize the insights from our sentiment data. If needed use the **Data Editor** to massage your data further or combine with other data sets you may have. 
 
@@ -242,7 +240,7 @@ Click **Validate** and **Save**
 
     ![Add Text Highlighter](./images/texthighlighter.png " ")
 
-14.	Add **Review ID, Sentiment, Sentiment Text, Offset, Length, Review**,Convert **Offset** and **Length** to attributes as these are the fields the text plugin uses to highlight the topics or phrases being reviewed in the review
+14.	Add **Review ID, Sentiment, Sentiment Text, Offset, Length, Review**, Convert **Offset** and **Length** to attributes as these are the fields the text plugin uses to highlight the topics or phrases being reviewed in the review
 
     ![Add Highlighter Fields](./images/texthighlighterfields.png " ")
 

@@ -30,8 +30,6 @@ This lab assumes you have:
 * Some understanding of cloud, database, and visualization fundamentals
 
 
-## Learn More
-
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
