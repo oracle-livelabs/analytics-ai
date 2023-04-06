@@ -27,7 +27,7 @@ In this lab, you will:
     <copy>ssh -i <private-key-file-name>.key opc@<compute_instance_public_ip></copy>
     ```
 
-  	![ssh connect](./images/Lab3-task1.1.png)
+  	![ssh connect](./images/connect-ip-instance.png)
 
   	Unpack the airport database sample downloaded in Lab1-Task3.7
 
@@ -35,7 +35,7 @@ In this lab, you will:
     <copy>unzip airport-db.zip</copy>
     ```
 
-  	![unpack database sample](./images/Lab3-task1.1-1.png)
+  	![unpack database sample](./images/unpack-database-sample.png)
 
   	After it is done extracting the files, verify the extracted material executing the following command:
     ```
@@ -44,14 +44,14 @@ In this lab, you will:
 
   	Among the output, you should see the following file names:
 
-  	![database files](./images/Lab3-task1.1-2.png)
+  	![database files](./images/see-database-files.png)
 
   	Using MySQL DB private IP address and fill in the password you used creating the DB system at Lab1/Task5.4, Connect to MySQL DB System with MySQL Shell with the following command:
     
 	  ```
     <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --js</copy>
     ```
-  	![connect to mysql shell](./images/Lab3-task1.1-3.png)
+  	![connect to mysql shell](./images/connect-mysql.png)
 
 	  > **Note:**  For the best practice it is recommended to remove the password from the command line as follows:
 	
@@ -69,18 +69,18 @@ In this lab, you will:
     ```
     <copy>util.loadDump("/home/opc/airport-db", {dryRun: true, resetProgress:true, ignoreVersion:true})</copy>
     ```
-  	![import db into mysql db system dry run](./images/Lab3-task1.2.png)
+  	![import db into mysql db system dry run](./images/import-db-into-mysql.png)
 
    	If it terminates without errors, execute the following to load the dump for real:
     ```
     <copy> util.loadDump("/home/opc/airport-db", {dryRun: false, threads: 8, resetProgress:true, ignoreVersion:true})</copy>
     ```
 
-  	![import db into mysql](./images/Lab3-task1.2-1.png)
+  	![import db into mysql](./images/import-db-into-mysql-2.png)
 
   	> **Note:** It takes around 3 minutes to finish.
 
-  	![MySQL shell connect](./images/Lab3-task1.2-2.png)
+  	![MySQL shell connect](./images/mysql-connected.png)
 
 3. Check the imported data. From MySQL Shell execute the commands:
 
@@ -94,7 +94,7 @@ In this lab, you will:
 	
   You should see the following output:
 
-  ![MySQL Database](./images/Lab3-task1.3.png)
+  ![MySQL Database](./images/show-mysql-db.png)
 
 	Continue with commands:
     ```
@@ -110,7 +110,7 @@ In this lab, you will:
     ```
   	You should see the following output:
 
-  	![Airport db tables](./images/Lab3-task1.3-1.png)
+  	![Airport db tables](./images/view-airport-db-tables.png)
 
 4. Let's start testing a simple query but yet effective query, to find per-company average age of passengers from Germany, Spain and Greece.
   
@@ -135,7 +135,7 @@ In this lab, you will:
     LIMIT 10;
     </copy>
     ```
-  	![Query run for airportdb](./images/Lab3-task1.4.png)
+  	![Query run for airportdb](./images/query-airport-db.png)
 
   	Exit from MySQL Shell:
     
@@ -144,17 +144,17 @@ In this lab, you will:
     \exit
     </copy>
     ```
-  	![exit sql db](./images/Lab3-task1.4-1.png)
+  	![exit sql db](./images/exit-mysql-db.png)
 
 ## Task 2: Execute queries leveraging HeatWave
 
 1. On the OCI console, go to **DATABASES** >> **DB Systems** and select the instance we created earlier _**mysql-analytics-test**_.
-  ![OCI Console](./images/Lab3-task2.1-4.png)
-  ![OCI Console](./images/Lab3-task2.1-5.png)
+  ![OCI Console](./images/open-db-systems.png)
+  ![OCI Console](./images/select-mysql-instance.png)
 
 
 	Check under the _**HeatWave**_ section, that HeatWave nodes are in _**Active**_ status,
-  	![OCI Console](./images/Lab3-task2.1.png)
+  	![OCI Console](./images/check-heatwave-active.png)
 
 
   	If HeatWave nodes are in _**Active**_ status, you can run the following Auto Parallel Load command to load the airportdb tables into HeatWave, from your bastion host ssh connection, using the following command:
@@ -167,12 +167,12 @@ In this lab, you will:
     </copy>
     ```
 
-  	![connect to mysql shell](./images/Lab3-task2.1-1.png)
+  	![connect to mysql shell](./images/connect-mysql-shell2.png)
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
-  	![load db into Heatwave](./images/Lab3-task2.1-2.png)
+  	![load db into Heatwave](./images/load-db.png)
 
   	Let's verify that the tables are loaded in the HeatWave cluster, and the loaded tables have an `AVAIL_RPDGSTABSTATE` load status.
     ```
@@ -181,7 +181,7 @@ In this lab, you will:
     ```
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ```
-  	![Performance schema tables](./images/Lab3-task2.1-3.png)
+  	![Performance schema tables](./images/view-performance-schema-tables.png)
 
 2. Let's come back to the previous query and execute it this time using HeatWave.
 
@@ -191,7 +191,7 @@ In this lab, you will:
     USE airportdb;
     </copy>
     ```
-  	![connect to airportdb](./images/Lab3-task2.2.png)
+  	![connect to airportdb](./images/connect-airport-db2.png)
 
   	Now let's enable _**HeatWave**_  and let the Magic begin:
     ```
@@ -199,13 +199,13 @@ In this lab, you will:
     set @@use_secondary_engine=ON;
     </copy>
     ```
-  	![enable secondary engine](./images/Lab3-task2.2-1.png)
+  	![enable secondary engine](./images/enable-secondary-engine.png)
 
   	To verify if `use_secondary_engine` is enabled (ON), enter the following command at the prompt: 
     ```
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ```
-  	![verification engine enabled](./images/Lab3-task2.2-2.png)
+  	![verification engine enabled](./images/verification-enabled.png)
 
 3. Check the explain plan of the previous query and confirm it will be using secondary engine:
     ```
@@ -230,7 +230,7 @@ In this lab, you will:
     ```
   	You should see a message "Using secondary engine RAPID" in the **Extra** output
 
-  	![run query explain](./images/Lab3-task2.3.png)
+  	![run query explain](./images/run-query-explain.png)
 
   	Re-run the previous query and check the execution time again:
     ```
@@ -256,7 +256,7 @@ In this lab, you will:
 
   	This second execution with HeatWave should be about 1.5-1s, try again the query!
 
-  	![run heatwave query](./images/Lab3-task2.3-1.png)
+  	![run heatwave query](./images/run-heatwave-query.png)
 
   	Exit MySQL Shell
 
