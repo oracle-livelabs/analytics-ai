@@ -46,7 +46,7 @@ This lab assumes that you have:
 
 1.  When prompted for the version number, press Enter.
 
-## Task 2: Download Image Classification JupyterLab Notebook from Object Storage
+## Task 2: Download Image Classification JupyterLab Notebook
 
 1. To access the image classification JupyterLab notebook, we are going to clone the Oracle Data Science and AI repository.  Navigate to the Oracle Data Science and AI repository https://github.com/oracle-samples/oci-data-science-ai-samples/
 
