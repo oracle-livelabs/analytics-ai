@@ -26,19 +26,19 @@ In this lab, you will:
 
    Once it is active you can take note of the _**Private IP Address**_ of the MySQL DB System which we will use later in the workshop.
 
-  ![MySQL DB System dashboard](./images/Lab2-task1.1.png)
+  ![MySQL DB System dashboard](./images/copy-private-ip.png)
 
 2. From the menu on the left bottom side select _**HeatWave**_, and click on the button _**Add HeatWave Cluster**_ located on the right.
      
-   ![Add Heatwave Cluster](./images/Lab2-task1.2.png)
+   ![Add Heatwave Cluster](./images/add-heatwave-cluster.png)
 
    	- Check that Shape looks as per picture below and that Node Count is set to 2, and then click the button _**Add HeatWave Cluster**_.
 
-   ![Heatwave Cluster enable](./images/Lab2-task1.2-1.png)
+   ![Heatwave Cluster enable](./images/select-shape.png)
 
 3. You will be brought back to the main page where you can check for the creation status. After some seconds you should see the nodes in _**Creating**_ status.
      
-   ![Heatwave Cluster creating status](./images/Lab2-task1.3.png)
+   ![Heatwave Cluster creating status](./images/heatwave-creating-status.png)
 
    After completion, the node status will switch to _**Active**_ status. The process will take some time to be completed. You can go to the next Task in the meantime.
 
@@ -47,13 +47,13 @@ In this lab, you will:
 
 1. Back to the Analytics Cloud from _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_ by now the status of the instance should have changed to _Active_. 
 
-   ![OCI Console](./images/Lab2-task2.1.png)
+   ![OCI Console](./images/open-oac.png)
 
    Click on the instance _**OACDemo**_ to go to the details page.
 
    Click on the button _**Configure Private Access Channel**_ under the Private Access Channel section to create a private access to the MySQL Database Service Instance.
 
-   ![Configuring private channel OAC](./images/Lab2-task2.1-1.png)
+   ![Configuring private channel OAC](./images/select-private-access-channel.png)
 
 2. In the next window you first need to fill the name for the channel **PrivateChannel**. Then, choose the VCN created earlier **`analytics_vcn_test`**, and make sure you select the correct subnet, **`Public Subnet-analytics_vcn_test`**, otherwise you won't be able to connect!
    
@@ -61,7 +61,7 @@ In this lab, you will:
 
    	> **Note:** It will take up to _**50 minutes**_ to create the private channel so go ahead and proceed to the next Lab! 
 
-   	![Configuring private channel OAC](./images/Lab2-task2.2.png)
+   	![Configuring private channel OAC](./images/configure-form-pac.png)
 
    	As a recap, in this lab we have enabled HeatWave cluster to MySQL Database Service, and configured Private Access Channel for the Oracle Analytics Cloud instance created in Lab 1. 
     
