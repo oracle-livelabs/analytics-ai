@@ -4,7 +4,7 @@
 
 In this lab, you’ll manually add a dimension to the outline in the application and cube you created in the previous lab, then you’ll create a dimension rule and perform a dimension build to add products to the outline, and finally, you’ll use an MDX query to analyze the data in the cube.
 
-Estimated Lab Time: -- 15 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -46,11 +46,11 @@ This lab assumes you have:
 
     ![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
 
-9. Select **FY2023**, and under **Operator**, choose **~ (Ignore)**.
+9. Select **FY2023**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
 
     ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
 
-10. Select **FY2024**, and under **Operator**, choose **~ (Ignore)**.
+10. Select **FY2024**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
 
 11. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
 
@@ -158,8 +158,9 @@ Next, we’ll load data to the Product dimension.
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create New Dimension Build Rule](https://docs.oracle.com/en/database/other-databases/essbase/21/essdm/create-new-dimension-build-rule.html)
+* [Build Dimension](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/run-and-manage-jobs-using-web-interface.html#GUID-823F8D30-0A59-4835-97FC-6A6494B46D36)
+* [MDX](https://docs.oracle.com/en/database/other-databases/essbase/21/esscq/mdx.html)
 
 ## Acknowledgements
 

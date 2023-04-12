@@ -4,7 +4,7 @@
 
 In this lab, you’ll create a data load rule file and load data into the cube, then you’ll calculate and analyze the data.
 
-Estimated Time: -- 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -87,8 +87,8 @@ This lab assumes you have:
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create New Data Load Rule](https://docs.oracle.com/en/database/other-databases/essbase/21/essdm/create-new-data-load-rule.html)
+* [Load Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/run-and-manage-jobs-using-web-interface.html#GUID-8779F7B5-1465-4B9E-B6C3-2AF2B7CD95F2)
 
 ## Acknowledgements
 

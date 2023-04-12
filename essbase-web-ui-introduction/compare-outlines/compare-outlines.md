@@ -4,7 +4,7 @@
 
 This lab walks you through how to compare two outlines in the Essbase web interface. The outlines must be of the same type, both aggregate storage, or both block storage. They can be on the same Essbase server, or on different Essbase servers.
 
-Estimated Lab Time: -- 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
