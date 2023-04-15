@@ -108,5 +108,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Nagwang, Product Manager, Analytics Product Strategy
 * **Contributors** -  Lucian Dinescu, Peter Monteiro
-- **Reviewed by** -
-- **Last Updated By/Date** -
+* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023

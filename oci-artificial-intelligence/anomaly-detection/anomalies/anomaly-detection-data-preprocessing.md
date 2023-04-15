@@ -235,7 +235,7 @@ Other column is representing a signal/sensor or attribute.
 
 Each row represents an observation of the system, with values of those signals/sensors/attributes aligned properly. We also support JSON format, which later will explain what that format looks like.
 
-##  TASK 2: Exploring Data
+##  Task 2: Exploring Data
 
 After the data being loaded, we now can start basic exploration to validate and identify potential issues of the data.
 
@@ -331,7 +331,7 @@ Use the following function to plot the distribution of every attribute to unders
 sensor_cols = [e for e in example_df.columns if e != 'timestamp']
 example_df[sensor_cols].hist(bins=100, figsize=(15, 6))
 ```
-![](../images/lab2-data-distribution-image.png)
+![data distribution plots for all attributes](../images/lab2-data-distribution-image.png)
 
 In this above example, the sensor10 seems to have a much wider range than other, more deeper check may reveal what happens.
 
@@ -365,7 +365,7 @@ For time-series data, it is necessary to plot each attribute on the timestamp ax
 ```Python
 example_df.plot(x='timestamp', figsize=(14,3), ylim=[-3, 3]) # Plot all numeric data
 ```
-![](../images/lab2-time-series-plot.png)
+![time-series plot](../images/lab2-time-series-plot.png)
 
 **Recommendations:**
 
@@ -380,7 +380,7 @@ Based on the graph of time-series, one may identify monotonic features, which ma
 ```Python
 example_df[['timestamp', 'sensor8', 'sensor9']].plot(x='timestamp', figsize=(14,3)) # Plot individual column
 ```
-![](../images/lab2-time-series-plot2-motonic-signals.png)
+![plot of two monotonic signals](../images/lab2-time-series-plot2-motonic-signals.png)
 
 **Example**
 
@@ -411,7 +411,7 @@ plt.yticks(rotation=0, fontsize=12)
 plt.title('Correlation Heatmap', fontsize=20)
 plt.show()
 ```
-![](../images/lab2-feature-correlation-heatmap.png =800x800)
+![feature correlation heatmap](../images/lab2-feature-correlation-heatmap.png =800x800)
 In this heatmap, it seems that sensor8 and sensor9 have a strong correlation; and it was found to be true in real business scenario (the two sensors are physically close).
 
 ## Task 3: Preprocessing Data
@@ -482,7 +482,7 @@ For example, if in the actual business case, such anomaly or fault indeed happen
 
 Generally speaking, the user should not remove no more than ~1%-5% outliers/anomalies from the data. If more than this, they need to double-check what conditions being used and be more conservative to remove.
 
-##  TASK 4: Final Splitting and Formatting
+##  Task 4: Final Splitting and Formatting
 
 Typically in general ML model development, data is split into training and testing set, so that ML models are trained from training set, and to be fair, performance are evaluated on the testing set.
 
@@ -568,9 +568,9 @@ def convert_df_to_json(df, outfile_name):
 
 After those above steps, you should now be able to transform the raw data provided earlier to be like the following:
 
-* [processed training csv data](../files/demo-training-data.csv)
+* [processed training csv data](../files/demo-training-data-multivariate.csv)
     - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+* <a href="../files/demo-testing-data-multivariate.json" target="_blank" download>processed testing json data</a>
     - same 10 signals with timestamp column, 100 observations
 
 Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.

@@ -4,7 +4,7 @@
 
 In this lab, you run the consistency checker on the Sample Sales semantic model, deploy the semantic model, and validate the subject area by creating visualizations in Oracle Analytics Cloud.
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -74,7 +74,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 	![Sample Sales subject area](images/add-sample-sales.png)
 
-5. In the **Data pane**, expand **Time**, **Base Facts**, and **Products**. Hold down the **Ctrl key**, select **Per Name Year** from Time, select **Revenue** from Base Facts, and select **Type** from Products. Right-click, select **Pick Visualization**.
+5. In the **Data pane**, expand **Time**, **Base Facts**, and **Products**. Hold down the **Ctrl (Command for Mac) key**, select **Per Name Year** from Time, select **Revenue** from Base Facts, and select **Type** from Products. Right-click, select **Pick Visualization**.
 
 	![Pick visualization](./images/pick-viz.png)
 
@@ -97,6 +97,6 @@ You have just learned how to create a semantic model user the Semantic Modeler i
 * [Work with the Consistency Checker](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-consistency-checker.html#GUID-DBBDF46F-2CB0-4EBD-BD98-0B75D9F0FD3E)
 
 ## Acknowledgements
-* **Author** - Nagwang, Product Manager, Analytics Product Strategy
-* **Contributors** -
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023

@@ -49,7 +49,11 @@ This lab assumes you have:
 
    ![pic2](images/open-project2.png)
 
-5. Compare the number of maneuvers
+5. Go to Edit Mode.
+
+   ![pic2](images/edit-workbook.png)
+
+6. Compare the number of maneuvers
 
    **Delete** any filter that's active. Next, add two new filters. Create a filter on `B_NAME` (team) to **include** France and Great Britain and `BDE_LEG_NUM_UNK` (Leg) to be **3**. Then, if needed, change the zoom on the map, so you can see the full leg.
 

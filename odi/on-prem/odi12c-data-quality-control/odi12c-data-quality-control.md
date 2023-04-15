@@ -5,7 +5,7 @@ This lab describes how to implement data quality control. An introduction to dat
 
 *Note*: ODI provides very basic quality checks. For complex use cases use Enterprise Data Quality (EDQ)
 
-*Estimated Lab Time*: 60 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### About Data Integrity Control
 Data integrity control is essential in ensuring the overall consistency of the data in your information systems applications. Application data is not always valid for the constraints and declarative rules imposed by the information system. You may, for instance, find orders with no customer, or order lines with no product, and so forth.
@@ -22,13 +22,7 @@ We want to determine which rows do not satisfy these two constraints and automat
 Enforcing these types of rules requires the use of a *check constraint* (also referred to as a *condition*), as well as a *reference constraint* between the SRC\_CITY and SRC\_ CUSTOMER tables.
 
 ### Prerequisites
-This lab assumes you have:
-- Basic knowledge of Oracle Database
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Initialize Environment
+This lab assumes you have completed all the previous labs.
 
 ## Task 1: Creating Constraints
 This step describes how to create the following constraints:
@@ -42,7 +36,7 @@ Creating an age constraints consists in adding a data validity condition on a co
 2. Expand the SRC\_CUSTOMER datastore.
 3. Right-click the Constraints node and select **New Condition**
 
-    ![](./images/insert_new_condition.png)  
+    ![Insert new condition](./images/insert_new_condition.png)  
 
 4. In the Definition tab of the Condition Editor:
     * In the Name field, enter the name of your condition. For example: AGE \> 21.
@@ -56,7 +50,7 @@ Creating an age constraints consists in adding a data validity condition on a co
     Customer Age is not over 21
     ```
 
-    ![](./images/condition_editor.png)
+    ![Condition editor](./images/condition_editor.png)
 
 5.  From the File main menu, select **Save** to save the condition.
 
@@ -83,7 +77,7 @@ The main advantages of performing data integrity checks are the following:
 This example guides you through the data integrity audit process (Static Control).
 The *Orders Application* contains data that does not satisfy business rule constraints on a number of different levels. The objective is to determine which data in this application does not satisfy the constraints imposed by the information system.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

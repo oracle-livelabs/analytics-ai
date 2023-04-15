@@ -1,6 +1,6 @@
 
 {
-      "workshoptitle": "Getting Started with Oracle Big Data Service (HA)",
+      "workshoptitle": "Oracle Big Data Service (BDS) HA with Oracle Distribution of Hadoop(ODH)",
       "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
@@ -34,14 +34,14 @@
       }
       ,
       {
-            "title": "Lab 4: Access a BDS Node Using a Public IP Address",
+            "title": "Lab 4: Make BDS Nodes Accessible with Public IP Address",
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../../access-utility-node/access-utility-node.md"
       }
       ,
       {
-            "title": "Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster",
-            "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
+            "title": "Lab 5: Use Ambari and Hue to Access a BDS Cluster",
+            "description": "This lab shows you how to use Ambari and Hue to access a Big Data Service (BDS) cluster.",
             "filename": "./../../use-cm-hue-access-cluster/use-cm-hue-access-cluster.md"
       }
       ,

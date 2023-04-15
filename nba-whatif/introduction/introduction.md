@@ -25,10 +25,10 @@ This lab assumes you have:
 
 If you are interested in learning more about this topic, the below blogs are available:
 
-* [NBA What If Analysis - placeholder until blog is published](http://docs.oracle.com)
+* [NBA What If Analysis](https://blogs.oracle.com/analytics/post/nba-whatif-lab)
 
 ## Acknowledgements
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
 * **Contributors** -  Carrie Nielsen, Senior Director, Analytics Product Strategy
                    -  Luke Wheless, Data Analyst BI-SCF
-* **Last Updated By/Date** - Andres Quintana, October 2022
+* **Last Updated By/Date** - Andres Quintana, February 2023

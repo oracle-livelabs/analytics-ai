@@ -1,5 +1,6 @@
 # Lab 2: (Optional) Forecast using Data Science Notebook 
 
+## Introduction
 In this lab, we will learn how to Forecast using Data Science Notebook. We will also learn about data requirements and data formats required by the OCI Forecasting Service APIs through some examples.
 
 *Estimated Time*: 50 minutes
@@ -25,19 +26,19 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 ## Task 1: API key generation  
 1.  Log in to the OCI account, expand the Profile menu and click on User Settings:
-    ![](images/lab1-task1-step1-login.png " ")
+    ![Log in Step](images/lab1-task1-step1-login.png " ")
 
 2.  Under User Settings, click on the API Keys under Resources on the left:
-    ![](images/lab1-task1-step2-apikey.png " ")
+    ![Click on API key](images/lab1-task1-step2-apikey.png " ")
 
 3. Click on Add API Key:
-    ![](images/lab1-task1-step3-addkey.png " ")
+    ![Add API Key](images/lab1-task1-step3-addkey.png " ")
 
 4. Download the private key. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
-    ![](images/lab1-task1-step4-savekey.png " ")
+    ![Save Key](images/lab1-task1-step4-savekey.png " ")
 
 5. Save the contents of the configuration file preview in a text file. Details such as user, fingerprint, tenancy, region etc. will be needed when setting up authorization for using the forecasting APIs.
-    ![](images/lab1-task1-step5-configurationfile.png " ")
+    ![Configuration File](images/lab1-task1-step5-configurationfile.png " ")
 
 
 
@@ -45,13 +46,13 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 
 1.  Search for data science in the top search bar. Click on the Data Science under Services:
-    ![](images/lab1-task2-step1-login.png " ")
+    ![Search Data Science](images/lab1-task2-step1-data-science.png " ")
 
 2.  Select the root compartment and press the create project button. 
-    ![](images/lab1-task2-step2-createproject.png " ")
+    ![Create Project](images/lab1-task2-step2-createproject.png " ")
 
 3.  Fill the name and description field and press the create button: 
-    ![](images/lab1-task2-step3-project-details.png " ")
+    ![Fill details for Project](images/lab1-task2-step3-project-details.png " ")
 
 
 
@@ -59,25 +60,25 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
 1.  Select the project which we created now to create a notebook session
     
-    ![](images/lab1-task3-step2-access.png " ")
+    ![Select Project](images/lab1-task3-step2-select-project.png " ")
 
 2.  Click on the create a notebook session
-    ![](images/lab1-task3-step3-notebooksession.png " ")
+    ![Notebook Session](images/lab1-task3-step3-notebooksession.png " ")
 
 3.  Give a name to the notebook session. Select appropriate compute, storage, VCN and subnet. Press the create button
     
-    ![](images/lab1-task3-step4-sessiondetails.png " ")
+    ![Session Details](images/lab1-task3-step4-sessiondetails.png " ")
 
 4.  It takes a few minutes (5-10 minutes) for the newly created notebook session to become active. It can be seen under the project. Once it has become active, open it
 
-    ![](images/lab1-task3-step5-wait.png " ")
+    ![Wait for forecast to complete](images/lab1-task3-step5-wait.png " ")
 
 5.  Click on the open button
     
-    ![](images/lab1-task3-step6-open.png " ")
+    ![Click on Open](images/lab1-task3-step6-open.png " ")
 
 6.  A new notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
-    ![](images/lab1-task3-step7-python3.png " ")
+    ![Python3](images/lab1-task3-step7-python3.png " ")
 
 7.  Now, we will set up authorization to use forecasting APIs. Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that we downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
@@ -94,7 +95,7 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 
     ```
 
-    ![](images/lab1-task3-step9-authorization.png " ")
+    ![Authorization](images/lab1-task3-step9-authorization.png " ")
 
 
 ## Task 4: Understand Data, Download Samples, Prepare data, Create Project
@@ -104,27 +105,25 @@ OCI forecasting service provides an AutoML solution with multiple univariate/mul
 
 For a successful forecast, the input data should pass the following data validations:
 
-* Number of rows for a time series >= 5 and <= 5000
-* Series length >= 2 X Major Seasonality
-* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
-* If the ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
-* If there are missing values for 5 consecutive time steps, throw an error.
-* Input Data Frequency: 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
-* Forecast Frequency: 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required. For custom frequency: If the input data frequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
-Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we want Forecast Frequency to be a DAY level
-* All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
-* Check if there are any duplicate dates in time-series after grouping also (Check for both additional and primary data)
+* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
+* Number of missing values for 5 consecutive time steps is not allowed
+* All the timestamps in the primary data source should exist in the secondary data source
+* The number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
+* There should be no duplicate dates in the time-series in either the additional and primary data files.
 
-**Data format requirements**
 
-The data should contain one timestamp column and other columns for target variable and series id (if using grouped data):
+- **Primary Data:**
+The input data should contain Series id, timestamp, and target variable which you want to forecast
+
+- **Additional Data:**
+The data should contain Series id, timestamp, and additional influencer that help in forecasting the target variable, given primary data
+
 - timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
-- If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 3 of Task 6 in this lab for  "yyyy-MM-dd HH:mm:ss"
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
-**Note**: The column names used in the examples here are just for representation and actual data can have different custom names.  
+**Note**: The column names used in the examples here are just for representation and actual data can have different custom names. 
 
 Currently, OCI Forecasting Service APIs support datasets that can be in one of the following formats:
 
@@ -222,7 +221,7 @@ Currently, OCI Forecasting Service APIs support datasets that can be in one of t
 2.  Next, we need to upload the sample training data into data science notebook, to be used for *inline data* preparation for model training in next steps.
 
 Click on upload and then browse to file to be uploaded:
-![](images/lab1-task3-upload-data.png " ")
+![Upload Data](images/lab1-task3-upload-data.png " ")
 
 ## Task 6: Inline Data preparation
 
@@ -530,41 +529,39 @@ In this task, we will learn how to use create and get forecast APIs.
     ```  
     Forecast Response below :
     ```json
-    {
-    'description': None,
-    'id': 'ocid1.aiforecast.oc1.phx.rwerweugg2dyrwerewrxf5wd3gc2xgrxxoxkrmjeddyoxyrs3wztaqlwfya',
+    {'description': None,
+    'id': 'ocid1.aiforecast.oc1.phx.amaaaaaaugg2dyyahh2cclvq7cxk6sywjsqkfftk4fta2mzyfx7otvexcubq',
     'responseType': None,
-    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaarewrewjuzo25wt7vosv4inc6ib5efqiyvon4dqwijssvyaxw6ivqa',
-    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaaugg2dyyagczklwmq76gcuaseewrewraknse25zybjfatjpeyks2q',
+    'compartmentId': 'ocid1.tenancy.oc1..aaaaaaaabkxgxjuzo25wt7vosv4inc6ib5efqiyvon4dqwijssvyaxw6ivqa',
+    'projectId': 'ocid1.aiforecastproject.oc1.phx.amaaaaaaugg2dyya5gctalqoe3b7jgr76ohkxffm3tn7mnwgfeczh3mth3ja',
     'displayName': 'Inline Forecasting Service API LA Live Labs ',
     'createdBy': None,
-    'timeCreated': '2022-11-25T03:44:25.920Z',
-    'timeUpdated': '2022-11-25T04:17:49.913Z',
-    'lifeCyleDetails': None,
+    'timeCreated': '2023-03-07T03:39:56.581Z',
+    'timeUpdated': '2023-03-07T04:16:24.701Z',
+    'lifeCycleDetails': 'Forecast completed',
+    'lifeCyleDetails': 'Forecast completed',
     'lifecycleState': 'ACTIVE',
     'failureMessage': None,
     'trainingMessages': [],
     'forecastCreationDetails': {'targetVariables': ['sales'],
-      'modelDetails': {'models': ['SMA',
+    'modelDetails': {'models': ['SMA',
         'DMA',
         'HWSM',
         'HWSA',
         'SES',
         'DES',
         'PROPHET']},
-      'dataSourceDetails': {'type': 'INLINE',
-      'primaryDataSource': {'isDataGrouped': True,
+    'dataSourceDetails': {'type': 'INLINE',
+    'primaryDataSource': {'isDataGrouped': True,
         'tsColName': 'date',
-        'dataFrequency': 'DAY',
     show more (open the raw output data in a text editor) ...
 
-    'inputSeriesCount': 1,
+    'validatedSeriesCount': 1,
     'forecastSeriesCount': 1,
     'freeformTags': {},
     'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
-      'CreatedOn': '2022-11-25T03:44:25.525Z'}},
-    'systemTags': {}
-      }
+    'CreatedOn': '2023-03-07T03:39:55.865Z'}},
+    'systemTags': {}}
     ```
      
 Using below code, we can save the forecast as tabular data in a csv file with prediction intervals.
@@ -589,7 +586,7 @@ df_forecasts.to_csv(file_name, index = None)
 df_forecasts      
 ```
 The forecast.csv will be saved in the same folder as the notebook file.
-  ![](images/lab1-task2.png " ")
+  ![Saved CSV file](images/lab1-task2.png " ")
 
 3. Get Training Metrics report from the response
 
@@ -602,9 +599,9 @@ The forecast.csv will be saved in the same folder as the notebook file.
     ```
     Output:
     ```Json
-  [{'targetColumn': '15_AUTOMOTIVE',
+    [{'targetColumn': '15_AUTOMOTIVE',
     'bestModel': 'prophet',
-    'errorMeasureValue': 1.1582192,
+    'errorMeasureValue': 1.1511183,
     'errorMeasureName': 'RMSE',
     'numberOfMethodsFitted': 5,
     'seasonality': 1,
@@ -645,35 +642,35 @@ Here is a example on using the forecast explanation API to get the global and lo
     {'dataSourceType': 'INLINE',
     'explanations': [{'targetColumn': '15_AUTOMOTIVE',
     'bestModel': 'PROPHET',
-    'bestHyperParameters': {'seasonality_prior_scale': 0.43401502145728005,
-    'seasonality_mode': 'additive',
-    'changepoint_prior_scale': 1.0,
-    'changepoint_range': 0.8600000000000001,
-    'holidays_prior_scale': 0.1},
+    'bestHyperParameters': {'seasonality_prior_scale': 0.515702360143489,
+        'seasonality_mode': 'additive',
+        'changepoint_prior_scale': 1.0,
+        'changepoint_range': 0.8800000000000001,
+        'holidays_prior_scale': 0.1},
     'hyperparameterSearchMethod': 'BAYESOPT',
     'bestModelSelectionMetric': 'RMSE',
-    'globalFeatureImportance': {'influencingFeatures': {'trend': {'rawScore': 0.0031412507,
-    'normalizedScore': 0.002469764},
-    'onpromotion': {'rawScore': 1.2687416, 'normalizedScore': 0.9975302}}},
-    'localFeatureImportance': {'forecastHorizon': 14,
-    'dates': ['2017-02-09 00:00:00',
-    '2017-02-10 00:00:00',
-    '2017-02-11 00:00:00',
-    '2017-02-12 00:00:00',
-    '2017-02-13 00:00:00',
-    '2017-02-14 00:00:00',
-    '2017-02-15 00:00:00',
-    '2017-02-16 00:00:00',
-    '2017-02-17 00:00:00',
-    '2017-02-18 00:00:00',
-    '2017-02-19 00:00:00',
+    'globalFeatureImportance': {'influencingFeatures': {'trend': {'rawScore': 0.0010241447,
+        'normalizedScore': 0.0006554309},
+        'onpromotion': {'rawScore': 1.2742214, 'normalizedScore': 0.8154747},
+        'yearly': {'rawScore': 0.16981193, 'normalizedScore': 0.10867604},
+        'weekly': {'rawScore': 0.11749427, 'normalizedScore': 0.07519384},
+        'daily': {'rawScore': 0.0, 'normalizedScore': 0.0}},
+        'influencingFeaturesUnified': {'primary': [{'name': 'Daily seasonality',
+        'description': 'The model finds the target values to follow daily cycles. This bar displays the importance of daily seasonality for the forecast.',
+        'rawScore': 0.0,
+        'normalizedScore': 0.0},
+        {'name': 'Lag effects (level and trend)',
+        'description': 'Lag effects are impacts of previous periods on the target values. Lag effects explain the upward or downward movements of the target variable (trend) and the average value for a specific time period (level). This bar shows how important lag effects are for this forecast.',
+        'rawScore': 0.0010241447,
+        'normalizedScore': 0.0006554309},
+        {'name': 'Weekly seasonality',
     show more (open the raw output data in a text editor) ...
 
-    'onpromotion': {'rawScore': 2.1349018,
-    'normalizedScore': 0.9962766}}]}}],
+            'rawScore': 2.1441226,
+            'normalizedScore': 0.98800904}]}]}}],
     'freeformTags': {},
     'definedTags': {'Oracle-Tags': {'CreatedBy': 'ravijkum',
-    'CreatedOn': '2022-11-25T03:44:25.525Z'}},
+    'CreatedOn': '2023-03-07T03:39:55.865Z'}},
     'systemTags': {}}
     ```
 *The above explanation shows features contributing towards the model output/prediction from the base value. The base value is nothing but the average model output computed over the most recent 100-time steps in the training data. If the dataset size is less than 100, then the base value is computed over the whole dataset. The features which have positive feature importance scores, push the prediction higher and the features that have negative feature importance scores, push the prediction lower. The feature importance scores are raw scores and those features with high magnitude influence the prediction most and the sign of the scores indicates whether the influence is positive or negative.*
@@ -683,23 +680,23 @@ Here is a example on using the forecast explanation API to get the global and lo
     Here is a simple function to plot the global feature importance from the above json output.
 
     ```Python
-  import plotly.express as px
-  import plotly.graph_objects as go
+    import plotly.express as px
+    import plotly.graph_objects as go
 
-  def plot_global_feature_importance(get_forecast_explanations):
-      df_imps = pd.DataFrame()
-      global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
-      df_imps['Feature_Importance'] = global_feature_importance.values()
-      df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
-      feature_names = global_feature_importance.keys()
-      df_imps['Features'] = feature_names
+    def plot_global_feature_importance(get_forecast_explanations):
+        df_imps = pd.DataFrame()
+        global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
+        df_imps['Feature_Importance'] = global_feature_importance.values()
+        df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
+        feature_names = global_feature_importance.keys()
+        df_imps['Features'] = feature_names
 
-      title = "Global Feature Importance"
-      fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
-      fig.update_traces(marker_color='lightsalmon')
-      fig.show()
+        title = "Global Feature Importance"
+        fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
+        fig.update_traces(marker_color='lightsalmon')
+        fig.show()
 
-  plot_global_feature_importance(get_forecast_explanations)
+    plot_global_feature_importance(get_forecast_explanations)
     ```
 
   ### Sample Global feature importance plot
@@ -715,31 +712,30 @@ Here is a example on using the forecast explanation API to get the global and lo
     Here is a simple function to plot the local feature importance from the above json output.
 
     ```Python
-    import plotly.express as px
-    import plotly.graph_objects as go
-    import numpy as np
+        import plotly.express as px
+        import plotly.graph_objects as go
+        import numpy as np
 
-    def plot_local_feature_importance(get_forecast_explanations, time_step):
-        df_imps = pd.DataFrame()
-        local_feature_importance = get_forecast_explanations['explanations'][0]['localFeatureImportance']['influencingFeatures'][time_step]
-        df_imps['Feature_Importance'] = local_feature_importance.values()
-        df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
-        feature_names = local_feature_importance.keys()
-        df_imps['Features'] = feature_names
+        def plot_local_feature_importance(get_forecast_explanations, time_step):
+            df_imps = pd.DataFrame()
+            local_feature_importance = get_forecast_explanations['explanations'][0]['localFeatureImportance']['influencingFeatures'][time_step]
+            df_imps['Feature_Importance'] = local_feature_importance.values()
+            df_imps["Feature_Importance"] = df_imps["Feature_Importance"].apply(lambda x:x["normalizedScore"])
+            feature_names = local_feature_importance.keys()
+            df_imps['Features'] = feature_names
 
-        title = "Local Feature Importance for Timestep " + str(time_step)
-        fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
-        fig.update_traces(marker_color='lightsalmon')
-        fig.show()
+            title = "Local Feature Importance for Timestep " + str(time_step)
+            fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
+            fig.update_traces(marker_color='lightsalmon')
+            fig.show()
 
-    time_step = 2
-
-    plot_local_feature_importance(get_forecast_explanations, time_step)
+        time_step = 2
+        plot_local_feature_importance(get_forecast_explanations, time_step)
     ```
 
-    ### Sample Local feature importance plot for step 1 forecast
+    ### Sample Local feature importance plot for step 2 forecast
 
-    ![Local Feature Importance for step 1 forecast](images/lab1-task2-local-feature-importance.png)
+    ![Local Feature Importance for step 2 forecast](images/lab1-task2-local-feature-importance.png)
 
     Similarly, by changing the time step, we can get the local feature importance for that corresponding forecast.
 

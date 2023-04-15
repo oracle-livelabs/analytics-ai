@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Departmental Data Warehouse - HR Analytics",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Departmental Data Warehouse - HR Analytics Hands-On Workshop Overview",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: Provision Resources",
+      "description": "Provisioning the resources for the architecture pattern",
+      "filename": "../../provision-resources/provision-resources.md" 
+    },
+    {
+      "title": "Lab 2: Perform Analysis",
+      "description": "Upload and analyze HR dashboards",
+      "filename": "../../perform-analysis/perform-analysis.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
