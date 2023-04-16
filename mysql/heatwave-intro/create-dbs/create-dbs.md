@@ -15,7 +15,7 @@ _Estimated Time:_ 20 minutes
 In this lab, you will be guided through the following tasks:
 
 - Create Virtual Cloud Network
-- Create MySQL Database for HeatWave (DB System) instance
+- Create MySQL HeatWave (DB System) Instance
 
 ### Prerequisites
 
@@ -46,10 +46,11 @@ In this lab, you will be guided through the following tasks:
     On Basic Information, complete the following fields:
 
     VCN Name:
-    ```
+
+    ```bash
     <copy>HEATWAVE-VCN</copy>
     ```
-    
+
     Compartment: Select  **(root)**
 
     Your screen should look similar to the following
@@ -71,68 +72,80 @@ In this lab, you will be guided through the following tasks:
 10. On Private Subnet-HEATWAVE-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-HEATWAVE-VCN**'
     ![VCN](./images/vcn-private-security-list.png "vcn private security list")
 
-11.	On Security List for Private Subnet-HEATWAVE-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
+11. On Security List for Private Subnet-HEATWAVE-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
     ![vcn private subnet](./images/vcn-private-security-list-ingress.png "vcn private security list ingress")
 
-12.	On Add Ingress Rules page under Ingress Rule 1
+12. On Add Ingress Rules page under Ingress Rule 1
 
- Add an Ingress Rule with Source CIDR
-    ```
+    a. Add an Ingress Rule with Source CIDR
+
+    ```bash
     <copy>0.0.0.0/0</copy>
     ```
- Destination Port Range
-     ```
+
+    b. Destination Port Range
+
+    ```bash
     <copy>3306,33060</copy>
      ```
- Description
-     ```
+
+    c. Description
+
+    ```bash
     <copy>MySQL Port Access</copy>
-     ```
- Click 'Add Ingress Rule'
+    ```
+
+    d. Click 'Add Ingress Rule'
     ![add ingres rule](./images/vcn-private-security-list-ingress-rules-mysql.png "vcn private security list ingress rukes mysql")
 
-13.	On Security List for Private Subnet-HEATWAVE-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
+13. On Security List for Private Subnet-HEATWAVE-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![show ingres rule](./images/vcn-private-security-list-ingress-display.png "vcn private security list ingress display")
 
 ## Task 2: Create MySQL Database for HeatWave (DB System) instance
 
-1. Go to Navigation Menu
+1. Click on Navigation Menu
          Databases
          MySQL
-         DB Systems
-    ![mysql menu](./images/04mysql01.png "mysql menu ")
+    ![home menu mysq](./images/home-menu-database-mysql.png "home menu mysql")
 
-2. Click 'Create MySQL DB System'
-    ![mysql create button](./images/04mysql02.png " mysql create button")
+2. Click 'Create DB System'
+    ![mysql create button](./images/mysql-menu.png " mysql create button")
 
-3. Create MySQL DB System dialog complete the fields in each section
+3. Create MySQL DB System dialog by completing the fields in each section
 
-    - Provide basic information for the DB System
-    - Setup your required DB System
+    - Provide DB System information
+    - Setup the DB system
     - Create Administrator credentials
     - Configure Networking
     - Configure placement
     - Configure hardware
     - Exclude Backups
-    - Advanced Options - Data Import
+    - Set up Advanced Options
 
-4. Provide basic information for the DB System:
+4. For DB System Option Select **Development or Testing**
 
- Select Compartment **(root)**
+    ![heatwave db option](./images/mysql-create-option-develpment.png "heatwave db option")
 
- Enter Name
-    ```
+5. Provide basic information for the DB System:
+
+    a. Select Compartment **(root)**
+
+    b. Enter Name
+
+    ```bash
     <copy>HEATWAVE-HW</copy>
     ```
- Enter Description
-    ```
-    <copy>MySQL Database Service HeatWave instance</copy>
+
+    c. Enter Description
+
+    ```bash
+    <copy>MySQL HeatWave Database Instance</copy>
     ```
 
- Select **HeatWave** to specify a HeatWave DB System
-    ![heatwave db](./images/04mysql03-3.png "heatwave db")
+    d. Select **HeatWave** to specify a HeatWave DB System
+    ![heatwave db info setup](./images/mysql-create-info-setup.png "heatwave db info setup ")
 
-5. Create Administrator Credentials
+6. Create Administrator Credentials
 
     **Enter Username** (write username to notepad for later use)
 
@@ -140,36 +153,33 @@ In this lab, you will be guided through the following tasks:
 
     **Confirm Password** (value should match password for later use)
 
-    ![mysql admin](./images/04mysql04.png "mysql admin ")
+    ![heatwave db admin](./images/mysql-create-admin.png "heatwave db admin ")
 
-6. On Configure networking, keep the default values
+7. On Configure networking, keep the default values
 
-    Virtual Cloud Network: **HEATWAVE-VCN**
+    a. Virtual Cloud Network: **HEATWAVE-VCN**
 
-    Subnet: **Private Subnet-HEATWAVE-VCN (Regional)**
+    b. Subnet: **Private Subnet-HEATWAVE-VCN (Regional)**
 
-    ![heatwave vcn](./images/04mysql05.png "heatwave vcn ")
+    c. On Configure placement under 'Availability Domain'
 
-7. On Configure placement under 'Availability Domain'
+    Select AD-1  ...  Do not check 'Choose a Fault Domain' for this DB System.
 
-    Select AD-3
-
-    Do not check 'Choose a Fault Domain' for this DB System.
-
-    ![Fault Domain default](./images/04mysql06-3.png "Fault Domain default")
+    ![heatwave db network ad](./images/mysql-create-network-ad.png "heatwave db network ad ")
 
 8. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
     Data Storage Size (GB) Set value to:  **1024**
 
-    ```
+    ```bash
     <copy>1024</copy>
     ```
-    ![data storage size](./images/04mysql07-3-100-2.png"data storage size ")
+
+    ![heatwave db  hardware](./images/mysql-create-db-hardware.png"heatwave db hardware ")
 
 9. On Configure Backups, disable 'Enable Automatic Backup'
 
-    ![auto backup](./images/04mysql08.png " auto backup")
+    ![heatwave db  backup](./images/mysql-create-backup.png " heatwave db  backup")
 
 10. Click on Show Advanced Options
 
@@ -177,30 +187,34 @@ In this lab, you will be guided through the following tasks:
 
     ```bash
         <copy>HEATWAVE-HW</copy> 
-    ```
+    ```  
 
-15. Review **Create MySQL DB System**  Screen
+    ![heatwave db advanced](./images/mysql-create-advanced.png "heatwave db advanced ")
 
-    ![review creete db screen](./images/04mysql09-3.png "review creete db screen ")
+12. Review **Create MySQL DB System**  Screen
+
+    ![heatwave db create](./images/mysql-create.png "heatwave db create ")
+  
 
     Click the '**Create**' button
 
-16. The New MySQL DB System will be ready to use after a few minutes
+13. The New MySQL DB System will be ready to use after a few minutes
 
     The state will be shown as 'Creating' during the creation
-    ![show creeation state](./images/04mysql10-3.png"show creeation state")
+    ![show creeation state](./images/mysql-create-in-progress.png"show creeation state")
 
-17. The state 'Active' indicates that the DB System is ready for use
+14. The state 'Active' indicates that the DB System is ready for use
 
     On HEATWAVE-HW Page, check the MySQL Endpoint (Private IP Address)
 
     ![heatwave endpoint](./images/04mysql11-3.png"heatwave endpoint")
 
-
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Perside Foster, MySQL Solution Engineering
-* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
+- **Author** - Perside Foster, MySQL Solution Engineering
+
+- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
+
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
