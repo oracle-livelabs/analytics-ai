@@ -1,5 +1,6 @@
-# Create MySQL Database System and HeatWave Cluster
-![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave")
+# Create MySQL HeatWave Database System
+
+![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
 
 ## Introduction
 
@@ -23,51 +24,55 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network
 
-1. Click **Navigation Menu**, **Networking**, then **Virtual Cloud Networks**  
-    ![menu vcn](./images/03vcn01.png "menu vcn ")
+1. You should be signed in to Oracle Cloud!
 
-2. Click **Start VCN Wizard**
-    ![vcn wizard](./images/03vcn02.png "vcn wizard ")
+    Click **Navigation Menu**,
 
-3. Select 'Create VCN with Internet Connectivity'
+    ![OCI Console Home Page](./images/homepage.png " home page")
+
+2. Click  **Networking**, then **Virtual Cloud Networks**  
+    ![menu vcn](./images/home-menu-networking-vcn.png "home menu networking vcn ")
+
+3. Click **Start VCN Wizard**
+    ![vcn wizard](./images/vcn-wizard-menu.png "vcn wizard ")
+
+4. Select 'Create VCN with Internet Connectivity'
 
     Click 'Start VCN Wizard'
-    ![start vcn wizard](./images/03vcn03.png "start vcn wizard ")
+    ![start vcn wizard](./images/vcn-wizard-start.png "start vcn wizard ")
 
-4. Create a VCN with Internet Connectivity
+5. Create a VCN with Internet Connectivity
 
     On Basic Information, complete the following fields:
 
- VCN Name:
+    VCN Name:
     ```
     <copy>MDS-VCN</copy>
     ```
- Compartment: Select  **(root)**
+    
+    Compartment: Select  **(root)**
 
- Your screen should look similar to the following
-    ![select compartment](./images/03vcn04.png "select compartment")
+    Your screen should look similar to the following
+    ![select compartment](./images/vcn-wizard-compartment.png "select compartment")
 
-5. Click 'Next' at the bottom of the screen
+6. Click 'Next' at the bottom of the screen
 
-6. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
+7. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
 
     Click 'Create' to create the VCN
-    ![create vcn](./images/03vcn04-1.png "create vcn")
+    ![create vcn](./images/vcn-wizard-create.png "create vcn")
 
-7. The Virtual Cloud Network creation is completing
-    ![vcn creation completing](./images/03vcn05.png "vcn creation completing")
-
-8. Click 'View Virtual Cloud Network' to display the created VCN
-    ![view vcn](./images/03vcn06.png "view vcn")
+8. When the Virtual Cloud Network creation completes, click 'View Virtual Cloud Network' to display the created VCN
+    ![vcn creation completing](./images/vcn-wizard-view.png "vcn creation completing")
 
 9. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-MDS-VCN**'
-     ![vcn subnet](./images/03vcn07.png "vcn subnet")
+     ![vcn subnet](./images/vcn-details-subnet.png "vcn detqails subnet")
 
-10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
-    ![VCN](./images/03vcn08.png "vcn security list")
+10. On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
+    ![VCN](./images/vcn-private-security-list.png "vcn private security list")
 
 11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
-    ![vcn private subnet](./images/03vcn09.png "vcn private subnet")
+    ![vcn private subnet](./images/vcn-private-security-list-ingress.png "vcn private security list ingress")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
 
@@ -84,10 +89,10 @@ In this lab, you will be guided through the following tasks:
     <copy>MySQL Port Access</copy>
      ```
  Click 'Add Ingress Rule'
-    ![add ingres rule](./images/03vcn10.png "add ingres rule")
+    ![add ingres rule](./images/vcn-private-security-list-ingress-rules-mysql.png "vcn private security list ingress rukes mysql")
 
 13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
-    ![show ingres rule](./images/03vcn11.png "show ingres rule")
+    ![show ingres rule](./images/vcn-private-security-list-ingress-display.png "vcn private security list ingress display")
 
 ## Task 2: Create MySQL Database for HeatWave (DB System) instance
 
@@ -192,6 +197,7 @@ In this lab, you will be guided through the following tasks:
     ![mds endpoint](./images/04mysql11-3.png"mds endpoint")
 
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
