@@ -47,7 +47,7 @@ In this lab, you will be guided through the following tasks:
 
     VCN Name:
     ```
-    <copy>MDS-VCN</copy>
+    <copy>HEATWAVE-VCN</copy>
     ```
     
     Compartment: Select  **(root)**
@@ -65,13 +65,13 @@ In this lab, you will be guided through the following tasks:
 8. When the Virtual Cloud Network creation completes, click 'View Virtual Cloud Network' to display the created VCN
     ![vcn creation completing](./images/vcn-wizard-view.png "vcn creation completing")
 
-9. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-MDS-VCN**'
+9. On HEATWAVE-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-HEATWAVE-VCN**'
      ![vcn subnet](./images/vcn-details-subnet.png "vcn detqails subnet")
 
-10. On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
+10. On Private Subnet-HEATWAVE-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-HEATWAVE-VCN**'
     ![VCN](./images/vcn-private-security-list.png "vcn private security list")
 
-11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
+11.	On Security List for Private Subnet-HEATWAVE-VCN page under 'Ingress Rules', click '**Add Ingress Rules**'
     ![vcn private subnet](./images/vcn-private-security-list-ingress.png "vcn private security list ingress")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
@@ -91,7 +91,7 @@ In this lab, you will be guided through the following tasks:
  Click 'Add Ingress Rule'
     ![add ingres rule](./images/vcn-private-security-list-ingress-rules-mysql.png "vcn private security list ingress rukes mysql")
 
-13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
+13.	On Security List for Private Subnet-HEATWAVE-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![show ingres rule](./images/vcn-private-security-list-ingress-display.png "vcn private security list ingress display")
 
 ## Task 2: Create MySQL Database for HeatWave (DB System) instance
@@ -122,7 +122,7 @@ In this lab, you will be guided through the following tasks:
 
  Enter Name
     ```
-    <copy>MDS-HW</copy>
+    <copy>HEATWAVE-HW</copy>
     ```
  Enter Description
     ```
@@ -144,11 +144,11 @@ In this lab, you will be guided through the following tasks:
 
 6. On Configure networking, keep the default values
 
-    Virtual Cloud Network: **MDS-VCN**
+    Virtual Cloud Network: **HEATWAVE-VCN**
 
-    Subnet: **Private Subnet-MDS-VCN (Regional)**
+    Subnet: **Private Subnet-HEATWAVE-VCN (Regional)**
 
-    ![mds vcn](./images/04mysql05.png "mds vcn ")
+    ![heatwave vcn](./images/04mysql05.png "heatwave vcn ")
 
 7. On Configure placement under 'Availability Domain'
 
@@ -176,7 +176,7 @@ In this lab, you will be guided through the following tasks:
 11. Go to the Networking tab, in the Hostname field enter (same as DB System Name):
 
     ```bash
-        <copy>MDS-HW</copy> 
+        <copy>HEATWAVE-HW</copy> 
     ```
 
 15. Review **Create MySQL DB System**  Screen
@@ -192,9 +192,9 @@ In this lab, you will be guided through the following tasks:
 
 17. The state 'Active' indicates that the DB System is ready for use
 
-    On MDS-HW Page, check the MySQL Endpoint (Private IP Address)
+    On HEATWAVE-HW Page, check the MySQL Endpoint (Private IP Address)
 
-    ![mds endpoint](./images/04mysql11-3.png"mds endpoint")
+    ![heatwave endpoint](./images/04mysql11-3.png"heatwave endpoint")
 
 
 You may now **proceed to the next lab**.
