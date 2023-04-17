@@ -43,7 +43,7 @@ _Estimated Time:_ 15 minutes
 1. Click on the hamburger **MENU (Navigator)** link at the upper left corner of the page.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**  
-    ![Oracle Cloud Web Console](https://oracle-livelabs.github.io/common/images/console/database-adw.png)
+    ![Oracle Cloud Web Console](./images/cloud-console.png)
 
     This will take you to the management console page.
 
@@ -51,7 +51,7 @@ _Estimated Time:_ 15 minutes
 
 2. To create a new instance, click the blue **Create Autonomous Database** button.
 
-    ![Create ADB](./images/lab100_2small.png)
+    ![Create ADB](./images/create-adb.png =250x*)
 
     Enter the required information and click the **Create Autonomous Database** button at the bottom of the form. For the purposes of this workshop, use the information below:
 
@@ -62,18 +62,18 @@ _Estimated Time:_ 15 minutes
      > **Display Name:** Enter the display name for your ADW Instance. Use a user-friendly name to help you easily identify the resource. You can leave the name provided. That field is not a mandatory one.
 
     > **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. For this demo purpose, I have called my database **ADWH**.
-  
+
     > **Workload Type:** Autonomous Data Warehouse  
     >
     > **Deployment Type:** Shared Infrastructure
     >
     > **Always Free:** Off
-    
+
       - **Not recommended for this lab**, but you can select Always Free configuration to start enjoying your Free Autonomous Database.  With Free option you will not be able to scale the database when need it.
-      
+
         [If you select 'Always Free Tier On', please check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
 
-      ![ADB Creation Details](./images/lab100_3a.png)
+      ![ADB Creation Details](./images/adb-creation-details.png)
 
    > **Choose Database version:** you can leave the default displayed version
    >
@@ -92,7 +92,7 @@ _Estimated Time:_ 15 minutes
 
     Under **Choose network access** section:
 
-    > Select **'Allow secure access from everywhere'** 
+    > Select **'Allow secure access from everywhere'**
     ![ADB Creation Password](./images/create-admin-pwd.png)
 
 4. Under **Choose a license type** section, choose **License Type: Licence Included**.
@@ -104,10 +104,10 @@ _Estimated Time:_ 15 minutes
 
 
 6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning.**  
-![ADB Creation Provisioning Amber](./images/lab100_8.png)
+![ADB Creation Provisioning Amber](./images/provisioning-amber.png =200x*)
 
 7. After a short while, the status turns to **Available State** and the "ADW" box will change color to green:  
-![ADB Creation Provisioning Green](./images/lab100_9.png)
+![ADB Creation Provisioning Green](./images/provisioning-green.png =200x*)
 
 8. Once the Instance Status is **Available**, additional summary information about your instance is populated, including workload type and other details.
 
@@ -127,4 +127,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu, March 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023
