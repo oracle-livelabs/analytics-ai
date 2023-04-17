@@ -207,7 +207,7 @@ In this lab, you will be guided through the following tasks:
 
     On HEATWAVE-HW Page, check the MySQL Endpoint (Private IP Address)
 
-    ![heatwave endpoint](./images/04mysql11-3.png"heatwave endpoint")
+    ![heatwave endpoint](./images/mysql-detail-active.png"heatwave endpoint")
 
 You may now **proceed to the next lab**.
 
