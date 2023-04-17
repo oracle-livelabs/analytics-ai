@@ -1,8 +1,8 @@
-# Blend Datasets
+# BI Ask
 
 ## Introduction
 
-In this lab, you will learn how to join two tables to blend data in Oracle Analytics.
+In this lab, you will learn how to setup and use BI Ask, a natural language querying feature to answer business questions with visualizations based on your data.
 
   ![BI Ask Overview](images/bi-ask-result.png)
 
