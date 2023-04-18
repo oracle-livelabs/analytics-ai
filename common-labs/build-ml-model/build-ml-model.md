@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to train, inspect, and apply a machine learning model in Oracle Analytics.
 
-Estimated Time: 25 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * [Heart Disease Likelihood Predict](https://objectstorage.us-ashburn-1.oraclecloud.com/p/B0i1pu4cx32M-FSyA66k3I_rphJIeqFR8g8wpem_ygjNRceNhMG6PMjix4_fS19l/n/idbwmyplhk4t/b/LiveLabs/o/Heart%20Disease%20Likelihood%20Predict.xlsx) dataset
-* [Heart Disease Likelihood Training](https://objectstorage.us-ashburn-1.oraclecloud.com/p/B3LnOO8JkJ7CiuiPgpaRgw64k4FpUfff4lYDI1jf3Bkne5prXE6strvDs3aaUB3r/n/idbwmyplhk4t/b/LiveLabs/o/Heart%20Disease%20Likelihood%20Training.xlsx) dataset
+* [Heart Disease Likelihood Training](https://objectstorage.us-ashburn-1.oraclecloud.com/p/B3LnOO8JkJ7CiuiPgpaRgw64k4FpUfff4lYDI1jf3Bkne5prXE6strvDs3aaUB3r/n/idbwmyplhk4t/b/LiveLabs/o/Heart%20Disease%20Likelihood%20Training.xlsx)
 
 ## Task 1: Train a Machine Learning Model
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
 6. From the Homepage, click **Create** and then select **Data Flow**.
 
-  ![Create Data Flow](images/create-df.png =250x*)
+  ![Create Data Flow](images/create-df.png)
 
 7. Let’s add the dataset you just created to train your model. Select **Heart Disease Likelihood Training** and click **Add**
 
@@ -70,13 +70,15 @@ This lab assumes you have:
 
   ![Save Model](images/save-model.png)
 
-13. In **Model name**, type **Heart Disease Likelihood Training - CART**. Let’s save the DataFlow too. Saving the data flow is useful in cases where the user would like to revisit the model or tune the model to get better results. Click **Save**.
+13. In **Model name**, type **Heart Disease Likelihood Training - CART**.
+
+Let’s save the DataFlow too. Saving the data flow is useful in cases where the user would like to revisit the model or tune the model to get better results. Click **Save**.
 
   ![Save model and DF](images/save-model-df.png)
 
 14. Save the data flow as **CART Heart Disease Training** and click **OK**.
 
-  ![Save DF](images/save-df.png =300x*)
+  ![Save DF](images/save-df.png)
 
 15. You now need to run the data flow to create the ML Model. Click the **Run Data Flow** icon.
 
@@ -84,11 +86,11 @@ This lab assumes you have:
 
 16. After the completion of the data flow, let's evaluate the ML model. Go back to the homepage.
 
-  ![Back to homepage](images/back-to-hompeage.png =400x*)
+  ![Back to homepage](images/back-to-hompeage.png)
 
 17. Click the Navigation menu and select **Machine Learning**.
 
-  ![Machine Learning](images/ml.png =300x*)
+  ![Machine Learning](images/ml.png)
 
 18. You will find your trained Multi Classifier CART machine learning model ready for use. In the next task, we will inspect this model.
 
@@ -186,7 +188,7 @@ This lab assumes you have:
 
   ![Save workbook](images/save-workbook.png)
 
-In this lab, you have successfully learned how to use Oracle Analytics to build, train, and apply a machine learning model to predict heart disease likelihood.
+In this lab, you have successfully learned how to use Oracle Analytics to build, train, and apply a machine learning model to predict heat disease likelihood.
 
 ## Learn More
 * [Create and Use Oracle Analytics Predictive Models](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/create-and-use-oracle-analytics-predictive-models.html)

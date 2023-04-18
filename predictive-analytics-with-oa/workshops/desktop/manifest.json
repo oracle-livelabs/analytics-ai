@@ -27,8 +27,7 @@
         },
         {
             "title": "Lab 3: Build a Machine Learning Model",
-            "description": "Learn how to build a machine learning model in Oracle Analytics.",
-            "filename": "../../build-ml-model/build-ml-model.md"
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/build-ml-model/build-ml-model.md"
         },
         {
             "title": "Need Help?",
