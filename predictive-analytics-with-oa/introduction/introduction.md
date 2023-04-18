@@ -4,7 +4,7 @@
 
 This workshop is the hands-on component of the course "Predictive Analytics with Oracle Analytics" delivered by the Oracle Analytics Enablement team. Lab 1 and 2 focus on leveraging augmented analytics capabilities like BI Ask, Auto-Insights, Explain, and NLG while lab 3 focuses on building a predictive model by training, inspecting and applying a predictive algorithm to a dataset.
 
-Estimated Workshop Time: 50 minutes
+Estimated Workshop Time: 45 minutes
 
 
 ### Objectives

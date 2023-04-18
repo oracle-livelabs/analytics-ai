@@ -6,7 +6,7 @@ In this lab, you will learn how to setup and use BI Ask, a natural language quer
 
   ![BI Ask Overview](images/bi-ask-result.png)
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

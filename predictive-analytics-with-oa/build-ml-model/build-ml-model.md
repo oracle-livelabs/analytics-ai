@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to train, inspect, and apply a machine learning model in Oracle Analytics.
 
-Estimated Time: 25 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
