@@ -34,9 +34,9 @@ That specifies who can issue database functions: \_EVALUATE, EVALUATE_ANALYTIC, 
 By default is (**0**) that means the **EVALUATE** database functions are **disabled**.
 
 1.  Open System Settings.  
-On the **Home** page, click **Navigator** ![](../db-functions/images/navigator.png), select **Console** and click on **System Settings**
+On the **Home** page, click **Navigator**, select **Console** and click on **System Settings**
 
-    ![System Settings](../db-functions/images/consolesystemsettings.png)
+    ![System Settings](../db-functions/images/navigator.png)
 
 2.  Change the default value (0) to 1.  
 Value 1 is for Service administrators only. Users with the BI Service Administrator application role can invoke EVALUATE database functions.  
@@ -87,19 +87,20 @@ Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visu
 
 
 5.  Lets see the Query Log from **Performance Tools**.
-    
+
 
     Go to **Console**, click on **Session and Query Cache**  
     The query log shows that **Count Distinct** is being used against the column in the query
 
     ![Query Log](../db-functions/images/customerslog.png)
+    ![Execution Log](images/execution-log.png)
 
-6.  Lets open SQL Developer Web and run **APPROX\_COUNT\_DISTINCT** function with **DCA\_SALES\_DATA** 
-Select Overview > Autonomous Database > Autonomous Database Details > Tools > SQL DEveloper Web > Open SQL Developer Web
+6.  Lets open SQL Developer Web and run **APPROX\_COUNT\_DISTINCT** function with **DCA\_SALES\_DATA**
+Select Overview > Autonomous Database > Autonomous Database Details > Database actions
 
-    ![SQL Develope Web](../db-functions/images/sqldevweb.png)
+    ![SQL Develope Web](../db-functions/images/db-actions.png)
 
-7.  Enter your **Username** and **Password** and click **Login In**
+7.  Click **SQL**.
 
     ![](../db-functions/images/sqldevweb2.png)
 
@@ -129,7 +130,7 @@ Click **Validate** and click **Save**.
 
      ![Add Calculation](../db-functions/images/addcalculation2.png)
 
-12.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
+12.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database.
 
      **APPROX\_COUNT\_DISTINCT** returns the approximate number of rows that contain a distinct value for expr.  
      This function provides an alternative to the **COUNT (DISTINCT** expr) function, which returns the exact number of rows that contain distinct values of expr. APPROX\_COUNT\_DISTINCT processes large amounts of data significantly faster than COUNT, with negligible deviation from the exact result.
@@ -148,26 +149,27 @@ Enter Name **Approx Count**; In the expression builder pane, compose and edit an
 
      ![Create Best Visualization](../db-functions/images/addcalculation2.png)
 
-15.  Create Best Visualization for **Approx Count**. 
-Expand My Calculations, Select **Approx Count**, Right-Click and Select **Create Best Visualization** 
+15.  Create Best Visualization for **Approx Count**.
+Expand My Calculations, Select **Approx Count**, Right-Click and Select **Create Best Visualization**
 
      ![Create Best Visualization](../db-functions/images/approxcount.png)
 
 16.  Check the visualization.  
-The calculation returns an approximate distinct count of Customer ID 
+The calculation returns an approximate distinct count of Customer ID
 
      ![Create Best Visualization](../db-functions/images/approxcountviz.png)
 
 17.  Go to the Query Log.  
 Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
-The query logs shows that the function approx\_count\_distinct is function shipped to database query 
+The query logs shows that the function approx\_count\_distinct is function shipped to database query
 
-     ![](../db-functions/images/approxcountlog.png)
+     ![](../db-functions/images/deveoper.png)
+     ![](images/developer2.png)
 
 18.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
 
 19.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
-Double-Click on **CATEGORY** attribute from the Data Pane. 
+Double-Click on **CATEGORY** attribute from the Data Pane.
 
      ![Add Category](../db-functions/images/approxcountvizcategsmall.png)
 
@@ -224,6 +226,6 @@ Congrats, you have just finished this workshop.
 ## **Acknowledgements**
 
 - **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Contributors** - 
+- **Contributors** -
 - **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
 - **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), February 2022

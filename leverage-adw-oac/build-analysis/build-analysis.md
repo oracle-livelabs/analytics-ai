@@ -35,13 +35,13 @@ In the Properties Pane select the **Analytics** **icon** and double-click **Add 
 3.  Rename the canvas as **Overview**.  
 Double-click on **Canvas 1**, type in **Overview** and hit Enter.
 
-    ![Rename Canvas](../build-analysis/images/canvas-overview.png)
+    ![Rename Canvas](../build-analysis/images/canvas-overview.png =200x*)
 
 4.  **Duplicate** Canvas.  
 Right-click the canvas tab and select  **Duplicate**.  
 This adds a copy of the selected canvas to the project’s row of canvas tabs.
 
-    ![Duplicate Canvas](../build-analysis/images/duplicate-canvassmall.png)
+    ![Duplicate Canvas](../build-analysis/images/duplicate-canvassmall.png =250x*)
 
 5.  Lets filter on Mobile Phones.   
 Right Click **Mobile Phones** Category and select **Keep Selected**.  
@@ -52,26 +52,26 @@ That keeps only the selected members and remove all others from the visualizatio
 6.  Move **Channel** to Color.  
 Drag **CHANNEL** from Trellis Rows section and Drop it to **Color** section.
 
-    ![Channel to Color](../build-analysis/images/channeltocolorsmall.png)
+    ![Channel to Color](../build-analysis/images/channeltocolorsmall.png =250x*)
 
 7.  Lets **Remove** the trend line for the sake of simplicity.  
 Go Analytics Property Pane > Trend and click x.
 
-    ![Remove Trend Line](../build-analysis/images/remove-trend.png)
+    ![Remove Trend Line](../build-analysis/images/remove-trend.png =250x*)
     ![Remove Trend Line](../build-analysis/images/remove-trend2.png)
 
 8.  Filter **CHANNEL** to **Direct Channel** .  
 Right Click on **Channel** > **Create Filter** and Select **Direct**.
 
-    ![Create Filter](../build-analysis/images/channel-create-filter.png)  
-    ![Create Filter](../build-analysis/images/direct-channel.png) 
+    ![Create Filter](../build-analysis/images/channel-create-filter.png =250x*)  
+    ![Create Filter](../build-analysis/images/direct-channel.png =250x*)
 
 9.  Lets **Drill** on **Direct Channel** to SUB\_CATEGORY.  
 Right Click > **Drill to Attribute/Hierarchy** and select Data Elements > **SUB\_CATEGORY**.  
 This Drill to [Attribute Name] to directly drill to a specific attribute within a visualization.
 
     ![Drill To](../build-analysis/images/channeldirect-drillto.png)  
-    ![Drill To Subcategory](../build-analysis/images/channeldirect-drilltosubcategorysmall.png)
+    ![Drill To Subcategory](../build-analysis/images/channeldirect-drilltosubcategorysmall.png =250x*)
 
 10.  Lets look at the results for 'Customers by Sales Week and Subcategory'.
 
@@ -81,7 +81,7 @@ This Drill to [Attribute Name] to directly drill to a specific attribute within 
 Go to **Data Panel**,  Select **# Customers**, press CTRL key and Select  **SUB\_CATEGORY**; Right Click and select **Create Best Visualization**  
 A visualization is automatically created on the canvas, and the best visualization type is selected based on the preconfigured logic. The selected data element is also positioned on a specific area of the Grammar Panel.
 
-     ![Create Best Visualization](../build-analysis/images/createbestviz.png)
+     ![Create Best Visualization](../build-analysis/images/createbestviz.png =300x*)
 
 12.  The system decided that Bar Chart was the best viz type to visualize this information.
 
@@ -90,81 +90,77 @@ A visualization is automatically created on the canvas, and the best visualizati
 13.  Changing the chart type is very easy.  
 Click on Grammar Pane Visualization type  and select **Donut** chart.
 
-     ![Change Chart Type](../build-analysis/images/customerssubcategory-donut.png)
+     ![Change Chart Type](../build-analysis/images/customerssubcategory-donut.png =400x*)
 
-14.  Move **SUB_CATEGORY** from **Category** section to **Color** section.
-
-     ![Subcategory to Color](../build-analysis/images/customerssubcategory-donut2.png)
-
-15. Chart properties can be modified here.  
+14. Chart properties can be modified here.  
 Go to **Property Pane**, **Values** tab and change **Data Labels** from Percent to **Percent**, **Value** and **Label**.
 
      ![Change Data Labels](../build-analysis/images/customerssubcategory-donut3.png)
 
-16.  **Change** Visualization from Donut to **Treemap**.  
+15.  **Change** Visualization from Donut to **Treemap**.  
 Click on Grammar Pane Visualization type  and select **Treemap** chart.
 
-     ![Treemap](../build-analysis/images/customerssubcategory-treemap.png)
+     ![Treemap](../build-analysis/images/customerssubcategory-treemap.png =400x*)
 
-17.  Remove legend from the Treemap Visualization.  
+16.  Remove legend from the Treemap Visualization.  
 Go **Property Pane**, click **General** tab, **Legend** element and select **None**.
 
-     ![Legend None](../build-analysis/images/change-legendtonone.png)
+     ![Legend None](../build-analysis/images/change-legendtonone.png =250x*)
 
-18.  Change back to **Donut**.
+17.  Change back to **Donut**.
 Click on Grammar Pane Visualization type  and select **Donut** chart again.
-     ![Donut](../build-analysis/images/customerssubcategory-donut4.png)  
+     ![Donut](../build-analysis/images/customerssubcategory-donut4.png =400x*)  
      > notice there is no legend displayed this time
 
-19. Use a **Visualization** **as a Filter**.  
+18. Use a **Visualization** **as a Filter**.  
 You can configure a visualization to filter other visualizations on the canvas.  
 Select Donut visualization, Right Click and select **Use as Filter**.
      ![Use as Filter](../build-analysis/images/customerssubcategory-donut-useasfilter.png)
 
-20. Experiment with Visualization as a Filter.  
+19. Experiment with Visualization as a Filter.  
 Click on a different slice of the Donut visualization and notice the change in the first visualization.
      ![Use as Filter](../build-analysis/images/customerssubcategory-donut-useasfilter2.png)
 
-21. Remove Use as Filter.  
+20. Remove Use as Filter.  
 Select the Donut Visualization, Right Click and deselect **Use as Filter**.
-     ![Remove Use as Filter](../build-analysis/images/remove-useasfilter.png)
+     ![Remove Use as Filter](../build-analysis/images/remove-useasfilter.png =400x*)
 
-22. Delete **CHANNEL** Filter.  
+21. Delete **CHANNEL** Filter.  
 Go to the **Filter Menu**, hover over CHANNEL, Click on the small down arrow and Select **Delete**.
      ![Donut](../build-analysis/images/remove-channelfilter.png)
 
-23.  Rename the canvas as **Phones**.  
+22.  Rename the canvas as **Phones**.  
 Double Click on Canvas > type in **Phones** and hit Enter.
 
-     ![Rename Canvas](../build-analysis/images/rename-canvasphones.png)
+     ![Rename Canvas](../build-analysis/images/rename-canvasphones.png =250x*)
 
-24.  **Duplicate** Canvas.  
+23.  **Duplicate** Canvas.  
 Right-click the canvas tab and select  **Duplicate**.  
 This adds a copy of the selected canvas to the project’s row of canvas tabs.
 
-     ![Duplicate Canvas](../build-analysis/images/duplicate-canvassmall.png)
+     ![Duplicate Canvas](../build-analysis/images/duplicate-canvassmall2.png =250x*)
 
-25. Lets filter out the data to those sub categories where we are losing maximum customers - iPhones and Android phones.  
+24. Lets filter out the data to those sub categories where we are losing maximum customers - iPhones and Android phones.  
 Select **SUB_CATEGORY** from Data Pane and Drag and Drop it to **Filter area** .
      ![Filter Subcategory](../build-analysis/images/filter-subcategory.png)
 
-26. Select Android Phone and iOS Phones.  
+25. Select Android Phone and iOS Phones.  
 Click **Android Phone** and **iOS Phones** (they will be moved to **Selections** tab). Click anywhere in Filter area.
 
-     ![Filter Phones](../build-analysis/images/filter-subcategoryandroidios.png)
+     ![Filter Phones](../build-analysis/images/filter-subcategoryandroidios.png =350x*)
 
-27. Filter **CHANNEL**.  
+26. Filter **CHANNEL**.  
 Go to Data Pane, select **CHANNEL** and drop it to Filter area.
      ![Filter Channel](../build-analysis/images/filter-channel.png)
 
-28. Select **Direct** Channel.  
+27. Select **Direct** Channel.  
 Click **Direct** (there will be moved to **Selections** tab). Click anywhere in Filter area..
      ![Filter Direct](../build-analysis/images/filter-channeldirect.png)
      ![Filter Direct](../build-analysis/images/filter-channeldirect2.png)
 
-29. Delete **CHANNEL** Filter.  
+28. Delete **CHANNEL** Filter.  
 Go to the **Filter Menu**, hover over CHANNEL, Click on the small down arrow and Select **Delete**.
-     ![Delete Channel Filter](../build-analysis/images/remove-channelfilter.png)
+     ![Delete Channel Filter](../build-analysis/images/remove-channelfilter2.png)
 
 
 You have just finished learning how to create your first analysis, use filters and building new canvases by reusing the previous content.
@@ -180,4 +176,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
 - **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu, March 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023
