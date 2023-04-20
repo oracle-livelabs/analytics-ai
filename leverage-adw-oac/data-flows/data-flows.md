@@ -30,13 +30,13 @@ Lets create a Data Flow by leveraging the mashup data set we used in the earlier
 1.  Create Data Flow.  
 On the **Home** or Data **page**, click **Create** and select **Data Flow**
 
-    ![Create DF](../data-flows/images/createdfsmall.png)
+    ![Create DF](../data-flows/images/createdfsmall.png =200x*)
 
 2.  Add Data Set.  
 You can select an existing Data Set or click Create Data Set to create a new one based on a file, local subject area, or database connection.  
 In the **Add Data Set** dialog, Select **customers** Data Set and Click **Add**.
 
-    ![Add Data Set](../data-flows/images/createdf2small.png)
+    ![Add Data Set](../data-flows/images/createdf2small.png =400x*)
 
 
 3.  You can see the Data Flow Editor with the Data Flow Steps. Lets start working by converting the data type of CUST\_ID column.  
@@ -63,18 +63,18 @@ Select CITY\_Population, CREDIT\_LIMIT and Click **Remove selected** button.
 7.  Lets **filter** our Data Set to retain only few States.  
 Click **Add a Step(+)** and Click **Filter**.
 
-    ![Filter](../data-flows/images/addfilter.png)
+    ![Filter](../data-flows/images/addfilter.png =450x*)
     * Click **Add Filter**
 
-     ![Filter](../data-flows/images/addfilter2.png)
+     ![Filter](../data-flows/images/addfilter2.png =450x*)
 
     * Select **STATE** from the available data
 
-     ![Filter](../data-flows/images/addfilter3.png)
+     ![Filter](../data-flows/images/addfilter3.png =450x*)
 
     * Select **AK, AL, AR, CA, CO**
 
-     ![Filter](../data-flows/images/addfilter4.png)
+     ![Filter](../data-flows/images/addfilter4.png =450x*)
 
 8.  Lets now **merge** the first name and last name as a single column and call it **Customer Name**.  
 Click **Add a Step(+)** and Click **Merge Column**.
@@ -82,29 +82,26 @@ Click **Add a Step(+)** and Click **Merge Column**.
     ![Merge Column](../data-flows/images/mergecolumn.png)
 
 9.  New column **Customer Name**.  
-Type in **New column name**: 'Customer Name', **Merge column** select 'FIRST\_NAME', **With**: select 'LAST\_NAME' and **Delimiter**: Space ( ).
+Type in **New column name**: 'Customer Name', **Merge column** select 'FIRST\_NAME', **With**: select 'LAST\_NAME' and **Delimiter**: Space ( ). Notice the new column created.
 
     ![Customer Name](../data-flows/images/customername.png)
 
-10.  Notice the new column created.
 
-     ![Customer Name](../data-flows/images/mergecolumncustomername2.png)
-
-11.  Renaming columns can be achieved by using Rename column step.  
+10.  Renaming columns can be achieved by using Rename column step.  
 Click **Add a Step(+)** and Click **Rename**.
 
      ![Rename Column](../data-flows/images/renamecolumn.png)
 
-12.  Type in the **Rename** column change INCOME\_LEVEL to **Income Level** and MARITAL\_STATUS to **Marital Status**.  
+11.  Type in the **Rename** column change INCOME\_LEVEL to **Income Level** and MARITAL\_STATUS to **Marital Status**.  
 
      ![Rename Column](../data-flows/images/renamecolumn2.png)
 
-13. Lets now **save** the **output** as a table in our **ADW** connection.  
+12. Lets now **save** the **output** as a table in our **ADW** connection.  
 Click **Add a Step(+)** and Click **Save**.
 
      ![Save Data](../data-flows/images/savedata.png)
 
-14. Type in the following:  
+13. Type in the following:  
 **Data Set**: DCA\_CUST\_DATA  
 **Save data to**: select **Database Connection**  
 **Connection**: ADWH (that's the connection you setup in "**_Lab 3: Connecting OAC to ADW and adjusting Data Set properties_**", **_Step 4_**)  
@@ -112,25 +109,24 @@ Click **Add a Step(+)** and Click **Save**.
 
      ![Save](../data-flows/images/savedata2small.png)
 
-15.  Column property can be changed at the time of saving the data to attribute/metric if needed.
+14.  Column property can be changed at the time of saving the data to attribute/metric if needed.
 
      ![Column Property](../data-flows/images/savedata4small.png)
 
-16.  Lets save and execute the Data Flow.  
+15.  Lets save and execute the Data Flow.  
 Click **Save icon**, type in the **Name**: 'Training DF' and Click **OK** button.
 
      ![Save DF](../data-flows/images/savedataflowsmall.png)
-     ![Save DF](../data-flows/images/savedataflow2small.png)
 
-17.  Click **Run** icon and check the _complete_ message.
+16.  Click **Run** icon and check the _complete_ message.
 
      ![Run](../data-flows/images/rundataflowsmall.png)  
      ![Run](../data-flows/images/rundataflow2.png)
 
-18.  Go to the OAC Home page.  
+17.  Go to the OAC Home page.  
 Click on **Go Back** icon.
 
-     ![Go Back](../data-flows/images/gobacksmall.png)
+     ![Go Back](../data-flows/images/gobacksmall.png =500x*)
 
 ## Task 2: Connect to Database Actions tool to check your data
 
@@ -174,4 +170,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
 - **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu, February 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, April 2023
