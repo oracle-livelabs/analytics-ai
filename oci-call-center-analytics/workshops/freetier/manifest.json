@@ -18,19 +18,24 @@
             "filename": "../../data-sources/data-sources.md"
         },
         {
-            "title": "Lab 2: Create OAC Instance",
-            "description": "Prepare an OAC instance",
+            "title": "Lab 2: Setup OIC Instance",
+            "description": "Prepare an OIC instance",
+            "filename": "../../oic-instance/oic-instance.md"
+        },
+        {
+            "title": "Lab 3: Configurations io Trigger Integration",
+            "description": "Learn how to trigger integrations",
+            "filename": "../../trigger-integration/trigger-integration.md"
+        },
+        {
+            "title": "Lab 4: Setup OAC instance",
+            "description": "Learn how to setup an OAC Instance",
             "filename": "../../oac-instance/oac-instance.md"
         },
         {
-            "title": "Lab 3: Create Speech Pipeline in OIC",
-            "description": "Learn how to use e-mail notification feature in OCI Speech",
-            "filename": "../../speech-oic-pipeline/oic-speech.md"
-        },
-        {
-            "title": "Lab 4: Create Language Pipeline in OIC",
-            "description": "Learn how to use e-mail notification feature in OCI Speech",
-            "filename": "../../language-oic-pipeline/oic-language.md"
+            "title": "Lab 5: To trigger a pipeline",
+            "description": "Learn how to trigger pipeline",
+            "filename": "../../trigger-pipeline/trigger-pipeline.md"
         }
     ]
 }

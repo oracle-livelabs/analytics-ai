@@ -23,54 +23,41 @@ This lab assumes you have:
 
 ## **Task 1**: Create Object Storage Bucket
 
-In this task, we'll create 2 buckets one for storing source files with reviews and the other for staging. The staging bucket is a 'location' where OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.
+In this task, we'll create 3 buckets one for storing source audio files, one for storing the transcribed audio files and last for the merged transcribed files. The merged transcriptions bucket is a 'location' where OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.(Need to confirm)
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
-   ![Create Bucket](./images/createbucket.png " ")
+   ![Navigate to bucket page](./images/navigate-to-buckets.png " ")
 
-2.	**Create a bucket** and name it “source-bucket”
+2. In the buckets page, select the compartment you want to create the bucket and click create bucket button.
 
-3.	Click **create** accepting all defaults.
+    ![Create Bucket](./images/create-bucket-button.png " ")
 
-    ![Configure Bucket](./images/configurebucket.png " ")
+3. Next Fill the fields with name "FilesForTranscription" and make to tick box to emit events
 
-4.	Repeat steps **1** to **3** and name the bucket “data-staging”
+    ![Create Bucket detail fields](./images/create-bucket.png " ")
 
+4. Repeat steps **1** to **3** to create two new buckets named "MergedTranscriptions" and "TranscribedFiles"
 
-
-## **Task 2**: Download and Upload Sample Data
-
-For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
-
-1. 	Download this [Dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip ) to your local machine. This file contains hotel reviews for a handful of hotels, and we will use that as our data source. We will perform sentiment analysis using Data Integration and AI Services.
-
-2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
-
-3.	Select the 'source-bucket' you created on **Task 1**.
-
-4.	On the bucket details page, under **Objects**, click **Upload**.
-
-   ![Object Upload](./images/uploadfiles.png " ")
-
-5.	In the Upload Objects panel, drag and drop the **data.csv** to the drop zone, or click **select files** to locate it on your machine.
-
-6.	Click **Upload**, and then click **Close**.
+    ![Buckets list](./images/bucket-list.png " ")
 
 
-## **Task 3**: Prepare Target Database
+
+## **Task 2**: Prepare Target Database
 
 In this task, we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
-   ![Create ADW](./images/createadw.png " ")
+   ![Navigate to ADW](./images/navigate-to-adw.png " ")
 
-2.	Select your compartment and **Create Autonomous Database**.
+2.	Select your compartment and click **Create Autonomous Database**.
+
+    ![Create ADW button](./images/create-database-button.png " ")
 
 3.	On the options, set a **Display Name** and **Database Name**
 
-   ![Create ADW](./images/createadwtwo.png " ")
+   ![Create ADW details](./images/create-database-1.png " ")
 
 4.	Workload type: **Data warehouse**.
 
@@ -80,26 +67,35 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 
 7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 
-   ![Create ADW](./images/createadwthree.png " ")
+   ![Create ADW details](./images/create-database-2.png " ")
 
-8.	On your database details page, click **Database Actions**.
+8. On the Autonomous Database details page, click **Database connection**.
+    ![Database Connection button](./images/database-connection-button.png " ")
 
-   ![Create ADW](./images/createadwfour.png " ")
+9. CLick Download Wallet
+    ![Download wallet](./images/download-wallet-button.png " ")
 
-9.	Under **Development**, click **SQL**.
+10. Enter password of your choice and store the password. Then click on Download. Store the downloaded wallet zip file.
+    ![Create wallet password](./images/download-wallet-password.png " ")
 
-   ![Create ADW](./images/createadwfive.png " ")
+11.	On your database details page, click **Database Actions**.
 
-11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
+   ![ADW details](./images/database-details.png " ")
+
+12.	Under **Development**, click **SQL**.
+
+   ![Navigate to database](./images/database-navigation.png " ")
+
+13. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 
 	Run the following script as shown in the image below:
 
-	    <copy>CREATE USER USER1 IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO USER1;ALTER USER USER1 QUOTA 200M ON DATA;</copy>
+	    <copy>CREATE USER livelabUser IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO livelabUser;ALTER USER livelabUser QUOTA 200M ON DATA;</copy>
 
-   ![Create User](./images/createadwsix.png " ")
+   ![Create User](./images/create-user-database.png " ")
 
 
-## **Task 4**: Create Tables to Store Output Data
+## **Task 3**: Create Tables to Store Output Data
 
 Whilst we are in the Database Actions dashboard, we will create 2 Tables
 
@@ -109,7 +105,7 @@ Follow the scripts below:
 
   **Create Raw Reviews Table**
 
-			<copy>CREATE TABLE USER1.REVIEWS
+			<copy>CREATE TABLE livelabUser.REVIEWS
 			("RECORD_ID" INT,
 			"HOTEL_ID" VARCHAR2(200 BYTE),
 			"HOTEL_NAME" VARCHAR2(200 BYTE),
@@ -128,7 +124,7 @@ Follow the scripts below:
 
   **Create Sentiment Table**
 
-		  <copy>CREATE TABLE USER1.SENTIMENT
+		  <copy>CREATE TABLE livelabUser.SENTIMENT
 	 	  ("RECORD_ID" INT,
 		  "HOTEL_NAME" VARCHAR2(200 BYTE),
 		  "ASPECT" VARCHAR2(200 BYTE),
@@ -150,6 +146,11 @@ This concludes this lab. You may now **proceed to the next lab**.
  [Overview of Autonomous Database](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
 ## Acknowledgements
-* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
-* **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022
+**Authors**
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Sahil Kalra - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Veluvarthi Narasimha Reddy - racle AI OCI Language Services
+
+**Last Updated By/Date**
+* Veluvarthi Narasimha Reddy  - Oracle AI OCI Language Services, April 2023
