@@ -3,7 +3,7 @@
 ## Introduction
 In this session, you will learn how to create projects, train a custom model and analyze text through endpoints.
 
-*Estimated Time*: 45 minutes
+> ***Estimated Lab Time***: 45 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this lab, you will:
 
 Follow these steps to configure required policies.
 
-### 1. Setup policies required in [Lab 1](?lab=analyze-text#PolicySetup) for using Language Service API
+### 1. Setup policies required in [Lab 1](?lab=pre-trained#PolicySetup) for using Language Service API
 
 ### 2. Setup policies to allow model training jobs to access OCI Object Storage:
 
@@ -98,7 +98,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload Custom NER offerletter data extracted above.
                  ![Upload Objects](./images/upload-data.png " ")
 
-            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on create and train model.
@@ -146,7 +146,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
             - Create bucket and upload the extracted data.
                  ![Upload Objects](./images/upload-data.png " ")
 
-            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://confluence.oci.oraclecorp.com/display/~aarumish/Language+Rel+V2.0+Live-Lab+Peer+Review)
+            For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
     2. **Navigate to Project**: Navigate to the project you created in Task 1.
     3. **Navigate to Models**: Under models, click on *Create and train model*.
@@ -184,7 +184,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 All the above tasks performed to create custom models and analyzing text can be done through Python code.
 **Pre-requisites**:
 <br/>
-For using Python SDK, please follow setup steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+For using Python SDK, please follow setup steps described in [Lab 1: Task 2](?lab=pre-trained#Task2:AnalyzeTextwithPythonSDK)
 
 #### **Python code to create custom NER model and analyze text**
 
@@ -381,8 +381,8 @@ print(f"End point status changed from CREATING to {end_point_details.data.lifecy
 text_to_analyze = "I am unable to use printer, seeing printer error."
 
 print(f"Analyzing the text: {text_to_analyze}")
-txtc_text_for_testing = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(endpoint_id = end_point_details.data.id, documents = [oci.ai_language.models.TextDocument(key = "1", text = text_to_analyze)])
-txtc_inference_result = ai_client.batch_detect_language_entities(txtc_text_for_testing)
+txtc_text_for_testing = oci.ai_language.models.BatchDetectLanguageTextClassificationDetails(endpoint_id = end_point_details.data.id, documents = [oci.ai_language.models.TextDocument(key = "1", text = text_to_analyze)])
+txtc_inference_result = ai_client.batch_detect_language_text_classification(txtc_text_for_testing)
 print("inference result for custom TXTC:")
 print(txtc_inference_result.data)
 </copy>
@@ -407,4 +407,4 @@ You may now **proceed to the next lab**.
   * Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Sahil Kalra - Oracle AI OCI Language Services, February 2023
+* Sahil Kalra - Oracle AI OCI Language Services, March 2023

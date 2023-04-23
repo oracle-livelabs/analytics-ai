@@ -6,7 +6,7 @@ In this lab, you will connect to the Data Integrator that we provisioned in Lab 
 
 Note: Below you will find instructions on how to establish the connection if you are using a terminal in Unix/Linux. If you are using a program such as Putty on Windows, please make sure that you perform the same operations, accordingly.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -62,7 +62,7 @@ Estimated Lab Time: 15 minutes
 
 1. Start VNC Viewer on your local machine. Since, we have a tunnel from the local machine to the ODI node, we will use the IP **localhost:1** as the URL.  **Enter** or click on **Connect** depending on the application you are using.
 
-    ![](./images/2.1.png " ")
+    ![Connect to ODI Instance](./images/connect-to-odi-instance.png "Connect to ODI Instance")
     
 <!--2. VNC Viewer should warn you about the connection. Select **Don't warn me...** and click on **Continue**.
 
@@ -70,31 +70,31 @@ Estimated Lab Time: 15 minutes
     
 2. The application will prompt you to enter the VNC password that we had provided while provisioning the stack. Enter that password.
     
-    ![](./images/2.2.png " ")
+    ![Enter VNC Password](./images/enter-vnc-password.png "Enter VNC Password")
     
 3. If this is the first time you have logged in, the Operating System might take you through a few setup steps. Make the appropriate selections and skip the ones not needed.
     
-    ![](./images/2.3.png " ")
+    ![First time Setup 1](./images/setup1.png "First time Setup 1")
     
-    ![](./images/2.4.png " ")
+    ![First time Setup 2](./images/setup2.png "First time Setup 2")
     
-    ![](./images/2.5.png " ")
+    ![First time Setup 3](./images/setup3.png "First time Setup 3")
     
-    ![](./images/2.6.png " ")
+    ![First time Setup 4](./images/setup4.png "First time Setup 4")
     
-    ![](./images/2.7.png " ")
+    ![First time Setup 5](./images/setup5.png "First time Setup 5")
     
 4. Now, click on **Applications** on the menu bar at the top. Go to programming and select **ODI Studio**.
     
-    ![](./images/2.8.png " ")
+    ![Launch ODI](./images/launch-odi.png "Launch ODI")
     
 5. If prompted to import preferences, just click **No**. You have successfully connected to the ODI instance and started ODI.
 
-    ![](./images/2.9.png " ")
+    ![Decline Import Preferences](./images/decline-import-preferences.png "Decline Import Preferences")
     
-    ![](./images/2.10.png " ")
+    ![ODI Home Screen](./images/odi-home-screen.png "ODI Home Screen")
 
-You may now proceed to Lab 3.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
