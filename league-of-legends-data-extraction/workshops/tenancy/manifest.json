@@ -33,11 +33,7 @@
     },
     {
       "title": "Lab 4: Create a Model",
-<<<<<<< HEAD
       "description": "Create Model",
-=======
-      "description": "Creat Model",
->>>>>>> cb1bbf9e03fd82e8b0ea9b5c92d434cf37ba94e2
       "filename": "https://oracle-devrel.github.io/leagueoflegends-optimizer/hols/dataextraction/creatingmodel/creatingmodel.md",
       "type": "dbcs"
     },
