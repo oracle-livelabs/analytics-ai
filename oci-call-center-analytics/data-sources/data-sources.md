@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis, in this case, a set of hotel reviews. We will also create the buckets and databases to save the processed data.
+This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis. We will also create the buckets and databases to save the processed data.
 
 Estimated Time: 60 minutes
 
@@ -99,45 +99,40 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 
 Whilst we are in the Database Actions dashboard, we will create 2 Tables
 
-1.	A table **REVIEWS** to store the extracted aspects and related entities
+1.	A table **WORDS** to store the extracted aspects and related entities
 2.	A table **SENTIMENT** to store the raw reviews
 Follow the scripts below:
 
   **Create Raw Reviews Table**
 
-			<copy>CREATE TABLE livelabUser.REVIEWS
-			("RECORD_ID" INT,
-			"HOTEL_ID" VARCHAR2(200 BYTE),
-			"HOTEL_NAME" VARCHAR2(200 BYTE),
-			"REVIEW_DATE" DATE,
-			"REVIEW_RATING" INT,
-			"REVIEW" VARCHAR2(2000 BYTE),
-			"REVIEW_TITLE" VARCHAR2(200 BYTE)
-			)SEGMENT CREATION IMMEDIATE
-			PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
-			NOCOMPRESS LOGGING
-			STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-				PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-				BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-				TABLESPACE "LANGUAGE";</copy>
+			<copy>CREATE TABLE CCA.words
+			(
+			conversation_file_id varchar(64) NOT NULL,
+			text VARCHAR(64)NOT NULL,
+			word_type VARCHAR(64)NOT NULL,
+			audio_offset_seconds FLOAT NOT NULL,
+			audio_duration_seconds FLOAT NOT NULL,
+			belongs_to_channel CHAR(1) NOT NULL,
+			character_offset_channel1 NUMBER ,
+			character_offset_channel2 NUMBER ,
+			character_offset_mixed NUMBER NOT NULL,
+			CONSTRAINT fk_conversation FOREIGN KEY (conversation_file_id) REFERENCES CCA.conversations(conversation_file_id),
+			CONSTRAINT check_belongs_to_channel CHECK (belongs_to_channel IN ('1','2'))
+			);</copy>
 
 
   **Create Sentiment Table**
 
 		  <copy>CREATE TABLE livelabUser.SENTIMENT
-	 	  ("RECORD_ID" INT,
-		  "HOTEL_NAME" VARCHAR2(200 BYTE),
-		  "ASPECT" VARCHAR2(200 BYTE),
-		  "SENTIMENT" VARCHAR2(200 BYTE),
-		  "OFFSET" INT,
-		  "LENGTH" INT
-		  ) SEGMENT CREATION IMMEDIATE
-		  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
- 		  NOCOMPRESS LOGGING
-		  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-			  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-			  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-			  TABLESPACE "LANGUAGE";<copy>
+			(
+			conversation_file_id VARCHAR(64) NOT NULL,
+			text VARCHAR(64) NOT NULL,
+			sentiment VARCHAR(64) NOT NULL,
+			character_offset NUMBER NOT NULL,
+			belongs_to_channel CHAR(1) NOT NULL,
+			AUDIO_OFFSET_FIRST_WORD_SECONDS FLOAT (126) NOT NULL
+			CONSTRAINT fk_conversation_in_sentiments FOREIGN KEY (conversation_file_id) REFERENCES CCA.conversations(conversation_file_id)
+			);<copy>
 
 This concludes this lab. You may now **proceed to the next lab**.
 

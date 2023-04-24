@@ -32,11 +32,10 @@ Estimated Time:
     ![Open OIC Service console page](./images/integration-details.png " ")
 
 5. Download the already created integration files to use in Task 2 and Task 3.
-[TranscribeAudioFiles](./files/TRANSCRIBE_AUDIO_FILES_01.00.0000.iar)
 
-[ExtractSentimentAndKeyPhrase](./files/EXTRAC_SENTIM_AND_KEY_PHRASE_01.00.0000.iar)
+[Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar)
 
-[ExtractEntityAndSaveWords](./files/EXTRAC_ENTITI_AND_SAVE_WORDS_01.00.0000.iar)
+[Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar)
 
 ## **Task 2**: Setup Speech Transcription Integration
 
@@ -47,7 +46,7 @@ Estimated Time:
 2. This will navigate you to the integrations home page. Now you need to click import button in the top right to upload integration file.
     ![Integrations page](./images/import-integrations-button.png " ")
 
-3. Make sure include asserted recordings checkbox is not ticked and then Click on choose file and select the [TranscribeAudioFiles](./files/TRANSCRIBE_AUDIO_FILES_01.00.0000.iar) you downloaded from Task 1 to upload. Finally click on **Import and Configure** after upload is finished.
+3. Make sure include asserted recordings checkbox is not ticked and then Click on choose file and select the [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) you downloaded from Task 1 to upload. Finally click on **Import and Configure** after upload is finished.
 
 4. This will open the configuration page for the **Transcribe Audio Files** integration. We need to edit the two connections in this integrations. Hover over the *New Audio Files for Transcription* connection and then click on edit icon.
     ![Transcription Audio Files Integration Configuration](./images/taf-connections.png " ")
@@ -67,7 +66,7 @@ Estimated Time:
 10. This will take you to connection details page, fill the **Connection URL** field with "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com"
     ![Transcribe Audio Files connection details](./images/taf-connection2-url.png " ")
 
-11. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Task 0. Then click on Test button.
+11. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
     ![Transcribe Audio Files connection details](./images/taf-connection2-test.png " ")
 
 12. After the Test is successfull, click save.
@@ -86,10 +85,10 @@ Now the Integration for speech is complete.
 
 ## **Task 3**: Setup Language Transcription Integration
 
-1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [ExtractSentimentAndKeyPhrase](./files/EXTRAC_SENTIM_AND_KEY_PHRASE_01.00.0000.iar) integration file. This will open the configuration editor for **Extract Sentiment and Key Phrases** integration.
-    ![Extract Sentiment And Key Phrases connections configurations](./images/esk-connections.png " ")
+1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) integration file. This will open the configuration editor for **Process Transcriptions** integration.
+    ![Process Transcriptions connections configurations](./images/esk-connections.png " ")
 
-2. This will open the configuration page for the **Extract Sentiment And Key Phrases** integration. We need to edit the five connections in this integrations. Hover over the *New Transcription For Analysis* connection and then click on edit icon.
+2. This will open the configuration page for the **Process Transcriptions** integration. We need to edit the five connections in this integrations. Hover over the *New Transcription For Analysis* connection and then click on edit icon.
 
 3. This will take you to connection details page, keep the security policy with the default and click **Test** button.
     ![New Transcription for analysis connection test](./images/esk-connection1-test.png " ")
@@ -106,7 +105,7 @@ Now the Integration for speech is complete.
 8. Fill the **Connection URL** field with "https://objectstorage.us-phoenix-1.oraclecloud.com"
     ![Read File From Storage Bucket connection details](./images/esk-connection2-url.png " ")
 
-9. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Task 0. Then click on Test button.
+9. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
     ![Read File From Storage Bucket connection details](./images/esk-connection2-test.png " ")
 
 10. After the Test is successfull, click save.
@@ -117,7 +116,7 @@ Now the Integration for speech is complete.
 12. Fill the **Service Name** field with "livelabdb_high"
     ![Transcription DB connection details](./images/esk-connection3-details.png " ")
 
-13. Under Security, upload the DB wallet you have downloaded in lab 1, the wallet password, the database username and password created in lab 1. Then click Test button
+13. Under Security, upload the DB wallet you have downloaded in Lab 2, the wallet password, the database username and password created in Lab 2. Then click Test button
     ![Transcription DB connection test](./images/esk-connection3-test.png " ")
 
 14. After the Test is successfull, click save.
@@ -128,36 +127,33 @@ Now the Integration for speech is complete.
 16. Fill the **Connection URL** field with "https://language.aiservice.us-phoenix-1.oci.oraclecloud.com"
     ![Language AI API connection details](./images/esk-connection4-url.png " ")
 
-17. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Task 0. Then click on Test button.
+17. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
     ![Language AI API connection test](./images/esk-connection4-test.png " ")
 
 18. After the Test is successfull, click save.
     ![Language AI API connection save](./images/esk-connection4-save.png " ")
 
-19. Navigate back to the configuration page, Hover over **Call Functions** connection and click edit icon. This will open the connection details page.
+<!-- 19. Navigate back to the configuration page, Hover over **Call Functions** connection and click edit icon. This will open the connection details page.
 
 20. Fill the **Connection URL** field with "https://*unique-Id*.us-phoenix-1.functions.oci.oraclecloud.com"
     ![Call Functions connection details](./images/esk-connection5-url.png " ")
 
-21. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Task 0. Then click on Test button.
+21. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
     ![Call Functions connection test](./images/esk-connection5-test.png " ")
 
 22. After the Test is successfull, click save.
-    ![Call Functions connection save](./images/esk-connection5-save.png " ")
+    ![Call Functions connection save](./images/esk-connection5-save.png " ") -->
 
-23. Now all the configurations for Language Transcription Integration done. Navigate back to the integrations home page, hover over the **Transcribe Audio Files** and click activate icon. 
+19. Now all the configurations for Language Transcription Integration done. Navigate back to the integrations home page, hover over the **Transcribe Audio Files** and click activate icon. 
     ![Activate Transcribe Audio Files integration](./images/activate-integration.png " ")
 
-24. In the dialog box, make sure to check the boxes to **Enable Tracing** and **Include Payload** and then click activate. 
+20. In the dialog box, make sure to check the boxes to **Enable Tracing** and **Include Payload** and then click activate. 
     ![Activate Transcribe Audio Files integration](./images/activate-integration-2.png " ")
 
-25. Similarily, repeat the steps 23 and 24 to activate the **Extract Sentiment And Key Phrases** integration.
+21. Similarily, repeat the steps 23 and 24 to activate the **Process Transcriptions** integration.
 
 This concludes this lab. You may now **proceed to the next lab**.
 
-## Learn More
- [Overview of Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
- [Overview of Autonomous Database](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
 ## Acknowledgements
 **Authors**
