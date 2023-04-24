@@ -11,6 +11,36 @@
             "title": "Get started",
             "description": "Sign up for and log into the Oracle Cloud",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Setup Environment",
+            "description": "Steps to setup working environment and policies",
+            "filename": "../../setup-environment/setup-environment.md"
+        },
+        {
+            "title": "Lab 2: Prepare data sources",
+            "description": "Learn how to use e-mail notification feature in OCI Speech",
+            "filename": "../../data-sources/data-sources.md"
+        },
+        {
+            "title": "Lab 3: Setup OIC Instance",
+            "description": "Prepare an OIC instance",
+            "filename": "../../oic-instance/oic-instance.md"
+        },
+        {
+            "title": "Lab 4: Configurations io Trigger Integration",
+            "description": "Learn how to trigger integrations",
+            "filename": "../../trigger-integration/trigger-integration.md"
+        },
+        {
+            "title": "Lab 5: Setup OAC instance",
+            "description": "Learn how to setup an OAC Instance",
+            "filename": "../../oac-instance/oac-instance.md"
+        },
+        {
+            "title": "Lab 6: To trigger a pipeline",
+            "description": "Learn how to trigger pipeline",
+            "filename": "../../trigger-pipeline/trigger-pipeline.md"
         }
     ]
 }
