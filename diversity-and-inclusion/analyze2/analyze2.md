@@ -1,10 +1,10 @@
-# Analyze the Gender-Affirming Interventions (GAI) Dataset
+# Analyze the LGTBQ+ Global Acceptance Index (GAI) Dataset
 
 <!--![Banner](images/banner.png)-->
 
 ## Introduction
 
-In this lab we will analyze a dataset on Gender-Affirming Interventions (GAI).
+In this lab we will analyze a dataset on LGTBQ+ Global Acceptance Index (GAI).
 
 Estimated Time: 30 minutes
 
@@ -19,7 +19,7 @@ Estimated Time: 30 minutes
 
 We want to look at the trend of GAI. In other words, we want to see how the GAI Score has been changing over time.
 
-1. From the homepage, open Data, then click on the Discrimination dataset to create a new Workbook for it. A workbook is the place where we create visualizations on datasets.
+1. From the homepage, open Data, then click on the GAI dataset to create a new Workbook for it. A workbook is the place where we create visualizations on datasets.
 
     ![Create a new workbook](images/open-gai.png)
 

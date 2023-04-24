@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this lab we will load the data on Discrimination and Gender-Affirming Interventions (GAI).
+In this lab we will load the data on Discrimination and LGTBQ+ Global Acceptance Index (GAI).
 
 Estimated Time: 5 minutes
 
@@ -53,7 +53,7 @@ Estimated Time: 5 minutes
 
    ![Save dataset](images/save-discrimination.png)
 
-## Task 3: Add the Gender-Affirming Interventions (GAI) Dataset
+## Task 3: Add the LGTBQ+ Global Acceptance Index (GAI) Dataset
 
 1. **Download** the <a href="./files/GAI Index.xlsx" target="\_blank">GAI dataset</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.xlsx`.
 
