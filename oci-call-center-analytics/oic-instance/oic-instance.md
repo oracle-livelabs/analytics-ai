@@ -1,17 +1,24 @@
-# Prepare Data Sources
+# Setup OIC instance
 
 ## Introduction
 
-This lab walks you through the steps to prepare an OAC instance.
+This lab walks you through the steps to setup an OIC instance.
 
 Estimated Time: 
 
 ### Objectives
 
+In this lab, you will:
+* Create an OIC instance
+* Configure an Transcribe Audio Files integration
+* Configure an Sentiment Analysis Integration
 
 
 ### Prerequisites
 
+This lab assumes you have:
+* An Oracle account
+* Completed previous Labs
 
 
 ## **Task 1**: Create OIC Instance
@@ -31,11 +38,7 @@ Estimated Time:
 4. Now the Instance is created and wait for its state to change from **Creating** to **Active**. Once the state changes to active, open the integration details page by clicking on it and then click the service console button to open the OIC console page
     ![Open OIC Service console page](./images/integration-details.png " ")
 
-5. Download the already created integration files to use in Task 2 and Task 3.
-
-[Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar)
-
-[Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar)
+5. Download the already created integration files [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) and [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) to use in Task 2 and Task 3. 
 
 ## **Task 2**: Setup Speech Transcription Integration
 
@@ -47,6 +50,7 @@ Estimated Time:
     ![Integrations page](./images/import-integrations-button.png " ")
 
 3. Make sure include asserted recordings checkbox is not ticked and then Click on choose file and select the [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) you downloaded from Task 1 to upload. Finally click on **Import and Configure** after upload is finished.
+    ![Import Integration file](./images/import-integration-file.png)
 
 4. This will open the configuration page for the **Transcribe Audio Files** integration. We need to edit the two connections in this integrations. Hover over the *New Audio Files for Transcription* connection and then click on edit icon.
     ![Transcription Audio Files Integration Configuration](./images/taf-connections.png " ")
@@ -61,9 +65,12 @@ Estimated Time:
 
 8. After the connection is saved you will see a confirmation dialog box saying "Connection New Audio File For Transcription was saved successfully".
 
-9. Navigate back to configuration page for the **Transcribe Audio Files** integration and similarily to step 4, click on edit button for *Transcribe Audio File* connection.
+9. Navigate back to configuration page for the **Transcribe Audio Files** integration and similar to step 4, Click on edit button for *Transcribe Audio File* connection.
 
-10. This will take you to connection details page, fill the **Connection URL** field with "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com"
+10. This will take you to connection details page, fill the **Connection URL** field with 
+
+        <copy>https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com</copy>
+
     ![Transcribe Audio Files connection details](./images/taf-connection2-url.png " ")
 
 11. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
@@ -72,14 +79,17 @@ Estimated Time:
 12. After the Test is successfull, click save.
     ![Transcribe Audio Files connection save](./images/taf-connection2-save.png " ")
 
-13. Navigate back to configuration editor page, see that both the connections status is **configured**.
+13. Navigate back to configuration editor page, See that both the connections status is **configured**.
     ![Transcribe Audio Files connection status](./images/taf-connections-status.png " ")
 
 14. Hover over Transcribe Audio Files and click on **update property values**
     ![Transcribe Audio Files update property values button](./images/taf-property-values-1.png " ")
 
-15. Under *SpeechApiOutputBucketName* in the New value field fill **TranscribedFiles** and then click submit.
+15. Under *SpeechApiOutputBucketName* in the **New Value** field fill **your-bucket-name**(*TrancribedFiles* in this case).
     ![Transcribe Audio Files update property values](./images/taf-property-values-2.png " ")
+
+16. Under *SpeechApiOutputNamespace* in the **Current Value** field make sure you have the namespace of the compartment you have your bucket. If it is not same, Fill the correct namespace in **New Value** and then click **Submit**.
+    ![Transcribe Audio Files update property values](./images/taf-property-values-3.png " ")
 
 Now the Integration for speech is complete.
 
@@ -102,7 +112,10 @@ Now the Integration for speech is complete.
 
 7. Navigate back to the configuration page, Hover over **Read File From Storage Bucket** connection and click edit icon. This will open the connection details page.
 
-8. Fill the **Connection URL** field with "https://objectstorage.us-phoenix-1.oraclecloud.com"
+8. Fill the **Connection URL** field with 
+
+        <copy>https://objectstorage.us-phoenix-1.oraclecloud.com</copy>
+
     ![Read File From Storage Bucket connection details](./images/esk-connection2-url.png " ")
 
 9. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
@@ -124,7 +137,9 @@ Now the Integration for speech is complete.
 
 15. Navigate back to the configuration page, Hover over **Language AI API** connection and click edit icon. This will open the connection details page.
 
-16. Fill the **Connection URL** field with "https://language.aiservice.us-phoenix-1.oci.oraclecloud.com"
+16. Fill the **Connection URL** field with 
+
+        <copy>https://language.aiservice.us-phoenix-1.oci.oraclecloud.com</copy>
     ![Language AI API connection details](./images/esk-connection4-url.png " ")
 
 17. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.
@@ -160,7 +175,8 @@ This concludes this lab. You may now **proceed to the next lab**.
   * Rajat Chawla  - Oracle AI OCI Language Services
   * Sahil Kalra - Oracle AI OCI Language Services
   * Ankit Tyagi -  Oracle AI OCI Language Services
-  * Veluvarthi Narasimha Reddy - racle AI OCI Language Services
+  * Veluvarthi Narasimha Reddy - Oracle AI OCI Language Services
+
 
 **Last Updated By/Date**
 * Veluvarthi Narasimha Reddy  - Oracle AI OCI Language Services, April 2023

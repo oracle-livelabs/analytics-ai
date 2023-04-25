@@ -13,7 +13,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Setup Environment",
+            "title": "Lab 1: Setup environment",
             "description": "Steps to setup working environment and policies",
             "filename": "../../setup-environment/setup-environment.md"
         },
@@ -23,12 +23,12 @@
             "filename": "../../data-sources/data-sources.md"
         },
         {
-            "title": "Lab 3: Setup OIC Instance",
+            "title": "Lab 3: Setup OIC instance",
             "description": "Prepare an OIC instance",
             "filename": "../../oic-instance/oic-instance.md"
         },
         {
-            "title": "Lab 4: Configurations io Trigger Integration",
+            "title": "Lab 4: Configurations to trigger integration",
             "description": "Learn how to trigger integrations",
             "filename": "../../trigger-integration/trigger-integration.md"
         },
@@ -38,7 +38,7 @@
             "filename": "../../oac-instance/oac-instance.md"
         },
         {
-            "title": "Lab 6: To trigger a pipeline",
+            "title": "Lab 6: Configurations To trigger pipeline",
             "description": "Learn how to trigger pipeline",
             "filename": "../../trigger-pipeline/trigger-pipeline.md"
         }

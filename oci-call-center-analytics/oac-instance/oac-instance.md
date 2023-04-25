@@ -19,11 +19,6 @@ Estimated Time 15 minutes.
 
 ## Task 1: Create an Oracle Analytics Cloud (OAC) Instance
 
-Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
-Click in **View Account** and **Sign in to Cloud**.
-
-![Oracle Console SignIn](./images/laboac-one.png)
-
 1. Go to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
     ![Oracle Analytics Console](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
@@ -34,31 +29,25 @@ Click in **View Account** and **Sign in to Cloud**.
 
     - **Compartment**: Select a valid compartment in your tenancy
 
-    - **Instance Name**: `WORKSHOPADWOAC`
+    - **Instance Name**: `livelabCallCenterOAC`
 
     - **Description**: &lt;optional&gt;
 
-    - **Feature Set**: Enterprise Analytics (important)
+    - **Edition**: Enterprise Analytics (important)
 
     - **Capacity**: 1 - Non Production
 
-    - **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
+    - **License**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
 
 3. Select **Create**.
 
-    ![OAC Instance Creation](./images/laboac-six.png)
+    ![OAC Instance Creation](./images/create-oac.png)
 
-4. On the **Confirmation** screen, select **Create**.
+4. This will the open the instance page, Wait for the status to change from **Creating** to **Active**.
 
-    The Analytics instance page will be displayed with a status of **CREATING**.
-
-    ![OAC Instance Creating](./images/laboac-seven.png)
-
+   ![OAC Instance Active](./images/oac-details.png)
     ***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
-5. The Analytics instance page will be displayed with a status of **ACTIVE**.
-
-    ![OAC Instance Active](./images/laboac-eight.png)
 
 ## Task 2: Upload Workbook
 
@@ -76,22 +65,27 @@ Click in **View Account** and **Sign in to Cloud**.
 
 1. On the top right-hand side of the **Analytics Home Page**, click **Create**, and then **Connection**.
 
-    ![Connection Creation](./images/oaccreateconnection.png)
+    ![Connection Creation](./images/create-connection.png)
 
 4. Choose **Oracle Autonomous Data Warehouse**.
 
-    ![Connection Creation - ADW](./images/select-adwh-connection.png)
+    ![Connection Creation - ADW](./images/connection-type.png)
 
 5.	Enter the credentials to the data warehouse (target database) you created in **Lab 2: Prepare data sources > Task 2: Prepare Target Database**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-download-credentials.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1).  
 Click **Save** to save your new connection **information**.
 
-  ![Define Connection](./images/adw-conn.png " ")
+  ![Define Connection](./images/connection-details.png " ")
 
 
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
+**Authors**
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Sahil Kalra - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Veluvarthi Narasimha Reddy - Oracle AI OCI Language Services
 
-- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
-- **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Chenai Jarimani, April 2023
+
+**Last Updated By/Date**
+* Veluvarthi Narasimha Reddy  - Oracle AI OCI Language Services, April 2023
