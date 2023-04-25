@@ -94,7 +94,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 3. Copy the id_rsa.pub content the notepad
 
     Your notepad should look like this
-    ![show ssh key](./images/notepad-rsa-key-1.png "show ssh key")  
+    ![show ssh key](./images/notepad-rsa-key.png "show ssh key")  
 
 4. Minimize cloud shell
 
