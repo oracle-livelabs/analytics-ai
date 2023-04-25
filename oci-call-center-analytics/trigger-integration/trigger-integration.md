@@ -18,7 +18,7 @@ This lab assumes you have:
 * Completed previous Labs
 
 
-## **Task 1**: Create an Application
+## **Task 1**: Create a Function
 To add a function, first, We need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
 
@@ -61,12 +61,12 @@ We will now create the function in the application. The function will do sentime
     ```
     ```
     <copy>
-    fn init --runtime python sentiment
+    fn init --runtime python merge
     </copy>
     ```
     ```
     <copy>
-    cd sentiment
+    cd merge
     </copy>
     ```
     ```
