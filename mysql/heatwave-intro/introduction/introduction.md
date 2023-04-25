@@ -1,5 +1,7 @@
 # Introduction
 
+![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
+
 ### About this Workshop
 
 Oracle MySQL Database Service is a fully-managed database service that lets developers quickly develop and deploy secure, cloud-native applications using the world’s most popular open-source database. MySQL Database Service is the only MySQL cloud service with an integrated, high-performance, in-memory query accelerator—HeatWave. MySQL HeatWave enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. HeatWave accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure, it is the only database service that runs on MySQL Enterprise Edition. It is 100% built, managed, and supported by the Oracle Cloud Infrastructure and MySQL engineering teams.

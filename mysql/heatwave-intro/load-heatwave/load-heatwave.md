@@ -1,5 +1,7 @@
-# Load HeatWave cluster in MySQL Database System  
-![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave ")
+# Load HeatWave cluster in MySQL Database System
+
+![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
+
 
 ## Introduction
 

@@ -1,5 +1,6 @@
-# Use MySQL HeatWave For Development  
-![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave ") 
+# Use MySQL HeatWave For Development
+
+![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
 
 ## Introduction
 

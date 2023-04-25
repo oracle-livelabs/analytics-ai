@@ -1,5 +1,6 @@
 # Run Queries with MySQL Shell
-![mds heatwave](./images/00_mds_heatwave_2.png "mds heatwave ")
+
+![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
 
 ## Introduction
 
