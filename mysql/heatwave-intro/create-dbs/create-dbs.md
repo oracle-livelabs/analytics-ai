@@ -133,7 +133,7 @@ In this lab, you will be guided through the following tasks:
     b. Enter Name
 
     ```bash
-    <copy>HEATWAVE-HW</copy>
+    <copy>HEATWAVE-DB</copy>
     ```
 
     c. Enter Description
