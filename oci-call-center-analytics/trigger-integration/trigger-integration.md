@@ -1,4 +1,4 @@
-# Configurations io trigger integration
+# Configurations to trigger integration
 
 ## Introduction
 
@@ -9,15 +9,17 @@ Learn how to trigger integrations
 
 ### Objectives:
 
-* To create a setup to trigger sppech and language integration setup in the Lab 3
+* To create a setup to trigger speech and language integration setup in the Lab 3
 
 ### Prerequisites:
 
-* Lab 3
+This lab assumes you have:
+* An Oracle account
+* Completed previous Labs
 
 
 ## **Task 1**: Create an Application
-To add a function, first, we need to create an **Application**.
+To add a function, first, We need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
 
    ![Create Application](./images/createapplication.png " ")
@@ -46,7 +48,7 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 
    ![Login Docker](./images/dockerlogin.png " ")
 
-## **Task 2**: Create and Deploy a Sentiment Function
+## **Task 2**: Create and Deploy a Merge Transcription Function
 
 We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded Jason lines). The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
 
@@ -281,7 +283,7 @@ We will now create the function in the application. The function will do sentime
 
 8. If successful you can see it listed under Functions in your Application
 
-  ![Login Docker](./images/deployfunction.png " ")
+  ![Login Docker](./images/deploy-function.png " ")
 
 
 ## **Task 3**: Setup and Integrate Notification with the Integration Service
@@ -295,9 +297,14 @@ We will now create the function in the application. The function will do sentime
 3. Fill the Name field with "NewAudioFileForTranscription" and click create.
     ![Create Topic details](./images/create-topic.png " ")
 
-4. After the Topic is created, open the Topic details page, and click Create Subscription.
+4. Before you move on to create a topic, open the **Integrations** homepage and copy your integration URL
 
-5. Under the Protocol choose "HTTPS (Custom URL)" from the dropdown. Fill the URL field with
+        <copy>https://call-center-analytics-livelab-<bucket-namespace>-px.integration.ocp.oraclecloud.com/</copy>
+    ![Integration URL](./images/integration-url.png " ")
+
+5. After the Topic is created, open the Topic details page, and click Create Subscription.
+
+6. Under the Protocol choose "HTTPS (Custom URL)" from the dropdown. Fill the URL field with
 
         <copy>
         https:<userName>:<Password>@<Integration-URL>/ic/api/integration/v1/flows/rest/TRANSCRIBE_AUDIO_FILES/1.0/NewAudioFileForTranscription
@@ -309,23 +316,23 @@ We will now create the function in the application. The function will do sentime
     
     The "Integration-URL" is the URL of the integration that we have created in the Lab 3.
 
-6. Click create button.
+7. Click create button.
     ![Create subscription](./images/create-subscription.png " ")
 
-7. After the subscrption is created, it will be in pending state. To make it active first click on the three dots to the right and click "resend confirmation".
+8. After the subscrption is created, it will be in pending state. To make it active first click on the three dots to the right and click "resend confirmation".
     ![Resend subscription confirmation](./images/subscription-confirmation-resend.png " ")
 
-8. To activate the subscription, open the integrations URL. open hamburger menu, click on **Monitoring** then **Integrations** and then **Errors**.
+9. To activate the subscription, open the integrations URL. open hamburger menu, click on **Monitoring** then **Integrations** and then **Errors**.
     ![Navigate to Errors Page](./images/navigate-to-errors-1.png " ")
     ![Navigate to Errors Page](./images/navigate-to-errors-2.png " ")
 
-9. In the Errors page click on view details for the latest error.
+10. In the Errors page click on view details for the latest error.
     ![Error details](./images/error-page.png " ")
 
-10. Now in the error click on Message URL link and store the confirmationURL that is shown.
+11. Now in the error click on Message URL link and store the confirmationURL that is shown.
     ![Error Message](./images/error-message.png " ")
 
-11. Modify the confirmation URL to remove "amp;" from the URL. For example modify
+12. Modify the confirmation URL to remove "amp;" from the URL. For example modify
         
         <copy>
         https://cell1.notification.us-phoenix-1.oci.oraclecloud.com/20181201/subscriptions/ocid1.onssubscription.oc1.phx.aaaaaaaaxzkyua23ujvlynaadfqspam7wrwt7eev6lmjyxo5h4dimhri5wza/confirmation?token=MDAwMHRCUzFpVnVYb2FqM1YxMXVTKzJQUDJFb2NFcWp5SEpuQzlqWDNvS0JMN25xaVFrSFhvPQ==&amp;protocol=CUSTOM_HTTPS
@@ -337,12 +344,12 @@ We will now create the function in the application. The function will do sentime
         https://cell1.notification.us-phoenix-1.oci.oraclecloud.com/20181201/subscriptions/ocid1.onssubscription.oc1.phx.aaaaaaaaxzkyua23ujvlynaadfqspam7wrwt7eev6lmjyxo5h4dimhri5wza/confirmation?token=MDAwMHRCUzFpVnVYb2FqM1YxMXVTKzJQUDJFb2NFcWp5SEpuQzlqWDNvS0JMN25xaVFrSFhvPQ==&protocol=CUSTOM_HTTPS
         </copy>
 
-12. Open the modified URL in the browser. You should see a page stating that you have been subscribed to the topic "NewAudioFileForTranscription".
+13. Open the modified URL in the browser. You should see a page stating that you have been subscribed to the topic "NewAudioFileForTranscription".
     ![Confirmation URL](./images/confirmation-url.png " ")
 
-13. Create a new topic with Name "NewTranscriptionForAnalysis" following steps 2 and 3.
+14. Create a new topic with Name "NewTranscriptionForAnalysis" following steps 2 and 3.
 
-14. Repeat the steps 4 to 12 to create a subscription for the new topic "NewTranscriptionForAnalysis".
+15. Repeat the steps 5 to 13 to create a subscription for the new topic "NewTranscriptionForAnalysis".
 
 
 ## **Task 4**: Event Setup for New Audio File for Transcription##
@@ -406,7 +413,8 @@ We will now create the function in the application. The function will do sentime
   * Rajat Chawla  - Oracle AI OCI Language Services
   * Sahil Kalra - Oracle AI OCI Language Services
   * Ankit Tyagi -  Oracle AI OCI Language Services
-  * Veluvarthi Narasimha Reddy - racle AI OCI Language Services
+  * Veluvarthi Narasimha Reddy - Oracle AI OCI Language Services
+
 
 **Last Updated By/Date**
 * Veluvarthi Narasimha Reddy  - Oracle AI OCI Language Services, April 2023

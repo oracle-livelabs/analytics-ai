@@ -1,4 +1,4 @@
-# Setup the Environment
+# Setup environment
 
 ## Introduction
 
@@ -11,9 +11,7 @@ Estimated Time: 90 minutes
 In this lab, you will:
 * Verify Compartment and Group
 * Set up Policies
-* Create VCN with the right access
-* Create an API Gateway
-* Confirm access to OCI Language Services
+* Confirm access to OCI Language and Speech Services
 * create an API signing key
 
 
@@ -21,16 +19,15 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs completed
 
 
 ## **Task 1**: Create Compartment, Group and Dynamic Group
 
-Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario, we are using compartment "oac-compartment" and "oac-developer" for the group. If these are not created you can refer to the below steps to create.
+Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario, we are using compartment "livelab" and "call-center-analytics" for the group. If these are not created you can refer to the below steps to create.
 
 1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Compartments**. A list of the compartments you have access to is displayed.
 
-    ![Create Compartment](./images/createcompartmentone.png " ")
+    ![Navigate to Compartment](./images/navigate-to-compartment.png " ")
 
 2. Navigate to the compartment in which you want to create the new compartment:
     * To create the compartment in the tenancy (root compartment) click **Create Compartment**
@@ -42,7 +39,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * **Compartment**: The compartment you are in is displayed. To choose another compartment to create this compartment in, select it from the list.
     **Tags**: If you have permission to create a resource, then you also have permission to apply free-form tags to that resource. To apply a defined tag, you must have permission to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
-    ![Create Compartment](./images/createcompartmenttwo.png " ")
+    ![Create Compartment](./images/create-compartment.png " ")
 
 4. Click **Create Compartment**.
 
@@ -59,7 +56,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * **Description**: A friendly description. You can change this later if you want to.
     * **Tags**: If you have permission to create a resource, then you also have permission to apply free-form tags to that resource. To apply a defined tag, you must have permission to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
-    ![Create Group](./images/creategrouptwo.png " ")
+    ![Create Group](./images/create-group.png " ")
 
 8. Click **Create Group**.
 
@@ -94,7 +91,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * For **Description**, enter a description to help other users know the purpose of this set of policies.
     * In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
 
-   ![Create Policies](./images/createpolicy.png " ")
+   ![Create Policies](./images/create-policy.png " ")
 
    **Note** When creating policies the one which says 'in tenancy' must be created/run in the root compartment of the tenancy. All other policies should be created in the respective compartments.
 
@@ -102,30 +99,30 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
     ```
     <copy>
-    allow any-user to manage ai-service-speech-family in compartment Call-Center-Analytics
+    allow any-user to manage ai-service-speech-family in compartment livelab
     </copy>
     ```
     ```
     <copy>
-    allow any-user to manage object-family in compartment Call-Center-Analytics
+    allow any-user to manage object-family in compartment livelab
     </copy>
     ```
     ```
     <copy>
-    allow any-user to read tag-namespaces in compartment Call-Center-Analytics
+    allow any-user to read tag-namespaces in compartment livelab
     </copy>
     ```
     ```
     <copy>
-    allow any-user to manage ai-service-vision-family in compartment Call-Center-Analytics
+    allow any-user to manage ai-service-vision-family in compartment livelab
     </copy>
     ```
     ```
     <copy>
-    Allow any-user to manage functions-family in compartment Call-Center-Analytics
+    Allow any-user to manage functions-family in compartment livelab
     </copy>
     ```
-    where **Call-Center-Analytics** should be swapped with the name of your compartment.
+    where **livelab** should be swapped with the name of your compartment.
 
 
 5.	Once you have created a Data Integration workspace (**Lab 4**), you will also need to set the following policies:
@@ -195,6 +192,12 @@ This concludes this lab. You may now **proceed to the next lab**.
 [Users and Groups](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingusers.htm)
 
 ## Acknowledgements
-* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
-* **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022
+**Authors**
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Sahil Kalra - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Veluvarthi Narasimha Reddy - Oracle AI OCI Language Services
+
+
+**Last Updated By/Date**
+* Veluvarthi Narasimha Reddy  - Oracle AI OCI Language Services, April 2023
