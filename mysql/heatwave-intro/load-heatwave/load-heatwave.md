@@ -66,7 +66,7 @@ algorithm, it will predict the number of nodes needed.
 
 2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
 
-    ```
+     ```bash
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
 
@@ -74,7 +74,7 @@ algorithm, it will predict the number of nodes needed.
 
 3. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
 
-    ```
+     ```bash
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
 
@@ -86,11 +86,11 @@ algorithm, it will predict the number of nodes needed.
 
 5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
-    ```
+     ```bash
     <copy>USE performance_schema;</copy>
     ```
 
-    ```
+     ```bash
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ```
 
@@ -98,11 +98,11 @@ algorithm, it will predict the number of nodes needed.
 
 ## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
-* [MySQL Database Documentation](https://www.MySQL.com)
+- [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+- [MySQL Database Documentation](https://www.MySQL.com)
 
 ## Acknowledgements
 
-* **Author** - Perside Foster, MySQL Solution Engineering
-* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
+- **Author** - Perside Foster, MySQL Solution Engineering
+- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
