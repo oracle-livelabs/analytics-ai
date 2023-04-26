@@ -282,13 +282,15 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![airportdb total records](./images/airportdb-list.png "airportdb total records ") 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**
 
 ## Learn More
 
 - [Cloud Shell](https://www.oracle.com/devops/cloud-shell/?source=:so:ch:or:awr::::Sc)
 - [Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 - [OCI Bastion Service ](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Bastion/Tasks/connectingtosessions.htm)
+
+
 
 ## Acknowledgements
 

@@ -194,6 +194,8 @@ In this lab, you will be guided through the following tasks:
 
     - [MySQL Database Documentation](https://www.MySQL.com)
 
+You may now **proceed to the next lab**
+
 ## Acknowledgements
 
 - **Author** - Perside Foster, MySQL Solution Engineering
