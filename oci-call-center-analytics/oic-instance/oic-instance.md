@@ -41,6 +41,7 @@ This lab assumes you have:
 5. Download the already created integration files [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) and [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) to use in Task 2 and Task 3. 
 
 ## **Task 2**: Setup Speech Transcription Integration
+In this lab, we will implement an integration in which, upon uploading the audio file, the pipeline will be initiated, the transcription job will be created, and the output will be saved to the TranscriptedFiles bucket.
 
 1. In the service console, open the hamburger menu and click **Integration** and then **Integrations** again to open integrations home page.
     ![Navigate to integrations page in Service console](./images/oic-integration-navigation-1.png " ")
@@ -98,6 +99,8 @@ This lab assumes you have:
 Now the Integration for speech is complete.
 
 ## **Task 3**: Setup Language Transcription Integration
+
+In this we will setup an integration, which utilizes language services such as key phrase extraction, sentiment analysis, and named entity extraction to analyze the conversation and save pertinent details to the database.
 
 1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) integration file. This will open the configuration editor for **Process Transcriptions** integration.
     ![Process Transcriptions connections configurations](./images/esk-connections.png " ")

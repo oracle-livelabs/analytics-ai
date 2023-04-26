@@ -2,8 +2,9 @@
 
 ## Introduction
 
+This lab facilitates the execution of the entire pipeline that we have set up. We will upload three distinct audio files: one for the customer channel, another for the call center support channel, and a third file which consists of both channels mixed together. Upon uploading the files to the designated FilesForTranscription bucket, our Transcribe Audio File integration will be triggered which will call Speech Transcription service, creating transcription jobs and saving the transcription output to the TranscribedFiles bucket. This will then trigger our Merge function, combining both channels transcriptions and storing the resulting output in the MergedTranscriptions bucket. As a result, the Integration Process Transcription will be initiated, calling language services such as key phrase extraction, sentiment analysis, and named entity extraction to analyze the conversation and save pertinent details to the database. The information stored in this database will be used by OAC workbooks to visualize and properly interpret the extracted information.
 
-Estimated Time 15 minutes.
+Estimated Time 15 FilesForTranscription.
 
 ### Objectives
 * Run the Integration pipeline we created in previous lans
@@ -100,6 +101,10 @@ You will get a list of our five tables provisioned by the Terraform script.
     ![Visualization of data](./images/visualize-data.png " ")
 
 
+
+## Conclusion
+
+The end result of this livelab exercise is a complete pipeline that can provide detailed and analyzed information about an audio file with just a simple upload to object storage. This information can be useful in a variety of applications, including customer service and market research. By completing this exercise, you can gain hands-on experience with implementing an end-to-end pipeline for audio transcription and analysis, which can be a valuable skill in a variety of industries.
 
 ## Acknowledgements
 **Authors**

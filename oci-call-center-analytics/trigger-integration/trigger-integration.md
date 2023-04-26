@@ -39,14 +39,11 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 3.	Click the **Launch Cloud Shell** button.
  This will start a Linux virtual machine with all the configurations to set up functions.
 4.	Follow steps **1** through **7** under the “Setup fn CLI on Cloud Shell” section
- 	* If you need guidance, see this [Video](https://www.youtube.com/watch?app=desktop&t=483&v=TdQ6BL58Zfk&feature=youtu.be)
 	* If you need more specific and detailed instructions, see this [Document](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm)
 	* You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
 5.	Before proceeding to the next lab test the connection to the docker and log in: steps **8** to **11**
 
    ![Test CLI](./images/testcloudshell.png " ")
-
-   ![Login Docker](./images/dockerlogin.png " ")
 
 ## **Task 2**: Create and Deploy a Merge Transcription Function
 
@@ -77,7 +74,7 @@ We will now create the function in the application. The function will do sentime
 
 
 
-   ![Create Sentiment Function](./images/createsentimentfunction.png " ")
+   ![Create Sentiment Function](./images/createmergefunction.png " ")
 
 2.	Notice that this will generate three files for you (**func.yaml**, **requirements.txt** and **func.py** ). Modify the files with the content shown below. You can use an editor like **vi** [URL](https://docs.oracle.com/cd/E19683-01/806-7612/6jgfmsvqn/index.html) to do so.
 
@@ -272,13 +269,15 @@ We will now create the function in the application. The function will do sentime
         </copy>
         ```
 
-6. Verify your 3 files look exactly as above with no spaces, additional code, etc.
+6. Please replace the **bucketNameOutput** with the bucket you created for merged transcription bucket. Verify all 3 files the they look exactly as above with no spaces, additional code, etc.
 
 7. Once you have edited the files in **Task 3**, deploy the function to your application, by running this cloud shell command. Make sure to replace **app-name** for the name of your application
+    ```
+  	<copy>fn -v deploy -app <app-name></copy>
+    ```
+    where, app-name is the name of the application you created in Task 1
 
-  	<copy>fn -v deploy -app app-name</copy>
-
-![Deploy Function](./images/deployfunccommand.png " ")
+![Deploy Function](./images/deployfunccommand1.png " ")
 
 8. If successful you can see it listed under Functions in your Application
 
