@@ -4,13 +4,12 @@
 
 This lab walks you through the steps to prepare your OCI Environment to be able to carry all the next steps needed to create a function, create data pipelines, run OCI Language Service as well as visualize your data in OAC.
 
-Estimated Time: 90 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Verify Compartment and Group
-* Set up Policies
+* Create compartment and group
+* Set up policies
 * Confirm access to OCI Language and Speech Services
 * create an API signing key
 
@@ -22,6 +21,8 @@ This lab assumes you have:
 
 
 ## **Task 1**: Create Compartment, Group and Dynamic Group
+
+This is an optional step, if you have an existing compartment or you prefer to perform all the setup in the root comapartment, skip to task 2.
 
 Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario, we are using compartment "livelab" and "call-center-analytics" for the group. If these are not created you can refer to the below steps to create.
 
@@ -60,25 +61,23 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
 8. Click **Create Group**.
 
-  In the next steps, you will create policies for the group.    
+    For Groups : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) for more details.
+  
+9. Add your user to the created group.
 
-9. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**. A list of the dynamic groups in your tenancy is displayed.
+10. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**. A list of the dynamic groups in your tenancy is displayed.
 
-10. Enter the following:
+11. Enter the following:
     * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy. You cannot change this later. The name must be 1-100 characters long and can include the following characters: lowercase letters a-z, uppercase letters A-Z, 0-9, and the period (.), dash (-), and underscore (_). Spaces are not allowed. Avoid entering confidential information.
     * **Description**: A friendly description. You can change this later if you want to.
 
-11. Add the the following rule under the Matching Rules, where COMPARTMENT ID represents the OCID of the your compartment.
+12. Add the the following rule under the Matching Rules, where COMPARTMENT ID represents the OCID of the your compartment which was created in the Task 1.
 
         <copy> ALL {resource.type = 'fnfunc', resource.compartment.id = '<COMPARTMENT_ID>'} </copy>
     
     ![Create Dynamic Group](./images/create-dg-details.png " ")
 
-11. Click **Create Dynamic Group**.
-
-
-
-  For Groups : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) for more details.
+13. Click **Create Dynamic Group**.
 
 ## **Task 2**: Setup Policies
 
@@ -99,56 +98,12 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
     ```
     <copy>
-    allow any-user to manage ai-service-speech-family in compartment livelab
+    allow group <group-name> to manage all-resources in compartment <compartment-name>
     </copy>
     ```
-    ```
-    <copy>
-    allow any-user to manage object-family in compartment livelab
-    </copy>
-    ```
-    ```
-    <copy>
-    allow any-user to read tag-namespaces in compartment livelab
-    </copy>
-    ```
-    ```
-    <copy>
-    allow any-user to manage ai-service-vision-family in compartment livelab
-    </copy>
-    ```
-    ```
-    <copy>
-    Allow any-user to manage functions-family in compartment livelab
-    </copy>
-    ```
-    where **livelab** should be swapped with the name of your compartment.
+    
+    where **compartment-name** should be replaced with the name of your compartment, **group-name** is the name of your group .
 
-
-5.	Once you have created a Data Integration workspace (**Lab 4**), you will also need to set the following policies:
-
-    ```
-    <copy>
-    allow any-user to read buckets in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = 'data-integration-workspace-ocid', request.operation = 'GetBucket'}
-    </copy>
-    ```
-    ```
-    <copy>
-    allow any-user to use functions-family in compartment <oac-compartment> where ALL {request.principal.type= 'disworkspace'}
-    </copy>
-    ```
-    ```
-    <copy>
-    allow any-user to manage objects in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<data-integration-workspace-ocid>'}
-    </copy>
-    ```
-    ```
-    <copy>
-    allow any-user to manage buckets in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<data-integration-workspace-ocid>', request.permission = 'PAR_MANAGE'}
-    </copy>
-    ```
-
-    where **oac-compartment** should be swapped with the name of your compartment.
 
 
 ## **Task 3**: Setup API Signing Key

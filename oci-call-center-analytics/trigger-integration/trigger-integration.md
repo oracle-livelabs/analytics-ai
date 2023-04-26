@@ -296,9 +296,9 @@ We will now create the function in the application. The function will do sentime
 3. Fill the Name field with "NewAudioFileForTranscription" and click create.
     ![Create Topic details](./images/create-topic.png " ")
 
-4. Before you move on to create a topic, open the **Integrations** homepage and copy your integration URL
+4. Before you move on to create a topic, open the **Transcribe Audio File** Integration homepage created in Lab 3, task 2 and copy your integration URL untill **.com**
 
-        <copy>https://call-center-analytics-livelab-<bucket-namespace>-px.integration.ocp.oraclecloud.com/</copy>
+    
     ![Integration URL](./images/integration-url.png " ")
 
 5. After the Topic is created, open the Topic details page, and click Create Subscription.
@@ -309,7 +309,8 @@ We will now create the function in the application. The function will do sentime
         https:<userName>:<Password>@<Integration-URL>/ic/api/integration/v1/flows/rest/TRANSCRIBE_AUDIO_FILES/1.0/NewAudioFileForTranscription
         </copy>
 
-    where the "userName" and "Password" are the login username and password in encoded text format(
+    where the "userName" and "Password" are the cloud account login username and password in URL encoded format.(URL encoding replaces non-ASCII characters with "%" followed by hexadecimal digits)
+    
     
     Example: user@gmail.com should be given as user%40gmail.com in the userName. 
     
@@ -321,7 +322,7 @@ We will now create the function in the application. The function will do sentime
 8. After the subscrption is created, it will be in pending state. To make it active first click on the three dots to the right and click "resend confirmation".
     ![Resend subscription confirmation](./images/subscription-confirmation-resend.png " ")
 
-9. To activate the subscription, open the integrations URL. open hamburger menu, click on **Monitoring** then **Integrations** and then **Errors**.
+9. To activate the subscription, open the **Transcribe Audio File** Integration. Open hamburger menu, click on **Monitoring** then **Integrations** and then **Errors**.
     ![Navigate to Errors Page](./images/navigate-to-errors-1.png " ")
     ![Navigate to Errors Page](./images/navigate-to-errors-2.png " ")
 
@@ -348,7 +349,7 @@ We will now create the function in the application. The function will do sentime
 
 14. Create a new topic with Name "NewTranscriptionForAnalysis" following steps 2 and 3.
 
-15. Repeat the steps 5 to 13 to create a subscription for the new topic "NewTranscriptionForAnalysis".
+15. Repeat the steps 5 to 13 to create a subscription for the new topic "NewTranscriptionForAnalysis" with the Integration **Process Transcriptions**.
 
 
 ## **Task 4**: Event Setup for New Audio File for Transcription##

@@ -10,7 +10,6 @@ Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
 Watch our short video that explains how to provision your Oracle Analytics Cloud instance:
 
-[](youtube:ZAqXlhivQCg)
 
 Estimated Time 15 minutes.
 
@@ -46,7 +45,7 @@ Estimated Time 15 minutes.
 4. This will the open the instance page, Wait for the status to change from **Creating** to **Active**.
 
    ![OAC Instance Active](./images/oac-details.png)
-    ***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
+    
 
 
 ## Task 2: Upload Workbook

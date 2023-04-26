@@ -23,13 +23,13 @@ This lab assumes you have:
 ​
 ## **Task 1**: Create Object Storage Bucket
 ​
-In this task, we'll create 3 buckets one for storing source audio files, one for storing the transcribed audio files and last for the merged transcribed files. The merged transcriptions bucket is a 'location' where OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.(Need to confirm)
+In this task, we'll create 3 buckets one for storing source audio files, one for storing the transcribed files and last for the merged transcribed files. 
 ​
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 ​
    ![Navigate to bucket page](./images/navigate-to-buckets.png " ")
 ​
-2. In the buckets page, select the compartment you want to create the bucket and click create bucket button.
+2. In the buckets page, select the compartment you created in the lab 1 and click create bucket button.
 ​
     ![Create Bucket](./images/create-bucket-button.png " ")
 ​
@@ -61,33 +61,32 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 ​
 4.	Workload type: **Data warehouse**.
 ​
-5.	Remember your password (**labDatabase01**)
+5.	Access type **Secure access from everywhere**
 ​
-6.	Access type **Secure access from allowed IPs and VCNs only**
-​
-7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
+6.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 ​
    ![Create ADW details](./images/create-database-2.png " ")
 ​
-8. On the Autonomous Database details page, click **Database connection**.
+7. On the Autonomous Database details page, click **Database connection**.
     ![Database Connection button](./images/database-connection-button.png " ")
 ​
-9. CLick Download Wallet
+8. CLick Download Wallet
     ![Download wallet](./images/download-wallet-button.png " ")
 ​
-10. Enter password of your choice and store the password. Then click on Download. Store the downloaded wallet zip file.
+9. Create a wallet password of your choice and store the password and then click on Download. Store the downloaded wallet zip file.
     ![Create wallet password](./images/download-wallet-password.png " ")
 ​
-11.	On your database details page, click **Database Actions**.
+10.	On your database details page, click **Database Actions**.
 ​
    ![ADW details](./images/database-details.png " ")
 ​
-12.	Under **Development**, click **SQL**.
+11.	Under **Development**, click **SQL**.
 ​
    ![Navigate to database](./images/database-navigation.png " ")
 ​
-13. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
+12. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 ​
+
 	Run the following script as shown in the image below:
 		```
 	    <copy>CREATE USER livelabUser IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO livelabUser;ALTER USER livelabUser QUOTA 200M ON DATA;DEFAULT COLLATION "USING_NLS_COMP";
@@ -103,11 +102,8 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 ​
 ## **Task 3**: Create Tables to Store Output Data
 ​
-Whilst we are in the Database Actions dashboard, we will create 2 Tables
+Whilst we are in the Database Actions dashboard, run the below queries to setup the database schema.
 ​
-1. A table **WORDS** to store the extracted aspects and related entities
-2. A table **SENTIMENT** to store the raw reviews. <br /><br />
-Follow the scripts below:
 ​
        ```
        <copy>
@@ -119,7 +115,7 @@ Follow the scripts below:
        </copy>
        ```
 ​
-	**Create Conversations Table**
+
 	```
 	<copy>
 	CREATE TABLE livelabUser.conversations
@@ -134,7 +130,7 @@ Follow the scripts below:
 	</copy>
 	```
 ​
-	**Create Raw Reviews Table**
+
 	```
 	<copy>CREATE TABLE livelabUser.words
 	(
@@ -152,7 +148,7 @@ Follow the scripts below:
 	);</copy>
 	```
 ​
-	**Create Key Phrases Table**
+	
 ​
 	```
 	<copy>
@@ -184,7 +180,7 @@ Follow the scripts below:
 	</copy>
 	```
 ​
-	**Create Sentiment Table**
+	
 ​
 	```
 	<copy>CREATE TABLE livelabUser.SENTIMENT

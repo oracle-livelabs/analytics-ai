@@ -69,7 +69,11 @@ This lab assumes you have:
 
 10. This will take you to connection details page, fill the **Connection URL** field with 
 
-        <copy>https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com</copy>
+        <copy>https://speech.aiservice.<region-identifier>.oci.oraclecloud.com</copy>
+    
+    where **region-identifier** is the identifier of the region in which you are working. Replace **region-identifier** with your region-identifier.
+    To know more about region identifier.
+    Visit [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#About)
 
     ![Transcribe Audio Files connection details](./images/taf-connection2-url.png " ")
 
@@ -114,7 +118,11 @@ Now the Integration for speech is complete.
 
 8. Fill the **Connection URL** field with 
 
-        <copy>https://objectstorage.us-phoenix-1.oraclecloud.com</copy>
+        <copy>https://objectstorage.<region-identifier>.oraclecloud.com</copy>
+
+    where **region-identifier** is the identifier of the region in which you are working. Replace **region-identifier** with your region-identifier.
+    To know more about region identifier.
+    Visit [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#About)
 
     ![Read File From Storage Bucket connection details](./images/esk-connection2-url.png " ")
 
@@ -139,7 +147,11 @@ Now the Integration for speech is complete.
 
 16. Fill the **Connection URL** field with 
 
-        <copy>https://language.aiservice.us-phoenix-1.oci.oraclecloud.com</copy>
+        <copy>https://language.aiservice.<region-identifier>.oci.oraclecloud.com</copy>
+
+    where **region-identifier** is the identifier of the region in which you are working. Replace **region-identifier** with your region-identifier.
+    To know more about region identifier.
+    Visit [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#About)
     ![Language AI API connection details](./images/esk-connection4-url.png " ")
 
 17. Fill the Tenancy OCID, User OCID, fingerprint and upload the **call-center-analytics-api-key-private.pem** created in Lab 1. Then click on Test button.

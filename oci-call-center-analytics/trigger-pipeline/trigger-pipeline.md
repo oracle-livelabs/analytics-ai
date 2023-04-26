@@ -13,7 +13,7 @@ Estimated Time 15 minutes.
 * All previous labs
 
 ## **Task 1**: Upload files
-    Our environment is all setup. It is now time to trigger our process into action by dropping three audio files in the Storage Bucket provisioned by the Terraform script
+Our environment is all setup. It is now time to trigger our process into action by dropping three audio files in the Storage Bucket provisioned by the Terraform script
 1. In the Oracle Home Page, Open the hamburger menu, Click **Storage** under **Object Storage & Archive Storage** click **Buckets**
     ![Navigate to Buckets](./images/navigate-to-buckets.png " ")
 2. Make sure that the right Compartment is selected on the left and click the **FilesForTranscription** bucket name.

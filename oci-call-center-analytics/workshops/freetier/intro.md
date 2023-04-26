@@ -29,6 +29,10 @@ Oracle Autonomous Data Warehouse (ADW) delivers a self-driving, self-securing, s
 
 Oracle Cloud Infrastructure Object Storage service is an Internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the Internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
+### **OIC**
+
+### **Functions**
+
 &nbsp;
 &nbsp;
 
@@ -36,12 +40,12 @@ Oracle Cloud Infrastructure Object Storage service is an Internet-scale, high-pe
 
 ### Objectives:
 
-* Understand overview of the OCI Language, OCI Speech, OCI Object Storage and Oracle Analytics Cloud(OAC)
+* Understand overview of the OCI Language, OCI Speech, OCI Object Storage, Oracle Integration cloud(OIC), Functions and Oracle Analytics Cloud(OAC)
 * Learn how to setup data sources(Obejct Stoarge Creation and Autonomous Data Warehouse database)
+* Learn how to create speech pipeline in Oracle Integration cloud(OIC)
+* Learn how to create language pipeline in Oracle Integration cloud(OIC)
 * Learn how to setup OAC instance
-* Learn how to create speech pipeline in OAC
-* Learn how to create language pipeline in OAC
-* Learn how to extract and visualize all the information from the audio using all the above services.
+* Learn how to extract and visualize all the information from the audio using all the above services in OAC.
 
 ### Prerequisites:
 
