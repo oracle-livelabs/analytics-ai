@@ -98,12 +98,11 @@ We will now create the function in the application. The function will do sentime
 		<copy>fdk
         oci>=2.2.18
         pandas
-        datetime/copy>
+        datetime</copy>
         ```
 
 5. 	**merge_trascriptions.py**
-        ```
-		<copy>
+        ```<copy>
         import io
         import os
         import json
