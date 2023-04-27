@@ -63,29 +63,33 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
     For Groups : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) for more details.
   
-9. Add your user to the created group.
+9. To add user to the created group. Open the **Group** details page, click **Add User to Group**
+    ![Group details page](./images/group-details.png " ")
 
-10. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**. A list of the dynamic groups in your tenancy is displayed.
+10. Select the user from dropdown and then click **Add**
+    ![Add User to group](./images/add-user.png " ")
 
-11. Enter the following:
+## **Task 2**: Create Dynamic Group and Setup Policies
+
+1. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**. A list of the dynamic groups in your tenancy is displayed.
+
+2. Enter the following:
     * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy. You cannot change this later. The name must be 1-100 characters long and can include the following characters: lowercase letters a-z, uppercase letters A-Z, 0-9, and the period (.), dash (-), and underscore (_). Spaces are not allowed. Avoid entering confidential information.
     * **Description**: A friendly description. You can change this later if you want to.
 
-12. Add the the following rule under the Matching Rules, where COMPARTMENT ID represents the OCID of the your compartment which was created in the Task 1.
+3. Add the the following rule under the Matching Rules, where COMPARTMENT ID represents the OCID of the your compartment which was created in the Task 1.
 
         <copy> ALL {resource.type = 'fnfunc', resource.compartment.id = '<COMPARTMENT_ID>'} </copy>
     
     ![Create Dynamic Group](./images/create-dg-details.png " ")
 
-13. Click **Create Dynamic Group**.
+4. Click **Create** to create the Dynamic Group.
 
-## **Task 2**: Setup Policies
+5.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**
 
-1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**
+6.	Click **Create Policy**
 
-2.	Click **Create Policy**
-
-3.	In the **Create Policy** panel, complete the following fields:
+7.	In the **Create Policy** panel, complete the following fields:
     * For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
     * For **Description**, enter a description to help other users know the purpose of this set of policies.
     * In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
@@ -94,7 +98,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
    **Note** When creating policies the one which says 'in tenancy' must be created/run in the root compartment of the tenancy. All other policies should be created in the respective compartments.
 
-4.	The following policies should be set:
+8.	The following policies should be set:
 
     ```
     <copy>

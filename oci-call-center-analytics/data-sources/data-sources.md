@@ -89,9 +89,22 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 
 	Run the following script as shown in the image below:
 		```
-	    <copy>CREATE USER livelabUser IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO livelabUser;ALTER USER livelabUser QUOTA 200M ON DATA;DEFAULT COLLATION "USING_NLS_COMP";
-		DEFAULT TABLESPACE "DATA";
-		TEMPORARY TABLESPACE "TEMP";</copy>
+		<copy>
+		CREATE USER "CCA" IDENTIFIED BY "<enter user1 password here>"
+		DEFAULT COLLATION "USING_NLS_COMP" 
+		DEFAULT TABLESPACE "DATA"
+		TEMPORARY TABLESPACE "TEMP";
+		</copy>
+		```
+		```
+		<copy>
+		GRANT DWROLE TO livelabUser;
+		</copy>
+		```
+		```
+		<copy>
+		ALTER USER livelabUser QUOTA 200M ON DATA;
+		</copy>
 		```
 		```
 		<copy>GRANT CREATE SESSION TO livelabUser;</copy>
@@ -105,17 +118,15 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
 Whilst we are in the Database Actions dashboard, run the below queries to setup the database schema.
 ​
 ​
-       ```
-       <copy>
-       CREATE SEQUENCE livelabUser.CONVERSATION_ID
-       MINVALUE 1
-       START WITH 1
-       INCREMENT BY 1
-       NOCACHE;
-       </copy>
-       ```
-​
-
+		```
+		<copy>
+		CREATE SEQUENCE livelabUser.CONVERSATION_ID
+		MINVALUE 1
+		START WITH 1
+		INCREMENT BY 1
+		NOCACHE;
+		</copy>
+		```
 	```
 	<copy>
 	CREATE TABLE livelabUser.conversations
@@ -129,8 +140,6 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	);
 	</copy>
 	```
-​
-
 	```
 	<copy>CREATE TABLE livelabUser.words
 	(
@@ -147,9 +156,6 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	CONSTRAINT check_belongs_to_channel CHECK (belongs_to_channel IN ('1','2'))
 	);</copy>
 	```
-​
-	
-​
 	```
 	<copy>
 	CREATE TABLE livelabUser.KEYPHRASES
@@ -179,7 +185,6 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	ALTER TABLE livelabUser.KEYPHRASES2 ADD CONSTRAINT FK_CONVERSATION_IN_KEYPHRASES FOREIGN KEY(CONVERSATION_FILE_ID) REFERENCES livelabUser.CONVERSATIONS ( CONVERSATION_FILE_ID );
 	</copy>
 	```
-​
 	
 ​
 	```
@@ -194,7 +199,6 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	CONSTRAINT fk_conversation_in_sentiments FOREIGN KEY (conversation_file_id) REFERENCES livelabUser.conversations(conversation_file_id)
 	);</copy>
 	```
- 
 	```
  	<copy>
 	CREATE OR REPLACE VIEW livelabUser.KeyPhrasesWords AS
@@ -206,7 +210,6 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	ORDER BY upper(TEXT);
 	</copy>
  	```
- 
 	```
 	<copy>
 	CREATE OR REPLACE VIEW livelabUser.KeyhpraseCounts AS

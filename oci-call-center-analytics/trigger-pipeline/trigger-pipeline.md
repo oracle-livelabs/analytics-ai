@@ -22,7 +22,14 @@ Our environment is all setup. It is now time to trigger our process into action 
 
 3. In the Bucket details page, click **Upload** button under the objects section
 
-4. In the upload objects dialog, click the **select files** link under the **Choose Files from your Computer** section and select the three audio files that you need for transcription.
+4. In the upload objects dialog, click the **select files** link under the **Choose Files from your Computer** section.
+
+5. Download these three audio files [audio_1](./files/2405cece-9b99-405e-9a21-1dd62d657c93_1.wav), [audio_2](./files/2405cece-9b99-405e-9a21-1dd62d657c93_2.wav) and [audio_mixed](./files/2405cece-9b99-405e-9a21-1dd62d657c93_mixed.wav). Select the three audio files that you downloaded to upload into the bucket.
+    
+    *Note:* 
+        * [audio_1](./files/2405cece-9b99-405e-9a21-1dd62d657c93_1.wav) is the audio file for **Speaker 1** part of conversation.
+        * [audio_2](./files/2405cece-9b99-405e-9a21-1dd62d657c93_2.wav) is the audio file for **Speaker 2** part of conversation.
+        * [audio_mixed](./files/2405cece-9b99-405e-9a21-1dd62d657c93_mixed.wav) is the audio file for the whole conversation between **Speaker 1** and **Speaker 2**
     ![Upload audio files](./images/upload-files.png " ")
 
 5. Once the file is uploaded, an event will be fired by the Storage Bucket which will be routed through the Notifications service to our integration along with the information about our newly created file.
