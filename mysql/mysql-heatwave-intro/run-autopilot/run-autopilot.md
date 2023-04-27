@@ -2,7 +2,6 @@
 
 ![mysql heatwave](./images/mysql-heatwave-logo.jpg "mysql heatwave")
 
-
 ## Introduction
 
 MySQL Autopilot provides machine learning automation that improves performance, scalability, and ease of use of HeatWave. It automates the database lifecycle operations including provisioning, data loading, query processing, and error handling. For example:
@@ -45,7 +44,7 @@ In this lab, you will be guided through the following tasks:
 
     Enter the following command at the prompt
 
-    ```bash
+     ```bash
     <copy>USE airportdb;</copy>
     ```
 
@@ -53,7 +52,7 @@ In this lab, you will be guided through the following tasks:
 
     Enter the following command at the prompt
 
-    ```bash
+     ```bash
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
 
@@ -61,7 +60,7 @@ In this lab, you will be guided through the following tasks:
 
     **Query 1)** Find per-company average age of passengers from Switzerland, Italy and France
 
-     ```bash
+    ```bash
     <copy>SELECT
         airline.airlinename,
         AVG(DATEDIFF(departure, birthdate) / 365.25) AS avg_age,
@@ -107,7 +106,7 @@ In this lab, you will be guided through the following tasks:
 
     **Query 3)** Ticket price greater than 500, grouped by price
 
-     ```bash
+    ```bash
     <copy> -- Query c) Ticket price greater than 500, grouped by price
     SELECT
         booking.price, COUNT(*)
@@ -122,7 +121,7 @@ In this lab, you will be guided through the following tasks:
 
     **Query 4)** Ticket price greater than 400, grouped by firstname , lastname
 
-     ```bash
+    ```bash
     <copy>SELECT
         firstname,
         lastname,
@@ -146,13 +145,13 @@ In this lab, you will be guided through the following tasks:
     <copy>call sys.heatwave_advisor(json_object('target_schema', JSON_ARRAY('airportdb'), 'auto_enc', json_object('mode', 'recommend') ));</copy>
     ```
 
-7. To apply the suggestion, access the auto-generated script
+7.	To apply the suggestion, access the auto-generated script
 
-     ```bash
+    ```bash
     <copy>SET SESSION group_concat_max_len = 1000000;</copy>
     ```
 
-     ```bash
+    ```bash
     <copy>SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatwave_advisor_report WHERE type = "sql" ORDER BY id;</copy>
     ```
 
@@ -161,7 +160,7 @@ In this lab, you will be guided through the following tasks:
 9. Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
 
     **Your results should look like this:**
-    ![results](./images/pilot01.png "results ")
+    ![results](./images/results.png "results ")
 
 ## Task 2: Improve Query performance using Auto Data Placement
 
@@ -171,12 +170,11 @@ In this lab, you will be guided through the following tasks:
     <copy>call sys.heatwave_advisor(json_object('target_schema', JSON_ARRAY('airportdb'), 'auto_dp', json_object('benefit_threshold',0) ));</copy>
     ```
 
-    ![data placement](./images/pilot02.png "data placement")
-
+![data placement](./images/data-placement.png "data placement")
 
 2. To apply the suggestion, access the auto-generated script
 
-     ```bash
+    ```bash
     <copy>SET SESSION group_concat_max_len = 1000000;
     SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatwave_advisor_report WHERE type = "sql" ORDER BY id;
     </copy>
@@ -186,15 +184,14 @@ In this lab, you will be guided through the following tasks:
 
 4. Run the query in Task 1 step 1 again. You can see that total query runtime has improved.
 
-    ![improved query runtime](./images/pilot03.png "improved query runtime  ")
+    ![improved query runtime](./images/improved-query-run-time.png "improved query runtime  ")
+
+You may now **proceed to the next lab**
 
 ## Learn More
 
 - [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
-
-    - [MySQL Database Documentation](https://www.MySQL.com)
-
-You may now **proceed to the next lab**
+- [MySQL Database Documentation](https://www.MySQL.com)
 
 ## Acknowledgements
 
