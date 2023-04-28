@@ -29,9 +29,13 @@ Oracle Autonomous Data Warehouse (ADW) delivers a self-driving, self-securing, s
 
 Oracle Cloud Infrastructure Object Storage service is an Internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the Internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
-### **OIC**
+### **Oracle Infrastructure cloud**
 
-### **Functions**
+OCI integration and digital assistant services accelerate process innovation by simplifying conversations between people and systems with prebuilt integrations, skills, adapters, and low-code automation.
+
+### **OCI Functions**
+
+Oracle Cloud Infrastructure Functions is a fully managed, multi-tenant, highly scalable, on-demand, Functions-as-a-Service platform. It is built on enterprise-grade Oracle Cloud Infrastructure and powered by the Fn Project open source engine.
 
 &nbsp;
 &nbsp;
