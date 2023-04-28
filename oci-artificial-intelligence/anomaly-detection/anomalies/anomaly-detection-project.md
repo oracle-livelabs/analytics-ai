@@ -26,16 +26,16 @@ Log into OCI Cloud Console. Using the Burger Menu on the top left corner, naviga
 
 Note: Users can select any compartment where they want the AD service project to reside.
 
-![](../images/1_navigate_to_ad_menu.png " ")
+![navigate to ad menu](../images/1_navigate_to_ad_menu.png " ")
 
 Clicking the Anomaly Detection Option will navigate one to the Anomaly Detection Console. Once here, select Create Project.
-![](../images/2_create_project.png " ")
+![create project](../images/2_create_project.png " ")
 
 The Create Project button navigates User to a form where they can specify the compartment in which to create an Anomaly Detection Project. The project we create here is named ad_demo.
-![](../images/3_project_created.png " ")
+![project created](../images/3_project_created.png " ")
 
 Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane. From here onwards, select ad_demo.
-![](../images/4_project_pane.png " ")
+![project pane](../images/4_project_pane.png " ")
 
 ## Task 2: Create a Data Asset
 
@@ -46,10 +46,10 @@ There are two ways to create data assets, showing as follows.
 ### 1: Directly create new data asset
 
 Click the Data Asset menu on the middle left, and Click the Create Data Asset button.
-![](../images/data-asset-1-create-directly-page.png " ")
+![data asset creation page](../images/data-asset-1-create-directly-page.png " ")
 
 Then you can specify the compartment of Object storage that houses the data. Click Create Button.
-![](../images/7_create_data_asset_form.png " ")
+![create data asset form](../images/7_create_data_asset_form.png " ")
 
 After a few seconds, the data asset will be shown in the data asset main panel.
 
@@ -58,10 +58,10 @@ For other types of data sources, such as Oracle Autonomous Transaction Processin
 ### 2: Use the Train Model button to create a new data asset (Optional)
 
 The Create and Train Model will take user to a form with the option to either choose an existing dataset or create a new dataset. Select `Create a new data asset` radio button.
-![](../images/6_specify_ocs.png " ")
+![create new data asset when select data](../images/6_specify_ocs.png " ")
 
 Create a new dataset navigates the User to a form, where they can specify the compartment of Object storage that houses the data. Click Create Button.
-![](../images/7_create_data_asset_form.png " ")
+![create data asset form](../images/7_create_data_asset_form.png " ")
 
 
 Congratulations on completing this lab!

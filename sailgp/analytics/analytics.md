@@ -46,7 +46,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    > **Note:** Store wallet files in a secure location. Share wallet files only with authorized users.
 
-3. On the ADW detail page,click **DB Connection**.
+3. On the ADW detail page,click **Database Connection**.
 
    ![AWD DB Connection](images/adw-db-connection.png)
 
@@ -92,6 +92,8 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
    Use the following information to configure your **connection**.
 
     - Connection Name: `SAILGP`
+    - Description: Can stay empty
+    - Encryption Type: Keep default value
     - Client Credentials: Use the Browse button to upload the **wallet ZIP file** that you downloaded (it will automatically extract the `cwallet.sso` file from this zip bundle)
     - Username: `sailor`
     - Password: `Oracle_12345`
@@ -176,8 +178,6 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
    ![Set name and save data set](images/save-dataset.png)
 
 ## Task 3: Find out Who the Winners of the Race Are
-
->NOTE: In the most recent update of Oracle Analytics Cloud, "Projects" have were renamed to "Workbooks". The functionality is unchanged. Please keep in mind that the screenshots in the lab have not yet been updated to reflect this.
 
 1. Still in the data set editor, on the top right, click **Create Workbook**.
 

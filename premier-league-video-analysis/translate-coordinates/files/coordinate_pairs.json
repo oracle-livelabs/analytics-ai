@@ -1,0 +1,3236 @@
+{
+    "6": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                524,
+                218
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1230,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1096,
+                800
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                111,
+                543
+            ]
+        }
+    ],
+    "7": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                532,
+                219
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1238,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1104,
+                797
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                121,
+                543
+            ]
+        }
+    ],
+    "8": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                539,
+                219
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1243,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1110,
+                797
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                129,
+                542
+            ]
+        }
+    ],
+    "9": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                551,
+                219
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1251,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1118,
+                796
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                141,
+                539
+            ]
+        }
+    ],
+    "10": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                560,
+                217
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1259,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1124,
+                793
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                150,
+                538
+            ]
+        }
+    ],
+    "11": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                570,
+                218
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1268,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1132,
+                793
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                160,
+                538
+            ]
+        }
+    ],
+    "12": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                576,
+                219
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1275,
+                232
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1140,
+                795
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                170,
+                537
+            ]
+        }
+    ],
+    "13": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                593,
+                219
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                234
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1153,
+                795
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                187,
+                537
+            ]
+        }
+    ],
+    "14": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                607,
+                222
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1302,
+                236
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1167,
+                799
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                200,
+                540
+            ]
+        }
+    ],
+    "15": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                629,
+                225
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1321,
+                239
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1191,
+                800
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                226,
+                539
+            ]
+        }
+    ],
+    "16": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                642,
+                225
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1338,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1203,
+                803
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                240,
+                539
+            ]
+        }
+    ],
+    "17": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                659,
+                226
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1358,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1223,
+                803
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                261,
+                541
+            ]
+        }
+    ],
+    "18": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                672,
+                227
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1370,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1234,
+                806
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                268,
+                541
+            ]
+        }
+    ],
+    "19": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                685,
+                224
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1389,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1250,
+                809
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                280,
+                540
+            ]
+        }
+    ],
+    "20": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                692,
+                224
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1398,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1259,
+                812
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                281,
+                543
+            ]
+        }
+    ],
+    "21": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                698,
+                224
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1411,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1268,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                285,
+                546
+            ]
+        }
+    ],
+    "22": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                705,
+                224
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1417,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1275,
+                820
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                293,
+                545
+            ]
+        }
+    ],
+    "23": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                711,
+                226
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1427,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1281,
+                824
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                295,
+                550
+            ]
+        }
+    ],
+    "24": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                227
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                826
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                293,
+                552
+            ]
+        }
+    ],
+    "25": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                228
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1435,
+                248
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1289,
+                830
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                295,
+                555
+            ]
+        }
+    ],
+    "26": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                713,
+                231
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1435,
+                248
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1289,
+                831
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                295,
+                554
+            ]
+        }
+    ],
+    "27": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                713,
+                233
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1435,
+                250
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                834
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                556
+            ]
+        }
+    ],
+    "28": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                713,
+                233
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1434,
+                252
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                833
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                556
+            ]
+        }
+    ],
+    "29": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                236
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1435,
+                256
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1289,
+                839
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                561
+            ]
+        }
+    ],
+    "30": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                238
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1434,
+                256
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                840
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                293,
+                563
+            ]
+        }
+    ],
+    "31": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1434,
+                257
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                563
+            ]
+        }
+    ],
+    "32": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1434,
+                258
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                563
+            ]
+        }
+    ],
+    "33": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                712,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                258
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                296,
+                564
+            ]
+        }
+    ],
+    "34": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                711,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                294,
+                564
+            ]
+        }
+    ],
+    "35": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                709,
+                243
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                290,
+                568
+            ]
+        }
+    ],
+    "36": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                709,
+                243
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                261
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1287,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                292,
+                569
+            ]
+        }
+    ],
+    "37": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                709,
+                243
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1432,
+                261
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1286,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                291,
+                569
+            ]
+        }
+    ],
+    "38": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                706,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1429,
+                261
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1282,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                292,
+                568
+            ]
+        }
+    ],
+    "39": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                706,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1425,
+                261
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1281,
+                844
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                288,
+                568
+            ]
+        }
+    ],
+    "40": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                704,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1423,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1279,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                288,
+                567
+            ]
+        }
+    ],
+    "41": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                702,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1421,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1276,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                282,
+                565
+            ]
+        }
+    ],
+    "42": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                699,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1421,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1275,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                285,
+                567
+            ]
+        }
+    ],
+    "43": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                699,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1418,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1273,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                282,
+                567
+            ]
+        }
+    ],
+    "44": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                698,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1416,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1271,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                281,
+                568
+            ]
+        }
+    ],
+    "45": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                696,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1416,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1271,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                276,
+                566
+            ]
+        }
+    ],
+    "46": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                694,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1416,
+                260
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1269,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                274,
+                566
+            ]
+        }
+    ],
+    "47": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                694,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1412,
+                259
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1269,
+                843
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                278,
+                567
+            ]
+        }
+    ],
+    "48": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                690,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1412,
+                259
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1265,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                272,
+                566
+            ]
+        }
+    ],
+    "49": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                686,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1405,
+                257
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1260,
+                841
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                264,
+                564
+            ]
+        }
+    ],
+    "50": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                680,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1401,
+                258
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1256,
+                842
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                264,
+                566
+            ]
+        }
+    ],
+    "51": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                677,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1395,
+                256
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                257,
+                566
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1249,
+                839
+            ]
+        }
+    ],
+    "52": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                670,
+                241
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1245,
+                838
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                257,
+                564
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1391,
+                254
+            ]
+        }
+    ],
+    "53": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                664,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1239,
+                836
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                249,
+                565
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1386,
+                254
+            ]
+        }
+    ],
+    "54": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                658,
+                237
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1234,
+                835
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                245,
+                564
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1381,
+                253
+            ]
+        }
+    ],
+    "55": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                651,
+                234
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                236,
+                562
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1228,
+                835
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1373,
+                251
+            ]
+        }
+    ],
+    "56": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                644,
+                234
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1224,
+                831
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                234,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1368,
+                248
+            ]
+        }
+    ],
+    "57": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                636,
+                231
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1213,
+                827
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                226,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1359,
+                247
+            ]
+        }
+    ],
+    "58": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                634,
+                231
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1207,
+                823
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                218,
+                557
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1349,
+                247
+            ]
+        }
+    ],
+    "59": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                620,
+                233
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1189,
+                823
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                209,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1330,
+                248
+            ]
+        }
+    ],
+    "60": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                612,
+                234
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                202,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1178,
+                821
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1317,
+                250
+            ]
+        }
+    ],
+    "61": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                601,
+                238
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1168,
+                819
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                196,
+                557
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1305,
+                251
+            ]
+        }
+    ],
+    "62": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                600,
+                238
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1162,
+                818
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                192,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1299,
+                251
+            ]
+        }
+    ],
+    "63": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                592,
+                240
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1153,
+                817
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                188,
+                558
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1288,
+                253
+            ]
+        }
+    ],
+    "64": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                588,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1147,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                184,
+                559
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1283,
+                254
+            ]
+        }
+    ],
+    "65": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                584,
+                243
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1143,
+                818
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                181,
+                560
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1280,
+                256
+            ]
+        }
+    ],
+    "66": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                584,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1141,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                179,
+                563
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1278,
+                259
+            ]
+        }
+    ],
+    "67": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                582,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1141,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                176,
+                562
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1276,
+                258
+            ]
+        }
+    ],
+    "68": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                577,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1137,
+                819
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                176,
+                562
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1270,
+                257
+            ]
+        }
+    ],
+    "69": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                566,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1125,
+                817
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                164,
+                563
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1259,
+                259
+            ]
+        }
+    ],
+    "70": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                552,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1112,
+                817
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                151,
+                563
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1246,
+                256
+            ]
+        }
+    ],
+    "71": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                520,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1085,
+                818
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                115,
+                565
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1216,
+                254
+            ]
+        }
+    ],
+    "72": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                498,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1061,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                92,
+                567
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1195,
+                256
+            ]
+        }
+    ],
+    "73": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                473,
+                244
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1037,
+                817
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                62,
+                568
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1167,
+                257
+            ]
+        }
+    ],
+    "74": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                460,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1024,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                48,
+                569
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1154,
+                258
+            ]
+        }
+    ],
+    "75": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                440,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                28,
+                571
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                1008,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1137,
+                256
+            ]
+        }
+    ],
+    "76": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                430,
+                249
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                998,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                14,
+                572
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1125,
+                258
+            ]
+        }
+    ],
+    "77": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                411,
+                248
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                981,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                0,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                3,
+                571
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1109,
+                257
+            ]
+        }
+    ],
+    "78": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                404,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                973,
+                816
+            ]
+        },
+        {
+            "worldCoordinate": [
+                5.5,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                333,
+                577
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1100,
+                258
+            ]
+        }
+    ],
+    "79": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                394,
+                246
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                964,
+                814
+            ]
+        },
+        {
+            "worldCoordinate": [
+                5.5,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                323,
+                576
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1092,
+                255
+            ]
+        }
+    ],
+    "80": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                387,
+                245
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                959,
+                814
+            ]
+        },
+        {
+            "worldCoordinate": [
+                5.5,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                317,
+                574
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1085,
+                255
+            ]
+        }
+    ],
+    "81": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                385,
+                243
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                957,
+                809
+            ]
+        },
+        {
+            "worldCoordinate": [
+                5.5,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                319,
+                574
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1083,
+                253
+            ]
+        }
+    ],
+    "82": [
+        {
+            "worldCoordinate": [
+                0,
+                20.16
+            ],
+            "cameraCoordinate": [
+                389,
+                242
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                -20.16
+            ],
+            "cameraCoordinate": [
+                960,
+                806
+            ]
+        },
+        {
+            "worldCoordinate": [
+                5.5,
+                -9.16
+            ],
+            "cameraCoordinate": [
+                324,
+                568
+            ]
+        },
+        {
+            "worldCoordinate": [
+                16.5,
+                20.16
+            ],
+            "cameraCoordinate": [
+                1084,
+                252
+            ]
+        }
+    ]
+}
