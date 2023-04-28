@@ -1,30 +1,26 @@
 {
-    "workshoptitle": "Search Documents and Images stored in Object Storage using OpenSearch, AI Vision, Text Recognition",
+    "workshoptitle": "Make It Searchable: AI-Enabled Information Retrieval",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "./../../intro/intro.md"
+            "filename": "./../../0-intro/intro.md"
         },
         {
             "title": "Get Started",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Install the Components",
-            "filename": "./../../components/components.md"
+            "title": "Lab 1: Install the components with automation",
+            "filename": "./../../1-components/components.md"
         },
         {
-            "title": "Lab 2: Create a Function to parse the documents",
-            "filename": "./../../function/function.md"
+            "title": "Lab 2: Integrate the Components",
+            "filename": "./../../2-integration/integration.md"
         },
         {
-            "title": "Lab 3: Integrate to the Components together",
-            "filename": "./../../integration/integration.md"
-        },
-        {
-            "title": "Lab 4: Create a Google like user interface",
-            "filename": "./../../visual_builder/visual_builder.md"
+            "title": "Lab 3: Create a search user interface and run searches",
+            "filename": "./../../3-visual_builder/visual_builder.md"
         },        
         {
             "title": "Need Help?",
