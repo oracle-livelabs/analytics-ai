@@ -30,7 +30,7 @@ As you enter the information, the application returns search results in a drop-d
 
     In order to **enable searching** and ask questions, you already have **indexed** the Data Set as part of the previous chapter.
 
-3.  Mouse Hover on the first visualization and Click **Explore as Workbook** 
+3.  Mouse Hover on the first visualization and Click **Explore as Workbook**
 
     ![Explore Data](../gain-insights/images/biask8.png)
 
@@ -43,19 +43,19 @@ A new Workbook will be opened
 We have to move one of the measure to the second Y axis and get a proper visualization.  
 Change **"# Customers"** to the second Y Axis > Go to the **Grammar Panel**, under the **Values** Section, hover over "**# Customers**", right-click and select **Y2 axis**  
 
-    ![Second Axis](../gain-insights/images/valuebysalesweekforcustomersbychannel-y2axissmall.png)
+    ![Second Axis](../gain-insights/images/valuebysalesweekforcustomersbychannel-y2axissmall.png =250x*)
 
-6.  Notice that the visualization has changed with **Value** scale on the left and **# Customers** scale on the right **Y axis**. 
+6.  Notice that the visualization has changed with **Value** scale on the left and **# Customers** scale on the right **Y axis**.
 
     ![Second Axis](../gain-insights/images/valuebysalesweekforcustomersbychannel-y2axis2.png)
 
 7.  Lets add **Category** to **Trellis Columns**.  
     Drag and drop **Category** data element from the Data Panel, to the Grammar Panel, into **Trellis Columns** section.  
-   
-    ![Category](../gain-insights/images/addcategorysmall.png)
+
+    ![Category](../gain-insights/images/addcategorysmall.png =350x*)
 
 8.  Notice that we are consistently losing Customers over time on Mobile Phones category.  
-    
+
     ![Loose Customers over Mobile Phone](../gain-insights/images/valuebysalesweekforcustomersbychannel-y2axis3.png)
 
 ## Task 2: Use Advanced Analytics  
@@ -70,7 +70,7 @@ Adding Trend lines is easy. It is used to analyze the specific direction of a gr
 
     ![Add Trend Line](../gain-insights/images/addtrendline.png)
 
-2.  Notice that there is **downward trend** for **Mobile Phones**. 
+2.  Notice that there is **downward trend** for **Mobile Phones**.
 
     ![Add Trend Line](../gain-insights/images/addtrendline2.png)
 
@@ -86,7 +86,7 @@ Adding a **Forecast** is pretty much the same process as the Trend lines one.
 
     Forecasting is the process of making predictions about the future based on past and present data and most commonly by analysis of trends.  
     Right-click your visualization, select **Add Statistics** and choose **Forecast**.  
-    
+
     ![Add Forecast](../gain-insights/images/addforecastsmall.png)
 
 5.  The forecast line predicts a further decline in the number of customers for Mobile Phones.
@@ -112,6 +112,5 @@ You may now **proceed to the next lab**.
 ## **Acknowledgements**
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence) 
-- **Last Updated By/Date** - Lucian Dinescu, February 2022
+- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023
