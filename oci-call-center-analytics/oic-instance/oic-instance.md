@@ -1,10 +1,10 @@
-# Setup OIC instance
+# Setup Oracle Integration Cloud (OIC) instance
 
 ## Introduction
 
 This lab walks you through the steps to setup an OIC instance.
 
-Estimated Time: 
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 * Completed previous Labs
 
 
-## **Task 1**: Create OIC Instance
+## Task 1: Create OIC Instance
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, go to **Developer Servicese**, and then select **Integration** under **Application Integration**.
 
@@ -38,9 +38,9 @@ This lab assumes you have:
 4. Now the Instance is created and wait for its state to change from **Creating** to **Active**. Once the state changes to active, open the integration details page by clicking on it and then click the service console button to open the OIC console page
     ![Open OIC Service console page](./images/integration-details.png " ")
 
-5. Download the already created integration files [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) and [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) to use in Task 2 and Task 3. 
+5. Download the already created integration files [Transcribe Audio Files](./files/call-center-analytics-transcribe-audio-files-integration.iar) and [Process Transcriptions](./files/call-center-analytics-process-transcriptions-integration.iar) to use in Task 2 and Task 3. 
 
-## **Task 2**: Setup Speech Transcription Integration
+## Task 2: Setup Speech Transcription Integration
 In this lab, we will implement an integration in which, upon uploading the audio file, the pipeline will be initiated, the transcription job will be created, and the output will be saved to the TranscriptedFiles bucket.
 
 1. In the service console, open the hamburger menu and click **Integration** and then **Integrations** again to open integrations home page.
@@ -50,7 +50,7 @@ In this lab, we will implement an integration in which, upon uploading the audio
 2. This will navigate you to the integrations home page. Now you need to click import button in the top right to upload integration file.
     ![Integrations page](./images/import-integrations-button.png " ")
 
-3. Make sure include asserted recordings checkbox is not ticked and then Click on choose file and select the [Transcribe Audio Files](./files/Call-CenterAnalytics-TranscribeAudioFiles-Integration.iar) you downloaded from Task 1 to upload. Finally click on **Import and Configure** after upload is finished.
+3. Make sure include asserted recordings checkbox is not ticked and then Click on choose file and select the [Transcribe Audio Files](./files/call-center-analytics-transcribe-audio-files-integration.iar) you downloaded from Task 1 to upload. Finally click on **Import and Configure** after upload is finished.
     ![Import Integration file](./images/import-integration-file.png)
 
 4. This will open the configuration page for the **Transcribe Audio Files** integration. We need to edit the two connections in this integrations. Hover over the *New Audio Files for Transcription* connection and then click on edit icon.
@@ -98,11 +98,11 @@ In this lab, we will implement an integration in which, upon uploading the audio
 
 Now the Integration for speech is complete.
 
-## **Task 3**: Setup Language Transcription Integration
+## Task 3: Setup Language Transcription Integration
 
 In this we will setup an integration, which utilizes language services such as key phrase extraction, sentiment analysis, and named entity extraction to analyze the conversation and save pertinent details to the database.
 
-1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [Process Transcriptions](./Call-CenterAnalytics-ProcessTranscriptions-Integration.iar) integration file. This will open the configuration editor for **Process Transcriptions** integration.
+1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [Process Transcriptions](./files/call-center-analytics-process-transcriptions-integration.iar) integration file. This will open the configuration editor for **Process Transcriptions** integration.
     ![Process Transcriptions connections configurations](./images/esk-connections.png " ")
 
 2. This will open the configuration page for the **Process Transcriptions** integration. We need to edit the five connections in this integrations. Hover over the *New Transcription For Analysis* connection and then click on edit icon.
@@ -182,7 +182,7 @@ In this we will setup an integration, which utilizes language services such as k
 
 21. Similarily, repeat the steps 23 and 24 to activate the **Process Transcriptions** integration.
 
-This concludes this lab. You may now **proceed to the next lab**.
+[Proceed to the next section](#next)
 
 
 ## Acknowledgements

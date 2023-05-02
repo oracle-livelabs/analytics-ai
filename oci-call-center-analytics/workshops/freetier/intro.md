@@ -40,7 +40,7 @@ Oracle Cloud Infrastructure Functions is a fully managed, multi-tenant, highly s
 &nbsp;
 &nbsp;
 
-*Estimated Lab Time*: 2 hour
+Estimated Lab Time: 60 minutes
 
 ### Objectives:
 

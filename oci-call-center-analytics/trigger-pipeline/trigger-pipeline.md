@@ -4,7 +4,7 @@
 
 This lab facilitates the execution of the entire pipeline that we have set up. We will upload three distinct audio files: one for the customer channel, another for the call center support channel, and a third file which consists of both channels mixed together. Upon uploading the files to the designated FilesForTranscription bucket, our Transcribe Audio File integration will be triggered which will call Speech Transcription service, creating transcription jobs and saving the transcription output to the TranscribedFiles bucket. This will then trigger our Merge function, combining both channels transcriptions and storing the resulting output in the MergedTranscriptions bucket. As a result, the Integration Process Transcription will be initiated, calling language services such as key phrase extraction, sentiment analysis, and named entity extraction to analyze the conversation and save pertinent details to the database. The information stored in this database will be used by OAC workbooks to visualize and properly interpret the extracted information.
 
-Estimated Time 15 FilesForTranscription.
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 * Run the Integration pipeline we created in previous lans
@@ -13,7 +13,7 @@ Estimated Time 15 FilesForTranscription.
 ### Prerequisites
 * All previous labs
 
-## **Task 1**: Upload files
+## Task 1: Upload files
 Our environment is all setup. It is now time to trigger our process into action by dropping three audio files in the Storage Bucket provisioned by the Terraform script
 1. In the Oracle Home Page, Open the hamburger menu, Click **Storage** under **Object Storage & Archive Storage** click **Buckets**
     ![Navigate to Buckets](./images/navigate-to-buckets.png " ")
@@ -35,7 +35,7 @@ Our environment is all setup. It is now time to trigger our process into action 
 
 5. Once the file is uploaded, an event will be fired by the Storage Bucket which will be routed through the Notifications service to our integration along with the information about our newly created file.
 
-## **Task 2**: Check All Jobs Completed in Speech
+## Task 2: Check All Jobs Completed in Speech
 
 1. In the Oracle Home Page, Open the hamburger menu, Navigate to **Analytics and AI** menu and click it, and then select **Speech** item under **AI services**.
     ![Navigate speech service menu](./images/navigate-to-ai-speech-menu.png " ")
@@ -46,7 +46,7 @@ Our environment is all setup. It is now time to trigger our process into action 
 3. On the jobs listing page you can see two new jobs being created with same names as the files you uploaded to **FilesForTranscription** bucket in the Task 1.
     ![Speech Jobs](./images/speech-jobs.png)
 
-## **Task 3**: Tracking of Triggered Integrations
+## Task 3: Tracking of Triggered Integrations
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, go to **Developer Servicese**, and then select **Integration** under **Application Integration**.
 
@@ -66,7 +66,7 @@ Our environment is all setup. It is now time to trigger our process into action 
 
 7. Once all the instances are successful, We can now view our data in Autonomous Database Warehouse.
 
-## **Task 4**: Check Data in ADW
+## Task 4: Check Data in ADW
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
@@ -91,7 +91,7 @@ You will get a list of our five tables provisioned by the Terraform script.
     ![seeing table data](./images/open-table2.png " ")
 
 
-## **Task 5**: Analyse data in OAC
+## Task 5: Analyse data in OAC
 
 1. From the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 

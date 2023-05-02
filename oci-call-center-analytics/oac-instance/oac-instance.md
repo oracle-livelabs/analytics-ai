@@ -1,4 +1,4 @@
-# Provisioning your Oracle Analytics Cloud (OAC) instance
+# Setup Oracle Analytics Cloud (OAC) instance
 
 ## Introduction
 
@@ -11,7 +11,7 @@ Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 Watch our short video that explains how to provision your Oracle Analytics Cloud instance:
 
 
-Estimated Time 15 minutes.
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 - Create an Oracle Analytics Cloud Instance
@@ -57,7 +57,7 @@ Estimated Time 15 minutes.
 2. In the **Oracle Analytics** page click on the three dots beside create button and click on **Import Workbook/Flow..**.
     ![Import workbook](./images/import-workbook.png)
 
-3. This will open a UI to upload a workbook. download this [CallCenterAnalyticsWorkbookFile](./files/CallCenterAnalytics.dva) workbook file  and upload it
+3. This will open a UI to upload a workbook. download this [CallCenterAnalyticsWorkbookFile](./files/call-center-analytics.dva) workbook file  and upload it
     ![Upload workbook](./images/upload-workbook.png)
 
 ## Task 3: Configure Workbook
@@ -76,7 +76,7 @@ Click **Save** to save your new connection **information**.
   ![Define Connection](./images/connection-details.png " ")
 
 
-This concludes this lab. You may now **proceed to the next lab**.
+[Proceed to the next section](#next)
 
 ## Acknowledgements
 **Authors**

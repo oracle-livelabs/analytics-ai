@@ -5,7 +5,7 @@
 Learn how to trigger integrations
 
 
-*Estimated Lab Time*: 2 hour
+Estimated Lab Time: 15 minutes
 
 ### Objectives:
 
@@ -18,7 +18,7 @@ This lab assumes you have:
 * Completed previous Labs
 
 
-## **Task 1**: Create a Function
+## Task 1: Create a Function
 To add a function, first, We need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
 
@@ -45,7 +45,7 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 
    ![Test CLI](./images/testcloudshell.png " ")
 
-## **Task 2**: Create and Deploy a Merge Transcription Function
+## Task 2: Create and Deploy a Merge Transcription Function
 
 We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded Jason lines). The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
 
@@ -99,7 +99,8 @@ We will now create the function in the application. The function will do sentime
         ```
 
 5. 	**merge_trascriptions.py**
-        ```<copy>
+        ```
+        <copy>
         import io
         import os
         import json
@@ -284,7 +285,7 @@ We will now create the function in the application. The function will do sentime
   ![Login Docker](./images/deploy-function.png " ")
 
 
-## **Task 3**: Setup and Integrate Notification with the Integration Service
+## Task 3: Setup and Integrate Notification with the Integration Service
 
 1. Click on the hamburger menu, then click on **Developer Services**, under **Application Integration** Click on **Notification**.
     ![Navigate to Notification Page](./images/navigate-to-notifications.png " ")
@@ -351,7 +352,7 @@ We will now create the function in the application. The function will do sentime
 15. Repeat the steps 5 to 13 to create a subscription for the new topic "NewTranscriptionForAnalysis" with the Integration **Process Transcriptions**.
 
 
-## **Task 4**: Event Setup for New Audio File for Transcription##
+## Task 4: Event Setup for New Audio File for Transcription##
 
 1. Open hanburger menu, click on **Observability & Management**, under **Events Service** Click on **Rules**.
     ![Navigate to Rules](./images/navigate-to-rules.png " ")
@@ -370,7 +371,7 @@ We will now create the function in the application. The function will do sentime
 7. Click Create Rule.
     ![Create New Audio File For Transcription Rule details](./images/create-rule-1.png " ")
 
-## **Task 5**: Event Setup for New Transcription for Merge Transcription##
+## Task 5: Event Setup for New Transcription for Merge Transcription##
 
 1. Navigate back to the Rules listing page.
 
@@ -388,7 +389,7 @@ We will now create the function in the application. The function will do sentime
 7. Click Create Rule.
     ![Create New Transcription For Merge Rule details](./images/create-rule-2.png " ")
 
-## **Task 6**: Event Setup for New Transcription for Analysis##
+## Task 6: Event Setup for New Transcription for Analysis##
 
 1. Navigate back to the Rules listing page.
 
@@ -405,6 +406,8 @@ We will now create the function in the application. The function will do sentime
 
 7. Click Create Rule.
     ![Create New Transcription For Analysis details](./images/create-rule-3.png " ")
+
+[Proceed to the next section](#next)
 
 ## Acknowledgements
 
