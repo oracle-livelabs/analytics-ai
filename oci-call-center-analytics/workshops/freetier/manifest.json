@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Building applications with Oracle’s AI services",
+    "workshoptitle": "Build applications with Oracle's AI services",
     "help": "oci_ocas_ops_ww_grp@oracle.com",
 	"tutorials": [
         {
@@ -23,8 +23,8 @@
             "filename": "../../data-sources/data-sources.md"
         },
         {
-            "title": "Lab 3: Setup OIC instance",
-            "description": "Prepare an OIC instance",
+            "title": "Lab 3: Setup Oracle Integration Cloud (OIC) instance",
+            "description": "Learn how to setup an OIC instance",
             "filename": "../../oic-instance/oic-instance.md"
         },
         {
@@ -33,7 +33,7 @@
             "filename": "../../trigger-integration/trigger-integration.md"
         },
         {
-            "title": "Lab 5: Setup OAC instance",
+            "title": "Lab 5: Setup Oracle Analytics Cloud (OAC) instance",
             "description": "Learn how to setup an OAC Instance",
             "filename": "../../oac-instance/oac-instance.md"
         },
@@ -41,6 +41,11 @@
             "title": "Lab 6: Configurations To trigger pipeline",
             "description": "Learn how to trigger pipeline",
             "filename": "../../trigger-pipeline/trigger-pipeline.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to prepare your OCI Environment to be able to carry all the next steps needed to create a function, create data pipelines, run OCI Language Service as well as visualize your data in OAC.
 
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -20,7 +21,7 @@ This lab assumes you have:
 * An Oracle account
 
 
-## **Task 1**: Create Compartment, Group and Dynamic Group
+## Task 1: Create Compartment, Group and Dynamic Group
 
 This is an optional step, if you have an existing compartment or you prefer to perform all the setup in the root comapartment, skip to task 2.
 
@@ -48,7 +49,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
 5. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Groups**. A list of the groups in your tenancy is displayed.
 
-    ![Create Group](./images/creategroupone.png " ")
+    ![Create Group](./images/navigate-to-groups.png " ")
 
 6. Click **Create Group**
 
@@ -69,7 +70,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 10. Select the user from dropdown and then click **Add**
     ![Add User to group](./images/add-user.png " ")
 
-## **Task 2**: Create Dynamic Group and Setup Policies
+## Task 2: Create Dynamic Group and Setup Policies
 
 1. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**. A list of the dynamic groups in your tenancy is displayed.
 
@@ -110,7 +111,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
 
 
-## **Task 3**: Setup API Signing Key
+## Task 3: Setup API Signing Key
 
 Generate an API signing key pair
 
@@ -144,7 +145,7 @@ Generate an API signing key pair
 To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
 
-This concludes this lab. You may now **proceed to the next lab**.
+[Proceed to the next section](#next)
 
 ## Learn More
 [Overview of OCI Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/landing.htm)

@@ -4,7 +4,8 @@
 ​
 This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis. We will also create the buckets and databases to save the processed data.
 ​
-Estimated Time: 60 minutes
+Estimated Lab Time: 10 minutes
+
 ​
 ### Objectives
 ​
@@ -21,7 +22,7 @@ This lab assumes you have:
 * Completed Lab 1
 ​
 ​
-## **Task 1**: Create Object Storage Bucket
+## Task 1: Create Object Storage Bucket
 ​
 In this task, we'll create 3 buckets one for storing source audio files, one for storing the transcribed files and last for the merged transcribed files. 
 ​
@@ -43,7 +44,7 @@ In this task, we'll create 3 buckets one for storing source audio files, one for
 ​
 ​
 ​
-## **Task 2**: Prepare Target Database
+## Task 2: Prepare Target Database
 ​
 In this task, we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 ​
@@ -113,7 +114,7 @@ In this task, we'll create and configure your target Autonomous Data Warehouse d
    ![Create User](./images/create-user-database.png " ")
 ​
 ​
-## **Task 3**: Create Tables to Store Output Data
+## Task 3: Create Tables to Store Output Data
 ​
 Whilst we are in the Database Actions dashboard, run the below queries to setup the database schema.
 ​
@@ -188,7 +189,7 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	
 ​
 	```
-	<copy>CREATE TABLE livelabUser.SENTIMENT
+	<copy>CREATE TABLE livelabUser.SENTIMENTS
 	(
 	conversation_file_id VARCHAR(64) NOT NULL,
 	text VARCHAR(64) NOT NULL,
@@ -246,7 +247,7 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	</copy>
 	```
 ​
-This concludes this lab. You may now **proceed to the next lab**.
+[Proceed to the next section](#next)
 ​
 ## Learn More
  [Overview of Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
