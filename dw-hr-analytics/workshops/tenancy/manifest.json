@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Departmental Data Warehouse - HR Analytics",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Departmental Data Warehouse - HR Analytics Hands-On Workshop Overview",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision Resources",
+      "description": "Provisioning the resources for the architecture pattern",
+      "filename": "../../provision-resources/provision-resources.md" 
+    },
+    {
+      "title": "Lab 2: Perform Analysis",
+      "description": "Upload and analyze HR dashboards",
+      "filename": "../../perform-analysis/perform-analysis.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

@@ -41,6 +41,7 @@ You add the city to the map.
 ![](images/3_destination_city.png " ")
 
 Location of the destination cities appear on the map. You now want to add the Expense information to see how much was spent by city.
+
 3. Select and Drag “Expense Amount” to “Size” The size of the bubble represents the amount spent on each city.
 
 
@@ -72,7 +73,8 @@ Now you want to see the prediction of Expenses for the future using Machine Lear
 
 You get a prediction for the next 3 periods (months). And you see that
 The tool allows you to choose from different Forecast Algorithms.
-On the properties menu at the bottom left you can configure more aspects of the visual.
+On the properties menu at the top left (near the Filter bar) you can configure more aspects of the visual.
+
 3. Click on the “Analytics” icon on the properties menu (most right icon)
     Under “Method” click on “Seasonal ARIMA” and choose “ARIMA” (company expenses are not seasonal, so makes more sense to use normal ARIMA model)
 
@@ -100,7 +102,7 @@ A solid proof that Hotels is one of the root issues here.
 ![](images/10_porto.png " ")
 
 To confirm your analysis, you want to check if expenses were out of policy.
-3. Select “In Policy” and drag it to “Color”
+3. Click on the Grammer tab, select “In Policy” and drag it to “Color”
 
 ![](images/11_inPolicy_color.png " ")
 
@@ -119,6 +121,7 @@ A wide variety of visualization are available to you.
 ![](images/13_horizontal_bar.png " ")
 
 The list of Hotel vendors appears. Now you need to filter it to Porto and to find the related ones.
+
 6. Click “Destination City” and drag it to “Filters”. Please note this filter is specific to visualization and not to entire canvas.
 
 ![](images/14_destination_city_filter.png " ")
@@ -141,13 +144,20 @@ was highlighted by the Explain).
 
 Someone could say you have finish, but you are a professional that looks for outstanding results.
 You try to walk the extra mile in the next exercise.
+But before, let’s save our work.
+1.	Click on the Save Icon.
 
 ![](images/17_root_cause_final.png " ")
+
+2.	Give it a name, ie: OAC\_TD\_Analysis\_IF
+3.	Click Save
+
+![](images/18_save_project.png " ")
 
 ## End of Exercise 4
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forlafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will create and connect to an ODI work repository and prepare the E-Business Suite data source in ODI. We will be using an Autonomous database to emulate EBS. If you have access to an EBS environment, please feel free to bring in data from there.
+In this lab, you will create and connect to an ODI work repository and prepare the E-Business Suite data source in ODI. You will be using an Autonomous database to emulate EBS. If you have access to an EBS environment, please feel free to bring in data from there.
 
-Estimated Lab Time: 40 minutes
+Estimated Time: 40 minutes
 
 ### Objectives
 
@@ -28,7 +28,7 @@ Note: Please download the above file before continuing. Normally, while working 
 
 If you are using an Autonomous Database to emulate the EBS database, please follow Step 1, else proceed to Step 2.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 	
 	![](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
@@ -64,9 +64,9 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
     
 ## Task 3: Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
 
-1. Connect to the Autonomous Data Warehouse that we created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. We downloaded the wallet to the local machine in the previous lab.
+1. Connect to the Autonomous Data Warehouse that you created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. You downloaded the wallet to the local machine in the previous lab.
 
-2. Run the commands below to create a schema for the metadata repository. We will call this schema 'ODI'. Replace 'MyPassword' in the first command with a password of your choosing.
+2. Run the commands below to create a schema for the metadata repository. Name this schema 'ODI'. Replace 'MyPassword' in the first command with a password of your choosing.
     
         create user ODI identified by MyPassword;
     
@@ -90,7 +90,7 @@ If you are using an Autonomous Database to emulate the EBS database, please foll
    
 ## Task 4: Creating ODI Master Repository
 
-In order to use ODI, we need to create a master and work repository. For this, we are going to use the Autonomous Data Warehouse that was spun up as part of the stack.
+In order to use ODI, you need to create a master and a work repository. For this, you are going to use the Autonomous Data Warehouse that was created as part of the stack.
 
 1. Return to ODI Studio.
 
@@ -188,9 +188,9 @@ In order to use ODI, we need to create a master and work repository. For this, w
 
     ![](./images/3.35.png " ")
 
-You may now proceed to Lab 4.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
-- **Last Updated By/Date** - Yash Lamba, January 2021
+- **Authors** - Yash Lamba, Senior Cloud Engineer, Massimo Castelli, Senior Director Product Management, January 2021
+- **Last Updated By/Date** - Yash Lamba, March 2023
 

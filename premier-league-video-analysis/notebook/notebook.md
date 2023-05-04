@@ -1,4 +1,4 @@
-# Lab: Recognizing Players and Shirt Numbers - Programmatically
+# Lab: Recognizing Players and Shirt Numbers - Python
 
 ## Introduction
 
@@ -20,7 +20,7 @@ In this lab you will:
 
 In order for OCI Data Science to be able to call the OCI Vision service, we need to set up an API Signing key.
 
-1. From the cloud console, open the user menu (top right) and click My Profile.
+1. From the cloud console, open the user menu (top right) and click User settings.
 
    ![User profile](./images/user-profile.png)
 
@@ -102,7 +102,7 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 2. Search for a Conda environment that suits the type of development that we're going to do.
 
    Search for the environments with the "computer vision" libraries with the search field at top right. 
-   Open the details of the "Computer Vision for CPU on Python 3.7" by clicking on the down arrow at the right.
+   Open the details of the "Computer Vision for GPU on Python 3.7" by clicking on the down arrow at the right.
    Copy the installation command to the clipboard by clicking on the Copy button.
 
     ![Upload Dataset](images/choose-computer-vision.png)
@@ -113,9 +113,9 @@ In order for OCI Data Science to be able to call the OCI Vision service, we need
 
 4. Paste the command from the clipboard.
 
-   `odsc conda install -s computervision_p37_cpu_v1`
+   `odsc conda install -s computervision_p37_gpu_v1 `
 
-5. You will receive a prompt related to what version number you want. Press `Enter` to select the default version.
+5. You will see a message saying "The environment you are trying to install was optimized for GPUs. Some of the libraries may not work. Consider using a GPU". Please ignore this as it will still work as intended.
 
 6. Wait for the conda package to be installed.
 
@@ -209,6 +209,7 @@ res = ai_service_vision_client.analyze_image(analyze_image_details=analyze_image
 res_json = json.loads(repr(res.data))
 f = open('vision_response.json', 'w')
 json.dump(res_json, f)
+f.close()
     </copy>
     ```
     
@@ -315,7 +316,7 @@ def add_shirt_number_to_players(vision_response):
 add_shirt_number_to_players(res_json)
 f = open('vision_response_enriched_with_shirt_numbers.json', 'w')
 json.dump(res_json, f)
-
+f.close()
     </copy>
     ```
 

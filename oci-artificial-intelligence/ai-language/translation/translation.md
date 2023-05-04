@@ -1,4 +1,4 @@
-# Lab 3: Translate text using OCI Console and python SDK
+# Lab 3: Translate text through OCI Console and python SDK
 
 ## Introduction
 
@@ -17,7 +17,7 @@ In this lab, you will learn to:
 ### Prerequisites
 
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Language policies are configured as per [Lab 1](?lab=analyze-text#PolicySetup)
+- Language policies are configured as per [Lab 1](?lab=pre-trained#PolicySetup)
 
 
 ## TASK 1: Translate Text using OCI Console
@@ -27,7 +27,7 @@ In this lab, you will learn to:
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
 
-    ![OCI Menu Screen](./images/navigate-to-ai-language-menu.png " ")
+    ![OCI Menu Screen](./images/navigate-to-ai-language.png " ")
 
     Using the Navigation Menu on the top left corner, navigate to Text Translation menu under Pretrained models.
 
@@ -60,7 +60,7 @@ In this lab, you will learn to:
 
 Please refer to the sample code below and update required variables to translate text using Python SDK
 
-Pre-requisites: For using Python SDK, please follow steps described in [Lab 1](?lab=analyze-text#Task2AnalyzeTextwithPythonSDK)
+Pre-requisites: For using Python SDK, please follow steps described in [Lab 1: Task2](?lab=pre-trained#Task2:AnalyzeTextwithPythonSDK)
 
 
 #### Python Code to translate text usign OCI SDK
@@ -109,5 +109,5 @@ In this lab you have learnt how to use Language Service to translate text with O
   * Rajat Chawla - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Raja Pratap Kondamari - Product Manager, OCI Language Service, October 2022
+* Sahil Kalra - Oracle AI OCI Language Services, March 2023
 

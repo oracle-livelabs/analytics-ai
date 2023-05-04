@@ -107,38 +107,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 
 ### Model Training
 
-Example of visualizing a decision tree:
-
-![Decision tree](./../common/images/ads-decision-tree.png " ")
-
-The Oracle AutoML engine, that produces ``ADSModel`` models, automates:
-
-* Feature Selection
-* Algorithm Selection
-* Feature Encoding
-* Hyperparameter Tuning
-
-Create your own models using any library. If they resemble ``sklearn`` estimators, you can promote them to ``ADSModel`` objects then use them in evaluations, explanations, and model catalog operations. If they do not support the ``sklearn`` behavior, you can wrap them in a Lambda then use them.
-
-Example of creating a set of AutoML models:
-
-```
-train, test = ds.train_test_split()
-automl = AutoML(train, provider=ml_engine)
-model, baseline = automl.train(model_list=[
-    'LogisticRegression',
-    'LGBMClassifier',
-    'XGBClassifier',
-    'RandomForestClassifier'])
-```
-
-Example of tuning trial results:
-
-```
-automl.visualize_tuning_trial()
-```
-
-![AutoML hyperparameter tuning](./../common/images/ads-automl-hyperparameter-tuning.png)
+Create your own models using any library. If they resemble ``sklearn`` estimators, you can promote them to ``ADSModel`` objects then use them in evaluations and model catalog operations. 
 
 ### Model Evaluations
 
@@ -155,17 +124,9 @@ evaluator.show_in_notebook()
 
 ![Model evaluation](./../common/images/ads-model-evaluation.png)
 
-### Model Interpretation and Explainability
-
-Model explanation makes it easier to understand why machine learning models return the results that they do by identifying the relative importance of features and relationships between features and predictions. Data Science offers the first commercial implementation of model-agnostic explanation. For example, a compliance officer can be certain that a model is not making decisions in violation of GDPR or regulations against discrimination.
-
-For data scientists, it enables them to ensure that any model they build is generating results based on predictors that make sense. Understanding why a model behaves the way it does is critical to users and regulators. Data Science ensures that deployed models are more accurate, robust, and compliant with relevant regulations.
-
-Oracle provides Machine Learning Explainability (MLX), which is a package that explains the internal mechanics of a machine learning system to better understand models. Models are in the ``ADSModel`` format. You use MLX to explain models from different training platforms. You create an ``ADSModel`` from a REST endpoint then use the ADS model explainability to explain a model that’s remote.
-
 ### Interaction with the Model Catalog
 
-You can upload the models that you create with ADS into the Data Science model catalog directly from ADS. You can save all your models, with their provenance information, in the catalog and make them accessible for anyone to use. Other users can then load the models and use them as an ``ADSModel`` object. You can also use this feature to help put the models into production with [Oracle Functions](https://docs.cloud.oracle.com/iaas/Content/Functions/Concepts/functionsoverview.htm).
+You can upload the models that you create with ADS into the Data Science model catalog directly from ADS. You can save all your models, with their provenance information, in the catalog and make them accessible for anyone to use. Other users can then load the models and use them as an ``ADSModel`` object. You can also use this feature to help put the models into production with the Data Science Model Deployment (https://docs.oracle.com/en-us/iaas/data-science/using/model-dep-about.htm).
 
 You many now **proceed to the next lab**.
 
@@ -173,4 +134,4 @@ You many now **proceed to the next lab**.
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
+    * [Wendy Yip](https://www.linkedin.com/in/wendy-yip-a3990610), Data Scientist, March 2023
