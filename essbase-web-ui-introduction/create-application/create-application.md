@@ -34,6 +34,8 @@ This lab assumes you have:
 
 4. In the **Import** dialog box, click **OK**.
 
+5. The **Sample** application and the **Basic** cube are created.
+
 ## Task 2: Display active alias names in the outline
 
 1. On the **Applications** page, expand the **Sample** application.

@@ -68,13 +68,15 @@ This lab assumes you have:
 
 3. In the cube inspector, select the **Scripts** tab.
 
-4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
+4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**. A new browser tab is opened.
 
-5. For the **Rule Name**, enter **Addprods**.
+5. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
 
 6. For the **Source Type**, select **File**.
 
 7. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder.
+
+    The **Shared** folder is  in the **Catalog** under the **All Files** folder.
 
 8. For **File Type**, select **Delimited**.
 
