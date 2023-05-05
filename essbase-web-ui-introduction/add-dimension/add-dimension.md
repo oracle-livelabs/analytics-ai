@@ -68,7 +68,9 @@ This lab assumes you have:
 
 3. In the cube inspector, select the **Scripts** tab.
 
-4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**. A new browser tab is opened.
+4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
+
+    A new browser tab is opened.
 
 5. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
 
