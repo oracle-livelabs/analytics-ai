@@ -76,9 +76,7 @@ This lab assumes you have:
 
 6. For the **Source Type**, select **File**.
 
-7. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder.
-
-    The **Shared** folder is  in the **Catalog** under the **All Files** folder.
+7. For **File**, navigate to **Catalog** > **All Files** > **Shared** > and double-click **add-products-with-aliases.txt**.
 
 8. For **File Type**, select **Delimited**.
 
