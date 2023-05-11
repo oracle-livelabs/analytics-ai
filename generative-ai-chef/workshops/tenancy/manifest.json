@@ -13,9 +13,39 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Sample",
-            "description": "Sample",
-            "filename": "../../1-first-sample-lab/first-sample-lab.md"
+            "title": "Lab 1: Setup the Environment",
+            "description": "Setup the notebook environment",
+            "filename": "../../2-setup-environment-lab/setup-environment-lab.md"
+        },
+        {
+            "title": "Lab 2: Load the Data",
+            "description": "Download and load the dataset that will be used for the lab",
+            "filename": "../../3-load-data/load-data.md"
+        },
+        {
+            "title": "Lab 3: Prep the Data",
+            "description": "Prepare the data so that it can be used for the model tuning and evaluation",
+            "filename": "../../"
+        },
+        {
+            "title": "Lab 4: Tokenize the Data",
+            "description": "Tokenize the data for the model tuning",
+            "filename": "../../"
+        },
+        {
+            "title": "Lab 5: Try Untuned LLM Model",
+            "description": "",
+            "filename": "../../"
+        },
+        {
+            "title": "Lab 6: Tune our own ChefGPT",
+            "description": "",
+            "filename": "../../"
+        },
+        {
+            "title": "Lab 7: Try the ChefGPT",
+            "description": "",
+            "filename": "../../"
         },
         {
             "title": "Need Help?",
