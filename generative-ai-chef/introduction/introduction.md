@@ -20,5 +20,5 @@ You may now **proceed to the next lab**.
 ## **Acknowledgements**
 
 * **Author** -
-Lyudmil Pelov - Senior Principal Product Manager, DSML
+Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
 Yanir Shahak - Senior Principal Software Engineer, AI Services
