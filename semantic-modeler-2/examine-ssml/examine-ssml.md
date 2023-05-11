@@ -21,7 +21,7 @@ In this lab, you will:
 * Create a schema in an empty model and add tables selected from relational data sources
 
 ### Prerequisites
-test
+
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
