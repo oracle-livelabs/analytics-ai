@@ -48,7 +48,7 @@ Open the `PyTorch 1.10 for GPU on Python 3.8
 Python 3.8` and click on the `Copy` button under the Install section
 
 ```bash
-odsc conda install -s pytorch110_p38_gpu_v1 
+<copy>odsc conda install -s pytorch110_p38_gpu_v1</copy>
 ```
 
 ![copy-conda-install](images/nb-env-ex-install-btn.png)
@@ -75,7 +75,7 @@ In the newly open terminal past the Conda installation command and hit enter to 
 Activate the conda environment by executing following after the installation completes:
 
 ```bash
-conda activate /home/datascience/conda/pytorch110_p38_gpu_v1
+<copy>conda activate /home/datascience/conda/pytorch110_p38_gpu_v1</copy>
 ```
 
 ![nb-activate-conda](images/nb-activate-conda.png)
@@ -87,7 +87,7 @@ Now that we have the required conda environment ready, we would need to install 
 You can install the dependencies by running following line in the Terminal.
 
 ```bash
-pip install transformers evaluate sentencepiece datasets datasets
+<copy>pip install transformers evaluate sentencepiece datasets</copy>
 ```
 
 ## Task 3: Create project folder
