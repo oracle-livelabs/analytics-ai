@@ -1,4 +1,4 @@
-# Create a Twitter Developer Account
+# Load the Dataset
 
 ## Introduction
 
@@ -17,19 +17,19 @@ By now you should have your OCI Data Science Notebook up and running and ready f
 
 ## Task 1: Download dataset
 
-- Step 1
+- *Step 1*
 
-For this we are going to use the RecipeNLG dataset. To download the dataset, open following link: [https://recipenlg.cs.put.poznan.pl/](https://recipenlg.cs.put.poznan.pl/)
+    For this we are going to use the RecipeNLG dataset. To download the dataset, open following link: [https://recipenlg.cs.put.poznan.pl/](https://recipenlg.cs.put.poznan.pl/)
 
-- Step 2
+- *Step 2*
 
-Click on the `Download RecipeNLG dataset` link.
-![recipes-nlg](images/recipe-nlg.png)
+    Click on the `Download RecipeNLG dataset` link.
+    ![recipes-nlg](images/recipe-nlg.png)
 
-- Step 3
+- *Step 3*
 
-Confirm the RecipeNLP Terms and Conditions and `Download` the dataset
-![recipes-nlg](images/recipenlg-download.png)
+    Confirm the RecipeNLP Terms and Conditions and `Download` the dataset
+    ![recipes-nlg](images/recipenlg-download.png)
 
 The dataset is about 500MB large compressed.
 
@@ -37,21 +37,21 @@ The dataset is about 500MB large compressed.
 
 We would need to upload the dataset to the notebook and unzip it, to be able to use it.
 
-- Step 1
+- *Step 1*
 
-Go to the browser tab where you opened your OCI Data Science Notebook previously and go into the folder `hol` that you've created.
+    Go to the browser tab where you opened your OCI Data Science Notebook previously and go into the folder `hol` that you've created.
 
-- Step 2
-Drag and drop the downloaded `dataset.zip` file into the notebook to upload it.
+- *Step 2*
+    Drag and drop the downloaded `dataset.zip` file into the notebook to upload it.
 
-![upload-dataset](images/drag-drop-dataset.png)
+    ![upload-dataset](images/drag-drop-dataset.png)
 
-... and confirm the uploading
-![confirm-upload](images/nb-confirm-upload.png)
+    ... and confirm the uploading
+    ![confirm-upload](images/nb-confirm-upload.png)
 
-- Step 3
+- *Step 3*
 
-Monitor the upload process at the bottom of the the notebook.
-![monitor-upload-process](images/nb-monitor-upload.png)
+    Monitor the upload process at the bottom of the the notebook.
+    ![monitor-upload-process](images/nb-monitor-upload.png)
 
 You may now **proceed to the next lab**.

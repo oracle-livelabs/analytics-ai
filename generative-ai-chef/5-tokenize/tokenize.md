@@ -1,4 +1,4 @@
-# Title of the Lab
+# Tokenize the Dataset
 
 ## Introduction
 
@@ -27,7 +27,7 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Do 1
 
 (optional) Task 1 opening paragraph.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Concise Task Description
+## Task 2: Do 2
 
 1. Step 1 - tables sample
 
@@ -79,15 +79,9 @@ This lab assumes you have:
 
   ```
 
-## Learn More
+## Notebook
 
-*(optional - include links to docs, white papers, blogs, etc)*
+*You can also download the notebook directly*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
-
-## Acknowledgements
-
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
