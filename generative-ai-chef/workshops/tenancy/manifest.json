@@ -15,37 +15,42 @@
         {
             "title": "Lab 1: Setup the Environment",
             "description": "Setup the notebook environment",
-            "filename": "../../2-setup-environment-lab/setup-environment-lab.md"
+            "filename": "../../1-setup-environment-lab/setup-environment-lab.md"
         },
         {
-            "title": "Lab 2: Load the Data",
+            "title": "Lab 2: Load the Dataset",
             "description": "Download and load the dataset that will be used for the lab",
-            "filename": "../../3-load-data/load-data.md"
+            "filename": "../../2-load-data/load-data.md"
         },
         {
-            "title": "Lab 3: Prep the Data",
+            "title": "Lab 3: Prep the Dataset",
             "description": "Prepare the data so that it can be used for the model tuning and evaluation",
-            "filename": "../../"
+            "filename": "../../3-prep-data/prep-data.md"
         },
         {
-            "title": "Lab 4: Tokenize the Data",
+            "title": "Lab 4: Clean the Dataset",
+            "description": "Prepare the data so that it can be used for the model tuning and evaluation",
+            "filename": "../../4-clean-data/clean-data.md"
+        },
+        {
+            "title": "Lab 5: Tokenize the Dataset",
             "description": "Tokenize the data for the model tuning",
-            "filename": "../../"
+            "filename": "../../5-tokenize/tokenize.md"
         },
         {
-            "title": "Lab 5: Try Untuned LLM Model",
+            "title": "Lab 6: Try Untuned LLM Model",
             "description": "",
-            "filename": "../../"
+            "filename": "../../6-try-untuned/try-untuned.md"
         },
         {
-            "title": "Lab 6: Tune our own ChefGPT",
+            "title": "Lab 7: Tune our ChefGPT",
             "description": "",
-            "filename": "../../"
+            "filename": "../../7-tune/tune.md"
         },
         {
-            "title": "Lab 7: Try the ChefGPT",
+            "title": "Lab 8: Let's try our ChefGPT",
             "description": "",
-            "filename": "../../"
+            "filename": "../../8-try-chefgpt/try-chefgpt.md"
         },
         {
             "title": "Need Help?",
