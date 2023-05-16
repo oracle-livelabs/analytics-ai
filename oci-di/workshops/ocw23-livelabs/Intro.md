@@ -35,7 +35,6 @@ Oracle Cloud Infrastructure Data Integration is a **fully managed, multi-tenant
 
 **Objectives**
 
-- Create Object Storage and Autonomous Data Warehouse Data Assets in the Workspace
 - Create Data Flows, Integration tasks, a Data Loader task and SQL task
 - Create a Pipeline, Pipeline task and publish tasks into an Application
 - Run the Data Loader task, Schedule and run the Pipeline task
@@ -49,6 +48,11 @@ This workshop has all the prerequisites provided for the workshop. Also:
 - Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 - Familiarity with ETL concepts is helpful.
 
+**Login to OCI**
+
+Login to OCI using the URL below and the tenancy and username/password provided;
+ 
+https://console.us-ashburn-1.oraclecloud.com/
 
 
 **Learn More**
