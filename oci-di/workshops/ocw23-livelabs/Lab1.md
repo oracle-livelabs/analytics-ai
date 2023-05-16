@@ -91,7 +91,6 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset
 
 15. Click **Create**.
 
-![The content is described above.](images/image.005.png)
   ![](../../create-data-assets/images/create-asset.png " ")
 
 **Congratulations!** Now you have created the Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration.
