@@ -24,31 +24,31 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](../../schedule-run/imagesimages/menu-di.png " ")
+  ![](../../schedule-run/images/menu-di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-  ![](../../schedule-run/imagesimages/workspaces-click.png " ")
+  ![](../../schedule-run/images/workspaces-click.png " ")
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](../../schedule-run/imagesimages/workspace-homepage-applications.png " ")
+  ![](../../schedule-run/images/workspace-homepage-applications.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
-  ![](../../schedule-run/imagesimages/applications-list.png " ")
+  ![](../../schedule-run/images/applications-list.png " ")
 
 5. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
-  ![](../../schedule-run/imagesimages/run-data-loader-task.png " ")
+  ![](../../schedule-run/images/run-data-loader-task.png " ")
 
 6. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
-  ![](../../schedule-run/imagesimages/data-loader-task-running.png " ")
+  ![](../../schedule-run/images/data-loader-task-running.png " ")
 
 7. After a short time, The **Data Loader task run ends successfully**. You can also check in the Autonomous Data Warehouse the inserted data.
 
-  ![](../../schedule-run/imagesimages/data-loader-task-successful.png " ")
+  ![](../../schedule-run/images/data-loader-task-successful.png " ")
 
 ## Task 2: Create a Schedule
 
@@ -56,27 +56,27 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](../../schedule-run/imagesimages/menu-di.png " ")
+  ![](../../schedule-run/images/menu-di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-  ![](../../schedule-run/imagesimages/workspaces-click.png " ")
+  ![](../../schedule-run/images/workspaces-click.png " ")
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](../../schedule-run/imagesimages/workspace-homepage-applications.png " ")
+  ![](../../schedule-run/images/workspace-homepage-applications.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN`, which contains all the tasks that you created previously in this workshop.
 
-  ![](../../schedule-run/imagesimages/applications-list.png " ")
+  ![](../../schedule-run/images/applications-list.png " ")
 
 5. On the Application details page, click **Schedules tab** under Details.
 
-  ![](../../schedule-run/imagesimages/schedules-section.png " ")
+  ![](../../schedule-run/images/schedules-section.png " ")
 
 6. Click **Create Schedule**.
 
-  ![](../../schedule-run/imagesimages/create-schedule.png " ")
+  ![](../../schedule-run/images/create-schedule.png " ")
 
 7. On the **Create Schedule** page:
 
@@ -90,11 +90,11 @@ You will first create a **Schedule** in the Application that contains the tasks 
     - **Review** the Summary of your schedule
     - Click **Create**.
 
-    ![](../../schedule-run/imagesimages/create-schedule-options.png " ")
+    ![](../../schedule-run/images/create-schedule-options.png " ")
 
 8. You can now see the **new schedule** in the Schedules list from your application.
 
-  ![](../../schedule-run/imagesimages/schedules-list.png " ")
+  ![](../../schedule-run/images/schedules-list.png " ")
 
 ## Task 3: Schedule the Pipeline task
 
@@ -102,30 +102,30 @@ You can create **task schedules** to schedule tasks to run on **specific days an
 
 1. From the `Workshop ApplicationNN` you are currently in, click on **Tasks** under Details section.
 
-  ![](../../schedule-run/imagesimages/tasks-section.png " ")
+  ![](../../schedule-run/images/tasks-section.png " ")
 
 2. In the Tasks section, click on the **Actions menu** (three dots) from the `Load DWH Pipeline Task` and select **Schedule**.
 
-  ![](../../schedule-run/imagesimages/action-menu-pipeline-task.png " ")
+  ![](../../schedule-run/images/action-menu-pipeline-task.png " ")
 
 4. On the **Create Task Schedule** page, enter a **Name** (`Load DWH Pipeline Task - Daily`) and **Description** (optional).
 
-  ![](../../schedule-run/imagesimages/task-schedule-name.png " ")
+  ![](../../schedule-run/images/task-schedule-name.png " ")
 
 5. Select the **Enable Task Schedule check box** to allow this task schedule to trigger automated runs when schedule conditions are met.
 
-  ![](../../schedule-run/imagesimages/enable-task-schedule.png " ")
+  ![](../../schedule-run/images/enable-task-schedule.png " ")
 
 6. In the **Schedule** section:
 
     - Click **Select** to associate this task schedule with a schedule
-    ![](../../schedule-run/imagesimages/select-button-schedule.png " ")
+    ![](../../schedule-run/images/select-button-schedule.png " ")
     - On the **Select Schedule** page, check the existing schedule (`Daily Schedule 2PM`) that you created in _Create a Schedule_, then click **Select**.
-    ![](../../schedule-run/imagesimages/select-schedule.png " ")
+    ![](../../schedule-run/images/select-schedule.png " ")
 
 7. In the Configure Task Schedule section, click **Configure** to specify run options for this task schedule.
 
-  ![](../../schedule-run/imagesimages/configure-task-schedule-button.png " ")
+  ![](../../schedule-run/images/configure-task-schedule-button.png " ")
 
 8. In the **Configure Task Schedule** page:
 
@@ -135,19 +135,19 @@ You can create **task schedules** to schedule tasks to run on **specific days an
     - Enter a value in **Retry Delay Duration**, and then select a unit from the menu to specify the time interval between retries. You can specify a value in seconds, minutes, or hours. The value must be greater than 5 seconds. Leave the default of **30 seconds**.
     - Click **Configure**.
 
-    ![](../../schedule-run/imagesimages/configure-task-schedule.png " ")
+    ![](../../schedule-run/images/configure-task-schedule.png " ")
 
 9. **Review** the options you defined and click **Save and Close**.
 
-  ![](../../schedule-run/imagesimages/task-schedule-save-close.png " ")
+  ![](../../schedule-run/images/task-schedule-save-close.png " ")
 
 10. From the `Workshop ApplicationNN` you are currently in, click on **Task Schedules** under Details section.
 
-  ![](../../schedule-run/imagesimages/task-schedules-section.png " ")
+  ![](../../schedule-run/images/task-schedules-section.png " ")
 
 11. In the list of Task Schedules, you can find the one you have just defined. **Your pipeline task is now scheduled to run every day at 2PM**.
 
-  ![](../../schedule-run/imagesimages/task-schedule.png " ")
+  ![](../../schedule-run/images/task-schedule.png " ")
 
 ## Task 4: Run the Pipeline task
 
@@ -155,19 +155,19 @@ In this step, you will now do a **manual on-demand run** of your pipeline task. 
 
 1. From the `Workshop ApplicationNN` you are currently in, click on **Tasks** under Details section.
 
-  ![](../../schedule-run/imagesimages/tasks-section.png " ")
+  ![](../../schedule-run/images/tasks-section.png " ")
 
 2. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load DWH Pipeline Task` that you will run.
 
-  ![](../../schedule-run/imagesimages/run-pipeline-task.png " ")
+  ![](../../schedule-run/images/run-pipeline-task.png " ")
 
 3. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
-  ![](../../schedule-run/imagesimages/pipeline-running.png " ")
+  ![](../../schedule-run/images/pipeline-running.png " ")
 
 4. The Pipeline task run has ended successfully. You can also check in the Autonomous Data Warehouse the inserted data.
 
-  ![](../../schedule-run/imagesimages/pipeline-success.png " ")
+  ![](../../schedule-run/images/pipeline-success.png " ")
 
    **Congratulations!**
 
