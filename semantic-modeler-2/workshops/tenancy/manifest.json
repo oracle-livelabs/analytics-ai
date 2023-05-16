@@ -18,29 +18,41 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision ADW and OAC",
+            "title": "Lab 1: Examine Semantic Model Markup Language",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision-resources/provision-adw-oac.md"
+            "filename": "../../examine-ssml/examine-ssml.md"
         },
         {
-            "title": "Lab 2: Load data into ADW and Connect to OAC",
-            "filename": "../../load-data-adw/load-data-adw.md"
+            "title": "Lab 2: Manage Logical Table Sources",
+            "filename": "../../manage-logical-table/manage-logical-table.md"
         },
         {
-            "title": "Lab 3: Create the Physical Layer",
-            "filename": "../../physical-layer/create-physical-layer.md"
+            "title": "Lab 3: Create Logical Hierarchies",
+            "filename": "../../logical-hierarchies/create-logical-hierarchies.md.md"
         },
         {
-            "title": "Lab 4: Create the Logical Layer",
-            "filename": "../../logical-layer/create-logical-layer.md"
+            "title": "Lab 4: Create calculated, level-based, and share measures",
+            "filename": "../../create-measures/create-measures.md"
         },
         {
-            "title": "Lab 5: Create the Presentation Layer",
-            "filename": "../../presentation-layer/create-presentation-layer.md"
+            "title": "Lab 5: Create ragged and skipped level hierarchies",
+            "filename": "../../skipped-and-ragged-hierarchies/skipped-and-ragged-hierarchies.md"
         },
         {
-            "title": "Lab 6: Test, Deploy, and Validate a Semantic Model",
-            "filename": "../../test-deploy-validate/test-deploy-validate.md"
+            "title": "Lab 6: Create Parent-Child Hierarchies",
+            "filename": "../../parent-child-hierarchies/parent-child-hierarchies.md"
+        },
+        {
+            "title": "Lab 7: Create Aggregate Tables",
+            "filename": "../../aggregate-tables/aggregate-tables.md"
+        },
+        {
+            "title": "Lab 8: Create time series measures",
+            "filename": "../../time-series-measures/time-series-measures.md"
+        },
+        {
+            "title": "Lab 9: Create initialization blocks and variables",
+            "filename": "../../initialization-blocks-and-variables/time-series-measures.md"
         },
         {
             "title": "Need Help?",
