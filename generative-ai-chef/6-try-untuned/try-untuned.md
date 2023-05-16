@@ -1,4 +1,4 @@
-# Try Untuned LLM Model
+# Try The Untuned LLM Model
 
 ## Introduction
 
