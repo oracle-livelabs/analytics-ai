@@ -1,7 +1,5 @@
 # Load and Prepare Data
 
-<!--![Banner](images/banner.png)-->
-
 ## Introduction
 
 In this lab we will load the data on Discrimination and LGTBQ+ Global Acceptance Index (GAI).
@@ -31,7 +29,7 @@ Estimated Time: 5 minutes
 
 ## Task 2: Add the Discrimination Dataset
 
-1. **Download** the <a href="./files/Anti Discrimination YoY.xlsx" target="\_blank">Discrimination dataset</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.xlsx`.
+1. **Download** the [Discrimination dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/Anti-Discrimination-YoY.xlsx) to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.xlsx`.
 
 2. In Oracle Analytics Cloud, on the top right, choose Create and then Dataset.
 
@@ -55,7 +53,7 @@ Estimated Time: 5 minutes
 
 ## Task 3: Add the LGTBQ+ Global Acceptance Index (GAI) Dataset
 
-1. **Download** the <a href="./files/GAI Index.xlsx" target="\_blank">GAI dataset</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.xlsx`.
+1. **Download** the [GAI dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/GAI-Index.xlsx) to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.xlsx`.
 
 2. In Oracle Analytics Cloud, on the top right, choose Create and then Dataset.
 
@@ -77,7 +75,7 @@ Estimated Time: 5 minutes
 
    ![Save dataset](images/save-gai.png)
 
-You may now proceed to the next lab.
+**Proceed to the next lab.**
 
 ## **Acknowledgements**
 

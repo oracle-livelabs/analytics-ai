@@ -1,7 +1,5 @@
 # Provision Analytics Cloud
 
-<!--![Banner](images/banner.png)-->
-
 ## Introduction
 
 During this lab you will deploy an Oracle Analytics Cloud instance on Oracle Cloud Infrastructure.
@@ -70,7 +68,7 @@ In this lab, you will:
 
    We will get back to your Oracle Analytics Cloud instance later in the workshop.
 
-   You may now proceed to the next lab.
+**Proceed to the next lab.**
 
 ## **Acknowledgements**
 

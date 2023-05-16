@@ -1,7 +1,5 @@
 # Analyze the LGTBQ+ Global Acceptance Index (GAI) Dataset
 
-<!--![Banner](images/banner.png)-->
-
 ## Introduction
 
 In this lab we will analyze a dataset on LGTBQ+ Global Acceptance Index (GAI).

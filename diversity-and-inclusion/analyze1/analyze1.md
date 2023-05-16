@@ -1,7 +1,5 @@
 # Analyze the Discrimination Dataset
 
-<!--![Banner](images/banner.png)-->
-
 ## Introduction
 
 In this lab we will analyze a dataset on Discrimination.
@@ -105,7 +103,7 @@ Feel free to experiment with different settings to uncover new insights from the
 
 Suggestion: Try modifying the filters to see how discrimination has changed over time. Go ahead and try out different configurations!
 
-You may now proceed to the next lab.
+**Proceed to the next lab.**
 
 ## **Acknowledgements**
 
