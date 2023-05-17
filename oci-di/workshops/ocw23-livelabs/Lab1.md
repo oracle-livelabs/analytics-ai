@@ -356,7 +356,7 @@ The number of attributes in the table are filtered. Only those attributes that m
 
     - Click **Add**.
 
-    ![](../../integration-tasks/images/expression-conditions.png " ")
+  ![](../../integration-tasks/images/expression-conditions.png " ")
 
 35. The new expression is now listed in the **Expression operator**. You can add as many expressions as you want. *Note*: Be sure to save often during design time!
 
