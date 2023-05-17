@@ -213,7 +213,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
     - Leave the default `VARCHAR` **Data Type** and default **Length**.
     - Copy the following expression and paste it in the **Expression Builder** box. This expression concatenates the PIPELINE\_NAME system parameter with a space character and the TASK\_RUN\_KEY system parameter.
     ```
-    <copy>CONCAT(CONCAT(${SYS.PIPELINE_NAME}, ' '),${SYS.TASK_RUN_KEY})</copy>
+    CONCAT(CONCAT(${SYS.PIPELINE_NAME}, ' '),${SYS.TASK_RUN_KEY})
     ```
    *Note*: You can also manually create the expression in the Expression Builder, by double-click or drag an drop of the System defined parameters and CONCAT function.
     - Click **Add**.

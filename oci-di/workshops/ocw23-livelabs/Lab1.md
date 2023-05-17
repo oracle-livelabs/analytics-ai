@@ -348,7 +348,7 @@ The number of attributes in the table are filtered. Only those attributes that m
     - Enter
 
     ```
-    <copy>CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)</copy>
+    CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)
     ```
 
    in the **expression box**.
@@ -376,7 +376,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
     - Enter `CUST` in the filter by name search field.
     - You want to join the entities using CUST\_ID and CUST\_KEY. In the editor, enter
     ```
-    <copy>JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY</copy>
+    JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY
     ```
     - Click **Create**.
 
@@ -502,7 +502,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Change **Data Type** to `DATE`.
     - Enter
     ```
-    <copy>TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')</copy>
+    TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')
     ```
    in the **expression** box.
 
@@ -521,7 +521,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Change **Data Type** to `NUMERIC`.
     - Enter   
     ```
-    <copy>TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)</copy>
+    TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)
     ```
    in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
     - Click **Add**.
@@ -551,7 +551,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Enter
 
     ```
-    <copy>CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE)-1) END</copy>
+    CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATAYPES.BIRTH_DATE)-1) END
     ```
    in the **expression** box.
    This function will calculate the age of the employee, by doing a minus between the current date and his birth date. CASE WHEN function returns the value for which a condition is met.
@@ -571,7 +571,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Leave **Data Type** as `VARCHAR`.
     - Enter   
     ```
-    <copy>COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No,'Phone Number Not Available')</copy>
+    COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No,'Phone Number Not Available')
     ```
    in the **expression** box
    This function will fill in the null values for phone number with string `Phone Number Not Available`.
@@ -620,7 +620,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Enter **Identifier** `WEST_MIDWEST_REGION`.
     - For **Condition** enter
     ```
-    <copy>SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')</copy>
+    SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')
     ```
     - Click **Add**.
 
@@ -640,7 +640,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - Enter **Identifier** `NORTHEAST_SOUTH_REGION`.
     - For **Condition** enter
     ```
-    <copy>SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Northeast','South')</copy>
+    SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Northeast','South')
     ```
     - Click **Add**.
 
