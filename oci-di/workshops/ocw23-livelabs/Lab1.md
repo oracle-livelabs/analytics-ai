@@ -509,7 +509,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
     - Click **Add**.
 
-    ![](../../integration-tasks/images/new-expression-details.png " ")
+  ![](../../integration-tasks/images/new-expression-details.png " ")
 
 12. Your expression for **BIRTH\_DATE** is now displayed. Click again on **Add Expression** to add a new one.
 
@@ -526,7 +526,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
     - Click **Add**.
 
-    ![](../../integration-tasks/images/new-numeric-expression.png " ")
+  ![](../../integration-tasks/images/new-numeric-expression.png " ")
 
 14. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
 
@@ -559,7 +559,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    *Note*: In case the attributes in the expression don't get automatically highlighted, please replace them, by highlighting in the expression's placeholders and then double-click or drag and drop attributes from the Incoming list.
     - Click **Add**.
 
-    ![](../../integration-tasks/images/new-expression-case.png " ")
+  ![](../../integration-tasks/images/new-expression-case.png " ")
 
 19. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
 
