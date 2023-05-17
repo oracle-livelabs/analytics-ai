@@ -35,7 +35,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
   ![](../../pipelines/images/create-app.png " ")
 
-5. The **Application Details page** for `Workshop Application` opens in a new tab.
+5. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
   ![](../../pipelines/images/my-application.png " ")
 
@@ -49,7 +49,7 @@ You will publish into the Workshop Application all of the tasks that you have cr
 
   ![](../../pipelines/images/tab-projects.png " ")
 
-2. Select your `DI_Workshop` project from the projects list.
+2. Select your `DI_WorkshopNN` project from the projects list.
 
   ![](../../pipelines/images/di-workshop.png " ")
 
@@ -61,21 +61,21 @@ You will publish into the Workshop Application all of the tasks that you have cr
 
   ![](../../pipelines/images/publish-to-app-button.png " ")
 
-5. In the Publish to Application dialog, select `Workshop Application` and then click **Publish**.
+5. In the Publish to Application dialog, select `Workshop ApplicationNN` and then click **Publish**.
 
    *Note*: You can modify the tasks or edit the data flow without impacting the published task. This enables you to test a version of your data flow, while working on some new changes.
 
   ![](../../pipelines/images/app-publish.png " ")
 
-6. You can now go to your `Workshop Application` to see your published task. On your workspace Home page, click **Open tab** (plus icon) in the tab bar, select **Applications**.
+6. You can now go to your `Workshop ApplicationNN` to see your published task. On your workspace Home page, click **Open tab** (plus icon) in the tab bar, select **Applications**.
 
   ![](../../pipelines/images/plus-apps.png " ")
 
-7. Select you `Workshop Application` from the list of applications.
+7. Select you `Workshop ApplicationNN` from the list of applications.
 
   ![](../../pipelines/images/workshop-apps.png " ")
 
-8. From the landing page of `Workshop Application`, click on **Patches**. A patch contains updates to published tasks in an Application. When you publish a task to an Application or unpublish a task, a patch is created in the Application. If you publish a group of tasks at the same time, only one patch is created. You should now see the patch that was created for the tasks you are publishing, with the status **In Progress**.
+8. From the landing page of `Workshop ApplicationNN`, click on **Patches**. A patch contains updates to published tasks in an Application. When you publish a task to an Application or unpublish a task, a patch is created in the Application. If you publish a group of tasks at the same time, only one patch is created. You should now see the patch that was created for the tasks you are publishing, with the status **In Progress**.
 
   ![](../../pipelines/images/patch-in-progress.png " ")
 
@@ -83,7 +83,7 @@ You will publish into the Workshop Application all of the tasks that you have cr
 
   ![](../../pipelines/images/patch-success.png " ")
 
-10. Click on **Tasks** tab under Details. You can now see the **list of published tasks** inside your `Workshop Application`.
+10. Click on **Tasks** tab under Details. You can now see the **list of published tasks** inside your `Workshop ApplicationNN`.
 
   ![](../../pipelines/images/all-tasks.png " ")
 
@@ -102,7 +102,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
   ![](../../pipelines/images/tab-projects.png " ")
 
-2. Select your `DI_Workshop` project from the projects list.
+2. Select your `DI_WorkshopNN` project from the projects list.
 
   ![](../../pipelines/images/di-workshop.png " ")
 
@@ -134,7 +134,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     - The **Compartment** with your OCI Data Integration resources is already selected.
     - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop Application`.
+    - For **Application**, make sure you select the `Workshop ApplicationNN`.
     - Under **Integration Task**, check the `Load Customers Lab` task.
     - Click **Select**.
 
@@ -156,7 +156,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     - The **Compartment** with your OCI Data Integration resources is already selected.
     - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop Application`.
+    - For **Application**, make sure you select the `Workshop ApplicationNN`.
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
@@ -186,7 +186,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     - The **Compartment** with your OCI Data Integration resources is already selected.
     - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop Application`.
+    - For **Application**, make sure you select the `Workshop ApplicationNN`.
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
@@ -232,7 +232,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
     - The **Compartment** with your OCI Data Integration resources is already selected.
     - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop Application`.
+    - For **Application**, make sure you select the `Workshop ApplicationNN`.
     - Under **SQL Task**, check the `Procedure DWH Load Stats` task.
     - Click **Select**.
 
@@ -291,7 +291,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
     - The **Compartment** with your OCI Data Integration resources is already selected.
     - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop Application`.
+    - For **Application**, make sure you select the `Workshop ApplicationNN`.
     - Under **Integration Task**, check the `Procedure DWH Load Stats` task.
     - Click **Select**.
 
@@ -354,7 +354,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
 You will create a Pipeline task for the pipeline you created in the above step.
 
-1. On the `DI_Workshop` Project Details page, from the submenu, click **Tasks**.
+1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
   ![](../../pipelines/images/click-tasks.png " ")
 
@@ -366,7 +366,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
     - For **Name** enter `Load DWH Pipeline Task`
     - **Description** (optional)
-    - **Project** `DI_Workshop` is auto-populated because we're creating this task from project details page.
+    - **Project** `DI_WorkshopNN` is auto-populated because we're creating this task from project details page.
 
     ![](../../pipelines/images/pipeline-task-name.png " ")
 
@@ -384,15 +384,15 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 ## Task 5: Publish the Pipeline task
 
-1. On the `DI_Workshop` Project Details page, from the submenu, click **Tasks**.
+1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
   ![](../../pipelines/images/click-tasks.png " ")
 
-2. All tasks from the `DI_Workshop` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
+2. All tasks from the `DI_WorkshopNN` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
 
   ![](../../pipelines/images/publish-to-app.png " ")
 
-3. In the Publish to Application dialog, select the `Workshop Application` to publish to from the drop-down list. Then, click **Publish**.
+3. In the Publish to Application dialog, select the `Workshop ApplicationNN` to publish to from the drop-down list. Then, click **Publish**.
 
   ![](../../pipelines/images/app-select.png " ")
 
