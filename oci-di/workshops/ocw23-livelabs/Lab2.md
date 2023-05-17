@@ -218,7 +218,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
    *Note*: You can also manually create the expression in the Expression Builder, by double-click or drag an drop of the System defined parameters and CONCAT function.
     - Click **Add**.
 
-    ![](../../pipelines/images/add-expression-pipeline.png " ")
+  ![](../../pipelines/images/add-expression-pipeline.png " ")
 
 24. Drag and drop a **SQL task** operator to the pipeline canvas. Connect the SQL task operator to the **PIPELINE\_NAME\_TASK\_RUN** expression operator.
 
