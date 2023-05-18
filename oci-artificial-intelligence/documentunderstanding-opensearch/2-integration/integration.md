@@ -51,18 +51,8 @@ Lets configure the connections. You will need to get back value from your notes:
 
 ### A. StreamInputBucket
 
-First, you will need to create a truststore file, *oss_store.jks*. 
-
 For this you need:
-- ##STREAM_BOOSTRAPSERVER## from the previous lab
-- Run this command on your laptop or in the Cloud Shell
-
-```
-<copy>
-echo -n | openssl s_client -connect ##STREAM_BOOSTRAPSERVER## | sed -ne  '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ociStreaming.cert
-keytool -keystore oss_store.jks -alias OSSStream -import -file ociStreaming.cert -storepass changeit -noprompt
-</copy>
-```
+- ##STREAM_BOOSTRAPSERVER##, ##STREAM_USERNAME##, ##AUTH_TOKEN## and *oss_store.jks* from the previous lab
 
 Click to edit the connection *StreamInputBucket*
 
@@ -72,7 +62,7 @@ Use this info:
   - Bootstrap servers = *##STREAM_BOOSTRAPSERVER##*
   - SASL Username = *##STREAM_USERNAME##*
   - SASL Password = *##AUTH_TOKEN##*
-  - Truststore = *oss_store.jks created above*
+  - Truststore = *oss_store.jks*
   - TrustStore password = *changeit* 
   - Access Type = *Connectivity agent*
   - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
@@ -189,11 +179,12 @@ Then fill the Connection details:
 ### F. Activate the integration
 
 All connections should be valid. Let's activate the integrations:
-Click on the Activation toggle
+Click on Activation 
 ![Checkup](images/opensearch-oic-checkup1.png)
 
-Click on the activation buttons for each integration and active them.
+Click on the Activate buttons for each integration
 ![Activate](images/opensearch-oic-activation.png)
+and active them. Note: it is recommended to enable Debug level loging for this lab so that we can check the integration payloads. 
 ![Activate2](images/opensearch-oic-activation2.png)
 
 All integrations should be up and running.
