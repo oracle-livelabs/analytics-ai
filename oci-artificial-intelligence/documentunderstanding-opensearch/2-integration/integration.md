@@ -44,15 +44,18 @@ Go the menu
 
 ![Import Package](images/opensearch-oic-package-import.png)
 
-## Task 6: Configure the connections
+## Task 2: Configure the connections
 
 Lets configure the connections. You will need to get back value from your notes:
 
 
 ### A. StreamInputBucket
 
-For this you need:
-- ##STREAM_BOOSTRAPSERVER##, ##STREAM_USERNAME##, ##AUTH_TOKEN## and *oss_store.jks* from the previous lab
+For this you need the following from the previous lab (provisioning the components):
+- ##STREAM_BOOSTRAPSERVER##, 
+- ##STREAM_USERNAME##, 
+- ##AUTH_TOKEN## and 
+- *oss_store.jks* 
 
 Click to edit the connection *StreamInputBucket*
 
@@ -190,19 +193,18 @@ and active them. Note: it is recommended to enable Debug level loging for this l
 All integrations should be up and running.
 ![Activate3](images/opensearch-oic-activation3.png)
 
-## Test OIC
+## Task 3: Test OIC
 
-- Go back to the bucket.
-- Go to the directory that you downloaded from GITHUB
+- In OCI console go back to the Object Storage bucket.
+- On your desktop go to the directory that you downloaded from GITHUB
 - Upload the files from the sample_files subdirectory
 
 ![Test OIC](images/opensearch-oic-test.png)
 
 Check the result in OIC. 
 - Go to OIC Home page
-- Menu *Monitoring* 
+- Menu *Obeservability* 
 - Menu *Integrations*
-- Again Menu *Integrations*
 
 ![Monitor OIC](images/opensearch-oic-test2.png)
 
@@ -212,4 +214,4 @@ Check the result in OIC.
     - Marc Gueury
     - Badr Aissaoui
     - Marek Krátký 
-- **History** - Creation - 27 Sep 2022
+- **History** - Creation - 19 May 2023
