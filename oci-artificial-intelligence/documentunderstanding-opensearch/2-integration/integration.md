@@ -185,9 +185,9 @@ All connections should be valid. Let's activate the integrations:
 Click on Activation 
 ![Checkup](images/opensearch-oic-checkup1.png)
 
-Click on the Activate buttons for each integration
+Click on the Activate buttons for each integration and active them. 
 ![Activate](images/opensearch-oic-activation.png)
-and active them. Note: it is recommended to enable Debug level loging for this lab so that we can check the integration payloads. 
+Note: it is recommended to enable Debug level loging for this lab so that we can check the integration payloads. 
 ![Activate2](images/opensearch-oic-activation2.png)
 
 All integrations should be up and running.
