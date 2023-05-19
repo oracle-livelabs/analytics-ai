@@ -2,17 +2,19 @@
 
 ## Introduction
 
-This lab shows you how to create an initial semantic model in Oracle Analytics Cloud, starting with the physical layer.
+This tutorial shows you how to open the Semantic Model Markup Language (SMML) editor to review and make changes to a semantic model.
 
 
 Estimated Lab Time: 25 minutes
 
 ### About
-This lab describes how to build governed semantic models using the Semantic Modeler. Ask your administrator to enable the Semantic Modeler preview feature in Console.
+This lab describes how to build governed semantic models using the Semantic Modeler.
 
-In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks. In this lab, you select the objects from a supported relational data source to define the physical layer of the semantic model.
+You can use Git repositories with Oracle Analytics to enable concurrent semantic modeler development.
 
-This lab shows you how to create the system connection required to use a relational data source with the Semantic Modeler. In an empty model, you create a schema and add tables selected from relational data sources.
+A semantic model is comprised of a set of JavaScript Object Notation (JSON) files. When you create and develop a semantic model locally, the model's JSON files are stored in Oracle Cloud. To make the semantic model's JSON files available for other development team members, the semantic model's owner creates a Git repository, initializes it with HTTPS or SSH, and uploads the semantic model's JSON files to the repository. Each developer creates a semantic model and uses HTTPS or SSH to connect to and clone the semantic model's JSON files to their Git repository.
+
+You can use the SMML editor to view and change the JSON SMML schema file of an object in your semantic model. If you are viewing or editing an invalid file, syntax and semantic errors are marked on the relevant line of text.
 
 ### Objectives
 
@@ -25,176 +27,105 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
-* Ability to connect to a relational data source
-* Access to the BISAMPLE schema to perform the steps in this lab
+* Access to the Sample Sales Semantic Model
+* Access to a Git Repository using your Github account
 
 
-## Task 1: Create a Semantic Model
+## Task 1: Examine the Semantic Model Markup Language
 
-In this section, you create an empty semantic model.
+In this section, you will review JSON objects in a semantic model and makes changes to the object definitions using the Semantic Model Markup Language (SMML) editor.
 
-1. On the Home page, click **Create**, and then select **Semantic Model**.
+Begin with step 3 if you're continuing this tutorial directly after completing the steps in Test, Deploy, and Validate a Semantic Model tutorial.
 
-	![Create](./images/create.png =400x*)
 
-2. In Create Semantic Model, enter <code>Sample Sales</code> in **Name**, and then click **Create**.
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
+	![Open Semantic Models](./images/semantic-models.png)
 
-	![Semantic model name](images/semantic-model-name.png =400x*)
+2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
+	![Open Samples Sales](./images/open-sample-sales.png)
 
-3. In Create Semantic Model, click **Start with Empty Model**.
+3. In the Sample Sales semantic model, click the **Physical Layer**. Expand **MySampleSalesDatabase** and expand **BISAMPLE**.
+	![Expand BISAMPLE](./images/bisample.png)
 
-	![Start with empty model](./images/empty-model.png)
+4. Right-click **SAMP_ PRODUCTS_D**, and select **Open in SMML Editor**.
 
-4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select Oracle ADW and click **Save**.
+	![Open in SMML Editor](./images/samp-prod-ssml.png)
 
-	![DB name](./images/db-name.png)
+## Task 2: Open Your Git Repository
 
-## Task 2: Add Physical tables
+In this section, you use your Git repository to store your semantic model.
 
-In this section, you add physical tables from the data source to the empty semantic model.
+1. Sign in to GitHub using the URL to your repository.
 
-1. In MySampleSalesDatabase, click the **Tables** tab.
+2. Click **Repositories** and open the repository to use with your semantic model.
 
-	![Tables tab](./images/tables.png)
+## Task 3: Back Up Your Semantic Mode
 
-2. In the Connections Connections pane icon pane, expand the BISAMPLE connection, and then expand Schemas.
+In this section, you create an archive of your semantic model as a backup.
 
-	![Schemas](./images/schemas.png =400x*)
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud with your BI Data Model Author application role or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
 
-3. Expand the BISAMPLE schema.
+2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 
-	![Expand BISAMPLE](images/expand-bisample.png =400x*)
+3. In the Sample Sales semantic model, click the **Page Menu**, and select **Export**.
 
-4. Hold down the Ctrl (Command for Mac users) key and select these tables:
-	* SAMP_ ADDRESSES_D
-	* SAMP_ CUSTOMERS_D
-	* SAMP_ PRODUCTS_D
-	* SAMP_ REVENUE_F
-	* SAMP_ TIME_ DAY_D
+4. In Export, keep **Sample Sales** as the archive name, select **Archive File (.zip)**, and then click **Export**.
 
-5. Drag the selected tables to Tables in the MySampleSalesDatabase tab
+5. In Opening Sample Sales.zip, click **Save** and click **OK**.
 
-	![Drag tables](./images/drag-tables.png)
+6. Use the default download location or selection another location, and click **Save**.
 
-## Task 3: Create Physical Table Aliases
+## Task 4: Initialize Git Integration
 
-In this section, you create physical table aliases that enables reusing the physical source tables. You also prefix the physical alias table's name with the table type such as F for fact and D for dimension, and use a number along with the F or D to change the original physical table name. For example, D1 Time for the SAMP_ TIME_ DAY_ D table and D2 Products for the SAMP_ PRODUCTS_D table.
+In this section, you specify your profile name, Git user name, and your personal access token in the Semantic Modeler to initialize Git.
 
-1. In Tables, right-click **SAMP_ TIME_ DAY_D** and select **Create Physical Table** Alias.
+1. In the Sample Sales semantic model, click **Toggle Git Panel**, and then click **Start**.
 
-	![create physical table alias](./images/create-physical-table-alias.png)
+2. In Initialize Git, paste your Git repository URL in to **Git Repository URL**, and then click **Continue**.
 
-2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **OK**. Close D1 Time.
+3. Select your Git profile, or select **New Profile**. Enter a **Profile Name**, your **Git user name**, and your personal access token in **Password**.
 
-	![D1 Time](./images/d1-time.png =500x*)
+4. Click **Initialize Git**.
 
-3. Right-click **SAMP_ PRODUCTS_D** and select **Create Physical Table Alias**.
+## Task 5: Review the Git Integration
 
-	![SAMP_PRODUCTS_D alias](./images/product-alias.png)
+In this section, you look at the semantic modeler content added to your Git repository.
 
-4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **OK**. Close D2 Products.
+1. In your Git repository, click the repository name, and then click **View code**.
 
-	![D2 products](images/d2-products.png =500x*)
+2. Click the physical folder, click the MySampleSalesDatabaseDatabase folder, and then click the BISAMPLE schema folder to view the contents.
 
-5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ OKRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
+The BISAMPLE folder contains the JSON definitions for the physical layer's tables.
 
-	* Right-click **SAMP_ CUSTOMERS_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **OK**. Close D3 Customers.
-	* Right-click **SAMP_ ADDRESSES_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **OK**. Close D4 Addresses.
-	* Right-click **SAMP_ REVENUE_F** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **OK**. Close F1 Revenue
+## Task 6: Change the Semantic Model
 
-6. You should now have the D1 Time, D2 Products, D3 Customers, D4 Addresses, and F1 Revenue tables.
+In this section, you add a description in SAMP_ PRODUCTS_D to demonstrate changes to the semantic model and how those changes are tracked in Git.
 
-	![Table aliases](./images/table-aliases.png =400x*)
+1. In the Physical Layer, double-click **SAMP_ PRODUCTS_D**. Click the **General** tab.
 
-## Task 4: Create Physical Joins
+2. In Description, enter <code>Test product description to show semantic model changes and Git</code>. Click **Save**.
 
-In this section, you define joins between alias tables to express relationships between tables in the Physical layer.
+The Git panel shows the status of the changes in the semantic model.
 
-1. In the **Joins** section, click the **Add Join** icon.
+3. In the Git panel, right-click **SAMP_ PRODUCTS_D** and select **View Diffs**.
 
-	![Add join](./images/add-join.png)
+4. Close the Diff Editor.
 
-2. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D1 Time**.
+5. In the Git panel, click **Stage All** in Unstaged Changes. In the **commit description** field, enter a description of the changes and click **Commit**.
 
-	![Add physical table](./images/add-physical-table.png =500x*)
+6. In the Git panel, click **Push**, and then click **Push**.
 
-3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_ DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_ DATE** column. Click **Add**.
+The message, "Push successful" appears when the changes are added to your Git repository.
 
-	![Add join conditions](./images/join-conditions.png =500x*)
-
-4. Click **Save** icon.
-
-	![Save](./images/save.png)
-
-5. Let's add another join. Click the **Add Join** icon. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D2 Products**.
-
-	![Join](./images/join-f1-d2.png =500x*)
-
-6. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **PROD_ KEY** column. Under the Right Table (D2 Products), click the dropdown, and select the **PROD_ KEY** column. Then click **Add**.
-
-	![Join conditions](./images/conditions-f1-d2.png =500x*)
-
-7. Click the **Physical Layer** icon. Under the BISAMPLE schema, right-click **F1 Revenue**, select **Show Physical Diagram**, and then click **Selected Tables and Direct Joins**.
-
-	![Selected tables and join conditions](./images/selected-tables-joins.png)
-
-8. Drag **D3 Customers** to the **Physical Diagram**. Drag the **F1 Revenue** from the Physical Diagram away so that it's not blocking D1 Time. Re-arrange as you see fit.
-
-	![Drag D3 Customers](./images/drag-d3.png)
-
-9. From the **F1 Revenue connector**, draw a line to **D3 Customers**.
-
-	![Connect F1 D3](./images/connect-f1-d3.png)
-
-10. In **Add Physical Join** under **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **CUST_ KEY** column. Under the Right Table (D3 Customers), click the dropdown, and select the **CUST_ KEY** column. Then click **Add**.
-
-	![Join F1 D3](./images/cust-key-join.png =500x*)
-
-11. Drag **D4 Addresses** to the Physical Diagram.
-
-	![Drag D4](./images/drag-d4.png)
-
-12. From the D3 Customers connector, draw a line to D4 Addresses.
-
-	![Connect D3-D4](./images/connect-d3-d4.png)
-
-13. In Add Physical Join under **Join Conditions**, click the list icon on the left, and select the **ADDRESS_ KEY** column. Click list icon on the right, and then select the **ADDRESS_ KEY column**. Click **Add**.
-
-	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
-
-14. Click the **Save** icon.
-
-	![Save](./images/save-diagram.png)
-
-## Task 5: Review Physical Layer tables
-
-In this section, you can review columns, joins, and data in the Physical Layer tables.
-
-1. In the Physical Layer, double-click the **D2 Products** table.
-
-	![Double click D2](./images/dc-d2.png)
-
-2. The Physical Layer table opens in the **Columns** tab.
-
-	![D2 columns](./images/d2-columns.png)
-
-3. Click **Joins** to view the joins to the F1 Revenue table.
-
-	![View F1 joins](./images/view-f1-joins.png)
-
-4. Click **Preview** to see a sample of the data in the columns.
-
-	![Preview D2 table](./images/preview-d2.png)
+7. In your Git repository, click the **Physical folder**, click **MySampleSalesDatabase**, click **BISAMPLE**, and then click **SAMP_ PRODUCTS_D.json** to view the changes made in the semantic model.
 
 ## Learn More
-* [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)
-* [Understand a Semantic Model's Requirements](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/understand-semantic-models-requirements.html)
-* [Plan the Physical Layer](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/plan-physical-layer.html#GUID-D7D6E064-F9C8-4B8B-A02F-B9E0358063F1)
+* [Edit Semantic Model Objects Using the SMML Editor](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/edit-semantic-model-objects-using-smml-editor.html)
+* [About Using Git Repositories with Semantic Modeler](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/using-git-repositories-semantic-modeler.html)
+* [Upload a Semantic Model to a Git Repository Using HTTPS](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/upload-semantic-model-git-repository-using-https.html)
+* [Work With Branches](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-branches.html)
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Contributors** - Desmond Jung
 * **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
