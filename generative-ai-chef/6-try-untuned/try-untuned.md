@@ -4,13 +4,13 @@
 
 Before we go and start tuning our model. We want to know how well the T5 based model is going to perform without tuning. What we're going to do is load the model and generate some recipes based on the out-of-the-box T5 base-model.
 
-Estimated Lab Time: -- 5
+Estimated Lab Time: -- 5 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-* Test the untuned LLM model in order to asses it's performance.
+* Test the untuned LLM model to asses it's performance.
 
 ## Task 1: Make sure the right kernel is selected
 
@@ -51,11 +51,11 @@ response = t5_generator(f"generate recipe: {prompt}", **tokenizer_kwargs)
 print(response[0]['generated_text'])
 ```
 
-In the first cell we're loading the T5 wrappers to assist with loading the model from HuggingFace. Then we load the T5 tokenizer we've used previously. Next, we're going to use a pipeline, which is a wrapper from the Transformers library, to help us use this model and the tokenizer for text generation.
+* In the first cell we're loading the T5 wrappers to assist with loading the model from HuggingFace. Then we load the T5 tokenizer we've used previously. Next, we're going to use a pipeline, which is a wrapper from the Transformers library, to help us use this model and the tokenizer for text generation.
 
-In the second cell we create a hard-coded list of groceries which we will pass to the model as a parameter.
+* In the second cell we create a hard-coded list of groceries which we will pass to the model as a parameter.
 
-In the third cell we are sending a prompt to the model which includes our request and the grocery list.
+* In the third cell we are sending a prompt to the model which includes our request and the grocery list.
 
 ## Task 3: Execute the code
 
