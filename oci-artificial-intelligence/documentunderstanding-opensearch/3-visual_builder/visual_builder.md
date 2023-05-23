@@ -17,9 +17,9 @@ First, lets go in Visual Builder. Go back to the homepage of Oracle Integration 
 
 ![Visual Builder link](images/opensearch-vb-link-oic.png)
 
-Then let's import the project from the file that you downloaded before in the "Integration" lab.
+Then let's import the project from the Github repository that you downloaded before in the "Integration" lab.
 - Click *Import*
-- Choose the file *vb/opensearch-1.0*
+- Choose the file *vb/opensearch-1.0.zip*
 - Name: *opensearch*
 - Description: *opensearch*
 - Click *Import*
