@@ -25,30 +25,40 @@ Please make sure that you have the Conda environment that we have prepared in th
 Copy the following code to the editor:
 
 ```ipynb
+<copy>
 # Let's Train ChefGPT
 
-Let's fine tune our own ChefGPT model.
-Load the pre-tokenized dataset
+# Let's fine tune our own ChefGPT model.
+# Load the pre-tokenized dataset
+
 from datasets import load_from_disk
 
 train_tokenized = load_from_disk('./tokenized_train_dataset_5k_v1')
 val_tokenized = load_from_disk('./tokenized_test_dataset_5k_v1')
+</copy>
 ```
 
 ```ipynb
+<copy>
 train_tokenized.shape
+</copy>
 ```
 
 ```ipynb
+<copy>
 val_tokenized.shape
+</copy>
 ```
 
 ```ipynb
+<copy>
 ## Let's Train
 from transformers import T5ForConditionalGeneration, T5Tokenizer, T5Config, TrainingArguments, Trainer
+</copy>
 ```
 
 ```ipynb
+<copy>
 # Configure the model
 config = T5Config.from_pretrained('t5-base')
 
@@ -56,9 +66,11 @@ config = T5Config.from_pretrained('t5-base')
 model = T5ForConditionalGeneration.from_pretrained('t5-base', config=config)
 # Disable caching for the model, prevents cache error message during the training!
 model.config.use_cache = False
+</copy>
 ```
 
 ```ipynb
+<copy>
 # Configure training arguments / A10 dual conform
 # as per https://huggingface.co/docs/transformers/model_doc/t5#training
 training_args = TrainingArguments(
@@ -87,14 +99,17 @@ trainer = Trainer(
     train_dataset=train_tokenized,
     eval_dataset=val_tokenized
 )
+</copy>
 ```
 
 ```ipynb
+<copy>
 # Fine-tune the model
 trainer.train()
 
 # Save the fine-tuned model
 model.save_pretrained("fine_tuned_t5_recipes_base_5k_v1")
+</copy>
 ```
 
 * In the first cell, we are going to load the tokenized training dataset.
@@ -133,6 +148,7 @@ Once the terminal window opens, type the following command:
 
 ```bash
 <copy>gpustat -i</copy>
+</copy>
 ```
 
 You should see an output similar to this;

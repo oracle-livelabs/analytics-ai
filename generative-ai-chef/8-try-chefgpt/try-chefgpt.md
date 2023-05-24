@@ -19,37 +19,46 @@ In this lab, you will:
 Copy the following code to the editor:
 
 ```ipynb
+<copy>
 # Let's try the ChefGPT
 
-Let's try our newly trained model and see how well it performs
-from transformers import T5ForConditionalGeneration, T5Tokenizer
+# Let's try our newly trained model and see how well it performs
+# from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 model = T5ForConditionalGeneration.from_pretrained("fine_tuned_t5_recipes_base_5k_v1")
 tokenizer = T5Tokenizer.from_pretrained("fine_tuned_t5_recipes_base_5k_v1")
+</copy>
 ```
 
 ```ipynb
-Let's setup our food items
+<copy>
+# Let's setup our food items
 food_items = "chicken, peas, carrots, cream of chicken soup, cream of celery soup, chicken broth, milk, Bisquick mix"
+</copy>
 ```
 
 ```ipynb
-For more information about the different settings visit: https://huggingface.co/blog/how-to-generate
+<copy>
+# For more information about the different settings visit: https://huggingface.co/blog/how-to-generate
 def generate_recipe_v1(prompt):
     input_text = f"generate recipe: {prompt}"
     input_ids = tokenizer.encode(input_text, return_tensors="pt")
     output_ids = model.generate(input_ids, max_length=512, num_return_sequences=1)
     output_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return output_text
+</copy>
 ```
 
 ```ipynb
+<copy>
 recipe = generate_recipe_v1(food_items)
 s = recipe.replace("ingredients:", "\n\nIngredients:").replace("directions:", "\n\nDirections:")
 print(s)
+</copy>
 ```
 
 ```ipynb
+<copy>
 generation_kwargs_v3 = {
     "max_length": 512,
     "do_sample": True,
@@ -68,9 +77,11 @@ def generate_recipe_v3(prompt):
 recipe = generate_recipe_v3(food_items)
 s = recipe.replace("ingredients:", "\n\nIngredients:").replace("directions:", "\n\nDirections:")
 print(s)
+</copy>
 ```
 
 ```ipynb
+<copy>
 generation_kwargs_v4 = {
     "max_length": 512,
     "min_length": 64,
@@ -104,9 +115,11 @@ def generate_recipe_v4(prompt):
 recipe = generate_recipe_v4(food_items)
 s = recipe.replace("ingredients:", "\n\nIngredients:").replace("directions:", "\n\nDirections:")
 print(s)
+</copy>
 ```
 
 ```ipynb
+<copy>
 ## Using Pipelines
 from transformers import pipeline
 from transformers import T5ForConditionalGeneration, T5Tokenizer
@@ -115,9 +128,11 @@ model = T5ForConditionalGeneration.from_pretrained("fine_tuned_t5_recipes_base_5
 tokenizer = T5Tokenizer.from_pretrained("fine_tuned_t5_recipes_base_5k_v1")
 
 generator = pipeline(model=model, tokenizer=tokenizer, task="text2text-generation")
+</copy>
 ```
 
 ```ipynb
+<copy>
 food_items = "chicken, peas, carrots, cream of chicken soup, cream of celery soup, chicken broth, milk, Bisquick mix"
 
 tokenizer_kwargs = {
@@ -131,6 +146,7 @@ tokenizer_kwargs = {
 response = generator(f"generate recipe: {food_items}", **tokenizer_kwargs)
 
 print(response[0]['generated_text'].replace("ingredients:", "\n\nIngredients:").replace("directions:", "\n\nDirections:"))
+</copy>
 ```
 
 * In the first cell we are going to use the same T5 wrapper used in previous labs, only this time, we are going to load the trained model by referencing the `fine_tuned_t5_recipes_base_5k_v1` folder (which is where we saved the trained model in the previous lab). We do the same for the tokenizer.

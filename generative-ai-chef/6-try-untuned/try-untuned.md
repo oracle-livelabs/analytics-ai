@@ -22,6 +22,7 @@ Please make sure that you have the Conda environment that we have prepared in th
 Copy the following code to the editor:
 
 ```ipynb
+<copy>
 ### T5-Base Untuned
 
 # Let's try the model first directly without tunning it to see what results we would get
@@ -35,13 +36,17 @@ t5_model = T5ForConditionalGeneration.from_pretrained("t5-base")
 t5_tokenizer = T5Tokenizer.from_pretrained("t5-base", model_max_len=512)
 
 t5_generator = pipeline(model=t5_model, tokenizer=t5_tokenizer, task="text2text-generation")
+</copy>
 ```
 
 ```ipynb
+<copy>
 prompt = 'cooking oats, brown sugar, salad oil, eggs, salt, almond extract'
+</copy>
 ```
 
 ```ipynb
+<copy>
 tokenizer_kwargs = {
     'max_length':512
 }
@@ -49,6 +54,7 @@ tokenizer_kwargs = {
 response = t5_generator(f"generate recipe: {prompt}", **tokenizer_kwargs)
 
 print(response[0]['generated_text'])
+</copy>
 ```
 
 * In the first cell we're loading the T5 wrappers to assist with loading the model from HuggingFace. Then we load the T5 tokenizer we've used previously. Next, we're going to use a pipeline, which is a wrapper from the Transformers library, to help us use this model and the tokenizer for text generation.
