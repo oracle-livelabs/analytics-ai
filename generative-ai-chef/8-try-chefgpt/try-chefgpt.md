@@ -16,7 +16,7 @@ In this lab, you will:
 
 ## Task 1: Load the code
 
-Copy the following code to the editor:
+Copy the following code to the editor. Each code section should be placed in a different cell:
 
 ```ipynb
 <copy>

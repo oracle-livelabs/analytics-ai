@@ -22,7 +22,7 @@ Please make sure that you have the Conda environment that we have prepared in th
 
 ## Task 2: Load the code
 
-Copy the following code to the editor:
+Copy the following code to the editor. Each code section should be placed in a different cell:
 
 ```ipynb
 <copy>
