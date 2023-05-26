@@ -1,5 +1,0 @@
-nltk
-datasets
-sentencepiece
-evaluate
-transformers
