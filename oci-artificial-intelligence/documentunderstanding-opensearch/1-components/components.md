@@ -12,7 +12,7 @@ In this section, we will install all the components needed using the OCI Wizards
 
 ### Prerequisites
 
-- A OCI Account
+- An OCI Account
 - Open a text editor and copy this text. This will be the variables that we will use during the lab.
 
 ````
@@ -26,21 +26,6 @@ COMPARTMENT_OCID = (SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
 OIC_OCID = (SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
 USER_OCID = (SAMPLE) ocid1.user.oc1..amaaaaaaaa
 AUTH_TOKEN = (SAMPLE)  X1232324_TGH
-PRIVATE_KEY = (SAMPLE) file private_key.pem
-
------BEGIN PRIVATE KEY-----
-AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9sdfhkjdhf
-...
------END PRIVATE KEY-----
-
-PRIVATE_KEY_RSA_FORMAT = (SAMPLE) file private_key_rsa_format.pem
-
------BEGIN RSA PRIVATE KEY-----
-ABCDEpAIBAAKCAQEAxHbqmTFASn48FY8mVtVZoUUE5iixGFpcN6JSdHHaxtkqTbx2
-...
------END RSA PRIVATE KEY-----
-
-FINGERPRINT = (SAMPLE) aa:aa:aa:98:ac:84:96:f5:a8:aa:aa:aa:aa:aa:aa:a
 
 Components
 ----------
@@ -54,13 +39,9 @@ OPENSEARCH_PWD = (SAMPLE) LiveLab--123
 
 OIC_HOST = (SAMPLE) opensearch-oic-namespace-fr.integration.ocp.oraclecloud.com
 
-COMPUTE_PRIVATE-KEY = This is a file that you need to keep
 COMPUTE_PUBLIC-IP = (SAMPLE) 123.123.123.123
-
 AI_VISION_URL = (SAMPLE) https://vision.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-
 FUNCTION_ENDPOINT = (SAMPLE) https://amaaaaaaaa.eu-frankfurt-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-frankfurt-1.amaaaaaaaa
-
 APIGW_HOSTNAME = (SAMPLE) amaaaaaaaa.apigateway.eu-frankfurt-1.oci.customer-oci.com
 </copy>
 `````
@@ -104,7 +85,7 @@ Go the menu
 - Check that you are in the right compartment (oci-starter in this case)
 - Click *Create*
 - Name: *oic*
-- Version: *OIC Integration *
+- Version: *OIC Integration 3*
 - Edition: *Standard*
 - Shape: *Development*
 - Choose the licence type 
@@ -112,21 +93,22 @@ Go the menu
 
 ![Create Integration](images/opensearch-oic2.png)
 
-Wait that OIC is created and Green. 
+Wait 3 mins that OIC is created and Green. 
 When it is created, 
+- Click **Service Console**. It will open a new tab that you will use in Task 3.
 - Copy the OCID of the OIC instance in your text editor. ***##OIC_OCID##***. We will need it later.
 - Enable Visual Builder
 
+You do not have to wait that it is done to go to the next step.
 
+![Visual Builder Enable](images/opensearch-oic3.png)
 
-## Task 2: Create an Agent Group
+## Task 3: Create an Agent Group
 
 To communicate with OpenSearch in the private network, we have to install the OIC agent on the compute.
 
 First, 
 - Go to the OIC console that you opened just above
-- Take note of the hostname of OIC in the browser URL,  *##OIC_HOST##*
-    - Ex: opensearch-oic-xxxxxx-fr.integration.ocp.oraclecloud.com 
 
 Create the Agent Group
 - On the left menu, choose *Integration*
@@ -138,12 +120,7 @@ Create the Agent Group
 
 ![Create Agent Group](images/opensearch-oic-agent-group.png)
 
-![Create Integration](images/opensearch-oic3.png)
-![Menu Integration](images/opensearch-oic1.png =50%x*)
-
-You do not have to wait that it is done to go to the next step.
-
-## Task 3: Run Terraform to create the other components.
+## Task 4: Run Terraform to create the other components.
 
 In OCI,
 
