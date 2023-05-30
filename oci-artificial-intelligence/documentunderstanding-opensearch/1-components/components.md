@@ -99,9 +99,9 @@ When it is created,
 - Copy the OCID of the OIC instance in your text editor. ***##OIC_OCID##***. We will need it later.
 - Enable Visual Builder
 
-You do not have to wait that it is done to go to the next step.
+You do not have to wait that it is done before to go to the next step.
 
-![Visual Builder Enable](images/opensearch-oic3.png)
+![Visual Builder Enable Integration](images/opensearch-oic3.png)
 
 ## Task 3: Create an Agent Group
 
@@ -111,14 +111,14 @@ First,
 - Go to the OIC console that you opened just above
 
 Create the Agent Group
-- On the left menu, choose *Integration*
+- On the left menu, choose *Design*
 - Then *Agent* 
-- Click *Create Agent Group*
+- Click *Create*
 - Name: *OPENSEARCH\_AGENT\_GROUP* 
 - Identifier: *OPENSEARCH\_AGENT\_GROUP*
 - Then *Create*
 
-![Create Agent Group](images/opensearch-oic-agent-group.png)
+![Create Agent Group](images/opensearch-oic3-agent-group.png)
 
 ## Task 4: Run Terraform to create the other components.
 
