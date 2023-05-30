@@ -16,7 +16,7 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Tenancy is whitelisted to be able to use OCI Speech
 
-## **Task 0:** **Policy Setup**
+## **Task 1:** **Policy Setup**
 
 Before you start using OCI Speech, your tenancy administrator should set up the following policies by following below steps:
 
@@ -40,6 +40,10 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
         allow any-user to manage ai-service-speech-family in tenancy
         allow any-user to manage object-family in tenancy
         allow any-user to read tag-namespaces in tenancy
+        allow any-user to use ons-family in tenancy
+        allow any-user to manage cloudevents-rules in tenancy
+        allow any-user to use virtual-network-family in tenancy
+        allow any-user to manage function-family in tenancy
         </copy>
         ```
         ![create policy information window](./images/any-user-policy.png " ")
@@ -68,11 +72,15 @@ Before you start using OCI Speech, your tenancy administrator should set up the 
         allow group group-name to manage ai-service-speech-family in tenancy
         allow group group-name to manage object-family in tenancy
         allow group group-name to read tag-namespaces in tenancy
+        allow group group-name to use ons-family in tenancy
+        allow group group-name to manage cloudevents-rules in tenancy
+        allow group group-name to use virtual-network-family in tenancy
+        allow group group-name to manage function-family in tenancy
         </copy>
         ```
         ![Create policy for group information window](./images/group-name-policy.png " ")
 
-## **Task 1:** Navigate to Overview Page
+## **Task 2:** Navigate to Overview Page
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
     ![Navigate speech service menu](./images/navigate-to-ai-speech-menu.png " ")
@@ -83,7 +91,7 @@ Under documentation you can find helpful links relevant to OCI speech service
     ![Speech service overview page](./images/overview-page.png " ")
 
 
-## **Task 2:** Create and Manage Transcription Job
+## **Task 3:** Create and Manage Transcription Job
 
 1. Navigate to OCI Speech
 
@@ -139,7 +147,7 @@ Under documentation you can find helpful links relevant to OCI speech service
     To change the compartment of a job from this view select "Move Resource" from the right side three dots menu and choose the target compartment from the dialog
         ![Jobs move resource window](./images/kebab-move-resource.png " ")
 
-## **Task 3:** Viewing the Results
+## **Task 4:** Viewing the Results
 
 To view the result of the transcription we will navigate to each the job and task details pages
 
@@ -171,7 +179,7 @@ To view the result of the transcription we will navigate to each the job and tas
         ![Job transcription details page](./images/task-details-page.png " ")
 
 
-## **Task 4:** Downloading and Viewing the Results in JSON
+## **Task 5:** Downloading and Viewing the Results in JSON
 
 Click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
     ![Job transcription JSON format selection button](./images/show-json-button.png " ")
