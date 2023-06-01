@@ -45,7 +45,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 	![Open Samples Sales](./images/open-sample-sales.png)
 
 3. In the Sample Sales semantic model, click the **Physical Layer**. Expand **MySampleSalesDatabase** and expand **BISAMPLE**.
-	![Expand BISAMPLE](./images/bisample.png)
+	![Expand BISAMPLE](./images/bisample.png =400x*)
 
 4. Right-click **SAMP_ PRODUCTS_D**, and select **Open in SMML Editor**.
 
