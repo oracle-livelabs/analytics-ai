@@ -24,7 +24,16 @@ In this lab, you will:
 
 **Required Download:**
 
-Mac Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
+<!-- Mac Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine. -->
+Open Cloud Shell
+Run the following command on your Cloud Shell machine to download the files needed throughout this lab:
+```
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip
+```
+Run the following command to unzip the download:
+```
+unzip biomedical-image-classification-training-data.zip
+```
 
 Windows Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/PN4oCX_LSj-gkGIciVxpHVpW36-Vh_wj8VVEk7q-5VR5sO_bGR_IY4XPvOvVFg89/n/orasenatdpltintegration03/b/all-images-live-lab/o/windows-biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
 
@@ -146,7 +155,14 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
 **Note:** These instructions are Mac OS compatible
-1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
+<!-- 1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
+    ```
+    <copy>export DL_BucketName="<your bucket name>"</copy>
+    ```
+    ```
+    <copy>export DL_Compartment=<OCID of your Compartment></copy>
+    ``` -->
+1. On your Cloud Shell machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_BucketName="<your bucket name>"</copy>
     ```
@@ -154,20 +170,31 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
     <copy>export DL_Compartment=<OCID of your Compartment></copy>
     ```
 
-2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your JPG/JPEG image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
+<!-- 2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your JPG/JPEG image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_LabelDirectory="<path to Cell folder>"</copy>
-    ```
+    ``` -->
+2. Execute the following command to set an environment variable for the directory that contains your JPG/JPEG image files.
+```
+export DL_LabelDirectory=~/Biomedical\ Image\ Classification-\ Training\ Data
+```
 
-3. Execute the following command to bulk-upload the JPG/JPEG image files to your bucket from the "Cell" folder, appending the prefix "c" to the objects that will be created from this bulk-upload command, which will be used to bulk-label the records in our Dataset later in this lab.
+<!-- 3. Execute the following command to bulk-upload the JPG/JPEG image files to your bucket from the "Cell" folder, appending the prefix "c" to the objects that will be created from this bulk-upload command, which will be used to bulk-label the records in our Dataset later in this lab.
     ```
     <copy>oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir $DL_LabelDirectory --content-type 'image/jpeg' --object-prefix c</copy>
     ```
 4. Repeat Steps 2 and 3, replacing "Cell" and "c" with "Stripe" and "s", which represent another category into which our images will be classified.
 
-5. Repeat Steps 2 and 3, replacing "Stripe" and "s" with "Debris" and "d", which represent another category into which our images will be classified.
+5. Repeat Steps 2 and 3, replacing "Stripe" and "s" with "Debris" and "d", which represent another category into which our images will be classified. -->
 
-6. Confirm that the images have been uploaded to object storage and have been prepended with the appropriate letter.
+3. Execute the following command to bulk-upload the JPG/JPEG image files to your bucket.
+```
+oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir "${DL_LabelDirectory}" --content-type 'image/jpeg'
+```
+
+<!-- 6. Confirm that the images have been uploaded to object storage and have been prepended with the appropriate letter.
+![Inspecting that images were uploaded to object storage](./images/obj-storage-upload-confirm.png) -->
+4. Confirm that the images have been uploaded to object storage within their respective folders.
 ![Inspecting that images were uploaded to object storage](./images/obj-storage-upload-confirm.png)
 
 ## **Task 3:** Create a Data Labeling Service Dataset
@@ -200,10 +227,14 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   g. Choose your Bucket by name
   ![Create dataset window - select bucket](./images/select-dataset-bucket.png)
 
-  h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be:
+<!--   h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be:
     * cell
     * stripe
-    * debris
+    * debris -->
+  h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be as shown below. Note to use capitalized first letters followed by lowercase letters when entering these labels:
+    * Cell
+    * Debris
+    * Stripe
   ![Adding labels](./images/dataset-labels.png)
 
   i. Click 'Next'
@@ -218,23 +249,50 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 ## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
 1. Click into your new Dataset. When all of the data has been imported into your DLS Dataset from your Object Storage Bucket, it will be time to perform a bulk-labeling operation on your data.
 
-2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
+<!-- 2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
+![GitHub repository where bulk data labeling code resides](./images/download-bulk-labeling-code.png) -->
+2. Run the follwing command to download the bulk-labeling script to the home directory on your Cloud Shell machine:
+```
+cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git
+cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python
+```
 ![GitHub repository where bulk data labeling code resides](./images/download-bulk-labeling-code.png)
 
-3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config\_file\_path, region\_identifier, compartment\_id, dataset\_id, labels).
+<!-- 3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config\_file\_path, region\_identifier, compartment\_id, dataset\_id, labels).
 
-  **Note:** Enter "cell", "stripe", "debris" as the 3 labels.
-
-4. Modify the labeling\_algorithm to "first\_letter" from "first\_match"
+  **Note:** Enter "cell", "stripe", "debris" as the 3 labels. -->
+3. Run the following command to obtain the identifier of your tenancy's home region. Copy and paste this value into a new line on a digital notepad app.
+```
+echo $OCI_REGION
+```
+4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
+```
+CONFIG_FILE_PATH = "/etc/oci/config"
+REGION_IDENTIFIER = "<replace-with-region-identifier-from-your-clipboard>"
+DATASET_ID = "<OCID of your DLS Dataset>"
+```
+5. Open the file named 'classification_config.py' from the bulk-labeling tool contents with the command 'vi classification_config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
+```
+LABELS = ["Cell", "Debris", "Stripe"]
+LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
+```
+<!-- 4. Modify the labeling\_algorithm to "first\_letter" from "first\_match"
 
 5. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
-
 6. Bulk-label the records in your DLS Dataset by running the following command:
     ```
     <copy>python3 main.py</copy>
-    ```
+    ``` -->
+6. Install pandas for your user on Cloud Shell, which is a prerequisite for the bulk-labeling script:
+```
+pip install --user pandas
+```
+7. Run the following command to bulk-label the records in your DLS Dataset:
+```
+python bulk_labeling_script.py
+```
 
-7. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
+8. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
 ![Pointing to an image in the dataset](./images/verify-label1.png)
 ![Verifying image has label](./images/verify-label2.png)
 
