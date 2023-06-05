@@ -18,7 +18,7 @@ In this lab, you will:
 * Locate the notebook in your download folder and drag it to your notebook environment. Please make sure to navigate to the correct folder.
 * Once the notebook has been uploaded, right click it on the left to open it in your environment. We've added comments to the cells to help you better understand the code.
 
-![Select the right kernel](images/drag-drop-notebook.gif)
+![Drag and drop notebook](images/drag-drop-notebook.gif)
 
 ## Task 2: Make sure the right kernel is selected
 

@@ -15,125 +15,26 @@ In this lab, you will:
 * Execute the training process
 * Observe the various training stages
 
-## Task 1: Please make sure the right kernel is selected
+## Task 1: Download the notebook & upload it to your notebook environment
+
+* Download the following notebook: [5-tune-chefgpt.ipynb](files/5-tune-chefgpt.ipynb).
+* Locate the notebook in your download folder and drag it to your notebook environment. Please make sure to navigate to the correct folder.
+* Once the notebook has been uploaded, right click it on the left to open it in your environment. We've added comments to the cells to help you better understand the code.
+
+![Drag and drop notebook](../6-try-untuned/images/drag-drop-notebook.gif)
+
+## Task 2: Make sure the right kernel is selected
 
 Please make sure that you have the Conda environment that we have prepared in the first lab, selected.
 ![Select the right kernel](images/select-kernel.jpg)
 
-## Task 2: Load the code
-
-Copy the following code to the editor. Each code section should be placed in a different cell:
-
-```ipynb
-<copy>
-# Let's Train ChefGPT
-
-# Let's fine tune our own ChefGPT model.
-# Load the pre-tokenized dataset
-
-from datasets import load_from_disk
-
-train_tokenized = load_from_disk('./tokenized_train_dataset_5k_v1')
-val_tokenized = load_from_disk('./tokenized_test_dataset_5k_v1')
-</copy>
-```
-
-```ipynb
-<copy>
-train_tokenized.shape
-</copy>
-```
-
-```ipynb
-<copy>
-val_tokenized.shape
-</copy>
-```
-
-```ipynb
-<copy>
-## Let's Train
-from transformers import T5ForConditionalGeneration, T5Tokenizer, T5Config, TrainingArguments, Trainer
-</copy>
-```
-
-```ipynb
-<copy>
-# Configure the model
-config = T5Config.from_pretrained('t5-base')
-
-# Initialize the model
-model = T5ForConditionalGeneration.from_pretrained('t5-base', config=config)
-# Disable caching for the model, prevents cache error message during the training!
-model.config.use_cache = False
-</copy>
-```
-
-```ipynb
-<copy>
-# Configure training arguments / A10 dual conform
-# as per https://huggingface.co/docs/transformers/model_doc/t5#training
-training_args = TrainingArguments(
-    output_dir='./results',
-    num_train_epochs=3,
-    per_device_train_batch_size=8,
-    per_device_eval_batch_size=8,
-    evaluation_strategy='epoch',
-    save_strategy='epoch',
-    logging_strategy='epoch',
-    logging_dir='./logs',
-    gradient_accumulation_steps=2,
-    learning_rate=1e-4,
-    warmup_steps=100,
-    weight_decay=0.01,
-    fp16=True,
-    load_best_model_at_end=True,
-    optim="adamw_torch",
-    adam_beta1=0.85
-)
-
-# Define the trainer
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_tokenized,
-    eval_dataset=val_tokenized
-)
-</copy>
-```
-
-```ipynb
-<copy>
-# Fine-tune the model
-trainer.train()
-
-# Save the fine-tuned model
-model.save_pretrained("fine_tuned_t5_recipes_base_5k_v1")
-</copy>
-```
-
-* In the first cell, we are going to load the tokenized training dataset.
-The second and third cells will print the sizes of the training and evaluation datasets.
-
-* In the fourth and fifth cells we are loading the model using the same wrappers used in previous labs.
-Using those wrappers we are going to tune the entire model using the loaded dataset. Since the model is not very large, this is not
-going to take a long time.
-
-* In the sixth cell, the training parameters are set while using the `TrainingArguments` and `Trainer` wrappers from the HuggingFace Transformers library.
-The training arguments were taken directly from the HuggingFace T5 model training documentation.
-The values for the parameters were selected to leverage the performance characteristics of the GPU shape we are using in this lab (dual A10 GPUs).
-
-* In the seventh cell, we are going to execute the training process as well as save the results to a local file.
-
 ## Task 3: Execute the code
 
-Please load the cells in their order of appearance to execute the code and observe the result.
-After the last cell start executing, you will see some high level information, like the number of examples, the number of epochs, how many training steps per epoch, and how much time the training is going to take.
-In our case, this should take less than 10 minutes.
+Execute the cells one-by-one and observe the result.
 
 ## Task 4: Monitor the execution
 
-If you'd like to see the GPU utilization:
+If you'd like to see the GPU utilization during training:
 
 Click on the terminal tab:
 ![Select terminal tab](images/open-terminal.jpg)
