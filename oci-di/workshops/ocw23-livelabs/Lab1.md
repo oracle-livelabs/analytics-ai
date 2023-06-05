@@ -9,7 +9,7 @@ Learn how to create a **Data Loader task**, **two Data Flows** along with **Inte
 ### Objectives
 * Create an OCI Data Integration project
 * Create a Data Loader task
-* Create two Data Flows
+* Create two Data Flows.
 * Create Integration tasks
 * Create a SQL task
 
