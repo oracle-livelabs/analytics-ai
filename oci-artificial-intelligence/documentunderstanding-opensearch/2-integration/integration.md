@@ -26,8 +26,9 @@ The directory contains the Oracle integration Cloud (OIC) package, the Visual Bu
 
 Alternatively you can download the files form the Cloud Shell:
 ![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+
 Enter the file name: oci-searchlab/oic/OPENSEARCH_OIC.par and click Download button.
-Enter the file name: oci-searchlab/vb/opensearch-1.0.zip and click Download button.
+
 
 
 ## Task 1: Import the integration
