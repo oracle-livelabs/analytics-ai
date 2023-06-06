@@ -13,7 +13,11 @@ Estimated time: 20 min
 
 You need the VB application archive *opensearch-1.0.zip* in the Git folder on your laptop you cloned in the previous lab or
 alternatively you can download the files form the Cloud Shell:
-![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+
+![CloudShell_Download](images/opensearch-cloudshell-download.png)
+
+![CloudShell_Download2](images/opensearch-cloudshell-download5.png)
+
 Enter the file name: oci-searchlab/vb/opensearch-1.0.zip and click Download button.
 
 ## Task 1: Import the project
