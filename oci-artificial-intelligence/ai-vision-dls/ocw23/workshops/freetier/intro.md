@@ -13,28 +13,29 @@ Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labele
 
 ### About the data:
 
-We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labeled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
+We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these .jpg images is labeled with one of three classifications based on the features present in the image. The three classifications are: Cell, Debris, and Stripe.
 
 ### Objectives
 
 In this workshop, you will:
 
-* Get familiar with the OCI Console and be able to demo key OCI Vision AI and Data Labeling features with it
-* Learn how to leverage the Data Labeling Service and custom code to bulk label a dataset of biomedical images
+* Get familiar with the OCI Console and be able to demo key OCI Vision AI and Data Labeling features
+* Learn how to leverage the Data Labeling Service and custom code to bulk-label a dataset of biomedical images
 * Train a custom image classification model using the labeled dataset and the Vision AI Service
 
 ### Prerequisites
 * An Oracle Free Tier, or Paid Cloud Account
-* Assumes that the end-user has full administrative privileges in the tenancy
-* Some familiarity with OCI CLI is desirable, but not required
+* User is either a tenancy administrator, or has access to a tenancy administrator for the *Policy Setup* step.
+    - Note: If you are not a tenancy administrator, begin with Task 1 after the tenancy administrator has assigned permissions in *Policy Setup*, for each Lab
+* Some familiarity with OCI-CLI is desirable, but not required
 * Some familiarity with Python is desirable, but not required
 
 [Proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**
-    * Samuel Cacela - Staff Cloud Engineer
-    * Gabrielle Prichard - Cloud Solution Engineer
+    * Samuel Cacela - Senior Cloud Engineer
+    * Gabrielle Prichard - Product Manager, Analytics Platform
 
 * **Last Updated By/Date**
-    * Gabrielle Prichard - Cloud Solution Engineer, March 2022
+    * Samuel Cacela - Senior Cloud Engineer, June 2023
