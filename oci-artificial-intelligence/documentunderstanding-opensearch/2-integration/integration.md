@@ -141,7 +141,7 @@ Then fill the Connection details:
 - Access Type = *Public gateway*
 - *Save / Test / Save* until 100%
 
-Before we can proceed with configuring the remaining three connections we need to wait for the script build.sh (Terraform) from the previous lab (provisioning the components) to finish (approx 30 minutes).
+**NOTE: Before we can proceed with configuring the remaining three connections we need to wait for the script build.sh (Terraform) from the previous lab (provisioning the components) to finish (approx 30 minutes).**
 
 ### G. StreamInputBucket
 You will need to get values from your environment:
@@ -152,7 +152,8 @@ In the output of this script look for the following values:
 - ##AUTH_TOKEN## and 
 
 Download the file *oss_store.jks* from OCI Cloud Shell. 
-![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+![CloudShell_Download2](images/opensearch-cloudshell-download3.png)
+
 Enter the file name: oci-searchlab/starter/oss_store.jks and click Download button. 
 
 Click to edit the connection *StreamInputBucket*
@@ -216,7 +217,8 @@ All integrations should be up and running.
 - In OCI console go back to the Object Storage bucket.
 - On your desktop go to the directory that you downloaded from GITHUB
 - Alternatively you can download the files form the Cloud Shell:
-![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
+
 Enter the file name: oci-searchlab/sample_files/shakespeare_macbeth.tif and click Download button.
 
 Upload the sample files to OCI Object Storage bucket: 
