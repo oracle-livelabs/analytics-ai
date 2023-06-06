@@ -2,86 +2,40 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we are going to download the dataset and split it into training and testing data.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 5 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 
-* Objective 1
-* Objective 2
-* Objective 3
+* Load data using Pandas
+* Split data into training and testing datasets
 
-### Prerequisites (Optional)
+## Task 1: Download the notebook & upload it to your notebook environment
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+* Download the following notebook: [1-prep-dataset.ipynb](files/1-prep-dataset.ipynb).
+* Locate the notebook in your download folder and drag it to your notebook environment. Please make sure to navigate to the correct folder.
+* Once the notebook has been uploaded, right click it on the left to open it in your environment. We've added comments to the cells to help you better understand the code.
 
-This lab assumes you have:
 
-* An Oracle Cloud account
-* All previous labs successfully completed
+## Task 2: Make sure the right kernel is selected
 
-*This is the "fold" - below items are collapsed by default*
+1. Please make sure that you have the conda environment that we have prepared in the first lab, selected.
 
-## Task 1: Do 1
+ ![Select Kernel](images/select-kernel.png)
 
-(optional) Task 1 opening paragraph.
+## Task 3: Execute the cells in the notebook to load dataset and split dataset intro training and testing dataset
 
-1. Step 1
+1.  You can execute a cell by clicking on the cell and pressing Shift + Enter.  Alternatively, you can click on the cell, go to the Run tab and select Run Selected Cells or Run All Cells.
 
- ![Image alt text](images/sample1.png)
+![Run Cell](images/run-cell.png)
 
-2. Step 2
+2.  In the first cell, we are loading the dataset.  Since this dataset is very large, we are only going to use a small portion of the dataset.  We are going to randomly select 5% of the dataset.   We are using the library [Pandas](https://pandas.pydata.org/) to load the dataset which has the ability to read csv files.  After loading in the dataset, we are splitting the dataset into the training set and the testing set.  It is important when training a machine learning model to split up your dataset, so you can use the training dataset to train your model and use the testing dataset to validate your model.  It is important to see how the model does with data it "has not seen" yet. We will use 80% of the dataset for the training dataset and 20% for testing.
 
-  ![Image alt text](images/sample1.png)
+![Spllit Dataset](images/split-dataset.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+3.  After loading in the dataset, we can check the number of rows and columns of our training and testing dataset with `.shape`.  For example, `print(test_df.shape)` will print the number of columns and rows of the dataframe.  You can check the first three rows of our dataframe with `data.head(3)`
 
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Do 2
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    * List item 1
-    * List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-   Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-   <copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
- ```
-
-  <copy>ssh -i <ssh-key-file></copy>
-
-  ```
-
-## Notebook
-
-*You can also download the notebook directly*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+You may now **proceed to the next lab**.

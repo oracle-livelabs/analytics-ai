@@ -2,86 +2,43 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we are going to clean the dataset by removing unnecessary characters and merge the texts together.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 
-* Objective 1
-* Objective 2
-* Objective 3
+* Clean the dataset by removing unnecessary characters from the text
+* Merge together the text of the titles of the recipe, ingredients and instruction
 
-### Prerequisites (Optional)
+## Task 1: Download the notebook & upload it to your notebook environment
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+* Download the following notebook: [2-clean-dataset.ipynb](files/2-clean-dataset.ipynb).
+* Locate the notebook in your download folder and drag it to your notebook environment. Please make sure to navigate to the correct folder.
+* Once the notebook has been uploaded, right click it on the left to open it in your environment. We've added comments to the cells to help you better understand the code.
 
-This lab assumes you have:
+## Task 2: Make sure the right kernel is selected
 
-* An Oracle Cloud account
-* All previous labs successfully completed
+1. Please make sure that you have the conda environment that we have prepared in the first lab, selected.
 
-*This is the "fold" - below items are collapsed by default*
+![Select Kernel](images/select-kernel.png)
 
-## Task 1: Do 1
+## Task 3: Execute the cells in the notebook to clean the dataset
 
-(optional) Task 1 opening paragraph.
+1.  You can execute a cell by clicking on the cell and pressing Shift + Enter.  Alternatively, you can click on the cell, go to the Run tab and select Run Selected Cells or Run All Cells.
 
-1. Step 1
+2. First, we are taking the training and testing datasets and filtering them to only the recommended "Gathered" entries.
 
- ![Image alt text](images/sample1.png)
+![Filter Entries](images/filter-entries.png)
 
-2. Step 2
+3. Next, we are cleaning the dataset.  When working with text data, it is often helpful to "clean" the dataset by removing texts and characters that do not provide a lot of meaning to the actual content.  There are various techniques for cleaning a text dataset.  We will take a simple approach by removing the brackets "[ ]" from the text.  We do that to both the training and testing datasets.
 
-  ![Image alt text](images/sample1.png)
+![Clean Dataset](images/clean-dataset.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+5. We are going to merge the title of the recipe, the ingredients and directions, which are separated into different columns, into a new text column called "merged_text".  We will use the "merged_text" column and drop the "title", "ingredients", "directions", "link" and "source" columns from the dataframe.  The dataframe is going to have only two columns, "NER" and "merged_text".  We are going to do that for both the training and testing dataframes.  The new dataframes are going to be saved to new csv files.  
 
-5. Example with bold **text**.
+![Merge Text](images/merge-text.png)
 
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Do 2
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    * List item 1
-    * List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-   Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-   <copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
- ```
-
-  <copy>ssh -i <ssh-key-file></copy>
-
-  ```
-
-## Notebook
-
-*You can also download the notebook directly*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+You may now **proceed to the next lab**.

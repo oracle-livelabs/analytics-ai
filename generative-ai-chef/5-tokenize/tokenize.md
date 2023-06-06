@@ -2,86 +2,52 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we are going to tokenize the dataset to prepare it in a format that can be used for tuning the model.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 
-* Objective 1
-* Objective 2
-* Objective 3
+* Select a small sample of training and validation datasets
+* Tokenize each entry in the training and validation datasets
 
-### Prerequisites (Optional)
+## Task 1: Download the notebook & upload it to your notebook environment
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+* Download the following notebook: [3-tokenize-dataset.ipynb](files/3-tokenize-dataset.ipynb).
+* Locate the notebook in your download folder and drag it to your notebook environment. Please make sure to navigate to the correct folder.
+* Once the notebook has been uploaded, right click it on the left to open it in your environment. We've added comments to the cells to help you better understand the code.
 
-This lab assumes you have:
+## Task 2: Make sure the right kernel is selected
 
-* An Oracle Cloud account
-* All previous labs successfully completed
+1. Please make sure that you have the conda environment that we have prepared in the first lab, selected.
 
-*This is the "fold" - below items are collapsed by default*
+![Select Kernel](images/select-kernel.png)
 
-## Task 1: Do 1
+## Task 3: Execute the cells in the notebook to tokenize the dataset
 
-(optional) Task 1 opening paragraph.
+1.  You can execute a cell by clicking on the cell and pressing Shift + Enter.  Alternatively, you can click on the cell, go to the Run tab and select Run Selected Cells or Run All Cells.
 
-1. Step 1
+2.  We are going to load the training and testing dataframes.  We want to first see how the training the model goes with a smaller dataset.  Training is going to be faster with a smaller dataset.   We are going to randomly select 5000 recipes from the training dataset for tuning and randomly select 500 recipes from the testing dataset for validation.
 
- ![Image alt text](images/sample1.png)
+![Select Dataset](images/select-dataset.png)
 
-2. Step 2
+3. The column "NER" is the food items for each recipe.  Our model should learn from the food items provided and generate the recipe instruction.  The column "merged_text" is the "target" of our model, what our model would be able to generate based on the input food items.
 
-  ![Image alt text](images/sample1.png)
+![Column Description](images/column-description.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+4.  The model we are tuning is called [T5](https://huggingface.co/docs/transformers/model_doc/t5) which has several versions that vary on the number of parameters.  We are going to choose the T5-base model.  This model has a wrapper from the [HuggingFace](https://huggingface.co/) library.
 
-5. Example with bold **text**.
+![Select Model](images/select-model.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+5.  We are going to tokenize the dataset which means to transform the text data into a form that the model can use .  The T5 model comes with its own tokenizer, which creates a mapping of text to numbers.   We have a helper function `tokenize_dataset` that will do so.  First, we are creating a text prompt "generate recipe" and add the list of food items for each recipe.  That becomes our input text.  The target of the model is the corresponding "merged_text." We will take each input, tokenize it and create a tokenized output called `input_tokenized`  We will do the same for our target and create a a tokenized target called `target_tokenized`.  The HuggingFace documentation recommends replacing the padding token IDs of the labels with
+-100.  The helper function returns "input_ids", "attention_mask" and "labels" which are the items that many Large Language Models expect for training inputs.
 
-## Task 2: Do 2
+![Tokenize Data](images/tokenize-data.png)
 
-1. Step 1 - tables sample
+6.  We can look at what an entry in the training dataset looks like after it has been tokenized.  We are going to save the tokenized data.
 
-  Use tables sparingly:
+![Get Tokenized Entry](images/get-tokenized-entry.png)
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    * List item 1
-    * List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-   Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-   <copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
- ```
-
-  <copy>ssh -i <ssh-key-file></copy>
-
-  ```
-
-## Notebook
-
-*You can also download the notebook directly*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+You may now **proceed to the next lab**.
