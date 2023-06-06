@@ -235,8 +235,8 @@ cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy
 4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
 <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
-REGION_IDENTIFIER = "\<replace-with-region-identifier-from-your-clipboard\>"
-DATASET_ID = "\<OCID of your DLS Dataset\>"
+REGION_IDENTIFIER = "&ltreplace-with-region-identifier-from-your-clipboard&gt"
+DATASET_ID = "&ltOCID of your DLS Dataset&gt"
 ```
 5. Open the file named 'classification\_config.py' from the bulk-labeling tool contents with the command 'vi classification\_config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
