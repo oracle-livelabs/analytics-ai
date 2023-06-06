@@ -24,11 +24,11 @@ In this lab, you will:
 
 Open Cloud Shell, and run the following command on your Cloud Shell command line interface to download the files needed throughout this lab:
 ```
-wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip
+<copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip</copy>
 ```
 Run the following command to unzip the download:
 ```
-unzip biomedical-image-classification-training-data.zip
+<copy>unzip biomedical-image-classification-training-data.zip</copy>
 ```
 
 ## **Policy Setup**
@@ -223,34 +223,34 @@ oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir "${DL_Label
 
 2. Run the follwing command to download the bulk-labeling script to the home directory on your Cloud Shell machine:
 ```
-cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git
-cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python
+<copy>cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git
+cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy>
 ```
 ![GitHub repository where bulk data labeling code resides](./images/download-bulk-labeling-code.png)
 
 3. Run the following command to obtain the identifier of your tenancy's home region. Copy and paste this value into a new line on a digital notepad app.
 ```
-echo $OCI_REGION
+<copy>echo $OCI_REGION</copy>
 ```
 4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
-CONFIG_FILE_PATH = "/etc/oci/config"
+<copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
 REGION_IDENTIFIER = "<replace-with-region-identifier-from-your-clipboard>"
 DATASET_ID = "<OCID of your DLS Dataset>"
 ```
 5. Open the file named 'classification_config.py' from the bulk-labeling tool contents with the command 'vi classification_config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
-LABELS = ["Cell", "Debris", "Stripe"]
-LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
+<copy>LABELS = ["Cell", "Debris", "Stripe"]
+LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
 ```
 
 6. Install pandas for your user on Cloud Shell, which is a prerequisite for the bulk-labeling script:
 ```
-pip install --user pandas
+<copy>pip install --user pandas</copy>
 ```
 7. Run the following command to bulk-label the records in your DLS Dataset:
 ```
-python bulk_labeling_script.py
+<copy>python bulk_labeling_script.py</copy>
 ```
 
 8. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
