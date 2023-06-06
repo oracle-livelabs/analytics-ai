@@ -31,8 +31,6 @@ Run the following command to unzip the download:
 unzip biomedical-image-classification-training-data.zip
 ```
 
-Windows Users: Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/PN4oCX_LSj-gkGIciVxpHVpW36-Vh_wj8VVEk7q-5VR5sO_bGR_IY4XPvOvVFg89/n/orasenatdpltintegration03/b/all-images-live-lab/o/windows-biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
-
 ## **Policy Setup**
 
 Before you start using OCI Data Labeling Service, you or your tenancy administrator should set up the following policies by following below steps:
