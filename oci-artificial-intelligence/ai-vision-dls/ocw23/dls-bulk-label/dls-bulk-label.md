@@ -85,7 +85,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 
     d. Add a description
 
-    e. Include the following rule. Replace the information in '<>' with your own value.
+    e. Include the following rule. Replace the information in '<>' with your own value. Preserve the quotation marks in the template.
 
       ```
       <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
@@ -151,7 +151,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
 **Note:** These instructions are Mac OS compatible
 
-1. On your Cloud Shell machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
+1. On your Cloud Shell machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values. Preserve the quotation marks in the commands.
     ```
     <copy>export DL_BucketName="<your bucket name>"</copy>
     ```
@@ -232,7 +232,7 @@ cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy
 ```
 <copy>echo $OCI_REGION</copy>
 ```
-4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
+4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values. Preserve the quotation marks in the template.
 ```
 <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
 REGION_IDENTIFIER = "&ltRegion identifier from notepad&gt"
