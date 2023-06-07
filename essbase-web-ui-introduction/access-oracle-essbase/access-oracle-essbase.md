@@ -1,23 +1,21 @@
 # Access Oracle Essbase
 
-This workshop assumes that you have Essbase deployed and ready to use. The labs in this workshop will work weather you have an Essbase stack deployment, or an independent deployment.
+This workshop assumes you have access to an Essbase instance that is deployed and ready to use.
+
+The labs in this workshop will work whether you have an Essbase stack deployment, or an independent deployment.
 
 To access Essbase, you must have the following information:
 
 * URL to access the Essbase web interface
-* User name and password to log in to Essbase as a power user or service administrator
+* User name and password to log in to Essbase as a power user
 
 Get the Essbase web interface URL for the Essbase instance you are using from your service administrator. The basic format of the URL is:
 
-`https://Host:port/essbase/jet`
+```
+<copy>https://Host:port/essbase/jet</copy>
+```
 
 The default secured port is 9001, unless it was changed during stack creation.
-
-This lab assumes you have:
-
-* Access to an Essbase instance that is deployed and ready to use
-* User name and password to log in to Essbase as a power user
-* Familiarity with Essbase is desirable, but not required
 
 ## Learn More
 
