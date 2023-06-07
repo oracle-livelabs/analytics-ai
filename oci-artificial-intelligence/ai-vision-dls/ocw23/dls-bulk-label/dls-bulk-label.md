@@ -51,7 +51,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   f. Click 'Create Compartment'
   ![Create compartment window](./images/create-compartment.png)
 
-2. Retrieve the compartment OCID and record it. You will need this later.
+2. Find the compartment OCID. Then, copy and paste this value into a new line on a digital notepad app. You will retrieve this value when building your IAM Policy statements.
 
 3. Make a group and add your user to it, along with any other users who will perform these lab steps.
 
@@ -92,7 +92,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
       ```
       ![Create dynamic group window](./images/creating-dynamic-group.png)
 
-5. Create policies for Dynamic Group and Group.
+5. Create IAM Policy statements for Dynamic Group and Group.
 
     a. From the OCI services menu, click 'Policies' under 'Identity'
     ![OCI services menu](./images/policies.png)
@@ -215,7 +215,7 @@ oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir "${DL_Label
   j. Review the information and deploy your Dataset by clicking 'Create'
   ![Create dataset window - review information](./images/click-create-dataset.png)
 
-5. Retrieve the Dataset OCID- you will need this during the next Task. Dataset OCID can be found here:
+5. Find the Dataset OCID as shown in the screenshot. Then, copy and paste this value into a new line on a digital notepad app. You will retrieve this value in the next Task when configuring the bulk-labeling tool.
   ![Identifying dataset OCID](./images/dataset-OCID.png)
 
 ## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
@@ -235,8 +235,8 @@ cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy
 4. Open the file named 'config.py' from the bulk-labeling tool contents with the command 'vi config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
 <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
-REGION_IDENTIFIER = "&ltreplace-with-region-identifier-from-your-clipboard&gt"
-DATASET_ID = "&ltOCID of your DLS Dataset&gt"
+REGION_IDENTIFIER = "&ltRegion identifier from notepad&gt"
+DATASET_ID = "&ltOCID of your DLS Dataset from notepad&gt"
 ```
 5. Open the file named 'classification\_config.py' from the bulk-labeling tool contents with the command 'vi classification\_config.py', and then edit the variables as indicated below. Be sure to replace the information in "<>" with your own values.
 ```
