@@ -149,15 +149,14 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   ![Create object storage bucket window](./images/create-bucket.png)
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
-**Note:** These instructions are Mac OS compatible
 
 1. On your Cloud Shell machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values. Preserve the quotation marks in the commands.
-    ```
-    <copy>export DL_BucketName="<your bucket name>"</copy>
-    ```
-    ```
-    <copy>export DL_Compartment=<OCID of your Compartment></copy>
-    ```
+```
+<copy>export DL_BucketName="<your bucket name>"</copy>
+```
+```
+<copy>export DL_Compartment=<OCID of your Compartment></copy>
+```
 
 2. Execute the following command to set an environment variable for the directory that contains your JPG/JPEG image files.
 ```
