@@ -1,18 +1,14 @@
-# Create the Physical Layer
+# Manage Logical Table Sources
 
 ## Introduction
 
-This lab shows you how to create an initial semantic model in Oracle Analytics Cloud, starting with the physical layer.
+In this tutorial, you add a physical table as an extension table of a logical table source for the D3 Customers logical table and then add a presentation table to the Sample Sales semantic model.
 
 
 Estimated Lab Time: 25 minutes
 
 ### About
-This lab describes how to build governed semantic models using the Semantic Modeler. Ask your administrator to enable the Semantic Modeler preview feature in Console.
-
-In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks. In this lab, you select the objects from a supported relational data source to define the physical layer of the semantic model.
-
-This lab shows you how to create the system connection required to use a relational data source with the Semantic Modeler. In an empty model, you create a schema and add tables selected from relational data sources.
+This tutorial describes how to build governed semantic models using the Semantic Modeler. 
 
 ### Objectives
 
@@ -25,29 +21,37 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
-* Ability to connect to a relational data source
-* Access to the BISAMPLE schema to perform the steps in this lab
+* Access to the Sample Sales Semantic Model
 
 
-## Task 1: Create a Semantic Model
+## Task 1: Add an Extension Physical Table for a Logical Table Source
 
-In this section, you create an empty semantic model.
+In this section, you add the D4 Addresses physical table as an extension table for the D3 Customers logical table source.
 
-1. On the Home page, click **Create**, and then select **Semantic Model**.
+Begin with step 3 if you're continuing this tutorial directly after completing the steps in the Examine Semantic Model Markup Language (SMML) and Integrate Semantic Model With a Git Repository tutorial.
 
-	![Create](./images/create.png =400x*)
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
+	![Open Semantic Models](./images/semantic-models.png)
 
-2. In Create Semantic Model, enter <code>Sample Sales</code> in **Name**, and then click **Create**.
+2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
+	![Open Samples Sales](./images/open-sample-sales.png)
 
-	![Semantic model name](images/semantic-model-name.png =400x*)
+3. Click the Logical layer, and then double-click **D3 Customers** in Sample Sales BM.
 
-3. In Create Semantic Model, click **Start with Empty Model**.
+	![Click into D3 Customers in the Logical Layer](./images/d3-customers.png)
 
-	![Start with empty model](./images/empty-model.png)
+4. In D3 Customers, click **Sources**, and then click **Detail View**.
 
-4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select Oracle ADW and click **Save**.
+	![View Details in D3 Customers](./images/sources-detail-view.png)
 
-	![DB name](./images/db-name.png)
+5. Scroll to the Table Mapping section, and then click **Add Table**.
+	![Add Table Mapping](./images/create-table-mapping.png)
+
+6. In Select Physical Table, expand **BISAMPLE**, click **D4 Addresses**, and then click **Select**.
+	![Select D4 Address for new table mapping](./images/select-d4-addresses-table.png)
+
+7. See the columns added from the D4 Addresses table.
+	![View D3 Columns after adding D4 table](./images/view-d3-columns.png)
 
 ## Task 2: Add Physical tables
 
