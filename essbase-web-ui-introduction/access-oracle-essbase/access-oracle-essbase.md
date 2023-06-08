@@ -1,6 +1,6 @@
 # Access Oracle Essbase
 
-This workshop assumes you have access to an Essbase instance that is deployed and ready to use.
+This workshop assumes you have access to an Essbase Release 21.5 instance that is deployed and ready to use.
 
 The labs in this workshop will work whether you have an Essbase stack deployment, or an independent deployment.
 
