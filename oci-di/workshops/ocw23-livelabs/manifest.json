@@ -8,19 +8,24 @@
             "filename": "./Intro.md"
         },
         {
-            "title": "Lab 1: Create a Data Loader task, two Data Flows, Integration tasks and a SQL task",
-            "description": "Learn how to create a Data Loader task, two Data Flows along with Integration tasks and a SQL task in OCI Data Integration.",
+            "title": "Lab 1: Create a Data Loader task",
+            "description": "Learn how to create a Data Loader task in OCI Data Integration.",
             "filename": "./Lab1.md"
         },
         {
-            "title": "Lab 2: Create an Application, a Pipeline and publish tasks",
-            "description": "Learn how to create an OCI Data Integration application, publish tasks into the application and create a Data Integration pipeline which calls the published tasks.",
+            "title": "Lab 2: Create a Data Flow and Integration task",
+            "description": "Learn how to create a Data Flow along with Integration task in OCI Data Integration.",
             "filename": "./Lab2.md"
         },
         {
-            "title": "Lab 3: Run Data Loader task, schedule and run Pipeline task",
-            "description": "Learn how to run a Data Loader task, create a task schedule in your OCI Data Integration application, to schedule the Pipeline task and to run it.",
+            "title": "Lab 3: Create an Application, a Pipeline and publish tasks",
+            "description": "Learn how to create an OCI Data Integration application, publish tasks into the application and create a Data Integration pipeline which calls the published tasks.",
             "filename": "./Lab3.md"
+        },
+        {
+            "title": "Lab 4: Run Data Loader task, schedule and run Pipeline task",
+            "description": "Learn how to run a Data Loader task, create a task schedule in your OCI Data Integration application, to schedule the Pipeline task and to run it.",
+            "filename": "./Lab4.md"
         }
     ]
 }
