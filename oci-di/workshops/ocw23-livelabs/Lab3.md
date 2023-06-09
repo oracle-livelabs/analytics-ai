@@ -10,8 +10,7 @@ The Pipeline you will create will orchestrate the execution of all of the tasks 
 
 ### Objectives
 * Create an Application
-* Publish tasks to Application
-* Creating a Pipeline which calls the published tasks
+* Creating a Pipeline
 * Creating a Pipeline Task
 * Publish the Pipeline Task
 
