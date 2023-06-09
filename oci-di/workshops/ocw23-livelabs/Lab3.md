@@ -102,11 +102,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_1** operator to the Integration task you added.
 
-  ![](../../pipelines/images/new-int-task.png " ")
+  ![](images/ocw23_pipeline_integrationtaskx1.png " ")
 
 18. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
-  ![](../../pipelines/images/select-int-task.png " ")
+  ![](images/ocw23_pipeline_integrationtaskx2.png " ")
 
 19. A page pops up with the selections for the **Integration Task**:
 
@@ -120,7 +120,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 20. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
-  ![](../../pipelines/images/run-success.png " ")
+  ![](images/ocw23_pipeline_integrationtaskx3.png " ")
 
 21. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
