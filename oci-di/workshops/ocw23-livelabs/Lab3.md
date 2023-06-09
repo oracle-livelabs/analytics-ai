@@ -98,7 +98,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 16. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
 
-  ![](pipelines/images/ocw23_pipeline_merge2.png " ")
+  ![](images/ocw23_pipeline_merge2.png " ")
 
 17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_1** operator to the Integration task you added.
 
