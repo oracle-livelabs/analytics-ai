@@ -1,10 +1,10 @@
-﻿# Create a Data Loader task, two Data Flows, Integration tasks and a SQL task
+﻿# Create a Data Loader task
 
 ## Introduction
 
-Learn how to create a **Data Loader task**, **two Data Flows** along with **Integration tasks** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
+Learn how to create a **Data Loader task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
 
-**Estimated Time**: 30 minutes
+**Estimated Time**: 20 minutes
 
 ### Objectives
 * Create an OCI Data Integration project
