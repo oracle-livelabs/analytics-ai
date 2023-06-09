@@ -9,9 +9,9 @@ The Pipeline you will create will orchestrate the execution of all of the tasks 
 **Estimated Time**: 20 minutes
 
 ### Objectives
-* Create an Application
 * Creating a Pipeline
 * Creating a Pipeline Task
+* Create an Application
 * Publish the Pipeline Task
 
 ## Task 1: Create a Pipeline
