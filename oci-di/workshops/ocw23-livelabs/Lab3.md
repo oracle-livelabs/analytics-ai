@@ -26,23 +26,23 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
 
-  ![](../../pipelines/images/tab-projects.png " ")
+  ![](images/ocw23_projectstab.png " ")
 
 2. Select your `DI_WorkshopNN` project from the projects list.
 
-  ![](../../pipelines/images/di-workshop.png " ")
+  ![](images/ocw23_projects.png " ")
 
 3. Select **Pipelines** section under project Details tab.
 
-  ![](../../pipelines/images/pipeline-section.png " ")
+  ![](images/ocw23_project_pipelines.png " ")
 
 4. Click on **Create Pipeline**.
 
-  ![](../../pipelines/images/create-pip.png " ")
+  ![](images/ocw23_pipelinecreate.png " ")
 
 5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
 
-  ![](../../pipelines/images/pipeline-name.png " ")
+  ![](images/ocw23_pipeline_name.png " ")
 
 6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
 
