@@ -44,7 +44,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
   ![](../../pipelines/images/pipeline-name.png " ")
 
-6. Click on **Save** button. The title of the pipeline will change to the pipeline name you have just added.
+6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
 
   ![](../../pipelines/images/pipeline-renamed.png " ")
 
@@ -171,23 +171,15 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
-
-  ![](../../pipelines/images/menu-di.png " ")
-
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). Click on your **Workspace** (DI-workspace).
-
-  ![](../../pipelines/images/workspaces-click.png " ")
-
-3. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
+1. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
 
   ![](../../pipelines/images/create-app-tile.png " ")
 
-4. On the Applications page, enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
+2. On the Applications page, enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
 
   ![](../../pipelines/images/create-app.png " ")
 
-5. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
+3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
   ![](../../pipelines/images/my-application.png " ")
 
