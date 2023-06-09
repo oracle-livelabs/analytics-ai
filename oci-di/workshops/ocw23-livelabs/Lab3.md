@@ -38,7 +38,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 4. Click on **Create Pipeline**.
 
-  ![](images/ocw23_pipelinecreate.png " ")
+  ![](images/ocw23_pipeline_create.png " ")
 
 5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
 
@@ -46,15 +46,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
 
-  ![](../../pipelines/images/pipeline-renamed.png " ")
+  ![](images/ocw23_pipeline_name_after_save.png " ")
 
 7. To add a task, you will drag and drop a task operator from the Operators Panel. Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
-  ![](../../pipelines/images/add-integration-step.png " ")
+  ![](images/ocw23_pipeline_integrationtask1.png " ")
 
 8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
 
-  ![](../../pipelines/images/select-int-task.png " ")
+  ![](images/ocw23_pipeline_integrationtask2.png " ")
 
 9. A page pops up with the selections for the **Integration Task**:
 
@@ -68,15 +68,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.  *Note*: Be sure to save often during design time!
 
-  ![](../../pipelines/images/pipeline-first-operator.png " ")
+  ![](images/ocw23_pipeline_integrationtask3.png " ")
 
 11. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
-  ![](../../pipelines/images/pipeline-data-loader.png " ")
+  ![](images/ocw23_pipeline_dataloadertask1.png " ")
 
 12. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
-  ![](../../pipelines/images/select-data-loader.png " ")
+  ![](images/ocw23_pipeline_dataloadertask2.png " ")
 
 13. A page pops up with the selections for the **Data Loader Task**:
 
@@ -90,15 +90,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 14. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
-  ![](../../pipelines/images/task-data-loader.png " ")
+  ![](images/ocw23_pipeline_dataloadertask3.png " ")
 
 15. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 
-  ![](../../pipelines/images/merge-op.png " ")
+  ![](images/ocw23_pipeline_merge.png " ")
 
 16. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
 
-  ![](../../pipelines/images/merge-success.png " ")
+  ![](pipelines/images/ocw23_pipeline_merge2.png " ")
 
 17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_1** operator to the Integration task you added.
 
