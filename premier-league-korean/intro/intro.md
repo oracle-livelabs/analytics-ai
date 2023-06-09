@@ -50,4 +50,4 @@ _이제, 학습을 시작할 준비가 되었습니다! 계속 진행해주세�
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
-- **Translator** - Korea ODP 
+- **Translator** - Korea ODP
