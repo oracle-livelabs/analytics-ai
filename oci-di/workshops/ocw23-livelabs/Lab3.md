@@ -141,11 +141,11 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-  ![](../../pipelines/images/click-tasks.png " ")
+  ![](images/ocw23_pipelinetask1.png " ")
 
 2. Click **Create Task**, and then select **Pipeline**.
 
-  ![](../../pipelines/images/create-pipeline-task.png " ")
+  ![](images/ocw23_pipelinetask2.png " ")
 
 3. On the **Create Pipeline Task** page, enter:
 
@@ -157,7 +157,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 4. In the **Pipeline** section, click **Select**.
 
-  ![](../../pipelines/images/select-pipeline.png " ")
+  ![](images/ocw23_pipelinetask3.png " ")
 
 5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
