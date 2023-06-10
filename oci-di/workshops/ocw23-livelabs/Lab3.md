@@ -100,9 +100,9 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
   ![](images/ocw23_pipeline_merge2.png " ")
 
-17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_1** operator to the Integration task you added.
+17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
 
-  ![](images/ocw23_pipeline_integrationtaskx1.png " ")
+  ![](images/ocw23_pipeline_integrationtaskx5.png " ")
 
 18. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
