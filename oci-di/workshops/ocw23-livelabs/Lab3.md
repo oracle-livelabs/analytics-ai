@@ -124,7 +124,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 21. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
-  ![](../../pipelines/images/final-pipeline.png " ")
+  ![](images/ocw23_pipeline_integrationtaskx4.png " ")
 
 22. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
