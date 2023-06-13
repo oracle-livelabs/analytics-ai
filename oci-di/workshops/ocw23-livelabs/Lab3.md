@@ -86,7 +86,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
-    ![](../../pipelines/images/dl-task.png " ")
+    ![](images/ocw23_pipeline_dataloadertask0.png " ")
 
 14. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
@@ -116,7 +116,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
-    ![](../../pipelines/images/new-int-select.png " ")
+    ![](images/ocw23_pipeline_integrationtask0.png " ")
 
 20. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
