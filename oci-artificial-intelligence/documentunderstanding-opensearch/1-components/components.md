@@ -26,6 +26,7 @@ COMPARTMENT_OCID = (SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
 OIC_OCID = (SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
 USER_OCID = (SAMPLE) ocid1.user.oc1..amaaaaaaaa
 AUTH_TOKEN = (SAMPLE)  X1232324_TGH
+OCI_PASSWORD = (SAMPLE) LiveLab--123
 
 Components
 ----------
@@ -38,6 +39,7 @@ OPENSEARCH_USER = opensearch-user
 OPENSEARCH_PWD = (SAMPLE) LiveLab--123
 
 OIC_HOST = (SAMPLE) opensearch-oic-namespace-fr.integration.ocp.oraclecloud.com
+OIC_APPID = (SAMPLE) 668BEAAAA904B7EBBBBBBC5E33943B_APPID
 
 COMPUTE_PUBLIC-IP = (SAMPLE) 123.123.123.123
 AI_VISION_URL = (SAMPLE) https://vision.aiservice.eu-frankfurt-1.oci.oraclecloud.com
@@ -45,7 +47,6 @@ FUNCTION_ENDPOINT = (SAMPLE) https://amaaaaaaaa.eu-frankfurt-1.functions.oci.ora
 APIGW_HOSTNAME = (SAMPLE) amaaaaaaaa.apigateway.eu-frankfurt-1.oci.customer-oci.com
 </copy>
 `````
-
 
 ## Task 1: Create a Compartment
 
@@ -82,7 +83,7 @@ Go the menu
 
 ![Menu Integration](images/opensearch-oic1.png =50%x*)
 
-- Check that you are in the right compartment (oci-starter in this case)
+- Check that you are in the right compartment (*oci-starter* in this case)
 - Click *Create*
 - Name: *oic*
 - Version: *OIC Integration 3*
@@ -120,7 +121,28 @@ Create the Agent Group
 
 ![Create Agent Group](images/opensearch-oic3-agent-group.png)
 
-## Task 4: Run Terraform to create the other components.
+## Task 4: Get the OIC AppID (ClientID)
+
+Go the menu
+- Identity & Security
+- Domains
+
+![Menu Domain](images/opensearch-oic-domain.png)
+
+- Choose *Default (current domain)*
+- On the left, choose *Oracle Cloud Services*
+
+![OIC Domain](images/opensearch-oic_service.png)
+
+- Scroll down until that you see a name like  
+    oic-xxxxxxx-xx  - Integration Service
+- Click on it
+- In the Service details look for *Client ID*
+- Copy the value in your notes *##OIC\_APPID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
+
+![OIC Domain](images/opensearch-oic_appid.png)
+
+## Task 5: Run Terraform to create the other components.
 
 In OCI,
 
@@ -137,22 +159,36 @@ git clone https://github.com/mgueury/oci-searchlab.git
 </copy>
 ````
 - Edit the file oci-searchlab/starter/env.sh
-- Replace the value with your OIC OCID
+- Replace the value with your ##OIC OCID##
+- Replace the value with the password of the OCI account. It will be used to download 
 
 ````
 <copy>
 export TF_VAR_oic_ocid=##OIC_OCID##
+export TF_VAR_oic_appid=##OIC_APPID##
 export TF_VAR_oci_password=##OCI_PASSWORD##
 </copy>
 ````
 
-- Run 2 commands below
+- Run 2 commands below. It will run Terraform to create the rest of the components.
 
 ````
+<copy>
 cd oci-searchlab/starter/
 bin/gen_auth_token.sh
 ./build.sh
+</copy>
 ````
+
+- You can already run the Lab 3, Task 1 and 2. When it is finished. 
+  You will see:
+
+```
+
+
+
+```
+
 
 ## Known issue
 
@@ -164,12 +200,19 @@ oci_core_instance.starter_instance: Creating..
   Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
 ```
 
-Solution:  edit the file starter/terraform/variable.sh
+Solution:  edit the file oci-searchlab/starter/src/terraform/variable.tf
 Replace:
 ```
 OLD: variable instance_shape { default = "VM.Standard.E4.Flex" }
 NEW: variable instance_shape { default = "VM.Standard.E3.Flex" }
 ```
+
+Then rerun
+
+```
+./build.sh
+```
+
 
 ## Acknowledgements
 
