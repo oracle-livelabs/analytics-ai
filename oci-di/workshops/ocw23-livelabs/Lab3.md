@@ -58,13 +58,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 9. A page pops up with the selections for the **Integration Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected.
-    - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop ApplicationNN`.
+    - Select **Design tasks** and select the name **Customers Project**.
     - Under **Integration Task**, check the `Load Customers Lab` task.
     - Click **Select**.
 
-    ![](../../pipelines/images/select-task.png " ")
+    ![](images/ocw23_pipeline_dataloadertask00.png " ")
 
 10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.  *Note*: Be sure to save often during design time!
 
@@ -80,9 +78,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 13. A page pops up with the selections for the **Data Loader Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected.
-    - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop ApplicationNN`.
+    - Select **Design tasks** and your project name **DI_WorkshopNN**.
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
@@ -110,9 +106,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 19. A page pops up with the selections for the **Integration Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected.
-    - The **Workspace** you are currently working in is already selected.
-    - For **Application**, make sure you select the `Workshop ApplicationNN`.
+    - Select **Design tasks** and your project name **DI_WorkshopNN**.
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
