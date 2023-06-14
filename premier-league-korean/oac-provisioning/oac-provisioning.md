@@ -1,4 +1,4 @@
-# Oracle Analytics Cloud 배포
+# Oracle Analytics Cloud 프로비저닝
 
 <!--![Banner](images/banner.png)-->
 
