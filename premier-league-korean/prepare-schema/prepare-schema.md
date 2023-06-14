@@ -1,64 +1,64 @@
-# Load Data into Autonomous Data Warehouse
+# Autonomous Data Warehouse로 데이터 로드
 
 <!--![Banner](images/banner.png)-->
 
 ## Introduction
-In this lab you will load the Premier League data into the Autonomous Data Warehouse. After this lab we will be ready to start analyzing the data.
+이 실습에서는 Premier League 데이터를 Autonomous Data Warehouse에 로드합니다. 이 실습을 완료하면 데이터를 분석할 준비가 됩니다..
 
-We will:
-1. Login in the Database Actions section as the ADMIN user. We will run a script here that a) creates the PL user and b) creates a set of **empty** tables in the PL schema.
-2. Log out and then login again in the Database Actions, now as the new PL user.
-3. Load the data into the tables as the PL user.
+다음을 수행합니다:
+1. 관리자 사용자로 데이터베이스 작업 섹션에 로그인합니다. 여기에서 스크립트를 실행하여 a) PL 사용자를 생성하고 b) PL 스키마에 빈 테이블 세트를 생성합니다.
+2. 로그아웃한 다음 데이터베이스 작업에 PL 사용자로 다시 로그인합니다.
+3. PL 사용자로 데이터를 테이블에 로드합니다.
 
-Estimated Time: 10 minutes
+예상 시간: 10분
 
 ### Objectives
-- Learn how to load data into the data warehouse, so you can analyze it later.
+- 데이터 웨어하우스에 데이터를 로드하는 방법을 배워서 나중에 분석할 수 있습니다.
 
 ### Prerequisites
-To complete this lab, you need to have the following:
-- A provisioned Autonomous Data Warehouse
-- You're logged into your Oracle Cloud Account
+이 실습을 완료하려면 다음이 필요합니다:
+- 프로비저닝된 Autonomous Data Warehouse
+- Oracle Cloud 계정에 로그인되어 있어야 합니다.
 
-## Task 1: Create a New Database User/Schema in Autonomous Data Warehouse
+## Task 1: Autonomous Data Warehouse에서 새 데이터베이스 사용자/스키마 생성
 
-This new user/schema will hold the football data.
+이 새 사용자/스키마는 축구 데이터를 로딩할 것입니다.
 
-1. Go to **Menu** > **Oracle Database** > **Autonomous Data Warehouse**.
+1. 다음으로 이동하세요  **Menu** > **Oracle Database** > **Autonomous Data Warehouse**.
 
    ![ADW Menu](images/adw-menu.png)
 
-2. Click on the **PL** database that you created earlier.
+2. .이전에 생성한 **PL** 데이터베이스를 클릭하세요.
 
    ![ADW Menu](images/open-db.png)
 
-3. Click **Database Actions**.
+3. 클릭하세요  **Database Actions**.
 
    ![ADW Menu](images/open-database-actions.png)
 
-   If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   물어보면 사용자 ADMIN과 안전한 비밀번호로 로그인하세요 (이전에 Autonomous Data Warehouse를 생성할 때 지정한 것입니다).
 
-4. Click the **SQL** tile under **Development** section.
+4. **Development** 섹션에서 **SQL** 타일을 선택하세요.
 
     ![ADW Menu](images/open-sql.png)
 
-5. **Download** [pl-create-user.sql](./files/pl-create-user.sql) Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
+5. [pl-create-user.sql](./files/pl-create-user.sql) 을 **다운로드**하세요. 파일을 로컬 머신에 저장하세요. 파일이 .sql 확장자로 저장되었는지 확인하세요.
 
-6. Open the `pl-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. 
+6. `pl-create-user.sql` 파일을 텍스트 편집기로 열고 모든 내용을 복사하여 데이터베이스 작업 워크시트 영역에 붙여넣으세요.. 
 
     ![ADW Menu](images/copy-paste.png)
 
-7. Click the **run-script** button (**NOT** the Run button). 
+7. **run-script** 버튼을 클릭하세요  (**NOT** Run 버튼이 아닙니다). 
 
-   You will be asked for a password for the new user "PL". The password should have a minimum of 8 characters, one special character and mix of upper and lowercase characters.
+   새 사용자 "PL"의 비밀번호를 요청받습니다. 비밀번호는 8자 이상이어야 하며, 하나의 특수 문자와 대소문자가 혼합되어야 합니다
 
-   Verify the output of the script in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
+    **Script Output** 탭에서 스크립트의 출력을 확인하세요. 출력의 마지막 줄은 스크립트가 성공적으로 실행되었음을 나타내어야 합니다.
 
     ![ADW Menu](images/run-script.png)
 
-## Task 2: Upload the Football Data to Autonomous Data Warehouse
+## Task 2: 축구 데이터를 자율 데이터 웨어하우스로 업로드하세요
 
-1. **Download** the 5 files that contain the data that we'll use in our analysis:
+1. 분석에 사용할 5개의 데이터 파일을 **다운로드** 받으세요:
 
    [event.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/oxJctcE-MEIjVVhjUZMhns-b5ovTAiCIEgJJG2-VxbLCQQjb34JrEiPKYV3XNiYd/n/fruktknlrefu/b/workshop-premier-league/o/event.csv) Shot data with location of shot, result and more.
 
@@ -70,52 +70,52 @@ This new user/schema will hold the football data.
 
    [player\_stats.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xlcockSigxId1FV7DLDV5vVNYl_L-RbYgJxj5NqXa_HaqqOHxZSUyEPjsk6gunf5/n/fruktknlrefu/b/workshop-premier-league/o/player_stats.csv) Precalculated player statistics, including xG.
 
-   Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
+   파일을 로컬컴퓨터에 저장하세요  **파일이 `.csv` 확장자로 저장되었는지 확인하세요**
 
-2. **Important**: At this point, make sure that you **change to the "PL" user**. Note that you created this "PL" user earlier (when you ran the pl-create-user.sql script).
+2. **Important**: 이 시점에서 **"PL" 사용자로 변경** 되었는지 확인하십시오. 이전에 "pl-create-user.sql" 스크립트를 실행할 때 이 "PL" 사용자를 생성한 것을 기억해야 합니다.
 
-   Log out from the Data Actions (currently showing "ADMIN").
+   "Data Actions"에서 로그아웃하세요. (현재 "ADMIN"으로 표시됨)
 
    ![ADW Menu](images/signoutadmin.png)
 
-   Now log in to Data Actions again using the following:
+   다음을 사용하여 다시 "Data Actions"에 로그인하세요:
 
    - Username: PL
-   - Password: Provide the secure password for the PL user (as chosen earlier in Task 1 Step 7).
+   - Password: PL 사용자의 안전한 비밀번호를 입력하세요. 이 비밀번호는 이전에 작업 1 단계 7에서 선택한 비밀번호입니다.
 
-3. Click to the **Data Load** option, under the **Data Tools** section.
+3.  **Data Tools** 영역 아래에 **Data Load** 옵셥을 클릭하세요
 
    ![Open Data Load](images/open-data-load.png)
 
-4. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
+4.  **Load Data** 선택하세요. 첫 번째 질문에는 "Load Data"를 선택하고 두 번째 질문에는 **"Local Files"**를 선택하십시오. 그런 다음 **Next** 을 클릭하십시오.
 
     ![Start Data Load](images/start-data-load.png)
 
-5. Select the files that you downloaded earlier (5 in total).
+5. 이전에 다운로드한 파일들(총 5개)을 선택하세요..
 
     ![Select Files](images/select-files.png)
 
-6. Edit the configuration of **each** of the data sets by changing the load option into "Insert into table". We are doing this because we already created the empty tables earlier, and we want to add the data into those existing tables.
+6. **각 데이터 세트**의 구성을 편집하여 로드 옵션을 "테이블에 삽입"으로 변경하세요. 이 작업을 수행하는 이유는 이전에 이미 빈 테이블을 생성했고, 해당 테이블에 데이터를 추가하고자 하기 때문입니다.
 
-  We are showing the instructions for PLAYER_STATS. **Please make sure that you do this for all data sets.**
+  PLAYER_STATS를 위한 지침을 보여주고 있습니다. **다른 모든 데이터 세트에 대해 동일한 작업을 수행하도록 해주세요.**
 
    ![Select Files](images/edit-player-stats.png)
 
    ![Select Files](images/change-option1.png)
 
-   Press "Close" after you've changed the option for each file.
+   각 파일의 옵션을 변경한 후에 **"Close"**를 누르세요
 
-7. After you have changed the load option of **all** files, click the **Start** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+7. 모든 파일의 로드 옵션을 변경한 후에 **"Start"** 버튼을 클릭하여 프로세스를 시작하고, **Run Data Load Job** 확인 창에서 **Run**을 클릭하세요.
 
     ![Start Load Process](images/load-data.png)
 
-8. This process takes usually takes between 20 seconds or a few minutes. When it's done you should see green ticks next to all data load jobs.
+8. 이 프로세스는 일반적으로 20초에서 몇 분 정도 소요됩니다. 완료되면 모든 데이터 로드 작업 옆에 녹색 표시가 표시됩니다.
 
    ![Load Completed](images/load-completed.png)
 
-   Congratulations! You've successfully loaded the data into Autonomous Data Warehouse.
+   축하합니다! 데이터를 자율 데이터 웨어하우스에 성공적으로 로드했습니다.
 
-   You may now proceed to the next lab.
+   이제 다음 랩을 진행할 수 있습니다.
 
 ## **Acknowledgements**
 
