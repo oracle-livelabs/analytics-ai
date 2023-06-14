@@ -1,56 +1,55 @@
-# Provision Analytics Cloud
+# Oracle Analytics Cloud 배포
 
 <!--![Banner](images/banner.png)-->
 
 ## Introduction
 
-During this lab you will deploy an Oracle Analytics Cloud instance on Oracle Cloud Infrastructure.
+이 실습에서는 Oracle Cloud Infrastructure에 Oracle Analytics Cloud 인스턴스를 배포합니다.
 
-Estimated Time: 15 minutes (provisioning time may vary)
+예상 시간: 15분 (배포 시간은 다를 수 있음)
 
 ### Objectives
-In this lab, you will:
-- Login as a federated user.
-- Create an Oracle Analytics Cloud Instance.
+이 실습에서는 다음을 수행합니다::
+- 사용자 로그인합니다.
+- Oracle Analytics Cloud 인스턴스를 생성합니다.
 
 ## Task 1: Federated User Login
 
-1. Oracle Cloud has two types of users:
+1. Oracle Cloud에는 두 가지 유형의 사용자가 있습니다:
 
-   - **OCI Native users**: represent users like you, or applications that can perform operations on OCI native services.
-   - **OCI Federated Users** with Identity Cloud Service (IDCS). IDCS is an Identity Provider included with Oracle Cloud to manage Identity services beyond basic users, groups and roles capabilities. For example, OAuth2.0, Multi Factor Authentication, etc.
+   - **OCI Native users**: 여러분과 같은 사용자 또는 OCI 기본 서비스에서 작업을 수행할 수 있는 애플리케이션을 나타냅니다.
+   - **OCI Federated Users** IDCS는 Oracle Cloud에 포함된 Identity 공급자로서 기본 사용자, 그룹 및 역할 기능 이상의 Identity 서비스를 관리합니다. 예를 들어 OAuth2.0, 다중 인증 요소 등을 포함합니다.
 
-   > NOTE: Oracle Analytics Cloud (OAC) requires a Federated user.
+   > NOTE: 참고: Oracle Analytics Cloud (OAC)는 Federated user 를 필요로 합니다. 
 
-2. Go to **Profile** on the top-right corner and make sure your user has the name **oracleidentitycloudservice/** appended before your email, like in the picture:
+2. 오른쪽 상단의 프로필로 이동하여 사용자 이름 앞에 **oracleidentitycloudservice/**가 표시되는지 확인하세요(아래 그림 참조).:
 
    ![Federated user](images/oac-profile-federated.png)
 
-3. If you don't you see **oracleidentitycloudservice/** before your email, then you need to Sign out and log in as a federated user, following these steps.
+3. 사용자 이메일 앞에 **oracleidentitycloudservice/**가 표시되지 않는다면 다음 단계를 따라서 로그아웃한 후 Federated user 로 로그인해야 합니다..
 
-4. Go to [cloud.oracle.com](https://cloud.oracle.com), type your **Cloud Account Name** and click **Next**.
+4. cloud.oracle.com로 이동하고 Cloud 계정 이름을 입력한 후 다음을 클릭하세요.
 
    ![Cloud Account Name](images/oac-login-cloud-account-name.png)
 
-5. Login with user and password.
+5. 사용자 이름과 비밀번호로 로그인하세요..
 
    ![User and Password](images/oac-login-user-password.png)
 
-6. At this point, you should have **oracleidentitycloudservice/** before your email on the Profile popup, on the top-right corner.
+6. 이제 프로필 팝업에서 오른쪽 상단에 이메일 앞에 **oracleidentitycloudservice/**가 표시되어야 합니다.
+   Federated user 에 대한 자세한 정보는 User Provisioning for Federated Users를 참조하세요.
 
-   For more information about federated users, see [User Provisioning for Federated Users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
+## Task 2: Oracle Analytics Cloud (OAC) 인스턴스 생성
 
-## Task 2: Create an Oracle Analytics Cloud (OAC) Instance
-
-1. Return to the Home Page and go to the **Menu** > **Analytics & AI** > **Analytics Cloud**.
+1. 홈 페이지로 돌아가 메뉴 > Analytics & AI > Analytics Cloud로 이동하세요.
 
    ![OAC Menu](images/oac-menu.png)
 
-2. Make sure you select the `root` compartment (unless you have permissions and experience selecting a different one) and click **Create Instance**.
+2. 'root' compartment(권한과 다른 compartment를 선택할 수 있는 권한과 경험이 있는 경우)를 선택하고 인스턴스 생성을 클릭하세요..
 
    ![OAC Create Button](images/oac-create-button.png)
 
-3. Fill the web form with the following information and click **Create**:
+3. 다음 정보를 웹 폼에 입력하고 **Create**:
 
    - **Name**: `PLAnalytics`
    - **Description**: `Analytics Instance for PL Workshop`
@@ -66,11 +65,11 @@ In this lab, you will:
 
    ![pic3](images/oac-creating.png)
 
-   > **Note:** Provisioning an Oracle Analytics Cloud instance can take from 10 (most likely) to 40 minutes.
+   > **Note:** Oracle Analytics Cloud 인스턴스를 프로비저닝하는 데는 10분(아마도)에서 40분이 소요될 수 있습니다.
 
-   We will get back to your Oracle Analytics Cloud instance later in the workshop.
+   이후 워크샵에서 Oracle Analytics Cloud 인스턴스 메뉴로 다시 돌아올 것입니다.
 
-   You may now proceed to the next lab.
+   이제 다음 실습으로 진행하실 수 있습니다..
 
 ## **Acknowledgements**
 
