@@ -24,19 +24,19 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](images/oc23_home1.png " ")
+  ![](images/ocw23_home1.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-  ![](images/oc23_home2.png " ")
+  ![](images/ocw23_home2.png " ")
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/oc23_home3.png " ")
+  ![](images/ocw23_home3.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/oc23_home4.png " ")
+  ![](images/ocw23_home4.png " ")
 
 5. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
