@@ -60,8 +60,8 @@ BEGIN
 DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
 table_name => 'json_cust_sales_ext',
 file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/customersales.json',
-column_list => 'doc varchar2(32000)',
-field_list => 'doc char(30000)',
+column_list => 'json_document clob',
+field_list => 'json_document',
 format => json_object('delimiter' value '\n')
 );
 END;
@@ -83,8 +83,8 @@ Join the data to the existing customer data:
 select GENRE_ID,MOVIE_ID,CUSTSALES.CUST_ID,AGE,GENDER,STATE_PROVINCE
 from CUSTOMER_CONTACT, CUSTOMER_EXTENSION,
 (select CUST_ID,GENRE_ID,MOVIE_ID
-FROM JSON_MOVIE_DATA_EXT,
-JSON_TABLE("DOC", '$[*]' COLUMNS
+FROM JSON_CUST_SALES_EXT,
+JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
 "CUST_ID" number path '$.CUST_ID',
 "GENRE_ID" number path '$.GENRE_ID',
 "MOVIE_ID" number path '$.MOVIE_ID')) CUSTSALES
