@@ -26,6 +26,9 @@ We have created a python script for you to use as part of your OCI Data Flow app
 
 Start Cloud Shell
 
+Click on the cloudshell icon in the top left hand corner next to your region information.
+![Find Cloud Shell](./images/cloudshell-icon.png "Cloud Shell icon")
+
 ![Start Cloud Shell](./images/cloudshell-open.png " ")
 
 From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs-df.py

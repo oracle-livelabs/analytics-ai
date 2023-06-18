@@ -47,12 +47,11 @@ Use the following three allow statements to add into the existing policy, and th
 
 ```
 <copy>
-allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
+allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
-allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
+allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
-allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE WITH WORKSPACE OCID'
-}
+allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
 </copy>
 ```
@@ -60,6 +59,8 @@ allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.princip
 Once the workspace has been created (a refresh of the screen might be needed to go from Processing to Active) move onto task 2.
 
 ## Task 2: Create the Data Assets in the workspace
+
+In the top right hand corner navigate to user profile, click, and then click on tenancy. You want to make sure to grab the Tenancy OCI and save it off for use with different connection informations for your data assets.
 
 Navigate back to the Workspace Lakehouse in Data Integration.
 Under Quick Actions, you want to click on **Create Data Asset**
@@ -70,7 +71,7 @@ The first data asset is going to be our ADW database we already created. Fill in
 
 ![Create Data Asset](./images/create_dataasset.png " ")
 
-Continue to fill with Select Database, regions, Tenancy OCID which can be found by clicking on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
+Continue to fill with Select Database, regions, Tenancy OCID that you saved off to the side, or if you need to find it again click on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
 
 ![Create Data Asset](./images/create_dataasset3.png " ")
 
@@ -191,7 +192,7 @@ RECOMMENDED         VARCHAR2(10));
 </copy>
 ```
 
-After the query executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
+After the create table statement executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
 
 Now you can verify that the entity is available as part of the OCI Data Catalog. Navigate to the Oracle Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
 

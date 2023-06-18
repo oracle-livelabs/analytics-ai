@@ -43,6 +43,16 @@
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
         {
+            "title": "Lab 6: Use OCI speech to enable the E-mail notifications",
+            "description": "Learn how to use e-mail notification feature in OCI Speech.",
+            "filename": "../../oci-speech-notifications/oci-speech-notifications.md"
+        },
+        {
+            "title": "Lab 7: Use OCI speech to enable Functions",
+            "description": "Learn how to use Faas feature in OCI Speech.",
+            "filename": "../../oci-speech-faas/oci-speech-faas.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
