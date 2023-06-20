@@ -26,7 +26,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 
   ![](images/ocw23_projectstab.png " ")
 
-4. On the Projects page, click **Create Project**.
+4. On the Projects page, click **Create Project** and in the sub menu select **Create new**.
 
   ![](images/ocw23_projectstab1.png " ")
 
