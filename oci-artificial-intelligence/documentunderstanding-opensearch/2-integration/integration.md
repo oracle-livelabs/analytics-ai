@@ -12,8 +12,9 @@ Estimated time: 20 min
 ### Prerequisites
 
 - It is easier to store the sample files on a laptop. If it is impossible, for ex that you do not have the git command, you can get them from the cloud console. We have downloaded them in the previous lab (Function) in the Cloud Shell. There is an option Download in the Cloud Shell.
+![CloudShell_Download](images/opensearch-cloudshell-download.png)
 
-- To download the sample files, please run this:
+- To download the sample files on your laptop, please run this:
 
 ````
 <copy>
@@ -21,19 +22,26 @@ git clone https://github.com/mgueury/oci-searchlab.git
 </copy>
 ````
 
-The directory contains the Oracle integration Cloud (OIC) package, the Visual Builder application and samples files to parse.
+The directory contains the Oracle integration Cloud (OIC) package, the Visual Builder (VB) application and samples files to parse.
+
+Alternatively you can download the files form the Cloud Shell:
+![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+
+Enter the file name: oci-searchlab/oic/OPENSEARCH_OIC.par and click Download button.
+
+
 
 ## Task 1: Import the integration
 
 We will upload the integration.
+Go to the tab with Integration open
 Go to the Oracle Integration home page:
 Go the menu
 - Developer Services
 - Application Integration
-- Choose *opensearch-oic*
+- Choose *oic*
 - Click *Service Console* to open a new browser tab with OIC 
 - On the left menu, choose *Design*
-- Then *Integration*
 - Then *Package*
 - Click *Import*
 - Browse: choose *OPENSEARCH_OIC.par*
@@ -46,16 +54,107 @@ Go the menu
 
 ## Task 2: Configure the connections
 
-Lets configure the connections. You will need to get back value from your notes:
+Lets configure the connections. 
+We can start with the public connections first because these don't depend on components provisioning being completed in the previous lab (Terraform script).
 
+Click to edit the connection *RestObjectStorage*
 
-### A. StreamInputBucket
+![Package details](images/opensearch-oic-package-import2.png)
 
-For this you need the following from the previous lab (provisioning the components):
+### A. RestObjectStorage
+
+First, we need to get the Object Storage rest API. *##OS\_URL##*
+
+You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/20160918/](https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/20160918/)
+
+Fill the Connection details:
+Then fill the Connection details:
+- Connection Type = *REST API Base URL*
+- Connection URL = *##OS\_URL##*
+    - ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com
+- Security policy = *OCI Service Invocation*
+- Access Type = *Public gateway*
+- *Save / Test / Save* until 100%
+
+### B. RestLanguageAI
+
+First, we need to get the AI Language rest API. *##AI\_LANG\_URL##*
+
+You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/](https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/)
+
+Fill the Connection details:
+Then fill the Connection details:
+- Connection Type = *REST API Base URL*
+- Connection URL = *##AI\_LANG\_URL##*
+    - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
+- Security policy = *OCI Service Invocation*
+- Access Type = *Public gateway*
+- *Save / Test / Save* until 100%
+
+### C. Resttrigger
+
+There is no connection details to enter
+- *Save / Test / Save* until 100%
+
+### D. RestDocumentUnderstandingAI
+
+First, we need to get the AI Document Understanding rest API. *##AI\_DOC\_URL##*
+
+You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/](https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/)
+
+Fill the Connection details:
+Then fill the Connection details:
+- Connection Type = *REST API Base URL*
+- Connection URL = *##AI\_LANG\_URL##*
+    - ex: https://document.aiservice.eu-frankfurt-1.oci.oraclecloud.com
+- Security policy = *OCI Service Invocation*
+- Access Type = *Public gateway*
+- *Save / Test / Save* until 100%
+
+### E. RestSpeechAI
+
+First, we need to get the AI Speech rest API. *##AI\_SPEECH\_URL##*
+
+You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/speech/20220101/](https://docs.oracle.com/en-us/iaas/api/#/en/speech/20220101/)
+
+Fill the Connection details:
+Then fill the Connection details:
+- Connection Type = *REST API Base URL*
+- Connection URL = *##AI\_LANG\_URL##*
+    - ex: https://speech.aiservice.eu-frankfurt-1.oci.oraclecloud.com
+- Security policy = *OCI Service Invocation*
+- Access Type = *Public gateway*
+- *Save / Test / Save* until 100%
+
+### F. RestVisionAI
+
+First, we need to get the AI Vision rest API. *##AI\_VISION\_URL##*
+
+You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/)
+
+Fill the Connection details:
+Then fill the Connection details:
+- Connection Type = *REST API Base URL*
+- Connection URL = *##AI\_VISION\_URL##*
+    - ex: https://vision.aiservice.eu-frankfurt-1.oci.oraclecloud.com
+- Security policy = *OCI Service Invocation*
+- Access Type = *Public gateway*
+- *Save / Test / Save* until 100%
+
+**NOTE: Before we can proceed with configuring the remaining three connections we need to wait for the script build.sh (Terraform) from the previous lab (provisioning the components) to finish (approx 30 minutes).**
+
+### G. StreamInputBucket
+You will need to get values from your environment:
+In OCI terminal run: oci-searchlab/starter/src/search_env.sh
+In the output of this script look for the following values:
 - ##STREAM_BOOSTRAPSERVER##, 
 - ##STREAM_USERNAME##, 
 - ##AUTH_TOKEN## and 
-- *oss_store.jks* 
+
+Download the file *oss_store.jks* from OCI Cloud Shell. 
+![CloudShell_Download2](images/opensearch-cloudshell-download3.png)
+
+Enter the file name: oci-searchlab/starter/oss_store.jks and click Download button. 
 
 Click to edit the connection *StreamInputBucket*
 
@@ -73,7 +172,7 @@ Use this info:
 
 ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
-### B. RestFunction
+### H. RestFunction
 
 Fill the Connection details:
 - Connection Type = *REST API Base URL*
@@ -85,7 +184,7 @@ Fill the Connection details:
 
 ![Connection RestFunction](images/opensearch-connection-restfunction.png)
 
-### C. RestOpenSearch
+### I. RestOpenSearch
 
     
 Fill the Connection details:
@@ -99,87 +198,7 @@ Fill the Connection details:
 
 ![Connect RestOpenSearch](images/opensearch-connection-restopensearch.png)
 
-### D. RestObjectStorage
-
-First, we need to get the Object Storage rest API. *##OS\_URL##*
-
-You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/20160918/](https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/20160918/)
-
-Fill the Connection details:
-Then fill the Connection details:
-- Connection Type = *REST API Base URL*
-- Connection URL = *##OS\_URL##*
-    - ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com
-- Security policy = *OCI Service Invocation*
-- Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
-### E. RestLanguageAI
-
-First, we need to get the AI Language rest API. *##AI\_LANG\_URL##*
-
-You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/](https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/)
-
-Fill the Connection details:
-Then fill the Connection details:
-- Connection Type = *REST API Base URL*
-- Connection URL = *##AI\_LANG\_URL##*
-    - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-- Security policy = *OCI Service Invocation*
-- Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
-### F. Resttrigger
-
-There is no connection details to enter
-- *Save / Test / Save* until 100%
-
-### G. RestDocumentUnderstandingAI
-
-First, we need to get the AI Document Understanding rest API. *##AI\_DOC\_URL##*
-
-You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/](https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/)
-
-Fill the Connection details:
-Then fill the Connection details:
-- Connection Type = *REST API Base URL*
-- Connection URL = *##AI\_LANG\_URL##*
-    - ex: https://document.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-- Security policy = *OCI Service Invocation*
-- Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
-### H. RestSpeechAI
-
-First, we need to get the AI Speech rest API. *##AI\_SPEECH\_URL##*
-
-You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/speech/20220101/](https://docs.oracle.com/en-us/iaas/api/#/en/speech/20220101/)
-
-Fill the Connection details:
-Then fill the Connection details:
-- Connection Type = *REST API Base URL*
-- Connection URL = *##AI\_LANG\_URL##*
-    - ex: https://speech.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-- Security policy = *OCI Service Invocation*
-- Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
-### I. RestVisionAI
-
-First, we need to get the AI Vision rest API. *##AI\_VISION\_URL##*
-
-You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/)
-
-Fill the Connection details:
-Then fill the Connection details:
-- Connection Type = *REST API Base URL*
-- Connection URL = *##AI\_VISION\_URL##*
-    - ex: https://vision.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-- Security policy = *OCI Service Invocation*
-- Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
-### F. Activate the integration
+### J. Activate the integration
 
 All connections should be valid. Let's activate the integrations:
 Click on Activation 
@@ -197,7 +216,12 @@ All integrations should be up and running.
 
 - In OCI console go back to the Object Storage bucket.
 - On your desktop go to the directory that you downloaded from GITHUB
-- Upload the files from the sample_files subdirectory
+- Alternatively you can download the files form the Cloud Shell:
+![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
+
+Enter the file name: oci-searchlab/sample_files/shakespeare_macbeth.tif and click Download button.
+
+Upload the sample files to OCI Object Storage bucket: 
 
 ![Test OIC](images/opensearch-oic-test.png)
 
