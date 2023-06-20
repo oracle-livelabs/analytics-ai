@@ -4,156 +4,155 @@
 
 ## Introduction
 
-As described in the introduction, our goal is to create an xG model. This model should be able to estimate how likely it is that a shot will result in a goal. 
+인트로에서 소개한대로, 우리의 목표는 xG 모델을 만드는 것입니다. 이 모델은 슛이 골로 이어질 가능성이 얼마나 있는지를 추정할 수 있어야 합니다.
 
-We will now do a visual data exploration of the shot data. We do this to find out which of its data points are actually *relevant* for a shot becoming a goal. In other words, what information do we have on shots that is of predictive value? Keep in mind that, if we were to train a machine learning model with irrelevant data points, this is likely to result in a reduced accuracy of the model. In other words, we want to make a selection of the right attributes we have on shots to train our model with and ignore the rest.
+이제 슛 데이터의 시각적인 데이터 탐색을 수행하겠습니다. 이는 슛이 골로 이어지기 위해 실제로 관련성 있는 데이터 포인트가 어떤 것인지 알아내기 위한 것입니다. 다시 말해, 슛에 대해 예측할 수 있는 정보를 가지는 요소(속성)는 무엇인가요? 불필요한 데이터 포인트로 기계 학습 모델을 훈련시키면 모델의 정확도가 감소할 가능성이 높습니다. 다른 말로, 우리는 모델을 훈련시키기 위해 슛에 대한 올바른 속성을 선택하고 나머지는 무시하려고 합니다.
 
-Estimated Time: 30 minutes
+예상 소요 시간: 30분
 
 ### Objectives
-- Identify what data points we have on shots are relevant to predicting the chance of a goal.
-- Learn how to use Oracle Analytics Cloud to Explore Data.
+- 슛의 데이터 포인트 중 골의 가능성을 예측하는 데 관련이 있는 것을 무엇인지 확인합니다.
+- Oracle Analytics Cloud를 사용하여 데이터를 탐색하는 방법을 배웁니다.
 
 ### Prerequisites
 - Oracle Analytics Cloud
 - Autonomous Data Warehouse
-- You've completed the previous lab that loads the data sources into the Autonomous Data Warehouse
+- 이전 랩에서 자료를 Autonomous Data Warehouse에 로드 완료
 
-## Task 1: Create the Connection from Oracle Analytics Cloud to Autonomous Database
+## Task 1: Oracle Analytics Cloud에서 Autonomous Database로의 연결 생성
 
-**Oracle Analytics Cloud** will be the tool which you use to analyze your data. **Autonomous Data Warehouse** is used to store and organize the data, and to provide the Machine Learning engine.
-Therefore we need to create a connection from Oracle Analytics Cloud to Autonomous Data Warehouse first. To be able to create this connection, OAC will need to use a so-called "wallet" file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible. The "wallet" file can be obtained from the database menus.
+**Oracle Analytics Cloud** 는 데이터를 분석하는 데 사용하는 도구입니다. **Autonomous Data Warehouse** 는 데이터를 저장하고 구성하며 머신 러닝 엔진을 제공하는 데 사용됩니다.
+따라서 먼저 Oracle Analytics Cloud에서 자율 데이터 웨어하우스로의 연결을 생성해야 합니다. 이 연결을 생성하기 위해 OAC는 이를 "wallet" 파일이라고 하는 특정 파일을 사용해야 합니다. "wallet" 파일(클라이언트 자격 증명)은 데이터베이스 사용자 ID와 비밀번호와 함께 가장 안전한 방법으로 자율 데이터베이스에 액세스할 수 있게 해줍니다. "wallet" 파일은 데이터베이스 메뉴에서 얻을 수 있습니다
 
-1. In Oracle Cloud, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. Oracle Cloud에서 상단 왼쪽의 **Navigation Menu** 를 클릭하여,  **Oracle Database**로 이동한 다음, **Autonomous Data Warehouse** 를 선택합니다.
 
 	![Oracle Console SignIn](images/adw-menu.png)
 
-    You can see all the **ADW** instances that you have **created**.
-    **Select** the instance `PL` that we created before.
+    만들어진 **ADW** 인스턴스를 모두 볼 수 있습니다. 이전에 만든 'PL' 인스턴스를 **선택**해주세요.
 
     ![ADW databases list](images/select-adw2.png)
 
-2. We will download the wallet file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible.
+2. 다음은 월렛 파일을 다운로드하는 과정입니다. 월렛 파일은 데이터베이스 사용자 ID와 비밀번호와 함께 자율 데이터베이스에 가장 안전한 방식으로 액세스할 수 있도록 합니다.
 
-   > **Note:** Store wallet files in a secure location. Share wallet files only with authorized users.
+   > **Note:** 월렛 파일을 안전한 위치에 저장하고, 월렛 파일을 권한이 있는 사용자만 공유해야 합니다.
 
-3. On the ADW detail page,click **DB Connection**.
+3. ADW detail 페이지에서, **DB Connection** 클릭.
 
    ![AWD DB Connection](images/adw-db-connection.png)
 
-4. Click **Download Wallet** on Database Connection side-screen. Leave  the default value `Instance Wallet` as the **Wallet Type**. Finally, click **Download Wallet**.
+4. Database Connection 스크린에서, 클릭 **Download Wallet** . **Wallet Type**은 **Instance Wallet**으로 기본값인 채로 두고, **Download Wallet**를 클릭하세요.
 
    ![AWD Download Wallet](images/adw-download-wallet.png)
 
-5. Choose a secure password for the wallet, confirm the password by typing it again and click **Download**.
+5. 월렛에 안전한 암호를 선택하고, 암호를 다시 입력하여 확인한 후에 **Download**를 클릭하세요.
 
       - Password: Type the secure password
       - Confirm Password: Confirm the secure password
 
    ![AWD Wallet Password](images/adw-wallet-password.png)
 
-6. Click **Close**. A ZIP file will start downloading.
+6. **Close** 클릭.  ZIP 파일 하나가 다운로드 됩니다.
 
-7. Use the Wallet in Oracle Analytics Cloud
+7. Oracle Analytics Cloud 에서 Wallet 사용하기  
 
-    **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
+    **Oracle Cloud Infrastructure console** 화면으로 돌아가서, 왼쪽에 있는 메뉴 아이콘을 클릭 하세요.
 
-    Navigate to **Analytics & AI** and then **Analytics Cloud**.
+    **Analytics & AI** 메뉴로 들어가서 **Analytics Cloud**를 선택하세요
 
     ![OAC Web Console](images/analytics-oac.png)
 
-8. **Open** the Cloud Analytics **URL** associated with your instance (we created this earlier) by using the dots menu button on the right-hand side of your instance information and selecting **Analytics Home Page**.
+8. 인스턴스 정보 우측에 있는 점 메뉴 버튼을 사용하여 이전에 생성한 인스턴스와 관련된 **Cloud Analytics URL**을 **열고** **Analytics 홈페이지**를 선택하세요
 
-   Make sure your Oracle Analytics Cloud instance is in status `Active` (not `Creating`) before you go to the **Analytics Home Page**. 
+   **Analytics Home Page** 로 들어가기 전에, Oracle Analytics Cloud 인스턴스가 상태가 `Active` 확인해주세요. (`Creating`이 아닌)
 
    ![Cloud Analytics URL](images/select-oac-instance.png)
 
-   The **Oracle Analytics** page will open in a new browser **window/tab**.
+  **Oracle Analytics** 페이지가 새로운 창에서 열립니다.
 
-9. On the top right-hand side of the screen, click **Create**, and then **Connection**.
+9. 화면 오른쪽 상단에 있는**Create**을 클릭한 후 **Connection**을 선택하세요.
 
     ![Connection Creation](images/oac-create-connection.png)
 
-10. Choose **Oracle Autonomous Data Warehouse**.
+10. **Oracle Autonomous Data Warehouse**를 선택해세요.
 
     ![Connection Creation - ADW](images/select-adw.png)
 
-    Use the following information to configure your **connection**.
+    다음 정보를 사용하여 **connection**을 구성합니다.
 
     > **Connection Name**: `PL`
     >
-    > **Client Credentials**: Use the Browse button to upload the **wallet zip > file** that you downloaded. It will automatically extract the `cwallet.sso` file from this zip bundle.
+    > **Client Credentials**: 다운로드한 **Wallet ZIP 파일**을 업로드하려면 브라우즈 버튼을 사용하세요. 이 파일은 ZIP 에서 `cwallet.sso` 파일을 자동으로 추출합니다.
     >
     > **Username**: `PL`
     >
-    > **Password**: Provide the secure password for the PL user (You chose this in "Load Data into Autonomous Data Warehouse" step 6).
+    > **Password**: "Autonomous Data Warehouse로 데이터 로드" 단계 6에서 선택한 PL 사용자의 안전한 비밀번호를 제공하세요.
     >
-    > **Service Name**: Keep the default, the name of your database followed by the `_high` suffix.
+    > **Service Name**: `_high` 접미사가 붙은 기본값인 데이터베이스 이름을 선택하세요  
     >
 
     ![Connection Creation](images/oac-adw-connection-details-pl.png)
 
-11. Select **Save** to save your new connection **information**.
+11. **SAVE**을 선택하여 새로운 연결 **정보**를 저장합니다.
 
-## Task 2: Add the EVENT Dataset to Oracle Analytics Cloud
+## Task 2: Oracle Analytics Cloud에 EVENT 데이터 세트 추가
 
-The EVENT dataset contains information on thousands of shots, of the full season 2017/2018 and a handful of matches of 2021/2022.
+EVENT 데이터 세트에는 2017/2018 전체 시즌과 2021/2022의 소수 경기에 대한 수천 개의 샷에 대한 정보가 포함되어 있습니다.
 
-1. On the top right, choose Create and then Dataset.
+1. 오른쪽 상단에서 생성(Create)을 선택한 다음 데이터 세트를 선택합니다.
 
    ![Create dataset](images/create-dataset.png)
 
-2. Select the `PL` connection.
+2. `PL` 연결을 선택합니다. 
 
    ![Select PL connection](images/select-pl.png)
 
-3. Open the `PL` schema and **double click** on the `EVENT` table.
+3. PL스키마를 열고 Event 테이블 을 **두 번 클릭**합니다
 
    ![Add dataset](images/click-dataset.png)
 
-   Each record in this data set represents one single shot.
+   이 데이터 세트의 각 레코드는 각각의 단일 슛을 나타냅니다.
 
-   You see how Oracle Analytics is profiling the columns in the data set. It creates histograms that give a high level overview of the distribution of the values in the column. These histograms help you to quickly understand what data you have at your disposal as well as gauge the quality of the data (e.g. missing values).
+   Oracle Analytics가 데이터 세트의 열을 프로파일링하는 방법을 확인합니다. 열의 값 분포에 대한 높은 수준의 개요를 제공하는 히스토그램을 생성합니다. 이 히스토그램은 데이터의 품질(예: 누락된 값)을 측정할 뿐만 아니라 원하는 데이터가 무엇인지 빠르게 이해하는 데 도움이 됩니다.
 
-4. Inspect the `MATCH_DATE` column
+4. `MATCH_DATE` 컬럼 확인
 
    ![Select match date](images/match-date.png)
 
-   Notice how the dataset contains mostly matches from 2017/2018. As mentioned in the introduction, we'll use the full season of 2017/2018 for training our model, and then we will apply this to a handful of matches of the 2021/2022 season.
+   데이터 세트에 2017/2018의 대부분의 일치 항목이 포함되어 있음을 확인하십시오. 소개에서 언급했듯이 2017/2018 전체 시즌을 모델 교육에 사용한 다음 이를 2021/2022 시즌의 몇 경기에 적용할 것입니다.
 
-5. Scroll over to the `X_REL_M` and `Y_REL_M` columns. These hold the coordinates from where the player was at the moment he took the shot. These values are measured from the center of the goal line (in meters). More about this later.
+5. `X_REL_M` 및 `Y_REL_M` 열로 스크롤 합니다, 이 부분은 플레이어가 샷을 한 순간의 좌표를 표기합니다. 이 값은 골라인 중앙에서 측정됩니다(미터 단위). 이에 부분에 대해서는 나중에 자세히 더 설명하겠습니다.
 
 	 ![Look at the coordinates](images/coordinates.png)
 
-6. Scroll over to the `HEAD`, `RIGHT_FOOTED`, `OTHER_BODY_PART`, et cetera columns. Notice how all of these provide additional information about the shot. This allows us to quickly evaluate the distribution of these variables. For example, we see immediately that the majority of shots are not headers (therefore footers). 
+6. `HEAD`, `RIGHT_FOOTED`, `OTHER_BODY_PART`, 등 열로 스크롤합니다 . 이들 모두가 샷에 대한 추가 정보를 제공하는 방법에 주목하십시오. 이를 통해 이러한 변수의 분포를 빠르게 평가할 수 있습니다. 예를 들어, 대부분의 샷이 머리글(따라서 바닥글)이 아님을 즉시 알 수 있습니다.
 
 	 ![Additional shot information](images/additional-info-attributes.png)
 
-7. Scroll over to the `IS_GOAL` attribute. We see immediately that, non surprisingly, the vast majority of shots do not result in a goal. 
+7.  `IS_GOAL` 속성 으로 스크롤합니다. 놀랍게도 대다수의 슛이 골로 이어지지 않는다는 것을 즉시 알 수 있습니다.
 
 	 ![Look at attribute IS_GOAL](images/is-goal.png)
 
-8. Configure the details of the dataset
+8. 데이터 세트의 세부 정보 구성
 
-   At the bottom of the screen, click on `EVENT` to configure the details of the dataset.
+   화면 하단에서 를 클릭하여 `EVENT` 데이터 세트의 세부 정보를 구성합니다.
 
    ![Details dataset](images/click-dataset2.png)
 
-9. Pivot the presentation so it becomes easier to modify the column configuration.
+9. 열 구성을 더 쉽게 수정할 수 있도록 프레젠테이션을 피봇팅합니다. 
 
   ![Pivot the dataset](images/change-representation.png)
 
-10. Modify the `DISTANCE_BUCKET` column. This attribute contains the distance rounded to the nearest 2 meters point. As you can see, it only contains even values. This will allow us to group shots with similar distances when we visualize them later on.
+10.  `DISTANCE_BUCKET` 열을 수정합니다. 이 속성에는 가장 가까운 2미터 지점으로 반올림된 거리가 포함됩니다. 보시다시피 짝수 값만 포함합니다. 이렇게 하면 나중에 시각화할 때 비슷한 거리의 샷을 그룹화할 수 있습니다.
 
-   Right now this attribute is classified as a `MEASURE` (visible by the # symbol). However, we will not use this attribute to calculate, therefore we will convert this into an `ATTRIBUTE`.
+    현재 이 컬럼은 `MEASURE`(# 기호로 표시)로 분류됩니다. 그러나 이 컬럼을 사용하여 계산하지 않으므로 이를 `ATTRIBUTE` 로 변환합니다. 
 
-   Click the header of the `DISTANCE_BUCKET` column, then click the value next to **Treat As** and change it to **Attribute**.
+   `DISTANCE_BUCKET` 컬럼의 헤더를 클릭한 다음, **Treat As** 옆에 값을 클릭하고 이 것을 **Attribute** 로 변경합니다.
 
    ![Change to attribute](images/change-to-attribute.png)
 
-   The symbol next to the column header changes to `A`.
+   컬럼의 머리글 옆의 기호가 `A` 로 변경됩니다 .
 
-11. Similarly, modify the `ID`, `X_REL_M_TEAM` and `Y_REL_M_TEAM` columns to be Attributes.
+11. 유사하게,  `ID`, `X_REL_M_TEAM` 와 `Y_REL_M_TEAM` 컬럼도 **Attributes** 로 변경합니다.
 
    ![Changes to attribute](images/id-attribute.png)
 
@@ -168,13 +167,13 @@ The EVENT dataset contains information on thousands of shots, of the full season
 
    ![Change aggregation to maximum](images/change-aggr-score.png)
 -->
-12. Save the data set
+12. 데이터 세트 저장
 
-    Click the **Save** icon and name the data set `Events`.
+    **Save** 아이콘을 클릭하고, 이름을 `Events` 로 저장
 
     ![Set name and save data set](images/save-dataset.png)
 
-12. Finally, go back to the homepage by clicking on the top left icon.
+12. 마지막으로 왼쪽 상단 아이콘을 클릭하여 홈페이지로 돌아갑니다.
 
    ![Go to the homepage](images/to-menu.png)
 
@@ -228,195 +227,193 @@ Let's have a first look at the data that we have available for our data challeng
 	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you will be able to generate (predict) the scores for the races of 2021 yourself!
 -->
 
-## Task 3: Understanding the Result of Shots
+## Task 3: 슛 결과의 이해
 
-  As explained in the introduction of this lab, we will perform a visual data exploration. Our objective of this is to understand the shot data better. In particular, we want to identify which data points to include in our model, and which ones to ignore. In addition, we would like to identify possibly *new* data points that can be extracted from the original dataset by enhancing it somehow. 
+  이 랩 소개에서 설명한 것처럼 시각적 데이터 탐색을 수행합니다. 우리의 목표는 샷 데이터를 더 잘 이해하는 것입니다. 특히 모델에 포함할 데이터 포인트와 무시할 데이터 포인트를 식별하려고 합니다. 또한 원본 데이터 세트를 어떻게든 향상시켜 추출할 수 있는 **새로운 데이터 포인트**를 식별하고자 합니다.
 
-1. On the homepage, click "Data", then click the "Events" dataset to create a new visualization workbook.
+1. 홈페이지에서 "데이터"를 클릭한 다음 "이벤트" 데이터 세트를 클릭하여 새 시각화 통합 문서를 만듭니다.
 
 	  ![Click dataset](images/click-dataset3.png)
 
-2. First of all, we want to understand better how many shots we have available and how many of those result in a goal. 
+2. 우선, 우리는 우리가 사용할 수 있는 슛 수와 그 중 골로 이어지는 슛 수를 더 잘 이해하고 싶습니다.
 
-   Create a new visualization by selecting `EVENT_COUNT` (the number of shots) and `RESULT` (the outcome of the shot). Use Control + click to select multiple fields, then drag the fields over to the canvas.
+    `EVENT_COUNT`(샷 수) 및 `RESULT` (샷 결과)를 선택하여 새 시각화를 만듭니다 . Control + 클릭을 사용하여 여러 필드를 선택한 다음 필드를 캔버스로 드래그합니다.
 
 	 ![Create a visualization](images/create-vis-1.png)
 
-    This results in the following visualization.
+    그 결과 다음과 같은 시각화가 생성됩니다.
 
 	 ![Resulting visualization](images/first-vis.png)
 
-3. For our model we'll want to include only in-game shots, and therefore exclude penalties. Drag the PENALTY field to the filter region, and select "N". 
+3. 우리 모델의 경우 게임 내 샷만 포함하고 따라서 페널티를 제외하려고 합니다. PENALTY 필드를 필터 영역으로 끌고 "N"을 선택합니다.
 
 	 ![Add a filter with PENALTY](images/add-filter1.png)
 
-4. We also want to exclude own goals. They are part of the dataset, but not relevant for what we want to do. Drag the OWN_GOAL field to the filter region, and select "N".
+4. 우리는 또한 자책골을 제외하고 싶습니다. 그것들은 데이터 세트의 일부이지만 우리가 원하는 것과는 관련이 없습니다. OWN_GOAL 필드를 필터 영역으로 드래그하고 "N"을 선택합니다.
 
 	 ![Drag more OWN_GOAL to filter](images/add-filter2.png)
 
-5. Inspect the result, notice how there are over 9000 shots that aren't penalties or own goals. Over 900 of those result in a goal. Note that the numbers you see in your environment may vary slightly from the screenshot as we are updating the workshop material.
+5. 결과를 살펴보고 페널티킥이나 자책골이 아닌 9000개 이상의 슛이 있는지 확인하십시오. 그 중 900개 이상이 골로 이어집니다. 워크숍 자료를 업데이트하는 중이므로 환경에 표시되는 숫자가 스크린샷과 약간 다를 수 있습니다
 
 	 ![Inspect the result](images/first-vis2.png)
 
-6. Let's change the visualization to understand the ratios between these numbers. Click on the visualization type dropdown and select Pie.
+6. 이 숫자 사이의 비율을 이해하기 위해 시각화를 변경해 보겠습니다. 시각화 유형 드롭다운을 클릭하고 파이차트를 선택합니다.
 
 	 ![Change the visualization](images/change-vis1-type.png)
 
-    Drag the RESULT field to the Color region.
+    RESULT 필드를 색상 영역으로 끕니다.
 
 	 ![Drag the RESULT field](images/drag-result.png)
 
-7. Inspect the visualization. You can hover over the pieces of the pie to see the details.
+7. 시각화를 검사합니다. 파이 차트 위로 마우스를 가져가면 세부 정보를 볼 수 있습니다.
 
 	 ![Inspect the visualization](images/first-vis3.png)
 
-   Our conclusion is that almost 40% of the shots either miss the goal or hit the woodwork. 
-   Just over 60% of the shots are on target. The majority of those however, are saved. On average about 10% of shots result in a goal.
+   우리의 결론은 거의 40%의 슛이 골대를 놓치거나 목공에 맞았다는 것입니다. 
+   슛의 60% 이상이 목표물에 맞았습니다. 그러나 대부분은 저장됩니다. 평균적으로 약 10%의 슛이 골로 이어집니다.
 
-## Task 4: Investigate how The Distance Influences the Chance of Scoring a Shot
+## Task 4: 거리가 득점 기회에 미치는 영향 조사
 
-We are on the lookout for data points that are of value to make a prediction on whether a shot will result in a goal. Our intuition tells us that *distance* should have an influence on whether a shot results in a goal. Let's find more about this. 
+우리는 슛이 골로 이어질지 여부를 예측하기 위해 가치 있는 데이터 포인트를 찾고 있습니다. 우리의 직감은 *distance* 거리가 슛이 골로 이어지는지 여부에 영향을 미쳐야 한다는 것을 알고 있습니다. 이것에 대해 더 알아봅시다.
 
-1. Select the fields `DISTANCE_BUCKET` (the distance of the shot grouped in buckets of 2 meters) and `EVENT_COUNT` (the number of shots) by using Control + Right Click. Then, Right-Click any of the two fields and select "Create Best Visualization".
+1. Control + 오른쪽 클릭을 사용하여 필드 `DISTANCE_BUCKET`(2미터의 버킷으로 그룹화된 샷 거리) 및 `EVENT_COUNT` (샷 수)를 선택합니다. 그런 다음 두 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "Create Best Visualization" 를 선택합니다.
 
-   This should create a Bar chart. If not, change the visualization type.
+   이렇게 하면 막 대형 차트가 생성됩니다. 그렇지 않은 경우 시각화 유형을 변경하십시오.
 
    ![Look at distance](images/distance-vis.png)
 
-   This shows the *number of shots* organized by distance.
+   이것은 거리별로 *정리된 샷 수*를 보여줍니다.
 
-   Notice how a large amount of shots are taken from between 8 and 30 meters away from the goal. Interestingly, there’s a dip in the number of shots around 22 meters. 
+   골대에서 8~30미터 떨어진 곳에서 얼마나 많은 양의 슛을 날리는지 주목하세요. 흥미롭게도 22미터 부근에서 슛 횟수가 줄었습니다.
    
-   Notice also that there are hardly any shots from within +/- 5 meters from the goal. That makes sense, it’s very difficult for players to actually get a chance at a shot at such close distance to the goal.
+   또한 골대에서 +/- 5미터 이내에서는 슛이 거의 없다는 점에 유의하십시오. 선수들이 골대와 가까운 거리에서 실제로 슛 기회를 잡는 것은 매우 어렵습니다.
 
-2. How many of these shots result in a goal? Let's visualize this as well. Drag the `GOAL_CNT` field to the "Values (Y-Axis)" section of the chart configuration. Make sure that the correct chart is selected first.
+2. 이 슛 중 몇 개가 골로 이어지나요? 이것도 시각화해 봅시다. `GOAL_CNT` 필드를 차트 구성의  "Values (Y-Axis)" 섹션으로 드래그합니다 . 올바른 차트가 먼저 선택되었는지 확인하십시오.
 
    ![Drag GOAL_CNT](images/drag-goal-cnt.png)
    
-   The result looks as follows:
+   결과는 다음과 같습니다:
    
    ![Resulting visualization](images/distance-vis2.png)
 
-   We can conclude that the majority of the goals come from shots from less than +/- 18 meters from the goal. 
+   우리는 대부분의 골이 골대로부터 +/- 18미터 미만의 슛에서 나온다는 결론을 내릴 수 있습니다.
    
-   Also notice that although it’s hard for a player to get into a position to fire a shot from lower than +/- 6 meters, the *percentage* of goals in those ranges is very high. The number of goals is almost equal to the number of shots at a distance of less than 4 meters.
-   On the other hand, we see a fair amount of shots from over 18 meters away, but the number of goals is relatively low, in other words, the percentage of shots that result in a score at larger distances is low. 
+   또한 플레이어가 +/- 6미터 미만에서 슛을 쏠 수 있는 위치에 도달하기는 어렵지만 해당 범위의 *골 비율*이 매우 높다는 점에 유의하십시오. 골 수는 4m 미만의 거리에서 슛 수와 거의 같습니다. 반면에 우리는 18미터가 넘는 거리에서 상당한 양의 슛을 볼 수 있지만 골 수는 상대적으로 적습니다. 즉, 더 먼 거리에서 득점으로 이어지는 슛의 비율은 낮습니다.
    
-3. Our intuition tells us that all of this makes sense, but how do we put a number on this phenomenon? Let’s quantify this relationship between distance and goal percentage by introducing a new "Score Percentage" variable.
+3. 우리의 직감은 이 모든 것이 그럴듯하게 맞다고 말하지만, 이 현상에 어떻게 정량적으로 숫자를 매길까요? 새로운 "점수 백분율"(Score Percentage) 변수를 도입하여 거리와 목표 백분율 사이의 관계를 정량화해 보겠습니다.
 
-   Right-click on the "My Calculations" section (below the list of attributes) and choose "Add Calculation". 
+   "My Calculations"을 마우스 오른쪽 버튼으로 클릭하고 (속성 목록 아래)) "Add Calculation"을 선택합니다. 
 
-   Then construct the formula `GOAL_CNT`/`EVENT_COUNT`. The easiest way to do this is by dragging the fields from the attribute list (on the left) to the formula canvas. Then name the new attribute "Score Percentage" and press "Save".
+   `GOAL_CNT`/`EVENT_COUNT` 공식을 만듭니다. 가장 쉬운 방법은 속성 목록(왼쪽)에서 수식 캔버스로 필드를 드래그하는 것입니다. 그런 다음 새 속성의 이름을 "Score Percentage"로 지정하고 "저장"을 누릅니다.
 
    ![Construct the formula](images/calc-score-perc.png)
    
-4. Drag the newly created attribute to the section of Values (Y-Axis) just below the `EVENT_COUNT` attribute.
+4. 새로 생성된 속성을  `EVENT_COUNT` 속성 바로 아래의 값(Y축) 섹션으로 드래그합니다.
 
    ![Drag the calculation](images/drag-score3.png)
 
-5. However, we can hardly see the Score Percentage yet. This is because it's value is in a range between 0 and 1. To zoom in on this, we decide to give this attribute it's own Y-axis. 
-   
-   Right-click on the "Score Percentage" field and choose "Y2 Axis". 
+5. 그러나 아직 Score Percentage를 거의 볼 수 없습니다. 값이 0과 1 사이의 범위에 있기 때문입니다. 이를 확대하기 위해 이 속성에 자체 Y축"Y2 Axis"을 지정하기로 결정했습니다.
+
+   "Score Percentage" 필드를 마우스 오른쪽 버튼으로 클릭하고 "Y2 Axis"를 선택합니다.
 
    ![Right click Score Percentage](images/y2-axis2.png)
 
-   Next, again right-click on the "Score Percentage" and change the visualization type to "Line".
+   그런 다음 다시 "Score Percentage"를 마우스 오른쪽 버튼으로 클릭하고 시각화 유형을 "Line"으로 변경합니다.
 
    ![Right click Score Percentage and chance visualization type](images/set-to-line.png)
 
-6. The result should look like this.
+6. 결과는 다음과 같아야 합니다.
 
    ![Resulting visualization](images/result-vis2.png)
    
-   Notice how the percentage (0.0 - 1.0) is shown along the right Y axis. 
+   오른쪽 Y축을 따라 백분율(0.0 - 1.0)이 어떻게 표시되는지 확인합니다.
    
-   We now see the negative exponential relationship that exists between the distance to the goal and the score percentage: At 0 meters from the goal (practically on the goal line), the percentage of shots resulting in a goal is 100%. The score percentage quickly drops to around 25% for shots taken from about 6 meters away and than slowly drops off more, until about 2% (1 shot in 50 is scored) when the distance is over 28 meters.
+   이제 골까지의 거리와 점수 비율 사이에 존재하는 음의 지수 관계를 볼 수 있습니다. 골에서 0미터(실제로 골라인)에서 골로 이어지는 슛의 비율은 100%입니다. 점수 비율은 약 6m 떨어진 곳에서 촬영한 샷의 경우 약 25%로 빠르게 떨어지고, 거리가 28m를 초과하면 약 2%(50발 중 1발이 득점됨)까지 천천히 더 떨어집니다.
 
-7. Interestingly, we see two spikes in the score percentage around 36 and 58 meters. What's going on there? Let's investigate.
+7. 흥미롭게도 우리는 36미터와 58미터 부근에서 점수 퍼센티지에서 두 개의 스파이크를 볼 수 있습니다. 어떤 현상이 있는지 분석해 봅시다. 
 
-   Select `GOAL_CNT` (number of goals) and `EVENT_COUNT` (number of shots) by using Control+click and dragging them to the Tooltip section of the chart.
-
+   Control + 클릭을 사용하여 `GOAL_CNT` (number of goals) 와 `EVENT_COUNT` (number of shots) 를 선택하여 차트의 도구 설명 섹션으로 드래그합니다.
    ![Add tooltip](images/add-tooltip.png)
    
-8. Now hover over the "suspicious" shots around 58 meters. 
+8. 이제 58미터 정도에 위치한 "의심스러운" 슛 위로 마우스를 가져갑니다.
 
    ![Hover over suspicious shot](images/hover.png)
 
-   Notice how the tooltip shows that there were only 2 shots taken from that distance. It just happened so that one of those shots resulted in a goal!
+   도구 설명에 해당 거리에서 슛팅이 2개뿐임을 표시하는 것을 확인하세요. 그 슛 중 하나가 골로 이어졌습니다!
 
-   In any case, we can conclude that distance is an indicator that is likely to have value as it comes to predicting the chance that a shot will result in a goal.
+   어쨌든 우리는 **거리**가 슛이 골로 이어질 가능성을 예측하는 데 가치가 있을 가능성이 있는 지표라는 결론을 내릴 수 있습니다.
 
 ## Task 5: Investigate how Headers/Footers Influence the Chance of Scoring a Shot
 
-We have a lot more information on shots than just the distance, let's see how valuable those data points are as it comes to predicting goals.
+우리는 거리보다 슛에 대해 더 많은 정보를 가지고 있습니다. 이러한 데이터 포인트가 목표 예측에 얼마나 중요한지 살펴 봅시다.
 
-1. We suspect that whether a shot comes from a header or footer has an influence on the chance of scoring. Let’s visualize this as well.
+1. 우리는 슛이 헤더(헤딩 사용)에서 나오는지 풋터(발 사용)에서 나오는지 여부가 득점 가능성에 영향을 미친다고 생각합니다. 이것도 시각화해 봅시다.
 
-   Create a chart using the fields `HEAD`, `GOAL_CNT`, `EVENT_COUNT` and the calculated field `Score Percentage`. Use the Table visualization type. Remember that you can select multiple fields by using Control+click.
+   `HEAD`, `GOAL_CNT`, `EVENT_COUNT`, `Score Percentage`필드 (컬럼) 를 사용하여 테이블 시각화 유형을 만듭니다. Control+클릭을 사용하여 여러 필드를 선택할 수 있습니다. 
 
    ![Investigate header](images/investigate-header2.png)
 
-   Footers and headers both result in a goal in about 10% of cases. So does that mean that the fact that a shot is taken with the foot or the head is not important for our prediction? Should we ignore it for our model? Not necessarily, because it may be that there is value in it when header/footer is combined with other variables. 
+   풋터 및 헤더 모두 약 10%의 사례에서 골로 이어집니다. 그렇다면 발이나 머리로 슛을 쏜다는 사실이 우리의 예측에 중요하지 않다는 의미입니까? 모델에 대해 무시해야 합니까? 반드시 그렇지는 않습니다. 이것이 다른 변수와 결합될 때 의미가 있을 수 있기 때문입니다.
 
-3. Let's put the influence of header/footer in the context of the distance of the shot. 
+3. 슛 거리의 맥락에서 풋터/헤더의 영향을 살펴보겠습니다.
 
-   Click the chart we previously created with the distance metric. 
+   이전에 거리 메트릭으로 만든 차트를 클릭합니다.
    
-   Remove the `GOAL_CNT` metric from the chart.
+   차트에서 `GOAL_CNT` 를 제거합니다 .
 
    ![Remnove GOAL_CNT](images/remove-goal-cnt.png)
 
-   Drag the `HEAD` field to the Color section of the chart configuration.
+   `HEAD` 필드를 드레그하여 차트 구성의 컬러 섹션으로 끌어다 놓습니다.
 
    ![Drag HEAD](images/drag-header.png)
    
-4. Inspect the results.
+4. 결과를 확인 합니다. 
 
    ![Inspect the results](images/result-header.png)
 
-   Not surprisingly, headers are usually taken very close to the goal.
+   당연하게도 헤딩은 대개 골대에 매우 근접하게 이루어집니다.
 
-   Regarding the goal percentage lines, the line named "N, Score Percentage" means footer score percentage and "Y, Score Percentage" means header score percentage. 
-   
-   At most distances, the scoring percentage for headers is lower than that for footers. For example, given a shot is taken from for 8 meters, the changes of scoring a goal are higher when the player can take the ball with the foot.
+   목표 퍼센티지 라인에서 "N, Score Percentage" 라인은 푸터 스코어 퍼센티지를 의미하고 "Y, Score Percentage"는 헤더 스코어 퍼센티지를 의미합니다.
 
-   We can conclude that the HEAD flag is likely an indicator to predict goal chance. Therefore we want to include it when training our model.
+   대부분의 거리에서 머리글의 점수 백분율은 바닥글의 점수 백분율보다 낮습니다. 예를 들어 8m 거리에서 슛을 했다면 발로 공을 잡을 수 있을 때 득점 변화가 더 큽니다.
 
-5. Save our visualization by clicking on the Save icon and name it "Shots Data Exploration".
+   따라서 HEAD 플래그가 골 찬스를 예측하는 지표일 가능성이 높다고 결론을 내릴 수 있습니다. 따라서 모델을 훈련할 때 포함하고 싶습니다.
+
+5. 저장 아이콘을 클릭하여 시각화를 저장하고 이름을 "Shots Data Exploration"으로 지정합니다.
 
    ![Save exploration](images/save-exploration.png)
 
 ## Task 6 (Bonus): Investigate how Corners and Other Factors Influence the Chance of Scoring a Shot
 
-1. Similarly to headers/footers, we have a lot more data points that we can validate. Let's take one more example: Whether a shot is an indirect result of a corner.
+1. 포터 /헤더와 마찬가지로 검증할 수 있는 데이터 포인트가 훨씬 더 많습니다. 예를 하나 더 들어보겠습니다. 슛이 코너킥의 간접적인 결과인지 여부입니다.
 
-   In the two charts that you see here, interchange the `HEAD` attribute with the `FROM_CORNER` attribute. You can do this by simply dragging the `FROM_CORNER` attribute on top of the `HEAD` attribute in both of the chart configurations.
+   여기에 표시되는 두 차트에서 `HEAD` 을 `FROM_CORNER` 특성으로 교환합니다 FROM_CORNER. 두 차트 구성 모두에서 `FROM_CORNER`  속성을 `HEAD` 속성 위로 드래그하면 됩니다 
 
-2. The result should look like this.
+2. 결과는 다음과 같아야 합니다.
 
    ![Corner visualization result](images/corner-result.png)
 
-   Generally speaking, the score percentage of shots that are the (indirect) result of corners is a bit lower than shots that aren’t (9% versus 10%). Maybe this is because a lot of players gather in the same area when there’s a corner, making it more difficult to score?
+   일반적으로 코너킥의 (간접적인) 결과인 샷의 점수 비율은 그렇지 않은 샷보다 약간 낮습니다(9% 대 10%). 코너킥이 있을 때 많은 선수들이 같은 지역에 모여서 득점하기가 더 어려워지기 때문일까요?
 
-   We see this pattern across all distances: the score percentage when the shot is the result of a Corner is lower than for shots that have another origin. 
+   우리는 모든 거리에서 이 패턴을 볼 수 있습니다. 슛이 코너킥의 결과일 때 점수 비율은 다른 원점이 있는 슛보다 낮습니다.
 
-   What is the take away here? Whenever we find that a variable (in this case the corner "flag") leads to a different pattern in the thing we're trying to predict (in this case the scoring percentage), it shows that it may be an influencer. Therefore it’s a likely candidate to include in our model to predict scoring percentage.
+   여기에서 시사점은, 변수(이 경우 코너킥 "플래그")가 우리가 예측하려는 항목(이 경우 *점수 백분율*)에서 다른 패턴으로 이어지는 것을 발견할 때마다 변수가 영향 요인일 수 있음을 보여줍니다. 따라서 점수 비율을 예측하기 위해 모델에 포함할 가능성이 있는 후보입니다.
 
-   So yes, we should also include the `FROM_CORNER` variable when training our model.
+   그래서 우리는 `FROM_CORNER` 변수를 우리의 모델 훈련에 포함 시켜야 합니다.
 
-3. Now it's up to you to try out the other variables, and see how they are related to the scoring percentage. 
+3. 이제 다른 변수를 시험해보고 점수 백분율과 어떤 관련이 있는지 확인하는 것은 귀하의 몫입니다.
 
-   We suggest you take a look at the following attributes: `FREE_KICK` (whether the shot was a freekick), `SET_PIECE` (whether the shot was the indirect result of a sequence that was started by a free kick), and `FAST_BREAK` (whether the shot was the result of a counter).
+   다음 속성을 살펴보는 것이 좋습니다. `FREE_KICK` (슛이 프리킥으로 부터 시작 되었는지 여부), `SET_PIECE` (슛이 프리킥의 간접적 결과인지 여부),  `FAST_BREAK` (상대편에데 공을 뺏은 뒤 역습에 의한 것인지 여부).
 
-4. Press the left-arrow on the top left to go back to the main menu. Save the workbook if necessary.
+4. 왼쪽 상단의 왼쪽 화살표를 눌러 메인 메뉴로 돌아갑니다. 필요한 경우 통합 문서를 저장합니다.
 
    ![Back to menu](images/back-to-menu.png)
 
-## Task 7: Conclusion
+## Task 7: 결론
 
-In our Exploratory Data Analysis we tried to identify the factors of a shot that are of value to predict whether a goal will be scored from it. Using various visualization techniques, we identified a number of variables that are good candidates for the machine learning model.
+탐색적 데이터 분석에서 우리는 득점 여부를 예측하는 데 가치가 있는 샷의 요소를 식별하려고 했습니다. 다양한 시각화 기술을 사용하여 기계 학습 모델에 적합한 여러 변수를 식별했습니다.
 
-You may now proceed to the next lab.
+이제 다음 실습을 진행할 수 있습니다.
 
 ## **Acknowledgements**
 
