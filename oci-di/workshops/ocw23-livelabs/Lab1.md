@@ -24,19 +24,19 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 
 3. On your workspace home page, click **Open tab** (plus icon) in the tab bar and then select **Projects**.
 
-   ![](../../integration-tasks/images/click-projects.png " ")
+  ![](images/ocw23_projectstab.png " ")
 
 4. On the Projects page, click **Create Project**.
 
-   ![](../../integration-tasks/images/create-project.png " ")
+  ![](images/ocw23_projectstab1.png " ")
 
 5. On the Create Project page, enter `DI_WorkshopNN` (replace NN with your user number ie. DI_Workshop01) for **Name** and an optional **Description**, and then click **Create**.
 
-   ![](../../integration-tasks/images/create-project-page.png " ")
+  ![](images/ocw23_projectstab2.png " ")
 
-6. You are now in the **Project Details** page for `DI_WorkshopNN` project.
+6. You are now in the **Project Details** page for `DI_WorkshopNN` project. You can create dataflows, pipelines and tasks from the project, we will create a data loader task from the home page on the next step.
 
-   ![](../../integration-tasks/images/di-workshop-project.png " ")
+  ![](images/ocw23_projectstab3.png " ")
 
 
 ## Task 2: Create a Data Loader task
