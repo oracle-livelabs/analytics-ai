@@ -343,7 +343,7 @@ Let's have a first look at the data that we have available for our data challeng
 
    어쨌든 우리는 **거리**가 슛이 골로 이어질 가능성을 예측하는 데 가치가 있을 가능성이 있는 지표라는 결론을 내릴 수 있습니다.
 
-## Task 5: Investigate how Headers/Footers Influence the Chance of Scoring a Shot
+## Task 5: 헤딩인지의 여부가 골로 이어질 확율에 영향을 주는지 확인하기
 
 우리는 거리보다 슛에 대해 더 많은 정보를 가지고 있습니다. 이러한 데이터 포인트가 목표 예측에 얼마나 중요한지 살펴 봅시다.
 
@@ -383,7 +383,7 @@ Let's have a first look at the data that we have available for our data challeng
 
    ![Save exploration](images/save-exploration.png)
 
-## Task 6 (Bonus): Investigate how Corners and Other Factors Influence the Chance of Scoring a Shot
+## Task 6 (Bonus): 코너 킥과 다른 요소들이 골로 이어질 확율에 영향을 주는지 확인하기
 
 1. 포터 /헤더와 마찬가지로 검증할 수 있는 데이터 포인트가 훨씬 더 많습니다. 예를 하나 더 들어보겠습니다. 슛이 코너킥의 간접적인 결과인지 여부입니다.
 
