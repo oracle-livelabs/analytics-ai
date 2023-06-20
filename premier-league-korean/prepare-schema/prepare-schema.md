@@ -70,7 +70,7 @@
 
    [player\_stats.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xlcockSigxId1FV7DLDV5vVNYl_L-RbYgJxj5NqXa_HaqqOHxZSUyEPjsk6gunf5/n/fruktknlrefu/b/workshop-premier-league/o/player_stats.csv) 미리 계산된 선수 통계, 포함하여 xG를 포함한 목록입니다.
 
-   파일을 로컬컴퓨터에 저장하세요  **파일이 `.csv` 확장자로 저장되었는지 확인하세요**
+   파일을 로컬 컴퓨터에 저장하세요,  **파일이 `.csv` 확장자로 되었는지 확인하세요**
 
 2. **Important**: 이 시점에서 **"PL" 사용자로 변경** 되었는지 확인하십시오. 이전에 "pl-create-user.sql" 스크립트를 실행할 때 이 "PL" 사용자를 생성한 것을 기억해야 합니다.
 
