@@ -22,11 +22,13 @@ The default secured port is 9001, unless it was changed during stack creation.
 * [Access Oracle Essbase](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/access-oracle-essbase.html#GUID-9B07C1B6-D7D0-4F2D-87A4-A14F8CF8B8C6)
 * [Understand Your Access Permissions in Essbase](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/understand-your-access-permissions-essbase.html#GUID-406C17E5-6020-4812-A3D7-98A13FB2ED8A)
 
-## Task 1: Access the Essbase web interface and enter your login credentials
+## Task 1: Access the Essbase web interface
 
 1. Obtain the URL for the Essbase web interface from your service administrator.
 
-2. Enter your login credentials.
+2. Open a browser window and enter the URL for the Essbase web interface.
+
+3. Enter your login credentials.
 
 ## Acknowledgements
 
