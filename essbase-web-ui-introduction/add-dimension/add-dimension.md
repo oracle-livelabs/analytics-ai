@@ -158,6 +158,8 @@ This lab assumes you have:
 
 Next, we’ll load data to the Product dimension.
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 * [Create New Dimension Build Rule](https://docs.oracle.com/en/database/other-databases/essbase/21/essdm/create-new-dimension-build-rule.html)

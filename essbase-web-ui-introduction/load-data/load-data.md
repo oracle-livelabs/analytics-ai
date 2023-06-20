@@ -85,6 +85,8 @@ This lab assumes you have:
 
     ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze-data-in-500.png)
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 * [Create New Data Load Rule](https://docs.oracle.com/en/database/other-databases/essbase/21/essdm/create-new-data-load-rule.html)
