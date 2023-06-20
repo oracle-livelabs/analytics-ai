@@ -1,4 +1,4 @@
-# Compare Outlines
+# Compare outlines
 
 ## Introduction
 
