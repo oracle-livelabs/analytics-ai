@@ -33,7 +33,7 @@ This lab assumes you have:
 
 2. In the **Import** dialog box, click **Catalog**.
 
-3. In the **Select Files from Catalog** dialog box, navigate to gallery &lt; Applications &lt; Demo Samples &lt; Block Storage, click **Sample\_Basic.xlsx** and click **Select**.
+3. In the **Select Files from Catalog** dialog box, navigate to **gallery** &gt; **Applications** &gt; **Demo Samples** &gt; **Block Storage**, click **Sample\_Basic.xlsx** and click **Select**.
 
     ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
 
