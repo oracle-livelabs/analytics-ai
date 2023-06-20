@@ -23,13 +23,13 @@ This lab assumes you have:
 
 ## Task 1: Create a data load rule file
 
-1. Go to Sample Basic cube inspector > **Scripts** and create a new data load rule.
+1. Go to Sample Basic cube inspector &gt; **Scripts** and create a new data load rule.
 
 2. For the **Rule Name**, use **Data500**.
 
 3. For **Source Type**, select **File**.
 
-4. Navigate to the **load-sales-cogs.txt** data load file. The file is in the **Catalog** under **All Files** > **shared** > **load-sales-cogs.txt**.
+4. Navigate to the **load-sales-cogs.txt** data load file. The file is in the **Catalog** under **All Files** &gt; **shared** &gt; **load-sales-cogs.txt**.
 
 5. Change **Data Load Record** number to 1 because row 0 is the header row in the data file.
 
@@ -51,7 +51,7 @@ This lab assumes you have:
 
 ## Task 2: Run the data load job
 
-1. On the **Jobs** page, select **New Job** > **Load Data**.
+1. On the **Jobs** page, select **New Job** &gt; **Load Data**.
 
 2. Select the **Application** and **Database**.
 
