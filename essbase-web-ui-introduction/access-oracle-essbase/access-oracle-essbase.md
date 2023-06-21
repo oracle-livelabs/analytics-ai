@@ -1,5 +1,7 @@
 # Access Oracle Essbase
 
+## Introduction
+
 This workshop assumes you have access to an Essbase Release 21.5 instance that is deployed and ready to use.
 
 The labs in this workshop will work whether you have an Essbase stack deployment, or an independent deployment.
@@ -16,9 +18,6 @@ Get the Essbase web interface URL for the Essbase instance you are using from yo
 ```
 
 The default secured port is 9001, unless it was changed during stack creation.
-
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Access the Essbase web interface
 
