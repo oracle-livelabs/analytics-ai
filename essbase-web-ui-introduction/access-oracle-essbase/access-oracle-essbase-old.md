@@ -17,9 +17,6 @@ Get the Essbase web interface URL for the Essbase instance you are using from yo
 
 The default secured port is 9001, unless it was changed during stack creation.
 
-
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Access the Essbase web interface
 
 1. Obtain the URL for the Essbase web interface from your service administrator.
