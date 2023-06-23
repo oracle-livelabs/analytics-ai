@@ -11,7 +11,7 @@ Estimated time: 20 min
 
 ### Prerequisites
 
-- It is easier to store the sample files on a laptop. If it is impossible, for ex that you do not have the git command, you can get them from the cloud console. We have downloaded them in the previous lab (Function) in the Cloud Shell. There is an option Download in the Cloud Shell.
+- It is easier to store the sample files on a laptop. If it is impossible, for ex that you do not have the git command, you can get them from the cloud console. We have downloaded them in the previous lab (Install the Components) in the Cloud Shell using the _git clone_ command. There is an option Download in the Cloud Shell.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
 
 - To download the sample files on your laptop, please run this:
@@ -59,7 +59,7 @@ We can start with the public connections first because these don't depend on com
 
 Click to edit the connection *RestObjectStorage*
 
-![Package details](images/opensearch-oic-package-import2.png)
+![Package details](images/opensearch-oic-package-import1.png)
 
 ### A. RestObjectStorage
 
@@ -74,7 +74,8 @@ Then fill the Connection details:
     - ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ### B. RestLanguageAI
 
@@ -89,12 +90,14 @@ Then fill the Connection details:
     - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
-
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
+  
 ### C. Resttrigger
 
 There is no connection details to enter
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ### D. RestDocumentUnderstandingAI
 
@@ -109,7 +112,8 @@ Then fill the Connection details:
     - ex: https://document.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ### E. RestSpeechAI
 
@@ -124,7 +128,8 @@ Then fill the Connection details:
     - ex: https://speech.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ### F. RestVisionAI
 
@@ -139,7 +144,8 @@ Then fill the Connection details:
     - ex: https://vision.aiservice.eu-frankfurt-1.oci.oraclecloud.com
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 **NOTE: Before we can proceed with configuring the remaining three connections we need to wait for the script build.sh (Terraform) from the previous lab (provisioning the components) to finish (approx 30 minutes).**
 
@@ -168,7 +174,8 @@ Use this info:
   - TrustStore password = *changeit* 
   - Access Type = *Connectivity agent*
   - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
-  - *Save / Test / Save* until 100%
+  - *Test / Save / Save* until 100%
+  - Go back to the list of connections
 
 ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
@@ -180,7 +187,8 @@ Fill the Connection details:
     - ex: https://xxxx.eu-frankfurt-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-frankfurt-1.aaaaaaabbbbb
 - Security policy = *OCI Service Invocation*
 - Access Type = *Public gateway*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ![Connection RestFunction](images/opensearch-connection-restfunction.png)
 
@@ -194,7 +202,8 @@ Fill the Connection details:
 - Security policy: *No Security Policy*
 - Access Type = *Connectivity agent*
 - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
-- *Save / Test / Save* until 100%
+- *Test / Save / Save* until 100%
+- Go back to the list of connections
 
 ![Connect RestOpenSearch](images/opensearch-connection-restopensearch.png)
 
