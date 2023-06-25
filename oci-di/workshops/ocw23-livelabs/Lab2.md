@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Learn how to create **Data Flows** along with **Integration tasks** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
+Learn how to create **Data Flows** along with an **Integration task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
 
 **Estimated Time**: 20 minutes
 
 ### Objectives
 * Create a Data Flow.
-* Create Integration tasks
+* Create Integration task.
 
 ## Task 1: Create a Data Flow
 
@@ -291,9 +291,9 @@ This Data Flow will load data from **multiple source files** containing Employee
 
   ![](../../integration-tasks/images/save-close-button.png " ")
 
-## Task 5: Create Integration Tasks
+## Task 5: Create Integration Task
 
-**Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create Integration tasks for the two Data Flows you created in the previous steps.
+**Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create an Integration task for the Data Flow you created in the previous steps.
 
 1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 
