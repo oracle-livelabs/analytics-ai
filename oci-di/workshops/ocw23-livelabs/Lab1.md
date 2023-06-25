@@ -153,6 +153,5 @@ b. RENAME transformation.
 
 ## Acknowledgements
 
-* **Author** - Theodora Cristea
-* **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, August 2021
+* **Contributors** -  Theodora Cristea, Priyesh Lakar
+* **Last Updated By/Date** - David Allan, June 2023

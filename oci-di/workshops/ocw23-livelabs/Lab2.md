@@ -348,6 +348,5 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 ## Acknowledgements
 
-* **Author** - Theodora Cristea
-* **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, August 2021
+* **Contributors** -  David Allan, Theodora Cristea
+* **Last Updated By/Date** - David Allan, June 2023

@@ -179,6 +179,5 @@ In this step, you will now do a **manual on-demand run** of your pipeline task. 
 
 ## Acknowledgements
 
-* **Author** - Theodora Cristea
-* **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Contributors** -  Theodora Cristea, David Allan
+* **Last Updated By/Date** - David Allan, June 2023

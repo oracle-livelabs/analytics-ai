@@ -206,6 +206,5 @@ In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time res
 
 ## Acknowledgements
 
-* **Author** - Theodora Cristea
-* **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Contributors** -  David Allan, Theodora Cristea
+* **Last Updated By/Date** - David Allan, June 2023
