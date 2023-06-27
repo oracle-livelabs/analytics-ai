@@ -1,11 +1,11 @@
 {
   "workshoptitle": "Oracle RedBull Pit Strategy Hands-on Lab",
-  "help": "livelabs-help-db_us@oracle.com",
+  "help": "livelabs-help-analytics_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../../pitstrategy/intro/intro.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/intro/intro.md",
       "type": "dbcs"
     },
     {
@@ -16,37 +16,37 @@
     {
       "title": "Lab 1: Infrastructure",
       "description": "Infrastructure",
-      "filename": "../../../pitstrategy/infra/infra.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/infra/infra.md",
       "type": "dbcs"
     },
     {
       "title": "Lab 2: Data Extraction",
       "description": "Data Extraction",
-      "filename": "../../../pitstrategy/dataextraction/dataextraction.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/dataextraction/dataextraction.md",
       "type": "dbcs"
     },
     {
       "title": "Lab 3: Data Exploration",
       "description": "Data Exploration",
-      "filename": "../../../pitstrategy/dataexploration/dataexploration.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/dataexploration/dataexploration.md",
       "type": "dbcs"
     },
     {
       "title": "Lab 4: Data Merging",
       "description": "Data Merging",
-      "filename": "../../../pitstrategy/datamerging/datamerging.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/datamerging/datamerging.md",
       "type": "dbcs"
     },
     {
       "title": "Lab 5: Model Training",
       "description": "Model Training",
-      "filename": "../../../pitstrategy/modeltraining/modeltraining.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/modeltraining/modeltraining.md",
       "type": "dbcs"
     },
     {
       "title": "Lab 6: Model Deployment",
       "description": "Model Deployment",
-      "filename": "../../../pitstrategy/modeldeployment/modeldeployment.md",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/modeldeployment/modeldeployment.md",
       "type": "dbcs"
     },
     {
