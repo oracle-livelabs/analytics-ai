@@ -22,8 +22,11 @@ The engine you will use to label your data is OCI Data Labeling, which is a serv
 
 ### Live Lab Steps Overview
 
+**Total Estimated Workshop Time**: *67-88 minutes*
+
 **Lab 1**
-*Estimated Time*: 45-60 minutes
+\
+*\[45-60 minutes\]*
 
 * Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab.
 * Create an Object Storage Bucket.
@@ -32,13 +35,12 @@ The engine you will use to label your data is OCI Data Labeling, which is a serv
 * Bulk-label the images that were loaded into Object Storage using a provided script that takes a labeling scheme as input. In this lab, the labeling scheme will be based on the names of the folders containing the training images (e.g. images in the *Cell* folder will be labeled with *Cell*, and so on)
 
 **Lab 2**
-*Estimated Time*: 22-28 minutes
+\
+*\[22-28 minutes\]*
 
 * Create a Vision Project, which is a logical container for your Vision models.
 * Custom-train a Vision model using the labeled records in the Data Labeling dataset.
 * Upload test data via the web console and see the model inference in action.
-
-*Estimated Workshop Time*: 67-88 minutes
 
 ### About the data
 
@@ -62,7 +64,7 @@ In this workshop, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * User is either a tenancy administrator, or has access to a tenancy administrator for the *Policy Setup* step.
-    * Note: If you are not a tenancy administrator, begin with Task 1 after the tenancy administrator has assigned permissions in **Policy Setup**, for each Lab
+    Note: If you are not a tenancy administrator, begin with **Task 1** after the tenancy administrator has assigned permissions in **Policy Setup**, for each Lab
 * Lab steps assume usage of home region.
 * Familiarity with a command-line interface (CLI) text editor is recommended, e.g. vi, nano, emacs
 * Some familiarity with OCI-CLI is desirable, but not required

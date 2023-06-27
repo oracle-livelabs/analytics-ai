@@ -3,11 +3,11 @@
 ## Introduction
 In this lab, you will use the labeled dataset created in [Lab 1](../dls-bulk-label/dls-bulk-label.md) to train a custom image classification model. The image classification model will classify the images as either cell, stripe, or debris within a certain confidence.
 
-*Estimated Time*: 20-25 minutes
+**Estimated Time**: *20-25 minutes*
 
 ### Objectives
 
-In this lab, you will:
+The sections in this lab are:
 
 * **Task 1**: Create a Vision Project, which is a logical container for your Vision models.
 * **Task 2**: Custom-train a Vision model using the labeled records in the Data Labeling dataset.
@@ -17,10 +17,10 @@ In this lab, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * User is either a tenancy administrator, or has access to a tenancy administrator for the *Policy Setup* step.
-    * Note: If you are not a tenancy administrator, begin with Task 1 after the tenancy administrator has assigned permissions in **Policy Setup**.
+    Note: If you are not a tenancy administrator, begin with Task 1 after the tenancy administrator has assigned permissions in **Policy Setup**.
 * Lab steps assume usage of home region.
 
-## **Task 1:** Create a Vision Project.
+## **Task 1:** Create a Vision Project
 *\[2-3 minutes\]*
 
 1. From the OCI services menu, click *Vision* under *AI Services*.
@@ -121,21 +121,22 @@ In this lab, you will:
 
 Congratulations on completing this lab!
 
-You have successfully achieved the following (new achievements in **bold**):
+You have successfully achieved the following:
 
 * Created Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab.
 * Created an Object Storage Bucket.
 * Downloaded biomedical training data using Cloud Shell, and bulk-upload the biomedical training data to the Object Storage bucket.
 * Created a Data Labeling dataset, which imports the training images from Object Storage as records.
 * Bulk-labeled the images that were loaded into Object Storage using a provided script that takes a labeling scheme as input. In this lab, the labeling scheme will be based on the names of the folders containing the training images (e.g. images in the *Cell* folder will be labeled with *Cell*, and so on)
-* **Create a Vision Project, which is a logical container for your Vision models.**
-* **Custom-train a Vision model using the labeled records in the Data Labeling dataset.**
-* **Upload test data via the web console and see the model inference in action.**
+**New Achievements**:
+* Created a Vision Project, which is a logical container for your Vision models.
+* Custom-trained a Vision model using the labeled records in the Data Labeling dataset.
+* Uploaded test data via the web console and see the model inference in action.
 
 ## What's next?
 
-* Read about [Children's National Medical Center (CNMC) uses Vision and Data Labeling to help cure children's cancer, improving efficiency 30-50%](https://blogs.oracle.com/cloud-infrastructure/post/cmri-uses-oracle-ai-to-help-cure-childrens-cancer-improves-efficiency-30-50-percent)
-* Read about [Children's Medical Research Institute (CMRI) cuts costs by 25% on OCI](https://www.oracle.com/customers/cmri/)
+* Read about how [Children's National Medical Center (CNMC) uses Vision and Data Labeling to help cure children's cancer, improving efficiency 30-50%](https://blogs.oracle.com/cloud-infrastructure/post/cmri-uses-oracle-ai-to-help-cure-childrens-cancer-improves-efficiency-30-50-percent)
+* Read about how [Children's Medical Research Institute (CMRI) cuts costs by 25% on OCI](https://www.oracle.com/customers/cmri/)
 * Read about [Vision](https://www.oracle.com/artificial-intelligence/vision/)
 * Read about [Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/)
 * Read about [more AI Services](https://www.oracle.com/artificial-intelligence/ai-services/)

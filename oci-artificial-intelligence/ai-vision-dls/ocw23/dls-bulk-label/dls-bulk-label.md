@@ -7,11 +7,11 @@ Participants will download a .zip file, bulk-upload the images to object storage
 
 You will use the labeled dataset you create in this lab to custom-train a Vision model in [Lab 2](../custom-model/custom-model.md).
 
-*Estimated Time*: 45-60 minutes
+**Estimated Time**: *45-60 minutes*
 
 ### Objectives
 
-In this lab, you will:
+The sections in this lab are:
 
 * **Policy Setup**: Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab.
 * **Task 1**: Create an Object Storage Bucket.
@@ -23,7 +23,7 @@ In this lab, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * User is either a tenancy administrator, or has access to a tenancy administrator for the **Policy Setup** step.
-    * Note: If you are not a tenancy administrator, begin with **Task 1** after the tenancy administrator has assigned permissions in **Policy Setup**.
+    Note: If you are not a tenancy administrator, begin with **Task 1** after the tenancy administrator has assigned permissions in **Policy Setup**.
 * Lab steps assume usage of home region.
 * Familiarity with a command-line interface (CLI) text editor is recommended, e.g. vi, nano, emacs
 * Some familiarity with OCI-CLI is desirable, but not required
