@@ -37,6 +37,9 @@ Then let's import the project from the Github repository that you downloaded bef
 
 ##Task 2: Edit the connections
 
+From the Visual Applications list open the imported application by clicking on the application name
+![Visual Builder Import](images/opensearch-vb-applications.png)
+
 Let's edit the connection to connect to our OpenSearch server.
 
 ### Connection opensearch
@@ -47,6 +50,11 @@ Go to the imported application.
 - Then *Edit icon* 
 
 ![Connection OpenSearch](images/opensearch-vb-connection-opensearch.png)
+
+You will need to get values from your environment:
+In OCI terminal run: oci-searchlab/starter/src/search_env.sh
+In the output of this script look for the following values:
+*##APIGW_HOSTNAME##*
 
 - Instance URL: *https://##APIGW_HOSTNAME##*
   Ex: https://xxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com
