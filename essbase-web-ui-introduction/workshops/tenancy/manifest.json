@@ -13,28 +13,28 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Access Oracle Essbase",
+            "title": "Lab 1: Access Oracle Essbase",
             "description": "Log in to Essbase as a power user or service administrator.",
             "filename": "../../access-oracle-essbase/access-oracle-essbase.md"
 
         },
         {
-            "title": "Lab 1: Create Application",
+            "title": "Lab 2: Create Application",
             "description": "Import an application using a sample application workbook.",
             "filename": "../../create-application/create-application.md"
         },
         {
-            "title": "Lab 2: Add Dimensions",
+            "title": "Lab 3: Add Dimensions",
             "description": "Add two dimensions to your outline; build one manually and build another using a text file and rule file.",
             "filename": "../../add-dimension/add-dimension.md"
         },
         {
-            "title": "Lab 3: Load Data",
+            "title": "Lab 4: Load Data",
             "description": "Load product data to your application using a text file and data load rule file.",
             "filename": "../../load-data/load-data.md"
         },
         {
-            "title": "Lab 4: Compare Outlines",
+            "title": "Lab 5: Compare Outlines",
            "description": "Compare two outlines in the Essbase web interface.",
             "filename": "../../compare-outlines/compare-outlines.md"
         },
