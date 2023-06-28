@@ -36,7 +36,7 @@ AUTH_TOKEN=(SAMPLE)abcdefgh$$123
 -- FUNCTION CONNECTION ---------------------------
 FUNCTION_ENDPOINT=(SAMPLE)https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
 
--- OPENSEACH CONNECTION --------------------------
+-- OPENSEARCH CONNECTION --------------------------
 OPENSEARCH_API_ENDPOINT=(SAMPLE)https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
 
 -- API GATEWAY CONNECTION ------------------------
@@ -190,7 +190,7 @@ In OCI,
     -- FUNCTION CONNECTION ---------------------------
     FUNCTION_ENDPOINT=https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
 
-    -- OPENSEACH CONNECTION --------------------------
+    -- OPENSEARCH CONNECTION --------------------------
     OPENSEARCH_API_ENDPOINT=https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
 
     -- API GATEWAY CONNECTION ------------------------
