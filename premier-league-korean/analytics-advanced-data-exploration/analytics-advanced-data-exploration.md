@@ -130,4 +130,4 @@
 
 ## **Acknowledgements**
 
-- **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Author** - Jeroen Kloosterman - Technology Product Strategy Director,  Sudeshni Fisher - Technology Product Strategy Manager.
