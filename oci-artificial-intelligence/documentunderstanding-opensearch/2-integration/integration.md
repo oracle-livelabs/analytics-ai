@@ -11,20 +11,22 @@ Estimated time: 20 min
 
 ### Prerequisites
 
-- It is easier to store the sample files on a laptop. If it is impossible, for ex that you do not have the git command, you can get them from the cloud console. We have downloaded them in the previous lab (Install the Components) in the Cloud Shell using the _git clone_ command. There is an option Download in the Cloud Shell.
+- You will need the Oracle integration Cloud (OIC) package, the Visual Builder (VB) application and samples files on your laptop/desktop. The easiest option is to download a zip file from Github. 
+
+- To download the files to your laptop from Github, please follow these steps:
+
+- In your Intenet browser go to https://github.com/mgueury/oci-searchlab/tree/main and click Code and then Download ZIP.
+![GitHub_Download](images/opensearch-github-download-zip.png)
+
+Extract the oci-searchlab-main.zip file on your laptop/desktop. 
+![GitHub_Download](images/opensearch-github-extract-zip.png) 
+
+The directory contains the Oracle integration Cloud (OIC) package in the oic folder, the Visual Builder (VB) application in the vb folder and samples files in the sample_files folder.
+
+Alternatively, since we have downloaded the Github repository in the previous lab (Install the Components) in the Cloud Shell using the _git clone_ command, there is an option Download in the Cloud Shell.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
 
-- To download the sample files on your laptop, please run this:
-
-````
-<copy>
-git clone https://github.com/mgueury/oci-searchlab.git
-</copy>
-````
-
-The directory contains the Oracle integration Cloud (OIC) package, the Visual Builder (VB) application and samples files to parse.
-
-Alternatively you can download the files form the Cloud Shell:
+Download the files from the Cloud Shell as follows:
 ![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
 
 Enter the file name: oci-searchlab/oic/OPENSEARCH_OIC.par and click Download button.
@@ -95,9 +97,7 @@ Then fill the Connection details:
   
 ### C. Resttrigger
 
-There is no connection details to enter
-- *Test / Save / Save* until 100%
-- Go back to the list of connections
+There is no change needed here. The connection is already configured. 
 
 ### D. RestDocumentUnderstandingAI
 
@@ -170,8 +170,10 @@ Use this info:
   - Bootstrap servers = *##STREAM_BOOSTRAPSERVER##*
   - SASL Username = *##STREAM_USERNAME##*
   - SASL Password = *##AUTH_TOKEN##*
+  Expand Optional security
   - Truststore = *oss_store.jks*
   - TrustStore password = *changeit* 
+  
   - Access Type = *Connectivity agent*
   - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
   - *Test / Save / Save* until 100%
@@ -180,6 +182,10 @@ Use this info:
 ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
 ### H. RestFunction
+You will need to get values from your environment:
+In OCI terminal run: oci-searchlab/starter/src/search_env.sh
+In the output of this script look for the following values:
+*##FUNCTION_ENDPOINT##*
 
 Fill the Connection details:
 - Connection Type = *REST API Base URL*
@@ -193,7 +199,10 @@ Fill the Connection details:
 ![Connection RestFunction](images/opensearch-connection-restfunction.png)
 
 ### I. RestOpenSearch
-
+You will need to get values from your environment:
+In OCI terminal run: oci-searchlab/starter/src/search_env.sh
+In the output of this script look for the following values:
+*##OPENSEARCH\_API\_ENDPOINT##*
     
 Fill the Connection details:
 - Connection Type = *REST API Base URL*
@@ -223,12 +232,17 @@ All integrations should be up and running.
 
 ## Task 3: Test OIC
 
-- In OCI console go back to the Object Storage bucket.
+- In OCI console go the Object Storage bucket *opensearch-bucket*.
+
+![Test OIC](images/opensearch-oic-test-os-buckets.png)
+
+![Test OIC](images/opensearch-oic-test-opensearch-bucket.png)
+
 - On your desktop go to the directory that you downloaded from GITHUB
 - Alternatively you can download the files form the Cloud Shell:
 ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
 
-Enter the file name: oci-searchlab/sample_files/shakespeare_macbeth.tif and click Download button.
+Enter the file name: oci-searchlab/sample\_files/shakespeare\_macbeth.tif and click Download button.
 
 Upload the sample files to OCI Object Storage bucket: 
 
@@ -236,10 +250,26 @@ Upload the sample files to OCI Object Storage bucket:
 
 Check the result in OIC. 
 - Go to OIC Home page
-- Menu *Obeservability* 
+- Menu *Observability* 
 - Menu *Integrations*
 
 ![Monitor OIC](images/opensearch-oic-test2.png)
+
+Optional: Upload the rest of the sample files to the Object Storage bucket *opensearch-bucket*.
+
+Check the instances in OIC. 
+- Go to OIC Home page
+- Menu *Observability* 
+- Menu *Integrations*
+
+Click on the "eye" icon to open the instance Activity Stream 
+
+![Monitor OIC](images/opensearch-oic-test-instances.png)
+
+and view the message payloads.
+
+![Monitor OIC](images/opensearch-oic-test-instances-activity-stream.png)
+
 
 ## Acknowledgements
 
