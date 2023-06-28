@@ -11,18 +11,25 @@ To access Essbase, you must have the following information:
 * URL to access the Essbase web interface
 * User name and password to log in to Essbase as a power user
 
-Get the Essbase web interface URL for the Essbase instance you are using from your service administrator. The basic format of the URL is:
+Estimated Lab Time: 5 minutes
 
-```
-<copy>https://Host:port/essbase/jet</copy>
-```
+### Objectives
 
-The default secured port is 9001, unless it was changed during stack creation.
+In this lab, you will:
+
+* Obtain the URL to access the Essbase web interface
+* Enter your login credentials
 
 ## Task 1: Access the Essbase web interface
 
 1. Obtain the URL for the Essbase web interface from your service administrator.
 
+    The basic format of the URL is:
+
+    ```
+    <copy>https://Host:port/essbase/jet</copy>
+    ```
+    The default secured port is 9001, unless it was changed during stack creation.
 2. Open a browser window and enter the URL for the Essbase web interface.
 
 3. Enter your login credentials.
