@@ -120,7 +120,7 @@
 
    ![Back to menu](images/back-to-menu4.png)
 
-## Task 3: Conclusions
+## Task 3: 결론
 
 이 실습에서는 아직 데이터의 일부가 아닌 추가 속성인 ANGLE(골 포스트 사이)을 식별했습니다.
 
