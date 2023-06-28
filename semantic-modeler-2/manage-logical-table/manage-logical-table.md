@@ -53,145 +53,97 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 7. See the columns added from the D4 Addresses table.
 	![View D3 Columns after adding D4 table](./images/view-d3-columns.png)
 
-## Task 2: Add Physical tables
+## Task 2: Manage Logical Table Sources
 
-In this section, you add physical tables from the data source to the empty semantic model.
+In this section, you rename logical table sources and view column mapping to physical tables.
 
-1. In MySampleSalesDatabase, click the **Tables** tab.
+1. Click the **Logical Layer**, expand **Sample Sales BM**.
 
-	![Tables tab](./images/tables.png)
+	![Click Logical Layer and expand Sample Sales BM](./images/logical-layer-sample-sales-BM.png)
 
-2. In the Connections Connections pane icon pane, expand the BISAMPLE connection, and then expand Schemas.
+2. Double-click **D3 Customers**, click **Sources**, and then rename the D3 Customers logical table source (not the logical table) to **LTS1 Customers**.
 
-	![Schemas](./images/schemas.png =400x*)
+	![Rename D3 Customers column to LTS1 Customers](./images/rename-d3-customers.png)
 
-3. Expand the BISAMPLE schema.
+3. Select **LTS1 Customers**, click **Detail View**, and then scroll to the Column Mapping section.
 
-	![Expand BISAMPLE](images/expand-bisample.png =400x*)
+	![Go to column mapping in LTS1 Customers](images/column-mapping-LTS1-customers.png)
 
-4. Hold down the Ctrl (Command for Mac users) key and select these tables:
-	* SAMP_ ADDRESSES_D
-	* SAMP_ CUSTOMERS_D
-	* SAMP_ PRODUCTS_D
-	* SAMP_ REVENUE_F
-	* SAMP_ TIME_ DAY_D
+4. In Show, select **Mapped**.
+	![Change mapping to "mapped"](images/column-mapping-mapped.png)
 
-5. Drag the selected tables to Tables in the MySampleSalesDatabase tab
+5. In the Logical Layer, double-click **D1 Time**, click **Sources**, and then rename the D1 Time logical table source to **LTS1 Time**.
 
-	![Drag tables](./images/drag-tables.png)
+	![Rename D1 Time column to LTS1 Time](./images/d1-time-LTS1-time.png)
 
-## Task 3: Create Physical Table Aliases
+6. In the Logical Layer, double-click **D2 Products**, click **Sources**, and then rename the D2 Products logical table source to **LTS1 Products**.
+	![Rename D2 Products column to LTS1 Products](./images/d2-products-LTS1-products.png)
 
-In this section, you create physical table aliases that enables reusing the physical source tables. You also prefix the physical alias table's name with the table type such as F for fact and D for dimension, and use a number along with the F or D to change the original physical table name. For example, D1 Time for the SAMP_ TIME_ DAY_ D table and D2 Products for the SAMP_ PRODUCTS_D table.
+7. In the Logical Layer, double-click **F1 Revenue**, click **Sources**, and then rename the F1 Revenue logical table source to **LTS1 Revenue**.
+	![Rename F1 Revenue column to LTS1 Revenue](./images/f1-revenue-LTS1-revenue.png)
 
-1. In Tables, right-click **SAMP_ TIME_ DAY_D** and select **Create Physical Table** Alias.
+8. Click **Save**.
 
-	![create physical table alias](./images/create-physical-table-alias.png)
+## Task 3: Create Presentation Layer Objects
 
-2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **OK**. Close D1 Time.
+In this section you add a presentation table to the Sample Sales semantic model.
 
-	![D1 Time](./images/d1-time.png =500x*)
+1. Click the Presentation Layer, double-click **Sample Sales**, click **Add Table**, and then select **Create Presentation Table**. In Create Presentation Table, enter <code>Customer Regions</code> in **Name**, and then click **OK**. Click **Save**.
 
-3. Right-click **SAMP_ PRODUCTS_D** and select **Create Physical Table Alias**.
+	![Create Presentation Table](./images/create-presentation-table.png)
+	![Input Presentation table details](./images/presentation-table-details.png)
 
-	![SAMP_PRODUCTS_D alias](./images/product-alias.png)
+2. Click the **Logical Layer**, expand **D3 Customers**, hold down the **Ctrl** key, select and drag the following to Customer Regions **Columns** tab:
+	* ADDRESS1
+	* ADDRESS2
+	* AREA
+	* CITY
+	* COUNTRY_NAME
+	* ESTAB_NAME
+	* POSTAL_CODE
+	* REGION
+	* STATE_PROVINCE
+	* STATE_PROVINCE _ABBRV
+	![Drag D3 customer columns into Customer Regions](./images/customer-region-columns.png)
 
-4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **OK**. Close D2 Products.
+3. Click **Save**.
 
-	![D2 products](images/d2-products.png =500x*)
+## Task 4: Deploy and Validate the Changes
 
-5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ OKRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
+In this section, you run the consistency checker, deploy the updated semantic model, and create a workbook with the updated Sample Sales subject area.
 
-	* Right-click **SAMP_ CUSTOMERS_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **OK**. Close D3 Customers.
-	* Right-click **SAMP_ ADDRESSES_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **OK**. Close D4 Addresses.
-	* Right-click **SAMP_ REVENUE_F** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **OK**. Close F1 Revenue
+1. Click the Consistency Checker and select **Errors and Warnings**.
+	Oracle Analytics didn't find any errors in the Sample Sales semantic model.
 
-6. You should now have the D1 Time, D2 Products, D3 Customers, D4 Addresses, and F1 Revenue tables.
+	![Click consistency checker](./images/errors-and-warnings.png)
 
-	![Table aliases](./images/table-aliases.png =400x*)
+2. In the semantic model, click the Page Menu Page Menu icon, and select Deploy.
+	The message, "Deploy successful" appears when the deployment process is complete.
 
-## Task 4: Create Physical Joins
+	![Deploy Semantic Model](./images/deploy-model.png =500x*)
 
-In this section, you define joins between alias tables to express relationships between tables in the Physical layer.
+3. Click **Go back**. On the Semantic Models page, click **Navigator**, and then click **Home**.
+	![Go to home page](./images/go-home.png =500x*)
 
-1. In the **Joins** section, click the **Add Join** icon.
+4. On the Home page, click **Create**, and then click **Workbook**.
 
-	![Add join](./images/add-join.png)
+	![Create workbook](./images/create-workbook.png =500x*)
 
-2. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D1 Time**.
+5. In Add Data, click **Sample Sales**, and then click **Add to Workbook**.
 
-	![Add physical table](./images/add-physical-table.png =500x*)
+	![Add data to workbook](./images/add-data.png =500x*)
 
-3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_ DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_ DATE** column. Click **Add**.
+6. In the Data panel, **expand the Products, Customers, Base Facts,** and **Customer Regions** folders.
 
-	![Add join conditions](./images/join-conditions.png =500x*)
+	![Expand folders](./images/expand-folders.png =500x*)
 
-4. Click **Save** icon.
+7. Hold down the **Ctrl** or **Cmd** key, select **Name** from Customers, **Country Name** from Customer Regions, **Type** from Products, and **Revenue** from Base Facts.
+	![Select values from dataset](./images/select-data-values.png =500x*)
 
-	![Save](./images/save.png)
+8. Drag the data elements to the canvas.
 
-5. Let's add another join. Click the **Add Join** icon. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D2 Products**.
+	![Drag values to canvas to create table that uses the Customer Regions, Customers, Products, and Base Facts table.](./images/drag-to-canvas.png)
 
-	![Join](./images/join-f1-d2.png =500x*)
-
-6. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **PROD_ KEY** column. Under the Right Table (D2 Products), click the dropdown, and select the **PROD_ KEY** column. Then click **Add**.
-
-	![Join conditions](./images/conditions-f1-d2.png =500x*)
-
-7. Click the **Physical Layer** icon. Under the BISAMPLE schema, right-click **F1 Revenue**, select **Show Physical Diagram**, and then click **Selected Tables and Direct Joins**.
-
-	![Selected tables and join conditions](./images/selected-tables-joins.png)
-
-8. Drag **D3 Customers** to the **Physical Diagram**. Drag the **F1 Revenue** from the Physical Diagram away so that it's not blocking D1 Time. Re-arrange as you see fit.
-
-	![Drag D3 Customers](./images/drag-d3.png)
-
-9. From the **F1 Revenue connector**, draw a line to **D3 Customers**.
-
-	![Connect F1 D3](./images/connect-f1-d3.png)
-
-10. In **Add Physical Join** under **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **CUST_ KEY** column. Under the Right Table (D3 Customers), click the dropdown, and select the **CUST_ KEY** column. Then click **Add**.
-
-	![Join F1 D3](./images/cust-key-join.png =500x*)
-
-11. Drag **D4 Addresses** to the Physical Diagram.
-
-	![Drag D4](./images/drag-d4.png)
-
-12. From the D3 Customers connector, draw a line to D4 Addresses.
-
-	![Connect D3-D4](./images/connect-d3-d4.png)
-
-13. In Add Physical Join under **Join Conditions**, click the list icon on the left, and select the **ADDRESS_ KEY** column. Click list icon on the right, and then select the **ADDRESS_ KEY column**. Click **Add**.
-
-	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
-
-14. Click the **Save** icon.
-
-	![Save](./images/save-diagram.png)
-
-## Task 5: Review Physical Layer tables
-
-In this section, you can review columns, joins, and data in the Physical Layer tables.
-
-1. In the Physical Layer, double-click the **D2 Products** table.
-
-	![Double click D2](./images/dc-d2.png)
-
-2. The Physical Layer table opens in the **Columns** tab.
-
-	![D2 columns](./images/d2-columns.png)
-
-3. Click **Joins** to view the joins to the F1 Revenue table.
-
-	![View F1 joins](./images/view-f1-joins.png)
-
-4. Click **Preview** to see a sample of the data in the columns.
-
-	![Preview D2 table](./images/preview-d2.png)
 
 ## Learn More
 * [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)
