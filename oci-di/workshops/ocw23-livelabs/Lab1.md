@@ -54,7 +54,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
   ![](images/task2_2.png " ")
 
 3. Similarly, select Database as the target type as we will use ADW as a target in this example.
-4. Data Loader Task allows users to choose different load types, the first one is multiple data entities i.e., at one go we can migrate data in bulk additionally, users can also select single entity depending on their requirements. Here, you will select Multiple data entities as load type.
+4. Data Loader Task allows users to choose different load types, the first one is multiple data entities i.e. at one go we can migrate data in bulk; alternatively, users can also select single entity depending on their requirements. Here, you will select Multiple data entities as load type.
 5. Next, we can specify the name and Identifier of the task that we want to keep, let’s rename our task to Load Revenue Data into Data Warehouse
 6. Then we are going to select the Project or folder where we want to save our task. After clicking on select, type in your Project name which you created earlier and select that folder. For example, it should be DI_ProjectXX where XX will be your user ID.
 
@@ -64,7 +64,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 8. Now, in the panel select the following:
 a. Data Asset: Object_Storage.
 b. Connection: Default Connection.
-c. Compartment: DI-compartment (the Compartment in which you have the bucket where you uploaded your REVENUE.CSV file in setting up the Data Integration prerequisites in OCI).
+c. Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
 d. Bucket: DI-bucket (the Object Storage bucket where you uploaded your REVENUE.CSV file in Setting up the Data Integration prerequisites in OCI).
 e. We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
 
