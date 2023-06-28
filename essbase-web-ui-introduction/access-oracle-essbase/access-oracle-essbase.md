@@ -20,6 +20,13 @@ In this lab, you will:
 * Obtain the URL to access the Essbase web interface
 * Enter your login credentials
 
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle Cloud account
+* All previous labs successfully completed
+
 ## Task 1: Access the Essbase web interface
 
 1. Obtain the URL for the Essbase web interface from your service administrator.
