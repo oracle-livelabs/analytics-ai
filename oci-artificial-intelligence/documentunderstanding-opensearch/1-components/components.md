@@ -89,7 +89,7 @@ Oracle Integration will allow to glue all of this together.
 
 You do not have to wait that Visual Builder is installed before to go to the next step.
 
-## Task 3: Create an Agent Group and download the Connectivity agent zip file and config
+## Task 3: Create an Agent Group
 
 To communicate with OpenSearch in the private network, we have to install the OIC agent on the compute.
 
@@ -104,21 +104,6 @@ First,
     - Then *Create*
     ![Create Agent Group](images/opensearch-oic3-agent-group.png)
 
-Dowload the Connectivity agent zip file
-- On the top bar, choose *Download*
-- Then *Connectivity agent*
-- The download should begin automatically
-- Save the oic_conn_agent_installer.zip
-
-![Download Agent](images/opensearch-oic-download-agent.png)
-
-Dowload the Connectivity agent config file
-- Click the "..." menu next to the *OPENSEARCH\_AGENT\_GROUP*
-- Then *Download config*
-- The download should begin automatically
-- Save the InstallerProfile.cfg
-
-![Download Agent](images/opensearch-oic-download-agent-config.png)
 
 ## Task 4: Get the OIC AppID (ClientID)
 
