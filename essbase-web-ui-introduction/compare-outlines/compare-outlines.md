@@ -103,8 +103,8 @@ This lab assumes you have:
 
 ## Learn More
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Compare Outlines](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/compare-outlines.html#GUID-F6B9A25F-0B32-41EB-AD10-611C31CAB13C)
+* [Copy and Paste Members Within and Between Outlines](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/copy-and-paste-members-and-outlines.html#GUID-630F6AEC-6951-4975-A4FD-94E329A0BDB4)
 
 ## Acknowledgements
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
