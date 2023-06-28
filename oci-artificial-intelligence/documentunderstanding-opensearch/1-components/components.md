@@ -148,7 +148,6 @@ In OCI,
     - Click Terminal/New Terminal
     - Run the command below in the terminal
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
-
     ````
     <copy>
     git clone https://github.com/mgueury/oci-searchlab.git
