@@ -70,7 +70,16 @@ First, we are going to create a compartment. This allows for separation as well 
 
     ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
-5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
+5. Create Dynamic Group for Data Catalog - This dynamic group needs to be created even if you are administrator in the tenancy. It is to be able to data asset discovery and manage the Data Catalog.
+Click on Create Dynamic Groups, enter the name, description and copy and paste the Rule to enter into Rule 1.
+
+   ```
+   <copy>
+   Any {resource.type = 'datacatalog', resource.compartment.type = 'lakehouse1'} </copy>
+   ```
+   ![Create Dynamic Group](./images/create-dc-dg.png "dynamic group creation")
+
+6. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
 
 
     Select Policies on the side menu and click on the button Create Policy.
