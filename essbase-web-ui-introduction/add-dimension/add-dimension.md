@@ -10,6 +10,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will:
 
+* Download required files for this workshop
 * Manually add a dimension to the outline, in the outline editor
 * Create a dimension build rule file
 * Perform a dimension build job
@@ -22,7 +23,17 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Add a dimension manually
+## Task 1: Download required files for this workshop
+
+1. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/add-products-with-aliases-and-load-sales-cogs-files.zip) to download required files for this workshop.
+
+2. Save the zip file to your computer, in a location where you can find it easily.
+
+3. Extract the zip file.
+
+    The add-products-with-aliases.txt file will be used for this lab. The load-sales-cogs.txt file will be used in a later lab.
+
+## Task 2: Add a dimension manually
 
 1. In the outline editor, select the Scenario dimension.
 
@@ -60,7 +71,7 @@ This lab assumes you have:
 
     ![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
 
-## Task 2: Create a dimension build rule file
+## Task 3: Create a dimension build rule file
 
 1. On the **Applications** page, and to the right of the **Basic** cube, click the **Actions** menu.
 
@@ -104,7 +115,7 @@ This lab assumes you have:
 
 17. Click **Save and Close**.
 
-## Task 3: Create a dimension build job
+## Task 4: Create a dimension build job
 
 1. Go to the **Jobs** page and select **New Job** and **Build Dimension**.
 
@@ -126,7 +137,7 @@ This lab assumes you have:
 
     ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
 
-## Task 4: Analyze data for the newly created product group
+## Task 5: Analyze data for the newly created product group
 
 1. On the **Applications** page, click the **Actions** menu next to the **Basic** cube and select **Analyze Data**.
 
@@ -169,4 +180,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Dori Woodhouse July, 2023

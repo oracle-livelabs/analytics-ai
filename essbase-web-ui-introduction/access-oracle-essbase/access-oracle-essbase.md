@@ -37,4 +37,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Dori Woodhouse July, 2023
