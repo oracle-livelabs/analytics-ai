@@ -21,7 +21,7 @@ Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb
 
 Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/DBActions.png " ")
+![Database Actions](./images/dbactions1.png " ")
 
 Click on SQL to execute the query to create the table.
 
@@ -40,6 +40,7 @@ group by "genreid",name, country
 order by country;
 </copy>
 ```
+
 This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
 
 ![SQL](./images/SQL_output.png " ")
@@ -158,4 +159,4 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
