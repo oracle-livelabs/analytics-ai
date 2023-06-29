@@ -82,7 +82,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     ```
    in the **expression** box.
 
-   This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
+   This function will convert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
     - Click **Add**.
 
   ![](../../integration-tasks/images/new-expression-details.png " ")
@@ -269,7 +269,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
   ![](../../integration-tasks/images/mapping-result.png " ")
 
-42. Drag and drop **another target operator**. Connect the **NORTHEAST\_SOUTH\_REGION output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
+42. Drag and drop **another target operator**. Connect the **NORTHEAST\_SOUTH\_REGION output port** of the Split operator to the **TARGET\_2 operator**. In Properties tab of the new target operator:
 
     - Change to **Merge Integration Strategy**.
     - For **Data Asset**, select `Data_Warehouse`.
@@ -291,7 +291,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
   ![](../../integration-tasks/images/save-close-button.png " ")
 
-## Task 5: Create Integration Task
+## Task 2: Create Integration Task
 
 **Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create an Integration task for the Data Flow you created in the previous steps.
 
@@ -312,23 +312,6 @@ This Data Flow will load data from **multiple source files** containing Employee
   ![](../../integration-tasks/images/integration-task.png " ")
 
 5. The **Create Integration Task** page opens in a new tab. On this page:
-
-    - Change the **Name** to `Load Customers Lab` and enter an optional **Description**. The value in the **Identifier** field is auto-generated based on the value you enter for Name.
-    ![](../../integration-tasks/images/integration-task-name.png " ")
-    - In the Data Flow section, click Select.
-    ![](../../integration-tasks/images/integration-task-select-df.png " ")
-    - In the **Select a Data Flow** panel, select `Load Customers and Revenue Data`, and then click Select.
-    ![](../../integration-tasks/images/select-df.png " ")
-    - The Data Flow will be **validated** after the selection and the result should be displayed as **Successful**.
-    - Click **Create and Close**.
-
-    ![](../../integration-tasks/images/integration-task-save.png " ")
-
-6. From the `DI_WorkshopNN` project section **Tasks**, you will now create an Integration Task for your second Data Flow. Click **Create Task** and then select **Integration**.
-
-  ![](../../integration-tasks/images/integration-task.png " ")
-
-7. The **Create Integration Task** page opens in a new tab. On this page:
 
     - Change the **Name** to `Load Employees by Regions` and enter the optional **Description**. The value in the **Identifier** field is auto-generated based on the value you enter for Name.
     - In the Data Flow section, click Select. In the **Select a Data Flow** panel, select `Load Employees by Region`, and then click Select.
