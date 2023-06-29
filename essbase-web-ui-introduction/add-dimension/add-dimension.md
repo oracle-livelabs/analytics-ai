@@ -35,11 +35,11 @@ This lab assumes you have:
 
 4. Upload the files to the Catalog.
 
-   1. Log in to the Essbase web interface.
-   2. Go to the **Files** page.
-   3. Select the **Shared** folder.
-   4. Select **Upload Files** and click **Drag or select files**.
-   5. Browse to the files you downloaded, select them, and click **Open**.
+    1. Log in to the Essbase web interface.
+    2. Go to the **Files** page.
+    3. Select the **Shared** folder.
+    4. Select **Upload Files** and click **Drag or select files**.
+    5. Browse to the files you downloaded, select them, and click **Open**.
 
 ## Task 2: Add a dimension manually
 
