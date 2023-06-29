@@ -34,7 +34,7 @@ First, we are going to create a compartment. This allows for separation as well 
 
 1. Once you are logged in, you are at the cloud services dashboard. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![Oracle home page.](./images/Picture100-36.png " ")
+    ![Oracle home page.](./images/console-hamburger.png " ")
 
 2. Continue down to the Identity & Security menu and from there to Compartments.
 
@@ -71,7 +71,8 @@ First, we are going to create a compartment. This allows for separation as well 
     ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
 5. Create Dynamic Group for Data Catalog - This dynamic group needs to be created even if you are administrator in the tenancy. It is to be able to data asset discovery and manage the Data Catalog.
-Click on Create Dynamic Groups, enter the name, description and copy and paste the Rule to enter into Rule 1.
+Click on Create Dynamic Groups, enter the name, description and copy and paste the Rule to enter into Rule 1. 
+    ![Select Dynamic Groups](./images/dynamic_groups1.png " ")
 
     ```
     <copy>
