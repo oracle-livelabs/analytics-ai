@@ -236,7 +236,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Data Asset**, select `Data_Warehouse`.
     - For **Connection**, select `Beta connection`.
     - For **Schema**, select `Beta`.
-    - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure_ that you ran on the Autonomous Data Warehouse).
+    - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in OCI that you ran on the Autonomous Data Warehouse).
     - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`).
     - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 

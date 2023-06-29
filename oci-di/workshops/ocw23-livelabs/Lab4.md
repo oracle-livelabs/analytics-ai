@@ -22,11 +22,11 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 In this step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
+1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
   ![](images/ocw23_home1.png " ")
 
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
+2. From the Workspaces page, make sure that you are in the correct compartment (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
   ![](images/ocw23_home2.png " ")
 
@@ -46,7 +46,7 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
   ![](../../schedule-run/images/data-loader-task-running.png " ")
 
-7. After a short time, The **Data Loader task run ends successfully**. You can also check in the Autonomous Data Warehouse the inserted data.
+7. After a short time, The **Data Loader task run ends successfully**.
 
   ![](../../schedule-run/images/data-loader-task-successful.png " ")
 
@@ -54,7 +54,7 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
 You will first create a **Schedule** in the Application that contains the tasks that can be scheduled for automated runs. Set up a schedule by selecting a time zone and configuring a frequency at which associated task schedules should run. You can automate task runs on an hourly schedule, or a daily or monthly schedule.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
+1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
   ![](images/ocw23_home1.png " ")
 
@@ -165,7 +165,7 @@ In this step, you will now do a **manual on-demand run** of your pipeline task. 
 
   ![](../../schedule-run/images/pipeline-running.png " ")
 
-4. The Pipeline task run has ended successfully. You can also check in the Autonomous Data Warehouse the inserted data.
+4. The Pipeline task run has ended successfully.
 
   ![](../../schedule-run/images/pipeline-success.png " ")
 

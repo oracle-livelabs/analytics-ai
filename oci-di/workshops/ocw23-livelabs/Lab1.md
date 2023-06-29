@@ -12,9 +12,9 @@ Learn how to create a **Data Loader task** in OCI Data Integration. The use-case
 
 ## Task 1: Create an OCI Data Integration project
 
-In Oracle Cloud Infrastructure Data Integration, a **project** is the container for design-time resources, such as tasks or data flows and pipelines.
+In OCI Data Integration, a **project** is the container for design-time resources, such as tasks or data flows and pipelines.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
+1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
   ![](images/ocw23_home1.png " ")
 
