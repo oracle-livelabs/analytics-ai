@@ -76,7 +76,7 @@ h. Let’s keep the other things as default until we go down and select our enti
 
   ![](images/task2_5.png " ")
 
-i. Now we will select multiple files that we want to use as a source using a pattern. In the search box type in */*/REVENUE*.csv and press enter. Click on Add to source button.
+i. Now we will select multiple files that we want to use as a source using a pattern. In the search box type in \*/\*/REVENUE*.csv and press enter. Click on Add to source button.
 
   ![](images/task2_6.png " ")
 
