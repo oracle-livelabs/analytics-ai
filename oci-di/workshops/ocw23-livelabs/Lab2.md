@@ -205,7 +205,6 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 31. The first split condition you defined is now displayed. The Split operator properties should look like this:
 
-  ![](../../integration-tasks/images/split-operator-properties.png " ")
   ![](images/ocw23_lab2_31.png " ")
 
 32. Still in Properties bar of the Split Operator, click on **Add Condition** in **Split Conditions section** to add a new split condition.
