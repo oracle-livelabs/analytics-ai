@@ -54,4 +54,17 @@ We would need to upload the dataset to the notebook and unzip it, to be able to 
     Monitor the upload process at the bottom of the the notebook.
     ![monitor-upload-process](images/nb-monitor-upload.png)
 
+- *Step 4*
+    In the terminal that you've previously opened, make sure that you are in the `hol` folder and then unzip the file.
+
+    ```bash
+    <copy>cd /home/datascience/hol/</copy>
+    ```
+
+    ... and unzip
+
+    ```bash
+    <copy>unzip dataset.zip</copy>
+    ```
+
 You may now **proceed to the next lab**.
