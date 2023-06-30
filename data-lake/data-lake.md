@@ -26,6 +26,9 @@ We have created a python script for you to use as part of your OCI Data Flow app
 
 Start Cloud Shell
 
+Click on the cloudshell icon in the top left hand corner next to your region information.
+![Find Cloud Shell](./images/cloudshell-icon.png " ")
+
 ![Start Cloud Shell](./images/cloudshell-open.png " ")
 
 From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs-df.py
@@ -99,15 +102,21 @@ oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucke
 </copy>
 ```
 
+![Tenancy Information](./images/tenancy_info.png " ")
+
 ![Upload File](./images/cloudshellupload.png " ")
 
 Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
 
 ![Storage Buckets](./images/showbuckets.png " ")
 
+![Objects in Buckets](./images/showbucketobjects.png " ")
+
 Now, navigate to the OCI Data Flow and click on Create Application.
 
 ![Create Data Flow](./images/nav_dataflow.png " ")
+
+![Create application](./images/df-applications.png " ")
 
 For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
@@ -128,13 +137,15 @@ Now we can run the application by selecting the more option dots and selecting R
 
 ![Run Data Flow](./images/runappmanual.png " ")
 
+This pops up the configuration of the application again, if you would like to change any set up for this run of the application. Just click on run at the bottom.
+
+![Run after configuration](./images/runappmanual2.png " ")
+
 It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
 ![Completed Data Flow](./images/runappresults.png " ")
 
 You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
-
-![Create Data Flow](./images/df_sparkui1.png " ")
 
 And there are additional views to see the details about the jobs and applications running and completed.
 
@@ -179,7 +190,7 @@ Select the workspace where you are creating the data integration, in this case i
 
 Select create data loader task, because we are going to use this as a data flow to take our csv file, perform transformations against and save it back into the object storage as json. This is a way to process data from files, to files, or to and from databases. We have already seen the loads to the database, and we know we have data that is going to be files that need filtering or transformations and we don't even have to put them in the database to do that.
 
-![Select Create data loader task](./images/create-data-loader-task1.png " ")
+![Select Create data loader task](./images/create-data-loader-task1.png =50%x*)
 
 Let's call this task LoadCustomerCSV
 
@@ -188,9 +199,7 @@ Let's call this task LoadCustomerCSV
 Now we have to just put in the Source, any transformations and Target for the load process. 
 Here you can see the options for source and target data. Click on File Storage for Source and File Storage for Target. We only have one file, so make sure that Single data entity is selected. Enter the name of LoadCustomerCSV, and before clicking next select the project - Project_lakehouse. Click Next.
 
-![Select source and target type](./images/create-data-loader-task3.png " ")
-
-
+![Select source and target type](./images/create-data-loader-task2.png " ")
 
 Now provide information about the Source. There is the ability to create a new source, or select from those available. Be sure to choose the compartment lakehouse1 and the Bucket that the file was just uploaded to, dataflow-warehouse.
 
@@ -226,27 +235,23 @@ Now you are going to navigate back to the data integration workspace, and click 
 
 ![Create Application](./images/create-app.png " ")
 
+![Create Application](./images/create-app1.png " ")
+
 Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application. Navigate to the Project_lakehouse, from the menu select Tasks. LoadCustomerCSV will be seen in the list and you will need to expand the three dot menu and add it to the application.
 
 ![Add Task to Application](./images/create-app2.png " ")
 
 ![Publish to application](./images/create-app3.png " ")
 
-Select the application name, lakehouseapp:
-
-![Select Application and Publish](./images/create-app4.png " ")
+Select the application name, lakehouseapp.
 
 ## Task 4: Run and schedule apps for automation
 
 Now under the application select the menu at the end of the LoadCustomerCSV task. 
 
-![View Task Added](./images/create-app5.png " ")
-
-Now select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
+Select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
 
 ![Run Task](./images/create-app6.png " ")
-
-
 
 You may now proceed to the next lab.
 
@@ -254,4 +259,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Contributors** - 
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2022
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023

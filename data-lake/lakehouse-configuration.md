@@ -34,7 +34,7 @@ First, we are going to create a compartment. This allows for separation as well 
 
 1. Once you are logged in, you are at the cloud services dashboard. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![Oracle home page.](./images/Picture100-36.png " ")
+    ![Oracle home page.](./images/console-hamburger.png " ")
 
 2. Continue down to the Identity & Security menu and from there to Compartments.
 
@@ -70,7 +70,17 @@ First, we are going to create a compartment. This allows for separation as well 
 
     ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
-5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
+5. Create Dynamic Group for Data Catalog - This dynamic group needs to be created even if you are administrator in the tenancy. It is to be able to data asset discovery and manage the Data Catalog.
+Click on Create Dynamic Groups, enter the name, description and copy and paste the Rule to enter into Rule 1. 
+    ![Select Dynamic Groups](./images/dynamic_groups1.png " ")
+
+    ```
+    <copy>
+    Any {resource.type = 'datacatalog', resource.compartment.type = 'lakehouse1'} </copy>
+    ```
+    ![Create Dynamic Group](./images/create-dc-dg.png " ")
+
+6. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
 
 
     Select Policies on the side menu and click on the button Create Policy.
@@ -135,7 +145,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
-    ![Oracle home page.](./images/Picture100-36.png " ")
+    ![Oracle home page.](./images/console-hamburger.png " ")
 
 2. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database with data assets for the data lake, so click **Autonomous Data Warehouse**. The console probably shows that no database exists yet. Click on **Create Autonomous Database** to start the instance creation process.
 
@@ -150,7 +160,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
 4. Configure the database, and for this lab we will be using **Always Free** resources.
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. If you already have an Always Free autonomous database in this tenancy, you will need to provide additional information and be sure to choose Serverless for deployment type.
     - __Choose database version__ - Select a database version from the available versions.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
@@ -182,7 +192,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/create_ADW4.png " ")
+    ![Choose License](./images/create_ADW4.png " ")
 
 8. Click __Create Autonomous Database__.
 
@@ -199,5 +209,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022
+* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management, Nagwang Gyamtso, Product Management
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
