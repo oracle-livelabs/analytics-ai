@@ -18,16 +18,16 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 1. From the Project Details page for `DI_WorkshopNN` project, click on **Data Flows** from the submenu.
 
-  ![](../../integration-tasks/images/click-data-flows.png " ")
+  ![](images/ocw23_lab2_1.png " ")
 
 2. Click **Create Data Flow**.
 
-  ![](../../integration-tasks/images/click-create-df.png " ")
+  ![](images/ocw23_lab2_2.png " ")
 
-3. The data flow designer opens in a new tab. In the **Properties panel**, for **Name**, enter `Load Employees by Region`, and click **Save**.
+3. The data flow designer opens in a new tab. In the **Properties panel**, for **Name**, enter `Load Employees by Region`, and click **Create**.
 
-  ![](../../integration-tasks/images/load-employees.png " ")
-  ![](../../integration-tasks/images/save-button.png " ")
+  ![](images/ocw23_lab2_3.png " ")
+  ![](images/ocw23_lab2_4.png " ")
 
 4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
 
