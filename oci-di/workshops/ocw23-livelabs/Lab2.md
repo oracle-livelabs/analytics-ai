@@ -45,10 +45,10 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Connection**, select `Default Connection`.
     - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here.
   ![](images/ocw23_lab2_5b.png " ")
-    - For **Data Entity**, click on **Select** and then on **Browse by Pattern**.
+    - For **Data Entity**, click on **Select** and then on **Browse by pattern**.
   ![](images/ocw23_lab2_6.png " ")
 
-   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found which match this pattern are now displayed: there are three files for employees. Click on **Select Pattern**.
+   Write the file pattern `EMPLOYEES_*` and press **return**. All files from your Object Storage bucket that are found which match this pattern are now displayed: there are three files for employees. Click on **Select pattern**.
   ![](images/ocw23_lab2_7.png " ")
 
    For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
