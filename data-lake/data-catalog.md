@@ -66,7 +66,7 @@ In the top right hand corner navigate to user profile, click, and then click on 
 
 The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID. Save this OCID to copy and paste into the correct field in the data assets for the database and object storage.
 
-![Create Data Asset](./images/tenancy_OCID.png " ")
+![Create Data Asset](./images/tenancy_OCID.png =50%x*)
 
 Navigate back to the Workspace Lakehouse in Data Integration.
 Under Quick Actions, you want to click on **Create Data Asset**
@@ -121,7 +121,7 @@ Navigate to the Data Catalog by clicking on Analytics & AI, and then Data Catalo
 
 ![Navigate to Analytics](./images/navdatacatalog.png " ")
 
-![Navigate to Data Catalog](./image/navdatacatalog2.png " ")
+![Navigate to Data Catalog](./images/navdatacatalog2.png " ")
 
 Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the catalog, lakehousecatalog. Click on Create.
 
