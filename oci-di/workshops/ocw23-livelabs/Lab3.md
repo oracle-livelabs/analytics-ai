@@ -64,19 +64,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     ![](images/ocw23_pipeline_dataloadertask00.png " ")
 
-10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.  *Note*: Be sure to save often during design time!
-
-  ![](images/ocw23_pipeline_integrationtask3.png " ")
-
-11. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
+10. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
   ![](images/ocw23_pipeline_dataloadertask1.png " ")
 
-12. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
+11. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
   ![](images/ocw23_pipeline_dataloadertask2.png " ")
 
-13. A page pops up with the selections for the **Data Loader Task**:
+12. A page pops up with the selections for the **Data Loader Task**:
 
     - Select **Design tasks** and your project name **DI_WorkshopNN**.
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
@@ -84,27 +80,27 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     ![](images/ocw23_pipeline_dataloadertask0.png " ")
 
-14. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
+13. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
   ![](images/ocw23_pipeline_dataloadertask3.png " ")
 
-15. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
+14. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 
   ![](images/ocw23_pipeline_merge.png " ")
 
-16. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
+15. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
 
   ![](images/ocw23_pipeline_merge2.png " ")
 
-17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
+16. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
 
   ![](images/ocw23_pipeline_integrationtaskx5.png " ")
 
-18. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
+17. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
   ![](images/ocw23_pipeline_integrationtaskx2.png " ")
 
-19. A page pops up with the selections for the **Integration Task**:
+18. A page pops up with the selections for the **Integration Task**:
 
     - Select **Design tasks** and your project name **DI_WorkshopNN**.
     - Under **Integration Task**, check the `Load Employees by Regions` task.
@@ -112,19 +108,19 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     ![](images/ocw23_pipeline_integrationtask0.png " ")
 
-20. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
+19. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
   ![](images/ocw23_pipeline_integrationtaskx3.png " ")
 
-21. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
+20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
   ![](images/ocw23_pipeline_integrationtaskx4.png " ")
 
-22. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
+21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
   ![](../../pipelines/images/validate-pip.png " ")
 
-23. Click on **Save and Close**.
+22. Click on **Save and Close**.
 
   ![](../../pipelines/images/save-close.png " ")
 
@@ -169,7 +165,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
   ![](../../pipelines/images/create-app-tile.png " ")
 
-2. On the Applications page, enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
+2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates), then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
 
   ![](../../pipelines/images/create-app.png " ")
 
