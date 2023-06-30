@@ -65,7 +65,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 a. Data Asset: Object_Storage.
 b. Connection: Default Connection.
 c. Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
-d. Bucket: DI-bucket (the Object Storage bucket where you uploaded your REVENUE.CSV file in Setting up the Data Integration prerequisites in OCI).
+d. Bucket: DI-bucket (the Object Storage bucket where REVENUE.CSV file resides).
 e. We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
 
   ![](images/task2_4.png " ")
