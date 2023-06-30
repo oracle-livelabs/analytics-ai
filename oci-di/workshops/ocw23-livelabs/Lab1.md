@@ -80,7 +80,7 @@ i. Now we will select multiple files that we want to use as a source using a pat
 
   ![](images/task2_6.png " ")
 
-j. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name and click on add. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
+j. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name and click on **Add** button. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
 
   ![](images/task2_7.png " ")
 
