@@ -237,6 +237,8 @@ Now you are going to navigate back to the data integration workspace, and click 
 
 ![Create Application](./images/create-app.png " ")
 
+![Create Application](./images/create-app1.png " ")
+
 Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application. Navigate to the Project_lakehouse, from the menu select Tasks. LoadCustomerCSV will be seen in the list and you will need to expand the three dot menu and add it to the application.
 
 ![Add Task to Application](./images/create-app2.png " ")
