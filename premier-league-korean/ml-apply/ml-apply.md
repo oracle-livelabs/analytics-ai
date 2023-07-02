@@ -4,49 +4,49 @@
 
 ## Introduction
 
-In this lab, we will apply our newly trained Expected Goals model to matches and players.
+이 실습에서는 새로 훈련된 예상 골 모델을 실제 경기 및 선수에 적용합니다.
 
-Estimated Time: 30 minutes
+예상 시간: 30분
 
 ### Objectives
-- Learn how to use data flow to apply ML models to data
+- OAC 데이터 흐름(Data Flow) 을 사용하여 ML 모델을 실제 데이터에 적용하는 방법 알아보기
 
 ### Prerequisites
 - Oracle Analytics Cloud
 - Autonomous Data Warehouse
-- You've completed the previous labs
+- 이전 실습을 완료
 
-## Task 1: Refresh the EVENT Data Set in Oracle Analytics Cloud to Include the New Columns
+## Task 1: 새 열을 포함하도록 Oracle Analytics Cloud에서 EVENT 데이터 세트 새로 고침(Refresh)
 
-1. In case you don't have a window with Oracle Analytics Cloud open, you can open it as follows:
+1. Oracle Analytics Cloud가 열려 있는 창이 없는 경우 다음과 같이 열 수 있습니다:
 
-    From the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
+    **Oracle Cloud Infrastructure console** 에서 왼쪽의 메뉴 아이콘을 클릭합니다.
 
-    Navigate to **Analytics & AI** and then **Analytics Cloud**.
+    **Analytics & AI** 로 이동한 다음 **Analytics Cloud** 을 클릭합니다.
 
     ![OAC Web Console](images/analytics-oac.png)
 
-2. **Open** the Cloud Analytics **URL** associated with your instance (we created this earlier) by using the dots menu button on the right-hand side of your instance information and selecting **Analytics Home Page**.
+2. 인스턴스 정보 오른쪽에 있는 점 메뉴 버튼을 사용하여 **Analytics Home Page** 를 선택하고, 인스턴스와 연결된 Cloud Analytics **URL** 를 **Open** 합니다. 
 
     ![Cloud Analytics URL](images/select-oac-instance.png)
 
-    The **Oracle Analytics** page will open in a new browser **window/tab**.
+    **Oracle Analytics** 페이지가 **새 브라우저** 창/탭 에서 열립니다 .
 
-3. Click **Data**, then the small icon on the bottom-right of the `EVENTS` data set, and then "Open".
+3. **Data**를 클릭하고, 데이터 세트의 오른쪽 하단에 있는 작은 아이콘(`EVENTS`)을 클릭 한 다음 "열기"를 클릭합니다. 
 
    ![Open events](images/open-events.png)
 
-4. Click on "Edit Definition" on the top near to the right of the screen.
+4. 화면 오른쪽 상단의 "정의 편집"을 클릭합니다.
 
    ![Edit definition](images/edit-definition.png)
 
-5. Notice how the `ANGLE` and `ANGLE_BUCKET`, `PREDICTED_GOAL` and `XG` fields are not yet part of the data set. 
+5. `ANGLE` 필드와  `ANGLE_BUCKET`, `PREDICTED_GOAL` 그리고 `XG` 필드가 아직 데이터셋의 일부가 아닌 것을 확인 하세요. 
 
-   Click "Add All" to also add these new columns in the data set in Oracle Analytics Cloud and press "OK".
+   "모두 추가"를 클릭하여 Oracle Analytics Cloud의 데이터 세트에 이러한 새 열을 추가하고 "확인"을 누릅니다.
 
    ![Press add all](images/press-add-all.png)
 
-6. Press "Save" to apply the changes and then go back to the home page with the button on the top-left.
+6. "저장"을 눌러 변경 사항을 적용한 다음 왼쪽 상단의 버튼을 사용하여 홈페이지로 돌아갑니다.
 
    ![Save and go to menu](images/save-and-menu.png)
 
@@ -144,217 +144,216 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
 
 ## Task 4: Build the Visualizations to Analyze a Match
 
-1. First of all we will add a MATCH data set, which holds the team names and results of each match.
+1. 먼저 각 경기의 팀 이름과 결과를 포함하는 MATCH 데이터 세트를 추가합니다.
 
-   On the homepage, click "Create", then click Dataset.
+   홈페이지에서 "만들기"를 클릭한 다음 데이터 세트를 클릭합니다.
+
 
    ![Create Dataset](images/add-dataset2.png)
 
-2. Choose the `PL` connection.
-
+2. `PL` 연결을 선택합니다. 
    ![Choose PL connection](images/choose-pl.png)
 
-3. Open the `PL` schema and double-click on `MATCH`.
+3. `PL` 스키마를 열고 `MATCH`를 더블 클릭합니다. 
 
    ![Open the PL schema and select MATCH](images/add-match.png)
 
-   Notice how this data set contains one row for each match (season 2017/2018 and a handful of matches of the 2021/2022 season).
+   이 데이터 세트에 각 경기(2017/2018 시즌 및 2021/2022 시즌의 일부 경기)에 대해 하나의 행이 포함되어 있는지 확인하십시오.
 
-4. Save the data set, name it `MATCH`, then go back to the main menu.
+4. 데이터 세트를 저장하고 이름을 `MATCH` 로 지정 다음 기본 메뉴로 돌아갑니다.
 
    ![Save data set](images/save-match.png)
 
-5. On the homepage, click "Data", then click the "Match" dataset to create a new visualization workbook.
+5. 홈페이지에서 "데이터"를 클릭한 다음 "Match" 데이터 세트를 클릭하여 새 시각화 통합 문서를 만듭니다.
 
    ![Create workbook](images/add-match2.png)
 
-6. First, let's select a particular match. Drag the `NAME_DATE` field to the Filter section and search and select the match "Liverpool - Manchester City 03-10-2021".
+6. 먼저 특정 경기를 선택하겠습니다. `NAME_DATE`필드를 필터 섹션으로 드래그 하고 "Liverpool - Manchester City 03-10-2021" 경기를 검색하고 선택합니다.
 
    ![Add filter](images/add-match-filter.png)
 
-7. Select the `TEAM_HOME_NAME`, `TEAM_AWAY_NAME`, `SCORE_HOME` and `SCORE_AWAY` fields (use Control-Click to select multiple fields). Then right-click on any of the fields, choose "Pick Visualization" and choose Table.
+7. `TEAM_HOME_NAME`, `TEAM_AWAY_NAME`, `SCORE_HOME` 및 `SCORE_AWAY` 및 필드를 선택합니다 (여러 필드 를 선택하려면 Control-클릭 사용). 그런 다음 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "시각화 선택"을 선택한 다음 테이블을 선택합니다.
 
    ![Create visualization](images/add-match-header.png)
 
-8. Reorder the columns so that the result looks as follows.
+8. 결과가 다음과 같이 표시되도록 열을 재정렬합니다.
 
    ![Reorder columns](images/result-match.png)
 
-9. Next, we will add the **list of shots by each team** in the match.
+9. 다음으로 경기에서 각 팀의 샷 목록**list of shots by each team**을 추가합니다.
 
-   Next to the search box, click the "+" icon and choose "Add Dataset".
+   검색 상자 옆에 있는 "+" 아이콘을 클릭하고 "데이터 세트 추가"를 선택합니다.
 
    ![Add dataset](images/add-dataset3.png)
 
-10. Pick the "Event" data set and click "Add to Workbook".
+10. "이벤트" 데이터 집합을 선택하고 "통합 문서에 추가"를 클릭합니다.
 
    ![Pick Event with xG data set](images/pick-event-with-xg.png)
 
-11. Select `PLAYER_NAME`, `TIME_MIN` and `IS_GOAL` from the "Event with xG" data set (use Control+click to select multiple fields). Then right-click on any of the fields and select "Pick Visualization" and choose Table.
+11. "Event with xG" 데이터 세트 에서,  `PLAYER_NAME`, `TIME_MIN` and `IS_GOAL` 를 선택합니다. 그런 다음 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "Pick Visualization"을 선택한 다음 테이블을 선택합니다.
 
    ![Create shots](images/create-shots.png)
 
-12. We would like to have separate tables for the home and away teams. Therefore we will duplicate this table. 
+12. 우리는 홈팀과 원정팀을 위한 별도의 테이블을 갖고 싶습니다. 따라서 이 테이블을 복제합니다.
 
-   Right-click on the header of the chart you just created and select Edit -> Duplicate Visualization.
+   방금 만든 차트의 헤더를 마우스 오른쪽 버튼으로 클릭하고 편집 -> 시각화 복제를 선택합니다.
 
    ![Duplicate](images/duplicate.png)
 
-13. The result should look similar to the following.
+13. 결과는 다음과 유사해야 합니다.
 
-   Rearrange the tables by dragging their headers if necessary.
+   필요한 경우 헤더를 드래그하여 테이블을 재정렬하십시오.
 
    ![Preliminary result](images/prelim-result.png)
 
-14. Now let's apply filters so that the left and right tables show shots for the home and away teams respectively.
+14. 이제 필터를 적용하여 왼쪽 및 오른쪽 테이블에 홈 팀과 원정 팀의 샷이 각각 표시되도록 해 보겠습니다.
 
-   Drag the `TEAM_SIDE` field to the Filters section of the shots table on the left, and choose "home".
+   `TEAM_SIDE` 필드를 왼쪽 샷 테이블의 필터 섹션으로 드래그 하고 "Home"을 선택합니다.
 
-   Similarly, filter the other shots table for the "away" team.
+   마찬가지로 "away" 팀에 대한 다른 샷 테이블을 필터링합니다.
 
    ![Team side filter](images/team-side-filter.png)
 
-15. Last of all, on both tables with shots use the up arrow on the `TIME_MIN` column to sort the shots by time.
+15. 마지막으로 샷이 있는 두 테이블에서 열의 위쪽 화살표를 사용하여 `TIME_MIN`샷을 시간별로 정렬합니다.
 
    ![Sort ascending](images/sort-asc.png)
 
-16. Now, let's add the football pitch to **visualize the location of each shot**, along with the xG information.
+16. 이제 축구 경기장을 추가하여 xG 정보와 함께 **각 샷의 위치를 ​​시각화**해 보겠습니다.
 
-   Select `X_REL_M_TEAM` (position of player), `Y_REL_M_TEAM` (position of player), `GOAL_CNT` (whether a goal was scored from the shot) and `XG` (the xG value according to our model) from the "Event with xG" data set (use Control+click to select multiple fields). Then right-click on any of the fields and select "Pick Visualization" and choose Map.
+   xG가 포함된 이벤트" 데이터 세트에서 `X_REL_M_TEAM`(선수의 위치), `Y_REL_M_TEAM`(선수의 위치), `GOAL_CNT`(슛에서 골이 득점되었는지 여부) 및 `XG`(우리 모델에 따른 xG 값)을 선택합니다 (Ctrl+클릭을 사용하여 여러 선택 필드). 그런 다음 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "Pick Visualization" 을 선택한 다음 맵을 선택합니다.
 
    ![Create map](images/create-map.png)
 
-17. Change the chart configuration so it matches the following screenshot:
+17. 다음 스크린샷과 일치하도록 차트 구성을 변경합니다.:
 
    ![Map configuration](images/map-config2.png)
 
-   You can drag fields around to change the configuration.
+   필드를 드래그하여 구성을 변경할 수 있습니다..
 
-18. Change the additional map configuration by clicking the Map icon and choosing "football\_pitch" as the background.
+18. 지도 아이콘을 클릭하고 배경으로 "football_pitch"를 선택하여 추가 지도 구성을 변경합니다.
 
    ![Map configuration](images/map-config.png)
 
-19. Drag the `ANGLE` and `DISTANCE` attributes over to the Tooltip section of the map configuration. This will allow us to easily check these values when we hover over a shot.
+19. `ANGLE` 및 `DISTANCE` 속성을 지도 구성의 도구 설명 섹션으로 드래그합니다 . 이렇게 하면 샷 위로 마우스를 가져갈 때 이러한 값을 쉽게 확인할 수 있습니다.
 
    ![Hover over shot tooltip](images/tooltip.png)
 
-20. Finally, we can compute the total xG scores. We will do this for both teams.
+20. 마지막으로 총 xG 점수를 계산할 수 있습니다. 우리는 두 팀 모두에 값을 계산할 것입니다.
 
-   Right-click the `XG` attribute and choose "Create Best Visualization". This will create a total for the xG values of all shots in the match.
+   `XG`속성 을 마우스 오른쪽 버튼으로 클릭 XG하고 "최고의 시각화 만들기"를 선택합니다. 이것은 경기에서 모든 샷의 xG 값에 대한 합계를 생성합니다.
 
    ![Create xG total](images/create-xg-total.png)
 
-21. Drag the XG visualization so that it shows on the side of the home team.
+21. 홈 팀 측면에 표시되도록 XG 시각화를 드래그합니다.
 
    ![Drag home team](images/drag-home-team.png)
 
-22. Set a filter on the home team's xG by dragging `TEAM_SIDE` to the Filters section and choosing "home".
+22. `TEAM_SIDE`필터 섹션으로 드래그하고 "홈"을 선택하여 홈 팀의 xG에 필터를 설정합니다
    
    ![Set a filter](images/set-xg-filter.png)
 
-23. Repeat steps 20-22 for the away team.
+23. 어웨이 팀에 대해 20-22단계를 반복합니다
 
-24. Check the resulting workbook. 
+24. 결과 통합 문서를 확인합니다.
 
-   Rearrange the visualizations if necessary.
+   필요한 경우 시각화를 재정렬합니다.
 
    ![Resulting visualization](images/result-liverpool-manchestercity.png)
 
-25. Save the workbook and name it "Match Analysis".
+25. 통합 문서를 저장하고 이름을 "Match Analysis" 로 지정합니다.
 
    ![Save workbok](images/save-workbook.png)
 
-## Task 5: Analyze Liverpool - Manchester City on 03-10-2021
+## Task 5: 2021년 3월 10일 리버풀 - 맨체스터 시티 분석
 
-1. Have a look at the difference between the total of goals versus the total xG for both teams. 
+1. 두 팀의 총 골 수와 총 xG의 차이를 살펴보십시오.
 
-   The numbers indicate that the teams were able to take good advantage of relatively difficult shot circumstances.
-
+   숫자는 팀이 상대적으로 어려운 샷 상황을 잘 활용할 수 있음을 나타냅니다.
    ![Difference between xG and goals](images/difference-totals.png)
 
-2. The players managed to score goals from some pretty difficult situations. Now we have xG, we can actually put a number on this.
+2. 선수들은 꽤 어려운 상황에서 골을 넣었습니다. 이제 우리는 xG를 가지고 있고, 우리는 실제로 이것에 숫자를 넣을 수 있습니다.
 
-   Click on Mohamed Salah’s goal in minute 75 in the shots table. 
+   슛 테이블에서 75분에 `Mohamed Salah` 의 골을 클릭하십시오.
    
    ![Mohamed Salah goal](images/first-goal.png)
    
-   Initially you may think that he’s quite close to the goal and it’s a good opportunity, but the xG is actually only 0.06. In other words, our xG model tells us that only in about 6% of all cases (1 in about 17 shots) a goal would be made in this situation (given the location on the pitch and the facts that it’s a footer, it’s not from a corner, it’s not from a free kick and it’s not from a fast break).
+   처음에는 그가 목표에 상당히 근접했고 좋은 기회라고 생각할 수 있지만 실제로 xG는 0.06에 불과합니다. 다시 말해, 우리의 xG 모델은 모든 경우의 약 6%(약 17번의 슛 중 1번)만이 이러한 상황에서 골이 될 것이라고 알려줍니다(경기장의 위치와 발을 사용한 슛이라는(Footer) 사실을 고려할 때, 프리킥이나 속공에서 나온 것이 아닙니다.)
 
-   We can appreciate that better if we have a look at the distance and the angle Salah is facing here:
+   여기에서 `Salah`가 향하고 있는 거리와 각도를 보면 더 잘 이해할 수 있습니다.
 
-   On the topdown view he may appear to be close to the goal, but he’s actually still 10 meters away from the center, with an angle of only 16 degrees between the two goal posts. Now keep in mind that there’s a keeper between him and the goal, and we realize just how difficult the shot is.
+   탑다운 뷰 에서 그는 골대에 가까운 것처럼 보일 수 있지만 실제로는 중앙에서 10미터 떨어져 있으며 두 골대 사이의 각도는 16도에 불과합니다. 이제 그와 골문 사이에 골키퍼가 있다는 것을 명심하고 우리는 여기에서 슛이 얼마나 어려운지 알 수 있습니다. 
    
-   That’s where we see the world class of these players!
+   이것이 세계적 수준의 플레이 인 것을 알 수 잇습니다. 
 
-3. Now have a look at the goal from Kevin de Bruyne in minute 80 by clicking on it in the shot table.
+3. 이제 슛 테이블에서 클릭하여 80분에 `Kevin de Bruyne`의 골을 살펴보십시오.
 
-   You see that the chance of scoring from that position according to our model is 8%. Because Kevin was quite far away from the goal, the angle between the goal posts is relatively small at 22 degrees.
+   모델에 따라 해당 위치에서 득점할 확률이 8%임을 알 수 있습니다. 케빈이 골문에서 꽤 멀리 떨어져 있었기 때문에 골대 사이의 각도가 22도로 비교적 작습니다
 
    ![Kevin de Bruyne goal](images/another-goal.png)
 
-4. Also notice the highest shot chance of the match according to our xG model. 
+4. 또한 xG 모델에 따라 경기의 가장 높은 슛 기회를 확인하십시오.
 
-   The last shot of the match was by Gabriel Jesus and it's given an xG of 0.28, and it did not result in a goal.
+   경기의 마지막 슛은 `Gabriel Jesus`의 슈팅으로 xG는 0.28로 주어졌으며 득점으로 이어지지는 않았습니다. 
 
-   Bonus: Investigate why the model may have given a relatively high xG for this shot. 
+   Bonus:  모델이 이 샷에 대해 상대적으로 높은 xG를 제공했을 수 있는 이유를 파악해 봅니다. 
 
    ![High xG](images/high-xg.png)
 
-## Task 6: Analyze Manchester United - Watford on 26-02-2022
+## Task 6: 2022년 2월 26일 맨체스터 유나이티드 - 왓포드 분석
 
-1. Change the filter to select the match between Manchester United - Watford on 26-02-2022.
+1. 필터를 변경하여 2022-02-26 맨체스터 유나이티드와 왓포드 간의 경기를 선택하세요.
 
    ![Change the filter](images/change-filter.png)
 
-2. Inspect the visualizations and analyze the match.
+2. 시각화를 검사하고 일치 항목을 분석합니다.
 
    ![Manchester United against Watford](images/manunitedwatford.png)
 
-   This game ended in 0-0.
+   이 게임은 0-0으로 끝났습니다.
 
-   So does that mean both teams were just as strong? If you’d watched the game, you’d know that Manchester United was having the upper hand, even though the score doesn’t reflect that.
+   그렇다면 두 팀 모두 그만큼 강했다는 의미일까요? 경기를 본 적이 있다면 점수에는 반영되지 않지만 맨체스터 유나이티드가 우위를 점하고 있다는 것을 알 수 있습니다.
 
-   You can see that in the sum of xG for both teams. They had a large amount of shots with an xG of over 20%. Normally some of these would land in the net, but sometimes a team is unlucky.  
+   양 팀의 xG 합계에서 이를 확인할 수 있습니다. xG가 20%가 넘는 슛이 많았고, 일반적으로 이슛들 중 일부는 골 네트에 도달하지만 때때로 팀은 운이 좋지 않을 때도 있습니다.
    
-   Now, as a trainer for Manchester United, you could interpret this in different ways: Maybe the team was just unlucky, or maybe the team should improve their finishing skills. Another way of looking at it is that the goalkeeper of Watford did a great job. In any case, we cannot blame ManUnited for not creating opportunities!
+   이제 맨체스터 유나이티드의 트레이너로서 이것을 다른 방식으로 해석할 수 있습니다. 팀이 운이 없었을 수도 있고 혹은 팀이 마무리 기술을 개선해야 할 수도 있습니다. 그것을 보는 또 다른 방법은 Watford의 골키퍼가 훌륭한 일을 했다는 것입니다. 어쨌든 우리는 맨체스터 유나이티드가 기회를 만들지 못했다고 비난할 수 없습니다!
 
-## Task 7 (Bonus): Find the Goal That Had the Lowest Chances According to Our xG model
+## Task 7 (Bonus): xG 모델에 따라 가능성이 가장 낮은 목표 찾기
 
-1. Remove the existing filter on match.
+1. Match 에서 기존 필터를 제거합니다.
 
    ![Delete filter](images/delete-filter.png)
 
-2. Create filter to a) show only the goals, b) remove penalties and c) remove own goals.
+2. 다음의 필터를 만듭니다 a) 골만 표시, b) 페너티 제거 c) 자살골 제거 
 
    ![Add filters](images/add-filters.png)
 
-3. Select the `ID`, `PLAYER_NAME` and `XG` fields of the "Event with xG" data set (use Control-Click to select multiple fields). Then right-click on any of the fields, choose "Pick Visualization" and choose Table.
+3. "Event with xG" 데이터 셋트의 `ID`, `PLAYER_NAME` 그리고`XG` 를 선택하고, 그런 다음 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "pick visualization"을 선택한 다음 테이블을 선택합니다.
 
    ![Visualization shots](images/shot-vis.png)
 
-4. Right-click on the visualization and check "Use as Filter". This means that the other visualizations on the workbook will automatically sync to the shot that we click.
+4. 시각화를 마우스 오른쪽 버튼으로 클릭하고 "Use as Filter"을 선택합니다. 즉, 통합 문서의 다른 시각화가 클릭하는 샷과 자동으로 동기화됩니다.
 
    ![Use as filter](images/use-as-filter.png)
 
-5. Sort the results by xG ascending by clicking on the up arrow on the xG column header.
+5. xG 열 머리글의 위쪽 화살표를 클릭하여 결과를 xG 오름차순으로 정렬합니다.
 
    ![Sort ascending](images/sort-asc2.png)
 
-   We see that it was Kai Havertz who scored a goal from the shot with the lowest xG. The xG is only 0.02, meaning that only one in about 50 shots in the same situation are expected to result in a goal.
+   우리는 가장 낮은 xG로 슛에서 골을 넣은 것이 `Kai Havertz`임을 알 수 있습니다. xG는 0.02에 불과하며, 이는 동일한 상황에서 약 50개의 슛 중 1개만이 골로 이어질 것으로 예상된다는 의미입니다.
 
    Click on the row.
 
-6. Investigate what makes this such a difficult shot. 
+6. 이 슛을 그렇게 어려운 이유를 조사하십시오.
 
-   Add the `HEAD` and `FROM_CORNER` attributes to the shots table. 
+   `HEAD` 과 `FROM_CORNER` 속성을 슛 테이블에 추가 합니다.
 
    ![Add HEAD and FROM_CORNER](images/difficult-shot.png)
 
-   Now we understand why this shot was so difficult: Not only was this a header resulting from a corner, but also the distance to the goal was substantial (11 meters) and the angle was also not ideal (22 degrees).
+   이 슛은 코너킥에서 나온 헤딩이었였을 뿐만 아니라 골문까지의 거리가 상당했고(11미터) 각도도 이상적이지 않았습니다(22도).
 
-   An incredible header!
+   굉장한 헤딩골 ~!
 
-   You may now proceed to the next lab.
+   이제 다음 실습을 진행할 수 있습니다.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
