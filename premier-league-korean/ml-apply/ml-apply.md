@@ -142,7 +142,7 @@ We're going to calculate/predict the xG value for all shots in our data set, inc
    ![Go back to the home page](images/back-to-menu.png)
 -->
 
-## Task 4: Build the Visualizations to Analyze a Match
+## Task 4: 경기를 분석하기 위한 시각화 만들기
 
 1. 먼저 각 경기의 팀 이름과 결과를 포함하는 MATCH 데이터 세트를 추가합니다.
 
