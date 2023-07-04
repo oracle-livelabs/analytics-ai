@@ -350,7 +350,7 @@ As the bulk-labeling proceeds, notice that the number of labeled records will in
 
 ![Records Unlabeled](./images/24-4-labeling-progress.png)
 
-To check on the progress of the labeling from the web console, for this lab we recommend using the buttons on the web console UI to periodically return to the Data Labeling dataset page shown in the below screenshot, rather than refreshing the page. Refreshing the browser will halt the bulk-labeling process. If you refresh the browser, you will need to run the following command again to resume the bulk-labeling process.
+To check on the progress of the labeling from the web console, for this lab we recommend using the buttons on the web console UI to periodically return to the Data Labeling dataset page shown in the below screenshots, rather than refreshing the page. Refreshing the browser will halt the bulk-labeling process. If you refresh the browser, you will need to run the following command again to resume the bulk-labeling process.
 
   ```
   <copy>python bulk_labeling_script.py</copy>
