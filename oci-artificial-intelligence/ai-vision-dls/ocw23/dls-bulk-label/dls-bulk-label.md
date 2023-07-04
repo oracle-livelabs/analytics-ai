@@ -285,7 +285,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>DATASET_ID = "<OCID of your Data Labeling dataset from your notepad app>"</copy>
   ```
 
-  *Recommended for users who are unfamiliar with CLI-based text editors:* Follow these instructions to make these edits using the vi editor:
+  *(Recommended for users who are unfamiliar with CLI-based text editors)*
+  \
+  Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
@@ -312,7 +314,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
   ```
 
-  *Recommended for users who are unfamiliar with CLI-based text editors:* Follow these instructions to make these edits using the vi editor:
+  *(Recommended for users who are unfamiliar with CLI-based text editors)*
+  \
+  Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
