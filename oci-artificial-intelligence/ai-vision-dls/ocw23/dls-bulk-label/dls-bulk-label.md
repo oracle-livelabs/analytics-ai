@@ -190,7 +190,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
 ```
 
-5. Execute the following command to bulk-upload the training image files to your bucket.
+5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you provided a different name than **image-classification-bucket**, then you may restructure the command accordingly.
 ```
 <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
 ```
