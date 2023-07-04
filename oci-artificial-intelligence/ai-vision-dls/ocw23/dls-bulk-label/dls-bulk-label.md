@@ -105,7 +105,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   e. Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
-  f. Paste the following matching rule into the text field. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
+  f. Paste the following matching rule into the text field. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
 
     ```
     <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
@@ -129,12 +129,12 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   e. Let the policy remain scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
 
-  f. Copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad.
+  f. Copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad.
 
     ```
-    <copy>Allow dynamic-group DataLabeling_DynamicGroup to read buckets in compartment id <compartment OCID>
-    Allow dynamic-group DataLabeling_DynamicGroup to read objects in compartment id <compartment OCID>
-    Allow dynamic-group DataLabeling_DynamicGroup to manage objects in compartment id <compartment OCID> where any {request.permission='OBJECT_CREATE'}
+    <copy>Allow dynamic-group Image_Classification_Dynamic_Group to read buckets in compartment id <compartment OCID>
+    Allow dynamic-group Image_Classification_Dynamic_Group to read objects in compartment id <compartment OCID>
+    Allow dynamic-group Image_Classification_Dynamic_Group to manage objects in compartment id <compartment OCID> where any {request.permission='OBJECT_CREATE'}
     Allow group Image_Classification_Group to manage object-family in compartment id <compartment OCID>
     Allow group Image_Classification_Group to read objectstorage-namespaces in compartment id <compartment OCID>
     Allow group Image_Classification_Group to manage data-labeling-family in compartment id <compartment OCID>
@@ -276,7 +276,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 ```
 <copy>echo $OCI_REGION</copy>
 ```
-4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **\<placeholder values\>** with your own values. Preserve the quotation marks in the template. Instructions using the vi command are shown below:
+4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template. Instructions using the vi command are shown below:
 
   You will update the values that are assigned to variables in **config.py** as indicated below:
   ```
