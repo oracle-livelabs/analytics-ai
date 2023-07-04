@@ -228,9 +228,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   c. **Annotation Class**: *Single Label*
 
-  ![Name, Dataset format, Annotation Class](./images/19-create-dataset-page-1-dataset-format-annotation-class.png)
-
   d. Click **Next**.
+
+  ![Name, Dataset format, Annotation Class](./images/19-create-dataset-page-1-dataset-format-annotation-class.png)
 
   e. Retrieve files from Object Storage by choosing **Select from Object Storage**.
 
@@ -246,9 +246,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   * Debris
   * Stripe
 
-  ![Add Labels](./images/21-create-dataset-page-2-add-labels.png)
-
   i. Click **Next**.
+
+  ![Add Labels](./images/21-create-dataset-page-2-add-labels.png)
 
   j. Review the information and deploy your Data Labeling dataset by clicking **Create**.
 
@@ -287,7 +287,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>DATASET_ID = "<OCID of your Data Labeling dataset from your notepad app>"</copy>
   ```
 
-  *(Recommended for users who are unfamiliar with CLI-based text editors)* Follow these instructions to make these edits using the vi editor:
+  *Recommended for users who are unfamiliar with CLI-based text editors:* Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
@@ -302,7 +302,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   e. Press **ESC** to escape *insert* mode.
   
-  f. Repeat steps a. - e., for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
+  f. Repeat steps **a.** through **e.**, for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
   
   g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
@@ -314,7 +314,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
   ```
 
-  *(Recommended for users who are unfamiliar with CLI-based text editors)* Follow these instructions to make these edits using the vi editor:
+  *Recommended for users who are unfamiliar with CLI-based text editors:* Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
