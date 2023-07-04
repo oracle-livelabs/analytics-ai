@@ -44,6 +44,8 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   b. Click **Create Compartment**.
 
+  ![Create compartment window](./images/2-1-create-compartment.png)
+
   c. Provide a name for your Policy, e.g. **Image\_Classification**
 
   d. Provide a description, e.g. **Compartment for image classification OCW23 LiveLab**
@@ -52,7 +54,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   f. Click **Create Compartment**.
 
-  ![Create compartment window](./images/2-1-create-compartment.png)
+  ![Create compartment window](./images/2-2-create-compartment-details.png)
 
 2. Find the compartment's Oracle Cloud Identifier (OCID), as shown in the below image. Then, copy and paste this value into a new line on a digital notepad app. You will retrieve this value when building your IAM Policy statements.
 
@@ -68,9 +70,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Domains](./images/4-identity-domains.png)
 
-  ![Default domain](./images/5-default-domain.png)
+  <!-- ![Default domain](./images/5-default-domain.png) -->
 
-  c. Click **Create Group**.
+  c. Click **Create group**.
 
   ![Create Group](./images/6-groups-in-default-domain.png)
 
@@ -78,7 +80,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   e. Provide a description for your Group, e.g. *Group for image classification OCW23 LiveLab users*
 
-  f. Click **Add User to Group**, and select the name of the user who will proceed with the lab tasks after the Policy Setup.
+  f. Select the name of the user who will proceed with the lab tasks after the Policy Setup.
 
   ![Create Group](./images/7-create-group.png)
 
@@ -91,11 +93,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Click Default Domain](./images/8-2-click-default-domain.png)
 
-  b. Click **Dynamic Groups**.
+  b. Click **Dynamic groups**.
 
   ![Click Dynamic Group](./images/5-2-default-domain-dynamic-group.png)
 
-  c. Click **Create Dynamic Group**.
+  c. Click **Create dynamic group**.
 
   ![Click Create Dynamic Group](./images/8-3-create-dynamic-group-button.png)
 
@@ -119,19 +121,15 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![OCI Services Menu](./images/2-menu-identity-and-security.png)
 
-  b. Select the root compartment using the dropdown menu under **List Scope**, and select **Policies**.
+  b. Click **Create Policy**.
 
-  ![Policies](./images/4-identity-domains.png)
+  c. Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
 
-  c. Click **Create Policy**.
+  d. Provide a description, e.g. *Policy for image classification OCW23 LiveLab*
 
-  d. Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
+  e. Let the policy remain scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
 
-  e. Provide a description, e.g. *Policy for image classification OCW23 LiveLab*
-
-  f. Let the policy remain scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
-
-  g. Copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad.
+  f. Copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad.
 
     ```
     <copy>Allow dynamic-group DataLabeling_DynamicGroup to read buckets in compartment id <compartment OCID>
@@ -144,9 +142,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     Allow group Image_Classification_Group to manage ai-service-vision-family in compartment id <compartment OCID></copy>
     ```
 
-  ![Policy](./images/10-2-create-policy.png)
+    g. Click **Create**.
 
-  h. Click **Create**.
+  ![Policy](./images/10-2-create-policy.png)
 
 ## **Task 1:** Create an Object Storage Bucket
 *\[5 minutes\]*
