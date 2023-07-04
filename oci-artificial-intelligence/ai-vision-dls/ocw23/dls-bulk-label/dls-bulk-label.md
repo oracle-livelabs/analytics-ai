@@ -87,29 +87,31 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 <!-- todo: replace images for dynamic group step so that they have boxes drawn around dynamic group resource names on the console UI -->
 4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling datasets in your new compartment.
 
-  a. Click **Default Domain** on the upper-left of the screen.
+  a. Click **Default domain** on the upper-left of the screen.
 
   ![Click Default Domain](./images/8-2-click-default-domain.png)
 
+  b. Click **Dynamic Groups**.
+
   ![Click Dynamic Group](./images/5-2-default-domain-dynamic-group.png)
 
-  b. Click **Create Dynamic Group**.
+  c. Click **Create Dynamic Group**.
 
   ![Click Create Dynamic Group](./images/8-3-create-dynamic-group-button.png)
 
-  e. Provide a name for your Dynamic Group, e.g. **Image_Classification_Dynamic_Group**
+  d. Provide a name for your Dynamic Group, e.g. **Image_Classification_Dynamic_Group**
 
-  f. Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
+  e. Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
-  g. Paste the following matching rule into the text field. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
+  f. Paste the following matching rule into the text field. Replace the placeholder value **\<compartment OCID\>** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
 
     ```
     <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
     ```
 
-  ![Create Dynamic Group window](./images/9-create-dynamic-group.png)
+  g. Click **Create**.
 
-  h. Click **Create**.
+  ![Create Dynamic Group window](./images/9-create-dynamic-group.png)
 
 5. Create a Policy. The Policy will contain a series of statements. Each statement will allow a Group (and associated users) or Dynamic Group (and associated resources that are matched by the matching rule) to access specified resources to specified degrees of privilege.
 
@@ -155,9 +157,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 2. Select your new compartment using the dropdown menu under **List Scope**.
 
-  ![Select compartment](./images/12-select-compartment-on-object-storage-page.png)
-
 3. Click **Create Bucket** and enter details for your Bucket.
+
+  ![Select compartment](./images/12-select-compartment-on-object-storage-page-and-click-create-bucket.png)
 
   a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-demo*. Make a note of this name for later use in this lab.
 
