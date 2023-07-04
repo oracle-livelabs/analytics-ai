@@ -256,7 +256,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Identifying dataset OCID](./images/23-labels-importing-copy-dataset-ocid.png)
 
-6. When all of the data has been imported into your dataset from your Object Storage Bucket, the screen will appear similar to the below screenshot. Notice that none (0) of the 1710 records have yet been labeled. Once all 1710 image files have been imported as records in your dataset, it will be time to begin the next task, where you will label your data using a bulk-labeling operation.
+6. When all of the data has been imported into your dataset from your Object Storage Bucket, the screen will appear similar to the below screenshot. Notice that none (**0**) of the **1710** records have yet been labeled. Once all **1710** image files have been imported as records in your dataset, it will be time to begin the next task, where you will label your data using a bulk-labeling operation.
 
   ![All records imported](./images/24-records-imported.png)
 
@@ -342,7 +342,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>python bulk_labeling_script.py</copy>
   ```
 
-As the bulk-labeling proceeds, notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, 1082 of the 1710 records have so far been labeled.
+As the bulk-labeling proceeds, notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, **1082** of the **1710** records have so far been labeled.
 
 ![Records Unlabeled](./images/24-4-labeling-progress.png)
 
@@ -364,7 +364,7 @@ To check on the progress of the labeling from the web console, for this lab we r
 
 ![Troubleshooting Bulk Labeling](./images/25-2-bulk-labeling-troubleshooting.png)
 
-After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that 1710/1710 records have been labeled.
+After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled.
 <!-- ![Bulk-Labeling Done](./images/25-bulk-labeling-done.png) -->
 
 ![Records Labeled](./images/27-all-records-labeled.png)
