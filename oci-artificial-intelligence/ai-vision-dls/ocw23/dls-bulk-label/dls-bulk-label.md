@@ -161,7 +161,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Select compartment](./images/12-select-compartment-on-object-storage-page-and-click-create-bucket.png)
 
-  a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-demo*. Make a note of this name for later use in this lab.
+  a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*. Make a note of this name for later use in this lab.
 
   b. **Default Storage Tier**: *Standard*
 
@@ -222,7 +222,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 ![Data Labeling Datasets](./images/18-data-labeling-datasets.png)
 
-  a. **Name**: Enter a name for your Data Labeling dataset, e.g. *image-classification-demo*
+  a. **Name**: Enter a name for your Data Labeling dataset, e.g. *image-classification-dataset*
 
   b. **Dataset format**: *Images*
 
@@ -241,9 +241,10 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ![Select Bucket](./images/20-create-dataset-page-2-select-bucket.png)
 
   h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Note to use capitalized first letters followed by lowercase letters, and take care to leave no space characters in the label names.
-    * Cell
-    * Debris
-    * Stripe
+    
+  * Cell
+  * Debris
+  * Stripe
 
   ![Add Labels](./images/21-create-dataset-page-2-add-labels.png)
 
@@ -291,17 +292,17 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   vi config.py
   ```
 
-  a. Use the arrow keys to navigate your cursor to the end of the value after *CONFIG_FILE_PATH =*
+  a. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG_FILE_PATH =*
   
   b. Enter *insert* mode by typing **i**.
   
   c. Delete the value within the quotation marks using the **delete** button.
   
-  d. Enter the value to be assigned to **CONFIG_FILE_PATH** in our example, which is: **"/etc/oci/config"**. Be sure to include the quotation marks where indicated.
+  d. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **"/etc/oci/config"**. Be sure to include the quotation marks where indicated.
   
   e. Press **ESC** to escape *insert* mode.
   
-  f. Repeat steps a. - e., for the remaining variables (**REGION_IDENTIFIER** and **DATASET_ID**) and their respective values, as indicated above.
+  f. Repeat steps a. - e., for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
   
   g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
@@ -324,11 +325,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   c. Delete the value within the quotation marks using the **delete** button.
   
-  d. Enter the value to be assigned to **CONFIG_FILE_PATH** in our example, which is: **["Cell", "Debris", "Stripe"]**. Be sure to include the quotation marks where indicated.
+  d. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **["Cell", "Debris", "Stripe"]**. Be sure to include the quotation marks where indicated.
   
   e. Press **ESC** to escape *insert* mode.
   
-  f. Repeat steps a. - e., for **LABELING_ALGORITHM** and its respective value, as indicated above.
+  f. Repeat steps **a.** through **e.**, for **LABELING\_ALGORITHM** and its respective value, as indicated above.
   
   g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
