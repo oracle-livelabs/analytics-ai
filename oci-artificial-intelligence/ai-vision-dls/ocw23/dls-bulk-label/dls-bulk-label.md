@@ -44,7 +44,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   b. Click **Create Compartment**.
 
-  c. Provide a name for your Policy, e.g. **Image_Classification**
+  c. Provide a name for your Policy, e.g. **Image\_Classification**
 
   d. Provide a description, e.g. **Compartment for image classification OCW23 LiveLab**
 
@@ -74,7 +74,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create Group](./images/6-groups-in-default-domain.png)
 
-  d. Provide a name for your Group, e.g. **Image_Classification_Group**
+  d. Provide a name for your Group, e.g. **Image\_Classification\_Group**
 
   e. Provide a description for your Group, e.g. *Group for image classification OCW23 LiveLab users*
 
@@ -99,7 +99,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Click Create Dynamic Group](./images/8-3-create-dynamic-group-button.png)
 
-  d. Provide a name for your Dynamic Group, e.g. **Image_Classification_Dynamic_Group**
+  d. Provide a name for your Dynamic Group, e.g. **Image\_Classification\_Dynamic_Group**
 
   e. Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
@@ -125,7 +125,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   c. Click **Create Policy**.
 
-  d. Provide a name for your Policy, e.g. **Image_Classification_Policy**
+  d. Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
 
   e. Provide a description, e.g. *Policy for image classification OCW23 LiveLab*
 
@@ -137,11 +137,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     <copy>Allow dynamic-group DataLabeling_DynamicGroup to read buckets in compartment id <compartment OCID>
     Allow dynamic-group DataLabeling_DynamicGroup to read objects in compartment id <compartment OCID>
     Allow dynamic-group DataLabeling_DynamicGroup to manage objects in compartment id <compartment OCID> where any {request.permission='OBJECT_CREATE'}
-    Allow group ImageClassification_Group to manage object-family in compartment id <compartment OCID>
-    Allow group ImageClassification_Group to read objectstorage-namespaces in compartment id <compartment OCID>
-    Allow group ImageClassification_Group to manage data-labeling-family in compartment id <compartment OCID>
-    Allow group ImageClassification_Group to use cloud-shell in tenancy
-    Allow group ImageClassification_Group to manage ai-service-vision-family in compartment id <compartment OCID></copy>
+    Allow group Image_Classification_Group to manage object-family in compartment id <compartment OCID>
+    Allow group Image_Classification_Group to read objectstorage-namespaces in compartment id <compartment OCID>
+    Allow group Image_Classification_Group to manage data-labeling-family in compartment id <compartment OCID>
+    Allow group Image_Classification_Group to use cloud-shell in tenancy
+    Allow group Image_Classification_Group to manage ai-service-vision-family in compartment id <compartment OCID></copy>
     ```
 
   ![Policy](./images/10-2-create-policy.png)
