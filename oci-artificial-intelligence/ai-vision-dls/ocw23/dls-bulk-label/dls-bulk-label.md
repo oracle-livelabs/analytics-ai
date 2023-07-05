@@ -271,56 +271,48 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ```
   <copy>echo $OCI_REGION</copy>
   ```
-4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template:
+4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
   ```
   <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
   <copy>REGION_IDENTIFIER = "<Region identifier from your notepad app>"</copy>
   <copy>DATASET_ID = "<OCID of your Data Labeling dataset from your notepad app>"</copy>
   ```
-  *(Recommended for users who are unfamiliar with CLI-based text editors)*
-  \
-  Follow these instructions to make these edits using the vi editor:
-  ```
-  vi config.py
-  ```
-  a. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG_FILE_PATH =*
-  
-  b. Enter *insert* mode by typing **i**.
-  
-  c. Delete the value within the quotation marks using the **delete** button.
-  
-  d. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **"/etc/oci/config"**. Be sure to include the quotation marks where indicated.
-  
-  e. Press **ESC** to escape *insert* mode.
-  
-  f. Repeat steps **a.** through **e.**, for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
-  
-  g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
+  a. Open **config.py** by running the command *vi config.py*.
 
-5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, e.g. with the command *vi classification\_config.py*, and then edit the variables as indicated below, in a fashion similar to the previous step:
+  b. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG_FILE_PATH =*
+  
+  c. Enter *insert* mode by typing **i**.
+  
+  d. Delete the value within the quotation marks using the **delete** button.
+  
+  e. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **"/etc/oci/config"**. Be sure to include the quotation marks where indicated.
+  
+  f. Press **ESC** to escape *insert* mode.
+  
+  g. Repeat steps **a.** through **e.**, for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
+  
+  h. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
+
+5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below, in a fashion similar to the previous step:
   ```
   <copy>LABELS = ["Cell", "Debris", "Stripe"]</copy>
   <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
   ```
-  *(Recommended for users who are unfamiliar with CLI-based text editors)*
-  \
-  Follow these instructions to make these edits using the vi editor:
-  ```
-  vi config.py
-  ```
-  a. Use the arrow keys to navigate your cursor to the end of the value after *LABELS =*
+  a. Open **classification\_config.py** by running the command *vi classification\_config.py*.
+
+  b. Use the arrow keys to navigate your cursor to the end of the value after *LABELS =*
   
-  b. Enter *insert* mode by typing **i**.
+  c. Enter *insert* mode by typing **i**.
   
-  c. Delete the value within the quotation marks using the **delete** button.
+  d. Delete the value within the quotation marks using the **delete** button.
   
-  d. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **["Cell", "Debris", "Stripe"]**. Be sure to include the quotation marks where indicated.
+  e. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **["Cell", "Debris", "Stripe"]**. Be sure to include the quotation marks where indicated.
   
-  e. Press **ESC** to escape *insert* mode.
+  f. Press **ESC** to escape *insert* mode.
   
-  f. Repeat steps **a.** through **e.**, for **LABELING\_ALGORITHM** and its respective value, as indicated above.
+  g. Repeat steps **a.** through **e.**, for **LABELING\_ALGORITHM** and its respective value, as indicated above.
   
-  g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
+  h. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
 6. Install pandas for your user on Cloud Shell, which is a prerequisite for running the bulk-labeling script:
   ```
