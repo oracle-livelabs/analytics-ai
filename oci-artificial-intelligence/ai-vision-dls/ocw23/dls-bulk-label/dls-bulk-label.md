@@ -52,11 +52,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   f. Click **Create Compartment**.
 
-![Create compartment window](./images/2-create-compartment-details.png)
+  ![Create compartment window](./images/2-create-compartment-details.png)
 
 2. Find the compartment's Oracle Cloud Identifier (OCID), as shown in the below image. Then, copy and paste this value into a new line on a digital notepad app. You will retrieve this value when building your IAM Policy statements.
 
-![Find the compartment OCID](./images/3-copy-compartment-ocid.png)
+  ![Find the compartment OCID](./images/3-copy-compartment-ocid.png)
 
 3. Create a Group and add users to it.
 
@@ -149,13 +149,13 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 1. From the OCI services menu, click **Buckets** under **Object Storage & Archive Storage**.
 
-![OCI services menu](./images/14-menu-storage.png)
+  ![OCI services menu](./images/14-menu-storage.png)
 
 2. Select your new compartment using the dropdown menu under **List Scope**.
 
 3. Click **Create Bucket** and enter details for your Bucket.
 
-![Select compartment](./images/15-select-compartment-on-object-storage-page-and-click-create-bucket.png)
+  ![Select compartment](./images/15-select-compartment-on-object-storage-page-and-click-create-bucket.png)
 
   a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*. Make a note of this name for later use in this lab.
 
@@ -175,7 +175,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 1. Open Cloud Shell
 
-![Open Cloud Shell](./images/18-oci-landing-page-cloud-shell.png)
+  ![Open Cloud Shell](./images/18-oci-landing-page-cloud-shell.png)
 
 2. Feel free to dismiss the tutorial by entering *N*. Alternatively, you may enter *Y*.
 
@@ -193,22 +193,22 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
 ```
 
-![Bulk-Upload Training Images](./images/19-bulk-upload-done.png)
+  ![Bulk-Upload Training Images](./images/19-bulk-upload-done.png)
 
 6. Once the bulk-upload process has completed, refresh the bucket page as indicated in the below screenshot.
 
-![Bulk-Upload Training Images](./images/20-bulk-upload-done-refresh-bucket.png)
+  ![Bulk-Upload Training Images](./images/20-bulk-upload-done-refresh-bucket.png)
 
 7. Confirm that your training images have been uploaded to your Object Storage bucket within their respective folders.
 
-![Bulk-Upload Training Images](./images/21-bulk-upload-done-expand-folder.png)
+  ![Bulk-Upload Training Images](./images/21-bulk-upload-done-expand-folder.png)
 
 ## **Task 3:** Create a Data Labeling Dataset
 *\[5-10 minutes\]*
 
 1. From the OCI services menu, click **Data Labeling** under **Analytics & AI**.
 
-![OCI services menu](./images/22-menu-analytics-and-data-labeling.png)
+  ![OCI services menu](./images/22-menu-analytics-and-data-labeling.png)
 
 2. Click on **Datasets**.
 
@@ -216,7 +216,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 4. Create your dataset by clicking **Create dataset**.
 
-![Data Labeling Datasets](./images/23-data-labeling-datasets.png)
+  ![Data Labeling Datasets](./images/23-data-labeling-datasets.png)
 
   a. **Name**: Enter a name for your Data Labeling dataset, e.g. *image-classification-dataset*
 
@@ -252,7 +252,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 5. Find the Dataset OCID as shown in the screenshot. Then, copy and paste this value into a new line on your digital notepad app. You will retrieve this value in the next Task when configuring the bulk-labeling tool.
 
-![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
+  ![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
 
 6. When all of the data has been imported into your dataset from your Object Storage Bucket, the screen will appear similar to the below screenshot. Notice that none (**0**) of the **1710** records have yet been labeled. Once all **1710** image files have been imported as records in your dataset, it will be time to begin the next task, where you will label your data using a bulk-labeling operation.
 
@@ -346,7 +346,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 As the bulk-labeling proceeds, notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, **1082** of the **1710** records have so far been labeled.
 
-![Records Unlabeled](./images/30-labeling-progress.png)
+  ![Records Unlabeled](./images/30-labeling-progress.png)
 
 To check on the progress of the labeling from the web console, for this lab we recommend using the buttons on the web console UI to periodically return to the Data Labeling dataset page shown in the below screenshots, rather than refreshing the page. Refreshing the browser will halt the bulk-labeling process. If you refresh the browser, you will need to run the following command again to resume the bulk-labeling process.
 
@@ -354,9 +354,9 @@ To check on the progress of the labeling from the web console, for this lab we r
   <copy>python bulk_labeling_script.py</copy>
   ```
 
-![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
+  ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
 
-![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
+  ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
 **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
 
@@ -373,9 +373,9 @@ After the bulk-labeling process has completed, a report detailing the duration o
 
 8. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown below, we can see that this record was sourced from the Stripe folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
 
-![Pointing to an image in the dataset](./images/36-verify-label-click-listing.png)
+  ![Pointing to an image in the dataset](./images/36-verify-label-click-listing.png)
 
-![Verifying Image has Label](./images/37-verify-label-check-label.png)
+  ![Verifying Image has Label](./images/37-verify-label-check-label.png)
 
 Congratulations on completing this lab!
 
