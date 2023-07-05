@@ -33,7 +33,7 @@ This lab assumes you have:
 
 2. On the Home page, click the Navigator Navigator icon, and then click Semantic Models.
 	![Open Semantic Models](./images/semantic-models.png)
-	
+
 3. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 	![Open Samples Sales](./images/open-sample-sales.png)
 

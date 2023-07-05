@@ -13,8 +13,9 @@ This tutorial describes how to build governed semantic models using the Semantic
 ### Objectives
 
 In this lab, you will:
-* Select the objects from a supported relational data source to define the physical layer of the semantic model
-* Create a schema in an empty model and add tables selected from relational data sources
+* Add a physical table as an extension table of a logical table source for the D3 Customers logical table
+* Add a presentation table to the Sample Sales semantic model
+* Create a workbook using the presentation tables from the semantic model
 
 ### Prerequisites
 
