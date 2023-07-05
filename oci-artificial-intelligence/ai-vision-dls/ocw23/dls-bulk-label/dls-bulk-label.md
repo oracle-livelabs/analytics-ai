@@ -38,11 +38,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   a. From the OCI Services menu, click **Compartments** under **Identity & Security**.
 
-  ![OCI Services Menu](./images/1-1-menu-identity-and-security-compartments.png)
+![OCI Services Menu](./images/1-1-menu-identity-and-security-compartments.png)
 
   b. Click **Create Compartment**.
 
-  ![Create compartment window](./images/1-2-create-compartment.png)
+![Create compartment window](./images/1-2-create-compartment.png)
 
   c. Provide a name for your Policy, e.g. **Image\_Classification**
 
@@ -52,7 +52,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   f. Click **Create Compartment**.
 
-  ![Create compartment window](./images/2-create-compartment-details.png)
+![Create compartment window](./images/2-create-compartment-details.png)
 
 2. Find the compartment's Oracle Cloud Identifier (OCID), as shown in the below image. Then, copy and paste this value into a new line on a digital notepad app. You will retrieve this value when building your IAM Policy statements.
 
@@ -66,13 +66,13 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   b. Select the root compartment from the dropdown menu on the left-hand side of the screen, and select the **Default** domain.
 
-  ![Domains](./images/5-identity-domains.png)
+![Domains](./images/5-identity-domains.png)
 
   <!-- ![Default domain](./images/5-default-domain.png) -->
 
   c. Click **Create group**.
 
-  ![Create Group](./images/6-groups-in-default-domain.png)
+![Create Group](./images/6-groups-in-default-domain.png)
 
   d. Provide a name for your Group, e.g. **Image\_Classification\_Group**
 
@@ -80,24 +80,24 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   f. Select the name of the user who will proceed with the lab tasks after the Policy Setup.
 
-  ![Create Group](./images/7-create-group.png)
+![Create Group](./images/7-create-group.png)
 
-  ![Create Group Done](./images/8-create-group-done.png)
+![Create Group Done](./images/8-create-group-done.png)
 
 <!-- todo: replace images for dynamic group step so that they have boxes drawn around dynamic group resource names on the console UI -->
 4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling datasets in your new compartment.
 
   a. Click **Default domain** on the upper-left of the screen.
 
-  ![Click Default Domain](./images/9-click-default-domain.png)
+![Click Default Domain](./images/9-click-default-domain.png)
 
   b. Click **Dynamic groups**.
 
-  ![Click Dynamic Group](./images/10-default-domain-dynamic-group.png)
+![Click Dynamic Group](./images/10-default-domain-dynamic-group.png)
 
   c. Click **Create dynamic group**.
 
-  ![Click Create Dynamic Group](./images/11-create-dynamic-group-button.png)
+![Click Create Dynamic Group](./images/11-create-dynamic-group-button.png)
 
   d. Provide a name for your Dynamic Group, e.g. **Image\_Classification\_Dynamic_Group**
 
@@ -111,13 +111,13 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   g. Click **Create**.
 
-  ![Create Dynamic Group window](./images/12-1-create-dynamic-group.png)
+![Create Dynamic Group window](./images/12-1-create-dynamic-group.png)
 
 5. Create a Policy. The Policy will contain a series of statements. Each statement will allow a Group (and associated users) or Dynamic Group (and associated resources that are matched by the matching rule) to access specified resources to specified degrees of privilege.
 
   a. From the OCI Services menu, click **Policies** under **Identity & Security**.
 
-  ![OCI Services Menu](./images/12-2-menu-identity-and-security-policies.png)
+![OCI Services Menu](./images/12-2-menu-identity-and-security-policies.png)
 
   b. Click **Create Policy**.
 
@@ -142,20 +142,20 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
     g. Click **Create**.
 
-  ![Policy](./images/13-create-policy.png)
+![Policy](./images/13-create-policy.png)
 
 ## **Task 1:** Create an Object Storage Bucket
 *\[5 minutes\]*
 
 1. From the OCI services menu, click **Buckets** under **Object Storage & Archive Storage**.
 
-  ![OCI services menu](./images/14-menu-storage.png)
+![OCI services menu](./images/14-menu-storage.png)
 
 2. Select your new compartment using the dropdown menu under **List Scope**.
 
 3. Click **Create Bucket** and enter details for your Bucket.
 
-  ![Select compartment](./images/15-select-compartment-on-object-storage-page-and-click-create-bucket.png)
+![Select compartment](./images/15-select-compartment-on-object-storage-page-and-click-create-bucket.png)
 
   a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*. Make a note of this name for later use in this lab.
 
@@ -165,9 +165,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   d. Click **Create**.
 
-  ![Create Object Storage Bucket](./images/16-create-bucket.png)
+![Create Object Storage Bucket](./images/16-create-bucket.png)
 
-  ![Create Object Storage Bucket Complete](./images/17-create-bucket-done.png)
+![Create Object Storage Bucket Complete](./images/17-create-bucket-done.png)
 
 
 ## **Task 2:** Load the Biomedical Training Data into Object Storage
@@ -226,7 +226,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   d. Click **Next**.
 
-  ![Name, Dataset format, Annotation Class](./images/24-create-dataset-page-1-dataset-format-annotation-class.png)
+![Name, Dataset format, Annotation Class](./images/24-create-dataset-page-1-dataset-format-annotation-class.png)
 
   e. Retrieve files from Object Storage by choosing **Select from Object Storage**.
 
@@ -234,7 +234,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   g. **Bucket**: Select your Bucket by name.
 
-  ![Select Bucket](./images/25-create-dataset-page-2-select-bucket.png)
+![Select Bucket](./images/25-create-dataset-page-2-select-bucket.png)
 
   h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Note to use capitalized first letters followed by lowercase letters, and take care to leave no space characters in the label names.
     
@@ -244,19 +244,19 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   i. Click **Next**.
 
-  ![Add Labels](./images/26-create-dataset-page-2-add-labels.png)
+![Add Labels](./images/26-create-dataset-page-2-add-labels.png)
 
   j. Review the information and deploy your Data Labeling dataset by clicking **Create**.
 
-  ![Review](./images/27-create-dataset-page-3-review.png)
+![Review](./images/27-create-dataset-page-3-review.png)
 
 5. Find the Dataset OCID as shown in the screenshot. Then, copy and paste this value into a new line on your digital notepad app. You will retrieve this value in the next Task when configuring the bulk-labeling tool.
 
-  ![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
+![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
 
 6. When all of the data has been imported into your dataset from your Object Storage Bucket, the screen will appear similar to the below screenshot. Notice that none (**0**) of the **1710** records have yet been labeled. Once all **1710** image files have been imported as records in your dataset, it will be time to begin the next task, where you will label your data using a bulk-labeling operation.
 
-  ![All records imported](./images/29-records-imported.png)
+![All records imported](./images/29-records-imported.png)
 
 ## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
 *\[20-30 minutes\]*
