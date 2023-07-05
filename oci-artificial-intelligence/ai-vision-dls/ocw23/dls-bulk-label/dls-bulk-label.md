@@ -68,8 +68,6 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Domains](./images/5-identity-domains.png)
 
-  <!-- ![Default domain](./images/5-default-domain.png) -->
-
   c. Click **Create group**.
 
   ![Create Group](./images/6-groups-in-default-domain.png)
@@ -180,18 +178,18 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 2. Feel free to dismiss the tutorial by entering *N*. Alternatively, you may enter *Y*.
 
 3. Run the following command on your Cloud Shell command line interface (CLI) to download the image files necessary this lab, which is the training data that will be used to train the computer vision machine learning model:
-```
-<copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R2GriGitNq-0NmTYGez0fop69aXx4SniJhyOjYpKXQyvQtaRtWU3yPgB8DaUzjey/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Training_Data.zip</copy>
-```
+  ```
+  <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R2GriGitNq-0NmTYGez0fop69aXx4SniJhyOjYpKXQyvQtaRtWU3yPgB8DaUzjey/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Training_Data.zip</copy>
+  ```
 4. Run the following command to unzip the download, extracting the enclosed folder containing the image files:
 ```
 <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
 ```
 
 5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you provided a different name than **image-classification-bucket**, then you may restructure the command accordingly.
-```
-<copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
-```
+  ```
+  <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
+  ```
 
   ![Bulk-Upload Training Images](./images/19-bulk-upload-done.png)
 
@@ -261,19 +259,18 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 ## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
 *\[20-30 minutes\]*
 
-2. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
-```
-<copy>cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git</copy>
-```
-3. Run the following command to change your directory to the folder where the configuration files and main executable script are located.
-```
-<copy>cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy>
-```
-
+1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
+  ```
+  <copy>cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git</copy>
+  ```
+2. Run the following command to change your directory to the folder where the configuration files and main executable script are located.
+  ```
+  <copy>cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy>
+  ```
 3. Run the following command to obtain the identifier of your tenancy's home region. Copy and paste the returned value into a new line on your digital notepad app.
-```
-<copy>echo $OCI_REGION</copy>
-```
+  ```
+  <copy>echo $OCI_REGION</copy>
+  ```
 4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template. Instructions using the vi command are shown below:
 
   You will update the values that are assigned to variables in **config.py** as indicated below:
@@ -282,14 +279,12 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>REGION_IDENTIFIER = "<Region identifier from your notepad app>"</copy>
   <copy>DATASET_ID = "<OCID of your Data Labeling dataset from your notepad app>"</copy>
   ```
-
   *(Recommended for users who are unfamiliar with CLI-based text editors)*
   \
   Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
-
   a. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG_FILE_PATH =*
   
   b. Enter *insert* mode by typing **i**.
@@ -311,14 +306,12 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   <copy>LABELS = ["Cell", "Debris", "Stripe"]</copy>
   <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
   ```
-
   *(Recommended for users who are unfamiliar with CLI-based text editors)*
   \
   Follow these instructions to make these edits using the vi editor:
   ```
   vi config.py
   ```
-
   a. Use the arrow keys to navigate your cursor to the end of the value after *LABELS =*
   
   b. Enter *insert* mode by typing **i**.
@@ -334,36 +327,29 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
 6. Install pandas for your user on Cloud Shell, which is a prerequisite for running the bulk-labeling script:
-  
   ```
   <copy>pip install --user pandas</copy>
   ```
 7. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about 17 minutes.
-
   ```
   <copy>python bulk_labeling_script.py</copy>
   ```
-
 As the bulk-labeling proceeds, notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, **1082** of the **1710** records have so far been labeled.
 
   ![Records Unlabeled](./images/30-labeling-progress.png)
 
 To check on the progress of the labeling from the web console, for this lab we recommend using the buttons on the web console UI to periodically return to the Data Labeling dataset page shown in the below screenshots, rather than refreshing the page. Refreshing the browser will halt the bulk-labeling process. If you refresh the browser, you will need to run the following command again to resume the bulk-labeling process.
-
   ```
   <copy>python bulk_labeling_script.py</copy>
   ```
-
   ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
 
   ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
 **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
-
   ```
   <copy>python bulk_labeling_script.py</copy>
   ```
-
 ![Troubleshooting Bulk Labeling](./images/33-bulk-labeling-troubleshooting.png)
 
 After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled.
