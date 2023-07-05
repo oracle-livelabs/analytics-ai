@@ -275,7 +275,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ```
   a. Open **config.py** by running the command *vi config.py*.
 
-  b. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG_FILE_PATH =*
+  b. Use the arrow keys to navigate your cursor to the end of the value to the right of: *CONFIG\_FILE\_PATH =*
   
   c. Enter *insert* mode by typing **i**.
   
