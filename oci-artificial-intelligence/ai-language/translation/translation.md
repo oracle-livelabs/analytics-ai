@@ -20,7 +20,7 @@ In this lab, you will learn to:
 - Language policies are configured as per [Lab 1](?lab=pre-trained#PolicySetup)
 
 
-## TASK 1: Translate Text using OCI Console
+## Task 1: Translate Text using OCI Console
 
 
 1. **Navigate to OCI Language Translation**: 
@@ -56,7 +56,7 @@ In this lab, you will learn to:
     ![Translation result](./images/translate-result.png " ")
 
 
-## TASK 2: Translate Text with Python SDK
+## Task 2: Translate Text with Python SDK
 
 Please refer to the sample code below and update required variables to translate text using Python SDK
 
@@ -109,5 +109,5 @@ In this lab you have learnt how to use Language Service to translate text with O
   * Rajat Chawla - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Sahil Kalra - Oracle AI OCI Language Services, March 2023
+* Sahil Kalra - Oracle AI OCI Language Services, June 2023
 
