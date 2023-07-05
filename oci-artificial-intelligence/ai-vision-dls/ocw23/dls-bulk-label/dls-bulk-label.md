@@ -271,9 +271,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ```
   <copy>echo $OCI_REGION</copy>
   ```
-4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template. Instructions using the vi command are shown below:
-
-  You will update the values that are assigned to variables in **config.py** as indicated below:
+4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs) e.g. with vi using the command *vi config.py*, and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&lt** with your own values. Preserve the quotation marks in the template:
   ```
   <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
   <copy>REGION_IDENTIFIER = "<Region identifier from your notepad app>"</copy>
@@ -299,9 +297,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   g. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
-5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, e.g. with the command *vi classification\_config.py*, and then edit the variables as indicated below.
-  
-  You will update the values that are assigned to variables in **classification\_config.py** as indicated below, in a fashion similar to the previous step:
+5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, e.g. with the command *vi classification\_config.py*, and then edit the variables as indicated below, in a fashion similar to the previous step:
   ```
   <copy>LABELS = ["Cell", "Debris", "Stripe"]</copy>
   <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
