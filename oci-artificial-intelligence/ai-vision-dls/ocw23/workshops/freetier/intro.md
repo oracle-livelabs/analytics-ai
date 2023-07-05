@@ -24,8 +24,7 @@ The engine you will use to label your data is OCI Data Labeling, which is a serv
 
 **Total Estimated Workshop Time**: *67-88 minutes*
 
-**Lab 1**
-\
+## Lab 1
 *\[45-60 minutes\]*
 
 * Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab.
@@ -34,8 +33,7 @@ The engine you will use to label your data is OCI Data Labeling, which is a serv
 * Create a Data Labeling dataset, which imports the training images from Object Storage as records.
 * Bulk-label the images that were loaded into Object Storage using a provided script that takes a labeling scheme as input. In this lab, the labeling scheme will be based on the names of the folders containing the training images (e.g. images in the *Cell* folder will be labeled with *Cell*, and so on)
 
-**Lab 2**
-\
+## Lab 2
 *\[22-28 minutes\]*
 
 * Create a Vision Project, which is a logical container for your Vision models.
