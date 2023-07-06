@@ -102,7 +102,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 18. A page pops up with the selections for the **Integration Task**:
 
-    - Select **Design tasks** and your project name **DI_WorkshopNN**.
+    - Select **Design tasks** and your project name **Customers Project**.
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 

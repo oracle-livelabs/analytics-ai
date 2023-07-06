@@ -1,4 +1,4 @@
-﻿# Create a Data Flow and Integration task
+# Create a Data Flow and Integration task
 
 ## Introduction
 
