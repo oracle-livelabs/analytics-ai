@@ -104,7 +104,7 @@ oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucke
 
 ![Tenancy Information](./images/tenancy_info.png " ")
 
-![Upload File](./images/cloudshellupload.png " ")
+![Upload File](./images/cloudshell-upload.png " ")
 
 Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
 
@@ -232,6 +232,8 @@ The last view is the validation of the source, target and data entities selected
 ## Task 3: Create an application for automation
 
 Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
+
+![Create Application](./images/create-app1.png " ")
 
 ![Create Application](./images/create-app.png " ")
 

@@ -21,7 +21,7 @@ Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb
 
 Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/DBActions.png " ")
+![Database Actions](./images/dbactionsbox.png " ")
 
 Click on SQL to execute the query to create the table.
 
@@ -40,6 +40,7 @@ group by "genreid",name, country
 order by country;
 </copy>
 ```
+
 This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
 
 ![SQL](./images/SQL_output.png " ")
@@ -128,7 +129,7 @@ Navigate to the menu Cloud Menu. Click on Analytics & AI and click on Data Catal
 
 Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
 
-![SQL](./images/Current_Catalog.png " ")
+![SQL](./images/currentcatalog.png " ")
 
 Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 
@@ -158,4 +159,4 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023

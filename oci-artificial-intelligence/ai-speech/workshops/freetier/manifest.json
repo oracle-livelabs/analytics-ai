@@ -43,12 +43,12 @@
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
         {
-            "title": "Lab 6: Use OCI speech to enable the E-mail notifications",
+            "title": "Lab 6: Enable notifications for OCi speech transcription jobs",
             "description": "Learn how to use e-mail notification feature in OCI Speech.",
             "filename": "../../oci-speech-notifications/oci-speech-notifications.md"
         },
         {
-            "title": "Lab 7: Use OCI speech to enable Functions",
+            "title": "Lab 7: Trigger functions for OCI speech transcription jobs",
             "description": "Learn how to use Faas feature in OCI Speech.",
             "filename": "../../oci-speech-faas/oci-speech-faas.md"
         },
