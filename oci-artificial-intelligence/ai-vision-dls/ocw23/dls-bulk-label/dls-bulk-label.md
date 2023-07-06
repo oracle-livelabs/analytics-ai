@@ -334,7 +334,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Records Unlabeled](./images/30-labeling-progress.png)
 
-11. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled. <!-- ![Bulk-Labeling Done](./images/34-bulk-labeling-done.png) -->
+11. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled.
 
   ![Records Labeled](./images/35-all-records-labeled.png)
 
