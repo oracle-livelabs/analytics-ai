@@ -231,9 +231,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Note to use capitalized first letters followed by lowercase letters, and take care to leave no space characters in the label names.
     
-    * Cell
-    * Debris
-    * Stripe
+  * Cell
+  * Debris
+  * Stripe
 
   i. Click **Next**.
 
@@ -334,8 +334,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
-  d. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled.
-  <!-- ![Bulk-Labeling Done](./images/34-bulk-labeling-done.png) -->
+  d. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled. <!-- ![Bulk-Labeling Done](./images/34-bulk-labeling-done.png) -->
 
   ![Records Labeled](./images/35-all-records-labeled.png)
 
