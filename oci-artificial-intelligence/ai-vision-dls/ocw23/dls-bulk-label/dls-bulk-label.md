@@ -174,9 +174,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 2. Feel free to dismiss the tutorial by entering *N*. Alternatively, you may enter *Y*.
 
 3. Run the following command on your Cloud Shell command line interface (CLI) to download the image files necessary this lab, which is the training data that will be used to train the computer vision machine learning model:
-  ```
-  <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R2GriGitNq-0NmTYGez0fop69aXx4SniJhyOjYpKXQyvQtaRtWU3yPgB8DaUzjey/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Training_Data.zip</copy>
-  ```
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R2GriGitNq-0NmTYGez0fop69aXx4SniJhyOjYpKXQyvQtaRtWU3yPgB8DaUzjey/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Training_Data.zip</copy>
+    ```
 4. Run the following command to unzip the download, extracting the enclosed folder containing the image files:
     ```
     <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
