@@ -313,7 +313,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>pip install --user pandas</copy>
     ```
-7. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about 17 minutes.
+7. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **17 minutes**.
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
