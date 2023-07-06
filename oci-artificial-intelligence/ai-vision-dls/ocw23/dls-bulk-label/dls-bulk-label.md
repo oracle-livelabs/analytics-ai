@@ -44,9 +44,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create compartment window](./images/1-2-create-compartment.png)
 
-  c. Provide a name for your Policy, e.g. **Image\_Classification**
+  c. Provide a name for your Compartment, e.g. **Image\_Classification**
 
-  d. Provide a description, e.g. **Compartment for image classification OCW23 LiveLab**
+  d. Provide a description for your Compartment, e.g. *Compartment for image classification OCW23 LiveLab*
 
   e. Select the root-level compartment, which has the same name as your tenancy.
 
@@ -118,7 +118,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   c. Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
 
-  d. Provide a description, e.g. *Policy for image classification OCW23 LiveLab*
+  d. Provide a description for your Policy, e.g. *Policy for image classification OCW23 LiveLab*
 
   e. Let the policy remain scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
 
