@@ -82,7 +82,6 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create Group Done](./images/8-create-group-done.png)
 
-<!-- todo: replace images for dynamic group step so that they have boxes drawn around dynamic group resource names on the console UI -->
 4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling datasets in your new compartment.
 
   a. Click **Default domain** on the upper-left of the screen.
