@@ -317,28 +317,28 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
-  a. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
+8. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
+
   ![Troubleshooting Bulk Labeling](./images/33-bulk-labeling-troubleshooting.png)
-  b. As the bulk-labeling proceeds, notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, **1082** of the **1710** records have so far been labeled.
 
-  ![Records Unlabeled](./images/30-labeling-progress.png)
+9. Use the buttons on the web console UI as shown in the below screenshots to check on the progress of the bulk-labeling from the web console. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will halt the bulk-labeling process. If you refresh the browser tab, you will need to run *python bulk\_labeling\_script.py* again to resume the bulk-labeling process.
 
-  c. Check on the progress of the labeling from the web console: for this lab we recommend using the buttons on the web console UI to periodically return to the Data Labeling dataset page shown in the below screenshots, rather than refreshing the page. Refreshing the browser will halt the bulk-labeling process. If you refresh the browser, you will need to run the following command again to resume the bulk-labeling process.
-    ```
-    <copy>python bulk_labeling_script.py</copy>
-    ```
   ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
 
   ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
-  d. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled. <!-- ![Bulk-Labeling Done](./images/34-bulk-labeling-done.png) -->
+10. Notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, **1082** of the **1710** records have so far been labeled.
+
+  ![Records Unlabeled](./images/30-labeling-progress.png)
+
+11. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that **1710/1710** records have been labeled. <!-- ![Bulk-Labeling Done](./images/34-bulk-labeling-done.png) -->
 
   ![Records Labeled](./images/35-all-records-labeled.png)
 
-8. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown below, we can see that this record was sourced from the Stripe folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
+12. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the Stripe folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
 
   ![Pointing to an image in the dataset](./images/36-verify-label-click-listing.png)
 
