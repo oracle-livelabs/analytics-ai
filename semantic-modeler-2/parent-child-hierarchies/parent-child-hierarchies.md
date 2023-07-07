@@ -165,7 +165,7 @@ In this section, you rename columns to use names that are easy to understand.
 
 10. Close **D5 Sales Rep**.
 
-## Task 6: Rename Columns
+## Task 6: Create a Logical Join
 
 In this section, you create joins between the sales rep alias tables and the F1 Revenue table.
 
