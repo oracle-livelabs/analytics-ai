@@ -1,7 +1,6 @@
 
-# Workshop Overview
+# Introduction
 
-## Introduction
 Using low code cloud services in Oracle Cloud Infrastructure (OCI), this workshop will illustrate how to create a system to search the full text of document images using OpenSearch and a familiar search interface created with Visual Builder.
 
 The focus of this workshop is making document images searchable. These document images are typically text documents that have been scanned to .tif or .jpg, or exported as .pdf. However the system you'll build will handle many different document types such as:
