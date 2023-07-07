@@ -4,7 +4,7 @@
 
 Learn how to create a **Data Loader task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
 
-**Estimated Time**: 20 minutes
+**Estimated Time**: 30 minutes
 
 ### Objectives
 * Create an OCI Data Integration project

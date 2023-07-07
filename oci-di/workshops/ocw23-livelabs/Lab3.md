@@ -6,7 +6,7 @@ Learn how to create an OCI Data Integration **application**, **publish tasks** i
 
 The Pipeline you will create will orchestrate the execution of all of the tasks you created and published in _Create a Data Loader task, Create a Data Flows and Integration tasks_. It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
 
-**Estimated Time**: 20 minutes
+**Estimated Time**: 30 minutes
 
 ### Objectives
 * Creating a Pipeline
