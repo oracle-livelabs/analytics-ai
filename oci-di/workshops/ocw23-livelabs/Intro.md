@@ -35,7 +35,7 @@ Oracle Cloud Infrastructure Data Integration is a **fully managed, multi-tenant
 
 **Objectives**
 
-- Create/use Data Flows, Integration tasks, a Data Loader task and SQL task
+- Create a bulk Data Loader task leveraging existing data assets to load into ADW from OCI Object Storage.
 - Create a Pipeline, Pipeline task and publish tasks into an Application
 - Run the Data Loader task, Schedule and run the Pipeline task
 
