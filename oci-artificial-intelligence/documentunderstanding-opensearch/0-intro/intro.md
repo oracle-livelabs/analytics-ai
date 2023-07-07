@@ -45,7 +45,10 @@ The enrichment processing is orchestrated with OIC, a low code integration servi
 - You need an Oracle Cloud account (i.e. access to an OCI tenancy) to complete this workshop. Participants can take advantage of Oracle's free trial account that come with free cloud credits that are good for 30 days or until used up. Many Oracle events, such as CloudWorld, offer trial accounts with extra free cloud credits. You should be able to complete this workshop in teh allotted time if your free trial cloud account is already created and ready to use. If you previously had a free trial account but the credits have expired, you won't be able to complete the lab. An option in this case is to obtain a new free trial account with fresh credits using a different email address. You can also use an existing paid Oracle Cloud account as long as you have administrator rights that will be needed to provision services.
 - You need a computer (laptop or desktop) with web browser, a text editor, and internet access. (Attempting to accomplish this workshop using a tablet or phone might be possible but is not recommended and we haven't tested it on those types of devices.)
 
+## Task 1: Confirm the prerequisites above
+
 ## Please proceed to the next lab.
+[Go to next lab.](#next)
 
 ## Acknowledgements 
 - **Author**
