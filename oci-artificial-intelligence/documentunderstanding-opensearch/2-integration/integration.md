@@ -48,9 +48,9 @@ Since the Github repository was downloaded in the cloud editor during the previo
     ![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
 
 ## Task 2: Import the integration
-We will upload the integration into OIC.
+Upload the integration configuration into OIC.
 
-1. Go the OIC console 3-bar/hamburger menu and select 
+1. Go the OIC service console menu and select 
     1. Developer Services
     2. Application Integration
 1. In the *Integration instances* list, select *oic*
@@ -266,7 +266,7 @@ click on **Activation**
 ![Activate3](images/opensearch-oic-activation3.png)
 
 ## Task 5: Test OIC
-In OCI console you'll go the Object Storage bucket called*opensearch-bucket*.
+You will load a file into object storage which will get ingested by OIC, processed with AI, and loaded into the OpenSearch index. (You'll query for this file in the next lab.)
 
 1. In the OCI Console, select the 3-bar/hamburger menu and select
     - Storage
@@ -283,7 +283,7 @@ In OCI console you'll go the Object Storage bucket called*opensearch-bucket*.
     1. Enter the file name: 
         ```
         <copy>
-        oci-searchlab/sample\_files/shakespeare\_macbeth.tif
+        oci-searchlab/sample_files/shakespeare_macbeth.tif
         <\copy>
         ```
         ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
@@ -302,10 +302,12 @@ In OCI console you'll go the Object Storage bucket called*opensearch-bucket*.
 
     ![Monitor OIC](images/opensearch-oic-test2.png)
 
-## Task 6: Optional Test
-This is an optional, additional test you can run with more sample files.
+    The **Succeeded** count should match the **Received** count.
 
-1. Upload the rest of the sample files to the Object Storage bucket *opensearch-bucket*.
+## Task 6: Optional - Process additional files
+This is an optional test you can run with more sample files. If you do this test, you will have more content in the OpenSearch index to query in the next lab. If you're running short of time, then you can skip it.
+
+1. Upload the remainder of the sample files to the Object Storage bucket *opensearch-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
 
 1. To check the instances in OIC, go to OIC Console and select
     1. Menu *Observability* 
@@ -316,6 +318,8 @@ This is an optional, additional test you can run with more sample files.
     ![Monitor OIC](images/opensearch-oic-test-instances.png)
 
     ![Monitor OIC](images/opensearch-oic-test-instances-activity-stream.png)
+
+### You may proceed to the next lab.
 
 
 ## Acknowledgements

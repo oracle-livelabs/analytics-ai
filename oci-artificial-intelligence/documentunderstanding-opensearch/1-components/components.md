@@ -1,19 +1,19 @@
 # Install the Components
 
 ## Introduction
+In this lab, you will install all the components needed for this workshop. Some of these will be provisioned manually and many will be provisioned automatically using a provided Terraform script.
 
-Estimated time: 60 min
-
-In this section, we will install all the components needed for this workshop. Some of these will be provisioned manually and many will be provisioned automatically using a provided Terraform script.
+Estimated time: 50 min
 
 ### Objectives
 
-- Create all the cloud components
+- Provision all the cloud components
 
 ### Prerequisites
 
 - An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
 - Cookies must be enabled in your browser to use the OCI console code editor in this lab
+- Choose which web browser to use before you start. There is an option in a later lab to download a github repo to your local computer using the OCI Console Cloud Shell. Some users have experienced a bug attempting to do this with the Firefox Browser Extended Support Release (ESR). The Chrome browser is an alternative in this case.
 
 
 ## Task 1: Prepare to save configuration settings
@@ -66,7 +66,7 @@ You can
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/opensearch-compartment2.png)
-3. After creating the compartment, copy the OCID to your text file at ***##COMPARTMENT_OCID##***. We will need it later.
+3. After creating the compartment, copy the OCID to your text file at ***##COMPARTMENT_OCID##***. You will need it later.
     ![Details Compartment](images/opensearch-compartment3.png)
 
 ## Task 3: Create an Oracle Integration instance
@@ -88,7 +88,7 @@ Oracle Integration Cloud (OIC) will allow you to glue all of the components toge
         ![Create Integration](images/opensearch-oic2.png)
 4. Wait about 3 mins until OIC is created and Green. 
 5. When it is created, click **Service Console**. It will open a new tab that you will use in Task 3.
-1. Copy the OCID of the OIC instance and paste it in your text file. ***##OIC_OCID##***. We will need it later.
+1. Copy the OCID of the OIC instance and paste it in your text file. ***##OIC_OCID##***. You will need it later.
 1. Click **Enable** next to *Visual Builder* to enable it
     ![Visual Builder Enable Integration](images/opensearch-oic3.png)
 
@@ -111,7 +111,7 @@ To communicate with OpenSearch in the private network, it is necessary to instal
 
 ## Task 5: Get the OIC AppID (ClientID)
 
-To enable Resource Principal, we need the OIC APPID.
+To enable Resource Principal, you need the OIC APPID.
 
 1. Go the console 3-bar/hamburger menu and select
     1. Identity & Security 
@@ -182,9 +182,12 @@ Perform a similar task to get Client ID/Secret for OIC
     ./build.sh
     </copy>
     ````
-5. **Proceed to the next Lab while Terrform is running.** Do not wait that Terraform is finished. However, you will need to check back when it is done and complete the next step.
+5. **Proceed to the next Lab while Terraform is running.** 
+    ```
+    Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
+    ```
 
-6. When Terraform will finished, you will see settings that you need in later labs. Save these to your text file. It will look something like:
+6. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     --------------------------
@@ -229,6 +232,9 @@ Then rerun the following command in the code editor
 ```
 ./build.sh
 ```
+
+### Return to the next lab when you have completed the final step of this lab.
+
 
 ## Acknowledgements
 
