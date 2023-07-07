@@ -1,4 +1,4 @@
-# Lab 6: Use OCI speech to enable the E-mail notifications
+# Lab 6: Enable notifications for OCi speech transcription jobs
 
 ## Introduction
 
