@@ -165,9 +165,13 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
   ![](../../pipelines/images/create-app-tile.png " ")
 
-2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates), then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
+2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates)
 
-  ![](../../pipelines/images/create-app.png " ")
+  ![](images/ocw23_create_app1.png " ")
+
+Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
+
+  ![](images/ocw23_create_app2.png " ")
 
 3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
