@@ -118,11 +118,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
-  ![](../../pipelines/images/validate-pip.png " ")
+  ![](images/validate-pip.png " ")
 
-22. Click on **Save and Close**.
+22. Click on **Create and Close**.
 
-  ![](../../pipelines/images/save-close.png " ")
+  ![](images/validate-pip.png " ")
 
 ## Task 2: Create a Pipeline task
 
