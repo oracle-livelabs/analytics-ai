@@ -1,6 +1,6 @@
-# Create Calculated Measures
+# Create the Presentation Layer
 
-### Introduction
+## Introduction
 
 Learn how to create calculated, level-based, and share measures in the logical layer of a semantic model in Oracle Analytics Cloud.
 
@@ -94,8 +94,6 @@ In this section, you create a measure that calculates the revenue share of a pro
 * [Expression Editor Reference](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/expression-editor-reference.html#ACMDG-GUID-1A790ED8-A783-4C55-B131-C738109BD8DA)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Last Updated By/Date** - Desmond Jung, July 2023
-
-
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, July, 2023

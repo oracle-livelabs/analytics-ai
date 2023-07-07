@@ -1,200 +1,238 @@
-# Examine Semantic Model Markup Language
+# Create Parent-Child Hierarchies
 
 ## Introduction
 
-This lab shows you how to create an initial semantic model in Oracle Analytics Cloud, starting with the physical layer.
+Learn how to create logical parent-child hierarchies and presentation layer objects in your semantic model.
 
 
 Estimated Lab Time: 25 minutes
 
-### About
-This lab describes how to build governed semantic models using the Semantic Modeler. Ask your administrator to enable the Semantic Modeler preview feature in Console.
-
-In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks. In this lab, you select the objects from a supported relational data source to define the physical layer of the semantic model.
-
-This lab shows you how to create the system connection required to use a relational data source with the Semantic Modeler. In an empty model, you create a schema and add tables selected from relational data sources.
-
 ### Objectives
 
 In this lab, you will:
-* Select the objects from a supported relational data source to define the physical layer of the semantic model
-* Create a schema in an empty model and add tables selected from relational data sources
+* Create logical parent-child hierarchies and presentation layer objects in your semantic model in Oracle Analytics Cloud.
 
 ### Prerequisites
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
-* Ability to connect to a relational data source
-* Access to the BISAMPLE schema to perform the steps in this lab
+* Access to the Sample Sales Semantic Model
 
 
-## Task 1: Create a Semantic Model
 
-In this section, you create an empty semantic model.
+## Task 1: Add Physical Tables and Create Alias Tables
 
-1. On the Home page, click **Create**, and then select **Semantic Model**.
+In this section, you add tables from the BISAMPLE data source to the physical layer of your semantic model, create alias tables, and define joins between the alias tables.
+
+1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
 
 	![Create](./images/create.png =400x*)
 
-2. In Create Semantic Model, enter <code>Sample Sales</code> in **Name**, and then click **Create**.
+2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 
 	![Semantic model name](images/semantic-model-name.png =400x*)
 
-3. In Create Semantic Model, click **Start with Empty Model**.
+3. Click the **Physical Layer**. Double-click **MySampleSalesDatabase**. Under Tables, expand the **Sample Sales** schema.
 
 	![Start with empty model](./images/empty-model.png)
 
-4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select Oracle ADW and click **Save**.
+4. In the **Connections pane**, expand the **BISAMPLE** schema. Hold down the Ctrl key and select **SAMP_ EMPL_ D_ VH**, **SAMP_ EMPL_ PARENT_ CHILD_ MAP**, and **SAMP_ EMPL_ POSTN_ D**.
 
 	![DB name](./images/db-name.png)
 
-## Task 2: Add Physical tables
+5. Drag the selected tables to **Sample Sales** in the Physical Layer. Drop the tables when **Add** appears. Click **Save**.
 
-In this section, you add physical tables from the data source to the empty semantic model.
+6. Under Tables in the Sample Sales schema, right-click **SAMP_ EMPL_ D_ VH** and select **Create Physical Table Alias**.
 
-1. In MySampleSalesDatabase, click the **Tables** tab.
+7. In Create Physical Table Alias, enter <code>D50 Sales Rep</code> in **Name**, and then click **OK**.
+
+8. Right-click **SAMP_ EMPL_ PARENT_ CHILD_ MAP** and click **Create Physical Table Alias**.
+
+9. In Create Physical Table Alias, enter <code>D51 Sales Rep Parent Child</code>, and then click **OK**.
+
+10. Right-click **SAMP_ EMPL_ POSTN_ D**, click **Create Physical Table Alias**.
+
+11. In Create Physical Table Alias, enter <code>D52 Sales Rep Position</code>, and then click **OK**. Click **Save**.
+
+## Task 2: Create Joins
+
+In this section, you define the joins between the added table and the existing F1 Revenue table.
+
+1. In MySampleSalesDatabase, click **Add Join**. In Add Physical Join, click **List** in Left table, expand **MySampleSalesDatabase**, and select **D50 Sales Rep**. Under Right Table, click **List**, expand **MySampleSalesDatabase**, and select **D52 Sales Rep Position**.
 
 	![Tables tab](./images/tables.png)
 
-2. In the Connections Connections pane icon pane, expand the BISAMPLE connection, and then expand Schemas.
-
+2. In Join Conditions, click **List** under the Left Table, and select **POSTN_ KEY**. Click **List** under the Right Table, select **POSTN_ KEY**, and then click **Add**.
 	![Schemas](./images/schemas.png =400x*)
 
-3. Expand the BISAMPLE schema.
+3. Click **Add Join**. In Add Physical Join, click **List** in Left table, expand **MySampleSalesDatabase**, and select **D51 Sales Rep Parent Child**. Under Right Table, click **List**, expand **MySampleSalesDatabase**, and select **D50 Sales Rep**.
 
 	![Expand BISAMPLE](images/expand-bisample.png =400x*)
 
-4. Hold down the Ctrl (Command for Mac users) key and select these tables:
-	* SAMP_ ADDRESSES_D
-	* SAMP_ CUSTOMERS_D
-	* SAMP_ PRODUCTS_D
-	* SAMP_ REVENUE_F
-	* SAMP_ TIME_ DAY_D
+4. In Join Conditions, click **List** under the Left Table, and select **ANCESTOR_ KEY**. Click **List** under the Right Table, select **EMPLOYEE_ KEY**, and then click **Add**.
 
-5. Drag the selected tables to Tables in the MySampleSalesDatabase tab
+5. Click **Add Join**. In Add Physical Join, click **List** in Left table, expand **MySampleSalesDatabase**, and select **F1 Revenue**. Under Right Table, click **List**, expand **MySampleSalesDatabase**, and select **D51 Sales Rep Parent Child**.
 
+6. In Join Conditions, click **List** under the Left Table, and select **EMPL_ KEY**. Click **List** under the Right Table, select **MEMBER_ KEY**, and then click **Add**.
 	![Drag tables](./images/drag-tables.png)
 
-## Task 3: Create Physical Table Aliases
+7. In the Physical Layer, right-click **D51 Sales Rep Parent Child**, select **Show Physical Diagram**, and then click **Selected Tables** and **Direct Joins**.
 
-In this section, you create physical table aliases that enables reusing the physical source tables. You also prefix the physical alias table's name with the table type such as F for fact and D for dimension, and use a number along with the F or D to change the original physical table name. For example, D1 Time for the SAMP_ TIME_ DAY_ D table and D2 Products for the SAMP_ PRODUCTS_D table.
+## Task 3: Add Logical Table
 
-1. In Tables, right-click **SAMP_ TIME_ DAY_D** and select **Create Physical Table** Alias.
+In this section you add a logical table and select columns from a physical layer table.
+
+1. Click **Logical Layer**, and double-click **Sample Sales BM**.
 
 	![create physical table alias](./images/create-physical-table-alias.png)
 
-2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **OK**. Close D1 Time.
+2. n Dimensions, click **Add Table**, and then click **Create New Table**.
 
 	![D1 Time](./images/d1-time.png =500x*)
 
-3. Right-click **SAMP_ PRODUCTS_D** and select **Create Physical Table Alias**.
+3. In Create Logical Table, enter <code>D5 Sales Rep</code> in Name and click **OK**.
 
-	![SAMP_PRODUCTS_D alias](./images/product-alias.png)
 
-4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **OK**. Close D2 Products.
+The D5 Sales Rep Columns tab opens in the Semantic Modeler.
+
+	![SAMP_ PRODUCTS_ D alias](./images/product-alias.png)
+
+4. Click the **Physical Layer**, expand **MySampleSalesDatabase**, and then expand **Sample Sales**.
 
 	![D2 products](images/d2-products.png =500x*)
 
-5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ OKRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
+5. Expand **D50 Sales Rep**, hold down the Ctrl key, select all the columns in **D50 Sales Rep**, and drag them to the **D5 Sales Rep** columns tab. Click **Save**.
 
-	* Right-click **SAMP_ CUSTOMERS_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **OK**. Close D3 Customers.
-	* Right-click **SAMP_ ADDRESSES_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **OK**. Close D4 Addresses.
-	* Right-click **SAMP_ REVENUE_F** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **OK**. Close F1 Revenue
-
-6. You should now have the D1 Time, D2 Products, D3 Customers, D4 Addresses, and F1 Revenue tables.
+6. Click the **General** tab, click **Primary Key**, and then select **Employee Key**. Click **Save**.
 
 	![Table aliases](./images/table-aliases.png =400x*)
 
-## Task 4: Create Physical Joins
+## Task 4: Add Source Tables and Columns
 
-In this section, you define joins between alias tables to express relationships between tables in the Physical layer.
+In this section, you update the logical layer table's sources.
 
-1. In the **Joins** section, click the **Add Join** icon.
+1. In D5 Sales Rep, click the **Sources** tab. Double-click **D50 Sales Rep**. Click **Save**.
 
 	![Add join](./images/add-join.png)
 
-2. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D1 Time**.
+2. Click **Detail View**. In Table Mapping, click **Add Table**.
 
 	![Add physical table](./images/add-physical-table.png =500x*)
 
-3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_ DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_ DATE** column. Click **Add**.
+3. In Select Physical Table, expand **Sample Sales**, click **D52 Sales Rep Position**, and then click **Select**. Click **Save**.
 
 	![Add join conditions](./images/join-conditions.png =500x*)
 
-4. Click **Save** icon.
+4. Click the **Sources** tab. In Table Mapping, click **Add Table**., and add **D51 Sales Rep Parent Child**. Click **Save**.
 
 	![Save](./images/save.png)
 
-5. Let's add another join. Click the **Add Join** icon. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D2 Products**.
+5. Click the **Columns** tab. Hold down the Ctrl key, select **Member Key**, **Ancestor Key**, **Is Lef**, and then click **Delete**. Click **Save**.
 
 	![Join](./images/join-f1-d2.png =500x*)
 
-6. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **PROD_ KEY** column. Under the Right Table (D2 Products), click the dropdown, and select the **PROD_ KEY** column. Then click **Add**.
 
-	![Join conditions](./images/conditions-f1-d2.png =500x*)
+## Task 5: Rename Columns
 
-7. Click the **Physical Layer** icon. Under the BISAMPLE schema, right-click **F1 Revenue**, select **Show Physical Diagram**, and then click **Selected Tables and Direct Joins**.
+In this section, you rename columns to use names that are easy to understand.
 
-	![Selected tables and join conditions](./images/selected-tables-joins.png)
-
-8. Drag **D3 Customers** to the **Physical Diagram**. Drag the **F1 Revenue** from the Physical Diagram away so that it's not blocking D1 Time. Re-arrange as you see fit.
-
-	![Drag D3 Customers](./images/drag-d3.png)
-
-9. From the **F1 Revenue connector**, draw a line to **D3 Customers**.
-
-	![Connect F1 D3](./images/connect-f1-d3.png)
-
-10. In **Add Physical Join** under **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **CUST_ KEY** column. Under the Right Table (D3 Customers), click the dropdown, and select the **CUST_ KEY** column. Then click **Add**.
-
-	![Join F1 D3](./images/cust-key-join.png =500x*)
-
-11. Drag **D4 Addresses** to the Physical Diagram.
-
-	![Drag D4](./images/drag-d4.png)
-
-12. From the D3 Customers connector, draw a line to D4 Addresses.
-
-	![Connect D3-D4](./images/connect-d3-d4.png)
-
-13. In Add Physical Join under **Join Conditions**, click the list icon on the left, and select the **ADDRESS_ KEY** column. Click list icon on the right, and then select the **ADDRESS_ KEY column**. Click **Add**.
-
-	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
-
-14. Click the **Save** icon.
-
-	![Save](./images/save-diagram.png)
-
-## Task 5: Review Physical Layer tables
-
-In this section, you can review columns, joins, and data in the Physical Layer tables.
-
-1. In the Physical Layer, double-click the **D2 Products** table.
+1. In the **D5 Sales Rep Columns** tab, double-click **POSTN_ KEY**. Enter <code>Position Key</code>.
 
 	![Double click D2](./images/dc-d2.png)
 
-2. The Physical Layer table opens in the **Columns** tab.
+2. Double-click **Type**. Enter <code>Sales Rep Type</code>.
 
 	![D2 columns](./images/d2-columns.png)
 
-3. Click **Joins** to view the joins to the F1 Revenue table.
+3. Double-click **Empl Name**. Enter <code>Sales Rep Name</code>.
 
 	![View F1 joins](./images/view-f1-joins.png)
 
-4. Click **Preview** to see a sample of the data in the columns.
+4. Double-click **Emply Key**. Enter <code>Sales Rep Number</code>.
 
 	![Preview D2 table](./images/preview-d2.png)
 
+5. Double-click **Hire Dt**. Enter <code>Hire Date</code>.
+
+6. Double-click **Mgr ID**. Enter <code>Manager Number</code>.
+
+7. Double-click **Postn Desc**. <code>Enter Position</code>.
+
+8. Double-click **Postn Level**. <code>Enter Position Level</code>.
+
+9. Double-click **Distance**. <code>Enter Closure Distance</code>. Click **Save**.
+
+10. Close **D5 Sales Rep**.
+
+## Task 6: Rename Columns
+
+In this section, you create joins between the sales rep alias tables and the F1 Revenue table.
+
+In this section, you define the join between D5 Sales Rep and the F1 Revenue tables.
+
+1. Click the **Logical Layer**. Expand **Sample Sales BM**, right-click **D5 Sales Rep**, select **Show Logical Diagram**, and then click **Selected Table and Direct Joins**.
+
+2. Drag **F1 Revenue** to the Logical Diagram. Select **F1 Revenue** and draw the join to **D5 Sales Rep**.
+
+3. In the Add Join dialog, click **Add**. Click **Save**.
+
+## Task 7: Create a Parent-Child Hierarchy
+
+In this section, you create a parent-child hierarchy, set the member key, and set the parent key.
+
+1. In the **Logical Layer**, double-click **D5 Sales Rep**.
+
+2. In **D5 Sales Rep**, click the **Hierarchy** tab. From Hierarchy Type, select **Parent-Child**.
+
+3. Under Parent-Child, click **Detail**.
+
+4. In Detail, select **Sales Rep Number** from Member Key, select **Sales Rep Name** from Display Key, and then select **Manager Number** from Parent Key.
+
+5. Click **Select** to define the parent-child relationship table.
+
+6. In Select Physical Table, click **D51 Sales Rep Parent Child** and click **Select**.
+
+7. Under the Relationship Table, select **MEMBER_ KEY** from Member Key, select **ANCESTOR_ KEY** from Parent Key, select **DISTANCE** from Relationship Distance, and then select **IS_ LEAF** from Leaf Node Identifier. Click **Save**.
+
+## Task 8: Specify Content Level of Detail
+
+1. In D5 Sales Rep, click the **Columns** tab. Double-click **Sales Rep Name** and click **Detail View**. Under Level, select **Detail**.
+
+2. Double-click **Sales Rep Number**. Under Level, select **Detail**. Click **Save**.
+
+3. Click the **Hierarchy** tab. In Level Name, enter <code>Sales Rep Total</code> to replace **Total**.
+
+4. Click the **Detail** level. In Level Name, enter <code>Sales Rep Detail</code> to replace **Detail**. Click **Save**.
+
+5. Click the **Columns** tab. Double-click **Sales Rep Name**. Under Level, select **Sales Rep Detail**. Double-click **Sales Rep Number**. Under Level, select **Sales Rep Detail**. Click **Save**.
+
+## Task 9: Create Presentation Layer Objects
+
+In this section, you create the Sales Rep presentation table and presentation hierarchies.
+
+1. Click the **Presentation Layer**. Double-click the **Sample Sales** subject area.
+
+2. In the Tables tab, click **Add Tables**, and then click **Add Table**.
+
+3. In Select Logical Table, click **D5 Sales Rep** and click **Select**.
+
+4. Double-click **D5 Sales Rep** in the Tables tab.
+
+5. In D5 Sales Rep, click the **General** tab. In Name, enter **Sales Rep** to replace **D5 Sales Rep**, and then click **Save**.
+
+6. In Sales Rep, click the **Hierarchies** tab.
+
+7. In the Hierarchies tab, next to Display Columns, click **Replace**. In Select Presentation Column, expand **Sales Rep**, click S**ales Rep Name** and then click **Select**.
+
+8. Click **Save**.
+
 ## Learn More
-* [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)
-* [Understand a Semantic Model's Requirements](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/understand-semantic-models-requirements.html)
-* [Plan the Physical Layer](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/plan-physical-layer.html#GUID-D7D6E064-F9C8-4B8B-A02F-B9E0358063F1)
+* [Create and Manage Parent-Child Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-manage-parent-child-hierarchies.html#GUID-81468B64-80D2-4AB5-9E35-A7C19215D440)
+* [What Are Driving Tables?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-logical-joins.html#GUID-D59DD499-4459-4E04-B8D9-25F42C045E43)
+* [Manage Logical Tables Sources](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/manage-logical-table-sources.html#ACMDG-GUID-700A5FA9-87B3-40A2-991A-9E0FA6341950)
 
 ## Acknowledgements
-* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Author** - Desmond Jung, Cloud Engineer, NACI
+* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Last Updated By/Date** - Desmond Jung, July 2023

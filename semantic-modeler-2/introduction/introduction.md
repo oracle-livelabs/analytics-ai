@@ -23,6 +23,7 @@ In this workshop, you will learn how to:
 * [The Semantic Modeler in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/post/the-semantic-modeler-in-oracle-analytics-cloud)
 
 ## Acknowledgements
-* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro, Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Author** - Desmond Jung, Cloud Engineer, NACI
+* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Last Updated By/Date** - Desmond Jung, July 2023
+

@@ -134,6 +134,7 @@ The message, "Push successful" appears when the changes are added to your Git re
 * [Work With Branches](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-branches.html)
 
 ## Acknowledgements
-* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Desmond Jung
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Author** - Desmond Jung, Cloud Engineer, NACI
+* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Last Updated By/Date** - Desmond Jung, July 2023
+

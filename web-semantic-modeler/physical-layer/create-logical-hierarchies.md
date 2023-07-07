@@ -1,4 +1,4 @@
-# Create Logical Hierarchies
+# Create the Presentation Layer
 
 ## Introduction
 
@@ -30,19 +30,19 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials.
 
-2. On the Home page, click the **Navigator**, and then click **Semantic Models**.
+2. On the Home page, click the Navigator Navigator icon, and then click Semantic Models.
 
-3. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
+3. In the Semantic Models page, select Sample Sales, click Actions menu Action menu, and then select Open.
 
-4. In the Logical Layer, click **D2 Products**.
+4. In the Logical Layer, click D2 Products.
 
-5. In D2 Products, click the **Hierarchy** tab. In Hierarchy Type, select **Level-Based**.
+5. In D2 Products, click the Hierarchy tab. In Hierarchy Type, select Level-Based.
 
-6. Under Hierarchies, click **Add Level**. In Level **Name,** enter <code>Product Brand</code> to replace Level-3. In the **Primary Key** and **Associated Columns fields**, select **Brand**.
+6. Under Hierarchies, click Add Level Add Level icon. In Level Name, enter Product Brand to replace Level-3. In the Primary Key and Associated Columns fields, select Brand.
 
-7. Select **Product Brand** in Hierarchies, click **Add Level**. In Level **Name**, enter <code>Product LOB</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **LOB**.
+7. Select Product Brand in Hierarchies, click Add Level Add Level icon. In Level Name, enter Product LOB to replace Level-4. In the Primary Key and Associated Columns fields, select LOB.
 
-8. Select **Product LOB**, click **Add Level**. In **Level Name**, enter <code>Product Type</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Type**, and then click **Save**.
+8. Select Product LOB, click Add Level Add Level icon. In Level Name, enter Product Type to replace Level-5. In the Primary Key and Associated Columns fields, select Type, and then click Save Save icon.
 
 9. Close D2 Products.
 
@@ -92,6 +92,6 @@ In this section, you create a time hierarchy in the D1 Time logical table to use
 * [Create Logical Time Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data.html#ACMDG-GUID-8EC7B9D0-7A0D-4520-9A90-82D625518D4E)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Last Updated By/Date** - Desmond Jung, July 2023
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, July, 2023

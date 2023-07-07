@@ -31,7 +31,7 @@
             "filename": "../../create-logical-hierarchies/create-logical-hierarchies.md"
         },
         {
-            "title": "Lab 4: Create calculated, level-based, and share measures",
+            "title": "Lab 4: Create Calculated, Level-Based, and Share Measures",
             "filename": "../../create-measures/create-measures.md"
         },
         {
@@ -47,11 +47,11 @@
             "filename": "../../aggregate-tables/aggregate-tables.md"
         },
         {
-            "title": "Lab 8: Create time series measures",
+            "title": "Lab 8: Create Time Series Measures",
             "filename": "../../time-series-measures/time-series-measures.md"
         },
         {
-            "title": "Lab 9: Create initialization blocks and variables",
+            "title": "Lab 9: Create Initialization Blocks and Variables",
             "filename": "../../initialization-blocks-and-variables/time-series-measures.md"
         },
         {
