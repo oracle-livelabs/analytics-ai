@@ -108,7 +108,7 @@ Estimated time: 20 min
 
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents.
 
-    | File | Query terms |
+    | File | Search Terms |
     | ------------------------------------- | --------------------------------------- |
     | Image_Map_Brazil.png | brasil, rio |
     | Image_Workshop_architecture.png | opensearch, streaming, "object storage" |
@@ -119,6 +119,9 @@ Estimated time: 20 min
     | Voice_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
     | Shakespeare_macbeth.tif | macbeth, candle, shadow |
     | Penguins.jpg | penguins, animal, beak, bird |
+    | HOL_summary.txt | workshop, oic, "document understanding" |
+
+    **Note - since most web browsers don't natively display .tif files, if you attempt to open one in the search results, you will be prompted to download it. You can then view it with an application on you local computer, if you have one that can view .tif files.**
 
 
 ## Congratulations! You have completed this workshop.
