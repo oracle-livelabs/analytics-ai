@@ -103,10 +103,25 @@ Estimated time: 20 min
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear.
 ![Run the application](images/opensearch-vb-test.png)
 
-1. In the search user interface, enter *shakespeare* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
+1. In the search user interface, enter *macbeth* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
 
-### Congratulations! You have completed this workshop.
+1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents.
+
+    | File | Query terms |
+    | ------------------------------------- | --------------------------------------- |
+    | Image_Map_Brazil.png | brasil, rio |
+    | Image_Workshop_architecture.png | opensearch, streaming, "object storage" |
+    | Invoice_6879875_scanned.tif | 6879875, bijou, 111.31 |
+    | Invoice_DS67076_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
+    | Text_DocU_blog_HTML_to_PDF.pdf | blogs.oracle.com, datascience |
+    | Text_DocU_Overview_PPTX_to_PDF.pdf | harbor, "product direction" |
+    | Voice_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
+    | Shakespeare_macbeth.tif | macbeth, candle, shadow |
+    | Penguins.jpg | penguins, animal, beak, bird |
+
+
+## Congratulations! You have completed this workshop.
 You provisioned multiple services into a compartment in your OCI tenancy. These included Oracle Integration Cloud (OIC), several AI services such as OCI Document Understanding, and Oracle Search with OpenSearch. You imported a project into OIC that ingests document files from Object Storage, sends them to AI services based on the file type, and then loads extracted data into an OpenSearch index. You configured all of the service connections used by that OIC project and then you ran the integration project. Finally, you imported an application project into Visual Builder, you configured the connection to OpenSearch, and then you ran the project to display a search user interface. You used that search tool to query the content added to the OpenSearch index. This workshop has illustrated how different OCI services can be integrated together to use AI to make many types of content more searchable.
 
 ## Acknowledgements

@@ -31,17 +31,17 @@ The enrichment processing is orchestrated with OIC, a low code integration servi
 
 ![Integration](images/opensearch-oic.png)
 The file types supported by the OIC project are hard-coded into different routes in the ObjectStorage2OpenSearch integration using the Switch command. Here's how various file types are processed.
-- If the name contains "belgian", it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
+- If the name contains ***belgian***, it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
 
-- If the file has the extension ".png", ".jpg", ".jpeg", or ".gif", it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
+- If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
 
-- If the file has the extension ".json", this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is classified using Language Service and then it is indexed into OpenSearch.
+- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is classified using Language Service and then it is indexed into OpenSearch.
 
-- If the file has the extension ".mp4", ".avi" ".mp3", ".wav", or ".m4a", it is processed by OCI Speech
+- If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech and the json output is processed as described above
 
-- If the file has the extension ".tif", it is processed by OCI Document Understanding
+- If the file has the extension **.tif** or **.pdf**, it is processed by OCI Document Understanding and the json output is processed as described above
 
-- All other file types are sent to the OCI Function with Tikka parser and extracted text is classified using Language Service and then indexed into OpenSearch
+- All other file types are sent to the OCI Function with Tikka parser and extracted text is classified using OCI Language and then indexed into OpenSearch
 
 
 

@@ -213,7 +213,7 @@ Perform a similar task to get Client ID/Secret for OIC
 
 ## Known issues
 
-During the terraform run, there might be an error:
+During the terraform run, there might be an error depending on the compute shapes supported byyour tenancy:
 
 ```
 oci_core_instance.starter_instance: Creating..
@@ -223,8 +223,8 @@ oci_core_instance.starter_instance: Creating..
 
 Solution:  edit the file *oci-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
 ```
-OLD: variable instance_shape { default = "VM.Standard.AMD.Generic" }
-NEW: variable instance_shape { default = "VM.Standard.E3.Flex" }
+OLD: variable instance_shape { default = "VM.Standard.E3.Flex" }
+NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
 ```
 
 Then rerun the following command in the code editor
@@ -233,7 +233,8 @@ Then rerun the following command in the code editor
 ./build.sh
 ```
 
-### Return to the next lab when you have completed the final step of this lab.
+## Continue with the next lab when you have completed the final step of this lab.
+[Go to next lab.](#next)
 
 
 ## Acknowledgements
