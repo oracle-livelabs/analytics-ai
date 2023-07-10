@@ -1,334 +1,208 @@
-# Create a Data Flow and Integration task
+﻿# Create an Application, a Pipeline and publish tasks
 
 ## Introduction
 
-Learn how to create **Data Flows** along with an **Integration task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed in the associated workshop task.
+Learn how to create an OCI Data Integration **application**, **publish tasks** into the application and create a Data Integration **pipeline** which calls the published tasks.
 
-**Estimated Time**: 20 minutes
+The Pipeline you will create will orchestrate the execution of all of the tasks you created and published in _Create a Data Loader task, Create a Data Flows and Integration tasks_. It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
+
+**Estimated Time**: 30 minutes
 
 ### Objectives
-* Create a Data Flow.
-* Create Integration task.
+* Creating a Pipeline
+* Creating a Pipeline Task
+* Create an Application
+* Publish the Pipeline Task
 
-## Task 1: Create a Data Flow
+## Task 1: Create a Pipeline
 
-To further explore the capabilities of Data Flows in OCI Data Integration, you will now create **a new Data Flow** with different transformation rules.
+A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** to facilitate data processing. It manages and orchestrates the execution of a set of related tasks and processes. The pipeline functionality in OCI Data Integration helps write complex data pipelines using published tasks from any application, and you can add data loader, integration REST, Pipeline or SQL tasks. You can create pipelines quickly using a designer similar to the Data Flow designer.
 
-This Data Flow will load data from **multiple source files** containing Employees data using File Patterns functionality in OCI Data Integration. After, you will do transformations on the Employees data and later load the data in **multiple target tables**, based on the region of the employees. Two target tables will be loaded: one for employees from **West and Midwest region** and one for employees from **Northeast and South region**. We will take advantage of the **Split operator** in OCI Data Integration Data Flows.
+The Pipeline you will create in this step will orchestrate the execution of all of the tasks you created and published in this Workshop until now. The pipeline will begin with the **parallel execution** of the `LOAD_CUSTOMERS_LAB` **Integration Task** and `LOAD_REVENUE_DATA_INTO_DATA_WAREHOUSE` **Data Loader task**. After the successful execution of these two tasks, the `LOAD_EMPLOYEES_BY_REGIONS` **Integration Task** will be executed in sequence.
+You can also reference Pipeline name and Task run key **system parameters of the pipeline** and pass them as parameters into your own tasks.
 
-1. From the Project Details page for `DI_WorkshopNN` project, click on **Data Flows** from the submenu.
+Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the Data Integration Application from OCI Console or whevever you want to persist in your own custom tasks.
 
-  ![](images/ocw23_lab2_1.png " ")
 
-2. Click **Create Data Flow**.
+1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
 
-  ![](images/ocw23_lab2_2.png " ")
+  ![](images/ocw23_projectstab.png " ")
 
-3. The data flow designer opens in a new tab. In the **Properties panel**, for **Name**, enter `Load Employees by Region`, and click **Create**.
+2. Select your `DI_WorkshopNN` project from the projects list.
 
-  ![](images/ocw23_lab2_3.png " ")
-  ![](images/ocw23_lab2_4.png " ")
+  ![](images/ocw23_projects.png " ")
 
-4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
+3. Select **Pipelines** section under project Details tab.
 
-  ![](images/ocw23_lab2_5a.png " ")
+  ![](images/ocw23_project_pipelines.png " ")
 
-5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
+4. Click on **Create Pipeline**.
 
-  ![](images/ocw23_lab2_5.png " ")
+  ![](images/ocw23_pipeline_create.png " ")
 
+5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
 
-6. In the **Details** tab, click Select next to each of the following options to make your selections:
+  ![](images/ocw23_pipeline_name.png " ")
 
-    - For **Identifier**, rename to `EMPLOYEES_SOURCE_FILES`.
-    - For **Data Asset**, select `Object_Storage`.
-    - For **Connection**, select `Default Connection`.
-    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here.
-  ![](images/ocw23_lab2_5b.png " ")
-    - For **Data Entity**, click on **Select** and then on **Browse by pattern**.
-  ![](images/ocw23_lab2_6.png " ")
+6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
 
-   Write the file pattern `EMPLOYEES_*` and press **return**. All files from your Object Storage bucket that are found which match this pattern are now displayed: there are three files for employees. Click on **Select pattern**.
-  ![](images/ocw23_lab2_7.png " ")
+  ![](images/ocw23_pipeline_name_after_save.png " ")
 
-   For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
-  ![](images/ocw23_lab2_8.png " ")
+7. To add a task, you will drag and drop a task operator from the Operators Panel. Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
-   In the end, your details for the source operator should look like this.
-  ![](images/ocw23_lab2_9.png " ")
+  ![](images/ocw23_pipeline_integrationtask1.png " ")
 
-7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.  *Note*: Be sure to save often during design time!
+8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
 
-  ![](images/ocw23_lab2_10.png " ")
+  ![](images/ocw23_pipeline_integrationtask2.png " ")
 
-8. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
+9. A page pops up with the selections for the **Integration Task**:
 
-  ![](images/ocw23_lab2_11.png " ")
+    - Select **Design tasks** and select the name **Customers Project**.
+    - Under **Integration Task**, check the `Load Customers Lab` task.
+    - Click **Select**.
 
-9. In the Properties panel for **EXPRESSION\_1** operator, rename the Identifier to **TRANSFORM\_DATATYPES**.
+    ![](images/ocw23_pipeline_dataloadertask00.png " ")
 
-  ![](images/ocw23_lab2_11.png " ")
+10. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
-10. You will now add a **new expression**. Still in the Properties panel, click on **Add Expression**.
+  ![](images/ocw23_pipeline_dataloadertask1.png " ")
 
-  ![](images/ocw23_lab2_12.png " ")
+11. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
-11. In the **Add Expression** panel:
+  ![](images/ocw23_pipeline_dataloadertask2.png " ")
 
-    - **Rename** the expression to `BIRTH_DATE` in the Identifier field.
-    - Change **Data Type** to `DATE`.
-    - Enter
-    ```
-    TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')
-    ```
-   in the **expression** box.
+12. A page pops up with the selections for the **Data Loader Task**:
 
-   This function will convert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
-    - Click **Add**.
+    - Select **Design tasks** and your project name **DI_WorkshopNN**.
+    - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
+    - Click **Select**.
 
-  ![](images/ocw23_lab2_13.png " ")
+    ![](images/ocw23_pipeline_dataloadertask0.png " ")
 
-12. Your expression for **BIRTH\_DATE** is now displayed. Click again on **Add Expression** to add a new one.
+13. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
-  ![](images/ocw23_lab2_14.png " ")
+  ![](images/ocw23_pipeline_dataloadertask3.png " ")
 
-13. In the **Add Expression** panel:
+14. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 
-    - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field.
-    - Change **Data Type** to `NUMERIC`.
-    - Enter   
-    ```
-    TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)
-    ```
-   in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
-    - Click **Add**.
+  ![](images/ocw23_pipeline_merge.png " ")
 
-  ![](images/ocw23_lab2_15.png " ")
+15. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
 
-14. The expressions for the **TRANSFORM\_DATATYPES** operator should now look like this:
+  ![](images/ocw23_pipeline_merge2.png " ")
 
-  ![](images/ocw23_lab2_16.png " ")
+16. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
 
-15. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATATYPES** operator to the new **Expression** operator.  *Note*: Be sure to save often during design time!
+  ![](images/ocw23_pipeline_integrationtaskx5.png " ")
 
-  ![](images/ocw23_lab2_17.png " ")
+17. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
-16. In the Properties panel for the new **EXPRESSION\_1 operator**, change the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
+  ![](images/ocw23_pipeline_integrationtaskx2.png " ")
 
-  ![](images/ocw23_lab2_18.png " ")
+18. A page pops up with the selections for the **Integration Task**:
 
-17. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
+    - Select **Design tasks** and your project name **Customers Project**.
+    - Under **Integration Task**, check the `Load Employees by Regions` task.
+    - Click **Select**.
 
-  ![](images/ocw23_lab2_19.png " ")
+    ![](images/ocw23_pipeline_integrationtask0.png " ")
 
-18. In the **Add Expression** panel:
+19. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
-    - **Rename** the expression to `EMPLOYEE_AGE` in the Identifier field.
-    - Change **Data Type** to `NUMERIC`.
-    - Enter
+  ![](images/ocw23_pipeline_integrationtaskx3.png " ")
 
-    ```
-    CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.TRANSFORM_DATATYPES.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATATYPES.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.TRANSFORM_DATATYPES.BIRTH_DATE)-1) END
-    ```
-   in the **expression** box.
-   This function will calculate the age of the employee, by doing a minus between the current date and his birth date. CASE WHEN function returns the value for which a condition is met.
+20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
-   *Note*: In case the attributes in the expression don't get automatically highlighted, please replace them, by highlighting in the expression's placeholders and then double-click or drag and drop attributes from the Incoming list.
-    - Click **Add**.
+  ![](images/ocw23_pipeline_integrationtaskx4.png " ")
 
-  ![](images/ocw23_lab2_20.png " ")
+21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
-19. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
+  ![](images/validate-pip.png " ")
 
-  ![](images/ocw23_lab2_21.png " ")
+22. Click on **Create and Close**.
 
-20. In the **Add Expression** panel:
+  ![](images/validate-pip.png " ")
 
-    - **Rename** the expression to `PHONE_NO` in the Identifier field.
-    - Leave **Data Type** as `VARCHAR`.
-    - Enter   
-    ```
-    COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No,'Phone Number Not Available')
-    ```
-   in the **expression** box
-   This function will fill in the null values for phone number with string `Phone Number Not Available`.
-    - Click **Add**.
+## Task 2: Create a Pipeline task
 
-  ![](images/ocw23_lab2_22.png " ")
+Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
+You will create a Pipeline task for the pipeline you created in the above step.
 
-21. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.  *Note*: Be sure to save often during design time!
+1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-  ![](images/ocw23_lab2_23.png " ")
+  ![](images/ocw23_pipelinetask1.png " ")
 
-22. Check the following two fields: **EMPLOYEES\_SOURCE\_FILES.Age\_in\_Yrs**, **EMPLOYEES\_SOURCE\_FILES.Year\_of\_Joining**. We will exclude these fields from this operator.
+2. Click **Create Task**, and then select **Pipeline**.
 
-  ![](images/ocw23_lab2_24.png " ")
+  ![](images/ocw23_pipelinetask2.png " ")
 
-23. Click on **Actions** and then on **Exclude by selection**.
+3. On the **Create Pipeline Task** page, enter:
 
-  ![](images/ocw23_lab2_25.png " ")
+    - For **Name** enter `Load DWH Pipeline Task`
+    - **Description** (optional)
+    - **Project** `DI_WorkshopNN` is auto-populated because we're creating this task from project details page.
 
-24. The fields are now excluded. Click on **View Rules** to see the rules you defined.
+    ![](../../pipelines/images/pipeline-task-name.png " ")
 
-  ![](images/ocw23_lab2_26.png " ")
+4. In the **Pipeline** section, click **Select**.
 
-25. Click on **Data** tab of the **EMPLOYEE\_AGE\_AND\_PHONE** operator.
+  ![](images/ocw23_pipelinetask3.png " ")
 
-  ![](images/ocw23_lab2_27.png " ")
+5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
-26. Scroll to the right until you get to the attribute **EMPLOYEE\_AGE\_AND\_PHONE.EMPLOYEES\_SOURCE\_FILES.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the **region**: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
+  ![](../../pipelines/images/pipeline-select.png " ")
 
-  ![](images/ocw23_lab2_28.png " ")
+6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Save and Close**.
 
-27. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.  *Note*: Be sure to save often during design time!
+  ![](../../pipelines/images/save-pipeline-task.png " ")
 
-  ![](images/ocw23_lab2_29.png " ")
+## Task 3: Create an Application
 
-28. In the **Properties** bar of the Split Operator, we will leave the default **Identifier** (**SPLIT\_1**) and **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
+In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 
-  ![](images/ocw23_lab2_29.png " ")
+1. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
 
-29. Still in Properties bar of the Split Operator, click on **Add Condition** in **Split Conditions section**.
+  ![](../../pipelines/images/create-app-tile.png " ")
 
-  ![](images/ocw23_lab2_29.png " ")
+2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates)
 
-30. In **Add Split Condition** page:
+  ![](images/ocw23_create_app1.png " ")
 
-    - Enter **Identifier** `WEST_MIDWEST_REGION`.
-    - For **Condition** enter
-    ```
-    SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')
-    ```
-    - Click **Add**.
+Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
 
-  ![](images/ocw23_lab2_30.png " ")
+  ![](images/ocw23_create_app2.png " ")
 
-31. The first split condition you defined is now displayed. The Split operator properties should look like this:
+3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
-  ![](images/ocw23_lab2_31.png " ")
+  ![](../../pipelines/images/my-application.png " ")
 
-32. Still in Properties bar of the Split Operator, click on **Add Condition** in **Split Conditions section** to add a new split condition.
+In OCI Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
-  ![](images/ocw23_lab2_31.png " ")
+## Task 4: Publish the Pipeline task
 
+1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-33. In **Add Split Condition** page:
+  ![](../../pipelines/images/click-tasks.png " ")
 
-    - Enter **Identifier** `NORTHEAST_SOUTH_REGION`.
-    - For **Condition** enter
-    ```
-    SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Northeast','South')
-    ```
-    - Click **Add**.
+2. All tasks from the `DI_WorkshopNN` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
 
-  ![](images/ocw23_lab2_32.png " ")
+  ![](../../pipelines/images/publish-to-app.png " ")
 
-34. The split conditions that you defined are now displayed. After the conditions in the split operator are evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port.
+3. In the Publish to Application dialog, select the `Workshop ApplicationNN` to publish to from the drop-down list. Then, click **Publish**.
 
-  ![](images/ocw23_lab2_33.png " ")
+  ![](../../pipelines/images/app-select.png " ")
 
-35. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.  *Note*: Be sure to save often during design time!
-
-  ![](images/ocw23_lab2_34.png " ")
-
-36. In the properties for **TARGET\_1** operator:
-
-    - Change to **Merge Integration Strategy**.
-    - For **Data Asset**, select `Data_Warehouse`.
-    - For **Connection**, select `Beta connection`.
-    - For **Schema**, select `Beta`.
-    - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in OCI that you ran on the Autonomous Data Warehouse).
-    - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`).
-    - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
-
-  ![](images/ocw23_lab2_35.png " ")
-
-37. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 3 attributes that were not mapped automatically in the target.
-
-  ![](images/ocw23_lab2_36.png " ")
-
-38. **Manually map** the **E\_Mail** attribute from source  to **EMAIL** attribute from target, with drag and drop.
-
-  ![](images/ocw23_lab2_37.png " ")
-
-39. You will use **mapping by pattern** to map the two remaining unmapped attributes. This maps inbound attributes to target attributes based on simple, user-defined regex rules. Click on **Actions** button and then on **Map by pattern**.
-
-  ![](images/ocw23_lab2_38.png " ")
-
-40. In the **Map by pattern** page that pops up:
-
-    - For **Source Pattern**, use `*_S_NAME`.
-    - For **Target Pattern**, use `$1S_NAME`.
-    - Click on **Preview Mapping**. In the table, the mapping for FATHERS\_NAME and MOTHERS\_NAME attributes is now displayed.
-    - Click on **Map**.
-
-   *Note:* For more information on how to use **Mapping by pattern**, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm#operator-target), section Target Operator, **Mapping attributes**.
-
-  ![](images/ocw23_lab2_39.png " ")
-
-41. The attribute mapping for the **EMPLOYEES\_WEST\_MIDWEST target table** is now complete.  *Note*: Be sure to save often during design time!
-
-  ![](images/ocw23_lab2_40.png " ")
-
-42. Drag and drop **another target operator**. Connect the **NORTHEAST\_SOUTH\_REGION output port** of the Split operator to the **TARGET\_2 operator**. In Properties tab of the new target operator:
-
-    - Change to **Merge Integration Strategy**.
-    - For **Data Asset**, select `Data_Warehouse`.
-    - For **Connection**, select `Beta connection`.
-    - For **Schema**, select `Beta`.
-    - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in OCI_ that you ran on the Autonomous Data Warehouse).
-    - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
-    - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
-
-   **Make sure you also map all of the columns, same as in steps 38, 39 and 40.**
-
-  ![](images/ocw23_lab2_41.png " ")
-
-43. The design of the Data Flow is now ready. Click on **Validate**. The Validation panel lets you know if any warnings or errors were detected.  *Note*: If any warnings or errors are found, select an issue and it'll take you to the operator that caused it, to investigate further. Warnings that might be displayed should not cause the task to fail.
-
-  ![](images/ocw23_lab2_42.png " ")
-
-44. Click on **Save and Close**.
-
-  ![](images/ocw23_lab2_43.png " ")
-
-## Task 2: Create Integration Task
-
-**Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create an Integration task for the Data Flow you created in the previous steps.
-
-1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
-
-  ![](../../integration-tasks/images/home-projects.png " ")
-
-2. On the **Projects** page, select the project you have been working on for this workshop, `DI_WorkshopNN`.
-
-  ![](../../integration-tasks/images/select-project.png " ")
-
-3. On the `DI_WorkshopNN` **Project Details** page, from the submenu, click **Tasks**.
-
-  ![](images/ocw23_lab2_43.png " ")
-
-4. Click **Create Task**, and then select **Integration**.
-
-  ![](images/ocw23_lab2_44.png " ")
-
-5. The **Create Integration Task** page opens in a new tab. On this page:
-
-    - Change the **Name** to `Load Employees by Regions` and enter the optional **Description**. The value in the **Identifier** field is auto-generated based on the value you enter for Name.
-    - In the Data Flow section, click Select. In the **Select a Data Flow** panel, select `Load Employees by Region`, and then click Select.
-    - The Data Flow will be **validated**.
-    - Click **Create and Close**.
-
-  ![](images/ocw23_lab2_45.png " ")
-
-   **Congratulations!**  You created the Data Flow and Integration task in OCI Data Integration.
+   **Congratulations!**  
 
 ## Learn More
 
-* [Data Flow in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/data-flows.htm)
-* [Integration Task in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/integration-tasks.htm)
-* [Data Loader Task in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/data-loader-tasks.htm)
-* [SQL Task in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/sql-tasks.htm)
+* [Applications in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/applications.htm)
+* [Pipelines in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline.htm)
+* [Pipeline Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-tasks.htm)
+* [Using Parameters in Pipelines](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters)
+* [Publishing Design Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/publish-design-tasks.htm)
+* [Patches in OCI Data Integration Applications](https://docs.oracle.com/en-us/iaas/data-integration/using/patches.htm#patches)
 
 ## Acknowledgements
 

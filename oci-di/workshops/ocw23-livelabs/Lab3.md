@@ -1,210 +1,183 @@
-﻿# Create an Application, a Pipeline and publish tasks
+﻿# Run Data Loader task, schedule and run Pipeline task
 
 ## Introduction
 
-Learn how to create an OCI Data Integration **application**, **publish tasks** into the application and create a Data Integration **pipeline** which calls the published tasks.
+Learn how to **run a Data Loader task**, create a **task schedule** in your OCI Data Integration application, to **schedule the Pipeline task** and to **run it**.
+After publishing tasks to an Application, you can run a task **manually on-demand**, or you can use schedules and task schedules to **automate the execution** of your tasks.
+To run a task automatically on a specific schedule, you must:
+* **Create a schedule**: A schedule defines when and how frequently tasks should be run. A schedule can be used across tasks of any type.
+* **Create a task schedule for the task**: A task schedule is an automated run configuration for a specific task. You schedule a task to run automatically by creating a task schedule, and associating the task schedule with an existing schedule.
 
-The Pipeline you will create will orchestrate the execution of all of the tasks you created and published in _Create a Data Loader task, Create a Data Flows and Integration tasks_. It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
+You will schedule your Pipeline Task to run daily at 2PM.
 
-**Estimated Time**: 30 minutes
+**Estimated Time**: 15 minutes
 
 ### Objectives
-* Creating a Pipeline
-* Creating a Pipeline Task
-* Create an Application
-* Publish the Pipeline Task
+* Run the Data Loader task
+* Create a Schedule
+* Schedule the Pipeline Task
+* Run the Pipeline Task
 
-## Task 1: Create a Pipeline
+## Task 1: Run the Data Loader task
 
-A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** to facilitate data processing. It manages and orchestrates the execution of a set of related tasks and processes. The pipeline functionality in OCI Data Integration helps write complex data pipelines using published tasks from any application, and you can add data loader, integration REST, Pipeline or SQL tasks. You can create pipelines quickly using a designer similar to the Data Flow designer.
+In this step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
 
-The Pipeline you will create in this step will orchestrate the execution of all of the tasks you created and published in this Workshop until now. The pipeline will begin with the **parallel execution** of the `LOAD_CUSTOMERS_LAB` **Integration Task** and `LOAD_REVENUE_DATA_INTO_DATA_WAREHOUSE` **Data Loader task**. After the successful execution of these two tasks, the `LOAD_EMPLOYEES_BY_REGIONS` **Integration Task** will be executed in sequence.
-You can also reference Pipeline name and Task run key **system parameters of the pipeline** and pass them as parameters into your own tasks.
+1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the Data Integration Application from OCI Console or whevever you want to persist in your own custom tasks.
+  ![](images/ocw23_home1.png " ")
 
+2. From the Workspaces page, make sure that you are in the correct compartment (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
+  ![](images/ocw23_home2.png " ")
 
-  ![](images/ocw23_projectstab.png " ")
+3. From your `DI_Workspace` homepage, click on **Applications**.
 
-2. Select your `DI_WorkshopNN` project from the projects list.
+  ![](images/ocw23_home3.png " ")
 
-  ![](images/ocw23_projects.png " ")
+4. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
-3. Select **Pipelines** section under project Details tab.
+  ![](images/ocw23_home4.png " ")
 
-  ![](images/ocw23_project_pipelines.png " ")
+5. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
-4. Click on **Create Pipeline**.
+  ![](../../schedule-run/images/run-data-loader-task.png " ")
 
-  ![](images/ocw23_pipeline_create.png " ")
+6. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
-5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
+  ![](../../schedule-run/images/data-loader-task-running.png " ")
 
-  ![](images/ocw23_pipeline_name.png " ")
+7. After a short time, The **Data Loader task run ends successfully**.
 
-6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
+  ![](../../schedule-run/images/data-loader-task-successful.png " ")
 
-  ![](images/ocw23_pipeline_name_after_save.png " ")
+## Task 2: Create a Schedule
 
-7. To add a task, you will drag and drop a task operator from the Operators Panel. Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
+You will first create a **Schedule** in the Application that contains the tasks that can be scheduled for automated runs. Set up a schedule by selecting a time zone and configuring a frequency at which associated task schedules should run. You can automate task runs on an hourly schedule, or a daily or monthly schedule.
 
-  ![](images/ocw23_pipeline_integrationtask1.png " ")
+1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
+  ![](images/ocw23_home1.png " ")
 
-  ![](images/ocw23_pipeline_integrationtask2.png " ")
+2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-9. A page pops up with the selections for the **Integration Task**:
+  ![](images/ocw23_home2.png " ")
 
-    - Select **Design tasks** and select the name **Customers Project**.
-    - Under **Integration Task**, check the `Load Customers Lab` task.
-    - Click **Select**.
+3. From your `DI_Workspace` homepage, click on **Applications**.
 
-    ![](images/ocw23_pipeline_dataloadertask00.png " ")
+  ![](images/ocw23_home3.png " ")
 
-10. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
+4. From the **list of Applications**, select the `Workshop ApplicationNN`, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/ocw23_pipeline_dataloadertask1.png " ")
+  ![](images/ocw23_home4.png " ")
 
-11. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
+5. On the Application details page, click **Schedules tab** under Details.
 
-  ![](images/ocw23_pipeline_dataloadertask2.png " ")
+  ![](images/ocw23_home5.png " ")
 
-12. A page pops up with the selections for the **Data Loader Task**:
+6. Click **Create Schedule**.
 
-    - Select **Design tasks** and your project name **DI_WorkshopNN**.
-    - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
-    - Click **Select**.
+  ![](images/ocw23_home6.png " ")
 
-    ![](images/ocw23_pipeline_dataloadertask0.png " ")
+7. On the **Create Schedule** page:
 
-13. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
+    - Enter a **Name**: `Daily Schedule 2PM`
+    - Enter a **Description** (optional)
+    - Select a **Time Zone** for this schedule: `For example, (UTC+01:00) Central European Time (CET)`
+    - From the **Frequency** drop-down, select `Daily`
+    - **Repeat Every**: Enter the number of days between scheduled runs. We want the schedule to repeat every single day, so leave the default option of `1`
+  For example, enter 2 if you want the schedule to run every two days
+    - **Time**: Enter the time in the 24-hour format. For example, enter `14:00` for 2PM
+    - **Review** the Summary of your schedule
+    - Click **Create**.
 
-  ![](images/ocw23_pipeline_dataloadertask3.png " ")
+    ![](../../schedule-run/images/create-schedule-options.png " ")
 
-14. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
+8. You can now see the **new schedule** in the Schedules list from your application.
 
-  ![](images/ocw23_pipeline_merge.png " ")
+  ![](../../schedule-run/images/schedules-list.png " ")
 
-15. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
+## Task 3: Schedule the Pipeline task
 
-  ![](images/ocw23_pipeline_merge2.png " ")
+You can create **task schedules** to schedule tasks to run on **specific days and times**, and at a **specific frequency**. You create a task schedule for each task that you want to run on an **automated schedule**. A task schedule must be associated with an existing schedule. You can enable or disable a task schedule at any time. In this step, you will schedule the Pipeline Task. However, scheduling process is the same for all tasks in OCI Data Integration.
 
-16. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
+1. From the `Workshop ApplicationNN` you are currently in, click on **Tasks** under Details section.
 
-  ![](images/ocw23_pipeline_integrationtaskx5.png " ")
+  ![](../../schedule-run/images/tasks-section.png " ")
 
-17. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
+2. In the Tasks section, click on the **Actions menu** (three dots) from the `Load DWH Pipeline Task` and select **Schedule**.
 
-  ![](images/ocw23_pipeline_integrationtaskx2.png " ")
+  ![](../../schedule-run/images/action-menu-pipeline-task.png " ")
 
-18. A page pops up with the selections for the **Integration Task**:
+4. On the **Create Task Schedule** page, enter a **Name** (`Load DWH Pipeline Task - Daily`) and **Description** (optional).
 
-    - Select **Design tasks** and your project name **Customers Project**.
-    - Under **Integration Task**, check the `Load Employees by Regions` task.
-    - Click **Select**.
+  ![](../../schedule-run/images/task-schedule-name.png " ")
 
-    ![](images/ocw23_pipeline_integrationtask0.png " ")
+5. Select the **Enable Task Schedule check box** to allow this task schedule to trigger automated runs when schedule conditions are met.
 
-19. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
+  ![](../../schedule-run/images/enable-task-schedule.png " ")
 
-  ![](images/ocw23_pipeline_integrationtaskx3.png " ")
+6. In the **Schedule** section:
 
-20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
+    - Click **Select** to associate this task schedule with a schedule
+    ![](../../schedule-run/images/select-button-schedule.png " ")
+    - On the **Select Schedule** page, check the existing schedule (`Daily Schedule 2PM`) that you created in _Create a Schedule_, then click **Select**.
+    ![](../../schedule-run/images/select-schedule.png " ")
 
-  ![](images/ocw23_pipeline_integrationtaskx4.png " ")
+7. In the Configure Task Schedule section, click **Configure** to specify run options for this task schedule.
 
-21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
+  ![](../../schedule-run/images/configure-task-schedule-button.png " ")
 
-  ![](images/validate-pip.png " ")
+8. In the **Configure Task Schedule** page:
 
-22. Click on **Create and Close**.
+    - **Start Time** and **End Time** are optional. If you don't specify a Start Time, this task schedule takes effect immediately, and runs are triggered when conditions specified in the associated schedule are met. We will not define Start Time and End Time.
+    - Leave blank also the optional **Expected Time to Complete** field.
+    - For **Retry Count**, enter the number of times to retry executing the task when a run fails. For example, you can define a value of **1**.
+    - Enter a value in **Retry Delay Duration**, and then select a unit from the menu to specify the time interval between retries. You can specify a value in seconds, minutes, or hours. The value must be greater than 5 seconds. Leave the default of **30 seconds**.
+    - Click **Configure**.
 
-  ![](images/validate-pip.png " ")
+    ![](../../schedule-run/images/configure-task-schedule.png " ")
 
-## Task 2: Create a Pipeline task
+9. **Review** the options you defined and click **Save and Close**.
 
-Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
-You will create a Pipeline task for the pipeline you created in the above step.
+  ![](../../schedule-run/images/task-schedule-save-close.png " ")
 
-1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
+10. From the `Workshop ApplicationNN` you are currently in, click on **Task Schedules** under Details section.
 
-  ![](images/ocw23_pipelinetask1.png " ")
+  ![](../../schedule-run/images/task-schedules-section.png " ")
 
-2. Click **Create Task**, and then select **Pipeline**.
+11. In the list of Task Schedules, you can find the one you have just defined. **Your pipeline task is now scheduled to run every day at 2PM**.
 
-  ![](images/ocw23_pipelinetask2.png " ")
+  ![](../../schedule-run/images/task-schedule.png " ")
 
-3. On the **Create Pipeline Task** page, enter:
+## Task 4: Run the Pipeline task
 
-    - For **Name** enter `Load DWH Pipeline Task`
-    - **Description** (optional)
-    - **Project** `DI_WorkshopNN` is auto-populated because we're creating this task from project details page.
+In this step, you will now do a **manual on-demand run** of your pipeline task. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task).
 
-    ![](../../pipelines/images/pipeline-task-name.png " ")
+1. From the `Workshop ApplicationNN` you are currently in, click on **Tasks** under Details section.
 
-4. In the **Pipeline** section, click **Select**.
+  ![](../../schedule-run/images/tasks-section.png " ")
 
-  ![](images/ocw23_pipelinetask3.png " ")
+2. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load DWH Pipeline Task` that you will run.
 
-5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
+  ![](../../schedule-run/images/run-pipeline-task.png " ")
 
-  ![](../../pipelines/images/pipeline-select.png " ")
+3. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
-6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Save and Close**.
+  ![](../../schedule-run/images/pipeline-running.png " ")
 
-  ![](../../pipelines/images/save-pipeline-task.png " ")
+4. The Pipeline task run has ended successfully.
 
-## Task 3: Create an Application
+  ![](../../schedule-run/images/pipeline-success.png " ")
 
-In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
-
-1. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
-
-  ![](../../pipelines/images/create-app-tile.png " ")
-
-2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates)
-
-  ![](images/ocw23_create_app1.png " ")
-
-Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
-
-  ![](images/ocw23_create_app2.png " ")
-
-3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
-
-  ![](../../pipelines/images/my-application.png " ")
-
-In OCI Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
-
-## Task 4: Publish the Pipeline task
-
-1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
-
-  ![](../../pipelines/images/click-tasks.png " ")
-
-2. All tasks from the `DI_WorkshopNN` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
-
-  ![](../../pipelines/images/publish-to-app.png " ")
-
-3. In the Publish to Application dialog, select the `Workshop ApplicationNN` to publish to from the drop-down list. Then, click **Publish**.
-
-  ![](../../pipelines/images/app-select.png " ")
-
-   **Congratulations!**  
+   **Congratulations!**
 
 ## Learn More
 
-* [Applications in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/applications.htm)
-* [Pipelines in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline.htm)
-* [Pipeline Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-tasks.htm)
-* [Using Parameters in Pipelines](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters)
-* [Publishing Design Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/publish-design-tasks.htm)
-* [Patches in OCI Data Integration Applications](https://docs.oracle.com/en-us/iaas/data-integration/using/patches.htm#patches)
+* [Scheduling tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/schedules.htm)
+* [Executing Published Tasks](https://docs.oracle.com/en-us/iaas/data-integration/using/published-tasks.htm)
+* [Viewing Executed Task Runs](https://docs.oracle.com/en-us/iaas/data-integration/using/task-runs.htm)
 
 ## Acknowledgements
 
-* **Contributors** -  David Allan, Theodora Cristea
+* **Contributors** -  Theodora Cristea, David Allan
 * **Last Updated By/Date** - David Allan, June 2023
