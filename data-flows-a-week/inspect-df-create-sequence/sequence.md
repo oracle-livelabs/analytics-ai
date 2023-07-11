@@ -71,7 +71,7 @@ This lab assumes you have:
 
 	![create sequence](images/create-sequence.png)
 
-2. Drag **xx\_Product\_Match\_DF** and **xx\_Sales\_Discounting\_DF** into the selections pane. Make sure the Product_Math_DF is placed before the Sales_Discounting_DF since the Sales_Discounting_DF relies on the output created from the Product_Match_DF. Click **Save**.
+2. Drag **xx\_Product\_Match\_DF** and **xx\_Sales\_Discounting\_DF** into the selections pane. Make sure the Product\_Match\_DF is placed before the Sales\_Discounting\_DF since the Sales\_Discounting\_DF relies on the output created from the Product\_Match\_DF. Click **Save**.
 
 	![drag dataflow](images/drag-df.png)
 
