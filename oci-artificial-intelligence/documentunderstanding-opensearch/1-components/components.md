@@ -167,22 +167,29 @@ Perform a similar task to get Client ID/Secret for OIC
     </copy>
     ````
 4. Run each of the three commands below, one at a time. It will run Terraform to create the rest of the components.
-    ````
+    ```
     <copy>
     cd oci-searchlab/starter/
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     bin/gen_auth_token.sh
     </copy>
-    ````
+    ```
+    You should see the following in the results of the *gen_auth_token.sh* script:
+    
+    ```
+    AUTH_TOKEN stored in env.sh
+    TF_VAR_auth_token= 'a generated token'
+    ```
+    
     ````
     <copy>
     ./build.sh
     </copy>
     ````
-5. **Proceed to the next Lab while Terraform is running.** 
+5. **Please proceed to the [next lab](#next) while Terraform is running.** 
     ```
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
     ```
@@ -233,8 +240,8 @@ Then rerun the following command in the code editor
 ./build.sh
 ```
 
-## Continue with the next lab when you have completed the final step of this lab.
-[Go to next lab.](#next)
+**Continue with the [next lab](#next) when you have completed the final step of this lab.**
+
 
 
 ## Acknowledgements

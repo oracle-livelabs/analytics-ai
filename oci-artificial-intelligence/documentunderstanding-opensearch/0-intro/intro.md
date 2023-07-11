@@ -3,20 +3,22 @@
 
 Using low code cloud services in Oracle Cloud Infrastructure (OCI), this workshop will illustrate how to create a system to search the full text of document images using OpenSearch and a familiar search interface created with Visual Builder.
 
-The focus of this workshop is making document images searchable. These document images are typically text documents that have been scanned to .tif or .jpg, or exported as .pdf. However the system you'll build will handle many different document types such as:
+The focus of this workshop is making document images searchable. These document images are typically text documents that have been scanned to .tif or .jpg, or .pdf. However the system you'll build will handle many different document types such as:
 - Word, Excel, PDF 
 - Images with text using AI text recognition
 - Images without text using AI Vision
 - Custom document: Belgian ID card images
 
-![Introduction Usecase](images/opensearch-intro.png)
+TODO
+![Introduction use case](images/opensearch-intro.png)
 
-The procedures in this workshop are designed for users that have obtained an Oracle Cloud free trial account with active credits. 
+The procedures in this workshop are designed for users that have obtained an Oracle Cloud free trial account with active credits. The procedures will also work for other Oracle Cloud accounts but may, in some cases, require minor adaptation.
 
 Total estimated time: 90 minutes
 
 ### Architecture
 
+TODO
 ![Architecture](images/opensearch-architecture.png)
 
 It works like this:
@@ -56,11 +58,11 @@ The file types supported by the OIC project are hard-coded into different routes
 - Search for files through the user interface
 
 ### Prerequisites
-- You need an Oracle Cloud account (i.e. access to an OCI tenancy) to complete this workshop. Participants can take advantage of Oracle's free trial account that come with free cloud credits that are good for 30 days or until used up. Many Oracle events, such as CloudWorld, offer trial accounts with extra free cloud credits. You should be able to complete this workshop in teh allotted time if your free trial cloud account is already created and ready to use. If you previously had a free trial account but the credits have expired, you won't be able to complete the lab. An option in this case is to obtain a new free trial account with fresh credits using a different email address. You can also use an existing paid Oracle Cloud account as long as you have administrator rights that will be needed to provision services.
-- You need a computer (laptop or desktop) with web browser, a text editor, and internet access. (Attempting to accomplish this workshop using a tablet or phone might be possible but is not recommended and we haven't tested it on those types of devices.)
+- You need an Oracle Cloud account (i.e. access to an OCI tenancy) to complete this workshop. Participants can take advantage of Oracle's free trial account that comes with free cloud credits that are good for 30 days or until used up. Many Oracle events, such as CloudWorld, offer trial accounts with extra free cloud credits. You should be able to complete this workshop in the allotted time if your free trial cloud account is already created and ready to use. If you previously had a free trial account but the credits have expired, you won't be able to complete the lab. An option in this case is to obtain a new free trial account with fresh credits using a different email address. You can also use an existing paid Oracle Cloud account as long as you have administrator rights that will be needed to provision services.
+- You need a computer (laptop or desktop) with web browser, a text editor, and internet access. (Attempting to accomplish this workshop using a tablet or phone might be possible but is not recommended and it hasn't been tested on those types of devices.)
 
-## Please proceed to the next lab.
-[Go to next lab.](#next)
+**Please proceed to the [next lab.](#next)**
+
 
 ## Acknowledgements 
 - **Author**

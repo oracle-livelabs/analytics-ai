@@ -124,7 +124,8 @@ Estimated time: 20 min
     **Note - since most web browsers don't natively display .tif files, if you attempt to open one in the search results, you will be prompted to download it. You can then view it with an application on you local computer, if you have one that can view .tif files.**
 
 
-## Congratulations! You have completed this workshop.
+**Congratulations! You have completed this workshop.**
+
 You provisioned multiple services into a compartment in your OCI tenancy. These included Oracle Integration Cloud (OIC), several AI services such as OCI Document Understanding, and Oracle Search with OpenSearch. You imported a project into OIC that ingests document files from Object Storage, sends them to AI services based on the file type, and then loads extracted data into an OpenSearch index. You configured all of the service connections used by that OIC project and then you ran the integration project. Finally, you imported an application project into Visual Builder, you configured the connection to OpenSearch, and then you ran the project to display a search user interface. You used that search tool to query the content added to the OpenSearch index. This workshop has illustrated how different OCI services can be integrated together to use AI to make many types of content more searchable.
 
 ## Acknowledgements

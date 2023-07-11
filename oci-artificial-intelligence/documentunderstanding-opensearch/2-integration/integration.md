@@ -320,8 +320,7 @@ This is an optional test you can run with more sample files. If you do this test
 
     ![Monitor OIC](images/opensearch-oic-test-instances-activity-stream.png)
 
-## You may proceed to the next lab.
-[Go to next lab.](#next)
+**Please proceed to the [next lab.](#next)**
 
 
 ## Acknowledgements
