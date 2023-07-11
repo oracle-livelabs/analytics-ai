@@ -26,7 +26,7 @@ This lab assumes you have:
 
 	![create dataflow](images/create-dataflow.png)
 
-2. Search for and select the **XX_Matched_Products** dataset. Click **Add**.
+2. Search for and select the **XX\_Matched\_Products** dataset. Click **Add**.
 
 	![add matched](images/add-matched.png)
 
@@ -82,7 +82,7 @@ This lab assumes you have:
 
 	![select columns](images/select-cols.png)
 
-15. Hold the ctrl button on your keyboard and select **Sales Rep Number**, **Product_1**, **Sales Rep Number-1**, **Sales Rep Name_1**, and **Office_1**. Click **Remove selected**. We will not be needing these columns.
+15. Hold the ctrl button on your keyboard and select **Sales Rep Number**, **Product\_1**, **Sales Rep Number\_1**, **Sales Rep Name\_1**, and **Office\_1**. Click **Remove selected**. We will not be needing these columns.
 
 	![remove columns](images/remove-cols.png)
 
@@ -92,7 +92,7 @@ This lab assumes you have:
 
 	![save](images/save.png)
 
-2. Enter **XX_Sales_Discounting** as the dataset name and select **Database Connection** for **Save data to**.
+2. Enter **XX\_Sales\_Discounting** as the dataset name and select **Database Connection** for **Save data to**.
 
 	![save output](images/save-output.png)
 
@@ -100,7 +100,7 @@ This lab assumes you have:
 
 	![adw connection](images/adw-connection.png)
 
-4. Enter **XX_Sales_Discounting** for the **Name** and click Click **OK**.
+4. Enter **XX\_Sales\_Discounting** for the **Name** and click Click **OK**.
 
 	![save as](images/save-as.png)
 
