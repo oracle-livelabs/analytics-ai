@@ -22,7 +22,7 @@ TODO
 ![Architecture](images/opensearch-architecture.png)
 
 It works like this:
-1. A document is uploaded in the Object Storage
+1. A document is uploaded in the Object Storage by the user
 1. An event is raised and queued in Streaming (Kafka)
 1. The events are processed by Oracle Integration Cloud (OIC)
 1. Based on the file type, OIC will send them to one or more AI services to enrich them and provide searchable text

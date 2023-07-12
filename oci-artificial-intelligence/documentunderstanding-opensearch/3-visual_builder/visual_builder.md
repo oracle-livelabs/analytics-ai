@@ -11,7 +11,7 @@ Estimated time: 20 min
 - Create a user interface with Visual Builder and use it to query content that has been processed by the solution
 
 ### Prerequisites
-- You've completed the previous labs. If you didn't complete 
+- You've completed the previous labs
 
 ## Task 1: Download the project
 1. You will need the VB application archive *opensearch-1.0.zip* for the next task. If you cloned the Git repo to your local computer in a previous lab, you will already have this file. This file is located in the *visual_builder* folder of the cloned repo. You can continue to the next task.
@@ -38,14 +38,16 @@ Estimated time: 20 min
   
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
         1. Developer Services
-        1. Application Integration
+        1. Integration
   
-    1. Check that you are in the intended compartment (*oci-starter* in this case)
+    1. Check that you are in the intended compartment. (*oci-starter* was the recommended compartment name.)
+
+    1. Click **oic** in the Integration instances list
 
     1. Click the **Service Console** button. It will open the OCI service console in a new tab.
 
 
-1. In the OIC service console menu, choose Visual Builder.
+1. In the OIC service console menu, choose **Visual Builder**.
 ![Visual Builder link](images/opensearch-vb-link-oic.png)
 
 1. Import the project file that you obtained in **Task 1**.
@@ -63,7 +65,7 @@ Estimated time: 20 min
     ```
     <copy>
     oci-searchlab/starter/src/search_env.sh
-    <\copy>
+    </copy>
     ```
 
 1. In the output of the script, look for the following value:
@@ -103,23 +105,25 @@ Estimated time: 20 min
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear.
 ![Run the application](images/opensearch-vb-test.png)
 
-1. In the search user interface, enter *macbeth* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
+1. In the search user interface, enter *shakespeare* or *macbeth* or *candle* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
+
+1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service.
 
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents.
 
     | File | Search Terms |
     | ------------------------------------- | --------------------------------------- |
-    | Image_Map_Brazil.png | brasil, rio |
-    | Image_Workshop_architecture.png | opensearch, streaming, "object storage" |
-    | Invoice_6879875_scanned.tif | 6879875, bijou, 111.31 |
-    | Invoice_DS67076_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
-    | Text_DocU_blog_HTML_to_PDF.pdf | blogs.oracle.com, datascience |
-    | Text_DocU_Overview_PPTX_to_PDF.pdf | harbor, "product direction" |
-    | Voice_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
-    | Shakespeare_macbeth.tif | macbeth, candle, shadow |
+    | Image\_Map\_Brazil.png | brasil, rio |
+    | Image\_Workshop\_architecture.png | opensearch, streaming, "object storage" |
+    | Invoice\_6879875\_scanned.tif | 6879875, bijou, 111.31 |
+    | Invoice\_DS67076\_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
+    | Text\_DocU\_blog\_HTML\_to\_PDF.pdf | blogs.oracle.com, datascience |
+    | Text\_DocU\_Overview\_PPTX\_to\_PDF.pdf | harbor, "product direction" |
+    | Voice\_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
+    | Shakespeare\_macbeth.tif | shakespeare, macbeth, candle, shadow |
     | Penguins.jpg | penguins, animal, beak, bird |
-    | HOL_summary.txt | workshop, oic, "document understanding" |
+    | HOL\_summary.txt | workshop, oic, "document understanding" |
 
     **Note - since most web browsers don't natively display .tif files, if you attempt to open one in the search results, you will be prompted to download it. You can then view it with an application on you local computer, if you have one that can view .tif files.**
 

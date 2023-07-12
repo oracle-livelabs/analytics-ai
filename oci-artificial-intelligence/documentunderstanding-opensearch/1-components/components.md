@@ -60,7 +60,7 @@ You can
 1. Login to your OCI account/tenancy
 1. Go the 3-bar/hamburger menu of the console and select
     1. Identity & Security
-    1. Compartment
+    1. Compartments
     ![Menu Compartment](images/opensearch-compartment1.png =40%x*)
 2. Click ***Create Compartment***
     - Give a name: ***oci-starter***
@@ -75,10 +75,10 @@ Oracle Integration Cloud (OIC) will allow you to glue all of the components toge
 
 1. Go the Cloud console 3-bar/hamburger menu and select the following
     1. Developer Services
-    1. Application Integration
+    1. Integration (under Application Integration)
     ![Menu Integration](images/opensearch-oic1.png =50%x*)
 2. Check that you are in the intended compartment (*oci-starter* in this case)
-3. Click *Create* and set the following options
+3. Click the *Create Instance* button and set the following options
     - Name: *oic*
     - Version: *OIC Integration 3*
     - Edition: *Standard*
@@ -86,10 +86,11 @@ Oracle Integration Cloud (OIC) will allow you to glue all of the components toge
     - Choose the license type (Use *Subscribe to a new...* unless you already have a license that you can reuse.)
     - Click *Create*
         ![Create Integration](images/opensearch-oic2.png)
-4. Wait about 3 mins until OIC is created and Green. 
-5. When it is created, click **Service Console**. It will open a new tab that you will use in Task 3.
-1. Copy the OCID of the OIC instance and paste it in your text file. ***##OIC_OCID##***. You will need it later.
-1. Click **Enable** next to *Visual Builder* to enable it
+4. Wait about 3 mins until **oic** state is *Active*.
+1. Click *oic* in the list of integration instances. 
+5. In the *Integration instance details*, click **Service Console**. It will open a new tab that you will use in the next Task.
+1. In the *Integration instance details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
+1. Click **Enable** next to *Visual Builder* to enable it. The **oic** instance status will change to *updating*.
     ![Visual Builder Enable Integration](images/opensearch-oic3.png)
 
 1. Continue to next task. You do not have to wait for Visual Builder to be installed before continuing.
@@ -98,11 +99,11 @@ Oracle Integration Cloud (OIC) will allow you to glue all of the components toge
 
 To communicate with OpenSearch in the private network, it is necessary to install the OIC agent on the compute instance.
 
-1. Go to the OIC console that you opened just above
+1. Go to the OIC console tab that you opened just above
 2. Create the Agent Group using the following steps:
     1. On the left menu, choose *Design*
-    1. Then *Agent* 
-    1. Click *Create*
+    1. Then *Agents* 
+    1. Click the *Create* button
     1. Name: *OPENSEARCH\_AGENT\_GROUP* 
     1. Identifier: *OPENSEARCH\_AGENT\_GROUP*
     1. Then *Create*
@@ -115,13 +116,13 @@ To enable Resource Principal, you need the OIC APPID.
 
 1. Go the console 3-bar/hamburger menu and select
     1. Identity & Security 
-    1. Domains
+    1. Domains (under Identity)
     ![Menu Domain](images/opensearch-oic-domain.png)
-2. Choose the *Default (current domain)* domain
+2. Choose the *Default (Current domain)* domain
 3. On the left, choose *Oracle Cloud Services*
     ![OIC Domain](images/opensearch-oic_service.png)
-4. Scroll down until that you see a name like *oic-xxx-xxxx  - Integration Service*, then **click on it**
-5. In the Service details, look for *Client ID*
+4. Scroll down until that you see a name like *oic-xxx-xxxx* and the *Description* is *Integration Cloud Service*, then **click on it**
+5. In the Service details, look for *Client ID* under *General Information*
     - Copy the value to your text file at *##OIC\_APPID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
     ![OIC Domain](images/opensearch-oic_appid.png)
 
@@ -135,11 +136,11 @@ Perform a similar task to get Client ID/Secret for OIC
 2. Choose the *Default (current domain)* domain
 3. On the left, choose *Oracle Cloud Services*
 4. Scroll down until that you see a name like *opensearch\_agent\_group-oic-xxx-xxxx  - Connectivity Agent OAuth Client* and **click on it**.
-5. In the Service details, look for *Client ID*
+5. In the Service details, look for *Client ID* under *General Information*
     - Copy the value to your text file at *##OIC\_CLIENT\_ID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
 1. Click *Show Secret* and copy the value to your  text file at *##OIC\_CLIENT\_SECRET##*.
     ![OIC Domain](images/opensearch-confapp1.png)
-6. Scroll further down the page to find *Resources*.
+6. Scroll further down the page to find *Resources* under *Token issuance policy*
 1. Copy the scope in the row that ends with /ic/api and paste it to your text file at *##OIC\_SCOPE##*. It will look something like https://12345678.integration.us-phoenix-1.ocp.oraclecloud.com:443/ic/api/
     ![OIC Domain](images/opensearch-confapp2.png)
 
@@ -156,7 +157,10 @@ Perform a similar task to get Client ID/Secret for OIC
     </copy>
     ````
 3. Edit the file *oci-searchlab/starter/env.sh*
-1. in env.sh, replace the values **##OIC\_OCID##**, **##OIC_APPID##**, **##OIC\_CLIENT\_ID##**, **##OIC\_CLIENT\_SECRET##**, **##OIC\_SCOPE##** with the corresponding value from your text file.
+    1. Click the **Explorer** icon in the left bar of the code editor
+    1. Use Explorer to locate env.sh
+    1. Click env.sh to open it in the editor
+1. In env.sh, replace the values **##OIC\_OCID##**, **##OIC_APPID##**, **##OIC\_CLIENT\_ID##**, **##OIC\_CLIENT\_SECRET##**, **##OIC\_SCOPE##** with the corresponding value from your text file.
     ````
     <copy>
     export TF_VAR_oic_ocid="##OIC_OCID##"
@@ -166,7 +170,8 @@ Perform a similar task to get Client ID/Secret for OIC
     export TF_VAR_oic_scope="##OIC_SCOPE##"
     </copy>
     ````
-4. Run each of the three commands below, one at a time. It will run Terraform to create the rest of the components.
+1. Save your edits using File > Save
+4. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
     cd oci-searchlab/starter/
@@ -190,9 +195,9 @@ Perform a similar task to get Client ID/Secret for OIC
     </copy>
     ````
 5. **Please proceed to the [next lab](#next) while Terraform is running.** 
-    ```
+
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-    ```
+
 
 6. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
@@ -217,10 +222,11 @@ Perform a similar task to get Client ID/Secret for OIC
 
     Done.
     ```
+**Continue with the [next lab](#next) when you have completed the final step of this lab.**
 
 ## Known issues
 
-During the terraform run, there might be an error depending on the compute shapes supported byyour tenancy:
+During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
 ```
 oci_core_instance.starter_instance: Creating..
@@ -239,9 +245,6 @@ Then rerun the following command in the code editor
 ```
 ./build.sh
 ```
-
-**Continue with the [next lab](#next) when you have completed the final step of this lab.**
-
 
 
 ## Acknowledgements

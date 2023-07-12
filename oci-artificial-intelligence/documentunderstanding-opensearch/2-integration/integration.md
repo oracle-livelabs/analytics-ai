@@ -32,11 +32,11 @@ To download the files to your laptop from the Github website, please follow thes
 1. Extract the oci-searchlab-main.zip file to your computer. 
 ![GitHub_Download](images/opensearch-github-extract-zip.png) 
 
-1. Note the directory contains the Oracle integration Cloud (OIC) package in the ***oic*** folder, the Visual Builder (VB) application in the ***vb*** folder, and samples files in the ***sample_files*** folder.
+1. Note the directory contains the Oracle Integration Cloud (OIC) package in the ***oic*** folder, the Visual Builder (VB) application in the ***vb*** folder, and samples files in the ***sample_files*** folder.
 
 ````
 Method 2
-Since the Github repository was downloaded in the cloud editor during the previous lab using the _git clone_ command, there is an option to download individual files using the OCI Console Cloud Shell. If you want to use this option, follow these alternative steps.
+Since the Github repository was downloaded in the Cloud Console Code Editor during the previous lab using the "git clone" command, there is an option to download individual files using the OCI Console Code Editor. If you want to use this option, follow these alternative steps.
 ````
 1. In the OCI Console, select the **Developer Tools icon** and then select *Cloud Shell*.
 
@@ -50,13 +50,12 @@ Since the Github repository was downloaded in the cloud editor during the previo
 ## Task 2: Import the integration
 Upload the integration configuration into OIC.
 
-1. Go the OIC service console menu and select 
-    1. Developer Services
-    2. Application Integration
-1. In the *Integration instances* list, select *oic*
-1. Click the **Service Console** button to open a new browser tab with the OIC service console.
-1. In the OIC service console, on the left menu, choose *Design*, then *Package*
-1. Click *Import*
+1. Open the OIC Service console. If you were logged out, use the following steps to re-open it. 
+    1. Go to the OCI Console menu, select *Developer Services*, then *Integration*. 
+    1. In the *Integration Instances* list, click **oic**. 
+    1. On the *oic* integration instance details page, click the **Service console** button.
+1. In the OIC service console, on the left menu, choose *Design*, then *Packages*
+1. Click the *Import* button
     - Browse to choose *OPENSEARCH_OIC.par*
         - Go to the directory on your local computer where you downloaded files from GITHUB
         - In the directory **oic**, you will find *OPENSEARCH_OIC.par*
@@ -112,7 +111,7 @@ We start with the public connections first because these don't depend on compone
 
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
-    - Connection URL = *##AI\_LANG\_URL##*
+    - Connection URL = *##AI\_DOC\_URL##*
         - ex: https://document.aiservice.eu-frankfurt-1.oci.oraclecloud.com
     - Security policy = *OCI Service Invocation*
     - Access Type = *Public gateway*
@@ -127,7 +126,7 @@ We start with the public connections first because these don't depend on compone
 
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
-    - Connection URL = *##AI\_LANG\_URL##*
+    - Connection URL = *##AI\_SPEECH\_URL##*
         - ex: https://speech.aiservice.eu-frankfurt-1.oci.oraclecloud.com
     - Security policy = *OCI Service Invocation*
     - Access Type = *Public gateway*
@@ -167,10 +166,11 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
     oci-searchlab/starter/src/search_env.sh
     </copy>
     ```
-    - In the output of this script look for the following values:
+    1. In the output of this script look for the following values under the heading **-- STREAMING CONNECTION --------------------------**:
         - ##STREAM_BOOSTRAPSERVER##
         - ##STREAM_USERNAME##
         - ##AUTH_TOKEN##
+    1. Copy and paste these values to your text file to use in configuring the connection
 
 1. Click the **Cloud Shell Menu icon** and select *Download*.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
@@ -186,7 +186,7 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
     - SASL Username = *##STREAM_USERNAME##*
     - SASL Password = *##AUTH_TOKEN##*
     - Expand *Optional security*
-        - Truststore = *oss_store.jks*
+        - Truststore = upload *oss_store.jks*
         - TrustStore password = *changeit* 
     - Access Type = *Connectivity agent*
     - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
@@ -203,11 +203,12 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
     ```
     <copy>
     oci-searchlab/starter/src/search_env.sh
-    <\copy>
+    </copy>
     ```
 
-    - In the output of this script look for the following value:
+    1. In the output of this script look for the following value:
         - *##FUNCTION_ENDPOINT##*
+    1. Copy and paste the value to your text file to use in configuring the connection
 
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
@@ -263,7 +264,7 @@ click on **Activation**
     ![Activate2](images/opensearch-oic-activation2.png)
 
 
-1. Confirm all integrations are be up and running.
+1. Confirm all integrations are up and running.
 ![Activate3](images/opensearch-oic-activation3.png)
 
 ## Task 5: Test OIC
