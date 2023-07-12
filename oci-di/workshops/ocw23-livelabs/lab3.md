@@ -20,7 +20,7 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 ## Task 1: Run the Data Loader task
 
-In this step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
+In this step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (any task including Integration tasks, Data Loader tasks, REST tasksm SQL tasks and Pipeline tasks) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
 
 1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
@@ -42,11 +42,15 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
   ![](../../schedule-run/images/run-data-loader-task.png " ")
 
-6. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
+6. The **Run task** dialog will be displayed, you could change the parameter values here, simply press **Run**.
+
+  ![](images/ocw23_rundataloader.png " ")
+
+7. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
   ![](../../schedule-run/images/data-loader-task-running.png " ")
 
-7. After a short time, The **Data Loader task run ends successfully**.
+8. After a short time, The **Data Loader task run ends successfully**.
 
   ![](../../schedule-run/images/data-loader-task-successful.png " ")
 
