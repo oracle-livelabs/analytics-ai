@@ -24,11 +24,11 @@ This lab assumes you have:
 
 1. Click **Create** and select **Data Flow**.
 
-	![create dataflow](images/create-dataflow.png)
+	![create dataflow](images/create-dataflow.png =450x*)
 
 2. Search for and select the **XX\_Matched\_Products** dataset. Click **Add**.
 
-	![add matched](images/add-matched.png)
+	![add matched](images/add-matched.png =450x*)
 
 3. Click **Add a step** and select **Add Data**.
 
@@ -36,7 +36,7 @@ This lab assumes you have:
 
 4. Search for and select the **Sales Orgs** dataset. Click **Add**.
 
-	![add sales org](images/add-sales-org.png)
+	![add sales org](images/add-sales-org.png =450x*)
 
 5. An auto join is created using the **Sales Rep Name** column.
 
@@ -48,7 +48,7 @@ This lab assumes you have:
 
 7. Search for the **Offices** dataset and click **Add**.
 
-	![add offices](images/add-offices.png)
+	![add offices](images/add-offices.png =450x*)
 
 8. An auto-join will be created between the output dataset of the first join and the **Offices** dataset on the **Office** column.
 
@@ -102,7 +102,7 @@ This lab assumes you have:
 
 4. Enter **XX\_Sales\_Discounting** for the **Name** and click Click **OK**.
 
-	![save as](images/save-as.png)
+	![save as](images/save-as.png =450x*)
 
 5. Click **Run** to run the data flow. This data flow will output the **XX_Sales_Discounting** dataset which was created by joining the **Matched_Products**, **Sales Orgs** and **Offices** datasets and also includes the **Discount % for Order** column which we created using the expression editor.
 
@@ -110,7 +110,7 @@ This lab assumes you have:
 
 6. Click the back arrow to return to the homepage.
 
-	![nav back](images/nav-back.png)
+	![nav back](images/nav-back.png =450x*)
 
 You may now **proceed to the next lab**.
 
