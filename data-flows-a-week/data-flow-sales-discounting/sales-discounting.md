@@ -1,4 +1,4 @@
-# Create the Presentation Layer
+# Create a Sales Discounting Data Flow
 
 ## Introduction
 
@@ -120,5 +120,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Contributors - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* Last Updated By/Date - Nagwang Gyamtso, February, 2023
+* Contributors - Lucian Dinescu
+* Last Updated By/Date - Nagwang Gyamtso, July, 2023

@@ -1,4 +1,4 @@
-# Load data into the ADW and connect to OAC
+# Connect OAC to ADW
 
 ## Introduction
 
