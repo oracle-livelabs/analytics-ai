@@ -34,7 +34,7 @@ Estimated time: 20 min
 
 
 ## Task 2: Import the project
-1. Go to the Oracle Integration Cloud (OIC) service console. If this is not already open in one of your browser tabs, you can get back to it by following these steps.
+1. Go to the Oracle Integration Cloud (OIC) service console home page. If this is not already open in one of your browser tabs, you can get back to it by following these steps.
   
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
         1. Developer Services
@@ -52,16 +52,22 @@ Estimated time: 20 min
 
 1. Import the project file that you obtained in **Task 1**.
     1. Click *Import*
+        ![Visual Builder Import](images/opensearch-vb.png)
+        
+    1. Click **Application from file**
+        ![Visual Builder file](images/opensearch-vb-file.png)
     1. Choose the file *vb/opensearch-1.0.zip*
-    1. Name: *opensearch*
-    1. Description: *opensearch*
-    1. Click *Import*
+    1. Application Name: *opensearch*
+    1. Application ID: *opensearch*
+    1. Click **Import**
 
-    ![Visual Builder Import](images/opensearch-vb-import.png)
+        ![Visual Builder Import](images/opensearch-vb-import.png)
+    1. Wait for the import to be confirmed
 
 ## Task 3: Edit the connections
 
 1. You will need to get values from your environment. In OCI Console Cloud Shell, run the following command. 
+    
     ```
     <copy>
     oci-searchlab/starter/src/search_env.sh
@@ -69,10 +75,10 @@ Estimated time: 20 min
     ```
 
 1. In the output of the script, look for the following value:
-***##APIGW_HOSTNAME##***
+***APIGW_URL***
 
 
-1. From the Visual Applications list, open the imported application by clicking on the application name, **opensearch-1.0**
+1. From the Visual Applications list, open the imported application by clicking on the application name, **opensearch**
 ![Visual Builder Import](images/opensearch-vb-applications.png)
 
 1. To edit the connection to connect to the OpenSearch server, click on the **Service icon**
@@ -85,7 +91,7 @@ Estimated time: 20 min
 ![Connection OpenSearch](images/opensearch-vb-connection-opensearch.png)
 
 1. Configure the server as follows:
-    - Instance URL: *https://##APIGW_HOSTNAME##*
+    - Instance URL: *APIGW_URL*
       - Ex: https://xxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com
     - Authentication: None
 ![Edit Connection OpenSearch](images/opensearch-vb-connection-opensearch2.png)
@@ -93,12 +99,13 @@ Estimated time: 20 min
 1. Click *Save*
 
 1. Test the connection:
-    1. Select tab **Endpoints**
-    1.  *Get - Get Many*
-    1. Select tab **Test**
-    1. Click *Send Request*
+    1. Select tab *Endpoints*
+    1. Click **Get - Get Many**
+    1. Select tab *Test*
+    1. Click **Send Request**
 
     ![Test Connection OpenSearch](images/opensearch-vb-connection-opensearch3.png)
+    1. The test succeeded if you see *"successful": 1,*
 
 ## Task 4: Test the application
 
@@ -110,27 +117,27 @@ Estimated time: 20 min
 
 1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service.
 
-1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents.
+1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
 
     | File | Search Terms |
     | ------------------------------------- | --------------------------------------- |
     | Image\_Map\_Brazil.png | brasil, rio |
-    | Image\_Workshop\_architecture.png | opensearch, streaming, "object storage" |
+    | Image\_Workshop\_architecture.png | streaming, "object storage" |
     | Invoice\_6879875\_scanned.tif | 6879875, bijou, 111.31 |
     | Invoice\_DS67076\_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
     | Text\_DocU\_blog\_HTML\_to\_PDF.pdf | blogs.oracle.com, datascience |
     | Text\_DocU\_Overview\_PPTX\_to\_PDF.pdf | harbor, "product direction" |
     | Voice\_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
     | Shakespeare\_macbeth.tif | shakespeare, macbeth, candle, shadow |
-    | Penguins.jpg | penguins, animal, beak, bird |
+    | Penguins.jpg | animal, beak, bird, penguins |
     | HOL\_summary.txt | workshop, oic, "document understanding" |
 
-    **Note - since most web browsers don't natively display .tif files, if you attempt to open one in the search results, you will be prompted to download it. You can then view it with an application on you local computer, if you have one that can view .tif files.**
+    **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
 
 
 **Congratulations! You have completed this workshop.**
 
-You provisioned multiple services into a compartment in your OCI tenancy. These included Oracle Integration Cloud (OIC), several AI services such as OCI Document Understanding, and Oracle Search with OpenSearch. You imported a project into OIC that ingests document files from Object Storage, sends them to AI services based on the file type, and then loads extracted data into an OpenSearch index. You configured all of the service connections used by that OIC project and then you ran the integration project. Finally, you imported an application project into Visual Builder, you configured the connection to OpenSearch, and then you ran the project to display a search user interface. You used that search tool to query the content added to the OpenSearch index. This workshop has illustrated how different OCI services can be integrated together to use AI to make many types of content more searchable.
+Here's what you accomplished. You provisioned multiple services into a compartment in your OCI tenancy. These included Oracle Integration Cloud (OIC), several AI services (such as OCI Document Understanding and OCI Language), and Oracle Search with OpenSearch. You imported a project into OIC that ingests document files from Object Storage, sends them to AI services based on the file type, and then loads extracted data into an OpenSearch index. You configured all of the service connections used by that OIC project and then you ran the integration project. Finally, you imported an application project into Visual Builder, you configured the connection to OpenSearch, and then you ran the project to display a search user interface. You used that search tool to query the content added to the OpenSearch index. This workshop has illustrated how different OCI services can be integrated together to use AI to make many types of content more searchable.
 
 ## Acknowledgements
 - **Author**

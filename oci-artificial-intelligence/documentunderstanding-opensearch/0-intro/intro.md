@@ -18,7 +18,6 @@ Total estimated time: 90 minutes
 
 ### Architecture
 
-TODO
 ![Architecture](images/opensearch-architecture.png)
 
 It works like this:

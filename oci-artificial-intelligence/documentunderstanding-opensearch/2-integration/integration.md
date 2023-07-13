@@ -22,7 +22,7 @@ Estimated time: 20 min
 You will need the Oracle integration Cloud (OIC) package, the Visual Builder (VB) application, and samples files on your laptop/desktop. These procedures provide two methods to download a zip file from Github. Decide which method to use.
 
 ````
-Method 1
+Method 1 (recommended)
 To download the files to your laptop from the Github website, please follow these steps.
 ````
 
@@ -256,19 +256,19 @@ click on **Activation**
 ![Checkup](images/opensearch-oic-checkup1.png)
 
 1. Click on the **Activate** button for each integration and active them. 
-![Activate](images/opensearch-oic-activation.png)
-
-    ```
+    
     Note: it is recommended to enable Debug tracing for this lab to check the integration payloads. 
-    ```
+
+    ![Activate](images/opensearch-oic-activation.png)
+
     ![Activate2](images/opensearch-oic-activation2.png)
 
 
-1. Confirm all integrations are up and running.
+1. Confirm all integrations are *Active*.
 ![Activate3](images/opensearch-oic-activation3.png)
 
 ## Task 5: Test OIC
-You will load a file into object storage which will get ingested by OIC, processed with AI, and loaded into the OpenSearch index. (You'll query for this file in the next lab.)
+You will load a file into object storage which will be ingested by OIC, processed with AI, and loaded into the OpenSearch index. (You'll query for this file in the next lab.)
 
 1. In the OCI Console, select the 3-bar/hamburger menu and select
     - Storage
@@ -281,24 +281,27 @@ You will load a file into object storage which will get ingested by OIC, process
 
 1. On your local computer, go to the directory that you previously downloaded from GITHUB
 
-    1. Alternatively, you can download the files form the Cloud Shell:
-    1. Enter the file name: 
-        ```
-        <copy>
-        oci-searchlab/sample_files/shakespeare_macbeth.tif
-        <\copy>
-        ```
-        ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
+    - Alternatively, you can download the file below from the Cloud Shell:
+        1. Enter the file name: 
+            ```
+            <copy>
+            oci-searchlab/sample_files/shakespeare_macbeth.tif
+            <\copy>
+            ```
+            ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
 
-    1. click Download button.
+        1. Click the **Download** button.
 
 
-1. Upload the sample file to OCI Object Storage bucket: 
+1. Under *Objects* click the **Upload* button. 
+
+1. In the *Upload Objects* dialog, drag and drop *shakespeare_macbeth.tif* to the drop zone or use **select files** to browse to it on your local computer. Then click the **Upload** button.
 
     ![Test OIC](images/opensearch-oic-test.png)
 
+1. Click the **Close** button on the *Upload Objects* dialog. The file will be detected automatically and processed by the OIC integration.
      
-1. To check the result in OIC, Go to the OIC Console and select
+1. To check the result in OIC, go to the OIC Console and select
     1. Menu *Observability* 
     2. Menu *Integrations*
 
@@ -307,7 +310,7 @@ You will load a file into object storage which will get ingested by OIC, process
     The **Succeeded** count should match the **Received** count.
 
 ## Task 6: Optional - Process additional files
-This is an optional test you can run with more sample files. If you do this test, you will have more content in the OpenSearch index to query in the next lab. If you're running short of time, then you can skip it.
+This is an optional test you can run with more sample files. If you do this test, you will have more content in the OpenSearch index to query in the next lab. If you're running short of time, then you can skip it or come back to it later.
 
 1. Upload the remainder of the sample files to the Object Storage bucket *opensearch-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
 
@@ -315,9 +318,17 @@ This is an optional test you can run with more sample files. If you do this test
     1. Menu *Observability* 
     1. Menu *Integrations*
 
-1. Click on the "eye" icon to open the instance Activity Stream and view the message payloads.
+1. Click the *Refresh** icon - next to the time in the upper right quadrant of the window - to refresh the processing status. Repeat as needed.
+    
+    ![Refresh OIC](images/opensearch-oic-test-refresh.png)
+
+1. In the OIC console, go the *Observability* > *Instances* menu.
+
+1. Click on the "eye" icon for any instance to open the instance Activity Stream.
 
     ![Monitor OIC](images/opensearch-oic-test-instances.png)
+
+1. In the *Activity stream* dialog, click on the **eye** icon on any row that has one to view the message payload.
 
     ![Monitor OIC](images/opensearch-oic-test-instances-activity-stream.png)
 
