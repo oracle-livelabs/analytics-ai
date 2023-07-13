@@ -1,4 +1,4 @@
-# Create the Physical Layer
+# Create a Product Match Data Flow
 
 ## Introduction
 
@@ -9,8 +9,7 @@ Estimated Lab Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Create a data flow to filter out null product values
-* Create a branch to create two output datasets
+* Create a data flow with two output datasets to be stored in an ADW
 
 ### Prerequisites
 

@@ -1,4 +1,4 @@
-# Create the Logical Layer
+# Analyze Your Data
 
 ## Introduction
 In this lab, you will create a workbook using the **Sales\_Discounting** dataset you created from the data flow. You will create a simple visualization to help us get started with analyzing the sales discounting dataset.
