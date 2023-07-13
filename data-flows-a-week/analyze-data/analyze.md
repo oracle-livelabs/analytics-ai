@@ -21,7 +21,7 @@ This lab assumes you have:
 
 1. Click **Create** and select **Workbook**.
 
-	![Create workbook](images/create-workbook.png)
+	![Create workbook](images/create-workbook.png =400x*)
 
 2. Search for and select the **xx\_Sales\_Discounting** dataset and click **Add to Workbook**.
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 
 3. Select **Product Type**, **Region**, and **Discount % for Order**. Right-click and select **Create Best Visualization**. This will let the system auto-determine the best visualization type to visualize these columns.
 
-	![create best visualization](images/create-best-viz.png)
+	![create best visualization](images/create-best-viz.png =400x*)
 
 4. Here you can see that clearly, the Camera and Portable product types are receiving the highest discount across all three regions. With this information, we can investigate further to understand why these two product types are receiving the most discount and how that impacts our profit margins.
 
@@ -37,11 +37,11 @@ This lab assumes you have:
 
 5. For now, we will save the workbook. Click the **Save** icon on the top right.
 
-	![save](images/save.png)
+	![save](images/save.png =400x*)
 
 6. Enter **xx\_Sales\_Discounting** and hit **Save**.
 
-	![save workbook](images/save-workbook.png)
+	![save workbook](images/save-workbook.png =400x*)
 
 7. In this workshop, we learned how to use Oracle Analytics' lightweight ETL tool called Data Flows to extract, transform, and load data using the combined powers of Oracle Analytics Cloud and Oracle Autonomous Data Warehouse. We created several data flow outputs using local subject area and flat file data sources and created a workbook to start uncovering insights on the datasets we created.
 
