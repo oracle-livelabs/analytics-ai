@@ -170,7 +170,7 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
         - ##STREAM_BOOSTRAPSERVER##
         - ##STREAM_USERNAME##
         - ##AUTH_TOKEN##
-    1. Copy and paste these values to your text file to use in configuring the connection
+    1. Copy and paste **all** the output from this script to your text file to use in configuring the connection and for later tasks.
 
 1. Click the **Cloud Shell Menu icon** and select *Download*.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
@@ -199,20 +199,10 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
 1. Go back to the list of connections
 
 ### 8. RestFunction
-1. In OCI Console Cloud Shell, run: 
-    ```
-    <copy>
-    oci-searchlab/starter/src/search_env.sh
-    </copy>
-    ```
-
-    1. In the output of this script look for the following value:
-        - *##FUNCTION_ENDPOINT##*
-    1. Copy and paste the value to your text file to use in configuring the connection
-
-1. Fill the Connection details:
+1. Use the **##FUNCTION_ENDPOINT##** value you saved to your text file to fill in the Connection details:
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
-    - Connection url = *##FUNCTION_ENDPOINT##* without /action/invoke at the end.
+    - Connection url = **##FUNCTION_ENDPOINT##** (without /action/invoke at the end)
         - ex: https://xxxx.eu-frankfurt-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-frankfurt-1.aaaaaaabbbbb
     - Security policy = *OCI Service Invocation*
     - Access Type = *Public gateway*
@@ -225,17 +215,8 @@ IMPORTANT: Before proceeding with configuring the remaining three connections, t
 1. Go back to the list of connections
 
 ### 9. RestOpenSearch
-1. In OCI Console Cloud Shell, run: 
-    ```
-    <copy>
-    oci-searchlab/starter/src/search_env.sh
-    <\copy>
-    ```
-
-    - In the output of this script look for the following value:
-        - *##OPENSEARCH\_API\_ENDPOINT##*
-    
-1. Fill the Connection details:
+1. Use the **##OPENSEARCH\_API\_ENDPOINT##** value you saved to your text file to fill in the Connection details:
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
     - Connection url = *##OPENSEARCH\_API\_ENDPOINT##*
         - ex: https://amamamamalllllaaac5vkwantypqqcs4bqrgqjrkvuxxghsmg7zzzzzxxxxx.opensearch.eu-frankfurt-1.oci.oraclecloud.com:9200

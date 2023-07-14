@@ -4,12 +4,12 @@
 Using low code cloud services in Oracle Cloud Infrastructure (OCI), this workshop will illustrate how to create a system to search the full text of document images using OpenSearch and a familiar search interface created with Visual Builder.
 
 The focus of this workshop is making document images searchable. These document images are typically text documents that have been scanned to .tif or .jpg, or .pdf. However the system you'll build will handle many different document types such as:
-- Word, Excel, PDF 
-- Images with text using AI text recognition
+- Images with text using AI Document Understanding
 - Images without text using AI Vision
 - Custom document: Belgian ID card images
+- Word, Excel, even recorded speech
 
-TODO
+
 ![Introduction use case](images/opensearch-intro.png)
 
 The procedures in this workshop are designed for users that have obtained an Oracle Cloud free trial account with active credits. The procedures will also work for other Oracle Cloud accounts but may, in some cases, require minor adaptation.
@@ -23,7 +23,7 @@ Total estimated time: 90 minutes
 It works like this:
 1. A document is uploaded in the Object Storage by the user
 1. An event is raised and queued in Streaming (Kafka)
-1. The events are processed by Oracle Integration Cloud (OIC)
+1. The stream is received and processed by Oracle Integration Cloud (OIC)
 1. Based on the file type, OIC will send them to one or more AI services to enrich them and provide searchable text
 1. The results are uploaded to an OpenSearch index
 1. The user queries OpenSearch using a Visual Builder application

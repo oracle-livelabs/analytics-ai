@@ -66,18 +66,6 @@ Estimated time: 20 min
 
 ## Task 3: Edit the connections
 
-1. You will need to get values from your environment. In OCI Console Cloud Shell, run the following command. 
-    
-    ```
-    <copy>
-    oci-searchlab/starter/src/search_env.sh
-    </copy>
-    ```
-
-1. In the output of the script, look for the following value:
-***APIGW_URL***
-
-
 1. From the Visual Applications list, open the imported application by clicking on the application name, **opensearch**
 ![Visual Builder Import](images/opensearch-vb-applications.png)
 
@@ -90,8 +78,11 @@ Estimated time: 20 min
 1. Click the **Edit icon** 
 ![Connection OpenSearch](images/opensearch-vb-connection-opensearch.png)
 
+1. Use the ***APIGW_URL*** value you saved to your text file to fill in the Connection details:
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+
 1. Configure the server as follows:
-    - Instance URL: *APIGW_URL*
+    - Replace Instance URL: *APIGW_URL*
       - Ex: https://xxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com
     - Authentication: None
 ![Edit Connection OpenSearch](images/opensearch-vb-connection-opensearch2.png)
@@ -105,17 +96,19 @@ Estimated time: 20 min
     1. Click **Send Request**
 
     ![Test Connection OpenSearch](images/opensearch-vb-connection-opensearch3.png)
-    1. The test succeeded if you see *"successful": 1,*
+    1. The test succeeded if you see *"successful": 1,* in the response
 
 ## Task 4: Test the application
 
-1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear.
+1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
 ![Run the application](images/opensearch-vb-test.png)
 
 1. In the search user interface, enter *shakespeare* or *macbeth* or *candle* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
 
-1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service.
+1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service. You can click the file name to display it.
+    
+    **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
 
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
 
@@ -129,10 +122,10 @@ Estimated time: 20 min
     | Text\_DocU\_Overview\_PPTX\_to\_PDF.pdf | harbor, "product direction" |
     | Voice\_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
     | Shakespeare\_macbeth.tif | shakespeare, macbeth, candle, shadow |
-    | Penguins.jpg | animal, beak, bird, penguins |
+    | Penguins.jpg | animal, beak, bird, penguin |
     | HOL\_summary.txt | workshop, oic, "document understanding" |
 
-    **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
+
 
 
 **Congratulations! You have completed this workshop.**

@@ -66,8 +66,6 @@ You can
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/opensearch-compartment2.png)
-3. After creating the compartment, copy the OCID to your text file at ***##COMPARTMENT_OCID##***. You will need it later.
-    ![Details Compartment](images/opensearch-compartment3.png)
 
 ## Task 3: Create an Oracle Integration instance
 
@@ -183,11 +181,9 @@ Perform a similar task to get Client ID/Secret for OIC
     </copy>
     ```
     You should see the following in the results of the *gen_auth_token.sh* script:
-    
-    ```
-    AUTH_TOKEN stored in env.sh
-    TF_VAR_auth_token= 'a generated token'
-    ```
+    - AUTH_TOKEN stored in env.sh
+    - TF_VAR_auth_token= 'a generated token'
+
     
     ````
     <copy>
