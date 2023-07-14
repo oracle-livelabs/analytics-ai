@@ -151,11 +151,11 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
-  ![](../pipelines/images/pipeline-select.png " ")
+  ![](images/pipeline-select.png " ")
 
-6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Save and Close**.
+6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Create and Close**.
 
-  ![](../pipelines/images/save-pipeline-task.png " ")
+  ![](images/save-pipeline-task.png " ")
 
 ## Task 3: Create an Application
 
