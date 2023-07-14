@@ -264,12 +264,12 @@ You will load a file into object storage which will be ingested by OIC, processe
 
     - Alternatively, you can download the file below from the Cloud Shell:
         1. Enter the file name: 
-            ```
-            <copy>
-            oci-searchlab/sample_files/shakespeare_macbeth.tif
-            <\copy>
-            ```
-            ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
+        ```
+        <copy>
+        oci-searchlab/sample_files/shakespeare_macbeth.tif
+        <\copy>
+        ```
+        ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
 
         1. Click the **Download** button.
 

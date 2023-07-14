@@ -239,7 +239,9 @@ NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
 Then rerun the following command in the code editor
 
 ```
+<copy>
 ./build.sh
+</copy>
 ```
 
 
