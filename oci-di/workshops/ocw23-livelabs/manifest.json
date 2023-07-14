@@ -10,17 +10,17 @@
         {
             "title": "Lab 1: Create a Data Loader task",
             "description": "Learn how to create a Data Loader task in OCI Data Integration.",
-            "filename": "./lab1.md"
+            "filename": "../../create-data-loader/create-data-loader.md"
         },
         {
             "title": "Lab 2: Create an Application, a Pipeline and publish tasks",
             "description": "Learn how to create an OCI Data Integration application, publish tasks into the application and create a Data Integration pipeline which calls the published tasks.",
-            "filename": "./lab2.md"
+            "filename": "../../create-pipeline/create-pipeline.md"
         },
         {
             "title": "Lab 3: Run Data Loader task, schedule and run Pipeline task",
             "description": "Learn how to run a Data Loader task, create a task schedule in your OCI Data Integration application, to schedule the Pipeline task and to run it.",
-            "filename": "./lab3.md"
+            "filename": "../../run-pipeline/run-pipeline.md"
         }
     ]
 }
