@@ -20,11 +20,11 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 1. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/home3.png " ")
+  ![](images/aworkspace_home.png " ")
 
 2. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/home4.png " ")
+  ![](images/applications.png " ")
 
 3. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
