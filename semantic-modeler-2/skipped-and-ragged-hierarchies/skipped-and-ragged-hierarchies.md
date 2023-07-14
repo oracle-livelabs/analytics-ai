@@ -75,13 +75,10 @@ In this section, you set the level of detail stored in the logical tables.
 1. In the Logical Layer, double-click **D3 Customers**. Click the **Sources** tab. Double-click **LTS1 Customers** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D3 Customers.
     ![D3 details](./images/d3-granularity-detail.png)
 2. In the Logical Layer, double-click **D2 Products**. Click the **Sources** tab. Double-click **LTS1 Products** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D2 Products.
-    ![D2 Details](./images/d2-products-granularity-detail.png)
 3. In the Logical Layer, double-click **D20 Products**. Click the **Sources** tab. Double-click **D20 Products** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D20 Products.
-    ![D20 Details](./images/d20-detail.png)
 4. In the Logical Layer, double-click **D1 Time**. Click the **Sources** tab. Double-click **LTS1 Time** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D1 Time.
-    ![D1 Time details](./images/d1-time-detail.png)
 5. In the Logical Layer, double-click **F1 Revenue**. Click the **Sources** table. Double-click **LTS1 Revenue** to open the detail view.
-    ![F1 revenue details](./images/f1-revenue-add-level.png)
+
 6. Scroll to Data Granularity. Click **Add Level** for each dimension table joined to F1 Revenue in your semantic model.
 
 7. Click **Add Level** to add the Detail granularity level for **D2 Products**.
