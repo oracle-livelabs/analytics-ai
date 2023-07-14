@@ -143,7 +143,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
     - **Description** (optional)
     - **Project** `DI_WorkshopNN` is auto-populated because we're creating this task from project details page.
 
-    ![](../../pipelines/images/pipeline-task-name.png " ")
+    ![](../pipelines/images/pipeline-task-name.png " ")
 
 4. In the **Pipeline** section, click **Select**.
 
@@ -151,11 +151,11 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
-  ![](../../pipelines/images/pipeline-select.png " ")
+  ![](../pipelines/images/pipeline-select.png " ")
 
 6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Save and Close**.
 
-  ![](../../pipelines/images/save-pipeline-task.png " ")
+  ![](../pipelines/images/save-pipeline-task.png " ")
 
 ## Task 3: Create an Application
 
@@ -163,7 +163,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
 1. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
 
-  ![](../../pipelines/images/create-app-tile.png " ")
+  ![](../pipelines/images/create-app-tile.png " ")
 
 2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates)
 
@@ -175,7 +175,7 @@ Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Na
 
 3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
-  ![](../../pipelines/images/my-application.png " ")
+  ![](../pipelines/images/my-application.png " ")
 
 In OCI Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
@@ -183,15 +183,15 @@ In OCI Data Integration, a **Task** is a design-time resource that specifies a s
 
 1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-  ![](../../pipelines/images/click-tasks.png " ")
+  ![](../pipelines/images/click-tasks.png " ")
 
 2. All tasks from the `DI_WorkshopNN` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
 
-  ![](../../pipelines/images/publish-to-app.png " ")
+  ![](../pipelines/images/publish-to-app.png " ")
 
 3. In the Publish to Application dialog, select the `Workshop ApplicationNN` to publish to from the drop-down list. Then, click **Publish**.
 
-  ![](../../pipelines/images/app-select.png " ")
+  ![](../pipelines/images/app-select.png " ")
 
    **Congratulations!**  
 
