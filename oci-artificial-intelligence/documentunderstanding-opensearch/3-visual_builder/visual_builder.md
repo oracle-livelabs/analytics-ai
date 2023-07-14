@@ -26,8 +26,7 @@ Estimated time: 20 min
     1. To download the Visual Builder project file to your local computer from the Cloud Shell, enter the file name below and click **Download**.
         ```
         <copy>
-        oci-searchlab/vb/opensearch-1.0.zip
-        <\copy>
+        oci-searchlab/vb/opensearch-1.0.zip <\copy>
         ```
 
         ![CloudShell_Download2](images/opensearch-cloudshell-download5.png)
