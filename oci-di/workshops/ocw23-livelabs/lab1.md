@@ -93,7 +93,7 @@ a. Data Asset: Data_Warehouse
 b. Connection: Beta Connection
 c. Schema: BETA
 d. We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
-e. Choose the “Use default staging location settings.”
+e. Ensure the “Use default staging location settings.” is selected.
 
   ![](images/task2_9.png " ")
 
@@ -136,7 +136,7 @@ b. RENAME transformation.
 
   ![](images/task2_17.png " ")
 
-17. Click on Next and click on Create.
+17. Click on Next and click on Save.
 
 18. Then we will go back to our DI_WorkspaceXX (where XX will be your user ID) and click on Tasks tab.
 

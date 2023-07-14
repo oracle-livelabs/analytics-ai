@@ -18,39 +18,27 @@ You will schedule your Pipeline Task to run daily at 2PM.
 * Schedule the Pipeline Task
 * Run the Pipeline Task
 
-## Task 1: Run the Data Loader task
-
-In this step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (any task including Integration tasks, Data Loader tasks, REST tasksm SQL tasks and Pipeline tasks) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
-
-1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
-
-  ![](images/ocw23_home1.png " ")
-
-2. From the Workspaces page, make sure that you are in the correct compartment (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
-
-  ![](images/ocw23_home2.png " ")
-
-3. From your `DI_Workspace` homepage, click on **Applications**.
+1. From your `DI_Workspace` homepage, click on **Applications**.
 
   ![](images/ocw23_home3.png " ")
 
-4. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
+2. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
   ![](images/ocw23_home4.png " ")
 
-5. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
+3. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
   ![](../../schedule-run/images/run-data-loader-task.png " ")
 
-6. The **Run task** dialog will be displayed, you could change the parameter values here, simply press **Run**.
+4. The **Run task** dialog will be displayed, you could change the parameter values here, simply press **Run**.
 
   ![](images/ocw23_rundataloader.png " ")
 
-7. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
+5. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
   ![](../../schedule-run/images/data-loader-task-running.png " ")
 
-8. After a short time, The **Data Loader task run ends successfully**.
+6. After a short time, The **Data Loader task run ends successfully**.
 
   ![](../../schedule-run/images/data-loader-task-successful.png " ")
 
@@ -116,7 +104,7 @@ You can create **task schedules** to schedule tasks to run on **specific days an
 
   ![](../../schedule-run/images/task-schedule-name.png " ")
 
-5. Select the **Enable Task Schedule check box** to allow this task schedule to trigger automated runs when schedule conditions are met.
+5. Ensure the **Enable Task Schedule check box** is selected to allow this task schedule to trigger automated runs when schedule conditions are met.
 
   ![](../../schedule-run/images/enable-task-schedule.png " ")
 
@@ -141,7 +129,7 @@ You can create **task schedules** to schedule tasks to run on **specific days an
 
     ![](../../schedule-run/images/configure-task-schedule.png " ")
 
-9. **Review** the options you defined and click **Save and Close**.
+9. **Review** the options you defined and click **Create**.
 
   ![](../../schedule-run/images/task-schedule-save-close.png " ")
 

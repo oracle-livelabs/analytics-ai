@@ -48,7 +48,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
   ![](images/ocw23_pipeline_name_after_save.png " ")
 
-7. To add a task, you will drag and drop a task operator from the Operators Panel. Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
+7. To add a task, you will drag and drop a task operator from the Operators Panel (Integration Task is in the operator pallette on left hand side). Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
   ![](images/ocw23_pipeline_integrationtask1.png " ")
 
