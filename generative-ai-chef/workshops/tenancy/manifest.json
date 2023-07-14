@@ -1,0 +1,61 @@
+{
+    "workshoptitle": "Welcome to Bistro AI: Create an AI-Powered Recipe Generator",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Setup the Environment",
+            "description": "Setup the notebook environment",
+            "filename": "../../1-setup-environment-lab/setup-environment-lab.md"
+        },
+        {
+            "title": "Lab 2: Load the Dataset",
+            "description": "Download and load the dataset that will be used for the lab",
+            "filename": "../../2-load-data/load-data.md"
+        },
+        {
+            "title": "Lab 3: Prep the Dataset",
+            "description": "Prepare the data so that it can be used for the model tuning and evaluation",
+            "filename": "../../3-prep-data/prep-data.md"
+        },
+        {
+            "title": "Lab 4: Clean the Dataset",
+            "description": "Prepare the data so that it can be used for the model tuning and evaluation",
+            "filename": "../../4-clean-data/clean-data.md"
+        },
+        {
+            "title": "Lab 5: Tokenize the Dataset",
+            "description": "Tokenize the data for the model tuning",
+            "filename": "../../5-tokenize/tokenize.md"
+        },
+        {
+            "title": "Lab 6: Try Untuned LLM Model",
+            "description": "",
+            "filename": "../../6-try-untuned/try-untuned.md"
+        },
+        {
+            "title": "Lab 7: Tune our ChefGPT",
+            "description": "",
+            "filename": "../../7-tune/tune.md"
+        },
+        {
+            "title": "Lab 8: Let's try our ChefGPT",
+            "description": "",
+            "filename": "../../8-try-chefgpt/try-chefgpt.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

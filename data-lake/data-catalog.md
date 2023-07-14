@@ -28,6 +28,8 @@ From the home navigation menu, click Analytics & AI and then click Data Integrat
 
 Here you will create a Workspace which will allow for diagramming the data flows with filters and create execution plans for data into the data assets. First, we must create the workspace and a couple more policies for the workspace to access the object storage and use and update the data in the data lake.
 
+![Workspace in Lakehouse](./images/create_workspace1a.png " ")
+
 Click on Create Workspace. Name it Workspace Lakehouse, uncheck the Enable the Private Network option and click the Create button.
 
 ![Create Workspace](./images/create_workspace.png " ")
@@ -47,12 +49,11 @@ Use the following three allow statements to add into the existing policy, and th
 
 ```
 <copy>
-allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
+allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
-allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
+allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
-allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE WITH WORKSPACE OCID'
-}
+allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE_WITH_WORKSPACE OCID'}
 
 </copy>
 ```
@@ -61,6 +62,12 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
 ## Task 2: Create the Data Assets in the workspace
 
+In the top right hand corner navigate to user profile, click, and then click on tenancy. You want to make sure to grab the Tenancy OCI and save it off for use with different connection informations for your data assets.
+
+The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID. Save this OCID to copy and paste into the correct field in the data assets for the database and object storage.
+
+![Create Data Asset](./images/tenancy_OCID.png =50%x*)
+
 Navigate back to the Workspace Lakehouse in Data Integration.
 Under Quick Actions, you want to click on **Create Data Asset**
 
@@ -68,11 +75,9 @@ Under Quick Actions, you want to click on **Create Data Asset**
 
 The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
 
+Continue to fill with Select Database, regions, Tenancy OCID that you saved off to the side, or if you need to find it again click on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
+
 ![Create Data Asset](./images/create_dataasset.png " ")
-
-Continue to fill with Select Database, regions, Tenancy OCID which can be found by clicking on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
-
-![Create Data Asset](./images/create_dataasset3.png " ")
 
 Using the default connection you can put in User Name ADMIN and the password you configured for your database, and select the TNS Alias from the dropdown.
 
@@ -84,9 +89,7 @@ Now lets create the second data asset which will be the dataflow-warehouse bucke
 
 ![Create Data Asset](./images/create_dataasset6.png " ")
 
-Then copy in the Tenancy OCID. The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID.
-
-![Create Data Asset](./images/tenancy_OCID.png " ")
+Then copy in the Tenancy OCID. 
 
 The Namespace will populate once the tenancy was entered and then enter the region ID. The region ID you can get from clicking the dropdown menu by regions and click on manage region. Your current region should be listed at the top of the list.
 
@@ -107,6 +110,8 @@ Test Connection to make sure you can connect to the this data asset. Click on 'd
 
 ![Create Project](./images/create_project.png " ")
 
+![Create Project Fields](./images/create_project2.png " ")
+
 You have now configured this data lake by creating a database, data sources in object storage. Configuration is completed from access to services and are ready to use in this project.
 
 ## Task 4: Create the OCI Data Catalog
@@ -114,9 +119,13 @@ You have now configured this data lake by creating a database, data sources in o
 In this task, you will create the OCI Data Catalog. Review options for creating business term to sync with the metadata for the data assets.
 Navigate to the Data Catalog by clicking on Analytics & AI, and then Data Catalog. Then click Data Catalogs.
 
-![Navigate to Analytics](./images/Nav_datacatalog.png " ")
+![Navigate to Analytics](./images/navdatacatalog.png " ")
+
+![Navigate to Data Catalog](./images/navdatacatalog2.png " ")
 
 Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the catalog, lakehousecatalog. Click on Create.
+
+![Create Catalog](./images/create_datacatalog1.png " ")
 
 ![Create Catalog](./images/create_datacatalog.png " ")
 
@@ -170,7 +179,7 @@ Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb
 
 Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/DBActions.png " ")
+![Database Actions](./images/dbactions1.png " ")
 
 Click on SQL to execute the query to create the table.
 
@@ -191,13 +200,13 @@ RECOMMENDED         VARCHAR2(10));
 </copy>
 ```
 
-After the query executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
+After the create table statement executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
 
 Now you can verify that the entity is available as part of the OCI Data Catalog. Navigate to the Oracle Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
 
 Click on lakehousecatalog from the Data Catalogs. Verify compartment if you do not see it listed.
 
-![SQL](./images/Current_Catalog.png " ")
+![SQL](./images/currentcatalog.png " ")
 
 Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 Select the ADMIN data entity and run the job now.
@@ -219,5 +228,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Contributors** -  
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022
+* **Contributors** -  Nagwang Gyamtso, Product Management
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023

@@ -1,0 +1,58 @@
+{
+  "workshoptitle": "Oracle RedBull Pit Strategy Hands-on Lab",
+  "help": "livelabs-help-analytics_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/intro/intro.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Get Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Infrastructure",
+      "description": "Infrastructure",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/infra/infra.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 2: Data Extraction",
+      "description": "Data Extraction",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/dataextraction/dataextraction.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 3: Data Exploration",
+      "description": "Data Exploration",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/dataexploration/dataexploration.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 4: Data Merging",
+      "description": "Data Merging",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/datamerging/datamerging.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 5: Model Training",
+      "description": "Model Training",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/modeltraining/modeltraining.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 6: Model Deployment",
+      "description": "Model Deployment",
+      "filename": "https://oracle-devrel.github.io/redbull-pit-strategy/hols/pitstrategy/modeldeployment/modeldeployment.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+    }
+  ]
+}
