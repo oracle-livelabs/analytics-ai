@@ -31,11 +31,11 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 
 3. In the **Logical Layer**, double-click **F1 Revenue**, and then click **Add Column**.
-
+    ![text](./images/f1-revenue-add-column.png)
 4. In **New Column_ 1**, enter <code>Month Ago Revenue</code>, and then click **Detail View**.
-
+    ![text](./images/month-ago-revenue-open-detail.png)
 5. Under Sources, click **Logical Expressions**. Click **Open Expression Editor**.
-
+    ![text](./images/f1-revenue-expression.png)
 6. In the Expression Editor, enter <code>Ago</code> in the search bar, and click **Search**.
 
 7. Double-click **AGO** time series function. In the AGO expression, for **measure**, enter <code>Rev</code>, expand **F1 Revenue**, and then select **Revenue**.
@@ -43,7 +43,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 8. For **time_level**, enter <code>Mon</code>, and then select the time dimension **Month**.
 
 9. For the **number of periods**, enter <code>1</code>, click **Validate**, and then click **Save** in the Expression Editor.
-
+    ![text](./images/month-ago-revenue.png)
 10. Click **Save**.
 
 ## Task 2: Create a Measure with the TODATE Function
@@ -53,6 +53,7 @@ In this section, you create a revenue measure column that used the TODATE time s
 1. In the Logical Layer, double-click **F1 Revenue**, and then click **Add Column**.
 
 2. In New Column_ 1, enter <code>Year To Date Revenue</code> and then click **Detail View**.
+    ![View year to Date Revenue](./images/yeartodaterevenue.png)
 
 3. Under Sources, click **Logical Expressions**. Click **Open Expression Editor**.
 
@@ -61,8 +62,10 @@ In this section, you create a revenue measure column that used the TODATE time s
 5. In the TODATE expression, enter <code>Rev</code> in measure, expand **F1 Revenue**, and then select **Revenue**.
 
 6. For time_ level, enter <code>Yea</code>, and then select **Year**. Click **Validate**, and then click **Save** in the Expression Editor.
+    ![Enter expression values](./images/yeartodaterevenue-expression.png)
 
 7. Click **Save**.
+    ![Save year to date revenue](./images/year-to-date-revenue.png)
 
 ## Task 3: Create a Measure with the PERIODROLLING Function
 
@@ -71,7 +74,7 @@ In this section, you create a revenue measure column that uses the period rollin
 1. In the Logical Layer, double-click **F1 Revenue**, and then click **Add Column**.
 
 2. In New Column_ 1, enter <code>Revenue 3 Period Rolling Sum</code>.
-
+    ![Revenue 3 Period Rolling Sum](./images/revenue-3-period-rolling-sum.png)
 3. Under Sources, click **Logical Expressions**. Click **Open Expression Editor**.
 
 4. In the Expression Editor, enter <code>Per</code> in the search bar, and then double-click **Period Rolling**.
@@ -79,7 +82,7 @@ In this section, you create a revenue measure column that uses the period rollin
 5. In the PERIODROLLING expression, enter <code>Rev</code> in measure, expand **F1 Revenue**, and then select **Revenue**.
 
 6. Enter <code>-2</code> in **starting_ period_ offset**. Enter <code>0</code> in **ending_ period_ offset**. Click **Validate**, and then click **Save** in the Expression Editor.
-
+    ![Enter expression values](./images/period-rolling-expression.png)
 7. Click **Save**.
 
 ## Learn More

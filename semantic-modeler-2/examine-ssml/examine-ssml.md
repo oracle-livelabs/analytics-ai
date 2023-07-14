@@ -91,7 +91,7 @@ In this section, you specify your profile name, Git user name, and your personal
 2. In Initialize Git, paste your Git repository URL in to **Git Repository URL**, and then click **Continue**.
 	![Paste Git Repository URL](./images/initialize-git.png)
 
-3. Select your Git profile, or select **New Profile**. Enter a **Profile Name**, your **Git user name**, and your personal access token in **Password**.
+3. Select your Git profile, or select **New Profile**. Enter a **Profile Name**, your **Git user name**, and your personal access token in **Password**. When creating your personal access token, check all the boxes prompted on the screen.
 	![Select Git Profile and input Git credentials](./images/initialize-git.png)
 4. Click **Initialize Git**.
 
@@ -112,11 +112,12 @@ In this section, you add a description in SAMP_ PRODUCTS_D to demonstrate change
 1. In the Physical Layer, double-click **SAMP_ PRODUCTS_D**. Click the **General** tab.
 
 2. In Description, enter <code>Test product description to show semantic model changes and Git</code>. Click **Save**.
-
 The Git panel shows the status of the changes in the semantic model.
 
-3. In the Git panel, right-click **SAMP_ PRODUCTS_D** and select **View Diffs**.
+	![Open Samp_Products D](./images/samp-products-d.png)
 
+3. In the Git panel, right-click **SAMP_ PRODUCTS_D** and select **View Diffs**.
+	![View Diffs](./images/view-diffs.png)
 4. Close the Diff Editor.
 
 5. In the Git panel, click **Stage All** in Unstaged Changes. In the **commit description** field, enter a description of the changes and click **Commit**.

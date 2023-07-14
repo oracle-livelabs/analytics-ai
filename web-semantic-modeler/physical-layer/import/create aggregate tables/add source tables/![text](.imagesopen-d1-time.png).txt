@@ -1,0 +1,4 @@
+![text](./images/open-d1-time.png)
+![text](./images/drag-d1-time-qtr-grain.png)
+![text](./images/open-f1-revenue.png)
+![text](./images/drag-f2-revenue-aggregate.png)

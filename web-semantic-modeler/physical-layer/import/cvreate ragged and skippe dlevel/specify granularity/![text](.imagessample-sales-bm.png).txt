@@ -1,0 +1,17 @@
+![text](./images/sample-sales-bm.png)
+![text](./images/d20-to-dimensions.png)
+
+![text](./images/d20-products-hierarchy.png)
+![text](./images/check-ragged-skipped.png)
+![text](./images/product-brand.png)
+![text](./images/product-lob.png)
+![text](./images/product-type.png)
+
+![text](./images/d3-granularity-detail.png)
+![text](./images/d2-products-granularity-detail.png)
+![text](./images/d20-detail.png)
+![text](./images/d1-time-detail.png)
+![text](./images/f1-revenue-add-level.png)
+![text](./images/add-d2-products.png)
+![text](./images/add-d20-products.png)
+![text](./images/add-d3-customers.png)

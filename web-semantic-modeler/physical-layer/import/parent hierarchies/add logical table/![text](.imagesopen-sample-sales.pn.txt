@@ -1,0 +1,6 @@
+![text](./imagesopen-sample-sales.png)
+![text](./images/create-new-table.png)
+![text](./images/create-logical-table.png)
+![text](./images/drag-columns.png)
+![text](./images/new-columns.png)
+![text](./images/d5-primary-key.png)

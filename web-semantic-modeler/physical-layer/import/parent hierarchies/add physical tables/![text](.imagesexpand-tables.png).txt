@@ -1,0 +1,8 @@
+![text](./images/expand-tables.png)
+![text](./images/drag-schemas.png)
+![text](./images/empl-d-vh-create-table.png)
+![text](./images/d50-sales-rep.png)
+![text](./images/empl-parent-child-create-table.png)
+![text](./images/d51-sales-rep-parent-child.png)
+![text](./images/empl-postn-create-table.png)
+![text](./images/d52-sales-rep-position.png)

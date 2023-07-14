@@ -1,0 +1,4 @@
+![text](./images/add-variable.png)
+![text](./images/open-detail.png)
+![text](./images/currentday.png)
+![text](./images/new-variables.png)

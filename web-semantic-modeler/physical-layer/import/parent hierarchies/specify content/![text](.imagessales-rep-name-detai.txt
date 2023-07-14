@@ -1,0 +1,5 @@
+![text](./images/sales-rep-name-detail.png)
+![text](./images/sales-rep-number-detail.png)
+![text](./images/sales-rep-total.png)
+![text](./images/sales-rep-detail.png)
+![text](./images/sales-rep-number-sales-rep-detail.png)

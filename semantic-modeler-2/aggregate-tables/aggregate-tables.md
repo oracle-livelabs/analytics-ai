@@ -27,33 +27,25 @@ In this section, you add tables from your physical source to your Samples Sales 
 Begin with step 3 if you're continuing this tutorial directly after completing the steps in the Create Parent-Child Hierarchies tutorial.
 
 1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
-
-	![Create](./images/create.png =400x*)
-
+	![Open Semantic Models](./images/semantic-models.png)
 2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
-
-	![Semantic model name](images/semantic-model-name.png =400x*)
-
+	![Open Samples Sales](./images/open-sample-sales.png)
 3. Click the **Physical Layer**. Double-click **MySampleSalesDatabase**.
-
-	![Start with empty model](./images/empty-model.png)
 
 4. In Tables, under MySampleSalesDatabase, expand the **Sample Sales schema**.
 
-	![DB name](./images/db-name.png)
-
 5. Click **Connections**. Expand **BISAMPLE**. Hold down the Ctrl key, select the **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ D** tables, and then drop the tables on the Sample Sales schema when the **Add table** green icon shows.
-
+	![drop tables in sample sales](./images/drag-fa2-samp-time.png)
 6. In the Tables pane, hold down the Ctrl key, select **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ DAY** table, right-click, and then select **Cut**. Right-click the **Sample Sales schema**, and then select **Paste**.
 
 7. Right-click **SAMP_ REVENUE_ FA2** and select **Create Physical Table Alias**.
-
+	![create physical table samp revenue fa2](./images/physical-alias-fa2.png)
 8. In Create Physical Table Alias, enter <code>F2 Revenue Aggregate</code> in **Name**, and then click **OK**. Close F2 Revenue Aggregate.
-
+	![Name table F2 Revenue Aggregate](./images/f2-revenue-aggregate.png)
 9. Right-click **SAMP_ TIME_ QTR_ DAY** and select **Create Physical Table Alias**.
-
+	![Create physical table Samp Time Qtr Day](./images/physical-alias-samp-time-qtr-day.png)
 10. In Create Physical Table Alias, enter <code>D1 Time QTR Grain</code> in **Name**, and then click **OK**.
-
+	![Name D1 Time QTR Grain](./images/d1-time-qtr-grain.png)
 11. Click **Save**.
 
 ## Task 2: Create Joins
@@ -62,23 +54,25 @@ In this section, you create links between the aggregate tables and the D2 Produc
 
 1. In the Physical Layer, right-click **F2 Revenue Aggregate**, select **Show Physical Diagram**, and then click **Selected Table Only**.
 
-	![Tables tab](./images/tables.png)
+	![Show physical diagram F2](./images/selected-tables-only.png)
 
 2. Hold down the Ctrl key, select **D1 Time QTR Grain** and select **D2 Products**, and then drag the tables to the Physical Diagram.
 
-	![Schemas](./images/schemas.png =400x*)
+	![Drag columns to diagram](./images/drag-d1-d2.png)
 
 3. Click **F2 Revenue Aggregate** and drag the cursor to **D2 Product** to open the Add Physical Join dialog.
 
-	![Expand BISAMPLE](images/expand-bisample.png =400x*)
+	![Connect F2 and D2](./images/physical-join-f2-d2.png)
 
 4. From the Join Conditions list under the Left Table, select **PROD_ KEY**. From the Join Conditions list under the Right Table, select **PROD_ KEY**, and then click **Add**.
-
+	
 5. In the Physical Diagram, click **F2 Revenue Aggregate**, drag the cursor to **D1 Time QTR Grain** to open the Add Physical Join dialog.
 
-	![Drag tables](./images/drag-tables.png)
+	![Connect F2 and D1](./images/physical-join-f2-d1.png)
 
 6. From the Join Conditions list under the Left Table, select **BILL_ QTR_ KEY**. From the **Join Conditions** list under the Right Table, select **QTR_ KEY**, and then click **Add**.
+
+	![Join Tables](./images/aggregate-join-tables.png)
 
 ## Task 3: Add Source Tables
 
@@ -86,29 +80,28 @@ In this section, you add the aggregate tables as sources for the F1 Revenue and 
 
 1. Click the **Logical Layer**. Expand **Sample Sales BM**, and then double-click **D1 Time**.
 
-	![create physical table alias](./images/create-physical-table-alias.png)
+	![Open D1 Time](./images/open-d1-time.png)
 
 2. In D1 Time, click **Sources**. Click the **Physical Layer**.
 
-	![D1 Time](./images/d1-time.png =500x*)
 
 3. From the Sample Sales schema, select **D1 Time QTR Grain**, and then drag it to D1 Time Sources.
 
-	![SAMP_ PRODUCTS_ D alias](./images/product-alias.png)
+	![Drag D1 Time QTR Grain](./images/drag-d1-time-qtr-grain.png)
 
 4. Close D1 Time.
 
-	![D2 products](images/d2-products.png =500x*)
-
 5. In the Logical Layer, double-click **F1 Revenue**.
 
-6. In F1 Revenue, click **Sources**.
+	![Open F1 Revenue](./images/open-f1-revenue.png)
 
-	![Table aliases](./images/table-aliases.png =400x*)
+6. In F1 Revenue, click **Sources**.
 
 7. Click the **Physical Layer**.
 
 8. From the Sample Sales schema, select **F2 Revenue Aggregate**, and then drag it to F1 Revenue Sources.
+
+	![Drag F2 to F1](./images/drag-f2-revenue-aggregate.png)
 
 ## Task 4: Specify Data Granularity
 
@@ -116,27 +109,22 @@ In this section, you set the level of detail (the grain) stored in the logical t
 
 1. In the F1 Revenue Sources tab, double-click **F2 Revenue Aggregate**. Scroll to Data Granularity. Click **Add Level**.
 
-	![Add join](./images/add-join.png)
+	![Add level to F1 Sources tab](./images/f2-revenue-aggregate-add-level.png)
 
 2. From the Dimension list, select **D2 Products**. Click the **Level** list, and then select **Total**.
 
-	![Add physical table](./images/add-physical-table.png =500x*)
-
 3. Click **Add Level**. From the Dimension list, select **D1 Time**. Click the **Level** list, and then select **QTR**.
 
-	![Add join conditions](./images/join-conditions.png =500x*)
 
 4. Click **Add Level**. From the Dimension list, select **D3 Customers**. Click the **Level** list, and then select **Total**.
 
-	![Save](./images/save.png)
 
 5. Click **Add Level**. From the Dimension list, select **D1 Time**. Click the **Level** list, and then select **Total**.
 
-	![Join](./images/join-f1-d2.png =500x*)
 
 6. Click **Save**.
 
-	![Join conditions](./images/conditions-f1-d2.png =500x*)
+	![Added levels data granularity](./images/data_gran_rev_agg.png)
 
 
 ## Learn More

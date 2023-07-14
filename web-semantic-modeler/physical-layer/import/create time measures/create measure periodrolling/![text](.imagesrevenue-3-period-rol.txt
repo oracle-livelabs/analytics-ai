@@ -1,0 +1,2 @@
+![text](./images/revenue-3-period-rolling-sum.png)
+![text](./images/period-rolling-expression.png)
