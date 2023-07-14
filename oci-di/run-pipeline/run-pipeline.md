@@ -20,7 +20,7 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 1. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/aworkspace_home.png " ")
+  ![](images/workspace_home.png " ")
 
 2. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 

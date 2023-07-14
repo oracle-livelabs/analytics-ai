@@ -50,11 +50,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 7. To add a task, you will drag and drop a task operator from the Operators Panel (Integration Task is in the operator pallette on left hand side). Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
-  ![](images/pipeline_integrationtask1.png " ")
+  ![](images/pipeline_addintegration.png " ")
 
 8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
 
-  ![](images/pipeline_integrationtask2.png " ")
+  ![](images/pipeline_integrationtaskpanel.png " ")
 
 9. A page pops up with the selections for the **Integration Task**:
 
@@ -62,15 +62,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Integration Task**, check the `Load Customers Lab` task.
     - Click **Select**.
 
-    ![](images/pipeline_dataloadertask00.png " ")
+    ![](images/pipeline_selecttask.png " ")
 
 10. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
-  ![](images/pipeline_dataloadertask1.png " ")
+  ![](images/pipeline_with_data_loader.png " ")
 
 11. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
-  ![](images/pipeline_dataloadertask2.png " ")
+  ![](images/pipeline_dataloader.png " ")
 
 12. A page pops up with the selections for the **Data Loader Task**:
 
@@ -78,11 +78,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
-    ![](images/pipeline_dataloadertask0.png " ")
+    ![](images/pipeline_selectdataloader.png " ")
 
 13. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
-  ![](images/pipeline_dataloadertask3.png " ")
+  ![](images/pipeline_dataloaderpanel.png " ")
 
 14. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 
@@ -94,11 +94,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 16. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
 
-  ![](images/pipeline_integrationtaskx5.png " ")
+  ![](images/pipeline_integrationtask.png " ")
 
 17. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
-  ![](images/pipeline_integrationtaskx2.png " ")
+  ![](images/pipeline_integrationtask2properties.png " ")
 
 18. A page pops up with the selections for the **Integration Task**:
 
@@ -106,15 +106,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
-    ![](images/pipeline_integrationtask0.png " ")
+    ![](images/pipeline_integrationtask2select.png " ")
 
 19. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
-  ![](images/pipeline_integrationtaskx3.png " ")
+  ![](images/pipeline_integrationtask2panel.png " ")
 
 20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
-  ![](images/pipeline_integrationtaskx4.png " ")
+  ![](images/pipeline_integrationtaskconnected.png " ")
 
 21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
