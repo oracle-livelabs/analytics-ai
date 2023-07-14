@@ -71,10 +71,10 @@ In this section, you create an archive of your semantic model as a backup.
 	![Open Samples Sales](./images/open-sample-sales.png)
 	
 3. In the Sample Sales semantic model, click the **Page Menu**, and select **Export**.
-	![Click export in semantic model](./images/export.png)
+	![Click export in semantic model](./images/export.png =400x*)
 
 4. In Export, keep **Sample Sales** as the archive name, select **Archive File (.zip)**, and then click **Export**.
-	![Choose Archive File as export option](./images/archive-file.png)
+	![Choose Archive File as export option](./images/archive-file.png =400x*)
 
 5. In Opening Sample Sales.zip, click **Save** and click **OK**.
 
@@ -86,13 +86,13 @@ In this section, you create an archive of your semantic model as a backup.
 In this section, you specify your profile name, Git user name, and your personal access token in the Semantic Modeler to initialize Git.
 
 1. In the Sample Sales semantic model, click **Toggle Git Panel**, and then click **Start**.
-	![Start Toggle Git Panel](./images/toggle-git-panel.png)
+	![Start Toggle Git Panel](./images/toggle-git-panel.png =400x*)
 
 2. In Initialize Git, paste your Git repository URL in to **Git Repository URL**, and then click **Continue**.
-	![Paste Git Repository URL](./images/initialize-git.png)
+	![Paste Git Repository URL](./images/initialize-git.png =500x*)
 
 3. Select your Git profile, or select **New Profile**. Enter a **Profile Name**, your **Git user name**, and your personal access token in **Password**. When creating your personal access token, check all the boxes prompted on the screen.
-	![Select Git Profile and input Git credentials](./images/initialize-git.png)
+	![Select Git Profile and input Git credentials](./images/initialize-git.png =500x*)
 4. Click **Initialize Git**.
 
 ## Task 5: Review the Git Integration

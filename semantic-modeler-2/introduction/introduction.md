@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop describes how to build governed semantic models using the Semantic Modeler which is currently available for preview. Ask your administrator to enable the Semantic Modeler preview feature in Console.
+This workshop is a continuation of "Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC), which describes how to build governed semantic models using the Semantic Modeler which is currently available for preview. Ask your administrator to enable the Semantic Modeler preview feature in Console.
 
 In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks.
 
@@ -12,10 +12,16 @@ Estimated Workshop Time: 2 hours 50 minutes
 ### Objectives
 
 In this workshop, you will learn how to:
-* Provision an ADW and OAC instance
-* Load data into an ADW
-* Create a Semantic Model in OAC
-* Test, Deploy, and Validate a semantic model
+* Examine Semantic Model Markup Language (SMML) and Integrate Semantic Model With a Git Repository
+* Manage Logical Table Sources
+* Create Logical Hierarchies
+* Create Calculated Measures
+* Create Ragged and Skipped Level Hierarchies
+* Create Parent-Child Hierarchies
+* Create Aggregate Tables
+* Create Time Series Measures
+* Create Initialization Blocks and Variables
+
 
 
 ## Learn More

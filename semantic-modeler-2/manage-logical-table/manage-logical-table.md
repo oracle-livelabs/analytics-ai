@@ -60,7 +60,7 @@ In this section, you rename logical table sources and view column mapping to phy
 
 1. Click the **Logical Layer**, expand **Sample Sales BM**.
 
-	![Click Logical Layer and expand Sample Sales BM](./images/logical-layer-sample-sales-BM.png)
+	![Click Logical Layer and expand Sample Sales BM](./images/logical-layer-sample-sales-BM.png =400x*)
 
 2. Double-click **D3 Customers**, click **Sources**, and then rename the D3 Customers logical table source (not the logical table) to **LTS1 Customers**.
 
@@ -91,7 +91,7 @@ In this section you add a presentation table to the Sample Sales semantic model.
 
 1. Click the Presentation Layer, double-click **Sample Sales**, click **Add Table**, and then select **Create Presentation Table**. In Create Presentation Table, enter <code>Customer Regions</code> in **Name**, and then click **OK**. Click **Save**.
 
-	![Create Presentation Table](./images/create-presentation-table.png)
+	![Create Presentation Table](./images/create-presentation-table.png =400x*)
 	![Input Presentation table details](./images/presentation-table-details.png)
 
 2. Click the **Logical Layer**, expand **D3 Customers**, hold down the **Ctrl** key, select and drag the following to Customer Regions **Columns** tab:
@@ -136,14 +136,12 @@ In this section, you run the consistency checker, deploy the updated semantic mo
 
 6. In the Data panel, **expand the Products, Customers, Base Facts,** and **Customer Regions** folders.
 
-	![Expand folders](./images/expand-folders.png =500x*)
-
 7. Hold down the **Ctrl** or **Cmd** key, select **Name** from Customers, **Country Name** from Customer Regions, **Type** from Products, and **Revenue** from Base Facts.
-	![Select values from dataset](./images/select-data-values.png =500x*)
+	![Select values from dataset](./images/select-data-values.png =400x*)
 
 8. Drag the data elements to the canvas.
 
-	![Drag values to canvas to create table that uses the Customer Regions, Customers, Products, and Base Facts table.](./images/drag-to-canvas.png)
+	![Drag values to canvas to create table that uses the Customer Regions, Customers, Products, and Base Facts table.](./images/drag-to-canvas.png =400x*)
 
 
 ## Learn More

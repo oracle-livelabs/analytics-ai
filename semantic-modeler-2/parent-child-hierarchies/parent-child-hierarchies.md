@@ -93,10 +93,10 @@ In this section you add a logical table and select columns from a physical layer
 	![Create new tale](./images/create-new-table.png)
 
 3. In Create Logical Table, enter <code>D5 Sales Rep</code> in Name and click **OK**.
+	![Name D5 Sales Rep](./images/create-logical-table.png)
 
 The D5 Sales Rep Columns tab opens in the Semantic Modeler.
 
-	![Name D5 Sales Rep](./images/create-logical-table.png)
 
 4. Click the **Physical Layer**, expand **MySampleSalesDatabase**, and then expand **Sample Sales**.
 
@@ -219,8 +219,9 @@ In this section, you create the Sales Rep presentation table and presentation hi
 5. In D5 Sales Rep, click the **General** tab. In Name, enter <code>Sales Rep</code> to replace **D5 Sales Rep**, and then click **Save**.
 	![Enter Sales Rep](./images/change-d5-sales-rep.png)
 6. In Sales Rep, click the **Hierarchies** tab.
-	![Replace display](./images/replace-display.png)
+	
 7. In the Hierarchies tab, next to Display Columns, click **Replace**. In Select Presentation Column, expand **Sales Rep**, click **Sales Rep Name** and then click **Select**.
+	![Replace display](./images/replace-display.png)
 	![Hierarchies](./images/select-presentation.png)
 8. Click **Save**.
 

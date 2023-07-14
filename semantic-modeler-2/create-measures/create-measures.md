@@ -45,7 +45,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 9. In F1 Revenue, click **Add Column**. In Name, enter <code>Revenue Rank</code>. Click **Logical Expression**, and then click **Open Expression Editor**. Under Functions, expand **Display**, and then double-click **Rank**.
     ![Display revenue rank](./images/f1-revenue-revenue-rank.png)
 10. Click **Logical Layer**, expand **F1 Revenue**, and then drag **Revenue** to column in the parentheses next to **Rank** in the Expression Editor field. Click **Validate**, and then click **Save** to save the calculation. The Revenue Rank columns uses the Rank function for its calculated measure.
-    ![Validate expression](./images/validate-save.png)
+    ![Display revenue rank](./images/revenue-rank-expression.png)
 11. Click **Save**.
 
 
@@ -58,7 +58,7 @@ In this section, you create measure columns in the Revenue table using physical 
 2. In **Name**, enter <code>Product Total Revenue</code>.
     ![Product Total Revenue](./images/product-total-revenue.png)
 3. In Sources with **Physical Expression** selected, click **Add Level**.
-
+   ![Product Total Revenue](./images/f1-physical-expression.png) 
 4. Click **LTS1 Revenue** in the **Logical Table Source** field. Double-click **Physical Column**, expand **F1 Revenue**, and then select **Revenue**.
 
 5. In Aggregation, click **Add Aggregation by Level**. From the **Dimension** list, click **D2 Products**. From the **Logical Level** list, click **Total**, and then click **Save**.
@@ -82,10 +82,10 @@ In this section, you create a measure that calculates the revenue share of a pro
 1. In the F1 Revenue Columns tab, click **Add Column**. Enter <code>Product Share</code> to replace New Column_1. Click **Detail View**.
     ![new column product share](./images/f1-revenue-product-share.png)
 2. Click **Logical Expression**, and then click **Open Expression Editor**.
-    ![Open logical expression](./images/product-share-expression-editor.png)
+    ![Save expression](./images/product-share-logical-expression.png)
 3. In the Expression Editor search bar, enter <code>Round</code>, and then double-click **ROUND** to add the function. In the expression field after ROUND in the parentheses, enter the following:
 <code>(100*Revenue/Product Type Revenue, 1)</code>
-    ![Save expression](./images/product-share-logical-expression.png)
+    ![Open logical expression](./images/product-share-expression-editor.png)
 4. Click **Validate**, and the click **Save** in the Expression Editor. Click **Save**.
 
 

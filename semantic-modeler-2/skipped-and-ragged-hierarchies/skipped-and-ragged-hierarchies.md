@@ -34,12 +34,12 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
     ![Expand sample sales schema](./images/open-bisample.png)
 4. Click **Connections**. Expand **BISAMPLE**, select **SAMP_ PRODUCTS_ DR**, and drag it to the **Sample Sales** schema.
     ![Drag Samp Products Dr to schema](./images/drag-samp-products-dr.png)
-5. Right-click** SAMP_ PRODUCTS_ DR** and select **Create Physical Table Alias**.
+5. Right-click **SAMP_ PRODUCTS_ DR** and select **Create Physical Table Alias**.
     ![Create physical table alias](./images/create-physical-alias.png)
 6. In Create Physical Table Alias, enter <code>D20 Product</code> in **Name**, and then click **OK**.
     ![Name is D20 product](./images/d20-product.png)
 7. Double-click **D20 Product**. Click **Preview**.
-    ![Preview D20 Product](./images/D20-preview.png)
+    ![Preview D20 Product](./images/D20-preview.png =400px*)
 
 ## Task 2: Add a Table to the Logical Layer
 
@@ -56,7 +56,7 @@ In this section, you add the D20 Product table to the logical layer.
 
 In this section, you use the D20 Product table to create the ragged and skipped hierarchy.
 
-1. In the Dimensions pane, double-click** D20 Products**. Click **Hierarchy**.
+1. In the Dimensions pane, double-click **D20 Products**. Click **Hierarchy**.
     ![D20 Products Hierarchy](./images/d20-products-hierarchy.png)
 2. In the Hierarchy tab, select **Level-Based** from Hierarchy Type, select **Ragged**, and then select **Skipped**.
     ![Hierarchy tab](./images/check-ragged-skipped.png)
@@ -73,7 +73,7 @@ In this section, you use the D20 Product table to create the ragged and skipped 
 In this section, you set the level of detail stored in the logical tables.
 
 1. In the Logical Layer, double-click **D3 Customers**. Click the **Sources** tab. Double-click **LTS1 Customers** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D3 Customers.
-    ![D3 details](./images/d3-granularity-detail.png)
+    ![D3 details](./images/d3-granularity-detail.png =500px*)
 2. In the Logical Layer, double-click **D2 Products**. Click the **Sources** tab. Double-click **LTS1 Products** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D2 Products.
 3. In the Logical Layer, double-click **D20 Products**. Click the **Sources** tab. Double-click **D20 Products** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D20 Products.
 4. In the Logical Layer, double-click **D1 Time**. Click the **Sources** tab. Double-click **LTS1 Time** to open the detail view. Scroll to Data Granularity. From Defined by, select **Detail**. Close D1 Time.

@@ -46,12 +46,10 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
     ![Current periods](./images/current-periods.png)
 6. In Current Periods, enter the following in the **Select Statement** text block:
 
-</code>SELECT CALENDAR_ DATE, PER_ NAME_ MONTH, PER_ NAME_ YEAR FROM BISAMPLE.SAMP_ TIME_ DAY_ D WHERE CALENDAR_ DATE = (SELECT MAX(BILL_ DAY_ DT) FROM BISAMPLE.SAMP_ REVENUE_ F)</code>
-
-    ![text](./images/select-statement.png)
+    SELECT CALENDAR_ DATE, PER_ NAME_ MONTH, PER_ NAME_ YEAR FROM BISAMPLE.SAMP_ TIME_ DAY_ D WHERE CALENDAR_ DATE = (SELECT MAX(BILL_ DAY_ DT) FROM BISAMPLE.SAMP_ REVENUE_ F)
 
 7. Click **Save**.
-
+    ![select statement](./images/current-per-select-statement.png)
 ## Task 2: Create Variables
 
 In this section, you create variables that are used in the initialization block.
@@ -59,7 +57,7 @@ In this section, you create variables that are used in the initialization block.
 1. In Current Periods, click **Add Variable**.
     ![add variables](./images/add-variable.png)
 2. In Current PeriodsNew Variable_ 1, click **Row Menu**, and then select **Open Detail**.
-    ![Open detail periods new variable](./images/open-detail.png)
+    ![Open detail periods new variable](./images/open-detail.png =1500px*)
 3. In **Name**, enter <code>CurrentDay</code>.
     ![Current day](./images/currentday.png)
 4. Click **Add Variable**. Enter <code>CurrentMonth</code> to replace Current PeriodsNew Variable_ 1 in **Name**.

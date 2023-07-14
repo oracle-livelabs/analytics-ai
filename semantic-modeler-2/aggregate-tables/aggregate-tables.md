@@ -62,16 +62,16 @@ In this section, you create links between the aggregate tables and the D2 Produc
 
 3. Click **F2 Revenue Aggregate** and drag the cursor to **D2 Product** to open the Add Physical Join dialog.
 
-	![Connect F2 and D2](./images/physical-join-f2-d2.png)
+	
 
 4. From the Join Conditions list under the Left Table, select **PROD_ KEY**. From the Join Conditions list under the Right Table, select **PROD_ KEY**, and then click **Add**.
-	
+	![Connect F2 and D2](./images/physical-join-f2-d2.png)
 5. In the Physical Diagram, click **F2 Revenue Aggregate**, drag the cursor to **D1 Time QTR Grain** to open the Add Physical Join dialog.
 
+	
+
+6. From the Join Conditions list under the Left Table, select **BILL_ QTR_ KEY**. From the **Join Conditions** list under the Right Table, select **QTR_ KEY**, and then click **Add**.	
 	![Connect F2 and D1](./images/physical-join-f2-d1.png)
-
-6. From the Join Conditions list under the Left Table, select **BILL_ QTR_ KEY**. From the **Join Conditions** list under the Right Table, select **QTR_ KEY**, and then click **Add**.
-
 	![Join Tables](./images/aggregate-join-tables.png)
 
 ## Task 3: Add Source Tables

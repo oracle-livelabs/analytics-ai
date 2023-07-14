@@ -27,9 +27,9 @@ In this section, you create a revenue measure column that uses the AGO time seri
 Begin with step 3 if you're continuing this tutorial directly after completing the steps in the Create Aggregate Tables tutorial.
 
 1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials. On the Home page, click the **Navigator**, and then click **Semantic Models**.
-
+    ![Open Semantic Models](./images/semantic-models.png)
 2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
-
+    ![Open Samples Sales](./images/open-sample-sales.png)
 3. In the **Logical Layer**, double-click **F1 Revenue**, and then click **Add Column**.
     ![text](./images/f1-revenue-add-column.png)
 4. In **New Column_ 1**, enter <code>Month Ago Revenue</code>, and then click **Detail View**.

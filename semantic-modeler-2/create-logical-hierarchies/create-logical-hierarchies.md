@@ -35,7 +35,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 3. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
     ![Open Samples Sales](./images/open-sample-sales.png)
 4. In the Logical Layer, click **D2 Products**.
-    ![Click d2 products in logical layer](./images/select-d2-products.png)
+    ![Click d2 products in logical layer](./images/select-d2-products.png =400x*)
 5. In D2 Products, click the **Hierarchy** tab. In Hierarchy Type, select **Level-Based**.
     ![Select level based in hierarchy type](./images/D2-Products-level-based.png)
 6. Under Hierarchies, click **Add Level**. In Level **Name,** enter <code>Product Brand</code> to replace Level-3. In the **Primary Key** and **Associated Columns fields**, select **Brand**.
