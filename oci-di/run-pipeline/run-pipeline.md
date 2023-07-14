@@ -20,11 +20,11 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 1. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/ocw23_home3.png " ")
+  ![](images/home3.png " ")
 
 2. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/ocw23_home4.png " ")
+  ![](images/home4.png " ")
 
 3. You now have the list of published task in `Workshop ApplicationNN` displayed. From the list of tasks, select **Run** from the **Actions menu** (three dots) for the `Load Revenue Data into Data Warehouse` Data Loader task that you will run.
 
@@ -32,7 +32,7 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 4. The **Run task** dialog will be displayed, you could change the parameter values here, simply press **Run**.
 
-  ![](images/ocw23_rundataloader.png " ")
+  ![](images/rundataloader.png " ")
 
 5. A **run entry** is created in the Runs section of the Application details page. You can monitor here the **status** and **duration** of your task run. Click on **Refresh** if you want to update the status.
 
@@ -48,27 +48,27 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
 1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](images/ocw23_home1.png " ")
+  ![](images/home1.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-  ![](images/ocw23_home2.png " ")
+  ![](images/home2.png " ")
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/ocw23_home3.png " ")
+  ![](images/home3.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN`, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/ocw23_home4.png " ")
+  ![](images/home4.png " ")
 
 5. On the Application details page, click **Schedules tab** under Details.
 
-  ![](images/ocw23_home5.png " ")
+  ![](images/home5.png " ")
 
 6. Click **Create Schedule**.
 
-  ![](images/ocw23_home6.png " ")
+  ![](images/home6.png " ")
 
 7. On the **Create Schedule** page:
 
