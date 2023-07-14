@@ -48,27 +48,27 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
 1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](images/home1.png " ")
+  ![](images/home_menu.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
-  ![](images/home2.png " ")
+  ![](images/workspaces.png " ")
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![](images/home3.png " ")
+  ![](images/workspace_home.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN`, which contains all the tasks that you created previously in this workshop.
 
-  ![](images/home4.png " ")
+  ![](images/applications.png " ")
 
 5. On the Application details page, click **Schedules tab** under Details.
 
-  ![](images/home5.png " ")
+  ![](images/menu.png " ")
 
 6. Click **Create Schedule**.
 
-  ![](images/home6.png " ")
+  ![](images/schedules.png " ")
 
 7. On the **Create Schedule** page:
 
