@@ -90,6 +90,6 @@ In this section, you create a revenue measure column that uses the period rollin
 
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
 * **Last Updated By/Date** - Desmond Jung, July 2023
 

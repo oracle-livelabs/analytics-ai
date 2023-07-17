@@ -46,7 +46,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
     ![Current periods](./images/current-periods.png)
 6. In Current Periods, enter the following in the **Select Statement** text block:
 
-    SELECT CALENDAR_ DATE, PER_ NAME_ MONTH, PER_ NAME_ YEAR FROM BISAMPLE.SAMP_ TIME_ DAY_ D WHERE CALENDAR_ DATE = (SELECT MAX(BILL_ DAY_ DT) FROM BISAMPLE.SAMP_ REVENUE_ F)
+    <code> SELECT CALENDAR_DATE, PER_NAME_MONTH, PER_NAME_YEAR FROM BISAMPLE.SAMP_TIME_DAY_D WHERE CALENDAR_DATE = (SELECT MAX(BILL_DAY_DT) FROM BISAMPLE.SAMP_REVENUE_F)</code>
 
 7. Click **Save**.
     ![select statement](./images/current-per-select-statement.png)
@@ -81,6 +81,6 @@ In this section, you create variables that are used in the initialization block.
 
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
 * **Last Updated By/Date** - Desmond Jung, July 2023
 

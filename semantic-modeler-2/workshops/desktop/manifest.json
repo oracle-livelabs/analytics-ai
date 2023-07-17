@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Model Your Data Using the Web Semantic Modeler in Oracle Analytics Cloud",
+    "workshoptitle": "Model Your Data with the Semantic Modeler in Oracle Analytics Cloud: Part 2",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -15,32 +15,44 @@
         {
             "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision ADW and OAC",
+            "title": "Lab 1: Examine Semantic Model Markup Language",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision-resources/provision-adw-oac.md"
+            "filename": "../../examine-ssml/examine-ssml.md"
         },
         {
-            "title": "Lab 2: Load data into ADW and Connect to OAC",
-            "filename": "../../load-data-adw/load-data-adw.md"
+            "title": "Lab 2: Manage Logical Table Sources",
+            "filename": "../../manage-logical-table/manage-logical-table.md"
         },
         {
-            "title": "Lab 3: Create the Physical Layer",
-            "filename": "../../physical-layer/create-physical-layer.md"
+            "title": "Lab 3: Create Logical Hierarchies",
+            "filename": "../../create-logical-hierarchies/create-logical-hierarchies.md"
         },
         {
-            "title": "Lab 4: Create the Logical Layer",
-            "filename": "../../logical-layer/create-logical-layer.md"
+            "title": "Lab 4: Create Calculated, Level-Based, and Share Measures",
+            "filename": "../../create-measures/create-measures.md"
         },
         {
-            "title": "Lab 5: Create the Presentation Layer",
-            "filename": "../../presentation-layer/create-presentation-layer.md"
+            "title": "Lab 5: Create Ragged and Skipped Level Hierarchies",
+            "filename": "../../skipped-and-ragged-hierarchies/skipped-and-ragged-hierarchies.md"
         },
         {
-            "title": "Lab 6: Test, Deploy, and Validate a Semantic Model",
-            "filename": "../../test-deploy-validate/test-deploy-validate.md"
+            "title": "Lab 6: Create Parent-Child Hierarchies",
+            "filename": "../../parent-child-hierarchies/parent-child-hierarchies.md"
+        },
+        {
+            "title": "Lab 7: Create Aggregate Tables",
+            "filename": "../../aggregate-tables/aggregate-tables.md"
+        },
+        {
+            "title": "Lab 8: Create Time Series Measures",
+            "filename": "../../time-series-measures/time-series-measures.md"
+        },
+        {
+            "title": "Lab 9: Create Initialization Blocks and Variables",
+            "filename": "../../initialization-variables/initialization-variables.md"
         },
         {
             "title": "Need Help?",

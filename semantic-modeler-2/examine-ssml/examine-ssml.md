@@ -140,6 +140,6 @@ The message, "Push successful" appears when the changes are added to your Git re
 
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
 * **Last Updated By/Date** - Desmond Jung, July 2023
 

@@ -132,6 +132,6 @@ In this section, you set the level of detail (the grain) stored in the logical t
 
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
 * **Last Updated By/Date** - Desmond Jung, July 2023
 
