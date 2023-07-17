@@ -1,4 +1,4 @@
-# Examine Semantic Model Markup Language
+# Examine Semantic Model Markup Language and integrate SMML with Git
 
 ## Introduction
 
@@ -19,8 +19,8 @@ You can use the SMML editor to view and change the JSON SMML schema file of an o
 ### Objectives
 
 In this lab, you will:
-* Select the objects from a supported relational data source to define the physical layer of the semantic model
-* Create a schema in an empty model and add tables selected from relational data sources
+* Examine the Semantic Model Markup Language
+* Initialize Git Integration for the semantic model
 
 ### Prerequisites
 
@@ -29,6 +29,10 @@ This lab assumes you have:
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
 * Access to the Sample Sales Semantic Model
 * Access to a Git Repository using your Github account
+* Completion of "Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC) Part 1
+
+https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644
+
 
 
 ## Task 1: Examine the Semantic Model Markup Language

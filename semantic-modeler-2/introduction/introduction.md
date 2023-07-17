@@ -8,6 +8,9 @@ In the Oracle Analytics Semantic Modeler, you define the physical, logical, and 
 
 Estimated Workshop Time: 2 hours 50 minutes
 
+If you haven't completed part of 1 of Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC) please start the lab with the link below.
+
+https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644
 
 ### Objectives
 
