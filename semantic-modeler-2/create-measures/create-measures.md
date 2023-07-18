@@ -88,6 +88,7 @@ In this section, you create a measure that calculates the revenue share of a pro
     ![Open logical expression](./images/product-share-expression-editor.png)
 4. Click **Validate**, and the click **Save** in the Expression Editor. Click **Save**.
 
+You may now **proceed to the next lab**
 
 ## Learn More
 * [Work with Logical Columns](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-logical-columns.html#ACMDG-GUID-BD5F1139-6304-4C18-B46A-B73E721BC9F5)

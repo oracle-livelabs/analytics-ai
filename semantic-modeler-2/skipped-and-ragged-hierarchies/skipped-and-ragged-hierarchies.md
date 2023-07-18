@@ -89,6 +89,8 @@ In this section, you set the level of detail stored in the logical tables.
     ![add level for d3](./images/add-d3-customers.png)
 10. Click **Save**.
 
+You may now **proceed to the next lab**
+
 ## Learn More
 * [About Working with Logical Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/working-logical-hierarchies.html#GUID-9AF96F03-ABBA-43EF-80C9-A8ED6F018DE8)
 * [About Data Granularity](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-data-granularity.html#GUID-299129AF-FABC-43C3-9FD2-5CB927E0B744)

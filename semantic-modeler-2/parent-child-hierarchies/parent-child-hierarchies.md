@@ -225,6 +225,8 @@ In this section, you create the Sales Rep presentation table and presentation hi
 	![Hierarchies](./images/select-presentation.png)
 8. Click **Save**.
 
+You may now **proceed to the next lab**
+
 ## Learn More
 * [Create and Manage Parent-Child Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-manage-parent-child-hierarchies.html#GUID-81468B64-80D2-4AB5-9E35-A7C19215D440)
 * [What Are Driving Tables?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-logical-joins.html#GUID-D59DD499-4459-4E04-B8D9-25F42C045E43)

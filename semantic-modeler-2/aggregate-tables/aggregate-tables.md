@@ -126,6 +126,7 @@ In this section, you set the level of detail (the grain) stored in the logical t
 
 	![Added levels data granularity](./images/data_gran_rev_agg.png)
 
+You may now **proceed to the next lab**
 
 ## Learn More
 * [Add Logical Table Sources](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/add-logical-table-sources.html#GUID-52CBFD5E-0F83-4836-AEB8-32F0A8299FA7)

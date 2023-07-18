@@ -143,6 +143,7 @@ In this section, you run the consistency checker, deploy the updated semantic mo
 
 	![Drag values to canvas to create table that uses the Customer Regions, Customers, Products, and Base Facts table.](./images/drag-to-canvas.png)
 
+You may now **proceed to the next lab**
 
 ## Learn More
 * [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)

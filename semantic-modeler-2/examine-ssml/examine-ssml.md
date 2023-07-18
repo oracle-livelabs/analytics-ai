@@ -132,6 +132,8 @@ The message, "Push successful" appears when the changes are added to your Git re
 
 7. In your Git repository, click the **Physical folder**, click **MySampleSalesDatabase**, click **BISAMPLE**, and then click **SAMP_ PRODUCTS_D.json** to view the changes made in the semantic model.
 
+You may now **proceed to the next lab**
+
 ## Learn More
 * [Edit Semantic Model Objects Using the SMML Editor](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/edit-semantic-model-objects-using-smml-editor.html)
 * [About Using Git Repositories with Semantic Modeler](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/using-git-repositories-semantic-modeler.html)
