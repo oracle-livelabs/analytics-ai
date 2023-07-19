@@ -1,5 +1,5 @@
 
-# Create a Search user interface
+# Create a search user interface and run searches
 
 ## Introduction
 In this lab you will create a user interface in Visual Builder that can be used to execute searches against the content that has been processed by the AI services and loaded into OpenSearch. A Visual Builder project has been prepared and you will upload this project, connect it to your environment, then use it. 
@@ -133,8 +133,7 @@ Here's what you accomplished. You provisioned multiple services into a compartme
 
 ## Acknowledgements
 - **Author**
-  - Marc Gueury
-  - Badr Aissaoui
-  - Marek Krátký 
-- **History** - Creation - 23 May 2023
+    - Marc Gueury, Master Principal Account Cloud Engineer
+    - Badr Aissaoui, Principal Account Cloud Engineer
+    - Marek Krátký, Cloud Storage Specialist 
 

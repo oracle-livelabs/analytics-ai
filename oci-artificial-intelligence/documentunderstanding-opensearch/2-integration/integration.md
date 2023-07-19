@@ -152,10 +152,10 @@ We start with the public connections first because these don't depend on compone
 
 1. Go back to the list of connections
 
-```
-IMPORTANT: Before proceeding with configuring the remaining three connections, the Terraform script from the previous lab (build.sh) must finish. It takes about 34 minutes to complete. Return to the code editor in the cloud console and verify the script has finished then complete the remaining instruction in that previous lab before returning to continue here.
-```
-[Go to previous lab.](#prev)
+    ```
+    IMPORTANT: Before proceeding with configuring the remaining three connections, the Terraform script from the previous lab (build.sh) must finish. It takes about 34 minutes to complete. Return to the code editor in the cloud console and verify the script has finished then complete the remaining instruction in that previous lab before returning to continue here.
+    ```
+    [Go to previous lab.](#prev)
 
 ### 7. StreamInputBucket
 1. In the OCI Console, select the **Developer Tools icon** and then select *Cloud Shell*.
@@ -313,13 +313,12 @@ This is an optional test you can run with more sample files. If you do this test
 
     ![Monitor OIC](images/opensearch-oic-test-instances-activity-stream.png)
 
-**Please proceed to the [next lab.](#next)**
+**You may now proceed to the [next lab.](#next)**
 
 
 ## Acknowledgements
 
 - **Author**
-    - Marc Gueury
-    - Badr Aissaoui
-    - Marek Krátký 
-- **History** - Creation - 19 May 2023
+    - Marc Gueury, Master Principal Account Cloud Engineer
+    - Badr Aissaoui, Principal Account Cloud Engineer
+    - Marek Krátký, Cloud Storage Specialist 

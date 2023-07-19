@@ -20,34 +20,34 @@ Estimated time: 50 min
 
 1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
 
-````
-<copy>
-List of ##VARIABLES##
----------------------
-COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
-OIC_OCID=(SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
-OIC_APPID=(SAMPLE) 123456789012345678AABBCC_APPID
-OIC_CLIENT_ID=(SAMPLE) AABBCCDDEEFF1234567890_APPID
-OIC_CLIENT_SECRET=(SAMPLE) 123$45678$12234
-OIC_SCOPE=(SAMPLE) https://1234567890.integration.us-phoenix-1.ocp.oraclecloud.com:443/ic/api/
+    ````
+    <copy>
+    List of ##VARIABLES##
+    ---------------------
+    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
+    OIC_OCID=(SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
+    OIC_APPID=(SAMPLE) 123456789012345678AABBCC_APPID
+    OIC_CLIENT_ID=(SAMPLE) AABBCCDDEEFF1234567890_APPID
+    OIC_CLIENT_SECRET=(SAMPLE) 123$45678$12234
+    OIC_SCOPE=(SAMPLE) https://1234567890.integration.us-phoenix-1.ocp.oraclecloud.com:443/ic/api/
 
-Terraform Output
-----------------
--- STREAMING CONNECTION --------------------------
-STREAM_BOOSTRAPSERVER=(SAMPLE)cell-1.streaming.us-phoenix-1.oci.oraclecloud.com:9092
-STREAM_USERNAME=(SAMPLE)tenantname/username/ocid1.streampool.oc1.phx.amaaaaaa3twn4mia5hvcf4m3npe2l76fxfhffbrabcdefgh
-AUTH_TOKEN=(SAMPLE)abcdefgh$$123
+    Terraform Output
+    ----------------
+    -- STREAMING CONNECTION --------------------------
+    STREAM_BOOSTRAPSERVER=(SAMPLE)cell-1.streaming.us-phoenix-1.oci.oraclecloud.com:9092
+    STREAM_USERNAME=(SAMPLE)tenantname/username/ocid1.streampool.oc1.phx.amaaaaaa3twn4mia5hvcf4m3npe2l76fxfhffbrabcdefgh
+    AUTH_TOKEN=(SAMPLE)abcdefgh$$123
 
--- FUNCTION CONNECTION ---------------------------
-FUNCTION_ENDPOINT=(SAMPLE)https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
+    -- FUNCTION CONNECTION ---------------------------
+    FUNCTION_ENDPOINT=(SAMPLE)https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
 
--- OPENSEARCH CONNECTION --------------------------
-OPENSEARCH_API_ENDPOINT=(SAMPLE)https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
+    -- OPENSEARCH CONNECTION --------------------------
+    OPENSEARCH_API_ENDPOINT=(SAMPLE)https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
 
--- API GATEWAY CONNECTION ------------------------
-APIGW_URL=(SAMPLE)https://abcdefgh.apigateway.us-phoenix-1.oci.customer-oci.com
-</copy>
-`````
+    -- API GATEWAY CONNECTION ------------------------
+    APIGW_URL=(SAMPLE)https://abcdefgh.apigateway.us-phoenix-1.oci.customer-oci.com
+    </copy>
+    `````
 
 ## Task 2: Create a Compartment
 
@@ -218,7 +218,7 @@ Perform a similar task to get Client ID/Secret for OIC
 
     Done.
     ```
-**Continue with the [next lab](#next) when you have completed the final step of this lab.**
+**You may now proceed to the [next lab](#next)**
 
 ## Known issues
 
@@ -248,8 +248,7 @@ Then rerun the following command in the code editor
 ## Acknowledgements
 
 - **Author**
-    - Marc Gueury
-    - Badr Aissaoui
-    - Marek Krátký 
-- **History** - Creation - 24 May 2023
+    - Marc Gueury, Master Principal Account Cloud Engineer
+    - Badr Aissaoui, Principal Account Cloud Engineer
+    - Marek Krátký, Cloud Storage Specialist 
 
