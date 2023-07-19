@@ -104,11 +104,11 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    노트북에서 다음 섹션을 찾을 수 있습니다.
 
-   **a) Calculate ANGLE**
+    **1. Calculate ANGLE**
 
    이 계산은 삼각 함수를 사용합니다. 왼쪽 및 오른쪽 골대까지의 각도를 계산한 다음 이를 빼서 둘 사이의 각도를 구합니다. 기본적으로 이러한 함수는 값을 라디안으로 반환하며 각도로 변환합니다.
 
-   **b) Prepare the data**
+    **2. Prepare the data**
 
    모델 학습에 관련이 있는 데이터만 포함하는 학습 테이블이 생성됩니다. 2017/2018 시즌의 샷 데이터만 사용합니다.
 
@@ -215,5 +215,8 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    이제 다음 실습을 진행할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
+
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023

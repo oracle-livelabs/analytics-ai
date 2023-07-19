@@ -128,6 +128,8 @@
 
 이제 다음 실습을 진행할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director,  Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023

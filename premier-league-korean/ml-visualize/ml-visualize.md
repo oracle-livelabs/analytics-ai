@@ -126,5 +126,8 @@
 
 13. Conclusion: 이제 우리는 다양한 유형의 슛(헤딩/발사용슛/카운터(역공) 등)에 대해 득점 기회가 어디에 있는지에 대한 명확한 그림을 갖게 되었습니다. 이는 선수나 팀과의 코칭 대화에서 사용할 수 있으며 특히 실제 슛과 비교할 때 유용할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
+
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023
