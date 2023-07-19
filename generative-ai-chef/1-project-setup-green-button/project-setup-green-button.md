@@ -4,10 +4,10 @@
 
 Projects are used to collect related data science resources and artifact, such that it enables you to organize your work. They contain a collection of notebook sessions and models.
 
-*Estimated Lab Time*: 5 minutes
+Estimated Lab Time: ~5 minutes
 
 ### Objective
-In this lab, you:
+
 * Use the Console to create a Data Science Project.
 
 ### Prerequisites
@@ -19,13 +19,12 @@ In this lab, you:
 
 You create a Data Science project to organize your notebook sessions and models within your project.
 
-
-1. After launching the workshop, click on **View login Info**.  
+1. After launching the workshop, click on **View login Info**.
     ![View login info](images/view-login-info.png)
-1. Click on **Launch OCI** and login with the username and password provided in the Reservation Information.    
+1. Click on **Launch OCI** and login with the username and password provided in the Reservation Information.
     ![Launch OCI](images/launch-oci.png)
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**.
-	![Navigation to Data Science](images/analytics-ml-datascience.png " ")
+    ![Navigation to Data Science](images/analytics-ml-datascience.png " ")
 1. Select the compartment, generally, you will need to expand (click the + symbol) the ``root`` and ``Livelabs`` sections. Then select the compartment name in the Reservation Information.  It generally has the format ``LL####-COMPARTMENT`` where ``####`` is a number.
     ![Compartment dropdown](images/compartment-green-button.png)
 1. Click **Create Project**.
@@ -40,3 +39,11 @@ You create a Data Science project to organize your notebook sessions and models 
 This creates the project and opens the project page.
 
 You can **proceed to the next lab**.
+
+## **Acknowledgements**
+
+***Authors***
+
+* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
+* Wendy Yip - Senior Product Manager, Data Science & AI
+* Yanir Shahak - Senior Principal Software Engineer, AI Services

@@ -8,10 +8,10 @@ A notebook session is associated with a compute instance, VCN, subnet, and block
 
 When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session, and then changing the configuration while activating the notebook session again. The size of the block storage can only be increased.
 
-*Estimated Lab Time*: 15 minutes
+Estimated Lab Time: ~15 minutes
 
 ### Objectives
-In this lab, you:
+
 * Use the Console to create a Data Science notebook session running on a GPU
 * Use the Console to open the Data Science notebook session
 
@@ -24,7 +24,7 @@ In this lab, you:
 
 1. Select the compartment for the project you created in the previous section.
 1. Click the name of the project to contain the notebook session.
-1. Click **Create notebook session**.  
+1. Click **Create notebook session**.
     ![Create a notebook](images/create-notebook.png " ")
 1. Confirm that the compartment that is selected is the compartment in the Reservation Information. If the compartment is different, change it to the one listed in the Reservation Information.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
@@ -39,4 +39,12 @@ In this lab, you:
 1. When the notebook is in an **Active** state, then click **Open**.
     ![Click open](images/open-active-notebook.png)
 
-You can *proceed to the next lab*.
+You can **proceed to the next** lab.
+
+## **Acknowledgements**
+
+***Authors***
+
+* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
+* Wendy Yip - Senior Product Manager, Data Science & AI
+* Yanir Shahak - Senior Principal Software Engineer, AI Services
