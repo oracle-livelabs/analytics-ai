@@ -80,7 +80,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
   ![](images/create_data_loader_filepattern.png "Enter file pattern for source selection")
 
-10. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name and click on **Add** button. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
+10. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name (enter revenueNN where NN is your user number) and click on **Add** button. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
 
   ![](images/create_data_loader_addtosource.png "Add to source and define group name")
 
