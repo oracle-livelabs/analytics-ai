@@ -62,45 +62,45 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
 7. You will click on Next and in this panel, we will specify the different configurations i.e., required to select the source data.
 8. Now, in the panel select the following:
-a. Data Asset: Object_Storage.
-b. Connection: Default Connection.
-c. Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
-d. Bucket: DI-bucket (the Object Storage bucket where REVENUE.CSV file resides).
-e. We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
+* Data Asset: Object_Storage.
+* Connection: Default Connection.
+* Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
+* Bucket: DI-bucket (the Object Storage bucket where REVENUE.CSV file resides).
+* We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
 
   ![](images/create_data_loader_parameters.png "Parameterize the source information")
 
-f. File Type: Set to CSV and select the Compression type set to the default value.
-g. Since the csv file has a header, we will check Data has header option mentioned just below the Compression type.
-h. Let’s keep the other things as default until we go down and select our entities in the Data entities section.
+* File Type: Set to CSV and select the Compression type set to the default value.
+* Since the csv file has a header, we will check Data has header option mentioned just below the Compression type.
+* Let’s keep the other things as default until we go down and select our entities in the Data entities section.
 
   ![](images/create_data_loader_filetype.png "Source data file type")
 
-i. Now we will select multiple files that we want to use as a source using a pattern. In the search box type in \*/\*/REVENUE*.csv and press enter. Click on Add to source button.
+9. Now we will select multiple files that we want to use as a source using a pattern. In the search box type in \*/\*/REVENUE*.csv and press enter. Click on Add to source button.
 
   ![](images/create_data_loader_filepattern.png "Enter file pattern for source selection")
 
-j. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name and click on **Add** button. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
+10. We can even add this pattern as a group by selecting Add as a group using a file pattern as shown in the image. We can also specify the group name and click on **Add** button. This will add all the input files in the group which you will use as a source for our data loader task. You can also click on the group name once it’s added to see the list of entities that you are going to use it as a source.
 
   ![](images/create_data_loader_addtosource.png "Add to source and define group name")
 
   ![](images/create_data_loader_sourceadded.png "Source group is added to selected data entities ")
 
-k. Now click on Next button.
+11. Now click on Next button.
 
 9. Here, we are going to select the configurations for the target data type for the data loader task. Now, select the following:
-a. Data Asset: Data_Warehouse
-b. Connection: Beta Connection
-c. Schema: BETA
-d. We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
-e. Ensure the “Use default staging location settings.” is selected.
+* Data Asset: Data_Warehouse
+* Connection: Beta Connection
+* Schema: BETA
+* We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
+* Ensure the “Use default staging location settings.” is selected.
 
   ![](images/create_data_loader_target.png "Target data asset information also parameterized")
 
-f. In the Data Entities tab:
-i. Click on Create new data entities.
-ii. Select Integration Strategy as Insert
-iii. Select same entity names as source for our example.
+6. In the Data Entities tab:
+* Click on Create new data entities.
+* Select Integration Strategy as Insert
+* Select same entity names as source for our example.
 
   ![](images/create_data_loader_targetentities.png "Target data entities information")
 
