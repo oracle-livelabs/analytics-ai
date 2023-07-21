@@ -8,7 +8,7 @@ A notebook session is associated with a compute instance, VCN, subnet, and block
 
 When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session, and then changing the configuration while activating the notebook session again. The size of the block storage can only be increased.
 
-Estimated Lab Time: ~15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -43,8 +43,4 @@ You can **proceed to the next** lab.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

@@ -4,7 +4,7 @@
 
 Now that we have a tuned model, let's test it.
 
-Estimated Lab Time: ~5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
    ![Drag and drop notebook](../8-try-untuned/images/drag-drop-notebook.gif)
 
-## Task 3: Execute the code & observe the results
+## Task 2: Execute the code & observe the results
 
 1. Please execute the cells in their order of appearance and observe the result.
    After executing the fourth cell, you should see an output which looks a lot like a recipe.
@@ -46,8 +46,4 @@ In this lab, you will:
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

@@ -4,13 +4,13 @@
 
 To proceed with the lab you would need Oracle Cloud account and access to the Oracle Cloud Infrastructure Data Science and AI Services.
 
-Estimated time - ~5 minutes
+Estimated Time - 5 minutes
 
 ### Objectives
 
-1. Install and activate the required Conda environment
-2. Install dependencies
-3. Create project folder
+* Install and activate the required Conda environment
+* Install dependencies
+* Create project folder
 
 ### Prerequisites
 
@@ -98,8 +98,4 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

@@ -4,7 +4,7 @@
 
 In this lab, we are going to tokenize the dataset to prepare it in a format that can be used for tuning the model.
 
-Estimated Lab Time: ~15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -60,8 +60,4 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

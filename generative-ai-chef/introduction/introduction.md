@@ -6,7 +6,7 @@ Looking for some culinary inspiration? Look no further than `ChefGPT`! When you 
 
 With a dataset of recipes as your foundation, you'll personalize the model, turning it into your very own `ChefGPT`. By running this customized model, you'll unlock a wealth of recipe ideas that prioritize maximizing deliciousness. Say goodbye to boring meals as you explore the world of generative AI and enhance your skills in the process.
 
-Estimated time - 60 minutes
+Estimated Workshop Time: 60 minutes
 
 ### Objectives
 
@@ -28,8 +28,4 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

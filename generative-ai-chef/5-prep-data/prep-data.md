@@ -4,7 +4,7 @@
 
 In this lab, we are going to download the dataset and split it into training and testing data.
 
-Estimated Lab Time: ~5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -48,8 +48,4 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

@@ -4,7 +4,7 @@
 
 Projects are used to collect related data science resources and artifact, such that it enables you to organize your work. They contain a collection of notebook sessions and models.
 
-Estimated Lab Time: ~5 minutes
+Estimated Time: 5 minutes
 
 ### Objective
 
@@ -42,8 +42,4 @@ You can **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

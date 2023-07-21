@@ -4,7 +4,7 @@
 
 In this lab, we are going to clean the dataset by removing unnecessary characters and merge the texts together.
 
-Estimated Lab Time: ~10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -51,8 +51,4 @@ You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak

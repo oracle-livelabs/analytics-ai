@@ -4,7 +4,7 @@
 
 Now that our dataset is clean and tokenized, and we've seen how the untuned t5 model is performing, let's train our own chef GPT model using 5,000 recipes available in our training dataset.
 
-Estimated Lab Time: ~20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -84,8 +84,4 @@ In this lab, you will:
 
 ## **Acknowledgements**
 
-***Authors***
-
-* Lyudmil Pelov - Senior Principal Product Manager, Data Science & AI
-* Wendy Yip - Senior Product Manager, Data Science & AI
-* Yanir Shahak - Senior Principal Software Engineer, AI Services
+* **Authors** - Lyudmil Pelov, Wendy Yip, Yanir Shahak
