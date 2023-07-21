@@ -2,10 +2,9 @@
 
 ## Introduction
 
-This tutorial shows you how to create time series measures in your semantic model.
+This lab shows you how to create time series measures in your semantic model.
 
-
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 

@@ -4,7 +4,7 @@
 
 Learn how to create calculated, level-based, and share measures in the logical layer of a semantic model in Oracle Analytics Cloud.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 

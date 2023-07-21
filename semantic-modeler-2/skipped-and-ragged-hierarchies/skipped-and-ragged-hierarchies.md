@@ -4,7 +4,7 @@
 
 In this lab, you continue building the Sample Sales semantic model by creating a skipped and ragged hierarchy.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 

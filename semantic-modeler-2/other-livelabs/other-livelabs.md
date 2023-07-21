@@ -1,5 +1,6 @@
 # Other LiveLabs you might like
 
+- [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
 
 - [Leveraging Oracle Analytics Cloud with Autonomous Data Warehouse](https://apexapps.oracle.com/pls/apex/f?p=133:180:9186177853010::::wid:812)
 

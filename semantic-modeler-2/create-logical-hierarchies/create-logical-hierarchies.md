@@ -6,7 +6,7 @@ This lab describes how to build governed semantic models using the Semantic Mode
 
 In this lab, you continue building the Sample Sales semantic model by creating calculated, level-based, and share measures, and creating level-based and time hierarchies.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -37,7 +37,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 4. In the Logical Layer, click **D2 Products**.
     ![Click d2 products in logical layer](./images/select-d2-products.png =400x*)
 5. In D2 Products, click the **Hierarchy** tab. In Hierarchy Type, select **Level-Based**.
-    ![Select level based in hierarchy type](./images/D2-Products-level-based.png)
+    ![Select level based in hierarchy type](./images/d2-products-level-based.png)
 6. Under Hierarchies, click **Add Level**. In Level **Name,** enter <code>Product Brand</code> to replace Level-3. In the **Primary Key** and **Associated Columns fields**, select **Brand**.
     ![Add product brand level](./images/d2-products-product-brand.png)
 7. Select **Product Brand** in Hierarchies, click **Add Level**. In Level **Name**, enter <code>Product LOB</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **LOB**.

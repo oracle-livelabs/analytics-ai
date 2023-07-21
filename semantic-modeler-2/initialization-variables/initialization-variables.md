@@ -2,12 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you create a global initialization block with three variables that users of the deployed semantic model can use when creating expressions in Oracle Analytics.
-
-
-Estimated Lab Time: 25 minutes
-
-### About
+In this lab, you create a global initialization block with three variables that users of the deployed semantic model can use when creating expressions in Oracle Analytics.
 
 You can create three types of initialization blocks:
 
@@ -16,6 +11,8 @@ You can create three types of initialization blocks:
 * Static
 
 You select the initialization block type based on the type of variables that you want it to run. You create global variables that Oracle Analytics consumers can use in expressions like the CurrentPeriod initialization in this tutorial. You can create session variables to select the Oracle Analytics consumer's department, sales region, or other pertinent details when the consumer signs in. You can create static initialization block with variables that hold values that don't change such as minimum credit score, preferred credit score, or a constant in mixture.
+
+Estimated Time: 25 minutes
 
 ### Objectives
 

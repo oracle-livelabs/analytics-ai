@@ -6,7 +6,7 @@ This workshop is a continuation of [Model Your Data With the Semantic Modeler in
 
 In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks.
 
-Estimated Workshop Time: 2 hours 50 minutes
+Estimated Time: 2 hours 50 minutes
 
 ### Objectives
 

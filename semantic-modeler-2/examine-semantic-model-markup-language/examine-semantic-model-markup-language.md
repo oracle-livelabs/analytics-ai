@@ -2,19 +2,15 @@
 
 ## Introduction
 
-This tutorial shows you how to open the Semantic Model Markup Language (SMML) editor to review and make changes to a semantic model.
-
-
-Estimated Lab Time: 25 minutes
-
-### About
-This lab describes how to build governed semantic models using the Semantic Modeler.
+This lab shows you how to open the Semantic Model Markup Language (SMML) editor to review and make changes to a semantic model.
 
 You can use Git repositories with Oracle Analytics to enable concurrent semantic modeler development.
 
 A semantic model is comprised of a set of JavaScript Object Notation (JSON) files. When you create and develop a semantic model locally, the model's JSON files are stored in Oracle Cloud. To make the semantic model's JSON files available for other development team members, the semantic model's owner creates a Git repository, initializes it with HTTPS or SSH, and uploads the semantic model's JSON files to the repository. Each developer creates a semantic model and uses HTTPS or SSH to connect to and clone the semantic model's JSON files to their Git repository.
 
 You can use the SMML editor to view and change the JSON SMML schema file of an object in your semantic model. If you are viewing or editing an invalid file, syntax and semantic errors are marked on the relevant line of text.
+
+Estimated Time: 25 minutes
 
 ### Objectives
 

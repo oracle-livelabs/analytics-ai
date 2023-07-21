@@ -2,13 +2,10 @@
 
 ## Introduction
 
-In this tutorial, you add a physical table as an extension table of a logical table source for the D3 Customers logical table and then add a presentation table to the Sample Sales semantic model.
+In this lab, you add a physical table as an extension table of a logical table source for the D3 Customers logical table and then add a presentation table to the Sample Sales semantic model.
 
 
-Estimated Lab Time: 25 minutes
-
-### About
-This tutorial describes how to build governed semantic models using the Semantic Modeler. 
+Estimated Time: 25 minutes
 
 ### Objectives
 
