@@ -1,5 +1,0 @@
-![text](./images/selected-tables-only.png)
-![text](./images/drag-d1-d2.png)
-![text](./images/physical-join-f2-d2.png)
-![text](./images/physical-join-f2-d1.png)
-![text](./images/aggregate-join-tables.png)

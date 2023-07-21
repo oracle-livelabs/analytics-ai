@@ -18,9 +18,9 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Examine Semantic Model Markup Language",
+            "title": "Lab 1: Examine Semantic Model Markup Language and integrate SMML with Git",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../examine-ssml/examine-ssml.md"
+            "filename": "../../examine-semantic-model-markup-language/examine-semantic-model-markup-language.md"
         },
         {
             "title": "Lab 2: Manage Logical Table Sources",

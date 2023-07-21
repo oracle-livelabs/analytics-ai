@@ -1,5 +1,0 @@
-![text](./images/drag-fa2-samp-time.png)
-![text](./images/physical-alias-fa2.png)
-![text](./images/f2-revenue-aggregate.png)
-![text](./images/physical-alias-samp-time-qtr-day.png)
-![text](./images/d1-time-qtr-grain.png)

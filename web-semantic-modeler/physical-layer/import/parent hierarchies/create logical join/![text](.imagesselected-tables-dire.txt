@@ -1,3 +1,0 @@
-![text](./images/selected-tables-direct-join.png)
-![text](./images/add-join.png)
-![text](./images/logical-join.png)

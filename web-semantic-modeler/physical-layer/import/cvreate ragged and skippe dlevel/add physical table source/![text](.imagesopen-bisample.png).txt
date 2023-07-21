@@ -1,4 +1,0 @@
-![text](./images/open-bisample.png)
-![text](./images/drag-samp-products-dr.png)
-![text](./images/create-physical-alias.png)
-![text](./images/d20-product.png)

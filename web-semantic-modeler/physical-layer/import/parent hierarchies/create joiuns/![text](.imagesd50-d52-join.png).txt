@@ -1,8 +1,0 @@
-![text](./images/d50-d52-join.png)
-![text](./images/postn-key-postn-key-join.png)
-![text](./images/d51-d50-join.png)
-![text](./images/ancestor-empl-key-join.png)
-![text](./images/f1-d51-join.png)
-![text](./images/empl-key-member-key-join.png)
-![text](./images/selected-tables-and-direct-joins.png)
-![text](./images/physical-diagram.png)

@@ -6,10 +6,6 @@ This workshop is a continuation of [Model Your Data With the Semantic Modeler in
 
 In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks.
 
-## Prequisites
-
-* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
-
 Estimated Workshop Time: 2 hours 50 minutes
 
 ### Objectives
@@ -25,6 +21,9 @@ In this workshop, you will learn how to:
 * Create Time Series Measures
 * Create Initialization Blocks and Variables
 
+### Prequisites
+
+* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
 
 
 ## Learn More

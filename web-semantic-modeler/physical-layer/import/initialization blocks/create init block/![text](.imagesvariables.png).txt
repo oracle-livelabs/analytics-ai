@@ -1,4 +1,0 @@
-![text](./images/variables.png)
-![text](./images/create-initialization-block.png)
-![text](./images/current-periods.png)
-![text](./images/select-statement.png)
