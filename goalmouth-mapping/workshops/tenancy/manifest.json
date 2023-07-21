@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Goalmouth Map with Premier League Data",
+    "workshoptitle": "Learn to apply custom image maps with Premier League penalty goals",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
