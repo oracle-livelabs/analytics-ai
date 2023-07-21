@@ -18,11 +18,15 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Time Comparison",
+            "title": "Lab 1: Create a Dataset",
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/create-dataset/create-dataset.md"
+        },
+        {
+            "title": "Lab 2: Time Comparison",
             "filename": "../../time-comparison/time-comparison.md"
         },
         {
-            "title": "Lab 2: Geographical Relationships",
+            "title": "Lab 3: Geographical Relationships",
             "filename": "../../geographical-relationships/geographical-relationships.md"
         },
         {

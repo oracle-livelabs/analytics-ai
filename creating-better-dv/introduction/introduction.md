@@ -6,8 +6,7 @@ This workshop is the hands-on portion of the "Creating Better Data Visualization
 
 In this workshop, we explore different ways to visualize time comparison and geographical relationships in Oracle Analytics Cloud.
 
-Estimated Workshop Time: 20 minutes
-
+Estimated Workshop Time: 25 minutes
 
 ### Objectives
 
