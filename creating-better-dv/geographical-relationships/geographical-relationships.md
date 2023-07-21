@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to visualize a geographical relationship using a map and manage color assignments to easily understand profits by cities.
+In this lab, you will learn how to visualize geographical relationships using a map and manage color assignments to easily distinguish profits by cities.
 
 Estimated Lab Time: 10 minutes
 
@@ -28,7 +28,7 @@ This lab assumes you have:
 
 2. Pick the **Map** visualization.
 
-	![Pick Map](images/pick-map.png)
+	![Pick Map](images/pick-map.png =400x*)
 
 3. This is our simple map visualization which shows the Profit bubble by color and Quantity Ordered by the size of the bubble. We can improve this visualization further by using colors to help us identify cities that are in positive profit vs negative profit.
 
@@ -40,39 +40,39 @@ This lab assumes you have:
 
 5. Click the drop-down option for **Profit** to change the color gradient.
 
-	![Change color](images/change-profit-color.png)
+	![Change color](images/change-profit-color.png =400x*)
 
 6. Select the **Diverging Red-White-Green** gradient.
 
-	![Select gradiaent](images/select-rwg.png)
+	![Select gradiaent](images/select-rwg.png =400x*)
 
 7. Click the Red color box to change the color for negative **Profit**.
 
-	![Change color for profit](images/profit-color.png)
+	![Change color for profit](images/profit-color.png =400x*)
 
 8. Select the rustic-orange preset and click **OK**. This will represent our negative profit values.
 
-	![Select orange](images/select-orange.png)
+	![Select orange](images/select-orange.png =400x*)
 
 9. Click the green color box for positive profit.
 
-	![Positive profit](images/positive-profit.png)
+	![Positive profit](images/positive-profit.png =400x*)
 
 10. Select the sea-blue color from the preset. This will represent our positive profits. Click **OK**.
 
-	![Select blue](images/select-blue.png)
+	![Select blue](images/select-blue.png =400x*)
 
 11. Click **Done** to apply the new color assignments.
 
-	![Apply new color assignment](images/apply-assignment.png)
+	![Apply new color assignment](images/apply-assignment.png =400x*)
 
 12. As you can see, it's now much easier to identify cities that are either profiting or losing money. This can help us easily decide where we need to re-allocate our resources. Maps are a great way to show geographical relationships in our data.
 
-	![Map result](images/map-result.png)
+	![Map result](images/map-result.png =400x*)
 
 13. Change the **Title** of the visualization to **Geographical Relationships** and make the font **Bolded**.
 
-	![Viz properties](images/viz-properties.png)
+	![Viz properties](images/viz-properties.png =400x*)
 
 14. Rename the canvas to **Geographical Relationships** and click **Save** to save the workbook.
 
@@ -80,7 +80,7 @@ This lab assumes you have:
 
 15. Name the workbook **Choosing the best visualizations** and click **Save**.
 
-	![Save as](images/save-as.png)
+	![Save as](images/save-as.png =500x*)
 
 You have completed the Creating Better Data Visualizations with Oracle Analytics hands-on lab!
 

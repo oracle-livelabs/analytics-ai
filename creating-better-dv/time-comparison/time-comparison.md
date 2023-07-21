@@ -71,7 +71,7 @@ This lab assumes you have:
 
 6. Click the visualization type to change the visualization and select the **Stacked Area** chart.
 
-	![Stacked area chart](images/stacked-area.png)
+	![Stacked area chart](images/stacked-area.png =500x*)
 
 7. Here, we have our **Stacked Area** chart, which shows the composition of **Quantity Ordered** based on the **Order Priority** over time.
 
@@ -83,23 +83,23 @@ This lab assumes you have:
 
 9. This is where you can manage the color assignment for your attributes. Click the color box for **1 - Critical**.
 
-	![Click color box](images/color-box.png)
+	![Click color box](images/color-box.png =400x*)
 
 10. Select the rusty-orange preset and click **OK**.
 
-	![Select new color](images/select-orange.png)
+	![Select new color](images/select-orange.png =400x*)
 
 11. Let's change the color assignment for the high priority orders. Click the color box for **2 - High**.
 
-	![Select new color](images/select-high.png)
+	![Select new color](images/select-high.png =400x*)
 
 12. Select the light-green preset and click **OK**.
 
-	![Select light-green](images/select-green.png)
+	![Select light-green](images/select-green.png =400x*)
 
 13. We are fine with the other two color assignments for now. After you set the right color assignments, click **Done** to apply the colors.
 
-	![Done](images/done.png)
+	![Done](images/done.png =400x*)
 
 14. Let's go ahead and change the **Title** of the **Stacked Area** chart to **2021 Trending Dimensions - Understanding Absolute Changes**.
 
@@ -111,7 +111,7 @@ This lab assumes you have:
 
 16. Name it **Time**, then click **Add Canvas**. We will create a geographical relationship visualization in this new canvas.
 
-	![Add canvas](images/add-canvas.png)
+	![Add canvas](images/add-canvas.png =400x*)
 
 
 You may now **proceed to the next lab**.
