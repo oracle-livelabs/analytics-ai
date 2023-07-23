@@ -3,6 +3,7 @@
 <!--![Banner](images/banner.png)-->
 
 ## Introduction
+
 이 실습에서는 Premier League 데이터를 Autonomous Data Warehouse에 로드합니다. 이 실습을 완료하면 데이터를 분석할 준비가 됩니다.
 
 다음을 수행합니다:
@@ -88,6 +89,9 @@
    ![Open Data Load](images/open-data-load.png)
 
 4. **Load Data** 선택하세요. 첫 번째 질문에는 "Load Data"를 선택하고 두 번째 질문에는 **"Local Files"**를 선택하십시오. 그런 다음 **Next** 을 클릭하십시오.
+
+   - Username: PL
+   - Password: PL 사용자의 안전한 비밀번호를 입력하세요. 이 비밀번호는 이전에 작업 1 단계 7에서 선택한 비밀번호입니다.
 
     ![Start Data Load](images/start-data-load.png)
 

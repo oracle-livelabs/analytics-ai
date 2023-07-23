@@ -121,15 +121,15 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    `DISTANCE`를 포함하지 않은 것을 유념하세요. 왜냐하면, `ANGLE` 이 이미 `DISTANCE`의 의미를 내포하기 있기 때문입니다.`DISTANCE` 가 증가하면, `ANGLE`이 감소합니다. 하지만 여러분들은 자유롭게 실험하고 다른 속성(Features) 을 선택하셔도 됩니다~!
 
-   **c) Configure the model training**
+    **3) Configure the model training**
 
    훈련을 위해 모델 매개변수 테이블이 먼저 생성됩니다. 설정되는 유일한 매개변수는 사용할 알고리즘의 이름인 Generalized Linear Model 입니다. 이것은 분류를 위해 로지스틱 회귀를 사용합니다.
 
-   **d) Train the model**
+    **4) Train the model**
 
    훈련이 완료되면, 모델은 `XG_MODEL`로 저장될 것입니다. 
 
-   **e) Apply the model**
+    **5) Apply the model**
 
    이 코드는 새로 생성된 xG 모델을 모든 슛에 적용합니다. 모든 슛은 이제 골이 될 것인지 여부와 골 확률(xG 값)에 대한 이진(바이너리) 예측을 갖게 됩니다.
 

@@ -102,7 +102,7 @@ EVENT 데이터 세트에는 2017/2018 전체 시즌과 2021/2022의 소수 경�
 
    ![Create dataset](images/create-dataset.png)
 
-2. `PL` 연결을 선택합니다.
+2. `PL` 연결을 선택합니다. 
 
    ![Select PL connection](images/select-pl.png)
 
@@ -420,3 +420,4 @@ Let's have a first look at the data that we have available for our data challeng
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
 - **Last Updated By/Date** - Jason Jang, July 2023
 - **Korean Translator & Contributors** - Jason Jang, July 2023
+
