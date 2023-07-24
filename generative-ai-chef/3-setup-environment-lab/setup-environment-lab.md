@@ -27,7 +27,7 @@ Estimated Time - 5 minutes
 
     ![launcher-plus-icon](images/nb-new-launcher-plus-icon.png)
 
-    This would open he Launcher which looks like this:
+    This would open the Launcher which looks like this:
 
     ![nb-launcher](images/nb-launcher.png)
 
@@ -70,7 +70,7 @@ Estimated Time - 5 minutes
 
 ## Task 2: Install dependencies
 
-1. Now that we have the required conda environment ready, we would need to install some additional python dependencies required for the following code.
+1. Now that we have the required conda environment ready, we would need to install some additional Python dependencies required for the following code.
 
    You can install the dependencies by running following line in the Terminal.
 
