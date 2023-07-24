@@ -13,6 +13,7 @@ Estimated Workshop Time: 1 hours 30 minutes
 In this workshop, you will learn how to:
 * Provision an Oracle Analytics Cloud instance 
 * Setup and prepare data for mapping
+* Apply custom image map layers
 * Build visualizations
 * Filter Oracle Analytics Cloud dashboards and visualizations
 
@@ -22,10 +23,6 @@ This lab assumes you have:
 * An Oracle account
 * A basic understanding of analytics terms and concepts
 
-## Learn More
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy

@@ -134,10 +134,6 @@ Now, imagine you are a broadcaster and you're researching for upcoming matches a
 
 Congratulations on completing this workshop! 
 
-## Learn More
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy

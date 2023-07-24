@@ -95,10 +95,6 @@ As mentioned above, a Premier League goalmouth is exactly 3x wider than it is ta
 
 This concludes the Map Boundaries lab. You may proceed to the next lab.
 
-## Learn More
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy

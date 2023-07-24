@@ -75,10 +75,6 @@ Premier League has provided a dataset showing Team Name, Player Name, Game Date,
 
 This concludes the setup and preparation lab. You may proceed to the next lab.
 
-## Learn More
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Andres Quintana, Senior Product Manager, Analytics Product Strategy
