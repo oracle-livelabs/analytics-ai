@@ -171,7 +171,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
 Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
 
-  ![](images/create_app2.png " ")
+  ![](images/create_app2.png "Create application, enter name and description.")
 
 3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
