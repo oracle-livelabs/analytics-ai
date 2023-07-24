@@ -2,20 +2,28 @@
 
 ## About this Workshop
 
-This workshop describes how to build governed semantic models using the Semantic Modeler which is currently available for preview. Ask your administrator to enable the Semantic Modeler preview feature in Console.
+This workshop is a continuation of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644), which describes how to build governed semantic models using the Semantic Modeler which is currently available for preview. Ask your administrator to enable the Semantic Modeler preview feature in Console.
 
 In the Oracle Analytics Semantic Modeler, you define the physical, logical, and presentation layers to create a semantic model, along with related objects such as variables, and initialization blocks.
 
-Estimated Workshop Time: 2 hours 50 minutes
-
+Estimated Time: 2 hours 50 minutes
 
 ### Objectives
 
 In this workshop, you will learn how to:
-* Provision an ADW and OAC instance
-* Load data into an ADW
-* Create a Semantic Model in OAC
-* Test, Deploy, and Validate a semantic model
+* Examine Semantic Model Markup Language (SMML) and Integrate Semantic Model With a Git Repository
+* Manage Logical Table Sources
+* Create Logical Hierarchies
+* Create Calculated Measures
+* Create Ragged and Skipped Level Hierarchies
+* Create Parent-Child Hierarchies
+* Create Aggregate Tables
+* Create Time Series Measures
+* Create Initialization Blocks and Variables
+
+### Prequisites
+
+* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
 
 
 ## Learn More
@@ -23,6 +31,7 @@ In this workshop, you will learn how to:
 * [The Semantic Modeler in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/post/the-semantic-modeler-in-oracle-analytics-cloud)
 
 ## Acknowledgements
-* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** -  Lucian Dinescu, Peter Monteiro, Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Author** - Desmond Jung, Cloud Engineer, NACI
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
+* **Last Updated By/Date** - Desmond Jung, July 2023
+
