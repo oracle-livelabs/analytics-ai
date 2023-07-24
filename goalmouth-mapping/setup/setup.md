@@ -4,7 +4,7 @@
 
 In this exercise, you will upload the data, prepare and save the dataset, and create the workbook environment.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 

@@ -4,7 +4,7 @@
 
 In this lab you will explore the data to establish the upper and lower limits of the latitude and longitude values in order to create the map boundaries. You will also upload the background map image. 
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 

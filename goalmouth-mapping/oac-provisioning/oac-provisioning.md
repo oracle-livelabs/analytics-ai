@@ -84,7 +84,7 @@ This lab assumes you have:
 
 You may now *proceed to the next lab*.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao

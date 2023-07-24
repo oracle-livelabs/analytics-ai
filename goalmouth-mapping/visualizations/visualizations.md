@@ -4,7 +4,7 @@
 
 In this lab you will construct visualizations and build a dashboard.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
