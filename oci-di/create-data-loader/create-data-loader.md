@@ -88,7 +88,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
 11. Now click on Next button.
 
-9. Here, we are going to select the configurations for the target data type for the data loader task. Now, select the following:
+12. Here, we are going to select the configurations for the target data type for the data loader task. Now, select the following:
 * Data Asset: Data_Warehouse
 * Connection: Beta Connection
 * Schema: BETA
@@ -97,48 +97,48 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
   ![](images/create_data_loader_target.png "Target data asset information also parameterized")
 
-6. In the Data Entities tab:
+13. In the Data Entities tab:
 * Click on Create new data entities.
 * Select Integration Strategy as Insert
 * Select same entity names as source for our example.
 
   ![](images/create_data_loader_targetentities.png "Target data entities information")
 
-10. Click on Next and click on the Data tab.
+14. Click on Next and click on the Data tab.
 
   ![](images/create_data_loader_attributes.png "Click on data tab")
 
-11. Here, we are going to apply two powerful and yet, simple transformations:
+15. Here, we are going to apply two powerful and yet, simple transformations:
 a. NULL FILLUP transformation
 b. RENAME transformation.
 
-12. Once, the data is loaded then we scroll to the right until we see the src_order_number column.
+16. Once, the data is loaded then we scroll to the right until we see the src_order_number column.
 
-13. Click on the three dots (“hamburger”) right next to the column name and select Null fill up.
+17. Click on the three dots (“hamburger”) right next to the column name and select Null fill up.
 
   ![](images/create_data_loader_data.png "Click on hamburger icon for SRC_ORDER_NUMBER")
 
   ![](images/create_data_loader_null.png "Select null fill up")
 
-14. A new Null fill up transformation box will appear where you will type “Not available” in the Replace by text box and keep the remaining things as is.
+18. A new Null fill up transformation box will appear where you will type “Not available” in the Replace by text box and keep the remaining things as is.
 
   ![](images/create_data_loader_nullfill.png "Null fillup dialog")
 
-15. Next, we move further towards right until we see the order_dtime2_timezone column and we again click on the three dots (“hamburger”) right next to the column name but this time we select Rename.
+19. Next, we move further towards right until we see the order_dtime2_timezone column and we again click on the three dots (“hamburger”) right next to the column name but this time we select Rename.
 
   ![](images/create_data_loader_timezone.png "Click on hamburger icon for ORDER_DTIME2_TIMEZONE and Rename menu")
 
   ![](images/create_data_loader_rename.png "Select rename")
 
-16. Enter the new name as Order_timezone in the Name text box.
+20. Enter the new name as Order_timezone in the Name text box.
 
   ![](images/create_data_loader_renameatt.png "Rename information")
 
-17. Click on Next and click on Save.
+21. Click on Next and click on Save.
 
-18. Then we will go back to our DI_WorkspaceXX (where XX will be your user ID) and click on Tasks tab.
+22. Then we will go back to our DI_WorkspaceXX (where XX will be your user ID) and click on Tasks tab.
 
-19. Here, we are going to see the task that we saved.
+23. Here, we are going to see the task that we saved.
 
    **Congratulations!**  You created the Data Loader task.
 
