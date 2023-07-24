@@ -3,7 +3,8 @@
 <!--![Banner](images/banner.png)-->
 
 ## Introduction
-이 실습에서는 Premier League 데이터를 Autonomous Data Warehouse에 로드합니다. 이 실습을 완료하면 데이터를 분석할 준비가 됩니다..
+
+이 실습에서는 Premier League 데이터를 Autonomous Data Warehouse에 로드합니다. 이 실습을 완료하면 데이터를 분석할 준비가 됩니다.
 
 다음을 수행합니다:
 1. 관리자 사용자로 데이터베이스 작업 섹션에 로그인합니다. 여기에서 스크립트를 실행하여 a) PL 사용자를 생성하고 b) PL 스키마에 빈 테이블 세트를 생성합니다.
@@ -72,7 +73,7 @@
 
    파일을 로컬 컴퓨터에 저장하세요,  **파일이 `.csv` 확장자로 되었는지 확인하세요**
 
-2. **Important**: 이 시점에서 **"PL" 사용자로 변경** 되었는지 확인하십시오. 이전에 "pl-create-user.sql" 스크립트를 실행할 때 이 "PL" 사용자를 생성한 것을 기억해야 합니다.
+2. **Important**: 이 시점에서 **"PL" 사용자로 변경** 되었는지 확인하십시오. 이전에 "pl-create-user.sql" 스크립트를 실행할 때 이 "PL" 사용자를 생성한 것을 기억해야 합니다.    
 
    "Data Actions"에서 로그아웃하세요. (현재 "ADMIN"으로 표시됨)
 
@@ -80,14 +81,17 @@
 
    다음을 사용하여 다시 "Data Actions"에 로그인하세요:
 
-   - Username: PL
-   - Password: PL 사용자의 안전한 비밀번호를 입력하세요. 이 비밀번호는 이전에 작업 1 단계 7에서 선택한 비밀번호입니다.
+    - Username: PL
+    - Password: PL 사용자의 안전한 비밀번호를 입력하세요. 이 비밀번호는 이전에 작업 1 단계 7에서 선택한 비밀번호입니다.
 
-3.  **Data Tools** 영역 아래에 **Data Load** 옵셥을 클릭하세요
+3. **Data Tools** 영역 아래에 **Data Load** 옵셥을 클릭하세요    
 
    ![Open Data Load](images/open-data-load.png)
 
-4.  **Load Data** 선택하세요. 첫 번째 질문에는 "Load Data"를 선택하고 두 번째 질문에는 **"Local Files"**를 선택하십시오. 그런 다음 **Next** 을 클릭하십시오.
+4. **Load Data** 선택하세요. 첫 번째 질문에는 "Load Data"를 선택하고 두 번째 질문에는 **"Local Files"**를 선택하십시오. 그런 다음 **Next** 을 클릭하십시오.
+
+   - Username: PL
+   - Password: PL 사용자의 안전한 비밀번호를 입력하세요. 이 비밀번호는 이전에 작업 1 단계 7에서 선택한 비밀번호입니다.
 
     ![Start Data Load](images/start-data-load.png)
 
@@ -117,6 +121,8 @@
 
    이제 다음 랩을 진행할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023
