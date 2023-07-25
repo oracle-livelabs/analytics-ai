@@ -18,15 +18,15 @@ In this lab, you will:
 1. Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
     ![Database](./images/Databaselisting.png " ")
-
+    
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
     ![Database Actions](./images/DBActions.png " ")
-
+    
 3. Click on SQL to execute the query to create the table.
 
     ![SQL](./images/SQL_queries.png " ")
-
+    
 4. You can just simply query the MOVIE GENRE table to view data, or create a view to see the additional data along with the join to the MOVIE GENRE entity.
 
     ```

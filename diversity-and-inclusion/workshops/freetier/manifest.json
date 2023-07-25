@@ -1,0 +1,37 @@
+{
+  "workshoptitle": "Analyze Diversity and Inclusion Data with Oracle Analytics Cloud",
+  "help": "livelabs-help-analytics_us@oracle.com”",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "What is the value of Expected Goals (xG) in the Premier League? In this workshop you'll learn what xG is, build your own xG model, and apply it to a match to analyze team performance.",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "These are the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision Analytics Cloud",
+      "filename": "../../oac-provisioning/oac-provisioning.md"
+    },
+    {
+      "title": "Lab 2: Load and Prepare Data",
+      "filename": "../../load-data/load-data.md"
+    },
+    {
+      "title": "Lab 3: Analyze the Discrimination Dataset",
+      "filename": "../../analyze1/analyze1.md"
+    },
+    {
+      "title": "Lab 4: Analyze the LGTBQ+ Global Acceptance Index (GAI) Dataset",
+      "filename": "../../analyze2/analyze2.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

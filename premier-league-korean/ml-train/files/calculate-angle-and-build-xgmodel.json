@@ -1,0 +1,413 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sql\nalter table event add angle number;",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:49:20+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_-606217542",
+      "id": "20220706-104902_1836489441",
+      "dateCreated": "2022-04-18T09:13:50+0000",
+      "dateStarted": "2022-04-18T16:38:56+0000",
+      "dateFinished": "2022-04-18T16:39:06+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nupdate event set angle \u003d \n  SDO_UTIL.CONVERT_UNIT(\n       atan((y_rel_m + (7.32/2)) / x_rel_m) - atan((y_rel_m - (7.32/2)) / x_rel_m)\n    , \u0027Radian\u0027, \u0027Degree\u0027\n    );",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_-458875830",
+      "id": "20220706-104902_696849766",
+      "dateCreated": "2022-04-18T09:14:47+0000",
+      "dateStarted": "2022-04-18T16:39:10+0000",
+      "dateFinished": "2022-04-18T16:39:13+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nalter table event add angle_bucket number;",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_759883894",
+      "id": "20220706-104902_1086089118",
+      "dateCreated": "2022-04-18T09:18:31+0000",
+      "dateStarted": "2022-04-18T16:39:13+0000",
+      "dateFinished": "2022-04-18T16:39:13+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nupdate event set angle_bucket \u003d floor(angle);",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_1940749798",
+      "id": "20220706-104902_452895431",
+      "dateCreated": "2022-04-18T09:18:49+0000",
+      "dateStarted": "2022-04-18T16:39:14+0000",
+      "dateFinished": "2022-04-18T16:39:15+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\ncreate table event_train as select event_id, angle, head, from_corner, set_piece, fast_break, is_goal from event where to_char(match_date, \u0027YYYY\u0027) in (\u00272017\u0027, \u00272018\u0027)\nand penalty \u003d \u0027N\u0027 and own_goal \u003d \u0027N\u0027;",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_-662641656",
+      "id": "20220706-104902_1124500203",
+      "dateCreated": "2022-04-12T12:55:10+0000",
+      "dateStarted": "2022-04-18T16:39:15+0000",
+      "dateFinished": "2022-04-18T16:39:16+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\ncreate table model_parameters(setting_name varchar2(30), setting_value varchar2(4000));",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_1593035307",
+      "id": "20220706-104902_583376328",
+      "dateCreated": "2022-04-12T12:50:15+0000",
+      "dateStarted": "2022-04-18T16:39:16+0000",
+      "dateFinished": "2022-04-18T16:39:16+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\ninsert into model_parameters(setting_name, setting_value) values (\u0027ALGO_NAME\u0027, \u0027ALGO_GENERALIZED_LINEAR_MODEL\u0027);",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_-873955307",
+      "id": "20220706-104902_23498393",
+      "dateCreated": "2022-04-12T12:50:18+0000",
+      "dateStarted": "2022-04-18T16:39:17+0000",
+      "dateFinished": "2022-04-18T16:39:17+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\ncall dbms_data_mining.create_model(\u0027XG_MODEL\u0027, \u0027CLASSIFICATION\u0027, \u0027EVENT_TRAIN\u0027, \u0027EVENT_ID\u0027, \u0027IS_GOAL\u0027, \u0027MODEL_PARAMETERS\u0027);",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_771111444",
+      "id": "20220706-104902_1860304104",
+      "dateCreated": "2022-04-12T12:50:44+0000",
+      "dateStarted": "2022-04-18T16:39:17+0000",
+      "dateFinished": "2022-04-18T16:39:19+0000",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nalter table event add predicted_goal varchar2(1);",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_1303701040",
+      "id": "20220706-104902_419904005",
+      "dateCreated": "2022-07-06T10:45:46+0000",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\nalter table event add xg number;",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:46:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_1601011121",
+      "id": "20220706-104902_388161328",
+      "dateCreated": "2022-07-06T10:45:56+0000",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\nupdate event\nset predicted_goal \u003d PREDICTION(XG_MODEL USING *)\n, xg \u003d prediction_probability(XG_MODEL, \u0027Y\u0027 USING *);",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:49:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_-2101584545",
+      "id": "20220706-104902_570792203",
+      "dateCreated": "2022-07-06T10:46:07+0000",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\ncommit;",
+      "user": "PL",
+      "dateUpdated": "2022-07-06T10:49:31+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1657104542930_985566995",
+      "id": "20220706-104902_1130510111",
+      "dateCreated": "2022-07-06T10:46:18+0000",
+      "status": "READY"
+    }
+  ],
+  "name": "Calculate ANGLE and build xG model",
+  "id": "439",
+  "defaultInterpreterGroup": "spark",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/Calculate ANGLE and build xG model"
+}

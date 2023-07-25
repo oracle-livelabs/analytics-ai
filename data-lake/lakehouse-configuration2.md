@@ -27,17 +27,17 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-	  ![Click Tools, then Database Actions](./images/DBActions.png " ")
+	  ![Click Tools, then Database Actions](./images/dbactions1.png " ")
 
 2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
 
 3. Enter the password for the ADMIN user you entered when creating the database.
 
-4. Under **Data Tools**, click **DATA LOAD**
+4. Under **Data Studio**, click **DATA LOAD**
 
     ![Click DATA LOAD](./images/dataload.png " ")
 
-5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
+5. In the **What do you want to do with your data?** section, click **LOAD DATA** and choose **CLOUD STORE** for **Where is you data?** to set up the connection from your Autonomous Database to OCI Object Storage.
 
     ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
 
@@ -59,19 +59,11 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 In this step, we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our Autonomous Database.
 
-1. To load or link data from our newly configured cloud storage, click the **Data Load** link in the top left of your screen. Or if you are still in the same view with MOVIESTREAMLANDING Cloud Storage, skip down to step 3 to choose the objects you want to load.
+1. You will see a list of folders which is the data available from the object storage bucket that we can load into our Autonomous Database.
 
     ![Click Data Load](./images/backtodataload.png " ")
 
-2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**.
-
-    ![Select Load Data, then Cloud Storage](./images/loadfromstorage.png " ")
-
-3. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
-
-    ![Click Data Load](./images/selectlanding.png " ")
-
-4. From the MOVIESTREAMLANDING location, drag the **customer\_contact**, **customer\_extension**, and **customer\_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
+4. From the listed folders, drag the **customer\_contact**, **customer\_extension**, and **customer\_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
 
 5. Drag the **genre** and **movie** folders over to the right hand pane and click **OK**.
 
