@@ -16,11 +16,9 @@ In this lab, you will:
 
 > **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
-Estimated Time:20 minutes
-
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:tYM6-qjij9A)
+[Lab 1a walkthrough](youtube:tYM6-qjij9A)
 
 ### About product
 
@@ -38,11 +36,11 @@ First, we are going to create a compartment. This allows for separation as well 
 
 2. Continue down to the Identity & Security menu and from there to Compartments.
 
-    ![Oracle home page.](./images/create_compartment.png " ")
+    ![Navigate to compartments.](./images/create_compartment.png " ")
 
 3. There is a Create Compartment button to click on, and then the screen will come up for you to give the compartment a name, which we will be using lakehouse1 for this lab.
 
-    ![Oracle home page.](./images/compartment.png " ")
+    ![Create compartment.](./images/compartment.png " ")
 
     You are going to be using this compartment for the rest of the lab. When you see the compartment listed on the left menu, just verify that it says lakehouse1. This will be important for the databases and the data tasks.
 
@@ -64,20 +62,19 @@ First, we are going to create a compartment. This allows for separation as well 
     - data-integration-users
     - data-lakehouse-admin
 
-    After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
+5. After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
 
     To add a user, click on a group and below the group details, click on Add User.
 
     ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
-5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
-
+6. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
 
     Select Policies on the side menu and click on the button Create Policy.
 
     ![Create Policies](./images/create_policy.png " ")
 
-    Name each policy for to match the group so they are easy to recognize what they are used for.
+7. Name each policy to match the group so they are easy to recognize what they are used for.
     - Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here).
     - Add the description.
     - Select under Policy use cases Data Flow. This will bring up common policy templates for this area in OCI.
@@ -86,25 +83,24 @@ First, we are going to create a compartment. This allows for separation as well 
 
     ![Create Policies](./images/create_policy1.png " ")
 
-    Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
+8. Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
 
     ![Create Policies](./images/create_policy2.png " ")
 
-    Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
+9. Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
 
 
     ```
     <copy>
-allow group data-lakehouse-admin to manage dis-workspaces in compartment lakehouse1
+    allow group data-lakehouse-admin to manage dis-workspaces in compartment lakehouse1
 
-allow group data-lakehouse-admin to manage dis-work-requests in compartment lakehouse1
+    allow group data-lakehouse-admin to manage dis-work-requests in compartment lakehouse1
 
-allow group data-lakehouse-admin to use virtual-network-family in compartment lakehouse1
+    allow group data-lakehouse-admin to use virtual-network-family in compartment lakehouse1
 
-allow group data-lakehouse-admin to manage tag-namespaces in compartment lakehouse1
+    allow group data-lakehouse-admin to manage tag-namespaces in compartment lakehouse1
 
-allow group data-lakehouse-admin to use object-family in compartment lakehouse1
-
+    allow group data-lakehouse-admin to use object-family in compartment lakehouse1
     </copy>
     ```
 
@@ -112,28 +108,27 @@ allow group data-lakehouse-admin to use object-family in compartment lakehouse1
 
 Creating Object Storage Buckets allows for various types of data to be stored. For this lab, we are using a couple of buckets. Two are created for our data flow process which includes a place for the data and another one for the logs. 
 
-From the Home Menu click on Storage and then click on Buckets.
+1. From the Home Menu click on Storage and then click on Buckets.
 
    ![Create Storage Bucket](./images/object_storage1.png " ")
 
-   Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
+2. Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
 
    ![Create Storage Bucket](./images/create_bucket.png " ")
 
-   Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
-    
+3. Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
+
    ![Create Storage Bucket](./images/create_bucket2.png " ")
 
 The dataflow buckets are for the processing of the data and logs.
 
-
 ## Task 3: Create ADW
 
-In this step, you will create an Oracle Autonomous Data Warehouse.
+In this task, you will create an Oracle Autonomous Data Warehouse (ADW).
 
 1. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
+    >__Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
     ![Oracle home page.](./images/Picture100-36.png " ")
 
@@ -144,9 +139,9 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list **lakehouse1**.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use **Lakehousedb**.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use **Lakehousedb**.
-    . Choose the workload type to be __Data Warehouse__ .
+    - Choose the workload type to be __Data Warehouse__ .
 
-    ![Compartment_name.](./images/create_ADW1.png " ")
+    ![Compartment name.](./images/create_ADW1.png " ")
 
 4. Configure the database, and for this lab we will be using **Always Free** resources.
 
@@ -182,7 +177,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/create_ADW4.png " ")
+    ![choose license type](./images/create_ADW4.png " ")
 
 8. Click __Create Autonomous Database__.
 
@@ -200,4 +195,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, July 2023, Nagwang Gyamtso, Solution Engineering, February 2022

@@ -41,24 +41,19 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
 
-6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
+6. To add access to the MovieStream landing area, click **+Add Cloud Storage** in the top right of your screen.
 
-    In the **Name** field, enter 'MovieStreamLanding'
+    - In the **Name** field, enter 'MovieStreamLanding'
+        > **Note:** Take care not to use spaces in the name.
 
-    > **Note:** Take care not to use spaces in the name.
-
-    Leave the Cloud Store selected as **Oracle**.
-
-    Copy and paste the following URI into the URI + Bucket field:
-
-   ```
+    - Leave the Cloud Store selected as **Oracle**.
+    - Copy and paste the following URI into the URI + Bucket field:
+    ```
     <copy>
     https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
     </copy>
     ```
-
-    Select **No Credential** as this is a public bucket and then click **Create**.
-    
+    - Select **No Credential** as this is a public bucket and then click **Create**.
 
 ## Task 2: Load data from files in Object Storage using Data Tools
 
@@ -100,4 +95,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, July 2023
