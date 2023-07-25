@@ -1,6 +1,6 @@
 # Introduction to OCI Document Understanding
 
-## Introduction
+## About This Workshop
 
 OCI Document Understanding is a serverless, multi-tenant service, accessible using the Console, REST APIs, SDK, or CLI.
 
@@ -20,11 +20,12 @@ In this workshop, you will:
 
 ### Prerequisites
 * An Oracle Paid Cloud Account or Trial Account with Credits
-* Familiar with OCI Policy and SDK setup.
-* Python 3.6, 3.7, 3.8 or 3.9 installed (for Lab 3)
-* Familiar with Python programming for SDK usage is strongly recommended.
+* Python 3.6, 3.7, 3.8 or 3.9 installed (for Lab 4)
+* Ability to install Postman on your local computer
+* Familiarity with OCI Policy and SDK setup is recommended
+* Familiarity with Python programming for SDK usage is strongly recommended
 
-You may now **proceed to the next lab**.
+You may now **[proceed to next lab](#next)**.
 
 ## Acknowledgements
 * **Authors**
@@ -32,4 +33,4 @@ You may now **proceed to the next lab**.
 
 
 * **Last Updated By/Date**
-    * Kate D'Orazio, Feb 2023
+    * Wes Prichard, Product Manager, July 2023

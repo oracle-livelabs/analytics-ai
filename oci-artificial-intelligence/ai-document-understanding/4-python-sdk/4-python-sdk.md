@@ -4,19 +4,21 @@
 
 In this lab you will use the OCI Python SDK to extract information from documents.
 
-[SDK for Python](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#SDK_for_Python)
+The Python SDK can be found [here](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#SDK_for_Python).
 
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives:
+* Learn how to use the OCI Python SDK to communicate with the Document Understanding service.
 
-* Learn how to use OCI Python SDK to communicate with our Document Understanding service.
-
+### Prerequisites:
+* You will use the text file of tenancy configuration you created and updated in previous labs TODO-confirm
+* You will need to use the API key you created in Lab 3
 
 ## Task 1: Setup API Signing Key and Config File
-If this is your first time using the OCI SDK, you'll need to create a config file. If you've already done this, you can skip to the next step.
+If this is your first time using the OCI SDK, you'll need to create a config file for authentication. (If, prior to this workshop, you've done this for the tenancy you're using, you can skip to the next task.)
 
-1. Create the .oci folder. Open an admin command prompt or Terminal and run the following command.
+1. To create the .oci folder, open an admin command prompt or Terminal and run the following command.
 
     Windows:
     ```
@@ -28,279 +30,289 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
     <copy>mkdir ~/.oci</copy>
     ```
 
-2. Generate an API signing key pair
 
-    > **Note**: If you completed lab 3, you already created an API Key. If that's the case, navigate to the key and skip to step f. below.
 
-    a. Open My Profile
+1. In the cloud console, open the **Profile** menu and click **My profile** (or in older tenancies, your user name).
 
-    Open the **Profile** menu (User menu icon) and click **your user name**.
+    ![Profile menu](./images/new-profilename.png " ") TODO
 
-      ![Profile menu](./images/new-profilename.png " ")
+1. Under *Resources*, select **API keys**. The fingerprint for your previously-generated key is listed under *API keys*.
 
-    b. Open API Keys
+    > **Note**: When you completed Lab 3, you created an API Key. We'll use that same API key here.
+    
+    ![Add API button](./images/add-api-button.png " ") TODO
 
-    Navigate to **API keys** and then Click **Add API Key**.
+1. Use the 3 dot icon on the row where the key is listed and select **View Configuration file**. Copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
 
-      ![Add API button](./images/add-api-button.png " ")
+    ![View configuration file](./images/conf.png " ")      
 
-    c. Generate API Key
+1. Create a file on your local computer with the name *config* (with no extension) in the .oci folder and paste the values previously copied. 
 
-    In the dialog, select **Generate API key pair**. Click **Download Private Key**.
+1. Locate the .pem keyfile that you downloaded in Lab 3 and copy it to the .oci folder. The path where you downloaded it should be in your text file.
 
-      ![Generate API key button](./images/downloadprivatekey.png " ")
-
-    d. Save Private Key
-
-    Save the private key that downloaded to your **.oci** directory.
-
-    e. Add the API Key
-
-    Click **Add**.
-
-      ![Add API key button](./images/add-api-key.png " ")
-
-    f. Generate Config File
-
-    Use the 3 dots on the row where the key is listed and select **View Configuration file**. Copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
-
-      ![View configuration file](./images/conf.png " ")      
-
-3. Create a file with the name *config* (with no extension) in the .oci folder and paste the values previously copied. Save your changes.
-
-     Replace the **key_file value** with the path of your generated private key.
+1. Replace **\<path to your private keyfile>** with the path of your generated private key. You can use this syntax: *key_file=~/.oci/mykeyfile.pem*. Save your config file changes.
 
       ![Updated config file](./images/config2.png " ")
 
 
-    To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
+    > To know more, visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
+## Task 2: Run Python Code Sample
 
-## Task 2: Add Sample Documents to Object Storage
+1. Create a new file on your local machine called *invoicekv.py* in the C:\Users\<user>\AppData\Local\Programs\Python\<Python version>\Scripts folder, or add it to your Desktop if you are using a Mac.
 
-1. Download the [Lab-4 sample documents](./sample-documents/lab4) and upload them to your Object Storage bucket.
+2. Copy the python code from below and paste it into *invoicekv.py*. <br>
+The following sample code involves essentially three steps. First, it calls *CreateProcessorJob* to process your sample invoice. Second, it calls *GetProcessorJob* to get the status of the job. Third, it calls *GetObject* to get the response from Object Storage.
+        
+    ```python
+    <copy>
+    ### Import Packages
+    import oci
+    import uuid
+    import base64
 
-2. Login to the OCI Console and navigate to your Object Storage Buckets
+    # Setup basic variables
+    # Auth Config
+    CONFIG_PROFILE = "DEFAULT"
+    config = oci.config.from_file('~/.oci/config', CONFIG_PROFILE)
 
-  ![Object storage bucket](./images/object-storage-link.png " ")
+    # Compartment where processor job will be created (required)
+    COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"  # e.g. "ocid1.compartment.oc1..aaaaaaaae5j73axsja5fnahbn23ilop3ynjkcg77mcvgryddz4pkh2t5ppaq";
 
-3. Choose an existing bucket or create a new bucket called "DocumentDemo".
+    def create_processor_job_callback(times_called, response):
+        print("Waiting for processor lifecycle state to go into succeeded state:", response.data)
 
-## Task 3: OCI Document Understanding Service SDK Code Sample
+    # Setup input location where document being processed is stored.
+    object_location = oci.ai_document.models.ObjectLocation()
+    object_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axhh9gizbq5x"
+    object_location.bucket_name = "docu-bucket"  # e.g "docu-bucket"
+    object_location.object_name = "<enter-your-object-name-here>"  # e.g "invoice-white-clover.tif"
 
-1. Create a new file on your local machine called "invoicekv.py" and add it to C:\Users\<user>\AppData\Local\Programs\Python\<Python version>\Scripts folder or add it to your Desktop if you are using a Mac.
+    aiservicedocument_client = oci.ai_document.AIServiceDocumentClientCompositeOperations(oci.ai_document.AIServiceDocumentClient(config=config))
 
-2. Copy the python code from below into "invoicekv.py".
+    # Document Key-Value extraction Feature
+    key_value_extraction_feature = oci.ai_document.models.DocumentKeyValueExtractionFeature()
 
-    #### Python Code
+    # Setup the output location where processor job results will be created
+    output_location = oci.ai_document.models.OutputLocation()
+    output_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axk2tfhlrens"
+    output_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "output"
+    output_location.prefix = "<enter-your-prefix-here>"  # e.g "demo"
 
-    The following sample code involves essentially three steps. First, it calls CreateProcessorJob to process your sample invoice. Second, it calls GetProcessorJob to get the status of the job. Third, it calls GetObject to get the response from Object Storage.
-        ```python
-        <copy>
-        ### Import Packages
-        import oci
-        import uuid
-        import base64
+    # Create a processor_job for invoice key_value_extraction feature. 
+    # Note: If you want to use another key value extraction feature, set document_type to "RECIEPT" "PASSPORT" or "DRIVER_ID". If you have a mix of document types, you can remove document_type
+    create_processor_job_details_key_value_extraction = oci.ai_document.models.CreateProcessorJobDetails(
+                                                        display_name=str(uuid.uuid4()),
+                                                        compartment_id=COMPARTMENT_ID,
+                                                        input_location=oci.ai_document.models.ObjectStorageLocations(object_locations=[object_location]),
+                                                        output_location=output_location,
+                                                        processor_config=oci.ai_document.models.GeneralProcessorConfig(features=[key_value_extraction_feature],
+                                                                                                                    document_type="INVOICE"))
 
-        # Setup basic variables
-        # Auth Config
-        CONFIG_PROFILE = "DEFAULT"
-        config = oci.config.from_file('~/.oci/config', CONFIG_PROFILE)
+    print("Calling create_processor with create_processor_job_details_key_value_extraction:", create_processor_job_details_key_value_extraction)
+    create_processor_response = aiservicedocument_client.create_processor_job_and_wait_for_state(
+        create_processor_job_details=create_processor_job_details_key_value_extraction,
+        wait_for_states=[oci.ai_document.models.ProcessorJob.LIFECYCLE_STATE_SUCCEEDED],
+        waiter_kwargs={"wait_callback": create_processor_job_callback})
 
-        # Compartment where processor job will be created (required)
-        COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"  # e.g. "ocid1.compartment.oc1..aaaaaaaae5j73axsja5fnahbn23ilop3ynjkcg77mcvgryddz4pkh2t5ppaq";
+    print("processor call succeeded with status: {} and request_id: {}.".format(create_processor_response.status, create_processor_response.request_id))
+    processor_job: oci.ai_document.models.ProcessorJob = create_processor_response.data
+    print("create_processor_job_details_key_value_extraction response: ", create_processor_response.data)
 
-        def create_processor_job_callback(times_called, response):
-            print("Waiting for processor lifecycle state to go into succeeded state:", response.data)
+    print("Getting defaultObject.json from the output_location")
+    object_storage_client = oci.object_storage.ObjectStorageClient(config=config)
+    get_object_response = object_storage_client.get_object(namespace_name=output_location.namespace_name,
+                                                        bucket_name=output_location.bucket_name,
+                                                        object_name="{}/{}/{}_{}/results/{}.json".format(
+                                                            output_location.prefix, processor_job.id,
+                                                            object_location.namespace_name,
+                                                            object_location.bucket_name,
+                                                            object_location.object_name))
+    print(str(get_object_response.data.content.decode()))
+    </copy>
+    ```
 
-        # Setup input location where document being processed is stored.
-        object_location = oci.ai_document.models.ObjectLocation()
-        object_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axhh9gizbq5x"
-        object_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "demo_examples"
-        object_location.object_name = "<enter-your-object-name-here>"  # e.g "key_value_extraction_demo.jpg
+3. Edit *invoicekv.py* and update all of the below variables using values you previously saved to your text file. 
+    
+    - COMPARTMENT_ID = "\<enter-your-compartment-ocid-here>"
+    - object_location.namespace_name = "\<enter-your-objectstorage-namespsace-here>"  
+        - e.g. "axabc9efgh5x"
+    - object_location.bucket_name = "\<enter-your-bucket-name-here>"  
+        - e.g "docu-bucket"
+    - object_location.object_name = "\<enter-your-object-name-here>"  
+        - e.g "invoice-white-clover.tif"
+    - output_location.namespace_name = "\<enter-your-objectstorage-namespsace-here>"  
+        - e.g. "axabc9efgh5x"
+    - output_location.bucket_name = "\<enter-your-bucket-name-here>"  
+        - e.g "docu-bucket"
+    - output_location.prefix = "\<enter-your-prefix-here>"  
+        - e.g "results-python"
+    
 
-        aiservicedocument_client = oci.ai_document.AIServiceDocumentClientCompositeOperations(oci.ai_document.AIServiceDocumentClient(config=config))
-
-        # Document Key-Value extraction Feature
-        key_value_extraction_feature = oci.ai_document.models.DocumentKeyValueExtractionFeature()
-
-        # Setup the output location where processor job results will be created
-        output_location = oci.ai_document.models.OutputLocation()
-        output_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axk2tfhlrens"
-        output_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "output"
-        output_location.prefix = "<enter-your-prefix-here>"  # e.g "demo"
-
-        # Create a processor_job for invoice key_value_extraction feature. 
-        # Note: If you want to use another key value extraction feature, set document_type to "RECIEPT" "PASSPORT" or "DRIVER_ID". If you have a mix of document types, you can remove document_type
-        create_processor_job_details_key_value_extraction = oci.ai_document.models.CreateProcessorJobDetails(
-                                                            display_name=str(uuid.uuid4()),
-                                                            compartment_id=COMPARTMENT_ID,
-                                                            input_location=oci.ai_document.models.ObjectStorageLocations(object_locations=[object_location]),
-                                                            output_location=output_location,
-                                                            processor_config=oci.ai_document.models.GeneralProcessorConfig(features=[key_value_extraction_feature],
-                                                                                                                        document_type="INVOICE"))
-
-        print("Calling create_processor with create_processor_job_details_key_value_extraction:", create_processor_job_details_key_value_extraction)
-        create_processor_response = aiservicedocument_client.create_processor_job_and_wait_for_state(
-            create_processor_job_details=create_processor_job_details_key_value_extraction,
-            wait_for_states=[oci.ai_document.models.ProcessorJob.LIFECYCLE_STATE_SUCCEEDED],
-            waiter_kwargs={"wait_callback": create_processor_job_callback})
-
-        print("processor call succeeded with status: {} and request_id: {}.".format(create_processor_response.status, create_processor_response.request_id))
-        processor_job: oci.ai_document.models.ProcessorJob = create_processor_response.data
-        print("create_processor_job_details_key_value_extraction response: ", create_processor_response.data)
-
-        print("Getting defaultObject.json from the output_location")
-        object_storage_client = oci.object_storage.ObjectStorageClient(config=config)
-        get_object_response = object_storage_client.get_object(namespace_name=output_location.namespace_name,
-                                                            bucket_name=output_location.bucket_name,
-                                                            object_name="{}/{}/{}_{}/results/{}.json".format(
-                                                                output_location.prefix, processor_job.id,
-                                                                object_location.namespace_name,
-                                                                object_location.bucket_name,
-                                                                object_location.object_name))
-        print(str(get_object_response.data.content.decode()))
-        </copy>
-        ```
-
-3. Update variables
-
-    Open the python script and update all of the below variables.
-        ```python
-        <copy>
-        COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"
-        object_location.namespace_name = "<enter-your-objectstorage-namespsace-here>"  # e.g. "axhh9gizbq5x"
-        object_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "demo_examples"
-        object_location.object_name = "<enter-your-object-name-here>"  # e.g "key_value_extraction_demo.jpg"
-        output_location.namespace_name = "<enter-your-objectstorage-namespsace-here>"  # e.g. "axk2tfhlrens"
-        output_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "output"
-        output_location.prefix = "<enter-your-prefix-here>"  # e.g "demo"
-        </copy>
-        ```
-
-4. Execute the code
-
-    Navigate to the directory where you saved the above file using your terminal or the command line and execute the file by running the following command (from the /Scripts folder):
+4. To execute the code, use the command line on your local computer to navigate to the Python installation directory (C:\Users\<user>\AppData\Local\Programs\Python\<Python version>) and execute *invoicekv.py* by running the following command:
     
     Windows:
     ```
-    <copy>python invoicekv.py</copy>
+    <copy>python Scripts\invoicekv.py</copy>
     ```
         
     Mac OS / Linux:
     ```
-    <copy>python3 invoicekv.py</copy>
+    <copy>python3 scripts/invoicekv.py</copy>
     ```
 
-5. Result
-
-    You will see the following results (edited for brevity):
-        ```
-        <copy>
+5. You will see the following results (edited for brevity):
+    ```json
         Calling create_processor with create_processor_job_details_key_value_extraction: {
-        "compartment_id": "",
-        "display_name": "",
-        "input_location":
-        "output_location": {
-        "bucket_name": "Demo",
-        "namespace_name": "axhheqi2ofpb",
-        "prefix": "none"
+        "compartment_id": "ocid1.tenancy.oc1..aaaaaaaatadts4ja4ibgh7zjroqrogf7m7rqjse5myolrxkbjgyznmvd5foa",
+        "display_name": "ba4b98e0-89a1-4bd4-b61d-c6fc654eab1f",
+        "input_location": {
+            "object_locations": [
+            {
+                "bucket_name": "docu_bucket",
+                "namespace_name": "axnlnwjfh7xw",
+                "object_name": "invoice-white-clover.tif"
+            }
+            ],
+            "source_type": "OBJECT_STORAGE_LOCATIONS"
         },
-        
-        processor call succeeded with status: 201 and request_id: "".
+        "output_location": {
+            "bucket_name": "docu_bucket",
+            "namespace_name": "axnlnwjfh7xw",
+            "prefix": "results-python"
+        },
+        "processor_config": {
+            "document_type": "INVOICE",
+            "features": [
+            {
+                "feature_type": "KEY_VALUE_EXTRACTION",
+                "model_id": null,
+                "tenancy_id": null
+            }
+            ],
+            "is_zip_output_enabled": null,
+            "language": null,
+            "processor_type": "GENERAL"
+        }
+        }
+        processor call succeeded with status: 200 and request_id: 81810E0AD8684EA6B6727BD0C64BF4C8/A0D666AA8310E2A0DBD2D5F26AF576AB/60A1B97C0E4B6FB717248B20742348F7.
         create_processor_job_details_key_value_extraction response:  {
-        "compartment_id": "",
-        "display_name": "",
-        "id": "",
-        "input_location": null,
+        "compartment_id": "ocid1.tenancy.oc1..aaaaaaaatadts4ja4ibgh7zjroqrogf7m7rqjse5myolrxkbjgyznmvd5foa",
+        "display_name": "ba4b98e0-89a1-4bd4-b61d-c6fc654eab1f",
+        "id": "ocid1.aidocumentprocessorjob.oc1.phx.amaaaaaa3twn4miahmcgwnzmol67sqz4k7wngwfflg4pliv23zziv3xpv6xq",
+        "input_location": {
+            "object_locations": [
+            {
+                "bucket_name": "docu_bucket",
+                "namespace_name": "axnlnwjfh7xw",
+                "object_name": "invoice-white-clover.tif"
+            }
+            ],
+            "source_type": "OBJECT_STORAGE_LOCATIONS"
+        },
         "lifecycle_details": null,
         "lifecycle_state": "SUCCEEDED",
         "output_location": {
-            "bucket_name": "",
-            "namespace_name": "",
-            "prefix": ""
+            "bucket_name": "docu_bucket",
+            "namespace_name": "axnlnwjfh7xw",
+            "prefix": "results-python"
         },
         "percent_complete": 100.0,
         "processor_config": {
-            "document_type": INVOICE,
+            "document_type": "INVOICE",
             "features": [
             {
-                "feature_type": "KEY_VALUE_EXTRACTION"
+                "feature_type": "KEY_VALUE_EXTRACTION",
+                "model_id": null,
+                "tenancy_id": null
             }
             ],
             "is_zip_output_enabled": false,
             "language": null,
             "processor_type": "GENERAL"
         },
-        "time_accepted": "2022-12-05T14:23:48.218000+00:00",
-        "time_finished": "2022-12-05T14:23:48.218000+00:00",
-        "time_started": "2022-12-05T14:23:48.218000+00:00"
+        "time_accepted": "2023-07-25T19:17:02.014000+00:00",
+        "time_finished": "2023-07-25T19:17:02.014000+00:00",
+        "time_started": "2023-07-25T19:17:02.014000+00:00"
         }
         Getting defaultObject.json from the output_location
         {
-        "documentMetadata": {
-            "pageCount": 1,
-            "mimeType": "image/png"
+        "documentMetadata" : {
+            "pageCount" : 1,
+            "mimeType" : "image/tiff"
         },
-        "pages": [
-            {
-            "pageNumber": 1,
-            "dimensions": {
-                "width": 1372,
-                "height": 1732,
-                "unit": "PIXEL"
+        "pages" : [ {
+            "pageNumber" : 1,
+            "dimensions" : {
+            "width" : 2550.0,
+            "height" : 3300.0,
+            "unit" : "PIXEL"
             },
-            "documentFields": [
-                {
-                "fieldType": "KEY_VALUE",
-                "fieldLabel": {
-                    "name": "VendorAddress",
-                    "confidence": 0.99862003
-                },
-                "fieldValue": {
-                    "valueType": "STRING",
-                    "text": "657 Clifford Street Allentown, PA",
-                    "boundingPolygon": {
-                    "normalizedVertices": [
-                        {
-                        "x": 0.08454810495626822,
-                        "y": 0.10219399538106236
-                        },
-                        {
-                        "x": 0.21793002915451895,
-                        "y": 0.10219399538106236
-                        },
-                        {
-                        "x": 0.21793002915451895,
-                        "y": 0.13048498845265588
-                        },
-                        {
-                        "x": 0.08454810495626822,
-                        "y": 0.13048498845265588
-                        }
-                    ]
-                    },
-                    "wordIndexes": [
-                    3,
-                    4,
-                    5,
-                    9,
-                    10
-                    ],
-                    "value": "657 Clifford Street Allentown, PA"
-                }
+            "detectedDocumentTypes" : null,
+            "detectedLanguages" : null,
+            "words" : [ {
+            "text" : "INVOICE",
+            "confidence" : 0.9389687,
+            "boundingPolygon" : {
+                "normalizedVertices" : [ {
+                "x" : 0.6224614162071078,
+                "y" : 0.05068707090435606
+                }, {
+                "x" : 0.8349716605392157,
+                "y" : 0.05061941435842803
+                }, {
+                "x" : 0.835078125,
+                "y" : 0.07926487778172349
+                }, {
+                "x" : 0.6225678806678921,
+                "y" : 0.07933253432765151
+                } ]
+            }
             },
-        </copy>
-        ```
+        ...
+            "lines" : [ {
+            "text" : "INVOICE",
+            "confidence" : 0.9389687,
+            "boundingPolygon" : {
+                "normalizedVertices" : [ {
+                "x" : 0.6224614162071078,
+                "y" : 0.05068707090435606
+                }, {
+                "x" : 0.8349716605392157,
+                "y" : 0.05061941435842803
+                }, {
+                "x" : 0.835078125,
+                "y" : 0.07926487778172349
+                }, {
+                "x" : 0.6225678806678921,
+                "y" : 0.07933253432765151
+                } ]
+            },
+            "wordIndexes" : [ 0 ]
+            },
+        ...
+        "detectedDocumentTypes" : null,
+        "detectedLanguages" : null,
+        "documentClassificationModelVersion" : null,
+        "languageClassificationModelVersion" : null,
+        "textExtractionModelVersion" : "1.13.39",
+        "keyValueExtractionModelVersion" : "1.20.54",
+        "tableExtractionModelVersion" : null,
+        "errors" : null,
+        "searchablePdf" : null
+        }
+    ```
 
-    Confirm the results by looking at each image.
+1. Confirm the results by looking at the source image.
 
-    You can also take a look at the JSON output in your Oracle Object Storage bucket.
+1. You can also take a look at the JSON output in your Object Storage bucket under the prefix you specified in the python file.
+
+Congratulations on completing this lab!
 
 ## Learn More
 * To try other features, you can refer to the full collection of sample python code [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
 
-Congratulations on completing this lab!
+
 
 ## Acknowledgements
 * **Authors**
@@ -308,4 +320,4 @@ Congratulations on completing this lab!
 
 
 * **Last Updated By/Date**
-    * Kate D'Orazio, Feb 2023
+    * Wes Prichard, Product Manager, July 2023
