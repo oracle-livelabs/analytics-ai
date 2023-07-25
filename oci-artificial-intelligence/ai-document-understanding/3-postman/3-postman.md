@@ -11,22 +11,22 @@ Postman is a GUI-based REST API tool that is very popular among developers.
 * Learn how to access and use Document Understanding service through REST APIs.
 
 ## Task 1: Export the Document Understanding API Collection to your local computer
-We have put together a Postman Collection to help you get started with calling the Document Understanding REST APIs, which you'll import into your local POSTMAN instance.
+We have put together a Postman Collection to help you get started with calling the Document Understanding REST APIs. You'll import that collection into your local POSTMAN instance.
 
-1. Install [POSTMAN](https://www.postman.com/downloads/) to your local computer if you don't already have it. Once installed, run it. 
+1. Install Postman to your local computer (if you don't already have it) using this link: [https://www.postman.com/downloads/](https://www.postman.com/downloads/). Once installed, run it. 
 
 2. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/overview) to download the **Document Understanding API Collection**. The link opens Postman on the web. Select **Collections** on the left side of the screen. Hover over *Document Understanding Service API* and click the 3 dots icon and click it to open the popup menu. Select **Export** to export the collection file and save it to your local computer. You will need to create an account, if you don't already have one, to download the API collection.
   ![Postman OCI Collection](./images/documentcollectionscreen.png)
 
-3. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/environment/29850-eab82db8-e9a1-4200-9f39-de10b4a0f371) to download the **OCI Credentials Environment**. The link opens Postman on the web. Select **Environmments** on the left side of the screen then select **OCI Credentials**. On the right side of the screen find the 3 dots icon and click it to open a popup menu. On the menu, click **Export** to export the credentials file and save it to your local computer.
+3. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/environment/29850-eab82db8-e9a1-4200-9f39-de10b4a0f371) to download the **OCI Credentials Environment**. The link opens Postman on the web. Select **Environmments** on the left side of the screen then select **OCI Credentials**. On the right side of the screen find the 3 dots icon and click it to open a popup menu. On the menu, click **Export** to export the credentials file and save it to your local computer. You'll upload the file to your local Postman in the next task.
   ![Postman OCI Credentials](./images/postman-exportoci-credentials.png)
 
 ## Task 2: Set up your OCI credentials
 
 1. Ensure Postman is running on your local computer.
 
-1. Import the OCI Credentials file into Postman running on your local machine by using the **Import** button at the top left under *My workspace*. The file is named **OCI Credentials.postman_environment.json**
-  ![Postman import button](./images/postman-importoci1.png)
+1. Import the OCI Credentials file into Postman running on your local computer by using the **Import** button at the top left under *My workspace*. The file is named **OCI Credentials.postman_environment.json**
+  ![Postman import button](./images/postman-importoci1.png) TODO
 
 2. In the *Import* dialog, click the **Upload Files** button and select the json file you exported in the previous step. (**OCI Credentials.postman_environment.json**) 
 
@@ -121,8 +121,10 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
         |US West (Phoenix) |	us-phoenix-1 |	Phoenix, AZ |
         |US West (San Jose) |	us-sanjose-1 |	San Jose, CA |
 
+        >If you don't see your region, look here: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm        
+        
         ![Postman value for region](./images/postman-region.png " ")
-        The information in the table is found here: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+
 
 1. compartment_ocid
 
@@ -136,6 +138,8 @@ Open the newly imported environment in POSTMAN: OCI Credentials. You'll see it c
 
     4. Paste the OCID into the **compartment_ocid CURRENT VALUE** field of the Postman Environment.
     ![Postman value for compartment ID](./images/postman-copmartment-ocid.png " ")
+
+    1. Also save the compartment OCID to your text file for reference later.
 
 1. In POSTMAN, click the **Persist All** button to save the Current Value to the Initial Value.
 
@@ -206,13 +210,13 @@ In this task you'll call the Processor Job REST API.
 
 1. *objectName* should be **"invoice-sample.png"** (This is one of the files you uploaded in Lab 2.)
 
-1. Now, you will insert your location details for where you want your results to be stored. For this lab, we're use Text Extraction, which will return a JSON object to the object storage location of your choosing. Below is what you need to define:
+1. Now, you will insert your location details for where you want your results to be stored. For this lab, we're using Text Extraction, which will return a JSON object to the object storage location of your choosing. Below is what you need to define:
 
-    1. *Object Storage Namespace*: use the namespace from the previous step
+    - *Object Storage Namespace*: use the namespace from the previous step
 
-    2. *bucketName*: should be the name of the bucket where you want your results stored - you can use the same bucket, i.e. **docu-bucket**
+    - *bucketName*: should be the name of the bucket where you want your results stored - you can use the same bucket, i.e. **docu-bucket**
 
-    3. *prefix*: use **results-postman**
+    - *prefix*: use **results-postman**
 
 
 1. In POSTMAN, click the **Send** button. The response should return in a few seconds with a job ID. Note the job ID for the next task.

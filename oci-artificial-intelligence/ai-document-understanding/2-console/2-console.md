@@ -8,7 +8,7 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
 ## Task 1: Prepare to save configuration settings
 
 1. Open a text editor and copy & paste this text into a text file and save it on your local computer. You will store settings there from your OCI tenancy that will be used during the lab.
-    ```
+    ```text
     <copy>
     lab compartment:
       ex. docu-lab
@@ -16,16 +16,11 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
     object storage bucket name: 
       ex. docu-bucket
 
-    object storage bucket prefix: 
-      ex. output
-
     tenancy_ocid:
       ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg  
 
     user_ocid: 
       ex. ocid1.user.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
-
-    API Key: ???
 
     region: 
       ex. us-phoenix-1
@@ -40,7 +35,7 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
 
 
 ## Task 2: Create a compartment
-Create a compartment for the object storage bucket you will use in this workshop. 
+You will create a compartment for the object storage bucket you will use in this workshop. 
 
 You can use an existing compartment to run the lab but we recommend you create a new one in case you want to delete the components later
 
@@ -56,6 +51,7 @@ You can use an existing compartment to run the lab but we recommend you create a
 1. In the *Create Compartment* dialog, 
     1. Enter a name: **docu-lab** (recommended) (If you created a policy for a specific compartment in Lab 1, enter the same name here.)
     1. Enter a description
+    1. Ensure *Parent Compartment* is set to the root compartment
     1. Click **Create Compartment**
     ![Create Compartment](images/compartment2.png) TODO
 
@@ -69,7 +65,7 @@ Some sample files have been provided that you can use when testing OCI Document 
 1. Unzip the file to a folder on your local computer. You will use these files in the next task.
 
 ## Task 4: Upload sample files to Object Storage
-Upload the sample files to object storage for this lab and later labs. You'll create an Object Storage bucket in your lab compartment then upload sample files to it.
+You will upload the sample files to object storage for this lab and later labs. You'll create an Object Storage bucket in your lab compartment then upload sample files to it.
 
 1. From the OCI console burger menu, click **Storage** then **Buckets**.
     ![Console navigation window](./images/consolebucketbutton.png)
@@ -86,16 +82,17 @@ Upload the sample files to object storage for this lab and later labs. You'll cr
     - Click **Create**
     ![Create bucket window](./images/consolecreatenewbucket.png) TODO
 
-1. Click on the name of the bucket that you just created, i.e. **docu-bucket**, to open the bucket detail window 
+1. Save the name of the bucket to the text file you created in Task 1
 
+1. Click on the name of the bucket that you just created, i.e. **docu-bucket**, to open the bucket detail window 
 
 1. Click **Upload** 
     ![Console navigation window](./images/consolebucketselection.png)
 
 1. In the *Upload Objects* dialog, click *select files*, browse to the folder where you unzipped the sample files, and select images to upload. 
-    ![Console navigation window](./images/consolebucketupload.png)
+    ![Console navigation window](./images/consolebucketupload.png) TODO
 
-1. Click **Upload** and wait until all the files have been uploaded
+1. Click **Upload** and wait a few seconds until all the files have been uploaded
 
 1. Click **Close** to close the *Upload Objects* dialog
 
@@ -122,11 +119,11 @@ Use features of Document Understanding to analyze document files.
   1. Change *Document source* from *Demo files* to **Local files**
     ![Local file panel](./images/documentconsolelocalfile.PNG)
 
-  1. You will be prompted to enter details for an output object storage bucket. Enter the following values in the *Output location* dialog:
+  1. You will be prompted to enter details for an output object storage bucket. JSON output from the document processing will be written to this location. Enter the following values in the *Output location* dialog:
     
       - Compartment: **docu-lab**
       - Output object storage location: **docu-bucket**
-      - Prefix: **output**
+      - Prefix: **console-output**
       - Click **Submit**
     ![Local file panel](./images/documentconsoleoutput.PNG) 
 
@@ -135,8 +132,9 @@ Use features of Document Understanding to analyze document files.
 
   1. Repeat the previous step for other sample files.
   
-  ## Task 6 - Try other Document Understanding features
-  
+## Task 6 - Try other Document Understanding features
+There are more features you can try in the console.
+
   1. You can repeat the steps in the previous task to test other features like *Table extraction*, *Key value extraction*, and *Document classification* in the console. (You won't need to set the output location again though.)
       ![DUS navigation panel](./images/documentconsolenav.PNG)
 
@@ -152,3 +150,4 @@ You may now **[proceed to next lab](#next)**.
 
 
 * **Last Updated By/Date**
+    * Wes Prichard, Product Manager, July 2023

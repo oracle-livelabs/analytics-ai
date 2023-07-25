@@ -96,8 +96,8 @@ The following sample code involves essentially three steps. First, it calls *Cre
     # Setup the output location where processor job results will be created
     output_location = oci.ai_document.models.OutputLocation()
     output_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axk2tfhlrens"
-    output_location.bucket_name = "<enter-your-bucket-name-here>"  # e.g "output"
-    output_location.prefix = "<enter-your-prefix-here>"  # e.g "demo"
+    output_location.bucket_name = "docu-bucket"
+    output_location.prefix = "results-python"
 
     # Create a processor_job for invoice key_value_extraction feature. 
     # Note: If you want to use another key value extraction feature, set document_type to "RECIEPT" "PASSPORT" or "DRIVER_ID". If you have a mix of document types, you can remove document_type
@@ -132,24 +132,21 @@ The following sample code involves essentially three steps. First, it calls *Cre
     </copy>
     ```
 
-3. Edit *invoicekv.py* and update all of the below variables using values you previously saved to your text file. 
+3. Edit *invoicekv.py* and update/confirm all of the below variables using values you previously saved to your text file. 
     
-    - COMPARTMENT_ID = "\<enter-your-compartment-ocid-here>"
-    - object_location.namespace_name = "\<enter-your-objectstorage-namespsace-here>"  
+    - COMPARTMENT_ID = "\<enter-your-compartment-ocid-here\>"
+        - e.g. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+    - object_location.namespace_name = "\<enter-your-objectstorage-namespace-here\>"  
         - e.g. "axabc9efgh5x"
-    - object_location.bucket_name = "\<enter-your-bucket-name-here>"  
-        - e.g "docu-bucket"
-    - object_location.object_name = "\<enter-your-object-name-here>"  
-        - e.g "invoice-white-clover.tif"
+    - object_location.bucket_name = "docu-bucket"
+    - object_location.object_name = "invoice-white-clover.tif"  
     - output_location.namespace_name = "\<enter-your-objectstorage-namespsace-here>"  
         - e.g. "axabc9efgh5x"
-    - output_location.bucket_name = "\<enter-your-bucket-name-here>"  
-        - e.g "docu-bucket"
-    - output_location.prefix = "\<enter-your-prefix-here>"  
-        - e.g "results-python"
+    - output_location.bucket_name = "docu-bucket"
+    - output_location.prefix = "results-python"
     
 
-4. To execute the code, use the command line on your local computer to navigate to the Python installation directory (C:\Users\<user>\AppData\Local\Programs\Python\<Python version>) and execute *invoicekv.py* by running the following command:
+4. To execute the code, use the command line on your local computer to navigate to the Python installation directory (C:\Users\<user>\AppData\Local\Programs\Python\<Python version>) and execute *invoicekv.py* by running the following command. (You might need to modify the command if you put *invoicekv.py* in a different location.)
     
     Windows:
     ```
@@ -291,6 +288,38 @@ The following sample code involves essentially three steps. First, it calls *Cre
             "wordIndexes" : [ 0 ]
             },
         ...
+            "tables" : null,
+            "documentFields" : [ {
+            "fieldType" : "KEY_VALUE",
+            "fieldLabel" : {
+                "name" : "VendorNameLogo",
+                "confidence" : 0.9648226
+            },
+            "fieldName" : null,
+            "fieldValue" : {
+                "valueType" : "STRING",
+                "text" : "White Clover Markets",
+                "confidence" : null,
+                "boundingPolygon" : {
+                "normalizedVertices" : [ {
+                    "x" : 0.20825050612017762,
+                    "y" : 0.10135752361263778
+                }, {
+                    "x" : 0.5072710343903186,
+                    "y" : 0.1013130049272017
+                }, {
+                    "x" : 0.5072756647974082,
+                    "y" : 0.11988379274922302
+                }, {
+                    "x" : 0.20825513652726715,
+                    "y" : 0.1199283114346591
+                } ]
+                },
+                "wordIndexes" : [ 1, 2, 3 ],
+                "value" : "White Clover Markets"
+            }
+            },
+        ...
         "detectedDocumentTypes" : null,
         "detectedLanguages" : null,
         "documentClassificationModelVersion" : null,
@@ -303,14 +332,14 @@ The following sample code involves essentially three steps. First, it calls *Cre
         }
     ```
 
-1. Confirm the results by looking at the source image.
+1. Confirm the results by looking at the source image on your local computer.
 
-1. You can also take a look at the JSON output in your Object Storage bucket under the prefix you specified in the python file.
+1. You can also take a look at the JSON output in your Object Storage bucket under the prefix you specified in the python file (1.e. *results-python*).
 
-Congratulations on completing this lab!
+Congratulations on completing this workshop!
 
 ## Learn More
-* To try other features, you can refer to the full collection of sample python code [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
+* To try other features, you can refer to the full collection of sample python code on Github [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
 
 
 
