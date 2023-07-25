@@ -341,6 +341,34 @@ Congratulations on completing this workshop!
 ## Learn More
 * To try other features, you can refer to the full collection of sample python code on Github [here](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/ai_services/document_understanding/python)
 
+## Cleanup
+If you want to remove the items added to your tenancy in this lab, you can use the following procedures to delete the object storage bucket, compartment, and policy.
+
+1. From the OCI console burger menu, click **Storage** then **Buckets**.
+    ![Console navigation window](./images/consolebucketbutton.png)
+
+1. In the *Compartment* dropdown, select the lab compartment (*docu-lab*). 
+
+1. Click on the name of the bucket created in this workshop (*docu-bucket*)
+
+1. On the *Bucket details* page, click **Delete**. Confirm that you want to delete the bucket when prompted
+
+1. From the OCI console burger menu, select **Identity & Security** then  **Compartments**
+
+1. Click on the name of the compartment created in this workshop (*docu-lab*)
+
+1. On the *Compartment details* page, click **Delete**. Confirm that you want to delete the compartment when prompted.
+
+1. From the OCI console burger Menu, select to **Identity & Security** then **Policies**
+
+1. Click **Policies** if needed to see the list of policies. Also ensure the root compartment is selected.
+
+1. Click on the name of the policy created in this workshop (*document-understanding-access-policy*)
+
+1. On the *Policy details* page, click **Delete**. Confirm that you want to delete the policy when prompted.
+
+
+
 
 
 ## Acknowledgements
