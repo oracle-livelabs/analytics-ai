@@ -132,7 +132,7 @@ Click on Show advanced options. And enter in the Spark configuration properties 
 14. It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
     ![Completed Data Flow](./images/runappresults.png " ")
-
+    
 15. You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
     ![Create Data Flow](./images/df_sparkui1.png " ")
@@ -178,7 +178,7 @@ First we want to download the customer sales csv file that we can put into our o
     ![Select the Lakehouse workspace](./images/data-integration-workspace-select.png " ")
 
 8. Select create data loader task, because we are going to use this as a data flow to take our csv file, perform transformations against and save it back into the object storage as json. This is a way to process data from files, to files, or to and from databases. We have already seen the loads to the database, and we know we have data that is going to be files that need filtering or transformations and we don't even have to put them in the database to do that.
-
+    
     ![Select Create data loader task](./images/create-data-loader-task1.png " ")
 
 9. Let's call this task LoadCustomerCSV
@@ -219,7 +219,6 @@ Here you can see the options for source and target data. Click on File Storage f
     ![Validation of the data loader task](./images/create-data-loader-validate.png " ")
 
 ## Task 3: Create an application for automation
-
 1. Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
 
     ![Create Application](./images/create-app.png " ")
@@ -243,7 +242,7 @@ Here you can see the options for source and target data. Click on File Storage f
 2. Now select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
 
     ![Run Task](./images/create-app6.png " ")
-
+    
 You may now proceed to the next lab.
 
 ## Acknowledgements

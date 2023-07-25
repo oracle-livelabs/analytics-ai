@@ -67,7 +67,7 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 2. The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
 
     ![Create Data Asset](./images/create_dataasset.png " ")
-
+    
 3. Continue to fill with Select Database, regions, Tenancy OCID which can be found by clicking on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
 
     ![Create Data Asset](./images/create_dataasset3.png " ")
@@ -105,11 +105,14 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
     ![Create Project](./images/create_project.png " ")
 
+![Create Project Fields](./images/create_project2.png " ")
+
 You have now configured this data lake by creating a database, data sources in object storage. Configuration is completed from access to services and are ready to use in this project.
 
 ## Task 4: Create the OCI Data Catalog
 
 In this task, you will create the OCI Data Catalog. Review options for creating business term to sync with the metadata for the data assets.
+
 1. Navigate to the Data Catalog by clicking on Analytics & AI, and then Data Catalog. Then click Data Catalogs.
 
     ![Navigate to Analytics](./images/Nav_datacatalog.png " ")
@@ -165,7 +168,7 @@ In this task, you will simply be creating a new table to verify that the table i
     ![Database](./images/Databaselisting.png " ")
 
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
-
+    
     ![Database Actions](./images/DBActions.png " ")
 
 3. Click on SQL to execute the query to create the table.
