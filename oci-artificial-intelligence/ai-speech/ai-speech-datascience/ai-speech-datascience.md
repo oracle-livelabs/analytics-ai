@@ -86,7 +86,7 @@ Before you can start using OCI data science, your tenancy administrator should s
 
     where dynamic-group represents the name of your dynamic group. -->
 
-## **Task 1:** Navigate to the Data Science Notebook Session
+## Task 1: Navigate to the Data Science Notebook Session
 
 Follow the below steps to open a notebook in OCI DataScience:
 1. Navigate to Data Science Service
@@ -137,7 +137,7 @@ Follow the below steps to open a notebook in OCI DataScience:
     Open the notebook session that was provisioned.
         ![Notebook session page](./images/open-notebook.png " ")
 
-## **Task 2:** Invoke the Speech Service
+## Task 2: Invoke the Speech Service
 
 
 1. Download and Upload the Files

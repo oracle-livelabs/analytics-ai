@@ -3,11 +3,11 @@
 ## Introduction
 
 When creating a Workbook out of a Dataset, you'll see a blank canvas.  
-You avoid the _blank canvas syndrome_  using **Explain**. Explain uses machine learning (**ML**) to find useful insights about your data. 
+You avoid the _blank canvas syndrome_  using **Explain**. Explain uses machine learning (**ML**) to find useful insights about your data.
 
 _Estimated Time:_ 25 minutes
 
-![Explain](./images/explain0.png)
+![Explain](./images/explain-overview.png)
 
 ### Objectives
 
@@ -26,23 +26,23 @@ After you have applied the [starter file script](https://objectstorage.us-ashbur
 
 2.  Go to top right and click **Create Workbook** button.
 
-    ![Create Workbook](../immediate-insights/images/create-workbook.png)
-    
+    ![Create Workbook](./images/create-workbook.png =250x*)
+
 
 3.  Select DCA\_SALES\_DATA and click **Add to Workbook** button.
 
-    ![Add to Workbook](../immediate-insights/images/add-dataset.png)
+    ![Add to Workbook](./images/add-dataset.png)
 
 4.  An empty **Canvas** is presented in **Visualize** tab  
 
-    ![Visualize](../immediate-insights/images/visualize.png)    
+    ![Visualize](./images/visualize.png)    
 
 ## Task 2: Get Started with Visualizing Data  
 Before drowning into details, let us introduce you to the different sections of the screen. This will help you to easily follow the next steps.
 
 1. An **Oracle Analytics Workbook** consist of **three main parts** (you can see them at the top center part of the screen):
 
-   ![OAC Navigation](./images/oac-three-parts.png)  
+   ![OAC Navigation](./images/oac-three-parts.png =250x*)  
      - **Data**: Here is where you prepare your data. You get a preview of each dataset on the Workbook. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here  
      - **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define  
      - **Present**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results
@@ -52,7 +52,7 @@ Before drowning into details, let us introduce you to the different sections of 
 2. You have already seen the **Data** screen on previous steps.  
 The **Visualize** screen is this one:
 
-   ![OAC - Canvas explanation](./images/canvas.png)
+   ![OAC - Canvas explanation](./images/dv-overview.png)
 
     Main areas to note here are:  
     - **Elements Pane**: Contains all fields from your datasets to be used in the Workbook  
@@ -86,7 +86,7 @@ This is the **Explain** feature.
 4. Lets start to explain **# VALUE**  
 In Data Pane Select **# VALUE**, Right-Click and select **Explain VALUE**
 
-    ![Explain Value](./images/explainvalue.png)  
+    ![Explain Value](./images/explainvalue.png =250x*)  
     Explain displays its findings to you as text descriptions and visualizations. You can select key visualizations and add them to your Workbook's canvas.
 
 5. A new page is opened. Explain on metric provides basic facts and anomalies based on aggregation rule.
@@ -94,26 +94,31 @@ In Data Pane Select **# VALUE**, Right-Click and select **Explain VALUE**
    ![Explain Value](./images/explainvalue2.png)  
 
 6. Interesting visuals can be selected to be added to the canvas.  
-Scroll down, hover the mouse over **SALES\_DATE**; **Category** and click on top right of the insight its checkmark (_Select for Canvas_) 
+Scroll down, hover the mouse over **SALES\_DATE**; **Category** and click on top right of the insight its checkmark (_Select for Canvas_)
 
-   ![Explain Value](./images/explainvaluebasicfacts.png) 
+   ![Explain Value](./images/explainvaluebasicfacts.png)
 
 7. Anomalies tab exhibits groups in the data that show unexpected results.  
-Select first two visualizations and click on top right of the insight (_Select for Canvas_) 
+Select first two visualizations and click on top right of the insight (_Select for Canvas_)
 
-   ![Explain Value](./images/explainvalueanomalies.png) 
+   ![Explain Value](./images/explainvalueanomalies1.png)
 
-8. Go to top right corner of the page and click **Add Selected**   ![Explain Value](./images/explainvalueaddselected.png) 
+
+8. Select the second visualization. Go to top right corner of the page and click **Add Selected**
+
+    ![Explain Value](./images/explainvalueanomalies2.png)
 
 9. Returning to the canvas you notice the 4 selected insights as visualizations.  
 Note that the canvas name has changed to **Explain VALUE** and under _My Calculations_ you get 2 new measures and 2 new attributes.  
 
-   ![Explain Value](./images/explainvaluecanvas.png) 
+   ![Explain Value](./images/explainvaluecanvas.png)
 
 10. Let's now **select** an **attribute** column which generates basic factual insights, key drivers, segments and anomalies.  
 In Data Pane Select **SUB\_CATEGORY**, Right-Click and select **Explain SUB\_CATEGORY**
 
-11. Check visuals and then close the page (Click **Close** ![Close](./images/explainsubcategoryclose2.png)) 
+   ![Explain Sub-Category](./images/explain-sub-category.png =300x*)
+
+11. Check visuals and then close the page (Click **Close** ![Close](./images/explainsubcategoryclose2.png))
 
     ![Explain Sub-Category2](./images/explainsubcategory2.png)
 
@@ -131,4 +136,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu, February 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023

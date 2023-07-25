@@ -16,7 +16,7 @@ Postman is a GUI-based REST API invocation tool that is very popular among devel
 * Basic knowledge of REST API calls.
 * Postman GUI in your local setup. If you don't have POSTMAN, please download it from [POSTMAN](https://www.postman.com/downloads/)
 
-## **Task 1:** Setting Up Postman for OCI REST APIs
+## Task 1: Setting Up Postman for OCI REST APIs
 We have provided some scripts and steps below that can be used to allow invoking OCI REST APIs through Postman. Please follow the steps in the order described.
 
 1. Import the environment into Postman
@@ -55,7 +55,7 @@ Enter Name and click 'Save to OCI REST COLLECTION'
 
 Just make sure that the OCI REST calls are executed as part of the OCI REST COLLECTION, as that collection contains the necessary javascript code to generate OCI's authentication header -->
 
-## **Task 2:** Invoke Speech OCI REST APIs
+## Task 2: Invoke Speech OCI REST APIs
 
 Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
