@@ -52,9 +52,11 @@ In this lab, you will:
 
    ![Tokenize Data](images/tokenize-data.png)
 
-6. We can look at what an entry in the training dataset looks like after it has been tokenized.  We are going to save the tokenized data.
+6. We can look at what an entry in the training dataset looks like after it has been tokenized.
 
    ![Get Tokenized Entry](images/get-tokenized-entry.png)
+
+7. Scroll down to the last sections of the notebook to observe the code which saves the tokenized dataset.
 
 You may now **proceed to the next lab**.
 
