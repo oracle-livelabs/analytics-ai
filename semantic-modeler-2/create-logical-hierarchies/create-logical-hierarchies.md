@@ -1,196 +1,99 @@
-# Examine Semantic Model Markup Language
+# Create Logical Hierarchies
 
 ## Introduction
 
-This tutorial describes how to build governed semantic models using the Semantic Modeler.
+This lab describes how to build governed semantic models using the Semantic Modeler.
 
-Estimated Lab Time: 25 minutes
+In this lab, you continue building the Sample Sales semantic model by creating calculated, level-based, and share measures, and creating level-based and time hierarchies.
 
-### About
-
-In this tutorial, you continue building the Sample Sales semantic model by creating calculated, level-based, and share measures, and creating level-based and time hierarchies..
+Estimated Time: 25 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Create caluclated, level-based, and share measures.
 * Create level-based and time hierarchies
 
 ### Prerequisites
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
+* Access to DV Content Author, BI Data Model Author, or a BI Service Administrator role
 * Access to the Sample Sales Semantic Model
+* All previous labs successfully completed
 
 
+## Task 1: Create a Level-based Hierarchy for Products
 
-## Task 1: Create a Semantic Model
+In the logical layer, your tables are dimension objects. The dimension object's logical columns are its attributes. You organize the columns of a dimension object into levels of a hierarchical structure.
 
- In the logical layer, your tables are dimension objects. The dimension object's logical columns are its attributes. You organize the columns of a dimension object into levels of a hierarchical structure.
+Begin with step 3 if you're continuing this tutorial directly after completing the steps in the Manage Logical Table Sources tutorial.
 
 1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials.
-
-2. On the Home page, click the Navigator Navigator icon, and then click Semantic Models.
-	![Open Semantic Models](./images/semantic-models.png)
-
+    
+2. On the Home page, click the **Navigator**, and then click **Semantic Models**.
+    ![Open Semantic Models](./images/semantic-models.png)
 3. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
-	![Open Samples Sales](./images/open-sample-sales.png)
-
-4. In the Logical layer, double-click **D2 Products**.
-
-	![click d2 products](./images/select-d2-products.png)
-
+    ![Open Samples Sales](./images/open-sample-sales.png)
+4. In the Logical Layer, click **D2 Products**.
+    ![Click d2 products in logical layer](./images/select-d2-products.png =400x*)
 5. In D2 Products, click the **Hierarchy** tab. In Hierarchy Type, select **Level-Based**.
-
-	![open hierarchy tab and select level-based](./images/level-based-hierarchy.png)
-
-## Task 2: Add Physical tables
-
-In this section, you add physical tables from the data source to the empty semantic model.
-
-1. In MySampleSalesDatabase, click the **Tables** tab.
-
-	![Tables tab](./images/tables.png)
-
-2. In the Connections Connections pane icon pane, expand the BISAMPLE connection, and then expand Schemas.
-
-	![Schemas](./images/schemas.png =400x*)
-
-3. Expand the BISAMPLE schema.
-
-	![Expand BISAMPLE](images/expand-bisample.png =400x*)
-
-4. Hold down the Ctrl (Command for Mac users) key and select these tables:
-	* SAMP_ ADDRESSES_D
-	* SAMP_ CUSTOMERS_D
-	* SAMP_ PRODUCTS_D
-	* SAMP_ REVENUE_F
-	* SAMP_ TIME_ DAY_D
-
-5. Drag the selected tables to Tables in the MySampleSalesDatabase tab
-
-	![Drag tables](./images/drag-tables.png)
-
-## Task 3: Create Physical Table Aliases
-
-In this section, you create physical table aliases that enables reusing the physical source tables. You also prefix the physical alias table's name with the table type such as F for fact and D for dimension, and use a number along with the F or D to change the original physical table name. For example, D1 Time for the SAMP_ TIME_ DAY_ D table and D2 Products for the SAMP_ PRODUCTS_D table.
-
-1. In Tables, right-click **SAMP_ TIME_ DAY_D** and select **Create Physical Table** Alias.
-
-	![create physical table alias](./images/create-physical-table-alias.png)
-
-2. In Create Physical Table Alias, enter <code>D1 Time</code> in **Name**, and then click **OK**. Close D1 Time.
-
-	![D1 Time](./images/d1-time.png =500x*)
-
-3. Right-click **SAMP_ PRODUCTS_D** and select **Create Physical Table Alias**.
-
-	![SAMP_PRODUCTS_D alias](./images/product-alias.png)
-
-4. In **Create Physical Table Alias**, enter <code>D2 Products</code> in **Name**, and then click **OK**. Close D2 Products.
-
-	![D2 products](images/d2-products.png =500x*)
-
-5. Create physical table aliases for **SAMP_ CUSTOMERS_ D, SAMP_ OKRESSES_ D, and SAMP_ REVENUE_F** with the following instructions:
-
-	* Right-click **SAMP_ CUSTOMERS_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D3 Customers</code> in **Name**, and then click **OK**. Close D3 Customers.
-	* Right-click **SAMP_ ADDRESSES_D** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>D4 Addresses</code> in **Name**, and then click **OK**. Close D4 Addresses.
-	* Right-click **SAMP_ REVENUE_F** and select **Create Physical Table Alias**.
-		* In Create Physical Table Alias, enter <code>F1 Revenue</code> in **Name**, and then click **OK**. Close F1 Revenue
-
-6. You should now have the D1 Time, D2 Products, D3 Customers, D4 Addresses, and F1 Revenue tables.
-
-	![Table aliases](./images/table-aliases.png =400x*)
-
-## Task 4: Create Physical Joins
-
-In this section, you define joins between alias tables to express relationships between tables in the Physical layer.
-
-1. In the **Joins** section, click the **Add Join** icon.
-
-	![Add join](./images/add-join.png)
-
-2. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D1 Time**.
-
-	![Add physical table](./images/add-physical-table.png =500x*)
-
-3. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **BILL_ DAY_ DT** column. Under the Right Table (D1 Time), click the dropdown, and select the **CALENDAR_ DATE** column. Click **Add**.
-
-	![Add join conditions](./images/join-conditions.png =500x*)
-
-4. Click **Save** icon.
-
-	![Save](./images/save.png)
-
-5. Let's add another join. Click the **Add Join** icon. In **Add Physical Join**, click the dropdown in the Left Table. Expand the database, expand the schema, and then click **F1 Revenue**. Click the dropdown in the Right Table. Expand the database, expand the schema, and then click **D2 Products**.
-
-	![Join](./images/join-f1-d2.png =500x*)
-
-6. In **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **PROD_ KEY** column. Under the Right Table (D2 Products), click the dropdown, and select the **PROD_ KEY** column. Then click **Add**.
-
-	![Join conditions](./images/conditions-f1-d2.png =500x*)
-
-7. Click the **Physical Layer** icon. Under the BISAMPLE schema, right-click **F1 Revenue**, select **Show Physical Diagram**, and then click **Selected Tables and Direct Joins**.
-
-	![Selected tables and join conditions](./images/selected-tables-joins.png)
-
-8. Drag **D3 Customers** to the **Physical Diagram**. Drag the **F1 Revenue** from the Physical Diagram away so that it's not blocking D1 Time. Re-arrange as you see fit.
-
-	![Drag D3 Customers](./images/drag-d3.png)
-
-9. From the **F1 Revenue connector**, draw a line to **D3 Customers**.
-
-	![Connect F1 D3](./images/connect-f1-d3.png)
-
-10. In **Add Physical Join** under **Join Conditions**, click the dropdown under Left Table (F1 Revenue), select the **CUST_ KEY** column. Under the Right Table (D3 Customers), click the dropdown, and select the **CUST_ KEY** column. Then click **Add**.
-
-	![Join F1 D3](./images/cust-key-join.png =500x*)
-
-11. Drag **D4 Addresses** to the Physical Diagram.
-
-	![Drag D4](./images/drag-d4.png)
-
-12. From the D3 Customers connector, draw a line to D4 Addresses.
-
-	![Connect D3-D4](./images/connect-d3-d4.png)
-
-13. In Add Physical Join under **Join Conditions**, click the list icon on the left, and select the **ADDRESS_ KEY** column. Click list icon on the right, and then select the **ADDRESS_ KEY column**. Click **Add**.
-
-	![Join ADDRESS_KEY](./images/join-address-key.png =500x*)
-
-14. Click the **Save** icon.
-
-	![Save](./images/save-diagram.png)
-
-## Task 5: Review Physical Layer tables
-
-In this section, you can review columns, joins, and data in the Physical Layer tables.
-
-1. In the Physical Layer, double-click the **D2 Products** table.
-
-	![Double click D2](./images/dc-d2.png)
-
-2. The Physical Layer table opens in the **Columns** tab.
-
-	![D2 columns](./images/d2-columns.png)
-
-3. Click **Joins** to view the joins to the F1 Revenue table.
-
-	![View F1 joins](./images/view-f1-joins.png)
-
-4. Click **Preview** to see a sample of the data in the columns.
-
-	![Preview D2 table](./images/preview-d2.png)
+    ![Select level based in hierarchy type](./images/d2-products-level-based.png)
+6. Under Hierarchies, click **Add Level**. In Level **Name,** enter <code>Product Brand</code> to replace Level-3. In the **Primary Key** and **Associated Columns fields**, select **Brand**.
+    ![Add product brand level](./images/d2-products-product-brand.png)
+7. Select **Product Brand** in Hierarchies, click **Add Level**. In Level **Name**, enter <code>Product LOB</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **LOB**.
+    ![Add product lob](./images/d2-products-product-lob.png)
+8. Select **Product LOB**, click **Add Level**. In **Level Name**, enter <code>Product Type</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Type**, and then click **Save**.
+    ![Open Samples Sales](./images/d2-products-product-type.png)
+9. Close D2 Products.
+
+## Task 2: Create a Level-based Hierarchy for Customers
+
+In this section, you create a level-based hierarchy for the D3 Customers table.
+
+1. In the Logical Layer, double-click **D3 Customers**. In D3 Customers, click the **Hierarchy** tab. In Hierarchy Type, select **Level-Based**.
+    ![Select level based](./images/d3-customers-level-based.png)
+2. Under Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer Region</code> to replace Level-3. In the **Primary Key** and **Associated Columns** fields, select **Region**.
+    ![change to customer region](./images/d3-customers-custom-region.png)
+3. Select **Customer Region** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer Area</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **Area**.
+    ![change to customer area](./images/d3-customers-customer-area.png)
+4. Select **Customer Area** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer Country</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Country Name**.
+    ![Change to customer country](./images/d3-customers-customer-country.png)
+5. Select **Customer Country** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer State Province</code> to replace Level-6. In the **Primary Key** and **Associated Columns** fields, select **State Province**.
+    ![Change to customer state province](./images/d3-customers-customer-state-province.png)
+6. Select **Customer State Province** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer City</code> to replace Level-7. In the **Primary Key** and **Associated Columns** fields, select **City**.
+    ![Change to customer city](./images/d3-customers-customer-ctiy.png)
+7. Select **Customer City** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Customer Postal Code</code> to replace Level-8. In the **Primary Key** and **Associated Columns** fields, select **Postal Code**, and then click **Save**.
+    ![Change to customer postal code](./images/d3-customers-customer-postal-code.png)
+8. Close D3 Customers.
+
+
+## Task 3: Create a Time Hierarchy
+
+In this section, you create a time hierarchy in the D1 Time logical table to use with time series functions.
+
+1. In the Logical Layer, double-click **D1 Time**. In D1 Time, click the **Hierarchy** tab. In Hierarchy Type, select **Time**.
+    ![Select Time in Hierarchy tab](./images/d1-time-time.png)
+2. Under Hierarchies, click **Add Level**. In **Level Name**, enter <code>Year</code> to replace Level-3. In the **Primary Key** and **Associated Columns** fields, select **Cal Year** and **Per Name Year**. Click the **Chronological Key** field and select **Per Name Year**.
+    ![Add Year level](./images/d1-time-year.png)
+3. Click **Add Level**. In **Level Name**, enter <code>Half Year</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **Cal Half** and **Per Name Half**. Click the **Chronological Key** field and select **Per Name Half**.
+    ![Add Half Year level](./images/d1-time-half-year.png)
+4. Select **Year** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Qtr</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Cal Qtr** and **Per Name Qtr**. Click the **Chronological Key** field and select **Per Name Qtr**.
+    ![Add Qtr level](./images/d1-time-qtr.png)
+5. Select **Qtr** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Month</code> to replace Level-6. In the **Primary Key** and **Associated Columns** fields, select **Cal Month** and **Per Name Month**. Click the **Chronological Key** field and select **Per Name Month**.
+    ![Add Month level](./images/d1-time-month.png)
+6. Select **Month** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Week</code> to replace Level-7. In the **Primary Key** and **Associated Columns** fields, select **Cal Week** and **Per Name Week**. Click the **Chronological Key** field and select **Per Name Week**.
+    ![Add Week level](./images/d1-time-week.png)
+7. Click **Save**.
+
+8. Close D1 Time.
+
+You may now **proceed to the next lab**
 
 ## Learn More
-* [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)
-* [Understand a Semantic Model's Requirements](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/understand-semantic-models-requirements.html)
-* [Plan the Physical Layer](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/plan-physical-layer.html#GUID-D7D6E064-F9C8-4B8B-A02F-B9E0358063F1)
+* [About Working with Logical Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/working-logical-hierarchies.html#ACMDG-GUID-9AF96F03-ABBA-43EF-80C9-A8ED6F018DE8)
+* [Create Logical Time Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data.html#ACMDG-GUID-8EC7B9D0-7A0D-4520-9A90-82D625518D4E)
 
 ## Acknowledgements
-* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Author** - Desmond Jung, Cloud Engineer, NACI
+* **Contributors** - Pravin Janardanam, Nagwang Gyamtso,
+* **Last Updated By/Date** - Desmond Jung, July 2023
