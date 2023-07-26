@@ -271,7 +271,7 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
 4. In the _**Create Administrator Credentials**_ section enter the username and choose a password of your own, but make sure to note it as you will be using it later through the workshop:
     
     ```
-    username: <copy>admin</copy>
+    username: <copy>admin<copy>
  
     password: **PASSWORD**
     ```
