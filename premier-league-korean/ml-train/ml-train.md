@@ -104,11 +104,11 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    노트북에서 다음 섹션을 찾을 수 있습니다.
 
-   **a) Calculate ANGLE**
+    **1. Calculate ANGLE**
 
    이 계산은 삼각 함수를 사용합니다. 왼쪽 및 오른쪽 골대까지의 각도를 계산한 다음 이를 빼서 둘 사이의 각도를 구합니다. 기본적으로 이러한 함수는 값을 라디안으로 반환하며 각도로 변환합니다.
 
-   **b) Prepare the data**
+    **2. Prepare the data**
 
    모델 학습에 관련이 있는 데이터만 포함하는 학습 테이블이 생성됩니다. 2017/2018 시즌의 샷 데이터만 사용합니다.
 
@@ -121,15 +121,15 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    `DISTANCE`를 포함하지 않은 것을 유념하세요. 왜냐하면, `ANGLE` 이 이미 `DISTANCE`의 의미를 내포하기 있기 때문입니다.`DISTANCE` 가 증가하면, `ANGLE`이 감소합니다. 하지만 여러분들은 자유롭게 실험하고 다른 속성(Features) 을 선택하셔도 됩니다~!
 
-   **c) Configure the model training**
+    **3) Configure the model training**
 
    훈련을 위해 모델 매개변수 테이블이 먼저 생성됩니다. 설정되는 유일한 매개변수는 사용할 알고리즘의 이름인 Generalized Linear Model 입니다. 이것은 분류를 위해 로지스틱 회귀를 사용합니다.
 
-   **d) Train the model**
+    **4) Train the model**
 
    훈련이 완료되면, 모델은 `XG_MODEL`로 저장될 것입니다. 
 
-   **e) Apply the model**
+    **5) Apply the model**
 
    이 코드는 새로 생성된 xG 모델을 모든 슛에 적용합니다. 모든 슛은 이제 골이 될 것인지 여부와 골 확률(xG 값)에 대한 이진(바이너리) 예측을 갖게 됩니다.
 
@@ -215,5 +215,8 @@ SQL 학습은 이 워크숍의 목표가 아닙니다. 따라서 이미 이 작�
 
    이제 다음 실습을 진행할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
+
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023
