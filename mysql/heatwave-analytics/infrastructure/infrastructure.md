@@ -239,7 +239,7 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
     OCPU: <copy>2</copy>
   	```	
   	```
-    License Type: <copy>License Included<copy>
+    License Type: <copy>License Included</copy>
   	```
 
   ![Analytics Creation](./images/oac-config-name.png)
@@ -271,9 +271,10 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
 4. In the _**Create Administrator Credentials**_ section enter the username and choose a password of your own, but make sure to note it as you will be using it later through the workshop:
     
     ```
-    username: <copy>admin<copy>
- 
-    password: **PASSWORD**
+    username: <copy>admin</copy>
+	```	
+  	```
+    password: <copy>**PASSWORD**</copy>
     ```
 	- In the _**Configure Networking**_ section make sure you select the same VCN, _**`analytics_vcn_test`**_ you have used to create the Compute Instance but for MySQL you will use a different subnet, the private one called _**`Private Subnet-analytics_vcn_test(Regional)`**_.
 
