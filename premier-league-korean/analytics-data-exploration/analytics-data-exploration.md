@@ -276,7 +276,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 우리는 슛이 골로 이어질지 여부를 예측하기 위해 가치 있는 데이터 포인트를 찾고 있습니다. 우리의 직감은 *distance* 거리가 슛이 골로 이어지는지 여부에 영향을 미쳐야 한다는 것을 알고 있습니다. 이것에 대해 더 알아봅시다.
 
-1. Control + 오른쪽 클릭을 사용하여 필드 `DISTANCE_BUCKET`(2미터의 버킷으로 그룹화된 샷 거리) 및 `EVENT_COUNT` (샷 수)를 선택합니다. 그런 다음 두 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "Create Best Visualization" 를 선택합니다.
+1. Control + 왼쪽 클릭을 사용하여 필드 `DISTANCE_BUCKET`(2미터의 버킷으로 그룹화된 샷 거리) 및 `EVENT_COUNT` (샷 수)를 선택합니다. 그런 다음 두 필드 중 하나를 마우스 오른쪽 버튼으로 클릭하고 "Create Best Visualization" 를 선택합니다.
 
    이렇게 하면 막 대형 차트가 생성됩니다. 그렇지 않은 경우 시각화 유형을 변경하십시오.
 
@@ -415,6 +415,9 @@ Let's have a first look at the data that we have available for our data challeng
 
 이제 다음 실습을 진행할 수 있습니다.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director, Sudeshni Fisher - Technology Product Strategy Manager.
+- **Last Updated By/Date** - Jason Jang, July 2023
+- **Korean Translator & Contributors** - Jason Jang, July 2023
+

@@ -96,7 +96,7 @@ This lab assumes you have:
 
 	![save output](images/save-output.png)
 
-3. Select the **ADW4Workshops** connection. Then click **Save** to save the data flow.
+3. Select the **ADW4Workshops** connection. From your columns, make sure "Order Number" is set to "Attribute" and the agrregation for "Discount % for Order" is set to "Average". Then click **Save** to save the data flow.
 
 	![adw connection](images/adw-connection.png)
 
