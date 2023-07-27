@@ -16,20 +16,14 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
     object storage bucket name: 
       ex. docu-bucket
 
-    tenancy_ocid:
-      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg  
-
-    user_ocid: 
-      ex. ocid1.user.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
-
-    region: 
-      ex. us-phoenix-1
-      
-    compartment_ocid: 
-      ex. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
-
+    private key file location: 
+	    ex. C:\Users\MYNAME\Downloads\myuser_2023-07-26T22_13_50.623Z.pem
+	
     object storage namespace:
       ex. axabc9efgh5x
+
+    tenancy_ocid:
+      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg  
     </copy>
     ```
 
@@ -53,14 +47,14 @@ You can use an existing compartment to run the lab but we recommend you create a
     1. Enter a description
     1. Ensure *Parent Compartment* is set to the root compartment
     1. Click **Create Compartment**
-    ![Create Compartment](images/compartment2.png) TODO
+    ![Create Compartment](images/compartment2.png)
 
 1. Save the name of your new compartment in the text file you created in the previous task
 
 ## Task 3: Download sample files
 Some sample files have been provided that you can use when testing OCI Document Understanding on the cloud console.
 
-1. Download the zip file at this link TODO and save it to your local computer.
+1. Download the zip file at this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/sample_images.zip) and save it to your local computer.
 
 1. Unzip the file to a folder on your local computer. You will use these files in the next task.
 
@@ -71,7 +65,7 @@ You will upload the sample files to object storage for this lab and later labs. 
     ![Console navigation window](./images/consolebucketbutton.png)
 
 1. In the *Compartment* dropdown, select the lab compartment (*docu-lab*). (If you created a policy for a specific compartment in Lab 1, select the same name here.)
-    ![Create object storage compartment window](./images/consolecompartmentsearch.png) TODO
+    ![Create object storage compartment window](./images/consolecompartmentsearch.png)
 
 1. Next, click **Create Bucket**
     ![Create bucket window](./images/consolecreatebucket.png)
@@ -80,31 +74,31 @@ You will upload the sample files to object storage for this lab and later labs. 
     - Bucket Name: **docu-bucket** (recommended)
     - Storage Tier: Standard
     - Click **Create**
-    ![Create bucket window](./images/consolecreatenewbucket.png) TODO
+    ![Create bucket window](./images/consolecreatenewbucket.png)
 
 1. Save the name of the bucket to the text file you created in Task 1
 
-1. Click on the name of the bucket that you just created, i.e. **docu-bucket**, to open the bucket detail window 
+1. Click on the name of the bucket that you just created, i.e. **docu-bucket**, to open the *Bucket details* window 
 
 1. Click **Upload** 
     ![Console navigation window](./images/consolebucketselection.png)
 
-1. In the *Upload Objects* dialog, click *select files*, browse to the folder where you unzipped the sample files, and select images to upload. 
-    ![Console navigation window](./images/consolebucketupload.png) TODO
+1. In the *Upload Objects* dialog, click *select files*, browse to the folder where you unzipped the sample files, and select images to upload. Upload all the files that were in the .zip file you downloaded.
+    ![Console navigation window](./images/consolebucketupload.png)
 
-1. Click **Upload** and wait a few seconds until all the files have been uploaded
+1. Click **Upload** and wait a few seconds until all the files show *Finished*
 
 1. Click **Close** to close the *Upload Objects* dialog
 
 ## Task 5: Analyze Document Data
 Use features of Document Understanding to analyze document files.
 
-  1. Using the burger Menu on the top left corner of the OCI console, select **Analytics and AI**, then select **Document Understanding** under *AI Services*
+  1. Using the burger menu on the top left corner of the OCI console, select **Analytics and AI**, then select **Document Understanding** under *AI Services*
       ![Console navigation window](./images/ocinavigationmenu.png)
 
   2. On the Document Understanding page, select the first feature in the left list, **Text extraction** 
   
-  1. A demo file is automatically loaded by default. View the extraction results on the right hand *Results* panel. Note that you can view the results by line or by word.
+  1. A demo file is automatically processed by default. After a few seconds, view the extraction results on the right hand *Results* panel. Note that you can view the results by line or by word.
       ![DUS demo window](./images/documentconsoletext.PNG)
 
   1. If you're curious about the raw JSON response, scroll down on the results panel... 
@@ -135,7 +129,7 @@ Use features of Document Understanding to analyze document files.
 ## Task 6 - Try other Document Understanding features
 There are more features you can try in the console.
 
-  1. You can repeat the steps in the previous task to test other features like *Table extraction*, *Key value extraction*, and *Document classification* in the console. (You won't need to set the output location again though.)
+  1. You can repeat the steps in the previous task to test other features like *Table extraction*, *Key value extraction*, and *Document classification* in the console. Some sample documents are not applicable to some features. For example some documents don't have tables to extract. (You won't need to set the output location again though.)
       ![DUS navigation panel](./images/documentconsolenav.PNG)
 
 

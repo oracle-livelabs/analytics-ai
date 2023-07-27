@@ -46,7 +46,7 @@ Before you start using OCI Document Understanding, OCI policies must be setup to
         <copy>allow group <group-name> to use ai-service-document-family in tenancy</copy>
         ```
 
-    1. If your want to analyze documents stored in an object storage bucket, add the below policy statement in the *Policy Builder* field to grant object storage access permissions to users. This is recommended and required for most use cases.
+    1. Add the below policy statement in the *Policy Builder* field to grant object storage access permissions to users. This enables processing of documents stored in an object storage bucket. 
         ```
         <copy>allow any-user to use object-family in tenancy</copy>
         ```
@@ -69,6 +69,8 @@ Before you start using OCI Document Understanding, OCI policies must be setup to
         ```
         <copy>allow group <group_in_tenancy> to manage object-family in compartment <compartment_containing_object_storage_output_bucket></copy>
         ```
+    1. Click the **Create** button to create the policy containing 3 statements.
+        ![OCI Create policy screen](./images/create-policy2.PNG)
 
 ## Summary
 In this lab you learned how to set up your OCI Document Understanding policies.

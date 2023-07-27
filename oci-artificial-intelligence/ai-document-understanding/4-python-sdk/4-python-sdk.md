@@ -12,7 +12,7 @@ The Python SDK can be found [here](https://docs.oracle.com/en-us/iaas/Content/AP
 * Learn how to use the OCI Python SDK to communicate with the Document Understanding service.
 
 ### Prerequisites:
-* You will use the text file of tenancy configuration you created and updated in previous labs TODO-confirm
+* You will use the text file of tenancy configuration you created and updated in previous labs
 * You will need to use the API key you created in Lab 3
 
 ## Task 1: Setup API Signing Key and Config File
@@ -30,27 +30,25 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
     <copy>mkdir ~/.oci</copy>
     ```
 
-
-
 1. In the cloud console, open the **Profile** menu and click **My profile** (or in older tenancies, your user name).
 
-    ![Profile menu](./images/new-profilename.png " ") TODO
+    ![Profile menu](./images/new-profilename.png " ")
 
 1. Under *Resources*, select **API keys**. The fingerprint for your previously-generated key is listed under *API keys*.
 
     > **Note**: When you completed Lab 3, you created an API Key. We'll use that same API key here.
     
-    ![Add API button](./images/add-api-button.png " ") TODO
+    ![Add API button](./images/api-key-fingerprint.png " ")
 
-1. Use the 3 dot icon on the row where the key is listed and select **View Configuration file**. Copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
+1. Use the 3 dot icon on the row where the key is listed and select **View Configuration file**. Click **Copy* to copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
 
     ![View configuration file](./images/conf.png " ")      
 
-1. Create a file on your local computer with the name *config* (with no extension) in the .oci folder and paste the values previously copied. 
+1. Create a file on your local computer with the name *config* (with no extension) in the .oci folder and paste the values copied in the previous step. 
 
-1. Locate the .pem keyfile that you downloaded in Lab 3 and copy it to the .oci folder. The path where you downloaded it should be in your text file.
+1. Locate the *\*.pem* keyfile that you downloaded in Lab 3 and copy it to the *.oci* folder. The path where you downloaded it should be in your text file.
 
-1. Replace **\<path to your private keyfile>** with the path of your generated private key. You can use this syntax: *key_file=~/.oci/mykeyfile.pem*. Save your config file changes.
+1. Replace <**path to your private keyfile**> with the path of your generated private key. You can use this syntax: *key_file=~/.oci/mykeyfile.pem*. Save your config file changes.
 
       ![Updated config file](./images/config2.png " ")
 
@@ -59,7 +57,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
 ## Task 2: Run Python Code Sample
 
-1. Create a new file on your local machine called *invoicekv.py* in the C:\Users\<user>\AppData\Local\Programs\Python\<Python version>\Scripts folder, or add it to your Desktop if you are using a Mac.
+1. Create a new file on your local machine called *invoicekv.py* in the 'C:\Users\\*user*\AppData\Local\Programs\Python\\*Python version*\Scripts' folder, or add it to your Desktop if you are using a Mac.
 
 2. Copy the python code from below and paste it into *invoicekv.py*. <br>
 The following sample code involves essentially three steps. First, it calls *CreateProcessorJob* to process your sample invoice. Second, it calls *GetProcessorJob* to get the status of the job. Third, it calls *GetObject* to get the response from Object Storage.
@@ -77,16 +75,16 @@ The following sample code involves essentially three steps. First, it calls *Cre
     config = oci.config.from_file('~/.oci/config', CONFIG_PROFILE)
 
     # Compartment where processor job will be created (required)
-    COMPARTMENT_ID = "<enter-your-compartment-ocid-here>"  # e.g. "ocid1.compartment.oc1..aaaaaaaae5j73axsja5fnahbn23ilop3ynjkcg77mcvgryddz4pkh2t5ppaq";
+    COMPARTMENT_ID = "enter-your-compartment-ocid-here"  # e.g. "ocid1.compartment.oc1..aaaaaaaae5j73axsja5fnahbn23ilop3ynjkcg77mcvgryddz4pkh2t5ppaq";
 
     def create_processor_job_callback(times_called, response):
         print("Waiting for processor lifecycle state to go into succeeded state:", response.data)
 
     # Setup input location where document being processed is stored.
     object_location = oci.ai_document.models.ObjectLocation()
-    object_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axhh9gizbq5x"
+    object_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axabc9efgh5x"
     object_location.bucket_name = "docu-bucket"  # e.g "docu-bucket"
-    object_location.object_name = "<enter-your-object-name-here>"  # e.g "invoice-white-clover.tif"
+    object_location.object_name = "enter-your-object-name-here"  # e.g "invoice-white-clover.tif"
 
     aiservicedocument_client = oci.ai_document.AIServiceDocumentClientCompositeOperations(oci.ai_document.AIServiceDocumentClient(config=config))
 
@@ -95,7 +93,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
 
     # Setup the output location where processor job results will be created
     output_location = oci.ai_document.models.OutputLocation()
-    output_location.namespace_name = "<enter-your-objectstorage-namespace-here>"  # e.g. "axk2tfhlrens"
+    output_location.namespace_name = "enter-your-objectstorage-namespace-here"  # e.g. "axabc9efgh5x"
     output_location.bucket_name = "docu-bucket"
     output_location.prefix = "results-python"
 
@@ -132,7 +130,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
     </copy>
     ```
 
-3. Edit *invoicekv.py* and update/confirm all of the below variables using values you previously saved to your text file. 
+3. Edit *invoicekv.py* and update/confirm all of the below variables using values you previously saved to your text file. Then save *invoicekv.py*.
     
     - COMPARTMENT_ID = "\<enter-your-compartment-ocid-here\>"
         - e.g. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
@@ -145,8 +143,15 @@ The following sample code involves essentially three steps. First, it calls *Cre
     - output_location.bucket_name = "docu-bucket"
     - output_location.prefix = "results-python"
     
+1. Open a command line on your local computer and navigate to your Python installation folder: (C:\Users\<user>\AppData\Local\Programs\Python\<Python version> on Windows) 
 
-4. To execute the code, use the command line on your local computer to navigate to the Python installation directory (C:\Users\<user>\AppData\Local\Programs\Python\<Python version>) and execute *invoicekv.py* by running the following command. (You might need to modify the command if you put *invoicekv.py* in a different location.)
+1. Execute the following command to verify you are running python 3.6, 3.7, 3.8, or 3.9
+
+    ```
+    <copy>python --version</copy>
+    ```
+
+4. Execute *invoicekv.py* by running the following command. (You might need to modify the command if you put *invoicekv.py* in a different location.)
     
     Windows:
     ```
@@ -366,8 +371,6 @@ If you want to remove the items added to your tenancy in this lab, you can use t
 1. Click on the name of the policy created in this workshop (*document-understanding-access-policy*)
 
 1. On the *Policy details* page, click **Delete**. Confirm that you want to delete the policy when prompted.
-
-
 
 
 
