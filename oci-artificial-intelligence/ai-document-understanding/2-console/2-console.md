@@ -8,22 +8,25 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
 ## Task 1: Prepare to save configuration settings
 
 1. Open a text editor and copy & paste this text into a text file and save it on your local computer. You will store settings there from your OCI tenancy that will be used during the lab.
-    ```text
+    ```text TODO
     <copy>
-    lab compartment:
+    lab compartment: 
       ex. docu-lab
+
+    lab compartment ocid: 
+      ex. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
 
     object storage bucket name: 
       ex. docu-bucket
 
     private key file location: 
-	    ex. C:\Users\MYNAME\Downloads\myuser_2023-07-26T22_13_50.623Z.pem
-	
-    object storage namespace:
+      ex. C:\Users\MYNAME\Downloads\myuser_2023-07-26T22_13_50.623Z.pem
+      
+    object storage namespace: 
       ex. axabc9efgh5x
 
-    tenancy_ocid:
-      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg  
+    root compartment ocid: 
+      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
     </copy>
     ```
 
@@ -50,6 +53,14 @@ You can use an existing compartment to run the lab but we recommend you create a
     ![Create Compartment](images/compartment2.png)
 
 1. Save the name of your new compartment in the text file you created in the previous task
+
+1. The *Compartments* page is displayed and lists all of the compartments.  Click the name of the lab compartment you just created (i.e. docu-lab).
+	    
+1. On the *Compartment details* page, click **Copy** next to the compartment *OCID*.
+	    ![OCI comparment details page](./images/compartment-copy.png " ")
+    
+1. Save the compartment OCID to your text file as the *lab compartment ocid*
+
 
 ## Task 3: Download sample files
 Some sample files have been provided that you can use when testing OCI Document Understanding on the cloud console.
