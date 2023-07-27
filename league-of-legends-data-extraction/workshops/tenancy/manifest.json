@@ -32,13 +32,19 @@
       "type": "dbcs"
     },
     {
-      "title": "Lab 4: Create a Model",
+      "title": "Lab 4: Think about the Problem",
+      "description": "How to think like a Data Scientist to solve the problem",
+      "filename": "https://oracle-devrel.github.io/leagueoflegends-optimizer/hols/dataextraction/the_problem/problem.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 5: Create a Model",
       "description": "Create Model",
       "filename": "https://oracle-devrel.github.io/leagueoflegends-optimizer/hols/dataextraction/creatingmodel/creatingmodel.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 5: Client",
+      "title": "Lab 6: Client",
       "description": "Client API.",
       "filename": "https://oracle-devrel.github.io/leagueoflegends-optimizer/hols/dataextraction/client/client.md",
       "type": "dbcs"
@@ -47,10 +53,6 @@
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
-    },
-    {
-      "title": "Oracle CloudWorld 2023 - Support",
-      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
     }
   ]
 }
