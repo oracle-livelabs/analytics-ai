@@ -4,7 +4,6 @@
 
 Learn how to create logical parent-child hierarchies and presentation layer objects in your semantic model.
 
-
 Estimated Time: 25 minutes
 
 ### Objectives
