@@ -39,7 +39,7 @@ We have put together a Postman Collection to help you get started with calling t
 Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see it contains multiple variables with empty values. We need to set 6 of those variables.
     ![OCI Credentials template](./images/postman-ocicredentialsblank.png)
 
-1. Configure *tenancy_ocid *
+1. Configure *tenancy_ocid*
 
     1. To get the **tenancy_ocid**, open the OCI Console, click the **Profile** icon in the upper right corner, then select **Tenancy: *name***
     ![OCI profile menu](./images/selecttenancy.png " ")
@@ -313,7 +313,7 @@ In this task, you'll call the Document AI synchronous REST API, using POSTMAN, t
 1. In the objects listed in the folder, you'll find another folder with the name of the job ID. Click the job ID folder to open it. 
 
 1. Keep expanding the subfolders until you find *sample-invoice.PNG.json*. That JSON file includes all the text extracted from the original document. Use the 3-dot menu on the right end of the row to download it and view it. The name of the downloaded file will be *results-postman_\<jobId\>_\<namespace\>_docu-bucket_results_invoice-sample.PNG.json*
-  ![Object storage bucket](./images/documentoutput.png) TODO
+  ![Object storage bucket](./images/documentoutput.png)
 
 ## Summary
 You configured Postman to connect to your OCI tenancy and you initiated a text extraction job using the REST API then obtained the results of the job. You can use this same approach to test other REST API requests. The REST API reference can be found [here](https://docs.oracle.com/en-us/iaas/api/) under *Document Understanding API*. <br>

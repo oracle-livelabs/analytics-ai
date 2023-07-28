@@ -40,7 +40,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
     
     ![Add API button](./images/api-key-fingerprint.png " ")
 
-1. Use the 3 dot icon on the row where the key is listed and select **View Configuration file**. Click **Copy* to copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
+1. Use the 3 dot icon on the row where the key is listed and select **View Configuration file**. Click **Copy** to copy the values shown on the *Configuration File Preview*. You will paste them into a file in the next step.
 
     ![View configuration file](./images/conf.png " ")      
 
