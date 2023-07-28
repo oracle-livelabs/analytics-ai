@@ -26,35 +26,35 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
 
-  ![](images/projectstab.png "Home menu ")
+  ![Home menu](images/projectstab.png " ")
 
 2. Select your `DI_WorkshopNN` project from the projects list.
 
-  ![](images/projects.png "Projects list")
+  ![Projects list](images/projects.png " ")
 
 3. Select **Pipelines** section under project Details tab.
 
-  ![](images/project_pipelines.png "Select pipelines in menu")
+  ![Select pipelines in menu](images/project_pipelines.png " ")
 
 4. Click on **Create Pipeline**.
 
-  ![](images/pipeline_create.png "Create pipeline")
+  ![Create pipeline](images/pipeline_create.png " ")
 
 5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
 
-  ![](images/pipeline_name.png "Enter pipeline name")
+  ![Enter pipeline name](images/pipeline_name.png " ")
 
 6. Click on **Create** button. The title of the pipeline will change to the pipeline name you have just added.
 
-  ![](images/pipeline_name_after_save.png "Pipeline name changed")
+  ![Pipeline name changed](images/pipeline_name_after_save.png " ")
 
 7. To add a task, you will drag and drop a task operator from the Operators Panel (Integration Task is in the operator pallette on left hand side). Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
-  ![](images/pipeline_addintegration.png "Add integration task to pipeline")
+  ![Add integration task to pipeline](images/pipeline_addintegration.png " ")
 
 8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
 
-  ![](images/pipeline_integrationtaskpanel.png "View integration task operator panel")
+  ![View integration task operator panel](images/pipeline_integrationtaskpanel.png " ")
 
 9. A page pops up with the selections for the **Integration Task**:
 
@@ -62,15 +62,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Integration Task**, check the `Load Customers Lab` task.
     - Click **Select**.
 
-    ![](images/pipeline_selecttask.png "Select integration task from list")
+    ![Select integration task from list](images/pipeline_selecttask.png " ")
 
 10. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
-  ![](images/pipeline_with_data_loader.png "Data loader task added to pipeline")
+  ![Data loader task added to pipeline](images/pipeline_with_data_loader.png " ")
 
 11. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
-  ![](images/pipeline_dataloader.png "Select data loader task option")
+  ![Select data loader task option](images/pipeline_dataloader.png " ")
 
 12. A page pops up with the selections for the **Data Loader Task**:
 
@@ -78,27 +78,27 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
-    ![](images/pipeline_selectdataloader.png "Select data load task from list")
+    ![Select data load task from list](images/pipeline_selectdataloader.png " ")
 
 13. In the properties bar, the **Data Loader Task** `Load Revenue Data into Data Warehouse` is now selected. The Identifier has automatically changed with the name of Data Loader Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
 
-  ![](images/pipeline_dataloaderpanel.png "View of pipeline with data loader")
+  ![View of pipeline with data loader](images/pipeline_dataloaderpanel.png " ")
 
 14. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 
-  ![](images/pipeline_merge.png "Add merge into pipeline and connect")
+  ![Add merge into pipeline and connect](images/pipeline_merge.png " ")
 
 15. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note*: Be sure to save often during design time!
 
-  ![](images/pipeline_merge2.png "View of merge in pipeline")
+  ![View of merge in pipeline](images/pipeline_merge2.png " ")
 
 16. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_SUCCESS** operator to the Integration task you added.
 
-  ![](images/pipeline_integrationtask.png "Add another integration task into pipeline")
+  ![Add another integration task into pipeline](images/pipeline_integrationtask.png " ")
 
 17. On the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application. This integration task will run **in sequence** after the successful run of the previous parallel tasks.
 
-  ![](images/pipeline_integrationtask2properties.png "Select the second integration task from pipeline and configure")
+  ![Select the second integration task from pipeline and configure](images/pipeline_integrationtask2properties.png " ")
 
 18. A page pops up with the selections for the **Integration Task**:
 
@@ -106,23 +106,23 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
     - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
-    ![](images/pipeline_integrationtask2select.png "Select the Load Employees by Regions integration task from the list")
+    ![Select the Load Employees by Regions integration task from the list](images/pipeline_integrationtask2select.png " ")
 
 19. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 
-  ![](images/pipeline_integrationtask2panel.png "View of pipeline with the second integration task added")
+  ![View of pipeline with the second integration task added](images/pipeline_integrationtask2panel.png " ")
 
 20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
-  ![](images/pipeline_integrationtaskconnected.png "Completed pipeline view")
+  ![Completed pipeline view](images/pipeline_integrationtaskconnected.png " ")
 
 21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
-  ![](images/validate-pip.png "Validation details shown")
+  ![Validation details shown](images/validate-pip.png " ")
 
 22. Click on **Create and Close**.
 
-  ![](images/validate-pip.png "Create and close")
+  ![Create and close](images/validate-pip.png " ")
 
 ## Task 2: Create a Pipeline task
 
@@ -131,11 +131,11 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-  ![](images/pipelinetask1.png "Create task menu")
+  ![Create task menu](images/pipelinetask1.png " ")
 
 2. Click **Create Task**, and then select **Pipeline**.
 
-  ![](images/pipelinetask2.png "Create pipeline task")
+  ![Create pipeline task](images/pipelinetask2.png " ")
 
 3. On the **Create Pipeline Task** page, enter:
 
@@ -143,19 +143,19 @@ You will create a Pipeline task for the pipeline you created in the above step.
     - **Description** (optional)
     - **Project** `DI_WorkshopNN` is auto-populated because we're creating this task from project details page.
 
-    ![](../pipelines/images/pipeline-task-name.png "Create pipeline task panel")
+    ![Create pipeline task panel](../pipelines/images/pipeline-task-name.png " ")
 
 4. In the **Pipeline** section, click **Select**.
 
-  ![](images/pipelinetask3.png "Select pipeline for task")
+  ![Select pipeline for task](images/pipelinetask3.png " ")
 
 5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
-  ![](images/pipeline-select.png "Select pipeline from list of pipelines")
+  ![Select pipeline from list of pipelines](images/pipeline-select.png " ")
 
 6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Create and Close**.
 
-  ![](images/save-pipeline-task.png "Select create and close")
+  ![Select create and close](images/save-pipeline-task.png " ")
 
 ## Task 3: Create an Application
 
@@ -163,19 +163,19 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
 1. On the workspace Home page, in the **Quick Actions tile**, click **Create Application**.
 
-  ![](../pipelines/images/create-app-tile.png "Create application from home page of OCI Data Integration")
+  ![Create application from home page of OCI Data Integration](../pipelines/images/create-app-tile.png " ")
 
 2. On the Applications page, click on `Create Blank Application` (its also possible to copy existing applications and create applications based on templates)
 
-  ![](images/create_app1.png "Select create blank application")
+  ![Select create blank application](images/create_app1.png " ")
 
 Then enter `Workshop ApplicationNN`  (replace NN with your user number) for **Name**. You can optionally give a short **Description** for your application, then click **Create**.
 
-  ![](images/create_app2.png "Create application, enter name and description.")
+  ![Create application, enter name and description](images/create_app2.png " ")
 
 3. The **Application Details page** for `Workshop ApplicationNN` opens in a new tab.
 
-  ![](../pipelines/images/my-application.png "Application pane for your created application")
+  ![Application pane for your created application](../pipelines/images/my-application.png " ")
 
 In OCI Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
@@ -183,15 +183,15 @@ In OCI Data Integration, a **Task** is a design-time resource that specifies a s
 
 1. On the `DI_WorkshopNN` Project Details page, from the submenu, click **Tasks**.
 
-  ![](../pipelines/images/click-tasks.png "Click on tasks")
+  ![Click on tasks](../pipelines/images/click-tasks.png " ")
 
 2. All tasks from the `DI_WorkshopNN` project will be displayed. Click on the **Actions menu** (three dots) for the `Load DWH Pipeline Task`. Then, click on **Publish to Application**.
 
-  ![](../pipelines/images/publish-to-app.png "Publish task to application")
+  ![Publish task to application](../pipelines/images/publish-to-app.png " ")
 
 3. In the Publish to Application dialog, select the `Workshop ApplicationNN` to publish to from the drop-down list. Then, click **Publish**.
 
-  ![](../pipelines/images/app-select.png "Select your application")
+  ![Select your application](../pipelines/images/app-select.png " ")
 
    **Congratulations!**  
 

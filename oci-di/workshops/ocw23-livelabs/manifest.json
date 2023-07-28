@@ -26,6 +26,11 @@
             "title": "Lab 3: Run Data Loader task, schedule and run Pipeline task",
             "description": "Learn how to run a Data Loader task, create a task schedule in your OCI Data Integration application, to schedule the Pipeline task and to run it.",
             "filename": "../../run-pipeline/run-pipeline.md"
+        },
+        {
+            "title": " Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
