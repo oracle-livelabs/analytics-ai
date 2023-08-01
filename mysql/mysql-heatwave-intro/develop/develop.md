@@ -1,4 +1,4 @@
-# Use MySQL HeatWave For Development  
+# Build a LAMP application with MySQL HeatWave  
 
 ## Introduction
 
@@ -241,8 +241,10 @@ Estimated Time: 20 minutes
     Example: http://129.213.167..../mydbchart.php
     ![mydbchart out](./images/mydbchart-out.png "mydbchart out ")
 
+You may now **proceed to the next lab**
+
 ## Acknowledgements
 
-- **Author** - Perside Foster, MySQL Solution Engineering, Harsh Nayak , MySQL Solution Engineering 
-- **Contributors** - Salil Pradhan, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2023
+- **Author** - Perside Foster, MySQL Principal Solution Engineering
+- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2023
