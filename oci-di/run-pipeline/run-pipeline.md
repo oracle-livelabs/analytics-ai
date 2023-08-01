@@ -20,7 +20,7 @@ You will schedule your Pipeline Task to run daily at 2PM.
 
 1. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![Workspace home, select applications](images/workspace_home.png " ")
+  ![Workspace home, select applications](images/workspace-home.png " ")
 
 2. From the **list of Applications**, select the `Workshop ApplicationNN` you created, which contains all the tasks that you created previously in this workshop.
 
@@ -48,7 +48,7 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
 1. In the OCI Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![Home page, choose Analytics and AI](images/home_menu.png " ")
+  ![Home page, choose Analytics and AI](images/home-menu.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
@@ -56,7 +56,7 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
 3. From your `DI_Workspace` homepage, click on **Applications**.
 
-  ![Click on applications](images/workspace_home.png " ")
+  ![Click on applications](images/workspace-home.png " ")
 
 4. From the **list of Applications**, select the `Workshop ApplicationNN`, which contains all the tasks that you created previously in this workshop.
 

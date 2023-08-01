@@ -5,7 +5,7 @@
         {
             "title": "Introduction: OCI Data Integration",
             "description": "Learn about the features provided by the data integration services",
-            "filename": "./intro.md"
+            "filename": "../../introduction-lab/intro.md"
         },
         {
             "title": "Get Started",
