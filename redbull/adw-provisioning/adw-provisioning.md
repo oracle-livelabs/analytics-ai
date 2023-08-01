@@ -38,7 +38,7 @@ To complete this lab, you need to have the following:
       - Display name: `REDBULL`
       - Database name: `REDBULL`
       - Choose a workload type: `Data Warehouse`
-      - Choose a deployment type: `Shared Infrastructure`
+      - Choose a deployment type: `Serverless Infrastructure`
 
 4. Fill the next part of the provisioning form with the following values.
 

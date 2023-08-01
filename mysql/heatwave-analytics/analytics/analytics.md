@@ -72,7 +72,7 @@ In this lab, you will:
 
 4. Browse the connection type or simply type in the search section _**MySQL**_, and Click it.
   
-  	![Oracle Analytics dashboard connection creation](./images/select-mysql..png)
+  	![Oracle Analytics dashboard connection creation](./images/select-mysql.png)
 
  	In the new window we have a lot of information we need to provide. Host name is a little bit tricky, we need to provide the Internal FQDN (fully qualified domain name) of the MySQL Database Instance. To find this out, you need to go back to the MySQL instance details.
 
