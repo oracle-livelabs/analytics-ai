@@ -1,8 +1,8 @@
-# Setup the Environment
+# Prepare the Dataset
 
 ## Introduction
 
-In this exercise, you will upload the data, prepare and save the dataset, and create the workbook environment.
+In this exercise, you will upload the data, prepare and save the dataset, and create the workbook.
 
 Estimated Time: 20 minutes
 
@@ -16,12 +16,14 @@ In this lab, you will:
 ### Prerequisites 
 
 This lab assumes you have:
-* An Oracle Cloud account
+* An Oracle account
 * A basic understanding of analytics terms and concepts
+* Permission to create Datasets in Oracle Analytics Cloud (OAC)
+* Access to the Console of OAC
 
 ## Task 1: Upload the data file
 
-Premier League has provided a dataset showing Team Name, Player Name, Game Date, Season, Opponent, Latitude and Longitude for all of the successful penalty goals scored during the 2022-23 season. This data will be used to construct a map showing where the ball enters the goalmouth on those penalties. You will be able to see which players were more successful at home versus while they were playing away. You will also be able to determine if there are players who have equal success at home or while away.
+Premier League has provided a dataset showing Match Description, Player Name, Match Date, Latitude and Longitude for all of the successful penalty goals scored during the 2022-23 season. This data will be used to construct a map showing where the ball enters the goalmouth on those penalties. You will be able to see which players were more successful at home versus while they were playing away. You will also be able to determine if there are players who have equal success at home or while away.
 
 1. Download the attached file. 
 
@@ -43,7 +45,7 @@ Premier League has provided a dataset showing Team Name, Player Name, Game Date,
 
   ![Select Ok to begin preparing the dataset](images/create-dataset5.png)
 
-## Task 2: Prepare the Dataset
+## Task 2: Configure the Location Details
 
 1. At the bottom of your browser window, click on the file name to access the data editor. 
 
@@ -73,7 +75,7 @@ Premier League has provided a dataset showing Team Name, Player Name, Game Date,
 
   ![Click to close the auto-insights pane](images/create-workbook1.png)
 
-This concludes the setup and preparation lab. You may proceed to the next lab.
+This concludes the dataset preparation lab. You may proceed to the next lab.
 
 
 ## Acknowledgements

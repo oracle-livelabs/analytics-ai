@@ -17,11 +17,13 @@ In this workshop, you will learn how to:
 * Build visualizations
 * Filter Oracle Analytics Cloud dashboards and visualizations
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
 * A basic understanding of analytics terms and concepts
+* Permission to create Datasets in Oracle Analytics Cloud (OAC)
+* Access to the Console of OAC
 
 
 ## Acknowledgements
