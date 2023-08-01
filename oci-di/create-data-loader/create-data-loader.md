@@ -62,17 +62,17 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
 7. You will click on Next and in this panel, we will specify the different configurations i.e., required to select the source data.
 8. Now, in the panel select the following:
-* Data Asset: Object_Storage.
-* Connection: Default Connection.
-* Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
-* Bucket: DI-bucket (the Object Storage bucket where REVENUE.CSV file resides).
-* We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
+    * Data Asset: Object_Storage.
+    * Connection: Default Connection.
+    * Compartment: DI-compartment (the Compartment in which you have the bucket where the REVENUE.CSV file resides).
+    * Bucket: DI-bucket (the Object Storage bucket where REVENUE.CSV file resides).
+    * We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
 
   ![Parameterize the source information](images/create-data-loader-parameters.png " ")
 
-* File Type: Set to CSV and select the Compression type set to the default value.
-* Since the csv file has a header, we will check Data has header option mentioned just below the Compression type.
-* Let’s keep the other things as default until we go down and select our entities in the Data entities section.
+    * File Type: Set to CSV and select the Compression type set to the default value.
+    * Since the csv file has a header, we will check Data has header option mentioned just below the Compression type.
+    * Let’s keep the other things as default until we go down and select our entities in the Data entities section.
 
   ![Source data file type](images/create-data-loader-filetype.png " ")
 
@@ -89,18 +89,18 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 11. Now click on Next button.
 
 12. Here, we are going to select the configurations for the target data type for the data loader task. Now, select the following:
-* Data Asset: Data_Warehouse
-* Connection: Beta Connection
-* Schema: BETA
-* We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
-* Ensure the “Use default staging location settings.” is selected.
+    * Data Asset: Data_Warehouse
+    * Connection: Beta Connection
+    * Schema: BETA
+    * We can easily parameterize everything by clicking on Parameterize option. Later we will see how we can reuse the same flow for different sources and targets during run time.
+    * Ensure the “Use default staging location settings.” is selected.
 
   ![Target data asset information also parameterized](images/create-data-loader-target.png " ")
 
 13. In the Data Entities tab:
-* Click on Create new data entities.
-* Select Integration Strategy as Insert
-* Select same entity names as source for our example.
+    * Click on Create new data entities.
+    * Select Integration Strategy as Insert
+    * Select same entity names as source for our example.
 
   ![Target data entities information](images/create-data-loader-targetentities.png " ")
 
