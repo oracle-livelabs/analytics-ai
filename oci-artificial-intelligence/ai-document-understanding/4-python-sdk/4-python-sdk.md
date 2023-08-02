@@ -48,7 +48,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
 1. Locate the *\*.pem* keyfile that you downloaded in Lab 3 and copy it to the *.oci* folder. The path where you downloaded it should be in your text file.
 
-1. Replace <**path to your private keyfile**> with the path of your generated private key. You can use this syntax: *key_file=~/.oci/mykeyfile.pem*. Save your config file changes.
+1. Replace <**path to your private keyfile**> with the path of your generated private key file. You can use this syntax: *key_file=~/.oci/mykeyfile.pem*. Save your config file changes.
 
       ![Updated config file](./images/config2.png " ")
 
@@ -57,7 +57,7 @@ If this is your first time using the OCI SDK, you'll need to create a config fil
 
 ## Task 2: Run Python Code Sample
 
-1. Create a new file on your local machine called *invoicekv.py* in the 'C:\Users\\*user*\AppData\Local\Programs\Python\\*Python version*\Scripts' folder, or add it to your Desktop if you are using a Mac.
+1. Create a new file on your local machine called *invoicekv.py* in the 'C:\Users\\*user*\AppData\Local\Programs\Python\\*Python version*\Scripts' folder on Windows, or add it to your Desktop if you are using a Mac.
 
 2. Copy the python code from below and paste it into *invoicekv.py*. <br>
 The following sample code involves essentially three steps. First, it calls *CreateProcessorJob* to process your sample invoice. Second, it calls *GetProcessorJob* to get the status of the job. Third, it calls *GetObject* to get the response from Object Storage.
@@ -133,7 +133,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
 3. Edit *invoicekv.py* and update/confirm all of the below variables using values you previously saved to your text file. Then save *invoicekv.py*.
     
     - COMPARTMENT_ID = "\<enter-your-compartment-ocid-here\>"
-        - e.g. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+        - use your lab compartment OCID
     - object_location.namespace_name = "\<enter-your-objectstorage-namespace-here\>"  
         - e.g. "axabc9efgh5x"
     - object_location.bucket_name = "docu-bucket"
@@ -143,7 +143,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
     - output_location.bucket_name = "docu-bucket"
     - output_location.prefix = "results-python"
     
-1. Open a command line on your local computer and navigate to your Python installation folder: (C:\Users\<user>\AppData\Local\Programs\Python\<Python version> on Windows) 
+1. Open a command line on your local computer and navigate to your Python installation folder: (C:\Users\<user>\AppData\Local\Programs\Python\*Python version* on Windows) 
 
 1. Execute the following command to verify you are running python 3.6, 3.7, 3.8, or 3.9
 
@@ -339,7 +339,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
 
 1. Confirm the results by looking at the source image on your local computer.
 
-1. You can also take a look at the JSON output in your Object Storage bucket under the prefix you specified in the python file (1.e. *results-python*).
+1. You can also take a look at the JSON output in your Object Storage bucket under the prefix you specified in the python file (i.e. *results-python*).
 
 Congratulations on completing this workshop!
 
@@ -350,7 +350,6 @@ Congratulations on completing this workshop!
 If you want to remove the items added to your tenancy in this lab, you can use the following procedures to delete the object storage bucket, compartment, and policy.
 
 1. From the OCI console burger menu, click **Storage** then **Buckets**.
-    ![Console navigation window](./images/consolebucketbutton.png)
 
 1. In the *Compartment* dropdown, select the lab compartment (*docu-lab*). 
 

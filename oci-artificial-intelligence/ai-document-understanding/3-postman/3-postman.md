@@ -25,11 +25,11 @@ We have put together a Postman Collection to help you get started with calling t
 
 1. Ensure Postman is running on your local computer.
 
-1. Prepare to import the OCI Credentials file into Postman running on your local computer by using the **Import** button at the top left under *My workspace*. The file is named **OCI Credentials.postman_environment.json**. (If prompted, replace any previous version of the credentials in your Postman.)
+1. Prepare to import the OCI Credentials file into Postman running on your local computer by clicking the **Import** button at the top left under *My workspace*. 
     
     ![Postman import button](./images/postman-importoci1.png)
 
-2. In the *Import* dialog, click **files** and select the json file you exported in the previous step. (**OCI Credentials.postman_environment.json**) 
+2. In the *Import* dialog, click **files** and select the json file you exported in the previous step (**OCI Credentials.postman_environment.json**). If prompted, replace any previous version of the credentials in your Postman.
 
 3. Set OCI Credentials as the active environment by selecting **Environments**, then **clicking the check** next to *OCI Credentials*. (Hover to make the check appear.)
   
@@ -73,7 +73,7 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
     4. The Add API Key dialog box opens. Select option: **Generate API Key Pair**
     ![OCI generate API key pair button](./images/add-api-key-dialog1.png " ")
 
-    5. Click the **Download Private Key** button and save the file to you local computer. Save the location of the private key file (*username-date*.pem) to your text file to be used in the next lab.
+    5. Click the **Download Private Key** button and save the file to you local computer. **NOTE - if your key file name contains special characters (such as @ from an email address), change the name of the file to be simpler, like *mykeyfile.pem*, to avoid an error later**. Save the location of the private key file (mykeyfile.pem) to your text file to be used in the next lab.
     ![OCI add API key button](./images/add-api-key-dialog2.png " ")
 
     6. Click the **Add** button in the *Add API Key* dialog. The *Configuration File Preview* dialog opens.
@@ -84,7 +84,7 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
     ![OCI API key](./images/add-api-key-fingerprint.png " ")
     ![Postman value for fingerprint](./images/postman-fingerprint.png " ")
 
-    9. On your local computer, navigate to the **private key file (*username-date*.pem)** that you downloaded when getting the fingerprint. Open it in a text editor, copy its entire contents, and paste them into the **private_key CURRENT VALUE** field of the Postman Environment.
+    9. On your local computer, navigate to the **private key file (mykeyfile.pem)** that you downloaded when getting the fingerprint. Open it in a text editor, copy its entire contents, and paste them into the **private_key CURRENT VALUE** field of the Postman Environment.
     ![Postman value for private key](./images/postman-privatekey.png " ")
 
 1. Configure *region*
@@ -147,7 +147,7 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
 1. Prepare to import the Document Understanding API Collection file into Postman running on your local machine by selecting **Collections** on the left side of the  screen then clicking the **Import** button at the top.
   ![Postman import button](./images/postman-importoci1.png)
 
-2. In the *Import* dialog, click th **files** and select the json file you exported in Task 1 (**DocumentUnderstanding API.postman_collection.json**). (Replace any previous version if prompted.)
+2. In the *Import* dialog, click **files** and select the json file you exported in Task 1 (**DocumentUnderstanding API.postman_collection.json**). (Replace any previous version if prompted.)
 
 ## Task 4: Invoke the Processor Job REST API
 
@@ -200,7 +200,7 @@ In this task you'll call the Processor Job REST API.
 
 1. Save **Object Storage Namespace** to your text file for later reference.
 
-1. *bucketName* should be the name of the bucket where you uploaded the sample image for this lab, i.e **docu-bucket**. Refer to your text file for the name. ensure it has double quotes around it.
+1. *bucketName* should be the name of the bucket where you uploaded the sample image for this lab, i.e **docu-bucket**. Refer to your text file for the name. Ensure it has double quotes around it.
 
 1. *objectName* should be **"invoice-sample.PNG"** (This is one of the files you uploaded in Lab 2 and the name is case sensitive.)
 

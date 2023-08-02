@@ -19,14 +19,17 @@ In this lab, we will learn how to use OCI Document Understanding in the OCI Cons
     object storage bucket name: 
       ex. docu-bucket
 
-    private key file location: 
-      ex. C:\Users\MYNAME\Downloads\myuser_2023-07-26T22_13_50.623Z.pem
+    root compartment ocid: 
+      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
       
+    private key file location: 
+      ex. C:\Users\MYNAME\Downloads\mykeyfile.pem
+
     object storage namespace: 
       ex. axabc9efgh5x
 
-    root compartment ocid: 
-      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+    job ID: 
+      ex. ocid1.aidocumentprocessorjob.oc1.phx.aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
     </copy>
     ```
 
