@@ -17,7 +17,42 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## Task 1: Open the machine learning notebook
+## Task 1: Alter the tables to allow access to new user "MLUSER1"
+
+1. Back in the ATP console, Select Database Actions.
+
+   Click on "SQL", then Development, then sign in as "ADMIN" (password Oracle_12345).
+
+   ![](images/open-sql.png)
+
+2. Copy and paste the two commands below,then select "run script" and you should get the out puts of "Grant succeeded" and "User MLUSER1 altered".
+
+```bash
+   <copy>
+   GRANT UNLIMITED TABLESPACE TO MLUSER1
+   </copy>
+   ```
+   ![](images/grant-access.png)
+
+   ![](images/grant.png)
+
+   ```bash
+   <copy>
+   ALTER USER MLUSER1 QUOTA 100M ON DATA
+   </copy>
+   ```
+
+   ![](images/alter-user.png)
+
+   ![](images/alter.png)
+
+3. Sign out as "admin" at the top right hand side of the page.
+
+   ![](images/sign-out.png)
+
+
+
+## Task 2: Open the machine learning notebook
 
 1. Back in the ATP console, Select Database Actions.
 
