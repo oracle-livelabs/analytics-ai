@@ -32,7 +32,7 @@ In this Lab, you will:
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for Object Storage, Data Labeling
 
-## **Task 1**
+## **Task 1:** Policy Setup
 *\[10 minutes\]*
 
 Before you start using OCI Data Labeling, you or your tenancy administrator should set up the following policies by following below steps:
