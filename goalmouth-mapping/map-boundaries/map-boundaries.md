@@ -4,7 +4,7 @@
 
 In this lab you will explore the data to establish the upper and lower limits of the latitude and longitude values in order to create the map boundaries. You will also upload the background map image. 
 
-Estimated Time: 20 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -35,12 +35,9 @@ Creating a table from the latitude and longitude data will allow you to explore 
 3. Repeat the above step for the **MapLon** column to find the upper and lower limits for the Longitude column. 
 
 4. The data limits are reflected in the table below. 
-  
-  | Latitude | Longitude | 
-  | --- | --- |
-  | 8.375 | -161.568 |
-  | 0.15 | -135.135 | 
 
+  ![The upper and lower limits of the coordinates](images/table-output1.png)
+  
 5. Click the save icon in the upper right corner of the page to save your workbook. Save it as goalmouth-lab.
 
   ![Click to save the workbook](images/create-table3.png)
@@ -69,29 +66,31 @@ Creating a table from the latitude and longitude data will allow you to explore 
 
   ![Navigate to the backgrounds tab](images/map-navigate4.png)
 
-5. Click on **Image Backgrounds** and select the **+** icon to upload the attached background image from Step 1. 
+6. Click on **Image Backgrounds** and select the **+** icon to upload the attached background image from Step 1. 
 
   ![Click to upload the background map image](images/map-navigate5.png)
 
-6. Browse to your downloaded file.
+7. Browse to your downloaded file.
 
   ![Upload the file](images/map-navigate6.png)
 
-7. In the map image edit window, select the drop-down menu next to **Coordinates** and change the selection from Auto to Custom (Lat, Long).
+8. In the map image edit window, select the drop-down menu next to **Coordinates** and change the selection from Auto to Custom (Lat, Long).
 
   ![Select Custom Lat, Long](images/map-navigate7.png)
 
-8. Knowing our upper and lower latitude and longitude limits allows us to establish a frame. Use the below coordinates to standardize your map image. 
+9. Knowing our upper and lower latitude and longitude limits allows us to establish a frame. Use the below coordinates to standardize your map image. 
 
-  | Latitude | Longitude | 
-  | --- | --- |
-  | 10 | -163.75 |
-  | 0.0 | -133 |
+  ![The standardized coordinates](images/table-output2.png)
 
+We use standardized coordinates to account for the image layer. This ensures that the points representing the penalty goals are placed inside of the goal posts and above the goal line. 
 
-  ![Plug in the custom coordinates](images/map-navigate8.png)
+  ![Plug in the standardized coordinates](images/map-navigate8.png)
 
-9. Navigate back to your workbook. Your canvas should look like this: You will see the table created to establish the upper and lower limits of the geographic coordinates. 
+10. Save and Close the Image Background dialog box. 
+
+  ![Save and close the dialog box](images/map-navigate9.png)
+
+11. Navigate back to your workbook. Your canvas should look like this: You will see the table created to establish the upper and lower limits of the geographic coordinates. 
 
   ![Your canvas should look like this](images/canvas-status1.png)
 
