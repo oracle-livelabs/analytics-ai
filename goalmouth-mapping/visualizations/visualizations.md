@@ -27,6 +27,10 @@ Visualizations allow us to tell a story with the data that will resonate and sta
 
 	![Create a second table](images/aggregate-attribute1.png)
 
+  ![The second table](images/aggregate-attribute6.png)
+
+As you move forward in this lab ensure that you are selected on the table with PL Name, TEAM, and Event Unique ID as the grammar panel and properties only relate to the selected visualization. 
+
 2. In the grammar panel, right click on Event Unique ID and select **Aggregate** and then **Count**.
 
   ![Aggregate the Event Unique ID attribute](images/aggregate-attribute2.png)
