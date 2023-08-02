@@ -107,16 +107,6 @@ In this LiveLab, you will:
     * **Recall**: Fraction of images that were classified correctly with a label / images that should have been classified with that label, but were not.
     * **F1 Score**: Harmonic mean of precision and recall values.
 
-  Zooming out from our biomedical use case, AI Vision can automate time-consuming, attention-demanding tasks across many industries, such as:
-
-  - Scene monitoring
-  - Visual anomaly or fraud detection
-  - Quality inspection, scene monitoring
-  - Categorize a document as a predefined type such as resume, invoice, receipt, or tax form
-  - Information extraction
-  - Digital asset management, media indexing, inventory analytics
-  - Understanding handwritten, tilted, shaded, rotated text
-
 2. [Click to download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hah9GOfzzUI67R2a1X93shi9j1C7OFUFSqbfYtLDBe1waj5d6HL70RR26mkDCWWS/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Test_Data.zip) this 8 MB dataset to your local machine. This dataset contains a test set of coherent diffraction images of blood samples. As these images were not present in the training dataset, they were not used to train your Vision model, and will enable you to simulate the model serving process.
 
 3. Upload one image from the test dataset on your local machine to test the newly created model.
@@ -143,23 +133,20 @@ In this LiveLab, you will:
 
   ![Analyze Debris image](./images/16-vision-model-analyze-image-stripe-example.png)
 
-Congratulations on completing Lab 2 as well as the LiveLab! Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to use cases where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
+**Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to use cases where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
 
 In addition to image classification, OCI supports AI automation of tasks such as:
 
-- *Object Detection*: Identify pre-defined or custom-defined objects within images
+- **Object Detection**: Identify pre-defined or custom-defined objects within images
 - *Optical Character Recognition*: Recognize characters in documents or images
+- **Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
+- **Speech Transcription**: Transcribe spoken language from audio files to transcripts
+- **Sentiment Analysis**: Automatically decipher sentiment of a volume of text or sentences within it
+- **Named-Entity Recognition**: Extraction of people, places, and things that are publicly recognized
+- **Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
+- **Translation**: Translate between any of 21 languages
 
-- *Document Understanding*: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
-
-- *Speech Transcription*: Transcribe spoken language from audio files to transcripts
-
-- *Sentiment Analysis*: Automatically decipher sentiment of a volume of text or sentences within it
-- *Named-Entity Recognition*: Extraction of people, places, and things that are publicly recognized
-- *Key-phrase extraction*: Extract key-phrases that can be considered as tags related to a volume of text
-- *Translation*: Translate between any of 21 languages
-
-Read more about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [addiitonal AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools available today can enable you to streamline and optimize the processes that are required for your use case.
+**Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools available today can enable you to streamline and optimize the processes that are required for your use case.
 
 [Proceed to the next section](#next).
 
