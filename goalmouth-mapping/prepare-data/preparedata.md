@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## Task 1: Upload the data file
 
-Premier League has provided a dataset showing Match Description, Player Name, Match Date, Latitude and Longitude for all of the successful penalty goals scored during the 2022-23 season. This data will be used to construct a map showing where the ball enters the goalmouth on those penalties. You will be able to see which players were more successful at home versus while they were playing away. You will also be able to determine if there are players who have equal success at home or while away.
+Premier League has provided a dataset which includes all of the successful penalty goals scored during the 2022-23 season. This data will be used to construct a map showing where the ball enters the goalmouth on those penalties. You will be able to see which players were more successful at home versus while they were playing away. You will also be able to determine if there are players who have equal success at home or while away.
 
 1. Download the attached file. 
 
