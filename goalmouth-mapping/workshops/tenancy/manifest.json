@@ -23,8 +23,8 @@
             "filename": "../../oac-provisioning/oac-provisioning.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Prepare the Dataset",
+            "filename": "../../prepare-data/preparedata.md"
         },
         {
             "title": "Lab 3: Establish Map Boundaries",
