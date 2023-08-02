@@ -12,63 +12,59 @@ In this lab, you will:
 * Construct visualizations
 * Build a dashboard
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
+* Access to the Console of OAC
 
 
-## Task 1: Add a Column to the Data Layer 
-Visualizations allow us to tell a story with the data that will resonate and stay with the end user. This creates a lasting impact beyond the capabilities of the data alone. In this section you will create a map and bar chart from the data. Together, these visuals will illustrate the data's contextual narrative. Since the data does not include a count of Penalties Scored, we will have to add it manually in the data layer. 
+## Task 1: Aggregate an Attribute 
+Visualizations allow us to tell a story with the data that will resonate and stay with the end user. This creates a lasting impact beyond the capabilities of the data alone. In this section you will create a map and bar chart from the data. Together, these visuals will illustrate the data's contextual narrative. Since the data does not include a count of Penalties Scored, we will have to add it by aggregating the Event Unique ID attribute.
 
-1. Select 'Data' at the top of the page. 
+1. Select PL Name, TEAM, Event Unique ID and bring them into the the left of the table on the canvas you will see a green bar indicating that a new table visualization is being added. 
 
-	![Click on Data](images/data-layer1.png)
+	![Create a second table](images/aggregate-attribute1.png)
 
-2. Click the pencil icon on the dataset to edit the data. This will open the data in a new tab.
+2. In the grammar panel, right click on Event Unique ID and select **Aggregate** and then **Count**.
 
-  ![Click on the pencil icon](images/data-layer2.png)
+  ![Aggregate the Event Unique ID attribute](images/aggregate-attribute2.png)
 
-3. On the left side of the window (next to the search bar) click the **+** icon. 
+3. The above step created a count of the number of penalties each player has scored by Home and Away. 
 
-  ![Select the plus icon to create a new column](images/data-layer3.png) 
+  ![A count of each player's penalty goals is displayed](images/aggregate-attribute3.png) 
 
-5. Clicking the **+** will open an edit panel to create a new column. We will name this column *Penalties Scored*. Since the data only includes successful penalties, this will be treated like a row count and in the value box. Just type "1" and click Validate and then and Add Step".
+4. Click the drop down at the top of the grammar panel to change this new table's visualization type to a Horizontal Stacked Bar Chart.
 
-  ![Edit and validate the new column](images/data-layer4.png)
+  ![Change the visualization type](images/aggregate-attribute4.png)
 
-6. In the bottom left of the window change the Penalties Scored column to be treated as a measure. 
+5. Your canvas should look like this: You'll see the table from the previous lab section used to find the upper and lower limits of the Latitude and Longitude and  the Horizontal Stacked Bar Chart you just created.
 
-  ![Change the penalties scored column to a measure](images/data-layer5.png)
+  ![Your canvas so far](images/aggregate-attribute5.png)
 
-7. Save the data layer and return to the workbook tab. Click on Visualize in the top center of the window. After you save the data layer the workbook will automatically refresh to include the new data. 
+## Task 2: Modify the Bar Chart
+In the previous section, you aggregated the attribute of Event Unique ID to create a count of penalties scored. From there, you created a bar chart to visualize that count. Now, you will modify that bar chart to visually tell the story of each player's penalty success. 
 
-## Task 2: Create a Bar Chart
+1. Move TEAM to **Color**. This will make it so each player's penalty goals are displayed on one individual bar segmented by colors which will represent penalties scored at Home or Away matches.
 
-1. Select PL Name, Penalties Scored, and TEAM and drag them to the left of the table on the workbook. You will see a green bar indicating that a new visualization is being added. 
+  ![Move Team to Color](images/modify-barchart1.png)
 
-  ![Drag the selected data to a new visualization](images/create-barchart1.png)
+2. Add Match Date and Description to the Detail of the bar chart. This will change each bar into individual segments representing each match.
 
-2. The visualization automatically populated as a bar chart. You will need to change it to a horizontal stacked bar chart. 
+  ![Add the selected elements to detail](images/modify-barchart2.png)
 
-  ![Change the visualization type](images/create-barchart2.png)
+3. Sort the bar chart by the number of penalties scored from High to Low. To do this, click on the 3 dot menu icon in the top right of the bar chart visualization, select sort by, select Count Event Unique ID, and finally click high to low 
+  
+  ![Sort the bar chart](images/modify-barchart3.png)  
 
-3. Add Match Date and Description to the Detail of the bar chart. This will change each bar into individual blocks representing each match. 
+4. Your canvas should now look like this: You will see the modifications you made to the Stacked Bar Chart visualization and the table created earlier in this workshop.
 
-  ![Add the selected data to detail](images/create-barchart3.png)
-
-4. Sort the bar chart by the number of penalties scored from High to Low. To do this, click on the 3 dot menu icon in the top right of the visualization, select sort by, select penalties scored, and finally click high to low 
-
-  ![Sort the bar chart](images/create-barchart4.png)
-
-5. At this point, your canvas should look like this:
-
-  ![Your canvas should look like this](images/create-barchart5.png)
+  ![Your canvas should look like this](images/modify-barchart4.png)
 
 ## Task 3: Assemble the map
 
-1. Select the table visualization and change the visualization type to a **Map**. 
+1. Select the table visualization that was created earlier in this workshop and change the visualization type to a **Map**. 
 
   ![Change visualization type](images/create-map1.png)
 
@@ -84,11 +80,15 @@ Visualizations allow us to tell a story with the data that will resonate and sta
 
   ![Add Description and Team to the map](images/create-map6.png)
 
+  After adding Description and Team to the map, hover your mouse over one of the points on the map. The tooltip will now show the Match Description, whether the penalty was scored by a player on the Home or the Away team, the match date, and player name. 
+
+  ![Penalty information displayed](images/create-map7.png)
+
 5. At this point, your map should look like this.
 
   ![Your map should look like this](images/create-map4.png)
 
-6. Your canvas should look like this.
+6. Your canvas should look like this. You will see the Stacked Bar Chart created in the previous section as well as the Goal Mouth Map that was just completed. 
   
   ![Your canvas should look like this](images/create-map5.png)
 
@@ -106,9 +106,9 @@ Visualizations allow us to tell a story with the data that will resonate and sta
 
   ![Select Away from the Team filter](images/add-filter3.png)
 
-Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away games this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next two player names. The penalty goals represented by these players will become highlighted on the map.  
+Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away matches this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next three player names. You should have four total players selected. The penalty goals represented by these players will become highlighted on the map.  
 
-  ![Multi-select the top three players](images/add-filter4.png)
+  ![Multi-select the top four players](images/add-filter4.png)
 
 4. Bring the canvas back to showing all of the data. To do this you can click any blank space within the bar chart and then click on the selected value in the team filter (at the top of the page) to remove the selections. 
 
@@ -120,17 +120,19 @@ Now, imagine you are a broadcaster and you're researching for upcoming matches a
 
   ![Change the Bar Chart title](images/customize1.png)
 
-2. Now change the axis from PL NAME to Player Name. Navigate to the Axis tab in Properties and change the Label axis from Auto to Custom. 
+2. Now change the Labels Axis from PL NAME to Player Name and the Values Axis name from Count Event Unique ID to Penalties Scored. Navigate to the Axis tab in Properties and change the Label axis from Auto to Custom, repeat for the Values axis. 
 
   ![Change the Label Axis title](images/customize2.png)
 
 3. Now following the above steps change the Title of the Map to Penalty Map and remove the legend. 
 
-  ![Change the Label Axis title](images/customize3.png)
+  ![Rename the Penalty Map](images/customize3.png)
+
+  ![Change the name of the Penalty Map](images/customize4.png)
 
 4. At this stage, your canvas should look like this:
 
-  ![Final canvas](images/customize4.png)
+  ![Final canvas](images/customize5.png)
 
 Congratulations on completing this workshop! 
 

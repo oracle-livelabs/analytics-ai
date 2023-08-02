@@ -13,14 +13,16 @@ In this lab, you will:
 * Use the table to establish the upper and lower limits of the latitude and longitude values
 * Upload the background map image
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
+* Permission to create Datasets in Oracle Analytics Cloud (OAC)
+* Access to the Console of OAC
 
 ## Task 1: Create a table.
-Creating a table from the latitude and longitude data will allow you to explore the upper and lower limits of the values. This step is important because these limits will allow you to accurately define the map boundaries. A Premier League goalmouth is exactly three times as wide as it is tall. Knowing this ratio and the data limits will ensure that the goalmouth map accurately visualizes the data.
+Creating a table from the latitude and longitude data will allow you to explore the upper and lower limits of the values. This step is important because these limits will allow you to accurately define the map boundaries. 
 
 1. In your Oracle Analytics Cloud workbook, select Match Date, PL Name, MapLat, and MapLon from the data and drag them into the visualizations pane. This will automatically return a table. 
 
@@ -37,9 +39,7 @@ Creating a table from the latitude and longitude data will allow you to explore 
   | Latitude | Longitude | 
   | --- | --- |
   | 8.375 | -161.568 |
-  | 0.15 | -135.135 |
-  
-As mentioned above, a Premier League goalmouth is exactly 3x wider than it is tall. This means that the limits will be adjusted to fit this parameter. 
+  | 0.15 | -135.135 | 
 
 5. Click the save icon in the upper right corner of the page to save your workbook. Save it as goalmouth-lab.
 
@@ -53,7 +53,7 @@ As mentioned above, a Premier League goalmouth is exactly 3x wider than it is ta
 
   [Goalmouth Map](files/pl-goalmouth.png)
 
-2. Use the back arrow at the top left of the workbook page to navigate back to the Oracle Analytics Cloud home page. 
+2. With the workbook saved, use the back arrow at the top left of the workbook page to navigate back to the Oracle Analytics Cloud home page. 
 
   ![Use the back arrow](images/map-navigate1.png)
 
@@ -81,7 +81,7 @@ As mentioned above, a Premier League goalmouth is exactly 3x wider than it is ta
 
   ![Select Custom Lat, Long](images/map-navigate7.png)
 
-8. As you recall, a Premiere League goalmouth is three times wider than it is tall. Knowing our upper and lower lat, long limits allows us to establish a frame. Use the below coordinates to standardize your map image. 
+8. Knowing our upper and lower latitude and longitude limits allows us to establish a frame. Use the below coordinates to standardize your map image. 
 
   | Latitude | Longitude | 
   | --- | --- |
@@ -91,7 +91,10 @@ As mentioned above, a Premier League goalmouth is exactly 3x wider than it is ta
 
   ![Plug in the custom coordinates](images/map-navigate8.png)
 
-9. Navigate back to your workbook. 
+9. Navigate back to your workbook. Your canvas should look like this: You will see the table created to establish the upper and lower limits of the geographic coordinates. 
+
+  ![Your canvas should look like this](images/canvas-status1.png)
+
 
 This concludes the Map Boundaries lab. You may proceed to the next lab.
 
