@@ -21,8 +21,7 @@ In this LiveLab, you will:
 ## Prerequisites
 
 * An Oracle Free Tier, or Paid Cloud Account
-* You are either a tenancy administrator, or has access to a tenancy administrator for the *Policy Setup* step
-    *Note*: If you are not a tenancy administrator, begin with **Task 1** after the tenancy administrator has assigned permissions in **Policy Setup**, for each Lab
+* Your OCI user is a member of the group that was created in Lab 1
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for Vision
 
@@ -121,11 +120,11 @@ In this LiveLab, you will:
   
   c. Examine confidence measurements under the **Results** pane
 
-  ![Analyzing the confidence measures in the results pane](./images/13-vision-analyze-cell-image-confidence.png)
+  ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
 
-  ![Analyzing the JSON response in the results pane](./images/14-vision-analyze-cell-image-json.png)
+  ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
 
-  Note that batch processing of interence data is supported via OCI-CLI, REST API, and SDK. By clicking **Response**, you can see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
+  Note that batch processing of interence data is supported via OCI-CLI, REST API, and SDK. Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
