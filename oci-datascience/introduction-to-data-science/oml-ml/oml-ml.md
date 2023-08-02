@@ -19,17 +19,17 @@ In this lab you will:
 
 ## Task 1: Open the machine learning notebook
 
-1. Back in the ATP console, Open the Machine Learning Notebooks.
+1. Back in the ATP console, Select Database Actions.
 
-   Click on Service Console, then Development, then Oracle Machine Learning Notebooks.
+   Click on "View all database actions", then Development, then sign in with the new user MLUSER1 (password Oracle_12345).
 
    ![](images/service-console.png)
 
-   ![](images/open-notebook.png)
+   Select "Oracle Machine Learning"
 
-2. Sign in
+   ![](images/open-ml.png)
 
-   Sign in with the new user MLUSER1 (password Oracle_12345).
+2. Sign in again if asked with the new user MLUSER1 (password Oracle_12345).
 
    ![](images/sign-in-mluser.png)
 
