@@ -2,45 +2,45 @@
 
 ## Introduction
 
-### What is this LiveLab about?
+### What is this LiveLab about
 
-In this Live Lab, you will create a cell classifier on OCI using a computer vision machine learning model. Your cell classifier will be able to automatically discern images that show cells in a blood sample from images that show non-cells. The concept of the cell classification task and dataset used in this LiveLab has been borrowed from Professor Xin-hua Hu's machine learning experiment in the Physics department at East Carolina University.
+In this Live Lab, you will create a cell classifier on Oracle Cloud Infrastructure (OCI) using a computer vision machine learning model. Your cell classifier will be able to automatically discern images that show cells in a blood sample from images that show non-cells. The concept of the cell classification task and dataset used in this LiveLab has been borrowed from Professor Xin-hua Hu's machine learning experiment in the Physics department at East Carolina University.
 
 This LiveLab demonstrates the use of the following OCI services, in the order in which you will encounter them:
 
-1. [OCI Object Storage](https://www.oracle.com/cloud/storage/object-storage/), which is a highly scalable and secure storage option for data in its native format
-2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/), which enables standardized and automated labeling of training data, OCI Vision
-3. [OCI AI Vision](https://www.oracle.com/artificial-intelligence/vision/), which includes image classification as a supported computer vision task
+1. [OCI Object Storage](https://www.oracle.com/cloud/storage/object-storage/): A highly scalable and secure storage option for data in its native format
+2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/): Enables standardized and automated labeling of training data, OCI Vision
+3. [OCI AI Vision](https://www.oracle.com/artificial-intelligence/vision/): Includes image classification as a supported computer vision task
 
-### What are the real-world applications?
+### What are the real-world applications of computer vision AI
 
 Using a custom-trained OCI Vision model can bring significant time and cost savings in various industries by automating and optimizing tasks that would otherwise require manual effort. These are some critical use cases across different industries where a custom-trained OCI Vision model can be highly beneficial:
 
-1. **Retail and E-Commerce**:
+1. **Retail and E-Commerce**
     - *Automated Product Categorization*: Automatically classify products into categories based on images, streamlining inventory management and online cataloging.
     - *Shelf and Store Monitoring*: Monitor shelves and store layouts to detect stockouts, misplaced items, and optimize shelf space utilization.
     - *Fraud Detection*: Identify fraudulent product returns or label swapping by analyzing product images.
-2. **Manufacturing and Quality Control**:
+2. **Manufacturing and Quality Control**
     - *Defect Detection*: Inspect products for defects, such as cracks, scratches, or abnormalities, ensuring high-quality standards without manual inspection.
     - *Parts and Component Recognition*: Identify and sort components on assembly lines, reducing errors and speeding up production.
     - *Anomaly Detection*: Spot anomalies in manufacturing processes or assembly lines to prevent costly production errors.
-3. **Healthcare and Life Sciences**:
+3. **Healthcare and Life Sciences**
     - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, to assist in diagnosis and treatment planning.
     - *Pathology Slide Analysis*: Analyze pathology slides for cancer detection and disease diagnosis, improving efficiency for pathologists.
     - *Drug Discovery*: Speed up drug discovery processes by identifying potential drug compounds or interactions from molecular images.
-4. **Agriculture**:
+4. **Agriculture**
     - *Crop Monitoring*: Monitor crop health, growth, and disease detection through aerial or ground-based imagery, optimizing agricultural practices.
     - *Pest and Disease Detection*: Detect pests or diseases in crops early to enable targeted interventions and minimize crop damage.
     - *Yield Estimation*: Estimate crop yield and optimize resource allocation based on field images, leading to better harvest planning.
-5. **Logistics and Transportation**:
+5. **Logistics and Transportation**
     - *Object Recognition in Logistics*: Identify and sort packages or items for efficient logistics and warehouse management.
     - *License Plate Recognition*: Automate toll collection, parking management, and security access control by recognizing license plates.
     - *Real-time Traffic Analysis*: Monitor traffic flow and congestion to optimize transportation routes and reduce delivery times.
-6. **Financial Services**:
+6. **Financial Services**
     - *Document Processing*: Automate the extraction of information from invoices, receipts, or forms, reducing manual data entry efforts.
     - *Fraud Detection*: Identify fraudulent activities, such as check fraud or credit card misuse, through image analysis.
     - *Authentication*: Use facial recognition for secure and convenient customer authentication in mobile banking or e-commerce applications.
-7. **Real Estate and Construction**:
+7. **Real Estate and Construction**
     - *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
     - *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
 
@@ -64,7 +64,7 @@ In this LiveLab, you will:
 
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
-* *Not required, though beneficial*:, but not required*: Familiarity with Python
+* *Not required, though beneficial*: Familiarity with Python
 
 [Proceed to the next section](#next).
 
@@ -72,7 +72,7 @@ In this LiveLab, you will:
 
 **Total Estimated Workshop Time**: *97 minutes*
 
-### Lab 1
+### **Lab 1**
 *\[58 minutes\]*
 
 In Lab 1, you will be provided a dataset consisting of 1710 images. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures.
@@ -89,7 +89,7 @@ The Tasks in Lab 1 are organized as follows:
 * **Task 4**: Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records.
 * **Task 5**: Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
-### Lab 2
+### **Lab 2**
 *\[39 minutes\]*
 
 In Lab 2, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
