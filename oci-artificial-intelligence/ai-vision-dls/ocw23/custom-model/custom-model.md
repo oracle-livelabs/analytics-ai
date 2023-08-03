@@ -124,7 +124,9 @@ In this LiveLab, you will:
 
   ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
 
-  Note that batch processing of interence data is supported via OCI-CLI, REST API, and SDK. Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
+  Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
+
+  *Note*: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
