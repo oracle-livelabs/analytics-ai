@@ -41,7 +41,7 @@ In this lab you will:
 
 2. Search for a suitable Conda environment that suits the type of development that we're going to do.
 
-   - Search for the "TensorFlow 2.7 for CPU on Python 3.7" Conda environment. At the time of writing this lab, it was at the top of the list, you may have to use the search field to find it.
+   - Search for the "TensorFlow 2.7 for CPU on Python 3.7" Conda environment. At the time of writing this lab, it was at the top of the list, you may have to use the search field to find it and select "show depreceated" at top right of page.
    - Open the details by clicking on the down arrow at the right.
    - Copy the installation command to the clipboard by clicking on the Copy button.
 
