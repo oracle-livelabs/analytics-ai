@@ -147,7 +147,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 - **Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
 - **Translation**: Translate between any of 21 languages
 
-**Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools available today can enable you to streamline and optimize the processes that are required for your use case.
+**Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
 [Proceed to the next section](#next).
 
