@@ -136,7 +136,7 @@ In this LiveLab, you will:
 
   ![Analyze Debris image](./images/16-vision-model-analyze-image-stripe-example.png)
 
-**Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to [use cases](../workshops/freetier/intro.md#what-are-the-real-world-applications-of-computer-vision-ai) where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
+**Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to [use cases](../workshops/freetier/intro.md#how-can-computer-vision-ai-be-used-in-your-business?) where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
 
 In addition to image classification, OCI supports AI automation of tasks such as:
 

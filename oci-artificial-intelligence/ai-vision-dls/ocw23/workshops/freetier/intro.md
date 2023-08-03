@@ -2,7 +2,7 @@
 
 ## Introduction
 
-### What is this LiveLab about
+### What is this LiveLab about?
 
 In this LiveLab, you will create a cell classifier on Oracle Cloud Infrastructure (OCI) using a computer vision machine learning model. Your cell classifier will be able to automatically discern images of cells in a blood sample from images that show non-cell structures. The images were captured using a technique called coherent diffraction imaging.
 
@@ -14,7 +14,7 @@ To render your own cell classifier in the style of Professor Hu's research, you 
 2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/): Enables standardized and automated labeling of training data, OCI Vision
 3. [OCI AI Vision](https://www.oracle.com/artificial-intelligence/vision/): Includes image classification as a supported computer vision task
 
-### What are the real-world applications of computer vision AI
+### How can computer vision AI be used in your business?
 
 Using a custom-trained OCI Vision model can bring significant time and cost savings in various industries by automating and optimizing tasks that would otherwise require manual effort. These are some critical use cases across different industries where a custom-trained OCI Vision model can be highly beneficial:
 
@@ -27,7 +27,7 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
     - *Parts and Component Recognition*: Identify and sort components on assembly lines, reducing errors and speeding up production.
     - *Anomaly Detection*: Spot anomalies in manufacturing processes or assembly lines to prevent costly production errors.
 3. **Healthcare and Life Sciences**
-    - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, to assist in diagnosis and treatment planning.
+    - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, or coherent diffraction images (as in this LiveLab), to assist in diagnosis and treatment planning.
     - *Pathology Slide Analysis*: Analyze pathology slides for cancer detection and disease diagnosis, improving efficiency for pathologists.
     - *Drug Discovery*: Speed up drug discovery processes by identifying potential drug compounds or interactions from molecular images.
 4. **Agriculture**
