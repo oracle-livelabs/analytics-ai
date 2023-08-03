@@ -317,7 +317,7 @@ In this task, you'll call the Document AI synchronous REST API, using POSTMAN, t
 
 ## Summary
 You configured Postman to connect to your OCI tenancy and you initiated a text extraction job using the REST API then obtained the results of the job. You can use this same approach to test other REST API requests. The REST API reference can be found [here](https://docs.oracle.com/en-us/iaas/api/) under *Document Understanding API*. <br>
-You may now **[proceed to next lab](#next)**.
+You may now **proceed to next lab**.
 
 ## Acknowledgements
 * **Authors**

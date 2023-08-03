@@ -75,7 +75,7 @@ Before you start using OCI Document Understanding, OCI policies must be setup to
 ## Summary
 In this lab you learned how to set up your OCI Document Understanding policies.
 
-You may now **[proceed to next lab](#next)**.
+You may now **proceed to next lab**.
 
 
 ## Acknowledgements

@@ -19,7 +19,7 @@ This workshop provides an introduction to the capabilities of OCI Document Under
 * Ability to install Postman on your local computer (for Lab 3)
 * Python 3.6, 3.7, 3.8 or 3.9 installed on your local computer (for Lab 4)
 
-You may now **[proceed to next lab](#next)**.
+You may now **proceed to next lab**.
 
 ## Acknowledgements
 * **Authors**

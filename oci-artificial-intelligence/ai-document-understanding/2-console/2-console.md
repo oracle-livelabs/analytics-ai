@@ -150,7 +150,7 @@ There are more features you can try in the console.
 ## Summary
 In this lab you learned how use OCI Document Understanding in the OCI console with the demo files and additional sample files. You can apply this knowledge to your own files.
 
-You may now **[proceed to next lab](#next)**.
+You may now **proceed to next lab**.
 
 ## Acknowledgements
 * **Authors**
