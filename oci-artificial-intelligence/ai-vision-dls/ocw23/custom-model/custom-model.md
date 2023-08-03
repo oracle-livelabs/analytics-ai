@@ -1,5 +1,5 @@
 # Create a custom AI Vision Model
-**Estimated Time**: *39 minutes*
+**Estimated Time**: *41 minutes*
 
 ## Introduction
 
@@ -10,6 +10,7 @@ The Tasks in this Lab are organized as follows:
 * **Task 1**: Create an AI Vision Project, which is a logical container for your Vision models.
 * **Task 2**: Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset.
 * **Task 3**: Upload test data via the OCI web console, and witness your model serve your input in real-time.
+* **Task 4**: Clean up the resources you provisioned for this LiveLab.
 
 ## Primary Objectives
 
@@ -77,11 +78,11 @@ In this LiveLab, you will:
 
   b. **Training duration**: *Quick mode*
 
-  **Note**: Despite the web console indicating 1 hour of training duration, the work request will require about *30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+  **Note**: Although the web console indicates 1 hour of training duration, the work request will require about *30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
   c. Click **Next**.
 
-  ![Create and train model window: train model](./images/6-create-vision-model-page-2-train-model.png)
+  ![Create and train model window: train model](./images/6-vision-create-model-page-2-train-model.png)
 
 3. Review that the model information is correct and click **Create and train**.
 
@@ -91,9 +92,9 @@ In this LiveLab, you will:
 
 4. After about 30 minutes, your model will be in the **Active** state, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
 
-![Model is available](./images/9-vision-model-active)
+![Model is available](./images/9-vision-model-active.png)
 
-![Vision Model Active](./10-vision-model-active.png)
+![Vision Model Active](./images/10-vision-model-active.png)
 
 ## **Task 3:** Test the Model On New Images
 *\[2 minutes\]*
@@ -133,6 +134,51 @@ In this LiveLab, you will:
   ![Analyze Debris image](./images/15-vision-model-analyze-image-debris-example.png)
 
   ![Analyze Debris image](./images/16-vision-model-analyze-image-stripe-example.png)
+
+## **Task 4:** Cleanup
+*\[2 minutes\]*
+
+1. Delete your Object Storage Bucket:
+
+  a. Navigate to your Object Storage Bucket.
+
+  [Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
+
+  b. Click into your hyperlinked Bucket, and click **Delete** > enter the name of your Bucket > **Delete**
+
+  [Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png)
+
+  <!-- [Delete bucket] -->
+
+2. Delete your Data Labeling Dataset:
+
+  a. Navigate to your Data Labeling Dataset.
+
+  [Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
+
+  b. Click into your hyperlinked Dataset, and click **More actions** > **Delete** > enter the name of your Dataset name > **Delete**
+
+  [Click into dataset](../dls-bulk-label/images/23-data-labeling-datasets.png)
+
+  <!-- [Delete dataset] -->
+
+3. Delete your AI Vision Model and Project:
+
+  a. Navigate to your AI Vision Project.
+
+  [Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
+
+  b. Click into your hyperlinked Project, then click into your hyperlinked model.
+
+  [Click into project](./images/4-vision-click-project.png)
+
+  <!-- [Click into model] -->
+
+  c. To delete your AI Vision Model, click the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > type *DELETE* > **Delete**
+
+  <!-- [Delete model] -->
+
+  d. To delete your AI Vision ProjectClick Delete > type *DELETE* > **Delete**
 
 **Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to use cases where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
 
