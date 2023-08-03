@@ -4,7 +4,9 @@
 
 ### What is this LiveLab about
 
-In this Live Lab, you will create a cell classifier on Oracle Cloud Infrastructure (OCI) using a computer vision machine learning model. Your cell classifier will be able to automatically discern images that show cells in a blood sample from images that show non-cells. The concept of the cell classification task and dataset used in this LiveLab has been borrowed from Professor Xin-hua Hu's machine learning experiment in the Physics department at East Carolina University.
+In this Live Lab, you will create a cell classifier on Oracle Cloud Infrastructure (OCI) using a computer vision machine learning model. Your cell classifier will be able to automatically discern images of cells in a blood sample from images that show non-cell structures. The images were captured using a technique called coherent diffraction imaging.
+
+The concept of the cell classification task and dataset used in this LiveLab has been borrowed from Professor Xin-hua Hu's machine learning experiment in the Physics department at East Carolina University. Professor Hu proposes the cell classifier as a major time-saver for medical professionals who would traditionally distinguish images of cells from non-cells by looking at them, and record their findings manually. With large datasets, this process can be incredibly time-consuming. With the cell classifier, however, these professionals can offload a vast amount of busywork, and focus on tasks where their expertise can be much more economically applied - and derive their analyses much faster where time is critical.
 
 This LiveLab demonstrates the use of the following OCI services, in the order in which you will encounter them:
 
@@ -75,7 +77,7 @@ In this LiveLab, you will:
 ### **Lab 1**
 *\[58 minutes\]*
 
-In Lab 1, you will be provided a dataset consisting of *1710 images*. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures.
+In Lab 1, you will be provided a dataset consisting of *1710 images*. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
 You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
 
