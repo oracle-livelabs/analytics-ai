@@ -18,7 +18,7 @@
         ,
 
         {
-            "title": "Lab 1: Use DLS to bulk label a dataset",
+            "title": "Lab 1: Use Data Labeling to bulk label a dataset",
             "description": "Learn how to bulk label a set of images with OCI Bulk Labeling Service",
             "filename": "../../dls-bulk-label/dls-bulk-label.md"
         },
