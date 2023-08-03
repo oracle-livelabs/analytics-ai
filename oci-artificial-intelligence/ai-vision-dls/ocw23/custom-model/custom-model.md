@@ -152,7 +152,7 @@ In this LiveLab, you will:
 
 2. Delete your Data Labeling Dataset:
 
-  a. Navigate to your Data Labeling Dataset from the OCI services menu: **Analytics &** AI > **Data Labeling**
+  a. Navigate to your Data Labeling Dataset from the OCI services menu: **Analytics & AI** > **Data Labeling**
 
   ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
