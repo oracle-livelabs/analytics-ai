@@ -44,9 +44,7 @@ In this LiveLab, you will:
 
   b. **Name**: Enter a name for your Project, e.g. *image-classification-project*
 
-  c. **Name**: Enter a name for your Project, e.g. *image-classification-project*
-
-  d. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 LiveLab*
+  c. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 LiveLab*
 
   d. Click **Create project**
 
@@ -65,9 +63,9 @@ In this LiveLab, you will:
 
   c. **Training data**: Choose existing dataset
 
-  d. **Data source**: *Data Labeling Services*
+  d. **Data source**: *Data labeling service*
 
-  e. Choose the dataset that you created in Lab 1
+  e. Choose the dataset that you created in Lab 1.
 
   f. Click **Next**.
 
