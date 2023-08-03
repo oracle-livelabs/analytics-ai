@@ -22,6 +22,7 @@ In this LiveLab, you will:
 ## Prerequisites
 
 * An Oracle Free Tier, or Paid Cloud Account
+* Lab 1 has been completed
 * Your OCI user is a member of the group that was created in Lab 1
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for Vision
@@ -31,7 +32,7 @@ In this LiveLab, you will:
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click *Vision* under *AI Services*.
 
-![OCI Services Menu](../images/1-menu-analytics-and-ai-vision.png)
+![OCI Services Menu](./images/1-menu-analytics-and-ai-vision.png)
 
 2. Click on *Projects* under *Custom Models*.
 
@@ -66,7 +67,7 @@ In this LiveLab, you will:
 
   d. **Data source**: *Data Labeling Services*
 
-  e. Choose the dataset that you created in Lab 1: *image-classification-dataset*
+  e. Choose the dataset that you created in Lab 1
 
   f. Click **Next**.
 
@@ -78,7 +79,7 @@ In this LiveLab, you will:
 
   b. **Training duration**: *Quick mode*
 
-  **Note**: Although the web console indicates 1 hour of training duration, the work request will require about *30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+  **Note:** Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
   c. Click **Next**.
 
@@ -90,7 +91,7 @@ In this LiveLab, you will:
 
 ![Vision model Creating](./images/8-vision-model-creating.png)
 
-4. After about 30 minutes, your model will be in the **Active** state, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
+4. After about 30 minutes, the state of your model will update to **Active**, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
 
 ![Model is available](./images/9-vision-model-active.png)
 
@@ -119,7 +120,7 @@ In this LiveLab, you will:
 
   ![Upload image](./images/12-vision-model-upload-cell-image.png)
   
-  c. Examine confidence measurements under the **Results** pane.
+  c. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
 
   ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
 
@@ -127,7 +128,7 @@ In this LiveLab, you will:
 
   Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
-  *Note*: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+  *Note:* Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
