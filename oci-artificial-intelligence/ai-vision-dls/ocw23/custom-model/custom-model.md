@@ -174,11 +174,11 @@ In this LiveLab, you will:
 
   <!-- [Click into model] -->
 
-  c. To delete your AI Vision Model, click the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > type *DELETE* > **Delete**
+  c. To delete your AI Vision Model, click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > type *DELETE* > **Delete**
 
   <!-- [Delete model] -->
 
-  d. To delete your AI Vision ProjectClick Delete > type *DELETE* > **Delete**
+  d. To delete your AI Vision Project, click **Delete** > type *DELETE* > **Delete**
 
 **Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to use cases where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
 
