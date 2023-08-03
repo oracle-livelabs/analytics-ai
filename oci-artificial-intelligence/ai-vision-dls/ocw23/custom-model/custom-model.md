@@ -142,11 +142,11 @@ In this LiveLab, you will:
 
   a. Navigate to your Object Storage Bucket from the OCI services menu: **Storage** > **Buckets**
 
-  ![Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
-
   b. Click into your hyperlinked Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
 
-  ![Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png)
+  ![Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
+
+  <!-- ![Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png) -->
 
   <!-- [Delete bucket] -->
 
@@ -154,9 +154,9 @@ In this LiveLab, you will:
 
   a. Navigate to your Data Labeling Dataset from the OCI services menu: **Analytics & AI** > **Data Labeling**
 
-  ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
-
   b. Click into your hyperlinked Dataset > Click **More actions** > **Delete** > Enter the name of your Dataset > **Delete**
+
+  ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
   <!-- ![Click into dataset](../dls-bulk-label/images/23-data-labeling-datasets.png) -->
 
@@ -166,19 +166,19 @@ In this LiveLab, you will:
 
   a. Navigate to your AI Vision Project from the OCI services menu: **Analytics & AI** > **Vision**
 
-  ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
-
   b. Click into your hyperlinked Project > Click into your hyperlinked model.
-
-  <!-- ![Click into project](./images/4-vision-click-project.png) -->
-
-  <!-- [Click into model] -->
 
   c. Delete your AI Vision Model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
 
+  d. Delete your AI Vision Project: Click **Delete** > Type *DELETE* > **Delete**
+
+  ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
+
+  <!-- ![Click into project](./images/4-vision-click-project.png) -->
+
   <!-- [Delete model] -->
 
-  d. Delete your AI Vision Project: Click **Delete** > Type *DELETE* > **Delete**
+  <!-- [Delete project] -->
 
 **Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to use cases where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
 
