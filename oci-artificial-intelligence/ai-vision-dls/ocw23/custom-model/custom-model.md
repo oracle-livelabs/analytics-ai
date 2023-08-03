@@ -142,11 +142,11 @@ In this LiveLab, you will:
 
   a. Navigate to your Object Storage Bucket: OCI Services menu > **Storage** > **Buckets**
 
-  [Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
+  ![Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
 
   b. Click into your hyperlinked Bucket, and click **Delete** > Enter the name of your Bucket > **Delete**
 
-  [Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png)
+  ![Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png)
 
   <!-- [Delete bucket] -->
 
@@ -154,11 +154,11 @@ In this LiveLab, you will:
 
   a. Navigate to your Data Labeling Dataset: OCI Services menu > **Analytics &** AI > **Data Labeling**
 
-  [Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
+  ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
   b. Click into your hyperlinked Dataset, and click **More actions** > **Delete** > Enter the name of your Dataset > **Delete**
 
-  [Click into dataset](../dls-bulk-label/images/23-data-labeling-datasets.png)
+  ![Click into dataset](../dls-bulk-label/images/23-data-labeling-datasets.png)
 
   <!-- [Delete dataset] -->
 
@@ -166,11 +166,11 @@ In this LiveLab, you will:
 
   a. Navigate to your AI Vision Project: OCI Services menu > **Analytics & AI** > **Vision**
 
-  [Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
+  ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
 
   b. Click into your hyperlinked Project, then click into your hyperlinked model.
 
-  [Click into project](./images/4-vision-click-project.png)
+  ![Click into project](./images/4-vision-click-project.png)
 
   <!-- [Click into model] -->
 
