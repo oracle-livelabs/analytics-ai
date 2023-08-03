@@ -21,9 +21,13 @@ In this lab you will:
 
 We will prepare the APEX application.
 
-1. Inside of the ATP instance console, go to Tools, and then "Open APEX".
+1. Inside of the ATP instance console, select the APEX INSTANCE at the bottom of the page.
 
    ![](images/development.png)
+
+   then select Launch Apex
+
+   ![](images/open-apex.png)
 
 2. Log in
 
