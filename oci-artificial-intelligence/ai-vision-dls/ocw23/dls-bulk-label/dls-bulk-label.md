@@ -14,7 +14,7 @@ The Tasks in this Lab are organized as follows:
 * **Task 1**: Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab
 * **Task 2**: Create an Object Storage Bucket
 * **Task 3**: Downloaded the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
-* **Task 4**: Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records.
+* **Task 4**: Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records
 * **Task 5**: Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
 ## **Primary Objectives**
