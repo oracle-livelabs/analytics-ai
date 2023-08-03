@@ -10,7 +10,7 @@ The Tasks in this Lab are organized as follows:
 * **Task 1**: Create an AI Vision Project, which is a logical container for your Vision models
 * **Task 2**: Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
 * **Task 3**: Upload test data via the OCI web console, and witness your model serve your input in real-time
-* **Task 4**: Clean up the resources you provisioned for this LiveLab
+* **Cleanup**: Deprovision the resources you provisioned for this LiveLab
 
 ## Primary Objectives
 
@@ -135,7 +135,24 @@ In this LiveLab, you will:
 
   ![Analyze Debris image](./images/16-vision-model-analyze-image-stripe-example.png)
 
-## **Task 4:** Cleanup
+**Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to [use cases](../workshops/freetier/intro.md#what-are-the-real-world-applications-of-computer-vision-ai) where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
+
+In addition to image classification, OCI supports AI automation of tasks such as:
+
+- **Object Detection**: Identify pre-defined or custom-defined objects within images
+- **Optical Character Recognition**: Recognize characters in documents or images
+- **Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
+- **Speech Transcription**: Transcribe spoken language from audio files to transcripts
+- **Sentiment Analysis**: Automatically decipher sentiment of a volume of text or sentences within it
+- **Named-Entity Recognition**: Extraction of people, places, and things that are publicly recognized
+- **Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
+- **Translation**: Translate between any of 21 languages
+
+**Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools available today can enable you to streamline and optimize the processes that are required for your use case.
+
+[Proceed to the next section](#next).
+
+## **Cleanup**
 *\[2 minutes\]*
 
 1. Delete your Object Storage Bucket:
@@ -179,23 +196,6 @@ In this LiveLab, you will:
   <!-- [Delete model] -->
 
   <!-- [Delete project] -->
-
-**Congratulations on completing Lab 2 as well as the LiveLab!** Now that you understand the process of producing a serving AI Vision model for cell classification, you are ready to consider the ways in which you can process the model analysis for end-user consumption. You can also apply the principals you discovered in this lab to [use cases](../workshops/freetier/intro.md#what-are-the-real-world-applications-of-computer-vision-ai) where similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
-
-In addition to image classification, OCI supports AI automation of tasks such as:
-
-- **Object Detection**: Identify pre-defined or custom-defined objects within images
-- **Optical Character Recognition**: Recognize characters in documents or images
-- **Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
-- **Speech Transcription**: Transcribe spoken language from audio files to transcripts
-- **Sentiment Analysis**: Automatically decipher sentiment of a volume of text or sentences within it
-- **Named-Entity Recognition**: Extraction of people, places, and things that are publicly recognized
-- **Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
-- **Translation**: Translate between any of 21 languages
-
-**Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools available today can enable you to streamline and optimize the processes that are required for your use case.
-
-[Proceed to the next section](#next).
 
 ## Acknowledgements
 
