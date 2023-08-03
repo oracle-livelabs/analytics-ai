@@ -41,7 +41,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   a. From the OCI Services menu, click **Compartments** under **Identity & Security**.
 
-  ![OCI Services Menu](./images/1-menu-identity-and-security-compartments.png)
+  ![OCI Services Menu](./images/1-1-menu-identity-and-security-compartments.png)
 
   b. Click **Create Compartment**.
 

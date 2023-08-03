@@ -93,8 +93,6 @@ In this LiveLab, you will:
 
 ![Model is available](./images/9-vision-model-active.png)
 
-![Vision Model Active](./images/10-vision-model-active.png)
-
 ## **Task 3:** Test the Model On New Images
 *\[2 minutes\]*
 
