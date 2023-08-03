@@ -1,4 +1,4 @@
-# Use DLS to bulk label a dataset
+# Use Data Labeling to bulk label a dataset
 **Estimated Time**: *58 minutes*
 
 ## Introduction
@@ -253,7 +253,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![All records imported](./images/29-records-imported.png)
 
-## **Task 5:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
+## **Task 5:** Populate Your Data Labeling Dataset With the Data From Your Object Storage Bucket
 *\[25 minutes\]*
 
 1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
