@@ -157,7 +157,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   b. Click **Create**.
 
-  c. Navigate to the detailed view of your bucket by clicking on the hyperlinked listing that appears, named after your bucket.
+  c. Navigate to the detailed view of your bucket by clicking on the hyperlinked listing named after your bucket, and see the details associated with your bucket.
 
   ![Create Object Storage Bucket](./images/16-create-bucket.png)
 
