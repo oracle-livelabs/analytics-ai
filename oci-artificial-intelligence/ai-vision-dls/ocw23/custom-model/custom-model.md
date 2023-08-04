@@ -180,7 +180,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   a. Navigate to your AI Vision Project from the OCI services menu: **Analytics & AI** > **Vision**
 
-  b. Click into your hyperlinked Project > Click into your hyperlinked model.
+  b. Click into your hyperlinked Project > Click into your hyperlinked model
 
   c. Delete your AI Vision Model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
 
