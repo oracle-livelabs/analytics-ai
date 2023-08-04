@@ -100,8 +100,8 @@ In this LiveLab, you will:
 
   The model performance metrics, defined below, indicate to end-users how apt your new model is at classifying cells (labeled *Cell*) from non-cells (labeled either *Debris* or *Stripe*), based on analysis of the visual properties of the coherent diffraction images.
 
-    * **Precision**: Fraction of images that were classified correctly / images that should not have been classified with the label, but were.
-    * **Recall**: Fraction of images that were classified correctly with a label / images that should have been classified with that label, but were not.
+    * **Precision**: Number of images that were classified correctly, divided by the number of images that should not have been classified with the label, but were.
+    * **Recall**: Number of images that were classified correctly with a label, divided by the number of images that should have been classified with that label, but were not.
     * **F1 Score**: Harmonic mean of precision and recall values. This metric represents the overall accuracy of our model, as it factors in both *Precision* and *Recall*.
 
 2. [Click to download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hah9GOfzzUI67R2a1X93shi9j1C7OFUFSqbfYtLDBe1waj5d6HL70RR26mkDCWWS/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Test_Data.zip) this 8 MB dataset to your local machine. This dataset contains a test set of coherent diffraction images of blood samples. As these images were not present in the training dataset, they were not used to train your Vision model, and will enable you to simulate the model serving process.
