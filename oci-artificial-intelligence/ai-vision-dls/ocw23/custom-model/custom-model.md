@@ -89,7 +89,7 @@ In this LiveLab, you will:
 
 ![Vision model Creating](./images/8-vision-model-creating.png)
 
-4. After about 30 minutes, the state of your model will update to **Active**, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
+4. After about *30 minutes*, the state of your model will update to **Active**, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
 
 ![Model is available](./images/9-vision-model-active.png)
 
