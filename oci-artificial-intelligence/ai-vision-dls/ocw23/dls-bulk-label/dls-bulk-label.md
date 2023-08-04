@@ -231,7 +231,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Select Bucket](./images/25-create-dataset-page-2-select-bucket.png)
 
-  h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Note to use capitalized first letters followed by lowercase letters, and take care to leave no space characters in the label names.
+  h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Be sure that the first letter of each label are uppercase, and the remaining letters are lowercase. Take care to leave no space characters in the label names.
     
     * Cell
     * Debris
