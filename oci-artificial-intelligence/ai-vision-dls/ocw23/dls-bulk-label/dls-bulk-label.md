@@ -1,5 +1,5 @@
 # Use Data Labeling to bulk label a dataset
-**Estimated Time**: *58 minutes*
+**Estimated Time**: *35 minutes*
 
 ## Introduction
 
@@ -141,7 +141,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ![Policy](./images/13-create-policy.png)
 
 ## **Task 2:** Create an Object Storage Bucket
-*\[3 minutes\]*
+*\[2 minutes\]*
 
 1. From the OCI services menu, click **Buckets** under **Object Storage & Archive Storage**.
 
@@ -167,7 +167,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 
 ## **Task 3:** Load the Biomedical Training Data into Object Storage
-*\[5 minutes\]*
+*\[3 minutes\]*
 
 1. Open Cloud Shell.
 
@@ -199,7 +199,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ![Bulk-Upload Training Images](./images/21-bulk-upload-done-expand-folder.png)
 
 ## **Task 4:** Create a Data Labeling Dataset
-*\[15 minutes\]*
+*\[3 minutes\]*
 
 1. From the OCI services menu, click **Data Labeling** under **Analytics & AI**.
 
@@ -249,12 +249,12 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
 
-6. When all of the data has been imported into your dataset from your Object Storage Bucket, the screen will appear similar to the below screenshot. Notice that none (*0*) of the *1710* records have yet been labeled. Once all *1710* image files have been imported as records in your dataset, it will be time to begin the next task, where you will label your data using a bulk-labeling operation. This process is expected to complete after about *11 minutes*.
+6. Note that It will take about *10 minutes* for the the data to be fully imported into your dataset, as records, from your Object Storage Bucket. Once the records have been fully imported, the page will appear similar to the below screenshot. Notice that (*0*) of the *1710* records have yet been labeled. The next step will be to bulk-label the records. Move onto the next Task while your images import as records.
 
   ![All records imported](./images/29-records-imported.png)
 
 ## **Task 5:** Populate Your Data Labeling Dataset With the Data From Your Object Storage Bucket
-*\[25 minutes\]*
+*\[17 minutes\]*
 
 1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
     ```
@@ -299,7 +299,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     LABELS = ["Cell", "Debris", "Stripe"]
     LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
     ```
-  a. Open **classification\_config.py** by running the following command:
+  a. Similarly, open **classification\_config.py** by running the following command:
 
     ```
     <copy>vi classification_config.py</copy>
@@ -323,11 +323,19 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>pip install --user pandas</copy>
     ```
-7. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **17 minutes**.
+7. Run the script once the images have been imported:
+
+  a. Check whether your page appear similar to the below screenshot, with *0*/*1710* indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. If this is the case, move onto *b.*
+
+  ![All records imported](./images/29-records-imported.png)
+
+  b. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **5 minutes**.
+    
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
 8. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
+    
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
@@ -348,7 +356,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Records Labeled](./images/35-all-records-labeled.png)
 
-12. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the Stripe folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
+12. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the *Stripe* folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
 
   ![Pointing to an image in the dataset](./images/36-verify-label-click-listing.png)
 

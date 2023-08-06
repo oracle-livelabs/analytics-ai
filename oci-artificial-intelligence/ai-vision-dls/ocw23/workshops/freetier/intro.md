@@ -72,10 +72,10 @@ In this LiveLab, you will:
 
 ## Live Lab Steps Overview
 
-**Total Estimated Workshop Time**: *99 minutes*
+**Total Estimated Workshop Time**: *75 minutes*
 
 ### **Lab 1**
-*\[58 minutes\]*
+*\[35 minutes\]*
 
 In Lab 1, you will be provided a dataset consisting of *1710 images*. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
@@ -92,7 +92,7 @@ The Tasks in Lab 1 are organized as follows:
 * **Task 5**: Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
 ### **Lab 2**
-*\[41 minutes\]*
+*\[40 minutes\]*
 
 In Lab 2, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
 

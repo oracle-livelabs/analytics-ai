@@ -1,5 +1,5 @@
 # Create a custom AI Vision Model
-**Estimated Time**: *41 minutes*
+**Estimated Time**: *40 minutes*
 
 ## Introduction
 
@@ -61,7 +61,7 @@ In this LiveLab, you will:
 
   b. **Type**: *Image Classification*
 
-  c. **Training data**: Choose existing dataset
+  c. **Training data**: *Choose existing dataset*
 
   d. **Data source**: *Data labeling service*
 
@@ -94,7 +94,7 @@ In this LiveLab, you will:
 ![Model is available](./images/9-vision-model-active.png)
 
 ## **Task 3:** Test the Model On New Images
-*\[2 minutes\]*
+*\[3 minutes\]*
 
 1. Now that your model is available, observe the performance metrics on the Model Details page, as well as the training duration.
 
@@ -150,7 +150,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 [Proceed to the next section](#next).
 
 ## **Cleanup**
-*\[2 minutes\]*
+*\[5 minutes\]*
 
 1. Delete your Object Storage Bucket:
 
