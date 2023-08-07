@@ -113,19 +113,19 @@ Use features of Document Understanding to analyze document files.
   2. On the Document Understanding page, select the first feature in the left list, **Text extraction** 
   
   1. A demo file is automatically processed by default. After a few seconds, view the extraction results on the right hand *Results* panel. Note that you can view the results by line or by word.
-      ![DUS demo window](./images/documentconsoletext.PNG)
+      ![DUS demo window](./images/documentconsoletext.png)
 
   1. If you're curious about the raw JSON response, scroll down on the results panel... 
-      ![Results panel](./images/results-highlighted.PNG)
+      ![Results panel](./images/results-highlighted.png)
   
   1. ...then expand *Request* and/or *Response*  
-      ![Results panel](./images/documentconsoleresults.PNG)
+      ![Results panel](./images/documentconsoleresults.png)
 
   1. Select the **second demo file** and view its results
-      ![Local file panel](./images/documentconsolefile.PNG)
+      ![Local file panel](./images/documentconsolefile.png)
 
   1. Change *Document source* from *Demo files* to **Local files**
-    ![Local file panel](./images/documentconsolelocalfile.PNG)
+    ![Local file panel](./images/documentconsolelocalfile.png)
 
   1. You will be prompted to enter details for an output object storage bucket. JSON output from the document processing will be written to this location. Enter the following values in the *Output location* dialog:
     
@@ -133,10 +133,10 @@ Use features of Document Understanding to analyze document files.
       - Output object storage location: **docu-bucket**
       - Prefix: **console-output**
       - Click **Submit**
-    ![Local file panel](./images/documentconsoleoutput.PNG) 
+    ![Local file panel](./images/documentconsoleoutput.png) 
 
   1. On the *Text extraction* page, under *Upload image*, click **select one...**, browse to one of the downloaded sample images, and select it. It will be analyzed and you can review the results.
-  ![Local file panel](./images/documentconsolelocalfile.PNG)
+  ![Local file panel](./images/documentconsolelocalfile.png)
 
   1. Repeat the previous step for other sample files.
   
@@ -144,7 +144,7 @@ Use features of Document Understanding to analyze document files.
 There are more features you can try in the console.
 
   1. You can repeat the steps in the previous task to test other features like *Table extraction*, *Key value extraction*, and *Document classification* in the console. Some sample documents are not applicable to some features. For example some documents don't have tables to extract. (You won't need to set the output location again though.)
-      ![DUS navigation panel](./images/documentconsolenav.PNG)
+      ![DUS navigation panel](./images/documentconsolenav.png)
 
 
 ## Summary
