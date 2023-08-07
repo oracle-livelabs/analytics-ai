@@ -31,9 +31,11 @@ Before you start using OCI Document Understanding, OCI policies must be setup to
 
     1. Name: *document-understanding-access-policy*
     1. Description: *policy to enable access to Document Understanding service*
-    1. Set *Compartment* to your root compartment and toggle on the manual editor. The root compartment will be called *name of tenancy (root)*, and it will be the top compartment in the compartment list.       
+    1. Set *Compartment* to your root compartment. The root compartment will be called *name of tenancy (root)*, and it will be the top compartment in the compartment list.       
     ![OCI Create policy](./images/policyeditor.png)
 
+    1. In the *Policy Builder* section, toggle **Show manual editor** on
+    
     1. Add the below statement in the *Policy Builder* field to allow all the users in your tenancy to use Document Understanding. This is a required policy.
         ```
         <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
