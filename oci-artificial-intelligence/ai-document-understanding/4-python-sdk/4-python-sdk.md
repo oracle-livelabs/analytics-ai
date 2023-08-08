@@ -6,7 +6,7 @@ In this lab you will use the OCI Python SDK to extract information from document
 
 The Python SDK can be found [here](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#SDK_for_Python).
 
-*Estimated Lab Time*: 30 minutes
+*Estimated Time*: 30 minutes
 
 ### Objectives:
 * Learn how to use the OCI Python SDK to communicate with the Document Understanding service.
@@ -64,7 +64,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
         
     ```python
     <copy>
-    ### Import Packages
+    # Import Packages
     import oci
     import uuid
     import base64
@@ -374,9 +374,6 @@ If you want to remove the items added to your tenancy in this lab, you can use t
 
 
 ## Acknowledgements
-* **Authors**
-    * Kate D'Orazio - Product Manager
+* **Authors** - Kate D'Orazio - Product Manager
 
-
-* **Last Updated By/Date**
-    * Wes Prichard, Product Manager, July 2023
+* **Last Updated By/Date** - Wes Prichard, Product Manager, July 2023

@@ -1,4 +1,4 @@
-# Lab 1: Configure Document Understanding policies
+# Configure Document Understanding policies
 
 ## Introduction
 
@@ -83,9 +83,6 @@ You may now **proceed to next lab**.
 
 
 ## Acknowledgements
-* **Authors**
-    * Kate D'Orazio - Product Manager
+* **Authors** - Kate D'Orazio - Product Manager
 
-
-* **Last Updated By/Date**
-    * Wes Prichard, Product Manager, July 2023
+* **Last Updated By/Date** - Wes Prichard, Product Manager, July 2023

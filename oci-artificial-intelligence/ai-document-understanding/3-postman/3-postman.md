@@ -1,11 +1,11 @@
-# Lab 3: Use OCI Document Understanding via REST APIs
+# Use OCI Document Understanding via REST APIs
 
 ## Introduction
 
 In this lab session, we will show you how to try out the OCI Document Understanding REST API using the POSTMAN application.
 Postman is a GUI-based REST API tool that is very popular among developers.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Time*: 15 minutes
 
 ### Objectives:
 * Learn how to access and use Document Understanding service through REST APIs.
@@ -42,7 +42,8 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
 1. Configure *tenancy_ocid*
 
     1. To get the **tenancy_ocid**, open the OCI Console, click the **Profile** icon in the upper right corner, then select **Tenancy: *name***
-    ![OCI profile menu](./images/selecttenancy.png " ")
+    
+        ![OCI profile menu](./images/selecttenancy.png " ")
 
     2. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
     ![OCI tenancy details page](./images/tenancy-ocid.png " ")
@@ -320,9 +321,6 @@ You configured Postman to connect to your OCI tenancy and you initiated a text e
 You may now **proceed to next lab**.
 
 ## Acknowledgements
-* **Authors**
-    * Kate D'Orazio - Product Manager
+* **Authors** - Kate D'Orazio - Product Manager
 
-
-* **Last Updated By/Date**
-    * Wes Prichard, Product Manager, July 2023
+* **Last Updated By/Date** - Wes Prichard, Product Manager, July 2023
