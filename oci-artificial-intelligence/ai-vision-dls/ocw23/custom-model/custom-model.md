@@ -228,13 +228,13 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
 
-  ## Acknowledgements
+## Acknowledgements
 
 * **Authors**
     * Samuel Cacela - Senior Cloud Engineer
     * Gabrielle Prichard - Product Manager, Analytics Platform
-    * Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
     * David Chen - Master Principal Cloud Architect
+    * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
 
 * **Last Updated By/Date**
     * Samuel Cacela - Senior Cloud Engineer, June 2023

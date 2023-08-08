@@ -47,7 +47,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create compartment window](./images/1-2-create-compartment.png)
 
-  c. **Name**: Provide a name for your Compartment, e.g. **Image\_Classification**
+  c. **Name**: Provide a name for your Compartment, e.g. *Image\_Classification*
 
   d. **Description**: Provide a description for your Compartment, e.g. *Compartment for image classification OCW23 LiveLab*
 
@@ -75,7 +75,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create Group](./images/6-groups-in-default-domain.png)
 
-  d. **Name**: Provide a name for your Group, e.g. **Image\_Classification\_Group**
+  d. **Name**: Provide a name for your Group, e.g. *Image\_Classification\_Group*
 
   e. **Description**: Provide a description for your Group, e.g. *Group for image classification OCW23 LiveLab users*
 
@@ -99,7 +99,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Click Create Dynamic Group](./images/11-create-dynamic-group-button.png)
 
-  d. **Name**: Provide a name for your Dynamic Group, e.g. **Image\_Classification\_Dynamic_Group**
+  d. **Name**: Provide a name for your Dynamic Group, e.g. *Image\_Classification\_Dynamic_Group*
 
   e. **Description**: Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
@@ -122,7 +122,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   c. Click **Create Policy**.
 
-  d. **Name**: Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
+  d. **Name**: Provide a name for your Policy, e.g. *Image\_Classification\_Policy*
 
   e. **Description**: Provide a description for your Policy, e.g. *Policy for image classification OCW23 LiveLab*
 
@@ -157,7 +157,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Select compartment](./images/15-select-compartment-on-object-storage-page-and-click-create-bucket.png)
 
-  a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*. Make a note of this name for later use in this lab.
+  a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*.
+
+  * *Note:* If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
 
   b. Click **Create**.
 
@@ -189,7 +191,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
     ```
-5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you provided a different name than **image-classification-bucket**, then replace this name in your command before you run it.
+5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you named your Bucket with a different name than *image-classification-bucket*, then retrieve this name from your digital notepadd app and replace *image-classification-bucket* in your command before you run it.
     
     ```
     <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
@@ -276,7 +278,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>echo $OCI_REGION</copy>
     ```
-4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
+4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
     
     ```
     CONFIG_FILE_PATH = "/etc/oci/config"
@@ -295,18 +297,18 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   d. Delete the value within the quotation marks using the **delete** button.
   
-  e. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **"/etc/oci/config"**. Be sure to include the quotation marks where indicated.
+  e. Enter the value to be assigned to *CONFIG\_FILE\_PATH* for this Lab, which is: *"/etc/oci/config"*. Be sure to include the quotation marks where indicated.
   
   f. Press **ESC** to escape *insert* mode.
   
-  g. Repeat steps **b.** through **e.**, for the remaining variables (**REGION\_IDENTIFIER** and **DATASET\_ID**) and their respective values, as indicated above.
+  g. Repeat steps **b.** through **e.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
   
   h. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
 
 5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below, in a fashion similar to the previous step:
     ```
-    LABELS = ["Cell", "Debris", "Stripe"]
     LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
+    LABELS = ["Cell", "Debris", "Stripe"]
     ```
   a. Similarly, open **classification\_config.py** by running the following command:
 
@@ -314,17 +316,17 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     <copy>vi classification_config.py</copy>
     ```
 
-  b. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *LABELS =*
+  b. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *LABELING\_ALGORITHM =*
   
   c. Enter *insert* mode by typing **i**.
   
   d. Delete the value within the quotation marks using the **delete** button.
   
-  e. Enter the value to be assigned to **CONFIG\_FILE\_PATH** in our example, which is: **["Cell", "Debris", "Stripe"]**. Be sure to include the quotation marks where indicated.
+  e. Enter the value to be assigned to *LABELING\_ALGORITHM* for this Lab, which is: *\["FIRST\_REGEX\_MATCH"\]*. Be sure to include the quotation marks where indicated.
   
   f. Press **ESC** to escape *insert* mode.
   
-  g. Repeat steps **b.** through **e.**, for **LABELING\_ALGORITHM** and its respective value, as indicated above.
+  g. Repeat steps **b.** through **e.**, for *LABELS* and its respective value: *\["Cell", "Debris", "Stripe"\]*
   
   h. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
@@ -380,8 +382,8 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 * **Authors**
     * Samuel Cacela - Senior Cloud Engineer
     * Gabrielle Prichard - Product Manager, Analytics Platform
-    * Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
     * David Chen - Master Principal Cloud Architect
+    * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
 
 * **Last Updated By/Date**
     * Samuel Cacela - Senior Cloud Engineer, June 2023
