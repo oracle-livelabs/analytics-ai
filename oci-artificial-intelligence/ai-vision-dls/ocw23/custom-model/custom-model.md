@@ -25,7 +25,7 @@ In this LiveLab, you will:
 * Lab 1 has been completed
 * Your OCI user is a member of the group that was created in Lab 1
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
-* Sufficient resource availability within your home region for 1 Vision Model
+* Sufficient resource availability within your home region for: 1 Vision Project, 1 Vision Model
 
 ## **Task 1:** Create an AI Vision Project
 *\[2 minutes\]*
