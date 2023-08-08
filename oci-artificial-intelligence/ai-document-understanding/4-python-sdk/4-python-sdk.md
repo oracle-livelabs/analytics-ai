@@ -65,6 +65,7 @@ The following sample code involves essentially three steps. First, it calls *Cre
     ```python
     <copy>
     # Import Packages
+
     import oci
     import uuid
     import base64

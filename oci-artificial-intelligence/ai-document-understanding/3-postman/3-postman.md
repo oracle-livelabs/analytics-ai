@@ -16,6 +16,7 @@ We have put together a Postman Collection to help you get started with calling t
 1. Install Postman to your local computer (if you don't already have it) using this link: [https://www.postman.com/downloads/](https://www.postman.com/downloads/). Once installed, run it. 
 
 2. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/overview) to download the **Document Understanding API Collection**. The link opens Postman on the web. Select **Collections** on the left side of the screen. In the *Collections* list, click **Document Understanding Service API** then click the **3 dots icon** to open the popup menu. Select **Export** to export the collection file and save it to your local computer. You will need to create an account, if you don't already have one, to download the API collection. When prompted, select *Collection v2.1* to export.
+
   ![Postman OCI Collection](./images/documentcollectionscreen.png)
 
 3. Use this [link](https://www.postman.com/oracledevs/workspace/oracle-cloud-infrastructure-rest-apis/environment/29850-eab82db8-e9a1-4200-9f39-de10b4a0f371) to download the **OCI Credentials Environment**. The link opens Postman on the web. Select **Environmments** on the left side of the screen then select **OCI Credentials**. On the right side of the screen find the **3 dots icon** and click it to open a popup menu. On the menu, click **Export** to export the credentials file and save it to your local computer. You'll upload the file to your local Postman in the next task.
@@ -44,6 +45,7 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
     1. To get the **tenancy_ocid**, open the OCI Console, click the **Profile** icon in the upper right corner, then select **Tenancy: *name***
     
         ![OCI profile menu](./images/selecttenancy.png " ")
+
 
     2. Copy the **OCID** on this page and add it to your Postman OCI Credentials in the **tenancy_ocid CURRENT VALUE** field.
     ![OCI tenancy details page](./images/tenancy-ocid.png " ")
@@ -142,6 +144,7 @@ Click the newly imported environment in POSTMAN: **OCI Credentials**. You'll see
 
 1. In POSTMAN, click the **Save** button to save all of the OCI Credentials that you just entered.
     ![Postman save button](./images/save-button.png " ")
+
 
 ## Task 3: Import the Document Understanding API collection
 
