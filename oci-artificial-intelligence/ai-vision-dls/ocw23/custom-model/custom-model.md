@@ -93,7 +93,7 @@ In this LiveLab, you will:
 
 ![Vision model Creating](./images/8-vision-model-creating.png)
 
-4. After about *30 minutes*, the **State** of your model will update to **Active**, indicating that it is available for use. You can monitor the training progress by checking on the **% Complete** indicated on-screen. Once your model is **Active**, navigate to the model serving page by clicking **Analyze**, and move onto the next Task.
+4. After about *30 minutes*, the **State** of your model will update to *Active*, indicating that it is available for use. You can monitor the training progress by checking on the **% Complete** indicated on-screen. Once your model is *Active*, navigate to the model serving page by clicking **Analyze**, and move onto the next Task.
 
 ![Model is available](./images/9-vision-model-active.png)
 

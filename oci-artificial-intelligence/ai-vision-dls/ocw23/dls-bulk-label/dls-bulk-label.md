@@ -334,11 +334,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
 7. Run the script once the images have been imported:
 
-  a. Check whether your page appears similar to the below screenshot, with the **Status** of your Dataset showing as *Active*, and the value next to **Labeled:** appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto *b.*
+  a. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled:** appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto **b.**
 
   ![All records imported](./images/29-records-imported.png)
 
-    * *Note:* Until this is the case, you may use the buttons on the web console UI as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
+    * *Note:* Until your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console UI as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
 
     ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
 
@@ -349,11 +349,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>python bulk_labeling_script.py</copy>
     ```
-8. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run the following command again to resume the bulk-labeling process.
-    
-    ```
-    <copy>python bulk_labeling_script.py</copy>
-    ```
+8. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
 
   ![Troubleshooting Bulk Labeling](./images/33-bulk-labeling-troubleshooting.png)
 
@@ -371,7 +367,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Records Labeled](./images/35-all-records-labeled.png)
 
-12. Verify that your images have been labeled by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the *Stripe* folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
+12. Verify that your images have been labeled as intended by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the *Stripe* folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
 
   ![Pointing to an image in the dataset](./images/36-verify-label-click-listing.png)
 
