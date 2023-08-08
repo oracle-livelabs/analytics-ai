@@ -72,7 +72,7 @@ In this LiveLab, you will:
 
 ## Live Lab Steps Overview
 
-**Total Estimated Workshop Time**: *75 minutes*
+**Total Estimated Workshop Time**: *80 minutes*
 
 ### **Lab 1**
 *\[35 minutes\]*
