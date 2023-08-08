@@ -278,8 +278,8 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>echo $OCI_REGION</copy>
     ```
-4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
-    
+4. In this step, you will open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
+
     ```
     CONFIG_FILE_PATH = "/etc/oci/config"
     REGION_IDENTIFIER = "<Region identifier from your notepad app>"
@@ -305,12 +305,13 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   h. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
 
-5. Open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below, in a fashion similar to the previous step:
+5. In a fashion similar to that of the previous step, in this step you will open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below.
+
     ```
     LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
     LABELS = ["Cell", "Debris", "Stripe"]
     ```
-  a. Similarly, open **classification\_config.py** by running the following command:
+  a. Open **classification\_config.py** by running the following command:
 
     ```
     <copy>vi classification_config.py</copy>
@@ -326,7 +327,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   
   f. Press **ESC** to escape *insert* mode.
   
-  g. Repeat steps **b.** through **e.**, for *LABELS* and its respective value: *\["Cell", "Debris", "Stripe"\]*
+  g. Repeat steps **b.** through **e.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
   
   h. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 

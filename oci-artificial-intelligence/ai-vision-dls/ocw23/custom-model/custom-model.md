@@ -151,7 +151,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 **Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
-*Don't forget* to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
+**Don't forget** to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
 
 [Proceed to the next section](#next).
 
