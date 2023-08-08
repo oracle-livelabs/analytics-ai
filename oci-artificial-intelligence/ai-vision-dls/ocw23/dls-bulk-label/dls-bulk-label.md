@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this Lab, you will be provided a dataset consisting of *1710 images*. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
+In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
 You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
 
