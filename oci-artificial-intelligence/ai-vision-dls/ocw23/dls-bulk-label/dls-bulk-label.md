@@ -79,13 +79,13 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   e. **Description**: Provide a description for your Group, e.g. *Group for image classification OCW23 LiveLab users*
 
-  f. Select the name of the user who will proceed with the lab tasks after the Policy Setup.
+  f. **Users**: Select the name of the user who will proceed with the lab tasks after the Policy Setup.
 
   ![Create Group](./images/7-create-group.png)
 
   ![Create Group Done](./images/8-create-group-done.png)
 
-4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling Datasets in your new compartment.
+4.  In this step, you will create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling Datasets in your new compartment.
 
   a. Click **Default domain** on the upper-left of the screen.
 
@@ -103,7 +103,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   e. **Description**: Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
-  f. Paste the following matching rule into the text field. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
+  f. **Matching rules**: Paste the following matching rule into the text field. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
       
       ```
       <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
@@ -112,7 +112,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create Dynamic Group window](./images/12-1-create-dynamic-group.png)
 
-5. Create a Policy. The Policy will contain a series of statements. Each statement will allow a Group (and associated users) or Dynamic Group (and associated resources that are matched by the matching rule) to access specified resources to specified degrees of privilege.
+5. In this step, you will create a Policy. The Policy will contain a series of statements. Each statement will allow a Group (and associated users) or Dynamic Group (and associated resources that are matched by the matching rule) to access specified resources to specified degrees of privilege.
 
   a. From the OCI Services menu, click **Identity & Security** > **Policies**.
 
@@ -147,7 +147,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 ## **Task 2:** Create an Object Storage Bucket
 *\[2 minutes\]*
 
-1. From the OCI services menu, click **Storage** > **Buckets**
+1. From the OCI services menu, click: **Storage** > **Buckets**
 
   ![OCI services menu](./images/14-menu-storage.png)
 
@@ -159,7 +159,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*.
 
-  * *Note:* If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
+    * *Note:* If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
 
   b. Click **Create**.
 
@@ -175,11 +175,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 ## **Task 3:** Load the Biomedical Training Data into Object Storage
 *\[3 minutes\]*
 
-1. Open Cloud Shell.
+1. Open Cloud Shell by clicking the **&lt&gt** icon at the top-left of the webpage. Then, click **Cloud Shell**.
 
   ![Open Cloud Shell](./images/18-from-bucket-navigate-to-cloud-shell.png)
 
-2. Feel free to dismiss the tutorial by entering *N*, or enter *Y* if you wish to follow the tutorial. Note your ability to minimize, maximize, and restore the Cloud Shell window as is convenient for intermittent interaction with the OCI Console UI.
+2. You may dismiss the tutorial by entering *N*, or enter *Y* if you wish to follow the tutorial. Note your ability to minimize, maximize, and restore the Cloud Shell window as is convenient for intermittent interaction with the OCI Console UI.
 
 3. Run the following command on your Cloud Shell command line interface (CLI) to download the image files necessary this lab, which is the training data that will be used to train the computer vision machine learning model:
     
@@ -203,14 +203,14 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Bulk-Upload Training Images](./images/20-bulk-upload-done-refresh-bucket.png)
 
-7. Confirm that your training images have been uploaded to your Object Storage bucket within their respective folders.
+7. Confirm that your training images have been uploaded to your Object Storage bucket within their respective folders: *Cell*, *Debris*, and *Stripe*.
 
   ![Bulk-Upload Training Images](./images/21-bulk-upload-done-expand-folder.png)
 
 ## **Task 4:** Create a Data Labeling Dataset
 *\[3 minutes\]*
 
-1. From the OCI services menu, click **Analytics & AI** > **Data Labeling**
+1. From the OCI services menu, click: **Analytics & AI** > **Data Labeling**
 
   ![OCI services menu](./images/22-menu-analytics-and-data-labeling.png)
 
@@ -242,9 +242,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   h. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Be sure that the *first letter* of each label is *uppercase*, and the *remaining letters* are *lowercase*. Take care to leave no space characters in the label names.
     
-    * Cell
-    * Debris
-    * Stripe
+    * *Cell*
+    * *Debris*
+    * *Stripe*
 
   i. Click **Next**.
 
@@ -361,7 +361,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
-10. Notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. Notice that in this example, *1082* of the *1710* records have so far been labeled.
+10. Notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. In the example shown in the below screenshot, *1082* of the *1710* records have so far been labeled.
 
   ![Records Unlabeled](./images/30-labeling-progress.png)
 

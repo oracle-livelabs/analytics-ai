@@ -10,7 +10,7 @@ The Tasks in this Lab are organized as follows:
 * **Task 1**: Create an AI Vision Project, which is a logical container for your Vision models
 * **Task 2**: Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
 * **Task 3**: Upload test data via the OCI web console, and witness your model serve your input in real-time
-* **Cleanup**: Deprovision the resources you provisioned for this LiveLab
+* **Cleanup**: Deprovision the resources you provisioned during this LiveLab
 
 ## Primary Objectives
 
@@ -30,7 +30,7 @@ In this LiveLab, you will:
 ## **Task 1:** Create an AI Vision Project
 *\[2 minutes\]*
 
-1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click **AI Services** > **Vision**
+1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
 
 ![OCI Services Menu](./images/1-menu-analytics-and-ai-vision.png)
 
@@ -128,7 +128,7 @@ In this LiveLab, you will:
 
   Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
-  *Note:* Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+    * *Note:* Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
@@ -151,6 +151,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 **Learn more** about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
+*Don't forget* to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
+
 [Proceed to the next section](#next).
 
 ## **Cleanup**
@@ -158,7 +160,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 1. Delete your Object Storage Bucket:
 
-  a. Navigate to your Object Storage Bucket from the OCI services menu: **Storage** > **Buckets**
+  a. From the OCI services menu, click: **Storage** > **Buckets**
 
   b. Click on the 3 dots to the right of the listing corresponding to your Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
 
@@ -170,7 +172,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 2. Delete your Data Labeling Dataset:
 
-  a. Navigate to your Data Labeling Dataset from the OCI services menu: **Analytics & AI** > **Data Labeling**
+  a. From the OCI services menu, click: **Analytics & AI** > **Data Labeling**
 
   b. Click on the 3 dots to the right of the listing corresponding to your Dataset > Click **Delete** > Enter the name of your Dataset > **Delete**
 
@@ -182,7 +184,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 3. Delete your AI Vision Model and Project:
 
-  a. Navigate to your AI Vision Project from the OCI services menu: **Analytics & AI** > **Vision**
+  a. From the OCI services menu, click: **Analytics & AI** > **Vision**
 
   b. Click into your hyperlinked Project > Click into your hyperlinked model
 

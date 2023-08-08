@@ -101,7 +101,7 @@ The Tasks in Lab 2 are organized as follows:
 * **Task 1**: Create an AI Vision Project, which is a logical container for your Vision models
 * **Task 2**: Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
 * **Task 3**: Upload test data via the OCI web console, and witness your model serve your input in real-time
-* **Cleanup**: Deprovision the resources you provisioned for this LiveLab
+* **Cleanup**: Deprovision the resources you provisioned during this LiveLab
 
 ## Acknowledgements
 
