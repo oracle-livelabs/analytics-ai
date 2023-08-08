@@ -25,12 +25,12 @@ In this LiveLab, you will:
 * Lab 1 has been completed
 * Your OCI user is a member of the group that was created in Lab 1
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
-* Sufficient resource availability within your home region for Vision
+* Sufficient resource availability within your home region for 1 Vision Model
 
 ## **Task 1:** Create an AI Vision Project
 *\[2 minutes\]*
 
-1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click *Vision* under *AI Services*.
+1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click **AI Services** > **Vision**
 
 ![OCI Services Menu](./images/1-menu-analytics-and-ai-vision.png)
 
@@ -57,17 +57,19 @@ In this LiveLab, you will:
 
 1. To custom-train your own AI Vision model, you will use the dataset that you labeled in the previous Lab:
 
-  a. Click **Create Model** and enter details for your model:
+  a. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
 
-  b. **Type**: *Image Classification*
+  b. Click **Create Model** and enter details for your model:
 
-  c. **Training data**: *Choose existing dataset*
+  c. **Type**: *Image Classification*
 
-  d. **Data source**: *Data labeling service*
+  d. **Training data**: *Choose existing dataset*
 
-  e. Choose the dataset that you created in Lab 1.
+  e. **Data source**: *Data labeling service*
 
-  f. Click **Next**.
+  f. Choose the Data Labeling Dataset that you created in Lab 1.
+
+  g. Click **Next**.
 
   ![Create and train model window: select data](./images/5-vision-create-model-page-1-select-data.png)
 
@@ -75,11 +77,13 @@ In this LiveLab, you will:
 
   a. **Model display name**: Enter a name for your Vision model, e.g. *image-classification-model*
 
-  b. **Training duration**: *Quick mode*
+  b. **Model description**: Enter a description for your Vision model, e.g. *Vision Model for image classification OCW23 LiveLab*
+
+  c. **Training duration**: *Quick mode*
 
   **Note:** Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
-  c. Click **Next**.
+  d. Click **Next**.
 
   ![Create and train model window: train model](./images/6-vision-create-model-page-2-train-model.png)
 
@@ -89,7 +93,7 @@ In this LiveLab, you will:
 
 ![Vision model Creating](./images/8-vision-model-creating.png)
 
-4. After about *30 minutes*, the state of your model will update to **Active**, indicating that it is available for use. When your model has reached this state, navigate to the model serving page by clicking **Analyze**.
+4. After about *30 minutes*, the **State** of your model will update to **Active**, indicating that it is available for use. You can monitor the training progress by checking on the **% Complete** indicated on-screen. Once your model is **Active**, navigate to the model serving page by clicking **Analyze**, and move onto the next Task.
 
 ![Model is available](./images/9-vision-model-active.png)
 
@@ -156,7 +160,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   a. Navigate to your Object Storage Bucket from the OCI services menu: **Storage** > **Buckets**
 
-  b. Click into your hyperlinked Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
+  b. Click on the 3 dots to the right of the listing corresponding to your Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
 
   ![Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
 
@@ -168,7 +172,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   a. Navigate to your Data Labeling Dataset from the OCI services menu: **Analytics & AI** > **Data Labeling**
 
-  b. Click into your hyperlinked Dataset > Click **More actions** > **Delete** > Enter the name of your Dataset > **Delete**
+  b. Click on the 3 dots to the right of the listing corresponding to your Dataset > Click **Delete** > Enter the name of your Dataset > **Delete**
 
   ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
@@ -184,7 +188,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   c. Delete your AI Vision Model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
 
-  d. Delete your AI Vision Project: Click **Delete** > Type *DELETE* > **Delete**
+  d. Delete your AI Vision Project: Wait for your AI Vision Model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
 
   ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
 
@@ -194,7 +198,37 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   <!-- [Delete project] -->
 
-## Acknowledgements
+4. Delete your Policy:
+
+  a. From the OCI services menu, click: **Identity & Security** > **Policies**
+
+  b. Select the root compartment from the dropdown menu on the left-hand side of the screen.
+
+  c. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
+
+5. Delete your Dynamic Group and Group:
+
+  a. From the OCI Services menu, click: **Identity & Security** > **Domains**
+
+  b. Select the root compartment from the dropdown menu on the left-hand side of the screen, and select the **Default** domain.
+
+  c. Click **Dynamic groups** on the left-hand side of the page.
+
+  d. Click on the 3 dots to the right of the listing corresponding to your Dynamic Group > **Delete** > **Delete dynamic group**
+
+  e. Click **Groups** on the left-hand side of the page.
+
+  f. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
+
+6. Delete your Compartment:
+
+  a. Ensure that all resources within the compartment have finished terminating.
+
+  b. From the OCI services menu, click: **Identity & Security** > **Compartments**
+
+  c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
+
+  ## Acknowledgements
 
 * **Authors**
     * Samuel Cacela - Senior Cloud Engineer

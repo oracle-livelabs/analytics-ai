@@ -30,16 +30,16 @@ In this Lab, you will:
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
     * *Note:* If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
-* Sufficient resource availability within your home region for Object Storage, Data Labeling
+* Sufficient resource availability within your home region for 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset Records, 1 Compartment, 1 Policy, 1 Group, and 1 Dynamic Group
 
-## **Task 1:** Policy Setup
+## **Task 1:** Identity and Access Management (IAM) Setup
 *\[10 minutes\]*
 
-Before you start using OCI Data Labeling, you or your tenancy administrator should set up the following policies by following below steps:
+Before you start using OCI Data Labeling, you or your tenancy administrator should set up the following Identity and Access Management (IAM) configuration:
 
 1. Create a new compartment where you will provision the resources used for this lab.
 
-  a. From the OCI Services menu, click **Compartments** under **Identity & Security**.
+  a. From the OCI Services menu, click **Identity & Security** > **Compartments**
 
   ![OCI Services Menu](./images/1-1-menu-identity-and-security-compartments.png)
 
@@ -63,7 +63,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 3. Create a Group and add users to it.
 
-  a. From the OCI Services menu, click **Domains** under **Identity & Security**.
+  a. From the OCI Services menu, click **Identity & Security** > **Domains**
 
   ![OCI Services Menu](./images/4-menu-identity-and-security-domains.png)
 
@@ -71,7 +71,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Domains](./images/5-identity-domains.png)
 
-  c. Click **Create group**.
+  c. Click **Groups** on the left-hand side of the page. Then, click **Create group**.
 
   ![Create Group](./images/6-groups-in-default-domain.png)
 
@@ -85,7 +85,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Create Group Done](./images/8-create-group-done.png)
 
-4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling datasets in your new compartment.
+4.  Create a Dynamic Group. The Dynamic Group will serve as a reference to a collection of resources that is determined by the matching rule logic associated with the Dynamic Group. You will write a matching rule that will match all Data Labeling Datasets in your new compartment.
 
   a. Click **Default domain** on the upper-left of the screen.
 
@@ -104,6 +104,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   e. **Description**: Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
 
   f. Paste the following matching rule into the text field. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
+      
       ```
       <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
       ```
@@ -113,19 +114,22 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 5. Create a Policy. The Policy will contain a series of statements. Each statement will allow a Group (and associated users) or Dynamic Group (and associated resources that are matched by the matching rule) to access specified resources to specified degrees of privilege.
 
-  a. From the OCI Services menu, click **Policies** under **Identity & Security**.
+  a. From the OCI Services menu, click **Identity & Security** > **Policies**.
 
   ![OCI Services Menu](./images/12-2-menu-identity-and-security-policies.png)
 
-  b. Click **Create Policy**.
+  b. Select the root compartment from the dropdown menu on the left-hand side of the screen.
 
-  c. **Name**: Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
+  c. Click **Create Policy**.
 
-  d. **Description**: Provide a description for your Policy, e.g. *Policy for image classification OCW23 LiveLab*
+  d. **Name**: Provide a name for your Policy, e.g. **Image\_Classification\_Policy**
 
-  e. **Compartment**: Ensure that the policy is scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
+  e. **Description**: Provide a description for your Policy, e.g. *Policy for image classification OCW23 LiveLab*
 
-  f. Toggle the **Show manual editor** switch. Then, copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad.
+  f. **Compartment**: Ensure that the policy is scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
+
+  g. Toggle the **Show manual editor** switch. Then, copy and paste the following statements into the Policy Builder editor. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad.
+      
       ```
       <copy>Allow dynamic-group Image_Classification_Dynamic_Group to read buckets in compartment id <compartment OCID>
       Allow dynamic-group Image_Classification_Dynamic_Group to read objects in compartment id <compartment OCID>
@@ -136,14 +140,14 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
       Allow group Image_Classification_Group to use cloud-shell in tenancy
       Allow group Image_Classification_Group to manage ai-service-vision-family in compartment id <compartment OCID></copy>
       ```
-    g. Click **Create**.
+    h. Click **Create**.
 
     ![Policy](./images/13-create-policy.png)
 
 ## **Task 2:** Create an Object Storage Bucket
 *\[2 minutes\]*
 
-1. From the OCI services menu, click **Buckets** under **Object Storage & Archive Storage**.
+1. From the OCI services menu, click **Storage** > **Buckets**
 
   ![OCI services menu](./images/14-menu-storage.png)
 
@@ -176,14 +180,17 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 2. Feel free to dismiss the tutorial by entering *N*, or enter *Y* if you wish to follow the tutorial. Note your ability to minimize, maximize, and restore the Cloud Shell window as is convenient for intermittent interaction with the OCI Console UI.
 
 3. Run the following command on your Cloud Shell command line interface (CLI) to download the image files necessary this lab, which is the training data that will be used to train the computer vision machine learning model:
+    
     ```
     <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R2GriGitNq-0NmTYGez0fop69aXx4SniJhyOjYpKXQyvQtaRtWU3yPgB8DaUzjey/n/orasenatdpltintegration03/b/all-images-live-lab-ocw23/o/Biomedical_Image_Classification_Training_Data.zip</copy>
     ```
 4. Run the following command to unzip the download, extracting the enclosed folder containing the image files:
+    
     ```
     <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
     ```
 5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you provided a different name than **image-classification-bucket**, then replace this name in your command before you run it.
+    
     ```
     <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
     ```
@@ -201,7 +208,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 ## **Task 4:** Create a Data Labeling Dataset
 *\[3 minutes\]*
 
-1. From the OCI services menu, click **Data Labeling** under **Analytics & AI**.
+1. From the OCI services menu, click **Analytics & AI** > **Data Labeling**
 
   ![OCI services menu](./images/22-menu-analytics-and-data-labeling.png)
 
@@ -209,11 +216,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 3. Select your new compartment using the dropdown menu under **List Scope**.
 
-4. Create your dataset by clicking **Create dataset**.
+4. Create your Data Labeling Dataset by clicking **Create dataset**.
 
   ![Data Labeling Datasets](./images/23-data-labeling-datasets.png)
 
-  a. **Name**: Enter a name for your Data Labeling dataset, e.g. *image-classification-dataset*
+  a. **Name**: Enter a name for your Data Labeling Dataset, e.g. *image-classification-dataset*
 
   b. **Dataset format**: *Images*
 
@@ -241,7 +248,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Add Labels](./images/26-create-dataset-page-2-add-labels.png)
 
-  j. Review the information and deploy your Data Labeling dataset by clicking **Create**.
+  j. Review the information and deploy your Data Labeling Dataset by clicking **Create**.
 
   ![Review](./images/27-create-dataset-page-3-review.png)
 
@@ -249,30 +256,32 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Identifying dataset OCID](./images/28-labels-importing-copy-dataset-ocid.png)
 
-6. Note that It will take about *10 minutes* for the the data to be fully imported into your dataset, as records, from your Object Storage Bucket. Once the records have been fully imported, the page will appear similar to the below screenshot. Notice that (*0*) of the *1710* records have yet been labeled. The next step will be to bulk-label the records. Move onto the next Task while your images import as records.
-
-  ![All records imported](./images/29-records-imported.png)
+6. Note that It will take about *10 minutes* for the the data to be fully imported into your Data Labeling Dataset, as records, from your Object Storage Bucket. Once the records have been fully imported, the page will appear similar to the below screenshot, and the **Status** of the Dataset will show as *Active*. Move onto the next Task while your images are importing.
 
 ## **Task 5:** Populate Your Data Labeling Dataset With the Data From Your Object Storage Bucket
 *\[17 minutes\]*
 
 1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
+    
     ```
     <copy>cd; git clone https://github.com/oracle-samples/oci-data-science-ai-samples.git</copy>
     ```
 2. Run the following command to change your directory to the folder where the configuration files and main executable script are located.
+    
     ```
     <copy>cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python</copy>
     ```
 3. Run the following command to obtain the identifier of your tenancy's home region. Copy and paste the returned value into a new line on your digital notepad app.
+    
     ```
     <copy>echo $OCI_REGION</copy>
     ```
 4. Open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
+    
     ```
     CONFIG_FILE_PATH = "/etc/oci/config"
     REGION_IDENTIFIER = "<Region identifier from your notepad app>"
-    DATASET_ID = "<OCID of your Data Labeling dataset from your notepad app>"
+    DATASET_ID = "<OCID of your Data Labeling Dataset from your notepad app>"
     ```
   a. Open **config.py** by running the following command:
 
@@ -325,9 +334,15 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
 7. Run the script once the images have been imported:
 
-  a. Check whether your page appear similar to the below screenshot, with *0*/*1710* indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. If this is the case, move onto *b.*
+  a. Check whether your page appears similar to the below screenshot, with the **Status** of your Dataset showing as *Active*, and the value next to **Labeled:** appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto *b.*
 
   ![All records imported](./images/29-records-imported.png)
+
+    * *Note:* Until this is the case, you may use the buttons on the web console UI as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
+
+    ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
+
+    ![Use Console Buttons click back into dataset](./images/32-console-buttons-click-back-into-dataset.png)
 
   b. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **5 minutes**.
     
@@ -342,7 +357,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Troubleshooting Bulk Labeling](./images/33-bulk-labeling-troubleshooting.png)
 
-9. Use the buttons on the web console UI as shown in the below screenshots to check on the progress of the bulk-labeling from the web console. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will halt the bulk-labeling process. If you refresh the browser tab, you will need to run *python bulk\_labeling\_script.py* again to resume the bulk-labeling process.
+9. Use the buttons on the web console UI as shown in the below screenshots to check on the progress of the the bulk-labeling. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session, and halt the bulk-labeling process. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *python bulk\_labeling\_script.py* on Cloud Shell to resume the bulk-labeling process.
 
   ![Use Console Buttons click out of dataset](./images/31-console-buttons-click-out-of-dataset.png)
 
