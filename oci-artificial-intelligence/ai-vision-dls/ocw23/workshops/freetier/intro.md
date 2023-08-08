@@ -112,4 +112,4 @@ The Tasks in Lab 2 are organized as follows:
     * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
 
 * **Last Updated By/Date**
-    * Samuel Cacela - Senior Cloud Engineer, June 2023
+    * Samuel Cacela - Senior Cloud Engineer, August 2023
