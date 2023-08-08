@@ -85,23 +85,23 @@ After your data has been labeled, you will be able to move on with training your
 
 The Tasks in Lab 1 are organized as follows:
 
-* **Task 1**: Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab
-* **Task 2**: Create an Object Storage Bucket
-* **Task 3**: Downloaded the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
-* **Task 4**: Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records
-* **Task 5**: Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
+* **Task 1**: *\[10 minutes\]* Create Identity and Access Management (IAM) Compartment, Policy, Group, and Dynamic Group to enable necessary permissions for this LiveLab
+* **Task 2**: *\[2 minutes\]* Create an Object Storage Bucket
+* **Task 3**: *\[5 minutes\]* Downloaded the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
+* **Task 4**: *\[3 minutes\]* Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records
+* **Task 5**: *\[15 minutes\]* Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
 ### **Lab 2**
-*\[40 minutes\]*
+*\[45 minutes\]*
 
 In Lab 2, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
 
 The Tasks in Lab 2 are organized as follows:
 
-* **Task 1**: Create an AI Vision Project, which is a logical container for your Vision models
-* **Task 2**: Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
-* **Task 3**: Upload test data via the OCI web console, and witness your model serve your input in real-time
-* **Cleanup**: Deprovision the resources you provisioned during this LiveLab
+* **Task 1**: *\[2 minutes\]* Create an AI Vision Project, which is a logical container for your Vision models
+* **Task 2**: *\[35 minutes\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
+* **Task 3**: *\[3 minutes\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
+* **Cleanup**: *\[5 minutes\]* Deprovision the resources you provisioned during this LiveLab
 
 ## Acknowledgements
 
