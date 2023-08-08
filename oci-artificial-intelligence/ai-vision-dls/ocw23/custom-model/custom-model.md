@@ -206,6 +206,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   c. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
 
+  ![Navigate to Vision](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
+
 5. Delete your Dynamic Group and Group:
 
   a. From the OCI Services menu, click: **Identity & Security** > **Domains**
@@ -220,6 +222,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
   f. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
 
+  ![Navigate to Vision](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
+
 6. Delete your Compartment:
 
   a. Ensure that all resources within the compartment have finished terminating.
@@ -227,6 +231,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
   b. From the OCI services menu, click: **Identity & Security** > **Compartments**
 
   c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
+
+  ![Navigate to Vision](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
 
 ## Acknowledgements
 
