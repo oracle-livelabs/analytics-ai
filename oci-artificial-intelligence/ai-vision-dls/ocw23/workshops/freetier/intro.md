@@ -1,4 +1,5 @@
 # Introduction
+**Total Estimated Workshop Time**: *80 minutes*
 
 ## About This Workshop
 
