@@ -32,11 +32,11 @@ In this LiveLab, you will:
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
 
-![OCI Services Menu](./images/1-menu-analytics-and-ai-vision.png)
+![Navigate to AI Vision](./images/1-menu-analytics-and-ai-vision.png)
 
 2. Click on *Projects* under *Custom Models*.
 
-![Vision Project](./images/2-vision-project.png)
+![Click Projects](./images/2-vision-project.png)
 
 3. Click **Create Project** and enter details for your Project:
 
@@ -48,11 +48,11 @@ In this LiveLab, you will:
 
   d. Click **Create project**
 
-  ![Create project](./images/3-vision-create-project.png)
+  ![Create Project](./images/3-vision-create-project.png)
 
   e. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
 
-  ![Click project](./images/4-vision-click-project.png)
+  ![Click Project](./images/4-vision-click-project.png)
 
 ## **Task 2:** Custom-train your own AI Vision model
 *\[35 minutes\]*
@@ -91,11 +91,11 @@ In this LiveLab, you will:
 
 ![Create and train model window: review](./images/7-vision-create-model-page-3-review.png)
 
-![Vision model Creating](./images/8-vision-model-creating.png)
+![AI Vision model is creating](./images/8-vision-model-creating.png)
 
 4. After about *30 minutes*, the **State** of your model will update to *Active*, indicating that it is available for use. You can monitor the training progress by checking on the **% Complete** indicated on-screen. Once your model is *Active*, navigate to the model serving page by clicking **Analyze**, and move onto the next Task.
 
-![Model is available](./images/9-vision-model-active.png)
+![AI Vision model is available](./images/9-vision-model-active.png)
 
 ## **Task 3:** Test the model on new images
 *\[3 minutes\]*
@@ -173,7 +173,7 @@ In this LiveLab, you will:
 
   d. Delete your Project for AI Vision models: Wait for your AI Vision model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
 
-  ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
+  ![Navigate to AI Vision](./images/1-menu-analytics-and-ai-vision.png)
 
   <!-- ![Click into project](./images/4-vision-click-project.png) -->
 
@@ -189,7 +189,7 @@ In this LiveLab, you will:
 
   c. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
 
-  ![Navigate to Vision](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
+  ![Navigate to AI Vision](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
 
 5. Delete your Dynamic Group and Group:
 
@@ -205,7 +205,7 @@ In this LiveLab, you will:
 
   f. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
 
-  ![Navigate to Vision](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
+  ![Navigate to Domains](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
 
 6. Delete your Compartment:
 
@@ -215,7 +215,7 @@ In this LiveLab, you will:
 
   c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
 
-  ![Navigate to Vision](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
+  ![Navigate to Compartments](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
 
 [Proceed to the next section](#next).
 
