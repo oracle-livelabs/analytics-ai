@@ -379,7 +379,19 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Verifying Image has Label](./images/37-verify-label-check-label.png)
 
-**Congratulations on completing Lab 1!** Now that you have a labeled dataset, you are ready to [progress to Lab 2](#next) to train your own cell classifier.
+## Conclusions
+
+Congratulations on completing Lab 1!
+
+In this Lab, you have:
+
+* Setup IAM resources for your image classification use caseCreated Identity and Access Management (IAM) Compartment, Group, and Dynamic Group, and Policy to enable necessary permissions for this LiveLab
+* Created an Object Storage Bucket for training data
+* Bulk-uploaded data to your Object Storage Bucket
+* Created a Dataset in OCI Data Labeling
+* Bulk-labeled the records in your OCI Data Labeling Dataset
+
+Now that you have loaded and labeled your dataset, you are ready to [proceed to Lab 2](#next) to train your own cell classifier!
 
 ## Acknowledgements
 

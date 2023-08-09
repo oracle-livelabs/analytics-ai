@@ -11,7 +11,7 @@ The concept of the cell classification story and the dataset used in this LiveLa
 
 With large datasets, this process can be incredibly time-consuming and impractical. However, by offloading this important busywork to the cell classifier, and focus on tasks where their broad and deep range of knowledge and skills can be much more economically applied - and derive their analyses much faster where time is of the essence.
 
-This solution pattern will be especially interesting if you can identify processes in your business and industry where automated and accurate visual analysis will render valuable time and cost savings.
+This solution pattern will be especially interesting if you can identify processes in your industry where automated and accurate visual analysis will render valuable time and cost savings.
 
 To render your own cell classifier in the style of Dr. Xin-hua Hu's research, you will elevate the scalabiltiy of your data platform on OCI using the following services, in the order in which you will encounter them:
 
