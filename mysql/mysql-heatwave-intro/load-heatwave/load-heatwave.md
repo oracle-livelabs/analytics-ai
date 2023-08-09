@@ -4,13 +4,11 @@
 
 ## Introduction
 
-A HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
+A HeatWave cluster comprise of a MySQL DB System node and one or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
 ![heatwave architect](./images/mysql-heatwave-architecture.png "heatwave architect ")
 
 _Estimated Time:_ 10 minutes
-
-[//]:    [](youtube:OzqCt3XATto)
 
 ### Objectives
 
@@ -31,19 +29,17 @@ In this lab, you will be guided through the following task:
     - Databases
     - MySQL
     - DB Systems
-2. Choose the root Compartment. A list of DB Systems is displayed.
+2. Choose the **turbo** Compartment. A list of DB Systems is displayed.
     ![navigation mysql with instance](./images/navigation-mysql-with-instance.png "navigation mysql with instance")
 
 3. In the list of DB Systems, click the **HEATWAVE-DB** system. click **More Action ->  Add HeatWave Cluster**.
     ![mysql more actions add cluster](./images/mysql-more-actions-add-cluster.png " mysql more actions add cluster")
 
-4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
+4. On the “Add HeatWave Cluster” dialog, select “HeatWave.512GB” shape
 5. Click “Estimate Node Count” button
     ![mysql cluster estimate node](./images/mysql-cluster-estimate-node.png "mysql cluster estimate node ")
 
-6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
-provisioning advisor to sample the data stored in I
-algorithm, it will predict the number of nodes needed.
+6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto provisioning advisor to sample the data stored in MySQL InnoDB and predict the number of HeatWave nodes needed.
     ![mysql estimate node](./images/mysql-estimate-node.png "mysql estimate node ")
 
 7. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
@@ -58,13 +54,10 @@ algorithm, it will predict the number of nodes needed.
 
 ## Task 2: Load airportdb Data into HeatWave Cluster
 
-1. If not already connected with SSH, connect to Compute instance using Cloud Shell
+1. Connect to OCI Cloud Shell
+    ![mysql shell open drawer](./images/cloudshell-console-drawer.png "cloudshell console drawer")
 
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.17....**)
-
-    ![compute connect](./images/compute-connect.png "compute connect ")
-
-2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
+2. On command Line, connect to the HeatWave Database using the MySQL Shell client tool with the following command:
 
      ```bash
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
@@ -84,7 +77,16 @@ algorithm, it will predict the number of nodes needed.
 
     ![mysql heatwave load complete](./images/mysql-heatwave-load-complete.png "mysql heatwave load complete ")
 
-5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
+5. Auto provisioning feature highlights:
+    - a. **Load analysis box:** shows the number of tables/columns being loaded
+    - b. **Capacity estimation box:** showis estimated memory and load time
+    - c. **Loading table boxes:** use different thread to load based on the table
+    - d. **Load summary box:** shows the actual load time
+    - ![mysql heatwave load features](./images/mysql-heatwave-load-features.png "mysql heatwave load features complete ")
+
+    - ![mysql heatwave autopilot loadtable](./images/mysql-heatwave-autopilot-loadtable.png "mysql heatwave autopilot loadtable")
+
+6. Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
      ```bash
     <copy>USE performance_schema;</copy>
@@ -100,13 +102,13 @@ You may now **proceed to the next lab**
 
 ## Learn More
 
-- [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+- [Oracle Cloud Infrastructure MySQL Database Service Documentation](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
 - [MySQL Database Documentation](https://www.MySQL.com)
 
-
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Perside Foster, MySQL Solution Engineering
-- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
+- **Author** - Perside Foster, MySQL Principal Solution Engineering
+- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2023
