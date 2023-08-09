@@ -17,14 +17,14 @@ The Tasks in this Lab are summarized as follows:
 * **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
 * **Task 5**: *\[15m\]* Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
-### **Primary Objectives**
+### Primary Objectives
 
 In this Lab, you will:
 
 * Learn how to navigate in the OCI web console and be able to demo key Data Labeling features
 * Learn how to leverage a helper script to bulk-label a dataset of biomedical images, i.e. efficiently label a large volume of images
 
-### **Prerequisites**
+### Prerequisites
 
 * An Oracle Free Tier, or Paid Cloud Account
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
