@@ -4,7 +4,7 @@
 
 ### What is this LiveLab about?
 
-In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will simulate the experience of automating, accelerating, and enhancing a biomedical research process where time is critical. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
+In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will experience the themes of automating, accelerating, and enhancing a biomedical research process where time is critical. You will learn how to implement a highly transferrable, multi-industry OCI solution pattern. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
 
 An image classification model will be able to tell you what your image represents, based on all of the shapes and colors present in the image. This experiment will require our image classifier to serve as a cell classifier. As a cell classifier, your machine learning model will be able to discern images of cells from non-cells in the provided dataset, where the images were captured using a technique called coherent diffraction imaging.
 
