@@ -12,14 +12,14 @@ The Tasks in this Lab are summarized as follows:
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
 * **Cleanup**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
-## Primary Objectives
+### Primary Objectives
 
 In this LiveLab, you will:
 
 * Learn how to navigate in the OCI web console and be able to demo key OCI AI Vision features
 * Custom-train your own image classification model using your labeled dataset and OCI AI Vision
 
-## Prerequisites
+### Prerequisites
 
 * An Oracle Free Tier, or Paid Cloud Account
 * Lab 1 has been completed

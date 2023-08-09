@@ -11,7 +11,7 @@
           "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
       },
         {
-            "title": "Introduction: Use the OCI Vision and Data Labeling Service",
+            "title": "Introduction: Create an Image Classification Model",
             "description": "Learn about the features provided by OCI Vision and the Data Labeling Service",
             "filename": "intro.md"
         },

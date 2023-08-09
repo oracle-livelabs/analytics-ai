@@ -1,4 +1,4 @@
-# Use the OCI Vision and Data Labeling Service
+# Create an Image Classification Model
 
 ## Introduction
 
@@ -52,7 +52,7 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
     - *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
     - *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
 
-## Primary Objectives
+### Primary Objectives
 
 In this LiveLab, you will:
 
@@ -60,7 +60,7 @@ In this LiveLab, you will:
 * Learn how to leverage a helper script to bulk-label a dataset of biomedical images, i.e. efficiently label a large volume of images
 * Custom-train your own image classification model using your labeled dataset and OCI AI Vision
 
-## Prerequisites
+### Prerequisites
 
 * An Oracle Free Tier, or Paid Cloud Account
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
@@ -68,7 +68,7 @@ In this LiveLab, you will:
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamci Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset Records, 1 Vision Project, 1 Vision Model
 
-## Required technical experience
+### Required technical experience
 
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
