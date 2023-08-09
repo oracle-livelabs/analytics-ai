@@ -5,6 +5,8 @@
 
 In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
+![3 samples of coherent diffraction images, each representing one of the classes: Cell, Debris, and Stripe.](../intro/images/1-sample-coherent-diffraction-images.png)
+
 You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
 
 After your data has been labeled, you will be able to move on with training your custom AI Vision model in style.

@@ -8,7 +8,7 @@
         {
             "title": "Introduction",
             "description": "train your own image classification model using OCI AI Vision. Label your data with OCI Data Labeling.",
-            "filename": "intro.md"
+            "filename": "../../intro/intro.md"
         },
         {
           "title": "Get Started",

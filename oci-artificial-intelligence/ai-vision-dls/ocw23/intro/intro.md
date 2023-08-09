@@ -74,6 +74,8 @@ In this LiveLab, you will:
 
 **Total Estimated Workshop Time**: *80 minutes*
 
+![Diagram illustrating the workshop flow](./images/2-workshop-flow.png)
+
 #### **Lab 1**
 *\[35 minutes\]*
 
