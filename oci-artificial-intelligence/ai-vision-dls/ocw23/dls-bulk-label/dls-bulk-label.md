@@ -30,12 +30,12 @@ In this Lab, you will:
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
     * *Note:* If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
-* Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset Records
+* Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset records
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python
 
-## **Task 1:** Identity and Access Management (IAM) Setup
+## **Task 1:** Identity and Access Management (IAM) setup
 *\[10 minutes\]*
 
 Before you start using OCI Data Labeling, you or your tenancy administrator should set up the following Identity and Access Management (IAM) configuration:
@@ -175,7 +175,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
   ![Click Into Object Storage Bucket](./images/17-2-click-into-bucket.png)
 
 
-## **Task 3:** Load the Biomedical Training Data into Object Storage
+## **Task 3:** Bulk-upload the biomedical training data into Object Storage
 *\[5 minutes\]*
 
 1. Open Cloud Shell by clicking the **&lt&gt** icon at the top-left of the webpage. Then, click **Cloud Shell**.
@@ -263,7 +263,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 6. Note that It will take about *10 minutes* for the the data to be fully imported into your Data Labeling Dataset, as records, from your Object Storage Bucket. Once the records have been fully imported, the page will appear similar to the below screenshot, and the **Status** of the Dataset will show as *Active*. Move onto the next Task while your images are importing.
 
-## **Task 5:** Populate Your Data Labeling Dataset With the Data From Your Object Storage Bucket
+## **Task 5:** Bulk-label the Data Labeling Dataset records
 *\[15 minutes\]*
 
 1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.

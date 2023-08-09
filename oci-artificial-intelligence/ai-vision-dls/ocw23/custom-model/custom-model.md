@@ -1,4 +1,4 @@
-# Create a custom AI Vision Model
+# Create a custom AI Vision model
 **Estimated Time**: *45 minutes*
 
 ## Introduction
@@ -25,9 +25,9 @@ In this LiveLab, you will:
 * Lab 1 has been completed
 * Your OCI user is a member of the group that was created in Lab 1
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
-* Sufficient resource availability within your home region for: 1 Vision Project, 1 Vision Model
+* Sufficient resource availability within your home region for: 1 Project for AI Vision models, 1 AI Vision model
 
-## **Task 1:** Create a Project for Vision models
+## **Task 1:** Create a Project for AI Vision models
 *\[2 minutes\]*
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
@@ -54,7 +54,7 @@ In this LiveLab, you will:
 
   ![Click project](./images/4-vision-click-project.png)
 
-## **Task 2:** Custom-Train your own AI Vision Model
+## **Task 2:** Custom-train your own AI Vision model
 *\[35 minutes\]*
 
 1. To custom-train your own AI Vision model, you will use the dataset that you labeled in the previous Lab:
@@ -77,7 +77,7 @@ In this LiveLab, you will:
 
   a. **Model display name**: Enter a name for your Vision model, e.g. *image-classification-model*
 
-  b. **Model description**: Enter a description for your Vision model, e.g. *Vision Model for image classification OCW23 LiveLab*
+  b. **Model description**: Enter a description for your Vision model, e.g. *Vision model for image classification OCW23 LiveLab*
 
   c. **Training duration**: *Quick mode*
 
@@ -97,7 +97,7 @@ In this LiveLab, you will:
 
 ![Model is available](./images/9-vision-model-active.png)
 
-## **Task 3:** Test the Model On New Images
+## **Task 3:** Test the model on new images
 *\[3 minutes\]*
 
 1. Now that your model is available, observe the performance metrics on the Model Details page, as well as the training duration.
@@ -163,15 +163,15 @@ In this LiveLab, you will:
 
   <!-- [Delete dataset] -->
 
-3. Delete your AI Vision Model and Project:
+3. Delete your AI Vision model and Project:
 
   a. From the OCI services menu, click: **Analytics & AI** > **Vision**
 
   b. Click into your hyperlinked Project > Click into your hyperlinked model
 
-  c. Delete your AI Vision Model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
+  c. Delete your AI Vision model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
 
-  d. Delete your AI Vision Project: Wait for your AI Vision Model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
+  d. Delete your Project for AI Vision models: Wait for your AI Vision model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
 
   ![Navigate to Vision](./images/1-menu-analytics-and-ai-vision.png)
 
