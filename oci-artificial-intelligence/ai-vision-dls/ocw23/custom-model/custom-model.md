@@ -10,7 +10,7 @@ The Tasks in this Lab are summarized as follows:
 * **Task 1**: *\[2m\]* Create an AI Vision Project, which is a logical container for your Vision models
 * **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
-* **Cleanup**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
+* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
 ### Objectives
 
@@ -153,7 +153,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 **Don't forget** to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
 
-## **Cleanup**
+## **Task 4:** Cleanup
 *\[5 minutes\]*
 
 1. Delete your Object Storage Bucket:
