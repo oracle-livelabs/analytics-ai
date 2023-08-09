@@ -4,9 +4,9 @@
 
 ### What is this LiveLab about?
 
-In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. An image classification model will be able to tell you what your image represents, based on all of the shapes and colors present in the image. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
+In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will simulate the experience of automating, accelerating, and enhancing a biomedical research process where time is critical.
 
-You will simulate the experience of automating, accelerating, and enhancing a biomedical research process where time is critical. This experiment will require our image classifier to serve as a cell classifier. As a cell classifier, your machine learning model will be able to discern images of cells from non-cells in the provided dataset, where the images were captured using a technique called coherent diffraction imaging.
+An image classification model will be able to tell you what your image represents, based on all of the shapes and colors present in the image. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving. This experiment will require our image classifier to serve as a cell classifier. As a cell classifier, your machine learning model will be able to discern images of cells from non-cells in the provided dataset, where the images were captured using a technique called coherent diffraction imaging.
 
 The concept of the cell classification story and the dataset used in this LiveLab has been provided by Dr. Xin-hua Hu, from his machine learning experiment in the Physics department at East Carolina University. The cell classifier is a practical option for medical professionals during their research process, who would traditionally distinguish images of cells from non-cells by their own visual observation, and record their findings manually.
 
