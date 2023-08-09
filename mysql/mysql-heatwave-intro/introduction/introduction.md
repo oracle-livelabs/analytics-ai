@@ -15,7 +15,7 @@ Overall this workshop will show you how easy it is to create and manage MySQL He
 _Estimated Lab Time:_ 1.5 hours
 
 Watch the video below for a quick walk-through of the lab.
-[Analyze Data at Web Scale in Object Store with MySQL HeatWave Lakehouse](videohub:1_svmmeu1s)
+[Scale Out Data Warehousing with MySQL HeatWave](videohub:1_svmmeu1s)
 
 ## About Product/Technology
 
