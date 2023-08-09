@@ -32,11 +32,11 @@ In this LiveLab, you will:
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
 
-![Navigate to AI Vision](./images/1-menu-analytics-and-ai-vision.png)
+![Navigate to AI Vision.](./images/1-menu-analytics-and-ai-vision.png)
 
 2. Click on *Projects* under *Custom Models*.
 
-![Click Projects](./images/2-vision-project.png)
+![Click Projects.](./images/2-vision-project.png)
 
 3. Click **Create Project** and enter details for your Project:
 
@@ -48,11 +48,11 @@ In this LiveLab, you will:
 
   d. Click **Create project**
 
-  ![Create Project](./images/3-vision-create-project.png)
+  ![Enter details for creating a Project](./images/3-vision-create-project.png)
 
   e. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
 
-  ![Click Project](./images/4-vision-click-project.png)
+  ![Click into your Project.](./images/4-vision-click-project.png)
 
 ## **Task 2:** Custom-train your own AI Vision model
 *\[35 minutes\]*
@@ -71,7 +71,7 @@ In this LiveLab, you will:
 
   f. Click **Next**.
 
-  ![Create and train model window: select data](./images/5-vision-create-model-page-1-select-data.png)
+  ![Enter details for creating your AI Vision model.](./images/5-vision-create-model-page-1-select-data.png)
 
 2. Enter training details for the model.
 
@@ -85,17 +85,17 @@ In this LiveLab, you will:
 
   d. Click **Next**.
 
-  ![Create and train model window: train model](./images/6-vision-create-model-page-2-train-model.png)
+  ![Enter details for creating your AI Vision model.](./images/6-vision-create-model-page-2-train-model.png)
 
 3. Review that the model information is correct and click **Create and train**.
 
-![Create and train model window: review](./images/7-vision-create-model-page-3-review.png)
+![Review the details, then create and start training your AI Vision model.](./images/7-vision-create-model-page-3-review.png)
 
-![AI Vision model is creating](./images/8-vision-model-creating.png)
+![Your AI Vision model is creating and training.](./images/8-vision-model-creating.png)
 
 4. After about *30 minutes*, the **State** of your model will update to *Active*, indicating that it is available for use. You can monitor the training progress by checking on the **% Complete** indicated on-screen. Once your model is *Active*, navigate to the model serving page by clicking **Analyze**, and move onto the next Task.
 
-![AI Vision model is available](./images/9-vision-model-active.png)
+![Your AI Vision model is now available.](./images/9-vision-model-active.png)
 
 ## **Task 3:** Test the model on new images
 *\[3 minutes\]*
@@ -116,9 +116,9 @@ In this LiveLab, you will:
 
   b. Click **select one...** in the **Upload image** section. Navigate to the folder containing the test images on your local machine and select an image to upload.
 
-  ![Select image](./images/11-vision-model-select-image.png)
+  ![Click select one... to select an image for model serving.](./images/11-vision-model-select-image.png)
 
-  ![Upload image](./images/12-vision-model-upload-cell-image.png)
+  ![Select an image from the Cell folder, for example, to upload for model serving.](./images/12-vision-model-upload-cell-image.png)
   
   c. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
 
@@ -132,9 +132,9 @@ In this LiveLab, you will:
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
-  ![Analyze Debris image](./images/15-vision-model-analyze-image-debris-example.png)
+  ![Analyze an image from the Debris folder.](./images/15-vision-model-analyze-image-debris-example.png)
 
-  ![Analyze Debris image](./images/16-vision-model-analyze-image-stripe-example.png)
+  ![Analyze an image from the Stripe folder.](./images/16-vision-model-analyze-image-stripe-example.png)
 
 ## **Task 4:** Cleanup
 *\[5 minutes\]*
@@ -145,11 +145,7 @@ In this LiveLab, you will:
 
   b. Click on the 3 dots to the right of the listing corresponding to your Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
 
-  ![Navigate to Object Storage](../dls-bulk-label/images/14-menu-storage.png)
-
-  <!-- ![Click into bucket](../dls-bulk-label/images/17-2-click-into-bucket.png) -->
-
-  <!-- [Delete bucket] -->
+  ![Navigate to Buckets.](../dls-bulk-label/images/14-menu-storage.png)
 
 2. Delete your Data Labeling Dataset:
 
@@ -157,11 +153,7 @@ In this LiveLab, you will:
 
   b. Click on the 3 dots to the right of the listing corresponding to your Dataset > Click **Delete** > Enter the name of your Dataset > **Delete**
 
-  ![Navigate to Data Labeling](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
-
-  <!-- ![Click into dataset](../dls-bulk-label/images/23-data-labeling-datasets.png) -->
-
-  <!-- [Delete dataset] -->
+  ![Navigate to Data Labeling.](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
 3. Delete your AI Vision model and Project:
 
@@ -173,23 +165,17 @@ In this LiveLab, you will:
 
   d. Delete your Project for AI Vision models: Wait for your AI Vision model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
 
-  ![Navigate to AI Vision](./images/1-menu-analytics-and-ai-vision.png)
-
-  <!-- ![Click into project](./images/4-vision-click-project.png) -->
-
-  <!-- [Delete model] -->
-
-  <!-- [Delete project] -->
+  ![Navigate to AI Vision.](./images/1-menu-analytics-and-ai-vision.png)
 
 4. Delete your Policy:
 
   a. From the OCI services menu, click: **Identity & Security** > **Policies**
 
-  b. Select the root compartment from the dropdown menu on the left-hand side of the screen.
+  b. Select the root-level compartment from the dropdown menu on the left-hand side of the screen.
 
   c. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
 
-  ![Navigate to AI Vision](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
+  ![Navigate to Policies.](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
 
 5. Delete your Dynamic Group and Group:
 
@@ -205,7 +191,7 @@ In this LiveLab, you will:
 
   f. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
 
-  ![Navigate to Domains](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
+  ![Navigate to Domains.](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
 
 6. Delete your Compartment:
 
@@ -215,7 +201,7 @@ In this LiveLab, you will:
 
   c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
 
-  ![Navigate to Compartments](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
+  ![Navigate to Compartments.](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
 
 [Proceed to the next section](#next).
 
