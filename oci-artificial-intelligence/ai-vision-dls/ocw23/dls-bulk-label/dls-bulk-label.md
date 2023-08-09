@@ -284,9 +284,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 4. In this step, you will open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
 
     ```
-    <copy>CONFIG_FILE_PATH = "/etc/oci/config"</copy>
-    <copy>REGION_IDENTIFIER = "<Region identifier from your notepad app>"</copy>
-    <copy>DATASET_ID = "<OCID of your Data Labeling Dataset from your notepad app>"</copy>
+    <copy>CONFIG_FILE_PATH = "/etc/oci/config"
+    REGION_IDENTIFIER = "<Region identifier from your notepad app>"
+    DATASET_ID = "<OCID of your Data Labeling Dataset from your notepad app>"</copy>
     ```
   a. Open **config.py** by running the following command:
 
@@ -311,8 +311,8 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 5. In a fashion similar to that of the previous step, in this step you will open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below.
 
     ```
-    <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"</copy>
-    <copy>LABELS = ["Cell", "Debris", "Stripe"]</copy>
+    <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
+    LABELS = ["Cell", "Debris", "Stripe"]</copy>
     ```
   a. Open **classification\_config.py** by running the following command:
 
