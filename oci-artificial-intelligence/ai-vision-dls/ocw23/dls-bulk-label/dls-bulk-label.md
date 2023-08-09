@@ -9,12 +9,12 @@ You will load this dataset into Object Storage, and prepare the data for model t
 
 After your data has been labeled, you will be able to move on with training your custom AI Vision model in style.
 
-The Tasks in this Lab are organized as follows:
+The Tasks in this Lab are summarized as follows:
 
 * **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Group, and Dynamic Group, and Policy to enable necessary permissions for this LiveLab
-* **Task 2**: *\[2m\]* Create an Object Storage Bucket
-* **Task 3**: *\[5m\]* Downloaded the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
-* **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the training images from your Object Storage Bucket as records
+* **Task 2**: *\[2m\]* Create an Object Storage Bucket for training data
+* **Task 3**: *\[5m\]* Download the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
+* **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
 * **Task 5**: *\[15m\]* Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
 
 ## **Primary Objectives**

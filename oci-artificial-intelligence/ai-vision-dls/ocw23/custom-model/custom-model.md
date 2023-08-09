@@ -5,10 +5,10 @@
 
 In this Lab, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
 
-The Tasks in this Lab are organized as follows:
+The Tasks in this Lab are summarized as follows:
 
 * **Task 1**: *\[2m\]* Create an AI Vision Project, which is a logical container for your Vision models
-* **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset
+* **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
 * **Cleanup**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
