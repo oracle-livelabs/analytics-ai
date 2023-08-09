@@ -391,7 +391,7 @@ In this Lab, you have:
 * Created a Dataset in OCI Data Labeling, which imported the images from your Object Storage Bucket as records
 * Bulk-labeled the records in your OCI Data Labeling Dataset
 
-Now that you have loaded and labeled your dataset, you are ready to [proceed to Lab 2](#next) to train your own cell classifier!
+Now that you have loaded and labeled your dataset, you are ready to [proceed to Lab 2](#next) to train your own cell classifier with your labeled image data.
 
 ## Acknowledgements
 
