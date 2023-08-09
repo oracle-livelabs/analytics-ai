@@ -385,7 +385,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
 In this Lab, you have:
 
-* Setup IAM resources for image classification
+* Set up IAM resources for image classification
 * Created an Object Storage Bucket for training data
 * Bulk-uploaded image data to your Object Storage Bucket
 * Created a Dataset in OCI Data Labeling, which imported the images from your Object Storage Bucket as records

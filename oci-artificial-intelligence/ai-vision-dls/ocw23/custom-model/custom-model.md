@@ -226,7 +226,7 @@ In this LiveLab, you will:
 In this Lab, you have:
 
 * Custom-trained an AI Vision model
-* Witness your model serve your input in real-time, demonstrating model accuracy
+* Witnessed your model serve your input in real-time, demonstrating model accuracy
 
 In this LiveLab, you have successfully implemented a highly transferrable OCI solution pattern à la Professor Hu, and simulated the experience of automating, accelerating, and enhancing a biomedical research process by producing your own cell classifier.
 
