@@ -153,8 +153,6 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 **Don't forget** to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
 
-[Proceed to the next section](#next).
-
 ## **Cleanup**
 *\[5 minutes\]*
 
@@ -235,6 +233,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
   c. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
 
   ![Navigate to Vision](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
+
+[Proceed to the next section](#next).
 
 ## Acknowledgements
 
