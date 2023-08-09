@@ -70,8 +70,6 @@ In this LiveLab, you will:
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python
 
-[Proceed to the next section](#next).
-
 ### Live Lab Steps Overview
 
 **Total Estimated Workshop Time**: *80 minutes*
@@ -104,6 +102,8 @@ The Tasks in Lab 2 are summarized as follows:
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
 * **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
+
+[Proceed to the next section](#next).
 
 ## Acknowledgements
 
