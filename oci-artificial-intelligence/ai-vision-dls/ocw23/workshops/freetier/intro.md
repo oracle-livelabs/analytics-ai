@@ -100,8 +100,8 @@ In this Lab, you will use the labeled dataset you created in Lab 1 to custom-tra
 
 The Tasks in Lab 2 are summarized as follows:
 
-* **Task 1**: *\[2m\]* Create an AI Vision Project, which is a logical container for your Vision models
-* **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset as training data
+* **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
+* **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
 * **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 

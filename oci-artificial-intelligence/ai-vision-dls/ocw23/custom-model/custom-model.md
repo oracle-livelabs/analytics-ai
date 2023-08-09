@@ -7,8 +7,8 @@ In this Lab, you will use the labeled dataset you created in Lab 1 to custom-tra
 
 The Tasks in this Lab are summarized as follows:
 
-* **Task 1**: *\[2m\]* Create an AI Vision Project, which is a logical container for your Vision models
-* **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset as training data
+* **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
+* **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
 * **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
@@ -27,7 +27,7 @@ In this LiveLab, you will:
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Vision Project, 1 Vision Model
 
-## **Task 1:** Create an AI Vision Project
+## **Task 1:** Create a Project for Vision models
 *\[2 minutes\]*
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
@@ -225,7 +225,7 @@ In this LiveLab, you will:
 
 In this Lab, you have:
 
-* Custom-trained an AI Vision model
+* Custom-trained an OCI AI Vision model
 * Witnessed your model serve your input in real-time, demonstrating model accuracy
 
 In this LiveLab, you have successfully implemented a highly transferrable OCI solution pattern à la Professor Hu, and simulated the experience of automating, accelerating, and enhancing a biomedical research process by producing your own cell classifier.
