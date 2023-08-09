@@ -6,8 +6,8 @@
     "help": "livelabs-help-na-cloud_us@oracle.com",
     "tutorials": [
         {
-            "title": "Introduction: Create an Image Classification Model",
-            "description": "Learn about the features provided by OCI Vision and the Data Labeling Service",
+            "title": "Introduction",
+            "description": "train your own image classification model using OCI AI Vision. Label your data with OCI Data Labeling.",
             "filename": "intro.md"
         },
         {
@@ -17,11 +17,12 @@
         },
         {
             "title": "Lab 1: Bulk-upload and bulk-label your data",
-            "description": "Learn how to bulk-label a set of images with OCI Data Labeling Service",
+            "description": "Bulk-upload a set of images to Object Storage, then bulk-label the images with OCI Data Labeling.",
             "filename": "../../dls-bulk-label/dls-bulk-label.md"
         },
         {
             "title": "Lab 2: Create a custom AI Vision Model",
+            "description": "Train your own custom AI Vision Model using your labeled set of images, and experiment with your model on new images.",
             "filename": "../../custom-model/custom-model.md"
         },
         {

@@ -1,8 +1,6 @@
-# Create an Image Classification Model
+# Introduction
 
-## Introduction
-
-### What is this LiveLab about?
+## About This Workshop
 
 In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will experience the themes of automating, accelerating, and enhancing a biomedical research process where time is critical. You will learn how to implement a highly transferrable, multi-industry OCI solution pattern. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
 
@@ -20,7 +18,7 @@ To render your own cell classifier in the style of Dr. Xin-hua Hu's research, yo
 2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/): Enables standardized and automated labeling of training data, OCI Vision
 3. [OCI AI Vision](https://www.oracle.com/artificial-intelligence/vision/): Includes image classification as a supported computer vision task
 
-### How can computer vision AI be used in your business?
+### How can visual AI be used in your business?
 
 Using a custom-trained OCI Vision model can bring significant time and cost savings in various industries by automating and optimizing tasks that would otherwise require manual effort. These are some critical use cases across different industries where a custom-trained OCI Vision model can be highly beneficial:
 
@@ -52,7 +50,7 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
     - *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
     - *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
 
-### Primary Objectives
+### Objectives
 
 In this LiveLab, you will:
 
@@ -67,9 +65,6 @@ In this LiveLab, you will:
     * *Note:* If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamci Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset Records, 1 Vision Project, 1 Vision Model
-
-### Required technical experience
-
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python

@@ -12,7 +12,7 @@ The Tasks in this Lab are summarized as follows:
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
 * **Cleanup**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
-### Primary Objectives
+### Objectives
 
 In this LiveLab, you will:
 
