@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this Lab, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
+In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the *F1 score*. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
 
 The Tasks in this Lab are summarized as follows:
 

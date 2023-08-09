@@ -4,11 +4,17 @@
 
 ### What is this LiveLab about?
 
-In this LiveLab, you will create a cell classifier on Oracle Cloud Infrastructure (OCI) using a computer vision machine learning model. Your cell classifier will be able to automatically discern images of cells in a blood sample from images that show non-cell structures. The images were captured using a technique called coherent diffraction imaging.
+In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. An image classification model will be able to tell you what your image represents, based on all of the shapes and colors present in the image. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
 
-The concept of the cell classification task and dataset used in this LiveLab has been borrowed from Professor Xin-hua Hu's machine learning experiment in the Physics department at East Carolina University. Professor Hu proposes the cell classifier as a major time-saver for medical professionals who would traditionally distinguish images of cells from non-cells by looking at them, and record their findings manually. With large datasets, this process can be incredibly time-consuming. With the cell classifier, however, these professionals can offload a vast amount of busywork, and focus on tasks where their expertise can be much more economically applied - and derive their analyses much faster where time is critical.
+You will simulate the experience of automating, accelerating, and enhancing a biomedical research process where time is critical. This experiment will require our image classifier to serve as a cell classifier. As a cell classifier, your machine learning model will be able to discern images of cells from non-cells in the provided dataset, where the images were captured using a technique called coherent diffraction imaging.
 
-To render your own cell classifier in the style of Professor Hu's research, you will elevate the scalabiltiy of your data platform on OCI using the following services, in the order in which you will encounter them:
+The concept of the cell classification story and the dataset used in this LiveLab has been provided by Dr. Xin-hua Hu, from his machine learning experiment in the Physics department at East Carolina University. The cell classifier is a practical option for medical professionals during their research process, who would traditionally distinguish images of cells from non-cells by their own visual observation, and record their findings manually.
+
+With large datasets, this process can be incredibly time-consuming and impractical. However, by offloading this important busywork to the cell classifier, and focus on tasks where their broad and deep range of knowledge and skills can be much more economically applied - and derive their analyses much faster where time is of the essence.
+
+This solution pattern will be especially interesting if you can identify processes in your business and industry where automated and accurate visual analysis will render valuable time and cost savings.
+
+To render your own cell classifier in the style of Dr. Xin-hua Hu's research, you will elevate the scalabiltiy of your data platform on OCI using the following services, in the order in which you will encounter them:
 
 1. [OCI Object Storage](https://www.oracle.com/cloud/storage/object-storage/): A highly scalable and secure storage option for data in its native format
 2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/): Enables standardized and automated labeling of training data, OCI Vision
@@ -77,7 +83,7 @@ In this LiveLab, you will:
 ### **Lab 1**
 *\[35 minutes\]*
 
-In Lab 1, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted into folders by medical professionals, named either *Cell*, *Debris*, or *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
+In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
 You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
 
@@ -94,7 +100,7 @@ The Tasks in Lab 1 are summarized as follows:
 ### **Lab 2**
 *\[45 minutes\]*
 
-In Lab 2, you will use labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the F1 score. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
+In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the *F1 score*. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
 
 The Tasks in Lab 2 are summarized as follows:
 
