@@ -232,7 +232,7 @@ In this LiveLab, you have successfully implemented a highly transferrable OCI so
 
 The next step in this solution pattern would be to process the JSON representation of the model analysis for end-user consumption.
 
-In addition to image classification, OCI supports AI-driven automation of tasks such as:
+In addition to image classification, OCI supports AI-driven automation of a variety of tasks, including:
 
 - **Object Detection**: Identify pre-defined or custom-defined objects within images
 - **Optical Character Recognition**: Recognize characters in documents or images
