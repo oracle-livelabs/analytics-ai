@@ -153,6 +153,8 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 **Don't forget** to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
 
+[Proceed to the next section](#next).
+
 ## **Cleanup**
 *\[5 minutes\]*
 

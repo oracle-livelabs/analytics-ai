@@ -379,7 +379,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Verifying Image has Label](./images/37-verify-label-check-label.png)
 
-**Congratulations on completing Lab 1!** Now that you have a labeled dataset, you are ready to [**progress to Lab 2**](#next) to train your own cell classifier.
+**Congratulations on completing Lab 1!** Now that you have a labeled dataset, you are ready to [progress to Lab 2](#next) to train your own cell classifier.
 
 ## Acknowledgements
 
