@@ -9,7 +9,7 @@ The Tasks in this Lab are summarized as follows:
 
 * **Task 1**: *\[2m\]* Create an AI Vision Project, which is a logical container for your Vision models
 * **Task 2**: *\[35m\]* Custom-train an AI Vision model using the labeled records in your Data Labeling Dataset as training data
-* **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time
+* **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
 * **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
 
 ### Objectives
@@ -221,16 +221,16 @@ In this LiveLab, you will:
 
 ## Conclusions
 
-Congratulations on completing this Lab, as well as this LiveLab!
+**Congratulations on completing this Lab, as well as this LiveLab!**
 
 In this Lab, you have:
 
 * Custom-trained an AI Vision model
-* Witness your model serve your input in real-time, demonstrating reported accuracy
+* Witness your model serve your input in real-time, demonstrating model accuracy
 
 In this LiveLab, you have successfully implemented a highly transferrable OCI solution pattern à la Professor Hu, and simulated the experience of automating, accelerating, and enhancing a biomedical research process by producing your own cell classifier.
 
-The next step in this solution pattern would be to consider the ways in the model analysis would be processed for end-user consumption. You are now ready to apply the principals you discovered in this lab to [use cases](../workshops/freetier/index.html?lab=intro) where a similar pattern of labeling data and training models on OCI would yield significant time and cost savings returns.
+The next step in this solution pattern would be to process the JSON representation of the model analysis for end-user consumption.
 
 In addition to image classification, OCI supports AI automation of tasks such as:
 
@@ -245,7 +245,7 @@ In addition to image classification, OCI supports AI automation of tasks such as
 
 Learn more about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
-Apply your new knowledge to your own industry, and we hope to see you in future LiveLabs!
+Apply your new knowledge to [your own industry](../workshops/freetier/index.html?lab=intro), and we hope to see you in future LiveLabs!
 
 Don't forget to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
 
