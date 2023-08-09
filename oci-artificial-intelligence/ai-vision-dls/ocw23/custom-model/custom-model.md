@@ -50,6 +50,8 @@ In this LiveLab, you will:
 
   ![Create project](./images/3-vision-create-project.png)
 
+  e. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
+
   ![Click project](./images/4-vision-click-project.png)
 
 ## **Task 2:** Custom-Train your own AI Vision Model
@@ -57,19 +59,17 @@ In this LiveLab, you will:
 
 1. To custom-train your own AI Vision model, you will use the dataset that you labeled in the previous Lab:
 
-  a. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
+  a. Click **Create Model** and enter details for your model:
 
-  b. Click **Create Model** and enter details for your model:
+  b. **Type**: *Image Classification*
 
-  c. **Type**: *Image Classification*
+  c. **Training data**: *Choose existing dataset*
 
-  d. **Training data**: *Choose existing dataset*
+  d. **Data source**: *Data labeling service*
 
-  e. **Data source**: *Data labeling service*
+  e. Choose the Data Labeling Dataset that you created in Lab 1.
 
-  f. Choose the Data Labeling Dataset that you created in Lab 1.
-
-  g. Click **Next**.
+  f. Click **Next**.
 
   ![Create and train model window: select data](./images/5-vision-create-model-page-1-select-data.png)
 
