@@ -5,7 +5,7 @@
 
 In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model. You will also be able to experiment with the model serving capability of your cell classifier on your own, using an included set of test images.
 
-![Diagram illustrating that the research cycle can be accelerated with OCI AI Vision, enabling teams to accomplish more, faster, where time is critical, as with patient diagnosis.](../intro/images/3-accelerate-research-cycle.png)
+![Diagram illustrating that the research cycle can be accelerated with OCI AI Vision, enabling teams to accomplish more, faster, where time is critical, as with patient diagnosis.](./images/0-accelerate-research-cycle.png)
 
 The Tasks in this Lab are summarized as follows:
 

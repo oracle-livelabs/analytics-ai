@@ -74,7 +74,7 @@ In this Workshop, you will:
 
 **Total Estimated Workshop Time**: *80 minutes*
 
-![Diagram illustrating the workshop flow](./images/2-workshop-flow.png)
+![Diagram illustrating the workshop flow](./images/1-workshop-flow.png)
 
 #### **Lab 1**
 *\[35 minutes\]*
