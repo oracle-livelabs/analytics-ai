@@ -3,11 +3,11 @@
 
 ## About This Workshop
 
-In this LiveLab, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will experience the themes of automating, accelerating, and enhancing a biomedical research process where time is critical. You will learn how to implement a highly transferrable, multi-industry OCI solution pattern. The LiveLab is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
+In this Workshop, you will train your own image classification model on Oracle Cloud Infrastructure (OCI) using OCI AI Vision. You will experience the themes of automating, accelerating, and enhancing a biomedical research process where time is critical. You will learn how to implement a highly transferrable, multi-industry OCI solution pattern. The Workshop is divided into two Labs: loading and labeling a provided dataset, followed by model training and serving.
 
 An image classification model will be able to tell you what your image represents, based on all of the shapes and colors present in the image. This experiment will require our image classifier to serve as a cell classifier. As a cell classifier, your machine learning model will be able to discern images of cells from non-cells in the provided dataset, where the images were captured using a technique called coherent diffraction imaging.
 
-The concept of the cell classification story and the dataset used in this LiveLab has been provided by Dr. Xin-hua Hu, from his machine learning experiment in the Physics department at East Carolina University. The cell classifier is a practical option for medical professionals during their research process, who would traditionally distinguish images of cells from non-cells by their own visual observation, and record their findings manually.
+The concept of the cell classification story and the dataset used in this Workshop has been provided by Dr. Xin-hua Hu, from his machine learning experiment in the Physics department at East Carolina University. The cell classifier is a practical option for medical professionals during their research process, who would traditionally distinguish images of cells from non-cells by their own visual observation, and record their findings manually.
 
 With large datasets, this process can be incredibly time-consuming and impractical. However, by offloading this important busywork to the cell classifier, and focus on tasks where their broad and deep range of knowledge and skills can be much more economically applied - and derive their analyses much faster where time is of the essence.
 
@@ -32,7 +32,7 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
     - *Parts and Component Recognition*: Identify and sort components on assembly lines, reducing errors and speeding up production.
     - *Anomaly Detection*: Spot anomalies in manufacturing processes or assembly lines to prevent costly production errors.
 3. **Healthcare and Life Sciences**
-    - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, or coherent diffraction images (as in this LiveLab), to assist in diagnosis and treatment planning.
+    - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, or coherent diffraction images (as in this Workshop), to assist in diagnosis and treatment planning.
     - *Pathology Slide Analysis*: Analyze pathology slides for cancer detection and disease diagnosis, improving efficiency for pathologists.
     - *Drug Discovery*: Speed up drug discovery processes by identifying potential drug compounds or interactions from molecular images.
 4. **Agriculture**
@@ -53,7 +53,7 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
 
 ### Objectives
 
-In this LiveLab, you will:
+In this Workshop, you will:
 
 * Learn how to navigate in the OCI web console and be able to demo key OCI AI Vision and Data Labeling features
 * Learn how to leverage a helper script to bulk-label a dataset of biomedical images, i.e. efficiently label a large volume of images
@@ -70,7 +70,7 @@ In this LiveLab, you will:
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python
 
-### Live Lab Steps Overview
+### Workshop Steps Overview
 
 **Total Estimated Workshop Time**: *80 minutes*
 
@@ -87,7 +87,7 @@ After your data has been labeled, you will be able to move on with training your
 
 The Tasks in Lab 1 are summarized as follows:
 
-* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Group, Dynamic Group, and Policy to enable necessary permissions for this LiveLab
+* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Group, Dynamic Group, and Policy to enable necessary permissions for this Workshop
 * **Task 2**: *\[2m\]* Create an Object Storage Bucket for training data
 * **Task 3**: *\[5m\]* Download the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
 * **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
@@ -103,7 +103,7 @@ The Tasks in Lab 2 are summarized as follows:
 * **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
+* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 [Proceed to the next section](#next).
 

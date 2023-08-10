@@ -13,7 +13,7 @@ After your data has been labeled, you will be able to move on with training your
 
 The Tasks in this Lab are summarized as follows:
 
-* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Dynamic Group, and Policy to enable necessary permissions for this LiveLab
+* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Dynamic Group, and Policy to enable necessary permissions for this Workshop
 * **Task 2**: *\[2m\]* Create an Object Storage Bucket for training data
 * **Task 3**: *\[5m\]* Download the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
 * **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
@@ -54,7 +54,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   c. **Name**: Provide a name for your Compartment, e.g. *Image\_Classification*
 
-  d. **Description**: Provide a description for your Compartment, e.g. *Compartment for image classification OCW23 LiveLab*
+  d. **Description**: Provide a description for your Compartment, e.g. *Compartment for image classification OCW23 Workshop*
 
   e. **Parent Compartment**: Select the root-level compartment, which has the same name as your tenancy.
 
@@ -82,7 +82,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   d. **Name**: Provide a name for your Group, e.g. *Image\_Classification\_Group*
 
-  e. **Description**: Provide a description for your Group, e.g. *Group for image classification OCW23 LiveLab users*
+  e. **Description**: Provide a description for your Group, e.g. *Group for image classification OCW23 Workshop users*
 
   f. **Users**: Select the name of the user who will proceed with the lab tasks after the Policy Setup.
 
@@ -106,7 +106,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   d. **Name**: Provide a name for your Dynamic Group, e.g. *Image\_Classification\_Dynamic_Group*
 
-  e. **Description**: Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 LiveLab resources*
+  e. **Description**: Provide a description for your Dynamic Group, e.g. *Dynamic Group for image classification OCW23 Workshop resources*
 
   f. **Matching rules**: Paste the following matching rule into the text field. Replace the placeholder value **&ltcompartment OCID&gt** with your own compartment OCID from your notepad. Be sure to preserve the quotation marks from the template.
       
@@ -129,7 +129,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   d. **Name**: Provide a name for your Policy, e.g. *Image\_Classification\_Policy*
 
-  e. **Description**: Provide a description for your Policy, e.g. *Policy for image classification OCW23 LiveLab*
+  e. **Description**: Provide a description for your Policy, e.g. *Policy for image classification OCW23 Workshop*
 
   f. **Compartment**: Ensure that the policy is scoped at the root-level compartment. Click the toggle switch labeled **Show manual editor** to enable entry of free-form text into a text field. You will use this text field to build your Policy logic.
 

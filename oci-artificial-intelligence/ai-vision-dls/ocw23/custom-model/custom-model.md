@@ -3,18 +3,20 @@
 
 ## Introduction
 
-In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier! After the training process, you will be able to see the determined accuracy of your model, reported as the *F1 score*. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images!
+In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model, reported as the *F1 score*. You will also be able to experience the model serving capability of your cell classifier on your own with an included set of test images.
+
+![Diagram illustrating that the research cycle can be accelerated with OCI AI Vision, enabling teams to accomplish more, faster, where time is critical, as with patient diagnosis.](../intro/images/3-accelerate-research-cycle.png)
 
 The Tasks in this Lab are summarized as follows:
 
 * **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this LiveLab
+* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 ### Objectives
 
-In this LiveLab, you will:
+In this Workshop, you will:
 
 * Learn how to navigate in the OCI web console and be able to demo key OCI AI Vision features
 * Custom-train your own image classification model using your labeled dataset and OCI AI Vision
@@ -44,7 +46,7 @@ In this LiveLab, you will:
 
   b. **Name**: Enter a name for your Project, e.g. *image-classification-project*
 
-  c. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 LiveLab*
+  c. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 Workshop*
 
   d. Click **Create project**
 
@@ -77,7 +79,7 @@ In this LiveLab, you will:
 
   a. **Model display name**: Enter a name for your Vision model, e.g. *image-classification-model*
 
-  b. **Model description**: Enter a description for your Vision model, e.g. *Vision model for image classification OCW23 LiveLab*
+  b. **Model description**: Enter a description for your Vision model, e.g. *Vision model for image classification OCW23 Workshop*
 
   c. **Training duration**: *Quick mode*
 
@@ -207,14 +209,14 @@ In this LiveLab, you will:
 
 ## Conclusions
 
-**Congratulations on completing this Lab, as well as this LiveLab!**
+**Congratulations on completing this Lab, as well as this Workshop!**
 
 In this Lab, you have:
 
 * Custom-trained an OCI AI Vision model
 * Witnessed your model serve your input in real-time, demonstrating model accuracy
 
-In this LiveLab, you have successfully implemented a highly transferrable OCI solution pattern à la Professor Hu, and simulated the experience of automating, accelerating, and enhancing a biomedical research process by producing your own cell classifier.
+In this Workshop, you have successfully implemented a highly transferrable OCI solution pattern à la Professor Hu, and simulated the experience of automating, accelerating, and enhancing a biomedical research process by producing your own cell classifier.
 
 The next step in this solution pattern would be to process the JSON representation of the model analysis for end-user consumption.
 
@@ -231,9 +233,9 @@ In addition to image classification, OCI supports AI-driven automation of a vari
 
 Learn more about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
-Apply your new knowledge to [your own industry](../workshops/freetier/index.html?lab=intro), and we hope to see you in future LiveLabs!
+Apply your new knowledge to [your own industry](../workshops/freetier/index.html?lab=intro), and we hope to see you in future Workshops!
 
-Don't forget to visit the **Cleanup** section below to deprovision the resources you provisioned during this LiveLab.
+Don't forget to visit the **Cleanup** section below to deprovision the resources you provisioned during this Workshop.
 
 [Proceed to the next section](#next).
 
