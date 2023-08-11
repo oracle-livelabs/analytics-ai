@@ -84,7 +84,7 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
 7. Then copy in the Tenancy OCID. The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID.
 
-    ![Create Data Asset](./images/tenancy_OCID.png " ")
+    ![Create Data Asset](./images/tenancyocid.png " ")
 
 8. The Namespace will populate once the tenancy was entered and then enter the region ID. The region ID you can get from clicking the dropdown menu by regions and click on manage region. Your current region should be listed at the top of the list.
 
@@ -169,7 +169,7 @@ In this task, you will simply be creating a new table to verify that the table i
 
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
     
-    ![Database Actions](./images/DBActions.png " ")
+    ![Database Actions](./images/dbactions1.png " ")
 
 3. Click on SQL to execute the query to create the table.
 
