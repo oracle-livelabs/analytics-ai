@@ -50,7 +50,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
     - Copy and paste the following URI into the URI + Bucket field:
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/data_lakehouse/o/movieload
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/movieload
     </copy>
     ```
     - Select **No Credential** as this is a public bucket and then click **Create**.
