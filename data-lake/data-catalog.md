@@ -115,7 +115,7 @@ In this task, you will create the OCI Data Catalog. Review options for creating 
 
 1. Navigate to the Data Catalog by clicking on Analytics & AI, and then Data Catalog. Then click Data Catalogs.
 
-    ![Navigate to Analytics](./images/Nav_datacatalog.png " ")
+    ![Navigate to Analytics](./images/navdatacatalog.png " ")
 
 2. Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the catalog, lakehousecatalog. Click on Create.
 
