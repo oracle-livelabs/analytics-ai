@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Deploy and configure MySQL Database Service powered by HeatWave and Oracle Analytics Cloud",
+  "workshoptitle": "Analyze SailGP data with MySQL HeatWave Lakehouse",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
