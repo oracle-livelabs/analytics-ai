@@ -105,7 +105,7 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
     ![Create Project](./images/create_project.png " ")
 
-![Create Project Fields](./images/create_project2.png " ")
+![Create Project Fields](./images/createproject2.png " ")
 
 You have now configured this data lake by creating a database, data sources in object storage. Configuration is completed from access to services and are ready to use in this project.
 
