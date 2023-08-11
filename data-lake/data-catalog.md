@@ -196,7 +196,7 @@ In this task, you will simply be creating a new table to verify that the table i
 
 7. Click on lakehousecatalog from the Data Catalogs. Verify compartment if you do not see it listed.
 
-    ![SQL](./images/Current_Catalog.png " ")
+    ![SQL](./images/currentcatalog.png " ")
 
 8. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 Select the ADMIN data entity and run the job now.
