@@ -18,7 +18,7 @@ In this lab, you will:
 
 Watch the video below for a quick walk through of the lab.
 
-[Lab 1a walkthrough](youtube:tYM6-qjij9A)
+[](youtube:tYM6-qjij9A)
 
 ### About product
 
@@ -36,11 +36,11 @@ First, we are going to create a compartment. This allows for separation as well 
 
 2. Continue down to the Identity & Security menu and from there to Compartments.
 
-    ![Navigate to compartments.](./images/create_compartment.png " ")
+    ![Navigate to compartments](./images/create_compartment.png " ")
 
 3. There is a Create Compartment button to click on, and then the screen will come up for you to give the compartment a name, which we will be using lakehouse1 for this lab.
 
-    ![Create compartment.](./images/compartment.png " ")
+    ![Create compartment](./images/compartment.png " ")
 
     You are going to be using this compartment for the rest of the lab. When you see the compartment listed on the left menu, just verify that it says lakehouse1. This will be important for the databases and the data tasks.
 
@@ -62,19 +62,30 @@ First, we are going to create a compartment. This allows for separation as well 
     - data-integration-users
     - data-lakehouse-admin
 
-5. After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
+    After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
 
     To add a user, click on a group and below the group details, click on Add User.
 
     ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
+5. Create Dynamic Group for Data Catalog - This dynamic group needs to be created even if you are administrator in the tenancy. It is to be able to data asset discovery and manage the Data Catalog.
+Click on Create Dynamic Groups, enter the name, description and copy and paste the Rule to enter into Rule 1. 
+    ![Select Dynamic Groups](./images/dynamic_groups1.png " ")
+
+    ```
+    <copy>
+    Any {resource.type = 'datacatalog', resource.compartment.type = 'lakehouse1'} </copy>
+    ```
+    ![Create Dynamic Group](./images/create-dc-dg.png " ")
+
 6. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
+
 
     Select Policies on the side menu and click on the button Create Policy.
 
     ![Create Policies](./images/create_policy.png " ")
 
-7. Name each policy to match the group so they are easy to recognize what they are used for.
+7. Name each policy for to match the group so they are easy to recognize what they are used for.
     - Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here).
     - Add the description.
     - Select under Policy use cases Data Flow. This will bring up common policy templates for this area in OCI.
@@ -101,6 +112,7 @@ First, we are going to create a compartment. This allows for separation as well 
     allow group data-lakehouse-admin to manage tag-namespaces in compartment lakehouse1
 
     allow group data-lakehouse-admin to use object-family in compartment lakehouse1
+
     </copy>
     ```
 
@@ -117,10 +129,11 @@ Creating Object Storage Buckets allows for various types of data to be stored. F
    ![Create Storage Bucket](./images/create_bucket.png " ")
 
 3. Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
-
+    
    ![Create Storage Bucket](./images/create_bucket2.png " ")
 
-The dataflow buckets are for the processing of the data and logs.
+    The dataflow buckets are for the processing of the data and logs.
+
 
 ## Task 3: Create ADW
 
@@ -141,7 +154,7 @@ In this task, you will create an Oracle Autonomous Data Warehouse (ADW).
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use **Lakehousedb**.
     - Choose the workload type to be __Data Warehouse__ .
 
-    ![Compartment name.](./images/create_ADW1.png " ")
+    ![Compartment Name](./images/create_ADW1.png " ")
 
 4. Configure the database, and for this lab we will be using **Always Free** resources.
 
@@ -177,7 +190,7 @@ In this task, you will create an Oracle Autonomous Data Warehouse (ADW).
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![choose license type](./images/create_ADW4.png " ")
+    ![Choose License](./images/create_ADW4.png " ")
 
 8. Click __Create Autonomous Database__.
 
@@ -194,5 +207,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, July 2023, Nagwang Gyamtso, Solution Engineering, February 2022
+* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management, Nagwang Gyamtso, Product Management
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
