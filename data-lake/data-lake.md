@@ -100,44 +100,47 @@ We have created a python script for you to use as part of your OCI Data Flow app
     oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
     </copy>
     ```
-    ![Upload File](./images/cloudshellupload.png " ")
+    
+    ![Tenancy Information](./images/tenancy_info.png " ")
+   
+    ![Upload File](./images/cloudshell-upload.png " ")
 
-8. Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
+9. Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
 
     ![Storage Buckets](./images/showbuckets.png " ")
 
-9. Now, navigate to the OCI Data Flow and click on Create Application.
+10. Now, navigate to the OCI Data Flow and click on Create Application.
 
     ![Create Data Flow](./images/nav_dataflow.png " ")
 
-10. For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+11. For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
     ![Create Data Flow](./images/createsparkapp.png " ")
 
-11. For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
+12. For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
 
     ![Create Data Flow](./images/createappconfigure.png " ")
 
-12. The Application Log location is the dataflow-logs bucket that was created. Output logs and error messages will go into this bucket.
+13. The Application Log location is the dataflow-logs bucket that was created. Output logs and error messages will go into this bucket.
 Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
 
     ![Advanced Options](./images/createappadvoptions.png " ")
 
-13. Click on Create Application.
+14. Click on Create Application.
 
     Now we can run the application by selecting the more option dots and selecting Run from the menu.
 
     ![Run Data Flow](./images/runappmanual.png " ")
 
-14. It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
+15. It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
     ![Completed Data Flow](./images/runappresults.png " ")
     
-15. You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
+16. You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
     ![Create Data Flow](./images/df_sparkui1.png " ")
 
-16. And there are additional views to see the details about the jobs and applications running and completed.
+17. And there are additional views to see the details about the jobs and applications running and completed.
 
     ![Create Data Flow](./images/df_sparkui2.png " ")
 

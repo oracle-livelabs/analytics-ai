@@ -84,7 +84,7 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
 7. Then copy in the Tenancy OCID. The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID.
 
-    ![Create Data Asset](./images/tenancy_OCID.png " ")
+    ![Create Data Asset](./images/tenancyocid.png " ")
 
 8. The Namespace will populate once the tenancy was entered and then enter the region ID. The region ID you can get from clicking the dropdown menu by regions and click on manage region. Your current region should be listed at the top of the list.
 
@@ -105,7 +105,7 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
     ![Create Project](./images/create_project.png " ")
 
-![Create Project Fields](./images/create_project2.png " ")
+![Create Project Fields](./images/createproject2.png " ")
 
 You have now configured this data lake by creating a database, data sources in object storage. Configuration is completed from access to services and are ready to use in this project.
 
@@ -115,7 +115,7 @@ In this task, you will create the OCI Data Catalog. Review options for creating 
 
 1. Navigate to the Data Catalog by clicking on Analytics & AI, and then Data Catalog. Then click Data Catalogs.
 
-    ![Navigate to Analytics](./images/Nav_datacatalog.png " ")
+    ![Navigate to Analytics](./images/navdatacatalog.png " ")
 
 2. Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the catalog, lakehousecatalog. Click on Create.
 
@@ -169,7 +169,7 @@ In this task, you will simply be creating a new table to verify that the table i
 
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
     
-    ![Database Actions](./images/DBActions.png " ")
+    ![Database Actions](./images/dbactions1.png " ")
 
 3. Click on SQL to execute the query to create the table.
 
@@ -196,7 +196,7 @@ In this task, you will simply be creating a new table to verify that the table i
 
 7. Click on lakehousecatalog from the Data Catalogs. Verify compartment if you do not see it listed.
 
-    ![SQL](./images/Current_Catalog.png " ")
+    ![SQL](./images/currentcatalog.png " ")
 
 8. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 Select the ADMIN data entity and run the job now.

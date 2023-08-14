@@ -2,9 +2,13 @@
 
 ## About this Workshop
 
-The Premier League has contacted you and asked for your expertise. The Premier League wants to be able to present and display a map during their in-game broadcasts showing where the ball enters the net when an opposing team scores a penalty goal. The Premier League has said they want to do this because it will increase fan engagement and spark interesting conversations with data and visualizations. They recognize that visualized data often enables users to ask questions they may not have otherwise asked. This data will also be able for the fans to explore on an interactive publicly available embedded analytics website. This will empower fans to feel more invested in the players that they support.
+The Premier League has been leading the charge with their embrace of data and visualizations as a way to increase fan engagement. They recognize that visualized data often enables users to ask questions they may not have otherwise asked. These data visualizations will be a catalyst that sparks interesting conversations with fans across the world. Visualized data enables fans to explore their favorite teams, players, and remarkable matches in a new dimension. As a fun visual element, maps are also appealing as they give eager fans an easy way to highlight memorable moments. 
 
-You have agreed to demonstrate this capability in Oracle Analytics Cloud using historic data from the players across the Premier League.
+In this workshop you will be using Oracle Analytics Cloud with data provided by the Premier League to configure a custom image map layer of a football goalmouth and plot the penalty goals scored by players across the Premier League during the 2022-2023 season. 
+
+The at-a-glance usability of maps makes them one of the most powerful tools for rapidly uncovering insights. Any dataset with geographic coordinates can be transformed through mapping. Oracle Analytics Cloud allows users the flexibility to tailor any image relevant to their analysis into a custom background map layer.
+
+![A completed goalmouth map with penalties plotted](images/aboutworkshop1.png)
 
 Estimated Workshop Time: 1 hours 30 minutes 
 
@@ -17,11 +21,13 @@ In this workshop, you will learn how to:
 * Build visualizations
 * Filter Oracle Analytics Cloud dashboards and visualizations
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
 * A basic understanding of analytics terms and concepts
+* Permission to create Datasets in Oracle Analytics Cloud (OAC)
+* Access to the Console of OAC
 
 
 ## Acknowledgements
