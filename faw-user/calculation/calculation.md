@@ -55,8 +55,6 @@ This lab assumes you have:
 
   ![Save workbook](images/save-workbook.png =500x*)
 
-Congratulations, you have learned how to create a calculation to create a new data element in Oracle Analytics. To learn more, check out the resources listed below!
-
 You may now **proceed to the next lab**.
 
 ## Learn More
