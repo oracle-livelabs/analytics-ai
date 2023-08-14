@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Turbocharge Business Insights with MySQL Database",
+    "workshoptitle": "Turbocharge Business Insight with MySQL HeatWave",
       "help": "livelabs-help-oci_us@oracle.com",
       "tutorials": [
           {
@@ -14,15 +14,15 @@
           },
      
           {
-              "title": "Lab 1: Create MySQL Database System and HeatWave Cluster",
+              "title": "Lab 1: Create MySQL Database System",
               "filename": "../../create-dbs/create-dbs.md"
           },
   
           {
-            "title": "Lab 2: Connect to MySQL DB System",
-            "filename": "../../connect-dbs/connect-dbs.md"
+            "title": "Lab 2: Connect to MySQL HeatWave With Cloud Shell Private Access and OCI Shell",
+            "filename": "../../connect-dbs-ocishell-mysqlshell/connect-dbs-ocishell-mysqlshell.md"
           },
-             
+  
           {
               "title": "Lab 3: Load HeatWave cluster",
               "filename": "../../load-heatwave/load-heatwave.md"
@@ -32,16 +32,22 @@
               "title": "Lab 4: Run Queries in HeatWave and MySQL ",
               "filename": "../../run-queries/run-queries.md"
           },
-          
+        
           {
-            "title": "Lab 5: (Bonus) Run MySQL Autopilot",
-            "filename": "../../run-autopilot/run-autopilot.md"
+            "title": "Lab 5:  (Bonus) Build a real-time dashboard in Oracle Analytics Cloud with MySQL HeatWave",
+            "filename": "../../do-oac/do-oac.md"
+          }, 
+    
+        
+          {
+            "title": "Lab 6: (Bonus) Build a LAMP application with MySQL HeatWave",
+            "filename": "../../create-lamp/create-lamp.md"
           },
         
           {
-            "title": "Lab 6: (Bonus) Use MySQL HeatWave For Development",
-            "filename": "../../develop/develop.md"
-          }, 
+            "title": "Lab7: Stop OCI Services",
+            "filename": "../../stop-services/stop-services.md"
+          },
 
           {
               "title": "Need Help?",
