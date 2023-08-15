@@ -224,14 +224,21 @@ The next step in this solution pattern would be to process the JSON representati
 
 In addition to image classification, OCI supports AI-driven automation of a variety of tasks, including:
 
-- **Object Detection**: Identify pre-defined or custom-defined objects within images
-- **Optical Character Recognition**: Recognize characters in documents or images
-- **Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
-- **Speech Transcription**: Transcribe spoken language from audio files to transcripts
-- **Sentiment Analysis**: Automatically decipher sentiment of a volume of text or sentences within it
-- **Named-Entity Recognition**: Extraction of people, places, and things that are publicly recognized
-- **Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
-- **Translation**: Translate between any of 21 languages
+**Object Detection**: Identify pre-defined or custom-defined objects within images
+
+**Optical Character Recognition**: Recognize characters in documents or images
+
+**Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
+
+**Speech Transcription**: Transcribe spoken language from audio files to transcripts
+
+**Sentiment Analysis**: Automatically decipher sentiment of a volume of text or sentences within it
+
+**Named-Entity Recognition**: Extraction of people, places, and things that are publicly recognized
+
+**Key-phrase extraction**: Extract key-phrases that can be considered as tags related to a volume of text
+
+**Translation**: Translate between any of 21 languages
 
 Learn more about [AI Vision](https://www.oracle.com/artificial-intelligence/vision/) and [additional AI Services](https://www.oracle.com/artificial-intelligence/ai-services/) that support these tasks and learn about how the tools that are available today can enable you to streamline and optimize the processes that are required for your business.
 
