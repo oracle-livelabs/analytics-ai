@@ -3,7 +3,7 @@
 
 ## Introduction
 
-[Lab 2][videohub:1_ldvz8ts0]
+[Lab 2](videohub:1_ldvz8ts0)
 
 In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model. You will also be able to experiment with the model serving capability of your cell classifier on your own, using an included set of test images.
 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-[Lab 1][videohub:1_5dimsltq]
+[Lab 1](videohub:1_5dimsltq)
 
 In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
@@ -323,8 +323,8 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     LABELS = ["Cell", "Debris", "Stripe"]</copy>
     ```
 
-    ![Edit classification_config.py](./images/29-2-edit-classification-config.png)
-    
+    ![Edit classification_config.py](./images/29-3-edit-classification-config.png)
+
   a. Open **classification\_config.py** by running the following command:
 
     ```
