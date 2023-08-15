@@ -63,8 +63,8 @@ In this Workshop, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * One of the following:
-  * You are either a tenancy administrator
-  * A tenancy administrator will set up Identity and Access Management (IAM) configuration as described in *Lab 1, Task 1*. Then, you may proceed beginning with *Lab 1, Task 2*.
+    * You are either a tenancy administrator
+    * A tenancy administrator will set up Identity and Access Management (IAM) configuration as described in *Lab 1, Task 1*. Then, you may proceed beginning with *Lab 1, Task 2*.
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset records, 1 Project for AI Vision models, 1 AI Vision model
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
@@ -113,10 +113,10 @@ The Tasks in Lab 2 are summarized as follows:
 ## Acknowledgements
 
 * **Authors**
-  * Samuel Cacela - Senior Cloud Engineer
-  * Gabrielle Prichard - Product Manager, Analytics Platform
-  * David Chen - Master Principal Cloud Architect
-  * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
+    * Samuel Cacela - Senior Cloud Engineer
+    * Gabrielle Prichard - Product Manager, Analytics Platform
+    * David Chen - Master Principal Cloud Architect
+    * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
 
 * **Last Updated By/Date**
-  * Samuel Cacela - Senior Cloud Engineer, August 2023
+    * Samuel Cacela - Senior Cloud Engineer, August 2023
