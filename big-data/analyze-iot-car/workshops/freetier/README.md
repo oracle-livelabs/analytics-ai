@@ -17,7 +17,7 @@ Alternatively, you can follow the individual workshop labs on this repo:
 - [Initialize the BDS Environment](./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md)
 - [Monitor Real-Time Truck Driving](./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md)
 - [Identify Hazardous Road Segments](./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md)
-- [Analyze Driving Patterns](./../..lab4-analyze-driving-patterns/analyze-driving-patterns.md)
+- [Analyze Driving Patterns](./../../lab4-analyze-driving-patterns/analyze-driving-patterns.md)
 
 <!-- Keep this content -->
 
