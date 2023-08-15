@@ -211,7 +211,7 @@ In this Workshop, you will:
 
 ## Conclusions
 
-**Congratulations on completing this Lab, as well as this Workshop!**
+**Congratulations on completing Lab 2, as well as this Workshop!**
 
 In this Lab, you have:
 
