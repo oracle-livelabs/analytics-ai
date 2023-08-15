@@ -10,10 +10,10 @@ The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** wi
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
-- [Initialize the BDS Environment](../Analyze-IoT-Car/Lab1-Initialize-the-BDS-Environment/Lab1-Initialize-the-BDS-Environment.md)
-- [Monitor Real-Time Truck Driving](../Analyze-IoT-Car/Lab2-Monitor-Real-Time-Truck-Driving/Lab2-Monitor-Real-Time-Truck-Driving.md)
-- [Identify Hazardous Road Segments](../Analyze-IoT-Car/Lab3-Identify-Hazardous-Road-Segments/Lab3-Identify-Hazardous-Road-Segments.md)
-- [Analyze Driving Patterns](../Analyze-IoT-Car/Lab4-Analyze-Driving-Patterns/Lab4-Analyze-Driving-Patterns.md)
+- [Initialize the BDS Environment](./../../Lab1-Initialize-the-BDS-Environment/Lab1-Initialize-the-BDS-Environment.md)
+- [Monitor Real-Time Truck Driving](./../../Lab2-Monitor-Real-Time-Truck-Driving/Lab2-Monitor-Real-Time-Truck-Driving.md)
+- [Identify Hazardous Road Segments](./../../Lab3-Identify-Hazardous-Road-Segments/Lab3-Identify-Hazardous-Road-Segments.md)
+- [Analyze Driving Patterns](./../../Lab4-Analyze-Driving-Patterns/Lab4-Analyze-Driving-Patterns.md)
 
 
 <!-- Keep this content -->
