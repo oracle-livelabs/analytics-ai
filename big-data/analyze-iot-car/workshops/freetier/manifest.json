@@ -1,0 +1,42 @@
+
+{
+      "workshoptitle": "Analyze IoT Car using Flink/Kafka/Spark in Big Data Services",
+      "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+      {
+         "title": "Getting Started",
+         "description": "Get a Free Trial",
+         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+      }
+      ,
+      {
+            "title": "Lab 1: Initialize the BDS Environment",
+            "description": "This lab shows you how to Initialize the BDS Environment",
+            "filename": "./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md"
+      }
+      ,
+      {
+            "title": "Lab 2: Monitor Real-Time Truck Driving",
+            "description": "This lab shows you how to Monitor Real-Time Truck Driving.",
+            "filename": "./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md"
+      }
+      ,
+      {
+            "title": "Lab 3: Identify Hazardous Road Segments",
+            "description": "This lab shows you how to Identify Hazardous Road Segments.",
+            "filename": "./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md"
+      }
+      ,
+      {
+            "title": "Lab 4: Analyze Driving Patterns",
+            "description": "This lab shows you how to Analyze Driving Patterns.",
+            "filename": "./../../lab4-analyze-driving-patterns/analyze-driving-patterns.md"
+      }
+      ,
+      {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+   ] 
+}
