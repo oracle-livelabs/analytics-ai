@@ -15,4 +15,4 @@ Please confirm that the following is completed before submitting your PR
 - [ ] Filenames are descriptive
 - [ ] Your workshop folder structure should be similar to the one used in the sample workshop (https://github.com/oracle-livelabs/common/tree/main/sample-livelabs-templates/sample-workshop)
 - [ ] Are you using multiple versions (desktop/, sandbox/, tenancy/)? Make sure that each of them contains a manifest.json and an index.html
-- [ ] Image references in markdown contain an alternate text
+- [ ] Image references in markdown contain an alternate text 
