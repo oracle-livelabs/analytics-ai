@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Insights to Information",
+    "workshoptitle": "Fusion Analytics: Insights to Information",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
