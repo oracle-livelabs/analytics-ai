@@ -226,9 +226,9 @@ In addition to image classification, OCI supports AI-driven automation of a vari
 
 * **Object Detection**: Identify pre-defined or custom-defined objects within images
 
-* **Optical Character Recognition**: Recognize characters in documents or images
+* **Optical Character Recognition**: Recognize characters in documents and images
 
-* **Document Understanding**: extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
+* **Document Understanding**: Extract units of information from documents such as text, tables, key-value pairs, pages, custom-defined or pre-defined document type
 
 * **Speech Transcription**: Transcribe spoken language from audio files to transcripts
 
