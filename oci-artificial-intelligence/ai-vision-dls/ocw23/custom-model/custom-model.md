@@ -140,7 +140,7 @@ In this Workshop, you will:
 
   ![Analyze an image from the Stripe folder.](./images/16-vision-model-analyze-image-stripe-example.png)
 
-## **Task 4 (Optional)**: Cleanup
+## **Task 4** (Optional): Cleanup
 *\[5 minutes\]*
 
 1. Delete your Object Storage Bucket:

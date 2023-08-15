@@ -106,7 +106,7 @@ The Tasks in Lab 2 are summarized as follows:
 * **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4 (Optional)**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
+* **Task 4** (Optional): *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 [Proceed to the next section](#next).
 
