@@ -244,7 +244,7 @@ Learn more about [AI Vision](https://www.oracle.com/artificial-intelligence/visi
 
 Apply your new knowledge to [your own industry](../workshops/freetier/index.html?lab=intro), and we hope to see you in future Workshops!
 
-Don't forget to visit the **Cleanup** section below to deprovision the resources you provisioned during this Workshop.
+Don't forget to visit **Task 4** to deprovision the resources you provisioned during this Workshop.
 
 [Proceed to the next section](#next).
 
