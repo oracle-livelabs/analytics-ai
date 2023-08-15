@@ -1,47 +1,26 @@
 # Workshop Introduction and Overview
 
-The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
+The labs in this workshop walk you through all the steps to Analyze IoT Car using Flink/Kafka/Spark in **Oracle Big Data Service (BDS)**.
 
-Estimated Workshop Time: 6 hours
+Estimated Workshop Time: 2 hours
 
-## What is Oracle Big Data Service?
+## What is Analyze IoT Car using Flink/Kafka/Spark in Big Data Service Workshop?
 
-**Oracle Big Data Service (BDS)** provides enterprise-grade Hadoop as a service, with end-to-end security, high performance, and ease of management and upgradeability.
-
-BDS is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, BDS scales to meet an organization’s requirements at a low cost and with the highest levels of security. It includes :
-
-* Choice of distribution of hadoop Oracle Distribution of Hadoop(ODH) or Cloudera Distribution of Hadoop (CDH) .
-* Offers a range of Hadoop technology stack including HDFS, Yarn and other Open source Apache service such Kafka, Flink, and Spark.
-* Highly secure and highly available clusters provisioned in minutes.
-* Expand on premise Hadoop; deploy test and development to the cloud.
-* Any scale using high performance bare metal or cost effective virtual machine (VM) shapes.
-* End-to-end data management; use with Autonomous Database, Analytics Cloud, OCI Streaming, OCI Data Catalog, OCI Data Science, and OCI Data Flow.
-* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL.
-
-Watch our short video that explains key features in Oracle Big Data Service:
-
-[](youtube:CAmaIGKkEIE)
+This workshop's labs will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data.
 
 ## Workshop Objectives
 
-- Prepare for using Oracle Big Data Service (BDS).
-- Create a Highly-Available (HA) BDS cluster using Oracle Distribution including Apache Hadoop(ODH) from the Oracle Cloud Infrastructure Console (OCI).
-- Add Cloud SQL to the cluster and maintain your cluster.
-- Access a BDS utility node using a public IP address.
-- Use Ambari and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both Ambari and Hue.
-- Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
-- Upload data from your master node in your cluster to new HDFS directories and new object storage buckets.
+- Initialize the BDS Environment.
+- Monitor Real-Time Truck Driving.
+- Identify Hazardous Road Segments.
+- Analyze Driving Patterns.
 
 ## Lab Breakdown
 
-- **Lab 1:** Prepare your Big Data Service Environment
-- **Lab 2:** Create a BDS Hadoop Cluster
-- **Lab 3:** Add Oracle Cloud SQL to the Cluster
-- **Lab 4**: Make BDS Nodes Accessible with Public IP Address
-- **Lab 5:** Use Ambari and Hue to Access a BDS Cluster
-- **Lab 6:** Create a Hadoop Administrator User
-- **Lab 7:** Upload Data to Hadoop Distributed File System and Object Storage
-- **Lab 8:** Clean up Resources Used in this Workshop (Optional)
+- **Lab 1:** Initialize the BDS Environment
+- **Lab 2:** Monitor Real-Time Truck Driving
+- **Lab 3:** Identify Hazardous Road Segments
+- **Lab 4**: Analyze Driving Patterns
 
 ## Workshop Prerequisites
 
@@ -71,6 +50,6 @@ Use the following links to get more information about BDS and OCI:
 
 * **Author:**
 
-  * Anand Chandak, Principal Product Manager, Big Data Services
   * Justin Zou, Principal Data Engineer,Japan & APAC Hub
-* **Last Updated By/Date:** Justin Zou, March 2023
+  * Anand Chandak, Principal Product Manager, Big Data Services
+* **Last Updated By/Date:** Justin Zou, Aug 2023

@@ -1,6 +1,6 @@
-# Welcome to Oracle Big Data Services using Oracle Distribution of Hadoop(ODH) Hands-on Workshop!
+# Welcome to Analyze IoT Car using Flink/Kafka/Spark in Big Data Services Hands-on Workshop!
 
-The **Oracle Big Data Service (BDS) using ODH workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster using Oracle Distribution of Hadoop(ODH). You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Ambari and Hue to access the cluster, and creating a Hadoop administrator user.
+The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data.
 
 ## Access the Labs Using Our Web Interface
 
@@ -10,13 +10,11 @@ The **Oracle Big Data Service (BDS) using ODH workshop** is a series of step-by-
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
-- [Introduction to Oracle Big Data Service](../bds-quickstart-workshop/intro.md)
-- [Setup the BDS Environment](../bds-getting-started/bds-getting-started.md)
-- [Create a BDS Hadoop Cluster](../bds-create-cluster/bds-create-cluster.md)
-- [Add Oracle Cloud SQL to the Cluster](../bds-add-cloud-sql/bds-add-cloud-sql.md)
-- [Access a BDS Node Using a Public IP Address](../bds-access-utility-node/bds-access-utility-node.md)
-- [Use Ambari and Hue to Access a BDS Cluster](../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md)
-- [Create a Hadoop Administrator User](../bds-create-hadoop-user/bds-create-hadoop-user.md)
+- [Initialize the BDS Environment](../Analyze-IoT-Car/Lab1-Initialize-the-BDS-Environment/Lab1-Initialize-the-BDS-Environment.md)
+- [Monitor Real-Time Truck Driving](../Analyze-IoT-Car/Lab2-Monitor-Real-Time-Truck-Driving/Lab2-Monitor-Real-Time-Truck-Driving.md)
+- [Identify Hazardous Road Segments](../Analyze-IoT-Car/Lab3-Identify-Hazardous-Road-Segments/Lab3-Identify-Hazardous-Road-Segments.md)
+- [Analyze Driving Patterns](../Analyze-IoT-Car/Lab4-Analyze-Driving-Patterns/Lab4-Analyze-Driving-Patterns.md)
+
 
 <!-- Keep this content -->
 

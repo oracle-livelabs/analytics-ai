@@ -1,4 +1,4 @@
-# Access a BDS Node Using a Public IP Address
+# Initialize the BDS Environment
 
 ## Introduction
 
