@@ -16,6 +16,7 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to a workbook
+* [Sample Order Lines DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/J6wePlhCmLfKoZRTdaMTEKerOCkYrnN3cPd4-g899hTOureVn6tHRZ048xjb4tTv/n/idtlyhmtj68r/b/LiveLabFiles/o/Sample%20Order%20Lines%20DS.xlsx) dataset
 
 ## Task 1: Create a New Measure Using Calculations
 
