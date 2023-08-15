@@ -3,6 +3,8 @@
 
 ## Introduction
 
+[Lab 2][videohub:1_ldvz8ts0]
+
 In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model. You will also be able to experiment with the model serving capability of your cell classifier on your own, using an included set of test images.
 
 ![Diagram illustrating that the research cycle can be accelerated with OCI AI Vision, enabling teams to accomplish more, faster, where time is critical, as with patient diagnosis.](./images/0-accelerate-research-cycle.png)
@@ -12,7 +14,7 @@ The Tasks in this Lab are summarized as follows:
 * **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
+* **Task 4** (Optional): *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 ### Objectives
 
@@ -29,7 +31,7 @@ In this Workshop, you will:
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Project for AI Vision models, 1 AI Vision model
 
-## **Task 1:** Create a Project for AI Vision models
+## **Task 1**: Create a Project for AI Vision models
 *\[2 minutes\]*
 
 1. Create a Project, which is a logical container for AI Vision models. From the OCI services menu, click: **AI Services** > **Vision**
@@ -56,7 +58,7 @@ In this Workshop, you will:
 
   ![Click into your Project.](./images/4-vision-click-project.png)
 
-## **Task 2:** Custom-train your own AI Vision model
+## **Task 2**: Custom-train your own AI Vision model
 *\[35 minutes\]*
 
 1. To custom-train your own AI Vision model, you will use the dataset that you labeled in the previous Lab:
@@ -83,7 +85,7 @@ In this Workshop, you will:
 
   c. **Training duration**: *Quick mode*
 
-  **Note:** Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+    > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
   d. Click **Next**.
 
@@ -99,7 +101,7 @@ In this Workshop, you will:
 
 ![Your AI Vision model is now available.](./images/9-vision-model-active.png)
 
-## **Task 3:** Test the model on new images
+## **Task 3**: Test the model on new images
 *\[3 minutes\]*
 
 1. Now that your model is available, observe the performance metrics on the Model Details page, as well as the training duration.
@@ -130,7 +132,7 @@ In this Workshop, you will:
 
   Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
-    * *Note:* Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+    > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
@@ -138,7 +140,7 @@ In this Workshop, you will:
 
   ![Analyze an image from the Stripe folder.](./images/16-vision-model-analyze-image-stripe-example.png)
 
-## **Task 4:** Cleanup
+## **Task 4 (Optional)**: Cleanup
 *\[5 minutes\]*
 
 1. Delete your Object Storage Bucket:

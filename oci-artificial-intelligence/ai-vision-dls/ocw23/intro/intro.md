@@ -63,7 +63,7 @@ In this Workshop, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
-    * *Note:* If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
+    > **Note**: If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset records, 1 Project for AI Vision models, 1 AI Vision model
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
@@ -73,6 +73,8 @@ In this Workshop, you will:
 ### Workshop Steps Overview
 
 **Total Estimated Workshop Time**: *80 minutes*
+
+#### Workshop Flow
 
 ![Diagram illustrating the workshop flow](./images/1-workshop-flow.png)
 
@@ -103,7 +105,7 @@ The Tasks in Lab 2 are summarized as follows:
 * **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
 * **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
 * **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
+* **Task 4 (Optional)**: *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 [Proceed to the next section](#next).
 

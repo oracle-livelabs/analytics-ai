@@ -3,6 +3,8 @@
 
 ## Introduction
 
+[Lab 1][videohub:1_5dimsltq]
+
 In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
 
 ![3 samples of coherent diffraction images, each representing one of the classes: Cell, Debris, and Stripe.](./images/0-sample-coherent-diffraction-images.png)
@@ -30,14 +32,14 @@ In this Lab, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
-    * *Note:* If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
+    > **Note**: If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset records
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python
 
-## **Task 1:** Identity and Access Management (IAM) setup
+## **Task 1**: Identity and Access Management (IAM) setup
 *\[10 minutes\]*
 
 Before you start using OCI Data Labeling, you or your tenancy administrator should set up the following Identity and Access Management (IAM) configuration:
@@ -149,7 +151,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
     ![Enter details for creating a Policy.](./images/13-create-policy.png)
 
-## **Task 2:** Create an Object Storage Bucket
+## **Task 2**: Create an Object Storage Bucket
 *\[2 minutes\]*
 
 1. From the OCI services menu, click: **Storage** > **Buckets**
@@ -164,7 +166,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   a. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*.
 
-    * *Note:* If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
+    > **Note**: If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
 
   b. Click **Create**.
 
@@ -176,7 +178,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Click into your Bucket.](./images/17-2-click-into-bucket.png)
 
-## **Task 3:** Bulk-upload the biomedical training data into Object Storage
+## **Task 3**: Bulk-upload the biomedical training data into Object Storage
 *\[5 minutes\]*
 
 1. Open Cloud Shell by clicking the **&lt&gt** icon at the top-left of the webpage. Then, click **Cloud Shell**.
@@ -211,7 +213,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![From the detailed page for the Bucket, expand a folder to verify that it has been populated from the bulk-uploading process.](./images/21-bulk-upload-done-expand-folder.png)
 
-## **Task 4:** Create a Data Labeling Dataset
+## **Task 4**: Create a Data Labeling Dataset
 *\[3 minutes\]*
 
 1. From the OCI services menu, click: **Analytics & AI** > **Data Labeling**
@@ -262,9 +264,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Copy the OCID of your Data Labeling Dataset to your clipboard.](./images/28-labels-importing-copy-dataset-ocid.png)
 
-6. Note that It will take about *10 minutes* for the the data to be fully imported into your Data Labeling Dataset, as records, from your Object Storage Bucket. Once the records have been fully imported, the page will appear similar to the below screenshot, and the **Status** of the Dataset will show as *Active*. Move onto the next Task while your images are importing.
+6. While your images are importing from your Object Storage Bucket as records, you may move onto the next Task. Note that this process will take about *10 minutes*. Once the records have been fully imported, the page will appear similar to the below screenshot, and the **Status** of the Dataset will show as *Active*. Move onto the next Task while your images are importing.
 
-## **Task 5:** Bulk-label the Data Labeling Dataset records
+![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
+
+## **Task 5**: Bulk-label the Data Labeling Dataset records
 *\[15 minutes\]*
 
 1. On Cloud Shell, run the following command to download the bulk-labeling script to the home directory on your Cloud Shell machine.
@@ -282,13 +286,16 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>echo $OCI_REGION</copy>
     ```
-4. In this step, you will open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
+4. In this step, you will open the file named **config.py** from the bulk-labeling tool contents with a CLI-based text editor of your preference (e.g. vi, nano, emacs), and then edit the variables as indicated below. Be sure to replace the **&ltplaceholder values&gt** with your own values from your digital notepad app. Preserve the quotation marks as shown in the template. Instructions on how to make these edits using vi are provided, and are recommended for users who are unfamiliar with CLI-based text editors.
 
     ```
     <copy>CONFIG_FILE_PATH = "/etc/oci/config"
     REGION_IDENTIFIER = "<Region identifier from your notepad app>"
     DATASET_ID = "<OCID of your Data Labeling Dataset from your notepad app>"</copy>
     ```
+
+    ![Edit config.py](./images/29-2-edit-config.png)
+
   a. Open **config.py** by running the following command:
 
     ```
@@ -315,6 +322,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     <copy>LABELING_ALGORITHM = "FIRST_REGEX_MATCH"
     LABELS = ["Cell", "Debris", "Stripe"]</copy>
     ```
+
+    ![Edit classification_config.py](./images/29-2-edit-classification-config.png)
+    
   a. Open **classification\_config.py** by running the following command:
 
     ```
@@ -343,15 +353,15 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   a. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto **b.**
 
-    * *Note:* Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
+    > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
 
-  ![All records have been imported into your Data Labeling Dataset.](./images/29-records-imported.png)
+  ![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
 
   ![You may use the OCI web console buttons to click out of the details page for your Data Labeling Dataset.](./images/31-console-buttons-click-out-of-dataset.png)
 
   ![You may use the OCI web console buttons to click back into the details page for your Data Labeling Dataset.](./images/32-console-buttons-click-back-into-dataset.png)
 
-  b. Run the following command to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **5 minutes**.
+  b. Run the following command on Cloud Shell to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **5 minutes**.
     
     ```
     <copy>python bulk_labeling_script.py</copy>
