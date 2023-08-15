@@ -24,32 +24,32 @@ To render your own cell classifier in the style of Dr. Xin-hua Hu's research, yo
 Using a custom-trained OCI Vision model can bring significant time and cost savings in various industries by automating and optimizing tasks that would otherwise require manual effort. These are some critical use cases across different industries where a custom-trained OCI Vision model can be highly beneficial:
 
 1. **Retail and E-Commerce**
-    - *Automated Product Categorization*: Automatically classify products into categories based on images, streamlining inventory management and online cataloging.
-    - *Shelf and Store Monitoring*: Monitor shelves and store layouts to detect stockouts, misplaced items, and optimize shelf space utilization.
-    - *Fraud Detection*: Identify fraudulent product returns or label swapping by analyzing product images.
+  - *Automated Product Categorization*: Automatically classify products into categories based on images, streamlining inventory management and online cataloging.
+  - *Shelf and Store Monitoring*: Monitor shelves and store layouts to detect stockouts, misplaced items, and optimize shelf space utilization.
+  - *Fraud Detection*: Identify fraudulent product returns or label swapping by analyzing product images.
 2. **Manufacturing and Quality Control**
-    - *Defect Detection*: Inspect products for defects, such as cracks, scratches, or abnormalities, ensuring high-quality standards without manual inspection.
-    - *Parts and Component Recognition*: Identify and sort components on assembly lines, reducing errors and speeding up production.
-    - *Anomaly Detection*: Spot anomalies in manufacturing processes or assembly lines to prevent costly production errors.
+  - *Defect Detection*: Inspect products for defects, such as cracks, scratches, or abnormalities, ensuring high-quality standards without manual inspection.
+  - *Parts and Component Recognition*: Identify and sort components on assembly lines, reducing errors and speeding up production.
+  - *Anomaly Detection*: Spot anomalies in manufacturing processes or assembly lines to prevent costly production errors.
 3. **Healthcare and Life Sciences**
-    - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, or coherent diffraction images (as in this Workshop), to assist in diagnosis and treatment planning.
-    - *Pathology Slide Analysis*: Analyze pathology slides for cancer detection and disease diagnosis, improving efficiency for pathologists.
-    - *Drug Discovery*: Speed up drug discovery processes by identifying potential drug compounds or interactions from molecular images.
+  - *Medical Image Analysis*: Automate the analysis of medical images, such as X-rays or MRIs, or coherent diffraction images (as in this Workshop), to assist in diagnosis and treatment planning.
+  - *Pathology Slide Analysis*: Analyze pathology slides for cancer detection and disease diagnosis, improving efficiency for pathologists.
+  - *Drug Discovery*: Speed up drug discovery processes by identifying potential drug compounds or interactions from molecular images.
 4. **Agriculture**
-    - *Crop Monitoring*: Monitor crop health, growth, and disease detection through aerial or ground-based imagery, optimizing agricultural practices.
-    - *Pest and Disease Detection*: Detect pests or diseases in crops early to enable targeted interventions and minimize crop damage.
-    - *Yield Estimation*: Estimate crop yield and optimize resource allocation based on field images, leading to better harvest planning.
+  - *Crop Monitoring*: Monitor crop health, growth, and disease detection through aerial or ground-based imagery, optimizing agricultural practices.
+  - *Pest and Disease Detection*: Detect pests or diseases in crops early to enable targeted interventions and minimize crop damage.
+  - *Yield Estimation*: Estimate crop yield and optimize resource allocation based on field images, leading to better harvest planning.
 5. **Logistics and Transportation**
-    - *Object Recognition in Logistics*: Identify and sort packages or items for efficient logistics and warehouse management.
-    - *License Plate Recognition*: Automate toll collection, parking management, and security access control by recognizing license plates.
-    - *Real-time Traffic Analysis*: Monitor traffic flow and congestion to optimize transportation routes and reduce delivery times.
+  - *Object Recognition in Logistics*: Identify and sort packages or items for efficient logistics and warehouse management.
+  - *License Plate Recognition*: Automate toll collection, parking management, and security access control by recognizing license plates.
+  - *Real-time Traffic Analysis*: Monitor traffic flow and congestion to optimize transportation routes and reduce delivery times.
 6. **Financial Services**
-    - *Document Processing*: Automate the extraction of information from invoices, receipts, or forms, reducing manual data entry efforts.
-    - *Fraud Detection*: Identify fraudulent activities, such as check fraud or credit card misuse, through image analysis.
-    - *Authentication*: Use facial recognition for secure and convenient customer authentication in mobile banking or e-commerce applications.
+  - *Document Processing*: Automate the extraction of information from invoices, receipts, or forms, reducing manual data entry efforts.
+  - *Fraud Detection*: Identify fraudulent activities, such as check fraud or credit card misuse, through image analysis.
+  - *Authentication*: Use facial recognition for secure and convenient customer authentication in mobile banking or e-commerce applications.
 7. **Real Estate and Construction**
-    - *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
-    - *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
+  - *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
+  - *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
 
 ### Objectives
 
@@ -63,7 +63,7 @@ In this Workshop, you will:
 
 * An Oracle Free Tier, or Paid Cloud Account
 * You are either a tenancy administrator, or has access to a tenancy administrator for the policy setup described in *Lab 1, Task 1*
-> **Note**: If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
+  > **Note**: If you are not a tenancy administrator, begin with *Lab 1, Task 2* after the tenancy administrator has assigned permissions in *Lab 1, Task 1*
 * Accessibility to your tenancy's [home region](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 * Sufficient resource availability within your home region for: 1 Compartment, 1 Group, 1 Dynamic Group, 1 Policy, 1 Object Storage Bucket, 1 Data Labeling Dataset, 1710 Data Labeling Dataset records, 1 Project for AI Vision models, 1 AI Vision model
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
@@ -112,10 +112,10 @@ The Tasks in Lab 2 are summarized as follows:
 ## Acknowledgements
 
 * **Authors**
-    * Samuel Cacela - Senior Cloud Engineer
-    * Gabrielle Prichard - Product Manager, Analytics Platform
-    * David Chen - Master Principal Cloud Architect
-    * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
+  * Samuel Cacela - Senior Cloud Engineer
+  * Gabrielle Prichard - Product Manager, Analytics Platform
+  * David Chen - Master Principal Cloud Architect
+  * Dr. Xin-hua Hu - Professor, Dept. of Physics at East Carolina University
 
 * **Last Updated By/Date**
-    * Samuel Cacela - Senior Cloud Engineer, August 2023
+  * Samuel Cacela - Senior Cloud Engineer, August 2023
