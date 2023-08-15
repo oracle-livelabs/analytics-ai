@@ -85,7 +85,7 @@ In this Workshop, you will:
 
   c. **Training duration**: *Quick mode*
 
-    > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+> **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
   d. Click **Next**.
 
@@ -132,7 +132,7 @@ In this Workshop, you will:
 
   Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
-    > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+> **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
   d. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
