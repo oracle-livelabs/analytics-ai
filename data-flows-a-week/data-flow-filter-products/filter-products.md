@@ -1,4 +1,4 @@
-# Create the Physical Layer
+# Create a Product Match Data Flow
 
 ## Introduction
 
@@ -9,8 +9,7 @@ Estimated Lab Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Create a data flow to filter out null product values
-* Create a branch to create two output datasets
+* Create a data flow with two output datasets to be stored in an ADW
 
 ### Prerequisites
 
@@ -26,17 +25,17 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 1. Click **Create** and then select **Data Flow**.
 
-	![create dataflow](images/create-dataflow.png)
+	![create dataflow](images/create-dataflow.png =400x*)
 
 2. All your available data sources will be listed in this window. For this lab, we will create a new dataset from an existing subject area. Click **Create Dataset**.
 
-	![create dataset](images/create-dataset.png)
+	![create dataset](images/create-dataset.png =450x*)
 
 3. Select the **Local Subject Area** option.
 
 	**Note**: We are selecting the Local Subject Area dataset because it contains the official, curated corporate product hierarchy which is our “single source of truth.” This is an example of how OAC enables fast, self-service data prep and analysis on ad hoc (spreadsheets) and curated datasets.
 
-	![local sa](images/local-sa.png)
+	![local sa](images/local-sa.png =450x*)
 
 4. Drag and drop **SampleApp** into the data diagram pane. Then double-click SampleApp in the **Join Diagram**.
 
@@ -60,7 +59,7 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 8. Enter **XX_Products** for **Name** and click **OK**.
 
-	![save](images/save-as.png)
+	![save](images/save-as.png =400x*)
 
 9. Go back to the **New Data Flow** browser tab.
 
@@ -68,7 +67,7 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 10. The **xx_Products** subject area dataset should be auto-selected. Click **Add**.
 
-	![add](images/add.png)
+	![add](images/add.png =450x*)
 
 11. You will now be taken to the data flow editor. The data flow steps are shown on the left pane, the data flow diagram on the top shaded area, the step configurations are in the middle and the dataset preview is on the bottom of the screen.
 
@@ -78,17 +77,17 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 1. Click **Add a step**. Here, you'll see all the data transformations you can apply to your data. You can add more data, join tables, apply filters, aggregations, add columns, rename columns, apply advanced statistical analysis, or apply Oracle ML and AI models. Click **Add Data**.
 
-	![add dataset](images/add-data.png)
+	![add dataset](images/add-data.png =400x*)
 
 2. You will bring in a flat file dataset and join the new dataset with the **Products** dataset you created. Click **Create Dataset**.
 
-	![create dataset](images/create-dataset-upload.png)
+	![create dataset](images/create-dataset-upload.png =450x*)
 
 3. Click the **Upload** option and from your local machine, select the [**SALES\_REPS\_ALL\_PRODUCT**](https://objectstorage.us-phoenix-1.oraclecloud.com/p/S3gWL_n0qhXhs-7Th2JpvZ-_p-Y2-h9dinh37je_2nthEpsvVGDAhkwfuAnfhcH6/n/idbwmyplhk4t/b/LiveLabsFiles/o/SALES_REPS_ALL_PRODUCTS.csv) dataset.
 
 	**Note:** Download the sales reps dataset [here](https://objectstorage.us-phoenix-1.oraclecloud.com/p/S3gWL_n0qhXhs-7Th2JpvZ-_p-Y2-h9dinh37je_2nthEpsvVGDAhkwfuAnfhcH6/n/idbwmyplhk4t/b/LiveLabsFiles/o/SALES_REPS_ALL_PRODUCTS.csv).
 
-	![add dataset](images/add-dataset.png)
+	![add dataset](images/add-dataset.png =450x*)
 
 4. This dataset consists of product sales and discount amounts for each sales transaction a sales rep processed. Add your initials, **_XX** at the end of the table name and Click **OK**.
 
@@ -100,11 +99,11 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 6. Save the dataset as **XX\_Sales\_Reps\_All\_Products** and click **OK**.
 
-	![save dataset](images/save-ds-as.png)
+	![save dataset](images/save-ds-as.png =350x*)
 
 7. Go back to the Data Flow browser tab. The sales reps dataset should be auto-selected. Click **Add**.
 
-	![add flat file](images/add-flat-ds.png)
+	![add flat file](images/add-flat-ds.png =450x*)
 
 8. The tool automatically recommends a way to join the two data sets in the data flow, as indicated in the Match columns section. The system created an auto-join using the **Product** column. In the **Keep rows** configuration for **Input 2**, click the dropdown menu and select **All rows**. This will allow us to use all the sales data in the new combined dataset.
 
@@ -130,7 +129,7 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 5. Check the **Nulls** box to select only the **Product** columns with NULL values.
 
-	![select null](images/select-nulls.png)
+	![select null](images/select-nulls.png =450x*)
 
 6. Click the **Save Data** step in the first branch. Enter **XX\_Missing\_Products** for the Dataset name. For **Save data to** select **Database Connection**.
 
@@ -154,7 +153,7 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 11. Select **Nulls** and then select **Exclude**. This will exclude all the rows with null **Product** values.
 
-	![exclude nulls](images/exclude-nulls.png)
+	![exclude nulls](images/exclude-nulls.png =450x*)
 
 12. Click the **Save Data** step for this current branch. Enter **XX\_Matched\_Products** for the Dataset name and **Save data to** the **Database Connection**.
 
@@ -168,11 +167,11 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 1. Save this data flow by clicking the **Save** icon.
 
-	![save](images/save-df.png)
+	![save](images/save-df.png =450x*)
 
 2. Type **XX\_Product\_Match\_DF** and Click **OK**.
 
-	![save](images/save-as-ok.png)
+	![save](images/save-as-ok.png =450x*)
 
 3. Click the play icon to run the data flow. This is a good start. We have combined our products and sales datasets and then separated them into two segments: a dataset where the products DO match, and a dataset where the products DON’T match.
 

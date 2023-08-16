@@ -1,4 +1,4 @@
-# Load data into the ADW and connect to OAC
+# Connect OAC to ADW
 
 ## Introduction
 
@@ -23,19 +23,19 @@ This lab assumes you have:
 
 1. Login to your OAC instance using your credentials.
 
-  ![login](images/login.png)
+  ![login](images/login.png =400x*)
 
 2. On the top right corner, click **Create** and then select **Connection**.
 
-  ![create connection](images/create-connection.png)
+  ![create connection](images/create-connection.png =400x*)
 
 3. Here, you'll see all the different sources that OAC can connect to. Select **Oracle Autonomous Data Warehouse**.
 
-  ![select adw](images/select-adw.png)
+  ![select adw](images/select-adw.png =450x*)
 
 4. Enter the **Connection Name** and select your ADW wallet .zip file. This wallet file will used to connect to your ADW. Then enter the **Username** and **Password** of your ADW user. For **Service Name** select **..._medium** and enable **System connection**. Click **Save**. You will see a message notifying that your **Connection created successfully**.
 
-  ![connection credentials](images/connection-credentials.png)
+  ![connection credentials](images/connection-credentials.png =400x*)
 
 You may now **proceed to the next lab**.
 

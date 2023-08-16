@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Model Your Data with the Semantic Modeler in Oracle Analytics Cloud",
+    "workshoptitle": "Model Your Data with the Semantic Modeler in Oracle Analytics Cloud: Part 2",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -18,9 +18,9 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Examine Semantic Model Markup Language",
+            "title": "Lab 1: Examine Semantic Model Markup Language and integrate SMML with Git",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../examine-ssml/examine-ssml.md"
+            "filename": "../../examine-semantic-model-markup-language/examine-semantic-model-markup-language.md"
         },
         {
             "title": "Lab 2: Manage Logical Table Sources",
@@ -31,11 +31,11 @@
             "filename": "../../create-logical-hierarchies/create-logical-hierarchies.md"
         },
         {
-            "title": "Lab 4: Create calculated, level-based, and share measures",
-            "filename": "../../create-measures/create-measures.md"
+            "title": "Lab 4: Create Calculated, Level-Based, and Share Measures",
+            "filename": "../../create-calculated-level-based-and-share-measures/create-calculated-level-based-and-share-measures.md"
         },
         {
-            "title": "Lab 5: Create ragged and skipped level hierarchies",
+            "title": "Lab 5: Create Ragged and Skipped Level Hierarchies",
             "filename": "../../skipped-and-ragged-hierarchies/skipped-and-ragged-hierarchies.md"
         },
         {
@@ -47,12 +47,12 @@
             "filename": "../../aggregate-tables/aggregate-tables.md"
         },
         {
-            "title": "Lab 8: Create time series measures",
+            "title": "Lab 8: Create Time Series Measures",
             "filename": "../../time-series-measures/time-series-measures.md"
         },
         {
-            "title": "Lab 9: Create initialization blocks and variables",
-            "filename": "../../initialization-blocks-and-variables/time-series-measures.md"
+            "title": "Lab 9: Create Initialization Blocks and Variables",
+            "filename": "../../initialization-variables/initialization-variables.md"
         },
         {
             "title": "Need Help?",

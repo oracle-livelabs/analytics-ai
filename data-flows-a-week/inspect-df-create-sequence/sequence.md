@@ -1,17 +1,16 @@
-# Test, Deploy, and Validate a Semantic Model
+# Create Data Flow Schedules and Sequences
 
 ## Introduction
 
-In this lab, you run the consistency checker on the Sample Sales semantic model, deploy the semantic model, and validate the subject area by creating visualizations in Oracle Analytics Cloud.
+In this lab, you will inspect your data flow to understand the data sources and outputs within the data flow. You will learn how to schedule data flows and create data flow sequences.
 
 Estimated Time: 5 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Run the consistency checker
-* Deploy the Sample Sales semantic model
-* Validate the subject area by creating visualizations in Oracle Analytics Cloud
+* Schedule a data flow
+* Create a data flow sequence
 
 ### Prerequisites
 
@@ -25,7 +24,7 @@ This lab assumes you have:
 
 1. Click the **Navigation** menu and select **Jobs**.
 
-	![jobs](images/jobs.png)
+	![jobs](images/jobs.png =450x*)
 
 2. Here, you can view the data flow jobs and their status'.
 
@@ -45,7 +44,7 @@ This lab assumes you have:
 
 6. Click **Sources/Tables**. Here you can view the data sources that were used in this data flow, including the target dataset. Click **Close**.
 
-	![close](images/close.png)
+	![close](images/close.png =450x*)
 
 ## Task 2: Schedule a Data Flow
 
@@ -55,7 +54,7 @@ This lab assumes you have:
 
 2. Configure the schedule to run the data flow and click **OK**.
 
-	![ok](images/ok.png)
+	![ok](images/ok.png =450x*)
 
 3. Right-click the same data flow and this time, select **Inspect**.
 
@@ -69,15 +68,15 @@ This lab assumes you have:
 
 1. Click **Create** and select **Sequence**. This will open the data flow sequence setup window.
 
-	![create sequence](images/create-sequence.png)
+	![create sequence](images/create-sequence.png =450x*)
 
-2. Drag **xx\_Product\_Match\_DF** and **xx\_Sales\_Discounting\_DF** into the selections pane. Make sure the Product_Math_DF is placed before the Sales_Discounting_DF since the Sales_Discounting_DF relies on the output created from the Product_Match_DF. Click **Save**.
+2. Drag **xx\_Product\_Match\_DF** and **xx\_Sales\_Discounting\_DF** into the selections pane. Make sure the Product\_Match\_DF is placed before the Sales\_Discounting\_DF since the Sales\_Discounting\_DF relies on the output created from the Product\_Match\_DF. Click **Save**.
 
 	![drag dataflow](images/drag-df.png)
 
 3. Enter **xx\_DF\_Sequence** for **Name** and click **OK**.
 
-	![save sequence](images/save-sequence-as.png)
+	![save sequence](images/save-sequence-as.png =450x*)
 
 4. Click the back arrow to return to the **Data** page.
 

@@ -8,7 +8,7 @@ Data flows enable you to organize and integrate your data to produce curated dat
 
 This workshop covers the basics of creating datasets, curating datasets with data flows, scheduling data flows, and creating data flow sequences.
 
-Estimated Workshop Time: 30 minutes
+Estimated Workshop Time: 45 minutes
 
 
 ### Objectives
@@ -16,7 +16,6 @@ Estimated Workshop Time: 30 minutes
 In this workshop, you will learn how to:
 * Provision an ADW and OAC instance
 * Connect OAC and ADW
-* Create a multi-table dataset
 * Create a Data Flow and perform data transformations
 * Schedule a data flow
 * Create a data flow sequence
