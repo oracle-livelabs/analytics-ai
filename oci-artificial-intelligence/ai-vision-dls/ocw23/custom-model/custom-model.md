@@ -44,51 +44,51 @@ In this Workshop, you will:
 
 3. Click **Create Project** and enter details for your Project:
 
-  1. **Compartment**: Select your new compartment using the dropdown menu under **List Scope**.
+    1. **Compartment**: Select your new compartment using the dropdown menu under **List Scope**.
 
-  2. **Name**: Enter a name for your Project, e.g. *image-classification-project*
+    2. **Name**: Enter a name for your Project, e.g. *image-classification-project*
 
-  3. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 Workshop*
+    3. **Description**: Optionally, provide a description for your Project, e.g. *Project for image classification OCW23 Workshop*
 
-  4. Click **Create project**
+    4. Click **Create project**
 
-    ![Enter details for creating a Project](./images/3-vision-create-project.png)
+      ![Enter details for creating a Project](./images/3-vision-create-project.png)
 
-  5. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
+    5. Wait for the **Status** of your Project to update to *ACTIVE*. Then, click into your hyperlinked Project listing.
 
-    ![Click into your Project.](./images/4-vision-click-project.png)
+      ![Click into your Project.](./images/4-vision-click-project.png)
 
 ## Task 2: Custom-train your own AI Vision model
 
 1. To custom-train your own AI Vision model, you will use the dataset that you labeled in the previous Lab:
 
-  1. Click **Create Model** and enter details for your model:
+    1. Click **Create Model** and enter details for your model:
 
-  2. **Type**: *Image Classification*
+    2. **Type**: *Image Classification*
 
-  3. **Training data**: *Choose existing dataset*
+    3. **Training data**: *Choose existing dataset*
 
-  4. **Data source**: *Data labeling service*
+    4. **Data source**: *Data labeling service*
 
-  5. Choose the Data Labeling Dataset that you created in Lab 1.
+    5. Choose the Data Labeling Dataset that you created in Lab 1.
 
-  6. Click **Next**.
+    6. Click **Next**.
 
-    ![Enter details for creating your AI Vision model.](./images/5-vision-create-model-page-1-select-data.png)
+      ![Enter details for creating your AI Vision model.](./images/5-vision-create-model-page-1-select-data.png)
 
 2. Enter training details for the model.
 
-  1. **Model display name**: Enter a name for your Vision model, e.g. *image-classification-model*
+    1. **Model display name**: Enter a name for your Vision model, e.g. *image-classification-model*
 
-  2. **Model description**: Enter a description for your Vision model, e.g. *Vision model for image classification OCW23 Workshop*
+    2. **Model description**: Enter a description for your Vision model, e.g. *Vision model for image classification OCW23 Workshop*
 
-  3. **Training duration**: *Quick mode*
+    3. **Training duration**: *Quick mode*
 
-    > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+      > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
-  4. Click **Next**.
+    4. Click **Next**.
 
-    ![Enter details for creating your AI Vision model.](./images/6-vision-create-model-page-2-train-model.png)
+      ![Enter details for creating your AI Vision model.](./images/6-vision-create-model-page-2-train-model.png)
 
 3. Review that the model information is correct and click **Create and train**.
 
@@ -114,95 +114,95 @@ In this Workshop, you will:
 
 3. Upload one image from the test dataset on your local machine to test the newly created model.
 
-  1. Select **Local file** under **Image source**.
+    1. Select **Local file** under **Image source**.
 
-  2. Click **select one...** in the **Upload image** section. Navigate to the folder containing the test images on your local machine and select an image to upload.
+    2. Click **select one...** in the **Upload image** section. Navigate to the folder containing the test images on your local machine and select an image to upload.
 
-  ![Click select one... to select an image for model serving.](./images/11-vision-model-select-image.png)
+    ![Click select one... to select an image for model serving.](./images/11-vision-model-select-image.png)
 
-  ![Select an image from the Cell folder, for example, to upload for model serving.](./images/12-vision-model-upload-cell-image.png)
-  
-  3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
+    ![Select an image from the Cell folder, for example, to upload for model serving.](./images/12-vision-model-upload-cell-image.png)
+    
+    3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
 
-  ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
+    ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
 
-  ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
+    ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
 
-  Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
+    Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
 
-    > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+      > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
-  4. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
+    4. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
-  ![Analyze an image from the Debris folder.](./images/15-vision-model-analyze-image-debris-example.png)
+    ![Analyze an image from the Debris folder.](./images/15-vision-model-analyze-image-debris-example.png)
 
-  ![Analyze an image from the Stripe folder.](./images/16-vision-model-analyze-image-stripe-example.png)
+    ![Analyze an image from the Stripe folder.](./images/16-vision-model-analyze-image-stripe-example.png)
 
 ## Task 4 (Optional): Cleanup
 
 1. Delete your Object Storage Bucket:
 
-  1. From the OCI services menu, click: **Storage** > **Buckets**
+    1. From the OCI services menu, click: **Storage** > **Buckets**
 
-  2. Click on the 3 dots to the right of the listing corresponding to your Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
+    2. Click on the 3 dots to the right of the listing corresponding to your Bucket > Click **Delete** > Enter the name of your Bucket > **Delete**
 
-    ![Navigate to Buckets.](../dls-bulk-label/images/14-menu-storage.png)
+      ![Navigate to Buckets.](../dls-bulk-label/images/14-menu-storage.png)
 
 2. Delete your Data Labeling Dataset:
 
-  1. From the OCI services menu, click: **Analytics & AI** > **Data Labeling**
+    1. From the OCI services menu, click: **Analytics & AI** > **Data Labeling**
 
-  2. Click on the 3 dots to the right of the listing corresponding to your Dataset > Click **Delete** > Enter the name of your Dataset > **Delete**
+    2. Click on the 3 dots to the right of the listing corresponding to your Dataset > Click **Delete** > Enter the name of your Dataset > **Delete**
 
-    ![Navigate to Data Labeling.](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
+      ![Navigate to Data Labeling.](../dls-bulk-label/images/22-menu-analytics-and-data-labeling.png)
 
 3. Delete your AI Vision model and Project:
 
-  1. From the OCI services menu, click: **Analytics & AI** > **Vision**
+    1. From the OCI services menu, click: **Analytics & AI** > **Vision**
 
-  2. Click into your hyperlinked Project > Click into your hyperlinked model
+    2. Click into your hyperlinked Project > Click into your hyperlinked model
 
-  3. Delete your AI Vision model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
+    3. Delete your AI Vision model: Click on the 3 dots to the right of the listing corresponding to your AI Vision model > **Delete** > Type *DELETE* > **Delete**
 
-  4. Delete your Project for AI Vision models: Wait for your AI Vision model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
+    4. Delete your Project for AI Vision models: Wait for your AI Vision model to finish terminating. Then, click **Delete** > Type *DELETE* > **Delete**
 
-    ![Navigate to AI Vision.](./images/1-menu-analytics-and-ai-vision.png)
+      ![Navigate to AI Vision.](./images/1-menu-analytics-and-ai-vision.png)
 
 4. Delete your Policy:
 
-  1. From the OCI services menu, click: **Identity & Security** > **Policies**
+    1. From the OCI services menu, click: **Identity & Security** > **Policies**
 
-  2. Select the root-level compartment from the dropdown menu on the left-hand side of the screen.
+    2. Select the root-level compartment from the dropdown menu on the left-hand side of the screen.
 
-  3. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
+    3. Click on the 3 dots to the right of the listing corresponding to your Policy > **Delete** > **Delete**
 
-    ![Navigate to Policies.](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
+      ![Navigate to Policies.](../dls-bulk-label/images/12-2-menu-identity-and-security-policies.png)
 
 5. Delete your Dynamic Group and Group:
 
-  1. From the OCI Services menu, click: **Identity & Security** > **Domains**
+    1. From the OCI Services menu, click: **Identity & Security** > **Domains**
 
-  2. Select the root compartment from the dropdown menu on the left-hand side of the screen, and select the **Default** domain.
+    2. Select the root compartment from the dropdown menu on the left-hand side of the screen, and select the **Default** domain.
 
-  3. Click **Dynamic groups** on the left-hand side of the page.
+    3. Click **Dynamic groups** on the left-hand side of the page.
 
-  4. Click on the 3 dots to the right of the listing corresponding to your Dynamic Group > **Delete** > **Delete dynamic group**
+    4. Click on the 3 dots to the right of the listing corresponding to your Dynamic Group > **Delete** > **Delete dynamic group**
 
-  5. Click **Groups** on the left-hand side of the page.
+    5. Click **Groups** on the left-hand side of the page.
 
-  6. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
+    6. Click on the 3 dots to the right of the listing corresponding to your Group > **Delete** > **Delete group**
 
-    ![Navigate to Domains.](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
+      ![Navigate to Domains.](../dls-bulk-label/images/4-menu-identity-and-security-domains.png)
 
 6. Delete your Compartment:
 
-  1. Ensure that all resources within the compartment have finished terminating.
+    1. Ensure that all resources within the compartment have finished terminating.
 
-  2. From the OCI services menu, click: **Identity & Security** > **Compartments**
+    2. From the OCI services menu, click: **Identity & Security** > **Compartments**
 
-  3. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
+    3. Click on the 3 dots to the right of the listing corresponding to your Compartment > **Delete** > **Delete**
 
-    ![Navigate to Compartments.](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
+      ![Navigate to Compartments.](../dls-bulk-label/images/1-1-menu-identity-and-security-compartments.png)
 
 [Proceed to the next section](#next).
 
