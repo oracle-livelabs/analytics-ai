@@ -15,7 +15,7 @@ Watch the video below for a quick walk through of the lab.
 ### Objectives
 
 * Learn how to create OCI Data Flow App
-* Learn how to create OCI Data Load
+* Learn how to create OCI Data Load 
 * Learn how to schedule to automate OCI Data Flow Apps
 
 ## Task 1: Create an OCI Data Flow app
@@ -26,6 +26,9 @@ We have created a python script for you to use as part of your OCI Data Flow app
 
 1. Start Cloud Shell
 
+    Click on the cloudshell icon in the top left hand corner next to your region information.
+    ![Find Cloud Shell](./images/cloudshell-icon.png " ")
+
     ![Start Cloud Shell](./images/cloudshell-open.png " ")
 
 2. From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs-df.py
@@ -35,7 +38,6 @@ We have created a python script for you to use as part of your OCI Data Flow app
     vi livelabs-df.py
     </copy>
     ```
-
 3. Copy the following script and insert it into the livelabs-df.py file you are currently editing in Cloud Shell:
 
     ```
@@ -44,22 +46,22 @@ We have created a python script for you to use as part of your OCI Data Flow app
     import sys
 
     def oracle_datasource_example(spark):
-        # Wallet  information.
-        properties = {"adbId": ADB_ID,"user" : USERNAME,"password": PASSWORD}
+    # Wallet  information.
+    properties = {"adbId": ADB_ID,"user" : USERNAME,"password": PASSWORD}
 
-        ##print("Reading data from autonomous database.")
-        ##df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+    ##print("Reading data from autonomous database.")
+    ##df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+    
+    print("Reading data from json file in object storage")
+    df = spark.read.json("oci://data_lakehouse@c4u04/export-stream-2020-custid-genreid.json")
+    
+    df.printSchema()
 
-        print("Reading data from json file in object storage")
-        df = spark.read.json("oci://data_lakehouse@c4u04/export-stream-2020-custid-genreid.json")
+    print("Filtering recommendation.")
+    df.filter(df.recommended == "Y")
 
-        df.printSchema()
-
-        print("Filtering recommendation.")
-        df.filter(df.recommended == "Y")
-
-        print("Writing to autonomous database.")
-        df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
+    print("Writing to autonomous database.")
+    df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
 
     if __name__ == "__main__":
         spark = SparkSession \
@@ -67,81 +69,92 @@ We have created a python script for you to use as part of your OCI Data Flow app
             .appName("Python Spark Oracle Datasource Example") \
             .getOrCreate()
 
-        # TODO: PROVIDE THE ARGUMENTS
-        ADB_ID = "replacewithADBID"
-        SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED"
-        TARGET_TABLE = "ADMIN.MOVIE_GENRE"
-        USERNAME = "replacewithUSER"
-        PASSWORD = "replacewithPASSWORD"
+    # TODO: PROVIDE THE ARGUMENTS 
+    ADB_ID = "replacewithADBID"
+    SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED" 
+    TARGET_TABLE = "ADMIN.MOVIE_GENRE" 
+    USERNAME = "replacewithUSER"
+    PASSWORD = "replacewithPASSWORD"
 
-        oracle_datasource_example(spark)
+    oracle_datasource_example(spark)
 
-        spark.stop()
+    spark.stop()
     </copy>
     ```
 
-4. After pasting the above script, in the TODO section at bottom of the script a few of the variables need values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithXXXX. 
+4. After pasting the above script, in the TODO section at bottom of the script a few of the variables need values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithUSER. 
     >__Note:__ If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shellwhere it states "replacewithADBID".
 
     ![Get the ADB ID](./images/getadbid.png " ")
 
 5. Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks):
 
-    ![Paste ADB ID](./images/editfilepaste.png " ")
+![Paste ADB ID](./images/editfilepaste.png " ")
 
-    ![Edited File](./images/editedfile.png " ")
+![Edited File](./images/editedfile.png " ")
 
-6. See the edited file above for the three areas to edit. When finished editing press **esc** **:wq** to save the file and your changes.
+    See the edited file above for the three areas to edit. 
 
-7. Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAMESPACE with your actual namespace name (Namespace name can be found in OCI tenancy:
+6.When finished editing press **esc** **:wq** to save the file and your changes.
+
+7. Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAMESPACE with your actual namespace name (Namespace name can be found in OCI tenancy information):
 
     ```
     <copy>
     oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
     </copy>
     ```
-    ![Upload File](./images/cloudshellupload.png " ")
+
+    ![Upload File](./images/cloudshell-upload.png " ")
 
 8. Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
 
     ![Storage Buckets](./images/showbuckets.png " ")
 
+    ![Objects in Buckets](./images/showbucketobjects.png " ")
+
 9. Now, navigate to the OCI Data Flow and click on Create Application.
 
     ![Create Data Flow](./images/nav_dataflow.png " ")
 
-10. For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+    ![Create application](./images/df-applications.png " ")
+
+10. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
     ![Create Data Flow](./images/createsparkapp.png " ")
 
-11. For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
+    For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
 
     ![Create Data Flow](./images/createappconfigure.png " ")
 
-12. The Application Log location is the dataflow-logs bucket that was created. Output logs and error messages will go into this bucket.
-Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
+    The Application Log location is the dataflow-logs bucket that was created. Output logs and error messages will go into this bucket.
+
+11. Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
 
     ![Advanced Options](./images/createappadvoptions.png " ")
 
-13. Click on Create Application.
+12. Click on Create Application.
 
-    Now we can run the application by selecting the more option dots and selecting Run from the menu.
+13. Now we can run the application by selecting the more option dots and selecting Run from the menu.
 
     ![Run Data Flow](./images/runappmanual.png " ")
 
-14. It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
+    This pops up the configuration of the application again, if you would like to change any set up for this run of the application. Just click on run at the bottom.
+
+    ![Run after configuration](./images/runappmanual2.png " ")
+
+    It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
     ![Completed Data Flow](./images/runappresults.png " ")
-    
-15. You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
-    ![Create Data Flow](./images/df_sparkui1.png " ")
+You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
-16. And there are additional views to see the details about the jobs and applications running and completed.
+And there are additional views to see the details about the jobs and applications running and completed.
 
-    ![Create Data Flow](./images/df_sparkui2.png " ")
+![Create Data Flow](./images/df_sparkui2.png " ")
 
 Now let's go back to OCI Data Integrations because we setup some other data sources to load as part of our data integration into the Data Lakehouse and use for additional queries as par of our analysis.
+
 
 ## Task 2: Create OCI Data Integration - Load
 
@@ -178,8 +191,8 @@ First we want to download the customer sales csv file that we can put into our o
     ![Select the Lakehouse workspace](./images/data-integration-workspace-select.png " ")
 
 8. Select create data loader task, because we are going to use this as a data flow to take our csv file, perform transformations against and save it back into the object storage as json. This is a way to process data from files, to files, or to and from databases. We have already seen the loads to the database, and we know we have data that is going to be files that need filtering or transformations and we don't even have to put them in the database to do that.
-    
-    ![Select Create data loader task](./images/create-data-loader-task1.png " ")
+
+    ![Select Create data loader task](./images/create-data-loader-task1.png =50%x*)
 
 9. Let's call this task LoadCustomerCSV
 
@@ -188,9 +201,9 @@ First we want to download the customer sales csv file that we can put into our o
 10. Now we have to just put in the Source, any transformations and Target for the load process. 
 Here you can see the options for source and target data. Click on File Storage for Source and File Storage for Target. We only have one file, so make sure that Single data entity is selected. Enter the name of LoadCustomerCSV, and before clicking next select the project - Project_lakehouse. Click Next.
 
-    ![Select source and target type](./images/create-data-loader-task3.png " ")
+    ![Select source and target type](./images/create-data-loader-task2.png " ")
 
-11. Now provide information about the Source. There is the ability to create a new source, or select from those available. Be sure to choose the compartment lakehouse1 and the Bucket that the file was just uploaded to, dataflow-warehouse.
+11. Provide information about the Source. There is the ability to create a new source, or select from those available. Be sure to choose the compartment lakehouse1 and the Bucket that the file was just uploaded to, dataflow-warehouse.
 
     ![Create Select File](./images/create-data-loader-task5.png " ")
 
@@ -210,7 +223,7 @@ Here you can see the options for source and target data. Click on File Storage f
 
     ![Set target information](./images/create-data-loader-target2.png " ")
 
-16. Next step are the transformations and filters on the source data set. This time the file just changing format from CSV to JSON. Click Next.
+16. Next step is the transformations and filters on the source data set. This time the file just changing format from CSV to JSON. Click Next.
 
     ![See transformation](./images/create-data-loader-transformation.png " ")
 
@@ -219,9 +232,16 @@ Here you can see the options for source and target data. Click on File Storage f
     ![Validation of the data loader task](./images/create-data-loader-validate.png " ")
 
 ## Task 3: Create an application for automation
-1. Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
+
+Now you are going to navigate back to the data integration workspace, and click on Application. 
+
+1. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
+
+    ![Create Application](./images/create-app1.png " ")
 
     ![Create Application](./images/create-app.png " ")
+
+    ![Create Application](./images/create-app1.png " ")
 
 2. Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application. Navigate to the Project_lakehouse, from the menu select Tasks. LoadCustomerCSV will be seen in the list and you will need to expand the three dot menu and add it to the application.
 
@@ -229,23 +249,21 @@ Here you can see the options for source and target data. Click on File Storage f
 
     ![Publish to application](./images/create-app3.png " ")
 
-3. Select the application name, lakehouseapp:
+2. Select the application name, lakehouseapp.
 
-    ![Select Application and Publish](./images/create-app4.png " ")
+    ![Application name](./images/create-app4.png " ")
 
 ## Task 4: Run and schedule apps for automation
 
 1. Now under the application select the menu at the end of the LoadCustomerCSV task. 
 
-    ![View Task Added](./images/create-app5.png " ")
-
-2. Now select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
+2. Select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
 
     ![Run Task](./images/create-app6.png " ")
-    
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, July 2023
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, August 2023

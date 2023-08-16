@@ -4,7 +4,7 @@
 
 In this lab you will construct visualizations and build a dashboard.
 
-Estimated Time: 20 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -23,9 +23,13 @@ This lab assumes you have:
 ## Task 1: Aggregate an Attribute 
 Visualizations allow us to tell a story with the data that will resonate and stay with the end user. This creates a lasting impact beyond the capabilities of the data alone. In this section you will create a map and bar chart from the data. Together, these visuals will illustrate the data's contextual narrative. Since the data does not include a count of Penalties Scored, we will have to add it by aggregating the Event Unique ID attribute.
 
-1. Select PL Name, TEAM, Event Unique ID and bring them into the the left of the table on the canvas you will see a green bar indicating that a new table visualization is being added. 
+1. To start, you'll create a second table. Select PL Name, TEAM, Event Unique ID and bring them into the the canvas to the left of the table you created in the previous section. On the canvas you will see a green bar indicating that a new table visualization is being added. 
 
 	![Create a second table](images/aggregate-attribute1.png)
+
+  ![The second table](images/aggregate-attribute6.png)
+
+As you move forward in this lab ensure that you are selected on the table with PL Name, TEAM, and Event Unique ID as the grammar panel and properties only relate to the selected visualization. 
 
 2. In the grammar panel, right click on Event Unique ID and select **Aggregate** and then **Count**.
 
@@ -72,7 +76,7 @@ In the previous section, you aggregated the attribute of Event Unique ID to crea
 
   ![Move MapLat and MapLon](images/create-map2.png)
 
-3. Select Properties and the Map tab and change the Background Map to the name of the background map layer that you previously uploaded. It should  be named pl-goalmouth.
+3. To change the background map layer, start by selecting Properties at the top of the grammar panel, then the Map tab, and finally click "Default" which will open a dropdown menu. You will now be able to select the the background map layer that you previously uploaded. It should  be named pl-goalmouth.
 
   ![Set the custom map background layer](images/create-map3.png)
 
@@ -80,7 +84,7 @@ In the previous section, you aggregated the attribute of Event Unique ID to crea
 
   ![Add Description and Team to the map](images/create-map6.png)
 
-  After adding Description and Team to the map, hover your mouse over one of the points on the map. The tooltip will now show the Match Description, whether the penalty was scored by a player on the Home or the Away team, the match date, and player name. 
+After adding Description and Team to the map, hover your mouse over one of the points on the map. The tooltip will now show the Match Description, whether the penalty was scored by a player on the Home or the Away team, the match date, and player name. 
 
   ![Penalty information displayed](images/create-map7.png)
 
@@ -106,13 +110,17 @@ In the previous section, you aggregated the attribute of Event Unique ID to crea
 
   ![Select Away from the Team filter](images/add-filter3.png)
 
-Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away matches this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next three player names. You should have four total players selected. The penalty goals represented by these players will become highlighted on the map.  
+You should see the Away attribute move to the right side of the filter into the Selections area.
+
+  ![Select Away from the Team filter](images/add-filter5.png)
+
+Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away matches this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next three player names. You should have four total players selected. The penalty goals represented by these players will be outlined in bold on the map. The map allows you start conversations from the placement of their goals. As you can see, only two of those goals are in the center while the rest are in the corners. It would be reasonable to discuss that it is more likely for a player to have success by aiming for the corners of the goal.
 
   ![Multi-select the top four players](images/add-filter4.png)
 
 4. Bring the canvas back to showing all of the data. To do this you can click any blank space within the bar chart and then click on the selected value in the team filter (at the top of the page) to remove the selections. 
 
-7. Explore the data by experiencing different filter options. Observe the changes to the goal map. 
+5. Explore the data by experiencing different filter options. Observe the changes to the goal map. 
 
 ## Task 5: (Optional) Customize your Dashboard 
 
