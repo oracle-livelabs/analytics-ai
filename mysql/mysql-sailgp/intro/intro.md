@@ -8,7 +8,7 @@ Welcome to this exciting Hands-On-Lab where sport merges with technological inno
 
 **MySQL HeatWave Lakehouse**'s power lies in the ability to query and analyze hundreds of terabytes of data directly from Object Storage. 
 
-**SailGP** offers you the perfect playground to try out the Lakehouse technology. The high tech boats contain over 800 IoT sensors that provide more than 12,000 data points, and the teams are continuously looking for data insights improve their chances of winning.
+**SailGP** offers you the perfect playground to try out the Lakehouse technology. The high tech boats contain over 800 IoT sensors that provide more than 12,000 data points, and the teams are continuously looking for data insights to improve their chances of winning.
 
 This is your chance to see what it is to be a "Data Athlete" for SailGP and help the sailing teams increase their performance. Along the way, you will learn **how to operate a MySQL HeatWave Lakehouse** and techniques like **data visualization** and **machine learning**!
 

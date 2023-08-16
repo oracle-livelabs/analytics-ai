@@ -102,6 +102,17 @@ In this lab, you will:
 
   	If prompted to accept the finger print, type _**yes**_ and hit enter, then you will get a Warning.
 
+6. Run the following command to install MySQL Shell on the compute instance.
+
+	```
+	<copy>
+  sudo yum install mysql-shell -y
+	```
+	</copy>
+  
+  The result should look like this:
+  ![Result installation of MySQL Shell](./images/mysqlshell-installation-succeeded.png)
+
 ## Task 3: Connect to MySQL Shell and configure the External Table
 
 1. First, get obtain the private IP address of the MySQL database. You can get this by going to "Databases", "DB Systems", "mysql-lakehouse", "Connections" and then copy the private IP address.
