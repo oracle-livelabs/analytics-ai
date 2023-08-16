@@ -84,7 +84,7 @@ In this Workshop, you will:
 
     3. **Training duration**: *Quick mode*
 
-      > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
+        > **Note**: Although the web console indicates 1 hour of training duration, *the work request will require about 30 minutes to complete*. This will include the process of back-end infrastructure deployment, model training, and model deployment to the endpoint that will be made accessible to your environment via the web console and APIs.
 
     4. Click **Next**.
 

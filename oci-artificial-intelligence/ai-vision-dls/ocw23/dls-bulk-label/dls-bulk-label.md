@@ -166,7 +166,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
     1. **Bucket Name**: Enter a name for your Bucket that you can recognize, e.g. *image-classification-bucket*.
 
-      > **Note**: If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
+        > **Note**: If you choose a different name, copy and paste this value into a new line on your digital notepad app for later use in this Lab.
 
     2. Click **Create**.
 
@@ -244,19 +244,19 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
       ![Enter details for creating your Data Labeling Dataset.](./images/25-create-dataset-page-2-select-bucket.png)
 
-  8. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Be sure that the *first letter* of each label is *uppercase*, and the *remaining letters* are *lowercase*. Take care to leave no space characters in the label names.
-    
-    * *Cell*
-    * *Debris*
-    * *Stripe*
+    8. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Be sure that the *first letter* of each label is *uppercase*, and the *remaining letters* are *lowercase*. Take care to leave no space characters in the label names.
+      
+      * *Cell*
+      * *Debris*
+      * *Stripe*
 
-  9. Click **Next**.
+    9. Click **Next**.
 
-    ![Enter details for creating your Data Labeling Dataset.](./images/26-create-dataset-page-2-add-labels.png)
+      ![Enter details for creating your Data Labeling Dataset.](./images/26-create-dataset-page-2-add-labels.png)
 
-  10. Review the information and deploy your Data Labeling Dataset by clicking **Create**.
+    10. Review the information and deploy your Data Labeling Dataset by clicking **Create**.
 
-    ![Review the details, then create your Data Labeling Dataset.](./images/27-create-dataset-page-3-review.png)
+      ![Review the details, then create your Data Labeling Dataset.](./images/27-create-dataset-page-3-review.png)
 
 5. Find the Dataset OCID as shown in the screenshot. Then, copy and paste this value into a new line on your digital notepad app. You will retrieve this value in the next Task when configuring the bulk-labeling tool.
 
@@ -293,25 +293,25 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Edit config.py](./images/29-2-edit-config.png)
 
-  1. Open **config.py** by running the following command:
+    1. Open **config.py** by running the following command:
 
-    ```
-    <copy>vi config.py</copy>
-    ```
+      ```
+      <copy>vi config.py</copy>
+      ```
 
-  2. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *CONFIG\_FILE\_PATH =*
-  
-  3. Enter *insert* mode by typing **i**.
-  
-  4. Delete the value within the quotation marks using the **delete** button.
-  
-  5. Enter the value to be assigned to *CONFIG\_FILE\_PATH* for this Lab, which is: *"/etc/oci/config"*. Be sure to include the quotation marks where indicated.
-  
-  6. Press **ESC** to escape *insert* mode.
-  
-  7. Repeat sub-steps **4.2.** through **4.5.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
-  
-  h. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
+    2. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *CONFIG\_FILE\_PATH =*
+    
+    3. Enter *insert* mode by typing **i**.
+    
+    4. Delete the value within the quotation marks using the **delete** button.
+    
+    5. Enter the value to be assigned to *CONFIG\_FILE\_PATH* for this Lab, which is: *"/etc/oci/config"*. Be sure to include the quotation marks where indicated.
+    
+    6. Press **ESC** to escape *insert* mode.
+    
+    7. Repeat sub-steps **4.2.** through **4.5.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
+    
+    8. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
 
 5. In a fashion similar to that of the previous step, in this step you will open the file named **classification\_config.py** from the bulk-labeling tool contents, and then edit the variables as indicated below.
 
@@ -322,25 +322,25 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
   ![Edit classification_config.py](./images/29-3-edit-classification-config.png)
 
-    1. Open **classification\_config.py** by running the following command:
+      1. Open **classification\_config.py** by running the following command:
 
-      ```
-      <copy>vi classification_config.py</copy>
-      ```
+        ```
+        <copy>vi classification_config.py</copy>
+        ```
 
-    2. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *LABELING\_ALGORITHM =*
-    
-    3. Enter *insert* mode by typing **i**.
-    
-    4. Delete the value within the quotation marks using the **delete** button.
-    
-    5. Enter the value to be assigned to *LABELING\_ALGORITHM* for this Lab, which is: *\["FIRST\_REGEX\_MATCH"\]*. Be sure to include the quotation marks where indicated.
-    
-    6. Press **ESC** to escape *insert* mode.
-    
-    7. Repeat sub-steps **5.2.** through **5.5.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
-    
-    8. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
+      2. Use the **arrow keys** to navigate your cursor to the end of the value to the right of: *LABELING\_ALGORITHM =*
+      
+      3. Enter *insert* mode by typing **i**.
+      
+      4. Delete the value within the quotation marks using the **delete** button.
+      
+      5. Enter the value to be assigned to *LABELING\_ALGORITHM* for this Lab, which is: *\["FIRST\_REGEX\_MATCH"\]*. Be sure to include the quotation marks where indicated.
+      
+      6. Press **ESC** to escape *insert* mode.
+      
+      7. Repeat sub-steps **5.2.** through **5.5.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
+      
+      8. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
 6. Install pandas for your user on Cloud Shell, which is a prerequisite for running the bulk-labeling script:
     ```
