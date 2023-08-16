@@ -1,7 +1,6 @@
-﻿
-# Introduction
+﻿# Introduction
 
-##About this Workshop
+## About this Workshop
 
 This workshop introduces you to **Oracle Cloud Infrastructure (OCI) Data Integration** and will give you a full tour of the service in a hands-on manner.
 
@@ -11,12 +10,12 @@ You will transform and load data into Autonomous Data Warehouse, you will also o
 
 Estimated Time: 75 Minutes
 
-##What is OCI Data Integration?
+## What is OCI Data Integration?
 
 Oracle Cloud Infrastructure Data Integration is a fully managed, multi-tenant, serverless, native cloud service that helps you with common extract, load, and transform (ETL) tasks such as ingesting data from different sources, cleansing, transforming, and reshaping that data, and then efficiently loading it to target data sources on Oracle Cloud Infrastructure. 
 Data engineers will be able to easily automate ETL data flows, prepare datasets quickly for Data Science projects, and stand up new data lake Services from cloud context and hybrid connectivity.
 
-##Objectives
+## Objectives
 
 - Get a high level overview on Oracle Cloud Infrastructure and the architecture for Data Integration
 - Learn to use OCI Data Integration
@@ -24,7 +23,7 @@ Data engineers will be able to easily automate ETL data flows, prepare datasets 
 - Create a Pipeline, Pipeline task and publish tasks into an Application
 - Run the Data Loader task, Schedule and run the Pipeline task
 
-##Prerequisites
+## Prerequisites
 
 This workshop has all the prerequisites provided for the workshop. Also:
 
@@ -32,14 +31,14 @@ This workshop has all the prerequisites provided for the workshop. Also:
 - Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 - Familiarity with ETL concepts is helpful.
 
-##Login to OCI
+## Login to OCI
 
 Login to OCI using the URL below and the tenancy and username/password provided;
  
 https://console.us-ashburn-1.oraclecloud.com/
 
 
-##Learn More
+## Learn More
 
 Use the following links to get more information about OCI Data Integration:
 
@@ -47,4 +46,8 @@ Use the following links to get more information about OCI Data Integration:
 - [OCI Data Integration blogs](https://blogs.oracle.com/dataintegration/)
 
 
+## Acknowledgements
+
+* **Contributors** -  Theodora Cristea, David Allan
+* **Last Updated By/Date** - David Allan, June 2023
 
