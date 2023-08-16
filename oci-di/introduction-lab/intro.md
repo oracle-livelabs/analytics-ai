@@ -47,4 +47,8 @@ Use the following links to get more information about OCI Data Integration:
 - [OCI Data Integration blogs](https://blogs.oracle.com/dataintegration/)
 
 
+## Acknowledgements
+
+* **Contributors** -  Theodora Cristea, David Allan
+* **Last Updated By/Date** - David Allan, June 2023
 
