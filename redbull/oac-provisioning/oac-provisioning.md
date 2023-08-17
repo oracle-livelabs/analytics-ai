@@ -10,7 +10,6 @@ Estimated Lab Time: 15 minutes (provisioning time may vary)
 
 ### Objectives
 In this lab, you will:
-- Login as a federated user.
 - Create an Oracle Analytics Cloud Instance.
 
 ### Prerequisites
