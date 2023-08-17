@@ -12,7 +12,7 @@ Have a look at this introduction to SailGP by Performance Analyst Cyrille Douill
 
 [](youtube:T-DUAasfubk)
 
-_Estimated Time:_ 15 minutes
+_Estimated Time:_ 20 minutes
 
 <!--![Banner](images/banner.jpg)-->
 

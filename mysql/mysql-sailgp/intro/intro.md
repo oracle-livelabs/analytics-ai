@@ -14,7 +14,7 @@ This is your chance to see what it is to be a "Data Athlete" for SailGP and help
 
 [](youtube:Z-2HT1PGEq8)
 
-Estimated Workshop Time: 100 minutes
+Estimated Workshop Time: 150 minutes
 
 ### Objectives
 

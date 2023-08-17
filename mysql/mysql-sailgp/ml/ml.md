@@ -8,7 +8,7 @@ We are going to see this technology in action through a very important challenge
 
 In this lab, you will use **MySQL HeatWave** **AutoML** to train a machine learning model that will find the relationship between wind speed, wind angle and boat speed. Once you have the ML model, you will visualize predictions that will help you predict the best sailing direction under all conditions.
 
-_Estimated Time:_ 25 minutes
+_Estimated Time:_ 30 minutes
 
 ![Banner](images/banner.jpg)
 
@@ -485,7 +485,7 @@ CALL sys.ML_PREDICT_TABLE('SAILGP.SAILGP_SGP_WINDSPEED_AND_WINDANGLES', @boat_sp
 
     Conclusion: We can now see clear patterns in how boat speed changes as a result of wind speed and wind angle. The angles to reach the highest boat speed are different depending on the wind speed. You can ignore the predicted values above 180 degrees, as we didn't have any records in the training set with a WIND\_ANGLE of over 180 degrees.
 
-## Task 6: Extract the Boat Speed towards Our Upwind Target
+## Task 7: Extract the Boat Speed towards Our Upwind Target
 
 At this point, we can use the previous chart to pick the best angle to sail to obtain the highest boat speed for a certain wind speed. In other words, what we can now predict is the green line in this diagram, based on wind speed and wind angle.
 
@@ -511,7 +511,7 @@ Luckily, we can easily do this by converting the chart into a polar diagram.
 
    Another example, imagine the current wind speed is 25 knots. This is the green ellipse. Again, find the point that's vertically in the highest position. In this case the highest speed that we can obtain towards our target can be achieved by taking an angle of 47 degrees to the wind (shown in the popup), the total boat speed will be 34.5 knots (shown in the popup), and the expected boat speed towards the target will be around 24 knots (vertical axis).
 
-## Task 7: Draw Conclusions
+## Task 8: Draw Conclusions
 In this lab we predicted what the boat speed will be based on wind speed and wind angle. We did this by training a ML model directly with **AutoML** in **MySQL HeatWave**.
 
 We used historical measurements of wind conditions and resulting boat speed. Machine Learning was able to find the complicated relationship that exists between these variables. Something that's not easy to do for human beings!

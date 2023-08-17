@@ -12,7 +12,7 @@ Check out this video that shows how to Tack and Gybe an F50!
 
 [](youtube:KBkxhgiFCwg)
 
-_Estimated Time:_ 10 minutes
+_Estimated Time:_ 20 minutes
 
 <!--![Banner](images/banner.jpg)-->
 

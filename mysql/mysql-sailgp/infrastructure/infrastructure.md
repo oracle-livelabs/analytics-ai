@@ -4,7 +4,7 @@
 
 In this lab you will prepare the infrastructure that you need to run the rest of the workshop. We will create/configure the following elements: A Virtual Cloud Network, the MySQL Database, the HeatWave Lakehouse Cluster, a Bastion host, Oracle Analytics Cloud and a Private Access Channel.
 
-Estimated Time: 45 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -56,12 +56,12 @@ In this lab, you will:
 
   ![VCN creation](./images/vcn-complete.png)
 
-8. Click on the _**`Private Subnet-analytics_vcn_test`**_. 
+8. Click on the _**`private subnet-lakehouse_vcn`**_. 
 
   ![VCN creation](./images/select-private-subnet.png)
 
 9. Earlier we set up the subnet to use the VCN's default security list, that has default rules, which are designed to make it easy to get started with Oracle Cloud Infrastructure. 
-   Now we will customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking on  _**`Security List for Private Subnet-analytics_vcn_test`**_.
+   Now we will customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking on  _**`Security List for private subnet-lakehouse_vcn`**_.
 
   ![scurity list](./images/edit-security-list.png)
 

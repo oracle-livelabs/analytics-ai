@@ -6,7 +6,7 @@ In this lab, you will prepare the data for the **SailGP** challenge. We will upl
 
 To any application, this external table can be accessed with SQL as normal. In the later labs we will see this, by using Oracle Analytics Cloud to access the data in the Lakehouse.
 
-Estimated Time: 15 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -25,7 +25,7 @@ In this lab, you will:
 
 1. **Download** the file that contains the data that we'll use in our analysis:
 
-   <a href="..." target="\_blank">SailGP data</a>
+   <a href="./files/sailgp_sgp_strm_pivot.csv" target="\_blank">SailGP data</a>
 
    Save the file on your local machine. Make sure that the file is saved with extension `.csv`.
 
