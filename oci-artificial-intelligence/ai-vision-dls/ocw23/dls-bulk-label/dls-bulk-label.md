@@ -363,7 +363,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
       ```
       <copy>python bulk_labeling_script.py</copy>
       ```
-      > **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
+        > **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
 
       ![An error has halted the bulk-labeling process, and an error message has printed to the Cloud Shell output console.](./images/33-bulk-labeling-troubleshooting.png)
 
