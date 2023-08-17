@@ -352,9 +352,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
       ![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
 
-      ![You may use the OCI web console buttons to click out of the details page for your Data Labeling Dataset.](./images/31-console-buttons-click-out-of-dataset.png)
-
         > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
+
+      ![You may use the OCI web console buttons to click out of the details page for your Data Labeling Dataset.](./images/31-console-buttons-click-out-of-dataset.png)
 
       ![You may use the OCI web console buttons to click back into the details page for your Data Labeling Dataset.](./images/32-console-buttons-click-back-into-dataset.png)
 
