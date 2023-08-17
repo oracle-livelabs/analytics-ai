@@ -246,9 +246,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
     8. **Add Labels**: You will enter all possible labels into this field. In our case, our labels will be as shown below. Be sure that the *first letter* of each label is *uppercase*, and the *remaining letters* are *lowercase*. Take care to leave no space characters in the label names.
       
-      * *Cell*
-      * *Debris*
-      * *Stripe*
+        * *Cell*
+        * *Debris*
+        * *Stripe*
 
     9. Click **Next**.
 
@@ -346,11 +346,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>pip install --user pandas</copy>
     ```
-7. Run the script once the images have been imported:
+7. Once the images have imported, you will run the bulk-labeling script:
 
-    1. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto **b.**
+    1. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto sub-step **7.2.**
 
-      > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
+        > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
 
       ![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
 
@@ -358,30 +358,30 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
       ![You may use the OCI web console buttons to click back into the details page for your Data Labeling Dataset.](./images/32-console-buttons-click-back-into-dataset.png)
 
-    2. Run the following command on Cloud Shell to bulk-label the records in your Data Labeling dataset. This process is expected to complete after about **5 minutes**.
+    2. Run the following command on Cloud Shell to bulk-label the records in your Data Labeling Dataset. This process is expected to complete after about **5 minutes**.
       
       ```
       <copy>python bulk_labeling_script.py</copy>
       ```
-8. If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
+      > **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
 
-  ![An error has halted the bulk-labeling process, and an error message has printed to the Cloud Shell output console.](./images/33-bulk-labeling-troubleshooting.png)
+      ![An error has halted the bulk-labeling process, and an error message has printed to the Cloud Shell output console.](./images/33-bulk-labeling-troubleshooting.png)
 
-9. Use the buttons on the web console as shown in the below screenshots to check on the progress of the the bulk-labeling. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session, and halt the bulk-labeling process. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *python bulk\_labeling\_script.py* on Cloud Shell to resume the bulk-labeling process.
+8. Use the buttons on the web console as shown in the below screenshots to check on the progress of the the bulk-labeling. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session, and halt the bulk-labeling process. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *python bulk\_labeling\_script.py* on Cloud Shell to resume the bulk-labeling process.
 
   ![You may use the OCI web console buttons to click out of details page for your Data Labeling Dataset.](./images/31-console-buttons-click-out-of-dataset.png)
 
   ![Use OCI web console buttons to click back into the details page for your Data Labeling Dataset.](./images/32-console-buttons-click-back-into-dataset.png)
 
-10. Notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. In the example shown in the below screenshot, *1082* of the *1710* records have so far been labeled.
+9. Notice that the number of labeled records will increase on the dataset page similarly to as shown in the below screenshot. In the example shown in the below screenshot, *1082* of the *1710* records have so far been labeled.
 
   ![The records in your Data Labeling Dataset are partially labeled.](./images/30-labeling-progress.png)
 
-11. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that *1710/1710* records have been labeled.
+10. After the bulk-labeling process has completed, a report detailing the duration of the labeling process will print to the screen, and the dataset page will reflect that *1710/1710* records have been labeled.
 
   ![The records in your Data Labeling Dataset are fully labeled.](./images/35-all-records-labeled.png)
 
-12. Verify that your images have been labeled as intended by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the *Stripe* folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
+11. Verify that your images have been labeled as intended by clicking into one of the records, and checking that the label is as you would expect it. In the example shown in the below screenshots, we can see that this record was sourced from the *Stripe* folder, based on the image name, *Stripe/\*-998.jpg*, and was labeled correspondingly as part of the bulk-labeling process.
 
   ![Click into a record in the labeled dataset](./images/36-verify-label-click-listing.png)
 
