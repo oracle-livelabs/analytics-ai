@@ -1,5 +1,4 @@
 # Introduction
-**Total Estimated Workshop Time**: *80 minutes*
 
 ## About This Workshop
 
@@ -18,6 +17,37 @@ To render your own cell classifier in the style of Dr. Xin-hua Hu's research, yo
 1. [OCI Object Storage](https://www.oracle.com/cloud/storage/object-storage/): A highly scalable and secure storage option for data in its native format
 2. [OCI Data Labeling](https://www.oracle.com/artificial-intelligence/data-labeling/): Enables standardized and automated labeling of training data, OCI Vision
 3. [OCI AI Vision](https://www.oracle.com/artificial-intelligence/vision/): Includes image classification as a supported computer vision task
+
+This diagram illustrates the flow of the Workshop:
+
+![Diagram illustrating Workshop flow](./images/1-workshop-flow.png)
+
+**Lab 1** *\[35m\]*
+
+In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
+
+You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
+
+After your data has been labeled, you will be able to move on with training your custom AI Vision model in style.
+
+The Tasks in Lab 1 are summarized as follows:
+
+* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Group, Dynamic Group, and Policy to enable necessary permissions for this Workshop
+* **Task 2**: *\[2m\]* Create an Object Storage Bucket for training data
+* **Task 3**: *\[5m\]* Download the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
+* **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
+* **Task 5**: *\[15m\]* Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
+
+**Lab 2** *\[45m\]*
+
+In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model. You will also be able to experiment with the model serving capability of your cell classifier on your own, using an included set of test images.
+
+The Tasks in Lab 2 are summarized as follows:
+
+* **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
+* **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
+* **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
+* **Task 4** (Optional): *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 ### How can visual AI be used in your business?
 
@@ -51,6 +81,8 @@ Using a custom-trained OCI Vision model can bring significant time and cost savi
     * *Property Inspection*: Automate property inspection by analyzing images to assess property condition and identify maintenance needs.
     * *Construction Progress Monitoring*: Track construction progress by analyzing images to ensure project timelines and quality standards.
 
+**Estimated Workshop Time**: *80 minutes*
+
 ### Objectives
 
 In this Workshop, you will:
@@ -70,43 +102,6 @@ In this Workshop, you will:
 * *Not required, though beneficial*: Familiarity with a command-line interface (CLI) text editor (e.g. vi, nano, emacs)
 * *Not required, though beneficial*: Familiarity with [OCI-CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 * *Not required, though beneficial*: Familiarity with Python
-
-### Workshop Steps Overview
-
-**Total Estimated Workshop Time**: *80 minutes*
-
-This diagram illustrates the flow of the Workshop:
-
-![Diagram illustrating Workshop flow](./images/1-workshop-flow.png)
-
-#### **Lab 1**
-*\[35 minutes\]*
-
-In this Lab, you will be provided a dataset consisting of *1710* images. The images have been pre-sorted by medical professionals into folders named *Cell*, *Debris*, and *Stripe*. While images in the *Cell* folder depict intact and viable cellular structures, the *Debris* and *Stripe* folders contain images of two types of non-cell structures. The folders contain the same number of images.
-
-You will load this dataset into Object Storage, and prepare the data for model training by labeling each image. But don't worry - you won't have to label each image individually! This Lab provides a helper script as a short cut to help you efficiently label every image based on the way the images are pre-sorted.
-
-After your data has been labeled, you will be able to move on with training your custom AI Vision model in style.
-
-The Tasks in Lab 1 are summarized as follows:
-
-* **Task 1**: *\[10m\]* Create Identity and Access Management (IAM) Compartment, Group, Dynamic Group, and Policy to enable necessary permissions for this Workshop
-* **Task 2**: *\[2m\]* Create an Object Storage Bucket for training data
-* **Task 3**: *\[5m\]* Download the training data using Cloud Shell, and bulk-upload the biomedical training data to your Object Storage Bucket
-* **Task 4**: *\[3m\]* Create a Dataset in OCI Data Labeling, which imports the image data from your Object Storage Bucket as records
-* **Task 5**: *\[15m\]* Leverage a helper script to bulk-label the records in your OCI Data Labeling Dataset
-
-#### **Lab 2**
-*\[45 minutes\]*
-
-In this Lab, you will use the labeled dataset you created in Lab 1 to custom-train an OCI AI Vision model, producing your own cell classifier. After the training process, you will be able to see the determined accuracy of your model. You will also be able to experiment with the model serving capability of your cell classifier on your own, using an included set of test images.
-
-The Tasks in Lab 2 are summarized as follows:
-
-* **Task 1**: *\[2m\]* Create a logical container for your Vision models, called a Project
-* **Task 2**: *\[35m\]* Custom-train an OCI AI Vision model using the labeled records in your Data Labeling Dataset as training data
-* **Task 3**: *\[3m\]* Upload test data via the OCI web console, and witness your model serve your input in real-time, demonstrating model accuracy
-* **Task 4** (Optional): *\[5m\]* Deprovision the resources you provisioned during this Workshop
 
 [Proceed to the next section](#next).
 
