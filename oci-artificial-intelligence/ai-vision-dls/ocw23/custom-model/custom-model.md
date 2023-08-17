@@ -122,15 +122,13 @@ In this Workshop, you will:
 
       ![Select an image from the Cell folder, for example, to upload for model serving.](./images/12-vision-model-upload-cell-image.png)
     
-    3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
+    3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class. Then, click on **Response** to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
+
+        > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
       ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
 
       ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
-
-    Click on **Response**, to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
-
-      > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
 
     4. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
 
