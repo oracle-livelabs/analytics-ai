@@ -309,7 +309,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     
     6. Press **ESC** to escape *insert* mode.
     
-    7. Repeat sub-steps **4.2.** through **4.5.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
+    7. Repeat sub-steps **4.2.** through **4.6.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
     
     8. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
 
@@ -338,7 +338,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
       
       6. Press **ESC** to escape *insert* mode.
       
-      7. Repeat sub-steps **5.2.** through **5.5.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
+      7. Repeat sub-steps **5.2.** through **5.6.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
       
       8. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
@@ -350,11 +350,11 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
 
     1. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto sub-step **7.2.**
 
-        > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
-
       ![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
 
       ![You may use the OCI web console buttons to click out of the details page for your Data Labeling Dataset.](./images/31-console-buttons-click-out-of-dataset.png)
+
+        > **Note**: Until the **Status** of your Data Labeling Dataset shows as *Active*, you may use the buttons on the web console as shown in the below screenshots to check on the progress of the importing of records from Object Storage. For this lab, we recommend this method of checking progress rather than by refreshing the browser tab. Refreshing the browser tab will force a reconnect to your Cloud Shell session. If you refresh the browser tab, then before proceeding with subsequent steps, you will need to run *cd oci-data-science-ai-samples/data_labeling_examples/bulk_labeling_python* on Cloud Shell to change your directory to the directory containing the bulk-labeling script.
 
       ![You may use the OCI web console buttons to click back into the details page for your Data Labeling Dataset.](./images/32-console-buttons-click-back-into-dataset.png)
 
