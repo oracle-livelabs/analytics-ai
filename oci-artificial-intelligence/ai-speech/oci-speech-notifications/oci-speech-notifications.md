@@ -1,4 +1,4 @@
-# Lab 6: Enable notifications for OCi speech transcription jobs
+# Lab 6: Enable notifications for OCI speech transcription jobs
 
 ## Introduction
 

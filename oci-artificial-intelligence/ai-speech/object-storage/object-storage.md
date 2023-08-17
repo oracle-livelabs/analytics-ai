@@ -20,11 +20,12 @@ In this lab, you will:
 
 ## Task 1: Format audio files with proper headers
 
-OCI speech supports single-channel, 16-bit PCM WAV audio files with a 16kHz sample rate. We recommend Audacity (GUI) or ffmpeg (command line) for audio transcoding. 
-If you have audio files that aren't in the supported encoding, you can [install ffmpeg](https://ffmpeg.org/download.html) and run the following command:
+OCI speech has multiple media format support per language. The list of formats supported can be found [here](https://docs.oracle.com/en-us/iaas/Content/speech/using/speech.htm#overview__support-per-language).
+
+If you have audio files that aren't in the supported encoding or in the supported format, GUI users can use any audio editing software that can load your input file and save in any one of the supported formats. For automated or command-line scenarios, we recommend using the ffmpeg utility. You can [install ffmpeg](https://ffmpeg.org/download.html) and run the following command:
 
     <copy>
-    ffmpeg -y -i <path to input file> -map 0:a -ac 1 -ar 16000 -b:a 16000 -acodec pcm_s16le <path to output wav file>
+    ffmpeg -i <input.ext> -fflags +bitexact -acodec pcm_s16le -ac 1 -ar 16000 <output.wav>
     </copy>
 
 In some rare cases a WAV file can have correct encoding but have a different metadata header. To fix this:
@@ -33,12 +34,6 @@ In some rare cases a WAV file can have correct encoding but have a different met
     ffmpeg -i <path to input file> -c copy -fflags +bitexact -flags:v +bitexact -flags:a +bitexact <path to output wav file>
     </copy>
 
-<strong>If your audio files are not in WAV format:</strong>
-GUI users can use any audio editing software that can load your input file and save in .WAV format. For automated or command-line scenarios, we recommend using the ffmpeg utility with the following command:
-
-    <copy>
-    ffmpeg -i <input.ext> -fflags +bitexact -acodec pcm_s16le -ac 1 -ar 16000 <output.wav>
-    </copy>
 
 Alternatively, download these pre-formatted sample audio files to use in Task 2:
 
