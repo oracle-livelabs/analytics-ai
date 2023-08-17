@@ -153,44 +153,14 @@ In this lab, you will:
 
 ## Task 3: Create an Oracle Analytics Cloud instance
 
-In this task we will create an Oracle Analytics Cloud instance before we proceed to the next lab, since it may takes sometime to be provisioned, so it will be **Running** status when we will use it later in this workshop.
+In this task we will create an Oracle Analytics Cloud instance.
 
-1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon in the top right hand side of your screen. If your username is shown as:
-
-	```
-	<copy>
-    oracleidentitycloudservice/<your username>
-	</copy>
-	```
-
-	Then you are **connected** as a **Single Sign On** user.
-
-  	![Federated User](./images/check-federated-user.png)
-
-  	If your username is shown as:
-
-	```
-	<copy>
-    <your username>
-	</copy>
-	```
-
-	Then you are **signed in** as an **Oracle Cloud Infrastructure** user and you may proceed to the **Task 4.2**.
-
-  	If your user does not contain the identity provider (**oracleidentitycloudprovider**), please logout and select to authenticate using **Single Sign On**.
-
-  	![Federated User](./images/sign-in-federated.png)
-
-   	To be capable of using **Oracle Analytics Cloud** we need to be Sign-On as a **Single Sign-On** (SSO) user.
-
-   	For more information about federated users, see **[User Provisioning for Federated Users.](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm)**
-
-2. Go to main page click the _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_.
+1. Go to main page click the _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_.
 
   ![OCI Console](./images/open-oac.png)
 
 
-3. Click _**Create instance**_ and in the new window, fill out the fields as shown in the image below. Verify that the compartment is the same as the one you select for MySQL.
+2. Click _**Create instance**_ and in the new window, fill out the fields as shown in the image below. Verify that the compartment is the same as the one you select for MySQL.
 Make sure to select 2 OCPUs, the Enterprise version and the _**License Included**_ button. Finally click _**Create**_ to start the provisioning of the instance.
 
   	![Analytics Creation](./images/oac-create.png)
@@ -210,9 +180,7 @@ Make sure to select 2 OCPUs, the Enterprise version and the _**License Included*
 
   ![Analytics Creation](./images/oac-config-name.png)
 
-  	> **Note:** It takes about _**15-20 minutes**_ to create the OAC instance you can proceed to the next task in the meantime.
-
-  ![Analytics Creation](./images/oac-creating-wait.png)
+  	> **Note:** It takes anywhere between 10-35 minutes to create the OAC instance. **Please proceed to the next task in the meantime**.
 
 ## Task 4: Create a Bastion Host compute instance
 
@@ -254,7 +222,7 @@ Now, let's create the Bastion Host.
 
   Well done, you can now proceed to the next lab!
 
-## Task 4: Enable the HeatWave cluster (with Lakehouse option)
+## Task 5: Enable the HeatWave cluster (with Lakehouse option)
 
 HeatWave is an in-memory query accelerator developed for Oracle MySQL Database Service. It's a massively parallel, hybrid, columnar, query-processing engine with state-of-art algorithms for distributed query processing which provide very high performance for queries.
 
@@ -274,7 +242,7 @@ In this task, we will Enable the HeatWave option on our MySQL database.
 
    ![HeatWave Cluster enable](./images/heatwave-active.png)
 
-## Task 5: Configure Private Access Channel - OAC
+## Task 6: Configure Private Access Channel - OAC
 
 This task is necessary so that Oracle Analytics Cloud can access the data of MySQL HeatWave, that's connected to the private network.
 
