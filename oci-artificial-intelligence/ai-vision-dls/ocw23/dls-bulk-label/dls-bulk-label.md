@@ -196,7 +196,9 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
     <copy>unzip Biomedical_Image_Classification_Training_Data.zip</copy>
     ```
-5. Execute the following command to bulk-upload the training image files to your bucket. Note that if you named your Bucket with a different name than *image-classification-bucket*, then retrieve this name from your digital notepadd app and replace *image-classification-bucket* in your command before you run it.
+5. Execute the following command to bulk-upload the training image files to your bucket.
+
+    > **Note**: If you named your Bucket with a different name than *image-classification-bucket*, then retrieve this name from your digital notepadd app and replace *image-classification-bucket* in your command before you run it.
     
     ```
     <copy>oci os object bulk-upload --bucket-name image-classification-bucket --src-dir ~/Biomedical_Image_Classification_Training_Data --content-type 'image/jpeg'</copy>
@@ -309,7 +311,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     
     6. Press **ESC** to escape *insert* mode.
     
-    7. Repeat sub-steps **4.2.** through **4.6.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
+    7. Repeat steps **4.2.** through **4.6.**, for the remaining variables (*REGION\_IDENTIFIER* and *DATASET\_ID*) and their respective values, as indicated above.
     
     8. Save your edits and exit the vi editor by typing **:wq** (*write* followed by *quit*), then pressing **Enter**.
 
@@ -338,7 +340,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
       
       6. Press **ESC** to escape *insert* mode.
       
-      7. Repeat sub-steps **5.2.** through **5.6.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
+      7. Repeat steps **5.2.** through **5.6.**, for the *LABELS* variable and its respective value: *\["Cell", "Debris", "Stripe"\]*
       
       8. Save your edits and exit the vi editor by typing **:wq**, then pressing **Enter**.
 
@@ -348,7 +350,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
     ```
 7. Once the images have imported, you will run the bulk-labeling script:
 
-    1. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto sub-step **7.2.**
+    1. Check whether your page appears similar to the below screenshot, with the **Status** of your Data Labeling Dataset showing as *Active*, and the value next to **Labeled**, appearing as *0/1710*, indicating that while *1710* images have been imported as records, none (*0*) of them have been labeled. You can track progress by clicking **Dataset list** and then clicking your Dataset listing to return to this page. Once you have confirmed that your page appears similar, move onto step **7.2.**
 
       ![All records have been imported into your Data Labeling Dataset.](./images/29-1-records-imported.png)
 
@@ -363,7 +365,7 @@ Before you start using OCI Data Labeling, you or your tenancy administrator shou
       ```
       <copy>python bulk_labeling_script.py</copy>
       ```
-        > **Note**: If you notice that the bulk-labeling process halts or fails out, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
+        > **Note**: If you notice that the bulk-labeling process stalls or produces an error message, as shown in the below screenshot, simply run *python bulk\_labeling\_script.py* again on Cloud Shell to resume the bulk-labeling process.
 
       ![An error has halted the bulk-labeling process, and an error message has printed to the Cloud Shell output console.](./images/33-bulk-labeling-troubleshooting.png)
 
