@@ -4,7 +4,7 @@
 
 In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_workflow.png)
+![lab3 Workflow](images/04_lab4_workflow.png)
 
 ***Estimated Time***: 30 minutes
 
@@ -165,34 +165,34 @@ INSERT INTO correlation_acceleration_fuel
 ## Task2: Visualize the Analysis Result in OAC
 1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_1.png)
+![lab3 Workflow](images/04_lab4_1.png)
 
 2.Select **MySQL** connection that you created.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_2.png)
+![lab3 Workflow](images/04_lab4_2.png)
 
 3.Double click table **driving_analysis_result** under MySQL database.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_3.png)
+![lab3 Workflow](images/04_lab4_3.png)
 
 4.Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_4.png)
+![lab3 Workflow](images/04_lab4_4.png)
 
 5.Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_5.png)
+![lab3 Workflow](images/04_lab4_5.png)
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_6.png)
+![lab3 Workflow](images/04_lab4_6.png)
 
 6.After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_7.png)
+![lab3 Workflow](images/04_lab4_7.png)
 
 7.On the workbook page select **Table** visualization. Drag&Drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag&Drop **Driver gender** into **Color**.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_8.png)
+![lab3 Workflow](images/04_lab4_8.png)
 
 8.Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
 
-![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_9.png)
+![lab3 Workflow](images/04_lab4_9.png)

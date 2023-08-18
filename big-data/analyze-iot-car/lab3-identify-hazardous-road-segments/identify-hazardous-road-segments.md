@@ -6,7 +6,7 @@ In this lab, you'll learn to set up a Flink task for real-time processing. The f
 
 The system relies on two primary data sources: driving information sourced from Kafka and records of dangerous road locations from MySQL. Within Flink, these datasets are merged, filtering out any incomplete or irrelevant entries, to produce the desired results.
 
-![lab2 Workflow](../workshops/freetier/images/02_lab2_workflow.pngimages/02_lab2_workflow.png)
+![lab2 Workflow](images/03_lab3_workflow.png)
 
 ***Estimated Time***: 30 minutes
 
@@ -169,19 +169,19 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 ## Task2: Visualize data in OAC
 1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
- ![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_1.png)
+ ![lab2 Workflow](images/03_lab3_1.png)
  
 2.Select **MySQL** connection that you created.
 
- ![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_2.png)
+ ![lab2 Workflow](images/03_lab3_2.png)
 
 3.Double click table **dangerous_road_alert** under MySQL database. 
 
- ![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_3.png)
+ ![lab2 Workflow](images/03_lab3_3.png)
 
 4.Click **dangerous_road_alert** tab to set all the columns as attribute.
 
- ![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_4.png)
+ ![lab2 Workflow](images/03_lab3_4.png)
 
 5.You can change column name.
 
@@ -189,26 +189,26 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 
 7.Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_5.png)
+![lab2 Workflow](images/03_lab3_5.png)
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_6.png)
+![lab2 Workflow](images/03_lab3_6.png)
 
 8.After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_7.png)
+![lab2 Workflow](images/03_lab3_7.png)
 
 9.On the workbook page select **Table visualization**.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_8.png)
+![lab2 Workflow](images/03_lab3_8.png)
 
 10.Drag&Drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_9.png)
+![lab2 Workflow](images/03_lab3_9.png)
 
 11.Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_10.png)
+![lab2 Workflow](images/03_lab3_10.png)
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_11.png)
+![lab2 Workflow](images/03_lab3_11.png)
 
 Now you can close Flink Client.

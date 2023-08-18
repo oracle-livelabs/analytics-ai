@@ -5,10 +5,6 @@ The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** wi
 ## Access the Labs Using Our Web Interface
 
 **[Click here](https://oracle-livelabs.github.io/analytics-ai/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
-This is the lab1 workflow:
-![lab1 Workflow](images/01_lab1_workflow.png)
-This is the lab2 workfow:
-![lab2 Workflow](images/02_lab2_workflow.png)
 
 ## Access the Labs on the Repo
 
