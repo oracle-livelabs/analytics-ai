@@ -5,7 +5,7 @@
 In order to use the OCI (Oracle Cloud Infrastructure) speech service you must upload formatted audio files to an OCI
 object storage bucket
 
-***Estimated Lab Time***: 15 minutes
+***Estimated Lab Time***: 5 minutes
 
 ### Objectives
 
