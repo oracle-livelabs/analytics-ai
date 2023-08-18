@@ -1,6 +1,6 @@
 # Welcome to Analyze IoT Car using Flink/Kafka/Spark in Big Data Services Hands-on Workshop!
 
-The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data. 
+The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data.
 
 ## Access the Labs Using Our Web Interface
 

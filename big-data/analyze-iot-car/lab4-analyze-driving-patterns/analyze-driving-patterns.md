@@ -1,10 +1,198 @@
-# Analyze Driving Patterns
+# Lab 4: Analysis of driving behavior
 
 ## Introduction
 
-Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. You can make the nodes in the cluster available using one of the following methods:
+In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving.
 
-* You can map the private IP addresses of selected nodes in the cluster to public IP addresses to make them publicly available on the internet. _**We will use this method in this lab which assumes that making the IP address public is an acceptable security risk.**_
-* You can set up an SSH tunnel using a bastion host. Only the bastion host is exposed to the public internet. A bastion host provides access to the cluster's private network from the public internet. See [Bastion Hosts Protected Access for Virtual Cloud Networks](https://www.oracle.com/a/ocom/docs/bastion-hosts.pdf).
-* You can also use VPN Connect which provides a site-to-site Internet Protocol Security (IPSec) VPN between your on-premises network and your virtual cloud network (VCN). IPSec VPN is a popular set of protocols used to ensure secure and private communications over IP networks. See [VPN Connect](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm).
-* Finally, you can use OCI FastConnect to access services in OCI without going over the public internet. With FastConnect, the traffic goes over your private physical connection. [See FastConnect](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud/user&id=oci-fastconnect).
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_workflow.png)
+
+***Estimated Time***: 30 minutes
+
+### Objectives
+
+- In Spark SQL, create temporary view to access data from MySQL.
+- Execute SQL statement to analyze driving operations in Sark SQL. 
+- Create dashboard in OAC to visualize analysis result.
+
+### Prerequisites
+This lab assumes that you have successfully completed the following labs in the Contents menu:
+- Lab 1: Setup Your Environment
+- Lab 2: Monitoring the truck real-time driving
+- Lab 3: Warning of dangerous road sections
+
+## Task 1:Execute Spark SQL Script
+1.Log into your BDS node un0. Replace the parameters in source/sql/spark-sql.sql file with actual values.
+2.Execute Spark SQL script with the following command. You can also execute Spark-SQL one by one.
+   ```
+   sudo su - hdfs
+cd /usr/odh/2.0.4/spark/bin
+./spark-sql -f source/sql/spark-sql.sql
+   ```
+   
+**Source Code Explanation**
+The following part in spark-sql.sql create temporary view to access data from MySQL.
+   ```
+   CREATE TEMPORARY VIEW car_info
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+    url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
+    dbtable "livelab_db.car_info",
+    user '{mysql_username}',
+    password '{mysql_password}',
+    driver 'com.mysql.cj.jdbc.Driver'
+);
+
+CREATE TEMPORARY VIEW dangerous_road
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+    url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
+    dbtable "livelab_db.dangerous_road",
+    user '{mysql_username}',
+    password '{mysql_password}',
+    driver 'com.mysql.cj.jdbc.Driver'
+);
+
+CREATE TEMPORARY VIEW driver_info
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+    url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
+    dbtable "livelab_db.driver_info",
+    user '{mysql_username}',
+    password '{mysql_password}',
+    driver 'com.mysql.cj.jdbc.Driver'
+);
+
+CREATE TEMPORARY VIEW driving_analysis_result
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+    url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
+    dbtable "livelab_db.driving_analysis_result",
+    user '{mysql_username}',
+    password '{mysql_password}',
+    driver 'com.mysql.cj.jdbc.Driver'
+);
+
+CREATE TEMPORARY VIEW correlation_acceleration_fuel
+USING org.apache.spark.sql.jdbc
+OPTIONS (
+    url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
+    dbtable "livelab_db.correlation_acceleration_fuel",
+    user '{mysql_username}',
+    password '{mysql.password}',
+    driver 'com.mysql.cj.jdbc.Driver'
+);
+
+   ```
+The following part find out drivers who exhibit anomalous driving behavior, such as sudden changes in speed or braking, then write the result into MySQL.
+
+   ```
+  --1,Which drivers exhibit anomalous driving behavior, such as sudden changes in speed or braking?
+WITH anomalous_driving_behavior AS (
+ SELECT vehicle_id, COUNT(1) AS num_anomalies FROM 
+ ( 
+ SELECT vehicle_id, 
+ LAG(car_speed) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_speed, 
+ car_speed, 
+ LAG(brake_status) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_brake_status, 
+ brake_status FROM livelab_db.car_iot_details ) AS driving_data 
+ WHERE ABS(car_speed - prev_speed) > 10 OR (brake_status = 1 AND prev_brake_status = 0) 
+ GROUP BY vehicle_id HAVING COUNT(*) > 10 
+ ORDER BY num_anomalies DESC
+ ),
+
+--2,What is the average speed of each driver over the last month?
+average_speed_monthly AS (
+ SELECT driver.driver_id, AVG(iot.car_speed) AS avg_speed 
+ FROM livelab_db.car_iot_details iot 
+ JOIN car_info car ON car.vehicle_id = iot.vehicle_id
+ JOIN driver_info driver ON car.driver_id = driver.driver_id
+ GROUP BY driver.driver_id
+  ),
+
+--3,Which vehicles have the highest and lowest fuel consumption?
+fuel_consumption_monthly AS (
+ SELECT vehicle_id, 
+ SUM(fuel_consumption) AS total_fuel_consumption 
+ FROM 
+ ( 
+ SELECT 
+ vehicle_id, 
+ (MAX(fuel_level) - MIN(fuel_level)) AS fuel_consumption 
+ FROM livelab_db.car_iot_details 
+ GROUP BY vehicle_id, to_date(time_gps)
+ ) AS fuel_consumption_table 
+ GROUP BY vehicle_id 
+ ORDER BY total_fuel_consumption ASC
+  )
+ 
+--join driver info and car info
+INSERT INTO driving_analysis_result
+SELECT
+car.vehicle_id,
+car.car_brand,
+car.productive_time,
+car.buy_time,
+car.car_type,
+car.capacity,
+car.car_desc,
+driver.driver_id,
+driver.driver_name,
+driver.birthday,
+driver.gender,
+driver.driving_license_id,
+driver.driver_address,
+driver.driver_desc,
+adb.num_anomalies,
+asm.avg_speed,
+fsm.total_fuel_consumption
+FROM car_info car
+JOIN driver_info driver ON car.driver_id = driver.driver_id
+JOIN anomalous_driving_behavior adb ON car.vehicle_id = adb.vehicle_id
+JOIN average_speed_monthly asm ON car.driver_id = asm.driver_id
+JOIN fuel_consumption_monthly fsm ON car.vehicle_id = fsm.vehicle_id;
+
+
+--4,Is there a correlation between acceleration and fuel consumption?
+INSERT INTO correlation_acceleration_fuel
+ SELECT 
+ AVG(fuel_level) AS avg_fuel_consumption, 
+ AVG(ABS(accel_speed)) AS avg_acceleration 
+ FROM livelab_db.car_iot_details;
+
+
+   ```
+   
+## Task2: Visualize the Analysis Result in OAC
+1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_1.png)
+
+2.Select **MySQL** connection that you created.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_2.png)
+
+3.Double click table **driving_analysis_result** under MySQL database.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_3.png)
+
+4.Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_4.png)
+
+5.Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_5.png)
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_6.png)
+
+6.After saving dataset, you can create a workbook. Click **Create Workbook**.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_7.png)
+
+7.On the workbook page select **Table** visualization. Drag&Drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag&Drop **Driver gender** into **Color**.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_8.png)
+
+8.Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
+
+![lab3 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/03_lab3_9.png)
