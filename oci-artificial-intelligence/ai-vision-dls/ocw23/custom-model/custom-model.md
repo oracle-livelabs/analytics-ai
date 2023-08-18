@@ -122,15 +122,21 @@ In this Workshop, you will:
 
       ![Select an image from the Cell folder, for example, to upload for model serving.](./images/12-vision-model-upload-cell-image.png)
     
-    3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class. Then, click on **Response** to see how the analysis appears when represented as JSON, which makes downstream processing easy as JSON is an industry-standard data format.
-
-        > **Note**: Batch processing of interence data is supported via OCI-CLI, REST API, and SDK.
+    3. Examine confidence measurements under the **Results** pane. These scores reveal how confident your model is that the test image belongs to a given class.
 
       ![Analyzing the confidence measures in the results pane](./images/13-vision-model-analyze-cell-image-confidence-scores.png)
 
-      ![Analyzing the JSON response in the results pane](./images/14-vision-model-analyze-cell-image-json.png)
+    4. Click on **Request** to see a preview of how the JSON-formatted API request for analyzing your image may appear. As you have conducted model serving via the web console, you have invoked a synchronous API request. Furthermore, as you have uploaded the image as a local file, the API request has sourced your image as inline data, as opposed to sourcing the image from an Object Storage Bucket.
 
-    4. Try analyzing other images in the test dataset by repeating steps **b.** and **c.**
+        > **Note**: Synchronous and asynchronous (batch) model serving for image analysis are supported via OCI-CLI, REST API, and SDK.
+
+      ![Analyzing the JSON request in the results pane](./images/14-1-vision-model-analyze-cell-image-json-request.png)
+
+    5. Click on **Response** to see how the JSON-formatted analysis appears. The industry-standard JSON format makes downstream processing easy.
+
+      ![Analyzing the JSON response in the results pane](./images/14-2-vision-model-analyze-cell-image-json-response.png)
+
+    6. Try analyzing other images in the test dataset by repeating steps **3.2.** through **3.5.**
 
       ![Analyze an image from the Debris folder.](./images/15-vision-model-analyze-image-debris-example.png)
 
