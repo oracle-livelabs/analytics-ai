@@ -13,24 +13,24 @@ Get Started with Oracle Big Data Service (non-HA)
 ]()
 
 2.  Add Kafka and Flink services. Log into Ambari with the following URL. Enter username and password, then click SIGN IN.
-   ![](images\01_lab1_task1_step2.png)
+   ![](images/01_lab1_task1_step2.png)
 3.  Click … icon beside Services, then select Add Service.
-![](images\01_lab1_task1_step3.png)
+![](images/01_lab1_task1_step3.png)
 4.  Check Kafka and Flink, then click Next
-![](images\01_lab1_task1_step4.png)
+![](images/01_lab1_task1_step4.png)
 5.  Click Next to accept all the default settings.
 6.  Click Deploy.
-![](images\01_lab1_task1_step6.png)
+![](images/01_lab1_task1_step6.png)
 7.  After installation, click NEXT.
-![](images\01_lab1_task1_step7.png)
+![](images/01_lab1_task1_step7.png)
 8.  Click COMPLETE.
-![](images\01_lab1_task1_step8.png)
+![](images/01_lab1_task1_step8.png)
 9.  Repeat the following steps to restart all affected components. Click RESTART, select Restart All Affected.
-![](images\01_lab1_task1_step9.png)
+![](images/01_lab1_task1_step9.png)
 10. Click CONFIRM RESTART ALL. 
-![](images\01_lab1_task1_step10.png)
+![](images/01_lab1_task1_step10.png)
 11. After restart, click OK.
-![](images\01_lab1_task1_step11.png)
+![](images/01_lab1_task1_step11.png)
 12. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
     Log into BDS node(un0). Download lib.zip to any directory (eg. /tmp/upload，you can change it wherever you want). Unzip it.
     Execute the following command to copy jar to all the BDS nodes.
