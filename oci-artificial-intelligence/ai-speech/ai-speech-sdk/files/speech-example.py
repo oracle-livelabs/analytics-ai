@@ -4,17 +4,17 @@ from oci.config import from_file
 ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
 
 # Give your job related details in these fields
-SAMPLE_DISPLAY_NAME = "test" # Name of the job
-SAMPLE_COMPARTMENT_OCID = "ocid1.tenancy.oc1..aaaaaaaan65vb32rkb65hoc64i7v3gy35usvkcphfuhcde6ze7izqtcfmwia" # Compartment OCID containing the bucket with audio files
-SAMPLE_DESCRIPTION = "" # Optional can be left blank
-SAMPLE_NAMESPACE = "axv9hslyzgrl" # Namespace of the bucket
-SAMPLE_BUCKET = "test_bucket" # Bucket name containing audio files
+SAMPLE_DISPLAY_NAME = "<job_name>" # Name of the job
+SAMPLE_COMPARTMENT_OCID = "<compartment_ocid>" # Compartment OCID containing the bucket with audio files
+SAMPLE_DESCRIPTION = "<job_description>" # Optional can be left blank
+SAMPLE_NAMESPACE = "<sample_namespace>" # Namespace of the bucket
+SAMPLE_BUCKET = "<bucket_name>" # Bucket name containing audio files
 JOB_PREFIX = "Python_SDK_DEMO"
 LANGUAGE_CODE = "en-US"
-FILE_NAMES = ["oracle-advertising.wav"] # List of audio files present in the bucket
-NEW_COMPARTMENT_OCID = "ocid1.tenancy.oc1..aaaaaaaan65vb32rkb65hoc64i7v3gy35usvkcphfuhcde6ze7izqtcfmwia" # Destination Compartmnet OCID
-NEW_DISPLAY_NAME = "test-new" # New Job Name in the Destination compartment
-NEW_DESCRIPTION = "" # Optional can be left blank
+FILE_NAMES = ["<file1>", "<file2>"] # List of audio files present in the bucket
+NEW_COMPARTMENT_OCID = "<new_compartment>" # Destination Compartmnet OCID
+NEW_DISPLAY_NAME = "<new_name>" # New Job Name in the Destination compartment
+NEW_DESCRIPTION = "<new_description>" # Optional can be left blank
 SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
