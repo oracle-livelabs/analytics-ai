@@ -4,35 +4,40 @@
 
 In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving.
 
-![lab3 Workflow](images/04_lab4_workflow.png)
+![lab4 Workflow](images/04_lab4_workflow.png "workflow")
 
 ***Estimated Time***: 30 minutes
 
 ### Objectives
 
 - In Spark SQL, create temporary view to access data from MySQL.
-- Execute SQL statement to analyze driving operations in Sark SQL. 
+- Execute SQL statement to analyze driving operations in Sark SQL.
 - Create dashboard in OAC to visualize analysis result.
 
 ### Prerequisites
+
 This lab assumes that you have successfully completed the following labs in the Contents menu:
+
 - Lab 1: Setup Your Environment
 - Lab 2: Monitoring the truck real-time driving
 - Lab 3: Warning of dangerous road sections
 
 ## Task 1:Execute Spark SQL Script
+
 1.Log into your BDS node un0. Replace the parameters in source/sql/spark-sql.sql file with actual values.
 2.Execute Spark SQL script with the following command. You can also execute Spark-SQL one by one.
-   ```
-   sudo su - hdfs
+
+```
+sudo su - hdfs
 cd /usr/odh/2.0.4/spark/bin
 ./spark-sql -f source/sql/spark-sql.sql
-   ```
-   
+```
+
 **Source Code Explanation**
 The following part in spark-sql.sql create temporary view to access data from MySQL.
-   ```
-   CREATE TEMPORARY VIEW car_info
+
+```
+CREATE TEMPORARY VIEW car_info
 USING org.apache.spark.sql.jdbc
 OPTIONS (
     url "jdbc:mysql://{mysql_host}:{mysql_port}/livelab_db",
@@ -81,12 +86,12 @@ OPTIONS (
     password '{mysql.password}',
     driver 'com.mysql.cj.jdbc.Driver'
 );
+```
 
-   ```
 The following part find out drivers who exhibit anomalous driving behavior, such as sudden changes in speed or braking, then write the result into MySQL.
 
-   ```
-  --1,Which drivers exhibit anomalous driving behavior, such as sudden changes in speed or braking?
+```
+--1,Which drivers exhibit anomalous driving behavior, such as sudden changes in speed or braking?
 WITH anomalous_driving_behavior AS (
  SELECT vehicle_id, COUNT(1) AS num_anomalies FROM 
  ( 
@@ -151,48 +156,46 @@ JOIN anomalous_driving_behavior adb ON car.vehicle_id = adb.vehicle_id
 JOIN average_speed_monthly asm ON car.driver_id = asm.driver_id
 JOIN fuel_consumption_monthly fsm ON car.vehicle_id = fsm.vehicle_id;
 
-
 --4,Is there a correlation between acceleration and fuel consumption?
 INSERT INTO correlation_acceleration_fuel
  SELECT 
  AVG(fuel_level) AS avg_fuel_consumption, 
  AVG(ABS(accel_speed)) AS avg_acceleration 
  FROM livelab_db.car_iot_details;
+```
 
-
-   ```
-   
 ## Task2: Visualize the Analysis Result in OAC
+
 1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
-![lab3 Workflow](images/04_lab4_1.png)
+![lab4 OAC Homepage](images/04_lab4_1.png "homepage")
 
 2.Select **MySQL** connection that you created.
 
-![lab3 Workflow](images/04_lab4_2.png)
+![lab4 OAC Connection](images/04_lab4_2.png "connection")
 
 3.Double click table **driving_analysis_result** under MySQL database.
 
-![lab3 Workflow](images/04_lab4_3.png)
+![lab4 Dataset](images/04_lab4_3.png "dataset")
 
 4.Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
 
-![lab3 Workflow](images/04_lab4_4.png)
+![lab4 Dataset Editor](images/04_lab4_4.png "dataset editor")
 
 5.Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
 
-![lab3 Workflow](images/04_lab4_5.png)
+![lab4 Save Dataset](images/04_lab4_5.png "save dataset")
 
-![lab3 Workflow](images/04_lab4_6.png)
+![lab4 Name Dataset](images/04_lab4_6.png "name dataset")
 
 6.After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab3 Workflow](images/04_lab4_7.png)
+![lab4 Create Workflow](images/04_lab4_7.png "create workbook")
 
 7.On the workbook page select **Table** visualization. Drag&Drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag&Drop **Driver gender** into **Color**.
 
-![lab3 Workflow](images/04_lab4_8.png)
+![lab4 Create Viz](images/04_lab4_8.png "create viz")
 
 8.Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
 
-![lab3 Workflow](images/04_lab4_9.png)
+![lab4 Save Viz](images/04_lab4_9.png "save workbook")

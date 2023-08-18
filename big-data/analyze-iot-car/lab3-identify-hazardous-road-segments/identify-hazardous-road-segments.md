@@ -6,27 +6,31 @@ In this lab, you'll learn to set up a Flink task for real-time processing. The f
 
 The system relies on two primary data sources: driving information sourced from Kafka and records of dangerous road locations from MySQL. Within Flink, these datasets are merged, filtering out any incomplete or irrelevant entries, to produce the desired results.
 
-![lab2 Workflow](images/03_lab3_workflow.png)
+![lab3 Workflow](images/03_lab3_workflow.png "workflow")
 
 ***Estimated Time***: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
+
 - In Spark SQL, create temporary view to access data from MySQL.
 - Execute SQL statement to analyze driving operations in Sark SQL.
 - Create dashboard in OAC to visualize analysis result.
 
 ### Prerequisites
+
 This lab assumes that you have successfully completed the following labs in the Contents menu:
+
 - Lab 1: Setup Your Environment
 - Lab 2: Monitoring the truck real-time driving
 
 ## Task 1:Start Flink Session and Client
+
 1.In the Flink Client, execute the following command to read data from MySQL table. Note: Replace the parameters before execution.
 
-   ```
-   CREATE TABLE car_info (
+```
+CREATE TABLE car_info (
 `vehicle_id` INT,
 `car_brand` STRING,
 `productive_time` DATE,
@@ -79,7 +83,6 @@ CREATE TABLE dangerous_road (
    'table-name' = 'dangerous_road'
 );
 
-
 CREATE TABLE dangerous_road_alert (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
@@ -113,102 +116,105 @@ CREATE TABLE dangerous_road_alert (
    'password' = '{mysql_password}',
    'table-name' = 'dangerous_road_alert'
 );
-   ```
+```
+
 2.Execute the following command to determine whether the current location is a dangerous road section,then insert alert into MySQL.
 
-   ```
-   CREATE VIEW alert_view AS
+```
+CREATE VIEW alert_view AS
 SELECT a.vehicle_id,
-	   a.time_gps,
-	   a.car_speed,
+ 	   a.time_gps,
+ 	   a.car_speed,
        b.road_id,
-	   b.longitude,
-	   b.latitude,
-	   b.road_class,
-	   b.road_type,
-	   b.junction_control,
-	   b.junction_detail,
-	   b.weather_condition
+ 	   b.longitude,
+ 	   b.latitude,
+ 	   b.road_class,
+ 	   b.road_type,
+ 	   b.junction_control,
+ 	   b.junction_detail,
+ 	   b.weather_condition
 FROM car_iot_details_view a, dangerous_road b
 WHERE (6370000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS( a.latitude) - RADIANS( b.latitude)) / 2), 2) + COS(RADIANS( a.latitude)) * COS(RADIANS( b.latitude)) * POWER(SIN((RADIANS(a.longitude) - RADIANS(b.longitude)) / 2), 2)))) <= 2000;
 
 INSERT INTO dangerous_road_alert 
 SELECT a.vehicle_id,
-	   a.time_gps,
-	   a.car_speed,
+ 	   a.time_gps,
+ 	   a.car_speed,
        a.road_id,
-	   a.longitude,
-	   a.latitude,
-	   a.road_class,
-	   a.road_type,
-	   a.junction_control,
-	   a.junction_detail,
-	   a.weather_condition,
-	   b.car_brand,
-	   b.productive_time,
-	   b.buy_time,
-	   b.car_type,
-	   b.capacity,
-	   b.car_desc,
-	   c.driver_id,
-	   c.driver_name,
-	   c.birthday,
-	   c.gender,
-	   c.driving_license_id,
-	   c.driver_address,
-	   c.driver_desc
+ 	   a.longitude,
+ 	   a.latitude,
+ 	   a.road_class,
+ 	   a.road_type,
+ 	   a.junction_control,
+ 	   a.junction_detail,
+ 	   a.weather_condition,
+ 	   b.car_brand,
+ 	   b.productive_time,
+ 	   b.buy_time,
+ 	   b.car_type,
+ 	   b.capacity,
+ 	   b.car_desc,
+ 	   c.driver_id,
+ 	   c.driver_name,
+ 	   c.birthday,
+ 	   c.gender,
+ 	   c.driving_license_id,
+ 	   c.driver_address,
+ 	   c.driver_desc
 FROM alert_view a JOIN car_info b ON a.vehicle_id=b.vehicle_id
 JOIN driver_info c ON c.driver_id=b.driver_id;
+```
 
-   ```
 3.You can execute the following command in MySQL to check data is written into MySQL database..
 
-   ```
+```
   select * from dangerous_road_alert limit 10;
-   ```
+```
+
 ## Task2: Visualize data in OAC
+
 1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
- ![lab2 Workflow](images/03_lab3_1.png)
- 
+ ![lab3 OAC Homepage](images/03_lab3_1.png "homepage")
+
 2.Select **MySQL** connection that you created.
 
- ![lab2 Workflow](images/03_lab3_2.png)
+ ![lab3 OAC Connection](images/03_lab3_2.png "connection")
 
-3.Double click table **dangerous_road_alert** under MySQL database. 
+3.Double click table **dangerous_road_alert** under MySQL database.
 
- ![lab2 Workflow](images/03_lab3_3.png)
+![lab3 Dataset](images/03_lab3_3.png "dataset")
 
 4.Click **dangerous_road_alert** tab to set all the columns as attribute.
 
- ![lab2 Workflow](images/03_lab3_4.png)
+![lab3 Dataset Editor](images/03_lab3_4.png "ataset editor")
 
 5.You can change column name.
 
-6.Set **Data Access** to **Live** as the previous step. 
+6.Set **Data Access** to **Live** as the previous step.
 
 7.Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
 
-![lab2 Workflow](images/03_lab3_5.png)
+![lab3 Save Dataset](images/03_lab3_5.png "save dataset")
 
-![lab2 Workflow](images/03_lab3_6.png)
+![lab3 Name Dataset](images/03_lab3_6.png "name dataset")
 
 8.After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab2 Workflow](images/03_lab3_7.png)
+![lab3 Create Workbook](images/03_lab3_7.png "create workbook")
 
 9.On the workbook page select **Table visualization**.
 
-![lab2 Workflow](images/03_lab3_8.png)
+![lab3 Select Viz](images/03_lab3_8.png "select viz")
 
 10.Drag&Drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
 
-![lab2 Workflow](images/03_lab3_9.png)
+![lab3 Set Viz](images/03_lab3_9.png "set viz")
 
 11.Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
 
-![lab2 Workflow](images/03_lab3_10.png)
+![lab3 Save Workbook](images/03_lab3_10.png "save workbook")
 
-![lab2 Workflow](images/03_lab3_11.png)
+![lab3 Name Workbook](images/03_lab3_11.png "name workbook")
 
 Now you can close Flink Client.
