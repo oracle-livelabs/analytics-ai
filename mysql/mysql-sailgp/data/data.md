@@ -25,7 +25,7 @@ In this lab, you will:
 
 1. **Download** the file that contains the data that we'll use in our analysis:
 
-   <a href="./files/sailgp_sgp_strm_pivot.csv" target="\_blank">SailGP data</a>
+   **Download SailGP data file [sailgp\_sgp\_strm\_pivot.csv](files/sailgp_sgp_strm_pivot.csv)**
 
    Save the file on your local machine. Make sure that the file is saved with extension `.csv`.
 

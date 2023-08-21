@@ -266,7 +266,9 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
    It should look like this:
 
 	 ```
+   <copy>
    (TIME_FOILING / TIME_SAILED)*100
+   </copy>
    ```
 
    ![pic2](images/foiling-percentage.png)

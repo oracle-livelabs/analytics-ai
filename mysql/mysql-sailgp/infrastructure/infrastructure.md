@@ -165,18 +165,9 @@ Make sure to select 2 OCPUs, the Enterprise version and the _**License Included*
 
   	![Analytics Creation](./images/oac-create.png)
 
-  	```
-    Name: <copy>SailGPMySQL</copy>
-  	```
-  	```
-    OCPU: 2
-  	```	
-  	```
-    License Type: License Included
-  	```
-  	```
-    Edition: Enterprise Edition
-  	```
+    - Name: SailGPMySQL
+    - License Type: License Included
+    - Edition: Enterprise Edition
 
   ![Analytics Creation](./images/oac-config-name.png)
 
