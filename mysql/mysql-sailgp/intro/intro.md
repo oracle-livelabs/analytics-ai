@@ -4,13 +4,15 @@
 
 ## About this Workshop
 
-Welcome to this exciting Hands-On-Lab where sport merges with technological innovation! You'll work with the latest **MySQL HeatWave Lakehouse** features to dive into the secrets behind winning in **SailGP**!
+This exciting lab merges sports with technological innovation. You'll work with the latest **MySQL HeatWave Lakehouse** features to dive into the secrets behind winning in **SailGP**!
 
-**MySQL HeatWave Lakehouse**'s power lies in the ability to query and analyze hundreds of terabytes of data directly from Object Storage. 
+**MySQL HeatWave Lakehouse**'s power lies in its ability to query hundreds of terabytes of data directly from object storage—as fast as querying data inside the database.
 
-**SailGP** offers you the perfect playground to try out the Lakehouse technology. The high tech boats contain over 800 IoT sensors that provide more than 12,000 data points, and the teams are continuously looking for data insights to improve their chances of winning.
+**SailGP** offers you the perfect playground to try out HeatWave Lakehouse. The high speed, high tech boats contain over 800 IoT sensors that provide more than 12,000 data points, and the teams are continuously looking for insights into that data to improve their chances of winning.
 
-This is your chance to see what it is to be a "Data Athlete" for SailGP and help the sailing teams increase their performance. Along the way, you will learn **how to operate a MySQL HeatWave Lakehouse** and techniques like **data visualization** and **machine learning**!
+This is your chance to see what it is to be a "Data Athlete" for SailGP and help the sailing teams increase their performance. Along the way, you will learn to use techniques like data visualization and machine learning!
+
+Off to the races!
 
 [](youtube:Z-2HT1PGEq8)
 
@@ -18,11 +20,11 @@ Estimated Workshop Time: 150 minutes
 
 ### Objectives
 
-In this workshop, you will learn how to:
-- Deploy the required components on Oracle Cloud Infrastructure, including the MySQL Database Service, HeatWave, Oracle Analytics Cloud and other necessary components.
-- Load data directly into object storage.
-- Create insights from your Lakehouse data by creating intuitive visualizations (using Oracle Analytics Cloud).
-- Train and use Machine Learning models.
+Here’s what you’ll learn:
+- How to configure the infrastructure, including MySQL HeatWave Lakehouse and other components.
+- How to load data directly into object storage and configure it in the Lakehouse.
+- How to create insights from your Lakehouse data by creating intuitive visualizations using Oracle Analytics Cloud.
+- How to build, train, and use machine learning models with HeatWave AutoML.
 
 ### Prerequisites
 

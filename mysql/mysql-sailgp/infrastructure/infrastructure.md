@@ -27,7 +27,7 @@ In this lab, you will:
 
 1. Log-in to your OCI tenancy. Once you have logged-in, select _**Networking >> Virtual Cloud Networks**_ from the _**menu icon**_ on the top left corner.
 
-  ![OCI Dashboard](./images/open-vcn.png)
+  ![Access Virtual Cloud Networks](./images/open-vcn.png)
 
 2. From the Compartment picker on the bottom left side, select your compartment from the list.
 
