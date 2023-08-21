@@ -2,7 +2,7 @@
 
 The labs in this workshop walk you through all the steps to Analyze IoT Car using Flink/Kafka/Spark in **Oracle Big Data Service (BDS)**.
 
-Estimated Workshop Time: 2 hours
+Estimated Workshop Time: 3 hours
 
 ## What is Analyze IoT Car using Flink/Kafka/Spark in Big Data Service Workshop?
 
