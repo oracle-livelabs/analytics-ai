@@ -114,7 +114,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 20. Connect the **integration task** to the **END\_1** operator. The final Pipeline should look like this:
 
-  ![Completed pipeline view](images/pipeline-integrationtaskconnected.png " ")
+  ![Completed pipeline view](images/pipeline-integrationtask2connected.png " ")
 
 21. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 
