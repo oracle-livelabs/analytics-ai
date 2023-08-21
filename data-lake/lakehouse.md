@@ -4,8 +4,6 @@
 
 The Data Lake is really all of the pieces working together to ingest data in many different forms from APIs, database, file formats and locations. The catalog documents the metadata and business value of the data with classifying data with business meaning and where the data is found. Data integrations allows for ETL processes and loading of new data assets along with the OCI Data Flows to process and filter new data and store as new data assets. Then the querying of the data whether or not using SQL to pull from the data lake or other reporting tools, the data assets in the data lake can now be consumed for business reporting and analytics.
 
-Estimated Time: 15 minutes
-
 ### Objectives
 
 In this lab, you will:
@@ -18,21 +16,21 @@ In this lab, you will:
 1. Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
     ![Database](./images/Databaselisting.png " ")
-    
+
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-    ![Database Actions](./images/DBActions.png " ")
-    
+    ![Database Actions](./images/dbactionsbox.png " ")
+
 3. Click on SQL to execute the query to create the table.
 
     ![SQL](./images/SQL_queries.png " ")
-    
+
 4. You can just simply query the MOVIE GENRE table to view data, or create a view to see the additional data along with the join to the MOVIE GENRE entity.
 
     ```
     <copy>
     SELECT
-    "genreid",name,country, count("custid")
+        "genreid",name,country, count("custid")
     FROM
         ADMIN.MOVIE_GENRE,customer_contact,GENRE
         where genre_id="genreid" and "custid"=cust_id
@@ -41,9 +39,9 @@ In this lab, you will:
     </copy>
     ```
 
-5. This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
+This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
 
-    ![SQL](./images/SQL_output.png " ")
+![SQL](./images/SQL_output.png " ")
 
 ## Task 2: View of the Oracle Data Lakehouse
 
@@ -61,8 +59,8 @@ We have a database, csv and json files in our data lake but there can be all of 
     DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
     table_name => 'json_cust_sales_ext',
     file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/customersales.json',
-    column_list => 'doc varchar2(32000)',
-    field_list => 'doc char(30000)',
+    column_list => 'json_document clob',
+    field_list => 'json_document',
     format => json_object('delimiter' value '\n')
     );
     END;
@@ -77,22 +75,22 @@ We have a database, csv and json files in our data lake but there can be all of 
     </copy>
     ```
 
-5. Join the data to the existing customer data:
+4. Join the data to the existing customer data:
 
     ```
     <copy>
     select GENRE_ID,MOVIE_ID,CUSTSALES.CUST_ID,AGE,GENDER,STATE_PROVINCE
     from CUSTOMER_CONTACT, CUSTOMER_EXTENSION,
     (select CUST_ID,GENRE_ID,MOVIE_ID
-    FROM JSON_MOVIE_DATA_EXT,
-    JSON_TABLE("DOC", '$[*]' COLUMNS
+    FROM JSON_CUST_SALES_EXT,
+    JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
     "CUST_ID" number path '$.CUST_ID',
     "GENRE_ID" number path '$.GENRE_ID',
     "MOVIE_ID" number path '$.MOVIE_ID')) CUSTSALES
-    where CUSTOMER_EXTENSION.CUST_ID=CUSTSALES.CUST_ID and CUSTOMER_EXTENSION.CUST_ID=CUSTOMER_CONTACT.CUST_ID
-    and COUNTRY_CODE='US'
-    </copy>
-```
+    where CUSTOMER_EXTENSION.CUST_ID=CUSTSALES.CUST_ID and 
+    CUSTOMER_EXTENSION.CUST_ID=CUSTOMER_CONTACT.CUST_ID and COUNTRY_CODE='US'   
+    </copy>    
+    ```
 
 6. If you want to also see the initial csv file in your object storage you can just create an external table on that as well.
 
@@ -117,8 +115,9 @@ We have a database, csv and json files in our data lake but there can be all of 
     ACTUAL_PRICE NUMBER'
     );
     END;
-    </copy>
+    </copy>    
     ```
+
 
 ## Task 3: OCI Data Catalog - View of the Data Lake
 
@@ -128,7 +127,7 @@ You have updated data, added new tables and views into the database. Let's take 
 
 2. Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
 
-    ![SQL](./images/Current_Catalog.png " ")
+    ![SQL](./images/currentcatalog.png " ")
 
 4. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 
@@ -156,4 +155,4 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, July 2023
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, August 2023

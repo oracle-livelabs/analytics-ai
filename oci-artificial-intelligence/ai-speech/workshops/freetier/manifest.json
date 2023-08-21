@@ -33,7 +33,7 @@
             "filename": "../../ai-speech-cli/ai-speech-cli.md"
         },
         {
-            "title": "Lab 4: Access OCI speech with REST APIs",
+            "title": "Lab 4: Access OCI speech with REST APIs (Optional)",
             "description": "Learn how to access OCI Speech with REST API.",
             "filename": "../../oci-speech-rest/oci-speech-rest.md"
         },
@@ -43,7 +43,7 @@
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
         {
-            "title": "Lab 6: Enable notifications for OCi speech transcription jobs",
+            "title": "Lab 6: Enable notifications for OCI speech transcription jobs",
             "description": "Learn how to use e-mail notification feature in OCI Speech.",
             "filename": "../../oci-speech-notifications/oci-speech-notifications.md"
         },
