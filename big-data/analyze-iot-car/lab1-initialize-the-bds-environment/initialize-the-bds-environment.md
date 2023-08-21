@@ -1,10 +1,13 @@
 # Lab 1: Set Up Your Environment
 
 ## Introduction
+In this lab, you'll be guided to prepare follow environment:
+BDS Environment
+MDS Environment
+OAC Environment
+Also you will be guided to download a source code and deploy it to BDS.
 
-
-
-***Estimated Time***: 30 minutes
+***Estimated Time***: 2 hours
 
 ## Task 1:Prepare BDS Environment
 1.	Create an BDS (ODH 2.0) environment on OCI. Refer to the following link for the details.
@@ -13,68 +16,94 @@ Get Started with Oracle Big Data Service (non-HA)
 ]()
 
 2.  Add Kafka and Flink services. Log into Ambari with the following URL. Enter username and password, then click SIGN IN.
-   ![](images/01_lab1_task1_step2.png)
+
+![login Ambari](images/01_lab1_task1_step2.png)
+
 3.  Click … icon beside Services, then select Add Service.
-![](images/01_lab1_task1_step3.png)
+
+![add services](images/01_lab1_task1_step3.png)
+
 4.  Check Kafka and Flink, then click Next
-![](images/01_lab1_task1_step4.png)
+
+![add kafka and flink](images/01_lab1_task1_step4.png)
+
 5.  Click Next to accept all the default settings.
 6.  Click Deploy.
-![](images/01_lab1_task1_step6.png)
-7.  After installation, click NEXT.
-![](images/01_lab1_task1_step7.png)
-8.  Click COMPLETE.
-![](images/01_lab1_task1_step8.png)
-9.  Repeat the following steps to restart all affected components. Click RESTART, select Restart All Affected.
-![](images/01_lab1_task1_step9.png)
-10. Click CONFIRM RESTART ALL. 
-![](images/01_lab1_task1_step10.png)
-11. After restart, click OK.
-![](images/01_lab1_task1_step11.png)
-12. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
-    Log into BDS node(un0). Download lib.zip to any directory (eg. /tmp/upload，you can change it wherever you want). Unzip it.
-    Execute the following command to copy jar to all the BDS nodes.
-```    
-    sudo su –
-    rm -f /usr/odh/current/flink/lib/flink-table-planner-loader-1.15.2.jar
-    scp lib/*.jar bdsun0:/usr/odh/current/flink/lib
-    scp lib/*.jar bdswn0:/usr/odh/current/flink/lib
-    scp lib/*.jar bdswn1:/usr/odh/current/flink/lib
-    scp lib/*.jar bdswn2:/usr/odh/current/flink/lib
-    scp lib/*.jar bdsmn0:/usr/odh/current/flink/lib
 
-    scp lib/mysql-connector-java-8.0.28.jar bdsun0:/usr/odh/current/spark3-client/jars
-    scp lib/mysql-connector-java-8.0.28.jar bdswn0:/usr/odh/current/spark3-client/jars
-    scp lib/mysql-connector-java-8.0.28.jar bdswn1:/usr/odh/current/spark3-client/jars
-    scp lib/mysql-connector-java-8.0.28.jar bdswn2:/usr/odh/current/spark3-client/jars
-    scp lib/mysql-connector-java-8.0.28.jar bdsmn0:/usr/odh/current/spark3-client/jars
+![deploy service](images/01_lab1_task1_step6.png)
+
+7.  After installation, click NEXT.
+
+![complete installation](images/01_lab1_task1_step7.png)
+
+8.  Click COMPLETE.
+
+![complete add services](images/01_lab1_task1_step8.png)
+
+9.  Repeat the following steps to restart all affected components. Click RESTART, select Restart All Affected.
+
+![restart services](images/01_lab1_task1_step9.png)
+
+10. Click CONFIRM RESTART ALL.
+
+![confirm restart](images/01_lab1_task1_step10.png)
+
+11. After restart, click OK.
+
+![complete restart](images/01_lab1_task1_step11.png)
+
+12. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
+Log into BDS node(un0). Download lib.zip to any directory (eg. /tmp/upload，you can change it wherever you want). Unzip it.
+Execute the following command to copy jar to all the BDS nodes.
+```    
+sudo su –
+rm -f /usr/odh/current/flink/lib/flink-table-planner-loader-1.15.2.jar
+scp lib/*.jar bdsun0:/usr/odh/current/flink/lib
+scp lib/*.jar bdswn0:/usr/odh/current/flink/lib
+scp lib/*.jar bdswn1:/usr/odh/current/flink/lib
+scp lib/*.jar bdswn2:/usr/odh/current/flink/lib
+scp lib/*.jar bdsmn0:/usr/odh/current/flink/lib
+
+scp lib/mysql-connector-java-8.0.28.jar bdsun0:/usr/odh/current/spark3-client/jars
+scp lib/mysql-connector-java-8.0.28.jar bdswn0:/usr/odh/current/spark3-client/jars
+scp lib/mysql-connector-java-8.0.28.jar bdswn1:/usr/odh/current/spark3-client/jars
+scp lib/mysql-connector-java-8.0.28.jar bdswn2:/usr/odh/current/spark3-client/jars
+scp lib/mysql-connector-java-8.0.28.jar bdsmn0:/usr/odh/current/spark3-client/jars
  ```
 
 ## Task2: Prepare MDS Environment
 Create a MDS (MySQL) environment on OCI.
 1. In OCI homepage, select Database > DB Systems.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_1.png)
+![navigate MDS](images/01_lab1_task2_step1.png)
 
 2. Click Create DB system.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_2.png)
+![create MDS](images/01_lab1_task2_step2.png)
 
 3. Select Development or testing. Input Name. Select Standalone. Input Username and Password.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_3.png)
+![configure MDS](images/01_lab1_task2_step3_01.png)
+
+![configure MDS](images/01_lab1_task2_step3_02.png)
 
 4. Select VCN and subnet.
 
-![lab2 Workflow](/analytics-ai/big-data/analyze-iot-car/workshops/freetier/images/02_lab2_4.png)
+![configure VNC](images/01_lab1_task2_step4.png)
 
 5. At the bottom, open Show advanced options. Select Connections tab and input Hostname. Click Create.
 
+![configure hostname](images/01_lab1_task2_step5_01.png)
+
+![login Ambari](images/01_lab1_task2_step5_02.png)
+
 6. After a few minutes, MDS is created successfully. Select Connections tab to check the Internal FQDN.
+
+![get FQDN](images/01_lab1_task2_step6.png)
 
 7. Log into BDS un0 node to connect MDS.
  ```
- sudo su -
+sudo su -
 mysql -u <username> -h <MDS Internal FQDN> -p’<Password>’
 #eg. mysql -uadmin -h bdslivelab.sub07110452230.shenzhuvcn2.oraclevcn.com -p'Welcome12345#'
  ```
@@ -112,25 +141,39 @@ After creating a OAC instance, you need to create connection with MySQL.For acce
 
 1.	Click on Private Access Channel.
 
+![navigate PAC](images/01_lab1_task3_step1.png)
+
 2.	Click Configure Private Access Channel.
+
+![click configure PAC](images/01_lab1_task3_step2.png)
 
 3.	Provide Name for your access channel. Select VCN you want your private access channel to use. Provide DNS Zones. Click Configure.
 
+![configure PAC](images/01_lab1_task3_step3.png)
+
 4.	 To check the status of your private access channel, click on Activity Log. After a few minutes, configuration completed.
+
+![check PAC log](images/01_lab1_task3_step4.png)
 
 5.	Create MySQL connection. Log into OAC home page. Click Create > Connection.
 
+![create Mysql connection](images/01_lab1_task3_step5.png)
+
 6.	Select MySQL.
 
+![select mysql connection](images/01_lab1_task3_step6.png)
+
 7.	Provide Connection Name, Host, Port, Database Name, Username and Password. Then click Save.
+
+![configure mysql connection](images/01_lab1_task3_step7.png)
 
 
 ## Task4: Deploy Souce Code on BDS
 1.	Log into BDS node(un0). Download source.zip to any directory (eg. /tmp/upload，you can change it wherever you want).
 2.	Unzip source.zip.
  ```
-      sudo su -
-      chmod -R 777 source
+sudo su -
+chmod -R 777 source
  ```
 3.	Replace the parameters in env configuraton file (/source/conf/env.conf) with your actual values.
  ```
@@ -163,4 +206,6 @@ sudo su - hdfs
 ./clear.sh
  ```
 5.	After completing the step4, execute init script (source/bin/init.sh) in the same terminal, it will init MySQL tables, Hive tables and create Kafka topic.
-      $ ./init.sh
+ ```
+./init.sh
+ ```
