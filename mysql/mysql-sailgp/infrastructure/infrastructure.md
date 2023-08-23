@@ -93,6 +93,8 @@ In this lab, you will:
 
 2. Start creating the DB System. 
 
+   Since this is for experimentation, choose "Development Testing". 
+
    Check the compartment, it should be the same as the compartment you created the network (VCN) in, and assign to the DB System the name:
 
    ```
@@ -119,7 +121,7 @@ In this lab, you will:
    
     ![Configure hardware MySQL DB System creation](./images/mysql-db-hardware.png)
 
-4. Confirm that in the _**Configure Hardware**_ section, the selected shape is **MySQL.HeatWave.VM.Standard.E3**, CPU Core Count: **16**, Memory Size: **512 GB**, Data Storage Size: **1024**.
+4. Confirm that in the _**Configure Hardware**_ section, the selected shape is **MySQL.HeatWave.VM.Standard**, CPU Core Count: **16**, Memory Size: **512 GB**, Data Storage Size: **1024**.
 
   ![MySQL DB system creation](./images/mysql-db-form2.png)
 
@@ -225,7 +227,7 @@ In this task, we will Enable the HeatWave option on our MySQL database.
 
   ![Add HeatWave](./images/add-heatwave.png)
 
-3. Check that Shape looks as per picture below, make sure that Node Count is set to 2, **select the MySQL HeatWave Lakehouse** option and then click the button _**Add HeatWave Cluster**_.
+3. Keep the default Shape, and set Node Count to 2, **select the MySQL HeatWave Lakehouse** option and then click the button _**Add HeatWave Cluster**_.
 
    ![HeatWave Cluster enable](./images/select-shape2.png)
 
