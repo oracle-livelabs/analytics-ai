@@ -53,16 +53,19 @@ Get Started with Oracle Big Data Service (non-HA)
 ![complete restart](images/01_lab1_task1_step11.png)
 
 12. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
-Log into BDS node(un0). Download lib.zip to any directory (eg. /tmp/upload，you can change it wherever you want). Unzip it.
+Log into BDS node(un0). Download [lib.zip](https://objectstorage.ap-tokyo-1.oraclecloud.com/p/bhsTSKQYGjbeGwm5JW63Re3_o9o2JOrKiQVi_-6hrQfrB7lGSvA1z5RPyDLy3lpU/n/sehubjapacprod/b/live-lab/o/download/lib.zip) to any directory (eg. /tmp/upload，you can change it wherever you want). Unzip it.
 Execute the following command to copy jar to all the BDS nodes.
 ```    
 sudo su –
-rm -f /usr/odh/current/flink/lib/flink-table-planner-loader-1.15.2.jar
+dcli -C "rm -f /usr/odh/current/flink/lib/flink-table-planner-loader-1.15.2.jar"
 scp lib/*.jar bdsun0:/usr/odh/current/flink/lib
 scp lib/*.jar bdswn0:/usr/odh/current/flink/lib
 scp lib/*.jar bdswn1:/usr/odh/current/flink/lib
 scp lib/*.jar bdswn2:/usr/odh/current/flink/lib
 scp lib/*.jar bdsmn0:/usr/odh/current/flink/lib
+
+hadoop fs -put lib/*.jar /flink/lib/flink-libs
+hadoop fs -put /usr/odh/current/flink/connectors/*.jar /flink/lib/flink-libs/
 
 scp lib/mysql-connector-java-8.0.28.jar bdsun0:/usr/odh/current/spark3-client/jars
 scp lib/mysql-connector-java-8.0.28.jar bdswn0:/usr/odh/current/spark3-client/jars
