@@ -218,3 +218,14 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 ![lab3 Name Workbook](images/03_lab3_11.png "name workbook")
 
 Now you can close Flink Client.
+
+
+## Acknowledgements
+
+* **Author:**
+
+  * Qian Jiang,Senior Cloud Engineer, Japan & APAC Hub
+  * Xuying Xie,Senior Data Engineer, Japan & APAC Hub
+  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+  * Anand Chandak, Principal Product Manager, Big Data Services
+* **Last Updated By/Date:** Justin Zou, Aug 2023

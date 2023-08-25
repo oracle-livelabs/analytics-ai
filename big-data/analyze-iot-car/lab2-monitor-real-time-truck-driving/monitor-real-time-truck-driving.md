@@ -18,28 +18,35 @@ The system employs Kafka to gather truck location data in real-time. Flink is th
 Create dashboard in OAC to show warning messages to the driver if they are on dangerous road sections.
 
 ### Prerequisites
+
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 	Lab 1: Setup Your Environment
 
 ## Task1: Execute Flink SQL Script
-1. Start Flink session with the following commands on BDS node un0. 
-```  
+
+1. Start Flink session with the following commands on BDS node un0.
+
+```
 sudo su - hdfs
 export HADOOP_CLASSPATH=`hadoop classpath`
 /usr/odh/current/flink/bin/yarn-session.sh -n 2 -jm 2048m -tm 4096m -d
-```  
+```
+
 When the following message is displayed, it means Yarn started successfully. Keep this terminal window open.
 
-2. Open another terminal window on node un0, execute the following command to start Flink Client. 
-```  
+2. Open another terminal window on node un0, execute the following command to start Flink Client.
+
+```
 sudo su - hdfs
 export HADOOP_CLASSPATH=`hadoop classpath`
 /usr/odh/current/flink-client/bin/sql-client.sh
-```  
+```
+
 When the following message is displayed, it means Flink Client started successfully. Keep the terminal open.
 
-3.	Execute the following Flink SQL command to configure client. You need to execute these commands one by one.
-```  
+3. Execute the following Flink SQL command to configure client. You need to execute these commands one by one.
+
+```
 SET 'sql-client.execution.result-mode' = 'tableau';
 SET 'execution.runtime-mode' = 'streaming';
 SET 'sql-client.execution.max-table-result.rows' = '10000';
@@ -52,9 +59,11 @@ SET 'table.optimizer.join-reorder-enabled' = 'true';
 SET 'table.exec.spill-compression.enabled' = 'true';
 SET 'table.exec.spill-compression.block-size' = '128kb';
 SET 'execution.checkpointing.interval' = '3s';
-```  
-4.	Execute the following Flink SQL command to create table which stores real-time car IoT data from Kafka. Note: Replace the parameters before execution.
-```  
+```
+
+4. Execute the following Flink SQL command to create table which stores real-time car IoT data from Kafka. Note: Replace the parameters before execution.
+
+```
 CREATE TABLE kafka_source (
 `vehicle_id` INT,               --Vehicle identity
 `time_gps` BIGINT,              --Time
@@ -83,9 +92,11 @@ WITH (
 'json.fail-on-missing-field' = 'false',
 'json.ignore-parse-errors' = 'true'
 );
-```  
-5.	Execute the following Flink SQL command to create view which filters out invalid data.
-```  
+```
+
+5. Execute the following Flink SQL command to create view which filters out invalid data.
+
+```
 CREATE VIEW car_iot_details_view AS SELECT
 vehicle_id,
 TO_TIMESTAMP_LTZ(time_gps,0) AS time_gps,
@@ -104,9 +115,11 @@ battery_surplus,
 engine_temperature,
 driver_heartbeats
 FROM kafka_source WHERE latitude IS NOT NULL AND longitude IS NOT NULL;
-```  
-6.	Execute the following Flink SQL command to put car IoT data into HDFS. Note: Replace the parameters before execution.
-```  
+```
+
+6. Execute the following Flink SQL command to put car IoT data into HDFS. Note: Replace the parameters before execution.
+
+```
 CREATE TABLE car_iot_details_hdfs (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
@@ -132,9 +145,11 @@ WITH (
 );
 
 INSERT INTO car_iot_details_hdfs SELECT * FROM car_iot_details_view;
-```  
-7.	Execute the following Flink SQL command to put car IoT data into MySQL. Note: Replace the parameters before execution.
-```  
+```
+
+7. Execute the following Flink SQL command to put car IoT data into MySQL. Note: Replace the parameters before execution.
+
+```
 CREATE TABLE car_iot_details_mysql (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
@@ -162,62 +177,76 @@ WITH (
 );
 
 INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehicle_id in (10,11,12);
-```  
+```
 
 ## Task2: Visualize data in OAC
-1.	First create a dataset. Log into OAC Home Page. Click Create > Dataset.
+
+1. First create a dataset. Log into OAC Home Page. Click Create > Dataset.
 
 ![create dataset](images/02_lab2_task2_step1.png)
 
-2.	Select MySQL connection that you created.
+2. Select MySQL connection that you created.
 
 ![chose mysql connection](images/02_lab2_task2_step2.png)
 
-3.	Double click table car_iot_details under MySQL database.
+3. Double click table car_iot_details under MySQL database.
 
 ![chose table](images/02_lab2_task2_step3.png)
 
-4.	Click car_iot_details tab. Set column vehicle, latitude, longtitude as attribute.
+4. Click car_iot_details tab. Set column vehicle, latitude, longtitude as attribute.
 
 ![configure dataset](images/02_lab2_task2_step4.png)
 
-5.	change the column name. Click icon beside column name, select Rename.
+5. change the column name. Click icon beside column name, select Rename.
 
 ![rename columns](images/02_lab2_task2_step5.png)
 
-6.	Set Data Access to Live. Click Edition Definition. Select Live from Data Access list. Then click OK.
+6. Set Data Access to Live. Click Edition Definition. Select Live from Data Access list. Then click OK.
 
 ![change access type](images/02_lab2_task2_step6.png)
 
-7.	Save dataset. Click Save As, set Name as Driving Info. Click OK.
+7. Save dataset. Click Save As, set Name as Driving Info. Click OK.
 
 ![save dataset](images/02_lab2_task2_step7_01.png)
 ![save dataset](images/02_lab2_task2_step7_02.png)
 
-8.	After saving dataset, you can create a workbook. Click Create Workbook.
+8. After saving dataset, you can create a workbook. Click Create Workbook.
 
 ![create workbook](images/02_lab2_task2_step8.png)
 
-9.	On the workbook page select Visualizations tab, then select Map visualization.
+9. On the workbook page select Visualizations tab, then select Map visualization.
 
 ![set map visualization](images/02_lab2_task2_step9.png)
 
-10.	Drag&Drop latitude and longitude into Category. Drag&Drop vehicle_id into Color. Because there is not any data by now, you cannot see the car position.
+10. Drag&Drop latitude and longitude into Category. Drag&Drop vehicle_id into Color. Because there is not any data by now, you cannot see the car position.
 
 ![configure map](images/02_lab2_task2_step10.png)
 
-11.	Click Save icon and select Save As. Save this workbook as Truck Position Point Map.
+11. Click Save icon and select Save As. Save this workbook as Truck Position Point Map.
 
 ![save workbook](images/02_lab2_task2_step11_01.png)
 
 ![save workbook](images/02_lab2_task2_step11_02.png)
 
-12.	Open another terminal window, execute the following script (source/bin/send-data.sh) to send data to Kafka.
-```  
+12. Open another terminal window, execute the following script (source/bin/send-data.sh) to send data to Kafka.
+
+```
 sudo su - hdfs
 ./send-data.sh
-```  
-13.	Get back to OAC page. Click refresh button to check car position. You can refresh it several times, then you will find out that the car is moving.
-You can also change Background Map if you want. Click Properties, select the map.
+```
+
+13. Get back to OAC page. Click refresh button to check car position. You can refresh it several times, then you will find out that the car is moving.
+    You can also change Background Map if you want. Click Properties, select the map.
 
 ![save workbook](images/02_lab2_task2_step13.png)
+
+
+## Acknowledgements
+
+* **Author:**
+
+  * Xuying Xie,Senior Data Engineer, Japan & APAC Hub
+  * Qian Jiang,Senior Cloud Engineer, Japan & APAC Hub
+  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+  * Anand Chandak, Principal Product Manager, Big Data Services
+* **Last Updated By/Date:** Justin Zou, Aug 2023
