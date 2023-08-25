@@ -1,4 +1,4 @@
-# Lab 1: Configure Document Understanding policies
+# Configure Document Understanding policies
 
 ## Introduction
 
@@ -14,66 +14,79 @@ In this workshop, you will:
 * Get familiar with the OCI Console and be able to configure your policies for OCI Document Understanding
 
 ## Task 1: Policy Setup
-Before you start using OCI Document Understanding, OCI policies should be setup for allowing you to access OCI Document Understanding Service. Follow these steps to configure required policies.
+Before you start using OCI Document Understanding, OCI policies must be setup to allow users to access OCI Document Understanding service. Follow these steps to configure required policies.
 
 1. Navigate to Policies
 
-  Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+    1. Log into OCI Cloud Console 
+    1. Using the Burger Menu on the top left corner, navigate to **Identity & Security** and click it
+    1. Then, under *Identity*, select **Policies**
     ![OCI Hamburger menu](./images/ocinavmenu.png)
 
-2. Create Policy
+1. Click **Create Policy**
 
-  Click Create Policy
+    
     ![OCI Create policy](./images/createpolicybutton.png)
 
-3. Set compartment to your root compartment and toggle on the manual editor
+1. On the *Create Policy* page, set the following values:
+
+    1. Name: *document-understanding-access-policy*
+    1. Description: *policy to enable access to Document Understanding service*
+    1. Set *Compartment* to your root compartment. The root compartment will be called *name of tenancy (root)*, and it will be the top compartment in the compartment list.       
+    ![OCI Create policy](./images/policyeditor.png)
+
+    1. In the *Policy Builder* section, toggle **Show manual editor** on
+    
+
+    1. Add the below statement in the *Policy Builder* field to allow all the users in your tenancy to use Document Understanding. This is a required policy.
+        ```
+        <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
+        ```
+
+        ![OCI Create policy screen](./images/policycompleted.png)
+
+        Alternative - If you want to limit access to a specific user group, create a policy with the below statement and insert the name of the user group at *group-name* (and remove angle brackets). 
+
+        ```
+        <copy>allow group <group-name> to use ai-service-document-family in tenancy</copy>
+        ```
+
+    1. Add the below policy statement in the *Policy Builder* field to grant object storage access permissions to users. This enables processing of documents stored in an object storage bucket. 
+        ```
+        <copy>allow any-user to use object-family in tenancy</copy>
+        ```
+        Alternative - If you want to limit access to a specific group of users, use this version of the policy instead:
+        ```
+        <copy>allow group <group_in_tenancy> to use object-family in tenancy</copy>
+        ```
+            
+        Alternative - If you want to further restrict access to object storage in a specific compartment, you can use the following policy instead. If you haven't created an compartment yet, you'll have an opportunity to create one with the name *docu-lab* in the next lab. 
+        ```
+        <copy>allow group <group_in_tenancy> to use object-family in compartment <compartment_containing_object_storage_output_bucket></copy>
+        ```
+
+    1. Document Understanding service stores results in an object storage bucket in your tenancy. Add the following policy to grant object storage access permissions to any user:
+        ```
+        <copy>allow any-user to manage object-family in tenancy</copy>
+        ```
+
+        Alternative - If you want to restrict access to a specific user group (such as who requested the analysis of documents) and restrict access to object storage in a specific compartment, use this policy instead:
+        ```
+        <copy>allow group <group_in_tenancy> to manage object-family in compartment <compartment_containing_object_storage_output_bucket></copy>
+        ```
+    1. Click the **Create** button to create the policy containing 3 statements.
         
-  Configure as shown below: 
-    ![OCI Create policy](./images/policyeditor.PNG)
+        ![OCI Create policy screen](./images/create-policy2.png)
 
-4. Create Policy to grant users Document APIs access (Required)
 
-  Add the below statement to allow all the users in your tenancy to use document understanding:
-    ```
-    <copy>allow any-user to manage ai-service-document-family in tenancy</copy>
-    ```
+## Summary
+In this lab you learned how to set up your OCI Document Understanding policies.
 
-    ![OCI Create policy screen](./images/policycompleted.PNG)
 
-  If you want to limit access to a user group, create a policy with the below statement:
-    ```
-    <copy>allow group <group-name> to use ai-service-document-family in tenancy</copy>
-    ```
-
-5. Policy to access input document files in object storage (Recommended)
-
-  If your want to analyze documents stored in your tenancy's object storage bucket, add the below statement to grant object storage access permissions to the group:
-    ```
-    <copy>allow group <group_in_tenancy> to use object-family in tenancy</copy>
-    ```
-        
-  If you want to restrict access to a specific compartment, you can use the following policy instead: 
-    ```
-    <copy>allow group <group_in_tenancy> to use object-family in compartment <input_bucket_located_object_storage_compartment></copy>
-    ```
-
-6. Policy to access output location in object storage (Required)
-
-  Document Understanding Service stores results in your tenancy's object store. Add the following policy to grant object storage access permissions to the user group who requested the analysis to documents:
-    ```
-    <copy>allow group <group_in_tenancy> to manage object-family in compartment <output_bucket_located_object_storage_compartment></copy>
-    ```
-
-Congratulations! </br>
-In this lab you have learnt how to set up your OCI Document Understanding policies.
-
-You may now **proceed to the next lab**.
+You may now **proceed to next lab**.
 
 
 ## Acknowledgements
-* **Authors**
-    * Kate D'Orazio - Product Manager
+* **Authors** - Kate D'Orazio - Product Manager
 
-
-* **Last Updated By/Date**
-    * Kate D'Orazio, Feb 2023
+* **Last Updated By/Date** - Wes Prichard, Product Manager, July 2023

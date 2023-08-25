@@ -47,11 +47,10 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
    ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/movieload
     </copy>
     ```
-
-    ![Click CLOUD LOCATIONS](./images/bucketuri.png " ")
+    Select No Credential as this is a public bucket and then click **Create**.
 
 
 ## Task 2: Load data from files in Object Storage using Data Tools

@@ -239,7 +239,7 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
     OCPU: <copy>2</copy>
   	```	
   	```
-    License Type: <copy>License Included<copy>
+    License Type: <copy>License Included</copy>
   	```
 
   ![Analytics Creation](./images/oac-config-name.png)
@@ -272,8 +272,9 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
     
     ```
     username: <copy>admin</copy>
- 
-    password: **PASSWORD**
+	```	
+  	```
+    password: <copy>**PASSWORD**</copy>
     ```
 	- In the _**Configure Networking**_ section make sure you select the same VCN, _**`analytics_vcn_test`**_ you have used to create the Compute Instance but for MySQL you will use a different subnet, the private one called _**`Private Subnet-analytics_vcn_test(Regional)`**_.
 

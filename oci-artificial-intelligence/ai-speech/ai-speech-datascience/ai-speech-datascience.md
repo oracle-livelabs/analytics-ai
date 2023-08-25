@@ -6,7 +6,7 @@ In this lab session, we will show you how to access OCI Speech services in a Dat
 
 The Datascience Notebook is a web application that contains code, results and visualizations that makes testing and sharing ML pipelines simple.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives:
 * Learn how to use OCI speech within a DataScience notebook.

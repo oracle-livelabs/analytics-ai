@@ -1,4 +1,4 @@
-# Lab 4: Access OCI speech with REST APIs
+# Lab 4: Access OCI speech with REST APIs (Optional)
 
 ## Introduction
 
@@ -64,13 +64,15 @@ Below, in the example shown to invoke Create Transcription Job, replace all plac
 
 OCI Speech Service EndPoints for all the services:
 
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
+
 
 1. <u>Create Transcription Job</u>
 
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs
     </copy>
     ```
     Body:
@@ -115,7 +117,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
     ```
 
 3. <u>List Transcription Jobs</u>
@@ -123,7 +125,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
     ```
 
 3. <u>Edit Transcription Job</u>
@@ -131,7 +133,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
     </copy>
     ```
     Body:
@@ -149,7 +151,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
     ```
     Body:
     ```
@@ -165,7 +167,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
     </copy>
     ```
 
@@ -174,7 +176,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
     </copy>
     ```
 
@@ -183,7 +185,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
     </copy>
     ```
 
@@ -192,7 +194,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
     </copy>
     ```
 

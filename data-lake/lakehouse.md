@@ -1,4 +1,4 @@
-# Lakehouse: Putting it together for Analytics
+# Lakehouse: Put it together for Analytics
 
 ## Introduction
 
@@ -11,35 +11,33 @@ In this lab, you will:
 * Validate that new data is being loaded
 * Review the components of the Data Lake
 
-Estimated Time: 15 minutes
-
 ## Task 1: SQL queries
 
-Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
+1. Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
-![Database](./images/Databaselisting.png " ")
+    ![Database](./images/Databaselisting.png " ")
 
-Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
+2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/dbactionsbox.png " ")
+    ![Database Actions](./images/dbactionsbox.png " ")
 
-Click on SQL to execute the query to create the table.
+3. Click on SQL to execute the query to create the table.
 
-![SQL](./images/SQL_queries.png " ")
+    ![SQL](./images/SQL_queries.png " ")
 
-You can just simply query the MOVIE GENRE table to view data, or create a view to see the additional data along with the join to the MOVIE GENRE entity.
+4. You can just simply query the MOVIE GENRE table to view data, or create a view to see the additional data along with the join to the MOVIE GENRE entity.
 
-```
-<copy>
-SELECT
-   "genreid",name,country, count("custid")
-FROM
-    ADMIN.MOVIE_GENRE,customer_contact,GENRE
-    where genre_id="genreid" and "custid"=cust_id
-group by "genreid",name, country
-order by country;
-</copy>
-```
+    ```
+    <copy>
+    SELECT
+        "genreid",name,country, count("custid")
+    FROM
+        ADMIN.MOVIE_GENRE,customer_contact,GENRE
+        where genre_id="genreid" and "custid"=cust_id
+    group by "genreid",name, country
+    order by country;
+    </copy>
+    ```
 
 This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
 
@@ -49,101 +47,99 @@ This query will demonstrate the combination for the customer, country and if the
 
 We have a database, csv and json files in our data lake but there can be all of the various data platforms and types of data stored in the data lake and even streamed. We don't always have to load data into a database to be able to use our data sets with other data sets and assets. There are simple queries to the object storage that will allow us to join the data together with our data warehouse in our data lakehouse. Here is just one example using the data that we have loaded in this short time.
 
-Navigate back to DBActions. Under Development, click on SQL. We are going to run a few queries here for analysis. At this point you can take the queries and information to analytics and reporting.
+1. Navigate back to DBActions. Under Development, click on SQL. We are going to run a few queries here for analysis. At this point you can take the queries and information to analytics and reporting.
 
-Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the CSV file in the object storage and join to the database tables.
+    Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the CSV file in the object storage and join to the database tables.
 
-Create an external table to view the data transformation in the object storage files that were created as part of the data integration and data loader tasks. The file_uri_list can be pulled from the object storage, object details - However, you just need to replace the REPLACENAMESPACE with your namespace for your bucket.
+2. Create an external table to view the data transformation in the object storage files that were created as part of the data integration and data loader tasks. The file_uri_list can be pulled from the object storage, object details - However, you just need to replace the REPLACENAMESPACE with your namespace for your bucket.
 
-```
-<copy>
-BEGIN
-DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
-table_name => 'json_cust_sales_ext',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/customersales.json',
-column_list => 'json_document clob',
-field_list => 'json_document',
-format => json_object('delimiter' value '\n')
-);
-END;
-</copy>
-```
+    ```
+    <copy>
+    BEGIN
+    DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
+    table_name => 'json_cust_sales_ext',
+    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/customersales.json',
+    column_list => 'json_document clob',
+    field_list => 'json_document',
+    format => json_object('delimiter' value '\n')
+    );
+    END;
+    </copy>
+    ```
 
-View the data in the external table.
+3. View the data in the external table.
 
-```
-<copy>
-select * from JSON_CUST_SALES_EXT
-</copy>
-```
+    ```
+    <copy>
+    select * from JSON_CUST_SALES_EXT
+    </copy>
+    ```
 
-Join the data to the existing customer data:
+4. Join the data to the existing customer data:
 
-```
-<copy>
-select GENRE_ID,MOVIE_ID,CUSTSALES.CUST_ID,AGE,GENDER,STATE_PROVINCE
-from CUSTOMER_CONTACT, CUSTOMER_EXTENSION,
-(select CUST_ID,GENRE_ID,MOVIE_ID
-FROM JSON_CUST_SALES_EXT,
-JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
-"CUST_ID" number path '$.CUST_ID',
-"GENRE_ID" number path '$.GENRE_ID',
-"MOVIE_ID" number path '$.MOVIE_ID')) CUSTSALES
-where CUSTOMER_EXTENSION.CUST_ID=CUSTSALES.CUST_ID and CUSTOMER_EXTENSION.CUST_ID=CUSTOMER_CONTACT.CUST_ID
-and COUNTRY_CODE='US'   
-</copy>    
-```
+    ```
+    <copy>
+    select GENRE_ID,MOVIE_ID,CUSTSALES.CUST_ID,AGE,GENDER,STATE_PROVINCE
+    from CUSTOMER_CONTACT, CUSTOMER_EXTENSION,
+    (select CUST_ID,GENRE_ID,MOVIE_ID
+    FROM JSON_CUST_SALES_EXT,
+    JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
+    "CUST_ID" number path '$.CUST_ID',
+    "GENRE_ID" number path '$.GENRE_ID',
+    "MOVIE_ID" number path '$.MOVIE_ID')) CUSTSALES
+    where CUSTOMER_EXTENSION.CUST_ID=CUSTSALES.CUST_ID and 
+    CUSTOMER_EXTENSION.CUST_ID=CUSTOMER_CONTACT.CUST_ID and COUNTRY_CODE='US'   
+    </copy>    
+    ```
 
-If you want to also see the initial csv file in your object storage you can just create an external table on that as well.
+6. If you want to also see the initial csv file in your object storage you can just create an external table on that as well.
 
-```
-<copy>
-BEGIN
-DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
-table_name => 'csv_cust_sales_ext',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/custsales_custsales-2020-01.csv',
-format => json_object('type' value 'csv','skipheaders' value '1'),
-column_list => 'DAY_ID NUMBER,
-GENRE_ID NUMBER,
-MOVIE_ID NUMBER,
-CUST_ID NUMBER,
-APP VARCHAR2(250),
-DEVICE VARCHAR2(250),
-OS VARCHAR2(250),
-PAYMENT_METHOD VARCHAR2(250),
-LIST_PRICE NUMBER,
-DISCOUNT_TYPE VARCHAR2(250),
-DISCOUNT_PERCENT NUMBER,
-ACTUAL_PRICE NUMBER'
-);
-END;
-</copy>    
-```
+    ```
+    <copy>
+    BEGIN
+    DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
+    table_name => 'csv_cust_sales_ext',
+    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/REPLACENAMESPACE/b/dataflow-warehouse/o/custsales_custsales-2020-01.csv',
+    format => json_object('type' value 'csv','skipheaders' value '1'),
+    column_list => 'DAY_ID NUMBER,
+    GENRE_ID NUMBER,
+    MOVIE_ID NUMBER,
+    CUST_ID NUMBER,
+    APP VARCHAR2(250),
+    DEVICE VARCHAR2(250),
+    OS VARCHAR2(250),
+    PAYMENT_METHOD VARCHAR2(250),
+    LIST_PRICE NUMBER,
+    DISCOUNT_TYPE VARCHAR2(250),
+    DISCOUNT_PERCENT NUMBER,
+    ACTUAL_PRICE NUMBER'
+    );
+    END;
+    </copy>    
+    ```
 
 
 ## Task 3: OCI Data Catalog - View of the Data Lake
 
 You have updated data, added new tables and views into the database. Let's take another look at the OCI Data Catalog to see that it captured the changes and the new entities.
 
-Navigate to the menu Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
+1. Navigate to the menu Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
 
-Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
+2. Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
 
-![SQL](./images/currentcatalog.png " ")
+    ![SQL](./images/currentcatalog.png " ")
 
-Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
+4. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 
-Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
+5. Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
 
-![New Entities](./images/new_entities.png " ")
+    ![New Entities](./images/new_entities.png " ")
 
-Click on Entities just to verify that all of the tables and views are now here.
+6. Click on Entities just to verify that all of the tables and views are now here.
 
-![Entities List](./images/final_catalog.png " ")
+    ![Entities List](./images/final_catalog.png " ")
 
-
-
-***Oracle Data Lakehouse
+### Oracle Data Lakehouse
 
 The Oracle Data Lakehouse uses the tools under the main menu of Analytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
 
@@ -159,4 +155,4 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, August 2023
