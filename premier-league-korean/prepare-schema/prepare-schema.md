@@ -61,15 +61,15 @@
 
 1. 분석에 사용할 5개의 데이터 파일을 **다운로드** 받으세요:
 
-   [event.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/oxJctcE-MEIjVVhjUZMhns-b5ovTAiCIEgJJG2-VxbLCQQjb34JrEiPKYV3XNiYd/n/fruktknlrefu/b/workshop-premier-league/o/event.csv) 슛 데이터에는 슛의 위치, 결과 등이 포함되어 있습니다
+   [event.csv](https://objectstorage.ap-seoul-1.oraclecloud.com/p/4lbZorxUhePqZzmuoQ-sWsqp2k2FNj9rbzA2C2PSoordaRvb5kBpzxmuzgOvL-H6/n/apackrsct01/b/Premier-league-korean/o/event.csv) 슛 데이터에는 슛의 위치, 결과 등이 포함되어 있습니다
 
-   [match.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/RYVwaLLuK6toAlh0hVap5V6H9XGPzShRycciiWEVwFqPG9EwdkjktbFSKf_nnpkY/n/fruktknlrefu/b/workshop-premier-league/o/match.csv) 경기 데이터에는 팀 이름, 결과 등이 포함되어 있습니다.
+   [match.csv](https://objectstorage.ap-seoul-1.oraclecloud.com/p/Z-COsKkFOSzdgQx08w77V7cWb6eTCGKciIkAC4Dg6dOL8KtLL7PTfXpg5KzOko5a/n/apackrsct01/b/Premier-league-korean/o/match.csv) 경기 데이터에는 팀 이름, 결과 등이 포함되어 있습니다.
 
-   [predict\_by\_angle.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/qjPrGmvSpo7WmTDwuafVn7mtbTCnb-8jvzQnLRaKeszyybC3hUSKPL-kfjkZwoit/n/fruktknlrefu/b/workshop-premier-league/o/predict_by_angle.csv) 슛 위치에서 골대까지 0부터 180도 사이의 각도 목록입니다.
+   [predict\_by\_angle.csv](https://objectstorage.ap-seoul-1.oraclecloud.com/p/ha5BjIM3vwbdmD49zN_FFXmnGy2WLMG5Qy6TRfCjKK3yePjN02TXkJRXLZeRfyf0/n/apackrsct01/b/Premier-league-korean/o/predict_by_angle.csv) 슛 위치에서 골대까지 0부터 180도 사이의 각도 목록입니다.
 
-   [xg\_matrix.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/MducgpGpw2eshkApXwW9CGJfAcnprJd7MBQ1fIXHvFPDg_fc6YoFWk-t4wFqll-g/n/fruktknlrefu/b/workshop-premier-league/o/xg_matrix.csv) 미리 계산된 xG 값 목록입니다, 마지막 Lab 에서 사용합니다.
+   [xg\_matrix.csv](https://objectstorage.ap-seoul-1.oraclecloud.com/p/s_XB8uXGH29H8pYJ_jpGI1G9gBSGk-fFR2pcuoqr5TFjpV6H1bZSbYXQNXELuda1/n/apackrsct01/b/Premier-league-korean/o/xg_matrix.csv) 미리 계산된 xG 값 목록입니다, 마지막 Lab 에서 사용합니다.
 
-   [player\_stats.csv](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xlcockSigxId1FV7DLDV5vVNYl_L-RbYgJxj5NqXa_HaqqOHxZSUyEPjsk6gunf5/n/fruktknlrefu/b/workshop-premier-league/o/player_stats.csv) 미리 계산된 선수 통계, 포함하여 xG를 포함한 목록입니다.
+   [player\_stats.csv](https://objectstorage.ap-seoul-1.oraclecloud.com/p/vdvgOT-MSGeW23BzzNI0iXXn1XXEzkOB1C9Sgxbx9ngoO-8j3KmNajh1SR_89b4u/n/apackrsct01/b/Premier-league-korean/o/player_stats.csv) 미리 계산된 선수 통계, 포함하여 xG를 포함한 목록입니다.
 
    파일을 로컬 컴퓨터에 저장하세요,  **파일이 `.csv` 확장자로 되었는지 확인하세요**
 

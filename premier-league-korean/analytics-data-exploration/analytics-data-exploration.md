@@ -124,7 +124,7 @@ EVENT 데이터 세트에는 2017/2018 전체 시즌과 2021/2022의 소수 경�
 
 	 ![Look at the coordinates](images/coordinates.png)
 
-6. `HEAD`, `RIGHT_FOOTED`, `OTHER_BODY_PART`, 등 열로 스크롤합니다 . 이들 모두가 샷에 대한 추가 정보를 제공하는 방법에 주목하십시오. 이를 통해 이러한 변수의 분포를 빠르게 평가할 수 있습니다. 예를 들어, 대부분의 샷이 머리글(따라서 바닥글)이 아님을 즉시 알 수 있습니다.
+6. `HEAD`, `RIGHT_FOOTED`, `OTHER_BODY_PART`, 등 열로 스크롤합니다 . 이들 모두가 샷에 대한 추가 정보를 제공하는 방법에 주목하십시오. 이를 통해 이러한 변수의 분포를 빠르게 평가할 수 있습니다. 예를 들어, 대부분의 슛이 헤딩(따라서 발사용)이 아님을 즉시 알 수 있습니다.
 
 	 ![Additional shot information](images/additional-info-attributes.png)
 
