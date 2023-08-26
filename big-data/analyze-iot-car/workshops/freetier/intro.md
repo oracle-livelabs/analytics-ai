@@ -50,6 +50,8 @@ Use the following links to get more information about BDS and OCI:
 
 * **Author:**
 
-  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
+  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+  * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
+  * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
 * **Last Updated By/Date:** Justin Zou, Aug 2023

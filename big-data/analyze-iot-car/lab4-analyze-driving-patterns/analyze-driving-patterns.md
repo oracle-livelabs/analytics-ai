@@ -200,13 +200,12 @@ INSERT INTO correlation_acceleration_fuel
 
 ![lab4 Save Viz](images/04_lab4_9.png "save workbook")
 
-
 ## Acknowledgements
 
 * **Author:**
 
-  * Qian Jiang,Senior Cloud Engineer, Japan & APAC Hub
-  * Xuying Xie,Senior Data Engineer, Japan & APAC Hub
-  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+  * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
+  * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
+  * Justin Zou, Principal Data Engineer, Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
 * **Last Updated By/Date:** Justin Zou, Aug 2023

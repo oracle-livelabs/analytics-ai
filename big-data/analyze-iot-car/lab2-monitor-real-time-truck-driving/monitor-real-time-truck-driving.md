@@ -240,13 +240,12 @@ sudo su - hdfs
 
 ![save workbook](images/02_lab2_task2_step13.png)
 
-
 ## Acknowledgements
 
 * **Author:**
 
-  * Xuying Xie,Senior Data Engineer, Japan & APAC Hub
-  * Qian Jiang,Senior Cloud Engineer, Japan & APAC Hub
-  * Justin Zou, Principal Data Engineer,Japan & APAC Hub
+  * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
+  * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
+  * Justin Zou, Principal Data Engineer, Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
 * **Last Updated By/Date:** Justin Zou, Aug 2023
