@@ -25,9 +25,7 @@ This lab assumes you have:
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
 * Access to the Sample Sales Semantic Model
 * Access to a Git Repository using your Github account
-* Completion of "Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC) Part 1
-
-https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644
+* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
 
 
 
@@ -69,7 +67,7 @@ In this section, you create an archive of your semantic model as a backup.
 
 2. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
 	![Open Samples Sales](./images/open-sample-sales.png)
-	
+
 3. In the Sample Sales semantic model, click the **Page Menu**, and select **Export**.
 	![Click export in semantic model](./images/export.png =400x*)
 
@@ -92,7 +90,8 @@ In this section, you specify your profile name, Git user name, and your personal
 	![Paste Git Repository URL](./images/initialize-git.png =500x*)
 
 3. Select your Git profile, or select **New Profile**. Enter a **Profile Name**, your **Git user name**, and your personal access token in **Password**. When creating your personal access token, check all the boxes prompted on the screen.
-	![Select Git Profile and input Git credentials](./images/initialize-git.png =500x*)
+	![Select Git Profile and input Git credentials](./images/git-credentials.png =500x*)
+
 4. Click **Initialize Git**.
 
 ## Task 5: Review the Git Integration
@@ -132,12 +131,11 @@ You may now **proceed to the next lab**
 
 ## Learn More
 * [Edit Semantic Model Objects Using the SMML Editor](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/edit-semantic-model-objects-using-smml-editor.html)
-* [About Using Git Repositories with Semantic Modeler](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/using-git-repositories-semantic-modeler.html)
+* [About Using Git Repositories with Semantic Modeler](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/using-git-repositories-semantic-model-development.html#GUID-5751B7B8-2A8D-4587-ACE4-0CABC9DAC12B)
 * [Upload a Semantic Model to a Git Repository Using HTTPS](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/upload-semantic-model-git-repository-using-https.html)
 * [Work With Branches](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-branches.html)
 
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
-
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023

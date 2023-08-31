@@ -18,6 +18,8 @@ You will schedule your Pipeline Task to run daily at 2PM.
 * Schedule the Pipeline Task
 * Run the Pipeline Task
 
+## Task 1: Run the Data Loader task
+
 1. From your `DI_Workspace` homepage, click on **Applications**.
 
   ![Workspace home, select applications](images/workspace-home.png " ")

@@ -91,17 +91,17 @@ In this section you add a presentation table to the Sample Sales semantic model.
 	![Create Presentation Table](./images/create-presentation-table.png =600x*)
 	![Input Presentation table details](./images/presentation-table-details.png =400x*)
 
-2. Click the **Logical Layer**, expand **D3 Customers**, hold down the **Ctrl** key, select and drag the following to Customer Regions **Columns** tab:
-	* ADDRESS1
-	* ADDRESS2
-	* AREA
-	* CITY
-	* COUNTRY_NAME
-	* ESTAB_NAME
-	* POSTAL_CODE
-	* REGION
-	* STATE_PROVINCE
-	* STATE_PROVINCE _ABBRV
+2. Click the **Logical Layer**, expand **D3 Customers**, hold down the **Ctrl (command on Mac)** key, select and drag the following to Customer Regions **Columns** tab:
+	* Address1
+	* Address2
+	* Area
+	* City
+	* Country Name
+	* Estab Name
+	* Postal Code
+	* Region
+	* State Province
+	* State Province Abbrv
 	![Drag D3 customer columns into Customer Regions](./images/customer-region-columns.png)
 
 3. Click **Save**.
@@ -110,7 +110,7 @@ In this section you add a presentation table to the Sample Sales semantic model.
 
 In this section, you run the consistency checker, deploy the updated semantic model, and create a workbook with the updated Sample Sales subject area.
 
-1. Click the Consistency Checker and select **Errors and Warnings**.
+1. Click the Consistency Checker and select **Include warnings**.
 	Oracle Analytics didn't find any errors in the Sample Sales semantic model.
 
 	![Click consistency checker](./images/errors-and-warnings.png =400x*)
@@ -150,4 +150,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023
