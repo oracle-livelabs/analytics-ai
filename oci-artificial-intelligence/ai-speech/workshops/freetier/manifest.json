@@ -8,9 +8,9 @@
             "filename": "./intro.md"
         },
         {
-            "title": "Get started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
+            "title": "Get started - Cloud login",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 0: Create a bucket and upload files",
@@ -56,6 +56,10 @@
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Oracle CloudWorld 2023 - Support",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
 }
