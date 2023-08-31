@@ -23,7 +23,7 @@
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },
         {
-            "title": "Lab 2: Access OCI speech with OCI SDKs",
+            "title": "Lab 2: Access OCI speech with OCI SDKs (Optional)",
             "description": "Learn how to access OCI Speech with Speech SDKs",
             "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
         },
@@ -38,7 +38,7 @@
             "filename": "../../oci-speech-rest/oci-speech-rest.md"
         },
         {
-            "title": "Lab 5: Use OCI speech with datascience notebook session",
+            "title": "Lab 5: Use OCI speech with datascience notebook session (Optional)",
             "description": "Learn how to access OCI Speech in DataScience Notebook Session.",
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
@@ -48,7 +48,7 @@
             "filename": "../../oci-speech-notifications/oci-speech-notifications.md"
         },
         {
-            "title": "Lab 7: Trigger functions for OCI speech transcription jobs",
+            "title": "Lab 7: Trigger functions for OCI speech transcription jobs (Optional)",
             "description": "Learn how to use Faas feature in OCI Speech.",
             "filename": "../../oci-speech-faas/oci-speech-faas.md"
         },
