@@ -1,4 +1,4 @@
-# Lab 7: Trigger functions for OCI speech transcription jobs
+# Lab 7: Trigger functions for OCI speech transcription jobs (Optional)
 
 ## Introduction
 
