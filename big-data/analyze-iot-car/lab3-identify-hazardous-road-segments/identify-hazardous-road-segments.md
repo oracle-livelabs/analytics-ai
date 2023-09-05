@@ -1,4 +1,4 @@
-# Lab 3: Warning of dangerous road sections
+# Lab 3: Identify dangerous road sections
 
 ## Introduction
 
@@ -23,7 +23,7 @@ In this lab, you will:
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 
 - Lab 1: Setup Your Environment
-- Lab 2: Monitoring the truck real-time driving
+- Lab 2: Monitor the truck real-time drive
 
 ## Task 1:Start Flink Session and Client
 
@@ -47,7 +47,8 @@ CREATE TABLE car_info (
    'password' = '{mysql_password}',
    'table-name' = 'car_info'
 );
-
+```
+```
 CREATE TABLE driver_info (
 `driver_id` INT,
 `driver_name` STRING,
@@ -64,7 +65,8 @@ CREATE TABLE driver_info (
    'password' = '{mysql_password}',
    'table-name' = 'driver_info'
 );
-
+```
+```
 CREATE TABLE dangerous_road (
 `road_id` INT,
 `longitude` DOUBLE,
@@ -82,7 +84,8 @@ CREATE TABLE dangerous_road (
    'password' = '{mysql_password}',
    'table-name' = 'dangerous_road'
 );
-
+```
+```
 CREATE TABLE dangerous_road_alert (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
@@ -135,7 +138,8 @@ SELECT a.vehicle_id,
  	   b.weather_condition
 FROM car_iot_details_view a, dangerous_road b
 WHERE (6370000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS( a.latitude) - RADIANS( b.latitude)) / 2), 2) + COS(RADIANS( a.latitude)) * COS(RADIANS( b.latitude)) * POWER(SIN((RADIANS(a.longitude) - RADIANS(b.longitude)) / 2), 2)))) <= 2000;
-
+```
+```
 INSERT INTO dangerous_road_alert 
 SELECT a.vehicle_id,
  	   a.time_gps,

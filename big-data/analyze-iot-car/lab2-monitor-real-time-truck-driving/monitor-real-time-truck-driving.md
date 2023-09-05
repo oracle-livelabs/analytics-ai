@@ -1,4 +1,4 @@
-# Lab 2: Monitoring the truck real-time driving
+# Lab 2: Monitor the truck real-time drive
 
 ## Introduction
 
@@ -24,7 +24,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
 ## Task1: Execute Flink SQL Script
 
-1. Start Flink session with the following commands on BDS node un0.
+1. Start Flink session with the following commands on BDS node un0 as hdfs user.
 
 ```
 sudo su - hdfs
@@ -32,7 +32,9 @@ export HADOOP_CLASSPATH=`hadoop classpath`
 /usr/odh/current/flink/bin/yarn-session.sh -n 2 -jm 2048m -tm 4096m -d
 ```
 
-When the following message is displayed, it means Yarn started successfully. Keep this terminal window open.
+When the following message is displayed, it means Flink session started successfully. Keep this terminal window open until you finished lab2 and lab3.
+
+![start flink session](images/02_lab2_task1_step1.png)
 
 2. Open another terminal window on node un0, execute the following command to start Flink Client.
 
@@ -42,9 +44,11 @@ export HADOOP_CLASSPATH=`hadoop classpath`
 /usr/odh/current/flink-client/bin/sql-client.sh
 ```
 
-When the following message is displayed, it means Flink Client started successfully. Keep the terminal open.
+When the following message is displayed, it means Flink Client started successfully. Keep the terminal open until you finished lab2 and lab3.
 
-3. Execute the following Flink SQL command to configure client. You need to execute these commands one by one.
+![start flink SQL client](images/02_lab2_task1_step2.png)
+
+3. Execute the following Flink SQL command in Flink SQL terminal to configure client. You need to execute these commands one by one.
 
 ```
 SET 'sql-client.execution.result-mode' = 'tableau';
@@ -120,7 +124,7 @@ FROM kafka_source WHERE latitude IS NOT NULL AND longitude IS NOT NULL;
 6. Execute the following Flink SQL command to put car IoT data into HDFS. Note: Replace the parameters before execution.
 
 ```
-CREATE TABLE car_iot_details_hdfs (
+/livelab_db/car_iot_detailsCREATE TABLE car_iot_details_hdfs (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
 `accel_speed` DOUBLE,
@@ -140,10 +144,12 @@ CREATE TABLE car_iot_details_hdfs (
 )
 WITH (
 'connector' = 'filesystem',
-'path' = '{defaultFs}',
+'path' = '{defaultFs}/livelab_db/car_iot_details',
 'format'= 'csv'
 );
+```
 
+```
 INSERT INTO car_iot_details_hdfs SELECT * FROM car_iot_details_view;
 ```
 
@@ -175,13 +181,15 @@ WITH (
 'password' = '{mysql_password}',
 'table-name' = 'car_iot_details'
 );
+```
 
+```
 INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehicle_id in (10,11,12);
 ```
 
 ## Task2: Visualize data in OAC
 
-1. First create a dataset. Log into OAC Home Page. Click Create > Dataset.
+1. First create a dataset. Log into OAC Home Page. Click **Create** > **Dataset**.
 
 ![create dataset](images/02_lab2_task2_step1.png)
 
@@ -189,54 +197,55 @@ INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehic
 
 ![chose mysql connection](images/02_lab2_task2_step2.png)
 
-3. Double click table car_iot_details under MySQL database.
+3. Double click table **car_iot_details** under MySQL database.
 
 ![chose table](images/02_lab2_task2_step3.png)
 
-4. Click car_iot_details tab. Set column vehicle, latitude, longtitude as attribute.
+4. Click **car_iot_details** tab. Set column **vehicle**, **latitude**, **longtitude** as **attribute**.
 
 ![configure dataset](images/02_lab2_task2_step4.png)
 
-5. change the column name. Click icon beside column name, select Rename.
+5. You can change the column name. Click icon beside column name, select **Rename**.
 
 ![rename columns](images/02_lab2_task2_step5.png)
 
-6. Set Data Access to Live. Click Edition Definition. Select Live from Data Access list. Then click OK.
+6. Set Data Access to Live. Click **Edit Definition**. Select **Live** from Data Access list. Then click **OK**.
 
 ![change access type](images/02_lab2_task2_step6.png)
 
-7. Save dataset. Click Save As, set Name as Driving Info. Click OK.
+7. Save dataset. Click **Save As**, set **Name** as **Driving Info**. Click **OK**.
 
 ![save dataset](images/02_lab2_task2_step7_01.png)
 ![save dataset](images/02_lab2_task2_step7_02.png)
 
-8. After saving dataset, you can create a workbook. Click Create Workbook.
+8. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
 ![create workbook](images/02_lab2_task2_step8.png)
 
-9. On the workbook page select Visualizations tab, then select Map visualization.
+9. On the workbook page select **Visualizations** tab, then double click **Map** visualization.
 
 ![set map visualization](images/02_lab2_task2_step9.png)
 
-10. Drag&Drop latitude and longitude into Category. Drag&Drop vehicle_id into Color. Because there is not any data by now, you cannot see the car position.
+10. Go to **Data** tab. Drag&Drop **latitude** and **longitude** into **Category**. Drag&Drop **vehicle_id** into **Color**. Because there is not any data by now, you cannot see the car position.
 
 ![configure map](images/02_lab2_task2_step10.png)
 
-11. Click Save icon and select Save As. Save this workbook as Truck Position Point Map.
+11. Click Save icon and select **Save As**. Save this workbook as **Truck Position Point Map**.
 
 ![save workbook](images/02_lab2_task2_step11_01.png)
 
 ![save workbook](images/02_lab2_task2_step11_02.png)
 
-12. Open another terminal window, execute the following script (source/bin/send-data.sh) to send data to Kafka.
+12. Open another terminal window and log into bdscluswn0 node as hdfs user. Execute the following script (/tmp/source/bin/send-data.sh) to send data to Kafka.
 
 ```
 sudo su - hdfs
+cd /tmp/source/bin
 ./send-data.sh
 ```
 
-13. Get back to OAC page. Click refresh button to check car position. You can refresh it several times, then you will find out that the car is moving.
-    You can also change Background Map if you want. Click Properties, select the map.
+13. Get back to OAC page. Click **refresh** button to check car position. You can refresh it several times, then you will find out that the car is moving.
+    You can also change Background Map if you want. Click **Properties**, select the **map**.
 
 ![save workbook](images/02_lab2_task2_step13.png)
 
