@@ -21,7 +21,7 @@ The system relies on two primary data sources: driving information sourced from 
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 
 - Lab 1: Setup Your Environment
-- Lab 2: Monitoring the truck real-time driving
+- Lab 2: Monitor the truck real-time drive
 
 ## Task 1: Start Flink Session and Client
 
