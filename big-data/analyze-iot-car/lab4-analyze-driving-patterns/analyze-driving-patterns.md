@@ -1,4 +1,4 @@
-# Lab 4: Analyze Driving Patterns
+# Lab 4: Analyze drive behavior
 
 ## Introduction
 
@@ -19,8 +19,8 @@ In this lab, you'll analyze various aspects of a truck driver's operations, incl
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 
 - Lab 1: Setup Your Environment
-- Lab 2: Monitoring the truck real-time driving
-- Lab 3: Warning of dangerous road sections
+- Lab 2: Monitor the truck real-time drive
+- Lab 3: Identify dangerous road sections
 
 ## Task 1: Execute Spark SQL Script
 
@@ -176,7 +176,9 @@ sudo su - hdfs
 
 ## Task2: Visualize the Analysis Result in OAC
 
-1. ![lab4 OAC Homepage](https://file+.vscode-resource.vscode-cdn.net/d%3A/github/analytics-ai/big-data/analyze-iot-car/lab4-analyze-driving-patterns/images/04_lab4_1.png "homepage")First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+1. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+
+![lab4 OAC Homepage](images/04_lab4_1.png "homepage")
 
 2. Select **MySQL** connection that you created.
 

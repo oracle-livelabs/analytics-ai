@@ -1,6 +1,6 @@
-# Welcome to Analyze IoT Car using Flink/Kafka/Spark in Big Data Services Hands-on Workshop!
+# Welcome to Analyze IoT Car in Big Data Services Hands-on Workshop!
 
-The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data.
+The **Analyze IoT Car in Big Data Services workshop** will guide you through the intricacies of processing and analyzing data using BDS. Initially, you'll familiarize yourself with Flink's capabilities to access real-time data from Kafka and process it. Subsequently, this data will be analyzed and the results will be stored in MySQL. For non-real-time data, Spark SQL will be employed to extract it from MySQL, followed by an analysis, the results of which will again be saved in MySQL. Finally, the Oracle Analytics Cloud will serve as your tool to visualize the analyzed data.
 
 ## Access the Labs Using Our Web Interface
 
@@ -10,10 +10,10 @@ The **Analyze IoT Car using Flink/Kafka/Spark in Big Data Services workshop** wi
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
-- [Initialize the BDS Environment](./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md)
-- [Monitor Real-Time Truck Driving](./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md)
-- [Identify Hazardous Road Segments](./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md)
-- [Analyze Driving Patterns](./../../lab4-analyze-driving-patterns/analyze-driving-patterns.md)
+- [Set Up Your Environment](./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md)
+- [Monitor the truck real-time drive](./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md)
+- [Identify dangerous road sections](./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md)
+- [Analyze drive behavior](./../../lab4-analyze-driving-patterns/analyze-driving-patterns.md)
 
 <!-- Keep this content -->
 
