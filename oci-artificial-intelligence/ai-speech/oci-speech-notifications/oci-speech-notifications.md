@@ -1,4 +1,4 @@
-# Lab 6: Use OCI speech to enable the E-mail notifications
+# Lab 6: Enable notifications for OCI speech transcription jobs
 
 ## Introduction
 
@@ -9,7 +9,7 @@ Using this service you can generate email notifications based on transcription j
 This event-driven approach allows you to respond to state changes in OCI in real time, removing the need to poll the transcription job status on a predefined schedule.
 
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives:
 

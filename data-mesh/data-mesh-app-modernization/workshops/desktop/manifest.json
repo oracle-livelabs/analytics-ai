@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Data Mesh - Event Sourcing",
+    "help": "livelabs-help-analytics_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "What is data mesh?",
+            "description": "Description of Data Mesh.",
+            "filename": "./../../what-is-data-mesh/what-is-data-mesh.md"
+        },
+        {
+            "title": "What is app modernization?",
+            "description": "Explore app modernization.",
+            "filename": "./../../what-is-app-modernization/what-is-app-modernization.md"
+          },
+        {
+            "title": "Access environment and explore setup",
+            "description": "Access environment and explore setup.",
+            "filename": "./../../access-environment-and-explore-setup/access-environment-and-explore-setup.md"
+        },
+            {
+                "title": "Run data mesh pipeline",
+                "description": "Run data mesh pipeline.",
+                "filename": "./../../run-data-mesh-pipeline/run-data-mesh-pipeline.md"
+            },
+            {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+           }
+    ]
+}
