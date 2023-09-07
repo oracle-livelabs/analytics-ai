@@ -1,18 +1,24 @@
-# Lab 1: Set Up Your Environment
+# Lab 1: Initialize the BDS Environment
 
 ## Introduction
 
 In this lab, you'll be guided to prepare follow environment:
-BDS Environment
-MDS Environment
-OAC Environment
-Also you will be guided to download a source code and deploy it to BDS.
+BDS, MDS and OAC environment. Then, you will be guided to download a source code and deploy it to BDS.
 
 ***Estimated Time***: 2 hours
 
-## Task 1:Prepare BDS Environment
+### Objectives
 
-1. Create an BDS (ODH 2.0) environment on OCI. Refer to the following link for the details.
+* Prepare environments for the live lab.
+* Download and deploy source code.
+
+### Prerequisites
+
+* Create your Oracle OCI Free Trial Account and sign into your account.
+
+## Task 1: Prepare BDS Environment
+
+1. Create an BDS (ODH 2.0) environment on OCI. Refer to the following link for the details. Note: select 3 OCPU for worker nodes.
    [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
    You should follow below labs:
 
@@ -74,21 +80,26 @@ Enter **username** and **password**, then click **SIGN IN**.
     Log into BDS node(un0) as root user.
 
 ```
+<copy>
 sudo su -
+</copy>
 ```
 
 Download [lib.zip](https://objectstorage.ap-tokyo-1.oraclecloud.com/p/bhsTSKQYGjbeGwm5JW63Re3_o9o2JOrKiQVi_-6hrQfrB7lGSvA1z5RPyDLy3lpU/n/sehubjapacprod/b/live-lab/o/download/lib.zip) to any directory (eg. /tmp) and unzip it.
 
 ```
+<copy>
 cd /tmp
 wget https://objectstorage.ap-tokyo-1.oraclecloud.com/p/bhsTSKQYGjbeGwm5JW63Re3_o9o2JOrKiQVi_-6hrQfrB7lGSvA1z5RPyDLy3lpU/n/sehubjapacprod/b/live-lab/o/download/lib.zip
 #unzip lib
 unzip /tmp/lib.zip
+</copy>
 ```
 
 Execute the following command to copy jar to all the BDS nodes.
 
 ```
+<copy>
 #copy kafka related jar files in bds cluster to flink classpath
 dcli -C "cp /usr/odh/current/flink/connectors/*kafka*.jar  /usr/odh/current/flink/lib"
 dcli -C "cp /usr/lib/flink/connectors/flink-connector-jdbc-1.15.2.jar  /usr/odh/current/flink/lib"
@@ -113,6 +124,7 @@ su - hdfs
 hadoop fs -put /usr/odh/current/flink/connectors/*.jar /flink/lib/flink-libs/
 hadoop fs -put /usr/odh/current/kafka-broker/libs/kafka-clients-3.2.0.jar /flink/lib/flink-libs/
 hadoop fs -put /tmp/lib/mysql-connector-java-8.0.28.jar /flink/lib/flink-libs/
+</copy>
 ```
 
 ## Task2: Prepare MDS Environment
@@ -160,7 +172,7 @@ Source Type: **CIDR**
 
 Source CIDR: **0.0.0.0/0**
 
-IP Protocal: **TCP**
+IP Protocol: **TCP**
 
 Destination Port Range: **3306**
 
@@ -170,48 +182,60 @@ Click **Add Ingress Rules**.
 7. Log into BDS un0 node as root user and connect MDS.
 
 ```
+<copy>
 sudo su -
 mysql -u <username> -h <MDS Internal FQDN> -p'<Password>'
 #eg. mysql -uadmin -h bdslivelab.sub07110452230.shenzhuvcn2.oraclevcn.com -p'Welcome12345#'
+</copy>
 ```
 
 8. Create Database with the following command.
 
 ```
+<copy>
 CREATE DATABASE <database_name>;
 #eg. CREATE DATABASE livelab_db;
+</copy>
 ```
 
 9. Create a native user with the following command.
 
 ```
+<copy>
 CREATE USER '<username>'@'%' IDENTIFIED WITH mysql_native_password BY '<password>';
 #eg. CREATE USER 'livelab_test'@'%' IDENTIFIED WITH mysql_native_password BY 'Oracle123456!';
+</copy>
 ```
 
 10. Grant privilege to the native user.
 
 ```
+<copy>
 GRANT ALL PRIVILEGES ON <database_name>.* TO '<username>'@'%';
 #eg. GRANT ALL PRIVILEGES ON livelab_db.* TO 'livelab_test'@'%';
+</copy>
 ```
 
 11. Connect MDS with the native user.
 
 ```
+<copy>
 mysql -u <username> -h <MDS Internal FQDN> -p’<Password>’
 #eg. mysql -ulivelab_test -h bdslivelab.sub07110452230.shenzhuvcn2.oraclevcn.com -p'Oracle123456!'
+</copy>
 ```
 
 12. Change the Database.
 
 ```
+<copy>
 use livelab_db;
+</copy>
 ```
 
 ## Task3: Prepare OAC Environment
 
-For data visualization ,you need to create an OAC environment on OCI.
+For data visualization, you need to create an OAC environment on OCI.
 
 1. In OCI homepage, select Analytics
    & AI > Analytics Cloud.
@@ -250,23 +274,26 @@ For data visualization ,you need to create an OAC environment on OCI.
 
 ![configure mysql connection](images/01_lab1_task3_step7.png)
 
-## Task4: Deploy Souce Code on BDS
+## Task4: Deploy Source Code on BDS
 
 1. Log into BDS node(un0) as root user. Download source.zip to any directory (eg. /tmp) and unzip it.
-   source.zip download link: 
+   source.zip download link:
    [source.zip](https://objectstorage.ap-tokyo-1.oraclecloud.com/p/CxV2eZlF7eVrQhIMOIy5t9iWWeSmgW4vDDSrHzPiHSsq9raprO3gP6wc-w-iqyXv/n/sehubjapacprod/b/live-lab/o/download/source.zip)
 
 ```
+<copy>
 sudo su -
 cd /tmp
 wget https://objectstorage.ap-tokyo-1.oraclecloud.com/p/CxV2eZlF7eVrQhIMOIy5t9iWWeSmgW4vDDSrHzPiHSsq9raprO3gP6wc-w-iqyXv/n/sehubjapacprod/b/live-lab/o/download/source.zip
 unzip /tmp/source.zip
 chmod -R 777 source
+</copy>
 ```
 
-3. Replace the parameters in env configuraton file (/tmp/source/conf/env.conf) with your actual values.
+2. Replace the parameters in env configuration file (/tmp/source/conf/env.conf) with your actual values.
 
 ```
+<copy>
 #configurations of HDFS
 #you can get this value from Ambari kafka configuration page Services-> HDFS -> Configs
 #get the value of propertie:fs.defaultFS in Advanced core-site
@@ -289,7 +316,7 @@ mysql_port=3306
 #you need to get the broker host and port.
 #example:livelabwn0:6667,livelabwn1:6667,livelabwn2:6667
 kafka_bootstrap_server=livelabwn0:6667,livelabwn1:6667,livelabwn2:6667
-
+</copy>
 ```
 
 You can get defaultFs value from Ambari > HDFS >CONFIG >ADVANCED > fs.defaultFS.
@@ -300,19 +327,35 @@ You can get kafka_bootstrap_server value from Ambari > Kafka > CONFIGS > Kafka B
 
 ![get defaultFS](images/get_kafka_broker_server.png)
 
-4. Execute clear script (/tmp/source/bin/clear.sh) as hdfs user to clear MySQL, HDFS, Hive and Kafka.
+3. Execute clear script (/tmp/source/bin/clear.sh) as hdfs user to clear MySQL, HDFS, Hive and Kafka.
    You should skip this step for the first time.
 
 ```
+<copy>
 sudo su - hdfs
 cd /tmp/source/bin/
 ./clear.sh
+</copy>
 ```
 
-5. After completing the step4, execute init script (/tmp/source/bin/init.sh) in the same terminal, it will init MySQL tables, Hive tables and create Kafka topic.
+4. After completing the step4, execute init script (/tmp/source/bin/init.sh) in the same terminal, it will init MySQL tables, Hive tables and create Kafka topic.
 
 ```
+<copy>
 sudo su - hdfs
 cd /tmp/source/bin/
 ./init.sh
+</copy>
 ```
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+
+* **Author:**
+
+  * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
+  * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
+  * Justin Zou, Principal Data Engineer, Japan & APAC Hub
+  * Anand Chandak, Principal Product Manager, Big Data Services
+* **Last Updated By/Date:** Justin Zou, Aug 2023

@@ -1,8 +1,8 @@
-# Lab 3: Identify dangerous road sections
+# Lab 3: Identify Hazardous Road Segments
 
 ## Introduction
 
-In this lab, you'll learn to set up a Flink task for real-time processing. The focus is on analyzing historical accident data to identify hazardous road sections. Using real-time truck location data, the system determines if a truck is on one of these dangerous sections. If a match is found, a safety alert is dispatched to the driver, urging caution. 
+In this lab, you'll learn to set up a Flink task for real-time processing. The focus is on analyzing historical accident data to identify hazardous road sections. Using real-time truck location data, the system determines if a truck is on one of these dangerous sections. If a match is found, a safety alert is dispatched to the driver, urging caution.
 
 The system relies on two primary data sources: driving information sourced from Kafka and records of dangerous road locations from MySQL. Within Flink, these datasets are merged, filtering out any incomplete or irrelevant entries, to produce the desired results.
 
@@ -11,8 +11,6 @@ The system relies on two primary data sources: driving information sourced from 
 ***Estimated Time***: 30 minutes
 
 ### Objectives
-
-In this lab, you will:
 
 - In Spark SQL, create temporary view to access data from MySQL.
 - Execute SQL statement to analyze driving operations in Sark SQL.
@@ -23,13 +21,14 @@ In this lab, you will:
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 
 - Lab 1: Setup Your Environment
-- Lab 2: Monitor the truck real-time drive
+- Lab 2: Monitoring the truck real-time driving
 
-## Task 1:Start Flink Session and Client
+## Task 1: Start Flink Session and Client
 
-1.In the Flink Client, execute the following command to read data from MySQL table. Note: Replace the parameters before execution.
+1. In the Flink Client, execute the following command to read data from MySQL table. Note: Replace the parameters before execution.
 
 ```
+<copy>
 CREATE TABLE car_info (
 `vehicle_id` INT,
 `car_brand` STRING,
@@ -47,9 +46,11 @@ CREATE TABLE car_info (
    'password' = '{mysql_password}',
    'table-name' = 'car_info'
 );
+</copy>
 ```
 
 ```
+<copy>
 CREATE TABLE driver_info (
 `driver_id` INT,
 `driver_name` STRING,
@@ -66,9 +67,11 @@ CREATE TABLE driver_info (
    'password' = '{mysql_password}',
    'table-name' = 'driver_info'
 );
+</copy>
 ```
 
 ```
+<copy>
 CREATE TABLE dangerous_road (
 `road_id` INT,
 `longitude` DOUBLE,
@@ -86,9 +89,11 @@ CREATE TABLE dangerous_road (
    'password' = '{mysql_password}',
    'table-name' = 'dangerous_road'
 );
+</copy>
 ```
 
 ```
+<copy>
 CREATE TABLE dangerous_road_alert (
 `vehicle_id` INT,
 `time_gps` TIMESTAMP,
@@ -122,11 +127,13 @@ CREATE TABLE dangerous_road_alert (
    'password' = '{mysql_password}',
    'table-name' = 'dangerous_road_alert'
 );
+</copy>
 ```
 
-2.Execute the following command to determine whether the current location is a dangerous road section,then insert alert into MySQL.
+2. Execute the following command to determine whether the current location is a dangerous road section, then insert alert into MySQL.
 
 ```
+<copy>
 CREATE VIEW alert_view AS
 SELECT a.vehicle_id,
  	   a.time_gps,
@@ -141,9 +148,11 @@ SELECT a.vehicle_id,
  	   b.weather_condition
 FROM car_iot_details_view a, dangerous_road b
 WHERE (6370000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS( a.latitude) - RADIANS( b.latitude)) / 2), 2) + COS(RADIANS( a.latitude)) * COS(RADIANS( b.latitude)) * POWER(SIN((RADIANS(a.longitude) - RADIANS(b.longitude)) / 2), 2)))) <= 2000;
+</copy>
 ```
 
 ```
+<copy>
 INSERT INTO dangerous_road_alert 
 SELECT a.vehicle_id,
  	   a.time_gps,
@@ -171,61 +180,64 @@ SELECT a.vehicle_id,
  	   c.driver_desc
 FROM alert_view a JOIN car_info b ON a.vehicle_id=b.vehicle_id
 JOIN driver_info c ON c.driver_id=b.driver_id;
+</copy>
 ```
 
-3.You can execute the following command in MySQL to check data is written into MySQL database..
+3. You can execute the following command in MySQL to check data is written into MySQL database.
 
 ```
+<copy>
   select * from dangerous_road_alert limit 10;
+</copy>
 ```
 
 ## Task2: Visualize data in OAC
 
-1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+1. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
  ![lab3 OAC Homepage](images/03_lab3_1.png "homepage")
 
-2.Select **MySQL** connection that you created.
+2. Select **MySQL** connection that you created.
 
  ![lab3 OAC Connection](images/03_lab3_2.png "connection")
 
-3.Double click table **dangerous_road_alert** under MySQL database.
+3. Double click table **dangerous_road_alert** under MySQL database.
 
 ![lab3 Dataset](images/03_lab3_3.png "dataset")
 
-4.Click **dangerous_road_alert** tab to set all the columns as attribute.
+4. Click **dangerous_road_alert** tab to set all the columns as attribute.
 
 ![lab3 Dataset Editor](images/03_lab3_4.png "ataset editor")
 
-5.You can change column name.
-
-6.Set **Data Access** to **Live** as the previous step.
-
-7.Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
+5. You can change column name.
+6. Set **Data Access** to **Live** as the previous step.
+7. Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
 
 ![lab3 Save Dataset](images/03_lab3_5.png "save dataset")
 
 ![lab3 Name Dataset](images/03_lab3_6.png "name dataset")
 
-8.After saving dataset, you can create a workbook. Click **Create Workbook**.
+8. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
 ![lab3 Create Workbook](images/03_lab3_7.png "create workbook")
 
-9.On the workbook page select **Table visualization**.
+9. On the workbook page select **Table visualization**.
 
 ![lab3 Select Viz](images/03_lab3_8.png "select viz")
 
-10.Drag&Drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
+10. Drag and drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
 
 ![lab3 Set Viz](images/03_lab3_9.png "set viz")
 
-11.Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
+11. Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
 
 ![lab3 Save Workbook](images/03_lab3_10.png "save workbook")
 
 ![lab3 Name Workbook](images/03_lab3_11.png "name workbook")
 
-Now you can close Flink Client.
+Now you can close Flink client.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

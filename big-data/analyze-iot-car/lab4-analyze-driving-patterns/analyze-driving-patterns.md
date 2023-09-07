@@ -1,8 +1,8 @@
-# Lab 4: Analyze drive behavior
+# Lab 4: Analyze Driving Patterns
 
 ## Introduction
 
-In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving. 
+In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving.
 
 ![lab4 Workflow](images/04_lab4_workflow.png "workflow")
 
@@ -19,10 +19,10 @@ In this lab, you'll analyze various aspects of a truck driver's operations, incl
 This lab assumes that you have successfully completed the following labs in the Contents menu:
 
 - Lab 1: Setup Your Environment
-- Lab 2: Monitor the truck real-time drive
-- Lab 3: Identify dangerous road sections
+- Lab 2: Monitoring the truck real-time driving
+- Lab 3: Warning of dangerous road sections
 
-## Task 1:Execute Spark SQL Script
+## Task 1: Execute Spark SQL Script
 
 **Source Code Explanation**
 The following part in spark-sql.sql create temporary view to access data from MySQL.
@@ -87,22 +87,22 @@ The following part find out drivers who exhibit anomalous driving behavior, such
 <copy>
 --1,Which drivers exhibit anomalous driving behavior, such as sudden changes in speed or braking?
 WITH anomalous_driving_behavior AS (
- SELECT vehicle_id, COUNT(1) AS num_anomalies FROM
- (
- SELECT vehicle_id,
- LAG(car_speed) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_speed,
- car_speed,
- LAG(brake_status) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_brake_status,
- brake_status FROM livelab_db.car_iot_details ) AS driving_data
- WHERE ABS(car_speed - prev_speed) > 10 OR (brake_status = 1 AND prev_brake_status = 0)
- GROUP BY vehicle_id HAVING COUNT(*) > 10
+ SELECT vehicle_id, COUNT(1) AS num_anomalies FROM 
+ ( 
+ SELECT vehicle_id, 
+ LAG(car_speed) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_speed, 
+ car_speed, 
+ LAG(brake_status) OVER (PARTITION BY vehicle_id ORDER BY time_gps) AS prev_brake_status, 
+ brake_status FROM livelab_db.car_iot_details ) AS driving_data 
+ WHERE ABS(car_speed - prev_speed) > 10 OR (brake_status = 1 AND prev_brake_status = 0) 
+ GROUP BY vehicle_id HAVING COUNT(*) > 10 
  ORDER BY num_anomalies DESC
  ),
 
 --2,What is the average speed of each driver over the last month?
 average_speed_monthly AS (
- SELECT driver.driver_id, AVG(iot.car_speed) AS avg_speed
- FROM livelab_db.car_iot_details iot
+ SELECT driver.driver_id, AVG(iot.car_speed) AS avg_speed 
+ FROM livelab_db.car_iot_details iot 
  JOIN car_info car ON car.vehicle_id = iot.vehicle_id
  JOIN driver_info driver ON car.driver_id = driver.driver_id
  GROUP BY driver.driver_id
@@ -110,20 +110,20 @@ average_speed_monthly AS (
 
 --3,Which vehicles have the highest and lowest fuel consumption?
 fuel_consumption_monthly AS (
- SELECT vehicle_id,
- SUM(fuel_consumption) AS total_fuel_consumption
- FROM
- (
- SELECT
- vehicle_id,
- (MAX(fuel_level) - MIN(fuel_level)) AS fuel_consumption
- FROM livelab_db.car_iot_details
+ SELECT vehicle_id, 
+ SUM(fuel_consumption) AS total_fuel_consumption 
+ FROM 
+ ( 
+ SELECT 
+ vehicle_id, 
+ (MAX(fuel_level) - MIN(fuel_level)) AS fuel_consumption 
+ FROM livelab_db.car_iot_details 
  GROUP BY vehicle_id, to_date(time_gps)
- ) AS fuel_consumption_table
- GROUP BY vehicle_id
+ ) AS fuel_consumption_table 
+ GROUP BY vehicle_id 
  ORDER BY total_fuel_consumption ASC
   )
-
+ 
 --join driver info and car info
 INSERT INTO driving_analysis_result
 SELECT
@@ -152,58 +152,59 @@ JOIN fuel_consumption_monthly fsm ON car.vehicle_id = fsm.vehicle_id;
 
 --4,Is there a correlation between acceleration and fuel consumption?
 INSERT INTO correlation_acceleration_fuel
- SELECT
- AVG(fuel_level) AS avg_fuel_consumption,
- AVG(ABS(accel_speed)) AS avg_acceleration
+ SELECT 
+ AVG(fuel_level) AS avg_fuel_consumption, 
+ AVG(ABS(accel_speed)) AS avg_acceleration 
  FROM livelab_db.car_iot_details;
- </copy>
+</copy>
 ```
 
-1.Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
-
-2.Execute Spark SQL script with the following command. You can also execute Spark-SQL one by one.
+1. Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
+2. Execute Spark SQL script with the following command.
 
 ```
 <copy>
 sudo su - hdfs
-cd /usr/odh/2.0.4/spark/bin
-./spark-sql -f /tmp/source/sql/spark-sql.sql
+/usr/lib/spark/bin/spark-sql  \
+--master yarn \
+--num-executors 1 \
+--executor-memory 1G \
+--executor-cores 1 \
+-f /tmp/source/sql/spark-sql.sql
 </copy>
 ```
 
 ## Task2: Visualize the Analysis Result in OAC
 
-1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+1. ![lab4 OAC Homepage](https://file+.vscode-resource.vscode-cdn.net/d%3A/github/analytics-ai/big-data/analyze-iot-car/lab4-analyze-driving-patterns/images/04_lab4_1.png "homepage")First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
-![lab4 OAC Homepage](images/04_lab4_1.png "homepage")
-
-2.Select **MySQL** connection that you created.
+2. Select **MySQL** connection that you created.
 
 ![lab4 OAC Connection](images/04_lab4_2.png "connection")
 
-3.Double click table **driving_analysis_result** under MySQL database.
+3. Double click table **driving_analysis_result** under MySQL database.
 
 ![lab4 Dataset](images/04_lab4_3.png "dataset")
 
-4.Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
+4. Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
 
 ![lab4 Dataset Editor](images/04_lab4_4.png "dataset editor")
 
-5.Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
+5. Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
 
 ![lab4 Save Dataset](images/04_lab4_5.png "save dataset")
 
 ![lab4 Name Dataset](images/04_lab4_6.png "name dataset")
 
-6.After saving dataset, you can create a workbook. Click **Create Workbook**.
+6. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
 ![lab4 Create Workflow](images/04_lab4_7.png "create workbook")
 
-7.On the workbook page select **Table** visualization. Drag&Drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag&Drop **Driver gender** into **Color**.
+7. On the workbook page select **Table** visualization. Drag and drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag and drop **Driver gender** into **Color**.
 
 ![lab4 Create Viz](images/04_lab4_8.png "create viz")
 
-8.Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
+8. Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
 
 ![lab4 Save Viz](images/04_lab4_9.png "save workbook")
 

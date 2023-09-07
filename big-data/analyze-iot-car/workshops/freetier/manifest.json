@@ -1,35 +1,35 @@
 
 {
-      "workshoptitle": "Analyze IoT Car in Big Data Services",
+      "workshoptitle": "Analyze IoT Car using Flink/Kafka/Spark in Big Data Services",
       "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
-         "title": "Get Started",
+         "title": "Getting Started",
          "description": "Get a Free Trial",
          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
       }
       ,
       {
-            "title": "Lab 1: Set Up Your Environment",
-            "description": "This lab shows you how to set up the BDS Environment",
+            "title": "Lab 1: Initialize the BDS Environment",
+            "description": "This lab shows you how to Initialize the BDS Environment",
             "filename": "./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md"
       }
       ,
       {
-            "title": "Lab 2: Monitor the truck real-time drive",
-            "description": "This lab shows you how to Monitor the truck real-time drive.",
+            "title": "Lab 2: Monitor Real-Time Truck Driving",
+            "description": "This lab shows you how to Monitor Real-Time Truck Driving.",
             "filename": "./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md"
       }
       ,
       {
-            "title": "Lab 3: Identify dangerous road sections",
-            "description": "This lab shows you how to Identify dangerous road sections.",
+            "title": "Lab 3: Identify Hazardous Road Segments",
+            "description": "This lab shows you how to Identify Hazardous Road Segments.",
             "filename": "./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md"
       }
       ,
       {
-            "title": "Lab 4: Analyze drive behavior",
-            "description": "This lab shows you how to Analyze drive behavior.",
+            "title": "Lab 4: Analyze Driving Patterns",
+            "description": "This lab shows you how to Analyze Driving Patterns.",
             "filename": "./../../lab4-analyze-driving-patterns/analyze-driving-patterns.md"
       }
       ,
