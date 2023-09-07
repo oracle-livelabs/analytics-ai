@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you'll be guided on setting up a Flink task for real-time processing. This involves capturing real-time location data and visualizing it on a map, enabling the display of live location monitoring on a dedicated screen. Such monitoring allows for real-time querying of each truck's location, its distance and time to destination, any deviations from its path, and its adherence to expected routes.
+In this lab, you'll be guided on setting up a Flink task for real-time processing. This involves capturing real-time location data and visualizing it on a map, enabling the display of live location monitoring on a dedicated screen. Such monitoring allows for real-time querying of each truck's location, its distance and time to destination, any deviations from its path, and its adherence to expected routes. 
 
 The data input consists of truck location details, captured every 5 seconds by individual IoT devices. This data encompasses vehicle codes, timestamps, longitude, latitude, and more.
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you'll learn to set up a Flink task for real-time processing. The focus is on analyzing historical accident data to identify hazardous road sections. Using real-time truck location data, the system determines if a truck is on one of these dangerous sections. If a match is found, a safety alert is dispatched to the driver, urging caution.
+In this lab, you'll learn to set up a Flink task for real-time processing. The focus is on analyzing historical accident data to identify hazardous road sections. Using real-time truck location data, the system determines if a truck is on one of these dangerous sections. If a match is found, a safety alert is dispatched to the driver, urging caution. 
 
 The system relies on two primary data sources: driving information sourced from Kafka and records of dangerous road locations from MySQL. Within Flink, these datasets are merged, filtering out any incomplete or irrelevant entries, to produce the desired results.
 
@@ -48,6 +48,7 @@ CREATE TABLE car_info (
    'table-name' = 'car_info'
 );
 ```
+
 ```
 CREATE TABLE driver_info (
 `driver_id` INT,
@@ -66,6 +67,7 @@ CREATE TABLE driver_info (
    'table-name' = 'driver_info'
 );
 ```
+
 ```
 CREATE TABLE dangerous_road (
 `road_id` INT,
@@ -85,6 +87,7 @@ CREATE TABLE dangerous_road (
    'table-name' = 'dangerous_road'
 );
 ```
+
 ```
 CREATE TABLE dangerous_road_alert (
 `vehicle_id` INT,
@@ -139,6 +142,7 @@ SELECT a.vehicle_id,
 FROM car_iot_details_view a, dangerous_road b
 WHERE (6370000 * 2 * ASIN(SQRT(POWER(SIN((RADIANS( a.latitude) - RADIANS( b.latitude)) / 2), 2) + COS(RADIANS( a.latitude)) * COS(RADIANS( b.latitude)) * POWER(SIN((RADIANS(a.longitude) - RADIANS(b.longitude)) / 2), 2)))) <= 2000;
 ```
+
 ```
 INSERT INTO dangerous_road_alert 
 SELECT a.vehicle_id,

@@ -253,7 +253,7 @@ For data visualization ,you need to create an OAC environment on OCI.
 ## Task4: Deploy Souce Code on BDS
 
 1. Log into BDS node(un0) as root user. Download source.zip to any directory (eg. /tmp) and unzip it.
-   source.zip download link:
+   source.zip download link: 
    [source.zip](https://objectstorage.ap-tokyo-1.oraclecloud.com/p/CxV2eZlF7eVrQhIMOIy5t9iWWeSmgW4vDDSrHzPiHSsq9raprO3gP6wc-w-iqyXv/n/sehubjapacprod/b/live-lab/o/download/source.zip)
 
 ```

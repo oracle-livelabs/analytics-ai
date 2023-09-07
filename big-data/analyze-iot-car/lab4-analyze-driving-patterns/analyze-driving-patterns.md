@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving.
+In this lab, you'll analyze various aspects of a truck driver's operations, including acceleration, braking, and speeding patterns, as well as vehicle conditions like fuel consumption and engine temperature. This analysis will help determine potential instances of dangerous or fatigued driving. 
 
 ![lab4 Workflow](images/04_lab4_workflow.png "workflow")
 
@@ -81,8 +81,8 @@ OPTIONS (
 </copy>
 ```
 
-
 The following part find out drivers who exhibit anomalous driving behavior, such as sudden changes in speed or braking, then write the result into MySQL.
+
 ```
 <copy>
 --1,Which drivers exhibit anomalous driving behavior, such as sudden changes in speed or braking?
@@ -162,6 +162,7 @@ INSERT INTO correlation_acceleration_fuel
 1.Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
 
 2.Execute Spark SQL script with the following command. You can also execute Spark-SQL one by one.
+
 ```
 <copy>
 sudo su - hdfs
@@ -169,6 +170,7 @@ cd /usr/odh/2.0.4/spark/bin
 ./spark-sql -f /tmp/source/sql/spark-sql.sql
 </copy>
 ```
+
 ## Task2: Visualize the Analysis Result in OAC
 
 1.First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
