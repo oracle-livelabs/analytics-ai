@@ -18,9 +18,12 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 * Learn to use CLI to interact with OCI Speech
 * Learn to use the OCI Speech SDKs.
 * Learn to access OCI Speech in DataScience NotebookSession
+* Learn to enable notifications for OCI Speech transcription jobs
+* Learn to trigger JAVA functions using OCI Speech service
 <!-- * Learn to access OCI Language Service in Data Flow. -->
 
 ### Prerequisites:
+
 * An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with OCI Policy and SDK/CLI setup.
@@ -41,7 +44,7 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 
 You may now **proceed to the next lab**
 
-## Acknowledgements:
+## Acknowledgements
 * **Authors**
     * Alex Ginella - Oracle AI OCI Speech Services
     * Rajat Chawla  - Oracle AI OCI Speech Services

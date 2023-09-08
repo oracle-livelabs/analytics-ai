@@ -29,16 +29,16 @@ Connect to your **Autonomous Database**.
 In the ADWH console, lets navigate to the Development tab and open the SQL Developer Web  
 
 1. In the **Oracle Console Home** Page, click on the hamburger **MENU** link at the upper left corner of the page and go to the ****Autonomous Data Warehouse**** section.  
-    ![Oracle Console SignIn](https://oracle-livelabs.github.io/common/images/console/database-adw.png)
-    
+    ![Oracle Console SignIn](./images/oci-nav.png)
+
     You can see all the **ADW** instances that you have **created**.  
     **Select** the instance that we created before.  
-    ![ADW databases list](./images/lab300_2a.png)
+    ![ADW databases list](./images/adw-list.png)
 
 2. On the "***Autonomous Database Details***" page for your Autonomous Database, click the **Database Actions** tab.  
 You can access to the '***Autonomous Database Details***' page using the cloud console page.  
 
-    ![ADW DB Console](./images/database-actions.png) 
+    ![ADW DB Console](./images/database-actions.png)
 
       - Select **SQL** from **Development** section.  
       ![](./images/sql.png)
@@ -46,14 +46,14 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
    - Download the [starter file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/starter-file.sql) SQL code, _Copy_ the content and _Paste_ to the _SQL Worksheet_.  
    ![SQL Developer Web worksheet](./images/sql-worksheet.png)    
 
-    - Click **Run Script** ![Run Script](./images/lab300_3d.png)
+    - Click **Run Script**
 
     - Check 'Script Output'  
      ![Script Output](./images/script-output.png)
 
     - Go to **Navigator** and search for DCA\_SALES\_DATA table
 
-      ![DCA Sales Data](./images/dca-sales-data.png)
+      ![DCA Sales Data](./images/dca-sales-data.png =250x*)
 
 ## Task 2: Prepare the connection from Autonomous Database
 
@@ -74,17 +74,17 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
     ![ADW DB Console](./images/db-connection.png)
 
     This will open a pop-up window. Select Wallet Type **Instance Wallet** and then **Download Wallet**.  
-    ![Oracle Wallet](./images/lab300_4a.png)
+    ![Oracle Wallet](./images/download-wallet.png)
 
    You will be asked to provide a **password** for the wallet. The password must meet the rules for the **Oracle Cloud password** complexity. This password is a password that you need to remember for your **wallet**. You can use the **admin password** that you created before.
 
 3. Select **Download** and save the wallet to your **local machine**.  
 
-    ![Oracle Wallet Download](./images/lab300_5.png)
+    ![Oracle Wallet Download](./images/wallet-pw.png)
 
 4. You can now **Close** the **Database Connection** pop up window.
 
-    ![Oracle Wallet Close](./images/lab300_6.png)
+    ![Oracle Wallet Close](./images/close-wallet.png)
 
 ## Task 3: Create the connection from Oracle Analytics Cloud to Autonomous Database
 1. ### Use the Wallet in Oracle Analytics Cloud
@@ -96,7 +96,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
 2. **Open** the Cloud Analytics **URL** associated with your instance (the one that we created in Lab 2) by using the dots menu button on the right-hand side of your instance information and selecting **Analytics Home Page**.  
 
-    ![Cloud Analytics URL](./images/lab300_8a.png)  
+    ![Cloud Analytics URL](./images/analytics-homepage.png)  
     > The **Oracle Analytic**s page will open in a new browser **window/tab**.
 
 3. On the top right-hand side of the screen, click **Create**, and then **Connection**.  
@@ -111,7 +111,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
     I recommend selecting first the autonomous database wallet zip file you just downloaded in ***Client Credentials*** field. It will automatically extract the required *cwallet.sso* and then **autocomplete** several of the fields for you. Later on you just have to review and modify them if need it.
 
-    > **Connection Name**: ADWH or any other connection name you choose 
+    > **Connection Name**: ADWH or any other connection name you choose
     >
     > **Service Name**: Choose the name of your database followed by the \_medium suffix.
     >
@@ -130,7 +130,7 @@ Now lets create a Data Set using the ADWH connection just created. And lets sele
 
 1. On the top right-hand side of the ***Oracle Analytics*** Home Page, click **Create**, and then **Data Set** to display the Create Data Set dialog.  
 
-    ![Data Set Creation](./images/create-dataset.png)
+    ![Data Set Creation](./images/create-dataset.png =250x*)
 
 2. In the Data Set editor, browse or search for  **ADWH**, the connection you have **created** in the previous step. Double-click  
 
@@ -138,14 +138,14 @@ Now lets create a Data Set using the ADWH connection just created. And lets sele
 
 3. In the next window, search for **DCA\_SALES\_DATA** table in **ADMIN**  *schema* and click **Add to Dataset**.
 
-    ![Data Set Creation -DCA_SALES_DATA](./images/add-to-dataset.png)
+    ![Data Set Creation -DCA_SALES_DATA](./images/add-to-dataset.png =250x*)
 
 4. Right Click **DCA\_SALES\_DATA** and select **Edit Definition**
 
     ![Edit Definition](./images/dataset-edit-def.png)
 
 5. Click **Add All**
-    
+
     ![Data Set Creation -DCA_SALES_DATA](./images/dataset-add-all.png)
 
     Once you add the columns the **Data Set name** took as the default table name (**DCA\_SALES\_DATA**)
@@ -180,11 +180,11 @@ Double Click **'Loyalty\_ID'** column, type in **# Customers** and hit Enter
     ![Count Distinct](./images/count-distinct.png)
 
 10. Lets extract week from the Sales Date column and rename it appropriate.  
-Select (click) **SALES\_DATE** column, go to Options > **Extract** > Week 
+Select (click) **SALES\_DATE** column, go to Options > **Extract** > Week
 
     ![Extract Week](./images/extract-week.png)
 
-11. Go to the new column **SALES_DATE Week 1** double-click > type in **Sales Week** and Click Enter on your keyboard 
+11. Go to the new column **SALES_DATE Week 1** double-click > type in **Sales Week** and Click Enter on your keyboard
 
     ![Sales Week](./images/sales-week.png)
 
@@ -199,7 +199,7 @@ Click on the Save button on top right.
 
 14. Click **Go Back** left arrow from top left
 
-    ![](./images/go-back.png)
+    ![](./images/go-back.png =300x*)
 
 You have just finished to Load and Prepare your Data.
 
@@ -207,7 +207,7 @@ You may now **proceed to the next lab**.
 
 ## Want to Learn More?
 
-* Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 3: Data Preparation and Augumented Data Enrichment 
+* Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 3: Data Preparation and Augumented Data Enrichment
 * [Typical Workflow to Prepare Your Data Set for Analysis](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/typical-workflow-prepare-your-data-set-analysis.html)  
 * [Modeling Your Data with Self-Service Data Sets in Oracle Analytics](https://blogs.oracle.com/analytics/post/modeling-your-data-with-self-service-data-sets-in-oracle-analytics)  
 * [Five Ways to Quickly Discover and Repair Data Issues in Oracle Analytics](https://blogs.oracle.com/analytics/post/five-ways-to-quickly-discover-and-repair-data-issues-in-oracle-analytics)  
@@ -217,4 +217,4 @@ You may now **proceed to the next lab**.
 - **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
-- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), March 2022
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023

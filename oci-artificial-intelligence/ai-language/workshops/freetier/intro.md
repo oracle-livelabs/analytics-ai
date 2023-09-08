@@ -1,44 +1,70 @@
-# OCI Language
+# Introduction
 
-## Introduction
+This live lab demonstrates how to extract insights from unstructured text with no machine-learning knowledge. OCI Language Service provides suite of services to distill a deeper understanding of opinions with sentiment analysis, identify key phrases and extract named entities such as people, places and organizations to understand common subjects and patterns. You can use out of the box pre-trained models and also customize the models to suite a specific domain.
 
-OCI Language empowers developers with production ready pre-trained models to automate sophisticated text analysis at scale without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs.
+OCI Language Service key features:
 
-The Language service contains these pretrained language processing capabilities:
+### **Pre-Trained Models**
 
-### 1. Sentiment Analysis
+OCI Language pre-trained APIs uses AI models trained for most common use cases.
+
+#### 1. Sentiment Analysis
+
 Identifies sentiment at the document, sentence and aspect level.
 
-### 2. Named Entity Recognition
+#### 2. Named Entity Recognition
+
 Identifies common entities, people, places, locations, email, and so on.
 
-### 3. Key Phrase Extraction
+#### 3. Key Phrase Extraction
+
 Identify the most salient talking points in your text.
 
-### 4. Language Detection
+#### 4. Language Detection
+
 Detects languages based on the given text, and includes a confidence score.
 
-### 5. Text Classification
+#### 5. Text Classification
+
 Identifies the document category and subcategory that the text belongs to.
 
+#### 6. Personal Identifiable Information
+
+Detects various entities of personal information.
+
+### **Custom Models**
+
+OCI Language custom models enables you to customize Text Classification and Named Entity Recognition with your own data
+
+
+#### 1. Custom Text Classification
+
+Enables you to build a custom AI model to automatically classify text into a set of classes you pre-define, both single label and multi-label custom text classification is supported.
+
+#### 2. Custom Named Entity Recognition
+
+Enables you to build a model to identify domain-specific entities that are unique to your business or industry vertical.
+
+### **Text Translation**
+
+OCI Language now provides an API to automatically translate text across 21 languages.
 
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 
-Explore the Language service within the Oracle Cloud AI service group to perform NLP tasks like detecting languages, extracting key elements, classifying intent, detecting the sentiment, etc., in the text with a few simple steps.
+&nbsp;
+&nbsp;
 
-*Estimated Lab Time*: 1 hour
+*Estimated Lab Time*: 2 hour
 
 ### Objectives:
 
-* Understand a high level overview of the OCI Language
-* Understand the full cycle/workflow of services provided in the OCI Language
-* Learn to use REST API to interact with OCI Language
-* Learn to use CLI to interact with OCI Language
-* Learn to use the OCI Language SDKs.
-* Learn to access OCI Language in DataScience NotebookSession
-<!-- * Learn to access OCI Language Service in Data Flow. -->
+* Understand overview of the OCI Language
+* Learn how to analyze text using pre-trained models using OCI Console, API and SDK
+* Learn how to create and train custom models
+* Learn how to use OCI Language service to translate text using OCI Console, API and SDK
 
 ### Prerequisites:
+
 * An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with OCI Policy and SDK/CLI setup.
@@ -46,19 +72,15 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 * Familiar with OCI services like DataScience, DataFlow etc., are recommended, but not required.
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
-<!-- ## AI Language Service Concepts -->
-<!-- * Pretrained -->
+[Proceed to the next section](#next)
 
-<!-- ## AI Language Process -->
+## Acknowledgements
 
-<!-- 1. Pretrained -->
+**Authors**
+  * Raja Pratap Kondamari - Product Manager, OCI Language Service
+  * Sahil Kalra - Oracle AI OCI Language Services
+  * Rajat Chawla  - Oracle AI OCI Language Services
+  * Ankit Tyagi -  Oracle AI OCI Language Services
 
-
-[Proceed to the next section](#next).
-
-### Acknowledgements:
-* **Authors**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services
-    * Ankit Tyagi -  Oracle AI OCI Langauge Services
-* **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI Services, February 2021
+**Last Updated By/Date**
+* Sahil Kalra - OCI Language Service, March 2022

@@ -40,11 +40,11 @@ This lab assumes you have:
     <copy>Oracle_4U</copy>
     ```
 
-    ![](images/essbase-login.png " ")
+    ![Essbase login page](images/essbase-login.png " ")
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
-    ![](images/essbase-landing.png " ")
+    ![Essbase Login Success Page](images/essbase-landing.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
@@ -57,8 +57,8 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/db-service-status-1.png " ")
-    ![](images/db-service-status-2.png " ")
+    ![Status of Database service](images/db-service-status-1.png " ")
+    ![Status of Database service](images/db-service-status-2.png " ")
 
     - WLS Admin Server and Essbase Server
     ```
@@ -67,7 +67,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/essbase-service-status.png " ")
+    ![Status of Database service](images/essbase-service-status.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 

@@ -30,16 +30,16 @@
       "filename": "../../setup-odi-rep/setup-odi-rep.md"
     },
     {
-      "title": "Lab 4: Getting Started",
+      "title": "Lab 4: Get Started",
       "filename": "../../odi12c-lab/odi12c-lab.md"
     },
     {
       "title": "Lab 5: Work with Mappings - 1",
-      "filename": "../../odi12c-mappings-1/odi12c-mappings-1.md"
+      "filename": "../../odi12c-basic-mappings-1/odi12c-mappings-1.md"
     },
     {
       "title": "Lab 6: Work with Mappings - 2",
-      "filename": "../../odi12c-mappings-2/odi12c-mappings-2.md"
+      "filename": "../../odi12c-basic-mappings-2/odi12c-mappings-2.md"
     },
     {
       "title": "Lab 7: Implementing Data Quality Control",

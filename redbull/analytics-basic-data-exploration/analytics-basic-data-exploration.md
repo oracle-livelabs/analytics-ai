@@ -285,7 +285,7 @@ Let's have a first look at the data that we have available for our data challeng
 	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you will be able to generate (predict) the scores for the races of 2021 yourself!
 -->
 
-## **Task 3:** Finding the best and worst race according to the fans
+## **Task 4:** Finding the best and worst race according to the fans
 
   What was the most popular race between 2008 and 2020 according to the fans? This would be interesting to find out, as that race is likely to have a lot of the key factors that fans appreciate.
 
@@ -333,7 +333,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 ![Banner](images/to-homepage6.png)
 
-## **Task 4:** Overtakes and DNFs
+## **Task 5:** Overtakes and DNFs
 
 These two races are a great starting point for our investigation into what factors makes a great (or not so great) race.
 
@@ -429,7 +429,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
    ![Banner](images/to-homepage9.png)
 
-## **Task 5:** Correlation diagrams for Position Changes and DNFs
+## **Task 6:** Correlation diagrams for Position Changes and DNFs
 
 How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
@@ -541,7 +541,7 @@ How can we check whether our theories about the relationship between position ch
 
    ![Banner](images/to-homepage8.png)
 
-## **Task 6:** Conclusion
+## **Task 7:** Conclusion
 
 In our Exploratory Data Analysis we tried to identify factors that are of value to predict the score that fans give to the races.
 

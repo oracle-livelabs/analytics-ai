@@ -1,4 +1,4 @@
-# Lab 4: Access OCI speech with REST APIs
+# Lab 4: Access OCI speech with REST APIs (Optional)
 
 ## Introduction
 
@@ -16,16 +16,16 @@ Postman is a GUI-based REST API invocation tool that is very popular among devel
 * Basic knowledge of REST API calls.
 * Postman GUI in your local setup. If you don't have POSTMAN, please download it from [POSTMAN](https://www.postman.com/downloads/)
 
-## **Task 1:** Setting Up Postman for OCI REST APIs
+## Task 1: Setting Up Postman for OCI REST APIs
 We have provided some scripts and steps below that can be used to allow invoking OCI REST APIs through Postman. Please follow the steps in the order described.
 
 1. Import the environment into Postman
 
     Download the [OCI Environment](./files/OCI_Environment.postman_environment.json) and import the environment into Postman using the 'Import' button at the top.
-        ![](./images/import-env.png " ")
+        ![POSTMAN import environment window](./images/import-env.png " ")
 
     Make sure to set OCI_Environment as the active environment.
-        ![](./images/set-active.png " ")
+        ![OCI environment window](./images/set-active.png " ")
 
 2. Set the Variables
 
@@ -34,7 +34,7 @@ We have provided some scripts and steps below that can be used to allow invoking
     Make sure to set both Initial Value and Current Value of the variables (set both as the same value).
 
     Click the Save button to commit your changes to the environment.
-        ![](./images/set-var.png " ")
+        ![OCI environment variables](./images/set-var.png " ")
 
 3. Import the Collections
 
@@ -43,7 +43,7 @@ We have provided some scripts and steps below that can be used to allow invoking
 4. Execute OCI REST Initializer
 
     From the OCI REST INITIALIZATION collection, invoke the Initializer GET for 'jsrsasign-all-min.js' , which imports and initializes a required library jsrsasign for encryption and digital signatures. This is a one-time setup task. 
-        ![](./images/initialize-rest.png " ")
+        ![OCI REST initialization collection](./images/initialize-rest.png " ")
 
 <!-- ### 5. Add Request in OCI REST COLLECTION
 
@@ -55,14 +55,16 @@ Enter Name and click 'Save to OCI REST COLLECTION'
 
 Just make sure that the OCI REST calls are executed as part of the OCI REST COLLECTION, as that collection contains the necessary javascript code to generate OCI's authentication header -->
 
-## **Task 2:** Invoke Speech OCI REST APIs
+## Task 2: Invoke Speech OCI REST APIs
 
 Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
 Below, in the example shown to invoke Create Transcription Job, replace all placeholder values with the corresponding values of the job you want to create
-    ![](./images/postman-screenshot.png " ")
+    ![Create Transcription Job example](./images/postman-screenshot.png " ")
 
 OCI Speech Service EndPoints for all the services:
+
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
 
 
 1. <u>Create Transcription Job</u>
@@ -70,7 +72,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs
     </copy>
     ```
     Body:
@@ -115,7 +117,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
     ```
 
 3. <u>List Transcription Jobs</u>
@@ -123,7 +125,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
     ```
 
 3. <u>Edit Transcription Job</u>
@@ -131,7 +133,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
     </copy>
     ```
     Body:
@@ -149,7 +151,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
     ```
     Body:
     ```
@@ -165,7 +167,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
     </copy>
     ```
 
@@ -174,7 +176,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
     </copy>
     ```
 
@@ -183,7 +185,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
     </copy>
     ```
 
@@ -192,7 +194,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
     </copy>
     ```
 
@@ -205,3 +207,4 @@ You may now **proceed to the next lab**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
+    * Veluvarthi Narasimha Reddy - Oracle AI Services

@@ -26,12 +26,12 @@ Estimated Lab Time: 30 minutes
 Download the file: [OAC_TD_Agreements.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Agreements.xlsx)
 
 To confirm that Hotel had already an agreement and the savings they have to claim to the hotel chain, you need to add that information from another excel with the list of vendor agreements.
-1. Click on the plus icon at the top right of the Data menu and select “Add Data Set”
+1. Click on the plus icon at the top right of the Data menu and select “Add Data”
 
 ![](images/1_add_data_set.png " ")
 
 You need to upload this new file.
-2. Click “Create Data Set”
+2. Click “Create Data Set”. A new browser tab will open.
 
 ![](images/2_create_data_set.png " ")
 
@@ -45,30 +45,41 @@ You need to upload this new file.
 ![](images/4_upload_file.png " ")
 
 
-You see a preview of the data. Note that this file has the country column with ISO3 code. It is really good that we got the recommendation to add ISO3 code to the expenses one.
-5. Change the Name of the dataset adding your initials at the end, to avoid clashing with other attendees, for instance: OAC_TD_Agreements_JAMP .Click on “Add”.
+A pop-up window shows preview of the data. 
 
+![](images/4a_upload_file.png " ")
+
+You see a preview of the data. Note that this file has the country column with ISO3 code. It is really good that we got the recommendation to add ISO3 code to the expenses one.
+
+5. Click OK
+
+The Editor window for the new dataset appears. This time no changes are needed. 
+
+![](images/4b_upload_file.png " ")
+
+1. Click on the Save icon 
+
+2. Change the Name of the dataset adding your initials at the end, to avoid clashing with other attendees, for instance: OAC_TD_Agreements_IF 
+
+3. Click OK
+
+Dataset gets saved and ready. You can get back to the workbook. 
+1. Click on the previous browser tab. It should have the name you used to save the workbook.
 
 ![](images/5_add_dataset.png " ")
 
+The list of datasets gets updated and the new added one appears selected.
+ 1. Click “Add to Workbook”
+
+![](images/5a_add_dataset.png " ")
+
 ## **Task 2**: Join different datasets
 
-New Data Set gets uploaded to instance.
-Navigate to previous tab in browser.
-
-1. Click on the plus icon at the top right of the Data menu and select “Add Data Set”.
-
-![](images/1_add_data_set.png " ")
-
-2. Select OAC_TD_Agreements_ yourName.xlsx file from list. Click on Add to Project button.
-
-![](images/6_select_data_set_agreements.png " ")
-
-3. New Data set gets added to project. Navigate to Data tab.
+New Data set gets added to project. Navigate to Data tab.
 
 ![](images/6_navigate_data_tab.png " ")
 
-4. Click on “Data Diagram” tab
+4. “Data Diagram” tab will be active
 
 ![](images/6_add_data.png " ")
 
@@ -102,7 +113,7 @@ You should have something like the screenshot. Then click OK.
 Once the join has been defined you can go back to the Visualize tab to continue your analysis.
 10. Click on “Visualize” at the top center.
 
-![](images/12_vizualise.png " ")
+![](images/12_visualize.png " ")
 
 On the Data menu at the left you note that the new Data Set has been added.
 
@@ -111,6 +122,7 @@ On the Data menu at the left you note that the new Data Set has been added.
 ![](images/13_explorer_data_set.png " ")
 
 You want to compare the total Hotel Expenses with the amount that can be saved if the company claims the Hotel Chain to apply the agreement.
+
 12. Click and Drag “Expenses Amount” to the top of the canvas. Check that a green bar appears at the top covering the whole canvas and not only a small part of it.
 
 ![](images/14_tile.png " ")
@@ -120,9 +132,9 @@ You want to compare the total Hotel Expenses with the amount that can be saved i
 ## **Task 3**: Use calculations on your datasets
 
 To obtain the savings you need to calculate the expenses multiplied by the agreement discount (that has not been applied).
-1. Select “My Calculations” and Right-click on it.Select “Add Calculation”
+1. Select “My Calculations” and Right-click on it. Select “Add Calculation”
 
-My calculations are at the bottom of the Data Pane, use the slider to find it if your screen resolution is too small and it is not appearing.
+My calculations are at the bottom of the explorer, use the slider to find it if your screen resolution is too small and it is not appearing.
 
 ![](images/15_Add_Calculation.png " ")
 
@@ -139,17 +151,17 @@ On the pop-up window you can define the formula of the calculation using the edi
 ![](images/17_validate_save.png " ")
 
 
-4. Click and Drag the new calculation “Saving” to the top right part of the canvas.
-Check that the vertical green bar only covers the “Expenses Amount” right border. This means the visual will be placed next to it.
+4. Click and Drag the new calculation “Savings” below the “Expense mount” tile.
 
 ![](images/18_drag_saving.png " ")
 
 Great. Now you would like to make this more appealing so you will work on the look and feel.
+
 5. On the properties box select the 2nd tab with the hash icon.
 
 ![](images/19_select_properties.png " ")
 
-6. Look for the “Number Format” parameter and click on “Auto” . Select “Currency”
+6. Select the 2nd tab with the hash icon and look for the “Number Format” parameter and click on “Auto” . Select “Currency”
 
 ![](images/20_select_currency.png " ")
 
@@ -165,60 +177,85 @@ Repeat the steps for the “Expense Amount” tile (remember to first select the
 
 ![](images/23_tiles.png " ")
 
-9. Click on the Map and Drag it to the right border of the canvas.
+9.	Click on “Savings” tile and drag it to the right of the “Expense Amount” tile.
 
-![](images/24_select_map.png " ")
+![](images/23_1_select_savings.png " ")
 
-10. Drop it when the green bar shows that Map will be placed next to the Horizontal Bar visual but not covering the whole right border.
+10. The visualization will disappear and move. Drop it when you see the green bar close to the “Expense Amount” tile
 
-![](images/25_drag_map.png " ")
+![](images/23_2_drag_savings.png " ")
 
-11. Click on the Horizontal Bar visual and drag it to the bottom left, under the Line Chart
-
-![](images/26_drag_bar_graph.png " ")
-
-12. Drop it when the green bar shows that will be under the line chart but not the whole bottom line.
-
-![](images/27_drop_bar_graph._bottom.png " ")
-
-13. Click on the Savings visual to select it.
+11. Click on the Savings visual to select it.
 
 ![](images/28_select_savings.png " ")
 
-14. On the properties box, search for the “Background” parameter and click on “Auto” to switch to “Custom”.
+12. On the properties box, search for the “Background” parameter and click on “Auto” to switch to “Custom”.
 
 ![](images/29_background.png " ")
 
-15. Under the new options of “Custom” search for the “Fill Color” parameter and click on the white box.
-    Select a blue color (no need to be the same, but if you like you can copy the code on the hex box: #659aad)
+13. Under the new options of “Custom” search for the “Fill Color” parameter and click on the white box.
+    Select a green color (no need to be the same, but if you like you can copy the code on the hex box: #317a45)
     Click on OK to apply the changes.
 
 ![](images/30_fill_color.png " ")
 
 
-16. On the properties box, search now for the “Value Font” parameter and click on “Auto”.
-    On the pop-up click on the Font Color Icon and choose appropriate color from the available colors.
+14. On the properties box, search now for the “Value Font” parameter and click on “Auto”.
 
 ![](images/31_select_value_font_color.png " ")
 
-Great. This is a nice dashboard now. You can save your work.
-17. Click on “Save” at the top right corner.
+15. On the pop-up click on the Font Color Icon and assign a white color, ie: #ffffff.
 
-![](images/32_save_project.png " ")
+![](images/31__1_fill_color.png " ") 
 
-18. Put a name to your project. Click on “Save”
 
-![](images/33_name_save.png " ")
+Now our Workbook is ready to be shared.
+To make it even more easy for others to follow our discovery journey we can add comments to collaborate and better explain.
+
+16. Click on the Notes drop-down arrow and select “Add Note”
+
+![](images/35_add_note.png " ") 
+
+17. A new note will appear on the center of the canvas.
+Add a text to the note, for example:
+“Porto City Center Hotel” is the outlier as its not applying the agreement discount
+Click outside the note to save it.
+
+![](images/36_note_text.png " ") 
+
+18. Notes can be linked to datapoints to relate the information and explanations.
+
+Hover close to the note boundaries to see connection dots. Click on one of the dots and drag the line up to the top Scatter Plot point belonging to “Porto City Center”
+
+![](images/37_link_note.png " ") 
+
+19. Notes can also be moved to other places in the canvas.
+To see how the resulting workbook will look, a preview option is provided.
+
+Click on the Play Icon
+
+![](images/38_preview_workbook.png " ") 
+
+20. Interactivity is still available in the Preview mode.
+
+Click on the scatter point and see how related data is highlighted on all the visualizations. This clearly indicates that is the biggest outlier and expenses from this hotel are processed as out-of-policy.
+
+![](images/39_preview_mode.png " ") 
+
 
 **Well done!** You have completed all exercises. Now you are ready to show this info to your manager.
 
-![](images/34_final_project.png " ")
+![](images/40_final_project.png " ")
+
+
+
+
 
 
 ## End of Exercise 5
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forlafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023

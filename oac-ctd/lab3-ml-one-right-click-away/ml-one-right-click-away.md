@@ -49,9 +49,25 @@ Canvas: Where all visuals are displayed. You can create several tab canvases (Ca
 ![](images/2_canvas_properties.png " ")
 
 
-First steps analyzing data usually requires time and effort. You can get a big push by leveraging the Explain functionality
-1. Select “Expenses Amount” by clicking on it.
-2. Right-click on “Expenses Amount” and select “Explain Expenses Amount”
+First steps analyzing data usually requires time and effort. You can get a big push by leveraging the Auto Insights.
+1. Click on the Yellow Bubble icon. Note that it takes a bit for the daemon to profile the dataset and prepare suggestions, if it’s not yellow, just wait a bit. 
+2. Click and Drag “Vendor Scatter Plot Chart” to the left of the map
+
+![](images/2_1_auto_insights.png " ")
+
+3. Drop the Insight when you see the green bar and the small plus icon.
+
+![](images/2_2_auto_insights.png " ")
+
+The selected graphic is added. If you hover over the visualization title, the description is showed. You can drag the slider down and will see dozens of other suggestions. Any calculation required to build a visual will also be created automatically. For now, we are done. 
+
+1. Click on the X to close the Auto Insights
+
+![](images/2_3_auto_insights.png " ")
+
+The 2 visualizations is a good starting point. However, we want to understand in deep the relationship of the records and any possible anomalies. For that, another great function is Explain.
+
+1. Right-click on “Expenses Amount” and select “Explain Expenses Amount”
 
 ![](images/3_explain_feature.png " ")
 
@@ -116,6 +132,6 @@ Sales Department, Hotels, and Out of Policy are the topics to review deeper in o
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Author** - Mahira Galal, Aydin Heydari, Sushil Mule and Ionut Forlafu
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Sushil Mule, August 2021
+- **Last Updated By/Date** - Ionut Forlafu, March 2023

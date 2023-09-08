@@ -45,32 +45,24 @@ This lab assumes you have:
       - Display name: `sailgp`
       - Database name: `sailgp`
       - Choose a workload type: `Data Warehouse`
-      - Choose a deployment type: `Shared Infrastructure`
+      - Choose a deployment type: `Serverless Infrastructure`
 
-4. Fill the next part of the provisioning form with the following values.
+4. In the part named "Configure the database", keep all the default values.
 
-   ![ADW Form 2](images/adw-form-2.png)
-
-      - Always Free: Turn it `on`, but it will work if you leave it `off` like in the screenshot
-      - Choose database version: `19c`, if your region has 21c it will equally work
-      - OCPU count: `1` or default value
-      - Storage (TB): `1` or default value
-      - Auto Scaling: `on` or default value
-
-5. Fill the last part of the provisioning form with the following values.
-
-   ![ADW Form 3](images/adw-form-3.png)
+5. Fill the administrator credentials as follows:
 
       - Password: `Oracle_12345`
       - Confirm password: `Oracle_12345`
-      - Access Type: `Secure access from everywhere`
-      - Choose a license type: `License Included`
 
-   Click **Create Autonomous Database**.
+6. Keep the default values for Network Access
 
-   We will see the new ADW Database provisioning.
+7. In Choosee license and Oracle Database edition
+ 
+   - Choose "License included".
 
-6. Wait for the icon to change from:
+8. Click **Create Autonomous Database**.
+
+   We will see the new ADW Database provisioning. Wait for the icon to change from:
 
    ![AWD Provisioning](images/adw-provisioning-state.png)
 
@@ -78,7 +70,7 @@ This lab assumes you have:
 
    ![AWD Active](images/adw-active-state.png)
 
-7. Your Autonomous Data Warehouse is ready to use.
+9. Your Autonomous Data Warehouse is ready to use.
 
 You may now *proceed to the next lab*.
 
@@ -86,4 +78,3 @@ You may now *proceed to the next lab*.
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao
-- **Last Updated By** - Arabella Yao, August 2021
