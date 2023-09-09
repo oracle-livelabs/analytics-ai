@@ -18,19 +18,18 @@ BDS, MDS and OAC environment. Then, you will be guided to download a source code
 
 ## Task 1: Prepare BDS Environment
 
-1. Create an BDS (ODH 2.0) environment on OCI. Refer to the following link for the details. Note: select 3 OCPU for worker nodes.
+1. Create an BDS (ODH 2.0) environment on OCI.Please select 3 OCPU for worker nodes. And set the cluster name as bds-cluster. Refer to the following link to created BDS cluster. 
    [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
+
    You should follow below labs:
-
+   
    Lab 1: Setup the BDS Environment
-
+   
    Lab 2: Create a BDS Hadoop Cluster
-
+   
    Lab 4: Access a BDS Node Using a Public IP Address
-
+   
    Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster
-
-cluster name: bds-cluster
 
 2. Add Kafka and Flink services. Log into Ambari with the following URL.
 
@@ -113,11 +112,11 @@ scp /tmp/lib/mysql-connector-java-8.0.28.jar bdscluswn2:/usr/odh/current/flink/l
 scp /tmp/lib/mysql-connector-java-8.0.28.jar bdsclusmn0:/usr/odh/current/flink/lib
 
 #copy mysql connector jar file to spark3 classpath
-scp lib/mysql-connector-java-8.0.28.jar bdsclusun0:/usr/odh/current/spark3-client/jars
-scp lib/mysql-connector-java-8.0.28.jar bdscluswn0:/usr/odh/current/spark3-client/jars
-scp lib/mysql-connector-java-8.0.28.jar bdscluswn1:/usr/odh/current/spark3-client/jars
-scp lib/mysql-connector-java-8.0.28.jar bdscluswn2:/usr/odh/current/spark3-client/jars
-scp lib/mysql-connector-java-8.0.28.jar bdsclusmn0:/usr/odh/current/spark3-client/jars
+scp /tmp/lib/mysql-connector-java-8.0.28.jar bdsclusun0:/usr/odh/current/spark3-client/jars
+scp /tmp/lib/mysql-connector-java-8.0.28.jar bdscluswn0:/usr/odh/current/spark3-client/jars
+scp /tmp/lib/mysql-connector-java-8.0.28.jar bdscluswn1:/usr/odh/current/spark3-client/jars
+scp /tmp/lib/mysql-connector-java-8.0.28.jar bdscluswn2:/usr/odh/current/spark3-client/jars
+scp /tmp/lib/mysql-connector-java-8.0.28.jar bdsclusmn0:/usr/odh/current/spark3-client/jars
 
 #copy kafka and mysql connector jar to flink cluster classpath
 su - hdfs
@@ -298,7 +297,7 @@ chmod -R 777 source
 #you can get this value from Ambari kafka configuration page Services-> HDFS -> Configs
 #get the value of propertie:fs.defaultFS in Advanced core-site
 #example:hdfs://localhost:8020
-defaultFs=hdfs://livelabmn0.sub07110452230.shenzhuvcn2.oraclevcn.com:8020
+defaultFs=hdfs://bdsclusmn0.sub08030309530.justinvnc1.oraclevcn.com:8020
 
 #Mysql configurations
 #host:localhost or a Ip Address
@@ -315,7 +314,7 @@ mysql_port=3306
 #you can get this value from Ambari kafka configuration page Services-> Kafka -> Configs
 #you need to get the broker host and port.
 #example:livelabwn0:6667,livelabwn1:6667,livelabwn2:6667
-kafka_bootstrap_server=livelabwn0:6667,livelabwn1:6667,livelabwn2:6667
+kafka_bootstrap_server=bdscluswn0:6667,bdscluswn1:6667,bdscluswn2:6667
 </copy>
 ```
 

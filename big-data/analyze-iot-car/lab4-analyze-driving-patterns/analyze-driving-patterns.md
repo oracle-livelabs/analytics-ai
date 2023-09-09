@@ -24,6 +24,21 @@ This lab assumes that you have successfully completed the following labs in the 
 
 ## Task 1: Execute Spark SQL Script
 
+
+1. Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
+2. Execute Spark SQL script with the following command.
+
+```
+<copy>
+sudo su - hdfs
+/usr/lib/spark/bin/spark-sql  \
+--master yarn \
+--num-executors 1 \
+--executor-memory 1G \
+--executor-cores 1 \
+-f /tmp/source/sql/spark-sql.sql
+</copy>
+```
 **Source Code Explanation**
 The following part in spark-sql.sql create temporary view to access data from MySQL.
 
@@ -159,21 +174,6 @@ INSERT INTO correlation_acceleration_fuel
 </copy>
 ```
 
-1. Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
-2. Execute Spark SQL script with the following command.
-
-```
-<copy>
-sudo su - hdfs
-/usr/lib/spark/bin/spark-sql  \
---master yarn \
---num-executors 1 \
---executor-memory 1G \
---executor-cores 1 \
--f /tmp/source/sql/spark-sql.sql
-</copy>
-```
-
 ## Task2: Visualize the Analysis Result in OAC
 
 1. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
@@ -184,11 +184,11 @@ sudo su - hdfs
 
 ![lab4 OAC Connection](images/04_lab4_2.png "connection")
 
-3. Double click table **driving_analysis_result** under MySQL database.
+3. Double click table **driving\_analysis\_result** under MySQL database.
 
 ![lab4 Dataset](images/04_lab4_3.png "dataset")
 
-4. Click **driving_analysis_result** tab. Set **vehicle_id, driver_id, capacity, avg_speed** as attribute.
+4. Click **driving\_analysis\_result** tab. Set **vehicle\_id, driver\_id, capacity, avg\_speed** as attribute.
 
 ![lab4 Dataset Editor](images/04_lab4_4.png "dataset editor")
 

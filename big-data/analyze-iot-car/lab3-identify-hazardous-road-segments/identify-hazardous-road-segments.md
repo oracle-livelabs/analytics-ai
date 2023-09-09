@@ -201,11 +201,11 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 
  ![lab3 OAC Connection](images/03_lab3_2.png "connection")
 
-3. Double click table **dangerous_road_alert** under MySQL database.
+3. Double click table **"dangerous\_road\_alert"** under MySQL database.
 
 ![lab3 Dataset](images/03_lab3_3.png "dataset")
 
-4. Click **dangerous_road_alert** tab to set all the columns as attribute.
+4. Click **dangerous\_road\_alert** tab to set all the columns as attribute.
 
 ![lab3 Dataset Editor](images/03_lab3_4.png "ataset editor")
 

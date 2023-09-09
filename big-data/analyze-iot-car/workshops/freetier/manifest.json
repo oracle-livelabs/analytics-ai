@@ -4,6 +4,12 @@
       "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
+            "title": "Introduction",
+            "description": "Introduction to Analyze IoT Car in Big Data Services",
+            "filename": "./intro.md"
+            }
+            ,
+      {
          "title": "Get Started",
          "description": "Get a Free Trial",
          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"

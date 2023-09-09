@@ -10,7 +10,7 @@ This workshop's labs will guide you through the intricacies of processing and an
 
 ## Workshop Objectives
 
-- Initialize the BDS Environment.
+- Set Up Your Environment.
 - Monitor the truck real-time drive.
 - Identify dangerous road sections.
 - Analyze drive behavior.
@@ -54,4 +54,4 @@ Use the following links to get more information about BDS and OCI:
   * Justin Zou, Principal Data Engineer,Japan & APAC Hub
   * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
   * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
-* **Last Updated By/Date:** Justin Zou, Aug 2023
+* **Last Updated By/Date:** Justin Zou, Sep 2023

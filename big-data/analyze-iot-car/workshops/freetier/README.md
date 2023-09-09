@@ -10,6 +10,7 @@ The **Analyze IoT Car in Big Data Services workshop** will guide you through the
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
+- [Introduction](./../../workshops/freetier/intro.md)
 - [Set Up Your Environment](./../../lab1-initialize-the-bds-environment/initialize-the-bds-environment.md)
 - [Monitor the truck real-time drive](./../../lab2-monitor-real-time-truck-driving/monitor-real-time-truck-driving.md)
 - [Identify dangerous road sections](./../../lab3-identify-hazardous-road-segments/identify-hazardous-road-segments.md)
