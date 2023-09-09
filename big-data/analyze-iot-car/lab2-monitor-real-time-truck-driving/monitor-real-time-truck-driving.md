@@ -201,10 +201,6 @@ INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehic
 
 1. First create a dataset. Log into OAC Home Page. Click **Create** > **Dataset**.
 
-![switch to OCI OAC](images/02_lab2_task2_login_OAC.png)
-
-![Click Analytics Home Page](images/02_lab2_task2_oac_homepage_login.png)
-
 ![create dataset](images/02_lab2_task2_step1.png)
 
 
