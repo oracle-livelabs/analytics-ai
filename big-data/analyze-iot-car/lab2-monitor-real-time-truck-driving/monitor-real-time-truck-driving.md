@@ -203,7 +203,6 @@ INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehic
 
 ![create dataset](images/02_lab2_task2_step1.png)
 
-
 2. Select MySQL connection that you created.
 
 ![chose mysql connection](images/02_lab2_task2_step2.png)
@@ -272,4 +271,4 @@ You may now **proceed to the next lab**.
   * Qian Jiang, Senior Cloud Engineer, Japan & APAC Hub
   * Justin Zou, Principal Data Engineer, Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
-* **Last Updated By/Date:** Justin Zou, Aug 2023
+* **Last Updated By/Date:** Justin Zou, Sept 2023

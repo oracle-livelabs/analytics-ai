@@ -24,7 +24,6 @@ This lab assumes that you have successfully completed the following labs in the 
 
 ## Task 1: Execute Spark SQL Script
 
-
 1. Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
 2. Execute Spark SQL script with the following command.
 
@@ -39,6 +38,7 @@ sudo su - hdfs
 -f /tmp/source/sql/spark-sql.sql
 </copy>
 ```
+
 **Source Code Explanation**
 The following part in spark-sql.sql create temporary view to access data from MySQL.
 
@@ -218,4 +218,4 @@ INSERT INTO correlation_acceleration_fuel
   * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
   * Justin Zou, Principal Data Engineer, Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
-* **Last Updated By/Date:** Justin Zou, Aug 2023
+* **Last Updated By/Date:** Justin Zou, Sept 2023

@@ -247,4 +247,4 @@ You may now **proceed to the next lab**.
   * Xuying Xie, Senior Data Engineer, Japan & APAC Hub
   * Justin Zou, Principal Data Engineer, Japan & APAC Hub
   * Anand Chandak, Principal Product Manager, Big Data Services
-* **Last Updated By/Date:** Justin Zou, Aug 2023
+* **Last Updated By/Date:** Justin Zou, Sept 2023
