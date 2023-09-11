@@ -25,7 +25,7 @@ This lab assumes that you have successfully completed the following labs in the 
 ## Task 1: Execute Spark SQL Script
 
 1. Log into your BDS node un0. Replace the parameters in /tmp/source/sql/spark-sql.sql file with actual values.
-2. Execute Spark SQL script with the following command.
+2. Start Spark SQL client with the following command.
 
 ```
 <copy>
@@ -34,13 +34,11 @@ sudo su - hdfs
 --master yarn \
 --num-executors 1 \
 --executor-memory 1G \
---executor-cores 1 \
--f /tmp/source/sql/spark-sql.sql
+--executor-cores 1
 </copy>
 ```
 
-**Source Code Explanation**
-The following part in spark-sql.sql create temporary view to access data from MySQL.
+3. Execute the following Spark SQL command to create temporary view to access data from MySQL. Note: Replace the parameters before execution.
 
 ```
 <copy>
@@ -53,7 +51,11 @@ OPTIONS (
     password '{mysql_password}',
     driver 'com.mysql.cj.jdbc.Driver'
 );
+</copy>
+```
 
+```
+<copy>
 CREATE TEMPORARY VIEW dangerous_road
 USING org.apache.spark.sql.jdbc
 OPTIONS (
@@ -63,7 +65,11 @@ OPTIONS (
     password '{mysql_password}',
     driver 'com.mysql.cj.jdbc.Driver'
 );
+</copy>
+```
 
+```
+<copy>
 CREATE TEMPORARY VIEW driver_info
 USING org.apache.spark.sql.jdbc
 OPTIONS (
@@ -73,7 +79,11 @@ OPTIONS (
     password '{mysql_password}',
     driver 'com.mysql.cj.jdbc.Driver'
 );
+</copy>
+```
 
+```
+<copy>
 CREATE TEMPORARY VIEW driving_analysis_result
 USING org.apache.spark.sql.jdbc
 OPTIONS (
@@ -83,7 +93,11 @@ OPTIONS (
     password '{mysql_password}',
     driver 'com.mysql.cj.jdbc.Driver'
 );
+</copy>
+```
 
+```
+<copy>
 CREATE TEMPORARY VIEW correlation_acceleration_fuel
 USING org.apache.spark.sql.jdbc
 OPTIONS (
@@ -96,7 +110,7 @@ OPTIONS (
 </copy>
 ```
 
-The following part find out drivers who exhibit anomalous driving behavior, such as sudden changes in speed or braking, then write the result into MySQL.
+4. Execute the following Spark SQL command to find out drivers who exhibit anomalous driving behavior, such as sudden changes in speed or braking, then write the result into MySQL.
 
 ```
 <copy>
@@ -164,7 +178,11 @@ JOIN driver_info driver ON car.driver_id = driver.driver_id
 JOIN anomalous_driving_behavior adb ON car.vehicle_id = adb.vehicle_id
 JOIN average_speed_monthly asm ON car.driver_id = asm.driver_id
 JOIN fuel_consumption_monthly fsm ON car.vehicle_id = fsm.vehicle_id;
+</copy>
+```
 
+```
+<copy>
 --4,Is there a correlation between acceleration and fuel consumption?
 INSERT INTO correlation_acceleration_fuel
  SELECT 
@@ -176,39 +194,48 @@ INSERT INTO correlation_acceleration_fuel
 
 ## Task2: Visualize the Analysis Result in OAC
 
-1. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+1. In OAC instance page, copy OAC Home Page URL and open it with browser.
 
 ![lab4 OAC Homepage](images/04_lab4_1.png "homepage")
 
-2. Select **MySQL** connection that you created.
+2. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
-![lab4 OAC Connection](images/04_lab4_2.png "connection")
+![lab4 OAC Homepage](images/04_lab4_2.png "homepage")
 
-3. Double click table **driving\_analysis\_result** under MySQL database.
+3. Select **MySQL** connection that you created.
 
-![lab4 Dataset](images/04_lab4_3.png "dataset")
+![lab4 OAC Connection](images/04_lab4_3.png "connection")
 
-4. Click **driving\_analysis\_result** tab. Set **vehicle\_id, driver\_id, capacity, avg\_speed** as attribute.
+4. Double click table **driving\_analysis\_result** under MySQL database.
 
-![lab4 Dataset Editor](images/04_lab4_4.png "dataset editor")
+![lab4 Dataset](images/04_lab4_4.png "dataset")
 
-5. Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
+5. Click **driving\_analysis\_result** tab. Set **vehicle\_id, driver\_id, capacity, avg\_speed** as attribute.
 
-![lab4 Save Dataset](images/04_lab4_5.png "save dataset")
+![lab4 Dataset Editor](images/04_lab4_5.png "dataset editor")
 
-![lab4 Name Dataset](images/04_lab4_6.png "name dataset")
+6. Change the following column name Click **...** icon beside column name, then select **Rename**.
+   driver_name -->Driver Name, car_type-->Car Type, capacity-->Car Capacity, cnt-->Driving Anomaly Amount, avg_speed-->Average Speed, total_fuel_consumption-->Total Fuel Consumption.
 
-6. After saving dataset, you can create a workbook. Click **Create Workbook**.
+![lab4 Dataset Editor](images/04_lab4_6.png "dataset editor")
 
-![lab4 Create Workflow](images/04_lab4_7.png "create workbook")
+7. Click **Save As**, set **Name** as **Driving Analysis**. Click **OK**.
 
-7. On the workbook page select **Table** visualization. Drag and drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag and drop **Driver gender** into **Color**.
+![lab4 Save Dataset](images/04_lab4_7.1.png "save dataset")
 
-![lab4 Create Viz](images/04_lab4_8.png "create viz")
+![lab4 Name Dataset](images/04_lab4_7.2.png "name dataset")
 
-8. Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
+8. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab4 Save Viz](images/04_lab4_9.png "save workbook")
+![lab4 Create Workflow](images/04_lab4_8.png "create workbook")
+
+9. On the workbook page select **Table** visualization. Drag and drop **Driver Name, Car Type, Car Capacity, Driving Anomaly Amount, Average Speed and Total Fuel Consumption** into **Rows**. Drag and drop **Driver gender** into **Color**.
+
+![lab4 Create Viz](images/04_lab4_9.png "create viz")
+
+10. Click **Save** icon. Save this workbook as **Driving Analysis**. Click **Save** button.
+
+![lab4 Save Viz](images/04_lab4_10.png "save workbook")
 
 ## Acknowledgements
 

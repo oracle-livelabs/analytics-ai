@@ -18,19 +18,18 @@ BDS, MDS and OAC environment. Then, you will be guided to download a source code
 
 ## Task 1: Prepare BDS Environment
 
-1. Create an BDS (ODH 2.0) environment on OCI.Please select 3 OCPU for worker nodes. And set the cluster name as bds-cluster. Refer to the following link to created BDS cluster. 
+1. Create an BDS (ODH 2.0) environment on OCI.Please select 3 OCPU for worker nodes. And set the cluster name as bds-cluster. Refer to the following link to created BDS cluster.
    [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
 
    You should follow below labs:
-   
-   Lab 1: Setup the BDS Environment
-   
-   Lab 2: Create a BDS Hadoop Cluster
-   
-   Lab 4: Access a BDS Node Using a Public IP Address
-   
-   Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster
 
+   Lab 1: Setup the BDS Environment
+
+   Lab 2: Create a BDS Hadoop Cluster
+
+   Lab 4: Access a BDS Node Using a Public IP Address
+
+   Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster
 2. Add Kafka and Flink services. Log into Ambari with the following URL.
 
 https://`<bdsclusun0-hostname>`:7183/
@@ -261,15 +260,19 @@ For data visualization, you need to create an OAC environment on OCI.
 
 ![check OAC log](images/01_lab1_task3_step4.png)
 
-7. Create MySQL connection. Log into OAC home page. You can copy OAC home page URL from OAC instance page. Click **Create** > **Connection**.
+7. Copy OAC home page URL from OAC instance page and open URL.
+
+![create Mysql connection](images/01_lab1_task3_step5.1.png)
+
+8. Create MySQL connection. In OAC home page, click **Create** > **Connection**.
 
 ![create Mysql connection](images/01_lab1_task3_step5.png)
 
-8. Select **MySQL**.
+9. Select **MySQL**.
 
 ![select mysql connection](images/01_lab1_task3_step6.png)
 
-9. Provide **Connection Name**, **Host**, **Port**, **Database Name**, **Username** and **Password**. Then click **Save**.
+10. Provide **Connection Name**, **Host**, **Port**, **Database Name**, **Username** and **Password**. Then click **Save**.
 
 ![configure mysql connection](images/01_lab1_task3_step7.png)
 

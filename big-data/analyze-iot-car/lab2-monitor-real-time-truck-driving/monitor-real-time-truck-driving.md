@@ -7,7 +7,7 @@ In this lab, you'll be guided on setting up a Flink task for real-time processin
 The data input consists of truck location details, captured every 5 seconds by individual IoT devices. This data encompasses vehicle codes, timestamps, longitude, latitude, and more.
 
 The system employs Kafka to gather truck location data in real-time. Flink is then used to filter out any erroneous data, which is subsequently directed to MySQL. The Oracle Analytics Cloud (OAC) periodically fetches the updated data from MySQL to render the position point map.
-![lab2 workflow](images/02_lab2_workflow.png)
+![lab2 workflow](images/02_lab2_workflow.png "workflow")
 ***Estimated Time***: 30 minutes
 
 ### Objectives
@@ -199,54 +199,59 @@ INSERT INTO car_iot_details_mysql SELECT * FROM car_iot_details_view where vehic
 
 ## Task2: Visualize data in OAC
 
-1. First create a dataset. Log into OAC Home Page. Click **Create** > **Dataset**.
+1. In OAC instance page, copy OAC Home Page URL and open it with browser.
 
 ![create dataset](images/02_lab2_task2_step1.png)
 
-2. Select MySQL connection that you created.
+2. Create a dataset in OAC Home Page. Click **Create** > **Dataset**.
 
-![chose mysql connection](images/02_lab2_task2_step2.png)
+![create dataset](images/02_lab2_task2_step2.png)
 
-3. Double click table **"car\_iot\_details"** under MySQL database.
+3. Select MySQL connection that you created.
 
-![chose table](images/02_lab2_task2_step3.png)
+![chose mysql connection](images/02_lab2_task2_step3.png)
 
-4. Click **car\_iot\_details** tab. Set column **vehicle**, **latitude**, **longitude** as **attribute**.
+4. Double click table **"car\_iot\_details"** under MySQL database.
 
-![configure dataset](images/02_lab2_task2_step4.png)
+![chose table](images/02_lab2_task2_step4.png)
 
-5. You can change the column name. Click icon beside column name, select **Rename**.
+5. Click **car\_iot\_details** tab. Set column **vehicle**, **latitude**, **longitude** as **attribute**.
 
-![rename columns](images/02_lab2_task2_step5.png)
+![configure dataset](images/02_lab2_task2_step5.png)
 
-6. Set Data Access to Live. Click **Edit Definition**. Select **Live** from Data Access list. Then click **OK**.
+6. Change the following column name Click **...** icon beside column name, then select **Rename**.
+   vehicle_id -->Vehicle ID, latitude --> Car Latitude, longitude -->Car Longitude. 
 
-![change access type](images/02_lab2_task2_step6.png)
+![rename columns](images/02_lab2_task2_step6.png)
 
-7. Save dataset. Click **Save As**, set **Name** as **Driving Info**. Click **OK**.
+7. Set Data Access to Live. Click **Edit Definition**. Select **Live** from Data Access list. Then click **OK**.
 
-![save dataset](images/02_lab2_task2_step7_01.png)
-![save dataset](images/02_lab2_task2_step7_02.png)
+![change access type](images/02_lab2_task2_step7.png)
 
-8. After saving dataset, you can create a workbook. Click **Create Workbook**.
+8. Save dataset. Click **Save As**, set **Name** as **Driving Info**. Click **OK**.
 
-![create workbook](images/02_lab2_task2_step8.png)
+![save dataset](images/02_lab2_task2_step8_01.png)
+![save dataset](images/02_lab2_task2_step8_02.png)
 
-9. On the workbook page select **Visualizations** tab, then double click **Map** visualization.
+9. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![set map visualization](images/02_lab2_task2_step9.png)
+![create workbook](images/02_lab2_task2_step9.png)
 
-10. Go to **Data** tab. Drag and drop **latitude** and **longitude** into **Category**. Drag and drop **vehicle_id** into **Color**. Because there is not any data by now, you cannot see the car position.
+10. On the workbook page select **Visualizations** tab, then double click **Map** visualization.
 
-![configure map](images/02_lab2_task2_step10.png)
+![set map visualization](images/02_lab2_task2_step10.png)
 
-11. Click Save icon and select **Save As**. Save this workbook as **Truck Position Point Map**.
+11. Go to **Data** tab. Drag and drop **latitude** and **longitude** into **Category**. Drag and drop **vehicle_id** into **Color**. Because there is not any data by now, you cannot see the car position.
 
-![save workbook](images/02_lab2_task2_step11_01.png)
+![configure map](images/02_lab2_task2_step11.png)
 
-![save workbook](images/02_lab2_task2_step11_02.png)
+12. Click Save icon and select **Save As**. Save this workbook as **Truck Position Point Map**.
 
-12. Open another terminal window and log into bdscluswn0 node as hdfs user. Execute the following script (/tmp/source/bin/send-data.sh) to send data to Kafka.
+![save workbook](images/02_lab2_task2_step12_01.png)
+
+![save workbook](images/02_lab2_task2_step12_02.png)
+
+13. Open another terminal window and log into bdscluswn0 node as hdfs user. Execute the following script (/tmp/source/bin/send-data.sh) to send data to Kafka.
 
 ```
 <copy>
@@ -256,10 +261,10 @@ cd /tmp/source/bin
 </copy>
 ```
 
-13. Get back to OAC page. Click **refresh** button to check car position. You can refresh it several times, then you will find out that the car is moving.
+14. Get back to OAC page. Click **refresh** button to check car position. You can refresh it several times, then you will find out that the car is moving.
     You can also change Background Map if you want. Click **Properties**, select the **map**.
 
-![save workbook](images/02_lab2_task2_step13.png)
+![save workbook](images/02_lab2_task2_step14.png)
 
 You may now **proceed to the next lab**.
 

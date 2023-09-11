@@ -30,14 +30,14 @@ This lab assumes that you have successfully completed the following labs in the 
 ```
 <copy>
 CREATE TABLE car_info (
-`vehicle_id` INT,
-`car_brand` STRING,
-`productive_time` DATE,
-`buy_time` DATE,
-`car_type` STRING,
-`capacity` INT,
-`driver_id` INT,
-`car_desc` STRING
+`vehicle_id` INT,               --Vehicle identity
+`car_brand` STRING,             --Car brand
+`productive_time` DATE,         --Production date
+`buy_time` DATE,                --Purchase date
+`car_type` STRING,              --Car type: oil or electric
+`capacity` INT,                 --Car capacity
+`driver_id` INT,                --Driver identity
+`car_desc` STRING               --Car description
 )
  WITH (
    'connector' = 'jdbc',
@@ -52,13 +52,13 @@ CREATE TABLE car_info (
 ```
 <copy>
 CREATE TABLE driver_info (
-`driver_id` INT,
-`driver_name` STRING,
-`birthday` DATE,
-`gender` STRING,
-`driving_license_id` STRING,
-`driver_address` STRING,
-`driver_desc` STRING
+`driver_id` INT,               --Driver identity
+`driver_name` STRING,          --Driver name
+`birthday` DATE,               --Driver birthday
+`gender` STRING,               --Driver gender
+`driving_license_id` STRING,   --Driver license identity
+`driver_address` STRING,       --Driver address
+`driver_desc` STRING           --Driver description
 )
  WITH (
    'connector' = 'jdbc',
@@ -73,14 +73,14 @@ CREATE TABLE driver_info (
 ```
 <copy>
 CREATE TABLE dangerous_road (
-`road_id` INT,
-`longitude` DOUBLE,
-`latitude` DOUBLE,
-`road_class` STRING,
-`road_type` STRING,
-`junction_control` STRING,
-`junction_detail` STRING,
-`weather_condition` STRING
+`road_id` INT,                 --Driver identity
+`longitude` DOUBLE,            --location longitude
+`latitude` DOUBLE,             --location latitude
+`road_class` STRING,           --Road class: speed road or motorways
+`road_type` STRING,            --Road type: dual carriage way or single carriage way
+`junction_control` STRING,     --Junction control: auto traffic signal or traffic sign
+`junction_detail` STRING,      --Junction detail: cross road,T or staggered junction,not at junction or within 20 metres
+`weather_condition` STRING     --Weather condition: fine high wind,fine no wind, fog or mist,rain,snow
 )
  WITH (
    'connector' = 'jdbc',
@@ -193,47 +193,55 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 
 ## Task2: Visualize data in OAC
 
-1. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
+1. In OAC instance page, copy OAC Home Page URL and open it with browser.
 
  ![lab3 OAC Homepage](images/03_lab3_1.png "homepage")
 
-2. Select **MySQL** connection that you created.
+2. First create a dataset. Log into **OAC Home Page**. Click **Create > Dataset**.
 
- ![lab3 OAC Connection](images/03_lab3_2.png "connection")
+ ![lab3 OAC Homepage](images/03_lab3_2.png "homepage")
 
-3. Double click table **"dangerous\_road\_alert"** under MySQL database.
+3. Select **MySQL** connection that you created.
 
-![lab3 Dataset](images/03_lab3_3.png "dataset")
+ ![lab3 OAC Connection](images/03_lab3_3.png "connection")
 
-4. Click **dangerous\_road\_alert** tab to set all the columns as attribute.
+4. Double click table **"dangerous\_road\_alert"** under MySQL database.
 
-![lab3 Dataset Editor](images/03_lab3_4.png "ataset editor")
+![lab3 Dataset](images/03_lab3_4.png "dataset")
 
-5. You can change column name.
-6. Set **Data Access** to **Live** as the previous step.
-7. Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
+5. Click **dangerous\_road\_alert** tab to set all the columns (except time_gps) as attribute.
 
-![lab3 Save Dataset](images/03_lab3_5.png "save dataset")
+![lab3 Dataset Editor](images/03_lab3_5.png "ataset editor")
 
-![lab3 Name Dataset](images/03_lab3_6.png "name dataset")
+6. Change the following column name Click **...** icon beside column name, then select **Rename**.
+   time_gps -->GPS Time, car_speed-->Car Speed, driver_name-->Driver Name, longitude-->Car Longitude, latitude-->Car Latitude, road_class-->Road Class, road_type-->Road Type, junction_control-->Junction Control, junction_detail-->Junction Detail.
 
-8. After saving dataset, you can create a workbook. Click **Create Workbook**.
+![lab3 Dataset Editor](images/03_lab3_6.png "ataset editor")
 
-![lab3 Create Workbook](images/03_lab3_7.png "create workbook")
+7. Set **Data Access** to **Live** as the previous step.
+8. Click **Save As**, set **Name** as **Dangerous Road Alert**. Click **OK**.
 
-9. On the workbook page select **Table visualization**.
+![lab3 Save Dataset](images/03_lab3_8.1.png "save dataset")
 
-![lab3 Select Viz](images/03_lab3_8.png "select viz")
+![lab3 Name Dataset](images/03_lab3_8.2.png "name dataset")
 
-10. Drag and drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
+9. After saving dataset, you can create a workbook. Click **Create Workbook**.
 
-![lab3 Set Viz](images/03_lab3_9.png "set viz")
+![lab3 Create Workbook](images/03_lab3_9.png "create workbook")
 
-11. Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
+10. On the workbook page select **Table visualization**.
 
-![lab3 Save Workbook](images/03_lab3_10.png "save workbook")
+![lab3 Select Viz](images/03_lab3_10.png "select viz")
 
-![lab3 Name Workbook](images/03_lab3_11.png "name workbook")
+11. Drag and drop **GPS Time, Car Speed, Driver Name, Car Longitude, Car Latitude, Road Class, Road Type, Junction Control and Junction Detail** into **Rows**.
+
+![lab3 Set Viz](images/03_lab3_11.png "set viz")
+
+12. Click **Save** icon and select **Save As**. Save this workbook as **Warning of Dangerous Road Sections**.
+
+![lab3 Save Workbook](images/03_lab3_12.1.png "save workbook")
+
+![lab3 Name Workbook](images/03_lab3_12.2.png "name workbook")
 
 Now you can close Flink client.
 
