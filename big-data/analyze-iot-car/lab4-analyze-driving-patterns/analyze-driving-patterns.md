@@ -215,7 +215,7 @@ INSERT INTO correlation_acceleration_fuel
 ![lab4 Dataset Editor](images/04_lab4_5.png "dataset editor")
 
 6. Change the following column name Click **...** icon beside column name, then select **Rename**.
-   driver_name -->Driver Name, car_type-->Car Type, capacity-->Car Capacity, cnt-->Driving Anomaly Amount, avg_speed-->Average Speed, total_fuel_consumption-->Total Fuel Consumption.
+   driver\_name -->Driver Name, car\_type-->Car Type, capacity-->Car Capacity, cnt-->Driving Anomaly Amount, avg\_speed-->Average Speed, total\_fuel\_consumption-->Total Fuel Consumption.
 
 ![lab4 Dataset Editor](images/04_lab4_6.png "dataset editor")
 

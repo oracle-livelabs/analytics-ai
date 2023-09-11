@@ -214,7 +214,7 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 ![lab3 Dataset Editor](images/03_lab3_5.png "ataset editor")
 
 6. Change the following column name Click **...** icon beside column name, then select **Rename**.
-   time_gps -->GPS Time, car_speed-->Car Speed, driver_name-->Driver Name, longitude-->Car Longitude, latitude-->Car Latitude, road_class-->Road Class, road_type-->Road Type, junction_control-->Junction Control, junction_detail-->Junction Detail.
+   time\_gps -->GPS Time, car\_speed-->Car Speed, driver\_name-->Driver Name, longitude-->Car Longitude, latitude-->Car Latitude, road\_class-->Road Class, road\_type-->Road Type, junction\_control-->Junction Control, junction\_detail-->Junction Detail.
 
 ![lab3 Dataset Editor](images/03_lab3_6.png "ataset editor")
 
