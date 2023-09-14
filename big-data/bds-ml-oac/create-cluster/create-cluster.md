@@ -295,7 +295,7 @@ _If you are using a Free Trial account to run this workshop, Oracle recommends t
   + ZooKeeper Server
 
 > **Note:**
-In **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**, you will use Cloudera Manager to view the roles, services, and gateways that are running on each node in the cluster.
+In **Lab 5, Use Ambari and Hue to Access a BDS Cluster**, you will use Ambari to view the roles, services, and gateways that are running on each node in the cluster.
 
 This concludes this lab. You may now proceed to the next lab.
 

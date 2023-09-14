@@ -1,6 +1,12 @@
 # Workshop Introduction and Overview                                    
 
-The labs in this workshop walk you through all the steps involved in Data Engineering - collecting, cleansing and transforming data, loading data and analysing using **Oracle Big Data Service (BDS)** and visualizing data using **Oracle Analytics Cloud**.
+The labs in this workshop walk you through all the steps involved in building a **Data Pipeline** using **Orace Big Data Service (BDS)**. We will be donning multiple hats during this workshop.  
+
+First we'll don the role of a **Data Engineer**. As this persona we'll Cleanse and Transform raw data present in Oracle Object Storage and store it in a particular form into an Object Storage bucket using Spark that we offer as a part of Big Data Service. Then we'll store this data in an external **Hive** table. The data set that we are going to use is the famous Taxi Data Set.
+
+Next we'll wear the hat of a **Data Scientist**, where we'll launch a **Jupyter notebook** that is also offered as a part of the service. We'll build a model and save it.
+
+Finally we'll wear the hat of a **Business Analyst** where we visualize this data using **Oracle Analytics Cloud**.
 
 Estimated Workshop Time: 6 hours
 

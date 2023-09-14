@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Data Engineering with Big Data Service",
+  "workshoptitle": "Building Data Pipeline using Big Data Service",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
       {
@@ -35,7 +35,7 @@
         }
         ,
         {
-              "title": "Lab 4: Use Cloudera Manager and Hue to Access a BDS Cluster",
+              "title": "Lab 4: Use Ambari and Hue to Access a BDS Cluster",
               "type":"freetier",
               "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
               "filename": "./../../use-cm-hue-access-cluster/use-cm-hue-access-cluster.md"
@@ -51,14 +51,14 @@
             {
             "title": "Lab 6: Cleanse data and upload to Hive using Python (PySpark)",
             "type":"freetier",
-            "description": "This lab shows you how to upload data to HDFS and Object Store.",
-            "filename": "./../../upload-query-data/upload-query-data.md"
+            "description": "This lab shows you how to cleanse data and upload to Object Storage and Hive table.",
+            "filename": "./../../cleanse-data/cleanse-data.md"
             }
             ,
             {
             "title": "Lab 7: Run the Machine Learning, Data Science code using Jupyterhub",
-            "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
-            "filename": "./../../cleanup/cleanup.md"
+            "description": "This lab shows you how to run the Machine Learning, Data Science code using Jupyterhub.",
+            "filename": "./../../data-science/data-science.md"
             }
             ,
             {
