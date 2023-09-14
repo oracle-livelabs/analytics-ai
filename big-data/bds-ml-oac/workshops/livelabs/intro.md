@@ -1,8 +1,14 @@
 # Workshop Introduction and Overview                                    
 
-The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
+The labs in this workshop walk you through all the steps involved in building a **Data Pipeline** using **Orace Big Data Service (BDS)**. We will be donning multiple hats during this workshop.  
 
-Estimated Workshop Time: 4 hours
+First we'll don the role of a **Data Engineer**. As this persona we'll Cleanse and Transform raw data present in Oracle Object Storage and store it in a particular form into an Object Storage bucket using Spark that we offer as a part of Big Data Service. Then we'll store this data in an external **Hive** table. The data set that we are going to use is the famous Taxi Data Set.
+
+Next we'll wear the hat of a **Data Scientist**, where we'll launch a **Jupyter notebook** that is also offered as a part of the service. We'll build a model and save it.
+
+Finally we'll wear the hat of a **Business Analyst** where we visualize this data using **Oracle Analytics Cloud**.
+
+Estimated Workshop Time: 6 hours
 
 ## What is Oracle Big Data Service?
 Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
@@ -18,66 +24,41 @@ Watch our short video that explains key features in Oracle Big Data Service:
 
 [](youtube:CAmaIGKkEIE)
 
+Here's the Data Flow Diagram depicting the flow of data during this workshop:
+
+![](./images/bds-ml-oac.png)
 
 ## Workshop Objectives
-- Review how to create some OCI resources that are required to get started with BDS.
+- Prepare for using Oracle Big Data Service (BDS).
 - Create a simple (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
-- Add Cloud SQL to the cluster and maintain your cluster.
 - Access a BDS utility node using a public IP address.
-- Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress security rules to the default security rule that enables you to access both CM and Hue.
+- Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
 - Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
-- Upload data to Hadoop Distributed File System.
+- Cleanse data uploaded in CSV format in Oracle Object Storage and upload the same to Object Storage and Hive Database.
+- Run the Machine Learning code using BDS Jupyterhub Notebook and make predictions with test data.
+- Visualize the data using Oracle Analytics Cloud.
+- Clean up all of the resources that you created in this workshop (optional).
+
 ## Lab Breakdown
-- **Lab 1:** Review Creating BDS Environment Resources (Optional)
+- **Lab 1:** Set Up the BDS Environment
 - **Lab 2:** Create a BDS Hadoop Cluster
-- **Lab 3:** Add Oracle Cloud SQL to the Cluster
-- **Lab 4:** Access a BDS Utility Node Using a Public IP Address
-- **Lab 5:** Use Cloudera Manager and Hue to Access a BDS Cluster
-- **Lab 6:** Create a Hadoop Administrator User
-- **Lab 7:** Upload Data to Hadoop Distributed File System (HDFS)
+- **Lab 3:** Access a BDS Utility Node Using a Public IP Address
+- **Lab 4:** Use Ambari and Hue to Access a BDS Cluster
+- **Lab 5:** Create a Hadoop Administrator User
+- **Lab 6:** Cleanse data and upload to Hive using Python (PySpark)
+- **Lab 7:** Run the Machine Learning, Data Science code using Jupyterhub
+- **Lab 8:** Visualize data using Oracle Analytics Cloud
+- **Lab 9:** Clean up Resources Used in this Workshop (Optional)
 
 ## Workshop Prerequisites
-This workshop requires an active *Oracle account* and a LiveLabs reservation as described in the **Getting Started** lab in the **Contents** menu.
+This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
 
-## Launch the Workshop
-
-> _**Note:** It can take up to 20 minutes to create your workshop environment._
-
-1. When your LiveLabs workshop reservation is ready, you will receive an email with the subject **Your Livelabs reservation has been created (event #)**.
-
-    ![](./images/env-built-email.png " ")
-
-2. On the LiveLabs Home page, click the **My Reservations** tab to display your reserved workshop on the **My Reservations** page. To start the workshop, click **Launch Workshop**.
-
-    ![](./images/my-reservations.png " ")
-
-    The **Launch *workshop-name* Workshop** page is displayed in a new browser tab named **Attend the Workshop**. The **Workshop Details** section contains important information that you will need throughout this workshop.  
-
-    ![](./images/workshop-details-section.png " ")
-
-    > **Note:** The **Let's Get Started - Log in to Oracle Cloud** section on the page displays helpful information on how to log in to the Console using your reserved environment.
-
-3. Click **Copy Password** to copy your initial password, and then click **Launch Console** or click the **Login URL**.
-
-    ![](./images/workshop-details-section-2.png " ")
-
-4. Follow the instructions provided to log in to your Oracle Cloud account, change your password, and complete your login to Oracle Cloud.
-
-5. When you log in and the **Oracle Cloud Console** Home page is displayed, make sure that the displayed region is the same that was assigned to you in the **Workshop Details** section of the **Launch *workshop-name* Workshop** page, **US West (Phoenix)** in this example.
-
-    ![](images/console-home.png)
-
-6. Scroll-down to the bottom of the **Launch *workshop-name* Workshop** page. Click the **Click here to open the next part of the workshop** box to proceed to the next lab in the workshop. In addition, it is recommended that you click the **Open the workshop instructions in a new tab** link for better viewing of the workshop.
-
-    ![](images/bottom-page.png)
-
-This concludes this lab. You may now [proceed to the next lab](#next).
-
-> **Notes:**
+> **Notes:**    
+ + If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
  + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Review Creating BDS Environment Resources (Optional)".**
+You are all set to begin the labs in this workshop! Click **Lab 1: Set Up the BDS Environment** in the **Contents** menu.
 
 ## Want to Learn More About Oracle Big Data Service?
 
@@ -94,6 +75,7 @@ Use these links to get more information about BDS and OCI:
 ## Acknowledgements
 
 * **Authors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-    * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+    * Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
+* **Contributors:**
+    * Anand Chandak, Principal Product Manager, Data and AI
+* **Last Updated By/Date:** Vivek Verma, September 2023
