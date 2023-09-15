@@ -45,7 +45,7 @@ This lab assumes you have:
       - Display name: `sailgp`
       - Database name: `sailgp`
       - Choose a workload type: `Data Warehouse`
-      - Choose a deployment type: `Shared Infrastructure`
+      - Choose a deployment type: `Serverless Infrastructure`
 
 4. In the part named "Configure the database", keep all the default values.
 

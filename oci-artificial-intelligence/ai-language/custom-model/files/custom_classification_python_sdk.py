@@ -84,7 +84,7 @@ print(f"End point status changed from CREATING to {end_point_details.data.lifecy
 text_to_analyze = "I am unable to use printer, seeing printer error."
 
 print(f"Analyzing the text: {text_to_analyze}")
-txtc_text_for_testing = oci.ai_language.models.BatchDetectLanguageEntitiesDetails(endpoint_id = end_point_details.data.id, documents = [oci.ai_language.models.TextDocument(key = "1", text = text_to_analyze)])
-txtc_inference_result = ai_client.batch_detect_language_entities(txtc_text_for_testing)
+txtc_text_for_testing = oci.ai_language.models.BatchDetectLanguageTextClassificationDetails(endpoint_id = end_point_details.data.id, documents = [oci.ai_language.models.TextDocument(key = "1", text = text_to_analyze)])
+txtc_inference_result = ai_client.batch_detect_language_text_classification(txtc_text_for_testing)
 print("inference result for custom TXTC:")
 print(txtc_inference_result.data)

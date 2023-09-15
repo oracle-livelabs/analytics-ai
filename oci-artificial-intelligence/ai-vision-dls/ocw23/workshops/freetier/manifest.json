@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "Create an Image Classification Model",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "help": "livelabs-help-na-cloud_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Train your own image classification model using OCI AI Vision. Label your data with OCI Data Labeling.",
+            "filename": "../../intro/intro.md"
+        },
+        {
+          "title": "Get Started",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Bulk-upload and bulk-label your data",
+            "description": "Bulk-upload a set of images to Object Storage, then bulk-label the images with OCI Data Labeling.",
+            "filename": "../../dls-bulk-label/dls-bulk-label.md"
+        },
+        {
+            "title": "Lab 2: Create a custom AI Vision model",
+            "description": "Train your own custom AI Vision model using your labeled set of images, and experiment with your model on new images.",
+            "filename": "../../custom-model/custom-model.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Oracle CloudWorld 2023 - Support",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+        }
+    ]
+}

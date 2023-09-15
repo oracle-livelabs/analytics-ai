@@ -32,42 +32,43 @@ _Estimated Time:_ 40 minutes
 1. **Search** for your Data Set.  
 In order to ask questions using the Data Set, you need to **index** the Data Set to **enable the searching**, to choose a **Language** and  **Indexing Schedule**.  
 In the **Oracle Analytics Home** page, click the **Navigator** on top left, and then click **Data**.  
-Note: if you are still on the previous lab, you can quickly Go Back ![Go Back](../ask-direct-questions/images/biaskgoback.png) to the **Home** page without saving the project  
 
-   ![Data](../ask-direct-questions/images/do-not-save.png)
+    >**Note**: if you are still on the previous lab, you can quickly Go Back to the **Home** page without saving the project.
+
+    ![Go Back](./images/biaskgoback.png =250x*)
 
 2. Click **Navigator** and select **Data**.  
 
-   ![Navigator Data](../ask-direct-questions/images/navigator-data.png)
+   ![Navigator Data](./images/navigator-data.png)
 
 3. **Select** your Data Set.  
    From **Data** page, select **Data Sets** section and identify or search for **DCA\_SALES\_DATA** Data Set.  
    Click the **Actions menu** of the data set or right-click the Data Set, and click **Inspect**
 
-   ![Inspect](../ask-direct-questions/images/datasetinspectsmall.png)
+   ![Inspect](./images/datasetinspectsmall.png)
 
-3. **Certify** the Data Set  
+4. **Certify** the Data Set  
    From **General** tab click **Certify** button  
-   
-   ![Certify](../ask-direct-questions/images/datasetcertify.png)
 
-4. **Index** the Data Set  
+   ![Certify](./images/datasetcertify.png)
+
+5. **Index** the Data Set  
    From **Search** tab click **Index Data Set for Searching**  
-  
-   ![Idex](../ask-direct-questions/images/datasetindex.png)
 
-5. **Control access** (optional)  
+   ![Idex](./images/datasetindex.png)
+
+6. **Control access** (optional)  
    Access to the Data Sets can be controlled from **Access** tab  
-  
-   ![Control](../ask-direct-questions/images/datasetcontrol.png)  
+
+   ![Control](./images/datasetcontrol.png)  
    Note: best practice is to enforce control using **Roles** rather than individual **Users**
 
    Click **Save** and then **Close** button.
 
-6. Go to **Home** Page
+7. Go to **Home** Page
    Click **Navigator** and then select **Home**  
-  
-   ![Home Page](../ask-direct-questions/images/navigatorhome.png)
+
+   ![Home Page](./images/navigatorhome.png =300x*)
 
 ## Task 2: Ask Questions about your data
 
@@ -78,29 +79,29 @@ In the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged 
    As you enter the information, the application returns search results in a drop-down list. The system can be searched by column names or data elements or both. Best fit results are returned immediately
 
 3. Press **SHIFT + ENTER** to visualize data  
-  
-   ![Visualize Data](../ask-direct-questions/images/biask.png)
+
+   ![Visualize Data](./images/biask.png)
 
 4. Check the results. Insights are rendered immediately from the best matching Data Set  
-  
-   ![Visualize Data](../ask-direct-questions/images/biask1.png)
+
+   ![Visualize Data](./images/biask1.png)
 
 5. Continue to type in the bar area "**for customers**" and press **SHIFT + ENTER**  
-   
-   ![Visualize Data](../ask-direct-questions/images/biask2.png)
+
+   ![Visualize Data](./images/biask2.png)
    We observe that we are losing customers over time
 
 6. Continue to type in the bar area "**for direct channel**" and press **SHIFT + ENTER**  
-    
+
     ![Visualize Data](../ask-direct-questions/images/biask3.png)
 
 7. Remove the last query.  
-    Select  "**for direct channel**" and press the x (remove) sign 
-    
+    Select  "**for direct channel**" and press the x (remove) sign
+
     ![Remove Data](../ask-direct-questions/images/biask4a.png)
 
 8. Continue to type in the bar area "**by channel**" and press **SHIFT + ENTER**  
-   
+
    ![Visualize Data](../ask-direct-questions/images/biask5.png)
 
 9. You have 9 visuals to start with. You can always choose one (or more) and explore it.  
@@ -115,17 +116,17 @@ In the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged 
 1. Turn **Auto Insights On** for all Datasets.  
 Go to Home Page > Navigator > Console
 
-   ![Console](./images/console.png)
+   ![Console](./images/console.png =250x*)
 
 2. Go to **System Settings** > **Performance and Compatibility** > **Enable Auto Insights on Datasets**
 
    ![System Settings](./images/system-settings.png)
    ![Enable Auto Insights](./images/enable-auto-insights.png)
 
-3. Enable Insights for **DCA\_SALES\_DATA** Dataset. 
-Go to Home page, click **Navigator**, then **Data**. 
+3. Enable Insights for **DCA\_SALES\_DATA** Dataset.
+Go to Home page, click **Navigator**, then **Data**.
 
-   ![Data](./images/navigator-data.png)
+   ![Data](./images/navigator-data2.png =250x*)
 
 4. Select **Datasets** tab, locate **DCA\_SALES\_DATA** Dataset > Click the **Actions Menu**  and select **Inspect**
 
@@ -152,7 +153,7 @@ Go to Home page, click **Navigator**, then **Data**.
    ![Relevant Insights](./images/relevant-insights.png)
 
 You have just finished to learn how to ask direct questions to your data using **BI Ask** and **Auto Insights** new feature.  
-* Optional: you can check in the next [video](https://youtu.be/uEESc7yo6kA) how BI Ask engine works with OAC DV and Day by Day in a side by side comparison 
+* Optional: you can check in the next [video](https://youtu.be/uEESc7yo6kA) how BI Ask engine works with OAC DV and Day by Day in a side by side comparison
 
 [](youtube:uEESc7yo6kA)
 
@@ -170,5 +171,5 @@ You may now **proceed to the next lab**.
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence) 
-- **Last Updated By/Date** - Lucian Dinescu, March 2022
+- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics, Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Nagwang Gyamtso, March 2023
