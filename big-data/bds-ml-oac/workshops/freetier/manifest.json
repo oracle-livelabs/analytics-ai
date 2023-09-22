@@ -64,7 +64,7 @@
             {
                   "title": "Lab 8: Visualize data using Oracle Analytics Cloud",
                   "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
-                  "filename": "./../../cleanup/cleanup.md"
+                  "filename": "./../../visualize-data/visualize-data.md"
             }
             ,
             {

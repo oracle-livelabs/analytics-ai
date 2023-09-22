@@ -124,9 +124,7 @@ Estimated Time: 60 minutes
 
 1. Login to Oracle Cloud Console and open the navigation menu. Click **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
 
-2. Click **Create Bucket** to create a new Object Storage bucket.
-
-3. From the list of buckets, click on the bucket that we created earlier **Taxi_Data**. Validate the parquet file created.
+2. From the list of buckets, click on the bucket that we created earlier **Taxi_Data**. Validate the parquet file created.
 
     ![](./images/object-storage-parquet.png " ")
 
@@ -152,7 +150,7 @@ Estimated Time: 60 minutes
 
     ![](./images/hue-query-output.png " ")
 
-This concludes this lab. You may now proceed to the next lab.
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
@@ -160,4 +158,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Vivek Verma, Sep 2023

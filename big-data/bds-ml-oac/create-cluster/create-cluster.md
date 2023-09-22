@@ -315,4 +315,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Vivek Verma, Sep 2023

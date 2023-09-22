@@ -10,12 +10,11 @@ Estimated Time: 60 minutes
 
 ### Objectives
 
-* Creat an Object Storage API Key for the Cluster
-* Enable BDS Cluster connectivity to Object Storage
-* Create Object Storage bucket for trnsformed data
-* Login to Utility node using SSH and submit a Spark job.
-* Verify transformed data in Object Storage Bucket.
-* Verify transformed data uploaded to Hive.
+* Launch Jupyterhub
+* Download Jupyter Data Science Notebook
+* Configure and Run Data Science Notebook
+* Verify predicted data in Object Storage bucket
+* Verify predicted data in Hive database table
 
 ## Task 1: Launch Jupyterhub
 
@@ -37,24 +36,59 @@ Estimated Time: 60 minutes
 
     ![](./images/jupyter-launcher.png " ")
 
-4. Download the Jupyter notebook from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WoB1T3VaY06AOiAqSj6PKMn4wLjDu1VJ5J6Lh_CFD6mylShr-66qzDj7Hgo7hJtQ/n/orasenatdpltintegration01/b/Taxi/o/bds-data-science.ipynb).
+## Task 2: Download Jupyter Data Science Notebook
 
-5. Go to JupyterHub and click **Upload Files**. Select the Jupyter Notebook downloaded in previous step and upload it.
+1. Download the Jupyter notebook from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WoB1T3VaY06AOiAqSj6PKMn4wLjDu1VJ5J6Lh_CFD6mylShr-66qzDj7Hgo7hJtQ/n/orasenatdpltintegration01/b/Taxi/o/bds-data-science.ipynb).
+
+2. Go to JupyterHub and click **Upload Files**. Select the Jupyter Notebook downloaded in previous step and upload it.
 
     ![](./images/upload-notebook.png " ")
 
-6. Click on the Jupyter notebook file name in the **File Browser** on the left to open the notebook. Ensure that the kernel displayed on the right is automatically set to **PySpark**.
+## Task 3: Configure and Run Data Science Notebook
+
+1. Click on the Jupyter notebook file name in the **File Browser** on the left to open the notebook. Ensure that the kernel displayed on the right is automatically set to **PySpark**.
 
     ![](./images/open-notebook.png " ")
 
-7. Replace the Namespace mentioned in the Notebook with Object Storage Namespace that was noted in **Task 3 : Lab 6: Cleanse data and upload to Hive using Python (PySpark)** 
+2. Replace the Namespace mentioned in the Notebook with Object Storage Namespace that was noted in **Task 3 : Lab 6: Cleanse data and upload to Hive using Python (PySpark)** 
 
-8. Execute the notebook clicking on **Run All Cells** under the **Run** menu.
+3. Execute the notebook clicking on **Run All Cells** under the **Run** menu.
 
     ![](./images/run-notebook.png " ")
 
+4. The spark job saves the predicted data in an Object Storage bucket and also in a Hive external table.
 
-This concludes this lab. You may now proceed to the next lab.
+## Task 4: Verify predicted data in Object Storage bucket
+
+1. Login to Oracle Cloud Console and open the navigation menu. Click **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
+
+2. Under the list of Buckets, click **Taxi\_Data**. The data is stored in the output folder **yellow\_tripdata\_ml\_output**.
+
+    ![](./images/yellow-tripdata-ml-output-bucket.png " ")
+
+## Task 5: Verify predicted data in Hive database table
+
+1. Login to **Hue** and on the **Editor** page click **default** to view the list of databases.
+
+    ![](./images/hue-databases.png " ")
+
+2. Click the database that was created by the Spark job - **bds\_demo\_db**.
+
+    ![](./images/hue-bds-database.png " ")
+
+3. This will list the tables created under **bds\_demo\_db** - **your\_predictions\_table**.
+
+4. Enter the query in query editor - 
+
+    ```
+    <copy>select * from bds_demo_db.your_predictions_table</copy>
+    ```
+
+5. Execute the query to get the output.
+
+    ![](./images/hue-query-predict-output.png " ")
+
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
@@ -62,4 +96,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Vivek Verma, Sep 2023
