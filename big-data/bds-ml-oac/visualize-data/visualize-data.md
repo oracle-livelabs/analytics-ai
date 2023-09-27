@@ -1,4 +1,4 @@
-# Run the Machine Learning, Data Science code using Jupyterhub
+# Visualize data using Oracle Analytics Cloud
 
 ## Introduction
 
