@@ -1,4 +1,4 @@
-# Lab 2: Access OCI speech with OCI SDKs
+# Lab 2: Access OCI speech with OCI SDKs (Optional)
 
 ## Introduction 
 
