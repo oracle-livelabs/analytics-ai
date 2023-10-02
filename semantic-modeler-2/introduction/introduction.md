@@ -33,5 +33,4 @@ In this workshop, you will learn how to:
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
-
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023

@@ -34,7 +34,12 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
     Log into OCI cloud console. Navigate to cloud shell icon on the top right and click it.
         ![Cloud shell icon](./images/cloud-shell-icon.png " ")
 
-2. Enter Speech CLI Command
+2. Enter Speech CLI Command to list all the transcription jobs
+    ```
+    <copy>
+    oci speech transcription-job list --all --compartment-id <your-compartment-id>
+    </copy>
+    ```
 
     Enter any one of the speech pre-deployed CLI commands you want to execute.
         ![Cloud shell window](./images/cloud-shell-command.png " ")
