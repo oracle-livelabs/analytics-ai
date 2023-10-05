@@ -32,11 +32,11 @@ In this section, you add tables from the BISAMPLE data source to the physical la
 
 	![Open Samples Sales](./images/open-sample-sales.png)
 
-3. Click the **Physical Layer**. Double-click **MySampleSalesDatabase**. Under Tables, expand the **Sample Sales** schema.
+3. Click the **Physical Layer**. Double-click **MySampleSalesDatabase**. Under Tables, expand the **BISAMPLE** schema.
 
 	![expand sample sales](./images/expand-tables.png)
 
-4. In the **Connections pane**, expand the **BISAMPLE** schema. Hold down the Ctrl key and select **SAMP_ EMPL_ D_ VH**, **SAMP_ EMPL_ PARENT_ CHILD_ MAP**, and **SAMP_ EMPL_ POSTN_ D**.
+4. In the **Connections pane**, expand the **BISAMPLE** schema. Hold down the Ctrl (command on Mac) key and select **SAMP_ EMPL_ D_ VH**, **SAMP_ EMPL_ PARENT_ CHILD_ MAP**, and **SAMP_ EMPL_ POSTN_ D**.
 
 5. Drag the selected tables to **Sample Sales** in the Physical Layer. Drop the tables when **Add** appears. Click **Save**.
 	![drag schemas](./images/drag-schemas.png)
@@ -87,19 +87,17 @@ In this section you add a logical table and select columns from a physical layer
 
 	![open sample sales](./images/open-sample-sales.png)
 
-2. n Dimensions, click **Add Table**, and then click **Create New Table**.
+2. In Dimensions, click **Add Table**, and then click **Create New Table**.
 
 	![Create new tale](./images/create-new-table.png)
 
-3. In Create Logical Table, enter <code>D5 Sales Rep</code> in Name and click **OK**.
+3. In Create Logical Table, enter <code>D5 Sales Rep</code> in Name and click **OK**. The D5 Sales Rep Columns tab opens in the Semantic Modeler.
+
 	![Name D5 Sales Rep](./images/create-logical-table.png)
 
-The D5 Sales Rep Columns tab opens in the Semantic Modeler.
+4. Click the **Physical Layer**, expand **MySampleSalesDatabase**, and then expand **BISAMPLE**.
 
-
-4. Click the **Physical Layer**, expand **MySampleSalesDatabase**, and then expand **Sample Sales**.
-
-5. Expand **D50 Sales Rep**, hold down the Ctrl key, select all the columns in **D50 Sales Rep**, and drag them to the **D5 Sales Rep** columns tab. Click **Save**.
+5. Expand **D50 Sales Rep**, hold down the Ctrl (command on Mac) key, select all the columns in **D50 Sales Rep**, and drag them to the **D5 Sales Rep** columns tab. Click **Save**.
 	![Drag columns](./images/drag-columns.png)
 	![New columns](./images/new-columns.png)
 6. Click the **General** tab, click **Primary Key**, and then select **Employee Key**. Click **Save**.
@@ -110,7 +108,7 @@ The D5 Sales Rep Columns tab opens in the Semantic Modeler.
 
 In this section, you update the logical layer table's sources.
 
-1. In D5 Sales Rep, click the **Sources** tab. Double-click **D50 Sales Rep**. Click **Save**.
+1. In D5 Sales Rep, click the **Sources** tab. Select **D50 Sales Rep**.
 
 
 2. Click **Detail View**. In Table Mapping, click **Add Table**.
@@ -124,7 +122,7 @@ In this section, you update the logical layer table's sources.
 
 	![Add D51](./images/add-d51-table.png)
 
-5. Click the **Columns** tab. Hold down the Ctrl key, select **Member Key**, **Ancestor Key**, **Is Lef**, and then click **Delete**. Click **Save**.
+5. Click the **Columns** tab. Hold down the Ctrl (command on Mac) key, select **Member Key**, **Ancestor Key**, **Is Lef**, and then click **Delete**. Click **Save**.
 
 	![Delete columns](./images/delete-columns.png)
 
@@ -133,35 +131,32 @@ In this section, you update the logical layer table's sources.
 
 In this section, you rename columns to use names that are easy to understand.
 
-1. In the **D5 Sales Rep Columns** tab, double-click **POSTN_ KEY**. Enter <code>Position Key</code>.
+1. In the **D5 Sales Rep Columns** tab, double-click **POSTN_ KEY**. Enter <code>'Position Key'</code>.
 
 
-2. Double-click **Type**. Enter <code>Sales Rep Type</code>.
+2. Double-click **Type**. Enter <code>'Sales Rep Type'</code>.
 
 
-3. Double-click **Empl Name**. Enter <code>Sales Rep Name</code>.
+3. Double-click **Empl Name**. Enter <code>'Sales Rep Name'</code>.
 
 
-4. Double-click **Emply Key**. Enter <code>Sales Rep Number</code>.
+4. Double-click **Emply Key**. Enter <code>'Sales Rep Number'</code>.
 
-5. Double-click **Hire Dt**. Enter <code>Hire Date</code>.
+5. Double-click **Hire Dt**. Enter <code>'Hire Date'</code>.
 
-6. Double-click **Mgr ID**. Enter <code>Manager Number</code>.
+6. Double-click **Mgr ID**. Enter <code>'Manager Number'</code>.
 
-7. Double-click **Postn Desc**. <code>Enter Position</code>.
+7. Double-click **Postn Desc**. <code>'Enter Position'</code>.
 
-8. Double-click **Postn Level**. <code>Enter Position Level</code>.
+8. Double-click **Postn Level**. <code>'Enter Position Level'</code>.
 
-9. Double-click **Distance**. <code>Enter Closure Distance</code>. Click **Save**.
+9. Double-click **Distance**. <code>'Enter Closure Distance'</code>. Click **Save**.
 
 	![Renaming columns](./images/column_rename.png)
 
 10. Close **D5 Sales Rep**.
 
 ## Task 6: Create a Logical Join
-
-In this section, you create joins between the sales rep alias tables and the F1 Revenue table.
-
 In this section, you define the join between D5 Sales Rep and the F1 Revenue tables.
 
 1. Click the **Logical Layer**. Expand **Sample Sales BM**, right-click **D5 Sales Rep**, select **Show Logical Diagram**, and then click **Selected Table and Direct Joins**.
@@ -192,7 +187,7 @@ In this section, you create a parent-child hierarchy, set the member key, and se
 
 ## Task 8: Specify Content Level of Detail
 
-1. In D5 Sales Rep, click the **Columns** tab. Double-click **Sales Rep Name** and click **Detail View**. Under Level, select **Detail**.
+1. In D5 Sales Rep, click the **Columns** tab. Select **Sales Rep Name** and click the **Detail View** icon. Under Level, select **Detail**.
 	![Sales Rep name detailed view](./images/sales-rep-name-detail.png)
 2. Double-click **Sales Rep Number**. Under Level, select **Detail**. Click **Save**.
 	![Sales rep number detail](./images/sales-rep-number-detail.png)
@@ -218,7 +213,7 @@ In this section, you create the Sales Rep presentation table and presentation hi
 5. In D5 Sales Rep, click the **General** tab. In Name, enter <code>Sales Rep</code> to replace **D5 Sales Rep**, and then click **Save**.
 	![Enter Sales Rep](./images/change-d5-sales-rep.png)
 6. In Sales Rep, click the **Hierarchies** tab.
-	
+
 7. In the Hierarchies tab, next to Display Columns, click **Replace**. In Select Presentation Column, expand **Sales Rep**, click **Sales Rep Name** and then click **Select**.
 	![Replace display](./images/replace-display.png)
 	![Hierarchies](./images/select-presentation.png)
@@ -234,4 +229,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023
