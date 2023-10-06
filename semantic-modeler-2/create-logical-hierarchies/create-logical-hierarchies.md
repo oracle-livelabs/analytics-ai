@@ -29,7 +29,7 @@ In the logical layer, your tables are dimension objects. The dimension object's 
 Begin with step 3 if you're continuing this tutorial directly after completing the steps in the Manage Logical Table Sources tutorial.
 
 1. If you closed your semantic model, sign in to Oracle Analytics Cloud using one of DV Content Author, BI Data Model Author or service administrator credentials.
-    
+
 2. On the Home page, click the **Navigator**, and then click **Semantic Models**.
     ![Open Semantic Models](./images/semantic-models.png)
 3. In the Semantic Models page, select **Sample Sales**, click **Actions menu**, and then select **Open**.
@@ -73,16 +73,22 @@ In this section, you create a time hierarchy in the D1 Time logical table to use
 
 1. In the Logical Layer, double-click **D1 Time**. In D1 Time, click the **Hierarchy** tab. In Hierarchy Type, select **Time**.
     ![Select Time in Hierarchy tab](./images/d1-time-time.png)
+
 2. Under Hierarchies, click **Add Level**. In **Level Name**, enter <code>Year</code> to replace Level-3. In the **Primary Key** and **Associated Columns** fields, select **Cal Year** and **Per Name Year**. Click the **Chronological Key** field and select **Per Name Year**.
     ![Add Year level](./images/d1-time-year.png)
+
 3. Click **Add Level**. In **Level Name**, enter <code>Half Year</code> to replace Level-4. In the **Primary Key** and **Associated Columns** fields, select **Cal Half** and **Per Name Half**. Click the **Chronological Key** field and select **Per Name Half**.
     ![Add Half Year level](./images/d1-time-half-year.png)
-4. Select **Year** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Qtr</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Cal Qtr** and **Per Name Qtr**. Click the **Chronological Key** field and select **Per Name Qtr**.
+
+4. Select **Half Year** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Qtr</code> to replace Level-5. In the **Primary Key** and **Associated Columns** fields, select **Cal Qtr** and **Per Name Qtr**. Click the **Chronological Key** field and select **Per Name Qtr**.
     ![Add Qtr level](./images/d1-time-qtr.png)
+
 5. Select **Qtr** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Month</code> to replace Level-6. In the **Primary Key** and **Associated Columns** fields, select **Cal Month** and **Per Name Month**. Click the **Chronological Key** field and select **Per Name Month**.
     ![Add Month level](./images/d1-time-month.png)
+
 6. Select **Month** in Hierarchies, click **Add Level**. In **Level Name**, enter <code>Week</code> to replace Level-7. In the **Primary Key** and **Associated Columns** fields, select **Cal Week** and **Per Name Week**. Click the **Chronological Key** field and select **Per Name Week**.
     ![Add Week level](./images/d1-time-week.png)
+
 7. Click **Save**.
 
 8. Close D1 Time.
@@ -96,4 +102,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso,
-* **Last Updated By/Date** - Desmond Jung, July 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023

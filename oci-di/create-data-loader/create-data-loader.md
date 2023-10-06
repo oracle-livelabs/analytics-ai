@@ -134,7 +134,7 @@ b. RENAME transformation.
 
   ![Rename information](images/create-data-loader-renameatt.png " ")
 
-21. Click on Next and click on Save.
+21. Click on Next and click on Create and Close.
 
 22. Then we will go back to our DI_WorkspaceXX (where XX will be your user ID) and click on Tasks tab.
 

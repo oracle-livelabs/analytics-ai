@@ -1,4 +1,4 @@
-# Lab 5: Use OCI speech with datascience notebook session
+# Lab 5: Use OCI speech with datascience notebook session (Optional)
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In this lab session, we will show you how to access OCI Speech services in a Dat
 
 The Datascience Notebook is a web application that contains code, results and visualizations that makes testing and sharing ML pipelines simple.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives:
 * Learn how to use OCI speech within a DataScience notebook.
@@ -125,9 +125,10 @@ Follow the below steps to open a notebook in OCI DataScience:
 6. Enter Notebook Details
 
     Select a name.
-    We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
+    We recommend you choose VM.Standard.E4.Flex as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
     Set block storage to 50 GB.
     Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
+    *Note:* You can choose default networking if you don't have a VCN or subnet created already.
         ![Create Notebook session details window](./images/create-notebook-session-2.png " ")
 
 7. Open the OCI Data Science notebook

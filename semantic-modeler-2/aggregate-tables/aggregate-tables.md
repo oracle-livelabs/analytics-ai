@@ -32,11 +32,11 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 	![Open Samples Sales](./images/open-sample-sales.png)
 3. Click the **Physical Layer**. Double-click **MySampleSalesDatabase**.
 
-4. In Tables, under MySampleSalesDatabase, expand the **Sample Sales schema**.
+4. In Tables, under MySampleSalesDatabase, expand the **BISAMPLE** schema.
 
-5. Click **Connections**. Expand **BISAMPLE**. Hold down the Ctrl key, select the **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ D** tables, and then drop the tables on the Sample Sales schema when the **Add table** green icon shows.
+5. Click **Connections**. Expand **BISAMPLE**. Hold down the Ctrl (command on Mac) key, select the **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ D** tables, and then drop the tables on the Sample Sales schema when the **Add table** green icon shows.
 	![drop tables in sample sales](./images/drag-fa2-samp-time.png)
-6. In the Tables pane, hold down the Ctrl key, select **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ DAY** table, right-click, and then select **Cut**. Right-click the **Sample Sales schema**, and then select **Paste**.
+6. In the Tables pane, hold down the Ctrl (command on Mac) key, select **SAMP_ REVENUE_ FA2** and **SAMP_ TIME_ QTR_ DAY** table, right-click, and then select **Cut**. Right-click the **BISAMPLE schema**, and then select **Paste**.
 
 7. Right-click **SAMP_ REVENUE_ FA2** and select **Create Physical Table Alias**.
 	![create physical table samp revenue fa2](./images/physical-alias-fa2.png)
@@ -56,21 +56,19 @@ In this section, you create links between the aggregate tables and the D2 Produc
 
 	![Show physical diagram F2](./images/selected-tables-only.png)
 
-2. Hold down the Ctrl key, select **D1 Time QTR Grain** and select **D2 Products**, and then drag the tables to the Physical Diagram.
+2. Hold down the Ctrl (command on Mac) key, select **D1 Time QTR Grain** and select **D2 Products**, and then drag the tables to the Physical Diagram.
 
 	![Drag columns to diagram](./images/drag-d1-d2.png)
 
-3. Click **F2 Revenue Aggregate** and drag the cursor to **D2 Product** to open the Add Physical Join dialog.
-
-	
+3. Click **F2 Revenue Aggregate** and drag the cursor to **D2 Products** to open the Add Physical Join dialog.
 
 4. From the Join Conditions list under the Left Table, select **PROD_ KEY**. From the Join Conditions list under the Right Table, select **PROD_ KEY**, and then click **Add**.
+
 	![Connect F2 and D2](./images/physical-join-f2-d2.png)
+
 5. In the Physical Diagram, click **F2 Revenue Aggregate**, drag the cursor to **D1 Time QTR Grain** to open the Add Physical Join dialog.
 
-	
-
-6. From the Join Conditions list under the Left Table, select **BILL_ QTR_ KEY**. From the **Join Conditions** list under the Right Table, select **QTR_ KEY**, and then click **Add**.	
+6. From the Join Conditions list under the Left Table, select **BILL_ QTR_ KEY**. From the **Join Conditions** list under the Right Table, select **QTR_ KEY**, and then click **Add**.
 	![Connect F2 and D1](./images/physical-join-f2-d1.png)
 	![Join Tables](./images/aggregate-join-tables.png)
 
@@ -107,7 +105,7 @@ In this section, you add the aggregate tables as sources for the F1 Revenue and 
 
 In this section, you set the level of detail (the grain) stored in the logical tables.
 
-1. In the F1 Revenue Sources tab, double-click **F2 Revenue Aggregate**. Scroll to Data Granularity. Click **Add Level**.
+1. In the F1 Revenue Sources tab, select **F2 Revenue Aggregate** and click the **Detail view** icon to open the detail view. Scroll to Data Granularity. Click **Add Level**.
 
 	![Add level to F1 Sources tab](./images/f2-revenue-aggregate-add-level.png)
 
@@ -115,12 +113,9 @@ In this section, you set the level of detail (the grain) stored in the logical t
 
 3. Click **Add Level**. From the Dimension list, select **D1 Time**. Click the **Level** list, and then select **QTR**.
 
+4. Click **Add Level**. From the Dimension list, select **D20 Product**. Click the **Level** list, and then select **Total**.
 
-4. Click **Add Level**. From the Dimension list, select **D3 Customers**. Click the **Level** list, and then select **Total**.
-
-
-5. Click **Add Level**. From the Dimension list, select **D1 Time**. Click the **Level** list, and then select **Total**.
-
+5. Click **Add Level**. From the Dimension list, select **D3 Customers**. Click the **Level** list, and then select **Total**.
 
 6. Click **Save**.
 
@@ -134,5 +129,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Author** - Desmond Jung, Cloud Engineer, NACI
 * **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
-
+* **Last Updated By/Date** - Nagwang Gyamtso, August 2023

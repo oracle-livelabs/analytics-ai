@@ -27,37 +27,30 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-	  ![Click Tools, then Database Actions](./images/DBActions.png " ")
+	  ![Click Tools, then Database Actions](./images/dbactions1.png " ")
 
 2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
 
 3. Enter the password for the ADMIN user you entered when creating the database.
 
-4. Under **Data Tools**, click **DATA LOAD**
+4. Under **Data Studio**, click **DATA LOAD**
 
     ![Click DATA LOAD](./images/dataload.png " ")
 
-5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
+5. In the **What do you want to do with your data?** section, click **LOAD DATA** and choose **CLOUD STORE** for **Where is you data?** to set up the connection from your Autonomous Database to OCI Object Storage.
 
     ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
 
-6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
+6. Data Load > Load Cloud Object window will pop up and you need to copy the bucket URI into this field.
 
-    In the **Name** field, enter 'MovieStreamLanding'
-
-    > **Note:** Take care not to use spaces in the name.
-
-    Leave the Cloud Store selected as **Oracle**.
-
-    Copy and paste the following URI into the URI + Bucket field:
+    Copy and paste the following URI into the URI + Load Data from Cloud Store:
 
    ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/movieload
     </copy>
     ```
-
-    Select **No Credential** as this is a public bucket and then click **Create**.
+    Select No Credential as this is a public bucket and then click **Create**.
     
 
 ## Task 2: Load data from files in Object Storage using Data Tools
