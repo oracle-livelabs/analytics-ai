@@ -28,9 +28,44 @@ BDS, MDS and OAC environment. Then, you will be guided to download a source code
    Lab 2: Create a BDS Hadoop Cluster
 
    Lab 4: Access a BDS Node Using a Public IP Address
+2. Create Ingress Security Rules (and Open Ports) for Ambari. In this step, you will add ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Ambari on port **`7183`**.
+3. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+4. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-   Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster
-2. Add Kafka and Flink services. Log into Ambari with the following URL.
+   ![Navigate to VCN](images/01_lab1_task1_vcn.png)
+5. On the **Virtual Cloud Networks** page, click your cluster's Virtual Cloud Network, **`training-vcn`**, to display the **Virtual Cloud Network Details** page.
+
+![cluster_vcn](images/01_lab1_task1_cluster_vcn.png)
+
+4. Next, you will update the default security list for the public subnet in your VCN. Remember, when you created the cluster, you needed to specify that your cluster belongs to a public subnet. On the **Virtual Cloud Network Details** page, scroll-down to the **Subnets** section. In the **Name** column, click the public subnet for the selected network, **`Public Subnet-training-vcn`**.
+
+  ![vcn_details_page](images/01_lab1_task1_vcn_details_page.png)
+
+5. On the **Subnet Details** page, scroll-down to the **Security Lists** section. In the **Name** column, click your **Default Security List** link for your selected network, **`Default Security List for training-vcn`**.
+
+![default_security_list](images/01_lab1_task1_default_security_list.png)
+
+6. On the **Security List Details** page, scroll-down to the **Ingress Rules** section. This section shows the currently available security rules in the selected **Default Security List**. Next, click **Add Ingress Rules**.
+
+![imadd_ingress_rule1](images/01_lab1_task1_add_ingress_rule1.png)
+
+7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Ambari to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port for Ambari to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**. Anyone on the internet can access port **`7183`** for Ambari. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
+
+   + For the **STATELESS** checkbox, leave it unchecked which makes the rule stateful. Any response to the incoming traffic is allowed back to the originating host, regardless of any egress rules applicable to the instance.
+   + For the **SOURCE TYPE**, select **`CIDR`**.
+   + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
+   + For the **IP PROTOCOL**, select **`TCP`**.
+   + For the **SOURCE PORT RANGE**, enter **`All`**.
+   + For the **DESTINATION PORT RANGE**, enter **`7183`**.
+   + For the **DESCRIPTION**, enter **`Access Ambari on Port 7183`**.
+
+![ambari_ingress_rule](images/01_lab1_task1_ambari_ingress_rule.png)
+
+8. Here are ingress rules are added to the **Default Security List**.
+
+![vcn_add_ingressport02](images/01_lab1_task1_vcn_add_ingressport02.png)
+
+9. Add Kafka and Flink services. Log into Ambari with the following URL.
 
 https://`<bdsclusun0-hostname>`:7183/
 
@@ -38,43 +73,43 @@ Enter **username** and **password**, then click **SIGN IN**.
 
 ![login Ambari](images/01_lab1_task1_step2.png)
 
-3. Click **…** icon beside **Services**, then select **Add Service**.
+10. Click **…** icon beside **Services**, then select **Add Service**.
 
 ![add services](images/01_lab1_task1_step3.png)
 
-4. Check **Kafka** and **Flink**, then click **Next**.
+11. Check **Kafka** and **Flink**, then click **Next**.
 
 ![add kafka and flink](images/01_lab1_task1_step4.png)
 
-5. Click **Next** to accept all the default setting. If you see the following recommended configurations, click **PROCEED ANYWAY**.
+12. Click **Next** to accept all the default setting. If you see the following recommended configurations, click **PROCEED ANYWAY**.
 
 ![deploy service](images/01_lab1_task1_step5.png)
 
-6. Click **Deploy**.
+13. Click **Deploy**.
 
 ![deploy service](images/01_lab1_task1_step6.png)
 
-7. After installation, click **NEXT**.
+14. After installation, click **NEXT**.
 
 ![complete installation](images/01_lab1_task1_step7.png)
 
-8. Click **COMPLETE**.
+15. Click **COMPLETE**.
 
 ![complete add services](images/01_lab1_task1_step8.png)
 
-9. Restart all affected components. Click **…** icon beside **Services**, select **Restart All Required**.
+16. Restart all affected components. Click **…** icon beside **Services**, select **Restart All Required**.
 
 ![restart services](images/01_lab1_task1_step9.png)
 
-10. Click **CONFIRM RESTART ALL**.
+17. Click **CONFIRM RESTART ALL**.
 
 ![confirm restart](images/01_lab1_task1_step10.png)
 
-11. After restart, click **OK**.
+18. After restart, click **OK**.
 
 ![complete restart](images/01_lab1_task1_step11.png)
 
-12. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
+19. Execute the following steps to upload jar so you can access MDS and Kafka with Flink and Spark.
     Log into BDS node(un0) as root user.
 
 ```
