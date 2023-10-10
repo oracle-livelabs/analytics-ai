@@ -38,4 +38,4 @@ Your account is ready? let's start learning!
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager, Rawan Aboukoura - Technology Product Strategy Manager
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director
+- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023

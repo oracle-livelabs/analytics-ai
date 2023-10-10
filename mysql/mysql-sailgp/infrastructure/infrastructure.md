@@ -262,4 +262,4 @@ This task is necessary so that Oracle Analytics Cloud can access the data of MyS
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager, Rawan Aboukoura - Technology Product Strategy Manager
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director
+- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023

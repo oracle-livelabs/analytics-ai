@@ -30,7 +30,7 @@ For this case, we will imagine that our **goal is to try to sail upwind** (into 
 
 Therefore, there is an optimal wind angle, and it is up to us to find it. However, this is not so easy; every boat has its own characteristics and responds with a different speed to the wind angle and wind speed in a non-linear way. There's a complex relationship between these variables!
 
-![pic1](images/wind-speed.png)
+![Wind speed](images/wind-speed.png)
 
 We will attack the problem in two phases:
 
@@ -157,53 +157,53 @@ In the past we've gone onto the water with our boat many times in different wind
 
    **Create** a new **Data Set**.
 
-   ![pic1](images/create-dataset.png)
+   ![Create dataset](images/create-dataset.png)
 
 4. Select our database connection, `SAILGP`.
 
-   ![pic1](images/select-sailgp.png)
+   ![Select database connection](images/select-sailgp.png)
 
 5. **Double click** the `SGP_SAIL_HISTORY` table in the `SAILOR` schema.
 
-   ![pic1](images/select-sail-history.png)
+   ![Double click SGP_SAIL_HISTORY](images/select-sail-history.png)
 
    Here you see the results of the measurements of our past trips with the boat; every measurement is a combinations of wind speed, wind angle and resulting boat speed.
 
 6. Open the contents of the table by clicking on `SGP_SAIL_HISTORY` at the bottom of the screen.
 
-   ![pic1](images/click-sail-history.png)
+   ![Open table](images/click-sail-history.png)
 
 7. Click on the PK column (this holds a simple counter for each measurement). On the bottom left of the screen, change **Treat As** to **Attribute**.
 
-   ![pic1](images/pk-attribute.png)
+   ![Treat As Attribute](images/pk-attribute.png)
 
 8. **Save** the Data Set and name it `Sail History`. Click **OK**.
 
-   ![pic1](images/save-dataset2.png)
+   ![Save the data set](images/save-dataset2.png)
 
 9. From the **Home Page**. Click **Create Workbook** and select the **Sail History** data set that you created earlier.
 
-   ![pic1](images/create-project.png)
+   ![Create a new workbook](images/create-project.png)
 
 10. Select the `PK`, `WIND_SPEED` and `BOAT_SPEED` columns (use control-click) and drag them to the canvas to create a new visualization.
 
-   ![pic1](images/investigate-windspeed-boatspeed.png)
+   ![Drag columns to canvas](images/investigate-windspeed-boatspeed.png)
 
    Conclusion: There appears to be some correlation between wind speed and boat speed, as you would expect. But it's not just a simple straight line!
 
-   ![pic1](images/result1.png)
+   ![Conclusion](images/result1.png)
 
 11. Create a new visualization from `PK`, `WIND_ANGLE` and `BOAT_SPEED` and drag it to just above the original chart (the area will be highlighted in blue).
 
-   ![pic1](images/investigate-windangle-boatspeed.png)
+   ![Create a new visualization](images/investigate-windangle-boatspeed.png)
 
    Conclusion: There also appears to be a relationship between `WIND_ANGLE` and `BOAT_SPEED` as well. There's a clear concentration of points in the top of the chart. However, there are also many points further down.
 
-   ![pic1](images/result2.png)
+   ![Conclusion](images/result2.png)
 
 12. Drag the `WIND_SPEED` to the **Color** component. With this we're trying to visualize the relationship between all three variables.
 
-   ![pic1](images/add-windspeed.png)
+   ![Drag WIND_SPEED](images/add-windspeed.png)
 
    Conclusion: We see correlation between wind speed, wind angle and boat speed. However, it's very difficult to find the exact relationship. As mentioned before, the relationship between wind speed, wind angle and boat speed is **non linear**.
 
@@ -313,140 +313,6 @@ CALL sys.ML_PREDICT_TABLE('SAILGP.SAILGP_SGP_WINDSPEED_AND_WINDANGLES', @boat_sp
 
   ![Make prediction](./images/predict-result.png)
 
-<!--
-
-
-
-1. **Create** a new **Data Set**.
-
-   ![pic1](images/create-dataset.png)
-
-2. Select the connection to our Autonomous Data Warehouse.
-
-   ![pic1](images/select-sailgp.png)
-
-3. **Double click** on the `SGP_WINDSPEED_AND_WINDANGLES` table (under the **SAILOR** user).
-
-   ![pic1](images/windspeed.png)
-
-   You will see that this table holds a combination of wind speeds and wind angles. The table **does not yet have** the boat speed. We will predict the boat speed from these two values.
-
-4. Click on the table name at the bottom of the screen.
-
-   ![pic1](images/click-table.png)
-
-5. **Save** the Data Set, call it `To Predict`. Click **OK**.
-
-   ![pic1](images/save-dataset.png)
-
-6. Go back to the **Home Page**.
-
-   ![pic1](images/to-homepage.png)
-
-7. Now we need to make the Machine Learning model that we built in the database available to Oracle Analytics Cloud.
-
-   Click the **ribbon**, then **Register Model/Function** and **Machine Learning Models**. Then select `SAILGP` connection.
-   ![pic1](images/register-ml-model.png)
-
-8. Now select the model starting with `SVMG`. Check that it has the same name that you created earlier (in your environment the numbers will be different from this screenshot). Then press **Register**.
-
-   ![pic1](images/register3.png)
-
-9. Now it's time to predict the boat speeds for all the combinations of wind speed and wind angle in the "To Predict" dataset. We can do this with Data Flows. Data Flows let us create a series of steps in which we can manipulate data in sequence, or in this case, apply a ML model to data.
-
-   **Create** a new **Data Flow**.
-
-   ![pic1](images/create-df.png)
-
-10. Select the **To Predict** Data Set as the input for the Data Flow and click **Add**.
-
-    ![pic1](images/select-to-predict.png)
-
-11. Click on the **+** icon next to the **To Predict** Data Set and add an **Apply Model** step.
-
-   ![pic1](images/add-apply-model.png)
-
-12. Choose the model that we registered earlier, and click **OK**.
-
-   ![pic1](images/select-model.png)
-
-   See how the Wind Speed and Wind Angle are automatically lined up with the input features of the model.
-
-13. Although the model has predicted values for wind angles from 0-360, our training data actually only has values from 0-180. Therefore it does not make sense to predict values above 180. We will set those to 0.
-
-   Click the **+** signal next to **Apply Model**, and select **Transform Column**.
-
-   ![pic1](images/transform-column.png)
-
-14. Choose the **Prediction** column. This is the column we will adapt.
-
-   ![pic1](images/pred-col.png)
-
-15. Clear the formula, open the Expressions option at the right, and drag `Case (If)` to the formula field.
-
-   ![pic1](images/drag-to-formula.png)
-
-16. Complete the formula `CASE WHEN wind_angle<=180 THEN prediction ELSE 0 END`.
-
-    When typing the field names wind_angle and prediction, make sure that you confirm the field names by clicking on the suggestions by the editor.
-
-    ![pic1](images/formula1.png)
-    ![pic1](images/formula2.png)
-
-    If all is well, `WIND_ANGLE` and `PREDICTION` will be shown in blue.
-
-    Now **Apply** the transformation.
-
-17. Finally, add a step to save the resulting data to a new Data Set. Select **Save Data**.
-
-    ![pic1](images/save-data2.png)
-
-18. Fill in the following details on the **Save Data** step.
-
-    - Data Set: `Predicted Boat speed`
-    - Table: `SGP_PREDICTED`
-
-    ![pic1](images/config-save.png)
-
-    Then press **Save**.
-
-19. Give the Data Flow the name `Prediction Data Flow`.
-
-    ![pic1](images/save-df2.png)
-
-20. On the top right, click on the **Play** button to start the Data Flow.
-
-    ![pic1](images/run-df.png)
-
-    This may take a few minutes. You should see a message that the Data Flow completed successfully.
-
-21. Go back to the **Home Page**.
-
-    ![pic1](images/to-homepage2.png)
-
-22. Open the new Data Set by clicking on **Data**, then on the ribbon of **Predicted Boat Speed** and select **Open**.
-
-    ![pic1](images/open-predicted.png)
-
-23. Change the **Treat As** of the 4 columns to be as follows:
-
-    - `WIND_SPEED`: `Attribute`
-    - `WIND_ANGLE`: `Attribute`
-    - `PK`: `Attribute`
-    - `Prediction`: `Measure`
-
-    Ignore any message regarding the Data Flow by clicking **OK**.
-
-    The result should look like this.
-
-    ![pic1](images/column-types.png)
-
-24. **Save** the Data Set and click **Create Workbook** after.
-
-    ![pic1](images/save-and-create.png)
-
--->
-
 ## Task 6: Look for insights in the predicted data using Analytics Cloud
 
 1. Add the MySQL table with predictions to Oracle Analytics Cloud. On the OAC Homepage, click "Create" and then "DataSet". 
@@ -475,11 +341,11 @@ CALL sys.ML_PREDICT_TABLE('SAILGP.SAILGP_SGP_WINDSPEED_AND_WINDANGLES', @boat_sp
 
 7. Select `WIND_SPEED`, `WIND_ANGLE` and `Prediction` (control-click for multi-select) and Right Click. Then choose **Pick Visualization** and choose **Line** chart.
 
-    ![pic1](images/create-line-chart.png)
+    ![Create line chart](images/create-line-chart.png)
 
 26. Make sure that the Line Chart is configured as indicated with the red boxes.
 
-    ![pic1](images/result-chart-1.png)
+    ![Line chart configuration](images/result-chart-1.png)
 
     > If you see a different chart be sure you have the correct order as showed in the picture.
 
@@ -489,7 +355,7 @@ CALL sys.ML_PREDICT_TABLE('SAILGP.SAILGP_SGP_WINDSPEED_AND_WINDANGLES', @boat_sp
 
 At this point, we can use the previous chart to pick the best angle to sail to obtain the highest boat speed for a certain wind speed. In other words, what we can now predict is the green line in this diagram, based on wind speed and wind angle.
 
-![pic1](images/wind-speed2.png)
+![Wind speed diagram](images/wind-speed2.png)
 
 However, this is not so useful by itself. Remember, what we -really- want to know, is not the absolute boat speed, but the boat speed towards our -goal-, which is going directly upwind in this case. What we want to do now, is to obtain the length of the -purple- line. The sailing term for this is "Velocity Made Good".
 
@@ -497,17 +363,17 @@ Luckily, we can easily do this by converting the chart into a polar diagram.
 
 1. Change the visualization of the chart to **Radar Line**.
 
-   ![pic1](images/radar-line2.png)
+   ![Radar line](images/radar-line2.png)
 
 2. How to read this chart?
 
    Because of the circular projection, the vertical distance now effectively shows the Velocity Made Good (the speed that we're achieving towards the target).
 
-   ![pic1](images/conclusion-1.png)
+   ![Conclusion Part 1](images/conclusion-1.png)
 
    For example, imagine the current wind speed is 10 knots. This is the orange ellipse. Now find the point that's vertically in the highest position. This point indicates the maximum speed that we can obtain towards our target (upwind). The optimum angle to obtain this is 54 degrees (shown in the popup), the total boat speed will be 21.6 knots (shown in the popup), and the expected boat speed towards the target will be almost 14 knots (vertical axis).
 
-   ![pic1](images/conclusion-2.png)
+   ![Conclusion Part 2](images/conclusion-2.png)
 
    Another example, imagine the current wind speed is 25 knots. This is the green ellipse. Again, find the point that's vertically in the highest position. In this case the highest speed that we can obtain towards our target can be achieved by taking an angle of 47 degrees to the wind (shown in the popup), the total boat speed will be 34.5 knots (shown in the popup), and the expected boat speed towards the target will be around 24 knots (vertical axis).
 
@@ -523,4 +389,4 @@ Congratulations on completing the lab! Now you've learned the basics of machine 
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
-- **Last Updated By** - Jeroen Kloosterman - Technology Product Strategy Director
+- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
