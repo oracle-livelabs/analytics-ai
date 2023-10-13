@@ -28,11 +28,17 @@ Here's the Data Flow Diagram depicting the flow of data during this workshop:
 
 ![](./images/bds-ml-oac.png)
 
+Sample Visualisations:
+
+![OAC Insights Workbook](./images/oac-insights-workbook.png)
+
+![OAC Insights Workbook](./images/oac-insighs-canvas21.png)
+
 ## Workshop Objectives
 - Prepare for using Oracle Big Data Service (BDS).
 - Create a simple (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
 - Access a BDS utility node using a public IP address.
-- Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
+- Use Ambari and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both Ambari and Hue.
 - Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
 - Cleanse data uploaded in CSV format in Oracle Object Storage and upload the same to Object Storage and Hive Database.
 - Run the Machine Learning code using BDS Jupyterhub Notebook and make predictions with test data.
@@ -78,4 +84,4 @@ Use these links to get more information about BDS and OCI:
     * Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     * Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, September 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

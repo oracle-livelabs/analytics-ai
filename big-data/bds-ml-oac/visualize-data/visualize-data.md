@@ -35,7 +35,7 @@ Estimated Time: 40 minutes
     
     **Capacity**: 2  
 
-    **License Type**: Select **"License Included**
+    **License Type**: Select **License Included**
 
     **Edition**: Select **Enterprise Edition**
 
@@ -94,6 +94,7 @@ Estimated Time: 40 minutes
 3. Update the **Host** with Public IP address of the **Utility Node**. 
 
     Enter Username : hive
+
     Enter Password : hive
     
     Click **Save**.
@@ -115,9 +116,13 @@ Estimated Time: 40 minutes
     ![OAC Insights Workbook](./images/oac-insights-workbook.png)
 
     The visualization on the right **Row Count by TPEP\_PICKUP\_DATETIME (Hour of Day)** displays the number of trips by the time of the day. As the day progresses, as in the early morning when people are typically either going to school or offices, you see a sudden uptick there. It goes down a bit and then it again rises when it's time to go back home, in the late evening and then it tapers down in the night time. And during the night time the number of trips essentially keeps going down. 
-    
+
+    ![OAC Insights Workbook](./images/oac-insighs-canvas21.png)
+
     Click on **Canvas 2** to view other graphs which are created. **Records for Top TRIP\_DISTANCE** shows the number of records in this data set for the month which is about 12 million. **Indexed Metrics Growth** shows as we come to the end of the month, there is an interesting pattern that the number of trips go down. 
-    
+
+    ![OAC Insights Workbook](./images/oac-insighs-canvas22.png)    
+
     Similar graphs can be built to analyze, visualize the data which is sitting in an object store with the help of all this integrations that was built during this lab.
 
 This concludes this lab. You may now **proceed to the next lab**.
@@ -128,4 +133,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, Sep 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

@@ -38,7 +38,7 @@ Estimated Time: 60 minutes
 
 ## Task 2: Download Jupyter Data Science Notebook
 
-1. Download the Jupyter notebook from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WoB1T3VaY06AOiAqSj6PKMn4wLjDu1VJ5J6Lh_CFD6mylShr-66qzDj7Hgo7hJtQ/n/orasenatdpltintegration01/b/Taxi/o/bds-data-science.ipynb).
+1. Download the Jupyter notebook from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/w6FRGXRU-rwQXtvGR2S7a03ehWmuumzd7H7hTFOYqn_tfLqaAt_7jzeZmNQgFlqK/n/orasenatdpltintegration01/b/Taxi/o/bds-data-science.ipynb).
 
 2. Go to JupyterHub and click **Upload Files**. Select the Jupyter Notebook downloaded in previous step and upload it.
 
@@ -96,4 +96,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, Sep 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

@@ -16,6 +16,7 @@ Estimated Time: 60 minutes
 * Login to Utility node using SSH and submit a Spark job.
 * Verify transformed data in Object Storage Bucket.
 * Verify transformed data uploaded to Hive.
+* Grant write permissions to livy user on Hive Database.
 
 ## Task 1: Creat an Object Storage API Key for the Cluster
 
@@ -77,6 +78,18 @@ Estimated Time: 60 minutes
 
     ![](./images/ambari-hdfs-config-saved.png " ")
 
+7. At this point you will be prompted to Restart services. Click **RESTART** and then select **Rolling Restart All Affected**.
+
+    ![](./images/ambari-hdfs-config-restart.png " ")
+
+8. Click **CONFIRM ROLLING RESTART ALL**.
+
+    ![](./images/ambari-hdfs-config-restartall.png " ")
+
+9. This will restart all required services. Click **OK** when restart is complete.
+
+    ![](./images/ambari-hdfs-config-restart-complete.png " ")
+
 ## Task 3: Create an Object Storage bucket
 
 1. Login to Oracle Cloud Console and open the navigation menu. Click **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
@@ -102,7 +115,7 @@ Estimated Time: 60 minutes
 2. Download the Python script
 
     ```
-    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/w5FQiRLC9JoYm3a0OPVi3zgXQqqgvyfxO7WJtVJSObqrJuTRx98sktjjB3HJWhXL/n/orasenatdpltintegration01/b/Taxi/o/taxi_trip_data_cleansing.py</copy>
+    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/SQ-xjdbN9yZZq1-v6Au8Apq9G71aKTpGKyJWOO2c3SnGZ3tNL7IgOJSYhcgWadTr/n/orasenatdpltintegration01/b/Taxi/o/taxi_trip_data_cleansing.py</copy>
     ```
 
 3. Edit the Python script (line number 25) and update the **Namespace** as noted in the previous step.
@@ -150,6 +163,19 @@ Estimated Time: 60 minutes
 
     ![](./images/hue-query-output.png " ")
 
+## Task 7: Grant write permissions to livy user on Hive Database
+
+1. In the next lab **livy** user will create a table in **bds\_demo\_db** database. Presently only **training** user can create tables in **bds\_demo\_db** database. Grant access to other users to write to **bds\_demo\_db** database. SSH to Utility Node and execute following steps :
+
+    ```
+    $ <copy>sudo su - training</copy>
+    $ <copy>hadoop fs -ls /apps/spark/warehouse/</copy>
+    $ <copy>hadoop fs -chmod 777 /apps/spark/warehouse/bds_demo_db.db</copy>
+    $ <copy>hadoop fs -ls /apps/spark/warehouse/</copy>
+
+    ```
+    ![](./images/change-database-permission.png " ")
+
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
@@ -158,4 +184,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, Sep 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

@@ -255,47 +255,55 @@ _If you are using a Free Trial account to run this workshop, Oracle recommends t
 
 **Master Node, `traininmn0`:**
 
-  + HDFS Balancer
-  + HDFS NameNode    
-  + Hive Gateway    
-  + Spark Gateway
-  + Spark History Server
-  + YARN (MR2 Included) JobHistory Server
-  + YARN (MR2 Included) ResourceManager
+  + Ambari Metrics Monitor
+  + HDFS Client
+  + HDFS JournalNode
+  + HDFS NameNode
+  + HDFS ZKFailoverController
+  + Hive Client
+  + Kerberos Client
+  + MapReduce2 Client
+  + Spark3 Client
+  + Spark3 History Server
+  + YARN Client
+  + YARN ResourceManager
   + ZooKeeper Server
 
 **Utility Node, `traininun0`:**
 
-  + HDFS HttpFS
-  + HDFS SecondaryNameNode
-  + Hive Gateway
-  + Hive Metastore Server
+  + Ambari Metrics Monitor
+  + Ambari Server
+  + HDFS Client
+  + HDFS JournalNode
+  + Hive Metastore
   + HiveServer2
-  + Hive WebHCat Server
-  + Hue Load Balancer
-  + Hue Server
-  + Cloudera Management Service Alert Publisher
-  + Cloudera Management Service Event Server
-  + Cloudera Management Service Host Monitor
-  + Cloudera Management Service Navigator Audit Server
-  + Cloudera Management Service Navigator Metadata Server
-  + Cloudera Management Service Reports Manager
-  + Cloudera Management Service Service Monitor
+  + Kerberos Client
+  + MapReduce2 Client
   + Oozie Server
-  + Spark Gateway
-  + YARN (MR2 Included) Gateway
+  + Spark3 Client
+  + Tez Client
+  + YARN Client
+  + ZooKeeper Client
   + ZooKeeper Server
 
 **Worker nodes, `traininwn0`, `traininwn1`, `traininwn2`:**
 
-  + HDFS DataNode  
-  + Hive Gateway
-  + Spark Gateway
-  + YARN (MR2 Included) NodeManager
-  + ZooKeeper Server
+  + Ambari Metrics Monitor
+  + HDFS DataNode
+  + HDFS Client
+  + Hive Client
+  + Kerberos Client
+  + MapReduce2 Client
+  + Oozie Client
+  + Spark3 Client
+  + Spark3 Thrift Server
+  + Tez Client
+  + YARN Client
+  + YARN NodeManager
+  + ZooKeeper Client
 
 > **Note:**
-In **Lab 5, Use Ambari and Hue to Access a BDS Cluster**, you will use Ambari to view the roles, services, and gateways that are running on each node in the cluster.
+In **Lab 4, Use Ambari and Hue to Access a BDS Cluster**, you will use Ambari to view the roles, services, and gateways that are running on each node in the cluster.
 
 This concludes this lab. You may now proceed to the next lab.
 

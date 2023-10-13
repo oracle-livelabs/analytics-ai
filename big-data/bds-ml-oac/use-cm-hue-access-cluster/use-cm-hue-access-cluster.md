@@ -105,6 +105,8 @@ In this task, you will <if type="freetier">add</if> <if type="livelabs">review h
 
   ![](./images/ingress-rules-added.png " ")
 
+11. Follow similar steps as above and add Ingress Rules for Port **8000** which will be used for **jupyterhub**.  
+
 ## Task 2: Use Ambari to Access the Cluster
 
 In this task, you will use Ambari to access the cluster. In a non-HA cluster, Ambari runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in task 2 of **Lab 3, Access a BDS Node Using a Public IP Address**.
@@ -221,4 +223,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, September 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

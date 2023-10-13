@@ -12,9 +12,9 @@ Big Data Service nodes are by default assigned private IP addresses, which aren'
 Using a bastion Host, VPN Connect, and OCI FastConnect provide more private and secure options than making the IP address public.
 
 **Important:**    
-A Utility node generally contains utilities used for accessing the cluster. Making the utility nodes in the cluster publicly available (which you will do in this lab) isn't enough to make services that run on the utility nodes available from the internet. For example, in a non-HA cluster such as our **`training-cluster`**, both Cloudera Manager (CM) and Hue run on the first utility node, **`traininun0`**.
+A Utility node generally contains utilities used for accessing the cluster. Making the utility nodes in the cluster publicly available (which you will do in this lab) isn't enough to make services that run on the utility nodes available from the internet. For example, in a non-HA cluster such as our **`training-cluster`**, both Ambari and Hue run on the first utility node, **`traininun0`**.
 
-Before you can access CM and Hue on the utility node using a web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will <if type="livelabs">review how to do this</if> <if type="freetier">do this</if> in **Lab 4, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92).
+Before you can access Ambari and Hue on the utility node using a web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will <if type="livelabs">review how to do this</if> <if type="freetier">do this</if> in **Lab 4, Use Ambari and Hue to Access a BDS Cluster**. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92).
 
 In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you will pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
 
@@ -57,13 +57,13 @@ This lab assumes that you have successfully completed all of the preceding labs 
   </if>
 
 <if type="freetier">
-5. On the same page, in the **List of cluster nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**, and the Cloud SQL node, **`traininqs0`**. Save the IP addresses as you will need them in later Tasks. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.15`**.
+5. On the same page, in the **List of cluster nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**. Save the IP addresses as you will need them in later Tasks. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.15`**.
 
   ![](./images/private-ips1.png " ")
 </if>
 
 <if type="livelabs">
-5. On the same page, in the **List of cluster nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**, and the Cloud SQL node, **`traininqs0`**. Save the IP addresses as you will need them in later Tasks. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.5`**. The private IP address for the Cloud SQL node in the cluster is **`10.0.0.7`**.
+5. On the same page, in the **List of cluster nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**. Save the IP addresses as you will need them in later Tasks. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.5`**. The private IP address for the Cloud SQL node in the cluster is **`10.0.0.7`**.
 
   ![](./images/ll-private-ips.png " ")
 </if>
@@ -80,23 +80,23 @@ In this task, you will set three variables using the **`export`** command. The v
 
   ![](./images/change-theme.png " ")
 
-2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
+2. At the **$** command line prompt, enter the following command. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
     ```
-    $ <copy>export DISPLAY_NAME="display-name"</copy>
+    $ export DISPLAY_NAME="display-name"
     ```
 
     > **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice. Press the **`[Enter]`** key to run the command.
 
-    In our example, we will use **`traininun0-public-ip`** for the descriptive name.
+    In our example, we will use **`traininun0-public-ip`** for the descriptive name. Enter the following command or click **Copy** to copy the command, and then paste it on the command line.
 
     ```
-    $ export DISPLAY_NAME="traininun0-public-ip"
+    $ <copy>export DISPLAY_NAME="traininun0-public-ip"</copy>
     ```
-3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.
+3. At the **$** command line prompt, enter the following command.
 
     ```
-    $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
+    $ export SUBNET_OCID="subnet-ocid"
     ```
     > **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.  
 
@@ -117,10 +117,10 @@ In this task, you will set three variables using the **`export`** command. The v
     </if>
 
 
-4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
+4. At the **$** command line prompt, enter the following command. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
     ```
-    $ <copy>export PRIVATE_IP="ip-address"</copy>
+    $ export PRIVATE_IP="ip-address"
     ```
     > **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address. Press the **`[Enter]`** key to run the command.
 
@@ -140,7 +140,7 @@ In this task, you will set three variables using the **`export`** command. The v
     ```
   </if>
 
-5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
+5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click Copy to copy the command, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
 
     ```
     $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
@@ -161,7 +161,7 @@ In this task, you will set three variables using the **`export`** command. The v
 </if>
 
 
-7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
+7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
 
   <if type="freetier">
   ![](./images/reserved-public-ip.png " ")
@@ -185,11 +185,11 @@ In this task, you will set two variables using the **`export`** command. Next, y
     > **Note:**    
     You already set the **`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **Task 2** of this lab. You don't need to set this variable again.
 
-2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the Master node that you want to map to a public IP address.
+2. At the **$** command line prompt, enter the following command. Remember, the **`ip-address`** is the private IP address that is assigned to the Master node that you want to map to a public IP address.
 
     <if type="freetier">
     ```
-    $ <copy>export PRIVATE_IP="10.0.0.32"</copy>
+    $ export PRIVATE_IP="10.0.0.32"
     ```
     </if>
 
@@ -219,7 +219,7 @@ In this task, you will set two variables using the **`export`** command. Next, y
 </if>
 
 
-5.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
+5.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
       <if type="freetier">
       ![](./images/list-mn0-public-ip.png " ")
@@ -234,7 +234,7 @@ In this task, you will set two variables using the **`export`** command. Next, y
 
 In this task, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
-1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
+1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved Public IPs**. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
 
   <if type="freetier">
   ![](./images/list-mn0-public-ip.png " ")
@@ -290,4 +290,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, September 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

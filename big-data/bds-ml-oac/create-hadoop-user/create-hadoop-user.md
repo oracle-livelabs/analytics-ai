@@ -18,45 +18,11 @@ Estimated Time: 45 minutes
 ### Prerequisites   
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-## Task 1: Gather Information About the Cluster
+## Task 1: Connect to the Cluster's Master Node Using Secure Shell (SSH)
 
-<if type="livelabs">
-1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
-</if>
+In this task, you will connect to the master node using SSH as user **`opc`** (the default Oracle Public Cloud user). 
 
-<if type="freetier">
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
-</if>
-
-2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
-
-  ![](./images/big-data.png " ")
-
-3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
-
-4. In the **Cluster Information** tab, in the **Customer Network Information** section, click the **Copy** link next to **Subnet OCID**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in **Task 2** in this lab.
-
-  <if type="freetier">
-  ![](./images/subnet-ocid.png " ")
-  </if>
-
-  <if type="livelabs">
-  ![](./images/ll-subnet-ocid.png " ")
-  </if>
-
-5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP address for the first master node, **`traininmn0`**. Save the IP address as you will need it in later tasks. In our example, the private IP address of our first master node in the cluster is <if type="freetier">**`10.0.0.10`**</if> <if type="livelabs">**`10.0.0.2`**</if>.
-
-  <if type="freetier">
-  ![](./images/mn0-private-ip.png " ")
-  </if>
-
-  <if type="livelabs">
-  ![](./images/ll-mn0-private-ip.png " ")
-  </if>
-
-## Task 2: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
-
-In this task, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
+You will use the reserved public IP address that is associated with traininmn0-public-ip that you created in Lab 3, Access a BDS Node Using a Public IP Address.
 
 Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH. For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
@@ -72,7 +38,7 @@ Remember, in **Lab 2**, we used our own SSH public key pair that we created usin
 
 For additional information on connecting to a node in the cluster using SSH, see [Connect to a Cluster Node By Using Secure Shell (SSH)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/connect-cluster-ssh.html) in the Using Oracle Big Data Service documentation.
 
-_If you are already connected to your cluster's first master node using the OpenSSH format with the **`ssh`** command above, you can skip the rest of the tasks in this section and proceed to **Task 4, Create the training Linux OS Administrator User**._
+_If you are already connected to your cluster's first master node using the OpenSSH format with the **`ssh`** command above, you can skip the rest of the tasks in this section and proceed to **Task 2, Create the training Linux OS Administrator User**._
 
 1. To SSH into your cluster using your Windows PuTTYgen generated SSH key pair, start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
@@ -133,7 +99,7 @@ _If you are already connected to your cluster's first master node using the Open
   ![](./images/ll-traininmn0-connected.png " ")
   </if>
 
-## Task 4: Create the **`training`** Linux OS Administrator User
+## Task 2: Create the **`training`** Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -227,9 +193,9 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     ![](./images/ll-hdfs-ls.png " ")
     </if>
 
-## Task 5: Add the **`training`** User to Hue (optional)
+## Task 3: Add the **`training`** User to Hue (optional)
 
-In this task, you log into Hue as an administrator and add the **`training`** user as an administrator. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun10`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this task, you log into Hue as an administrator and add the **`training`** user as an administrator. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 3, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
@@ -276,7 +242,7 @@ In this task, you log into Hue as an administrator and add the **`training`** us
 
    ![](./images/hue-add-users.png " ")
 
-6. Click the **Task 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
+6. Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
 
        ![](./images/hue-step3-Advanced1.png " ")
 
@@ -315,4 +281,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, September 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023
