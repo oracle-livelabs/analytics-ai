@@ -22,11 +22,11 @@ Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a
 
 Watch our short video that explains key features in Oracle Big Data Service:
 
-[](youtube:CAmaIGKkEIE)
+[Short Video](youtube:CAmaIGKkEIE)
 
 Here's the Data Flow Diagram depicting the flow of data during this workshop:
 
-![](./images/bds-ml-oac.png)
+![Data Flow Diagram](./images/bds-ml-oac.png)
 
 Sample Visualisations:
 

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Building Data Pipeline using Big Data Service",
+  "workshoptitle": "Build a Data Pipeline with Big Data Service",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
       {
@@ -9,7 +9,7 @@
       }
       ,
       {
-            "title": "Getting Started",
+            "title": "Get started - sign up for Free Trial",
             "description": "Get a Free Trial",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
       },
@@ -28,7 +28,7 @@
       }
       ,
       {
-            "title": "Lab 3: Access a BDS Node Using a Public IP Address",
+            "title": "Lab 3: Use Public IP Address to access a BDS Node",
             "type":"freetier",
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../../access-utility-node/access-utility-node.md"
@@ -49,20 +49,20 @@
             }
             ,
             {
-            "title": "Lab 6: Cleanse data and upload to Hive using Python (PySpark)",
+            "title": "Lab 6: Cleanse data and upload to Hive with Python (PySpark)",
             "type":"freetier",
             "description": "This lab shows you how to cleanse data and upload to Object Storage and Hive table.",
             "filename": "./../../cleanse-data/cleanse-data.md"
             }
             ,
             {
-            "title": "Lab 7: Run the Machine Learning, Data Science code using Jupyterhub",
+            "title": "Lab 7: Run the Machine Learning, Data Science code with Jupyterhub",
             "description": "This lab shows you how to run the Machine Learning, Data Science code using Jupyterhub.",
             "filename": "./../../data-science/data-science.md"
             }
             ,
             {
-                  "title": "Lab 8: Visualize data using Oracle Analytics Cloud",
+                  "title": "Lab 8: Visualize data with Oracle Analytics Cloud",
                   "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
                   "filename": "./../../visualize-data/visualize-data.md"
             }

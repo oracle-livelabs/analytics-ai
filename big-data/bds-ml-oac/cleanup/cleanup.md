@@ -26,19 +26,19 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
- 	![](./images/big-data.png " ")
+ 	![Big Data](./images/big-data.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button, and then select **Terminate Big Data Cluster** from the context menu.
 
-  ![](./images/terminate-cluster.png " ")    
+  ![Terminate Cluster](./images/terminate-cluster.png " ")    
 
 4. A confirmation message box is displayed. Enter the name of the cluster, and then click **Terminate**. The status of the cluster in the **State** column is **Deleting**. It can take up to 30 minutes before the cluster is deleted.  
 
-  ![](./images/delete-cluster-message.png " ")    
+  ![Delete Cluster](./images/delete-cluster-message.png " ")    
 
 5. The status of the cluster in the **State** column changes from **Active** to **Deleting**.
 
-  ![](./images/status-deleting.png " ")    
+  ![Deleting](./images/status-deleting.png " ")    
 
 6. To view the status of the deletion process, click the cluster's name link in the **Name** column to display the **Cluster Details** page. In the **Resources** section at the bottom left-hand side of the page, click **Work Requests**. In the **Work Requests** section, you can see the **% Complete** information.   
 
@@ -71,7 +71,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 2. From the list of available VCNs in your compartment, click the **training-vcn** name link in the **Name** column. The **Virtual Cloud Network Details** page is displayed.
 
-  ![](./images/vcn-details-page.png " ")
+  ![VCN](./images/vcn-details-page.png " ")
 
 3. In the **Subnets** section, click the **Actions** button associated with **Private Subnet-training-vcn**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
@@ -93,11 +93,11 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 12. At the top of the page, click **Terminate** to terminate your VCN. A **Terminate Virtual Cloud Network** window is displayed. After less than a minute, the **Terminate All** button is enabled. To delete your VCN, click **Terminate All**.
 
-  ![](./images/terminate-all-vcn.png " ")
+  ![Terminate all VCN](./images/terminate-all-vcn.png " ")
 
 13. When the termination operation is completed successfully, a **Virtual Cloud Network termination complete** message is displayed in the window. Click **Close**.
 
-  ![](./images/vcn-terminated.png " ")
+  ![VCN Terminated](./images/vcn-terminated.png " ")
 
 
 ## Task 4: Delete Your Reserved Public IP Addresses
@@ -108,7 +108,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 3. In this workshop, you have created three reserved IP addresses: `traininmn0-public-ip`, `traininqs0-public-ip`, and `traininun0-public-ip`.
 
-  ![](./images/reserved-ips.png " ")
+  ![Reserved IPs](./images/reserved-ips.png " ")
 
 4. Click the **Actions** button associated with **`traininmn0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
@@ -126,7 +126,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 3. On the row for the **biketrips** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
 
-  ![](./images/delete-biketrips.png " ")
+  ![Delete Bike Data](./images/delete-biketrips.png " ")
 
 4. A confirmation message box is displayed. Enter **biketrips** in the **Type the folder name to confirm deletion** text box, and then click **Delete**. The object is deleted and the **Bucket Details** page is re-displayed.
 
@@ -149,7 +149,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 3. A confirmation message box is displayed. Click **Delete**. The status of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
 
-    ![](./images/delete-compartment.png " ")
+    ![Delete Compartment](./images/delete-compartment.png " ")
 
 
 This concludes the workshop.

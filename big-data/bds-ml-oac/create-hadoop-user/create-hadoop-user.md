@@ -50,21 +50,21 @@ _If you are already connected to your cluster's first master node using the Open
     + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
 
     <if type="freetier">
-    ![](./images/putty-configuration-session.png " ")
+    ![putty session](./images/putty-configuration-session.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-putty-configuration-session.png " ")
+    ![putty session](./images/ll-putty-configuration-session.png " ")
     </if>
 
 2. In the **Category** pane, expand **Connection**, expand **SSH**, and then click **Auth**. In the **Options controlling SSH authentication** section, in the **Private key file for authentication** section, click **Browse**. In the **Select private key file** window, select your **_private key_** that is associated with your cluster's **_public key_** that you used when your created your BDS cluster.    
 
   <if type="freetier">
-  ![](./images/putty-configuration-auth.png " ")
+  ![putty session](./images/putty-configuration-auth.png " ")
   </if>
 
   <if type="livelabs">
-  ![](./images/ll-putty-configuration-auth.png " ")
+  ![putty session](./images/ll-putty-configuration-auth.png " ")
   </if>
 
 3. In the **Category** pane, select the **Session** parameter, and then click **Save** to save your session for easier future access. Your saved session is displayed in the **Saved Sessions** list.
@@ -72,31 +72,31 @@ _If you are already connected to your cluster's first master node using the Open
     > **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
 
   <if type="freetier">
-  ![](./images/session-saved.png " ")
+  ![putty session](./images/session-saved.png " ")
   </if>
 
   <if type="livelabs">
-  ![](./images/ll-session-saved.png " ")
+  ![putty session](./images/ll-session-saved.png " ")
   </if>
 
 4. Click **Open** to start the ssh session. If this is your first time connecting to your first master node in the cluster, the following **PuTTY Security Alert** message box is displayed. Click **Yes**.
 
   <if type="freetier">
-  ![](./images/security-alert.png " ")
+  ![Security Alert](./images/security-alert.png " ")
   </if>
 
   <if type="livelabs">
-  ![](./images/ll-security-alert.png " ")
+  ![Security Alert](./images/ll-security-alert.png " ")
   </if>
 
    You are now connected to the **`traininmn0`** master node.
 
   <if type="freetier">    
-  ![](./images/traininmn0-connected.png " ")
+  ![Session connected](./images/traininmn0-connected.png " ")
   </if>
 
   <if type="livelabs">    
-  ![](./images/ll-traininmn0-connected.png " ")
+  ![Session connected](./images/ll-traininmn0-connected.png " ")
   </if>
 
 ## Task 2: Create the **`training`** Linux OS Administrator User
@@ -109,17 +109,17 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     $ <copy>sudo bash</copy>
     ```
     <if type="freetier">
-    ![](./images/sudo-bash.png " ")
+    ![bash](./images/sudo-bash.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-sudo-bash.png " ")
+    ![bash](./images/ll-sudo-bash.png " ")
     </if>
 
 2. The **`dcli`** utility allows you to run the command that you specify across each node of the cluster. The syntax for the **`dcli`** utility is as follows:
 
     ```
-    dcli [option] [command]
+    <copy>dcli [option] [command]</copy>
     ```
     Use the **`-C`** option to run the specified command on all the nodes in the cluster.
 
@@ -130,12 +130,11 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     # <copy>dcli -C "groupadd supergroup"</copy>
     ```
     <if type="freetier">
-    ![](./images/dcli-groupadd.png " ")
+    ![groupadd](./images/dcli-groupadd.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-dcli-gro
-      upadd.png " ")
+    ![groupadd](./images/ll-dcli-groupadd.png " ")
     </if>
 
 3. Enter the following command at the **`#`** prompt to create the **`training`** administrator user and add it to the listed groups on each node in the **`training-cluster`**. The **`useradd`** linux command creates the new **`training`** user and adds it to the specified groups.
@@ -144,11 +143,11 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     # <copy>dcli -C "useradd -g supergroup -G hdfs,hadoop,hive training"</copy>
     ```
     <if type="freetier">
-    ![](./images/dcli-useradd.png " ")
+    ![User add](./images/dcli-useradd.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-dcli-useradd.png " ")
+    ![User add](./images/ll-dcli-useradd.png " ")
     </if>
 
     The preceding command creates a new user named **`training`** on each node of the cluster. The **`-g`** option assigns the **`supergroup`** group as the primary group for **`training`**. The **`-G`** option assigns the **`hdfs`**, **`hadoop`**, and **`hive`** groups as the secondary groups for **`training`**.
@@ -173,11 +172,11 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     $ <copy>id</copy>
     ```
     <if type="freetier">
-    ![](./images/training-user.png " ")
+    ![Training User](./images/training-user.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-training-user.png " ")
+    ![Training User](./images/ll-training-user.png " ")
     </if>
 
 7.  Perform a file listing of HDFS as the `training` user using the following command:
@@ -186,11 +185,11 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     $ <copy>hadoop fs -ls /</copy>
     ```
     <if type="freetier">
-    ![](./images/hdfs-ls.png " ")
+    ![HDFS](./images/hdfs-ls.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-hdfs-ls.png " ")
+    ![HDFS](./images/ll-hdfs-ls.png " ")
     </if>
 
 ## Task 3: Add the **`training`** User to Hue (optional)
@@ -202,7 +201,7 @@ In this task, you log into Hue as an administrator and add the **`training`** us
 2. Enter the following URL:
 
     ```
-    https://<ip-address>:8888
+    <copy>https://<ip-address>:8888</copy>
     ```
     > **Note:**    
     In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in a previous lab.
@@ -211,27 +210,27 @@ In this task, you log into Hue as an administrator and add the **`training`** us
 
     <if type="freetier">
     ```
-    https://129.80.209.87:8888
+    <copy>https://129.80.209.87:8888</copy>
     ```
     </if>
 
     <if type="livelabs">
     ```
-    https://129.80.209.87:8888
+    <copy>https://129.80.209.87:8888</copy>
     ```
     </if>
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 
-  ![](./images/hue-login-page1.png " ")
+  ![Hue Login](./images/hue-login-page1.png " ")
 
   The **Hue Editor** page is displayed.
 
-  ![](./images/hue-home-page1.png " ")
+  ![Hue Login](./images/hue-home-page1.png " ")
 
 4. From the left pane select **Administer Users** from **admin** menu.
 
-  ![](./images/hue-manage-users.png " ")
+  ![Hue Manage Users](./images/hue-manage-users.png " ")
 
 5. In the **User Admin** page, click **Add user**. In the **Create user** page, in **Step 1: Credentials (required)** of the wizard, enter the following information:
 
@@ -240,25 +239,25 @@ In this task, you log into Hue as an administrator and add the **`training`** us
     + **Password confirmation:** **`Training123`**
     + **Create home directory:** `Checked`
 
-   ![](./images/hue-add-users.png " ")
+   ![Hue Add Users](./images/hue-add-users.png " ")
 
 6. Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
 
-       ![](./images/hue-step3-Advanced1.png " ")
+       ![Hue advanced](./images/hue-step3-Advanced1.png " ")
 
        The **Hue Users** page is re-displayed. The newly added **`training`** user is displayed in the list of Hue users.
 
        <if type="freetier">
-       ![](./images/user-training-added.png " ")
+       ![User added](./images/user-training-added.png " ")
        </if>
 
        <if type="livelabs">
-       ![](./images/ll-user-training-added.png " ")
+       ![User added](./images/ll-user-training-added.png " ")
        </if>
 
 7. Exit Hue. From the **admin** menu on the left pane, select **Log Out**.
 
-  ![](./images/hue-logout1.png " ")
+  ![Hue Logout](./images/hue-logout1.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
 

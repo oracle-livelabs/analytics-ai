@@ -54,23 +54,23 @@ In this task, you will <if type="freetier">add</if> <if type="livelabs">review h
 
 2. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-	![](./images/vcn.png " ")
+	![VCN](./images/vcn.png " ")
 
 3. On the **Virtual Cloud Networks** page, click your cluster's Virtual Cloud Network, **`training-vcn`**.
 
-  ![](./images/cluster-vcn.png " ")
+  ![Cluster VCN](./images/cluster-vcn.png " ")
 
 4. Next, you will update the default security list for the public subnet in your VCN. Remember, when you created the cluster, you needed to specify that your cluster belongs to a public subnet. In the **Subnets** section on the **Virtual Cloud Network Details** page, click the public subnet for the selected network.
 
-  ![](./images/vcn-details-page.png " ")
+  ![VCN Details](./images/vcn-details-page.png " ")
 
 5. In the **Security Lists** section on the **Subnet Details** page, click your **Default Security List** link for your selected network in the **Name** column.
 
-  ![](./images/default-security-list.png " ")
+  ![Security List](./images/default-security-list.png " ")
 
 6. On the **Default Security List** page, scroll-down to the **Ingress Rules** section. This section shows the currently available security rules in the selected **Default Security List**. Next, click **Add Ingress Rules**.
 
-  ![](./images/add-ingress-rule-1.png " ")
+  ![Ingress Rule](./images/add-ingress-rule-1.png " ")
 
 7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Ambari to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port for Ambari to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**. Anyone on the internet can access port **`7183`** for Ambari. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
@@ -82,7 +82,7 @@ In this task, you will <if type="freetier">add</if> <if type="livelabs">review h
     + For the **DESTINATION PORT RANGE**, enter **`7183`**.
     + For the **DESCRIPTION**, enter **`For Ambari Access on Port 7183`**.
 
-  ![](./images/cm-ingress-rule.png " ")
+  ![Ingress Rule](./images/cm-ingress-rule.png " ")
 
 
 8. Click **+Additional Ingress Rule** to add an ingress security rule for Hue.
@@ -99,11 +99,11 @@ In this task, you will <if type="freetier">add</if> <if type="livelabs">review h
 
 10. Click **Add Ingress Rules**.
 
-  ![](./images/add-ingress-rules.png " ")
+  ![Ingress Rules](./images/add-ingress-rules.png " ")
 
   The two ingress rules are added to the **Default Security List**.
 
-  ![](./images/ingress-rules-added.png " ")
+  ![Ingress Rules](./images/ingress-rules-added.png " ")
 
 11. Follow similar steps as above and add Ingress Rules for Port **8000** which will be used for **jupyterhub**.  
 
@@ -116,7 +116,7 @@ In this task, you will use Ambari to access the cluster. In a non-HA cluster, Am
 2. Enter the following URL:
 
     ```
-    https://<ip-address>:7183
+    <copy>https://<ip-address>:7183</copy>
     ```
     > **Note:**    
     In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
@@ -125,37 +125,37 @@ In this task, you will use Ambari to access the cluster. In a non-HA cluster, Am
 
     <if type="freetier">
     ```
-    https://129.80.209.87:7183
+    <copy>https://129.80.209.87:7183</copy>
     ```
     </if>
 
     <if type="livelabs">
 
     ```
-    https://129.80.209.87:7183
+    <copy>https://129.80.209.87:7183</copy>
     ```
 
     </if>
 
 3. On the Ambari Login screen, enter your **`username`** which is **`admin`** by default in Ambari. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training#123`**. Click **Sign In**.
 
-  ![](./images/ambari-login-page.png " ")
+  ![Ambari Login](./images/ambari-login-page.png " ")
 
 4. In the Ambari Home page, note the name of the cluster and the services running on the cluster.
 
-  ![](./images/ambari-home-page.png " ")
+  ![Ambari Home Page](./images/ambari-home-page.png " ")
 
 5. Click **Hosts** on the left panel to get a list of hosts.
 
-  ![](./images/ambari-all-hosts.png " ")
+  ![Ambari All Hosts](./images/ambari-all-hosts.png " ")
 
   The hosts of the cluster are displayed. Hosts are configured with one or more components. The component indicates which daemon, also known as service, runs on the host. Typically, a host will run multiple components in support of the various services running in the cluster. Click a host to get the list of components.
 
-   ![](./images/components.png " ")
+   ![Components](./images/components.png " ")
 
 6. Exit Ambari. From the **User** drop-down menu, select **Sign out**.
 
-    ![](./images/logout-ambari.png " ")
+    ![Ambari Logout](./images/logout-ambari.png " ")
 
 ## Task 3: Use Hue to Access the Cluster
 
@@ -166,7 +166,7 @@ In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 2. Enter the following URL:
 
     ```
-    https://<ip-address>:8888
+    <copy>https://<ip-address>:8888</copy>
     ```
 
     > **Note:**    
@@ -176,13 +176,13 @@ In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 
     <if type="freetier">
     ```
-    https://129.80.209.87:8888
+    <copy>https://129.80.209.87:8888</copy>
     ```
     </if>
 
     <if type="livelabs">
     ```
-    https://129.80.209.87:8888
+    <copy>https://129.80.209.87:8888</copy>
     ```
     </if>
 
@@ -190,19 +190,19 @@ In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 
     > **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
-    ![](./images/hue-login-page1.png " ")
+    ![Hue Login](./images/hue-login-page1.png " ")
 
     The **Hue Editor** page is displayed.
 
-  ![](./images/hue-home-page1.png " ")
+  ![Hue Home Page](./images/hue-home-page1.png " ")
 
 4. For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the left pane and click on **Documentation** for general help topics.
 
-  ![](./images/hue-help.png " ")
+  ![Hue Help](./images/hue-help.png " ")
 
 5. Exit Hue. From the **admin** menu on the left pane, select **Log Out**.
 
-  ![](./images/hue-logout1.png " ")
+  ![Hue Logout](./images/hue-logout1.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
 

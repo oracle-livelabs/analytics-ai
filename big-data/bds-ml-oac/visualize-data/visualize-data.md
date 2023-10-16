@@ -1,4 +1,4 @@
-# Visualize data using Oracle Analytics Cloud
+# Visualize data with Oracle Analytics Cloud
 
 ## Introduction
 

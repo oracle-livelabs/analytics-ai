@@ -37,7 +37,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-   ![](./images/oracle-cloud-console-home.png " ")    
+   ![Console Home Page](./images/oracle-cloud-console-home.png " ")    
 
 ## Task 2: Create a Compartment
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the lab.
@@ -46,7 +46,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**.
 
-	 ![](./images/navigate-compartment.png " ")
+	 ![Create compartment navigation](./images/navigate-compartment.png " ")
 
 2. On the **Compartments** page, click **Create Compartment**.
 
@@ -54,11 +54,11 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 4. In the **Parent Compartment** drop-down list, select your parent compartment, and then click **Create Compartment**.
 
-   ![](./images/create-compartment.png " ")
+   ![Create compartment](./images/create-compartment.png " ")
 
    The **Compartments** page is re-displayed and the newly created compartment is displayed in the list of available compartments.
 
-   ![](./images/compartment-created.png " ")
+   ![Compartment created](./images/compartment-created.png " ")
 
 ## Task 3: Create an IAM User to Be the BDS Administrator
 
@@ -70,22 +70,22 @@ Create a new **Administrator** group that will have full access rights to the ne
 
 2. On the **Users** page, click **Create User**.
 
-   ![](./images/create-users-page.png " ")
+   ![Create Users](./images/create-users-page.png " ")
 
 3. In the **Create User** dialog box, enter **`training-bds-admin`** in the **Name** field, **`Training BDS Admin User`** in the **Description** field, an optional email address for the user in the **Email** field, and then click **Create**.
 
     > **Note:**
     An email address can be used as the user name, but it isn't required.
 
-   ![](./images/create-user.png " ")
+   ![Create User](./images/create-user.png " ")
 
 4. The **User Details** page is displayed. Click **Users** in the breadcrumbs to return to the **Users** page.
 
-   ![](./images/user-details.png " ")
+   ![User details](./images/user-details.png " ")
 
    The new user is displayed in the list of available users.
 
-   ![](./images/user-created.png " ")
+   ![User created](./images/user-created.png " ")
 
     > **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this Task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
@@ -97,30 +97,30 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
 2. On the **Groups** Page, click **Create Group**.
 
-   ![](./images/create-group.png " ")
+   ![Create group](./images/create-group.png " ")
 
 3. In the **Create Group** dialog box, enter **`training-bds-admin-group`** in the **Name** field, **`Training BDS Admin. Group`** in the **Description** field, and then click **Create**.
 
-   ![](./images/create-group-dialog-box.png " ")
+   ![Create group dialog](./images/create-group-dialog-box.png " ")
 
 4. The **Group Details** page is displayed. In the **Group Members** section, click **Add User to Group**.   
 
-   ![](./images/group-details-page.png " ")
+   ![Group details page](./images/group-details-page.png " ")
 
 5. In the **Add User to Group** dialog box, select the **`training-bds-admin`** user that you created earlier from the **Users** drop-down list, and then click **Add**.
 
-   ![](./images/add-user-group.png " ")
+   ![Add user to group](./images/add-user-group.png " ")
 
     > **Note:**
     If you haven't created the user who will be an administrator yet, go back to **Task 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this Task.
 
 6. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
 
-   ![](./images/user-added-to-group.png " ")
+   ![User added to group](./images/user-added-to-group.png " ")
 
 7. Click **Groups** in the breadcrumbs to re-display the **Groups** page. The newly created group is displayed in the list of available groups.
 
-   ![](./images/groups-page.png " ")
+   ![Groups Page](./images/groups-page.png " ")
 
 
 ## Task 5: Create IAM Policies for Administering Your Service
@@ -130,19 +130,19 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-compartment`** where the new policies will reside.  
 
-   ![](./images/search-box.png " ")
+   ![Search box](./images/search-box.png " ")
 
    Type part of the compartment's name in the **Search compartments** text box. When the compartment is displayed in the list, select it.  
 
-   ![](./images/search-compartment.png " ")
+   ![Search compartment](./images/search-compartment.png " ")
 
 3.  Click **Create Policy**.  
 
-    ![](./images/policies-page.png " ")
+    ![Policies Page](./images/policies-page.png " ")
 
     The **Create Policy** dialog box is displayed.
 
-    ![](./images/create-policy-db-blank.png " ")
+    ![Create Policy](./images/create-policy-db-blank.png " ")
 
 
 4. In the **Create Policy** dialog box, provide the following information:
@@ -151,7 +151,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     - Select **`training-compartment`** from the **Compartment** drop-down list, if it's not already selected.
     - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
 
-     ![](./images/create-policy-1-dialog.png " ")
+     ![Create Policy Dialog](./images/create-policy-1-dialog.png " ")
 
   + Click the **Copy** button in the following code box to copy the two policy statements, and then paste them in the **Policy Builder** text box. The first policy statement grants members of the `training-bds-admin-group` group manage privileges on the Virtual Cloud Network (VCN) resources in `training-compartment`. The second policy statement grants members of the `training-bds-admin-group` group manage privileges to inspect, read, update, create, delete, and move all clusters in `training-compartment`.
 
@@ -162,11 +162,11 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
   + Select the **Create Another Policy** check box to create a second policy after your create the first policy.   
 
-     ![](./images/create-policy-1-dialog-complete.png " ")
+     ![Create policy completed](./images/create-policy-1-dialog-complete.png " ")
 
 5. Click **Create**. A confirmation message is displayed. You can click the **View Details** link to display the **Policy Detail** page in a new tab in your browser. The **Create Policy** dialog box remains displayed because you selected the **Create Another Policy** check box. This enables you to create your second policy.
 
-  ![](./images/policy-created.png " ")
+  ![Policy Created](./images/policy-created.png " ")
 
 6. Create a new policy in the **`training-compartment`** which will contain policies about the network resources that will be used by your **`training-cluster`**. The policy statement in this new policy grants the system the rights to interact with various networking components. In the **Create Policy** dialog box, provide the following information:
 
@@ -180,19 +180,19 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         <copy>allow service bdsprod to {VNC_READ, VNIC_READ, VNIC_ATTACH, VNIC_DETACH, VNIC_CREATE, VNIC_DELETE,VNIC_ATTACHMENT_READ, SUBNET_READ, VCN_READ, SUBNET_ATTACH, SUBNET_DETACH, INSTANCE_ATTACH_SECONDARY_VNIC, INSTANCE_DETACH_SECONDARY_VNIC} in compartment training-compartment</copy>
         ```
 
-     ![](./images/create-policy-2-dialog.png " ")
+     ![Create Policy dialog](./images/create-policy-2-dialog.png " ")
 
      + Uncheck the **Create Another Policy** check box. Click **Create**.
 
-     ![](./images/click-create-button.png " ")
+     ![Create button](./images/click-create-button.png " ")
 
 7. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
-       ![](./images/policy-2-detail-page.png " ")
+       ![Policy detail page](./images/policy-2-detail-page.png " ")
 
 8. Click **Policies** in the breadcrumbs to re-display the **Policies** page. The newly created policies are displayed in the list of available policies.
 
-      ![](./images/policies-created.png " ")
+      ![Policy created](./images/policies-created.png " ")
 
       > **Note:** You can click the name of a policy on this page to view and edit its policy statements.
 
@@ -202,15 +202,15 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
 
 1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-	![](./images/navigate-vcn.png " ")
+	![Nagiage VCN](./images/navigate-vcn.png " ")
 
 2. On the **Virtual Cloud Networks** page, click **Start VCN Wizard**.  
 
-   ![](./images/vcn-page.png " ")
+   ![VCN details](./images/vcn-page.png " ")
 
 3. In the **Start VCN Wizard** dialog box, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-   ![](./images/start-vcn-wizard.png " ")        
+   ![VCN Wizard](./images/start-vcn-wizard.png " ")        
 
 3. The **Configuration** page of the wizard is displayed.
 
@@ -218,7 +218,7 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
     + **VCN NAME:** Enter **`training-vcn`**.
     + **COMPARTMENT:** Select **`training-compartment`**.
 
-    ![](./images/basic-information.png " ")        
+    ![Basic VCN Info](./images/basic-information.png " ")        
 
     In the **Configure VCN and Subnets** section, provide the following information:
     + **VCN CIDR BLOCK:** Enter the range of IP addresses for the network as a Classless Inter-Domain Routing (CIDR) block such as **`10.0.0.0/16`**.
@@ -226,23 +226,23 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
     + **PRIVATE SUBNET CIDR BLOCK:** Enter the CIDR block for the private subnet such as **`10.0.1.0/24`**.
     + In the **DNS RESOLUTION** section, select the **USE DNS HOSTNAMES IN THIS VCN** check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
 
-    ![](./images/configure-vcn-subnets.png " ")        
+    ![Create subnets](./images/configure-vcn-subnets.png " ")        
 
 4. Click **Next**. The **Review and Create** wizard's page is displayed. Review the details of the VCN. If you need to make any changes, click **Previous** and make the desired changes.
 
-   ![](./images/vcn-review.png " ")
+   ![VCN review](./images/vcn-review.png " ")
 
 5. Click **Create**.
 
-   ![](./images/create-vcn.png " ")
+   ![Create VCN](./images/create-vcn.png " ")
 
 6. When the VCN is created, you can click **View Virtual Cloud Network** to see the details of the network on the **Virtual Cloud Network Details** page.
 
-   ![](./images/view-vcn.png " ")
+   ![View VCN](./images/view-vcn.png " ")
 
 7. The newly created VCN details page is displayed.
 
-   ![](./images/vcn-details.png " ")
+   ![VCN details](./images/vcn-details.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
 </if>
@@ -284,14 +284,14 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-   ![](./images/oracle-cloud-console-home.png " ")    
+   ![Oracle Cloud Console](./images/oracle-cloud-console-home.png " ")    
 
 ## Task 2: Create a Compartment
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this task, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the workshop.
 
 1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**.
 
-	 ![](./images/navigate-compartment.png " ")
+	 ![Navigate Compartment](./images/navigate-compartment.png " ")
 
 3. On the **Compartments** page, click **Create Compartment**.
 
@@ -299,11 +299,11 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 5. In the **Parent Compartment** drop-down list, select your parent compartment, and then click **Create Compartment**.
 
-   ![](./images/create-compartment.png " ")
+   ![Create Compartment](./images/create-compartment.png " ")
 
    The **Compartments** page is re-displayed and the newly created compartment is displayed in the list of available compartments.
 
-   ![](./images/compartment-created.png " ")
+   ![Compartment created](./images/compartment-created.png " ")
 
 ## Task 3: Create an IAM User to Be the BDS Administrator
 
@@ -315,22 +315,22 @@ Create a new **Administrator** group that will have full access rights to the ne
 
 2. On the **Users** page, click **Create User**.
 
-   ![](./images/create-users-page.png " ")
+   ![Create Users](./images/create-users-page.png " ")
 
 3. In the **Create User** dialog box, enter **`training-bds-admin`** in the **Name** field, **`Training BDS Admin User`** in the  **Description** field, an optional email address for the user in the **Email** field, and then click **Create**.
 
     > **Note:**
     An email address can be used as the user name, but it isn't required.
 
-   ![](./images/create-user.png " ")
+   ![Create User](./images/create-user.png " ")
 
 4. The **User Details** page is displayed. Click **Users** in the breadcrumbs to return to the **Users** page.
 
-   ![](./images/user-details.png " ")
+   ![User details](./images/user-details.png " ")
 
    The new user is displayed in the list of available users.
 
-   ![](./images/user-created.png " ")
+   ![User created](./images/user-created.png " ")
 
     > **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this Task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
@@ -342,30 +342,30 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
 3. On the **Groups** Page, click **Create Group**.
 
-   ![](./images/create-group.png " ")
+   ![Create group](./images/create-group.png " ")
 
 4. In the **Create Group** dialog box, enter **`training-bds-admin-group`** in the **Name** field, **`Training BDS Admin. Group`** in the **Description** field, and then click **Create**.
 
-   ![](./images/create-group-dialog-box.png " ")
+   ![Create group dialog](./images/create-group-dialog-box.png " ")
 
 5. The **Group Details** page is displayed. In the **Group Members** section, click **Add User to Group**.   
 
-   ![](./images/group-details-page.png " ")
+   ![Group details](./images/group-details-page.png " ")
 
 6. In the **Add User to Group** dialog box, select the **`training-bds-admin`** user that you created earlier from the **USERS** drop-down list, and then click **Add**.
 
-   ![](./images/add-user-group.png " ")
+   ![Add user to group](./images/add-user-group.png " ")
 
     > **Note:**
     If you haven't created the user who will be an administrator yet, go back to **Task 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this Task.
 
 7. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
 
-   ![](./images/user-added-to-group.png " ")
+   ![User added to group](./images/user-added-to-group.png " ")
 
 8. Click **Groups** in the breadcrumbs to re-display the **Groups** page. The newly created group is displayed in the list of available groups.
 
-   ![](./images/groups-page.png " ")
+   ![Groups Page](./images/groups-page.png " ")
 
 
 ## Task 5: Create IAM Policies for Administering Your Service
@@ -375,19 +375,19 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-compartment`** where the new policies will reside.  
 
-   ![](./images/search-box.png " ")
+   ![Search box](./images/search-box.png " ")
 
    Type part of the compartment's name in the **Search compartments** text box. When the compartment is displayed in the list, select it.  
 
-   ![](./images/search-compartment.png " ")
+   ![Search Compartment](./images/search-compartment.png " ")
 
 3.  Click **Create Policy**.  
 
-    ![](./images/policies-page.png " ")
+    ![Policies Page](./images/policies-page.png " ")
 
     The **Create Policy** dialog box is displayed.
 
-    ![](./images/create-policy-db-blank.png " ")
+    ![Create Policy](./images/create-policy-db-blank.png " ")
 
 
 4. In the **Create Policy** dialog box, provide the following information:
@@ -396,7 +396,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     - Select **`training-compartment`** from the **Compartment** drop-down list, if it's not already selected.
     - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
 
-     ![](./images/create-policy-1-dialog.png " ")
+     ![Create Policy](./images/create-policy-1-dialog.png " ")
 
     + Click the **Copy** button in the following code box to copy the two policy statements, and then paste them in the **Policy Builder** text box. The first policy statement grants members of the `training-bds-admin-group` group manage privileges on the Virtual Cloud Network (VCN) resources in `training-compartment`. The second policy statement grants members of the `training-bds-admin-group` group manage privileges to inspect, read, update, create, delete, and move all clusters in `training-compartment`.
 
@@ -407,11 +407,11 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
     + Select the **Create Another Policy** check box to create a second policy after your create the first policy.   
 
-     ![](./images/create-policy-1-dialog-complete.png " ")
+     ![Create Policy Completed](./images/create-policy-1-dialog-complete.png " ")
 
 5. Click **Create**. A confirmation message is displayed. You can click the **View Details** link to display the **Policy Detail** page in a new tab in your browser. The **Create Policy** dialog box remains displayed because you selected the **Create Another Policy** check box. This enables you to create your second policy.
 
-  ![](./images/policy-created.png " ")
+  ![Policy Created](./images/policy-created.png " ")
 
 6. Create a new policy in the **`training-compartment`** which will contain policies about the network resources that will be used by your **`training-cluster`**. The policy statement in this new policy grants the system the rights to interact with various networking components. In the **Create Policy** dialog box, provide the following information:
 
@@ -425,19 +425,19 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         <copy>allow service bdsprod to {VNC_READ, VNIC_READ, VNIC_ATTACH, VNIC_DETACH, VNIC_CREATE, VNIC_DELETE,VNIC_ATTACHMENT_READ, SUBNET_READ, VCN_READ, SUBNET_ATTACH, SUBNET_DETACH, INSTANCE_ATTACH_SECONDARY_VNIC, INSTANCE_DETACH_SECONDARY_VNIC} in compartment training-compartment</copy>
         ```
 
-     ![](./images/create-policy-2-dialog.png " ")
+     ![Create Policy](./images/create-policy-2-dialog.png " ")
 
     + Uncheck the **Create Another Policy** check box. Click **Create**.
 
-     ![](./images/click-create-button.png " ")
+     ![Create Policy](./images/click-create-button.png " ")
 
 7. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
-     ![](./images/policy-2-detail-page.png " ")
+     ![Policy Details](./images/policy-2-detail-page.png " ")
 
 8. Click **Policies** in the breadcrumbs to re-display the **Policies** page. The newly created policies are displayed in the list of available policies.
 
-     ![](./images/policies-created.png " ")
+     ![Policy Created](./images/policies-created.png " ")
 
       > **Note:** You can click the name of a policy on this page to view and edit it.
 
@@ -447,15 +447,15 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
 
 1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-	 ![](./images/navigate-vcn.png " ")
+	 ![Navigate VCN](./images/navigate-vcn.png " ")
 
 2. On the **Virtual Cloud Networks** page, click **Start VCN Wizard**.  
 
-   ![](./images/vcn-page.png " ")
+   ![VCN page](./images/vcn-page.png " ")
 
 3. In the **Start VCN Wizard** dialog box, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-   ![](./images/start-vcn-wizard.png " ")        
+   ![Start VCN Wizard](./images/start-vcn-wizard.png " ")        
 
 3. The **Configuration** page of the wizard is displayed.
 
@@ -463,7 +463,7 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
     + **VCN NAME:** Enter **`training-vcn`**.
     + **COMPARTMENT:** Select **`training-compartment`**.
 
-    ![](./images/basic-information.png " ")        
+    ![Basic information](./images/basic-information.png " ")        
 
     In the **Configure VCN and Subnets** section, provide the following information:
     + **VCN CIDR BLOCK:** Enter the range of IP addresses for the network as a Classless Inter-Domain Routing (CIDR) block such as **`10.0.0.0/16`**.
@@ -471,23 +471,23 @@ In this task, you will create a new Virtual Cloud Network (VCN) that will be use
     + **PRIVATE SUBNET CIDR BLOCK:** Enter the CIDR block for the private subnet such as **`10.0.1.0/24`**.
     + In the **DNS RESOLUTION** section, select the **USE DNS HOSTNAMES IN THIS VCN** check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
 
-    ![](./images/configure-vcn-subnets.png " ")        
+    ![Configure Subnets](./images/configure-vcn-subnets.png " ")        
 
 4. Click **Next**. The **Review and Create** wizard's page is displayed. Review the details of the VCN. If you need to make any changes, click **Previous** and make the desired changes.
 
-   ![](./images/vcn-review.png " ")
+   ![VCN Review](./images/vcn-review.png " ")
 
 5. Click **Create**.
 
-   ![](./images/create-vcn.png " ")
+   ![Create VCN](./images/create-vcn.png " ")
 
 6. When the VCN is created, you can click **View Virtual Cloud Network** to see the details of the network on the **Virtual Cloud Network Details** page.
 
-   ![](./images/view-vcn.png " ")
+   ![View VCN](./images/view-vcn.png " ")
 
 7. The newly created VCN details page is displayed.
 
-   ![](./images/vcn-details.png " ")
+   ![VCN Details](./images/vcn-details.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
    </if>
@@ -506,6 +506,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-    * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+    * Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
+* **Contributors:**
+    * Anand Chandak, Principal Product Manager, Data and AI
+* **Last Updated By/Date:** Vivek Verma, October 2023

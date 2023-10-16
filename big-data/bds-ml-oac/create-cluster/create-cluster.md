@@ -25,7 +25,7 @@ This lab assumes that you have successfully completed **Lab 1: Set Up Your BDS E
 
 Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 
-[](youtube:zpASc1xvKOY)
+[Video to create a simple non-HA Hadoop cluster](youtube:zpASc1xvKOY)
 
 
 ## Task 1: Create a Cluster
@@ -37,7 +37,7 @@ Your simple non-HA cluster will have the following profile:
   + **Worker Nodes Shape:** **VM.Standard2.1** shape for the Worker nodes in the cluster. This shape provides **1 CPU** and **15 GB** of memory.
   + **Storage Size:** **150 GB** block storage for the Master, Utility, and Worker nodes.
 
-  ![](./images/cluster-layout.png " ")
+  ![Cluster Layout](./images/cluster-layout.png " ")
 
 
   > **Note:**    
@@ -61,27 +61,27 @@ Create the cluster as follows:
 2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
 
 
- ![](./images/big-data.png " ")
+ ![Big Data navigation](./images/big-data.png " ")
 
     <if type="livelabs">
 3. On the **Clusters** page, click **Create Cluster**.
 
-  ![](./images/ll-clusters-page.png " ")
+  ![Cluster Page](./images/ll-clusters-page.png " ")
 
   **Important:** If your assigned LiveLabs compartment is not selected on this page, click the **Compartment** drop-down list in the **List Scope** section on the left. Enter your assigned compartment name in the **Compartment** text field to search for it. When your compartment is displayed in the list of compartments, select it.
 
-    ![](./images/ll-select-compartment.png " ")
+    ![Select compartment](./images/ll-select-compartment.png " ")
 
     In addition, make sure that your LiveLabs assigned region from the **Launch Workshop** page is selected in Console's banner, **US West (Phoenix)** in our example.
 
-    ![](./images/ll-region.png " ")
+    ![Region](./images/ll-region.png " ")
    </if>    
 
    <if type="freetier">
 
 3. On the **Clusters** page, click **Create Cluster**.
 
-     ![](./images/clusters-page.png " ")
+     ![Clusters Page](./images/clusters-page.png " ")
 
      > **Note:** If your compartment is not selected, click the **Compartment** drop-down list in the **List Scope** section on the left. Enter your compartment's name in the **Compartment** text field to search for it. When your compartment is displayed in the list of compartments, select it.
 
@@ -96,7 +96,7 @@ Create the cluster as follows:
     * **Cluster Version:** Select a version of the Hadoop distribution to use for the cluster. Select **ODH 2.0**.
     * **Cluster profile:** Select the cluster profile for the cluster (available for ODH 2.0 and ODH 1.0 versions only). Select **Hadoop Extended**.
 
-    ![](./images/create-cluster-11.png " ")
+    ![Create cluster](./images/create-cluster-11.png " ")
 
 
 5. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
@@ -107,7 +107,7 @@ Create the cluster as follows:
     * **Number of Master & Utility Nodes** _Read-Only_ **:** Since you are creating a non-HA cluster, this field shows **2** nodes: **1** Master node and **1** Utility node.
     > **Note:** For an HA cluster, this field would show **4** nodes: **2** Master nodes and **2** Utility nodes.
 
-    ![](./images/create-cluster-2.png " ")
+    ![Create cluster](./images/create-cluster-2.png " ")
 
     > **Note:** For information on the supported cluster layout, shape, and storage, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
 
@@ -118,7 +118,7 @@ Create the cluster as follows:
     * **Block Storage size per Worker Node (in GB):** **`150 GB`**.
     * **Number of Worker Nodes:** **`3`**. This is the minimum allowed for a cluster.
 
-    ![](./images/create-cluster-3.png " ")
+    ![Create cluster](./images/create-cluster-3.png " ")
 
 7. In the **Network Setting > Cluster Private Network** section, provide the following details:
 
@@ -145,11 +145,11 @@ Create the cluster as follows:
     > **Note:** Select the **`Use the gateways in your selected Customer VCN (Customizable)`** option if you want more control over the networking configuration.
 
     <if type="freetier">
-    ![](./images/create-cluster-4.png " ")
+    ![Create cluster](./images/create-cluster-4.png " ")
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-create-cluster-4.png " ")
+    ![Create cluster](./images/ll-create-cluster-4.png " ")
     </if>
 
 9. In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
@@ -166,12 +166,12 @@ Create the cluster as follows:
 
      > **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
-     ![](./images/create-cluster-5.png " ")
+     ![Create cluster](./images/create-cluster-5.png " ")
 
 
 10.  Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 
-    ![](./images/status-creating.png " ")
+    ![Creating](./images/status-creating.png " ")
 
 
 ## Task 2: Monitor the Cluster Creation
@@ -180,14 +180,14 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 1. To view the cluster's details, click **`training-cluster`** in the **Name** column to display the **Cluster Details** page.
 
-   ![](./images/cluster-name-link.png " ")
+   ![Cluster Name](./images/cluster-name-link.png " ")
 
    The **Cluster Information** tab displays the cluster's general and network information.
    <if type="livelabs">
-   ![](./images/ll-cluster-details-page-2.png " ")  
+   ![Cluster Details](./images/ll-cluster-details-page-2.png " ")  
    </if>
    <if type="freetier">
-   ![](./images/cluster-details-page-2.png " ")  
+   ![Cluster Details](./images/cluster-details-page-2.png " ")  
    </if>
 
    The **List of cluster nodes** section displays the following information for each node in the cluster: Name, status, type, shape, private IP address, and date and time of creation.
@@ -195,56 +195,56 @@ The process of creating the cluster takes approximately one hour to complete; ho
     > **Note:**
     The name of a node is the concatenation of the **first seven** letters of the cluster's name, **`trainin`**, followed by two letters representing the node type such as **`mn`** for a **Master** node, **`un`** for a **Utility** node, and **`wn`** for a **Worker** node. The numeric value represents the node type order in the list such as Worker nodes **`0`**, **`1`**, and **`2`**.
 
-   ![](./images/cluster-nodes.png " ")
+   ![Cluster Nodes](./images/cluster-nodes.png " ")
 
 2. To view the details of a node, click the node's name link in the **Name** column. For  example, click the **`traininmn0`** first Master node in the **Name** column to display the **Node Details** page.
 
     <if type="freetier">
-    ![](./images/first-master-node.png " ")  
+    ![First Master Node](./images/first-master-node.png " ")  
     </if>
 
     <if type="livelabs">
-    ![](./images/ll-first-master-node.png " ")   
+    ![First Master Node](./images/ll-first-master-node.png " ")   
     </if>
 
    The **Node Information** tab displays the node's general information and the network information.
 
    <if type="freetier">   
-   ![](./images/node-details-1.png " ")  
+   ![Node details](./images/node-details-1.png " ")  
    </if>
 
    <if type="livelabs">
-   ![](./images/ll-node-details-1.png " ")  
+   ![Node details](./images/ll-node-details-1.png " ")  
    </if>
 
    The **Node Metrics** section at the bottom of the **Node Details** page _is displayed after the cluster is provisioned_. It displays the following charts: **CPU Utilization**, **Memory Utilization**, **Network Bytes In**, **Network Bytes Out**, and **Disk Utilization**. You can hover over any chart to get additional details.
 
-   ![](./images/node-details-2.png " ")  
+   ![Node details](./images/node-details-2.png " ")  
 
 
 3. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page.
 
-   ![](./images/cluster-details-breadcrumb.png " ")  
+   ![Cluster details](./images/cluster-details-breadcrumb.png " ")  
 
 4. In the **Resources** section on the left, click **Work Requests**.
 
-     ![](./images/cluster-details-page-3.png " ")  
+     ![Cluster details](./images/cluster-details-page-3.png " ")  
 
 5. The **Work Requests** section on the page displays the status of the cluster creation and other details such as the **Operation**, **Status**, **% Complete**, **Accepted**, **Started**, and **Finished**. Click the **CREATE_BDS** name link in the **Operation** column.
 
-   ![](./images/work-requests.png " ")
+   ![Work requests](./images/work-requests.png " ")
 
    The **CREATE_BDS** page displays the work request information, logs, and errors, if any.
 
-   ![](./images/create-bds-page.png " ")
+   ![Create BDS Page](./images/create-bds-page.png " ")
 
 6. Click the **Clusters** link in the breadcrumbs at the top of the page to re-display the **Clusters** page.
 
-    ![](./images/breadcrumb.png " ")  
+    ![Breadcrubb](./images/breadcrumb.png " ")  
 
 7. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
 
-  ![](./images/cluster-active.png " ")  
+  ![Active Cluster](./images/cluster-active.png " ")  
 
 > _**Note:**_  
 _If you are using a Free Trial account to run this workshop, Oracle recommends that you delete the BDS cluster when you complete the workshop to avoid unnecessary charges._    
@@ -323,4 +323,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, Sep 2023
+* **Last Updated By/Date:** Vivek Verma, October 2023

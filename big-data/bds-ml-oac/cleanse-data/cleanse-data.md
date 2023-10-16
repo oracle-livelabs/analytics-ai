@@ -1,4 +1,4 @@
-# Cleanse and Transform data and upload to Hive using Python (PySpark)
+# Cleanse and Transform data and upload to Hive with Python (PySpark)
 
 ## Introduction
 
@@ -26,7 +26,7 @@ Estimated Time: 60 minutes
 
 3. On the **Cluster details** page, under **Resources** on the left pane, click **API keys**. Click **Create key**.
 
-    ![](./images/bds-api-key.png " ")
+    ![API Key](./images/bds-api-key.png " ")
 
 4. In the **Create API key** panel, enter the following :
 
@@ -42,53 +42,53 @@ Estimated Time: 60 minutes
 
     Click **Create**.
 
-    ![](./images/bds-create-api-key.png " ")
+    ![Create API Key](./images/bds-create-api-key.png " ")
 
 5. The API key is listed in the **API keys** page. When the API key is successfully created, its status changes to **Active**. Click "View configuration file" to get the details of the API key that will be required in the next step.
 
-    ![](./images/bds-list-api-key.png " ")
+    ![List API Key](./images/bds-list-api-key.png " ")
 
 6. Note down the variables displayed on **View configuration file** panel.
 
-    ![](./images/bds-config-api-key.png " ")
+    ![BDS API Key](./images/bds-config-api-key.png " ")
 
 ## Task 2: Update HDFS configuration to enable connectivity to Object Storage
 
 1. Login to Ambari and on the left pane click **HDFS**.
 
-    ![](./images/ambari-hdfs.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs.png " ")
 
 2. Click **ADVANCED** under **CONFIGS**.
 
-    ![](./images/ambari-hdfs-config.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-config.png " ")
 
 3. Scroll down to update variables under **Custom core-site**. Update the variables with values noted from **View configuration file**. Click **SAVE**.
 
-    ![](./images/ambari-hdfs-custom-core.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-custom-core.png " ")
 
 4. Click **SAVE** to confirm the changes.
 
-    ![](./images/ambari-hdfs-confirm-save.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-confirm-save.png " ")
 
 5. Review the recommended changes and click **PROCEED ANYWAY**.
 
-    ![](./images/ambari-hdfs-confirm-saved.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-confirm-saved.png " ")
 
 6. Once the changes are saved a pop-up message is displayed with the message **Service configuration changes saved successfully**.
 
-    ![](./images/ambari-hdfs-config-saved.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-config-saved.png " ")
 
 7. At this point you will be prompted to Restart services. Click **RESTART** and then select **Rolling Restart All Affected**.
 
-    ![](./images/ambari-hdfs-config-restart.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-config-restart.png " ")
 
 8. Click **CONFIRM ROLLING RESTART ALL**.
 
-    ![](./images/ambari-hdfs-config-restartall.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-config-restartall.png " ")
 
 9. This will restart all required services. Click **OK** when restart is complete.
 
-    ![](./images/ambari-hdfs-config-restart-complete.png " ")
+    ![Ambari HDFS](./images/ambari-hdfs-config-restart-complete.png " ")
 
 ## Task 3: Create an Object Storage bucket
 
@@ -98,11 +98,11 @@ Estimated Time: 60 minutes
 
 3. Under **Create Bucket** pane, enter the Bucket Name - **Taxi_Data**. Leave rest as default. Click **Create**.
 
-    ![](./images/object-storage-create-bucket.png " ")
+    ![Object Storage](./images/object-storage-create-bucket.png " ")
 
 4. From the list of buckets, click on the bucket that we just created **Taxi_Data**. Under **Bucket Details** page, note down the **Namespace** for Object Storage.
 
-    ![](./images/object-storage-bucket-details.png " ")
+    ![Object Storage](./images/object-storage-bucket-details.png " ")
 
 ## Task 4: Login to Utility node using SSH and submit a Spark job
 
@@ -127,11 +127,11 @@ Estimated Time: 60 minutes
     ```
     $ <copy>spark-submit --deploy-mode cluster --master yarn --driver-memory 1g --num-executors 3 --executor-memory 2g --executor-cores 2 --queue default taxi_trip_data_cleansing.py</copy>
     ```
-    ![](./images/spark-submit-job.png " ")
+    ![Spark Job](./images/spark-submit-job.png " ")
 
 5. Monitor the job to completion.
 
-    ![](./images/spark-job-complete.png " ")
+    ![Spark Job](./images/spark-job-complete.png " ")
 
 ## Task 5: Verify transformed data in Object Storage Bucket
 
@@ -139,17 +139,17 @@ Estimated Time: 60 minutes
 
 2. From the list of buckets, click on the bucket that we created earlier **Taxi_Data**. Validate the parquet file created.
 
-    ![](./images/object-storage-parquet.png " ")
+    ![Object Storage](./images/object-storage-parquet.png " ")
 
 ## Task 6: Verify transformed data in Hive table
 
 1. Login to **Hue** and on the **Editor** page click **default** to view the list of databases.
 
-    ![](./images/hue-databases.png " ")
+    ![Hue database](./images/hue-databases.png " ")
 
 2. Click the database that was created by the Spark job - **bds\_demo\_db**.
 
-    ![](./images/hue-bds-database.png " ")
+    ![Hue Database](./images/hue-bds-database.png " ")
 
 3. This will list the tables created under **bds\_demo\_db** - **your\_cleansed\_data\_table**.
 
@@ -161,7 +161,7 @@ Estimated Time: 60 minutes
 
 5. Execute the query to get the output.
 
-    ![](./images/hue-query-output.png " ")
+    ![Hue Query](./images/hue-query-output.png " ")
 
 ## Task 7: Grant write permissions to livy user on Hive Database
 
@@ -174,7 +174,7 @@ Estimated Time: 60 minutes
     $ <copy>hadoop fs -ls /apps/spark/warehouse/</copy>
 
     ```
-    ![](./images/change-database-permission.png " ")
+    ![Change database permission](./images/change-database-permission.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
 
