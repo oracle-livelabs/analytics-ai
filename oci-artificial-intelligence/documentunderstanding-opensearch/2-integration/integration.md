@@ -160,10 +160,10 @@ We start with the public connections first because these don't depend on compone
 ### 7. StreamInputBucket
 1. In the OCI Console, select the **Developer Tools icon** and then select *Cloud Shell*.
 
-1. In OCI Console Cloud Shell, run: 
+1. In OCI Console Cloud Shell, if the terraform output is not there anymore, you can get it back like this: 
     ```
     <copy>
-    oci-searchlab/starter/src/search_env.sh
+    oci-searchlab/starter/src/after_done.sh
     </copy>
     ```
     1. In the output of this script look for the following values under the heading **-- STREAMING CONNECTION --------------------------**:
