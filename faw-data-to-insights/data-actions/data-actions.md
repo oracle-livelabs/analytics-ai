@@ -71,6 +71,7 @@ This lab assumes you have:
 You are now able to create links to related contents, dig deeper from summary information to detailed analysis.
 
 
+
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 * [Use Data Actions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-data-actions.html#GUID-7AACD0C9-9CC1-430D-BB0F-66513BD138CE)

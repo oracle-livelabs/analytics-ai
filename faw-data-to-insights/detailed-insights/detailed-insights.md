@@ -155,6 +155,7 @@ This lab assumes you have:
 
 You have successfully created another analysis/dashboard. In Fusion Data Intelligence Platform, we call this object Workbook. In the next lab exercise we will learn to link the detailed Workbook you created in this exercise to the first Workbook you created in your earlier lab exercise.
 
+**You may now proceed to the next lab**.
 
 ## Learn More
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
