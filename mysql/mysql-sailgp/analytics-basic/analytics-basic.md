@@ -182,35 +182,35 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    Drag `B_NAME` to the canvas.
 
-   ![pic1](images/drag-bname.png)
+   ![Drag B_NAME](images/drag-bname.png)
 
    Find the `TIME_SAILED` column and drag it to the canvas as well.
 
-   ![pic1](images/drag-time-sailed.png)
+   ![Drag TIME_SAILED](images/drag-time-sailed.png)
 
    The result should look like this. You have a simple table with the time that each team took to complete the race.
 
 3. Let's make this a bit easier to interpret: Change the representation to **Horizontal Stacked Bar Chart**.
 
-   ![pic1](images/change-to-horbar.png)
+   ![Change to horizontal stacked bar](images/change-to-horbar.png)
 
 4. We want to see the fastest team first, so let's change the sorting. Click the **Sorting** icon (top right).
 
-   ![pic1](images/change-sorting.png)
+   ![Change sorting](images/change-sorting.png)
 
    Configure the sorting to be by `TIME_SAILED` from low to high. Click **OK**.
 
-   ![pic1](images/change-sorting2.png)
+   ![Change sorting](images/change-sorting2.png)
 
    We can see that Great Britain was the winner, followed by Australia.
 
 5. Actually, Japan and the USA did not finish the race because they collided. Let's remove them from the outcome by adding a filter. Drag `B_NAME` to the filter area.
 
-   ![pic1](images/drag-bname-to-filter.png)
+   ![Drag B_NAME](images/drag-bname-to-filter.png)
 
    Then configure the filter to include all countries apart from `JPN` and `USA`. You see how the chart now contains only the 6 remaining teams.
 
-   ![pic1](images/configure-filter.png)
+   ![Configure filter](images/configure-filter.png)
 
    You can see that the boats that finished last were France and Denmark, we will now compare France and Denmark to Great Britain to see how they are different. Hopefully we will find some indicators on where France and Denmark can make improvements.
 
@@ -220,7 +220,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    Right click on the `BOAT_SPEED_KNOTS` field and choose **Create Best Visualization**.
 
-   ![pic2](images/visualize-knots.png)
+   ![Compare maximum boat speed](images/visualize-knots.png)
 
    This shows the maximum speed across all boats in this race. In fact, at the time, this was a new record for all SailGP races so far! 51 knots per hour is over 94 kilometers per hour or 59 miles per hour!
 
@@ -230,20 +230,20 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 2. Show what the maximum speeds are for all countries, by dragging `B_NAME` onto the same chart.
 
-   ![pic2](images/drag-bname2.png)
+   ![Drag B_NAME](images/drag-bname2.png)
 
 3. Change the chart type to **Horizontal Stacked**.
 
-   ![pic2](images/change-chart-type.png)
+   ![Change to Horizontal Stacked](images/change-chart-type.png)
 
 4. **Sort** the chart by boat speed, **High to Low**.
 
-   ![pic2](images/sort-icon.png)
-   ![pic2](images/sort-by-boat-speed.png)
+   ![Sort High to Low](images/sort-icon.png)
+   ![Sort High to Low](images/sort-by-boat-speed.png)
 
 	 In this case, the teams that have the higher maximum speed also are the teams that are finishing highest. However we have to be careful drawing any conclusions from this. Remember, in sailing the highest speed doesn't necessarily mean the best track taken through the course, nor that you will be the winner.
 
-   ![pic2](images/conclusion.png)
+   ![Conclusion](images/conclusion.png)
 
 ## Task 5: Investigate How Much the Teams Are Foiling
 
@@ -271,25 +271,25 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
    </copy>
    ```
 
-   ![pic2](images/foiling-percentage.png)
+   ![Foiling percentage](images/foiling-percentage.png)
 
 3. Create a basic chart
 
    Now create a chart to display the foiling percentage for all the teams. First, create a new chart with overall foiling percentage by right clicking on the new Foiling Percentage field and choosing **Create Best Visualization**.
 
-   ![pic2](images/foiling-percentage2.png)
+   ![Foiling percentage](images/foiling-percentage2.png)
 
 4. Add the `B_NAME` column in the visualization to show the foiling percentage per team.
 
-   ![pic2](images/drag-bname3.png)
+   ![Drag B_NAME](images/drag-bname3.png)
 
 5. Change the chart type to **Horizontal Bar Stacked**.
 
-   ![pic2](images/change-chart-type2.png)
+   ![Change chart type](images/change-chart-type2.png)
 
 6. Change the sorting to be on Foiling Percentage **High to Low**. Click **OK**.
 
-   ![pic2](images/change-sorting3.png)
+   ![Change sorting](images/change-sorting3.png)
 
    We can see that, although Denmark does a good job foiling, they are still the last team to cross the finish line.
 
@@ -297,17 +297,16 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 7. Save the workbook with name `Basic statistics on Bermuda race 4`.
 
-   ![pic2](images/save-project.png)
+   ![Save workbook](images/save-project.png)
 
 8. Go back to the **Home Page**.
 
-   ![pic2](images/to-homepage.png)
+   ![Go back to homepage](images/to-homepage.png)
 
 Congratulations on completing this lab!
 
 You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
-- **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributors** - Priscila Iruela, Arabella Yao
-- **Last Updated By** - Arabella Yao, August 2021
+- **Author** - Jeroen Kloosterman - Technology Product Strategy Director
+- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
