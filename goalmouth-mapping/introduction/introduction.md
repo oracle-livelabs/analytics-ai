@@ -12,7 +12,7 @@ The at-a-glance usability of maps makes them one of the most powerful tools for 
 
 ![A completed goalmouth map with penalties plotted](images/aboutworkshop1.png)
 
-Estimated Workshop Time: 1 hours 30 minutes 
+Estimated Workshop Time: 2 hours 
 
 ### Objectives
 
