@@ -245,6 +245,9 @@ JOIN driver_info c ON c.driver_id=b.driver_id;
 
 Now you can close Flink client.
 
+## Task3: Monitor flink jobs in Flink Dashboard
+refer to lab2:monitor real time truck driving and task3.open or refresh the Flink Dashboard.
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
