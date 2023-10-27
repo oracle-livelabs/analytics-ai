@@ -295,7 +295,7 @@ link:http://{mn0-ip}:8088/proxy/{flink-application-ip}/#/overview
 Replace the **{mn0-ip}** with the public IP Address of First Master Node you were just created in step1.
 And replace the {flink-application-ip} with application id of flink where you get in step3
 
-#eg.http://138.2.85.27:8088/proxy/application_1697598756447_0008/#/overview
+This is flink dashboard link sample:http://138.2.85.27:8088/proxy/application_1697598756447_0008/#/overview
 
 the Flink Dashboard will be as below:
 ![flink_dashboard_overview](images/02_lab2_task3_step4.png)
