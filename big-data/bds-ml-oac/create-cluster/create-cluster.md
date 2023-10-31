@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to create a simple non-Highly-Available (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS). This will be a small testing cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
+In this lab, you will learn how to create a simple non-Highly-Available (non-HA) Oracle Distribution including Apache Hadoop (ODH) cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS). ODH includes Apache Ambari, Apache Hadoop, Apache HBase, Apache Hive, Apache Spark, and other services for working with and securing big data. This will be a small testing cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Estimated Time: 60 minutes
 
