@@ -30,7 +30,7 @@ Here's the Data Flow Diagram depicting the flow of data during this workshop:
 
 ## Workshop Objectives
 - Prepare for using Oracle Big Data Service (BDS).
-- Create a simple (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
+- Create a simple (non-HA) Oracle Distribution including Apache Hadoop (ODH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
 - Access a BDS utility node using a public IP address.
 - Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
 - Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
