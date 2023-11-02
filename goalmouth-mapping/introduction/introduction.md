@@ -1,6 +1,6 @@
 # Introduction
 
-![Oracle and Premier League Logos](images/eploraclepartnerblack.png)
+![Oracle and Premier League Logos](images/eploraclepartnerblacksmall.png)
 
 ## About this Workshop
 
