@@ -1,0 +1,234 @@
+# Install the Components
+
+## Introduction
+In this lab, you will install all the components needed for this workshop. Some of these will be provisioned manually and many will be provisioned automatically using a provided Terraform script.
+
+Estimated time: 50 min
+
+### Objectives
+
+- Provision all the cloud components
+
+### Prerequisites
+
+- An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
+- Cookies must be enabled in your browser to use the OCI console code editor in this lab
+- Choose which web browser to use before you start. There is an option in a later lab to download a github repo to your local computer using the OCI Console Cloud Shell. Some users have experienced a bug attempting to do this with the Firefox Browser Extended Support Release (ESR). The Chrome browser is an alternative in this case.
+
+
+## Task 1: Prepare to save configuration settings
+
+1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
+
+    ````
+    <copy>
+    List of ##VARIABLES##
+    ---------------------
+    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
+    OIC_OCID=(SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
+    
+    TENANCY_OCID = (SAMPLE) ocid1.tenancy.oc1..amaaaaaaaa
+    USER_OCID = (SAMPLE) ocid1.user.oc1..amaaaaaaaa
+    PRIVATE_KEY = (SAMPLE) file private_key.pem
+
+    -----BEGIN PRIVATE KEY-----
+    AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9sdfhkjdhf
+    ...
+    -----END PRIVATE KEY-----
+
+    PRIVATE_KEY_RSA_FORMAT = (SAMPLE) file private_key_rsa_format.pem
+
+    -----BEGIN RSA PRIVATE KEY-----
+    ABCDEpAIBAAKCAQEAxHbqmTFASn48FY8mVtVZoUUE5iixGFpcN6JSdHHaxtkqTbx2
+    ...
+    -----END RSA PRIVATE KEY-----
+
+    FINGERPRINT = (SAMPLE) aa:aa:aa:98:ac:84:96:f5:a8:aa:aa:aa:aa:aa:aa:a
+
+    Terraform Output
+    ----------------
+    -- STREAMING CONNECTION --------------------------
+    STREAM_BOOSTRAPSERVER=(SAMPLE)cell-1.streaming.us-phoenix-1.oci.oraclecloud.com:9092
+    STREAM_USERNAME=(SAMPLE)tenantname/username/ocid1.streampool.oc1.phx.amaaaaaa3twn4mia5hvcf4m3npe2l76fxfhffbrabcdefgh
+    AUTH_TOKEN=(SAMPLE)abcdefgh$$123
+
+    -- FUNCTION CONNECTION ---------------------------
+    FUNCTION_ENDPOINT=(SAMPLE)https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
+
+    -- OPENSEARCH CONNECTION --------------------------
+    OPENSEARCH_API_ENDPOINT=(SAMPLE)https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
+
+    -- API GATEWAY CONNECTION ------------------------
+    APIGW_URL=(SAMPLE)https://abcdefgh.apigateway.us-phoenix-1.oci.customer-oci.com
+    </copy>
+    `````
+
+## Task 2: Create a Compartment
+
+The compartment will be used to contain all the components of the lab.
+
+You can
+- Use an existing compartment to run the lab 
+- Or create a new one (recommended)
+
+1. Login to your OCI account/tenancy
+1. Go the 3-bar/hamburger menu of the console and select
+    1. Identity & Security
+    1. Compartments
+    ![Menu Compartment](images/opensearch-compartment1.png =40%x*)
+2. Click ***Create Compartment***
+    - Give a name: ***oci-starter***
+    - Then again: ***Create Compartment***
+    ![Create Compartment](images/opensearch-compartment2.png)
+
+## Task 3: Create an Oracle Integration instance
+
+Oracle Integration Cloud (OIC) will allow you to glue all of the components together.
+Note: If you have just created your Cloud Account, it is possible that you need to wait few minutes before to complete this step.
+
+1. Go the Cloud console 3-bar/hamburger menu and select the following
+    1. Developer Services
+    1. Integration (under Application Integration)
+    ![Menu Integration](images/opensearch-oic1.png =50%x*)
+2. Check that you are in the intended compartment (*oci-starter* in this case)
+3. Click the *Create Instance* button and set the following options
+    - Name: *oic*
+    - Version: *OIC Integration 3*
+    - Edition: *Standard*
+    - Shape: *Development*
+    - Choose the license type (Use *Subscribe to a new...* unless you already have a license that you can reuse.)
+    - Click *Create*
+        ![Create Integration](images/opensearch-oic2.png)
+4. Wait about 3 mins until **oic** state is *Active*.
+1. Click *oic* in the list of integration instances. 
+5. In the *Integration instance details*, click **Service Console**. It will open a new tab that you will use in the next Task.
+1. In the *Integration instance details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
+1. Click **Enable** next to *Visual Builder* to enable it. The **oic** instance status will change to *updating*.
+    ![Visual Builder Enable Integration](images/opensearch-oic3.png)
+
+1. Continue to next task. You do not have to wait for Visual Builder to be installed before continuing.
+
+
+## Task 7: Run a Terraform script to create the other components.
+
+1. Go to the OCI console homepage
+2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
+1. In the code editor menu, click *Terminal* then *New Terminal*
+1. Run the command below in the terminal
+    ![Menu Compute](images/opensearch-terraform1.png =50%x*)
+    ````
+    <copy>
+    git clone https://github.com/mgueury/oci-searchlab.git
+    </copy>
+    ````
+3. Edit the file *oci-searchlab/starter/env.sh*
+    1. Click the **Explorer** icon in the left bar of the code editor
+    1. Use Explorer to locate env.sh
+    1. Click env.sh to open it in the editor
+1. In env.sh, replace the value **##OIC\_OCID##** with the corresponding value from your text file.
+    ````
+    <copy>
+    export TF_VAR_oic_ocid="##OIC_OCID##"
+    </copy>
+    ````
+1. Save your edits using File > Save
+4. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
+    ```
+    <copy>
+    cd oci-searchlab/starter/
+    </copy>
+    ```
+    ```
+    <copy>
+    bin/gen_auth_token.sh
+    </copy>
+    ```
+    You should see the following in the results of the *gen_auth_token.sh* script:
+    - AUTH_TOKEN stored in env.sh
+    - TF_VAR_auth_token= 'a generated token'
+
+    
+    ````
+    <copy>
+    ./build.sh
+    </copy>
+    ````
+5. **Please proceed to the [next lab](#next) while Terraform is running.** 
+
+    Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
+
+
+6. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+
+    ```
+    --------------------------
+    OCI SEARCH LAB Environment
+    --------------------------
+
+    -- STREAMING CONNECTION --------------------------
+    STREAM_BOOSTRAPSERVER=cell-1.streaming.us-phoenix-1.oci.oraclecloud.com:9092
+    STREAM_USERNAME=tenantname/username/ocid1.streampool.oc1.phx.amaaaaaa3twn4mia5hvcf4m3npe2l76fxfhffbrabcdefgh
+    AUTH_TOKEN=abcdefgh$$123
+
+    -- FUNCTION CONNECTION ---------------------------
+    FUNCTION_ENDPOINT=https://abcdefgh.us-phoenix-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.phx.aaaaaaaacfum7wwrgt34y5pdnjum24kqxr6lkjdgabcdefgh
+
+    -- OPENSEARCH CONNECTION --------------------------
+    OPENSEARCH_API_ENDPOINT=https://amaaaaaaabcdefgh.opensearch.us-phoenix-1.oci.oraclecloud.com:9200
+
+    -- API GATEWAY CONNECTION ------------------------
+    APIGW_URL=https://abcdefgh.apigateway.us-phoenix-1.oci.customer-oci.com
+
+    Done.
+    ```
+**You may now proceed to the [next lab](#next)**
+
+## Known issues
+
+1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
+
+```
+oci_core_instance.starter_instance: Creating..
+- Error: 500-InternalError, Out of host capacity.
+  Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
+```
+
+Solution:  edit the file *oci-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
+```
+OLD: variable instance_shape { default = "VM.Standard.E3.Flex" }
+NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
+```
+
+Then rerun the following command in the code editor
+
+```
+<copy>
+./build.sh
+</copy>
+```
+
+2. It happened on new tenancy that the terraform script failed with this error:
+
+```
+Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
+Suggestion: Please retry or contact support for help with service: Opensearch Cluster
+Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
+API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
+Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
+Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
+Service: Opensearch Cluster 
+Operation Name: CreateOpensearchCluster 
+```
+
+In such case, just rerunning ./build.sh fixed the issue.
+
+
+
+
+## Acknowledgements
+
+- **Author**
+    - Marc Gueury, Master Principal Account Cloud Engineer
+    - Badr Aissaoui, Principal Account Cloud Engineer
+    - Marek Krátký, Cloud Storage Specialist 
+
