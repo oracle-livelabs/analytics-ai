@@ -1,6 +1,6 @@
 {
   "workshoptitle": "Build a Data Pipeline with Big Data Service",
-  "help": "livelabs-help-db_us@oracle.com",
+  "help": "livelabs-help-bigdata_us@oracle.com",
   "tutorials": [
       {
           "title": "Introduction to Oracle Big Data Service (BDS)",
