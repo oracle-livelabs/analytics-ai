@@ -28,7 +28,7 @@ Here's the Data Flow Diagram depicting the flow of data during this workshop:
 
 ![](./images/bds-ml-oac.png)
 
-## Workshop Objectives
+### Workshop Objectives
 - Prepare for using Oracle Big Data Service (BDS).
 - Create a simple (non-HA) Oracle Distribution including Apache Hadoop (ODH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
 - Access a BDS utility node using a public IP address.
@@ -38,6 +38,9 @@ Here's the Data Flow Diagram depicting the flow of data during this workshop:
 - Run the Machine Learning code using BDS Jupyterhub Notebook and make predictions with test data.
 - Visualize the data using Oracle Analytics Cloud.
 - Clean up all of the resources that you created in this workshop (optional).
+
+### Workshop Prerequisites
+This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
 
 ## Lab Breakdown
 - **Lab 1:** Set Up the BDS Environment
@@ -49,9 +52,6 @@ Here's the Data Flow Diagram depicting the flow of data during this workshop:
 - **Lab 7:** Run the Machine Learning, Data Science code using Jupyterhub
 - **Lab 8:** Visualize data using Oracle Analytics Cloud
 - **Lab 9:** Clean up Resources Used in this Workshop (Optional)
-
-## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
 
 > **Notes:**    
  + If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)
@@ -78,4 +78,4 @@ Use these links to get more information about BDS and OCI:
     * Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     * Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, September 2023
+* **Last Updated By/Date:** Vivek Verma, December 2023
