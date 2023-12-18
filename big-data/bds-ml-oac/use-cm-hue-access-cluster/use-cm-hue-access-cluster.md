@@ -27,7 +27,7 @@ Estimated Time: 30 minutes
 * Add ingress rules to the default security rule that enables you to access both Ambari and Hue.
 </if>
 
-> **Note:**    
+### Prerequisites    
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ### Video Preview
@@ -223,4 +223,4 @@ This concludes this lab. You may now proceed to the next lab.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, October 2023
+* **Last Updated By/Date:** Vivek Verma, December 2023

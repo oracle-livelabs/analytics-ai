@@ -18,6 +18,9 @@ Estimated Time: 60 minutes
 * Verify transformed data uploaded to Hive.
 * Grant write permissions to livy user on Hive Database.
 
+### Prerequisites    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
+
 ## Task 1: Creat an Object Storage API Key for the Cluster
 
 1. Login to Oracle Cloud Console and open the navigation menu. Click **Analytics & AI**. Under **Data Lake**, click **Big Data Service**.
@@ -184,4 +187,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, October 2023
+* **Last Updated By/Date:** Vivek Verma, December 2023

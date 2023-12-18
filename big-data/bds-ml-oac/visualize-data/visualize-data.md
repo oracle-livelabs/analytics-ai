@@ -17,6 +17,9 @@ Estimated Time: 40 minutes
 * Update connection settings
 * Launch OAC Workbook
 
+### Prerequisites    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
+
 ## Task 1: Create an Oracle Analytics Cloud (OAC) Instance
 
 1. Go to **Home Console Page** and navigate to **Analytics & AI** section and then select **Analytics Cloud**.
@@ -133,4 +136,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, October 2023
+* **Last Updated By/Date:** Vivek Verma, December 2023

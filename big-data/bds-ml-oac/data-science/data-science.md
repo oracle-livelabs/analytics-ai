@@ -16,6 +16,9 @@ Estimated Time: 60 minutes
 * Verify predicted data in Object Storage bucket
 * Verify predicted data in Hive database table
 
+### Prerequisites    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
+
 ## Task 1: Launch Jupyterhub
 
 1. Launch **Jupyterhub** using the following url - https://Utility\_Node\_Public\_IP\_Address:8000
@@ -96,4 +99,4 @@ This concludes this lab. You may now **proceed to the next lab**.
     + Vivek Verma, Master Principal Cloud Architect, North America Cloud Engineering
 * **Contributors:**  
     + Anand Chandak, Principal Product Manager, Data and AI
-* **Last Updated By/Date:** Vivek Verma, October 2023
+* **Last Updated By/Date:** Vivek Verma, December 2023
