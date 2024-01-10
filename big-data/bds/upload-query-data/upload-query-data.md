@@ -22,7 +22,7 @@ Estimated Lab Time: 45 minutes
   + **Lab 1: Setup the BDS Environment**
   + **Lab 2: Create a BDS Hadoop Cluster**
   + **Lab 3: Add Oracle Cloud SQL to the Cluster**
-  + **Lab 4: Access a BDS Node Using a Public IP Address**
+  + **Lab 4: Make BDS Nodes Accessible with Public IP Address**
   + **Lab 5: Use Ambari and Hue to Access a BDS Cluster**
   + **Lab 6: Create a Hadoop Administrator User**
 + Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
@@ -214,7 +214,7 @@ In this step, you log into Hue as the **`training`** administrator user and quer
 
   In our example, we used the reserved public IP address that is associated with our **second utility node** as follows:
 
-    ``  https://150.136.16.64:8888  ``
+    `` https://150.136.16.64:8888 ``
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training#123`**.
 

@@ -27,14 +27,19 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-## **Task 1:** Run OCI CLI in Cloud Shell
+## Task 1: Run OCI CLI in Cloud Shell
 
 1. Navigate to Cloud Shell
 
     Log into OCI cloud console. Navigate to cloud shell icon on the top right and click it.
         ![Cloud shell icon](./images/cloud-shell-icon.png " ")
 
-2. Enter Speech CLI Command
+2. Enter Speech CLI Command to list all the transcription jobs
+    ```
+    <copy>
+    oci speech transcription-job list --all --compartment-id <your-compartment-id>
+    </copy>
+    ```
 
     Enter any one of the speech pre-deployed CLI commands you want to execute.
         ![Cloud shell window](./images/cloud-shell-command.png " ")
@@ -47,7 +52,7 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-## **Task 2:** Install OCI CLI in your local environment
+## Task 2: Install OCI CLI in your local environment
 
 Follow Lab 2 Task 2 setup for python, then in your python virtual environment, run:
 ```
@@ -57,7 +62,7 @@ pip install oci-cli
 ```
 
 
-## **Task 3:** Issue some of the OCI speech commands
+## Task 3: Issue some of the OCI speech commands
 
 1. Create Transcription Job
     Run this command : <strong>oci speech transcription-job create -c</strong>

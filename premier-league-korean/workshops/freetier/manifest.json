@@ -1,0 +1,53 @@
+{
+  "workshoptitle": "[Korean]Premier League and Oracle : Expected Goals ",
+  "help": "livelabs-help-analytics_us@oracle.com”",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "What is the value of Expected Goals (xG) in the Premier League? In this workshop you'll learn what xG is, build your own xG model, and apply it to a match to analyze team performance.",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/oci/oci-hol-ko/oci-core-fundamentals/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision Analytics Cloud",
+      "filename": "../../oac-provisioning/oac-provisioning.md"
+    },
+    {
+      "title": "Lab 2: Provision Autonomous Data Warehouse",
+      "filename": "../../adw-provisioning/adw-provisioning.md"
+    },
+    {
+      "title": "Lab 3: Load Data",
+      "filename": "../../prepare-schema/prepare-schema.md"
+    },
+    {
+      "title": "Lab 4: Explore data - basic",
+      "filename": "../../analytics-data-exploration/analytics-data-exploration.md"
+    },
+    {
+      "title": "Lab 5: Explore data - advanced",
+      "filename": "../../analytics-advanced-data-exploration/analytics-advanced-data-exploration.md"
+    },
+    {
+      "title": "Lab 6: Generate features and train ML model",
+      "filename": "../../ml-train/ml-train.md"
+    },
+    {
+      "title": "Lab 7: Apply the xG model to matches",
+      "filename": "../../ml-apply/ml-apply.md"
+    },
+    {
+      "title": "Lab 8: Visualize the model to coach players",
+      "filename": "../../ml-visualize/ml-visualize.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

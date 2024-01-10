@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Data Mesh - Event Sourcing",
+    "help": "livelabs-help-analytics_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "What is data mesh?",
+            "description": "Description of Data Mesh.",
+            "filename": "./../../what-is-data-mesh/what-is-data-mesh.md"
+        },
+        {
+            "title": "Access environment and explore setup",
+            "description": "Explore the environment.",
+            "filename": "./../../access-environment-and-explore-setup/access-environment-and-explore-setup.md"
+          },
+        {
+            "title": "Set up event sourcing pipeline",
+            "description": "Steps to initialize the workshop-installed compute instance and download the lab files.",
+            "filename": "./../../set-up-event-sourcing-pipeline/set-up-event-sourcing-pipeline.md"
+        },
+            {
+                "title": "Run data mesh pipeline",
+                "description": "Clone a PDB by using DBCA in silent mode.",
+                "filename": "./../../run-data-mesh-pipeline/run-data-mesh-pipeline.md"
+            },
+            {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+           }
+    ]
+}
