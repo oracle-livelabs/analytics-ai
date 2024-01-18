@@ -1,0 +1,46 @@
+{
+  "workshoptitle": "Leveraging Oracle Analytics Cloud with Essbase",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Workshop Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Creating Essbase Sample Application",
+      "description": "Verify you have a working Essbase instance with Sample app and OAC instance",
+      "filename": "../../creating-application/creatingapp.md"
+    },
+    {
+      "title": "Lab 2: Connect OAC to Essbase",
+      "description": "Connecting OAC to Essbase using the plugin",
+      "filename": "../../Connect-OAC-to-Essbase-cube/connect.md"
+    },
+    {
+      "title": "Lab 3: Essbase Features: Basic",
+      "filename": "../../essbase-basic/essbase-basic.md"
+    },
+    {
+      "title": "Lab 4: Essbase Features: Advanced",
+      "filename": "../../essbase-advanced/essbase-advanced.md"
+    },
+    {
+      "title": "Lab 5: Essbase Drill Through Feature",
+      "filename": "../../essbase-drill-thru/essbase-drill-thru.md"
+    },
+    {
+      "title": "Lab 6: Scenario Management",
+      "filename": "../../scenario/scenario.md"
+    },
+    {
+      "title": "Lab 7: Essbase Administration Services(EAS) Lite (Optional)",
+      "filename": "../../eas/eas.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
