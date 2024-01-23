@@ -2,7 +2,9 @@
 
 In this lab we will be creating Data Visualisations in OAC using Essbase connection created.
 
-### Task 1: Create Workbook
+## 
+
+## Task 1: Create Workbook
 
 Click on Create Workbook
 

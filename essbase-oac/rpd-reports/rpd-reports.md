@@ -2,6 +2,8 @@
 
 In this lab we will utilize the RPD to create financial dashboards in OAC. This is an alternate way of creating reports.
 
+## 
+
 ## Task 1: Install OAC Developer client tool
 
 Oracle Analytics Client Tools for Oracle Analytics Cloud provides capabilities to develop and maintain data models for use in cloud.
@@ -89,18 +91,75 @@ Click on the properties button on the top right and click on Replace data model 
 
 Click on browse button and select the RPD saved on your local system, enter the RPD password and click on Replace button.
 
-![Replace RPD](images/rpd-report16.png)
+![Replace RPD](images/rpd-report17.png)
 
 Please note that this will replace the existing RPD content in your OAC instance.
 On the successful deployment of your RPD, you should see the message Replace Data Model succeeded.
 
-![Successful RPD Deployment](images/rpd-report17.png)
+![Successful RPD Deployment](images/rpd-report18.png)
 
 Go to OAC homepage and create data set (you can refer in the Task (YTC) to create a dataset)
 
 In the create data set window, select Local Subject Area
 
-![Local SUbject Area](images/rpd-report18.png)
+![Local SUbject Area](images/rpd-report19.png)
+
+You should see the subject area we created in the RPD.
+
+![Newly created Subject Area](images/rpd-report20.png)
+
+We already learned creating the visualization in the task 4
+
+## Task 5: Create Classic Reports and Dashboards using Essbase Subject area
+
+In this task we will learn creating reports and dashboards in Classic BI
+
+Navigate to Classic BI either using Open Classic Home option from OAC home page or using URL by replacing dv with analytics (Use your Analytics URL)
+
+https://xxx.ocp.oraclecloud.com/ui/analytics
+
+![OAC Homepage](images/rpd-report21.png)
+
+From the Classic BI home page, click create and click on Analysis which will show all the subject areas created in the repository.
+
+Select the Demo subject area which you have created and proceed with report development.
+
+![Demo Subject Area](images/rpd-report22.png)
+
+Select members from each dimension and fact as shown in the below screenshot and click on Results
+
+![Member selection](images/rpd-report23.png)
+
+This will generate a tabular report by default. You can change the visualization type using the views button. Classic BI supports almost all the visualization types available in DV.
+
+![Tabular Report](images/rpd-report24.png)
+
+![Demo Subject Area](images/rpd-report25.png)
+
+You can play around building different reports and build a dashboard. 
+
+### Build a dashboard.
+
+From the Classic BI home page, go to menu and click Create and select Dashboard.
+
+
+![Building Dashboard](images/rpd-report26.png)
+
+Enter a dashboard name preferred location to save the dashboard.
+
+![Demo Subject Area](images/rpd-report27.png)
+
+Expand the Shared Folders from the bottom left and navigate to the folder where your reports are saved. 
+
+Drag the reports to the dashboard layout and save the dashboard. 
+
+![Dashboard Sample](images/rpd-report28.png)
+
+
+
+
+
+
 
 
 
