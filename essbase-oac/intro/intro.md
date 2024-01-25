@@ -10,7 +10,7 @@ Application developers, Business end users, CXO’s can use OAC to create and vi
 
 You will create Sample Essbase application, Data Visualization, Dashboards.
 
-## Estimated Time: 3hrs
+### Estimated Time: 3hrs
 
 ## What is Essbase?
 
@@ -49,9 +49,9 @@ Some understanding of OAC is helpful
 
 Use the following links to get more information about Essbase and OAC:
 
-Oracle Essbase 21C
-Oracle OAC
-Essbase 21C Live labs
+* [Oracle Essbase 21C] (https://docs.oracle.com/en/database/other-databases/essbase/21/index.html)
+* [Oracle OAC] (https://docs.oracle.com/en/cloud/paas/analytics-cloud/index.html)
+* [Essbase 21C Live labs] (https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=867&clear=180&session=4177008235825)
 
 ## Acknowledgements
 
