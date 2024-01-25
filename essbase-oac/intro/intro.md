@@ -10,7 +10,7 @@ Application developers, Business end users, CXO’s can use OAC to create and vi
 
 You will create Sample Essbase application, Data Visualization, Dashboards.
 
-### Estimated Time: 3hrs
+* ### Estimated Time: 3hrs
 
 ## What is Essbase?
 
@@ -55,6 +55,6 @@ Use the following links to get more information about Essbase and OAC:
 
 ## Acknowledgements
 
-### Authors – Srinivas SR/ Shiva Uppushetty
-### Contributors - Srinivas SR/ Shiva Uppushetty/ Sudip
+### Authors – Srinivas SR/ Shiva Uppushetty, NACI
+### Contributors - Srinivas SR/ Shiva Uppushetty/ Sudip , NACI
 ### Last Updated By/Date – 30/11/2023
