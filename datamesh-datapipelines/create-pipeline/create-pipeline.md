@@ -35,61 +35,113 @@ This lab assumes you have:
 
 1. Use the following login information to access the GGSA portal:
 - username: **osaadmin**
-- password: **welcome1**
+- password: **GGSAdm123456!**
 
     ![Login portal for GGSA](images/ggsa-pipeline-login.png)
 
-2. On the left hand side of the portal, a catalog of the components of which are able to be filtered (if not available, select the sidebar button next to the text **Catalog**). Select **Pipelines** to filter and select **DMIngestPipeline** to edit the pipeline. 
+## Task 3: View GoldenGate Stream
 
-    ![Filter and select pipeline](images/select-pipeline.png)
+1. Select the **toggle button** to expand the filter bar. Select **Steams** to filter by streams. Select **DMFinances** to view the GoldenGate stream.  
+   
+    ![Expand filter bar button](images/expand-filter-bar.png)
 
-## Task 3: Create File Stream
+2. Observe the GoldenGate Change Data that we viewed in the previous lab. Click the **X** to exit back.
 
-
+    ![View the GoldenGate Stream](images/goldengate-stream.png)
 
 ## Task 4: Create a pipeline
 
-## Task 5: Create a GoldenGate Stream
+1. Select the **Green button** to create new item and select **Pipeline** from the drop-down options.
 
-## Task 6: Add a Query Stage
+    ![Create a pipeline](images/create-pipeline.png)
 
-1. In the workflow section, click on the **Entertainment** stage and make sure it is highlighted blue. This is where the live data is streaming from and acts as a query stage.
+2. Insert a name for the pipeline, such as **Financials_DataPipeline** and select **DMFinances** from the stream options. Click **Save** to create the pipeline.
+
+    ![Name the pipeline](images/name-pipeline.png)
+
+
+## Task 5: Add a Query Stage
+
+1. Right click the **DMFinances** and select **Query** from the options.
+
+    ![Add a query stage](images/add-query-stage.png)
+
+2. Name the query stage and select **Save**.
+    ```
+    $ <copy>DataEnrichment</copy>
+    ```
+
+    ![Name the query stage](images/name-query-stage.png)
+
+3. In the workflow section, click on the **Entertainment** stage and make sure it is highlighted blue. This is where the live data is streaming from and acts as a query stage.
 
     ![Select Entertainment stage](images/entertainment-stage.png)
 
-## Task 7: Add a Filter to the Query Stage
+## Task 7: Add a Source to the Query Stage
 
-1. Click on the **Customers filter.** Customer data that is hosted in the database is merged with streaming data using a filter stage. Notice the sources are joining the two datasets, **Entertainment** and **Customer** with the following correlation conditions:
-    - CUSTOMER_ID_1 = CUSTOMER_ID
+1. Select add a source **DMFinances** and **Customers**.
 
-    ![Select Customers filter stage](images/filter-customer.png)
+    ![Add a source to Query stage](images/add-a-source-to-query.png)
 
-## Task 8: Add a OML Stage
+2. Add a condition to match **CCNUMBER_1** is **equals (case sensitive)** to **CCNUMBER**.
+   
+    ![Match the CCNUMBER between the datasets](images/match-ccnumber.png)
 
-1. Click on the **OMLStage** to inspect the parameters used for the Neural Network Classification model. Using input fields to score the data, such as:
-    - State
-    - Age
-    - Gender
-    - Hotel_Reservation 
-    - Credit_Limit
+## Task 8: Add a Data Cleaning stage
 
-    ![Select OMLStage to view parameters](images/oml-parameters.png)
+1. Right click **DataEnrichment** and add another Query stage.
 
-## Task 9: Add a Spending Factor Filter
+    ![Add a Query stage](images/add-datacleaning-stage.png)
 
-1. Click on the **SpendingFactor** stage to view the filter created from the OMLStage
+2. Name the query stage and select **Save**.
+    ```
+    $ <copy>DataCleaning</copy>
+    ```
 
-    ![Select spendingfactor stage to view source](images/spendingfactor-filter.png)
+    ![Name the query stage](images/name-datacleaning-stage.png)
 
-## Task 10: Create a Spending Factor
+2. Right click **op_type** and select **Remove from output**.
 
-1. Click on the **SpendingPattern** stage to see the set rules for predicting likely spending.
-    - High: **IF SCORING greater than 0.6 -> Then SET SFactor TO 3**
-    - MedHigh: **IF SCORING lower than or equals 0.6 AND SCORING greater than 0.5 -> THEN SET SFactor TO 2**
-    - MedLow: **IF SCORING lower than or equals 0.4 AND SCORING greater than 0.3 -> THEN SET SFactor TO 0.85**
-    - Low: **IF SCORING lower or equals 0.3 -> Then SET SFactor TO 0.5**
+    ![Remove optype from output](images/filter-optype.png)
 
-    ![Select spendingpattern to see rules](images/high-rule.png)
+3. Again, right click **CCNUMBER_1** and select **Remove from output**.
+
+    ![Remove ccnumber_1 from output](images/filter-ccnumber1.png)
+
+## Task 9: Add a ZipLatLong Query stage
+
+1. Right click on **DataCleaning** and select **Query**.
+
+    ![Select spendingfactor stage to view source](images/add-latlong-query-stage.png)
+
+2. Select **Add a source** to join **Zip2Latlon2** to the pipeline.
+
+    ![Addding ziplatlong to source](images/join-ziplatlong.png)
+
+3. Click **Add a condition** and then match **Zip** equals **TXNZIP**.
+
+    ![Match Zip to TXNZIP](images/join-zip-columns.png)
+
+## Task 10: Create a Current and Previous Event Pattern Stage
+
+1. Right click **ZipLatLong** stage and select **Pattern**.
+
+    ![Select Pattern stage](images/select-pattern.png)
+
+2. Select **Trend** category and choose **Current and Previous Events**.
+
+    ![Select Current and Previous Events](images/cur-prev-events.png)
+
+3. Name the stage **CurrPvEvents** and click **Save**.
+    ```
+    $ <copy>CurrPvEvents</copy>
+    ```
+
+4. Select **Partion Criteria** to include the following:
+    ```
+    CCNUMBER, CCTYPE, FIRSTLAST, EMAIL, HOMEZIP, HOMEIP
+    ```
+    ![Add Partion Criteria](images/name-currprevevents.png)
 
 ## Task 11: Add a Filter using the Spending Factor
 
