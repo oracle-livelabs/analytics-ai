@@ -70,6 +70,7 @@ You can
 ## Task 3: Create an Oracle Integration instance
 
 Oracle Integration Cloud (OIC) will allow you to glue all of the components together.
+Note: If you have just created your Cloud Account, it is possible that you need to wait few minutes before to complete this step.
 
 1. Go the Cloud console 3-bar/hamburger menu and select the following
     1. Developer Services
@@ -222,7 +223,7 @@ Perform a similar task to get Client ID/Secret for OIC
 
 ## Known issues
 
-During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
+1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
 ```
 oci_core_instance.starter_instance: Creating..
@@ -243,6 +244,23 @@ Then rerun the following command in the code editor
 ./build.sh
 </copy>
 ```
+
+2. It happened on new tenancy that the terraform script failed with this error:
+
+```
+Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
+Suggestion: Please retry or contact support for help with service: Opensearch Cluster
+Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
+API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
+Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
+Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
+Service: Opensearch Cluster 
+Operation Name: CreateOpensearchCluster 
+```
+
+In such case, just rerunning ./build.sh fixed the issue.
+
+
 
 
 ## Acknowledgements

@@ -153,5 +153,5 @@ You may now [proceed to the next Lab](#next)
 ## Acknowledgements
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2021
+- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam, Kalpana Singh
+* **Last Updated By/Date** - Kalpana Singh, Senior Solution Engineer, Analytics, NACI, March 2023
