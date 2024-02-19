@@ -7,7 +7,7 @@ This lab shows how we can create a connection between OAC and Essbase
 
 ## Task 1 : Launch Cloud URL
 
-###Login to OCI Console
+### Login to OCI Console
 
 Click on the hamburger icon, select Analytics & AI and click on Analytics Cloud
 

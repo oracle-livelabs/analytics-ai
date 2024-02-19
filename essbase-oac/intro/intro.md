@@ -55,6 +55,6 @@ Use the following links to get more information about Essbase and OAC:
 
 ## Acknowledgements
 
-### Authors – Srinivas SR/ Shiva Uppushetty, NACI
-### Contributors - Srinivas SR/ Shiva Uppushetty/ Sudip , NACI
+### Authors – Srinivas SR NACI
+### Contributors - Srinivas SR/ Sudip Bandyopadhyay, NACI
 ### Last Updated By/Date – 30/11/2023

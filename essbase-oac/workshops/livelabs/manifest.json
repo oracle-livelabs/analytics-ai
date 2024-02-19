@@ -8,7 +8,7 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Creating Essbase Sample Application",
+      "title": "Lab 1: Essbase and OAC Pre-requisites",
       "description": "Verify you have a working Essbase instance with Sample app and OAC instance",
       "filename": "../../creating-application/creatingapp.md"
     },
