@@ -6,7 +6,7 @@
 
 This lab shows how we can create a connection between OAC and Essbase
 
-*Estimated Lab Time:* 10 minutes (provisioning time may vary)
+*Estimated Lab Time:* 10 minutes
 
 ### Objectives
 In this lab, you will:

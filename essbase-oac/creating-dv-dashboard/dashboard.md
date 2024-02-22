@@ -6,7 +6,7 @@
 
 In this lab we will be creating Data Visualisations in OAC using Essbase connection created.
 
-*Estimated Lab Time:* 30 minutes (provisioning time may vary)
+*Estimated Lab Time:* 30 minutes
 
 ### Objectives
 In this lab, you will:
