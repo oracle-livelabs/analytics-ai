@@ -1,9 +1,21 @@
-
 # Connect OAC to Essbase cube
+
+<!--![Banner](images/banner.png)-->
+
+## Introduction
 
 This lab shows how we can create a connection between OAC and Essbase
 
-## 
+*Estimated Lab Time:* 10 minutes (provisioning time may vary)
+
+### Objectives
+In this lab, you will:
+- Launch OAC Console
+- Connect to Essbase.
+
+### Prerequisites
+- Oracle Free Trial Account.
+
 
 ## Task 1 : Launch Cloud URL
 
@@ -27,7 +39,7 @@ Click on create and select connections:
 
 Click on Oracle Essbase:
 
-![ Click on create and select connections](images/create-connection1.png)
+![ Click on create and select connections](images/select-essbase.png)
 
 Enter the relevant details:
 - a.	Provide a connection name.
@@ -36,25 +48,31 @@ Enter the relevant details:
 - d.	Provide username and password, please make sure the user you are providing here has admin access to Essbase instance.
 - e.	Click on Save
 
-![ Click on create and select connections](images/create-connection2.png)
+![ Click on create and select connections](images/click-create.png)
 
 ## Task 3: Create Dataset
 
 Click on Create and select Dataset:
 
-![ Click on create and select connections](images/dataset1.png)
+![ Click on create and select connections](images/create-dataset.png)
 
 A pop up will appear with the list of connections, select the connection we created above for Essbase:
 
-![ Click on create and select connections](images/dataset2.png)
+![ Click on create and select connections](images/select-connection.png)
 
 Select the application for which you want to perform reporting and click on Add:
 
 Note: You can create multiple datasets for the same application by giving different names to the Dataset
 
-![ Click on create and select connections](images/dataset4.png)
+![ Click on create and select connections](images/add_dataset.png)
 
-![ Click on create and select connections](images/dataset5.png)
+![ Click on create and select connections](images/dataset-created.png)
+
+## Acknowledgements
+
+ - **Authors** – Srinivas SR NACI
+ - **Contributors** - Srinivas SR/ Sudip Bandyopadhyay, NACI
+ - **Last Updated By/Date** – 22/02/2024
 
 
 

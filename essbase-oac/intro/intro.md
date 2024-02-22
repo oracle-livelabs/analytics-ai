@@ -1,6 +1,31 @@
-# Leveraging Oracle Analytics Cloud with Essbase
 
-# Introduction
+# Get started with Leveraging Oracle Analytics Cloud with Essbase
+
+<!--![Banner](images/banner.png)-->
+
+## Introduction
+
+This lab shows how we can create a connection between OAC and Essbase
+
+*Estimated Lab Time:* 5 minutes
+
+### Objectives
+
+In this lab, you will:
+
+- Setup the required OCI resources for the workshop and for using Essbase and OAC
+- Create Essbase instance with a non-SSL URL for Lab purpose.
+- Create an OAC instance.
+- Create Connection between OAC and Essbase
+- Create sample DVs.
+- Create classic reports and Dashboards.
+
+### Prerequisites
+
+- This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in Getting Started.
+- Familiarity with OCI is helpful
+- Familiarity with Essbase is desirable
+- Some understanding of OAC is helpful
 
 ## About this Workshop
 
@@ -28,23 +53,6 @@ Essbase does not have any reporting capabilities on its own, hence OAC can be le
 
 OAC provides various reporting capabilities for different types of users.
 
-## Objectives
-
-Setup the required OCI resources for the workshop and for using Essbase and OAC
-Create Essbase instance with a non-SSL URL for Lab purpose.
-Create an OAC instance.
-Create Connection between OAC and Essbase
-Create sample DVs.
-Create classic reports and Dashboards.
-
-## Prerequisites
-
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in Getting Started. Also:
-
-Familiarity with OCI is helpful
-Familiarity with Essbase is desirable
-Some understanding of OAC is helpful
-
 ## Learn More
 
 Use the following links to get more information about Essbase and OAC:
@@ -55,6 +63,6 @@ Use the following links to get more information about Essbase and OAC:
 
 ## Acknowledgements
 
-### Authors – Srinivas SR NACI
-### Contributors - Srinivas SR/ Sudip Bandyopadhyay, NACI
-### Last Updated By/Date – 30/11/2023
+- **Authors** – Srinivas SR NACI
+- **Contributors** - Srinivas SR/ Sudip Bandyopadhyay, NACI
+- **Last Updated By/Date** – 22/02/2024
