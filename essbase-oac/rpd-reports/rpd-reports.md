@@ -2,7 +2,7 @@
 
 In this lab we will utilize the RPD to create financial dashboards in OAC. This is an alternate way of creating reports.
 
-*Estimated Lab Time:* 60 minutes (provisioning time may vary)
+*Estimated Lab Time:* 60 minutes
 
 ### Objectives
 In this lab, you will:
