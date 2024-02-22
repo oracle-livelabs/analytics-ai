@@ -109,11 +109,11 @@ If you just completed Task 1A, please proceed to Task 2. If you have an existing
 
 ![Select Stacks](images/developer-resmgr-stacks.png)
 
-![Create Stack](images/create-stacks(1).png)
+![Create Stack](images/create-stacks.png)
 
 4. Select **My Configuration**, choose the .Zip file button, and click the Browse link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
- ![Choose zip](images/select-zip(1).png)
+ ![Choose zip](images/select-zip-file.png)
 
  Enter the following information:
 
