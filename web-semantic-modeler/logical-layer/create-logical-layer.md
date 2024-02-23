@@ -39,6 +39,7 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 4. In Create Business Model, enter <code>Sample Sales BM</code> in **Name**, and then click **OK**. The Semantic Modeler opens an empty business model.
 
 	![Enter BM name](./images/sample-sales-bm.png =500x*)
+	![Business Model](./images/empty-bm.png)
 
 
 ## Task 2: Set Logical Layer Naming Preferences
@@ -61,7 +62,7 @@ In this section, you set preferences for the names of tables and columns in the 
 
 	![Image](./images/dc-calendar-date.png)
 
-5. In the **Sample Sales BM** page, right-click **D1 Time** and select **Delete**. Select **Yes** when promted to confirm delete.
+5. In the **Sample Sales BM** page, right-click **D1 Time** and select **Delete**. Select **Yes** when prompted to confirm delete.
 
 	![Delete D1 time](./images/delete-d1.png)
 
@@ -69,19 +70,19 @@ In this section, you set preferences for the names of tables and columns in the 
 
 	![Preferences](./images/page-preferences.png =300x*)
 
-7. In **Preferences**, click **Logical Layer**. Select the **Rename Actions** icon. Select **Change each underscore (_) to a space**, **All lowercase**, and **Initial Capitals**.
+7. In **Preferences**, click **Logical Layer** and check the box next to **'Automatically rename objects when added to logical layer'**. Click the **Add Rules** icon next to
+Rename Actions. Select **Change each underscore (_) to a space**, **All lowercase**,
+and **Initial Capitals**. Click **Apply**.
+
+	>**Note**: Make sure the rename actions are in the correct order.
 
 	![Select preferences](./images/select-preferences.png)
 
-8. Click the toggle to **enable the preferences**, and then click **Apply**.
-
-	![Toggle enable preferences](./images/toggle-preferences.png)
-
-9. From the **Physical Layer**, select **D1 Time** and drag it to **Dimensions** in the **Sample Sales BM** business model.
+8. From the **Physical Layer**, select **D1 Time** and drag it to **Dimensions** in the **Sample Sales BM** business model.
 
 	![Drag D1 to Dimensions](./images/drag-d1-dimensions.png)
 
-10. Double-click **D1 Time** to see the renamed columns.
+9. Double-click **D1 Time** to see the renamed columns.
 
 	![D1 renamed](./images/dc-d1-renamed.png)
 
@@ -99,7 +100,7 @@ In this section, you set preferences for the names of tables and columns in the 
 
 	![Open logical dimension tables](./images/open-logical-dim-tables.png)
 
-4. In the **D1 Time** logical table's **General tab**, click in the **Primary Key** field and select **CALENDAR DATE**. **Repeat** the same step for **D2 Products** and add its **Primary Key**, **PROD KEY**. For **D3 Customers** add its **Primary Key**, **CUST KEY**.
+4. In the **D1 Time** logical table's **General tab**, Calendar Date should be the primary key. If not, click the **Primary Key** field and select **CALENDAR DATE**. **Repeat** the same step for **D2 Products** if the primary key is not there by default and add its **Primary Key**, **PROD KEY**. Do the same for **D3 Customers** add its **Primary Key**, **CUST KEY**.
 
 	![Add primary keys](./images/add-pk.png)
 
@@ -111,7 +112,7 @@ In this section, you set preferences for the names of tables and columns in the 
 
 	![Logical diagram](./images/logical-diagram.png)
 
-7. If you don't see the logical joins, close the **Logical Diagram** and take the following steps:
+7. **Optional**: If you don't see the logical joins, close the **Logical Diagram** and take the following steps:
 
 	* In the **Logical Layer**, hold the **Ctrl (Command for Mac) key**, select **D1 Time**, **D2 Products**, **D3 Customers**, and **F1 Revenue**.
 	* Right-click on any of the tables, select **Show Logical Diagram**, and then select **Selected Tables Only**.
@@ -130,7 +131,7 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 
 	![Double click F1 Revenue](./images/dc-f1-rev.png)
 
-2. In the **Columns** tab, keep the **UNITS** and the **REVENUE** columns. Hold down the **Shift key** and press the **Down Arrow** on your keyboard to select the remaining columns.
+2. In the **Columns** tab, delete all columns except for the **UNITS** and the **REVENUE** columns. Hold down the **Shift key** and press the **Down Arrow** on your keyboard to select the remaining columns.
 
 	![Select columns using the down arrow](./images/select-col-down-arrow.png)
 
@@ -159,5 +160,5 @@ In this section, you rename columns, remove columns for tables, and set the aggr
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, January, 2023
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024
