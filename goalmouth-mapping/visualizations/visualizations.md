@@ -84,7 +84,7 @@ In the previous section, you aggregated the attribute of Event Unique ID to crea
 
   ![Add Description and Team to the map](images/create-map6.png)
 
-After adding Description and Team to the map, hover your mouse over one of the points on the map. The tooltip will now show the Match Description, whether the penalty was scored by a player on the Home or the Away team, the match date, and player name. 
+  After adding Description and Team to the map, hover your mouse over one of the points on the map. The tooltip will now show the Match Description, whether the penalty was scored by a player on the Home or the Away team, the match date, and player name. 
 
   ![Penalty information displayed](images/create-map7.png)
 
@@ -114,7 +114,7 @@ You should see the Away attribute move to the right side of the filter into the 
 
   ![Select Away from the Team filter](images/add-filter5.png)
 
-Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away matches this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next three player names. You should have four total players selected. The penalty goals represented by these players will be outlined in bold on the map. The map allows you start conversations from the placement of their goals. As you can see, only two of those goals are in the center while the rest are in the corners. It would be reasonable to discuss that it is more likely for a player to have success by aiming for the corners of the goal.
+  Now, imagine you are a broadcaster and you're researching for upcoming matches and want to discuss players who have scored more than two penalty goals during away matches this season. By clicking on the top player name on the bar chart and then while holding ctrl on your keyboard click to multi-select the next three player names. You should have four total players selected. The penalty goals represented by these players will be outlined in bold on the map. The map allows you start conversations from the placement of their goals. As you can see, only two of those goals are in the center while the rest are in the corners. It would be reasonable to discuss that it is more likely for a player to have success by aiming for the corners of the goal.
 
   ![Multi-select the top four players](images/add-filter4.png)
 

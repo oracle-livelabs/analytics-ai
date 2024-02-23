@@ -371,7 +371,7 @@ code {
 <p>Oracle Cloud Infrastructure (OCI) Data Flow is a fully managed Apache Spark service to perform processing tasks on extremely large data sets without the infrastructure to deploy or manage. This enables rapid application delivery because developers can focus on app development, not infrastructure management.</p>
 <p>ETL stands for extract, transform, and load and ETL tools move data between systems. If ETL were for people instead of data, it would be akin to public and private transportation. Companies use ETL jobs to move data from a source, transform it to the form that is required, and load the resulting data and schema into a target system.</p>
 <p>OCI Data Flow integrates with OCI Data Catalog Metastore which acts as the platform’s centralized metadata store to enable different personas and applications to share data and metadata.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/lab-objective-data-pipeline.png" alt="Lab Overview" title=" "></p>
+<p><img src="../images/lab-objective-data-pipeline.png" alt="Lab Overview" title=" "></p>
 <p><em>Estimated Lab Time</em>: 90 minutes</p>
 <h3 id="personas-for-this-lab">Personas for this lab</h3>
 <p>There are three important personas for the lab. Mentioned below are the details of each of them:</p>
@@ -453,7 +453,7 @@ code {
 <p>An Oracle Cloud log in with the API Key capability enabled. Load your user under Identity/Users, and confirm you can create API Keys.</p>
 </li>
 </ul>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/api-keys-yes.png" alt="API Keys" title=" "></p>
+<p><img src="../images/api-keys-yes.png" alt="API Keys" title=" "></p>
 <ul>
 <li>
 <p>An API key registered and deployed to your local environment. See <a href="https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm">Register an API Key</a> for more information</p>
@@ -490,41 +490,41 @@ code {
 <ol>
 <li>
 <p>From the Console navigate to the object storage</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/upload_objecstorage.png" alt="Object Store" title=" "></p>
+<p><img src="../images/upload_objecstorage.png" alt="Object Store" title=" "></p>
 </li>
 <li>
 <p>For this workshop, we are reusing existing buckets <code>workshop-scripts</code> that contains all the input python files and <code>workshop-data</code> that contains all the Input JSON files  in compartment  <code>dataflow-demo</code>. The process to upload the files is as described <a href="https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage">File Upload</a>.</p>
 </li>
 <li>
 <p>In the bucket <code>workshop-data</code> find the input JSON files <code>yelp_business_yelp_academic_dataset_business.json</code> in the folder <code>yelp_business</code> and the file <code>yelp_review_yelp_academic_dataset_review.json</code> in the folder <code>yelp_review</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Yelp-Input-JSON-Dataset.png" alt="Yelp JSON Files" title=" "></p>
+<p><img src="../images/Yelp-Input-JSON-Dataset.png" alt="Yelp JSON Files" title=" "></p>
 </li>
 <li>
 <p>In the bucket <code>workshop-scripts</code> find the scripts <code>oci-df-lab-script.py</code> and <code>query_metastore_and_model.py</code> that will be used for the workshop</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-Example.png" alt="Files" title=" "></p>
+<p><img src="../images/Hive-Example.png" alt="Files" title=" "></p>
 </li>
 </ol>
 <h2 id="step-2-inspect-the-metastore"><strong>STEP 2</strong>: Inspect the MetaStore</h2>
 <ol>
 <li>
 <p>In the Console, open the navigation menu and click <code>Analytics &amp; AI</code>. Click <code>Data Catalog</code>.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/data-catalog.png" alt="Data Catalog" title=" "></p>
+<p><img src="../images/data-catalog.png" alt="Data Catalog" title=" "></p>
 </li>
 <li>
 <p>From the Data Catalog service page, click <code>Metastores</code>.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/MetaStore.png" alt="MetaStore" title=" "></p>
+<p><img src="../images/MetaStore.png" alt="MetaStore" title=" "></p>
 </li>
 <li>
 <p>Change the Compartment to the <code>dataflow-demo</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Metastore-Change-Compartment.png" alt="MetaStore Compartment" title=" "></p>
+<p><img src="../images/Metastore-Change-Compartment.png" alt="MetaStore Compartment" title=" "></p>
 </li>
 <li>
 <p>Should list the MetaStores in  <code>dataflow-demo</code> Compartment and you should find the <code>DF-metastore</code> Metastore that we will use for the workshop</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/metastore-compartment.png" alt="Show MetaStore" title=" "></p>
+<p><img src="../images/metastore-compartment.png" alt="Show MetaStore" title=" "></p>
 </li>
 <li>
 <p>Open the metastore <code>DF-metastore</code>  to inspect the location of the table for the MetaStore. This will hold the data for the tables that we create later.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/DF-metastore.png" alt="DF Metastore" title=" "></p>
+<p><img src="../images/DF-metastore.png" alt="DF Metastore" title=" "></p>
 </li>
 </ol>
 <h2 id="step-3-create-a-python-data-flow-application-in-oracle-cloud-infrastructure-data-flow"><strong>STEP 3</strong>: Create a python Data Flow Application in Oracle Cloud Infrastructure Data Flow</h2>
@@ -541,7 +541,7 @@ code {
 <ol>
 <li>
 <p>Navigate to  ```Data Flow`` from the console</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/data-flow-console.png" alt="Files" title=" "></p>
+<p><img src="../images/data-flow-console.png" alt="Files" title=" "></p>
 </li>
 <li>
 <p>Click <code>Create Application</code> from the page to launch the <code>Create Application</code>  page</p>
@@ -564,12 +564,12 @@ code {
 </li>
 <li>
 <p>Double-check your Application configuration, and confirm it is similar to the following</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Application.png" alt="Sample Application Configuration" title=" "></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Application-2.png" alt="Sample Application Configuration" title=" "></p>
+<p><img src="../images/Hive-MetaStore-Application.png" alt="Sample Application Configuration" title=" "></p>
+<p><img src="../images/Hive-MetaStore-Application-2.png" alt="Sample Application Configuration" title=" "></p>
 </li>
 <li>
 <p>When done, click <strong>Create</strong>. When the Application is created, you should see it in the Application list.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/MetaStore-App.png" alt="Sample Application" title=" "></p>
+<p><img src="../images/MetaStore-App.png" alt="Sample Application" title=" "></p>
 </li>
 </ol>
 <h2 id="step-4-run-the-oracle-cloud-infrastructure-data-flow-application"><strong>STEP 4</strong>: Run the Oracle Cloud Infrastructure Data Flow application</h2>
@@ -581,23 +581,23 @@ code {
 </li>
 <li>
 <p>Click <strong>Run</strong> to launch the run configuration screen</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Hive-MetaStore.png" alt="Run Sample Application" title=" "></p>
+<p><img src="../images/Run-Hive-MetaStore.png" alt="Run Sample Application" title=" "></p>
 </li>
 <li>
 <p>Click on <code>Run</code> and see all the applications. Initally the status of the run is <code>Accepted</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-Accepted.png" alt="Run Sample Application" title=" "></p>
+<p><img src="../images/Run-Application-Accepted.png" alt="Run Sample Application" title=" "></p>
 </li>
 <li>
 <p>Click launch the application and its status should change to <code>In Progress</code> in few seconds</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-InProgress.png" alt="Run Sample Application" title=" "></p>
+<p><img src="../images/Run-Application-InProgress.png" alt="Run Sample Application" title=" "></p>
 </li>
 <li>
 <p>While the Application is running, you can optionally load the <strong>Spark UI</strong>  to monitor progress. From the <strong>Actions</strong> icon for the run in question, select <strong>Spark UI</strong></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Run-Application-SparkUI.png" alt="Run Spark UI" title=" "></p>
+<p><img src="../images/Run-Application-SparkUI.png" alt="Run Spark UI" title=" "></p>
 </li>
 <li>
 <p>You are automatically redirected to the Apache Spark UI, which is useful for debugging and performance tuning.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore.png" alt="Spark UI" title=" "></p>
+<p><img src="../images/SparkUI-Hive-MetaStore.png" alt="Spark UI" title=" "></p>
 <p>On the screen users can look at:</p>
 <ol>
 <li>
@@ -608,28 +608,28 @@ code {
 </li>
 <li>
 <p>Navigate to the  <code>Executors</code> tab at the top to see the list of <code>Executors</code>
-<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore-Executors.png" alt="Spark UI" title=" "></p>
+<img src="../images/SparkUI-Hive-MetaStore-Executors.png" alt="Spark UI" title=" "></p>
 </li>
 <li>
 <p>Navigate to the <code>SQL</code> tab at the top to see the SQL Queries
-<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/SparkUI-Hive-MetaStore-SQL.png" alt="Spark UI" title=" "></p>
+<img src="../images/SparkUI-Hive-MetaStore-SQL.png" alt="Spark UI" title=" "></p>
 </li>
 </ol>
 </li>
 <li>
 <p>After few mins the  <code>Data Flow Run</code>  should complete and the State should change to <code>Succeeded</code>:</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/hive-metastore-run-success.png" alt="Run Succeeded" title=" "></p>
+<p><img src="../images/hive-metastore-run-success.png" alt="Run Succeeded" title=" "></p>
 </li>
 <li>
 <p>Drill into the Run to see more details, and scroll to the bottom to see a listing of logs.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/hive-metastore-log-run.png" alt="Run logs" title=" "></p>
+<p><img src="../images/hive-metastore-log-run.png" alt="Run logs" title=" "></p>
 </li>
 <li>
 <p>When you click the <code>spark_application_stdout.log.gz</code>  file, it should download a file <code>View</code> to your local file system.</p>
 </li>
 <li>
 <p>Click open the file and you should see the following output</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-log.png" alt="Application logs" title=" "></p>
+<p><img src="../images/Hive-MetaStore-log.png" alt="Application logs" title=" "></p>
 <p>The log file shows</p>
 <ol>
 <li>
@@ -648,7 +648,7 @@ code {
 </li>
 <li>
 <p>Navigate to the Object Store Bucket <code>DF-default-storage</code> that was used as location for the tables.</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Hive-MetaStore-Bucket.png" alt="Application logs" title=" "></p>
+<p><img src="../images/Hive-MetaStore-Bucket.png" alt="Application logs" title=" "></p>
 </li>
 <li>
 <p>Click open the Bucket <code>DF-default-storage</code> to show the content of the bucket and scrolls to bottom of the page</p>
@@ -657,7 +657,7 @@ code {
 <p>The content of the Bucket shows the table and the parquet files</p>
 </li>
 </ol>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/obj-store-bucket-content.png" alt="Application logs" title=" "></p>
+<p><img src="../images/obj-store-bucket-content.png" alt="Application logs" title=" "></p>
 <p>You should see the following :</p>
 <ol>
 <li>
@@ -712,22 +712,22 @@ code {
 </li>
 <li>
 <p>The configuration should look like as shown in the snapshot</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/query-metastore-application-1.png" alt="Query MetaStore Application " title=" "></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/query-metastore-application-2.png" alt="Query MetaStore Application " title=" "></p>
+<p><img src="../images/query-metastore-application-1.png" alt="Query MetaStore Application " title=" "></p>
+<p><img src="../images/query-metastore-application-2.png" alt="Query MetaStore Application " title=" "></p>
 </li>
 <li>
 <p>Click <code>Create</code> and save the application.</p>
 </li>
 <li>
 <p>Next Run the Application, by launching the application and clicking on <code>Run</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Query-metastore-run-application.png" alt="Query MetaStore Application Run " title=" "></p>
+<p><img src="../images/Query-metastore-run-application.png" alt="Query MetaStore Application Run " title=" "></p>
 </li>
 <li>
 <p>Application status changes from <code>Accepted</code> to <code>In-Progress</code> and <code>Succeeded</code></p>
 </li>
 <li>
 <p>Open the logs and you should see count of reviews by avg rating</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/Query-metastore-run-application-log.png" alt="Query MetaStore Logs " title=" "></p>
+<p><img src="../images/Query-metastore-run-application-log.png" alt="Query MetaStore Logs " title=" "></p>
 </li>
 <li>
 <p>Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithams. The higher the F1 score the better.</p>
@@ -740,45 +740,45 @@ code {
 <ol>
 <li>
 <p>From the Console navigate to  <code>Analytics Cloud</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Navigation.png" alt="OAC Navigation " title=" "></p>
+<p><img src="../images/OAC-Navigation.png" alt="OAC Navigation " title=" "></p>
 </li>
 <li>
 <p>In the <code>dataflow-demo</code> compartment you should see the following instances created that are created for the workshop</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Instances.png" alt="OAC Instances " title=" "></p>
+<p><img src="../images/OAC-Instances.png" alt="OAC Instances " title=" "></p>
 </li>
 <li>
 <p>Click on the Instance <code>DFWorkshop1</code> and click open the <code>URL</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Instance-URL.png" alt="OAC Instances URL " title=" "></p>
+<p><img src="../images/OAC-Instance-URL.png" alt="OAC Instances URL " title=" "></p>
 </li>
 <li>
 <p>You should be re-directed to the OAC Console</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Console.png" alt="OAC Console " title=" "></p>
+<p><img src="../images/OAC-Console.png" alt="OAC Console " title=" "></p>
 </li>
 <li>
 <p>On the console first we create a dataset</p>
 <ol>
 <li>
 <p>Click <code>Connect to Your Data</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Connect-to-your-Data.png" alt="OAC Console " title=" "></p>
+<p><img src="../images/OAC-Connect-to-your-Data.png" alt="OAC Console " title=" "></p>
 </li>
 <li>
 <p>Select the OAC instance <code>DF-Workshop-1</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Create-Data-Set.png" alt="OAC Console " title=" "></p>
+<p><img src="../images/OAC-Create-Data-Set.png" alt="OAC Console " title=" "></p>
 </li>
 <li>
 <p>It should show the databases that we created in step #3 above .</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-DB.png" alt="OAC Console " title=" "></p>
+<p><img src="../images/OAC-DB.png" alt="OAC Console " title=" "></p>
 </li>
 <li>
 <p>Drag and drop or double click <code>yelp_data</code> to the editor on the righthand side. It should load the data for <code>yelp_data</code>. It can take few mins for the data to show up</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/yelp-data-set.png" alt="OAC Console " title=" "></p>
+<p><img src="../images/yelp-data-set.png" alt="OAC Console " title=" "></p>
 </li>
 <li>
 <p>Enter a name for Dataset and Save.</p>
 </li>
 <li>
 <p>Open the Dataset and it explore the data</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-yelp-dataset.png" alt="OAC DataSet " title=" "></p>
+<p><img src="../images/OAC-yelp-dataset.png" alt="OAC DataSet " title=" "></p>
 </li>
 </ol>
 </li>
@@ -787,31 +787,31 @@ code {
 <ol>
 <li>
 <p>Add a new <code>calculation</code> by right clicking <code>My Calcuation</code> and then <code>Add Calculation</code></p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation.png" alt="OAC My Calculation " title=" "></p>
+<p><img src="../images/OAC-New-Calculation.png" alt="OAC My Calculation " title=" "></p>
 </li>
 <li>
 <p>Name the calculation and enter the  below calculation on the editor</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation-Formula.png" alt="OAC My Calculation " title=" "></p>
+<p><img src="../images/OAC-New-Calculation-Formula.png" alt="OAC My Calculation " title=" "></p>
 </li>
 <li>
 <p>Click <code>Save</code> and the new Calculation should be displayed under ```My Calculations``
-<img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-New-Calculation-Save.png" alt="OAC My Calculation Save " title=" "></p>
+<img src="../images/OAC-New-Calculation-Save.png" alt="OAC My Calculation Save " title=" "></p>
 </li>
 <li>
 <p>Click on <code>Visualize</code> on the top left hand and drop the map on the right side</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Visualization.png" alt="OAC Map Visualization " title=" "></p>
+<p><img src="../images/OAC-Map-Visualization.png" alt="OAC Map Visualization " title=" "></p>
 </li>
 <li>
 <p>On the <code>state layer</code> in the map drag the <code>state</code> column in the <code>Location</code> and drag the calculation <code>avg-star</code> on the <code>Color</code> field</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Columns.png" alt="OAC Map Visualization " title=" "></p>
+<p><img src="../images/OAC-Map-Columns.png" alt="OAC Map Visualization " title=" "></p>
 </li>
 <li>
 <p>On the <code>Filters</code>  drag <code>goodForKids</code>, <code>alchohol</code>, <code>years</code>,<code>takeout</code> columns</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map-Filter.png" alt="OAC Map Visualization " title=" "></p>
+<p><img src="../images/OAC-Map-Filter.png" alt="OAC Map Visualization " title=" "></p>
 </li>
 <li>
 <p>And save the map and visualize the data</p>
-<p><img src="file:///Users/aachanda/Documents/GitHub/learning-library/oci-library/oci-hol/oci-dataflow-sampleapp/images/OAC-Map.png" alt="OAC Map Visualization " title=" "></p>
+<p><img src="../images/OAC-Map.png" alt="OAC Map Visualization " title=" "></p>
 </li>
 </ol>
 </li>
