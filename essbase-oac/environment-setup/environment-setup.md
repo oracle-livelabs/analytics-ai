@@ -292,7 +292,7 @@ This issue is an indication that your tenant is not currently configured to use 
 
 You may now proceed to the next lab.
 
-**Acknowledgements**
+## Acknowledgements
 
  - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
  - **Contributors** - Arabella Yao, Product Manager, Database Product Management
