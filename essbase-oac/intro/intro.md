@@ -9,7 +9,7 @@ This lab shows how we can create a connection between OAC and Essbase
 
 *Estimated Lab Time:* 5 minutes
 
-### Objectives
+**Objectives**
 
 In this lab, you will:
 
@@ -20,14 +20,14 @@ In this lab, you will:
 - Create sample DVs.
 - Create classic reports and Dashboards.
 
-### Prerequisites
+**Prerequisites**
 
 - This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in Getting Started.
 - Familiarity with OCI is helpful
 - Familiarity with Essbase is desirable
 - Some understanding of OAC is helpful
 
-## About this Workshop
+**About this Workshop**
 
 This workshop introduces you to how to leverage OAC DV as well as Classic to create reports and Dashboards from Essbase cubes.
 
@@ -37,11 +37,11 @@ You will create Sample Essbase application, Data Visualization, Dashboards.
 
 * Estimated Time : 3hrs
 
-## What is Essbase?
+## Task 1: What is Essbase?
 
 Oracle Essbase products provide companies the ability to deliver critical business information to the right people when they need it. With Essbase, companies quickly leverage and integrate data from multiple existing data sources and distribute filtered information to end-user communities in the format that best meets the users’ needs. Users interact and intuitively explore data in real time and along familiar business dimensions, enabling them to perform speed-of thought analytics.
 
-## What is OAC?
+## Task 2: What is OAC?
 
 Oracle Analytics Cloud (OAC) is a scalable and secure public cloud service that provides a full set of capabilities to explore and perform collaborative analytics for you, your workgroup, and your enterprise.
 
@@ -53,7 +53,7 @@ Essbase does not have any reporting capabilities on its own, hence OAC can be le
 
 OAC provides various reporting capabilities for different types of users.
 
-## Learn More
+## Task 3: Learn More
 
 Use the following links to get more information about Essbase and OAC:
 
