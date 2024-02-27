@@ -90,7 +90,7 @@ This lab assumes you have:
 ## Task 2: Download and Stage Workshop Artifacts (on local PC/Mac)
 Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on the remote desktop. As a result, return to your local computer/workstation and perform the following:
 
-1. Download [`essbase_21c_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/51DwosGpWuwiHMYKbcgWcxsHkBaYipTRlGh-bcMSTVaCfVBwDwYoRfA4VpPSh7LR/n/natdsecurity/b/labs-files/o/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
+1. Download [`essbase_21c_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l1F9budyZgwDjzJC6mc5400vsmAHGsGiqU_cKpUj_dkhgLOcWsMOqPDm6WgFj0DA/n/c4u02/b/hosted_workshops/o/stacks/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive.
 
@@ -154,4 +154,4 @@ You may now [proceed to the next Lab](#next)
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 - **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam, Kalpana Singh
-- **Last Updated By/Date** - Kalpana Singh, Senior Solution Engineer, Analytics, NACI, March 2023
+- **Last Updated By/Date** - Srinivas SR, Senior Cloud Engineer, Analytics, NACI, Febraury 2024
