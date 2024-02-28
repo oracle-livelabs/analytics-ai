@@ -34,10 +34,12 @@
     },
     {
       "title": "Lab 6: Create Workbooks",
+      "description": "Creating Dashboards using OAC",
       "filename": "../../creating-dv-dashboard/dashboard.md"
     },
     {
       "title": "Lab 7: Create Data Model, Classic Reports, and Dashboards",
+      "description": "Creating Dashboards using RPD method",
       "filename": "../../rpd-reports/rpd-reports.md"
     },
     
