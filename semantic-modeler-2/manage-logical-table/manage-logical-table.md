@@ -48,26 +48,21 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 6. In Select Physical Table, expand **BISAMPLE**, click **D4 Addresses**, and then click **Select**.
 	![Select D4 Address for new table mapping](./images/select-d4-addresses-table.png =400x*)
 
-7. See the columns added from the D4 Addresses table.
+7. See the columns added from the D4 Addresses table mapped to the Customer table.
 	![View D3 Columns after adding D4 table](./images/view-d3-columns.png)
+
+8. In the **Columns** tab, you will see the columns from the address table we just mapped.
 
 ## Task 2: Manage Logical Table Sources
 
 In this section, you rename logical table sources and view column mapping to physical tables.
 
-1. Click the **Logical Layer**, expand **Sample Sales BM**.
-
-	![Click Logical Layer and expand Sample Sales BM](./images/logical-layer-sample-sales-BM.png =400x*)
-
-2. Double-click **D3 Customers**, click **Sources**, and then rename the D3 Customers logical table source (not the logical table) to **LTS1 Customers**.
+1. From the D3 Customers logical table, click the **Sources** tab. Open the detail view and in **Name**, rename the D3 Customers logical table source (not the logical table) to **LTS1 Customers**. Then **Save** the Semantic Model.
 
 	![Rename D3 Customers column to LTS1 Customers](./images/rename-d3-customers.png)
 
-3. Select **LTS1 Customers**, click **Detail View**, and then scroll to the Column Mapping section.
+2. Scroll down to the **Column Mapping** section. In **Show**, select **Mapped**.
 
-	![Go to column mapping in LTS1 Customers](images/column-mapping-LTS1-customers.png)
-
-4. In Show, select **Mapped**.
 	![Change mapping to "mapped"](images/column-mapping-mapped.png)
 
 5. In the Logical Layer, double-click **D1 Time**, click **Sources**, and then rename the D1 Time logical table source to **LTS1 Time**.
@@ -102,6 +97,7 @@ In this section you add a presentation table to the Sample Sales semantic model.
 	* Region
 	* State Province
 	* State Province Abbrv
+
 	![Drag D3 customer columns into Customer Regions](./images/customer-region-columns.png)
 
 3. Click **Save**.
@@ -110,13 +106,12 @@ In this section you add a presentation table to the Sample Sales semantic model.
 
 In this section, you run the consistency checker, deploy the updated semantic model, and create a workbook with the updated Sample Sales subject area.
 
-1. Click the Consistency Checker and select **Include warnings**.
+1. Click the **Consistency Checker** and select **Include warnings**.
 	Oracle Analytics didn't find any errors in the Sample Sales semantic model.
 
 	![Click consistency checker](./images/errors-and-warnings.png =400x*)
 
-2. In the semantic model, click the Page Menu Page Menu icon, and select Deploy.
-	The message, "Deploy successful" appears when the deployment process is complete.
+2. In the semantic model, click the **Page Menu** icon, and select **Deploy**. The message, **"Deploy successful"** appears when the deployment process is complete.
 
 	![Deploy Semantic Model](./images/deploy-model.png =400x*)
 
@@ -136,9 +131,12 @@ In this section, you run the consistency checker, deploy the updated semantic mo
 7. Hold down the **Ctrl** or **Cmd** key, select **Name** from Customers, **Country Name** from Customer Regions, **Type** from Products, and **Revenue** from Base Facts.
 	![Select values from dataset](./images/select-data-values.png =200x*)
 
-8. Drag the data elements to the canvas.
+8. Right-click and select **Pick Visualization**. Select the **Table** visualization.
 
-	![Drag values to canvas to create table that uses the Customer Regions, Customers, Products, and Base Facts table.](./images/drag-to-canvas.png)
+	![Table](./images/table-viz.png)
+	![Visualize](./images/drag-to-canvas.png)
+
+
 
 You may now **proceed to the next lab**
 
@@ -148,6 +146,6 @@ You may now **proceed to the next lab**
 * [Plan the Physical Layer](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/plan-physical-layer.html#GUID-D7D6E064-F9C8-4B8B-A02F-B9E0358063F1)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Nagwang Gyamtso, August 2023
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard, Lucian Dinescu, Desmond Jung
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024

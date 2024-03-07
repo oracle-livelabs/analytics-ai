@@ -159,6 +159,6 @@ You may now **proceed to the next lab**
 * [Work With Branches](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-branches.html)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Nagwang Gyamtso, August 2023
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard, Lucian Dinescu, Desmond Jung
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024
