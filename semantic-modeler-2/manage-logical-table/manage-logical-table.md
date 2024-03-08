@@ -129,6 +129,8 @@ In this section, you run the consistency checker, deploy the updated semantic mo
 6. In the Data panel, **expand the Products, Customers, Base Facts,** and **Customer Regions** folders.
 
 7. Hold down the **Ctrl** or **Cmd** key, select **Name** from Customers, **Country Name** from Customer Regions, **Type** from Products, and **Revenue** from Base Facts.
+	>**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
+
 	![Select values from dataset](./images/select-data-values.png =200x*)
 
 8. Right-click and select **Pick Visualization**. Select the **Table** visualization.

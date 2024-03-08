@@ -107,8 +107,6 @@ In this section you add a logical table and select columns from a physical layer
 
 1. Click **Logical Layer**, and double-click **Sample Sales BM**.
 
-	![open sample sales](./images/open-sample-sales.png)
-
 2. In Dimensions, click **Add Table**, and then click **Create New Table**.
 
 	![Create new tale](./images/create-new-table.png)
@@ -300,6 +298,7 @@ workbook with the updated Sample Sales subject area.
   ![Deploy](./images/deploy.png)
 
 3. Go back to the Oracle Analytics Cloud homepage and create a new workbook with the **Samples Sales** Subject Area. Add the following fields to a new visualization to validate this lesson:
+    >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
 
   	* D5 Sales Rep
 	* Position

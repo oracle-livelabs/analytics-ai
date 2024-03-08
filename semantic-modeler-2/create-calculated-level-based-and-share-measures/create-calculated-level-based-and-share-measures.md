@@ -146,15 +146,17 @@ workbook with the updated Sample Sales subject area.
 
 3. Go back to the Oracle Analytics Cloud homepage and create a new workbook with the **Samples Sales** Subject Area. Add the following fields to a new visualization to validate this lesson
 
+    >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
+
     * Products.Product
     * Base Facts.Revenue
     * Base Facts.Revenue Rank
     * Base Facts.Units
     * Base Facts.Actual Unit Price
 
-Sort by Revenue Rank ascending.
+    Sort by Revenue Rank ascending.
 
-  ![Visualize](./images/visualize.png)
+    ![Visualize](./images/visualize.png)
 
 You may now **proceed to the next lab**
 

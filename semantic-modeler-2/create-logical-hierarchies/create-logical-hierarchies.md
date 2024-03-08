@@ -134,6 +134,52 @@ In this section, you create a time hierarchy in the D1 Time logical table to use
 
 8. Close D1 Time.
 
+## Task 4: Create Presentation Hierarchies
+
+Drag and drop logical hierarchy to corresponding presentation tables.
+
+1. Click the **Presentation Layer** and double-click **Products**. Click the **Hierarchies** tab. From the Logical Layer, expand **D2 Products**. Drag and drop the logical hierarchy **H1** to **Hierarchies** in the **Products** presentation table.
+
+  ![Hierarchies](./images/prod-hierarchies.png)
+
+2. Select the **Detail** level under **Hierarchies**. Under **General**, find **Display Column** and click **Select**.
+
+  ![Select](./images/select-display-col-prod.png)
+
+3. Expand **Products** and select **Product**. Then click **Select**. Click **Save**.
+
+  ![Select](./images/select-prod.png)
+
+<!-- 2. Click the **Presentation Layer** and double-click **Time**. Click the **Hierarchies** tab. From the Logical Layer, expand **D1 Time**. Drag and drop the logical hierarchy **H1** to **Hierarchies** in the **Time** presentation table. Click **Save**.
+
+  ![Hierarchies](./images/time-hierarchies.png)
+
+3. Click the **Presentation Layer** and double-click **Customers**. Click the **Hierarchies** tab. From the Logical Layer, expand **D3 Customers**. Drag and drop the logical hierarchy **H1** to **Hierarchies** in the **Customers** presentation table. Click **Save**. 
+
+  ![Hierarchies](./images/customers-hierarchies.png) -->
+
+## Task 4: Deploy and Validate the Changes
+
+In this section, you run the consistency checker, deploy the updated semantic model, and create a
+workbook with the updated Sample Sales subject area.
+
+1. Click the **Consistency Checker** and select **Include warnings**.
+
+	![Click consistency checker](./images/errors-and-warnings.png =400x*)
+
+2. Oracle Analytics didn't find any errors in the Sample Sales semantic model. In the semantic model, click the **Page Menu** icon, and select **Deploy**. The message, **"Deploy successful"** appears in the status bar when the deployment process is complete.
+
+  ![Deploy](./images/deploy.png)
+
+3. Go back to the Oracle Analytics Cloud homepage and create a new workbook with the **Samples Sales** Subject Area. Select H1 presentation hierarchy from **Products** table and add it to your visualization. Since the hierarchy is defined, now you should be able to drill down from the top level of the product brand to the detail product
+
+    >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
+
+
+  ![Visualize](./images/visualize.png)
+
+
+
 You may now **proceed to the next lab**
 
 ## Learn More
