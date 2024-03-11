@@ -99,8 +99,9 @@ OCI Speech Service EndPoints for all the services:
             ]
         },
         "modelDetails": {
+            "modelType": <modelTypePlaceHolder>,
             "domain": "GENERIC",
-            "languageCode": "en-US"
+            "languageCode": "<languageCodePLaceHolder>"
         },
         "normalization": null,
         "outputLocation": {
@@ -111,6 +112,10 @@ OCI Speech Service EndPoints for all the services:
     }
     </copy>
     ```
+    *Note:*
+    * Supported values for modelTypePlaceHolder are ORACLE, WHISPER_MEDIUM
+    * Supported values for languageCodePLaceHolder for ORACLE MODEL are: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+    * Supported values for languageCodePLaceHolder for WHISPER_MEDIUM MODEL are: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
 
 2. <u>Get Transcription Job</u>
 
