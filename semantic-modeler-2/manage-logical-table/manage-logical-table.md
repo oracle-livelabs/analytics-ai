@@ -67,13 +67,13 @@ In this section, you rename logical table sources and view column mapping to phy
 
 5. In the Logical Layer, double-click **D1 Time**, click **Sources**, and then rename the D1 Time logical table source to **LTS1 Time**.
 
-	![Rename D1 Time column to LTS1 Time](./images/d1-time-LTS1-time.png)
+	![Rename D1 Time column to LTS1 Time](./images/d1-time-lts1-time.png)
 
 6. In the Logical Layer, double-click **D2 Products**, click **Sources**, and then rename the D2 Products logical table source to **LTS1 Products**.
-	![Rename D2 Products column to LTS1 Products](./images/d2-products-LTS1-products.png)
+	![Rename D2 Products column to LTS1 Products](./images/d2-products-lts1-products.png)
 
 7. In the Logical Layer, double-click **F1 Revenue**, click **Sources**, and then rename the F1 Revenue logical table source to **LTS1 Revenue**.
-	![Rename F1 Revenue column to LTS1 Revenue](./images/f1-revenue-LTS1-revenue.png)
+	![Rename F1 Revenue column to LTS1 Revenue](./images/f1-revenue-lts1-revenue.png)
 
 8. Click **Save**.
 

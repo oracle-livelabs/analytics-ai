@@ -51,7 +51,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 7. Double-click **D20 Products**. Click **Preview**.
 
-    ![Preview D20 Product](./images/D20-preview.png =400px*)
+    ![Preview D20 Product](./images/d20-preview.png =400px*)
 
 ## Task 2: Create a Join to the Fact Table
 
