@@ -150,4 +150,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** - Pravin Janardanam, Gabrielle Prichard, Lucian Dinescu, Desmond Jung
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024
+* **Last Updated By/Date** - Nagwang Gyamtso, March, 2024

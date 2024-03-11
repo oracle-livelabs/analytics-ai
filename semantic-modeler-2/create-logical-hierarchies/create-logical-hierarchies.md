@@ -154,7 +154,7 @@ Drag and drop logical hierarchy to corresponding presentation tables.
 
   ![Hierarchies](./images/time-hierarchies.png)
 
-3. Click the **Presentation Layer** and double-click **Customers**. Click the **Hierarchies** tab. From the Logical Layer, expand **D3 Customers**. Drag and drop the logical hierarchy **H1** to **Hierarchies** in the **Customers** presentation table. Click **Save**. 
+3. Click the **Presentation Layer** and double-click **Customers**. Click the **Hierarchies** tab. From the Logical Layer, expand **D3 Customers**. Drag and drop the logical hierarchy **H1** to **Hierarchies** in the **Customers** presentation table. Click **Save**.
 
   ![Hierarchies](./images/customers-hierarchies.png) -->
 
@@ -187,6 +187,6 @@ You may now **proceed to the next lab**
 * [Create Logical Time Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data.html#ACMDG-GUID-8EC7B9D0-7A0D-4520-9A90-82D625518D4E)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Pravin Janardanam, Nagwang Gyamtso,
-* **Last Updated By/Date** - Nagwang Gyamtso, August 2023
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard, Lucian Dinescu, Desmond Jung
+* **Last Updated By/Date** - Nagwang Gyamtso, March, 2024
