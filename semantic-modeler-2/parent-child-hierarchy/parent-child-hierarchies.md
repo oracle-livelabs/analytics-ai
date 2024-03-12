@@ -174,7 +174,7 @@ In this section, you rename columns to use names that are easy to understand.
 
 9. Double-click **Distance**. Enter <code>'Closure Distance'</code>. Click **Save**.
 
-	![Renaming columns](./images/column_rename.png)
+	![Renaming columns](./images/column-rename.png)
 
 
 ## Task 6: Create a Logical Join
