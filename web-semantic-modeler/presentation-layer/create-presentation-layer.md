@@ -89,15 +89,15 @@ Begin with step 3 if you're continuing this lab directly after completing the st
 	![Products table](./images/products-table.png)
 
 
-## Task 2: Add Columns tot he Presentation Tables
+## Task 2: Add Columns to the Presentation Tables
 
 In this section, you select columns from the logical tables to use in the presentation tables.
 
-1. In the **Presentation Layer**, double-click **Time** in the **Sample Sales** subject area. Click the **Logical Layer** icon, expand **Sample Sales BM**, and then expand **D1 Time**.
+1. In the **Logical Layer**, expand the **Sample Sales BM** and then expand **D1 Time**. Click the **Logical Layer** icon, expand **Sample Sales BM**, and then expand **D1 Time**.
 
 	![Expand D1 Time](./images/expand-d1-time.png)
 
-2. Hold down the **Ctrl** or **Command** key, and select and drag the following columns to the **Time Columns** tab:
+2. Hold down the **Ctrl** or **Command** key, and select and drag the following columns to the **Columns** tab in the **Time** presentation table:
 	* Calendar date
 	* Per name half
 	* per name month
@@ -135,15 +135,15 @@ In this section, you select columns from the logical tables to use in the presen
 
 In this section, you change the names of some columns, remove columns, and reorder columns in the semantic model's presentation tables.
 
-1. Click the **Products** tab. Hold down the **Ctrl (Command for Mac)** key, select the **Prod key**, **Attribute 1**, **Attribute 2**, and **Total Value** columns, and then click the **Delete** icon.
+1. Click the **Products** tab. Hold down the **Ctrl (Command for Mac)** key, select the **Prod key**, **Attribute 1**, **Attribute 2**, and **Total Value** columns, and then click the **Delete** icon. Click **Yes** when prompted to delete the presentation columns.
 
 	![Delete](./images/delete-icon.png)
 
-2. Double-click **Prod Dsc**. Enter <code>Product</code> in **Name**.
+2. Double-click **Prod Dsc**. Enter **'Product'** in **Name**.
 
 	![Product name](./images/product-name.png)
 
-3. Double-click **Lob**. Enter <code>Line of Business</code> in **Name**.
+3. Double-click **Lob**. Enter **'Line of Business'** in **Name**.
 
 	![Line of Business in name](./images/lob-name.png)
 
@@ -175,5 +175,5 @@ In this section, you change the names of some columns, remove columns, and reord
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024
