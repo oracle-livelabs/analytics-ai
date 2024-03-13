@@ -130,6 +130,8 @@ In this section, you create a time hierarchy in the D1 Time logical table to use
 
     ![Add Week level](./images/d1-time-week.png)
 
+7. Select **Detail** and in the **Chronological Key**, ensure that it is set to **Day Key**.
+
 7. Click **Save**.
 
 8. Close D1 Time.
