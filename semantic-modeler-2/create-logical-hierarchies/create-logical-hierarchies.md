@@ -132,9 +132,11 @@ In this section, you create a time hierarchy in the D1 Time logical table to use
 
 7. Select **Detail** and in the **Chronological Key**, ensure that it is set to **Day Key**.
 
-7. Click **Save**.
+  ![Chronological key](./images/chronological.png)
 
-8. Close D1 Time.
+8. Click **Save**.
+
+9. Close D1 Time.
 
 ## Task 4: Create Presentation Hierarchies
 
