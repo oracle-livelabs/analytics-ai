@@ -34,7 +34,7 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 	![Open Sample Sales](images/open-sample-sales.png)
 
-3. Click the **Check Consistency** icon and select **Errors and Warnings**.
+3. Click the **Check Consistency** icon and select **Include Warnings**.
 
 	![Consistency Checker](images/consistency-checker.png)
 
@@ -48,7 +48,8 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 	![Deploy](images/deploy.png =300x*)
 
-2. The message, "Deploy successful" appears when the deployment process is complete.
+2. The message, **"Deploy successful"** appears when the deployment process is complete.
+	>**Note:** Deployment takes 2 to 3 minutes to complete.
 
 	![Deploy successful](images/deploy-successful.png =500x*)
 
@@ -90,6 +91,30 @@ Begin with step 3 if you're continuing this tutorial directly after completing t
 
 	![Save workbook](./images/save-workbook.png)
 
+## Task 4: (Optional) View the Logcal and Physical SQL Executions
+
+1. Click on your user icon and select **Profile**.
+
+	![Profile](./images/profile.png)
+
+2. Click the **Advanced** tab and toggle **Enable Developer Options**. Click **Save** and **Close** the profile settings window.
+
+	![Enable Developer Options](./images/enable-developer.png)
+
+3. In your workbook, click the **workbook menu icon** and select **Developer**.
+
+	![Developer](./images/developer.png)
+
+4. Click **Refresh** in the **Performance Tools** tab. This will show you the queries you've run and its performance metrics.
+
+	![Refresh](./images/refresh.png)
+
+5. Click the **Execution Log** tab which is where you will see the SQL executions. The first query that was run is the Logical SQL. If you scroll down further, you will find the Physical SQL that was executed.
+
+	![logical SQL](./images/logical-sql.png)
+	![physical SQL](./images/physical-sql.png)
+
+
 You have just learned how to create a semantic model user the Semantic Modeler in Oracle Analytics Cloud!
 
 ## Learn More
@@ -98,5 +123,5 @@ You have just learned how to create a semantic model user the Semantic Modeler i
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024

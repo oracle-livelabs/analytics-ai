@@ -1,4 +1,4 @@
-# Lab 7: Trigger functions for OCI speech transcription jobs
+# Lab 7: Trigger functions for OCI speech transcription jobs (Optional)
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Oracle Cloud Infrastructure Functions is a fully managed, multi-tenant, highly s
 In this lab session, We will cover how you can create a simple Java function and trigger the function using OCI Speech service.
 
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives:
 

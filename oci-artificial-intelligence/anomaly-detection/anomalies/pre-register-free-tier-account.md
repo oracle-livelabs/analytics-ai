@@ -29,19 +29,6 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![](https://oracle-livelabs.github.io/common/labs/cloud-login/images/oci-console-home-page.png "")
 
-## **Rate this Workshop**
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-
 ## **Acknowledgements**
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services

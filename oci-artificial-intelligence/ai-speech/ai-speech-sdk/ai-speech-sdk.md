@@ -1,4 +1,4 @@
-# Lab 2: Access OCI speech with OCI SDKs
+# Lab 2: Access OCI speech with OCI SDKs (Optional)
 
 ## Introduction 
 
@@ -115,9 +115,23 @@ If you installed Python from source, with an installer from python.org, or via H
 ```Python
 <copy>
 import oci
-from oci.config import from_file
+ 
+def getSigner(profile_name):
+    config = oci.config.from_file(profile_name=profile_name)
+    token_file = config['security_token_file']
+    token = None
+    with open(token_file, 'r') as f:
+        token = f.read()
+    private_key = oci.signer.load_private_key_from_file(config['key_file'])
+    signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+    return config, signer
+ 
+def getSpeechClient():
+    config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    return ai_client
 
-ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
+ai_client = getSpeechClient()
 
 # Give your job related details in these fields
 SAMPLE_DISPLAY_NAME = "<job_name>"
@@ -131,7 +145,10 @@ FILE_NAMES = ["<file1>", "<file2>"]
 NEW_COMPARTMENT_ID = "<new_compartment>"
 NEW_DISPLAY_NAME = "<new_name>"
 NEW_DESCRIPTION = "<new_description>"
-SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
+# Supported MODEL_TYPE values: ORACLE, WHISPER_MEDIUM
+# Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+# Supported language codes for WHISPER_MEDIUM MODEL: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, # mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
+SAMPLE_MODEL_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(model_type=MODEL_TYPE, domain="GENERIC", language_code=LANGUAGE_CODE)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
 SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(
@@ -145,7 +162,7 @@ UPDATE_JOB_DETAILS = oci.ai_speech.models.UpdateTranscriptionJobDetails(display_
 transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=SAMPLE_DISPLAY_NAME,
                                                                                compartment_id=SAMPLE_COMPARTMENT_ID,
                                                                                description=SAMPLE_DESCRIPTION,
-                                                                               model_details=SAMPLE_MODE_DETAILS,
+                                                                               model_details=SAMPLE_MODEL_DETAILS,
                                                                                input_location=SAMPLE_INPUT_LOCATION,
                                                                                output_location=SAMPLE_OUTPUT_LOCATION)
  

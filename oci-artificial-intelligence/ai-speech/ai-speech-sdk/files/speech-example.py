@@ -1,20 +1,34 @@
 import oci
-from oci.config import from_file
+ 
+def getSigner(profile_name):
+    config = oci.config.from_file(profile_name=profile_name)
+    token_file = config['security_token_file']
+    token = None
+    with open(token_file, 'r') as f:
+        token = f.read()
+    private_key = oci.signer.load_private_key_from_file(config['key_file'])
+    signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+    return config, signer
+ 
+def getSpeechClient():
+    config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    return ai_client
 
-ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
+ai_client = getSpeechClient()
 
 # Give your job related details in these fields
-SAMPLE_DISPLAY_NAME = "<job_name>"
-SAMPLE_COMPARTMENT_ID = "<compartment_id>"
-SAMPLE_DESCRIPTION = "<job_description>"
-SAMPLE_NAMESPACE = "<sample_namespace>"
-SAMPLE_BUCKET = "<bucket_name>"
+SAMPLE_DISPLAY_NAME = "<job_name>" # Name of the job
+SAMPLE_COMPARTMENT_OCID = "<compartment_ocid>" # Compartment OCID containing the bucket with audio files
+SAMPLE_DESCRIPTION = "<job_description>" # Optional can be left blank
+SAMPLE_NAMESPACE = "<sample_namespace>" # Namespace of the bucket
+SAMPLE_BUCKET = "<bucket_name>" # Bucket name containing audio files
 JOB_PREFIX = "Python_SDK_DEMO"
 LANGUAGE_CODE = "en-US"
-FILE_NAMES = ["<file1>", "<file2>"]
-NEW_COMPARTMENT_ID = "<new_compartment>"
-NEW_DISPLAY_NAME = "<new_name>"
-NEW_DESCRIPTION = "<new_description>"
+FILE_NAMES = ["<file1>", "<file2>"] # List of audio files present in the bucket
+NEW_COMPARTMENT_OCID = "<new_compartment>" # Destination Compartmnet OCID
+NEW_DISPLAY_NAME = "<new_name>" # New Job Name in the Destination compartment
+NEW_DESCRIPTION = "<new_description>" # Optional can be left blank
 SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
@@ -22,12 +36,12 @@ SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(
     location_type="OBJECT_LIST_INLINE_INPUT_LOCATION", object_locations=[SAMPLE_OBJECT_LOCATION])
 SAMPLE_OUTPUT_LOCATION = oci.ai_speech.models.OutputLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
                                                              prefix=JOB_PREFIX)
-COMPARTMENT_DETAILS = oci.ai_speech.models.ChangeTranscriptionJobCompartmentDetails(compartment_id=NEW_COMPARTMENT_ID)
+COMPARTMENT_DETAILS = oci.ai_speech.models.ChangeTranscriptionJobCompartmentDetails(compartment_id=NEW_COMPARTMENT_OCID)
 UPDATE_JOB_DETAILS = oci.ai_speech.models.UpdateTranscriptionJobDetails(display_name=NEW_DISPLAY_NAME, description=NEW_DESCRIPTION)
 
 # Create Transcription Job with details provided
 transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=SAMPLE_DISPLAY_NAME,
-                                                                               compartment_id=SAMPLE_COMPARTMENT_ID,
+                                                                               compartment_id=SAMPLE_COMPARTMENT_OCID,
                                                                                description=SAMPLE_DESCRIPTION,
                                                                                model_details=SAMPLE_MODE_DETAILS,
                                                                                input_location=SAMPLE_INPUT_LOCATION,
@@ -78,7 +92,7 @@ else:
 print("***GET ALL TRANSCRIPTION JOBS IN COMPARTMENT***")
 # Gets All Transcription Jobs from a particular compartment
 try:
-    transcription_jobs = ai_client.list_transcription_jobs(compartment_id=SAMPLE_COMPARTMENT_ID)
+    transcription_jobs = ai_client.list_transcription_jobs(compartment_id=SAMPLE_COMPARTMENT_OCID)
 except Exception as e:
     print(e)
 else:

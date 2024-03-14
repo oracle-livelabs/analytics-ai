@@ -1,4 +1,4 @@
-# Lab 4: Access OCI speech with REST APIs
+# Lab 4: Access OCI speech with REST APIs (Optional)
 
 ## Introduction
 
@@ -64,13 +64,15 @@ Below, in the example shown to invoke Create Transcription Job, replace all plac
 
 OCI Speech Service EndPoints for all the services:
 
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
+
 
 1. <u>Create Transcription Job</u>
 
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs
     </copy>
     ```
     Body:
@@ -97,8 +99,9 @@ OCI Speech Service EndPoints for all the services:
             ]
         },
         "modelDetails": {
+            "modelType": <modelTypePlaceHolder>,
             "domain": "GENERIC",
-            "languageCode": "en-US"
+            "languageCode": "<languageCodePLaceHolder>"
         },
         "normalization": null,
         "outputLocation": {
@@ -109,13 +112,17 @@ OCI Speech Service EndPoints for all the services:
     }
     </copy>
     ```
+    *Note:*
+    * Supported values for modelTypePlaceHolder are ORACLE, WHISPER_MEDIUM
+    * Supported values for languageCodePLaceHolder for ORACLE MODEL are: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+    * Supported values for languageCodePLaceHolder for WHISPER_MEDIUM MODEL are: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
 
 2. <u>Get Transcription Job</u>
 
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
     ```
 
 3. <u>List Transcription Jobs</u>
@@ -123,7 +130,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
     ```
 
 3. <u>Edit Transcription Job</u>
@@ -131,7 +138,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
     </copy>
     ```
     Body:
@@ -149,7 +156,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
     ```
     Body:
     ```
@@ -165,7 +172,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
     </copy>
     ```
 
@@ -174,7 +181,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
     </copy>
     ```
 
@@ -183,7 +190,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
     </copy>
     ```
 
@@ -192,7 +199,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint
     ```
     <copy>
-    https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
     </copy>
     ```
 
