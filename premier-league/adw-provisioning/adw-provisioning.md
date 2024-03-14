@@ -38,16 +38,16 @@ To complete this lab, you need to have the following:
       - Display name: `PL`
       - Database name: `PL`
       - Choose a workload type: `Data Warehouse`
-      - Choose a deployment type: `Shared Infrastructure`
+      - Choose a deployment type: `Serverless`
 
 4. Fill the next part of the provisioning form with the following values.
 
    ![ADW Form 2](images/adw-form-2.png)
 
       - Choose database version: `19c`, if your region has 21c it will equally work.
-      - OCPU count: `1` or default value.
+      - ECPU count: `2` or default value.
       - Storage (TB): `1` or default value.
-      - OCPU auto scaling: `on` or default value.
+      - Compute auto scaling: `on` or default value.
       - Storage auto scaling: Leave at default value.
 
 5. Fill the last part of the provisioning form with the following values.
