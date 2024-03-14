@@ -25,7 +25,7 @@ In this lab, you will:
 
 1. **Download** the file that contains the data that we'll use in our analysis:
 
-   **Download SailGP data file [sailgp\_sgp\_strm\_pivot.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/sailgp_sgp_strm_pivot.csv)**
+   **Download SailGP data file [sailgp\_sgp\_strm\_pivot.csv](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/developer-library/sailgp_sgp_strm_pivot.csv)**
 
    Save the file on your local machine. Make sure that the file is saved with extension `.csv`.
 
