@@ -134,7 +134,8 @@ workbook with the updated Sample Sales subject area.
   ![Deploy](./images/deploy.png)
 
 3. Go back to the Oracle Analytics Cloud homepage and create a new workbook with the **Samples Sales** Subject Area. Create a new visualization with the following columns to validate this lesson:
-  >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
+
+    >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
 
     * Time.Per Name Month
     * Time.Per Name Year

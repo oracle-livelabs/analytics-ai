@@ -75,6 +75,10 @@ In this section, you rename logical table sources and view column mapping to phy
 7. In the Logical Layer, double-click **F1 Revenue**, click **Sources**, and then rename the F1 Revenue logical table source to **LTS1 Revenue**.
 	![Rename F1 Revenue column to LTS1 Revenue](./images/f1-revenue-lts1-revenue.png)
 
+8. Scroll down to **Data Granularity** and set Defined by to **Detail**.
+
+	![Data Granularity](./images/detail-gran.png)
+
 8. Click **Save**.
 
 ## Task 3: Create Presentation Layer Objects
