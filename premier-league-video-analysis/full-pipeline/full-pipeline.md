@@ -162,7 +162,7 @@ This video contains a fragment of a match between Liverpool and Tottenham Hotspu
    And execute the following:
 
    ```
-   <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/U4c38N1vkSezFW9TYqt6yfs70atBdeReiQA009FuMYxkN6ycSHK7J4K4iSYCvh1L/n/c4u04/b/livelabsfiles/o/ai-ml-library/video2.mp4 -O video2.mp4</copy>
+   <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/video2.mp4 -O video2.mp4</copy>
    ```
    
 2. You can download the new coordinate pairs file from [here.](./files/coordinate_pairs2.json)
