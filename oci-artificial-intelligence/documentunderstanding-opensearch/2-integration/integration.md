@@ -65,7 +65,7 @@ openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
 ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
 ````
 
-Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
+*Double-check* that the private\_key\_rsa_format.pem is really in RSA format like this:
 
 ```
 -----BEGIN RSA PRIVATE KEY-----

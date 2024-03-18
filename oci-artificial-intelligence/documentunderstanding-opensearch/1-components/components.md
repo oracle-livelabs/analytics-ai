@@ -14,7 +14,17 @@ Estimated time: 50 min
 - An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
 - Cookies must be enabled in your browser to use the OCI console code editor in this lab
 - Choose which web browser to use before you start. There is an option in a later lab to download a github repo to your local computer using the OCI Console Cloud Shell. Some users have experienced a bug attempting to do this with the Firefox Browser Extended Support Release (ESR). The Chrome browser is an alternative in this case.
+- Check that your tenancy has access to the Chicago Region
+    - For Paid Tenancy
+        - Click on region on top of the screen
+        - Check that the Chicago Region is there (Green rectangle)
+        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
+        - Click on the US MidWest (Chicago)
+        - Click Subscribe
 
+    ![Chicago Region](images/chicago-region.png)
+
+    - For Free Trial, the home region should be Chicago
 
 ## Task 1: Prepare to save configuration settings
 
@@ -106,8 +116,8 @@ Note: If you have just created your Cloud Account, it is possible that you need 
         ![Create Integration](images/opensearch-oic2.png)
 4. Wait about 3 mins until **oic** state is *Active*.
 1. Click *oic* in the list of integration instances. 
-5. In the *Integration instance details*, click **Service Console**. It will open a new tab that you will use in the next Task.
-1. In the *Integration instance details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
+5. In the *Integration Instance Details*, click **Service Console**. It will open a new tab that you will use in the next Task.
+1. In the *Integration Instance Details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
 1. Click **Enable** next to *Visual Builder* to enable it. The **oic** instance status will change to *updating*.
     ![Visual Builder Enable Integration](images/opensearch-oic3.png)
 
