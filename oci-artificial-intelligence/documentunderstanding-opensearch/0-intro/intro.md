@@ -19,7 +19,7 @@ Estimated Workshop Time: 90 minutes
 
 ### Architecture
 
-![Architecture](images/opensearch-architecture.png)
+![Architecture](images/opensearch-architecture-genai.png)
 
 It works like this:
 1. A document is uploaded in the Object Storage by the user
@@ -37,13 +37,13 @@ The file types supported by the OIC project are hard-coded into different routes
 
 - If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
 
-- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is classified using Language Service and then it is indexed into OpenSearch.
+- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is indexed into OpenSearch.
 
 - If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech and the json output is processed as described above
 
 - If the file has the extension **.tif** or **.pdf**, it is processed by OCI Document Understanding and the json output is processed as described above
 
-- All other file types are sent to the OCI Function with Tikka parser and extracted text is classified using OCI Language and then indexed into OpenSearch
+- All other file types are sent to the OCI Function with a document parser and extracted text is classified using OCI Language and then indexed into OpenSearch
 
 
 
