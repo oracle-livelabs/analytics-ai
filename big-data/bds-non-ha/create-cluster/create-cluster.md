@@ -101,7 +101,7 @@ Create the cluster as follows:
 5. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
     * **Choose Instance Type:** **``Virtual Machine``**.
-    * **Choose Master/Utility Node Shape:** **`VM.Standard2.4`**.
+    * **Choose Master/Utility Node Shape:** **`VM.Standard.E4.Flex`**.
     * **Block Storage size per Master/Utility Node (in GB):** **`150 GB`**.
     * **Number of Master & Utility Nodes** _Read-Only_ **:** Since you are creating a non-HA cluster, this field shows **2** nodes: **1** Master node and **1** Utility node.
     > **Note:** For an HA cluster, this field would show **4** nodes: **2** Master nodes and **2** Utility nodes.
@@ -113,7 +113,7 @@ Create the cluster as follows:
 6. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
     * **Choose Instance Type:** **`Virtual Machine`**.
-    * **Choose Worker Node Shape:** **`VM.Standard2.1`**.
+    * **Choose Worker Node Shape:** **`VM.Standard.E4.Flex`**.
     * **Block Storage size per Worker Node (in GB):** **`150 GB`**.
     * **Number of Worker Nodes:** **`3`**. This is the minimum allowed for a cluster.
 

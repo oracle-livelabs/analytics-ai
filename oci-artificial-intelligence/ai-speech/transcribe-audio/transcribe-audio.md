@@ -112,8 +112,10 @@ Under documentation you can find helpful links relevant to OCI speech service
 
     <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names
 
-    <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
-        ![Job details selection page](./images/basic-information-page.png " ")
+    <strong>Configure transcription:</strong> Choose the model model type and the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
+        ![Job details selection page](./images/basic-information-page-1.png " ")
+    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model.
+        ![Model selection page](./images/basic-information-page-2.png " ")
 
     Filters allow you to remove, tag or mask certain words from the transcription, such as profanity
         ![Filters selection page](./images/filters.png " ")

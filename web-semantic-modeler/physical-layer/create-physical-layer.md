@@ -45,7 +45,7 @@ In this section, you create an empty semantic model.
 
 	![Start with empty model](./images/empty-model.png)
 
-4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select Oracle ADW and click **Save**.
+4. In the **MyDatabase** tab, click **General**. In **Name**, enter <code>MySampleSalesDatabase</code>. For **Database Type**, select **Oracle Autonomous Data Warehouse** and click **Save**.
 
 	![DB name](./images/db-name.png)
 
@@ -181,13 +181,18 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 
 	![D2 columns](./images/d2-columns.png)
 
-3. Click **Joins** to view the joins to the F1 Revenue table.
+3. Click **Preview** to see a sample of the data in the columns.
+
+	![Preview D2 table](./images/preview-d2.png)
+
+4. In the Physical Layer, double-click the **F1 Revenue** table.
+
+	![F1 Revenue](./images/dc-f1-revenue.png)
+
+5. Click **Joins** to view the joins to the F1 Revenue table.
 
 	![View F1 joins](./images/view-f1-joins.png)
 
-4. Click **Preview** to see a sample of the data in the columns.
-
-	![Preview D2 table](./images/preview-d2.png)
 
 ## Learn More
 * [What Is a Semantic Model?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/what-is-semantic-model.html)
@@ -196,5 +201,5 @@ In this section, you can review columns, joins, and data in the Physical Layer t
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* **Contributors** - Pravin Janardanam, Shounak Ganguly, Gabrielle Prichard
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024

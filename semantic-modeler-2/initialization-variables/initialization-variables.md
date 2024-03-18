@@ -59,6 +59,8 @@ In this section, you create variables that are used in the initialization block.
     ![Current day](./images/currentday.png)
 4. Click **Add Variable**. Enter <code>CurrentMonth</code> to replace Current PeriodsNew Variable_ 1 in **Name**.
 
+  ![Current Month](./images/currentmonth.png)
+
 5. Click **Add Variable**. Enter <code>CurrentYear</code> to replace Current PeriodsNew Variable_ 1 in **Name**. Click **Save**.
     ![New variables](./images/new-variables.png)
 
@@ -73,11 +75,46 @@ In this section, you create variables that are used in the initialization block.
 4. Click **Test Query**.
     ![Test query](./images/test-query.png)
 
+## Task 4: Deploy and Validate the Changes
+
+In this section, you run the consistency checker, deploy the updated semantic model, and create a
+workbook with the updated Sample Sales subject area.
+
+1. Click the **Consistency Checker** and select **Include warnings**.
+
+	![Click consistency checker](./images/errors-and-warnings.png =400x*)
+
+2. Oracle Analytics didn't find any errors in the Sample Sales semantic model. In the semantic model, click the **Page Menu** icon, and select **Deploy**. The message, **"Deploy successful"** appears in the status bar when the deployment process is complete.
+
+  ![Deploy](./images/deploy.png)
+
+3. Go back to the Oracle Analytics Cloud homepage and create a new workbook with the **Samples Sales** Subject Area. Add the following fields to a new visualization to validate this lesson:
+
+    >**Note**: If you do not see the columns and your model deployment was successful, sign out and sign back in. If the columns are still not available, wait a few moments before trying again.
+
+    * Time.Per Name Year
+    * Time.Per Name Month
+    * Time.Calendar Date
+    * Base Facts.Revenue
+
+  ![Visualize](./images/visualize.png)
+
+4. Now, add an expression filter to test out your variable. Click the **Filter Bar Menu** and select **Create Expression Filter**.
+
+  ![Expression Filter](./images/expression-filter.png)
+
+5. Enter the expression from the screenshot. Click **Validate** and **Apply**.
+
+  ![Save](./images/save-expression.png)
+
+You may now **proceed to the next lab**
+
+
+
 ## Learn More
 * [Test Initialization Blocks](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-configure-initialization-blocks.html#GUID-3CDC1C17-01F1-4EAC-BBCB-757487820ED9)
 
 ## Acknowledgements
-* **Author** - Desmond Jung, Cloud Engineer, NACI
-* **Contributors** - Pravin Janardanam, Nagwang Gyamtso
-* **Last Updated By/Date** - Desmond Jung, July 2023
-
+* **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
+* **Contributors** - Pravin Janardanam, Gabrielle Prichard, Lucian Dinescu, Desmond Jung
+* **Last Updated By/Date** - Nagwang Gyamtso, March, 2024

@@ -103,7 +103,7 @@ Note: The steps going forward will have to followed in a Windows operating syste
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
-* **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, August 2021
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam, Kalpana Singh
+* **Last Updated By/Date** - Kalpana Singh, Senior Solution Engineer, Analytics, NACI, March 2023
 
 

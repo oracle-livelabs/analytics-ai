@@ -43,7 +43,7 @@ In this task, we'll create 2 buckets one for storing source files with reviews a
 
 For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
-1. 	Download this [Dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip ) to your local machine. This file contains hotel reviews for a handful of hotels, and we will use that as our data source. We will perform sentiment analysis using Data Integration and AI Services.
+1. 	Download this [Dataset](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip ) to your local machine. This file contains hotel reviews for a handful of hotels, and we will use that as our data source. We will perform sentiment analysis using Data Integration and AI Services.
 
 2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 

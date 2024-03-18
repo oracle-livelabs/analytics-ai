@@ -61,7 +61,7 @@ Performing analysis requires the laborious curation, combining, organizing, and 
 
    ![Create Data Flow](./images/createdataflow.png " ")
 
-2. Choose the **Data Set** then click **Add** .In our case we pick the Hotel Reviews Data that we downloaded on our local machine. [Dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip )
+2. Choose the **Data Set** then click **Add** .In our case we pick the Hotel Reviews Data that we downloaded on our local machine. [Dataset](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip )
 
    ![Add Dataset](./images/adddataset.png " ")
    
