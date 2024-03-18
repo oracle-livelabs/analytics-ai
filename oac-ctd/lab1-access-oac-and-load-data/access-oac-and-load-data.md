@@ -74,7 +74,7 @@ NOTE that you probably won’t have the same list of projects and datasets.
 
 ## **Task 3**: Load an excel file
 
-Donwload the file: [OAC\_TD\_Expenses.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
+Donwload the file: [OAC\_TD\_Expenses.xlsx](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/OAC_TD_Expenses.xlsx)
 
 1. Click on “Create”
 

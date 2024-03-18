@@ -36,7 +36,7 @@ Estimated Time: 20 minutes
    And execute the following:
 
    ```
-   <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-video4.mp4 -O video.mp4</copy>
+   <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-video4.mp4 -O video.mp4</copy>
    ```
 
 4. Open the notebook "pipeline.ipynb" and inspect it.
@@ -147,7 +147,7 @@ By default, the database tracking is turned off in the notebook. Optionally, you
     Watch the video with your favorite video player.
 
     If you had any problems creating the video, you can also download it here:
-    [Augmented video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-soccer_out.avi)
+    [Augmented video](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/pl-analysis-soccer_out.avi)
 
 ## Task 4: (Optional) Run the notebook for another video
 
@@ -162,7 +162,7 @@ This video contains a fragment of a match between Liverpool and Tottenham Hotspu
    And execute the following:
 
    ```
-   <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/U4c38N1vkSezFW9TYqt6yfs70atBdeReiQA009FuMYxkN6ycSHK7J4K4iSYCvh1L/n/c4u04/b/livelabsfiles/o/ai-ml-library/video2.mp4 -O video2.mp4</copy>
+   <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/video2.mp4 -O video2.mp4</copy>
    ```
    
 2. You can download the new coordinate pairs file from [here.](./files/coordinate_pairs2.json)

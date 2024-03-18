@@ -1,7 +1,21 @@
 import oci
-from oci.config import from_file
+ 
+def getSigner(profile_name):
+    config = oci.config.from_file(profile_name=profile_name)
+    token_file = config['security_token_file']
+    token = None
+    with open(token_file, 'r') as f:
+        token = f.read()
+    private_key = oci.signer.load_private_key_from_file(config['key_file'])
+    signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+    return config, signer
+ 
+def getSpeechClient():
+    config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    return ai_client
 
-ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
+ai_client = getSpeechClient()
 
 # Give your job related details in these fields
 SAMPLE_DISPLAY_NAME = "<job_name>" # Name of the job

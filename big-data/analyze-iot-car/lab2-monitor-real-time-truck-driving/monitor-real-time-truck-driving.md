@@ -260,11 +260,49 @@ cd /tmp/source/bin
 ./send-data.sh
 </copy>
 ```
+This send-data.sh script will generate a batch of data and send all of them to kafka. After that it will send 3 cars which ids are 10,11,12 realtime data every 20 seconds to kafka. 
+You should keep this terminal running until the process finished as below:
+![send_data_process](images/02_lab2_task2_step13.png)
+
 
 14. Get back to OAC page. Click **refresh** button to check car position. You can refresh it several times, then you will find out that the car is moving.
     You can also change Background Map if you want. Click **Properties**, select the **map**.
 
 ![save workbook](images/02_lab2_task2_step14.png)
+
+## Task3: Monitor flink jobs in Flink Dashboard
+
+1. Map the Private IP Address of the First Master Node to a Public IP Address.
+
+Refer to lab4 in [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
+
+In this example, we replaced the ip-address with the private IP address of our first Master node like below.
+![get_first_master_node_IP](images/02_lab2_task3_step1.png)
+
+2. Create Ingress Security Rules (and Open Ports) for Yarn. In this step, you will add ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Yarn on port **`8088`**.
+Refer to Lab1->Task1 and steps 4-7. And you need to replace the **DESTINATION PORT RANGE** with **`8088`**.
+Here are ingress rules are added to the **Default Security List**.
+![add_security_rules_for_yarn](images/02_lab2_task3_step2.png)
+
+3. Get the application id of flink.
+In Task1 when you start flink session you will get information about the application as below:
+![get_flink_application_id](images/02_lab2_task3_step3.png)
+copy the application id in the red circle. and remember that is you flink application id.
+
+4. Open Flink Dashboard in you browser. 
+link:http://{mn0-ip}:8088/proxy/{flink-application-ip}/#/overview
+
+Replace the **{mn0-ip}** with the public IP Address of First Master Node you were just created in step1.
+And replace the {flink-application-ip} with application id of flink where you get in step3
+
+This is flink dashboard link sample:http://138.2.85.27:8088/proxy/application_1697598756447_0008/#/overview
+
+the Flink Dashboard will be as below:
+![flink_dashboard_overview](images/02_lab2_task3_step4.png)
+
+5. You can monitor or manager the flink jobs.
+![monitor_flink_jobs](images/02_lab2_task3_step5.png)
+
 
 You may now **proceed to the next lab**.
 
