@@ -33,21 +33,17 @@ Estimated Time: 10 minutes
 
    ![ADW Menu](images/open-db.png)
 
-3. Open **DB Actions**.
+3. Open **DB Actions** and select Database Users from the drop down list.
 
    ![pic1](images/open-actions.png)
 
    If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user.
 
-4. Choose **Administration** > **Database Users**.
-
-   ![pic1](images/select-db-users.png)
-
-5. Find the **PL** user, then select edit
+4. Find the **PL** user, then select edit
 
    ![pic1](images/edit-pl-user.png)
 
-6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the **PL** user to use the Machine Learning functionality of Autonomous Data Warehouse. Sign out now as admin user.
+5. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the **PL** user to use the Machine Learning functionality of Autonomous Data Warehouse. Sign out now as admin user.
 
    ![pic1](images/add-oml-pl-user.png)
 
