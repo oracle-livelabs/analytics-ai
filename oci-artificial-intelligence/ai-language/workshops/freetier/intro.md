@@ -51,7 +51,7 @@ OCI Language now provides an API to automatically translate text across 21 langu
 
 ### **Jobs**
 
-OCI Language now provides an API to create async jobs.
+OCI Language now provides an API to create async jobs that enables you to process large volumes of text and translate documents in a batch mode.
 
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 

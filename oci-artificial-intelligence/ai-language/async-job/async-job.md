@@ -15,6 +15,7 @@ In this lab, you will:
 ### Prerequisites
 
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
+- Completed [Lab 2](?lab=custom-model#Task2:CreateCustomNERModel) to create a custom Named Entity Recognition model.
 - Familiar with OCI object storage to upload data.
 
 ## **Policy Setup**
@@ -68,7 +69,7 @@ Follow these steps to configure required policies.
 Follow below steps to create a job.
 
 1. **Upload the training data to Object Storage**:
-    1. Download and extract the hotel dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
+    1. Download and extract the hotel dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
 
     2. Upload training data to object storage:
         - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
@@ -96,7 +97,7 @@ Follow below steps to create a job.
 
     ![Pretrained language detection](./images/pretrained-language-detection.png " ")
 
-7. **Specify job input data to run the job**: Choose the data type and bucket name in which the hotel dataset was uploaded in step 1 and from which the job will take input.
+7. **Specify job input data to run the job**: Choose the data type and bucket name in which the hotel.csv uploaded in step 1.
 
     ![job-input-data](./images/job-input-data-hotel.png " ")
 
@@ -108,7 +109,7 @@ Follow below steps to create a job.
 
     ![job-output-data](./images/succeeded-job.png " ")
 
-10. **Review the job output** : The job result can be downloaded once it has been successfully completed by clicking the Output file location link in the job details page and searching for the folder with job OCID.
+10. **Access the job output** : Output files created by the job can be accessed once it has been successfully completed by navigating to the Output file location. Click on Output file location link to navigate to output folder, then navigate to the folder named same as  job ocid to access the output files.
 
     ![job-output-result](./images/succeeded-job-result.png " ")
 
@@ -127,66 +128,90 @@ Follow below steps to create a job.
 
         For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
-2. **Specify job properties**: Specify job name, compartment details and job description.
+2. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services.
 
-3. **Create a custom model from [Lab 2](?lab=custom-model#Task3:CreateCustomClassificationModel)**
+    ![OCI Language Screen](./images/navigate-to-ai-language.png " ")
 
-4. **Specify model type to run the job**: Choose Named entity recognition for model type.
+3. Select jobs on the left hand side of the console.
+
+    ![Job List](./images/job-list.png " ")
+
+4. The Create Job button navigates user to a form where they can specify the details to create an async job.
+
+    ![Create Job Panel](./images/create-job.png " ")
+
+5. **Specify job properties**: Specify job name, compartment details and job description.
+
+6. **Specify model type to run the job**: Select the custom Named Entity Recognition model you created in [Lab 2](?lab=custom-model#Task2:CreateCustomNERModel).
 
     ![async-job-custom-model](./images/async-job-custom-model.png " ")
 
-5. **Specify custom model details**: Select the model created in **Step 3**. You can also specify a existing model endpoint optionally and click Next.
+7. **Specify custom model details**: Select the model created in **Step 3**. You can also specify a existing model endpoint optionally and click Next.
 
     ![async-job-custom-model-details](./images/async-job-custom-model-details.png " ")
 
-6. **Specify job input data to run the job**: Select the data type and choose the bucket created in previous step from which the job will take input.
+8. **Specify job input data to run the job**: Select the data type and choose the bucket created in previous step from which the job will take input.
 
     ![job-input-data](./images/job-input-data-txtc.png " ")
 
-7. **Specify job output data to run the job**: Select the option to store job result and click Next.
+9. **Specify job output data to run the job**: Select the option to store job result and click Next.
 
     ![job-output-data](./images/job-output-data.png " ")
 
-8. **Create job**: Click on Create Job button to create an async job. Wait until the job execution is successful and job is in *SUCCEEDED* state.
+10. **Create job**: Click on Create Job button to create an async job. Wait until the job execution is successful and job is in *SUCCEEDED* state.
 
     ![job-output-data](./images/succeeded-job.png " ")
 
-9. **Review the job output** : The job result can be downloaded once it has been successfully completed by clicking the Output file location link in the job details page and searching for the folder with job OCID.
+11. **Access the job output** : Output files created by the job can be accessed once it has been successfully completed by navigating to the Output file location. Click on Output file location link to navigate to output folder, then navigate to the folder named same as  job ocid to access the output files.
 
     ![job-output-result](./images/succeeded-job-result.png " ")
+
+
 
 ## Task 3: Create an async job for translating documents
 
 1. **Upload the training data to Object Storage**:
     1. Download the translation dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-documents-for-translation.zip).
         - Extract the zip file contents into a directory.
-    2. Upload the training dataset files to object storage:
+    2. Upload the files to object storage:
         - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-        - Create bucket and upload Custom NER offerletter data extracted above.
+        - Create bucket and upload extracted files OCW AI Presentation.pptx and Oracle Cloud Infrastructure Overview.docx to object storage.
                 ![Upload Objects](./images/upload-data.png " ")
 
         For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
 
-2. **Specify job properties**: Specify job name, compartment details and job description.
+2. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language Service item under AI services.
 
-3. **Specify model type to run the job**: Select Pretrained language translation as the feature type and specify the source and target languages.
+    ![OCI Language Screen](./images/navigate-to-ai-language.png " ")
+
+3. Select jobs on the left hand side of the console.
+
+    ![Job List](./images/job-list.png " ")
+
+4. The Create Job button navigates user to a form where they can specify the details to create an async job.
+
+    ![Create Job Panel](./images/create-job.png " ")
+
+5. **Specify job properties**: Specify job name, compartment details and job description.
+
+6. **Specify model type to run the job**: Select Pretrained language translation as the feature type and specify the source and target languages.
 
     ![async-job-document-translation](./images/async-job-document-translation.png " ")
 
-4. **Specify job input data to run the job**: Select the bucket created in previous step and data file from which the job will take input.
+7. **Specify job input data to run the job**: Select the bucket created in previous step and file that was uploaded.
 
     ![job-input-data](./images/document-translation-input-data.png " ")
 
-5. **Specify job output data to run the job**: Select the option to store job result and click Next.
+8. **Specify job output data to run the job**: Select the option to store job result and click Next.
 
     ![job-output-data](./images/job-output-data.png " ")
 
-6. **Create job**: Click "Create Job" and this will kick off the process. Wait until the job execution is successful and job is in *SUCCEEDED* state.
+9. **Create job**: Click "Create Job" and this will kick off the process. Wait until the job execution is successful and job is in *SUCCEEDED* state.
 
     ![job-output-data](./images/succeeded-job.png " ")
 
-7. **Review the job output** : The job result can be downloaded once it has been successfully completed by clicking the Output file location link in the job details page and searching for the folder with job OCID.
+10. **Access the job output** : Output files created by the job can be accessed once it has been successfully completed by navigating to the Output file location. Click on Output file location link to navigate to output folder, then navigate to the folder named same as  job ocid to access the output files.
 
     ![job-output-result](./images/succeeded-job-result.png " ")
 
@@ -303,7 +328,7 @@ print("deleteJob ", delete_job.data)
 
 Download [code](./files/async_job_python_sdk.py) file and save it your directory.
 
-#### 2. **Python code to create document translation**
+#### 2. **Python code to create document translation job**
 
 ```Python
 <copy>
