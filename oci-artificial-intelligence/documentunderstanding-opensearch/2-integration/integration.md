@@ -65,7 +65,7 @@ openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
 ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
 ````
 
-*Double-check* that the private\_key\_rsa_format.pem is really in RSA format like this:
+Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -112,15 +112,15 @@ We start with the public connections first because these don't depend on compone
 
 1. Click the **edit** icon on the same row as *RestGenerativeAI*
 
-1. Copy the Generative AI endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/) . Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_GENAI\_URL##* below.
+1. Copy the Generative AI endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/) . Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_GENAI\_URL##* below.
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
     - Connection URL = *##AI\_GENAI\_URL##*
         - ex: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-    - Security policy = * OCI Signature Version 1*
-    - Tenancy OCID = ##TENANCY_OCID##
-    - User OCID = ##USER_OCID##
-    - Private KEY = ##PRIVATE_KEY_RSA_FORMAT##
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
     - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
@@ -356,6 +356,22 @@ This is an optional test you can run with more sample files. If you do this test
 
 **You may now proceed to the [next lab.](#next)**
 
+## Known issues
+
+1. When creating the connection, the Test of the connection fails.
+
+    Solution: If the connection is for an OCI Servic (ex: OCI Function, AI Vision, ....)
+    
+    OLD:  
+    - Security policy =*OCI Service Invocation*
+    
+    NEW:   
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
+    - FingerPrint = ##FINGERPRINT##
+    - Access Type = *Public gateway*
 
 ## Acknowledgements
 
