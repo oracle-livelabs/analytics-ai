@@ -152,6 +152,8 @@ We start with the public connections first because these don't depend on compone
 
 1. Copy the OCI Document Understanding REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/](https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_DOC\_URL##* below.
 
+    If "Document Understanding" is not available in your region, see the work-around in *Known issues* below. 
+
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
     - Connection URL = *##AI\_DOC\_URL##*
@@ -360,8 +362,12 @@ This is an optional test you can run with more sample files. If you do this test
 
 1. When creating the connection, the Test of the connection fails.
 
-    Solution: If the connection is for an OCI Servic (ex: OCI Function, AI Vision, ....)
-    
+```
+Unable to test connection RestVisionAI_1711400081.
+    {"detail":"","status":"HTTP 500 Internal Server Error","title":"Operation [testConnection] failed: io.micronaut.http.client.exceptions.HttpClientErrorDecoder$1","type":"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1"}
+```
+
+    Solution: If the connection is for an OCI Service (ex: OCI Function, AI Vision, ....), use the Security policy *OCI Signature Version 1*
     OLD:  
     - Security policy =*OCI Service Invocation*
     
@@ -372,6 +378,14 @@ This is an optional test you can run with more sample files. If you do this test
     - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
     - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
+
+2. Document Understanding is not available in my region
+
+    Currently (March 2024), "Document understanding" is not available in some regions (ex: Chicago). 
+    
+    If it is your case:  
+    - Import the OIC package "oic/chicago/OPENSEARCH_OIC_CHICAGO.par" instead. 
+    - Use any other region to configure the "Document Understanding" rest endpoint (ex: ashburn region) 
 
 ## Acknowledgements
 
