@@ -56,7 +56,7 @@ print("create_job_output ", create_job_output_pii.data)
 
 # Create async job for custom Text classification
 
-endpoint_id = <ENDPOINT_ID> #TODO Specify your endpointId here
+endpoint_id = <ENDPOINT_ID> #TODO Specify your endpointId here (optional)
 model_id = <MODEL_ID> #TODO Specify your modelId here
 model_metadata_details_custom_txtc = oci.ai_language.models.ModelMetadataDetails(model_type="TEXT_CLASSIFICATION",language_code='en',model_id=model_id)
 
@@ -67,7 +67,7 @@ print("create_job_output ", create_job_output_custom_txtc.data)
 
 # Create async job for custom Named entity recognition
 
-endpoint_id = <ENDPOINT_ID> #TODO Specify your endpointId here
+endpoint_id = <ENDPOINT_ID> #TODO Specify your endpointId here (optional)
 model_id = <MODEL_ID> #TODO Specify your modelId here
 model_metadata_details_custom_ner = oci.ai_language.models.ModelMetadataDetails(model_type="NAMED_ENTITY_RECOGNITION",language_code='en',endpoint_id=endpoint_id,model_id=model_id)
 
