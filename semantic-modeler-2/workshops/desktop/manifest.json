@@ -24,7 +24,7 @@
         },
         {
             "title": "Lab 2: Manage Logical Table Sources",
-            "filename": "../../manage-logical-table/manage-logical-table.md"
+            "filename": "../../manage-logical-table-sources/manage-logical-table.md"
         },
         {
             "title": "Lab 3: Create Logical Hierarchies",
@@ -36,11 +36,11 @@
         },
         {
             "title": "Lab 5: Create Ragged and Skipped Level Hierarchies",
-            "filename": "../../skipped-and-ragged-hierarchies/skipped-and-ragged-hierarchies.md"
+            "filename": "../../create-skipped-and-ragged-hierarchies/skipped-and-ragged-hierarchies.md"
         },
         {
             "title": "Lab 6: Create Parent-Child Hierarchies",
-            "filename": "../../parent-child-hierarchies/parent-child-hierarchies.md"
+            "filename": "../../parent-child-hierarchy/parent-child-hierarchies.md"
         },
         {
             "title": "Lab 7: Create Aggregate Tables",

@@ -14,7 +14,17 @@ Estimated time: 50 min
 - An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
 - Cookies must be enabled in your browser to use the OCI console code editor in this lab
 - Choose which web browser to use before you start. There is an option in a later lab to download a github repo to your local computer using the OCI Console Cloud Shell. Some users have experienced a bug attempting to do this with the Firefox Browser Extended Support Release (ESR). The Chrome browser is an alternative in this case.
+- Check that your tenancy has access to the Chicago Region
+    - For Paid Tenancy
+        - Click on region on top of the screen
+        - Check that the Chicago Region is there (Green rectangle)
+        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
+        - Click on the US MidWest (Chicago)
+        - Click Subscribe
 
+    ![Chicago Region](images/chicago-region.png)
+
+    - For Free Trial, the home region should be Chicago
 
 ## Task 1: Prepare to save configuration settings
 
@@ -26,10 +36,26 @@ Estimated time: 50 min
     ---------------------
     COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
     OIC_OCID=(SAMPLE) ocid1.integrationinstance.oc1.aaaaaaaaa
-    OIC_APPID=(SAMPLE) 123456789012345678AABBCC_APPID
-    OIC_CLIENT_ID=(SAMPLE) AABBCCDDEEFF1234567890_APPID
-    OIC_CLIENT_SECRET=(SAMPLE) 123$45678$12234
-    OIC_SCOPE=(SAMPLE) https://1234567890.integration.us-phoenix-1.ocp.oraclecloud.com:443/ic/api/
+    OIC_APPID=(SAMPLE) ABC12345678_APPID
+    
+    TENANCY_OCID = (SAMPLE) ocid1.tenancy.oc1..amaaaaaaaa
+    USERNAME= (sample) john.doe@example.com
+    USER_OCID = (SAMPLE) ocid1.user.oc1..amaaaaaaaa
+    PRIVATE_KEY = (SAMPLE) file private_key.pem
+
+    -----BEGIN PRIVATE KEY-----
+    AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9sdfhkjdhf
+    ...
+    -----END PRIVATE KEY-----
+
+    PRIVATE_KEY_RSA_FORMAT = (SAMPLE) file private_key_rsa_format.pem
+
+    -----BEGIN RSA PRIVATE KEY-----
+    ABCDEpAIBAAKCAQEAxHbqmTFASn48FY8mVtVZoUUE5iixGFpcN6JSdHHaxtkqTbx2
+    ...
+    -----END RSA PRIVATE KEY-----
+
+    FINGERPRINT = (SAMPLE) aa:aa:aa:98:ac:84:96:f5:a8:aa:aa:aa:aa:aa:aa:a
 
     Terraform Output
     ----------------
@@ -66,6 +92,10 @@ You can
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/opensearch-compartment2.png)
+2. When the compartment is created copy the compartment ocid ##COMPARTMENT_OCID## and put it in your notes
+    - Give a name: ***oci-starter***
+    - Then again: ***Create Compartment***
+    ![Create Compartment](images/opensearch-compartment2.png)    
 
 ## Task 3: Create an Oracle Integration instance
 
@@ -94,22 +124,7 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 
 1. Continue to next task. You do not have to wait for Visual Builder to be installed before continuing.
 
-## Task 4: Create an Agent Group
-
-To communicate with OpenSearch in the private network, it is necessary to install the OIC agent on the compute instance.
-
-1. Go to the OIC console tab that you opened just above
-2. Create the Agent Group using the following steps:
-    1. On the left menu, choose *Design*
-    1. Then *Agents* 
-    1. Click the *Create* button
-    1. Name: *OPENSEARCH\_AGENT\_GROUP* 
-    1. Identifier: *OPENSEARCH\_AGENT\_GROUP*
-    1. Then *Create*
-    ![Create Agent Group](images/opensearch-oic3-agent-group.png)
-
-
-## Task 5: Get the OIC AppID (ClientID)
+## Task 4: Get the OIC AppID (ClientID)
 
 To enable Resource Principal, you need the OIC APPID.
 
@@ -125,55 +140,35 @@ To enable Resource Principal, you need the OIC APPID.
     - Copy the value to your text file at *##OIC\_APPID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
     ![OIC Domain](images/opensearch-oic_appid.png)
 
-## Task 6: Get the OIC Client ID/Secret
-
-Perform a similar task to get Client ID/Secret for OIC
-
-1. Again, go the console 3-bar/hamburger menu and select 
-    1. *Identity & Security* 
-    2. *Domains*
-2. Choose the *Default (current domain)* domain
-3. On the left, choose *Oracle Cloud Services*
-4. Scroll down until that you see a name like *opensearch\_agent\_group-oic-xxx-xxxx  - Connectivity Agent OAuth Client* and **click on it**.
-5. In the Service details, look for *Client ID* under *General Information*
-    - Copy the value to your text file at *##OIC\_CLIENT\_ID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
-1. Click *Show Secret* and copy the value to your  text file at *##OIC\_CLIENT\_SECRET##*.
-    ![OIC Domain](images/opensearch-confapp1.png)
-6. Scroll further down the page to find *Resources* under *Token issuance policy*
-1. Copy the scope in the row that ends with /ic/api and paste it to your text file at *##OIC\_SCOPE##*. It will look something like https://12345678.integration.us-phoenix-1.ocp.oraclecloud.com:443/ic/api/
-    ![OIC Domain](images/opensearch-confapp2.png)
-
-## Task 7: Run a Terraform script to create the other components.
+## Task 5: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-1. In the code editor menu, click *Terminal* then *New Terminal*
-1. Run the command below in the terminal
+3. In the code editor menu, click *Terminal* then *New Terminal*
+4. Run the command below in the terminal
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
     ````
     <copy>
-    git clone https://github.com/mgueury/oci-searchlab.git
+    git clone https://github.com/mgueury/oci-genai-searchlab.git
     </copy>
     ````
-3. Edit the file *oci-searchlab/starter/env.sh*
+5. Edit the file *oci-genai-searchlab/starter/env.sh*
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
-1. In env.sh, replace the values **##OIC\_OCID##**, **##OIC_APPID##**, **##OIC\_CLIENT\_ID##**, **##OIC\_CLIENT\_SECRET##**, **##OIC\_SCOPE##** with the corresponding value from your text file.
+6. In env.sh, replace the ## with the corresponding value from your text file.
     ````
     <copy>
+    export TF_VAR_compartment_ocid="##COMPARTMENT_OCID##"
     export TF_VAR_oic_ocid="##OIC_OCID##"
-    export TF_VAR_oic_appid="##OIC_APPID##"
-    export TF_VAR_oic_client_id="##OIC_CLIENT_ID##"
-    export TF_VAR_oic_client_secret="##OIC_CLIENT_SECRET##"
-    export TF_VAR_oic_scope="##OIC_SCOPE##"
+    export TF_VAR_oic_appidd="##OIC_APPID##"
     </copy>
     ````
-1. Save your edits using File > Save
-4. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
+7. Save your edits using File > Save
+8. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
-    cd oci-searchlab/starter/
+    cd oci-genai-searchlab/starter/
     </copy>
     ```
     ```
@@ -181,9 +176,9 @@ Perform a similar task to get Client ID/Secret for OIC
     bin/gen_auth_token.sh
     </copy>
     ```
-    You should see the following in the results of the *gen_auth_token.sh* script:
-    - AUTH_TOKEN stored in env.sh
-    - TF_VAR_auth_token= 'a generated token'
+    You should see the following in the results of the *gen\_auth\_token.sh* script:
+    - AUTH\_TOKEN stored in env.sh
+    - TF\_VAR\_auth\_token='a generated token'
 
     
     ````
@@ -191,12 +186,9 @@ Perform a similar task to get Client ID/Secret for OIC
     ./build.sh
     </copy>
     ````
-5. **Please proceed to the [next lab](#next) while Terraform is running.** 
-
+9. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-
-
-6. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+10. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     --------------------------
@@ -225,43 +217,55 @@ Perform a similar task to get Client ID/Secret for OIC
 
 1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
-```
-oci_core_instance.starter_instance: Creating..
-- Error: 500-InternalError, Out of host capacity.
-  Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
-```
+    ```
+    oci_core_instance.starter_instance: Creating..
+    - Error: 500-InternalError, Out of host capacity.
+    Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
+    ```
 
-Solution:  edit the file *oci-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
-```
-OLD: variable instance_shape { default = "VM.Standard.E3.Flex" }
-NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
-```
+    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availabilty domain* to one where there are still capacity
+    ```
+    OLD: variable availability_domain_number { default = 1 }
+    NEW: variable availability_domain_number { default = 2 }
+    ```
 
-Then rerun the following command in the code editor
+    Then rerun the following command in the code editor
 
-```
-<copy>
-./build.sh
-</copy>
-```
+    ```
+    <copy>
+    ./build.sh
+    </copy>
+    ```
+
+    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.
 
 2. It happened on new tenancy that the terraform script failed with this error:
 
-```
-Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
-Suggestion: Please retry or contact support for help with service: Opensearch Cluster
-Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
-API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
-Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
-Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
-Service: Opensearch Cluster 
-Operation Name: CreateOpensearchCluster 
-```
+    ```
+    Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
+    Suggestion: Please retry or contact support for help with service: Opensearch Cluster
+    Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
+    API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
+    Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
+    Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
+    Service: Opensearch Cluster 
+    Operation Name: CreateOpensearchCluster 
+    ```
 
-In such case, just rerunning ./build.sh fixed the issue.
+    In such case, just rerunning ./build.sh fixed the issue.
 
+3. During terraform:
+    ```
+    Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
+    ```
 
+    Several persons are probably trying to install this tutorial on the same tenancy.
 
+    Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
+    ```
+    OLD: export TF_VAR_prefix="search"
+    NEW: export TF_VAR_prefix="search2"
+    ```
 
 ## Acknowledgements
 
