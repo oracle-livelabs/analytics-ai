@@ -34,7 +34,7 @@ The below steps shows ,how to create the ObjectStorage buckets. In this task we 
     
     * From the OCI Services menu, click `Storage` and then click `Buckets` under Object Storage
 
-       ![](images/OBJECT-STORAGE001.png " ")
+       ![](images/obj-storage-01.png " ")
 
     * Click `Bucket`
        ![](images/bucket.png " ")

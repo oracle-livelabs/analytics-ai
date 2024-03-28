@@ -22,7 +22,7 @@ MySQL HeatWave Lakehouse processes data in a variety of file formats, such as CS
 
 **HeatWave Architecture**
 
-  ![heatwave](images/ArchitecttureHW.png)
+  ![heatwave](images/architectturehw.png)
 
 
 ## Task 4: Objectives

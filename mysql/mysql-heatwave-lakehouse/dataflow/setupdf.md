@@ -24,7 +24,7 @@ Before you can create, manage and execute applications in Data Flow, the tenant 
 - Run Autoload to infer the schema and estimate capacity
 - Load complete T\_AGGR\_DEVICE\_PRED\_HOUR table from Object Store into MySQL HeatWave
 
-  ![architecture](images/DF_Overview1.png " ")
+  ![architecture](images/df-overview-01.png " ")
 
 ### Prerequisites
 
@@ -45,19 +45,19 @@ Before you Begin with Data Flow lab, you must have:
 
     * From the OCI Services menu, click `Storage` and then click `Buckets` under Object Storage
 
-       ![storage bucket](images/OBJECT-STORAGE001.png " ")
+       ![storage bucket](images/df-object-store01.png " ")
 
     * Click `Bucket`
-       ![navigation](images/BUCKET001.png " ")
+       ![navigation](images/df-bucket-01.png " ")
 
       **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
     * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service.
 
-      ![create bucket](images/CREATEBUCKET001.png " ")
+      ![create bucket](images/createbucket001.png " ")
 
     * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service.
-        ![dataflow warehouse](images/DATAWAREHOUSEBUCKET.png " ")
+        ![dataflow warehouse](images/df-warehouse.png " ")
 
 ## Task 2: Identity: Policy Set Up
 
@@ -70,25 +70,25 @@ We'll create a user, a group, and policies to understand the concept.
 
     * From the OCI Services menu, click `Identity and Security` and in identity click `Group`
 
-        ![groups](images/Groups001.png " ")
+        ![groups](images/df-groups001.png " ")
 
     * Create a group in your identity service called `dataflow-admin`
 
-        ![admin](images/DataflowAdminUser.png " ")
+        ![admin](images/dataflowadminuser.png " ")
 
     * Click on your new group to display it. Your new group is displayed.Add users to the groups
 
-        ![admin user](images/AddUsertoDFAdminGroup.png " ")
+        ![admin user](images/addusertodfadmingroup.png " ")
 
-        ![add users](images/AddUsers.png " ")
+        ![add users](images/addusers.png " ")
 
     * From the OCI Services menu, click `Identity and Security` and in identity click `Policies`
 
-        ![new policy](images/Policies001.png " ")    
+        ![new policy](images/policies-01.png " ")    
 
     * Create a policy called `dataflow-admin` in your `compartment` and add the following statements:
 
-       ![policy](images/CreateDFAdminPolicy.png " ")  
+       ![policy](images/createadadminpolicy.png " ")  
 
       ```
       <copy>
@@ -110,7 +110,7 @@ We'll create a user, a group, and policies to understand the concept.
       ```
     * Create a group in your identity service called dataflow-users and add users to this group.
 
-      ![group](images/DFUserGroup.png " ")
+      ![group](images/ " ")
 
     * Create a policy called dataflow-users and add the following statements:
 
