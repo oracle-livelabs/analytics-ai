@@ -13,15 +13,15 @@ Estimated Time: 75 minutes
 
 1. From the OCI services menu click **Policies** under **Identity**.
 
-    ![](images/function_040.png)
+    ![access policies](images/function_040.png)
 
 2. Make sure that the compartment you created your VCN in is selected and then click **Create Policy**.
 
-    ![](images/function_041.png)
+    ![VCN set up](images/function_041.png)
 
 3. Type "FunctionApplicationPolicies" into the name section and type "Allow functions to work" in the description section. Scroll down to the Policy statements section. Click the **+ Another Statement**.
 
-    ![](images/function_042.png)
+    ![function policies](images/function_042.png)
 
     Copy and paste the following as your first policy statement.
 
@@ -41,16 +41,16 @@ Estimated Time: 75 minutes
 
     Click **Create**.
 
-    ![](images/function_043.png)
+    ![policy list](images/function_043.png)
 
     Verify that your policy has been added to the policy list.
 
-    ![](images/function_044.png)
+    ![Policy list check](images/function_044.png)
 
 4. Next we will create our first application.
 
 5. From the OCI services menu click **Functions** under **Developer Services**.
-    ![](images/function_039.png)
+    ![fuction developer check](images/function_039.png)
 
 6. Click **Create Application** and fill out the dialog box.
 
@@ -61,15 +61,15 @@ Estimated Time: 75 minutes
 
     Click **Create**.
 
-    ![](images/function_030.png)
+    ![create function](images/function_030.png)
 
 7. Scroll down and click on **Getting Started**.
 
-    ![](images/function_045.png)
+    ![Function screen ](images/function_045.png)
 
     Scroll down until you see these commands.
 
-    ![](images/function_051.png)
+    ![Function screen ](images/function_051.png)
 
 ## Task 2: Configure and Invoke a Function
 
@@ -89,7 +89,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_019.png)
+    ![CLI installation](images/function_019.png)
 
 3. Confirm that the Fn CLI has been installed.
     ```
@@ -98,7 +98,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_020.png)
+    ![Function check](images/function_020.png)
 
 4. Next create the new Fn Project CLI context. `CONTEXT-NAME` below can be a name that you can choose. For this workshop `CONTEXT-NAME` will be test-fn.
 
@@ -107,7 +107,7 @@ Estimated Time: 75 minutes
     fn create context CONTEXT-NAME --provider oracle
     </copy>
     ```
-    ![](images/function_021.png)
+    ![Function provider](images/function_021.png)
 
 5. Specify that the Fn Project CLI is to use the new context.
 
@@ -117,7 +117,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_022.png)
+    ![function context](images/function_022.png)
 
 6. Configure the new context with the api-url endpoint to use when calling the OCI API. Replace REGION-IDENTIFIER with your region identifier.
 
@@ -127,7 +127,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_026.png)
+    ![Function URL API](images/function_026.png)
 
     *For example: fn update context api-url https://functions.us-ashburn-1.oraclecloud.com*
 
@@ -139,7 +139,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_028.png)
+    ![profile update](images/function_028.png)
 
 8. Scroll down on the **Getting Started** section of your function application. Copy and paste command 3 into the oracle cloud shell.
 
@@ -147,9 +147,9 @@ Estimated Time: 75 minutes
 
     `fn update context oracle.compartment-id [COMPARTMENT-OCID]`.
 
-    ![](images/function_046.png)
+    ![function context](images/function_046.png)
 
-    ![](images/function_025.png)
+    ![application](images/function_025.png)
 
 9. Copy and paste command 4 into the oracle cloud shell.
 
@@ -161,9 +161,9 @@ Estimated Time: 75 minutes
 
     *Note: [REGION-CODE] indicates the registry location. Region codes are listed at https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#regional-availability*
 
-    ![](images/function_047.png)
+    ![Region code](images/function_047.png)
 
-    ![](images/function_027.png)
+    ![next steps](images/function_027.png)
 
 10. Copy and paste command 6 into the oracle cloud shell.
 
@@ -173,9 +173,9 @@ Estimated Time: 75 minutes
 
     *Note: If your tenancy is federated your username will be in the format of oracleidentitycloudservice/[USERNAME].*
 
-    ![](images/function_048.png)
+    ![set up](images/function_048.png)
 
-    ![](images/function_049.png)
+    ![check the context](images/function_049.png)
 
 11. When prompted for a password paste your auth token into the shell and press enter.
 
@@ -195,7 +195,7 @@ Estimated Time: 75 minutes
     * a /src directory containing source files and directories for the streamhwrepo function*
     * a Maven configuration file called pom.xml that specifies the dependencies required to compile the function*
 
-    ![](images/function_031.png)
+    ![check](images/function_031.png)
     * Function Script for function :
     script name - func.py 
     Download file [`MYSQLLakehouse_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RPka_orWclfWJmKN3gTHfEiv-uPckBJTZ3FV0sESZ3mm3PDCQcVDCT-uM2dsJNGf/n/orasenatdctocloudcorp01/b/MYSQLLakehouse_labfiles/o/MYSQLLakehouse_labfiles.zip)
@@ -227,7 +227,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/function_032.png)
+    ![function provision](images/function_032.png)
 
     *Note: You can also Confirm that the hello-java image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**.*
 
@@ -249,7 +249,7 @@ Estimated Time: 75 minutes
 
 16. Verify "Hello World!" message is displayed.
 
-    ![](images/function_050.png)
+    ![create function](images/function_050.png)
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 
