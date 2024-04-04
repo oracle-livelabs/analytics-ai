@@ -56,14 +56,23 @@ Then, we need data about the user
 
 ![User API Keys](images/opensearch-user2.png)
 
-In your computer (NOT in cloud shell), you need to convert the PEM key to RSA format:
+In your computer, or in the bastion (NOT in cloud shell), you need to convert the PEM key to RSA format
 - Run the below command 
 - And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
 
+- If openssl is not installed on your computer, here are the instructions to do it on the bastion:
 ```
-openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
-ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
-````
+./starter.sh ssh bastion
+cat <<EOF > private_key.pem
+-----BEGIN PRIVATE KEY-----
+... <YOUR KEY HERE> ....
+-----END PRIVATE KEY-----
+EOF 
+openssl rsa -in private_key.pem -out private_key.rsa
+cat private_key.rsa
+rm private_key.pem private_key.rsa
+history -c
+```
 
 Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
 
@@ -124,24 +133,8 @@ We start with the public connections first because these don't depend on compone
     - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
-
-### 2. RestLanguageAI
-
-1. Click the **edit** icon on the same row as *RestLanguageAI*
-
-1. Copy the OCI Language REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/](https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_LANG\_URL##* below.
-
-1. Fill the Connection details:
-    - Connection Type = *REST API Base URL*
-    - Connection URL = *##AI\_LANG\_URL##*
-        - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
-    - Access Type = *Public gateway*
-
-1. **Test / Save / Save** until 100%
-
-1. Go back to the list of connections
   
+
 ### 3. Resttrigger
 
     There is no change needed here. The connection is already configured. 
@@ -233,7 +226,7 @@ We start with the public connections first because these don't depend on compone
     - Expand *Optional security*
         - Truststore = upload *oss_store.jks*
         - TrustStore password = *changeit* 
-    - Access Type = *Private Gateway*
+    - Access Type = *Private Endpoint*
     
     ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
@@ -265,7 +258,7 @@ We start with the public connections first because these don't depend on compone
     - Connection url = *##OPENSEARCH\_API\_ENDPOINT##*
         - ex: https://amamamamalllllaaac5vkwantypqqcs4bqrgqjrkvuxxghsmg7zzzzzxxxxx.opensearch.eu-frankfurt-1.oci.oraclecloud.com:9200
     - Security policy: *No Security Policy*
-    - Access Type = *Private Gateway*
+    - Access Type = *Private Endpoint*
     
     ![Connect RestOpenSearch](images/opensearch-connection-restopensearch.png)
 

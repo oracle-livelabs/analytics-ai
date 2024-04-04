@@ -144,19 +144,26 @@ To enable Resource Principal, you need the OIC APPID.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-3. In the code editor menu, click *Terminal* then *New Terminal*
-4. Run the command below in the terminal
+3. Check that the Code Editor Architecture is well X86_64.
+    - Go to Actions / Architecture
+    - Check that the current Architecture is well X86_64.
+    - If not change it to X86_64 and confirm. It will restart.
+
+        ![OIC Domain](images/opensearch-shell-architecture.png)
+
+4. In the code editor menu, click *Terminal* then *New Terminal*
+5. Run the command below in the terminal
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-genai-searchlab.git
     </copy>
     ````
-5. Edit the file *oci-genai-searchlab/starter/env.sh*
+6. Edit the file *oci-genai-searchlab/starter/env.sh*
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
-6. In env.sh, replace the ## with the corresponding value from your text file.
+7. In env.sh, replace the ## with the corresponding value from your text file.
     ````
     <copy>
     export TF_VAR_compartment_ocid="##COMPARTMENT_OCID##"
@@ -164,8 +171,8 @@ To enable Resource Principal, you need the OIC APPID.
     export TF_VAR_oic_appidd="##OIC_APPID##"
     </copy>
     ````
-7. Save your edits using File > Save
-8. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
+8. Save your edits using File > Save
+9. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
     cd oci-genai-searchlab/starter/
@@ -186,9 +193,9 @@ To enable Resource Principal, you need the OIC APPID.
     ./build.sh
     </copy>
     ````
-9. **Please proceed to the [next lab](#next) while Terraform is running.** 
+10. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-10. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+11. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     --------------------------
