@@ -274,6 +274,7 @@ To enable Resource Principal, you need the OIC APPID.
     NEW: export TF_VAR_prefix="search2"
     ```
 
+
 ## Acknowledgements
 
 - **Author**
