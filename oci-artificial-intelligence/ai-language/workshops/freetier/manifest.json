@@ -28,6 +28,11 @@
             "filename": "../../translation/translation.md"
         },
         {
+            "title": "Lab 4: Create async jobs and document translation",
+            "description": "Learn how to create async jobs and document translation using the oci console",
+            "filename": "../../async-job/async-job.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

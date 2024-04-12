@@ -49,6 +49,10 @@ Enables you to build a model to identify domain-specific entities that are uniqu
 
 OCI Language now provides an API to automatically translate text across 21 languages.
 
+### **Jobs**
+
+OCI Language now provides an API to create async jobs that enables you to process large volumes of text and translate documents in a batch mode.
+
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 
 &nbsp;
@@ -62,6 +66,7 @@ OCI Language now provides an API to automatically translate text across 21 langu
 * Learn how to analyze text using pre-trained models using OCI Console, API and SDK
 * Learn how to create and train custom models
 * Learn how to use OCI Language service to translate text using OCI Console, API and SDK
+* Learn how to use OCI Language service to create jobs using OCI Console, API and SDK
 
 ### Prerequisites:
 
@@ -81,6 +86,7 @@ OCI Language now provides an API to automatically translate text across 21 langu
   * Sahil Kalra - Oracle AI OCI Language Services
   * Rajat Chawla  - Oracle AI OCI Language Services
   * Ankit Tyagi -  Oracle AI OCI Language Services
+  * Nitish Kumar Rai - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-* Sahil Kalra - OCI Language Service, March 2022
+*  Nitish Kumar Rai - OCI Language Service, March 2024

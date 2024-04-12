@@ -229,15 +229,13 @@ To enable Resource Principal, you need the OIC APPID.
     - Error: 500-InternalError, Out of host capacity.
     Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
     ```
-
-    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availabilty domain* to one where there are still capacity
+    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
     ```
     OLD: variable availability_domain_number { default = 1 }
     NEW: variable availability_domain_number { default = 2 }
     ```
 
     Then rerun the following command in the code editor
-
     ```
     <copy>
     ./build.sh
@@ -273,7 +271,6 @@ To enable Resource Principal, you need the OIC APPID.
     OLD: export TF_VAR_prefix="search"
     NEW: export TF_VAR_prefix="search2"
     ```
-
 
 ## Acknowledgements
 
