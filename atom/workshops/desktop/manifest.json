@@ -1,0 +1,21 @@
+{
+  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+  "help": "livelabs-help_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Provision an Instance",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../provision/provision.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
