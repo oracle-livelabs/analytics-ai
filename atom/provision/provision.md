@@ -114,7 +114,7 @@ This task involves creating REST service which will be used by ODA to connect to
     ```
 5. Step 5: Click **Test Request** to make sure the connection is successful
 
-   ![API Services](images/oda_api_service_3.png) 
+   ![API Services](images/oci_rest_service_3.png) 
     
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside

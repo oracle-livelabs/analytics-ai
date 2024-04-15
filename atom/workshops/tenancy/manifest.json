@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Deploy ATOM Chatbot",
     "help": "livelabs-help_us@oracle.com",
     "tutorials": [
       {
@@ -8,7 +8,7 @@
         "filename": "../../introduction/introduction.md"
       },
       {
-        "title": "Lab 1: Provision an Instance",
+        "title": "Lab 1: Provision ODA and VBCS",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../provision/provision.md"
       },
