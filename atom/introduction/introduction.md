@@ -44,7 +44,7 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-**Authors**
+## Authors
 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
