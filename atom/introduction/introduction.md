@@ -35,12 +35,12 @@ In general, the Introduction does not have Steps.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [What Is Generative AI? How Does It Work?](https://www.oracle.com/artificial-intelligence/generative-ai/what-is-generative-ai/)
+* [What Is Retrieval-Augmented Generation (RAG)?](https://www.oracle.com/artificial-intelligence/generative-ai/retrieval-augmented-generation-rag/)
 
 ## Acknowledgements
-**Author** - * **Nitin Jain**, Master Principal Cloud Architect, NACIE
-             * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+**Author** 
+**Nitin Jain**, Master Principal Cloud Architect, NACIE
+**Abhinav Jain**, Senior Cloud Engineer, NACIE
 

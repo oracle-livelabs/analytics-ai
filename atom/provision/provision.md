@@ -4,7 +4,7 @@
 
 This lab will take you thru the step needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
 
-Estimated Time: 120 minutes
+Estimated Time: 1 hours 30 minutes
 
 ### About Oracle Digital Assistant (Optional)
 Oracle Digital Assistant delivers a complete AI platform to create conversational experiences for business applications through text, chat, and voice interfaces
@@ -187,6 +187,8 @@ This task involves creating REST service which will be used by ODA to connect to
     > **Note**
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
+
+7. Step 7: Click on the preview icon to launch ATOM chatbot and start chatting with ATOM.
 
 ## Acknowledgements
 **Author** - * **Nitin Jain**, Master Principal Cloud Architect, NACIE
