@@ -98,6 +98,15 @@ Estimated time: 20 min
 8. *Save*
 9. *Save*
 
+### 3. Compartment OCID
+1. Click on the *Web Application icon*
+2. Click on the *opensearch* application 
+3. Go to the *Variables* tab
+4. Click on the constant *compartmentId*
+5. Replace the value with your compartment Id: *##COMPARTMENT_OCID##*
+
+![Compartment ID OpenSearch](images/opensearch-vb-compartmentid.png)
+
 ## Task 3: Test the application
 
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
