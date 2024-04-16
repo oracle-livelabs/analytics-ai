@@ -16,8 +16,8 @@ Objective of this workshop is to set-up ATOM and its required OCI services:
 ![Architecture Diagram](images/arch_diagram.drawio.png)
 
 * Generative AI - Gen AI comes with pretrained foundational LLMs (Large Language Models) that are accessible via an on-demand API. No infrastructure provisioning is required for this service.
-* Digital Assistant - ODA is required to enable chatbot with it's Out Of the Box features and its integration with OCI Gen AI service
-* Visual Builder - VB can be used to embed ODA in a Web Based Application
+* Digital Assistant - ODA is required to enable chatbot with it's Out Of the Box features and its integration with OCI Gen AI service.
+* Visual Builder - VB can be used to embed ODA in a Web Based Application.
 
 In this workshop, you will learn how to: <!-- TODO: these should mostly match our labs and lab sections -->
 

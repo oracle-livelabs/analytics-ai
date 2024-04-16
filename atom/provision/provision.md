@@ -112,9 +112,22 @@ This task involves creating REST service which will be used by ODA to connect to
         }
     }
     ```
-5. Step 5: Click **Test Request** to make sure the connection is successful
+5. Step 1: Click on hamburger menu of OCI console and select **AI Services** > **Generative AI**
+
+   ![API Services](images/genai.png)
+
+   Step 2: Select Generation (under **Playground** heading)
+
+   ![API Services](images/generation_model_1.png)
+
+   Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
+   
+   ![API Services](images/generation_model_2.png)
+
+6. Step 6: Click **Test Request** to make sure the connection is successful
 
    ![API Services](images/oci_rest_service_3.png) 
+
     
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
@@ -140,11 +153,14 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![Create Channel](images/create_channel_1.png)
 
-3. Step 3: After channel creation, enable the Channel by using the toggle button (screenshot) and route it to skill imported in Task 4 (Take note of channelId for **Task 6** in later step)
-
-    ![Create Channel](images/route_skill.png)
-
-    ![Create Channel](images/skill_channel.png)
+3. Step 3: * After channel creation, enable the Channel by using the toggle button (screenshot).
+	   * Route it to skill imported in Task 4 
+   
+   ![Create Channel](images/route_skill1.png)
+   
+4. Step 4: Disable the **Client Authentication Enabled** toggle. (Take note of channelId for **Task 6** in later step).
+   
+    ![Create Channel](images/skill_channel1.png)
 
 ## Task 6: Create VBCS Instance & embed ODA skill in VBCS Application (Please directly move to Step 5 incase you already have a VBCS instance provisioned)
 
