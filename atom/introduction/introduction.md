@@ -40,7 +40,7 @@ In general, the Introduction does not have Steps.
 * [What Is Retrieval-Augmented Generation (RAG)?](https://www.oracle.com/artificial-intelligence/generative-ai/retrieval-augmented-generation-rag/)
 
 ## Acknowledgements
-**Author** 
+**Authors** 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
