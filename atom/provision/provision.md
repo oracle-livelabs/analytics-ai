@@ -121,7 +121,7 @@ This task involves creating REST service which will be used by ODA to connect to
     
 ## Task 4: Import Skill (Provided)
 
-1. Step 1: Download the skill from the url provided below
+1. Step 1: Click on the link to download the required skill (zip file): [Atom_Skill_txt.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_txt.zip)
 
 2. Step 2: Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
@@ -161,7 +161,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Step 3: Wait for the instance to come to **Active** (green color) status
 
-4. Step 4: Download the VB application from the provided link
+4. Step 4: Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
 
 5. Step 5: Import the application in provisioned instance as per the screenshots
 
