@@ -41,6 +41,6 @@ In general, the Introduction does not have Steps.
 
 ## Acknowledgements
 **Author** 
-**Nitin Jain**, Master Principal Cloud Architect, NACIE
-**Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Nitin Jain**, Master Principal Cloud Architect, NACIE
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
