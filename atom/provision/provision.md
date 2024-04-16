@@ -112,11 +112,7 @@ This task involves creating REST service which will be used by ODA to connect to
         }
     }
     ```
-5. Step 5: Click **Test Request** to make sure the connection is successful
-
-   ![API Services](images/oci_rest_service_3.png) 
-
-6. Step 1: Click on hamburger menu of OCI console and select **AI Services** > **Generative AI**
+5. Step 1: Click on hamburger menu of OCI console and select **AI Services** > **Generative AI**
 
    ![API Services](images/genai.png)
 
@@ -127,6 +123,11 @@ This task involves creating REST service which will be used by ODA to connect to
    Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
    
    ![API Services](images/generation_model_2.png)
+
+6. Step 6: Click **Test Request** to make sure the connection is successful
+
+   ![API Services](images/oci_rest_service_3.png) 
+
     
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
