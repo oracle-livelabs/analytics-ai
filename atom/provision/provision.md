@@ -17,10 +17,9 @@ Provisioning of ODA
 In this lab, you will:
 
 * **Provision ODA Instance**
-  * Follow Task 1 to Task 5 to set-up ODA Instance
-
+    * Follow Task 1 to Task 5 to set-up ODA Instance
 * **Provision VBCS Instance**
-  * Follow Task 6
+    * Follow Task 6
 
 ### Prerequisites
 
