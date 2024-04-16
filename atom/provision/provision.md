@@ -111,17 +111,17 @@ This task involves creating REST service which will be used by ODA to connect to
     ```
 
 5. This step is broken down into following 3 steps
-    Step 1: Click on hamburger menu of OCI console and select **AI Services** > **Generative AI**
+    * Step 1: Click on hamburger menu of OCI console and select **AI Services** > **Generative AI**
 
-   ![API Services](images/genai.png)
+    ![API Services](images/genai.png)
 
-   Step 2: Select Generation (under **Playground** heading)
+    * Step 2: Select Generation (under **Playground** heading)
 
-   ![API Services](images/generation_model_1.png)
+    ![API Services](images/generation_model_1.png)
 
-   Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
+    * Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
 
-   ![API Services](images/generation_model_2.png)
+    ![API Services](images/generation_model_2.png)
 
 6. Click **Test Request** to make sure the connection is successful
 
