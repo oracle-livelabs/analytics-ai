@@ -54,9 +54,11 @@ This task will help you to create desired dynamic group & necessary policy for t
 1. Attach the policy at the root compartment level
 
     ```text
+    <copy>
     Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
     Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
     Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+    </copy>
     ```
 
     > **Note:**
@@ -79,8 +81,8 @@ This task involves creating REST service which will be used by ODA to connect to
     ![API Services](images/oda_api_service.png)
 
 4. Click on **Add REST Service**. Provide the following details:
-    * **Name** : `Gen_AI_Service`
-    * **Endpoint** : `https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText`
+    * **Name** : ```text <copy> Gen_AI_Service </copy>```
+    * **Endpoint** : ```text <copy> https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText</copy>```
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : POST
@@ -88,6 +90,7 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Body**
 
     ```text
+    <copy>
     {
         "compartmentId": "ocid1.compartment.oc1..XXXXXXXXXXX",
         "servingMode": {
@@ -108,6 +111,7 @@ This task involves creating REST service which will be used by ODA to connect to
             "runtimeType": "COHERE"
         }
     }
+    </copy>
     ```
 
 5. This step is broken down into following 3 steps
@@ -129,8 +133,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
-    > **Note**
     > * If you are using a different name (and not Gen_AI_Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI_LLM and  GenAI_Truncate_LLM
+
+    ![API Services](images/oci_rest_service_4.png)
 
 ## Task 4: Import Skill (Provided)
 
