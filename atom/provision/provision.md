@@ -129,6 +129,8 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
+    > **Note**
+    > * If you are using a different name (and not Gen_AI_Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI_LLM and  GenAI_Truncate_LLM
 
 ## Task 4: Import Skill (Provided)
 
@@ -195,6 +197,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
 
     ![Create Channel](images/vbapp_setup.png)
 
