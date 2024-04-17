@@ -29,9 +29,9 @@ In this workshop, you will learn how to: <!-- TODO: these should mostly match ou
 
 This lab assumes you have:
 
-* An Oracle account
+* An Oracle Cloud account
 * Access to the Chicago Region
-* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, and Visual Builder
+* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder, and Identity Domains
 
 ## Learn More
 

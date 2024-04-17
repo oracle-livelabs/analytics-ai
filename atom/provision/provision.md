@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you thru the step needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
+This lab will take you through the steps needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
 
 Estimated Time: 1 hours 30 minutes
 
@@ -25,6 +25,8 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
+* Access to the Chicago Region
+* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder, and Identity Domains
 
 ## Task 1: Provision Oracle Digital Assistant
 
@@ -206,8 +208,24 @@ This task involves creating REST service which will be used by ODA to connect to
 
 7. Step 7: Click on the preview icon to launch ATOM chatbot and start chatting with ATOM.
 
+8. Step 8: Create a live version of the app
+
+    * Navigate to the vb application service page
+    * click on top right elipses menu -> stage
+        * Business Object Data:  Stage application with a clean database
+        * click "stage"
+    * click on top right elipses menu -> publish
+        * Business Object Data:  Publish application with a clean database
+        * click "publish"
+
+9. Step 9: Giving end users access to the app
+
+<!-- TODO: 
+need instructions on adding end users to the app in the Integrated application in Identity domains.
+-->
+
 ## Acknowledgements
 **Authors** 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-
+* **JB Anderson**,  Senior Cloud Engineer, NACIE
