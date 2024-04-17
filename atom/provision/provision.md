@@ -81,8 +81,22 @@ This task involves creating REST service which will be used by ODA to connect to
     ![API Services](images/oda_api_service.png)
 
 4. Click on **Add REST Service**. Provide the following details:
-    * **Name** : `Gen_AI_Service`
-    * **Endpoint** : `https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText`
+    * **Name**
+
+    ```text
+    <copy>
+    Gen_AI_Service
+    </copy>
+    ```
+
+    * **Endpoint**
+
+    ```text
+    <copy>
+    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText
+     </copy>
+    ```
+    
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : POST
