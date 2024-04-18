@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you thru the step needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
+This lab will take you through the steps needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
 
 Estimated Time: 1 hours 30 minutes
 
@@ -27,7 +27,7 @@ This lab assumes you have:
 
 * An Oracle account
 * Access to the Chicago Region
-* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, and Visual Builder
+* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder and Identity Domains
 
 ## Task 1: Provision Oracle Digital Assistant
 
@@ -96,7 +96,7 @@ This task involves creating REST service which will be used by ODA to connect to
     https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText
      </copy>
     ```
-    
+
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : POST
@@ -232,3 +232,4 @@ This task involves creating REST service which will be used by ODA to connect to
 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **JB Anderson**, Senior Cloud Engineer, NACIE
