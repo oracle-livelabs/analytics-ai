@@ -33,6 +33,11 @@
             "filename": "../../async-job/async-job.md"
         },
         {
+            "title": "Lab 5: Create and analyze texts using healthcare and multilingual models",
+            "description": "Learn how to create a healthcare and multilingual to analyze text using the oci console",
+            "filename": "../../healthcare-models/healthcare-models.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
