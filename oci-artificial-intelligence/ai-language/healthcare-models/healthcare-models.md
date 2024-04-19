@@ -30,6 +30,7 @@ In this lab, you will:
     2. **Navigate to Models**: Under models, click on create and train model.
 
     3. **Choose model type**: Choose Pretrained health entity detection for model type.
+        ![Create healthcare model](./images/create-healthcare-model.png " ")
 
     4. **Specifiy model properties**: Specify model name, compartment details and click Next.
 
