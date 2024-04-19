@@ -82,7 +82,7 @@ Before you start using OCI Language, OCI policies should be setup for allowing y
 3. Click Analyze
 
   You can analyze text by clicking Analyze button.
-    ![OCI Language Text Analytics - Analyze button](./images/analyze-button.png " ")
+      ![OCI Language Text Analytics - Analyze button](./images/analyze-button.png " ")
 
 4. Viewing Results
 
@@ -91,41 +91,52 @@ After you analyze your text, the Language service displays the results by catego
    1. Sentiment Analysis
 
    Renders the document level, aspect based and sentence level sentiment with score.
-     ![Text Analysis Results](./images/sentiment-result.png " ")
+      ![Text Analysis Results](./images/sentiment-result.png " ")
 
    2. Named Entity Recognition
  
    Identifies the named entities that were found and their categories are indicated.
-     ![NER Result](./images/ner-result.png " ")
+      ![NER Result](./images/ner-result.png " ")
 
    3. Key Phrase Extraction
 
    Lists the key phrases detected from the text.
-     ![KPE result](./images/kpe-result.png " ")
+      ![KPE result](./images/kpe-result.png " ")
 
    4. Language Detection
 
    Lists, by confidence percentage, the languages detected.
-     ![Language Detection Result](./images/lang-result.png " ")
+      ![Language Detection Result](./images/lang-result.png " ")
 
    5. Text Classification
 
    Lists the word, identified document category, and the confidence score.
-     ![Text classification Result](./images/text-result.png " ")
+      ![Text classification Result](./images/text-result.png " ")
 
    6. Personal Identifiable Information
-   
-   Detects various entities of personal information.
-     ![PII Masking Result](./images/pii-mask-result.png " ")
+      
+      Detects various entities of personal information.
+          ![PII Masking Result](./images/pii-mask-result.png " ")
 
-- Click on Configure mask to mask, replace or remove identified PII entities.
-    ![PII Configure Masking](./images/configure-masking.png " ")
+      - Click on Configure mask to mask, replace or remove identified PII entities.
+          ![PII Configure Masking](./images/configure-masking.png " ")
 
-- Select Replace and click on Save changes to replace identified entities with &lt;ENTITY_TYPE&gt;
-    ![PII Replace Result](./images/pii-replace.png " ")
+      - Select Replace and click on Save changes to replace identified entities with &lt;ENTITY_TYPE&gt;
+          ![PII Replace Result](./images/pii-replace.png " ")
 
-- Select Remove and click Save changes to remove identified entities.
-    ![PII Remove Result](./images/pii-remove.png " ")
+      - Select Remove and click Save changes to remove identified entities.
+          ![PII Remove Result](./images/pii-remove.png " ")
+
+   7. Personal Health Information
+      
+      - Click on Configure to mask, replace or remove identified PHI entities..
+            ![PII Masking Result](./images/phi-config.png " ")
+
+      - Select Phi as domain and click on save.
+            ![Personal health information](./images/personal-health-information.png " ")
+
+  
+
 
 
 ## Task 2: Analyze Text with Python SDK
