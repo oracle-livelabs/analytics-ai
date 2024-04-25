@@ -22,32 +22,67 @@ Estimated time: 20 min
 You will need the Oracle integration Cloud (OIC) package, the Visual Builder (VB) application, and samples files on your laptop/desktop. These procedures provide two methods to download a zip file from Github. Decide which method to use.
 
 ````
-Method 1 (recommended)
 To download the files to your laptop from the Github website, please follow these steps.
 ````
 
-1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-searchlab/tree/main and click *Code* and then *Download ZIP*.
+1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-genai-searchlab/tree/main and click *Code* and then *Download ZIP*.
 ![GitHub_Download](images/opensearch-github-download-zip.png)
 
-1. Extract the oci-searchlab-main.zip file to your computer. 
+1. Extract the oci-genai-searchlab-main.zip file to your computer. 
 ![GitHub_Download](images/opensearch-github-extract-zip.png) 
 
 1. Note the directory contains the Oracle Integration Cloud (OIC) package in the ***oic*** folder, the Visual Builder (VB) application in the ***vb*** folder, and samples files in the ***sample_files*** folder.
 
-````
-Method 2
-Since the Github repository was downloaded in the Cloud Console Code Editor during the previous lab using the "git clone" command, there is an option to download individual files using the OCI Console Code Editor. If you want to use this option, follow these alternative steps.
-````
-1. In the OCI Console, select the **Developer Tools icon** and then select *Cloud Shell*.
+## Task 2: User and Tenancy details
 
-1. Click the **Cloud Shell Menu icon** and select *Download*.
-![CloudShell_Download](images/opensearch-cloudshell-download.png)
+First, we need data about your tenancy and user.
+- On the top, right, click *Tenancy: name*
+- Copy the tenancy OCID *##TENANCY\_OCID##*
 
-1. To download the OIC integration file from the Cloud Shell, enter the file name: *oci-searchlab/oic/OPENSEARCH_OIC.par* and click **Download**.
-    
-    ![CloudShell_Download2](images/opensearch-cloudshell-download2.png)
+![Tenancy](images/opensearch-tenancy.png)
 
-## Task 2: Import the integration
+Then, we need data about the user
+- On the top, right, click *Your username*
+- Copy the username *##USERNAME##* (without oracleidentitycloudservice )
+- Copy the user OCID *##USER\_OCID##*
+- Click on *API Keys*
+
+![User](images/opensearch-user.png)
+
+- Click *Add API Key*
+- Generate one
+- Download it *##PRIVATE_KEY##*
+- Copy the *##FINGERPRINT##*
+
+![User API Keys](images/opensearch-user2.png)
+
+In your computer, or in the bastion (NOT in cloud shell), you need to convert the PEM key to RSA format
+- Run the below command 
+- And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
+
+- If openssl is not installed on your computer, here are the instructions to do it on the bastion:
+```
+./starter.sh ssh bastion
+cat <<EOF > private_key.pem
+-----BEGIN PRIVATE KEY-----
+... <YOUR KEY HERE> ....
+-----END PRIVATE KEY-----
+EOF 
+openssl rsa -in private_key.pem -out private_key.rsa
+cat private_key.rsa
+rm private_key.pem private_key.rsa
+history -c
+```
+
+Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
+
+```
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+## Task 3: Import the integration
 Upload the integration configuration into OIC.
 
 1. Open the OIC Service console. If you were logged out, use the following steps to re-open it. 
@@ -62,7 +97,7 @@ Upload the integration configuration into OIC.
 1. Click: *Import and Configure*
     ![Import Package](images/opensearch-oic-package-import.png)
 
-## Task 3: Configure the OIC connections
+## Task 4: Configure the OIC connections
 We start with the public connections first because these don't depend on component provisioning that is being completed in the previous lab by the Terraform script.
 
 ### 1. RestObjectStorage
@@ -77,28 +112,29 @@ We start with the public connections first because these don't depend on compone
     - Connection Type = *REST API Base URL*
     - Connection URL = *##OS\_URL##*
         - ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
+    - Security policy = *No Security*
     - Access Type = *Public gateway*
 1. **Test / Save / Save** until 100%
 1. Go back to the list of connections. The remainder of the connections are configured in a similar manner.
 
-### 2. RestLanguageAI
+### 2. RestGenerativeAI 
 
-1. Click the **edit** icon on the same row as *RestLanguageAI*
+1. Click the **edit** icon on the same row as *RestGenerativeAI*
 
-1. Copy the OCI Language REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/](https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_LANG\_URL##* below.
-
+1. Copy the Generative AI endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/) . Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_GENAI\_URL##* below.
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
-    - Connection URL = *##AI\_LANG\_URL##*
-        - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
+    - Connection URL = *##AI\_GENAI\_URL##*
+        - ex: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
+    - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
-
-1. **Test / Save / Save** until 100%
-
-1. Go back to the list of connections
+1. *Save / Test / Save* until 100%
   
+
 ### 3. Resttrigger
 
     There is no change needed here. The connection is already configured. 
@@ -108,6 +144,8 @@ We start with the public connections first because these don't depend on compone
 1. Click the **edit** icon on the same row as *RestDocumentUnderstandingAI*
 
 1. Copy the OCI Document Understanding REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/](https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_DOC\_URL##* below.
+
+    If "Document Understanding" is not available in your region, see the work-around in *Known issues* below. 
 
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
@@ -163,7 +201,7 @@ We start with the public connections first because these don't depend on compone
 1. In OCI Console Cloud Shell, if the terraform output is not there anymore, you can get it back like this: 
     ```
     <copy>
-    oci-searchlab/starter/src/after_done.sh
+    oci-genai-searchlab/starter/src/after_done.sh
     </copy>
     ```
     1. In the output of this script look for the following values under the heading **-- STREAMING CONNECTION --------------------------**:
@@ -175,7 +213,7 @@ We start with the public connections first because these don't depend on compone
 1. Click the **Cloud Shell Menu icon** and select *Download*.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
 
-1. Enter the file name: *oci-searchlab/starter/oss_store.jks* and click **Download**.
+1. Enter the file name: *oci-genai-searchlab/starter/oss_store.jks* and click **Download**.
 ![CloudShell_Download2](images/opensearch-cloudshell-download3.png)
 
 1. Go to the OIC console and click the **edit** icon on the same row as *StreamInputBucket*.
@@ -188,8 +226,7 @@ We start with the public connections first because these don't depend on compone
     - Expand *Optional security*
         - Truststore = upload *oss_store.jks*
         - TrustStore password = *changeit* 
-    - Access Type = *Connectivity agent*
-    - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
+    - Access Type = *Private Endpoint*
     
     ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
@@ -200,7 +237,7 @@ We start with the public connections first because these don't depend on compone
 
 ### 8. RestFunction
 1. Use the **##FUNCTION_ENDPOINT##** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
     - Connection url = **##FUNCTION_ENDPOINT##** (without /action/invoke at the end)
         - ex: https://xxxx.eu-frankfurt-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-frankfurt-1.aaaaaaabbbbb
@@ -216,13 +253,12 @@ We start with the public connections first because these don't depend on compone
 
 ### 9. RestOpenSearch
 1. Use the **##OPENSEARCH\_API\_ENDPOINT##** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
     - Connection url = *##OPENSEARCH\_API\_ENDPOINT##*
         - ex: https://amamamamalllllaaac5vkwantypqqcs4bqrgqjrkvuxxghsmg7zzzzzxxxxx.opensearch.eu-frankfurt-1.oci.oraclecloud.com:9200
     - Security policy: *No Security Policy*
-    - Access Type = *Connectivity agent*
-    - Selected agent group: *OPENSEARCH\_AGENT\_GROUP*
+    - Access Type = *Private Endpoint*
     
     ![Connect RestOpenSearch](images/opensearch-connection-restopensearch.png)
 
@@ -230,7 +266,7 @@ We start with the public connections first because these don't depend on compone
 
 1. Go back to the list of connections
 
-## Task 4. Activate the integration
+## Task 5. Activate the integration
 
 1. All connections should be valid. To activate the integrations,
 click on **Activation** 
@@ -248,7 +284,7 @@ click on **Activation**
 1. Confirm all integrations are *Active*.
 ![Activate3](images/opensearch-oic-activation3.png)
 
-## Task 5: Test OIC
+## Task 6: Test OIC
 You will load a file into object storage which will be ingested by OIC, processed with AI, and loaded into the OpenSearch index. (You'll query for this file in the next lab.)
 
 1. In the OCI Console, select the 3-bar/hamburger menu and select
@@ -257,7 +293,7 @@ You will load a file into object storage which will be ingested by OIC, processe
 
     ![Test OIC](images/opensearch-oic-test-os-buckets.png)
 
-1. In the *Buckets* list, select **opensearch-bucket**.
+1. In the *Buckets* list, select **search-public-bucket**.
     ![Test OIC](images/opensearch-oic-test-opensearch-bucket.png)
 
 1. On your local computer, go to the directory that you previously downloaded from GITHUB
@@ -266,7 +302,7 @@ You will load a file into object storage which will be ingested by OIC, processe
         1. Enter the file name: 
         ```
         <copy>
-        oci-searchlab/sample_files/shakespeare_macbeth.tif
+        oci-genai-searchlab/sample_files/shakespeare_macbeth.tif
         <\copy>
         ```
         ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
@@ -290,10 +326,10 @@ You will load a file into object storage which will be ingested by OIC, processe
 
     The **Succeeded** count should match the **Received** count.
 
-## Task 6: Optional - Process additional files
+## Task 7: Optional - Process additional files
 This is an optional test you can run with more sample files. If you do this test, you will have more content in the OpenSearch index to query in the next lab. If you're running short of time, then you can skip it or come back to it later.
 
-1. Upload the remainder of the sample files to the Object Storage bucket *opensearch-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
+1. Upload the remainder of the sample files to the Object Storage bucket *search-public-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
 
 1. To check the instances in OIC, go to OIC Console and select
     1. Menu *Observability* 
@@ -315,6 +351,34 @@ This is an optional test you can run with more sample files. If you do this test
 
 **You may now proceed to the [next lab.](#next)**
 
+## Known issues
+
+1. When creating the connection, the Test of the connection fails.
+
+```
+Unable to test connection RestVisionAI_1711400081.
+    {"detail":"","status":"HTTP 500 Internal Server Error","title":"Operation [testConnection] failed: io.micronaut.http.client.exceptions.HttpClientErrorDecoder$1","type":"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1"}
+```
+
+    Solution: If the connection is for an OCI Service (ex: OCI Function, AI Vision, ....), use the Security policy *OCI Signature Version 1*
+    OLD:  
+    - Security policy =*OCI Service Invocation*
+    
+    NEW:   
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
+    - FingerPrint = ##FINGERPRINT##
+    - Access Type = *Public gateway*
+
+2. Document Understanding is not available in my region
+
+    Currently (March 2024), "Document understanding" is not available in some regions (ex: Chicago). 
+    
+    If it is your case:  
+    - Import the OIC package "oic/chicago/OPENSEARCH_OIC_CHICAGO.par" instead. 
+    - Use any other region to configure the "Document Understanding" rest endpoint (ex: ashburn region) 
 
 ## Acknowledgements
 

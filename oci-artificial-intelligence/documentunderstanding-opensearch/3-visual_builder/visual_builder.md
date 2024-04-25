@@ -13,26 +13,9 @@ Estimated time: 20 min
 ### Prerequisites
 - You've completed the previous labs
 
-## Task 1: Download the project
-1. You will need the VB application archive *opensearch-1.0.zip* for the next task. If you cloned the Git repo to your local computer in a previous lab, you will already have this file. This file is located in the *visual_builder* folder of the cloned repo. You can continue to the next task.
+## Task 1: Import the project
+1. You will need the VB application archive *opensearch-1.0.x.zip* for the next task. If you cloned the Git repo to your local computer in a previous lab, you will already have this file. This file is located in the *visual_builder* folder of the cloned repo. You can continue to the next task.
 
-2. If you did not use the Git clone method to obtain the files, you can download the files using the OCI Console Cloud Shell using these procedures.
-
-    1. In the OCI Console, select the **Developer Tools icon** and then select *Cloud Shell*.
-
-    1. Click the **Cloud Shell Menu icon** and select *Download*.
-    ![CloudShell_Download](images/opensearch-cloudshell-download.png)
-
-    1. To download the Visual Builder project file to your local computer from the Cloud Shell, enter the file name below and click **Download**.
-    ```
-    <copy>
-    oci-searchlab/vb/opensearch-1.0.zip
-    ```
-
-    ![CloudShell_Download2](images/opensearch-cloudshell-download5.png)
-
-
-## Task 2: Import the project
 1. Go to the Oracle Integration Cloud (OIC) service console home page. If this is not already open in one of your browser tabs, you can get back to it by following these steps.
   
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
@@ -55,7 +38,7 @@ Estimated time: 20 min
         
     1. Click **Application from file**
         ![Visual Builder file](images/opensearch-vb-file.png)
-    1. Choose the file *vb/opensearch-1.0.zip*
+    1. Choose the file *vb/opensearch-1..x.zip*
     1. Application Name: *opensearch*
     1. Application ID: *opensearch*
     1. Click **Import**
@@ -63,13 +46,14 @@ Estimated time: 20 min
         ![Visual Builder Import](images/opensearch-vb-import.png)
     1. Wait for the import to be confirmed
 
-## Task 3: Edit the connections
+## Task 2: Edit the connections
 
 1. From the Visual Applications list, open the imported application by clicking on the application name, **opensearch**
 ![Visual Builder Import](images/opensearch-vb-applications.png)
 
 1. To edit the connection to connect to the OpenSearch server, click on the **Service icon**
 
+### 1. Opensearch connection
 1. Click the **opensearch** connection 
 
 1. Click on **Servers** tab
@@ -78,7 +62,7 @@ Estimated time: 20 min
 ![Connection OpenSearch](images/opensearch-vb-connection-opensearch.png)
 
 1. Use the ***APIGW_URL*** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
 
 1. Configure the server as follows:
     - Replace Instance URL: *APIGW_URL*
@@ -97,34 +81,55 @@ Estimated time: 20 min
     ![Test Connection OpenSearch](images/opensearch-vb-connection-opensearch3.png)
     1. The test succeeded if you see *"successful": 1,* in the response
 
-## Task 4: Test the application
+### 2. Generative AI connection
+1. Click on the again on *Service icon*
+2. Click on the *Backend Tab* 
+3. Choose the *GenerativeAI* backend
+4. Click on *Servers* tab 
+5. Then *Edit icon* 
+6. First, we need to get the Generative rest API. *##AI\_GENAI\_URL##*. You got it in the previous lab too.
+    You can find it here [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/)
+7. Fill the details:
+    - Instance URL: ##AI\_GENAI\_URL##
+    - Edit the authentication
+        - KeyId format = ##TENANCY\_OCID##/##USER\_OCID##/##FINGERPRINT##
+        - Ex: ocid1.tenancy.oc1..xxxxx/ocid1.user.oc1..xxxx/11:22:33:44:55:66:77
+    - Private KEY =  *##PRIVATE\_KEY\_RSA\_FORMAT##*
+8. *Save*
+9. *Save*
+
+### 3. Compartment OCID
+1. Click on the *Web Application icon*
+2. Click on the *opensearch* application 
+3. Go to the *Variables* tab
+4. Click on the constant *compartmentId*
+5. Replace the value with your compartment Id: *##COMPARTMENT_OCID##*
+
+![Compartment ID OpenSearch](images/opensearch-vb-compartmentid.png)
+
+## Task 3: Test the application
 
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
 ![Run the application](images/opensearch-vb-test.png)
 
-1. In the search user interface, enter *shakespeare* or *macbeth* or *candle* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
+1. In the search user interface, enter *jazz* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
 
-1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service. You can click the file name to display it.
-    
-    **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
-
+1. Try the same with the question "when was jazz created" with *Search*, *Semantic Search*, *RAG* and *Generate*. Compare the results.
+   
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
 
-    | File | Search Terms |
+    | Search Terms |
     | ------------------------------------- | --------------------------------------- |
-    | Image\_Map\_Brazil.png | brasil, rio |
-    | Image\_Workshop\_architecture.png | streaming, "object storage" |
-    | Invoice\_6879875\_scanned.tif | 6879875, bijou, 111.31 |
-    | Invoice\_DS67076\_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
-    | Text\_DocU\_blog\_HTML\_to\_PDF.pdf | blogs.oracle.com, datascience |
-    | Text\_DocU\_Overview\_PPTX\_to\_PDF.pdf | harbor, "product direction" |
-    | Voice\_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
-    | Shakespeare\_macbeth.tif | shakespeare, macbeth, candle, shadow |
-    | Penguins.jpg | animal, beak, bird, penguin |
-    | HOL\_summary.txt | workshop, oic, "document understanding" |
-
-
+    | When was jazz created | Search |
+    | When was jazz created | Semantic Search |
+    | When was jazz created | RAG |
+    | When was jazz created | Generate |
+    | When was the moon created | Search |
+    | When was the moon created | Semantic Search |
+    | When was the moon created | Generate |
+    | When was the moon created | RAG |
+    | Penguin | Search |
 
 
 **Congratulations! You have completed this workshop.**

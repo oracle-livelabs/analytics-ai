@@ -70,13 +70,7 @@ pip install oci-cli
     If your Location type is Inline input location
         ```
         <copy>
-        oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
-        "compartmentId": "ocid1.compartment.oc1..<uniqueID>",
-        "definedTags": null,
-        "description": "<descriptionPlaceholder>",
-        "displayName": "<displayNamePlaceholder>",
-        "freeformTags": null,
-        "inputLocation": {
+        oci speech transcription-job create -c <compartment_OCID> --input-location '{
             "locationType": "OBJECT_LIST_INLINE_INPUT_LOCATION",
             "objectLocations": [
                 {
@@ -89,36 +83,28 @@ pip install oci-cli
                     ]
                 }
             ]
-        },
-        "modelDetails": {
-            "domain": "GENERIC",
-            "languageCode": "en-US"
-        },
-        "normalization": {
-            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
-            "isPunctuationEnabled": true
-        },
-        "outputLocation": {
+        }' --output-location '{
             "bucketName": "<outputBucketPlaceholder>",
             "namespaceName": "<namespacePlaceholder>",
             "prefix": "<examplePrefix>/"
-        }
-    }' --defined-tags null --description "This is newly created Job from CLI" --display-name "cli_test_job" --freeform-tags null
+        }' --model-details '{
+            "modelType": "ORACLE",
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        }' --normalization '{
+            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
+            "isPunctuationEnabled": true
+        }' --defined-tags null --description <descriptionPlaceholder> --display-name <displayNamePlaceholder>
         </copy>
         ```
 
      If your Location type is File input location
         ```
         <copy>
-        oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
-        "compartmentId": "ocid1.compartment.oc1..<uniqueID>",
-        "definedTags": null,
-        "description": "<descriptionPlaceholder>",
-        "displayName": "<displayNamePlaceholder>",
-        "freeformTags": null,
-        "inputLocation": {
+        oci speech transcription-job create -c <compartment_OCID> --input-location '{
             "locationType": "OBJECT_LIST_FILE_INPUT_LOCATION",
-            "objectLocation": {
+            "objectLocations": [
+                {
                     "bucketName": "<bucketNamePlaceholder>",
                     "namespaceName": "<namespacePlaceholder>",
                     "objectNames": [
@@ -127,23 +113,25 @@ pip install oci-cli
                         "<filename3>.json"
                     ]
                 }
-        },
-        "modelDetails": {
-            "domain": "GENERIC",
-            "languageCode": "en-US"
-        },
-        "normalization": {
-            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
-            "isPunctuationEnabled": true
-        },
-        "outputLocation": {
+            ]
+        }' --output-location '{
             "bucketName": "<outputBucketPlaceholder>",
             "namespaceName": "<namespacePlaceholder>",
             "prefix": "<examplePrefix>/"
-        }
-    }' --defined-tags null --description "This is newly created Job from CLI" --display-name "cli_test_job" --freeform-tags null
+        }' --model-details '{
+            "modelType": "ORACLE",
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        }' --normalization '{
+            "filters": [{"type": "PROFANITY", "mode": "TAG"}],
+            "isPunctuationEnabled": true
+        }' --defined-tags null --description <descriptionPlaceholder> --display-name <displayNamePlaceholder>
         </copy>
         ```
+    *Note:*
+    * Supported values for modelType are ORACLE, WHISPER_MEDIUM
+    * Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+    * Supported language codes for WHISPER_MEDIUM MODEL: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
 
         
 
