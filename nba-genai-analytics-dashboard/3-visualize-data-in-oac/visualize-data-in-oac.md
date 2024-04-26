@@ -12,7 +12,10 @@ In this lab, you will learn how to:
 * Upload custom map layers using the Oracle Analytics Cloud Console
 * Get familiar with parameters and filter binding
 * Get familiar creating custom calculations
-* 
+
+###Prerequisites
+* A provisioned Oracle Analytics Cloud Instance
+* BIServiceAdministrator Role assigned
 
 ## Task 1: 
 
