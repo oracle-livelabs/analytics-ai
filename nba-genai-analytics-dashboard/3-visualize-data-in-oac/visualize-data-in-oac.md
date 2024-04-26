@@ -1,13 +1,17 @@
 # Visualize Data in Oracle Analytics Cloud (OAC)
 
 ## Introduction
+This lab walks you through the steps of creating self-service data visualizations in Oracle Analytics Cloud.
 
 Estimated time - 20 minutes
 
 
 
 ### Objectives
-
+In this lab, you will learn how to:
+* Upload custom map layers using the Oracle Analytics Cloud Console
+* Get familiar with parameters and filter binding
+* Get familiar creating custom calculations
 * 
 
 ## Task 1: 
