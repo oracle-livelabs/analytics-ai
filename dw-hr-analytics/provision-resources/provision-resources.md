@@ -13,7 +13,7 @@ Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 ### Prerequisites
 
 - Method 1
-    - IDCS Access Token to provision an analytics instance as part of the stack.
+    - Access Token to provision an analytics instance as part of the stack.
     - Necessary permissions to provision the stack in a compartment.
 
 - Method 2
@@ -21,39 +21,26 @@ Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 
 ## **METHOD 1:** Using a Resource Manager Stack
 
-In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an IDCS access token is required. If you don't have the necessary privileges, then proceed to Method 2.
+In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using Identity Domains then follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) and proceed to Method 2.
 
-### Task 1: Obtain IDCS Access Token
+### Task 1: Obtain Access Token
 
-1. Click on the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
+1. Click on the **Profile Icon** in the top right corner, navigate to **My Profile**.
 
-	![OCI Console Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png "OCI Console Federation")
+	![OCI Console My Profile](./images/access-my-profile.png "OCI Console My Profile")
 
-2. Click on the link to the **OracleIdentityCloudService**.
+2. Scroll down and select **My access tokens** from the **Resources** panel on the left. Select the **Invokes Identity Domain APIs** radio button. If you have access to any of the relevant app roles, you should be able to select one of them . 
 
-    ![Identity Domain](./images/select-idcs.png "Identity Domain")
+    ![Select App Role](./images/select-app-role.png "Select App Role")
 
-3. In the page that opens, click on the Service Console URL.
-
-    ![IDCS Service Console URL](./images/go-to-service-console.png "IDCS Service Console URL")
-
-4. In the Identity Cloud Service Console, click on the user icon in the top right corner and select **My Access Tokens**.
-
-    ![IDCS Access Token](./images/go-to-idcs-access-token-page.png "IDCS Access Token")
-
-5. If you have access to the relevant APIs, you should be able to select them, under the **Invokes Identity Cloud Service APIs** radio button. Thereafter, enter the duration of validity of the token in minutes and click on the **Download Token** button.
+3. Now enter the duration of validity of the token in minutes and click on the **Download Token** button. The value should be at least 30 minutes.
 
     ![Download Access Token](./images/download-access-token.png "Download Access Token")
 
-**Note:** If you don't have access to the required APIs, follow **Method 2**.
-
-6. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
+4. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
 
     ![Keep the token handy](./images/open-the-token-file.png "Keep the token handy")
 
-**Note:** You may follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
-
-7. You may now close the Identity Cloud Service Console.
 
 ### Task 2: Provision the Stack
 
@@ -143,6 +130,8 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Configure Variables](./images/configure-adw-variables.png "Configure Variables")
 
+    ![Configure Variables](./images/configure-adw-variables2 .png "Configure Variables")
+
 4. Scroll down and provide a password for the administrator.
 
     ![Provide Password](./images/provide-adw-password.png "Provide Password")
@@ -180,5 +169,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
  - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
- - **Last Updated By/Date** - Yash Lamba, March 2023
+ - **Last Updated By/Date** - Yash Lamba, April 2024
 

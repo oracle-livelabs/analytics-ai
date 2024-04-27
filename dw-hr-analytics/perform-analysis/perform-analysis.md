@@ -160,5 +160,5 @@ We will now leave it to your imagination to analyse the data sets that have been
 ## Acknowledgements
  - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar Sharma, Shikhar Mishra
- - **Last Updated By/Date** - Yash Lamba, March 2023
+ - **Last Updated By/Date** - Yash Lamba, April 2024
 
