@@ -21,7 +21,7 @@ Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 
 ## **METHOD 1:** Using a Resource Manager Stack
 
-In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using Identity Domains then follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) and proceed to Method 2.
+In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using **Identity Domains** then follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) to download the token and proceed to Task 2.
 
 ### Task 1: Obtain Access Token
 
@@ -29,7 +29,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 	![OCI Console My Profile](./images/access-my-profile.png "OCI Console My Profile")
 
-2. Scroll down and select **My access tokens** from the **Resources** panel on the left. Select the **Invokes Identity Domain APIs** radio button. If you have access to any of the relevant app roles, you should be able to select one of them . 
+2. Scroll down and select **My access tokens** from the **Resources** panel on the left. Select the **Invokes Identity Domain APIs** radio button. If you have access to any of the relevant app roles, you should be able to select one of them from the dropdown. 
 
     ![Select App Role](./images/select-app-role.png "Select App Role")
 
@@ -64,9 +64,11 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Provide Name](./images/configure-stack-variables.png "Provide Name")
 
-6. On the **Configure Variables** screen, enter the admin password, database name and database display name.![Configure Variables](./images/configure-stack-variables2.png "Configure Variables")
+6. On the **Configure Variables** screen, enter the admin password, database name and database display name.
 
-7. Check the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional, but recommended. Also, enter 0.0.0.0/0 in the public IP address field.
+    ![Configure Variables](./images/configure-stack-variables2.png "Configure Variables")
+
+7. Check the **Auto Scaling** box to enable auto-scaling of the database. Enabling this is optional but recommended. Also, enter 0.0.0.0/0 in the public IP address field.
 
     ![Computer's Public IP Address](./images/configure-stack-variables3.png "Computer's Public IP Address")
 
@@ -78,7 +80,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Review and Create](./images/review-create-stack.png "Review and Create")
 
-10. Now that the stack has been created, click on **Apply**. In the panel that appears, click on **Apply**, again.
+10. Now that the stack has been created, click on **Apply**. In the panel that appears, click on **Apply** again.
 
     ![Apply Terraform](./images/apply-terraform.png "Apply Terraform")
 
@@ -130,13 +132,13 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Configure Variables](./images/configure-adw-variables.png "Configure Variables")
 
-    ![Configure Variables](./images/configure-adw-variables2 .png "Configure Variables")
+    ![Configure Variables](./images/configure-adw-variables2.png "Configure Variables")
 
 4. Scroll down and provide a password for the administrator.
 
     ![Provide Password](./images/provide-adw-password.png "Provide Password")
 
-5. Choose an appropriate licence type and thereafter, hit **Create Autonomous Database**.
+5. Choose an appropriate licence type, and hit **Create Autonomous Database**.
 
     ![Select Licence and Create](./images/choose-adw-licence.png "Select Licence and Create")
 
@@ -144,7 +146,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Autonomous Database Home Page](./images/access-adw-home-page.png "Autonomous Database Home Page")
 
-**Note:** Keep this page open or make note of how to get here, since you will need to visit this page for the information required to connect to the database.
+**Note:** Keep this page open or make note of how to get here, since you will need to visit this page to gather the information required to connect to the database.
 
 ### Task 2: Provision the Analytics Cloud Instance
 
@@ -156,11 +158,11 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![Create Analytics Instance](./images/create-analytics-instance.png "Create Analytics Instance")
 
-3. Choose a compartment and provide a name for the instance. Let everything else stay the same. Then click on **Create**.
+3. Choose a compartment and provide a name for the instance. Let everything else stay the same. Then, click on **Create**.
 
     ![Configure Variables](./images/set-analytics-variables.png "Configure Variables")
 
-4. The instance will be up in 12-14 minutes. Once the instance is available, click on the **Open URL** button to gain access to the instance.
+4. The instance will be ready for use in 12-14 minutes. Once the instance is available, click on the **Open URL** button to gain access to the instance.
 
     ![Go to Analytics Home Page](./images/go-to-analytics-home-page.png "Go to Analytics Home Page")
 

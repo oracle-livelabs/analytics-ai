@@ -58,7 +58,7 @@ Estimated Time: 45 minutes
 
     ![Select File](./images/select-file.png "Select File")
 
-3.  Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit OK to close the dialog. 
+3.  Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog. 
 
     ![Import](./images/import-dva.png "Import")
 
@@ -131,7 +131,7 @@ The data flow should run and upon successful execution you should be able to see
 
 ## Task 4: Using Attrition Data set in the Human Resource project
 
-1. Open the Human Resource workflow. Click on the edit button to enter into the edit mode. From the data panel, click on the encircled **+** sign and select **Add Data Set**.
+1. Open the Human Resource workflow. Click on the edit button to enter the edit mode. From the data panel, click on the encircled **+** sign and select **Add Data Set**.
 
     ![Edit Dashboards](./images/edit-dashboard.png "Edit Dashboards")
     
