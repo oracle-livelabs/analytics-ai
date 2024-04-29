@@ -17,7 +17,9 @@ In this lab, you will learn how to:
 * A provisioned Oracle Analytics Cloud Instance
 * BIServiceAdministrator Role assigned
 
-## Task 1: Import Custom Maps in OAC
+## Task 1: Provision an Oracle Analytics Cloud Instance
+
+## Task 2: Import Custom Maps in OAC
 
 1. CLICK HERE to download a zip file with the map layers and map backgrounds we will use in this task
 2. From the OAC homepage, navigate to the console.
@@ -27,12 +29,12 @@ In this lab, you will learn how to:
 6. Navigate to the 'Map Layers' tab and expand 'Custom Map Layers'
 7. Upload your custom map layer 'NBA Shot Zones' 
 
-## Task 2: Use Self Service DV to Create a Workbook
+## Task 3: Use Self Service DV to Create a Workbook
 We will now develop a workbook with 3 canvases that will be used throughout the lab. 
 
 1. 
 
-## Task 3: Create a Safe Domain in OAC
+## Task 4: Create a Safe Domain in OAC
 
 1. From the OAC homepage, navigate to the console.
 2. In the console, open 'Safe Domains' under 'Configuration and Administration'
