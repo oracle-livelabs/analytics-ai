@@ -19,6 +19,14 @@ In this lab, you will learn how to:
 
 ## Task 1: Provision an Oracle Analytics Cloud Instance
 
+1. Log into your OCI tenancy
+2. In the region dropdown, select the correct region you'd like to provision your instance in
+3. In the OCI console, open up the navigation menu and navigate to 'Analytics & AI' then 'Analytics Cloud'
+4. Using the dropdown, select the compartment you want to provision OAC in
+5. Use the 'Create Instance' to open the create analytics instance form
+6. In the form, input the following for the required fields:
+   - fff
+
 ## Task 2: Import Custom Maps in OAC
 
 1. CLICK HERE to download a zip file with the map layers and map backgrounds we will use in this task
