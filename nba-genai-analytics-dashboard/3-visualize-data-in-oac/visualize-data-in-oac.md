@@ -25,7 +25,7 @@ In this lab, you will learn how to:
 4. Using the dropdown, select the compartment you want to provision OAC in
 5. Use the 'Create Instance' to open the create analytics instance form
 6. In the form, input the following for the required fields:
-   - Name: NBA-OAC
+   - Name: NBAOACLivelab
    - Compartment: Make sure this compartment matches your desired compartment for the instance
    - Capacity Type: OCPU
    - Capacity OCPU Count: 1
