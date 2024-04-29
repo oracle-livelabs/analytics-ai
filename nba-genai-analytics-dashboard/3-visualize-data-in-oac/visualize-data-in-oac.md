@@ -17,11 +17,11 @@ In this lab, you will learn how to:
 * A provisioned Oracle Analytics Cloud Instance
 * BIServiceAdministrator Role assigned
 
-## Task 1: 
+## Task 1: Import Custom Maps in OAC
 
-## Task 2: 
+## Task 2: Use Self Service DV to Create a Workbook
 
-## Task 3: 
+## Task 3: Create a Safe Domain in OAC
 
 You may now **proceed to the next lab**.
 
