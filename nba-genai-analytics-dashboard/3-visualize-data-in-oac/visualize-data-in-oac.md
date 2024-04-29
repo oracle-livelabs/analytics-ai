@@ -25,7 +25,13 @@ In this lab, you will learn how to:
 4. Using the dropdown, select the compartment you want to provision OAC in
 5. Use the 'Create Instance' to open the create analytics instance form
 6. In the form, input the following for the required fields:
-   - fff
+   - Name: NBA-OAC
+   - Compartment: Make sure this compartment matches your desired compartment for the instance
+   - Capacity Type: OCPU
+   - Capacity OCPU Count: 1
+   - License: License Included
+   - Edition: Enterprise Edition
+7. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
 
 ## Task 2: Import Custom Maps in OAC
 
@@ -33,7 +39,7 @@ In this lab, you will learn how to:
 2. From the OAC homepage, navigate to the console.
 3. From the console, open 'Maps' under 'Visualizations and Sharing'
 4. In the Maps page, navigate to the 'Backgrounds' tab and expand 'Image Backgrounds'
-5. Add your images for basketball shot zones and basketball half court
+5. Add your images for NBA shot zones and NBA half court
 6. Navigate to the 'Map Layers' tab and expand 'Custom Map Layers'
 7. Upload your custom map layer 'NBA Shot Zones' 
 
