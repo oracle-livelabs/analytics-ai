@@ -55,7 +55,7 @@ In this lab, you will learn how to:
 We will now develop a workbook with 3 canvases that will be used throughout the lab. 
 
 1. From the OAC homepage, click on the 'Create' button in the top right corner and select 'Workbook.'
-2. Add the dataset you created in Task 3
+2. Add the dataset(s) you created in Task 3
 3. Next we'll create two parameters. Create a 'Team' parameter in the parameter tab with the following settings:
   - Name: Team
   - Data Type: Text
@@ -73,7 +73,10 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 9. Right-click TEAM_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the team name to users.
 10. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters'
 11. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
-12. Now add a 
+12. Now add a treemap with your 'Game Count' calculation and 'WL' column.
+13. Now add a table with GAME_DATE(day), MATCHUP, WL, PTS, FGM, FGA, FG_PCT, and any additional statistics you would like.
+14. You can now move on to another canvas, title this one 'Player Statistics.'
+    
 
 ## Task 6: Create a Safe Domain in OAC
 
