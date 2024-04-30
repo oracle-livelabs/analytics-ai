@@ -43,12 +43,20 @@ In this lab, you will learn how to:
 6. Navigate to the 'Map Layers' tab and expand 'Custom Map Layers'
 7. Upload your custom map layer 'NBA Shot Zones' 
 
-## Task 3: Use Self Service DV to Create a Workbook
+## Task 3: Create a Data Connection in OAC
+1. From the OAC homepage, click on the 'Create' button in the top right corner and select 'Creation'
+2. Select 'Oracle Autonomous Data Warehouse' from the available connectors
+3. In the window, insert details for the required field and import your wallet
+
+## Task 4: Create a Data Set in OAC
+
+## Task 5: Use Self Service DV to Create a Workbook
 We will now develop a workbook with 3 canvases that will be used throughout the lab. 
 
-1. 
+1. From the OAC homepage, click on the 'Create' button in the top right corner and select 'Workbook.'
+2. In the creation 
 
-## Task 4: Create a Safe Domain in OAC
+## Task 6: Create a Safe Domain in OAC
 
 1. From the OAC homepage, navigate to the console.
 2. In the console, open 'Safe Domains' under 'Configuration and Administration'
