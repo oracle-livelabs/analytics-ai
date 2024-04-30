@@ -13,7 +13,7 @@ In this lab, you will learn how to:
 * Get familiar with parameters and filter binding
 * Get familiar creating custom calculations
 
-###Prerequisites
+### Prerequisites
 * A provisioned Oracle Analytics Cloud Instance
 * BIServiceAdministrator Role assigned
 
@@ -56,15 +56,24 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 
 1. From the OAC homepage, click on the 'Create' button in the top right corner and select 'Workbook.'
 2. Add the dataset you created in Task 3
-3. Rename the canvas 'Team Season Statistics' the first canvas we will make allows users to select a team and see their stats.
-4. Create a 'Team' parameter in the parameter tab with the following settings:
+3. Next we'll create two parameters. Create a 'Team' parameter in the parameter tab with the following settings:
   - Name: Team
   - Data Type: Text
   - Available Values: Column - TEAM_NAME
   - Initial Value: First Available Value
-5. Add TEAM_NAME to the filter bar and bind the 'Team' parameter you created. This will filter the entire canvas to show team data.
-6. Right-click TEAM_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the team name to users.
-7. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters'
+4. Create a 'Player' parameter in the parameter tab with the following settings:
+  - Name: Player
+  - Data Type: Text
+  - Available Values: Column - PLAYER_NAME
+  - Initial Value: First Available Value
+5. Next we'll create a set of calculations we'll use. Create a calculation for 'Field Goal %'. In the calculation field input 'SHOT_MADE_FLAG/SHOT_ATTEMPTED_FLAG'
+6. Next create a calculation to count the amount of games titled 'Game Count.' In the calculation field input 'count(GAME_ID).'
+7. Rename the canvas 'Team Season Statistics' the first canvas we will make allows users to select a team and see their stats.
+8. Add TEAM_NAME to the filter bar and bind the 'Team' parameter you created. This will filter the entire canvas to show team data.
+9. Right-click TEAM_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the team name to users.
+10. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters'
+11. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
+12. Now add a 
 
 ## Task 6: Create a Safe Domain in OAC
 
