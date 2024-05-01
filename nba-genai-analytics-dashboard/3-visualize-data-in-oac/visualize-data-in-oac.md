@@ -68,14 +68,22 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
   - Initial Value: First Available Value
 5. Next we'll create a set of calculations we'll use. Create a calculation for 'Field Goal %'. In the calculation field input 'SHOT_MADE_FLAG/SHOT_ATTEMPTED_FLAG'
 6. Next create a calculation to count the amount of games titled 'Game Count.' In the calculation field input 'count(GAME_ID).'
-7. Rename the canvas 'Team Season Statistics' the first canvas we will make allows users to select a team and see their stats.
-8. Add TEAM_NAME to the filter bar and bind the 'Team' parameter you created. This will filter the entire canvas to show team data.
-9. Right-click TEAM_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the team name to users.
-10. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters'
-11. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
-12. Now add a treemap with your 'Game Count' calculation and 'WL' column.
-13. Now add a table with GAME_DATE(day), MATCHUP, WL, PTS, FGM, FGA, FG_PCT, and any additional statistics you would like.
-14. You can now move on to another canvas, title this one 'Player Statistics.'
+7. Lastly, create a calculation titled 'Shot Zone Map.' In the calculation field input 'CONCAT(CONCAT(SHOT_ZONE_BASIC, ' '), SHOT_ZONE_AREA)'
+8. Rename the canvas 'Team Season Statistics' the first canvas we will make allows users to select a team and see their stats.
+9. Add TEAM_NAME to the filter bar and bind the 'Team' parameter you created. This will filter the entire canvas to show team data.
+10. Right-click TEAM_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the team name to users.
+11. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters'
+12. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
+13. Now add a treemap with your 'Game Count' calculation and 'WL' column.
+14. Now add a table with GAME_DATE(day), MATCHUP, WL, PTS, FGM, FGA, FG_PCT, and any additional statistics you would like.
+15. You can now move on to another canvas, title this one 'Player Statistics.'
+16.  Add PLAYER_NAME to the filter bar and bind the 'Player' parameter you created. This will filter the entire canvas to show team data.
+17. Right-click PLAYER_NAME in the data column and select 'Pick Visualization' then 'List.' This will display the player name to users.
+18. Right-click MATCHUP in the data column and select 'Pick Visualization' then 'Dashboard Filters.' Then add your Player parameter to the dashboard filters by dragging and dropping it into the filter controls section.
+19. Add separate tiles for Field Goal % and SHOT_ATTEMPTED_FLAG by dragging and dropping them onto the canvas.
+20. Now drag Shot Zone Map and field Goal % onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the 'Map' tab and correct map layer is selected in the 'Data Layers Tab.'
+21. Next drag Shot Zone Map and SHOT_ATTEMPTED_FLAG onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the 'Map' tab and correct map layer is selected in the 'Data Layers Tab.'
+22. Lastly, for this canvas we will create a pivot table. Bring PERIOD, GAME_DATE (Day), HTM, VTM, and Field Goal % onto the canvas, make sure PERIOD is put into the columns category for the visualization.
     
 
 ## Task 6: Create a Safe Domain in OAC
