@@ -13,30 +13,26 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Load Data into Autonomous Database",
+            "title": "Load your data into an Autonomous Database",
             "description": "",
             "filename": "../../2-load-data-into-adb/load-data-into-adb.md"
         },
         {
-            "title": "Create and connect to an OCI Compute Instance",
+            "title": "Visualize your data in Oracle Analytic Cloud",
             "description": "",
-            "filename": "../../3-create-and-connect-to-an-oci-compute-instance/create-and-connect-to-an-oci-compute-instance.md"
+            "filename": "../../3-visualize-data-in-oac/visualize-data-in-oac.md"
         },
         {
-            "title": "Configure the Compute Instance",
-            "filename": "../../4-configure-the-compute-instance/configure-the-compute-instance.md"
+            "title": "Import a Visual Builder App quickly",
+            "filename": "../../4-import-visual-builder-app/import-visual-builder-app.md"
         },
         {
-            "title": "Setup OCI API authentication",
-            "filename": "../../5-setup-oci-api-authentication/setup-oci-api-authentication.md"
+            "title": "Connect your data from the database",
+            "filename": "../../5-connect-data-from-database/connect-data-from-database.md"
         },
         {
-            "title": "Deploy the demo code to the Compute Instance",
-            "filename": "../../6-deploy-the-demo-code-to-the-ci/deploy-the-demo-code-to-the-ci.md"
-        },
-        {
-            "title": "Start your engines",
-            "filename": "../../7-start-your-engines/start-your-engines.md"
+            "title": "Use GenAI to enhance your app",
+            "filename": "../../6-use-app-with-genai/use-app-with-genai.md"
         },
         {
             "title": "Need Help?",
