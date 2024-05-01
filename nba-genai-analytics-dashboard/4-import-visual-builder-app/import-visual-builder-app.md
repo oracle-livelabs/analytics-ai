@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to create a visual builder instance, 
+This lab will show you how to create a visual builder instance and import an app with Analytics Iframe to 
 
 Estimated time - 20 minutes
 
@@ -63,27 +63,43 @@ Estimated time - 20 minutes
 
   ![Safe Domains button](images/safe-domains.png)
 
-5. Enter the domain of the visual builder app url in the empty field and clicked **Embedded**.
+5. Enter the domain of the visual builder app url in the empty field and clicked **Embedded**. 
 
-  ![Enter field of Safe Domains](images/embedded.png) 
+>>**Note:** The URL can include *wildcard* syntax, which means if you want to approve all apps on OCI, you can simply put **\*oraclecloud.com**, however, since we only need the visual builder app, we will put the url link for the instance. Use only the root URL for the Visual Builder without the **https://** and terminating **/**.
 
-6. Navigate back to the Visual builder webpage and then homepage using the side-menu and selecting **All Applications**. Click the **name** of the app to open the dashboard to begin editting.
+  ![Enter field of Safe Domains](images/embedding.png) 
+
+6. Copy the URL of the instance for Step 12, excluding everything after the **oraclecloud.com/**.
+
+7. Navigate back to the homepage of the Analytics by clicking the **side-menu button** and then **Home**. On the home page, the the **ellipsis** of the workbook just created and select **Inspect**.
+
+  ![Navigating to project path](images/project-path.png) 
+
+8. Click **Copy** for the **Object ID** and save this in a notepad, since it will be used for Step 12. 
+
+  ![Copy button for project path](images/object-id.png) 
+
+9.  Navigate back to the Visual builder webpage and then homepage using the side-menu and selecting **All Applications**. Click the **name** of the app to open the dashboard to begin editting.
 
   ![menu for the imported app](images/open-app.png)
 
-3. Click the drop down arrow for the text **watch-live** and select the option **watch-live-start**.
+10. Click the drop down arrow for the text **watch-live** and select the option **watch-live-start**.
 
   ![app structure tree](images/watch-live-start.png)
 
-2. Select the option **Oracle Analytics Project** from the structure tree.
+11. Select the option **Oracle Analytics Project** from the structure tree.
 
   ![app structure tree - Analytics option](images/structure-tree-analytics.png)
 
-3. Update the **Host** and **Project Path** from the information gathered from the previous lab on the right-side menu of the webpage. Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
+12. Update the **Host** and **Project Path** from the information gathered from the previous lab on the right-side menu of the webpage. 
+
+>>**Note:** The Project path is the URL of the analytics instance
+
+Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
 
   ![Analytics configuration menu](images/update-analytics.png)
 
-4. Repeat steps **2** and **3** for the page **watch-live-tiny**.
+10. Repeat steps **2** and **3** for the page **watch-live-tiny**.
 
   ![app structure tree](images/watch-live-tiny.png)
 

@@ -84,14 +84,7 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 20. Now drag Shot Zone Map and field Goal % onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the 'Map' tab and correct map layer is selected in the 'Data Layers Tab.'
 21. Next drag Shot Zone Map and SHOT_ATTEMPTED_FLAG onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the 'Map' tab and correct map layer is selected in the 'Data Layers Tab.'
 22. Lastly, for this canvas we will create a pivot table. Bring PERIOD, GAME_DATE (Day), HTM, VTM, and Field Goal % onto the canvas, make sure PERIOD is put into the columns category for the visualization.
-    
 
-## Task 6: Create a Safe Domain in OAC
-
-1. From the OAC homepage, navigate to the console.
-2. In the console, open 'Safe Domains' under 'Configuration and Administration'
-3. Add a new domain and copy and paste your visual builder domain URL
-4. For your newly added domain, check the box allowing for embedding
 
 You may now **proceed to the next lab**.
 
