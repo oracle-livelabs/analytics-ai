@@ -36,4 +36,7 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Authors:**
-	* Nicholas Cusato - Clud Engineer
+	* Nicholas Cusato - Cloud Engineer
+	* Malia German - Cloud Engineer
+	* Miles Novotny - Cloud Engineer
+* **Last Updated by/Date** - Nicholas Cusato, May 2024

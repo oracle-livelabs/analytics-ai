@@ -91,8 +91,12 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
+* https://blogs.oracle.com/analytics/post/embedding-oracle-analytics-cloud-data-visualizations-into-oracle-visual-builder-applications
 
 ## Acknowledgements
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Engineer
+	* Malia German - Cloud Engineer
+	* Miles Novotny - Cloud Engineer
+* **Last Updated by/Date** - Nicholas Cusato, May 2024
