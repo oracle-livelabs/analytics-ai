@@ -2,8 +2,16 @@
 
 ## About this Workshop
 
-Emotions run high with Oracle Red Bull Racing. Determining how fans feel is key to successfully understanding the passion and excitement of the race, and then applying those sentiments for new business drivers.
-Through a variety of OCI AI Services, which provide prebuilt and custom trainable AI models, this analysis becomes possible even without data science experience. In this workshop we will discover how to understand insights in Twitter conversations, and extract text from meme images. We'll analyze the data to get a complete picture of the emotions during an Oracle Red Bull race, and discover how to apply sentiment understanding to uncover more valuable insights for your organization.
+If you would like to expand your abilities to deliver and analytics and machine learning technology together
+in a compelling and easily digestible to format, this is the right workshop for you.
+
+Generative AI is the hottest topic in machine learning right now, and this lab will go through a compelling NBA performance analysis use case that
+shows how GenAI and Analytics can be used alongside each other to improve the ways that analysts learn about the game.
+
+This workshop starts with the Autonomous Database, the single source of truth which will house our NBA data. You will build dashboards in Oracle Analytics Cloud (OAC) and enable a Generative AI model to access this data and use it to inform its responses to queries. The dashboards and Generative AI model you set up will then be combined together in a VisualBuilder application where they can be used in tandem.
+
+The target audience for this workshop is analysts, data scientists, and app developers who are interested in finding the best ways to deliver analytics and AI solutions to end users. 
+
 ![Oracle RedBull Racing Official Partner logo](images/logo.png =500x200 "Oracle RedBull Racing Official Partner logo")
 
 ### Objectives

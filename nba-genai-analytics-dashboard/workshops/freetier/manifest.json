@@ -13,9 +13,9 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Create a Twitter developer account",
+            "title": "Load Data into Autonomous Database",
             "description": "",
-            "filename": "../../2-create-a-twitter-developer-account/create-a-twitter-developer-account.md"
+            "filename": "../../2-load-data-into-adb/load-data-into-adb.md"
         },
         {
             "title": "Create and connect to an OCI Compute Instance",
