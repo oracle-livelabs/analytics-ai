@@ -1,75 +1,98 @@
-# Configure the Compute Instance
+# Use application to analyze player performance with Generative AI
 
 ## Introduction
 
-Estimated time - 10 minutes
+This lab will show you how to create a visual builder instance, 
 
-In previous sections we created the Compute Instance and established a connection to it.  
-In this section we will make the necessary configurations for the demo to work properly.
+Estimated time - 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-[](videohub:1_4d415278)
 
 ### Objectives
 
-* Allow incoming network traffic on port 9000.
-* Install Node.JS.
-* Create a folder to hold the OCI authentication information.
+* Create a Visual Builder Instance
+* Import the application
+* Enable the Analytics iframe
 
-## Task 1: Allow incoming network traffic on port 9000
+## Task 1: Create a Visual Builder Instance
 
-The demo server will send sentiment analysis notifications to the client over port 9000.  
-By default, all communication to the server is disabled except for port 22 used for SSH connections.
-In the Compute Instance network configuration step, port 9000 was enabled on the network side, and now we will enable it on the Compute Instance.  
+1. Navigating the OCI console, select the **menu button** in the top-left corner and navigate to **Developer Services** and scroll down to click **Visual Builder**. 
 
-1. As we've done in the previous section, we will use the connected terminal to issue the following commands:
+  ![Menu showing navigation to Visual Builder](images/navigate-vb.png)
 
-    ```bash
-    [opc@senti-meter-server ~]$ <copy>sudo firewall-cmd --permanent --add-port=9000/tcp</copy>
-    ```
+2. Click **Create Instance**.
 
-    The terminal should output `success` when the command completes.
+  ![Button showing create instance](images/create-instance.png)
+   
+3. Name your instance (for example *NBA_LL*), validate you are in your compartment, and click **Create Visual Builder Instance**. There will be a confirmation that it was successful and the status will say **CREATING**.
 
-    ```bash
-    [opc@senti-meter-server ~]$ <copy>sudo firewall-cmd --reload</copy>
-    ```
+  ![menu for naming and creating instance](images/name-instance.png)
 
-    The terminal should output `success` when the command completes.
+1. Notice the Status updates to Complete. Once complete, click on the **instance** and select **Service homepage**. 
 
-## Task 2: Install Node.JS
+  ![homepage for visual builder instance](images/open-instance.png)
 
-To execute the demo code, we need to install Node.JS version 16 or above.
+## Task 2: Import the application
 
-1. In the terminal, type the following command:
+1. Click **Import Application**. 
 
-    ```bash
-    [opc@senti-meter-server ~]$ <copy>sudo dnf install @nodejs:16</copy>
-    ```
+  ![welcome page button to get started](images/import-app.png)
 
-   After executing this command, you should see output similar to the following:
+2. Select **Application from file**.
 
-   ![Install Node.JS command result](images/install-node-js-command-output.png "Install Node.JS command result")
+  ![button to import from file](images/app-from-file.png)
 
-   Respond to the prompt asking you if you would like to proceed with the installation, type `y` (for `yes`) and press Enter.  
-   Once the installation completes, your terminal should look like the following:
+3. Drag and drop the zip file to update the fields and click **Import**.
 
-   ![Install Node.JS command result](images/node-js-install-complete.png "Install Node.JS command result")
+  ![import menu with updated fields](images/drag-and-drop.png)
 
-## Task 3: Create a folder to hold the OCI authentication information
+## Task 3: Enable the Analytics iframe
 
-The demo code makes extensive use of OCI's AI APIs to analyze the incoming tweets. To make those API calls, authentication information must be sent with the calls. In a following lab we will configure the authentication, but for now, we will create a folder which will serve as a placeholder for the authentication information.
+1. Click the **side-menu** and click **settings**.
 
-1. We will use the `mkdir` command in the connected terminal to create the folder:
+    ![Menu navigation to settings](images/vb-settings.png)
 
-    ```bash
-    [opc@senti-meter-server ~]$ <copy>mkdir ~/.oci</copy>
-    ```
+2. Click **New Origin** and paste in the **Origin Address** from the previous lab. Click the **check mark** to save.
 
-    This command doesn't output anything in response when successful.
+    ![Add new Cross-Origin Address](images/cross-origins.png)
+
+3. Update the Analytics app with the visual builder information for safe domains by navigating back to the Oracle Analyics Cloud dashboard,  selecting the **side menu button** and clicking the **Console** button.
+
+  ![menu for the OAC console](images/oac-console.png)
+
+4. Click **Safe Domains**.
+
+  ![Safe Domains button](images/safe-domains.png)
+
+5. Enter the domain of the visual builder app url in the empty field and clicked **Embedded**.
+
+  ![Enter field of Safe Domains](images/embedded.png) 
+
+6. Navigate back to the Visual builder webpage and then homepage using the side-menu and selecting **All Applications**. Click the **name** of the app to open the dashboard to begin editting.
+
+  ![menu for the imported app](images/open-app.png)
+
+3. Click the drop down arrow for the text **watch-live** and select the option **watch-live-start**.
+
+  ![app structure tree](images/watch-live-start.png)
+
+2. Select the option **Oracle Analytics Project** from the structure tree.
+
+  ![app structure tree - Analytics option](images/structure-tree-analytics.png)
+
+3. Update the **Host** and **Project Path** from the information gathered from the previous lab on the right-side menu of the webpage. Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
+
+  ![Analytics configuration menu](images/update-analytics.png)
+
+4. Repeat steps **2** and **3** for the page **watch-live-tiny**.
+
+  ![app structure tree](images/watch-live-tiny.png)
 
 You may now **proceed to the next lab**.
+
+## Learn More
+
 
 ## Acknowledgements
 
 * **Authors:**
-	* Yanir Shahak - Senior Principal Software Engineer, Health & AI
+	* Nicholas Cusato - Cloud Engineer
