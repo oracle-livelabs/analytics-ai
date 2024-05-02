@@ -28,7 +28,7 @@ In this lab, you will learn how to:
    - Name: NBAOACLivelab
    - Compartment: Make sure this compartment matches your desired compartment for the instance
    - Capacity Type: OCPU
-   - Capacity OCPU Count: 1
+   - Capacity OCPU Count: 2
    - License: License Included
    - Edition: Enterprise Edition
 7. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
