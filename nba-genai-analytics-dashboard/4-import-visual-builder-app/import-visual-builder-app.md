@@ -93,15 +93,19 @@ Estimated time - 20 minutes
 
 12. Update the **Host** and **Project Path** from the information gathered from the previous lab on the right-side menu of the webpage. 
 
->>**Note:** The Project path is the URL of the analytics instance
+>>**Note:** The host is the URL of the analytics instance from step 6. The project path is the object id from the step 8.
 
-Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
+>>**Note:** Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
 
   ![Analytics configuration menu](images/update-analytics.png)
 
-10. Repeat steps **2** and **3** for the page **watch-live-tiny**.
+13. Repeat steps **11** and **12** for the page **watch-live-tiny** and confirm that the Analytics canvas is showing. 
+
+>>**Note:** If th
 
   ![app structure tree](images/watch-live-tiny.png)
+
+14. Confirm that the page loads the view of the canvas.
 
 You may now **proceed to the next lab**.
 
