@@ -21,17 +21,20 @@ In this lab, you will learn how to:
 
 1. Log into your OCI tenancy
 2. In the region dropdown, select the correct region you'd like to provision your instance in
-3. In the OCI console, open up the navigation menu and navigate to 'Analytics & AI' then 'Analytics Cloud'
-4. Using the dropdown, select the compartment you want to provision OAC in
-5. Use the 'Create Instance' to open the create analytics instance form
-6. In the form, input the following for the required fields:
+   ![Region Selector](images/region selection.png "Select your region")
+4. In the OCI console, open up the navigation menu and navigate to 'Analytics & AI' then 'Analytics Cloud'
+   ![OCI Navigation Menu](images/create-adb-1.png "Create ADB 1")
+6. Using the dropdown, select the compartment you want to provision OAC in
+7. Use the 'Create Instance' to open the create analytics instance form
+8. In the form, input the following for the required fields:
    - Name: NBAOACLivelab
    - Compartment: Make sure this compartment matches your desired compartment for the instance
    - Capacity Type: OCPU
    - Capacity OCPU Count: 2
    - License: License Included
    - Edition: Enterprise Edition
-7. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
+   ![OAC Settings](images/create-adb-1.png "Create ADB 1")
+9. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
 
 ## Task 2: Import Custom Maps in OAC
 
