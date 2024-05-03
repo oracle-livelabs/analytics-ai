@@ -78,7 +78,7 @@ Estimated time - 20 minutes
 
     ![Create GenAI_project table](./images/genai-project.png "")
 
-6.  Copy and paste the following to enable the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
+6.  Copy and paste the following to create the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
 
   ```
   <copy>
@@ -240,7 +240,166 @@ Estimated time - 20 minutes
 
   ![generate modules ](./images/generate-modules.png "")
 
-7. Navigate to the REST modules by clicking the **side-menu button** and click **REST**.
+7. Copy and paste the following statement in the SQL Worksheet to create the package that allows you to execute multiple functions to interact with the Generative AI services
+
+  ```
+  <copy>
+  
+  create or replace PACKAGE ADMIN."GENAI" AS
+      FUNCTION get_response(
+          query_parameter varchar2, 
+        project_id number,
+        profile_name varchar2 default 'genai') RETURN CLOB;
+
+      FUNCTION get_prompt(
+          query_parameter varchar2, 
+        project_id number default 1) RETURN CLOB;
+
+      PROCEDURE ask_question ( 
+          question in out varchar2, 
+          sqlquery out clob,
+          message out clob,
+          resultset out SYS_REFCURSOR,
+          profile_name in varchar2 default 'genai'
+          );
+
+  END genai;
+
+  create or replace PACKAGE BODY ADMIN.genai AS
+
+      FUNCTION get_prompt_sql ( 
+          project_id number default 1) return clob IS
+
+          l_query clob;
+          l_complete_query clob;
+
+      BEGIN
+              -- For the selected GenAI project - get the query that selects data that will be used by the model to create a custom response            
+              SELECT query
+              INTO l_query
+              FROM genai_project
+              WHERE id = project_id;
+
+              l_complete_query := 
+                  'select g.task, g.task_rules, genai_dataset.* 
+                  from genai_project g, 
+                  (' || l_query || ' 
+                  ) genai_dataset
+                  where g.id = ' || project_id;
+
+              -- Return the generated prompt
+              return l_complete_query;
+
+              exception
+                  when others then
+                      return null;
+      END;
+
+      FUNCTION get_response (	
+          query_parameter varchar2, 
+        project_id number,
+        profile_name varchar2 default 'genai') RETURN CLOB IS
+
+          v_response clob; 
+        l_prompt clob;
+          l_response clob;
+
+          BEGIN
+              -- Get the prompt from the project + the query parameter
+              l_prompt := get_prompt(
+                      query_parameter => query_parameter,
+                      project_id => project_id
+              );
+              -- Pass the prompt to the model and return the response
+              l_response := DBMS_CLOUD_AI.GENERATE(
+                  prompt => l_prompt,
+                  profile_name => profile_name,
+                  action => 'chat' 
+              );
+
+              RETURN l_response;
+
+              EXCEPTION
+                  WHEN OTHERS THEN
+                      RETURN 'Error generating response.' || chr(10) || sqlerrm;
+          END;
+
+
+      FUNCTION get_prompt (
+          query_parameter varchar2, 
+        project_id number DEFAULT 1)
+          RETURN CLOB IS
+
+          l_prompt clob;
+          l_query clob;
+          l_complete_query clob;
+
+
+          BEGIN
+              -- For the selected GenAI project - get the query that selects data that will be used by the model to create a custom response
+              l_query := get_prompt_sql ( project_id => project_id);
+
+              -- Add to the query the instructions for the task
+              -- Structure it as a JSON doc
+
+              l_complete_query := 
+                  'select json_serialize(json_object(* returning clob format json) pretty) as prompt
+                  from
+                  (' || l_query || ' 
+                  )';
+
+              -- Generate the prompt
+              execute immediate l_complete_query INTO l_prompt USING query_parameter;
+
+              -- Return the generated prompt
+              return l_prompt;
+
+              EXCEPTION
+                  when others then
+                      return 'Error generating prompt.' || chr(10) || l_query || chr(10) || sqlerrm;
+          END;
+
+
+      PROCEDURE ask_question ( 
+              question in out varchar2, 
+              sqlquery out clob,
+              message out clob,
+              resultset out SYS_REFCURSOR,
+              profile_name in varchar2 default 'genai'
+              ) is
+          BEGIN
+              -- Generate the sql for the query
+              sqlquery := dbms_cloud_ai.generate (
+                          prompt => question,
+                          profile_name => 'genai',
+                          action => 'showsql'
+                          );    
+
+              -- Clean up the results. Get rid of new lines and multiple spaces
+              sqlquery := replace(sqlquery, chr(10), ' ');
+              sqlquery := regexp_replace(sqlquery, ' +', ' ');
+
+              OPEN resultset FOR sqlquery;
+
+              message := 'success';
+
+              EXCEPTION
+                  -- this will pick up a bad sql statement (or a statement that could not be generated)
+                  WHEN OTHERS THEN
+                      message := sqlquery;
+                      sqlquery := null;            
+                      open resultset for 'select ''unable to generate valid sql'' as item from dual';
+
+          END;
+
+  END genai;
+
+  </copy>
+  ```
+
+  ![generate package](./images/package.png "")
+
+8. Navigate to the REST modules by clicking the **side-menu button** and click **REST**.
 
   ![Navigate to REST](./images/rest-nav.png "")
 
@@ -254,9 +413,14 @@ Estimated time - 20 minutes
 
 ## Task 2: Connect the Endpoints
 
-1. Navigate back to the Visual Builder App and 
+1. Navigate back to the Visual Builder App and select the icon on the left that resembles a **circle** (represents services). Click the **Backends** option and then, **nba2**. Click **Servers** and then edit for **NBA Question**
+
+  ![Navigate to Modules](./images/update-endpoint-question.png "")
+
+3.
 
 
+  ![Navigate to Modules](./images/save-endpoint-question.png "")
 
 You may now **proceed to the next lab**.
 
