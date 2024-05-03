@@ -44,13 +44,13 @@ In this lab, you will:
 
 ![Navigate to DB Actions](images/adb-db-actions.png "DB Actions")
 
-2. Choose **Load Data** then **Select Files**. Choose the lab files named **nba_game_summary_stats_2024_regular_season.csv** and **nba_shotchart_2024_regular_season.csv** from your desktop. This files can be downloaded from THIS link.
+2. Choose **Load Data** then **Select Files**. Choose the lab files named **nba\_game\_summary\_stats\_2024\_regular\_season.csv** and **nba\_shotchart\_2024\_regular\_season.csv** from your desktop. This files can be downloaded from THIS link.
 
 ![Choose Data Load](images/db-actions-dataload.png "Data Load")
 
 ![Choose Files to Upload](images/db-actions-dataload2.png "Choose Datasets")
 
-3. You may review the settings for either dataset before the data is loaded by pressing the edit icon at the right side of the page. Here details like the table name and column data types can be set. No updates are required for these two datasets. Press the **Start** button and the database tables will be created after a few moments.
+1. You may review the settings for either dataset before the data is loaded by pressing the edit icon at the right side of the page. Here details like the table name and column data types can be set. No updates are required for these two datasets. Press the **Start** button and the database tables will be created after a few moments.
 
 ![Start Data Load](images/db-actions-dataload3.png "Start Data Load")
 

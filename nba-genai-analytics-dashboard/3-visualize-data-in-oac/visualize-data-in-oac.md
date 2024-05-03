@@ -19,14 +19,12 @@ In this lab, you will learn how to:
 
 ## Task 1: Provision an Oracle Analytics Cloud Instance
 
-1. Log into your OCI tenancy
-2. In the region dropdown, select the correct region you'd like to provision your instance in
-   ![Region Selector](images/regionselection.png "Select your region")
-4. In the OCI console, open up the navigation menu and navigate to 'Analytics & AI' then 'Analytics Cloud'
+1. Navigate back to the OCI Console homepage.
+2. In the OCI console, open up the navigation menu and navigate to 'Analytics & AI' then 'Analytics Cloud'
    ![OCI Navigation Menu](images/analyticsmenu.png "OCI Analytics Menu")
-6. Using the dropdown, select the compartment you want to provision OAC in
-7. Use the 'Create Instance' to open the create analytics instance form
-8. In the form, input the following for the required fields:
+3. Using the dropdown, select the compartment you want to provision OAC in
+4. Use the 'Create Instance' to open the create analytics instance form
+5. In the form, input the following for the required fields:
    - Name: NBAOACLivelab
    - Compartment: Make sure this compartment matches your desired compartment for the instance
    - Capacity Type: OCPU
@@ -34,7 +32,7 @@ In this lab, you will learn how to:
    - License: License Included
    - Edition: Enterprise Edition
    ![OAC Settings](images/OACSettings.png "OAC Settings")
-9. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
+6. Press 'Create.' It may take approximately 20 minutes for your instance to be provisioned.
 
 ## Task 2: Import Custom Maps in OAC
 
