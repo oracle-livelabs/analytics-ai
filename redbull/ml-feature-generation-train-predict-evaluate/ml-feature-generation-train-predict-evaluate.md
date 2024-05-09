@@ -72,15 +72,15 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
-2. In the console of the Autonomous Data Warehouse, open the **DB Actions**.
+2. In the console of the Autonomous Data Warehouse, open the **DB Actions** and select **View all Database Actions**.
    
    Sign In with the **F1** user
 
-   ![pic1](images/open-db-actions.png)
+   ![pic1](images/open-db-actions-ml.png)
 
-3. Choose **Development** > **Oracle Machine Learning**.
+3. Select the hamburger menu top left and selct **Oracle Machine Learning**.
 
-   ![pic1](images/open-oml.png)
+   ![pic1](images/open-ml.png)
 
 4. Sign in with the user `F1` and the secure password for the F1 user.
 
