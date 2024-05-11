@@ -20,9 +20,13 @@ Estimated time - 20 minutes
 
   ![navigate to the sql worksheet](images/adb-sql.png)
 
-2. Ensure that your data is loaded in the menu.
+2. Right click **NBA_GAME_SUMMARY** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
 
-3. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
+  ![navigate to the AutoREST](images/enable-rest.png)
+
+  ![Enable REST Dialogue](images/copy-autorest.png)
+
+1. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
 
     ```
     <copy>
@@ -411,14 +415,17 @@ Estimated time - 20 minutes
 
   ![Navigate to Modules](./images/nba-module.png "")
 
+10. Notice each endpoint has a similar root URL. Copy one of them and erase the endpoint up to **`admin`**. This will be used as the root endpoint for the next task, where the endpoints are predifed in the app, accordingly. 
+    
+  ![Navigate to Modules](./images/copy-endpoint.png "")
+
 ## Task 2: Connect the Endpoints
 
 1. Navigate back to the Visual Builder App and select the icon on the left that resembles a **circle** (represents services). Click the **Backends** option and then, **nba2**. Click **Servers** and then edit for **NBA Question**
 
   ![Navigate to Modules](./images/update-endpoint-question.png "")
 
-3.
-
+2. Paste the **URL from the previous task** in the **`Instance URL`** and click **Save**.
 
   ![Navigate to Modules](./images/save-endpoint-question.png "")
 

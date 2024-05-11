@@ -48,7 +48,7 @@ You may now **proceed to the next lab**.
 * [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.htm)
 
 
-## **Acknowledgements**
+## Acknowledgements
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Engineer

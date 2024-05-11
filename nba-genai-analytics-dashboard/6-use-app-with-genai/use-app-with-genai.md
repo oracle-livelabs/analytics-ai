@@ -2,16 +2,21 @@
 
 ## Introduction
 
+This lab 
+
 Estimated time - 20 minutes
 
 
 ### Objectives
 
-* 
+* Test the Application
+* Deploy the application
 
-## Task 1: 
+## Task 1: Test the Application
 
-1. 
+1. Test the endpoints in the app by navigating to the service connections. Select **`question`**, then **`Endpoints`**, and select ther
+
+  ![Navigate to test question endpoint](./images/test-question.png "")
 
 ## Task 2: 
 
