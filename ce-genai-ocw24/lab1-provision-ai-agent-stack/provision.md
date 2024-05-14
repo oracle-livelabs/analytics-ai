@@ -1,4 +1,4 @@
-# Provision AI Agent Stack
+# Provision AI Agent Stack using Resource Manager
 
 ## About this Workshop
 
