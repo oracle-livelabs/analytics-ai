@@ -1,4 +1,4 @@
-# Introduction
+# Ingest Data into Open Search
 
 ## About this Workshop
 

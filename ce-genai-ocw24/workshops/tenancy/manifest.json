@@ -23,29 +23,25 @@
             "filename": "../../../../labs/cloud-login/cloud-login-direct-signin.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Provision AI Agent Stack",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../lab1-provision-ai-agent-stack/provision.md"
         },
         {
             "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "filename": "../../lab2-upload-data-to-bucket/upload-file.md"
         },
         {
             "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "filename": "../../lab3-ingest-data-into-open-search-load/ingest-data.md"
         },
         {
             "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "filename": "../../lab4-config-ai-agent/config-ai-agent.md"
         },
         {
             "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
-        },
-        {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "filename": "../../lab5-launch-chatbot/launch-chatbot.md"
         },
         {
             "title": "Need Help?",

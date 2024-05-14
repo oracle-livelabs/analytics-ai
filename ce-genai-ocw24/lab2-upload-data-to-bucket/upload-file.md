@@ -1,14 +1,14 @@
-# Introduction
+# Upload Data to Object Storage
 
 ## About this Workshop
 
-In this workshop, we will create a chatbot empowered by Generative AI and RAG to search business dashboards using OCI AI Agent, OCI Open Search.
+This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
-Architecture of the workshop:
-![architecture](./images/architecture.png )
+Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
-Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+*You may add an option video, using this format: [](youtube:YouTube video id)*
 
+  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
