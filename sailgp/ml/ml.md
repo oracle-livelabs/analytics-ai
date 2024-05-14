@@ -142,21 +142,17 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![ADW Menu](images/open-sailgp.png)
 
-3. Open the **Database Actions**.
+3. Open the **Database Actions** and select **Database Users**.
 
    If sign-in is requested, sign in with `ADMIN`, password `Oracle_12345`.
 
    ![ADW Menu](images/select-db-actions.png)
 
-4. Choose **Administration** > **Database Users**.
-
-   ![ADW Menu](images/select-db-users.png)
-
-5. Find the **SAILOR** user and Edit the user.
+4. Find the **SAILOR** user and Edit the user.
 
    ![ADW Menu](images/edit-sailor.png)
 
-6. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
+5. Turn on the "OML" (Oracle Machine Learning) button and click Apply Changes. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
 
    ![ADW Menu](images/enable-oml.png)
 
@@ -175,9 +171,9 @@ In the past we've gone onto the water with our boat many times in different wind
 
 ## Task 4: Build the Machine Learning Model
 
-1. In the console of the Autonomous Data Warehouse, go to **Database Actions**.
+1. In the console of the Autonomous Data Warehouse, go to **Database Actions** and select **View all Database Actions**.
 
-   ![pic1](images/select-db-actions.png)
+   ![pic1](images/select-db-actions-ml.png)
 
 2. Look at the top right to see which user is logged in.
 
@@ -186,7 +182,7 @@ In the past we've gone onto the water with our boat many times in different wind
    Username: `SAILOR`
    Password: `Oracle_12345`
 
-3. Choose "Oracle Machine Learning"
+3. Select the hamburger menu top left and select "Oracle Machine Learning"
 
    ![pic1](images/start-oml2.png)
 

@@ -2,14 +2,20 @@
 # Introduction
 
 ## About This Workshop
-Using low code cloud services in Oracle Cloud Infrastructure (OCI), this workshop will illustrate how to create a system to search the full text of document images using OpenSearch and a familiar search interface created with Visual Builder.
-
-The focus of this workshop is making document images searchable. These document images are typically text documents that have been scanned to .tif or .jpg, or .pdf. However the system you'll build will handle many different document types such as:
+Using low code tools, we will create a Generative AI Search to search documents using OpenSearch and a Google like search interface created with Visual Builder. Documents like:
+- Word, Excel, PDF, ...
 - Images with text using AI Document Understanding
 - Images without text using AI Vision
+- Audio and Videos files 
 - Custom document: Belgian ID card images
-- Word, Excel, even recorded speech
 
+![Screenshot](images/when-was-jazz-created.png)
+
+The website will have several ways to search:
+- Search: Based on *Words* in the documents
+- Semantic Search: Based on the *Meaning* (Vector Search)
+- RAG (Retrieval Augmented Generation): Answer questions based on documents
+- and a "Generate" response button.
 
 ![Introduction use case](images/opensearch-intro.png)
 
@@ -19,7 +25,7 @@ Estimated Workshop Time: 90 minutes
 
 ### Architecture
 
-![Architecture](images/opensearch-architecture.png)
+![Architecture](images/opensearch-architecture-genai.png)
 
 It works like this:
 1. A document is uploaded in the Object Storage by the user
@@ -37,13 +43,13 @@ The file types supported by the OIC project are hard-coded into different routes
 
 - If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision, then the extracted text is classified using OCI Language, and then it is indexed into OpenSearch
 
-- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is classified using Language Service and then it is indexed into OpenSearch.
+- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is indexed into OpenSearch.
 
 - If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech and the json output is processed as described above
 
 - If the file has the extension **.tif** or **.pdf**, it is processed by OCI Document Understanding and the json output is processed as described above
 
-- All other file types are sent to the OCI Function with Tikka parser and extracted text is classified using OCI Language and then indexed into OpenSearch
+- All other file types are sent to the OCI Function with a document parser and extracted text is classified using OCI Language and then indexed into OpenSearch
 
 
 
@@ -60,9 +66,11 @@ The file types supported by the OIC project are hard-coded into different routes
 ### Prerequisites
 - You need an Oracle Cloud account (i.e. access to an OCI tenancy) to complete this workshop. Participants can take advantage of Oracle's free trial account that comes with free cloud credits that are good for 30 days or until used up. Many Oracle events, such as CloudWorld, offer trial accounts with extra free cloud credits. You should be able to complete this workshop in the allotted time if your free trial cloud account is already created and ready to use. If you previously had a free trial account but the credits have expired, you won't be able to complete the lab. An option in this case is to obtain a new free trial account with fresh credits using a different email address. You can also use an existing paid Oracle Cloud account as long as you have administrator rights that will be needed to provision services.
 - You need a computer (laptop or desktop) with web browser, a text editor, and internet access. (Attempting to accomplish this workshop using a tablet or phone might be possible but is not recommended and it hasn't been tested on those types of devices.)
+- *The Cloud Account should have access to the Chicago Region* where the Generative AI is available.
+    - For Free Trial account, this means that the Free Trial should be created in the Chicago region
+    - For Paid account, you will need to add the Chicago Region to your tenancy to access the Generative AI APIs. (See lab 1) 
 
 **Please proceed to the [next lab.](#next)**
-
 
 ## Acknowledgements 
 - **Author**

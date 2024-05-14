@@ -45,7 +45,7 @@ This lab assumes you have:
 
 6. Browse to your geoJSON file you created. If successful, you will see  a window asking for your layer name and which field you will use to map to your data. 
 
-    In case you haven't created your own geoJSON, you can download [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
+    In case you haven't created your own geoJSON, you can download [Zandvoort Sector LineString.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
     > **Note:** if your file does not upload successfully, ensure you entered in a unique id for each property.  
 
     ![Upload your geoJSON LineString file](./images/zandvoort-sector-linestring2.png)
@@ -54,7 +54,7 @@ This lab assumes you have:
 
 8. Browse to your second geoJSON file you created. If successful, you  will see a window asking for your layer name and which field you  will use to map to your data.
 
-    In case you haven't created your own geoJSON, you can download [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
+    In case you haven't created your own geoJSON, you can download [Zandvoort Sector Point.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
     ![Upload your geoJSON point file](./images/zandvoort-sector-point2.png)
 

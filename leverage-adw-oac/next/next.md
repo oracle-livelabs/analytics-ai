@@ -45,10 +45,6 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
 ## Task 2: Want to learn more?
 
-If you have enjoyed the workshop, give me a star on Github: [click here](https://github.com/LucianDinescu/learning-library/tree/master/analytics-library/leverage-adw-oac)!
-
-![Github start](./images/gthib_start.png)
-
 Learn more about [Oracle Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud).
 
 Learn more about [Oracle Autonomous Data Warehouse on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-intro-adw.html#GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414).
@@ -59,4 +55,4 @@ Learn more about [Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/
 
 - **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Last Updated By/Date** - Priscila Iruela, September 2023

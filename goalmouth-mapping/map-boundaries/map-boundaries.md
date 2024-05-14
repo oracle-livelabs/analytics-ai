@@ -84,7 +84,7 @@ Creating a table from the latitude and longitude data will allow you to explore 
 
   ![The standardized coordinates](images/table-output4.png)
 
-We use standardized coordinates to account for the image layer. This ensures that the points representing the penalty goals are placed inside of the goal posts and above the goal line. The coordinates entered in the Image Background dialog box represent the absolute edge of the top right and bottom left corners on the image file. *To learn more about Map Backgrounds in Oracle Analytics Cloud follow the links in the below Learn More section.* 
+  We use standardized coordinates to account for the image layer. This ensures that the points representing the penalty goals are placed inside of the goal posts and above the goal line. The coordinates entered in the Image Background dialog box represent the absolute edge of the top right and bottom left corners on the image file. *To learn more about Map Backgrounds in Oracle Analytics Cloud follow the links in the below Learn More section.* 
 
   ![Plug in the standardized coordinates](images/map-navigate8.png)
 

@@ -1,5 +1,7 @@
 # Introduction
 
+![Oracle and Premier League Logos](images/eploraclepartnerblacksmall.png)
+
 ## About this Workshop
 
 The Premier League has been leading the charge with their embrace of data and visualizations as a way to increase fan engagement. They recognize that visualized data often enables users to ask questions they may not have otherwise asked. These data visualizations will be a catalyst that sparks interesting conversations with fans across the world. Visualized data enables fans to explore their favorite teams, players, and remarkable matches in a new dimension. As a fun visual element, maps are also appealing as they give eager fans an easy way to highlight memorable moments. 
@@ -10,7 +12,7 @@ The at-a-glance usability of maps makes them one of the most powerful tools for 
 
 ![A completed goalmouth map with penalties plotted](images/aboutworkshop1.png)
 
-Estimated Workshop Time: 1 hours 30 minutes 
+Estimated Workshop Time: 2 hours 
 
 ### Objectives
 

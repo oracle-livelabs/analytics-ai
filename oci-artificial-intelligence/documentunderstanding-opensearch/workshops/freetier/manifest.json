@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Make It Searchable: AI-Enabled Information Retrieval",
+    "workshoptitle": "Search Documents stored in Object Storage using Opensearch, Generative AI, Semantic Search, RAG",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
