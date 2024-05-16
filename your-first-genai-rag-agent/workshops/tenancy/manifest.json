@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Unlock Your Enterprise Knowledge: Building Your First Oracle GenAI RAG Agent",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Lab 1: Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 2: Ingestion of Unstructured Data",
+            "filename": "../../2-ingestion-of-unstructured-data/ingestion-of-unstructured-data.md"
+        },
+        {
+            "title": "Lab 3: 23ai as a Data Source",
+            "filename": "../../3-23ai-as-data-source/23ai-as-data-source.md"
+        },
+        {
+            "title": "Lab 4: OpenSearch as a Data Source",
+            "filename": "../../4-opensearch-as-data-source/opensearch-as-data-source.md"
+        },
+        {
+            "title": "Lab 5: Data retrieval",
+            "filename": "../../5-data-retrieval/data-retrieval.md"
+        },
+        {
+            "title": "Lab 6: Context Awareness",
+            "filename": "../../6-context-awareness/context-awareness.md"
+        },
+        {
+            "title": "Lab 7: Scenarios",
+            "filename": "../../7-scenarios/scenarios.md"
+        },
+        {
+            "title": "Lab 8: Future Potential",
+            "filename": "../../8-future-potential/future-potential.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
