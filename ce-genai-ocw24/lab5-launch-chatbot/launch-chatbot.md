@@ -1,45 +1,25 @@
 # Launch the Chatbot
 
-## About this Workshop
+Let's try out the Generative AI Agent chat widget.
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+1. On your cloud console, navigate to the Generative AI Agents and click on Agents to see the list of all Agents created.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+<img width="164" alt="image" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/762ed773-63c4-454d-917f-3c2db26e30f2">
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
+2. Select the Agent created.
 
-  [](youtube:zNKxJjkq0Pw)
+<img width="734" alt="image" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/60bda2fa-4a77-4d55-8ae4-532665b9ea1d">
 
-### Objectives
+3. Click on the Agent and select the option "Launch Chat with Agent"
 
-*List objectives for the workshop*
+<img width="803" alt="image" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/b916d43b-2902-466e-8431-47cb3b943bdc">
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+4. Start communicating with the Agent by asking for help and/or making specific questions, such as listing available metrics.
 
-### Prerequisites (Optional)
+<img width="950" alt="image" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/272e7307-82da-4af5-a03e-c1fc01c23323">
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Pavan Kumar Manuguri
+* **Contributors** -  Jiayuan Yang
+* **Last Updated By/Date** - Pavan Kumar Manuguri, May 17 2024
