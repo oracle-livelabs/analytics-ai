@@ -28,20 +28,21 @@
             "filename": "../../lab1-provision-ai-agent-stack/provision.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 2: Upload File to Object Storage",
             "filename": "../../lab2-upload-data-to-bucket/upload-file.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
+            "title": "Lab 3: Ingest Data into Open Search",
             "filename": "../../lab3-ingest-data-into-open-search-load/ingest-data.md"
         },
         {
-            "title": "Lab 4: Query Data",
+            "title": "Lab 4: Config AI Agent",
             "filename": "../../lab4-config-ai-agent/config-ai-agent.md"
         },
         {
-            "title": "Lab 5: Tables in LiveLabs",
+            "title": "Lab 5: Launch the Chatbot",
             "filename": "../../lab5-launch-chatbot/launch-chatbot.md"
+        },
         },
         {
             "title": "Need Help?",
