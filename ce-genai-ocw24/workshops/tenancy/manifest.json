@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
+    "workshoptitle": "Intelligent Business Dashboard Search using RAG",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -42,7 +42,6 @@
         {
             "title": "Lab 5: Launch the Chatbot",
             "filename": "../../lab5-launch-chatbot/launch-chatbot.md"
-        },
         },
         {
             "title": "Need Help?",
