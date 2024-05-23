@@ -2,35 +2,25 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+Oracle Cloud Infrastructure Generative AI Agents (Beta) is a fully managed service that combines the power of large language models with an intelligent retrieval system to create contextually relevant answers by searching your knowledge base, making your AI applications smart and efficient.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+This livelabs will cover all the steps to create and configure this service.  
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Estimated Workshop Time: 2 hours 30 minutes 
 
 ### Objectives
 
-*List objectives for the workshop*
-
 In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+* Provision new AI Agent.
+* Setup & configure the Agent.
+* Load indexes in oracle search.
+* Interact with Chat Agent. 
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+* Admin access to create required policeis.
 
 ## Learn More
 
@@ -40,6 +30,6 @@ In general, the Introduction does not have Steps.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Pavan Kumar Manuguri
+* **Contributors** -  Jiayuan Yang
+* **Last Updated By/Date** - Pavan Kumar Manuguri, May 23 2024
