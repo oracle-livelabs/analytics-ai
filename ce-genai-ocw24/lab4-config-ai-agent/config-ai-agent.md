@@ -2,23 +2,15 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
-
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+In this lab, we will look at the steps to configure the indexes on Open Search cluster.
 
 ### Objectives
 
 *List objectives for the workshop*
 
 In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+* Fetch indexes
+* Edit and Configure indexes
 
 ### Prerequisites (Optional)
 
@@ -30,7 +22,22 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-In general, the Introduction does not have Steps.
+### How to fetch indexes
+
+<img width="580" alt="Lab-4_Image-4" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/736c2272-7bf0-4f7e-9fec-667adb19e786">
+
+
+
+### How to Edit and Configure indexes
+
+![Lab-4_Image-6](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/3217d2cc-8b91-483a-9701-bc8c3070c723)
+
+
+
+
+### Objectives
+
+
 
 ## Learn More
 
