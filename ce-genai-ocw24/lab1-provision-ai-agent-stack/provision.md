@@ -119,7 +119,7 @@ When you no longer need the deployment, you can run this command to destroy the 
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1]([http://docs.oracle.com](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm))
+* [https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm]
 
 ## Acknowledgements
 * **Author** - Pavan Kumar Manuguri
