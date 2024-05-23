@@ -24,20 +24,36 @@ This lab assumes you have:
 
 ### How to fetch indexes
 
-<img width="580" alt="Lab-4_Image-4" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/736c2272-7bf0-4f7e-9fec-667adb19e786">
+1. Go to Generative AI Agents -> Data Sources.
+   
+<img width="161" alt="Lab-4_Image-1" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/340d74f5-661a-4aba-98e1-77237b82bd71">
 
+2. Select the Data Source created for the Agent.
+
+![Lab-4_Image-2](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/4d7e14a9-cbb2-4796-abb2-735e31058077)
+
+3. Edit the Agent Data Source.
+
+![Lab-4_Image-3](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/66b08944-b79e-4311-89ab-5924ff052cf6)
+
+4. Provide the Open Search user id and password to fetch all the indexes created.
+
+<img width="580" alt="Lab-4_Image-4" src="https://github.com/pavanmanuguri/analytics-ai/assets/104058904/ea4fc7fe-b3d7-483b-b4c7-d7614b9bd901">
 
 
 ### How to Edit and Configure indexes
 
-![Lab-4_Image-6](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/3217d2cc-8b91-483a-9701-bc8c3070c723)
+1. Review the list of indexes and keep the required index from the list. Remove remaining indexes (if any)
 
+![Lab-4_Image-5](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/83fc658f-db4a-431e-9dbe-70422333c71d)
 
+2. Provide the Content Field name, URL Field name, and Title field name and hit edit.
 
+3. After you hit edit, it takes couple of minutes to reflect those indexes in Open Search cluster.
 
-### Objectives
+   ![Lab-4_Image-6](https://github.com/pavanmanuguri/analytics-ai/assets/104058904/00bcb0e2-dde6-4f2c-b7ae-26011ce8d8c8)
 
-
+4. Go back to Agent Chat console, once the Agent Update status turns to Green color. 
 
 ## Learn More
 
