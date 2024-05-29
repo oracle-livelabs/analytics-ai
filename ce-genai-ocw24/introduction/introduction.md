@@ -2,7 +2,14 @@
 
 ## About this Workshop
 
-In this workshop, we will create a chatbot empowered by Generative AI and RAG to search business dashboards using OCI AI Agent, OCI Open Search.
+Enterprise runs multiple lines of business and have different business groups who generates, maintains, and consumes many business dashboards. Having an intelligent search engine allows business user to 
+easily search and quickly find the right business dashboard within enterprise's system can accelerate user's daily work. Leveraging the power of Large Language Model (LLM) and Retrieval Augmented  Generation (RAG),
+company can build a chatbot where user can search for business dashboards based on dashboard contents, data sources, or other dashboards metadata in natural language style. 
+
+Large Language Models (LLM) are machine learning models that can comprehend and generate human language text. Retrieval Augmented Generation (RAG) is a method for generating text 
+using additional information fetched from an external data source.
+
+In this workshop, we will create a chatbot empowered by Generative AI and RAG to search Oracle Analytics Cloud (OAC) dashboards using Oracle Generative AI Agents, Open Search, and OCI services.
 
 Architecture of the workshop:
 ![](./images/architecture.png =60%x*)
@@ -12,23 +19,19 @@ Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire work
 
 ### Objectives
 
-*List objectives for the workshop*
-
 In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+* Provision AI Agent stack 
+* Configure AI Agent data source with Open Search
+* Ingest data into Open Search cluster
+* Launch AI Agent chatbot and make query of analytics dashboards
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* Familiarity with Oracle Cloud is preferred, but not required
+* Familiarity with Large Language Model (LLM), Generative AI, Retrieval Augmented  Generation (RAG) is preferred, but not required
 
-*This is the "fold" - below items are collapsed by default*
 
 In general, the Introduction does not have Steps.
 
@@ -40,6 +43,6 @@ In general, the Introduction does not have Steps.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Jiayuan Yang, Cloud Engineer
+* **Contributors** -  Pavan Kumar Manuguri
+* **Last Updated By/Date** - Jiayuan Yang, June 2024
