@@ -2,9 +2,11 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+In this lab you will learn how to upload data to OCI Object Storage, and make a use of the object.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. You can create a bucket and store an object in the bucket, safely and securely retrieve data, and easily manage storage at scale. 
+
+Estimated Workshop Time: 5 minutes
 
 
 ### Objectives
@@ -47,12 +49,10 @@ In this workshop, you will learn how to:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [Getting Started with OCI Object Storage](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Jiayuan Yang, Cloud Engineer 
 * **Contributors** -  Pavan Kumar Manuguri, Senior Cloud Engineer
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Jiayuan Yang, June 2024

@@ -5,7 +5,7 @@
 In this workshop, we will create a chatbot empowered by Generative AI and RAG to search business dashboards using OCI AI Agent, OCI Open Search.
 
 Architecture of the workshop:
-![architecture](./images/architecture.png )
+![](./images/architecture.png =60%x*)
 
 Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
