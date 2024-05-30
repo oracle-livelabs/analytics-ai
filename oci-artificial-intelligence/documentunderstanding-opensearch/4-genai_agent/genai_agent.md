@@ -40,19 +40,72 @@ You will need the OCI Cache with Redis Cluster for the Generative AI Agent. The 
 
 ![GenAI Agent link](images/redis-cluster-create.png)
 
-8. Click the **Create cluster** button. It will open the VCN tab.
+8. Click the **Create cluster** button.
 
+9. Wait about 10 mins until Redis cluster state is Active.
 
 
 
 ## Task 2: Create a Generative AI Agent
 
 1. Go the Cloud console 3-bar/hamburger menu and select the following    
-   1. Databases
-   2. Clusters (under OCI Cache)
+   1. Analytics & AI
+   2. Generative AI Agents (under AI Services)
 
   ![GenAI Agent link](images/genai-agents-menu.png)
   
+### 1. Private endpoint
+1. Click *Private endpoints*
+2. Click *Create private endpoint* button. It will open the Create private endpoint form.
+   Compartment ID: *oci-starter*
+   Name: *search-pe*
+   Configuration
+      Choose a VCN: *search-vcn*
+      Choose a subnet: *search-priv-subnet*
+      DNS zones to resolve: *searchpriv.searchvcn.oraclevcn.com*
+   
+  ![GenAI Agent link](images/genai-agent-pe.png)
+   
+4. Click the **Create cluster** button.
+
+5. Wait about 3 mins until Private endpoint state is Active.
+
+### 2. Data source
+
+
+### 3. Cache store
+
+
+
+### 4. Agent
+
+
+
+## Task 3: Test the Generative AI Agent
+
+1. Click *search-agent* in the list of Agents
+   
+2. In the Agent details screen, click *Launch chat with agent*. It will open a new tab that you will use in the next Task. Sign in. 
+![Run the application](images/opensearch-vb-test.png)
+
+1. In the search user interface, enter *jazz* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
+![Test Result](images/opensearch-vb-test-result.png)
+
+1. Try the same with the question "when was jazz created" with *Search*, *Semantic Search*, *RAG* and *Generate*. Compare the results.
+   
+1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
+
+    | Search Terms |
+    | ------------------------------------- | --------------------------------------- |
+    | When was jazz created | Search |
+    | When was jazz created | Semantic Search |
+    | When was jazz created | RAG |
+    | When was jazz created | Generate |
+    | When was the moon created | Search |
+    | When was the moon created | Semantic Search |
+    | When was the moon created | Generate |
+    | When was the moon created | RAG |
+    | Penguin | Search |
 
 
 1. In the OIC service console menu, choose **Visual Builder**.
@@ -133,7 +186,7 @@ You will need the OCI Cache with Redis Cluster for the Generative AI Agent. The 
 
 ![Compartment ID OpenSearch](images/opensearch-vb-compartmentid.png)
 
-## Task 3: Test the application
+## Task 3: Test the Generative AI Agent
 
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
 ![Run the application](images/opensearch-vb-test.png)
