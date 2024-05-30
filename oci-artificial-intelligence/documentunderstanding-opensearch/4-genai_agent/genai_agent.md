@@ -15,37 +15,42 @@ Estimated time: 10 min
 
 ## Task 1: Create a OCI Cache with Redis Cluster
 You will need the OCI Cache with Redis Cluster for the Generative AI Agent. The agent stores a chat context in Redis cache.
-  
-    1. Go the Cloud console 3-bar/hamburger menu and select the following    
-        1. Databases
-        2. Clusters (under OCI Cache)
+
+1. Go the Cloud console 3-bar/hamburger menu and select the following    
+   1. Databases
+   2. Clusters (under OCI Cache)
+   
   ![GenAI Agent link](images/redis-clusters-menu.png)
   
-    2. Check that you are in the intended compartment. (*oci-starter* was the recommended compartment name.)
+2. Check that you are in the intended compartment. (*oci-starter* was the recommended compartment name.)
 
-    3. Click **Create cluster** button
-      Name: *search-redis*
-      Create in compartment: *oci-starter*
+3. Click **Create cluster** button
+   Name: *search-redis*
+   Create in compartment: *oci-starter*
 
-    4. Click the **Next** button. It will open the Node configuration tab.
-       You can leave everything as default
+4. Click the **Next** button. It will open the Node configuration tab.
+   You can leave everything as default
 
-    5. Click the **Next** button. It will open the VCN tab.
-      Select existing virtual cloud network
+5. Click the **Next** button. It will open the VCN tab.
+   Select existing virtual cloud network
       Virtual cloud network: *search-vcn*
       Subnet: *search-priv-subnet*
     
-    6. Click the **Next** button. It will open the Review tab.
+6. Click the **Next** button. It will open the Review tab.
 
-    7. Click the **Create cluster** button. It will open the VCN tab.
 ![GenAI Agent link](images/redis-cluster-create.png)
+
+8. Click the **Create cluster** button. It will open the VCN tab.
+
+
 
 
 ## Task 2: Create a Generative AI Agent
 
-  1. Go the Cloud console 3-bar/hamburger menu and select the following    
-        1. Databases
-        2. Clusters (under OCI Cache)
+1. Go the Cloud console 3-bar/hamburger menu and select the following    
+   1. Databases
+   2. Clusters (under OCI Cache)
+
   ![GenAI Agent link](images/genai-agents-menu.png)
   
 
