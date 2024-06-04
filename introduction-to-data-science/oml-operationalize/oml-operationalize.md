@@ -21,17 +21,21 @@ In this lab you will:
 
 We will prepare the APEX application.
 
-1. Inside of the ATP instance console, go to Tools, and then "Open APEX".
+1. Inside of the ATP instance console, select **View all Databse actions**
 
    ![](images/development.png)
 
-2. Log in
+2. Select the hamburger menu top left and then select **Apex**
+
+  ![](images/open-apex.png)
+
+3. Log in
 
    You will see the login page of APEX Administration Services. Use the ADMIN password that you entered when you provisioned ATP (Oracle_12345).
 
    ![](images/open-apex-2.png)
 
-5. Create a new workspace
+4. Create a new workspace
 
    Follow the instructions to create a new workspace. ![](images/create-workspace-01.png)
 

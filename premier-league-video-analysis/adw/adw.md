@@ -127,15 +127,12 @@ connection.commit()
 
     ![ADW databases list](images/select-adw2.png)
 
-2. Open Database Actions.
+2. Select Database Actions and select SQL.
 
     ![Open DB actions](images/open-db-actions.png)
 
-3. Open SQL.
 
-    ![Open SQL](images/open-sql.png)
-
-4. Query the contents of the TRACKING table.
+3. Query the contents of the TRACKING table.
 
    Type the following in the worksheet and run it.
    
@@ -146,7 +143,7 @@ connection.commit()
 
     ![SQL](images/select.png)
 
-5. You should see the following:
+4. You should see the following:
 
     ![Results](images/query-result.png)
 

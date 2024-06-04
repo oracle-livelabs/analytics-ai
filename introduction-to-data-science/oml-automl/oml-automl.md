@@ -26,7 +26,7 @@ This video covers a walkthrough of the lab.
 
 1. Back in the Datbase Actions home page, select Oracle Machine Learning.
 
-   ![](images/open-notebook.png)
+   ![](images/open-ml.png)
 
 2. Sign in
 

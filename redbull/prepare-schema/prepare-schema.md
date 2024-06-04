@@ -32,24 +32,21 @@ This new user/schema will hold the Grand Prix data.
 
    ![ADW Menu](images/open-redbull2.png)
 
-3. Click **Database Actions**.
+3. Click **Database Actions** and select **SQL**.
 
 
    ![ADW Menu](images/open-database-actions.png)
 
    If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
-4. Click the **SQL** tile under **Development** section.
 
-    ![ADW Menu](images/open-sql.png)
+4. **Download** <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/cEbDpmx0Imy3-L8SYZK4BQNnVLGVhkN_iJyQyjGc2So4qNse69_dSB513EzX_Hzu/n/fruktknlrefu/b/workshop-redbull-analytics/o/redbull-create-user.sql" target="\_blank">`redbull-create-user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
-5. **Download** <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/cEbDpmx0Imy3-L8SYZK4BQNnVLGVhkN_iJyQyjGc2So4qNse69_dSB513EzX_Hzu/n/fruktknlrefu/b/workshop-redbull-analytics/o/redbull-create-user.sql" target="\_blank">`redbull-create-user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
-
-6. Open the `redbull-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. This file will create a new user "F1" for us.
+5. Open the `redbull-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. This file will create a new user "F1" for us.
 
     ![ADW Menu](images/copy-paste.png)
 
-7. Click the **run-script** button (**NOT** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
+6. Click the **run-script** button (**NOT** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
 
     ![ADW Menu](images/run-script.png)
 
@@ -82,11 +79,11 @@ This new user/schema will hold the Grand Prix data.
    - Username: F1
    - Password: Provide the secure password for the F1 user
 
-3. Click to the **Data Load** option, under the **Data Tools** section.
+3. Select the hamburger top left and then select the **Data Load** option.
 
    ![Open Data Load](images/open-data-load.png)
 
-4. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
+4. Choose **Load Data**.
 
     ![Start Data Load](images/start-data-load.png)
 
