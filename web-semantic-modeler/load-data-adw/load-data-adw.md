@@ -59,15 +59,15 @@ In this section, you will login to the BISAMPLE user you just created and load t
 
 	![Sign in](./images/sign-in.png =300x*)
 
-3. Under **Data Studio**, click **DATA LOAD**.
+3. Click **Data Studio**, then click **Data Load**.
 
 	![Data Load](./images/data-load.png =500x*)
 
-4. Choose **LOAD DATA** and **LOCAL FILE**, then click **Next**.
+4. Choose **Load Data**.
 
 	![Local file](./images/local-file.png)
 
-5. Drag and drop or select the BISAMPLE_date.xlsx file from your local machine.
+5. Drag and drop or select the BISAMPLE.xlsx file from your local machine.
 
 	>**Note**: Find the BISAMPLE.xls file download in the prerequisites section above.
 
@@ -77,27 +77,35 @@ In this section, you will login to the BISAMPLE user you just created and load t
 
 	![Settings](./images/settings-icon.png)
 
-7. Under **Mapping**, change the **POSTAL_CODE** data type from NUMBER to **VARCHAR2**. This will prevent issues while loading the data since this dataset includes postal codes from around the world which have letters and numbers in the format. After changing the data type, close the table editor.
+7. Under **Mapping**, change the **POSTAL_CODE** data type to **VARCHAR2**. This will prevent issues while loading the data since this dataset includes postal codes from around the world which have letters and numbers in the format. Close the table editor.
 
 	![Data Type](./images/varchar.png)
 
-8. We're now ready to load the data. Click the **Start** button to start the data load. This should take about 2 minutes.
+8. Now let's make one more change. Find **SAMP\_TIME\_DAY\_D** and click the **Settings** icon.
+
+	![Settings](./images/settings-icon-day.png)
+
+9. Under **Mapping**, change the **DAY_KEY** data type to **NUMBER**. Close the table editor.
+
+	![Data Type](./images/number.png)
+
+10. We're now ready to load the data. Click the **Start** button to start the data load. This should take about 2 minutes.
 
 	![Start data load](./images/start-load.png)
 
-9. Click **Done** on the bottom of the page once the data load is complete.
+11. Once the data load is complete, you will see the tables.
 
 	![Load done](./images/load-done.png)
 
-10. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
+12. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
 
 	![SQL Development](./images/sql.png =500x*)
 
-11. All your tables should be listed here under the **BISAMPLE** user/schema. Right-click **SAMP\_REVENUE\_F** and select **Open**. We'll take a closer look to confirm all the data is there.
+13. All your tables should be listed here under the **BISAMPLE** user/schema. Right-click **SAMP\_REVENUE\_F** and select **Open**. We'll take a closer look to confirm all the data is there.
 
 	![Open revenue](./images/open-revenue.png)
 
-12. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
+14. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
 
 	![Count Rows](./images/count-rows.png)
 	![Row count](./images/row-count.png =300x*)
