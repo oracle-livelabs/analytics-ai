@@ -32,6 +32,10 @@ Identifies the document category and subcategory that the text belongs to.
 
 Detects various entities of personal information.
 
+#### 7. Personal Health Information
+
+Detects various entities of personal health information.
+
 ### **Custom Models**
 
 OCI Language custom models enables you to customize Text Classification and Named Entity Recognition with your own data
@@ -52,6 +56,14 @@ OCI Language now provides an API to automatically translate text across 21 langu
 ### **Jobs**
 
 OCI Language now provides an API to create async jobs that enables you to process large volumes of text and translate documents in a batch mode.
+
+### **Healthcare models**
+
+Provides state of the art service to extract entities from healthcare records.
+
+### **Multilingual models**
+
+Provides support for using machine learning models with non-English input content.
 
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 

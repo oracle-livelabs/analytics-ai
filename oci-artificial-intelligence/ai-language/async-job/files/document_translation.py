@@ -13,7 +13,6 @@ output_location = oci.ai_language.models.ObjectPrefixOutputLocation(namespace_na
 target_language_codes = {"configurationMap": {"languageCodes": "ar,pt-BR"}}
 configuration = {"targetLanguageCodes": target_language_codes}
 
-configuration_details = oci.ai_language.models.ConfigurationDetails(configuration_map= {"advancedProperties" : translation_config})
 model_metadata_details = oci.ai_language.models.ModelMetadataDetails(model_type="PRE_TRAINED_TRANSLATION", language_code='en', configuration = configuration);
 
 create_job_details = oci.ai_language.models.CreateJobDetails(description=None,
