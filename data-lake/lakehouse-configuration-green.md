@@ -163,7 +163,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-    ![Enter the required details.](./images/create_ADW2.png " ")
+    ![Enter the required details.](./images/createadw23ai.png " ")
 
 5. Create administrator credentials:
 
@@ -186,7 +186,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/create_ADW4.png " ")
+    ![](./images/createadwai234.png " ")
 
 8. Click __Create Autonomous Database__.
 
@@ -204,4 +204,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2024
