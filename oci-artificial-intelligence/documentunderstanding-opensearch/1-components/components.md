@@ -230,7 +230,7 @@ To enable Resource Principal, you need the OIC APPID.
     Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
     ```
 
-    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availabilty domain* to one where there are still capacity
+    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
     ```
     OLD: variable availability_domain_number { default = 1 }
     NEW: variable availability_domain_number { default = 2 }
@@ -246,7 +246,29 @@ To enable Resource Principal, you need the OIC APPID.
 
     If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.
 
-2. It happened on new tenancy that the terraform script failed with this error:
+2. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
+
+    ```
+    - Error: 404-NotAuthorizedOrNotFound, shape VM.Standard.x86.Generic not found
+    ```
+
+    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availinstance_shape* to one where there are still capacity in your tenancy/region
+    ```
+    OLD: variable instance_shape { default = "VM.Standard.x86.Generic" }
+    NEW: variable instance_shape { default = "VM.Standard.E4.Flex" }
+    ```
+
+    Then rerun the following command in the code editor
+
+    ```
+    <copy>
+    ./build.sh
+    </copy>
+    ```
+
+    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.    
+
+3. It happened on new tenancy that the terraform script failed with this error:
 
     ```
     Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
@@ -261,7 +283,7 @@ To enable Resource Principal, you need the OIC APPID.
 
     In such case, just rerunning ./build.sh fixed the issue.
 
-3. During terraform:
+4. During terraform:
     ```
     Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
     ```
