@@ -74,11 +74,15 @@ Under Quick Actions, you want to click on **Create Data Asset**
 
     ![Create Data Asset](./images/create_dataasset1.png " ")
 
+    Select Oracle ADW from the list of data asset types.
+
+    ![Select Oracle ADW as the data asset type](./images/create_dataasset.png " ")
+
     The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
 
     Continue to fill with Select Database, regions, Tenancy OCID that you saved off to the side, or if you need to find it again click on your profile, then click on Tenancy and copy the OCID. Make sure the compartment is lakehouse1 and DB is lakehousedb.
 
-    ![Create Data Asset](./images/create_dataasset.png " ")
+    ![Create Data Asset](./images/create_dataasset2.png " ")
 
     Using the default connection you can put in User Name ADMIN and the password you configured for your database, and select the TNS Alias from the dropdown.
 
@@ -180,13 +184,9 @@ In this step, you will simply be creating a new table to verify that the table i
 
 2. Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-    ![Database Actions](./images/dbactions1.png " ")
+    ![Database Actions](./images/dbactionssql.png " ")
 
-3. Click on SQL to execute the query to create the table.
-
-    ![SQL](./images/SQL_queries.png " ")
-
-4. You are going to copy and paste the following code to build the MOVIE_GENRE table that we will use later in our data feed process and end queries.
+3. You are going to copy and paste the following code to build the MOVIE_GENRE table that we will use later in our data feed process and end queries.
 
     ```
     <copy>
@@ -201,24 +201,26 @@ In this step, you will simply be creating a new table to verify that the table i
     </copy>
     ```
 
-5. After the create table statement executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
+    ![SQL query](./images/dbactionssqlquery.png " ")
 
-6. Now you can verify that the entity is available as part of the OCI Data Catalog. Navigate to the Oracle Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
+4. After the create table statement executes, you can close Database Actions tab to get back to the Oracle Cloud menu.
 
-7. Click on lakehousecatalog from the Data Catalogs. Verify compartment if you do not see it listed.
+5. Now you can verify that the entity is available as part of the OCI Data Catalog. Navigate to the Oracle Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
+
+6. Click on lakehousecatalog from the Data Catalogs. Verify compartment if you do not see it listed.
 
     ![SQL](./images/currentcatalog.png " ")
 
-8. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
+7. Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 Select the ADMIN data entity and run the job now.
 
     ![Harvest](./images/harvest1.png " ")
 
-9. Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
+8. Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
 
     ![New Entities](./images/new_entities.png " ")
 
-10. Click on Entities just to verify that all of the tables are now here.
+9. Click on Entities just to verify that all of the tables are now here.
 
     ![Entities List](./images/entities_list.png " ")
 
@@ -230,4 +232,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Contributors** -  Nagwang Gyamtso, Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2024
