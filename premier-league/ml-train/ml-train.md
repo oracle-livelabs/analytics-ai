@@ -63,9 +63,9 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
-2. In the console of the Autonomous Data Warehouse, open the **Database Actions** and sign in as the PL user
+2. In the console of the Autonomous Data Warehouse, open the **View all Database Actions** and sign in as the PL user
 
-   ![pic1](images/open-actions.png)
+   ![pic1](images/open-actions-ml.png)
 
 3. Choose **Oracle Machine Learning**.
 
