@@ -32,25 +32,19 @@ This new user/schema will hold the SailGP data.
 
    ![ADW Menu](images/open-sailgp.png)
 
-3. Click on **Database Actions**.
+3. Click on **Database Actions** and select **SQL**.
 
    ![ADW Menu](images/open-database-actions.png)
 
    If necessary, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
-4. Click the **SQL** tile under **Development** section.
+4. **Download** the <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ijzGhbd3fUi9JT-w47vGh27ORql8IFOOA_IkR_uePH-p4rvGN0uw5_AkVSi_xnZJ/n/fruktknlrefu/b/workshop-sailgp/o/sailgp_create_user.sql" target="\_blank">`sailgp_create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
-    ![ADW Menu](images/open-sql.png)
-
-    Close the help wizard. 
-
-5. **Download** the <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ijzGhbd3fUi9JT-w47vGh27ORql8IFOOA_IkR_uePH-p4rvGN0uw5_AkVSi_xnZJ/n/fruktknlrefu/b/workshop-sailgp/o/sailgp_create_user.sql" target="\_blank">`sailgp_create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
-
-6. Open the `sailgp_create_user.sql` file with a text editor and copy-and-paste all of its contents from the file into the worksheet area.
+5. Open the `sailgp_create_user.sql` file with a text editor and copy-and-paste all of its contents from the file into the worksheet area.
 
     ![ADW Menu](images/copy-paste.png)
 
-7. Click the run-script button (**not** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
+6. Click the run-script button (**not** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
 
     ![ADW Menu](images/run-script.png)
 
@@ -93,11 +87,11 @@ This new user/schema will hold the SailGP data.
 
    Save the files on your local machine. Make sure that the files are saved with extension `.csv`.
 
-2. Next, come back to your `SAILGP` ADW console. Open **Database Actions**.
+2. Next, come back to your `SAILGP` ADW console. Open **Database Actions** and select **Data Load**.
 
    You should still have a browser tab open with the main page of the Autonomous Data Warehouse service. If not, navigate to this page first. Then, open Database Actions.
 
-   ![Open Database Actions](images/open-database-actions.png)
+   ![Open Database Actions](images/open-database-actions-data.png)
 
 3. Login as the `SAILOR` user, as follows:
 
@@ -106,11 +100,7 @@ This new user/schema will hold the SailGP data.
 
    **_IMPORTANT_: Execute the following with the user `SAILOR`, (Don't use `ADMIN`)**
 
-3. Click the **Data Load** option, under the **Data Tools** section.
-
-   ![Open Data Load](images/open-data-load.png)
-
-4. Choose **Load Data** to answer the first question and **Local File** to answer the second one. Click **Next**.
+4. Choose **Load Data**
 
     ![Start Data Load](images/start-data-load.png)
 
