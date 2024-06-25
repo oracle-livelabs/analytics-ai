@@ -22,11 +22,11 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Identity & Security
   2. Choose Compartment
 
- ![Details Compartment](images/postgres-genai-compartment1.png)
+    ![Details Compartment](images/postgres-genai-compartment1.png)
  
   3. Click on the compartment name ***oci-starter***
      
-![Details Compartment](images/postgres-genai-compartment2.png)
+    ![Details Compartment](images/postgres-genai-compartment2.png)
 
 ## Task 2: Object Storage Bucket
 
@@ -37,13 +37,13 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Storage
   2. Object Storage / Bucket
 
-![Menu Object Storage](images/postgres-genai-objectstorage1.png)
+    ![Menu Object Storage](images/postgres-genai-objectstorage1.png)
 
   3. Choose the right compartment (oci-starter in this case)
-  4. Click on the bucket name *psql-bucket*
+  4. Click on the bucket name *psql-public-bucket*
   5. In the bucket details page note that this bucket is configured to Emit Object Events. You can create automation based on state changes for your Oracle Cloud Infrastructure resources by using event types, rules, and actions. In the search solution we leverage events to create a new message in the Sreaming service for every document either created, updated or deleted in the bucket.
 
-![Create Object Storage](images/postgres-genai-objectstorage2.png)
+    ![Create Object Storage](images/postgres-genai-objectstorage2.png)
 
 ## Task 3: Stream
 
@@ -53,13 +53,13 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Analytics / AI
   2. Messaging / Streaming
 
-![Menu Streaming](images/postgres-genai-streaming1.png)
+    ![Menu Streaming](images/postgres-genai-streaming1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Click on the stream name: *psql-stream*
 The Oracle Cloud Infrastructure Streaming service provides a fully managed, scalable, and durable solution for ingesting and consuming high-volume data streams in real-time. Streaming can be used for any use case in which data is produced and processed continually and sequentially in a publish-subscribe messaging model. Streaming is used to decouple the components of large systems. Producers and consumers can use Streaming as an asynchronous message bus and act independently and at their own pace.
 
-![Streaming details](images/postgres-genai-streaming2.png)
+    ![Streaming details](images/postgres-genai-streaming2.png)
 
   
 Review the stream details:
@@ -70,7 +70,7 @@ Review the stream details:
 Streaming is compatible with most Kafka APIs, allowing you to use applications written for Kafka to send messages to and receive messages from the Streaming service without having to rewrite your code. 
 Streaming can also utilize the Kafka Connect ecosystem to interface directly with external sources like databases, object stores, or any microservice on the Oracle Cloud. Kafka connectors can easily and automatically create, publish to, and deliver topics while taking advantage of the Streaming service's high throughput and durability.
 
-![Streaming pool details](images/postgres-genai-streaming3.png)
+    ![Streaming pool details](images/postgres-genai-streaming3.png)
 
 ## Task 4: Event Rule
 
@@ -82,7 +82,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Observability & Management
   2. Event Rules
 
-![Menu Rule](images/postgres-genai-rule1.png)
+    ![Menu Rule](images/postgres-genai-rule1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Click on the rule name *psql-input-rule*
@@ -91,13 +91,13 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   7. Notice Event Types: *Object - Create, Object - Delete, Object - Update*
   8. Notice Attributes: Name: *bucketName*, value: *psql-bucket*
 
- ![Rule details](images/postgres-genai-rule2.png)
+    ![Rule details](images/postgres-genai-rule2.png)
  
   9. Click on Actions
      Rules must  specify an action to trigger when the filter finds a matching event. Actions are responses you define for event matches. The resources for these services act as destinations for matching events. When the filter in the rule finds a match, the Events service delivers the matching event to one or more of the destinations you identified in the rule. The destination service that receives the event then processes the event in whatever manner you defined. This delivery provides the automation in your environment.
   11. Notice Action Type: *Streaming*, Stream=psql-stream
 
-![Rule details](images/postgres-genai-rule3.png)
+    ![Rule details](images/postgres-genai-rule3.png)
 
 ## Task 5: Virtual Cloud Network
 
@@ -108,7 +108,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Networking
   2. Virtual Cloud Network
 
-![Menu VCN](images/postgres-genai-vcn1.png)
+    ![Menu VCN](images/postgres-genai-vcn1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Click on vcn name *psql-vcn*
@@ -118,13 +118,13 @@ You can designate a subnet as either public or private when you create it. Priva
   6. Choose *Security Lists*
   7. Then click on *psql-security-list*
 
-![VCV subnet details](images/postgres-genai-vcn2.png)
+    ![VCV subnet details](images/postgres-genai-vcn2.png)
 
   8. Notice Ingress Rules that were created for this lab
      1. Source CIDR: *0.0.0.0/0*, Destination Port: *80* /required for accessing search user interface from Internet
      2. Source CIDR: *0.0.0.0/16*, Destination Port: *5432* /required for accessing PostgreSQL from a compute instance in the same VCN
 
-![VCV security list details](images/postgres-genai-vcn3.png)
+    ![VCV security list details](images/postgres-genai-vcn3.png)
 
 ## Task 6: Dynamic group
 
@@ -135,20 +135,20 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Identity & Security 
   2. Domains
  
- ![Menu Dynamic Group](images/postgres-genai-dyngroup1.png)
+    ![Menu Dynamic Group](images/postgres-genai-dyngroup1.png)
  
   3. Click on Default domain. Note that you might need to change the compartment to root compartment in order to see the Default domain
   4. Dynamic Groups
   6. Notice the two dynamic groups in Default Domain:  *psql-fn-dyngroup* and *psql-bastion-dyngroup*  
 
-![Menu Dynamic Group](images/postgres-genai-dyngroup2.png)
+    ![Menu Dynamic Group](images/postgres-genai-dyngroup2.png)
 
 When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
   6. Click on the dynamic group name: psql-bastion-dyngroup
   7. Notice Matching rules: e.g. instance.id = 'ocid1.instance.oc1.aaaabbbbbbcccccc'
   
-  ![Menu Dynamic Group](images/postgres-genai-dyngroup3.png)
+    ![Menu Dynamic Group](images/postgres-genai-dyngroup3.png)
   
   8. Go back to the list of dynamic groups in Default Domain
   9. Click on the dynamic group name: *psql-fn-dyngroup*
@@ -156,7 +156,7 @@ When you create a dynamic group, rather than adding members explicitly to the gr
     Rule 1: resource.type = 'fnfunc'
     Rule 2: e.g. resource.compartment.id = 'ocid1.compartment.oc1..aaaaaaaanmnkccccc'
 
-![Create Dynamic Group](images/postgres-genai-dyngroup4.png)
+    ![Create Dynamic Group](images/postgres-genai-dyngroup4.png)
 
 
 ## Task 7: Policies
@@ -168,12 +168,12 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Identity & Security
   2. Policies
 
-![Menu Policy](images/postgres-genai-policy1.png)
+    ![Menu Policy](images/postgres-genai-policy1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Notice two Policies in oci-starter Compartment: *psql-policy* and *psql-fn-policy*
  
- ![Menu Policy](images/postgres-genai-policy2.png) 
+    ![Menu Policy](images/postgres-genai-policy2.png) 
   
   5. Click on the policy name *psql-policy*
   6. Notice the following policy statements:
@@ -181,14 +181,14 @@ Allow dynamic-group psql-fn-dyngroup to manage objects in compartment id ocid1.c
 Allow dynamic-group psql-bastion-dyngroup to manage all-resources in compartment id ocid1.compartment.oc1..aaaaaaaanmnkccccc
 Allow dynamic-group psql-bastion-dyngroup to manage stream-family in ocid1.compartment.oc1..aaaaaaaanmnkccccc
 
-![Policy details](images/postgres-genai-policy3.png)
+    ![Policy details](images/postgres-genai-policy3.png)
 
   7. Go back to the list of policies in oci-starter Compartment
   8. Click on the policy name *psql-fn-policy*
   6. Notice the following policy statement:
 ALLOW any-user to use functions-family in compartment id ocid1.compartment.oc1..aaaaaaaanmnkccccc where ALL {request.principal.type= 'ApiGateway'}
 
-![Policy details](images/postgres-genai-policy4.png)
+    ![Policy details](images/postgres-genai-policy4.png)
 
 ## Task 8: PostgreSQL Database System
 
@@ -199,7 +199,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Database
   2. PostreSQL - DB Systems
 
-![Menu PostgreSQL](images/postgres-genai-cluster1.png)
+    ![Menu PostgreSQL](images/postgres-genai-cluster1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Click on the PostgreSQL db system name *psqlpsql*
@@ -214,7 +214,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   8. Notice Database system nodes
 A Database system is PostgreSQL database cluster running on one or more OCI VM Compute instances. A database system provides an interface enabling the management of tasks such as provisioning, backup and restore, monitoring, and so on. Each database system has one endpoint for read/write PSQL queries and can have multiple endpoints for read-only queries.
 
-![PostgreSQL details](images/postgres-genai-cluster2.png)
+    ![PostgreSQL details](images/postgres-genai-cluster2.png)
 
 ## Task 9: Functions Application
 
@@ -225,7 +225,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Developer Services
   2. Functions / Application
 
-![Menu Application](images/postgres-genai-fn1.png)
+    ![Menu Application](images/postgres-genai-fn1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
   4. Notice Applications in oci-starter compartment
@@ -233,7 +233,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   6. Notice Functions
   Name: psql-fn-function, Image: e.g. fra.ocir.io/fr9qm01oq44x/tikaparser:0.0.66
 
-![Details Application](images/postgres-genai-fn2.png)
+    ![Details Application](images/postgres-genai-fn2.png)
 
 
 ## Task 10: Compute Instance
@@ -245,13 +245,13 @@ Compute instance is used to host the application logic.
         1. Compute
         2. Instances
   
-   ![Menu Compute](images/postgres-genai-compute1.png) 
+    ![Menu Compute](images/postgres-genai-compute1.png) 
     
     2. Check that you are in the intended compartment. (*oci-starter* was the recommended compartment name.)
     3. Click **psql-bastion** in the Compute instances list
     4. Review the information on the Compute instance details page 
 
-  ![Compute details](images/postgres-genai-compute2.png)
+    ![Compute details](images/postgres-genai-compute2.png)
  
   2. Connect to the instance
     1. In the OCI Console, select the Developer Tools icon and then select Cloud Shell.
@@ -263,7 +263,7 @@ Compute instance is used to host the application logic.
       ./ssh_bastion.sh 
      ```
 
-  ![Compute details](images/postgres-genai-compute3.png)
+    ![Compute details](images/postgres-genai-compute3.png)
     
     3. When succesfully connected to the bastion instance you should see the following prompt:
     
@@ -271,7 +271,7 @@ Compute instance is used to host the application logic.
 
     4. Explore the application code in the opc user home direcotory
 
- ![Compute details](images/postgres-genai-compute4.png)
+    ![Compute details](images/postgres-genai-compute4.png)
 
 ## Task 11: AI Services
 
@@ -284,16 +284,16 @@ In this step you will explore the AI Services that are leveraged in the solution
         2. AI Services
         3. Select Generative AI
 
- ![Menu GenerativeAI](images/postgres-genai-ai1.png)
-
-OCI Generative AI offers several playground modes, each with ready-to-use pretrained models:
-    Generation: Generates text or extracts information from text
-    Summarization: Summarizes text with specified format, length, and tone
-    Embedding: Converts text to vector embeddings to use in applications for semantic searches, text classification, or text clustering
+        ![Menu GenerativeAI](images/postgres-genai-ai1.png)
+        
+        OCI Generative AI offers several playground modes, each with ready-to-use pretrained models:
+            Generation: Generates text or extracts information from text
+            Summarization: Summarizes text with specified format, length, and tone
+            Embedding: Converts text to vector embeddings to use in applications for semantic searches, text classification, or text clustering
         
         4. Use the generation, summarization, and embedding playgrounds to try the pretrained models: input text, adjust the parameters, and repeat until you get the desired results.
 
-  ![Test GenerativeAI](images/postgres-genai-ai1.png) 
+        ![Test GenerativeAI](images/postgres-genai-ai1.png) 
   
   2. Explore the Vision AI Service used in the solution. Common use cases of the Vision AI Service include: Image Classification, Object Detaction, Text Detection
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
@@ -301,15 +301,14 @@ OCI Generative AI offers several playground modes, each with ready-to-use pretra
         1. AI Services
         2. Select Vision
       
- ![Menu Vision](images/postgres-genai-ai3.png)        
+        ![Menu Vision](images/postgres-genai-ai3.png)        
         
         3. Click on Image classification.  
         4. Review the results of the image classification examples. (Assigns classes and confidence scores based on the scene and contents of an image)      
         5. Click on Object Detection
         6. Review the results of the object detection examples. (Identifies objects and their location within an image along with a confidence score)
-
   
-   ![Test Vision](images/postgres-genai-ai4.png)  
+        ![Test Vision](images/postgres-genai-ai4.png)  
   
   3. Explore the Document Understanding AI Service used in the solution. Common use cases of the Document Understanding AI Service include: Text extraction, Table Extraction, Key value extraction and Document classification
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
@@ -317,12 +316,12 @@ OCI Generative AI offers several playground modes, each with ready-to-use pretra
         1. AI Services
         2. Select Document Understanding
        
- ![Menu Document Understanding](images/postgres-genai-ai5.png)        
+        ![Menu Document Understanding](images/postgres-genai-ai5.png)        
         
         3. Click on Text extraction.  
         4. Review the results of the text exctraction examples. (Detect and recognize text in a document)      
 
- ![Menu Document Understanding](images/postgres-genai-ai6.png)  
+        ![Menu Document Understanding](images/postgres-genai-ai6.png)  
        
 **Congratulations! You have completed this workshop.**
 

@@ -141,7 +141,7 @@ You can
     -- SEARCH_URL -------
     http://123.123.123.123/
 
-    Please wait 5 mins. The indexing of the sample files has just started.
+    Please wait 5 mins. The server is starting.
     ```
 **You may now proceed to the [next lab](#next)**
 
