@@ -56,16 +56,25 @@ Then, we need data about the user
 
 ![User API Keys](images/opensearch-user2.png)
 
-In your computer (NOT in cloud shell), you need to convert the PEM key to RSA format:
+In your computer, or in the bastion (NOT in cloud shell), you need to convert the PEM key to RSA format
 - Run the below command 
 - And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
 
+- If openssl is not installed on your computer, here are the instructions to do it on the bastion:
 ```
-openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
-ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
-````
+./starter.sh ssh bastion
+cat <<EOF > private_key.pem
+-----BEGIN PRIVATE KEY-----
+... <YOUR KEY HERE> ....
+-----END PRIVATE KEY-----
+EOF 
+openssl rsa -in private_key.pem -out private_key.rsa
+cat private_key.rsa
+rm private_key.pem private_key.rsa
+history -c
+```
 
-*Double-check* that the private\_key\_rsa_format.pem is really in RSA format like this:
+Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -112,36 +121,20 @@ We start with the public connections first because these don't depend on compone
 
 1. Click the **edit** icon on the same row as *RestGenerativeAI*
 
-1. Copy the Generative AI endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/) . Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_GENAI\_URL##* below.
+1. Copy the Generative AI endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-inference/20231130/) . Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_GENAI\_URL##* below.
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
     - Connection URL = *##AI\_GENAI\_URL##*
         - ex: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-    - Security policy = * OCI Signature Version 1*
-    - Tenancy OCID = ##TENANCY_OCID##
-    - User OCID = ##USER_OCID##
-    - Private KEY = ##PRIVATE_KEY_RSA_FORMAT##
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
     - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
-
-### 2. RestLanguageAI
-
-1. Click the **edit** icon on the same row as *RestLanguageAI*
-
-1. Copy the OCI Language REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/](https://docs.oracle.com/en-us/iaas/api/#/en/language/20221001/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_LANG\_URL##* below.
-
-1. Fill the Connection details:
-    - Connection Type = *REST API Base URL*
-    - Connection URL = *##AI\_LANG\_URL##*
-        - ex: https://language.aiservice.eu-frankfurt-1.oci.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
-    - Access Type = *Public gateway*
-
-1. **Test / Save / Save** until 100%
-
-1. Go back to the list of connections
   
+
 ### 3. Resttrigger
 
     There is no change needed here. The connection is already configured. 
@@ -151,6 +144,8 @@ We start with the public connections first because these don't depend on compone
 1. Click the **edit** icon on the same row as *RestDocumentUnderstandingAI*
 
 1. Copy the OCI Document Understanding REST API endpoint from [https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/](https://docs.oracle.com/en-us/iaas/api/#/en/document-understanding/20221109/). Select the endpoint for the home region of your tenancy. You will paste it in place of *##AI\_DOC\_URL##* below.
+
+    If "Document Understanding" is not available in your region, see the work-around in *Known issues* below. 
 
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
@@ -231,7 +226,7 @@ We start with the public connections first because these don't depend on compone
     - Expand *Optional security*
         - Truststore = upload *oss_store.jks*
         - TrustStore password = *changeit* 
-    - Access Type = *Private Gateway*
+    - Access Type = *Private Endpoint*
     
     ![Connection StreamInputBucket](images/opensearch-connection-streaminputbucket.png)
 
@@ -263,7 +258,7 @@ We start with the public connections first because these don't depend on compone
     - Connection url = *##OPENSEARCH\_API\_ENDPOINT##*
         - ex: https://amamamamalllllaaac5vkwantypqqcs4bqrgqjrkvuxxghsmg7zzzzzxxxxx.opensearch.eu-frankfurt-1.oci.oraclecloud.com:9200
     - Security policy: *No Security Policy*
-    - Access Type = *Private Gateway*
+    - Access Type = *Private Endpoint*
     
     ![Connect RestOpenSearch](images/opensearch-connection-restopensearch.png)
 
@@ -356,6 +351,34 @@ This is an optional test you can run with more sample files. If you do this test
 
 **You may now proceed to the [next lab.](#next)**
 
+## Known issues
+
+1. When creating the connection, the Test of the connection fails.
+
+```
+Unable to test connection RestVisionAI_1711400081.
+    {"detail":"","status":"HTTP 500 Internal Server Error","title":"Operation [testConnection] failed: io.micronaut.http.client.exceptions.HttpClientErrorDecoder$1","type":"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1"}
+```
+
+    Solution: If the connection is for an OCI Service (ex: OCI Function, AI Vision, ....), use the Security policy *OCI Signature Version 1*
+    OLD:  
+    - Security policy =*OCI Service Invocation*
+    
+    NEW:   
+    - Security policy = *OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY\_OCID##
+    - User OCID = ##USER\_OCID##
+    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
+    - FingerPrint = ##FINGERPRINT##
+    - Access Type = *Public gateway*
+
+2. Document Understanding is not available in my region
+
+    Currently (March 2024), "Document understanding" is not available in some regions (ex: Chicago). 
+    
+    If it is your case:  
+    - Import the OIC package "oic/chicago/OPENSEARCH_OIC_CHICAGO.par" instead. 
+    - Use any other region to configure the "Document Understanding" rest endpoint (ex: ashburn region) 
 
 ## Acknowledgements
 

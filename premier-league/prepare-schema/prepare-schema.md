@@ -79,11 +79,11 @@ This new user/schema will hold the football data.
    - Username: PL
    - Password: Provide the secure password for the PL user (as chosen earlier in Task 1 Step 7).
 
-3. Click to the **Data Load** option, under the **Data Tools** section.
+3. Click the hamburger menu top left and then select the **Data Load** option.
 
    ![Open Data Load](images/open-data-load.png)
 
-4. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
+4. Select **Load Data**
 
     ![Start Data Load](images/start-data-load.png)
 

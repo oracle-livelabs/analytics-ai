@@ -39,6 +39,7 @@ Estimated time: 50 min
     OIC_APPID=(SAMPLE) ABC12345678_APPID
     
     TENANCY_OCID = (SAMPLE) ocid1.tenancy.oc1..amaaaaaaaa
+    USERNAME= (sample) john.doe@example.com
     USER_OCID = (SAMPLE) ocid1.user.oc1..amaaaaaaaa
     PRIVATE_KEY = (SAMPLE) file private_key.pem
 
@@ -116,8 +117,8 @@ Note: If you have just created your Cloud Account, it is possible that you need 
         ![Create Integration](images/opensearch-oic2.png)
 4. Wait about 3 mins until **oic** state is *Active*.
 1. Click *oic* in the list of integration instances. 
-5. In the *Integration Instance Details*, click **Service Console**. It will open a new tab that you will use in the next Task.
-1. In the *Integration Instance Details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
+5. In the *Integration instance details*, click **Service Console**. It will open a new tab that you will use in the next Task.
+1. In the *Integration instance details*, copy the OCID of the OIC instance and paste it in your text file at ***OIC_OCID***. You will need it later.
 1. Click **Enable** next to *Visual Builder* to enable it. The **oic** instance status will change to *updating*.
     ![Visual Builder Enable Integration](images/opensearch-oic3.png)
 
@@ -143,19 +144,26 @@ To enable Resource Principal, you need the OIC APPID.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-3. In the code editor menu, click *Terminal* then *New Terminal*
-4. Run the command below in the terminal
+3. Check that the Code Editor Architecture is well X86_64.
+    - Go to Actions / Architecture
+    - Check that the current Architecture is well X86_64.
+    - If not change it to X86_64 and confirm. It will restart.
+
+        ![OIC Domain](images/opensearch-shell-architecture.png)
+
+4. In the code editor menu, click *Terminal* then *New Terminal*
+5. Run the command below in the terminal
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-genai-searchlab.git
     </copy>
     ````
-5. Edit the file *oci-genai-searchlab/starter/env.sh*
+6. Edit the file *oci-genai-searchlab/starter/env.sh*
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
-6. In env.sh, replace the ## with the corresponding value from your text file.
+7. In env.sh, replace the ## with the corresponding value from your text file.
     ````
     <copy>
     export TF_VAR_compartment_ocid="##COMPARTMENT_OCID##"
@@ -163,8 +171,8 @@ To enable Resource Principal, you need the OIC APPID.
     export TF_VAR_oic_appidd="##OIC_APPID##"
     </copy>
     ````
-7. Save your edits using File > Save
-8. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
+8. Save your edits using File > Save
+9. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
     cd oci-genai-searchlab/starter/
@@ -185,9 +193,9 @@ To enable Resource Principal, you need the OIC APPID.
     ./build.sh
     </copy>
     ````
-9. **Please proceed to the [next lab](#next) while Terraform is running.** 
+10. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-10. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+11. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     --------------------------
@@ -216,41 +224,53 @@ To enable Resource Principal, you need the OIC APPID.
 
 1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
-```
-oci_core_instance.starter_instance: Creating..
-- Error: 500-InternalError, Out of host capacity.
-  Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
-```
+    ```
+    oci_core_instance.starter_instance: Creating..
+    - Error: 500-InternalError, Out of host capacity.
+    Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
+    ```
+    Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
+    ```
+    OLD: variable availability_domain_number { default = 1 }
+    NEW: variable availability_domain_number { default = 2 }
+    ```
 
-Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
-```
-OLD: variable instance_shape { default = "VM.Standard.E3.Flex" }
-NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
-```
+    Then rerun the following command in the code editor
+    ```
+    <copy>
+    ./build.sh
+    </copy>
+    ```
 
-Then rerun the following command in the code editor
-
-```
-<copy>
-./build.sh
-</copy>
-```
+    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.
 
 2. It happened on new tenancy that the terraform script failed with this error:
 
-```
-Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
-Suggestion: Please retry or contact support for help with service: Opensearch Cluster
-Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
-API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
-Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
-Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
-Service: Opensearch Cluster 
-Operation Name: CreateOpensearchCluster 
-```
+    ```
+    Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
+    Suggestion: Please retry or contact support for help with service: Opensearch Cluster
+    Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/opensearch_opensearch_cluster 
+    API Reference: https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster 
+    Request Target: POST https://search-indexing.eu-frankfurt-1.oci.oraclecloud.com/20180828/opensearchClusters 
+    Provider version: 5.14.0, released on 2023-09-27. This provider is 1 Update(s) behind to current. 
+    Service: Opensearch Cluster 
+    Operation Name: CreateOpensearchCluster 
+    ```
 
-In such case, just rerunning ./build.sh fixed the issue.
+    In such case, just rerunning ./build.sh fixed the issue.
 
+3. During terraform:
+    ```
+    Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
+    ```
+
+    Several persons are probably trying to install this tutorial on the same tenancy.
+
+    Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
+    ```
+    OLD: export TF_VAR_prefix="search"
+    NEW: export TF_VAR_prefix="search2"
+    ```
 
 ## Acknowledgements
 
