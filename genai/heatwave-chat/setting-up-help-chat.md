@@ -1,4 +1,4 @@
-# Setting Up a GenAI-Powered Help Chat 
+# How to Set Up a GenAI-Powered Help Chat?
 
 This quickstart shows how to use the vector store functionality and use HeatWave Chat to create an AI-powered Help chat that refers to the HeatWave user guide to respond to HeatWave related queries. 
 
