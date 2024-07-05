@@ -6,7 +6,19 @@ This lab will serve as a guide as to how to use ATOM.
 
 Estimated Time: 1 hours 30 minutes
 
-### About ATOM (Autonomous Target Operating Model)
+### Objectives
+
+Learn how to use ATOM
+
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account
+* Access to the Chicago and Ashburn Region
+* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder and Identity Domains
+
+## Task 1: About ATOM (Autonomous Target Operating Model)
 
 Once you've completed all the previous labs you'll have the option to interact with ATOM in following ways -
 
@@ -14,8 +26,10 @@ Once you've completed all the previous labs you'll have the option to interact w
 
 2. Process Attachments
 Please upload your document. ATOM currently supports word-based files in such as .txt, pdf, or csv. Large files may have issues.
+
 3. Document Understanding
 Please upload your document. ATOM currently supports files in JPEG, PNG, PDF, DOCX and TIFF documents with five pages or fewer. Large files may have issues.
+
 4. Analyze Speech
 Please upload your video or audio file. ATOM supports files up to 25 MB
 
@@ -26,7 +40,7 @@ Generative AI is a method of generating content based on a natural language desc
 What is Prompt engineering?
 Prompt engineering is the process where you guide generative AI solutions to generate desired outputs. Even though generative AI attempts to mimic humans, it requires detailed instructions to create high-quality and relevant output. In prompt engineering, you choose the most appropriate formats, phrases, words, and symbols that guide the AI to interact with your users more meaningfully. Prompt engineers use creativity plus trial and error to create a collection of input texts, so an application's generative AI works as expected.
 
-![Prompt_Engg](images/prompt_1.png)
+![Prompt_Engg](images/Prompt_1.png)
 
 What is a Prompt?
 A prompt is a natural language text that requests the generative AI to perform a specific task.

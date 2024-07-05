@@ -14,14 +14,7 @@ OCI Speech is an AI service that uses automatic speech recognition technology to
 
 ### Objectives
 
-Using Document Understanding & Speech service
-
-In this lab, you will:
-
-* **Use Document Understanding**
-  * 
-* **Use Speech service**
-  * 
+To use Document Understanding & Speech services
 
 ### Prerequisites
 
@@ -55,28 +48,51 @@ Create a Dynamic Group
 
 Go to Identity>>Domains>>Default domain>>Dynamic groups
 
+![Navigate to Domains](images/domain.png)
+
 Click on Create dynamic group and name it as odaDynamicGroup
 
 Select radio button - Match any rules defined below
 Add the following rules
 
-Rule 1- All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
+Rule 1
+
+```text
+    <copy>
+    All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
+    </copy>
+    ```
 Note - This will be ocid of Digital Assistant in Chicago region
 
-Rule 2 - All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
+Rule 2
+```text
+    <copy>
+    All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
+    </copy>
+    ```
 
-Rule 3 - ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
 
-Rule 4 - All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
+Rule 3
+```text
+    <copy>
+    ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+    </copy>
+    ```
+
+Rule 4 
+```text
+    <copy>
+    All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
+    </copy>
+    ```
 Note - This will be ocid of Digital Assistant in Ashburn region
-
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
 1. Attach the policy at the root compartment level
 
-    ```text
     ODA_Access - Policy to allow users access to ODA
+    ```text
     <copy>
     Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
     Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
@@ -84,16 +100,14 @@ This task will help you to create necessary policy for the Oracle Document Under
     Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
     </copy>
     ```
-
-    ```text
     API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
+    ```text
     <copy>
     ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
     </copy>
     ```
-
-    ```text
     ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes access to object storage.
+    ```text
     <copy>
     allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
@@ -120,9 +134,9 @@ This task will help you to create necessary policy for the Oracle Document Under
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
 
-## Task 3: Create REST Service for the OCI Generative AI Service
+## Task 3: Create REST Service
 
-This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**.
+This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**. This step only needs to be done once per ODA instance. If users are sharing one ODA instance to create multiple chatbot, only the first person will need to perform this step
 
 1. Locate the ODA created in **Task 1**
 
@@ -425,7 +439,7 @@ Provide a value to da.privateKey (Any Password)
 
 4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
 
-5. Import the application in provisioned instance as per the screenshots
+5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
     * Click on Import from Visual Builder Instance
 
@@ -451,12 +465,12 @@ Provide a value to da.privateKey (Any Password)
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+
+8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
 ## Acknowledgements
 
 **Authors**
-
-* **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
+
