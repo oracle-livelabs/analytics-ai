@@ -25,13 +25,13 @@ Once you've completed all the previous labs you'll have the option to interact w
 1. Chat with ATOM
 
 2. Process Attachments
-Please upload your document. ATOM currently supports word-based files in such as .txt, pdf, or csv. Large files may have issues.
+ATOM currently supports word-based files in such as .txt, pdf, or csv. Large files may have issues.
 
 3. Document Understanding
-Please upload your document. ATOM currently supports files in JPEG, PNG, PDF, DOCX and TIFF documents with five pages or fewer. Large files may have issues.
+ATOM currently supports files in JPEG, PNG, PDF, DOCX and TIFF documents with five pages or fewer. Large files may have issues.
 
 4. Analyze Speech
-Please upload your video or audio file. ATOM supports files up to 25 MB
+ATOM supports files up to 25 MB
 
 Let's look at Chat with ATOM in more detail
 
