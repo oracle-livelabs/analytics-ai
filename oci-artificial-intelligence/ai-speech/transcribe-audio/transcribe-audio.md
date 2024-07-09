@@ -1,4 +1,4 @@
-# Lab 1: Transcribe audio with the console
+# Lab 1: Transcribe audio files with the console
 
 ## Introduction
 In this session, we will help users get familiar with OCI Speech and teach them how to use our services via the cloud console.
