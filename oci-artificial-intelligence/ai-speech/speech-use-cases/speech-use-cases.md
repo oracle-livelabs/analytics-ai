@@ -1,4 +1,4 @@
-# Lab 6: Example Use Cases for OCI Speech Service
+# Lab 8: Example Use Cases for OCI Speech Service
 
 ## Introduction
 
