@@ -14,7 +14,9 @@ OCI Speech is an AI service that uses automatic speech recognition technology to
 
 ### Objectives
 
-To use Document Understanding & Speech services
+To use Document Understanding & Speech services.Please find detail architecture diagram for better understanding.
+
+![Arch DU](images/diag_1.png)
 
 ### Prerequisites
 
@@ -42,7 +44,7 @@ This task will help you to create Oracle Digital Assistant under your choosen co
 
     ![Active ODA Instance](images/oda_provision_4.png)
 
-## Task 2: Policy creation for Oracle Document Understanding
+## Task 2: Policy creation for Oracle Document Understanding and Speech Access
 
 Create a Dynamic Group
 
@@ -79,7 +81,7 @@ Rule 3
     </copy>
     ```
 
-Rule 4 
+Rule 4
 ```text
     <copy>
     All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
@@ -378,22 +380,21 @@ This task involves creating REST service which will be used by ODA to connect to
     }
     </copy>
     ```
-    
     * **Parameters**
 
     Click **Test Request** to make sure the connection is successful
 
    ![API Services](images/oci_rest_service_3.png)
 
-## Task 4: Import Skill (Provided)
+## Task 4: Import Skill
 
-1. Click on the link to download the required skill (zip file): [Atom_Skill_DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_DU.zip)
+1. Click on the link to download the required skill (zip file): [Atom_Skill_DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
    ![Import Skill](images/import_skill.png)
 
-## Task 5: Changes to Skill (Provided)
+## Task 5: Changes to Skill
 
 1. Go to Skills -> Settings -> Configuration
 Provide a value to da.privateKey (Any Password)
@@ -422,7 +423,7 @@ Provide a value to da.privateKey (Any Password)
 
     ![Create Channel](images/skill_channel1.png)
 
-## Task 6: Create VBCS Instance & embed ODA skill in VBCS Application (Please directly move to Step 5 incase you already have a VBCS instance provisioned)
+## Task 7: Create VBCS Instance & embed ODA skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -473,4 +474,3 @@ Provide a value to da.privateKey (Any Password)
 
 **Authors**
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-

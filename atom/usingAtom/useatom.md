@@ -47,8 +47,8 @@ A prompt is a natural language text that requests the generative AI to perform a
 
 Generative AI systems require context and detailed information to produce accurate and relevant responses. When you systematically design prompts, you get more meaningful and usable creations. In prompt engineering, you continuously refine prompts until you get the desired outcomes from the AI system. A prompt for a language model is a set of instructions or input provided by a user to guide the model's response, helping it understand the context and generate relevant and coherent language-based output, such as answering questions, completing sentences, or engaging in a conversation. There is an art to getting an LLM to do what you want them to do. People generally refer to this as Prompt Engineering.
 
-Tips to Enhance Prompt Engineering 
-As AI-powered tools become increasingly prevalent, prompt engineering is becoming a skill that developers need to master. Large language models (LLMs) and other generative foundation models require contextual, specific, and tailored natural language instructions to generate the desired output. This means that developers need to write prompts that are clear, concise, and informative. 
+Tips to Enhance Prompt Engineering
+As AI-powered tools become increasingly prevalent, prompt engineering is becoming a skill that developers need to master. Large language models (LLMs) and other generative foundation models require contextual, specific, and tailored natural language instructions to generate the desired output. This means that developers need to write prompts that are clear, concise, and informative.
 
 Tip #1: Know the model’s strengths and weaknesses
 
@@ -56,28 +56,29 @@ As AI models evolve and become more complex, developers need to comprehend their
 
 Tip #2: Be as specific as possible
 
-AI models can comprehend a variety of prompts. Although AI models can be very knowledgeable, they are still imperfect and can misinterpret prompts that are not specific enough. For AI models to navigate ambiguity, it is important to tailor your prompts specifically to your desired outcome. 
+AI models can comprehend a variety of prompts. Although AI models can be very knowledgeable, they are still imperfect and can misinterpret prompts that are not specific enough. For AI models to navigate ambiguity, it is important to tailor your prompts specifically to your desired outcome.
 
 Tip #3: Utilise contextual prompts
 
 Utilise contextual information in your prompts to help the model gain an in-depth understanding of your requests. Contextual prompts can include the specific task you want the model to perform, a replica of the output you're looking for, or a persona to emulate.
 
-Tip #4: Provide AI models with examples 
+Tip #4: Provide AI models with examples
 
 When creating prompts for AI models, it is helpful to provide examples. This is because prompts act as instructions for the model, and examples can help the model understand what you are asking for.
 
  Tip #5: Experiment with prompts and personas
 
-The way you construct your prompt impacts the model’s output. By creatively exploring different requests, you will soon have an understanding of how the model weighs its answers, and what happens when you interfuse your domain knowledge, expertise, and lived experience with the power of a multi-billion parameter large language model. 
+The way you construct your prompt impacts the model’s output. By creatively exploring different requests, you will soon have an understanding of how the model weighs its answers, and what happens when you interfuse your domain knowledge, expertise, and lived experience with the power of a multi-billion parameter large language model.
 
 Tip #6: Try chain-of-thought prompting
 
 Chain of thought prompting is a technique for improving the reasoning capabilities of large language models (LLMs). It works by breaking down a complex problem into smaller steps and then prompting the LLM to provide intermediate reasoning for each step. This helps the LLM to understand the problem more deeply, and to generate more accurate and informative answers.
 
 Best Practices for Prompt Engineering
+
 https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api
 
-Introduction to OCI Document Understanding 
+Introduction to OCI Document Understanding
 
 https://docs.oracle.com/en-us/iaas/Content/document-understanding/using/overview.htm
 
@@ -98,3 +99,8 @@ https://docs.oracle.com/en-us/iaas/Content/speech/using/speech.htm
 OCI Speech is an AI service that applies automatic speech recognition technology to transform audio-based content into text. Developers can easily make API calls to integrate OCI Speech’s pre-trained models into their applications. OCI Speech can be used for accurate, text-normalized, time-stamped transcription via the console and REST APIs as well as command-line interfaces or SDKs. You can also use OCI Speech in an OCI Data Science notebook session. With OCI Speech, you can filter profanities, get confidence scores for both single words and complete transcriptions, and more.
 
 ![Speech](images/speech_1.png)
+
+## Acknowledgements
+
+**Authors**
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE
