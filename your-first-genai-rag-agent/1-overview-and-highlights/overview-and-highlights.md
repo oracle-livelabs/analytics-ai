@@ -1,45 +1,29 @@
 # Introduction
 
+Oracle Cloud Infrastructure (OCI) Generative AI Agents combines the power of large language models (LLMs) and retrieval-augmented generation (RAG) with your enterprise data, letting users query diverse enterprise knowledge bases. Coming soon, the service will provide users with up-to-date information through a natural language interface and the ability to act directly on it.
+
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+In this workshop you will learn how to harness the power of conversational Generative AI to unlock the information hidden in your documents.
+We will show you how the OCI Generative AI Agents service can be easily used to have a conversation with your data.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Estimated Workshop Time: 1 hour 30 minutes
 
 ### Objectives
 
-*List objectives for the workshop*
-
 In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+* Setup the required policies and objects to allow the service to function.
+* Prepare and upload dataset files for your Agent to reason over.
+* Create a Knowledge Base which will ingest and index your data.
+* Create an Agent which will reason over your indexes data.
+* Have a conversation with your data - Using the Agent's chat interface, ask questions about your data.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [OCI Generative AI Agents service information](https://www.oracle.com/artificial-intelligence/generative-ai/agents/)
+* [OCI Generative AI Agents service documentation](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/home.htm)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
