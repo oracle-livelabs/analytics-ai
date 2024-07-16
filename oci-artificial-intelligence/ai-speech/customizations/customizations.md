@@ -1,4 +1,4 @@
-# Lab 3: Create and manage customizations in OCI Console
+# Lab 3: Create and manage customizations using REST API and in OCI Console
 
 ## Introduction
 In this session, we will help users get familiar with customizations and how to create and manage them using the OCI Console
@@ -57,13 +57,19 @@ Under documentation you can find helpful links relevant to OCI speech service
     Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage
         ![Select entities](./images/object-storage-entity.png " ")
 
-    Configure model details, click next to move on to the <strong>review</strong> page
+    Configure model details
         ![Select entities](./images/model-details.png " ")
+
+    Click next to move on to the <strong>review</strong> page
 
 5. Review customization and create
 
     Look over your information and click <strong>create</strong> to finish creating your customizaiton
+    
+    Review page for customization created using entity list
         ![Review page](./images/review-customization.png " ")
+    Review page for customization created using object storage training dataset
+        ![Review page](./images/review-page-object-storage.png " ")
 
     After clicking create, you will be redirected to the customizations page where you will see your newly created customization
         ![List page](./images/view-created-customization.png " ")
@@ -96,18 +102,6 @@ To view your newly created customization, click on your customization's name fro
 
     From either the customization details page or list customizations page, click <strong>delete</strong> to delete your customization
         ![delete customization](./images/delete-customization.png " ")
-
-
-## Task 4: Using your customization in a live transcription session
-
-Click <strong>Live transcribe</strong> in the side menu on the left to access the live transcription page
-    ![Click live transcription](./images/click-live-transcribe.png " ")
-
-Check the <strong>Enable customization</strong> box and select your customization from the drop down
-    ![Job transcription standard format selection button](./images/enable-customization.png " ")
-
-Begin session and use your customization's entities
-
 
 
 Congratulations on completing this lab!

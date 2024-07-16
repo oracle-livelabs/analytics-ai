@@ -1,4 +1,4 @@
-# Lab 2: Transcribe live audio with the console
+# Lab 2: Transcribe live audio with the console and SDK
 
 ## Introduction
 In this session, we will help users get familiar with OCI Speech live transcribe and teach them how to use our services via the cloud console.
@@ -65,7 +65,9 @@ To change transcription parameters, look to the <strong>Configure transcription<
 
 ## Task 4: Enabling a customization
 
-Select the <strong>Enable customizations</strong> box in the "Configure transcriptions" menu on the right to select a customization to include in your transcription session.
+First, either ensure there is an active customization in your compartment, or create one. Please refer to Lab 3 for guidance
+
+Next, select the <strong>Enable customizations</strong> box in the "Configure transcriptions" menu on the right to select a customization to include in your transcription session.
     ![Enable customizations](./images/enable-customizations.png " ")
 
 Specify a compartment and select a customization to include in your next transcription session
