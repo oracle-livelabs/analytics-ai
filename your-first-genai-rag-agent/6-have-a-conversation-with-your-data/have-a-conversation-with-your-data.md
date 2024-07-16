@@ -1,94 +1,64 @@
-# Title of the Lab
+# Have a conversation with your data
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Our provisioning work is now complete. It is now time to enjoy the fruits of our labor.
+In the previous labs we have created the proper permissions, uploaded our dataset to a storage bucket, created a knowledge base which drives it's data from the text files in our dataset and lastly, we've created an Agent which will interact with the data defined in the knowledge base.
+Part of the Agent creation process, the OCI Generative AI Agents service created an Endpoint. We will now use this endpoint to communicate with the Agent.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
 
-### Prerequisites (Optional)
+* Use the Agent to answer questions about our data.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
 
+## Task 1: Have a conversation with your data
 
-*This is the "fold" - below items are collapsed by default*
+1. Click the **Chat** link on the left.
 
-## Task 1: Concise Task Description
+1. Make sure that the root compartment is selected in the **Agent's compartment** list on the top of the page.
 
-(optional) Task 1 opening paragraph.
+1. Select the Agent we have created in the previous lab in the **Agent** list.
 
-1. Step 1
+1. Select the **Agent endpoint** (there should be only one which was automatically created for us when the Agent was created).
 
-	![Image alt text](images/sample1.png)
+1. You should see the greeting message we've entered during the Agent creation displayed in the chat section.
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+  ![Start chatting](./images/start-chat.png)
 
-2. Step 2
+1. At this point, we can start asking our Agent questions about the data we provided and get intelligent answers as well as references to the original data that the answers are based on.
 
-  ![Image alt text](images/sample1.png)
+Let's type the following question into the chat: "How can i create a fine-tuned model?" and click the **Submit** button.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+  ![Ask first question](./images/ask-first-question.png)
 
-5. Example with bold **text**.
+1. The Agent will scan the data for relevant information and compose a similar to the following:
 
-   If you add another paragraph, add 3 spaces before the line.
+  ![First answer](./images/first-answer.png)
 
-## Task 2: Concise Task Description
+1. The Agent can also provide a direct reference to the data in our dataset where the answer was extracted from. 
 
-1. Step 1 - tables sample
+  Scroll down to the end of the answer text and click **View citations** to expand the citations section. This section will provide one or more references to our text files which include a link to the file and an excerpt from the file where the answer was extracted from.
 
-  Use tables sparingly:
+  Providing citations makes sure that the Agent bases it's responses on our data and decreases the chances for hallucinations or made up answers.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+  ![First answer citations](./images/first-answer-citations.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  In addition to citations, you can also observe the log section on the right of the screen to which search query the Agent is using as well as which data files were found to have relevant answers and the text generated for the response.
 
-    - List item 1
-    - List item 2
+  ![Logs](./images/logs.png)
 
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+Feel free to experiment and ask the Agent additional questions about the OCI Generative AI service (examples: What is the OCI Generative AI service? which regions is the OCI Generative AI service available in? What are the requirements for a custom model dataset? etc.)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer

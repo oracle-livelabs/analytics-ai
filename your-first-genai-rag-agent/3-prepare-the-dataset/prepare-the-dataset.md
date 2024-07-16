@@ -4,6 +4,7 @@
 
 This lab will walk you through how to upload data to be ingested and indexed by the OCI Generative AI Agents service.
 The dataset is the fuel for the service. After the data has been indexed, you will be able to ask complex questions about it and have the service answer those questions like a human would.
+In this lab, you will be using a dataset we have created for you which contains parts of the OCI Generative AI service documentation. This will allow the Agent to answer user questions about the service.
 
 Estimated Time: 10 minutes
 
@@ -22,18 +23,18 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Download and unzip the dataset
+## Task 1: Create a knowledge base
 
-To make things easier, we have prepared a dataset which you can use for this hands-on-lab.
-The dataset consists of multiple text files containing text extracted from the OCI Generative AI Agents public documentation ([found here](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/home.htm)).
-In real-life scenarios, you would use your own data such as documents, contracts, reports etc. in either text (`.txt`) or PDF formats.
-
-1. Click this [link]() to download the `zip` archive containing the dataset text files.
+1. Click [this link](./files/oci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
   The `zip` archive will be downloaded to your configured `Downloads` folder.
   On `Windows` computers, downloaded files would be saved in `C:\Users\[user name]\Downloads` by default.
   For `Mac` computers, downloaded files would be saved in `/Users/[user name]/Downloads` by default.
 
 1. Locate the downloaded `zip` archive in your download folder using `File Explorer` on `Windows` or `Finder` on `Mac`.
+
+  ![Downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
+
+  ![Downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
 
 1. To extract the text files from the `zip` archive:
 
@@ -47,11 +48,19 @@ In real-life scenarios, you would use your own data such as documents, contracts
 
     1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
 
+  ![Right click dataset on Windows](./images/right-click-dataset-windows.png)
+
+  ![Extract dataset on Windows](./images/extract-dataset-windows.png)
+
+  ![Extracted dataset on Windows](./images/extracted-dataset-windows.png)
+
    On `Mac`:
 
     1. Double click the `zip` file.
 
     1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
+
+  ![Extracted dataset on Mac](./images/extracted-dataset-mac.png)
 
 ## Task 2: Create a storage bucket & upload the dataset
 
@@ -61,29 +70,49 @@ In real-life scenarios, you would use your own data such as documents, contracts
 
 1. Click **Buckets** on the right, under **Object Storage & Archive Storage**.
 
+  ![Buckets navigation](./images/buckets-navigation.png)
+
 1. Under **List scope**, make sure that the **root** compartment is selected.
 
 1. Click the **Create Bucket** button on the top of the **Buckets** table.
 
-1. Provide a name for the bucket (example: oci-generative-ai-agents-service-cw24-hol-dataset)
+  ![Buckets navigation](./images/buckets-list.png)
 
-1. Click the **Create** button on the bottom of the panel.
+1. Provide a name for the bucket (example: oci-generative-ai-agents-service-cw24-hol-dataset).
+
+1. For the purpose of this workshop, we are going to accepts the default values for the rest of the form.
+
+  Click the **Create** button on the bottom of the panel.
+
+  ![Create bucket](./images/create-bucket.png)
 
 1. Click the new bucket's name in the **Buckets** table.
+
+  ![Select bucket](./images/bucket-navigation.png)
 
 1. Under the **Objects** section of the page, click the **Upload** button.
 
 1. Click the **select files** link in the **Choose Files from your Computer** section.
 
+  ![Select files navigation](./images/select-files-navigation.png)
+
 1. In your `File Explorer` or `Finder`, navigate to the folder containing all of the `.txt` files extracted in the previous task.
 
 1. Select all of the files from the folder and click `Open`.
 
+  ![Select all files](./images/select-all-files.png)
+
 1. Click the **Upload** button at the bottom of the panel.
+
+  ![Upload files](./images/upload.png)
 
 1. Click the **Close** button at the bottom of the panel.
 
+  ![Upload done](./images/upload-done.png)
+
 If everything went to plan, you should see all of the files listed under the **Objects** section of the page.
+
+![Objects list](./images/objects-list.png)
 
 ## Acknowledgements
 

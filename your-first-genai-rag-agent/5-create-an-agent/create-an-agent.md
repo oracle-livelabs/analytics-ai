@@ -1,94 +1,77 @@
-# Title of the Lab
+# Create an Agent
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In the OCI Generative AI Agents service, an Agent holds a set of configuration which specifies the knowledge bases (can be more than one), a greeting preamble (more on this later) and an endpoint (a network access point which allows for communication with the Agent).
+After an Agent is created, you will be able to chat with it and also make API calls against it's endpoint.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
 
-### Prerequisites (Optional)
+* Create an Agent.
+* Observe Agent metadata.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
 
+## Task 1: Create an Agent
 
-*This is the "fold" - below items are collapsed by default*
+1. From the OCI Generative AI Agents service overview page, click the **Agents** link on the left.
 
-## Task 1: Concise Task Description
+1. Make sure that the root compartment is selected in the **Compartment** list under the **List scope** section on the left.
 
-(optional) Task 1 opening paragraph.
+1. Click the **Create agent** button at the top of the **Agents** table.
 
-1. Step 1
+  ![Create Agent navigation](./images/create-agent-navigation.png)
 
-	![Image alt text](images/sample1.png)
+1. Provide a name for the Agent (for example: oci-generative-ai-agents-cw24-hol-agent)
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+1. Make sure that the root compartment is selected in the **Compartment** list.
 
-2. Step 2
+1. Optionally, provide a **Welcome message** for the Agent to display at the start of a new conversation (also called the `Preamble`, for example: Hello, i'm the OCI Generative AI documentation helper! How can i help you today?).
 
-  ![Image alt text](images/sample1.png)
+1. Under the **Add knowledge bases** section, make sure that the root compartment is selected in the **Compartments** list.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+1. Check the box next to the knowledge base we have created in the previous lab to let the Agent know it should interact with the data specified in the knowledge base.
 
-5. Example with bold **text**.
+1. Make sure that the **Automatically create an endpoint for this agent** option is checked.
 
-   If you add another paragraph, add 3 spaces before the line.
+1. Click the **Create** button at the bottom of the page.
 
-## Task 2: Concise Task Description
+  ![Create knowledge base and data source](./images/create-agent.png)
 
-1. Step 1 - tables sample
+If everything went to plan, your Agent will be created. This can take a few minutes.
 
-  Use tables sparingly:
+Please wait until the **Lifecycle state** shows the **Active** state before moving on to the next lab.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+  ![Agent being created](./images/agent-creating.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  ![Agent created](./images/agent-created.png)
 
-    - List item 1
-    - List item 2
+## Task 2: Observe Agent metadata
 
-3. Code examples
+1. After the Agent was created and we've confirmed that it's **Lifecycle state** is **Active**, click the Agent name in the **Agents** table.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+  ![View Agent navigation](./images/view-agent-navigation.png)
 
-4. Code examples that include variables
+1. Notable information on the Agent details page:
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    1. Agent **name**.
+    2. Agent **OCID**.
+    3. **Knowledge Bases** associated with the Agent.
+    4. **Endpoints** which can be used to access the Agent programmatically (a default one was created when we created the Agent).
 
-## Learn More
+    > In addition, you can **Launch a chat** session with the Agent as well as **Edit**, **Move** and **Delete** the Agent.
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+  ![Agent details](./images/agent-details.png)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
