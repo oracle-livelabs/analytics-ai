@@ -103,6 +103,156 @@ To view your newly created customization, click on your customization's name fro
     From either the customization details page or list customizations page, click <strong>delete</strong> to delete your customization
         ![delete customization](./images/delete-customization.png " ")
 
+## Task 4: Using the customizations API
+
+The Postman REST Collection for Customizations setup can be downloaded from [OCI Customization REST Collection](./files/Customization_API_Collection.postman_collection.json). The POSTMAN instructions for the setups are [the same as Speech API](../ai-speech/oci-speech-rest/oci-speech-rest.md)
+
+OCI Speech Service EndPoints for all the services:
+
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
+
+1. <u>Create Customization Job</u>
+
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
+    </copy>
+    ```
+    Body:
+    ```
+    <copy>
+    {
+        "compartmentId": "<uniqueCompartmentID>>",
+        "description": "<descriptionPlaceholder>",
+        "displayName": "<displayNamePlaceholder>",
+        "alias": "<aliasPlaceHolder>",
+        "modelDetails": {
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        },
+        "trainingDataset": {
+            "datasetType": "ENTITY_LIST",
+            "referenceExamples": [
+                "Private data is <private>",
+                "Bird name is <bird>"
+            ],
+            "entityList": [{
+                "entityType": "private",
+                "entities": [{
+                        "entityValue": "hello",
+                        "pronunciations": [{
+                                "soundsLike": "helloo"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            },{
+                    "entityType": "bird",
+                    "entities": [{
+                            "entityValue": "Tweeteee3",
+                            "pronunciations": [{
+                                    "soundsLike": "tweetyy"
+                                }
+                            ],
+                            "weight": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </copy>
+    ```
+    *Note:*
+    * Supported values for domain are GENERIC, and MEDICAL
+    * Supported values for languageCode are en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+
+
+2. <u>Get Customization Job</u>
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+    `<customizationID>` should be replaced with the actual customization ID/Alias
+     `<region-identifier>` should be replaced with a valid region like us-phoenix-1
+
+3. <u>List Customization Jobs</u>
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>>
+    </copy>
+    ```
+    `<uniqueCompartmentID>` should be replaced with the compartment ID 
+    `<region-identifier> should be replaced with a valid region like us-phoenix-1`
+4. <u>Update Customization Job</u>
+
+    With the updated Customization body. We can submit a PUT request to update the Customization
+    
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+
+    Body:
+    ```
+    <copy>
+    {
+    "compartmentId": "<uniqueCompartmentID>>",
+    "description": "<descriptionPlaceholder>",
+    "displayName": "<displayNamePlaceholder>",
+    "alias": "<aliasPlaceHolderNew>",
+    "modelDetails": {
+        "domain": "GENERIC",
+        "languageCode": "en-US"
+    },
+    "trainingDataset": {
+        "datasetType": "ENTITY_LIST",
+        "referenceExamples": [
+            "Private data is <private>",
+            "Bird name is <bird>"
+        ],
+        "entityList": [{
+            "entityType": "private",
+            "entities": [{
+                    "entityValue": "hello",
+                    "pronunciations": [{
+                            "soundsLike": "helloo"
+                        }
+                    ],
+                    "weight": 1
+                }
+            ]
+        },{
+                "entityType": "bird",
+                "entities": [{
+                        "entityValue": "Robin",
+                        "pronunciations": [{
+                                "soundsLike": "Robun"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+    </copy>
+    ```
+
+
+    
+
+
+
 
 Congratulations on completing this lab!
 
@@ -111,3 +261,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
+    * Rishabh Tewari - Oracle AI Services
