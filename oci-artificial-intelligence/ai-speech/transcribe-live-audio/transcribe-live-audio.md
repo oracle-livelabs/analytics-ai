@@ -76,6 +76,148 @@ Congratulations on completing this lab!
 
 You may now **proceed to the next lab**
 
+## Task 5: Using OCI AI Speech live transcription SDK
+
+First, refer to lab 4 (Access OCI speech with OCI SDKs (Optional)) for API signing key and config file setup
+
+<strong>Python example:</strong>
+
+OCI AI Speech live transcription uses websockets to relay audio data and text transcriptions in real time. This means your client must implement some key listener functions:
+```
+on_result(result)
+    // This function will be called whenever a result is returned from the 
+    // realtime speech transcription service
+
+on_ack_message(ack_message)
+    // This function will be called whenever an audio chunk is received 
+    // to acknowledge that is has reached the realtime speech service 
+    // (when the is_ack_enabled parameter is set to true)
+
+on_connect()
+    // This function will be called upon connecting to the realtime speech
+    // transcription service
+
+on_connect_message(connect_message)
+    // This function is called upon authentication after having initially connected
+
+on_network_event(message)
+    // This function is called when a network event is sent by the realtime
+    // speech transcription service
+
+on_error(error)
+    // This function is called when an error occurs in the realtime speech
+    // transcription service. The error message and code will be passed in the error param
+
+on_close(error_code, error_message) (optional)
+    // This function is called when connection to the realtime speech transcription
+    // service has been closed due to an error, along with the error code and message. 
+    // Its implementation is not required
+```
+
+Example implementation of listener functions:
+```
+class MyRealtimeListener(RealtimeClientListener):
+    result = []
+    transcriptions = []
+    ackmessage = None
+    connectmessage = {}
+    errormessage = {}
+    test_name = ""
+    client_parameters = None
+
+    def on_result(self, result):
+        if result["transcriptions"][0]["isFinal"]:
+            logging.info(
+                f"Received final results: {result['transcriptions'][0]['transcription']}"
+            )
+        else:
+            logging.info(
+                f"Received partial results: {result['transcriptions'][0]['transcription']}"
+            )   
+
+        self.result.append(result)
+        self.transcriptions.append(result["transcriptions"][0]["transcription"])
+        return self.result
+
+    def on_ack_message(self, ackmessage):
+        self.ackmessage = ackmessage
+        # print(ackmessage)
+        return ackmessage
+
+    def on_connect(self):
+        logging.info("Connected successfully, pending authentication")
+        return "Connected successfully, pending authentication"
+
+    def on_connect_message(self, connectmessage):
+        logging.info(f"Authenticated successfully: {connectmessage}")
+        self.connectmessage = connectmessage
+        return connectmessage
+
+    def on_network_event(self, ackmessage):
+        print(f"Network event received: {ackmessage}")
+        return ackmessage
+
+    def on_error(self, errormessage):
+        logging.error(f"Error: {errormessage}")
+        self.errormessage = (errormessage.code, errormessage.reason)
+        return errormessage
+
+    def on_close(self, error_code, error_message):
+        logging.error(f"Error: {error_message}")
+        self.errormessage = (error_code, error_message)
+        return self.errormessage
+```
+
+<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session
+
+`language_code` : <strong>"en-US", "pt-BR", "es-ES", "hi-IN", "de-DE", "fr-FR", "it-IT"</strong>
+
+`model_domain` : <strong>"GENERIC", "MEDICAL"</strong>
+
+`partial_silence_threshold_in_ms` : <strong>500</strong>
+
+`final_silence_threshold_in_ms` : <strong>2000</strong>
+
+`encoding` : <strong>"audio/raw;rate=16000"</strong>
+
+`should_ignore_invalid_customizations` : <strong>True, False</strong>
+
+`stabilize_partial_results` : <strong>True, False</strong>
+
+`customizations` : <strong>[Customization1, Customization2]</strong>
+
+<strong>Example of setting realtime parameters</strong>
+
+```
+realtime_speech_parameters: RealtimeParameters = RealtimeParameters()
+realtime_speech_parameters.language_code = "en-US"
+realtime_speech_parameters.model_domain = (
+    realtime_speech_parameters.MODEL_DOMAIN_GENERIC
+)
+realtime_speech_parameters.partial_silence_threshold_in_ms = 0
+realtime_speech_parameters.final_silence_threshold_in_ms = 2000
+realtime_speech_parameters.encoding="audio/raw;rate=16000"
+realtime_speech_parameters.should_ignore_invalid_customizations = False
+realtime_speech_parameters.stabilize_partial_results = (
+    realtime_speech_parameters.STABILIZE_PARTIAL_RESULTS_NONE
+)
+realtime_speech_parameters.customizations = [
+    {
+        "compartmentId": "ocid1.compartment.....",
+        "customizationId": "ocid1.aispeechcustomization....",
+        "entities": [
+            {
+                "entityType": "entityType",
+                "customizationAlias": "entityAlias",
+                "customizationId": "ocid1.aispeechcustomization.....",
+            },
+            ...,
+        ],
+    }
+]
+```
+
+Download a fully implemented python example [here](./files/realtime_example.py) code file and save it your directory.
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
