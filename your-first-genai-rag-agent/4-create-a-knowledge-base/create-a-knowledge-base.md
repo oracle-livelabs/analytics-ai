@@ -13,7 +13,8 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-* Create a knowledge base
+* Create a knowledge base.
+* Monitor the ingestion job.
 
 ### Prerequisites
 
@@ -62,9 +63,41 @@ If everything went to plan, your Knowledge Base will be created. This can take a
 
 Please wait until the **Lifecycle state** shows the **Active** state before moving on to the next lab.
 
-  ![Knowledge base](./images/knowledge-base-created.png)
+  ![Knowledge base created](./images/knowledge-base-created.png)
 
-  ![Knowledge base](./images/knowledge-base-active.png)
+  ![Knowledge base active](./images/knowledge-base-active.png)
+
+## Task 2: Monitor the ingestion job
+
+When a Knowledge Base is created, an Ingestion Job is automatically created in order to process the information contained in the Data Source.
+This job might take a while to complete and the Knowledge Base will not be set to Active until it is done.
+Here are the steps to monitor the Ingestion Job's progress.
+
+1. From the OCI Generative AI Agents service overview page, click the **Knowledge Bases** link on the left.
+
+1. Make sure that the root compartment is selected in the **Compartment** list under the **List scope** section on the left.
+
+1. Click the Knowledge Base we've just created in the previous task in the **Knowledge bases** table.
+
+  ![Knowledge base navigation](./images/view-knowledge-base-navigation.png)
+
+1. In the Knowledge Base details page, click the Data Source we've created in the previous task in the **Data sources** table.
+
+  ![Data source navigation](./images/data-source-navigation.png)
+
+1. In the Data Source details page, click the Ingestion Job which was automatically created (should only be one) in the **Ingestion jobs** table.
+
+  ![Ingestion job navigation](./images/ingestion-job-navigation.png)
+
+1. In the Ingestion job details page you'll be able to see the job progress under the **Work requests** table by observing the **State** and **Percent complete** columns. Initially the it will look like this:
+
+  ![Ingestion job navigation](./images/ingestion-job-details.png)
+
+  When the Ingestion Job is complete, it should look this:
+
+  ![Ingestion job navigation](./images/ingestion-job-completed.png)
+
+  As you can see, details page displays information such as: **Number of ingested files**, **Number of failed files**, **Job duration** and more. When the job is complete, the **Percent complete** column should show 100% and the **State** column should indicate **Succeeded**. At this point you can continue to the next lab.
 
 ## Acknowledgements
 

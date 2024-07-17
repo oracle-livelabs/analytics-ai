@@ -57,7 +57,14 @@ Let's type the following question into the chat: "How can i create a fine-tuned 
 
   ![Logs](./images/logs.png)
 
-Feel free to experiment and ask the Agent additional questions about the OCI Generative AI service (examples: What is the OCI Generative AI service? which regions is the OCI Generative AI service available in? What are the requirements for a custom model dataset? etc.)
+Feel free to experiment and ask the Agent additional questions about the OCI Generative AI service.
+Here are a few sample questions you could try:
+
+* What is the OCI Generative AI service?
+* Which regions is the OCI Generative AI service available in?
+* What are the requirements for a custom model dataset?
+* Which LLMs are available through the service?
+* What can i do with the embedding models?
 
 ## Acknowledgements
 

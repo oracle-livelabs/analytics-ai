@@ -23,7 +23,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Create a knowledge base
+## Task 1: Download and unzip the sample dataset
 
 1. Click [this link](./files/oci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
   The `zip` archive will be downloaded to your configured `Downloads` folder.
