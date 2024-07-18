@@ -217,7 +217,7 @@ realtime_speech_parameters.customizations = [
 ]
 ```
 
-Download a fully implemented python example [here](./files/realtime_example.py) code file and save it your directory.
+Download a fully implemented python example [here.](./files/realtime_example.py)
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
