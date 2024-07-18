@@ -111,7 +111,7 @@ OCI Speech Service EndPoints for all the services:
 
 *Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
 
-1. <u>Create Customization Job</u>
+1. <u>Create Customization</u>
 
 
     Endpoint:
@@ -171,7 +171,7 @@ OCI Speech Service EndPoints for all the services:
     * Supported values for languageCode are en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
 
 
-2. <u>Get Customization Job</u>
+2. <u>Get Customization</u>
     Endpoint:
     ```
     <copy> 
@@ -181,7 +181,7 @@ OCI Speech Service EndPoints for all the services:
     `<customizationID>` should be replaced with the actual customization ID/Alias
      `<region-identifier>` should be replaced with a valid region like us-phoenix-1
 
-3. <u>List Customization Jobs</u>
+3. <u>List Customizations</u>
     Endpoint:
     ```
     <copy> 
@@ -190,7 +190,7 @@ OCI Speech Service EndPoints for all the services:
     ```
     `<uniqueCompartmentID>` should be replaced with the compartment ID 
     `<region-identifier> should be replaced with a valid region like us-phoenix-1`
-4. <u>Update Customization Job</u>
+4. <u>Update Customization</u>
 
     With the updated Customization body. We can submit a PUT request to update the Customization
     
@@ -248,7 +248,7 @@ OCI Speech Service EndPoints for all the services:
 
     </copy>
     ```
-4. <u>Delete Customization Job</u>
+4. <u>Delete Customization</u>
     Endpoint:
     ```
     <copy>
