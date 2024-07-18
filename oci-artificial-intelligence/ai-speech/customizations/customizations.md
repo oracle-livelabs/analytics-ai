@@ -113,10 +113,11 @@ OCI Speech Service EndPoints for all the services:
 
 1. <u>Create Customization Job</u>
 
+
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
+    POST https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
     </copy>
     ```
     Body:
@@ -174,7 +175,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy> 
-        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+        GET https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
     </copy>
     ```
     `<customizationID>` should be replaced with the actual customization ID/Alias
@@ -184,7 +185,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy> 
-        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>>
+        GET https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>>
     </copy>
     ```
     `<uniqueCompartmentID>` should be replaced with the compartment ID 
@@ -196,7 +197,7 @@ OCI Speech Service EndPoints for all the services:
     Endpoint:
     ```
     <copy>
-    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    PUT https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
     </copy>
     ```
 
@@ -247,7 +248,13 @@ OCI Speech Service EndPoints for all the services:
 
     </copy>
     ```
-
+4. <u>Delete Customization Job</u>
+    Endpoint:
+    ```
+    <copy>
+    DELETE https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
 
     
 
