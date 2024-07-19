@@ -54,7 +54,8 @@ Under documentation you can find helpful links relevant to OCI speech service
     Provide the type of the entities and then list them in the box below
         ![Define entity list](./images/entity-list.png " ")
 
-    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage
+    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage. [Here](./files/clmpayload.json) is an
+    example customization definition you can use
         ![Select entities](./images/object-storage-entity.png " ")
 
     Configure model details
@@ -105,19 +106,19 @@ To view your newly created customization, click on your customization's name fro
 
 ## Task 4: Using the customizations API
 
-The Postman REST Collection for Customizations setup can be downloaded from [OCI Customization REST Collection](./files/Customization_API_Collection.postman_collection.json). The POSTMAN instructions for the setups are [the same as Speech API](../ai-speech/oci-speech-rest/oci-speech-rest.md)
+The Postman REST Collection for Customizations setup can be downloaded from [OCI Customization REST Collection](./files/Customization_API_Collection.postman_collection.json). Refer to "Access OCI speech with REST APIs" lab for Postman setup
 
 OCI Speech Service EndPoints for all the services:
 
 *Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
 
-1. <u>Create Customization</u>
+1. <u>Create Customization - POST</u>
 
 
     Endpoint:
     ```
     <copy>
-    POST https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
     </copy>
     ```
     Body:
@@ -171,33 +172,43 @@ OCI Speech Service EndPoints for all the services:
     * Supported values for languageCode are en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
 
 
-2. <u>Get Customization</u>
+2. <u>Get Customization - GET</u>
+
     Endpoint:
     ```
     <copy> 
-        GET https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
     </copy>
     ```
     `<customizationID>` should be replaced with the actual customization ID/Alias
      `<region-identifier>` should be replaced with a valid region like us-phoenix-1
 
-3. <u>List Customizations</u>
+3. <u>List Customizations - GET</u>
+
     Endpoint:
     ```
     <copy> 
-        GET https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>>
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>&lifecycleState=<STATE>&displayName=<name>&id=<customizationId>
     </copy>
     ```
-    `<uniqueCompartmentID>` should be replaced with the compartment ID 
-    `<region-identifier> should be replaced with a valid region like us-phoenix-1`
-4. <u>Update Customization</u>
+    Filter your list query results using query params:
+
+    ```compartmentId```: <strong>view all customizations in a certain compartment</strong>
+
+    ```lifecycleState```: <strong>view all customizations with a certain lifecycle state</strong>
+
+    ```displayName```: <strong>view all customizations with a certain displayName</strong>
+
+    ```id```: <strong>view customizations with matching customizationId</strong>
+
+4. <u>Update Customization - PUT</u>
 
     With the updated Customization body. We can submit a PUT request to update the Customization
     
     Endpoint:
     ```
     <copy>
-    PUT https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
     </copy>
     ```
 
@@ -248,11 +259,12 @@ OCI Speech Service EndPoints for all the services:
 
     </copy>
     ```
-4. <u>Delete Customization</u>
+4. <u>Delete Customization - DELETE</u>
+
     Endpoint:
     ```
     <copy>
-    DELETE https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
     </copy>
     ```
 

@@ -147,7 +147,7 @@ if __name__ == "__main__":
             listener=MyListener(),
             service_endpoint=realtime_speech_url,
             signer=authenticator(),
-            compartment_id="ocid1.compartment.oc1..aaaaaaaafhejmv2sovpb2g7hxjfkonpxzlhb3ued6iutapxbqafjhl6s7xdq",
+            compartment_id="<compartmentID>",
         )
 
     loop = asyncio.get_event_loop()

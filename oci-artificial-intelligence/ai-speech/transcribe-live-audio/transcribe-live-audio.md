@@ -72,17 +72,14 @@ Next, select the <strong>Enable customizations</strong> box in the "Configure tr
 
 Specify a compartment and select a customization to include in your next transcription session
 
-Congratulations on completing this lab!
-
-You may now **proceed to the next lab**
 
 ## Task 5: Using OCI AI Speech live transcription SDK
 
 First, refer to lab 4 (Access OCI speech with OCI SDKs (Optional)) for API signing key and config file setup
 
-<strong>Python example:</strong>
+OCI AI Speech live transcription uses websockets to relay audio data and receive text transcriptions in real time. This means your client must implement some key listener functions:
 
-OCI AI Speech live transcription uses websockets to relay audio data and text transcriptions in real time. This means your client must implement some key listener functions:
+<strong>Python example:</strong>
 ```
 on_result(result)
     // This function will be called whenever a result is returned from the 
