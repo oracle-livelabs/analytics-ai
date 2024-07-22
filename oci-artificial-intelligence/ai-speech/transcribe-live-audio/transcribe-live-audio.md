@@ -165,11 +165,13 @@ class MyRealtimeListener(RealtimeClientListener):
         return self.errormessage
 ```
 
-<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session
+<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session. Click [here](https://docs.oracle.com/en-us/iaas/Content/speech/using/using-live-transcribe.htm) for documentation regarding the live transcribe API.
 
-`language_code` : <strong>"en-US", "pt-BR", "es-ES", "hi-IN", "de-DE", "fr-FR", "it-IT"</strong>
+*example values:*
 
-`model_domain` : <strong>"GENERIC", "MEDICAL"</strong>
+`language_code` : <strong>"en-US"</strong>
+
+`model_domain` : <strong>"MEDICAL"</strong>
 
 `partial_silence_threshold_in_ms` : <strong>500</strong>
 
@@ -177,11 +179,11 @@ class MyRealtimeListener(RealtimeClientListener):
 
 `encoding` : <strong>"audio/raw;rate=16000"</strong>
 
-`should_ignore_invalid_customizations` : <strong>True, False</strong>
+`should_ignore_invalid_customizations` : <strong>True</strong>
 
-`stabilize_partial_results` : <strong>True, False</strong>
+`stabilize_partial_results` : <strong>True</strong>
 
-`customizations` : <strong>[Customization1, Customization2]</strong>
+`customizations` : <strong>[Customization1]</strong>
 
 <strong>Example of setting realtime parameters</strong>
 
