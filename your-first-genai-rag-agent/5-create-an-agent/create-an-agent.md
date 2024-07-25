@@ -29,7 +29,7 @@ This lab assumes you have:
 
 1. Click the **Create agent** button at the top of the **Agents** table.
 
-  ![Create Agent navigation](./images/create-agent-navigation.png)
+  ![Screenshot showing how to start creating a new agent](./images/create-agent-navigation.png)
 
 1. Provide a name for the Agent (for example: oci-generative-ai-agents-cw24-hol-agent)
 
@@ -45,21 +45,21 @@ This lab assumes you have:
 
 1. Click the **Create** button at the bottom of the page.
 
-  ![Create knowledge base and data source](./images/create-agent.png)
+  ![Screenshot showing the required configuration for the new agent](./images/create-agent.png)
 
 If everything went to plan, your Agent will be created. This can take a few minutes.
 
 Please wait until the **Lifecycle state** shows the **Active** state before moving on to the next lab.
 
-  ![Agent being created](./images/agent-creating.png)
+  ![Screenshot showing the agent in the creating state](./images/agent-creating.png)
 
-  ![Agent created](./images/agent-created.png)
+  ![Screenshot showing the agent in the active state](./images/agent-created.png)
 
 ## Task 2: Observe Agent metadata
 
 1. After the Agent was created and we've confirmed that it's **Lifecycle state** is **Active**, click the Agent name in the **Agents** table.
 
-  ![View Agent navigation](./images/view-agent-navigation.png)
+  ![Screenshot showing how to navigate to the newly created agent](./images/view-agent-navigation.png)
 
 1. Notable information on the Agent details page:
 
@@ -70,7 +70,7 @@ Please wait until the **Lifecycle state** shows the **Active** state before movi
 
     > In addition, you can **Launch a chat** session with the Agent as well as **Edit**, **Move** and **Delete** the Agent.
 
-  ![Agent details](./images/agent-details.png)
+  ![Screenshot highlighting some of the agent's details like name, OCID etc.](./images/agent-details.png)
 
 ## Acknowledgements
 

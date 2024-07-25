@@ -32,9 +32,9 @@ This lab assumes you have:
 
 1. Locate the downloaded `zip` archive in your download folder using `File Explorer` on `Windows` or `Finder` on `Mac`.
 
-  ![Downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
+  ![Screenshot showing the downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
 
-  ![Downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
+  ![Screenshot showing the downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
 
 1. To extract the text files from the `zip` archive:
 
@@ -70,13 +70,13 @@ This lab assumes you have:
 
 1. Click **Buckets** on the right, under **Object Storage & Archive Storage**.
 
-  ![Buckets navigation](./images/buckets-navigation.png)
+  ![Screenshot showing how to navigate to the storage bucket section](./images/buckets-navigation.png)
 
 1. Under **List scope**, make sure that the **root** compartment is selected.
 
 1. Click the **Create Bucket** button on the top of the **Buckets** table.
 
-  ![Buckets navigation](./images/buckets-list.png)
+  ![Screenshot of the storage bucket list](./images/buckets-list.png)
 
 1. Provide a name for the bucket (example: oci-generative-ai-agents-service-cw24-hol-dataset).
 
@@ -84,35 +84,35 @@ This lab assumes you have:
 
   Click the **Create** button on the bottom of the panel.
 
-  ![Create bucket](./images/create-bucket.png)
+  ![Screenshot showing the new bucket configuration](./images/create-bucket.png)
 
 1. Click the new bucket's name in the **Buckets** table.
 
-  ![Select bucket](./images/bucket-navigation.png)
+  ![Screenshot showing navigating to the newly created bucket](./images/bucket-navigation.png)
 
 1. Under the **Objects** section of the page, click the **Upload** button.
 
 1. Click the **select files** link in the **Choose Files from your Computer** section.
 
-  ![Select files navigation](./images/select-files-navigation.png)
+  ![Screenshot showing how to start uploading files to the storage bucket](./images/select-files-navigation.png)
 
 1. In your `File Explorer` or `Finder`, navigate to the folder containing all of the `.txt` files extracted in the previous task.
 
 1. Select all of the files from the folder and click `Open`.
 
-  ![Select all files](./images/select-all-files.png)
+  ![Screenshot showing all files in the folder selected for uploading](./images/select-all-files.png)
 
 1. Click the **Upload** button at the bottom of the panel.
 
-  ![Upload files](./images/upload.png)
+  ![Screenshot showing all of the selected files ready to be uploaded](./images/upload.png)
 
 1. Click the **Close** button at the bottom of the panel.
 
-  ![Upload done](./images/upload-done.png)
+  ![Screenshot showing the uploaded files](./images/upload-done.png)
 
 If everything went to plan, you should see all of the files listed under the **Objects** section of the page.
 
-![Objects list](./images/objects-list.png)
+![Screenshot showing the uploaded files in the storage bucket](./images/objects-list.png)
 
 ## Acknowledgements
 

@@ -27,7 +27,7 @@ If your tenancy is already subscribed to the Chicago region, please skip to the 
 
 1. On the top right, click the Regions drop down menu.
 
-  ![Regions list](./images/regions-list.png)
+  ![Screenshot showing the tenancy regions list](./images/regions-list.png)
 
 1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
 
@@ -37,11 +37,11 @@ If your tenancy is already subscribed to the Chicago region, please skip to the 
 
   > **Note:** When you subscribe to a region, you cannot unsubscribe from it.
 
-  ![Infrastructure regions list](./images/infrastructure-regions.png)
+  ![Screenshot showing the region subscription page](./images/infrastructure-regions.png)
 
 1. Click the **Subscribe** button at the bottom of the **Subscribe to New Region** dialog.
 
-  ![Subscribe to new region dialog](./images/subscribe-new-region-dialog.png)
+  ![Screenshot showing the new region subscription approval dialog](./images/subscribe-new-region-dialog.png)
 
 The operation might take a few minutes to complete. When complete, the new region will appear on the **US Midwest (Chicago)** will appear in the **Regions** drop down menu on the main screen.
 
@@ -58,19 +58,19 @@ First, we are going to create a dynamic group which will allow us to grant acces
 
 1. Click **Domains**.
 
-  ![Domains navigation](./images/domains-navigation.png)
+  ![Screenshot showing how to navigate to the domains section of the console](./images/domains-navigation.png)
 
 1. Under the **List scope**, make sure that the **root** compartment is selected.
 
 1. Click the **Default** domain from the **Domains** table.
 
-  ![Default domain navigation](./images/default-domain-navigation.png)
+  ![Screenshot showing how to navigate to the default domain section](./images/default-domain-navigation.png)
 
 1. On the left click **Dynamic Groups**.
 
 1. Click thd **Create dynamic group** button at the top of the **Dynamic groups** table.
 
-  ![Dynamic group navigation](./images/dynamic-group.png)
+  ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group.png)
 
 1. Name the dynamic group (example: oci-generative-ai-agents-service)
 
@@ -86,7 +86,7 @@ First, we are going to create a dynamic group which will allow us to grant acces
     </copy>
     ```
 
-  ![Create dynamic group](./images/create-dynamic-group.png)
+  ![Screenshot showing how to configure the dynamic group](./images/create-dynamic-group.png)
 
 Next, we will create the access policies:
 
@@ -94,13 +94,13 @@ Next, we will create the access policies:
 
 1. Click **Policies**.
 
-  ![Policies navigation](./images/policies-navigation.png)
+  ![Screenshot showing how to navigate to the policies section](./images/policies-navigation.png)
 
 1. On the left under **List scope**, select the root compartment. The root compartment should appear first in the list, have the same name as the tenancy itself and have the text **(root)** next to it's name.
 
 1. Click the **Create Policy** button on the top left of the **Policies** table.
 
-  ![Create new policy navigation](./images/create-new-policy-navigation.png)
+  ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.png)
 
 1. Provide a name for the policy (example: oci-generative-ai-agents-service).
 
@@ -123,7 +123,7 @@ Next, we will create the access policies:
   Make sure to replace `<your-user-group-name>` with the user group your user is associated with (for example: `Administrators`).
   Also, please replace `<dynamic-group-name-created-above>` with the name you've provided for the dynamic group created above.
 
-  ![Create new policy](./images/create-new-policy.png)
+  ![Screenshot showing the steps to create a new policy](./images/create-new-policy.png)
 
 ## Task 3: Verify access to the service
 
@@ -133,7 +133,7 @@ Next, we will create the access policies:
 
 1. Verify that the appears in bold to indicate it is the active region.
 
-  ![Select the Chicago region](./images/select-chicago-region.png)
+  ![Screenshot showing how to select the Chicago region from the regions list](./images/select-chicago-region.png)
 
 1. Click the navigation menu on the top left.
 
@@ -143,7 +143,7 @@ Next, we will create the access policies:
   
   If the **Generative AI Agents** service does not appear under **AI Services**, please review previous tasks.
 
-  ![Agents service navigation](./images/agents-service-navigation.png)
+  ![Screenshot showing how to navigate to the Agents service from the main menu](./images/agents-service-navigation.png)
 
 ## Learn More
 

@@ -31,7 +31,7 @@ This lab assumes you have:
 
 1. Click the **Create knowledge base** button at the top of the **Knowledge bases** table.
 
-  ![Agents service navigation](./images/knowledge-base-navigation.png)
+  ![Screenshot showing how to navigate to the knowledge base sections within the agents service console](./images/knowledge-base-navigation.png)
 
 1. Provide a name for the Knowledge base (for example: oci-generative-ai-agents-cw24-hol-kb)
 
@@ -51,21 +51,21 @@ This lab assumes you have:
 
 1. Click the **Create** button at the bottom of the pane.
 
-  ![Create knowledge base and data source](./images/create-data-source.png)
+  ![Screenshot showing the configuration for the data source](./images/create-data-source.png)
 
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked.
 
 1. Click the **Create** button at the bottom of the page.
 
-  ![Knowledge base](./images/create-knowledge-base.png)
+  ![Screenshot showing how to complete the knowledge base configuration](./images/create-knowledge-base.png)
 
 If everything went to plan, your Knowledge Base will be created. This can take a few minutes.
 
 Please wait until the **Lifecycle state** shows the **Active** state before moving on to the next lab.
 
-  ![Knowledge base created](./images/knowledge-base-created.png)
+  ![Screenshot showing the created knowledge base](./images/knowledge-base-created.png)
 
-  ![Knowledge base active](./images/knowledge-base-active.png)
+  ![Screenshot showing the active knowledge base](./images/knowledge-base-active.png)
 
 ## Task 2: Monitor the ingestion job
 
@@ -79,23 +79,23 @@ Here are the steps to monitor the Ingestion Job's progress.
 
 1. Click the Knowledge Base we've just created in the previous task in the **Knowledge bases** table.
 
-  ![Knowledge base navigation](./images/view-knowledge-base-navigation.png)
+  ![Screenshot showing how to navigate to the newly created knowledge base](./images/view-knowledge-base-navigation.png)
 
 1. In the Knowledge Base details page, click the Data Source we've created in the previous task in the **Data sources** table.
 
-  ![Data source navigation](./images/data-source-navigation.png)
+  ![Screenshot showing how to navigate to the data source within the knowledge base](./images/data-source-navigation.png)
 
 1. In the Data Source details page, click the Ingestion Job which was automatically created (should only be one) in the **Ingestion jobs** table.
 
-  ![Ingestion job navigation](./images/ingestion-job-navigation.png)
+  ![Screenshot showing how to navigate to the ingestion job initiated for the data source](./images/ingestion-job-navigation.png)
 
 1. In the Ingestion job details page you'll be able to see the job progress under the **Work requests** table by observing the **State** and **Percent complete** columns. Initially the it will look like this:
 
-  ![Ingestion job navigation](./images/ingestion-job-details.png)
+  ![Screenshot showing the ingestion job details highlighting that it is in progress at the moment](./images/ingestion-job-details.png)
 
   When the Ingestion Job is complete, it should look this:
 
-  ![Ingestion job navigation](./images/ingestion-job-completed.png)
+  ![Screenshot showing additional details for the ingestion job like the number of files ingested or failed](./images/ingestion-job-completed.png)
 
   As you can see, details page displays information such as: **Number of ingested files**, **Number of failed files**, **Job duration** and more. When the job is complete, the **Percent complete** column should show 100% and the **State** column should indicate **Succeeded**. At this point you can continue to the next lab.
 
