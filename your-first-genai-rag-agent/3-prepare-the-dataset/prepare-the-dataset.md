@@ -26,6 +26,7 @@ This lab assumes you have:
 ## Task 1: Download and unzip the sample dataset
 
 1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Foci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
+
   The `zip` archive will be downloaded to your configured `Downloads` folder.
   On `Windows` computers, downloaded files would be saved in `C:\Users\[user name]\Downloads` by default.
   For `Mac` computers, downloaded files would be saved in `/Users/[user name]/Downloads` by default.
