@@ -77,6 +77,8 @@ Specify a compartment and select a customization to include in your next transcr
 
 First, refer to lab 4 (Access OCI speech with OCI SDKs (Optional)) for API signing key and config file setup
 
+Click [here](https://docs.oracle.com/en-us/iaas/Content/speech/using/using-live-transcribe.htm) for documentation regarding AI Speech SDK
+
 OCI AI Speech live transcription uses websockets to relay audio data and receive text transcriptions in real time. This means your client must implement some key listener functions:
 
 <strong>Python example:</strong>
@@ -165,7 +167,7 @@ class MyRealtimeListener(RealtimeClientListener):
         return self.errormessage
 ```
 
-<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session. Click [here](https://docs.oracle.com/en-us/iaas/Content/speech/using/using-live-transcribe.htm) for documentation regarding the live transcribe API.
+<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session.
 
 *example values:*
 
