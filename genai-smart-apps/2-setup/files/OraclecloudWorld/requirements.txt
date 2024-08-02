@@ -1,0 +1,17 @@
+streamlit==1.33.0
+langchain
+langchain_community==0.2.7
+oci==2.129.3
+oracledb
+PyPDF2
+pdfplumber
+Pillow
+pdf2image
+pytesseract
+pandas
+requests
+beautifulsoup4
+python-dotenv
+openpyxl
+youtube-transcript-api
+pdfminer.six
