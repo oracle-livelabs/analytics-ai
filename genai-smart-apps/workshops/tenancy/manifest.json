@@ -15,28 +15,28 @@
             "filename": "../../2-setup/setup.md"
         },
         {
-            "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
+            "title": "Gen Ai Chat App",
+            "filename": "../../3-oci-genai-chat-application/oci-genai-chat-application.md"
         },
         {
-            "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
+            "title": "Chat with PDF documents",
+            "filename": "../../4-chat-with-pdf/chat-with-pdf.md"
         },
         {
-            "title": "Create an Agent",
-            "filename": "../../5-create-an-agent/create-an-agent.md"
+            "title": "Compare PDF files",
+            "filename": "../../5-pdf-comparison/pdf-comparison.md"
         },
         {
-            "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
+            "title": "Document Summarization application",
+            "filename": "../../6-document-summarization/document-summarization.md"
         },
         {
-            "title": "Connect ODA with Gen AI Agents",
-            "filename": "../../7-connect-oda-with-agents/connect-oda-with-agents.md"
+            "title": "Chat and summarize web pages",
+            "filename": "../../7-web-content-chat-summarize/web-content-chat-summarize.md"
         },
         {
-            "title": "Connect ODA with Slack",
-            "filename": "../../8-connect-oda-with-slack/connect-oda-with-slack.md"
+            "title": "Chat and summarize youTube Videos",
+            "filename": "../../8-chat-with-youtube/chat-with-youtube.md"
         },
         {
             "title": "Need Help?",
