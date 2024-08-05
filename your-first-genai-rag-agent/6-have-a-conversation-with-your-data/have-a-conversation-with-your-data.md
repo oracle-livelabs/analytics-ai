@@ -33,38 +33,38 @@ This lab assumes you have:
 
 1. You should see the greeting message we've entered during the Agent creation displayed in the chat section.
 
-  ![Screenshot showing the various parts of the chat window such as the compartment, agent and endpoint selection](./images/start-chat.png)
+    ![Screenshot showing the various parts of the chat window such as the compartment, agent and endpoint selection](./images/start-chat.png)
 
 1. At this point, we can start asking our Agent questions about the data we provided and get intelligent answers as well as references to the original data that the answers are based on.
 
-Let's type the following question into the chat: "How can i create a fine-tuned model?" and click the **Submit** button.
+    Let's type the following question into the chat: "How can i create a fine-tuned model?" and click the **Submit** button.
 
-  ![Screenshot showing the first question being asked: "how can i create a fine-tuned model?"](./images/ask-first-question.png)
+    ![Screenshot showing the first question being asked: how can i create a fine-tuned model?](./images/ask-first-question.png)
 
-1. The Agent will scan the data for relevant information and compose a similar to the following:
+1. The Agent will scan the data for relevant information and compose a response similar to the following:
 
-  ![Screenshot showing the answer for the first question](./images/first-answer.png)
+    ![Screenshot showing the answer for the first question](./images/first-answer.png)
 
-1. The Agent can also provide a direct reference to the data in our dataset where the answer was extracted from. 
+1. The Agent can also provide a direct reference to the data in our dataset where the answer was extracted from.
 
-  Scroll down to the end of the answer text and click **View citations** to expand the citations section. This section will provide one or more references to our text files which include a link to the file and an excerpt from the file where the answer was extracted from.
+    Scroll down to the end of the answer text and click **View citations** to expand the citations section. This section will provide one or more references to our text files which include a link to the file and an excerpt from the file where the answer was extracted from.
 
-  Providing citations makes sure that the Agent bases it's responses on our data and decreases the chances for hallucinations or made up answers.
+    Providing citations makes sure that the Agent bases it's responses on our data and decreases the chances for hallucinations or made up answers.
 
-  ![Screenshot showing the citation provided by the agent as part of the answer for the first question](./images/first-answer-citations.png)
+    ![Screenshot showing the citation provided by the agent as part of the answer for the first question](./images/first-answer-citations.png)
 
-  In addition to citations, you can also observe the log section on the right of the screen to which search query the Agent is using as well as which data files were found to have relevant answers and the text generated for the response.
+    In addition to citations, you can also observe the log section on the right of the screen to which search query the Agent is using as well as which data files were found to have relevant answers and the text generated for the response.
 
-  ![Screenshot of the logs created for the generation of the first answer showing the search string as well as the retrieved files](./images/logs.png)
+    ![Screenshot of the logs created for the generation of the first answer showing the search string as well as the retrieved files](./images/logs.png)
 
-Feel free to experiment and ask the Agent additional questions about the OCI Generative AI service.
+1. Feel free to experiment and ask the Agent additional questions about the OCI Generative AI service.
 Here are a few sample questions you could try:
 
-* What is the OCI Generative AI service?
-* Which regions is the OCI Generative AI service available in?
-* What are the requirements for a custom model dataset?
-* Which LLMs are available through the service?
-* What can i do with the embedding models?
+    * What is the OCI Generative AI service?
+    * Which regions is the OCI Generative AI service available in?
+    * What are the requirements for a custom model dataset?
+    * Which LLMs are available through the service?
+    * What can i do with the embedding models?
 
 ## Acknowledgements
 
