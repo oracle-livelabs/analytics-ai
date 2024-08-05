@@ -6,7 +6,7 @@ Our provisioning work is now complete. It is now time to enjoy the fruits of our
 In the previous labs we have created the proper permissions, uploaded our dataset to a storage bucket, created a knowledge base which drives it's data from the text files in our dataset and lastly, we've created an Agent which will interact with the data defined in the knowledge base.
 Part of the Agent creation process, the OCI Generative AI Agents service created an Endpoint. We will now use this endpoint to communicate with the Agent.
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
