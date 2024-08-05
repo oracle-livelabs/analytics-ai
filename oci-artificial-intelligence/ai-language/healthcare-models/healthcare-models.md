@@ -82,7 +82,7 @@ In this lab, you will:
 
 
 
-## Task 3: Using Python SDK to create async job and document translation
+## Task 3: Using Python SDK to create healthcare and multilingual model
 
 #### **Python code to create healthcare and multilingual model**
 
