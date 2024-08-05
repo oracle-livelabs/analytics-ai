@@ -1,4 +1,4 @@
-# Lab 3: Create and manage customizations in OCI Console
+# Lab 3: Create and manage customizations using REST API and in OCI Console
 
 ## Introduction
 In this session, we will help users get familiar with customizations and how to create and manage them using the OCI Console
@@ -54,16 +54,23 @@ Under documentation you can find helpful links relevant to OCI speech service
     Provide the type of the entities and then list them in the box below
         ![Define entity list](./images/entity-list.png " ")
 
-    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage
+    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage. [Here](./files/clmpayload.json) is an
+    example customization definition you can use
         ![Select entities](./images/object-storage-entity.png " ")
 
-    Configure model details, click next to move on to the <strong>review</strong> page
+    Configure model details
         ![Select entities](./images/model-details.png " ")
+
+    Click next to move on to the <strong>review</strong> page
 
 5. Review customization and create
 
     Look over your information and click <strong>create</strong> to finish creating your customizaiton
+    
+    Review page for customization created using entity list
         ![Review page](./images/review-customization.png " ")
+    Review page for customization created using object storage training dataset
+        ![Review page](./images/review-page-object-storage.png " ")
 
     After clicking create, you will be redirected to the customizations page where you will see your newly created customization
         ![List page](./images/view-created-customization.png " ")
@@ -97,16 +104,172 @@ To view your newly created customization, click on your customization's name fro
     From either the customization details page or list customizations page, click <strong>delete</strong> to delete your customization
         ![delete customization](./images/delete-customization.png " ")
 
+## Task 4: Using the customizations API
 
-## Task 4: Using your customization in a live transcription session
+The Postman REST Collection for Customizations setup can be downloaded from [OCI Customization REST Collection](./files/Customization_API_Collection.postman_collection.json). Refer to "Access OCI speech with REST APIs" lab for Postman setup
 
-Click <strong>Live transcribe</strong> in the side menu on the left to access the live transcription page
-    ![Click live transcription](./images/click-live-transcribe.png " ")
+OCI Speech Service EndPoints for all the services:
 
-Check the <strong>Enable customization</strong> box and select your customization from the drop down
-    ![Job transcription standard format selection button](./images/enable-customization.png " ")
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
 
-Begin session and use your customization's entities
+1. <u>Create Customization - POST</u>
+
+
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
+    </copy>
+    ```
+    Body:
+    ```
+    <copy>
+    {
+        "compartmentId": "<uniqueCompartmentID>>",
+        "description": "<descriptionPlaceholder>",
+        "displayName": "<displayNamePlaceholder>",
+        "alias": "<aliasPlaceHolder>",
+        "modelDetails": {
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        },
+        "trainingDataset": {
+            "datasetType": "ENTITY_LIST",
+            "referenceExamples": [
+                "Private data is <private>",
+                "Bird name is <bird>"
+            ],
+            "entityList": [{
+                "entityType": "private",
+                "entities": [{
+                        "entityValue": "hello",
+                        "pronunciations": [{
+                                "soundsLike": "helloo"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            },{
+                    "entityType": "bird",
+                    "entities": [{
+                            "entityValue": "Tweeteee3",
+                            "pronunciations": [{
+                                    "soundsLike": "tweetyy"
+                                }
+                            ],
+                            "weight": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </copy>
+    ```
+    *Note:*
+    * Supported values for domain are GENERIC, and MEDICAL
+    * Supported values for languageCode are en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+
+
+2. <u>Get Customization - GET</u>
+
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+    `<customizationID>` should be replaced with the actual customization ID/Alias
+     `<region-identifier>` should be replaced with a valid region like us-phoenix-1
+
+3. <u>List Customizations - GET</u>
+
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>&lifecycleState=<STATE>&displayName=<name>&id=<customizationId>
+    </copy>
+    ```
+    Filter your list query results using query params:
+
+    ```compartmentId```: <strong>view all customizations in a certain compartment</strong>
+
+    ```lifecycleState```: <strong>view all customizations with a certain lifecycle state</strong>
+
+    ```displayName```: <strong>view all customizations with a certain displayName</strong>
+
+    ```id```: <strong>view customizations with matching customizationId</strong>
+
+4. <u>Update Customization - PUT</u>
+
+    With the updated Customization body. We can submit a PUT request to update the Customization
+    
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+
+    Body:
+    ```
+    <copy>
+    {
+    "compartmentId": "<uniqueCompartmentID>>",
+    "description": "<descriptionPlaceholder>",
+    "displayName": "<displayNamePlaceholder>",
+    "alias": "<aliasPlaceHolderNew>",
+    "modelDetails": {
+        "domain": "GENERIC",
+        "languageCode": "en-US"
+    },
+    "trainingDataset": {
+        "datasetType": "ENTITY_LIST",
+        "referenceExamples": [
+            "Private data is <private>",
+            "Bird name is <bird>"
+        ],
+        "entityList": [{
+            "entityType": "private",
+            "entities": [{
+                    "entityValue": "hello",
+                    "pronunciations": [{
+                            "soundsLike": "helloo"
+                        }
+                    ],
+                    "weight": 1
+                }
+            ]
+        },{
+                "entityType": "bird",
+                "entities": [{
+                        "entityValue": "Robin",
+                        "pronunciations": [{
+                                "soundsLike": "Robun"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+    </copy>
+    ```
+4. <u>Delete Customization - DELETE</u>
+
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+
+    
+
 
 
 
@@ -117,3 +280,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
+    * Rishabh Tewari - Oracle AI Services

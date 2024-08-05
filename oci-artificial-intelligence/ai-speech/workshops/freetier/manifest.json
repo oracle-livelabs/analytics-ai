@@ -23,12 +23,12 @@
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },
         {
-            "title": "Lab 2: Transcribe live audio with the console",
+            "title": "Lab 2: Transcribe live audio with the console and SDK",
             "description": "Learn how to transcribe live audio using oci console",
             "filename": "../../transcribe-live-audio/transcribe-live-audio.md"
         },
         {
-            "title": "Lab 3: Create and manage customizations in OCI Console",
+            "title": "Lab 3: Create and manage customizations in OCI Console and using REST API",
             "description": "Learn how to create, manage and use customizations",
             "filename": "../../customizations/customizations.md"
         },
