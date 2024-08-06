@@ -245,12 +245,8 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Method** : GET
     * **Request**
     * **Body**
-    * **Parameters**
-    Key: transcriptionJobId
-    Value: ocid1.aispeechtranscriptionjob.oc1.iad.amaXXXXXX
-    Type: Path
 
-    Click **Test Request** to make sure the connection is successful. Note you will have to create your own job in Speech Services to get the value of transcription job ocid.
+    Click **Test Request** to make sure the connection is successful.
 
    ![API Services](images/oci_rest_service_3.png)
 
@@ -276,17 +272,8 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Method** : GET
     * **Request**
     * **Body**
-    * **Parameters**
-    Key: transcriptionJobId
-    Value: ocid1.aispeechtranscriptionjob.oc1.iad.XXXXXXXX
-    Type: Path
 
-    Key: transcriptionTaskId
-    Value: ocid1.aispeechtranscriptiontask.oc1.iad.amaXXXXXXX
-    Type: Path
-
-    Click **Test Request** to make sure the connection is successful. Note you will have to create your own job in Speech Services to get the value of transcription task ocid.
-
+    Click **Test Request** to make sure the connection is successful.
 
    ![API Services](images/oci_rest_service_3.png)
 
