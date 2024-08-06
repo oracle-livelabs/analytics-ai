@@ -7,7 +7,7 @@ Oracle Cloud Infrastructure (OCI) Generative AI Agents combines the power of lar
 In this workshop you will learn how to harness the power of conversational Generative AI to unlock the information hidden in your documents.
 We will show you how the OCI Generative AI Agents service can be easily used to have a conversation with your data.
 
-Estimated Workshop Time: 1 hour 30 minutes
+Estimated Workshop Time: 1 hour 20 minutes
 
 ### Objectives
 

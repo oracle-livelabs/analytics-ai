@@ -5,7 +5,7 @@
 In this lab we are going to perform the actions required to enable the service on our tenancy.
 After that, we will create the objects required for subsequent labs.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -140,7 +140,7 @@ Next, we will create the access policies:
 1. Click **Analytics & AI**.
 
 1. Click **Generative AI Agents** under **AI Services**.
-  
+
   If the **Generative AI Agents** service does not appear under **AI Services**, please review previous tasks.
 
   ![Screenshot showing how to navigate to the Agents service from the main menu](./images/agents-service-navigation.png)

@@ -7,7 +7,7 @@ A Knowledge Base maintains information about the Data Source (where the data com
 Creating a Knowledge Base lets the OCI Generative AI Agents service know where our data is stored and what format it is stored in. Using this information, the service will be able to ingest the data, understand it and index it for fast retrieval later.
 A single knowledge base can be used for multiple Agents.
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
