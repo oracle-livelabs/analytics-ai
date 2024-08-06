@@ -1,0 +1,71 @@
+{
+        "datasetType": "ENTITY_LIST",
+        "referenceExamples": [
+            "find <composer> symphonies conducted by <conductor>",
+            "has <conductor> recorded any symphones by <composer>"
+        ],
+        "entityList": [
+            {
+            "alias": null,
+            "entityType": "composer",
+            "entities": [
+                {
+                    "entityValue": "Erkki Melartin",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Ernst Mielk",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Kaija Saariaho",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Selim Palmgren",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Fredrik Pacius",
+                    "pronunciations": null,
+                    "weight": 1
+                }
+            ]
+            },
+            {
+            "alias": null,
+            "entityType": "conductor",
+            "entities": [
+                {
+                    "entityValue": "Okko Kamu",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Jussi Jalas",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Mikk Murdvee",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Tauno Hannikainen",
+                    "pronunciations": null,
+                    "weight": 1
+                },
+                {
+                    "entityValue": "Hannu Norjanen",
+                    "pronunciations": null,
+                    "weight": 1
+                }
+            ]
+            }
+        ]
+    }
