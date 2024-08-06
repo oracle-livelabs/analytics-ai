@@ -1,6 +1,6 @@
 {
-  "workshoptitle": "Deploy ATOM Chatbot",
-  "help": "livelabs-help_us@oracle.com",
+  "workshoptitle": "Deploy ATOM (AI Powered) Chatbot",
+  "help": "livelabs-help-aiservices_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
@@ -16,6 +16,16 @@
       "title": "Lab 1: Provision an Instance",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../provision/provision.md"
+    },
+    {
+      "title": "Lab 2: Document Understanding and Speech Services",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../understandingDocument/duspeech.md"
+    },
+    {
+      "title": "Lab 3: How to use ATOM",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../usingAtom/useatom.md"
     },
     {
       "title": "Need Help?",
