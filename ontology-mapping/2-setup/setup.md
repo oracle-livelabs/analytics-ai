@@ -48,7 +48,7 @@ The operation might take a few minutes to complete. When complete, the new regio
 
 In the navigation bar
 
-First, we are going to create a dynamic group which will allow us to grant access to the OCI Generative AI Agent service to the dataset uploaded to Object Storage.
+First, we are going to ensure we operate within a region where the Generative AI service is available with the models we need to use.
 
 1. In the navigation bar of the Console, select the **US Midwest(Chicago)** region.
   ![Screenshot showing how to navigate to the regions section of the console](./images/select-chicago-region.png)
