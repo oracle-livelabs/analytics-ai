@@ -1,6 +1,6 @@
 # Introduction
 
-Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service for seamlessly integrating these versatile language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat.
+Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service for seamlessly integrating versatile language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat.
 
 ## About this Workshop
 
@@ -14,7 +14,7 @@ In this workshop, you will learn how to:
 
 * Setup the environment required to access Chat in the Generative AI service.
 * Select the model(s) of interest and update relevant parameters.
-* Upload a synthetic dataset including lexicon elements and text variants to be mapped.
+* Pass the model a synthetic dataset including lexicon elements and text variants to be mapped.
 * Assess the quality of the model response.
 * Have a conversation with the data, providing your own text variants to map.
 * As time permits, leverage a Jupyter notebook to access models using an API.
