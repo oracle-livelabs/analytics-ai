@@ -15,20 +15,8 @@
             "filename": "../../2-setup/setup.md"
         },
         {
-            "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
-        },
-        {
-            "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
-        },
-        {
-            "title": "Create an Agent",
-            "filename": "../../5-create-an-agent/create-an-agent.md"
-        },
-        {
-            "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
+            "title": "Test the model(s)",
+            "filename": "../../3-test-the-models/test-the-models.md"
         },
         {
             "title": "Need Help?",
