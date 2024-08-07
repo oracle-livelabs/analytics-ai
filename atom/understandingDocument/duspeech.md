@@ -245,12 +245,8 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Method** : GET
     * **Request**
     * **Body**
-    * **Parameters**
-    Key: transcriptionJobId
-    Value: ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaaftcd43aaig2xucz2fhk5c25f6qc5kx7ov2sosx2mlncsiovc7rpa
-    Type: Path
 
-    Click **Test Request** to make sure the connection is successful
+    Click **Test Request** to make sure the connection is successful.
 
    ![API Services](images/oci_rest_service_3.png)
 
@@ -276,63 +272,12 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Method** : GET
     * **Request**
     * **Body**
-    * **Parameters**
-    Key: transcriptionJobId
-    Value: ocid1.aispeechtranscriptionjob.oc1.iad.amaaaaaaftcd43aaig2xucz2fhk5c25f6qc5kx7ov2sosx2mlncsiovc7rpa
-    Type: Path
 
-    Key: transcriptionTaskId
-    Value: ocid1.aispeechtranscriptiontask.oc1.iad.amaaaaaaackbhjaaffriojc2xoqbhgqnrav3cxzxumgg2cel2a7lm3udu2vq
-    Type: Path
-
-    Click **Test Request** to make sure the connection is successful
+    Click **Test Request** to make sure the connection is successful.
 
    ![API Services](images/oci_rest_service_3.png)
 
 9. Click on **Add REST Service**. Provide the following details:
-    * **Name**
-
-    ```text
-    <copy>
-    manageObjectStorage
-    </copy>
-    ```
-
-    * **Endpoint**
-
-    ```text
-    <copy>
-    https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/ai/o/raw_datasets/{indexname}/{objectname}
-     </copy>
-    ```
-
-    * **Description (Optional)** : `manages objects in ai bucket for OpenSearch semantic search`
-    * **Authentication Type** : OCI Resource Principal
-    * **Method** : POST
-    * **Request**
-    * **Content Type** : text/plain
-    * **Body**
-
-    ```text
-    <copy>
-    Some sample text
-    </copy>
-    ```
-
-    * **Parameters**
-    Key: indexname
-    Value: cnrlTest
-    Type: Path
-
-    Key: objectname
-    Value: sampleFile.txt
-    Type: Path
-
-    Click **Test Request** to make sure the connection is successful
-
-   ![API Services](images/oci_rest_service_3.png)
-
-10. Click on **Add REST Service**. Provide the following details:
     * **Name**
 
     ```text
@@ -359,22 +304,22 @@ This task involves creating REST service which will be used by ODA to connect to
     ```text
     <copy>
     {
-    "compartmentId": "ocid1.compartment.oc1..aaaaaaaavvogngp2b625zve6v6i3rf33kwqmsq4aiwyrdoxpaweesibfjiea",
+    "compartmentId": "ocid1.compartment.oc1..aXXXXXX",
     "inputLocation": {
         "locationType": "OBJECT_LIST_INLINE_INPUT_LOCATION",
         "objectLocations": [
             {
-                "bucketName": "ATOM-dev",
-                "namespaceName": "idb6enfdcxbl",
+                "bucketName": "Your bucket",
+                "namespaceName": "Your namespace",
                 "objectNames": [
-                    "testFiles/media/video1015703127.mp4"
+                    "Your_test_file.mp4"
                 ]
             }
         ]
     },
     "outputLocation": {
-        "bucketName": "ATOM-dev",
-        "namespaceName": "idb6enfdcxbl",
+        "bucketName": "Your bucket",
+        "namespaceName": "Your namespace",
         "prefix": "output/"
     }
     }
@@ -399,7 +344,7 @@ This task involves creating REST service which will be used by ODA to connect to
 1. Go to Skills -> Settings -> Configuration
 Provide a value to da.privateKey (Any Password)
 
-2. Go to Skills -> Flow Designer and make sure there are no errors in any of the flows
+2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC, getSpeechLifecyleState, searchFlow and speechComponent of the flows
 
 ## Task 6: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
