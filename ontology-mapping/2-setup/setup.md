@@ -25,7 +25,7 @@ The OCI Generative AI Agents service operates in multiple but not all regions in
 
 
 1. On the top right, click the Regions drop down menu.
-![Screenshot showing the tenancy regions list](./images/regions-list.png)
+  >![Screenshot showing the tenancy regions list](./images/regions-list.png)
 
 1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
 
