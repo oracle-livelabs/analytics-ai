@@ -25,8 +25,7 @@ The OCI Generative AI Agents service operates in multiple but not all regions in
 
 
 1. On the top right, click the Regions drop down menu.
-
-  ![Screenshot showing the tenancy regions list](./images/regions-list.png)
+![Screenshot showing the tenancy regions list](./images/regions-list.png)
 
 1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
 
@@ -57,19 +56,19 @@ First, we are going to ensure we operate within a region where the Generative AI
   ![Screenshot showing location of the navigation menu](./images/navigation-menu.png)
 
 1. Click **Analytics & AI**. Under AI Services, click **Generative AI**.
-![Screenshot showing how to navigate to Generative AI](./images/select-generative-ai.png)
+  ![Screenshot showing how to navigate to Generative AI](./images/select-generative-ai.png)
 
 1. Click **Chat** from the Generative AI menu.
-![Screenshot showing how to Chat](./images/select-chat.png)
+  ![Screenshot showing how to Chat](./images/select-chat.png)
 
 1. Under Model, select the **meta.llama-3-70b-instruct** model.
-![Screenshot showing how to select the Meta Llama 3 model](./images/select-llama.png)
+  ![Screenshot showing how to select the Meta Llama 3 model](./images/select-llama.png)
 
 1. Click the checkbox indicating you have read the agreement and then click **Submit** to accept.
-![Screenshot showing how to accept the licensing terms of Meta Llama 3](./images/llama-licensing-terms.png)
+  ![Screenshot showing how to accept the licensing terms of Meta Llama 3](./images/llama-licensing-terms.png)
 
-1. In **Parameters**, adjust the Maximum output tokens to 5000.  This will help ensure the model can generate a response of sufficient length.
-![Screenshot showing how to set the maximum output tokens.](./images/set-output-tokens.png)
+1. In **Parameters**, adjust the Maximum output tokens to 4000.  This will help ensure the model can generate a response of sufficient length.  The total context length (input + output tokens) is 8000 tokens.
+  ![Screenshot showing how to set the maximum output tokens.](./images/set-output-tokens.png)
 
 
 
