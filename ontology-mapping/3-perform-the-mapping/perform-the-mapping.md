@@ -1,4 +1,4 @@
-# Prepare the dataset
+# Perform the mapping
 
 ## Introduction
 
@@ -36,7 +36,21 @@ This lab assumes you have:
 1. Copy and paste the list of terms or variants to be mapped into the chat window, but **DO NOT** press **Submit** yet.
 [text]("DEVICE_ID","STUDY_DESCRIPTION_1","13","CT C/T-spine w/ IV contrast","30","CT Cystogram w/ bladder contrast","44","Thoracic Spine CT +C","12","CT C/T-spine wo contrast","43","Thoracic Spine CT -C","49","Low Dose Lung CT -C","41","Total Body CT","4","CT Thorax/Abd/Pelvis wo contrast","1","CT Abd/Pelvis w/ contrast","34","CT Maxfac wo IV contrast","42","Cardiac CT Calcium Score","10","CT C-spine wo contrast","3","CT Abd w/wo contrast","19","CTA Head/Neck w/ IV contrast","37","Virtual Bronch","18","CT LS-spine w/wo IV contrast","24","CT Colongraphy","16","CT L-spine w/ IV contrast","9","CT Thorax wo contrast","32","CT Sacrum wo IV contrast","21","CTA Head w/ IV contrast","28","CT Sinuses w/ IV contrast","11","CT C-spine w/ IV contrast","35","CT right arm w/con","22","CTA LE w/ IV contrast"
 )
+Click the button below to copy text to the clipboard:
 
+<button onclick="copyToClipboard()">Copy Text</button>
+<input type="text" value="This is the text to copy" id="textToCopy" style="display:none;">
+
+<script>
+    function copyToClipboard() {
+        var copyText = document.getElementById("textToCopy");
+        copyText.style.display = "block";
+        copyText.select();
+        document.execCommand("copy");
+        copyText.style.display = "none";
+        alert("Text copied to clipboard!");
+    }
+</script>
 ## Acknowledgements
 
 * **Author** - David Miller, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer

@@ -11,22 +11,14 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
+            "title": "Setup",
+            "filename": "../../2-setup.md"
         },
         {
-            "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
+            "title": "Perform the Mapping",
+            "filename": "../../3-perform-the-mapping.md"
         },
-        {
-            "title": "Create an Agent",
-            "filename": "../../5-create-an-agent/create-an-agent.md"
-        },
-        {
-            "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
-        },
-        {
+          {
             "title": "Need Help?",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
