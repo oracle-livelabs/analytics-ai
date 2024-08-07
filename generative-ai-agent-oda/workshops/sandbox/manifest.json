@@ -1,8 +1,10 @@
 {
     "workshoptitle": "The Title of the Workshop is defined in the manifest",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
-    "variables": ["../../variables/variables.json",
-        "../../variables/variables-in-another-file.json"],
+    "variables": [
+        "../../variables/variables.json",
+        "../../variables/variables-in-another-file.json"
+    ],
     "tutorials": [
         {
             "title": "Get Started",
@@ -15,34 +17,34 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Provision Generative AI Agents Service",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../agent/agent.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Provision Infrastructure via Terraform",
+            "filename": "../../terraform/terraform.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Setup OCI Digital Assistant (ODA)",
+            "filename": "../../oda/oda.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Setup OCI Visual Builder (VB)",
+            "filename": "../../vb/vb.md"
         },
         {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+            "title": "Lab 5: Demo User Experience",
+            "filename": "../../user/user.md"
         },
         {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
+            "title": "Lab 6: (optional) Explore Functions in depth",
+            "filename": "../../functions/functions.md"
         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

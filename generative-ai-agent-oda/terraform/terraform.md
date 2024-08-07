@@ -29,22 +29,65 @@ This lab assumes you have:
 ## Task 1: Create Resource Manager Stack
 
 1. Start Create Stack Workflow
-TODO: create cool rm deploy link
 
-2. Configure Variables
+<!-- https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm
+TODO: update package url when available
+-->
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=<package-url>)
 
-3. Review and Create
+Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
 
+2. Fill out **Stack Information**
+
+<!-- TODO screenshot-->
+
+Ensure you are creating your stack in the correct region.
+
+Accept the Terms of Use.
+
+Optionally, update the name and description of the stack.
+
+Ensure you have selected the compartment you want to deploy the resource in.
+
+Click Next
+
+3. Configure Variables
+
+<!-- TODO screenshot-->
+
+<!-- TODO go through variable options-->
+
+4. Review and Create
+
+On this page, you can review your stack information and variable configuration.
+
+When you are done, click **Create** to finish the stack creation wizard.
+
+You can select **Run Apply** and skip Tasks 2 and 3, but it is recommended you perform these tasks separately so you can review the Terraform plan before applying.
 
 ## Task 2: Run Plan Job
 
-1. Click Plan
+<!-- TODO screenshot-->
+
+1. Click on the **Plan** button
+
+This will bring up a window on the right side. Click **Plan** again to initiate the plan job.
 
 2. Review completed plan
 
+<!-- TODO screenshot-->
+
+The plan job may take a couple minutes to complete. After it is completed, you can search through the logs to see the resources that will be created/updated/deleted as well as their configuration parameters.
+
+
 ## Task 3: Run Apply Job
 
+
 1. Click on the **Apply** button
+
+
+
+<!-- TODO screenshot-->
 
 2. In the **Apply job plan resolution** dropdown menu, select the Plan job you just reviewed
 

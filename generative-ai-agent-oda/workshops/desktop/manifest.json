@@ -1,8 +1,10 @@
 {
   "workshoptitle": "The Title of the Workshop is defined in the manifest",
   "help": "livelabs-help-**enterarea**_us@oracle.com",
-  "variables": ["../../variables/variables.json",
-    "../../variables/variables-in-another-file.json"],
+  "variables": [
+    "../../variables/variables.json",
+    "../../variables/variables-in-another-file.json"
+  ],
   "tutorials": [
     {
       "title": "Introduction",
@@ -32,12 +34,12 @@
       "filename": "../../vb/vb.md"
     },
     {
-        "title": "Lab 5: Demo User Experience",
-        "filename": "../../tables/tables.md"
+      "title": "Lab 5: Demo User Experience",
+      "filename": "../../user/user.md"
     },
     {
-            "title": "Lab 6: (optional) Explore Functions in depth",
-            "filename": "../../functions/functions.md"
+      "title": "Lab 6: (optional) Explore Functions in depth",
+      "filename": "../../functions/functions.md"
     },
     {
       "title": "Need Help?",

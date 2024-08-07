@@ -2,26 +2,20 @@
 
 ## About this Workshop
 
-Many of you have already been using Generative AI technologies to get or generate information. 
-
-However, if you want to get the information about your company’s private policies (that might be maintained in internal documents), you may not be able to get that correct information, or the Large language Model (LLM) might hallucinate (that is - generates responses that are nonsensical, factually incorrect, or disconnected from the user’s question).
-
-The reason is – in most of the cases, the base LLM (that powers these Generative AI chatbots) have been trained earlier on old public data, so it does not have the knowledge about any restricted information. And re-training the base LLM with new data is a very resource / time consuming process.
-
-We’ll see here how you can develop a solution using OCI Digital Assistant and OCI Generative AI Agents (Beta) services.
-
-This solution enables developers to perform GenAI RAG on custom PDF documents (stored in OCI Object Storage) using the OCI Generative AI Agent Service. 
-
+This workshop will help to configure Generative AI powered chatbot (ATOM) on your own OCI tenancy. 
+This workshop enables developers to perform GenAI RAG on custom PDF documents (stored in OCI Object Storage) using the OCI Generative AI Agent Service.
 The users can then
-- From OCI Digital Assistant Chatbot (that can be hosted in an OCI Visual Builder Web Application), connect to OCI Generative AI Agent Service (leveraging OCI Functions).
+
+- Connect to OCI Generative AI Agent Service from OCI Digital Assistant Chatbot (hosted in OCI Visual Builder ATOM Application)
 - Get responses of their question (in natural language) from those custom PDF documents.
+By following the workshop users can install this ATOM application in their own tenancy
 
+![User View](images/user_view.png)
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.) TODO
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Estimated Workshop Time: 3 hours -- minutes
+<!-- (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+TODO update estimate
+-->
 
 ### Objectives
 
@@ -31,42 +25,47 @@ Objective of this workshop is to set-up the required OCI services to create a fu
 
 * OCI Object Storage Service – Users can configure OCI Object Storage and create Buckets.
 Users can then upload their own unstructured PDF manuals / documents in those buckets.
-* OCI Generative AI Agent (Beta) Service – Users can configure OCI Generative AI Agent (Beta) Service (create and configure Knowledge Bases and Agents).
-Users can then ingest and perform RAG on the user’s documents in OCI Object Storage, using OCI Generative AI Agent (Beta) Service.
-* OCI Functions – Users can configure OCI Functions, using Python SDK
+* OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
+Users can then ingest and perform RAG on the user’s documents in OCI Object Storage, using OCI Generative AI Agent Service.
+* OCI Functions – Users can configure OCI Functions, using the provided automation scripts.
 Users can then connect to OCI Generative AI Agent Service using OCI Functions. The OCI Functions can be exposed as a Rest Service
-* OCI Digital Assistant (ODA) – Users can create ODA instance and create an ODA Skill.
-Users can then connect from ODA Skill to OCI Generative AI Agent Service, leveraging OCI Functions Rest Service.
-* OCI Visual Builder (VB) Application – User can create OCI Visual Builder (VB) instance.
-Users can then embed the ODA chatbot in the VB web application. Then the users can get responses from their PDF manuals / documents, using the VB web  application.
+* OCI Digital Assistant (ODA) – Users can create ODA instance and import the provided ODA Skill.
+Users can then connect from ODA chatbot to OCI Generative AI Agent Service, leveraging OCI Functions Rest Service.
+* OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
+Users can then embed the ODA chatbot in ATOM application. Then the users can get responses from their PDF manuals / documents, using the ATOM application.
 
 In this workshop, you will learn how to:
-* Provision an OCI Generative AI Agent
-* Provision Infrastructure through Terraform
-* Connect OCI Digital Assistant (ODA) to this Agent
-* Setup a frontend for ODA with a Visual Builder application
-* Test the agent's knowledge base against user queries
+
+* Create Object Storage Buckets, and upload custom PDF documents in those buckets
+* Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
+* Setup & configure Functions to connect to Generative AI Agent Service
+* Setup & configure ODA as an LLM powered chatbot
+* Setup & configure Visual Builder as a frontend channel for ODA
+* Test out the features and capabilities of this ATOM application
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud Account
 * Enrolled in Beta fo OCI Generative AI Agents for RAG - https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination
-* Access to Region where Agent service is available: Chicago, Frankfurt
+* Access to a Region where the Agent service is available: Chicago, Frankfurt
 * Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
-
-
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [What Is Generative AI? How Does It Work?](https://www.oracle.com/artificial-intelligence/generative-ai/what-is-generative-ai/)
+* [What Is Retrieval-Augmented Generation (RAG)?](https://www.oracle.com/artificial-intelligence/generative-ai/retrieval-augmented-generation-rag/)
+* [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.htm)
+*	[Overview of Digital Assistants and Skills](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/overview-digital-assistants-and-skills.html)
+*	[Overview of Visual Builder](https://docs.oracle.com/en-us/iaas/visual-builder/doc/oracle-visual-builder.html)
+*	[Oracle Digital Assistant's large language model integration](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/llm-blocks-skills.html)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+
+* **Author**
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **JB Anderson**, Senior Cloud Engineer, NACIE
 * **Contributors** -  <Name, Group> -- optional
