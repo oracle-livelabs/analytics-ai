@@ -54,8 +54,7 @@ First, we are going to ensure we operate within a region where the Generative AI
   ![Screenshot showing how to navigate to the regions section of the console](./images/select-chicago-region.png)
 
 1. Open the navigation menu.
-
-![Screenshot showing location of the navigation menu](./images/navigation-menu.png)
+  ![Screenshot showing location of the navigation menu](./images/navigation-menu.png)
 
 1. Click **Analytics & AI**. Under AI Services, click **Generative AI**.
 ![Screenshot showing how to navigate to Generative AI](./images/select-generative-ai.png)
