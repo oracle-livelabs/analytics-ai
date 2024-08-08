@@ -25,7 +25,7 @@ This lab assumes you have:
 
 ## Task 1: Perform your first mapping
 
-1. Copy and paste the following prompt into the chat message window, then press **Submit** .  Notice the components of the prompt we are providing:  instructions, standard data terms, and terms to be mapped.
+1. Copy and paste the following prompt into the chat message window, then press **Submit** .  Notice the components of the prompt we are providing:  instructions, standard data terms, and terms to be mapped.  Also included is a field *RAND_ID* which matches with *CODE* for the lexicon term *LONG_COMMON_NAME*.  This is used in the prompt to help us calculate how well the model performed its matching task.
     >**//INSTRUCTIONS//**
     >
     >For these radiology procedure names, Return a table of row #,STUDY_DESCRIPTION, best semantically matching LONG_COMMON_NAME (blank if no match), and CONFIDENCE (low, medium, high) of the match, CODE, RAND_ID,  whether RAND_ID equals CODE.  Also give the # of processed STUDY_DESCRIPTIONs and # of LONG_COMMON_NAMEs, and # of matches.
