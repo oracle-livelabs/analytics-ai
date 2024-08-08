@@ -126,7 +126,7 @@ This lab assumes you have:
 
     ![stack apply success](images/stack_apply_success.png) <!--TODO: replace image with a better run-->
 
-## Task 4: Inspect Created Resources
+## Task 3: Inspect Created Resources
 
 1. Find Function Invoke Endpoint
 
