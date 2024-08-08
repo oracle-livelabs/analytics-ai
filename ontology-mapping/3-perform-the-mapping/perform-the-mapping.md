@@ -90,8 +90,8 @@ This lab assumes you have:
 
 ## Task 3: Evaluate an alternative model
 
-1. To select a new model, choose the *cohere.command-r-16k v1.2* model in the **Model** dropdownlist in Chat.  
-    ![Screenshot showing how to choose the cohere.command-r-16k v1.2 model](./images/select-cohere-commandr.png)
+1. To select a new model, choose the *cohere.command-r-plus v1.2* model in the **Model** dropdownlist in Chat.  
+    ![Screenshot showing how to choose the cohere.command-r-plus v1.2 model](./images/select-model-commandrplus.png)
 1. In **Parameters**, adjust the Maximum output tokens to 4000.  This will help ensure the model can generate a response of sufficient length.  The total context length (input + output tokens) is 16k tokens.
 1. Copy the following prompt into the Chat message area and press **Submit**.  Then evaluate the response.  Notice speed, output formatting, and any performance differences.
     >**//INSTRUCTIONS//**
