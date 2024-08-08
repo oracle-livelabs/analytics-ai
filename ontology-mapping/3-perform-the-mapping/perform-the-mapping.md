@@ -50,7 +50,7 @@ This lab assumes you have:
 1. Ask the model to match a new study description by entering into the Chat message area: "Map MRI of the brain - Alzheimers research".  Click on **Submit**.  Does the response seem reasonable?
 1. Click on **Clear Chat** in the Chat area to restart the interaction with the model.  Any former prompt information we've provided will be removed.
 1. Test the model on another set of radiology procedure names with different types of variants (mispellings, abbreviations, alternative anatomy names).  Copy the following prompt into the Chat message area and press **Submit**.  Then evaluate the response.
->**//INSTRUCTIONS//**
+    >**//INSTRUCTIONS//**
     >
     >For these radiology procedure names, Return a table of row #,STUDY_DESCRIPTION, best semantically matching LONG_COMMON_NAME (blank if no match), and CONFIDENCE (low, medium, high) of the match, CODE, RAND_ID,  whether RAND_ID equals CODE.  Also give the # of processed STUDY_DESCRIPTIONs and # of LONG_COMMON_NAMEs, and # of matches.
     >
@@ -73,8 +73,6 @@ This lab assumes you have:
     >**//STUDIES TO MAP//**
     >
     >"STUDY_DESCRIPTION","Chest -C","CT Cerv Thoracic Spine w/o IV Contrast","CT Angio Abdominal Aorta","CT Cystogrphy w/","CT Cspine w/o IV Contrast","CT Heart Calcium","CT Chest/Abdomen/Pelvis with contrast","CT Lumbosacral Spine w & w/o contrast","CT Abdomen w & w/o IV Contrast","CT brain","CT Lumbosacral Spine with contrast","CT Angio Head w contrast","CT Neck Soft Tissue wo contrast","CT Lspine w/o IV Contrast","CT Carpal wo contrast","CT Pelvic w contrast","CT Eyes w & w/o contrast","CT left arm with contrast","CT Chest Abdomen Pelvis -C","CT Hi-Res Thorax w/o IV Contrast","CT Airway","CTA Head Neck with contrast","CT Lspine with contrast","CT Cervicl Thoracic Spine with contrast","CT rt arm","CT Cspine with contrast","CTA Cor Art with contrast","CT Sacral Spine w/o contrast","CT Abdomen wo IV Contrast","CT Facial Bones with contrast","CT Eyes w/o IV Contrast","CT Head to Toe","CT Kidneys Ureters Bladder wo contrast","CT Angio Kidneys w contrast","CT PNS with contrast","CT Brain with contrast","CT Abdomen with contrast multiphas","CTA Brain with contrast","CT Pelvic wo contrast","CT Lspine w & w/o contrast","CT Chest with IV Contrast","CT T-Spine wo contrast","CT Abdomen Pelvis with IV Contrast","CT Sacral Spine with contrast","CT Chest Low Dose wo contrast","CT T-Spine w contrast","CT PNS w/o contrast","CT Virtual Colonoscopy","CT Facial Bones w/o contrast","CTA Lower Ext with contrast"
-
-
 1. To make things harder, we will use Spanish radiology names and test how successful the mapping is. Press **Clear chat** in the Chat message window. Then paste the following prompt into the Chat message and click **Submit**.  Evaluate the model's response.
     >**//INSTRUCTIONS//**
     >
@@ -92,7 +90,7 @@ This lab assumes you have:
 
 1. To select a new model, choose the *cohere.command-r-plus v1.2* model in the **Model** dropdownlist in Chat.  
     ![Screenshot showing how to choose the cohere.command-r-plus v1.2 model](./images/select-model-commandrplus.png)
-1. In **Parameters**, adjust the Maximum output tokens to 4000.  This will help ensure the model can generate a response of sufficient length.  The total context length (input + output tokens) is 16k tokens.
+1. In **Parameters**, adjust the maximum output tokens to 4000.  This will help ensure the model can generate a response of sufficient length.  The total context length (input + output tokens) is 16k tokens.
 1. Copy the following prompt into the Chat message area and press **Submit**.  Then evaluate the response.  Notice speed, output formatting, and any performance differences.
     >**//INSTRUCTIONS//**
     >
@@ -105,6 +103,7 @@ This lab assumes you have:
     >**//STUDIES TO MAP//**
     >
     >"RAND_ID",STUDY_DESCRIPTION_3","15","CT^LUMBA^SPINE^W/WO","8","CT Chest +C","1","CT AP +C","3","CT Abdomen -+con ***25Apr2023","48","Ct rist w/o IV contast","46","Ct pelvis wi IV contast","30","CT Cystogram +C","41","Ct hole body","37","Ct virtuel bronchoscopy","43","Ct thoracick spine w/o IV contast","47","Ct soft tissue nek w/o IV contast","19","CTA Head and Neck +C","39","Cta renel arteries wi IV contast","14","CT Lumbar Spine -C","33","CT Maxillofacial +C","36","CT upper arm -C","10","CT Cervical Spine -C","34","CT Maxillofacial -C","2","CT Abdomen -C","40","Cta abdominel aorta","38","Cta brian wi IV contast","42","Ct cardic for calciem scoring","9","CT Chest **Jul24","25","CT High Res Chest -C","7","CT Head +C","5","CT CAP +C","13","CT Cspine Tspine + con","50","Ct kidneys ureter blader w/o IV contast","44","Ct thoracick spine wi IV contast","11","CT Cervical Spine +c","17","CT LSspine +C","32","CT Sacrum -C","27","CT Orbits low dose","35","arm fracture +C","49","Ct lo dose lung cancer screning w/o IV contast","4","CT CAP w/o contrast","22","CTA Lower Extremity +C","28","CT^PARASINUS^W/","23","Liver multiphase","18","CT LSspine *Dr Lofland Preop","21","CTA Head +C","31","CT Sacrum +C","45","Ct pelvis w/o IV contast","26","Orbits -C","16","CT Lumbar Spine +C","12","CT Cspine/Tspine -c","24","CT Colon","29","CT^PARASINUS^W/O","6","CT Head ^","20","CTA Coronary Arteries +C"
+
 ## Acknowledgements
 
 * **Author** - David Miller, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
