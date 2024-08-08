@@ -29,6 +29,7 @@ This lab assumes you have:
 
 1. Copy and paste the following instructions into the chat message window, then press **Submit** .  Notice the components of the prompt we are providing:  instructions, standard data terms, and terms to be mapped.
     >**//INSTRUCTIONS//**
+    >
     >For these radiology procedure names, Return a table of row #,STUDY_DESCRIPTION, best semantically matching LONG_COMMON_NAME (blank if no match), and CONFIDENCE (low, medium, high) of the match, CODE, RAND_ID,  whether RAND_ID equals CODE.  Also give the # of processed STUDY_DESCRIPTIONs and # of LONG_COMMON_NAMEs, and # of matches.
     >
     >**//LEXICON//**
