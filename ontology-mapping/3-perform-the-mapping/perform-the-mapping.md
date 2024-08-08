@@ -23,7 +23,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Create the prompt
+## Task 1: Perform your first mapping
 
 1. There are three components to the prompt we will be creating: the model instructions, data containing the lexicon terms, and data containing the study names to be mapped.  
 
