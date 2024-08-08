@@ -141,6 +141,9 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author**
+* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+* **JB Anderson**, Senior Cloud Engineer, NACIE
 * **Contributors** -  <Name, Group> -- optional
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date** - <Name, Month Year>
