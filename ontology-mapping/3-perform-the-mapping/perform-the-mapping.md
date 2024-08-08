@@ -39,7 +39,13 @@ This lab assumes you have:
     >**//STUDIES TO MAP//**
     >
     >"RAND_ID","STUDY_DESCRIPTION_1","20","CTA Coronaries w/ IV contrast","5","CT Thorax Abd Pelvis w/ IV contrast","34","CT Maxfac wo IV contrast","23","CT Abd w/ IV contrast multiphase","25","CT HR Chest wo contrast","11","CT C-spine w/ IV contrast","12","CT C/T-spine wo contrast","16","CT L-spine w/ IV contrast","30","CT Cystogram w/ bladder contrast","14","CT L-spine wo contrast","19","CTA Head/Neck w/ IV contrast","36","CT left arm w/o","10","CT C-spine wo contrast","18","CT LS-spine w/wo IV contrast","21","CTA Head w/ IV contrast","43","Thoracic Spine CT -C","45","Pelvis CT -C","8","CT Thorax w/ contrast","48","Wrist CT -C","32","CT Sacrum wo IV contrast","39","Renal CTA +C","27","CT Orbits w/wo IV contrast","2","CT Abd w/o contrast","26","CT Orbits wo contrast","35","CT right arm w/con","22","CTA LE w/ IV contrast","33","CT Maxfac w/ IV contrast","49","Low Dose Lung CT -C","41","Total Body CT","7","CT Head w/ IV contrast","37","Virtual Bronch","31","CT Sacrum w/ IV contrast","6","CT Head wo contrast","1","CT Abd/Pelvis w/ contrast","47","Neck CT -C","15","CT L-spine w/wo IV contrast","4","CT Thorax/Abd/Pelvis wo contrast","50","KUB CT -C","46","Pelvis CT +C","29","CT Sinuses wo IV contrast","24","CT Colongraphy","9","CT Thorax wo contrast","40","Abd Aorta CTA","13","CT C/T-spine w/ IV contrast","28","CT Sinuses w/ IV contrast","38","Brain CTA +C","42","Cardiac CT Calcium Score","3","CT Abd w/wo contrast","44","Thoracic Spine CT +C","17","CT LS-spine w/ IV contrast"
-
+## Task 2: Analyze the results
+1. Verify from response of the model that 50 STUDY_DESCRIPTIONS were processed.
+1. Review the matches and see if the matches make sense.  RAND_ID and CODE must be equal for a successful match.
+1. Identify if any STUDY_DESCRIPTIONS had medium or low confidence matches to a standard term.
+1. Ask the model why a particular match was more difficult.  For example, in the message area enter "Why was CT left arm w/o more difficult to match?" and hit **Submit**.  Does the response seem reasonable?
+## Task 3: Test the model further
+1. Ask the model to match a new study description by entering into the Chat message area: "Map MRI of the head".  Click on **Submit**.  Does the response seem reasonable?
 
 
 ## Acknowledgements
