@@ -38,7 +38,7 @@ This lab assumes you have:
 3. Wait for the instance to come to Active (green color) status
 
 4. Click on the link to download the VB application (zip file): ATOM_VB.zip
-    <!-- TODO: host artifact and provide download link (as par?)-->
+    [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
     * Click on Import from Visual Builder Instance
@@ -65,6 +65,8 @@ This lab assumes you have:
 7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+
+<!--TODO: add another task on setting up end users to access VBCS application -->
 
 ## Learn More
 

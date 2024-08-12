@@ -37,23 +37,22 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
 2. Fill out **Stack Information**
 
-    ![Stack Information](../terraform/images/stack_information.png)
-    <!-- TODO: update screenshot with final PAR url-->
-
+    ![Stack Accept Package](../terraform/images/stack_accept_package.png)
     * Ensure you are creating your stack in the correct region.
     * Accept the Terms of Use.
-    * Optionally, update the name and description of the stack.
-    * Ensure you have selected the compartment you want the stack to live in.
 
-    Click Next
+    ![Stack Information](../terraform/images/stack_information.png)
+    * Ensure you have selected the compartment you want the stack to live in.
+    * Optionally, update the name and description of the stack.
+    * Click Next
 
 3. General Configuration
 
     ![variables general configuration](images/variables_general.png)
 
     * Optionally, You can select another compartment to deploy your resources in
-    * Optionally, You can customize the prefix used to name resources
-        * Using a different **prefix** from your first stack is recommended
+    * Customize the prefix used to name resources
+        * It is required to use a different **prefix** from your first stack to avoid name collisions in a single compartment
     * Setting up IAM will enable a policy that allows all ODA instances to talk to functions and all functions to talk to the genai agent service in this compartment.
         * These are required to be deployed in your home region
     * Setting up Functions will deploy a function application enabled with logging and tracing on top of a Network
@@ -112,9 +111,6 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
     The plan job may take a couple minutes to complete. After it is completed, you can search through the logs to see the resources that will be created/updated/deleted as well as their configuration parameters.
 
-    ![stack breadcrumbs](../terraform/images/stack_breadcrumbs.png)
-    **NOTE** You can navigate back from a job details page by clicking the **Stack details** breadcrumb in the top left
-
 3. Click on the **Apply** button
 
     ![stack apply](../terraform/images/stack_apply.png)
@@ -129,11 +125,13 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
     The deployment of the infrastructure may take 10-20 minutes.
 
-    ![stack apply success](images/stack_apply_success.png) <!--TODO: replace image with a better run-->
+    ![stack apply success](../terraform/images/stack_apply_success.png) <!--TODO: replace image with a better run-->
 
 ## Task 3: Set up your local host dev environment
 
 Complete section C of the [localhost functions quickstart guide](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm#functionsquickstartlocalhost_topic_start_setting_up_local_dev_environment)
+
+The rest of the the instructions in this task expand upon the directions provided in the quickstart guide.
 
 1. Install and Start Docker
 
@@ -148,8 +146,8 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
     * Create a unique name for your profile
 
 3. Install Fn Project CLI and configure context
-    continue following the quickstart guide for steps 3, 4, and 5
 
+    continue following the quickstart guide for steps 3, 4, and 5
     <!-- TODO what to do with registry creation. Could be in TF. Can also use create repo on push global setting. Is this on in tenancies by default?-->
 
 4. Check Fn context setup
@@ -173,21 +171,23 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
 
     <!-- TODO Sometimes the auth token doesn't copy/paste correctly for me. I have to copy to an intermediate text file, then copy/paste again-->
 
-## task 4: Download function code
+## task 4: Setup Local Environment
 
-<!-- provide a PAR url to download function code or make it available in a github repo-->
+1. Download and unzip Function code
+    [genai-agent-function](https://objectstorage.us-chicago-1.oraclecloud.com/p/lITopjMfdLTOKL9IQz8Ej6oP4TwQsp8G_n7IYRvEep1HSxHoyEwyqCqnWBnkgc3C/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-function-8-12-24.zip)
 
-## task 5: setup a python environment
+2. In a terminal, navigate to the recently unzipped folder
 
-1. Create Virtual Environment
+
+3. (optional) Create a Python Virtual Environment
     It is recommended that you create virtual environments for different python projects. There are multiple tools to manage these environments including venv, conda, pyenv, and virtualenv.
 
-2. Install requirements
+4. Install requirements
     Navigate to the function code folder, activate your virtual environment, and run `pip install -r requirements.txt`
 
-    <!-- TODO: deal with getting python modules from artifactory-->
+    <!-- TODO: deal with getting python modules from artifactory or host the whl file as another artifact-->
 
-## task 6: Test function locally
+## task 5: Test function locally
 
 1. Setup local environment variables
 
@@ -218,7 +218,7 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
 
 <!-- TODO: add task for running pytest testbench-->
 
-## task 7: Deploy the Function to Dev
+## task 6: Deploy the Function to Dev
 
 1. update app.yaml file
 
@@ -241,7 +241,7 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
 
     **Note** Requests may take significantly longer than your production environment as provisioned concurrency is not on
 
-## task 8: Deploy the Function to Prod
+## task 7: Deploy the Function to Prod
 
 1. Update Prod Resource Manager Stack variables
 
@@ -252,6 +252,7 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
     * or provide the local image details
 
     ![variables function local image](images/variables_functions_local_image.png)
+    <!--TODO: Can we let user provide an easier value than OCIR OCID? -->
 
     click next -> save changes
 
@@ -263,8 +264,12 @@ Complete section C of the [localhost functions quickstart guide](https://docs.or
 
     Use a similar command as in the dev environment, but update the app and function name to the prod function application
     `echo -n '{"user_message":"Which account is associated with bill number 28676209?"}' | fn invoke <app name> genai-agent-func --content-type application/json`
-    
+
     <!-- TODO should we update the dev and prod function names to match currently dev is 'genai-agent' and prod is 'genai-agent-func'-->
+
+
+<!-- X. Explore Logs and Traces (optional) TODO: create-->
+
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*

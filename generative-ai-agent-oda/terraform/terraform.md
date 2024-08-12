@@ -26,22 +26,23 @@ This lab assumes you have:
 
     <!-- https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm
     TODO: update package url when available
+    use current OS PAR format. New format throws an error
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/p/965jEhC9fFSPw63kH-OnknQfMnERhkqUb36XLIJQw6K8GglnZPTEoooiMry9yy0A/n/idb6enfdcxbl/b/ai/o/genai-agent-oda-terraform-8-7-24.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-chicago-1.oraclecloud.com/p/kV1zhJYS_PWDJPYHXYpO0UXv1ay0dDZuDIhDzMAYrJehFaLLeoxdugihZjuzSHPe/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-oda-teraform-8-12-24.zip)
+
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
 
 2. Fill out **Stack Information**
 
-    ![Stack Information](images/stack_information.png)
-    <!-- TODO: update screenshot with final PAR url-->
-
+    ![Stack Accept Package](images/stack_accept_package.png)
     * Ensure you are creating your stack in the correct region.
     * Accept the Terms of Use.
-    * Optionally, update the name and description of the stack.
-    * Ensure you have selected the compartment you want the stack to live in.
 
-    Click Next
+    ![Stack Information](images/stack_information.png)
+    * Ensure you have selected the compartment you want the stack to live in.
+    * Optionally, update the name and description of the stack.
+    * Click Next
 
 3. General Configuration
 
@@ -58,7 +59,9 @@ This lab assumes you have:
     ![variables genai agent configuration](images/variables_agent.png)
 
     * Supply the Regional url for the GenAI Agent Endpoint. Chicago's is provided by default
-    * Provide the OCID for the Agent's Endpoint that was created in lab 1 <!-- should we have this be it's own task or ask reader to write down this value when resource is created in lab 1>
+    * Provide the OCID for the Agent's Endpoint that was created in lab 1
+    <!-- TODO: link to lab task where this is shown-->
+
 
 5. Functions Configuration
 
@@ -80,6 +83,7 @@ This lab assumes you have:
     * You can also choosing an existing vcn and subnet
 
     <!--TODO: validate what the networking requirements are. Currently provide a SGW and very minimal traffic rules. Not sure we even need that. How many ip addresses does a function application require?-->
+
 
     Click Next
 
@@ -108,7 +112,10 @@ This lab assumes you have:
     The plan job may take a couple minutes to complete. After it is completed, you can search through the logs to see the resources that will be created/updated/deleted as well as their configuration parameters.
 
     ![stack breadcrumbs](images/stack_breadcrumbs.png)
+
     **NOTE** You can navigate back from a job details page by clicking the **Stack details** breadcrumb in the top left
+    <!-- TODO: consider scaling down this image https://oracle-livelabs.github.io/common/sample-livelabs-templates/create-labs/labs/workshops/livelabs/?lab=4-labs-markdown-develop-content#Task8:Scaleanimage-->
+
 
 3. Click on the **Apply** button
 
@@ -144,9 +151,6 @@ This lab assumes you have:
 
     * This page lists all of the resources managed by this stack as well as their attributes.
     * Some resources have direct link to their details
-
-
-<!-- 3. Explore Logs and Traces (optional) TODO move to extra function lab -->
 
 
 ## Learn More
