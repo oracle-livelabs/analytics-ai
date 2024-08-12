@@ -7,7 +7,7 @@ Estimated Time: 20 minutes
 ## About this Workshop
 
 You can review this PowerPoint for a general overview of the topic.
-* [HOL 3468 Text Standardization with Generative AI](../1-overview-and-highlights/pdf/OCW24_HOL3468%20OCI%20GenAI%20TextStandardization.pdf)
+* [HOL 3468 Text Standardization with Generative AI](../1-overview-and-highlights/pdf/ocw24_hol3468%20oci%20genai%20textstandardization.pdf)
 
 This hands-on lab introduces the use of generative AI in data standardization, with a focus on healthcare applications. Participants will:
 
