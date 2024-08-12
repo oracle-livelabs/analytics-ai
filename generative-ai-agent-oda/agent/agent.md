@@ -126,7 +126,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
 
-    ![Agent Chat Playground](images/chat.png)
+    ![Agent Chat Playground](images/agent_launch_chat.png)
 
 ## Task 5: Update Agent's Knowledge Base (optional)
 
