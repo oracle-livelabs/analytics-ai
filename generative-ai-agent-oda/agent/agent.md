@@ -118,7 +118,13 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![agent active](images/agent_active_endpoint.png)
 
-4. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
+4. It’ll open up the Endpoint Screen. Copy and keep the OCID of the Endpoint. It’ll be used later.
+
+   Click on “Launch chat” button
+
+   ![agent endpoint](images/agent_endpoint.png)
+
+5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
 
     ![Agent Chat Playground](images/chat.png)
 
