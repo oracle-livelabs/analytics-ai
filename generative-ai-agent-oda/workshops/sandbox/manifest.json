@@ -1,10 +1,6 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
-    "variables": [
-        "../../variables/variables.json",
-        "../../variables/variables-in-another-file.json"
-    ],
+    "workshoptitle": "Deploy an ODA Chatbot powered by Generative AI Agents",
+    "help": "livelabs-help-aiservices_us@oracle.com",
     "tutorials": [
         {
             "title": "Get Started",
