@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we are going to take the actions needed to access the Chat capabilities of several large language models. 
+In this lab we are going to take the actions needed to access the Chat capabilities of several large language models.
 
 Estimated Time: 20 minutes
 

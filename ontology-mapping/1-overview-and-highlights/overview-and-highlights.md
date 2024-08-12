@@ -1,10 +1,25 @@
 # Introduction
 
-Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service for seamlessly integrating versatile language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat.
+Oracle Cloud Infrastructure (OCI) Generative AI is a fully managed service for seamlessly integrating versatile language models into a wide range of use cases, including writing assistance, summarization, analysis, and chat. 
+
+Estimated Time: 20 minutes
 
 ## About this Workshop
 
-Generative AI can be leveraged to automatically map text data to standardized terminology or lexicon terms, enabling organizations to improve data interoperability, streamline analysis, and unlock valuable insights. This hands-on lab introduces participants to the application of generative AI in data standardization, using healthcare as an industry example. Focusing on radiology imaging procedures, attendees will learn to use advanced language models like Cohere's Command R and Meta's Llama 3 to map diverse procedure names to standardized names and codes. Through practical exercises using synthetic data, participants will gain experience with both interactive chat interfaces and automated API-driven approaches, providing valuable skills for demonstrating the process and understanding factors that drive success.
+You can review this PowerPoint for a general overview of the topic.
+* [HOL 3468 Text Standardization with Generative AI](../1-overview-and-highlights/pdf/OCW24_HOL3468%20OCI%20GenAI%20TextStandardization.pdf)
+
+This hands-on lab introduces the use of generative AI in data standardization, with a focus on healthcare applications. Participants will:
+
+* Learn how AI can map diverse text data to standardized terminology
+* Focus on radiology imaging procedures as a practical example
+* Use advanced language models like Cohere's Command R and Meta's Llama 3
+* Practice mapping varied procedure names to standardized names and codes
+* Work with synthetic data through interactive chat interfaces
+* Gain skills to demonstrate the process and understand success factors
+
+By the end of this lab, attendees will have practical experience applying generative AI to real-world data standardization challenges.
+
 
 Estimated Workshop Time: 1 hour 20 minutes
 
@@ -17,7 +32,6 @@ In this workshop, you will learn how to:
 * Pass the model a synthetic dataset including lexicon elements and text variants to be mapped.
 * Assess the quality of the model response.
 * Have a conversation with the data, providing your own text variants to map.
-* As time permits, leverage a Jupyter notebook to access models using an API.
 
 ## Learn More
 
