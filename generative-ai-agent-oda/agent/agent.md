@@ -114,9 +114,9 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 3. In few minutes the status of recently created Agent will change from Creating to Active
 
-    Click on “Launch chat” button
+    Click on “Endpoints” menu item in the left panel and then the Endpoint link in the right panel.
 
-    ![agent active](images/agent_active.png)
+    ![agent active](images/agent_active_endpoint.png)
 
 4. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
 
