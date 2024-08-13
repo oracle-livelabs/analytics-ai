@@ -74,7 +74,7 @@ This task involves creating REST service which will be used by ODA to connect to
         "endpoint_id": "ocid1.genaiagentendpoint.oc1.us-chicago-1.amaaXXXXXXXXXXXXXXXXXXXXXXX",
         "user_message": "what is the XXXXX XXXXX?"
     }
-    ``` 
+    ```
     <!-- TODO: technically only the user message is required-->
 
 5. Click Test Request to make sure the connection is successful
@@ -84,7 +84,7 @@ This task involves creating REST service which will be used by ODA to connect to
 ## Task 3: Import Skill (Provided)
 
 1. Click on the link to download the required skill “GenAIAgentSkill(1.0).zip”
-    <!-- Need to provide URL of ODA Skill -->
+    
     [GenAIAgentSkill(1.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/tHMMKzOvr0k2HCGQ42ksjkEgFEyMoA5OdlUTO_ecdpnEH06Uut1jl9Dl6O0WkblH/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/GenAIAgentSkill(1.0).zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
@@ -125,14 +125,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id.png)
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
+
 * **Author**
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **JB Anderson**, Senior Cloud Engineer, NACIE

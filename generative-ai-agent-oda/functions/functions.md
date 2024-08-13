@@ -31,7 +31,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
     <!-- https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm
     TODO: update package url when available
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/p/965jEhC9fFSPw63kH-OnknQfMnERhkqUb36XLIJQw6K8GglnZPTEoooiMry9yy0A/n/idb6enfdcxbl/b/ai/o/genai-agent-oda-terraform-8-7-24.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-chicago-1.oraclecloud.com/p/kV1zhJYS_PWDJPYHXYpO0UXv1ay0dDZuDIhDzMAYrJehFaLLeoxdugihZjuzSHPe/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-oda-teraform-8-12-24.zip)
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
 
@@ -125,7 +125,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
     The deployment of the infrastructure may take 10-20 minutes.
 
-    ![stack apply success](../terraform/images/stack_apply_success.png) <!--TODO: replace image with a better run-->
+    ![stack apply success](../terraform/images/stack_apply_success.png)
 
 ## Task 3: Set up your local host dev environment
 

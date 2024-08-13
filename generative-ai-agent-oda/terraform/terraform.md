@@ -95,7 +95,7 @@ This lab assumes you have:
 
     When you are done, click **Create** or **Save Changes** to finish the stack creation wizard.
 
-    You can select **Run Apply** and skip Tasks 2, but it is recommended you perform these tasks separately so you can review the Terraform plan before applying.
+    You can select **Run Apply** and skip Task 2, but it is recommended you perform this separately so you can review the Terraform plan before applying.
 
 ## Task 2: Run Terraform stack
 
@@ -131,7 +131,7 @@ This lab assumes you have:
 
     The deployment of the infrastructure may take 10-20 minutes.
 
-    ![stack apply success](images/stack_apply_success.png) <!--TODO: replace image with a better run-->
+    ![stack apply success](images/stack_apply_success.png)
 
 ## Task 3: Inspect Created Resources
 
@@ -152,15 +152,8 @@ This lab assumes you have:
     * This page lists all of the resources managed by this stack as well as their attributes.
     * Some resources have direct link to their details
 
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
+
 * **Author**
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **JB Anderson**, Senior Cloud Engineer, NACIE

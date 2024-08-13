@@ -38,7 +38,7 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
     ![object storage navigation](images/os_nav.png)
 
 2. Provide the information for **Compartment** and **Bucket Name**. Click Create.
-    The Object Storage Bucket will be created 
+    The Object Storage Bucket will be created
 
     ![object storage bucket creation](images/os_bucket_create.png)
 
@@ -139,12 +139,6 @@ You may want to update your agent's knowledge base for a variety of reasons in t
     **Note:** Data ingestion Jobs perform incremental ingestions from 2nd run onwards
 <!-- TODO -->
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author**
