@@ -74,4 +74,4 @@ Please wait until the **Lifecycle state** shows the **Active** state before movi
 
 ## Acknowledgements
 
-* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
+* **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader

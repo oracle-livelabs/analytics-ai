@@ -101,4 +101,4 @@ Here are the steps to monitor the Ingestion Job's progress.
 
 ## Acknowledgements
 
-* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
+* **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader

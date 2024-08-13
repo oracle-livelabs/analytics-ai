@@ -142,5 +142,4 @@ With the Slack channel and messaging configuration complete, you can test your b
 
 ## Acknowledgements
 
-**Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea
-, AI and App Integration Specialist Leader
+**Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader

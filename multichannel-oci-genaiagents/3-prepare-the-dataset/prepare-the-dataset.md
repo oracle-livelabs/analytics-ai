@@ -12,7 +12,6 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-* Download and unzip the sample dataset we have prepared for you.
 * Create a storage bucket to store the dataset.
 * Upload the dataset to the storage bucket.
 
@@ -23,46 +22,7 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-## Task 1: Download and unzip the sample dataset
-
-1. Click [this link](./files/oci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
-  The `zip` archive will be downloaded to your configured `Downloads` folder.
-  On `Windows` computers, downloaded files would be saved in `C:\Users\[user name]\Downloads` by default.
-  For `Mac` computers, downloaded files would be saved in `/Users/[user name]/Downloads` by default.
-
-1. Locate the downloaded `zip` archive in your download folder using `File Explorer` on `Windows` or `Finder` on `Mac`.
-
-  ![Downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
-
-  ![Downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
-
-1. To extract the text files from the `zip` archive:
-
-   On `Windows`:
-
-    1. Right click the `zip` file.
-
-    1. Select **Extract All** from the menu.
-
-    1. Click the **Extract** button on the bottom.
-
-    1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
-
-  ![Right click dataset on Windows](./images/right-click-dataset-windows.png)
-
-  ![Extract dataset on Windows](./images/extract-dataset-windows.png)
-
-  ![Extracted dataset on Windows](./images/extracted-dataset-windows.png)
-
-   On `Mac`:
-
-    1. Double click the `zip` file.
-
-    1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
-
-  ![Extracted dataset on Mac](./images/extracted-dataset-mac.png)
-
-## Task 2: Create a storage bucket & upload the dataset
+## Task 1: Create a storage bucket & upload the dataset
 
 1. On your OCI tenancy console, click the **Navigation Menu**.
 
@@ -116,4 +76,4 @@ If everything went to plan, you should see all of the files listed under the **O
 
 ## Acknowledgements
 
-* **Author** - Lyudmil Pelov, Senior Principal Product Manager, Yanir Shahak, Senior Principal Software Engineer
+* **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader

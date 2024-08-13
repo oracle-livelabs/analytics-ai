@@ -149,5 +149,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-* **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea
-, AI and App Integration Specialist Leader
+* **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader
