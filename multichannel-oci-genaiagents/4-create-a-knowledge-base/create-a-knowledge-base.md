@@ -39,9 +39,9 @@ This lab assumes you have:
 
 1. Make sure that the **Object storage** option is selected in the **Select data store** list.
 
-1. Click the **Create data source** button at the top of the **Data sources** table.
+1. Click the **Specify data source** button at the top of the **Data sources** table.
 
-1. In the **Create data source** pane, provide a name for the data source (for example: oci-generative-ai-agents-cw24-hol-ds)
+1. In the **Specify data source** pane, provide a name for the data source (for example: oci-generative-ai-agents-cw24-hol-ds)
 
 1. In the **Data bucket** section, make sure that the root compartment is selected. If not, click the **Change compartment** link and select the root compartment.
 

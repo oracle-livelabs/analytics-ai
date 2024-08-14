@@ -89,13 +89,14 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 6. If you are setting up the channel for group chats and you want messages to go to the group without mentioning the Slack app name, select **Allow Messages Without App Mention in Group Chat**.
 7. Click **Create**.
 8. In the Channels page, copy the WebHook URL and paste it somewhere convenient on your system. You’ll need this to finish setting up the Slack app.
-9. Click the ![Route To ... dropdown icon](./media/image1.png) and select the digital assistant or skill that you want to associate with the channel.
+9. Click the ![Route To ... dropdown icon](./images/image1.png) and select the digital assistant or skill that you want to associate with the channel.
 10. In the **Route To** dropdown, select the digital assistant or skill that you want to associate with the channel.
 11. Switch on the **Channel Enabled** control.
 
 ## Task 6: Configure the Webhook URL in the Slack App
 
 1. In the left navigation of the web console for your Slack app, select **Interactivity & Shortcuts**.
+  ![Interactivity](./images/image2.png)
 2. Turn the **Interactivity** switch ON.
 3. In both the **Request URL** and **Options Load URL** fields, paste the webhook URL that was generated when you created the channel in Oracle Digital Assistant.
 4. Click **Save Changes**.

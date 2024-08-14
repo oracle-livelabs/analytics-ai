@@ -76,7 +76,7 @@ This lab assumes you have:
 
     ![Add Parameters](./images/image9.png)
 
-    You can test the API using the **Test Request** button.
+    You can test the API using the **Test Request** button and note the id(session Id) which we will use to test the other api.
 
     ![Test Request](./images/image10.png)
 
@@ -102,7 +102,7 @@ This lab assumes you have:
     }
     ```
 
-    In the **Parameters** section, add the parameters `agentEndpointId` and `sessionId`.
+    In the **Parameters** section, add the parameters `agentEndpointId` and `sessionId`( which you got from the previous api call).
 
     ![Add Parameters](./images/image13.png)
 
@@ -120,7 +120,7 @@ This lab assumes you have:
 
 2. Download the skill from [this link](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/frpj5kvxryk1/b/genAiAgents/o/genAiAgentsSkill(1.0).zip). Click on **Import Skills** in the right-hand corner and import the skill named **genAiAgentsSkill**.
 
-3. Once the skill is imported, open it and go to the **Settings** button on the right-hand side.
+3. Once the skill is imported, open it and go to the **Settings** button on the left-hand side as shown in the image below.
 
     ![Skill Settings](./images/image15.png)
 
