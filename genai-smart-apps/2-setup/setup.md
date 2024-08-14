@@ -1,154 +1,133 @@
-# Setup
+# Setup OCI-cli 
 
-## Introduction
+## Introduction 
 
-In this lab we are going to perform the actions required to enable the service on our tenancy.
-After that, we will create the objects required for subsequent labs.
+In this lab, we will go over the steps to install and configure OCI-cli, a command-line interface tool for managing Oracle Cloud resources. By the end of this guide, you should be able to access and manage your Oracle Cloud tenant from your command line. 
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes 
 
-### Objectives
+## Objectives 
 
-In this lab, you will:
+By the end of this lab, you will have: 
 
-* Make sure that our tenancy is subscribed to the Chicago region.
-* Create the required permissions for us to be able to use the service in our tenancy.
+- Installed OCI-cli on your local machine 
+- Created an API key for your user 
+- Configured the OCI-cli with your API credentials 
+- Tested the CLI connection to your Oracle Cloud tenant 
 
-### Prerequisites
+## Prerequisites 
 
-This lab assumes you have:
+- An Oracle Cloud account 
+- Administrative access to the tenant 
 
-* An Oracle Cloud account
+## Task 1: Install OCI-cli 
 
-## Task 1: Ensure Chicago region subscription
+The installation process for OCI-cli varies depending on your operating system. Below are the instructions for macOS and Linux: 
 
-The OCI Generative AI Agents service is currently only available in the Chicago region.
-If your tenancy is already subscribed to the Chicago region, please skip to the next task.
+### macOS 
 
-1. On the top right, click the Regions drop down menu.
+Open your terminal and run the following command: 
 
-  ![Regions list](./images/regions-list.png)
+```
+brew install oci-cli
+```
 
-1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
+### Linux 
 
-1. Click the Manage Regions link at the bottom of the list.
+Open your terminal and run the bash command with the script from the OCI-cli GitHub repository: 
 
-1. In the **Infrastructure Regions** list, locate the **US Midwest (Chicago)** region and click the subscribe button to it's right.
+```
+bash -c "$(curl -L <https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh>)"
+```
 
-  > **Note:** When you subscribe to a region, you cannot unsubscribe from it.
+For other operating systems or more detailed installation instructions, refer to the official documentation: [OCI CLI Quickstart](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm). 
 
-  ![Infrastructure regions list](./images/infrastructure-regions.png)
+## Task 2: Create an API Key 
 
-1. Click the **Subscribe** button at the bottom of the **Subscribe to New Region** dialog.
+To authenticate with OCI-cli, you need to create an API key for your user. Follow these steps: 
 
-  ![Subscribe to new region dialog](./images/subscribe-new-region-dialog.png)
+1. Open the OCI console and click on your profile icon in the top-right corner. 
 
-The operation might take a few minutes to complete. When complete, the new region will appear on the **US Midwest (Chicago)** will appear in the **Regions** drop down menu on the main screen.
+2. Click on your user ID to open the user profile page. 
 
-## Task 2: Create access policies
+<img src="./images/image1.png" style="width:6.5in;height:1.61736in" />
 
-In this task, we are going to create policies which will grant us access to the OCI Generative AI Agents service as well as the Object Storage service.
-We will use Object Storage to store the dataset required for this workshop.
+3. In the user profile, navigate to "User Settings" and select "API Keys". 
 
-First, we are going to create a dynamic group which will allow us to grant access to the OCI Generative AI Agent service to the dataset uploaded to Object Storage.
+4. Click on the "Add API Key" button. 
 
-1. Click the navigation menu on the top left.
+<img src="./images/image2.png" style="width:6.5in;height:3.36875in" />
 
-1. Click **Identity & Security**.
+5. A popup will appear. Download both the private and public key, and then click "Add". 
 
-1. Click **Domains**.
+<img src="./images/image3.png" style="width:6.5in;height:4.59444in" />
 
-  ![Domains navigation](./images/domains-navigation.png)
+6. A window will display the API key details. Copy the contents of the text box and click "Close". 
 
-1. Under the **List scope**, make sure that the **root** compartment is selected.
+<img src="./images/image4.png" style="width:6.5in;height:4.625in" />
 
-1. Click the **Default** domain from the **Domains** table.
+## Task 3: Configure OCI-cli 
 
-  ![Default domain navigation](./images/default-domain-navigation.png)
+Now, we will set up the configuration file for OCI-cli: 
 
-1. On the left click **Dynamic Groups**.
+1. Create a hidden directory (if it doesn't exist): 
 
-1. Click thd **Create dynamic group** button at the top of the **Dynamic groups** table.
+   ```
+   mkdir ~/.oci
+   ```
 
-  ![Dynamic group navigation](./images/dynamic-group.png)
+2. Create a config file inside the directory: 
 
-1. Name the dynamic group (example: oci-generative-ai-agents-service)
+   ```
+   touch ~/.oci/config
+   ```
 
-1. Provide an optional description (example: This group represents the OCI Generative AI Agents service)
+3. Move the downloaded SSH keys to the `.oci` directory and rename them: 
 
-1. Select the **Match all rules defined below** option in the **Matching rules** section.
+   ```
+   mv ssh-key-2022-08-16.key ~/.oci/ssh-key.key
+   mv ssh-key-2020-08-16.key.pub ~/.oci/ssh-key.key.pub
+   ```
 
-1. Enter the following expression in the **Rule 1** textbox:
+4. Open the config file and paste the content you copied from the API key details: 
 
-    ```text
-    <copy>
-    all {resource.type='genaiagent'}
-    </copy>
-    ```
+   ```
+   vi ~/.oci/config
+   ```
 
-  ![Create dynamic group](./images/create-dynamic-group.png)
+5. Modify the last field of the config file using the absolute path of the private key. 
 
-Next, we will create the access policies:
+Your config file should look similar to the image below: 
 
-1. Click **Identity & Security**.
+<img src="./images/image5.png" style="width:6.5in;height:1.34444in" />
 
-1. Click **Policies**.
+## Task 4: Test the Connection 
 
-  ![Policies navigation](./images/policies-navigation.png)
+To verify that OCI-cli is set up correctly, run the following command to list the regions of your Oracle Cloud tenant: 
 
-1. On the left under **List scope**, select the root compartment. The root compartment should appear first in the list, have the same name as the tenancy itself and have the text **(root)** next to it's name.
+```
+oci iam region list
+```
 
-1. Click the **Create Policy** button on the top left of the **Policies** table.
+If the command executes successfully and displays a list of regions, your OCI-cli is configured correctly. 
 
-  ![Create new policy navigation](./images/create-new-policy-navigation.png)
+## Download files
 
-1. Provide a name for the policy (example: oci-generative-ai-agents-service).
+download the codes from [here](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/frpj5kvxryk1/b/ocw/o/OraclecloudWorld.zip) and unzip it. 
 
-1. Provide a description (example: OCI Generative AI Agents CloudWorld 2024 Hands-On-Lab Policy).
+Run the below command to install all the dependencies 
+ ```
+pip install -r requirements.txt
+ ```
+Once the dependencies are loaded run the below command to launch the app
+ ```
+streamlit run ociChat.py
+ ```
+## Learn More 
 
-1. Make sure that the root compartment is selected.
+- [OCI CLI Installation](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
+- [Managing API Keys](<https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/managingcredentials.htm#To4>)
 
-1. Enable the **Show manual editor** option.
-
-1. In the policy editor, enter the following policy statements:
-
-  ```text
-  <copy>
-  allow group <your-user-group-name> to manage genai-agent-family in tenancy
-  allow group <your-user-group-name> to manage object-family in tenancy
-  allow dynamic-group <dynamic-group-name-created-above> to manage all-resources in tenancy
-  </copy>
-  ```
-
-  Make sure to replace `<your-user-group-name>` with the user group your user is associated with (for example: `Administrators`).
-  Also, please replace `<dynamic-group-name-created-above>` with the name you've provided for the dynamic group created above.
-
-  ![Create new policy](./images/create-new-policy.png)
-
-## Task 3: Verify access to the service
-
-1. On the top right, click the Regions drop down menu.
-
-1. Click the **US Midwest (Chicago)**.
-
-1. Verify that the appears in bold to indicate it is the active region.
-
-  ![Select the Chicago region](./images/select-chicago-region.png)
-
-1. Click the navigation menu on the top left.
-
-1. Click **Analytics & AI**.
-
-1. Click **Generative AI Agents** under **AI Services**.
-  
-  If the **Generative AI Agents** service does not appear under **AI Services**, please review previous tasks.
-
-  ![Agents service navigation](./images/agents-service-navigation.png)
-
-## Learn More
-
-* [Region subscription](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm#ariaid-title7)
-* [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm)
 
 ## Acknowledgements
 
