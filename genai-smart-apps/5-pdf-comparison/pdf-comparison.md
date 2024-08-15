@@ -180,7 +180,7 @@ from langchain.chains import RetrievalQA
 import os
 from langchain_community.embeddings import OCIGenAIEmbeddings
 import oracledb
-import pages.utils.config as config # Import the configuration
+import pages.utils.config as config 
 from langchain_community.chat_models.oci_generative_ai import ChatOCIGenAI
 from langchain_community.vectorstores.oraclevs import OracleVS
 from langchain_community.vectorstores.utils import DistanceStrategy
