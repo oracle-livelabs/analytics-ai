@@ -54,21 +54,21 @@ To authenticate with OCI-cli, you need to create an API key for your user. Follo
 
 2. Click on your user ID to open the user profile page. 
 
-<img src="./images/image1.png" style="width:6.5in;height:1.61736in" />
+
 
 3. In the user profile, navigate to "User Settings" and select "API Keys". 
 
 4. Click on the "Add API Key" button. 
 
-<img src="./images/image2.png" style="width:6.5in;height:3.36875in" />
+
 
 5. A popup will appear. Download both the private and public key, and then click "Add". 
 
-<img src="./images/image3.png" style="width:6.5in;height:4.59444in" />
+
 
 6. A window will display the API key details. Copy the contents of the text box and click "Close". 
 
-<img src="./images/image4.png" style="width:6.5in;height:4.625in" />
+
 
 ## Task 3: Configure OCI-cli 
 
@@ -111,7 +111,7 @@ Now, we will set up the configuration file for OCI-cli:
 
 Your config file should look similar to the image below: 
 
-<img src="./images/image5.png" style="width:6.5in;height:1.34444in" />
+
 
 ## Task 4: Test the Connection 
 
