@@ -75,21 +75,16 @@ This lab assumes you have:
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
 9. (optional) Enable User Access
-    * Note the name of your VB App
+    * Note the name of your VB Service
     * Navigate in the OCI Console to Identity & Security -> Identity -> Domains
     * Click the **Default** domain or whatever domain is tied to your VB instance
-    * under **Integrated Applictaions**, search for your VB app's name
-        * Each version of your VB app will have a base and test config.
-        * Adding a user or group to the latest version's base configuration will give them access to the live version of the app <!-- TODO: I get an error when trying to do either thing: Could not perform the Grant because the entitlement attributeName is null or empty.-->
-        <!--TODO: do permissions retain from version to version?-->
-    * Note the name of your VB service
     * Under **Oracle Cloud Services**, search for your VB Service name
-        * under Application roles add users or groups to the appropriate roles <!-- TODO: what are the appropriate roles-->
+    * under **Application roles** add users or groups (preferred) to the appropriate roles
+        * Fellow Developers and Admins should be added to ServiceDeveloper or ServiceAdministrator roles
+        * End Users should be added to the ServiceUser role
+        * [See the documentation for privilege details](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/visual-builder-oci-admin/oracle-visual-builder-roles-and-privileges-1.html#GUID-198BB498-5B16-4408-9E9C-86A1F6252083)
 
-
-<!--TODO: add another task on setting up end users to access VBCS application -->
-
-
+<!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
 
 ## Acknowledgements
 

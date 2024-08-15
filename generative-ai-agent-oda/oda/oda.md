@@ -125,6 +125,14 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id.png)
 
+## Task 5: (optional) View Conversation Analytics
+
+From ODA service console homepage -> skill **Dislpay name** -> **Insights** on side nav bar
+
+* On this overview page, you can see stats such as **Total number of Conversations** and **Number of Unique users
+* The View dropdown on the top right allows you to set a time window
+* The Channels filter allows you to filter data from a specific frontend channel
+* The Conversations tab allows you to see user messages and the agent's responses
 
 ## Acknowledgements
 
