@@ -224,9 +224,13 @@ This task involves creating REST service which will be used by ODA to connect to
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+7. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
 
-8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+    ![VB Error](images/vb_error.png)
+
+8. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+
+9. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
 ## Acknowledgements
 

@@ -47,7 +47,6 @@ This task will help you to create Oracle Digital Assistant under your choosen co
 ## Task 2: Policy creation for Oracle Document Understanding and Speech Access
 
 Create a Dynamic Group
-
 Go to Identity>>Domains>>Default domain>>Dynamic groups
 
 ![Navigate to Domains](images/domain.png)
@@ -57,81 +56,82 @@ Click on Create dynamic group and name it as odaDynamicGroup
 Select radio button - Match any rules defined below
 Add the following rules
 
-Rule 1
+    Rule 1
 
-```text
-    <copy>
-    All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
-    </copy>
+    ```text
+        <copy>
+        All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
+        </copy>
     ```
-Note - This will be ocid of Digital Assistant in Chicago region
+    Note - This will be ocid of Digital Assistant in Chicago region
 
-Rule 2
-```text
-    <copy>
-    All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
-    </copy>
-    ```
-
-
-Rule 3
-```text
-    <copy>
-    ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
-    </copy>
+    Rule 2
+    ```text
+        <copy>
+        All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
+        </copy>
     ```
 
-Rule 4
-```text
-    <copy>
-    All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
-    </copy>
+    Rule 3
+    ```text
+        <copy>
+        ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        </copy>
     ```
-Note - This will be ocid of Digital Assistant in Ashburn region
+
+    Rule 4
+    ```text
+        <copy>
+        All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
+        </copy>
+    ```
+    Note - This will be ocid of Digital Assistant in Ashburn region
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
 1. Attach the policy at the root compartment level
 
     ODA_Access - Policy to allow users access to ODA
-    ```text
-    <copy>
-    Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
-    Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
-    Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
-    Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
-    </copy>
-    ```
-    API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
-    ```text
-    <copy>
-    ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
-    </copy>
-    ```
-    ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes access to object storage.
-    ```text
-    <copy>
-    allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        ```text
+        <copy>
+        Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
+        Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
+        Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+        Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
+        </copy>
+        ```
+        API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
 
-    allow any-user to manage object-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        ```text
+        <copy>
+        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        </copy>
+        ```
 
-    allow any-user to read tag-namespaces in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes access to object storage.
+        ```text
+         <copy>
+         allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow dynamic-group odaDynamicGroup to manage ai-service-speech-family in tenancy
+        allow any-user to manage object-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow dynamic-group odaDynamicGroup to manage object-family in tenancy
+        allow any-user to read tag-namespaces in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow dynamic-group odaDynamicGroup to read tag-namespaces in tenancy
+        allow dynamic-group odaDynamicGroup to manage ai-service-speech-family in tenancy
 
-    ALLOW dynamic-group odaDynamicGroup to use fn-invocation in compartment vb
+        allow dynamic-group odaDynamicGroup to manage object-family in tenancy
 
-    Allow dynamic-group odaDynamicGroup to read objectstorage-namespaces in tenancy
+        allow dynamic-group odaDynamicGroup to read tag-namespaces in tenancy
 
-    Allow dynamic-group odaDynamicGroup to manage logging-family in compartment vb
+        ALLOW dynamic-group odaDynamicGroup to use fn-invocation in compartment vb
 
-    Allow dynamic-group odaDynamicGroup to read metrics in compartment vb
-    </copy>
-    ```
+        Allow dynamic-group odaDynamicGroup to read objectstorage-namespaces in tenancy
+
+        Allow dynamic-group odaDynamicGroup to manage logging-family in compartment vb
+
+        Allow dynamic-group odaDynamicGroup to read metrics in compartment vb
+        </copy>
+        ```
 
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
@@ -325,6 +325,7 @@ This task involves creating REST service which will be used by ODA to connect to
     }
     </copy>
     ```
+
     * **Parameters**
 
     Click **Test Request** to make sure the connection is successful
@@ -411,9 +412,13 @@ Provide a value to da.privateKey (Any Password)
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+7. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
 
-8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+    ![VB Error](images/vb_error.png)
+
+8. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+
+9. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
 ## Acknowledgements
 
