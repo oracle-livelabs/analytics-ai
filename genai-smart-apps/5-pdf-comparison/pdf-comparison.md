@@ -85,7 +85,8 @@ with st.sidebar:
 
 #### 3. Main Title and Form for User Input
 
-```python
+```
+<copy>
 Title_html = """
     <style>
         .title h1{
@@ -97,11 +98,9 @@ Title_html = """
             magenta 42.84%, red 50%);
         }
     </style>
-    <div class="title">
-        <h1>PDF comparison using Oracle Gen AI</h1>
-    </div>
     """
 components.html(Title_html)
+<\copy>
 ```
 
 - **HTML/CSS for Title**: Creates a styled title using HTML and CSS. The title has a rainbow gradient animation.
