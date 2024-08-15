@@ -23,11 +23,11 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-<!--*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*-->
-
 This lab assumes you have:
 
 * All previous labs successfully completed
+* Approval for [OCI Gen AI Agents Beta for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
+* Permissions to manage OCI Services: Generative AI Agents, Object Storage
 
 ## Task 1: Provision Oracle Object Storage Bucket
 
@@ -41,6 +41,8 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
     The Object Storage Bucket will be created
 
     ![object storage bucket creation](images/os_bucket_create.png)
+
+    <!--TODO: may need object events and may want object versioning -->
 
 ## Task 2: Upload custom PDF document in the Object Storage Bucket
 
@@ -132,18 +134,38 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 You may want to update your agent's knowledge base for a variety of reasons in the future. This optional tasks walks through how to do this.
 
+<!-- TODO: update task description with: You will also be able to deploy a function in the next lab, which will run an ingestion job when any Object Storage event is emitted in your bucket-->
+
 1. Add/Update/Remove files from Object Storage
 
-2. Run Ingestion Job
+    follow the same steps as in [Task 2](#task-2-upload-custom-pdf-document-in-the-object-storage-bucket)
 
-    **Note:** Data ingestion Jobs perform incremental ingestions from 2nd run onwards
-<!-- TODO -->
+2. Navigate to Data Source
+
+    ![knowledge base nav](images/kb_nav.png)
+
+    * In the Generative AI Agents Service, navigate to the **knowledge bases** view
+    * Click on the name of your knowledge base in the list
+    * Click on the name of your data source in the list
+
+
+3. Run Ingestion Job
+
+    ![data source details](images/data_source.png)
+    * Click **Create Ingestion Job**
+    * Provide a unique name and optional desciption
+    * click **Create**
+
+    **Note:** Data ingestion Jobs perform incremental ingestions from 2nd run onwards. The time this job takes is proportional to the amount of changes you made to your data source.
+
 
 
 ## Acknowledgements
+
 * **Author**
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Contributors** -  <Name, Group> -- optional
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Last Updated By/Date** - <Name, Month Year>
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **JB Anderson**, Senior Cloud Engineer, NACIE
+* **Contributors**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Last Updated By/Date**
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024

@@ -129,8 +129,9 @@ This task involves creating REST service which will be used by ODA to connect to
 ## Acknowledgements
 
 * **Author**
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Contributors** -  <Name, Group> -- optional
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Last Updated By/Date** - <Name, Month Year>
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **JB Anderson**, Senior Cloud Engineer, NACIE
+* **Contributors**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Last Updated By/Date**
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024

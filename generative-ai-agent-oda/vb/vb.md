@@ -8,13 +8,18 @@ Estimated Time: -- minutes
 
 ### About Visual Builder
 
-<!-- TODO-->
+Oracle Visual Builder is a cloud-based software development platform and a hosted environment for your application development infrastructure. It provides an open source standards-based solution to develop, collaborate on, and deploy applications within Oracle Cloud.
+
+In this workshop, we are using Visual Builder as the frontend solution end users will interact with. You can substitute this with any [frontend technology](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/channels-topic.html) with the ability to embed an ODA channel
 
 ### Objectives
 
 In this lab, you will:
 
-<!-- TODO-->
+* Create a Visual Builder Instance
+* Deploy a Visual Builder Application
+* Customize the Application to use your ODA skill
+* Provide end user access to the Application
 
 ### Prerequisites (Optional)
 
@@ -53,12 +58,15 @@ This lab assumes you have:
 
     ![Visual Builder import configuration](images/vb_import_config.png)
 
-6. Once import is completed, open the index.html file in the VB Instance and update the details as follows:
-    * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
-        * URI is the hostname of the ODA instance provisioned in Task 1 of the previous lab
-    * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-        * o	channelId is created during Task 5 - Step 3 of the previous lab
-    * Please set value of initUserHiddenMessage on Line 32 to “Hi”
+6. Once import is completed, update the index.html file
+    * Click on source in the navigation sidebar
+    * filepath: webApps/atom/index.html
+    * update the details as follows:
+        * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
+            * URI is the hostname of the ODA instance provisioned in Task 1 of the previous lab
+        * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+            * o	channelId is created during Task 5 - Step 3 of the previous lab
+        * Please set value of initUserHiddenMessage on Line 32 to “Hi” <!--TODO: Why don't we do this in the artifact? Why is sending Hi necessary?-->
 
     ![Visual Builder update HTML](images/vb_update_html.png)
 
@@ -66,19 +74,29 @@ This lab assumes you have:
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
+9. (optional) Enable User Access
+    * Note the name of your VB App
+    * Navigate in the OCI Console to Identity & Security -> Identity -> Domains
+    * Click the **Default** domain or whatever domain is tied to your VB instance
+    * under **Integrated Applictaions**, search for your VB app's name
+        * Each version of your VB app will have a base and test config.
+        * Adding a user or group to the latest version's base configuration will give them access to the live version of the app <!-- TODO: I get an error when trying to do either thing: Could not perform the Grant because the entitlement attributeName is null or empty.-->
+        <!--TODO: do permissions retain from version to version?-->
+    * Note the name of your VB service
+    * Under **Oracle Cloud Services**, search for your VB Service name
+        * under Application roles add users or groups to the appropriate roles <!-- TODO: what are the appropriate roles-->
+
+
 <!--TODO: add another task on setting up end users to access VBCS application -->
 
-## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
+
 * **Author**
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Contributors** -  <Name, Group> -- optional
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Last Updated By/Date** - <Name, Month Year>
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **JB Anderson**, Senior Cloud Engineer, NACIE
+* **Contributors**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Last Updated By/Date**
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
