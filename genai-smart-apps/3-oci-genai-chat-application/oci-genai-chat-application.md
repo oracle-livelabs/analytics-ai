@@ -43,16 +43,20 @@ To run the Oracle Gen AI Chat Application, you need the following:
 1. **Install Python packages:**
 
    ```
+   <copy>
    pip install streamlit langchain langchain_community
+   <\copy>
    ```
 
 2. **Create a configuration file:** Create a `config.py` file in the `pages/utils` directory with the following content:
 
-   ```python
+   ```
+   <copy>
    ENDPOINT = "https://inference.generativeai.eu-frankfurt-1.oci.oraclecloud.com" # Replace with your service endpoint
    EMBEDDING_MODEL = "cohere.command" # Replace with your embedding model ID
    GENERATE_MODEL = "cohere.command-r-plus" # Replace with your generative model ID
    COMPARTMENT_ID = "ocid1.compartment.oc1..example" # Replace with your compartment OCID
+   <\copy>
    ```
 
 ## Task 3: Running the Application
@@ -62,7 +66,9 @@ To run the Oracle Gen AI Chat Application, you need the following:
 To run the application, use the following command:
 
 ```
+<copy>
 streamlit run app.py
+<\copy>
 ```
 
 ### Step 2: Accessing the Application
@@ -118,7 +124,7 @@ The application reacts to user input from the chat interface. If the input start
 
 The application begins by importing the necessary libraries and setting up configuration parameters.
 
-```python
+``` python
 import streamlit as st
 import langchain
 from langchain.chains import ConversationChain

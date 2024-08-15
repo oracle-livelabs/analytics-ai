@@ -29,7 +29,9 @@ The installation process for OCI-cli varies depending on your operating system. 
 Open your terminal and run the following command: 
 
 ```
+<copy>
 brew install oci-cli
+</copy>
 ```
 
 ### Linux 
@@ -37,7 +39,9 @@ brew install oci-cli
 Open your terminal and run the bash command with the script from the OCI-cli GitHub repository: 
 
 ```
+ <copy>
 bash -c "$(curl -L <https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh>)"
+ </copy>
 ```
 
 For other operating systems or more detailed installation instructions, refer to the official documentation: [OCI CLI Quickstart](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm). 
@@ -73,26 +77,34 @@ Now, we will set up the configuration file for OCI-cli:
 1. Create a hidden directory (if it doesn't exist): 
 
    ```
+   <copy>
    mkdir ~/.oci
+   <\copy>
    ```
 
 2. Create a config file inside the directory: 
 
    ```
+   <copy>
    touch ~/.oci/config
+   </copy>
    ```
 
 3. Move the downloaded SSH keys to the `.oci` directory and rename them: 
 
    ```
+   <copy>
    mv ssh-key-2022-08-16.key ~/.oci/ssh-key.key
    mv ssh-key-2020-08-16.key.pub ~/.oci/ssh-key.key.pub
+   </copy>
    ```
 
 4. Open the config file and paste the content you copied from the API key details: 
 
    ```
+   <copy>
    vi ~/.oci/config
+   </copy>
    ```
 
 5. Modify the last field of the config file using the absolute path of the private key. 
@@ -106,7 +118,9 @@ Your config file should look similar to the image below:
 To verify that OCI-cli is set up correctly, run the following command to list the regions of your Oracle Cloud tenant: 
 
 ```
+<copy>
 oci iam region list
+</copy>
 ```
 
 If the command executes successfully and displays a list of regions, your OCI-cli is configured correctly. 
@@ -117,11 +131,15 @@ download the codes from [here](https://objectstorage.eu-frankfurt-1.oraclecloud.
 
 Run the below command to install all the dependencies 
  ```
+<copy>
 pip install -r requirements.txt
+<\copy>
  ```
 Once the dependencies are loaded run the below command to launch the app
  ```
+<copy>
 streamlit run ociChat.py
+<\copy>
  ```
 ## Learn More 
 

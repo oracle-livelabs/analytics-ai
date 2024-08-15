@@ -67,10 +67,9 @@ st.set_page_config(...)
 
 ```python
 with st.sidebar:
-    st.title("LLM - PDF Comparison App")
     st.markdown(
         """
-    ## About
+     About
 
     This app is an pdf comparison (LLM-powered), built using:
 
