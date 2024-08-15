@@ -65,24 +65,55 @@ This lab assumes you have:
         * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
             * URI is the hostname of the ODA instance provisioned in Task 1 of the previous lab
         * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-            * o	channelId is created during Task 5 - Step 3 of the previous lab
+            * channelId is created during Task 5 - Step 3 of the previous lab
         * Please set value of initUserHiddenMessage on Line 32 to “Hi” <!--TODO: Why don't we do this in the artifact? Why is sending Hi necessary?-->
-
     ![Visual Builder update HTML](images/vb_update_html.png)
 
 7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
-9. (optional) Enable User Access
+
+## Task 2: (optional) Setup Production version of VB
+
+1. Promote app to Live
+    Visual Builder has management tools for application versioning and environments. Your app starts out with a 1.0 Development environment
+
+    ![vb all applications](images/vb_all_applications.png)
+    * In the Visual Builder Service Console, the first page to load should be the **All Applications** page (also available via hamburger menu in top left)
+        * If you don't see the desired application, check the **Administered by me** box
+        * click on the carrot button next to the name to see all versions of the app
+    * To promote a version from Development to Staging, click on the ellipses menu on the right -> **Stage**
+    * To promote a version from Staging to Live, click on the ellipses menu on the right -> **Publish**
+    * After publishing a live version, you will no longer be able to make changes to that version. You can create a new version of the app by clicking on the ellipses menu on the right -> **New Version**
+        * The new version of the app will start in Development, and can be similarly promoted
+    * To get the live url, click on the carrot button next to Live -> atom. The live app will open in a new Browser window
+        * The url will follow the format `https://<VB_service_name>-vb-<tenancy_namespace>.builder.<region>.ocp.oraclecloud.com/ic/builder/rt/<VB_app_name>/live/webApps/atom/`
+    **Note** Users will be redirected to your Tenancy's login page to Authenticate themselves before being able to access the app. They will also need Authorization to access VB, which we will go over in the next step
+
+2. Enable Access to VB Apps
     * Note the name of your VB Service
     * Navigate in the OCI Console to Identity & Security -> Identity -> Domains
-    * Click the **Default** domain or whatever domain is tied to your VB instance
-    * Under **Oracle Cloud Services**, search for your VB Service name
+        * If your tenancy does not have Identity Domains yet, follow [these instructions](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/visual-builder-oci-admin/setting-users-and-groups-cloud-accounts-that-do-not-use-identity-domains-1.html#GUID-8B11C575-3CB9-4E46-BD09-17BD9B9897EE)
+    ![Domain navigation](images/domain_nav.png)
+    * Click on the domain tied to your VB instance
+        * Likely the current domain, **Default** domain, or **OracleIdentityCloudService** domain
+        * If you do not see these domains, change the compartment view to **root**
+    * Under **Oracle Cloud Services**, search for your VB Service name or **VisualBuilder Cloud Service**
+    ![domain cloud services](images/domain_cloud_services.png)
+    * Click on the VB Service with naming convention {VB Service Name}-vb-{tenancy namespace}
+    ![domain application roles](images/domain_app_roles.png)
     * under **Application roles** add users or groups (preferred) to the appropriate roles
         * Fellow Developers and Admins should be added to ServiceDeveloper or ServiceAdministrator roles
         * End Users should be added to the ServiceUser role
         * [See the documentation for privilege details](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/visual-builder-oci-admin/oracle-visual-builder-roles-and-privileges-1.html#GUID-198BB498-5B16-4408-9E9C-86A1F6252083)
+    ![domain add group](images/domain_add_group.png)
+    * To add a group to a role:
+        * click on the carrot button on the right side
+        * click **Manage** under assigned groups
+        * click **Show available groups**
+        * check the box next to each group to add
+        * click **Assign**
 
 <!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
 
