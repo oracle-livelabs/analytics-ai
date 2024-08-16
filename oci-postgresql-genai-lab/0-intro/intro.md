@@ -2,7 +2,7 @@
 # Introduction
 
 ## About This Workshop
-Using Terraform, we will create a Generative AI / Neural Search to search documents using PostgreSQL and a Google like search interface. Documents like:
+Using Terraform, we will create a Generative AI / Hybrid Search to search documents using PostgreSQL and a Google like search interface. Documents like:
 - PDF with text and images using OCI Document Understanding
 - Images using OCI Vision
 - Audio and Videos files using OCI Speech

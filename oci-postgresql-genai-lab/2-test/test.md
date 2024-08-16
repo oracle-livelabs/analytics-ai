@@ -13,11 +13,7 @@ Estimated time: 20 min
 - The previous lab must have been completed.
 
 ## Task 1: Download required files
-You will need samples files on your laptop/desktop. These procedures provide two methods to download a zip file from Github. Decide which method to use.
-
-````
-To download the files to your laptop from the Github website, please follow these steps.
-````
+You will need samples files on your laptop/desktop. To download the files to your laptop from the Github website, please follow these steps.
 
 1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-postgres-genai/tree/main and click *Code* and then *Download ZIP*.
 ![GitHub_Download](images/github-download-zip.png)
@@ -33,7 +29,7 @@ Please wait that the script from the previous lab finishes. You should see :
 
 ```
 -- SEARCH_URL -------
-http://123.123.123.123/
+https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
 ```
 
 You will load a file into object storage which will be ingested, processed with AI, and loaded into the database. 

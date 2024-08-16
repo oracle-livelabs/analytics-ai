@@ -55,7 +55,7 @@ Estimated time: 40 min
  
     Terraform Output
     ----------------
-    SEARCH_URL=(SAMPLE)http://123.123.123.123/
+    SEARCH_URL=(SAMPLE)https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
     </copy>
     `````
 
@@ -139,7 +139,7 @@ You can
 
     ```
     -- SEARCH_URL -------
-    http://123.123.123.123/
+    https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
 
     Please wait 5 mins. The server is starting.
     ```
