@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Unlock Your Enterprise Knowledge: Building Your First Oracle GenAI RAG Agent",
+    "workshoptitle": "Build an AI assistant you can access through Slack, Teams and more",
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
@@ -11,20 +11,32 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Prepare the dataset",
+            "title": "Setup",
+            "filename": "../../2-setup/setup.md"
+        },
+        {
+            "title": "LAB 1: Prepare the dataset",
             "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
         },
         {
-            "title": "Create a Knowledge Base",
+            "title": "LAB 2: Create a Knowledge Base",
             "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
         },
         {
-            "title": "Create an Agent",
+            "title": "LAB 3: Create an Agent",
             "filename": "../../5-create-an-agent/create-an-agent.md"
         },
         {
-            "title": "Have a conversation with your data",
+            "title": "LAB 4: Have a conversation with your data",
             "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
+        },
+        {
+            "title": "LAB 5: Connect ODA with Gen AI Agents",
+            "filename": "../../7-connect-oda-with-agents/connect-oda-with-agents.md"
+        },
+        {
+            "title": "LAB 6: Connect ODA with Slack",
+            "filename": "../../8-connect-oda-with-slack/connect-oda-with-slack.md"
         },
         {
             "title": "Need Help?",

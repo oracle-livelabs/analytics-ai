@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Unlock Your Enterprise Knowledge: Building Your First Oracle GenAI RAG Agent",
+    "workshoptitle": "How Generative AI helps you build smarter applications",
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
@@ -11,20 +11,32 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
+            "title": "LAB 1: Setup",
+            "filename": "../../2-setup/setup.md"
         },
         {
-            "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
+            "title": "LAB 2: Gen Ai Chat App",
+            "filename": "../../3-oci-genai-chat-application/oci-genai-chat-application.md"
         },
         {
-            "title": "Create an Agent",
-            "filename": "../../5-create-an-agent/create-an-agent.md"
+            "title": "LAB 3: Chat with PDF documents",
+            "filename": "../../4-chat-with-pdf/chat-with-pdf.md"
         },
         {
-            "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
+            "title": "LAB 4: Compare PDF files",
+            "filename": "../../5-pdf-comparison/pdf-comparison.md"
+        },
+        {
+            "title": "LAB 5: Document Summarization application",
+            "filename": "../../6-document-summarization/document-summarization.md"
+        },
+        {
+            "title": "LAB 6: Chat and summarize web pages",
+            "filename": "../../7-web-content-chat-summarize/web-content-chat-summarize.md"
+        },
+        {
+            "title": "LAB 7: Chat and summarize youTube Videos",
+            "filename": "../../8-chat-with-youtube/chat-with-youtube.md"
         },
         {
             "title": "Need Help?",
