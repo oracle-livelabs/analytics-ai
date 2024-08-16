@@ -84,7 +84,7 @@ This task involves creating REST service which will be used by ODA to connect to
 ## Task 3: Import Skill (Provided)
 
 1. Click on the link to download the required skill “GenAIAgentSkill(1.0).zip”
-    
+
     [GenAIAgentSkill(1.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/tHMMKzOvr0k2HCGQ42ksjkEgFEyMoA5OdlUTO_ecdpnEH06Uut1jl9Dl6O0WkblH/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/GenAIAgentSkill(1.0).zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
@@ -103,6 +103,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 5. You should be able to successfully the ODA Skill
 
+    **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview.png)
 
 ## Task 4: Create Channel to embed ODA in Visual Builder Application or in any custom Web App
@@ -153,6 +154,8 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * The View dropdown on the top right allows you to set a time window
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
+<!-- TODO: add screenshot-->
+
 
 ## Acknowledgements
 
