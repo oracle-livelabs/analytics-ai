@@ -239,3 +239,6 @@ This task involves creating REST service which will be used by ODA to connect to
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **JB Anderson**, Senior Cloud Engineer, NACIE
+
+**Last Updated By/Date:**
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
