@@ -32,3 +32,5 @@ In this workshop, you will learn how to:
 ## Acknowledgements
 
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader
+
+* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
