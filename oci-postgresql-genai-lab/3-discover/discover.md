@@ -259,8 +259,10 @@ Compute instance is used to host the application logic.
 
        
      ```
-        cd oci-postgres-genai/starter/bin/
-      ./ssh_bastion.sh 
+     <copy>
+     cd oci-postgres-genai/starter/bin/
+     ./ssh_bastion.sh 
+     </copy>     
      ```
 
     ![Compute details](images/postgres-genai-compute3.png)

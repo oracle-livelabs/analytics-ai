@@ -92,7 +92,9 @@ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cl
 He/She just need to add a Policy to your tenancy :
 
 ```
+<copy>
 allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
+</copy>
 ```
 
 **Please proceed to the [next lab.](#next)**

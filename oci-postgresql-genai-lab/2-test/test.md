@@ -28,8 +28,10 @@ You will need samples files on your laptop/desktop. To download the files to you
 Please wait that the script from the previous lab finishes. You should see :
 
 ```
+<copy>
 -- SEARCH_URL -------
 https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
+</copy>
 ```
 
 You will load a file into object storage which will be ingested, processed with AI, and loaded into the database. 

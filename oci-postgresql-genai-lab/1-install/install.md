@@ -40,7 +40,9 @@ Estimated time: 40 min
         He/She just need to add a Policy to your tenancy :
 
         ```
+        <copy>
         allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
+        </copy>        
         ```
 
 ## Task 1: Prepare to save configuration settings
@@ -138,10 +140,12 @@ You can
 12. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
+    <copy>    
     -- SEARCH_URL -------
     https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
 
     Please wait 5 mins. The server is starting.
+    </copy>    
     ```
 **You may now proceed to the [next lab](#next)**
 
@@ -150,15 +154,19 @@ You can
 1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
     ```
+    <copy>    
     oci_core_instance.starter_instance: Creating..
     - Error: 500-InternalError, Out of host capacity.
     Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
+    </copy>
     ```
 
     Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
     ```
+    <copy>    
     OLD: variable availability_domain_number { default = 1 }
     NEW: variable availability_domain_number { default = 2 }
+    </copy>    
     ```
 
     Then rerun the following command in the code editor
@@ -174,13 +182,17 @@ You can
 2. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
 
     ```
+    <copy>    
     - Error: 404-NotAuthorizedOrNotFound, shape VM.Standard.x86.Generic not found
+    </copy>    
     ```
 
     Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *instance_shape* to one where there are still capacity in your tenancy/region
     ```
+    <copy>    
     OLD: variable instance_shape { default = "VM.Standard.x86.Generic" }
     NEW: variable instance_shape { default = "VM.Standard.E4.Flex" }
+    </copy>    
     ```
 
     Then rerun the following command in the code editor
@@ -196,23 +208,29 @@ You can
 3. It happened on new tenancy that the terraform script failed with this error:
 
     ```
+    <copy>    
     Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
     Suggestion: Please retry or contact support for help with service: xxxx
+    </copy>    
     ```
 
     In such case, just rerunning ./build.sh fixed the issue.
 
 4. During terraform:
     ```
+    <copy>    
     Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
+    </copy>    
     ```
 
     Several persons are probably trying to install this tutorial on the same tenancy.
 
     Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
     ```
+    <copy>    
     OLD: export TF_VAR_prefix="search"
     NEW: export TF_VAR_prefix="search2"
+    </copy>    
     ```
 
 
