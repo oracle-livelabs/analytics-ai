@@ -28,7 +28,7 @@ This lab assumes you have:
 
 ## Task 1: Provision Oracle Digital Assistant
 
-This task will help you to create Oracle Digital Assistant under your choosen compartment. OCI Document Understanding service is only available in Ashburn region. Since we're using Ashburn region for this we will have to create a new Digital Assistant in Ashburn region.
+This task will help you to create Oracle Digital Assistant under your chosen compartment. OCI Document Understanding service is only available in Ashburn region. Since we're using Ashburn region for this we will have to create a new Digital Assistant in Ashburn region.
 
 1. Locate Digital Assistant under AI Services
 
@@ -47,7 +47,6 @@ This task will help you to create Oracle Digital Assistant under your choosen co
 ## Task 2: Policy creation for Oracle Document Understanding and Speech Access
 
 Create a Dynamic Group
-
 Go to Identity>>Domains>>Default domain>>Dynamic groups
 
 ![Navigate to Domains](images/domain.png)
@@ -60,33 +59,37 @@ Add the following rules
 Rule 1
 
 ```text
-    <copy>
+     <copy>
     All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
-    </copy>
-    ```
+     </copy>
+```
+
 Note - This will be ocid of Digital Assistant in Chicago region
 
 Rule 2
+
 ```text
-    <copy>
+     <copy>
     All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
     </copy>
-    ```
-
+ ```
 
 Rule 3
+
 ```text
     <copy>
     ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
-    </copy>
-    ```
+     </copy>
+```
 
 Rule 4
+
 ```text
-    <copy>
+     <copy>
     All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
     </copy>
-    ```
+```
+
 Note - This will be ocid of Digital Assistant in Ashburn region
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
@@ -94,44 +97,49 @@ This task will help you to create necessary policy for the Oracle Document Under
 1. Attach the policy at the root compartment level
 
     ODA_Access - Policy to allow users access to ODA
+
     ```text
-    <copy>
-    Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
-    Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
-    Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
-    Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
-    </copy>
+        <copy>
+        Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
+        Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
+        Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+        Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
+        </copy>
     ```
+
     API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
-    ```text
-    <copy>
-    ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
-    </copy>
+
+     ```text
+        <copy>
+        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        </copy>
     ```
+
     ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes access to object storage.
+
     ```text
-    <copy>
-    allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        <copy>
+        allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow any-user to manage object-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        allow any-user to manage object-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow any-user to read tag-namespaces in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
+        allow any-user to read tag-namespaces in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
 
-    allow dynamic-group odaDynamicGroup to manage ai-service-speech-family in tenancy
+        allow dynamic-group odaDynamicGroup to manage ai-service-speech-family in tenancy
 
-    allow dynamic-group odaDynamicGroup to manage object-family in tenancy
+        allow dynamic-group odaDynamicGroup to manage object-family in tenancy
 
-    allow dynamic-group odaDynamicGroup to read tag-namespaces in tenancy
+        allow dynamic-group odaDynamicGroup to read tag-namespaces in tenancy
 
-    ALLOW dynamic-group odaDynamicGroup to use fn-invocation in compartment vb
+        ALLOW dynamic-group odaDynamicGroup to use fn-invocation in compartment vb
 
-    Allow dynamic-group odaDynamicGroup to read objectstorage-namespaces in tenancy
+        Allow dynamic-group odaDynamicGroup to read objectstorage-namespaces in tenancy
 
-    Allow dynamic-group odaDynamicGroup to manage logging-family in compartment vb
+        Allow dynamic-group odaDynamicGroup to manage logging-family in compartment vb
 
-    Allow dynamic-group odaDynamicGroup to read metrics in compartment vb
-    </copy>
-    ```
+        Allow dynamic-group odaDynamicGroup to read metrics in compartment vb
+        </copy>
+     ```
 
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
@@ -172,7 +180,6 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : POST
-    * **Request**
     * **Body**
 
     ```text
@@ -219,7 +226,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
-    > * If you are using a different name (and not Gen_AI_Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI_LLM and  GenAI_Truncate_LLM
+    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both Gen AI LLM and  Gen AI Truncate LLM
 
     ![API Services](images/oci_rest_service_4.png)
 
@@ -237,14 +244,12 @@ This task involves creating REST service which will be used by ODA to connect to
     ```text
     <copy>
     https://speech.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/
-     </copy>
+    </copy>
     ```
 
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : GET
-    * **Request**
-    * **Body**
 
     Click **Test Request** to make sure the connection is successful.
 
@@ -270,8 +275,6 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : GET
-    * **Request**
-    * **Body**
 
     Click **Test Request** to make sure the connection is successful.
 
@@ -297,7 +300,6 @@ This task involves creating REST service which will be used by ODA to connect to
     * **Description (Optional)** : `Optional`
     * **Authentication Type** : OCI Resource Principal
     * **Method** : POST
-    * **Request**
     * **Content Type** : application/json
     * **Body**
 
@@ -325,7 +327,6 @@ This task involves creating REST service which will be used by ODA to connect to
     }
     </copy>
     ```
-    * **Parameters**
 
     Click **Test Request** to make sure the connection is successful
 
@@ -415,7 +416,14 @@ Provide a value to da.privateKey (Any Password)
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
+9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+
+    ![VB Error](images/vb_error.png)
+
 ## Acknowledgements
 
 **Authors**
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+
+**Last Updated By/Date:**
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
