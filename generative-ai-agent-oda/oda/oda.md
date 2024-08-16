@@ -125,7 +125,27 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id.png)
 
-## Task 5: (optional) View Conversation Analytics
+## Task 5: (optional) Customize ODA Conversation
+
+1. Customize predefined agent messages
+
+    * In the ODA Service Console, click on the appropriate skill
+    * In the **Flows** tab, click on user.StartFlow
+    * To modify the initial agent message: "Hi there, I'm the Gen AI Agent Bot! I can help answer any questions you may have."
+        * update AskFirstQuestion block -> component tab -> question
+    * To modify the continuation question: "If you have any other question, you can please ask me."
+        * update AskQuestion -> component tab -> question
+
+    ![flow update question](images/flow_update_question.png)
+
+2. Customize citation format
+    * In the ODA Service Console, click on the appropriate skill
+    * In the **Flows** tab, click on user.InvokeGenAIAgent
+    * For the three OutputCitation blocks, update the component tab -> messages
+
+    ![flow update citations](images/flow_update_citations.png)
+
+## Task 6: (optional) View Conversation Analytics
 
 From ODA service console homepage -> skill **Dislpay name** -> **Insights** on side nav bar
 

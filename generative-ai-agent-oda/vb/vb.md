@@ -76,6 +76,8 @@ This lab assumes you have:
 
 ## Task 2: (optional) Setup Production version of VB
 
+In this Task, we will use VB's development lifecycle to create a **Live** version of the app and get the corresponding url. Then we will setup access the app through OCI IAM. Once complete, you can distribute this app url to your end users. Before accessing the app, users will need to login using your Tenancy's login page.
+
 1. Promote app to Live
     Visual Builder has management tools for application versioning and environments. Your app starts out with a 1.0 Development environment
 
@@ -84,24 +86,24 @@ This lab assumes you have:
         * If you don't see the desired application, check the **Administered by me** box
         * click on the carrot button next to the name to see all versions of the app
     * To promote a version from Development to Staging, click on the ellipses menu on the right -> **Stage**
+        **Note** Your choice for **Business Object Data** does not matter as this VB app stores no data.
     * To promote a version from Staging to Live, click on the ellipses menu on the right -> **Publish**
     * After publishing a live version, you will no longer be able to make changes to that version. You can create a new version of the app by clicking on the ellipses menu on the right -> **New Version**
         * The new version of the app will start in Development, and can be similarly promoted
     * To get the live url, click on the carrot button next to Live -> atom. The live app will open in a new Browser window
         * The url will follow the format `https://<VB_service_name>-vb-<tenancy_namespace>.builder.<region>.ocp.oraclecloud.com/ic/builder/rt/<VB_app_name>/live/webApps/atom/`
-    **Note** Users will be redirected to your Tenancy's login page to Authenticate themselves before being able to access the app. They will also need Authorization to access VB, which we will go over in the next step
 
 2. Enable Access to VB Apps
-    * Note the name of your VB Service
+    * Note your VB instance name that was [created in Task 1 step 2](#task-1-create-vbcs-instance--embed-oda-skill-in-vbcs-application)
     * Navigate in the OCI Console to Identity & Security -> Identity -> Domains
         * If your tenancy does not have Identity Domains yet, follow [these instructions](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/visual-builder-oci-admin/setting-users-and-groups-cloud-accounts-that-do-not-use-identity-domains-1.html#GUID-8B11C575-3CB9-4E46-BD09-17BD9B9897EE)
     ![Domain navigation](images/domain_nav.png)
     * Click on the domain tied to your VB instance
         * Likely the current domain, **Default** domain, or **OracleIdentityCloudService** domain
         * If you do not see these domains, change the compartment view to **root**
-    * Under **Oracle Cloud Services**, search for your VB Service name or **VisualBuilder Cloud Service**
+    * Under **Oracle Cloud Services**, search for your VB instance name or **VisualBuilder Cloud Service**
     ![domain cloud services](images/domain_cloud_services.png)
-    * Click on the VB Service with naming convention {VB Service Name}-vb-{tenancy namespace}
+    * Click on the VB instance with naming convention {VB instance Name}-vb-{tenancy namespace}
     ![domain application roles](images/domain_app_roles.png)
     * under **Application roles** add users or groups (preferred) to the appropriate roles
         * Fellow Developers and Admins should be added to ServiceDeveloper or ServiceAdministrator roles
@@ -114,6 +116,13 @@ This lab assumes you have:
         * click **Show available groups**
         * check the box next to each group to add
         * click **Assign**
+
+3. Troubleshooting Errors
+    * You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+    ![vb forbidden error](images/vb_forbidden_error.png)
+
+<!-- TODO: no mention of security access or roles in shell page-->
+
 
 <!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
 
