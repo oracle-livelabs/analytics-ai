@@ -234,21 +234,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
-8. Step 8: Create a live version of the app
+9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
 
-    * Navigate to the vb application service page
-    * click on top right elipses menu -> stage
-        * Business Object Data:  Stage application with a clean database
-        * click "stage"
-    * click on top right elipses menu -> publish
-        * Business Object Data:  Publish application with a clean database
-        * click "publish"
-
-9. Step 9: Giving end users access to the app
-
-<!-- TODO: 
-need instructions on adding end users to the app in the Integrated application in Identity domains.
--->
+    ![VB Error](images/vb_error.png)
 
 ## Acknowledgements
 
@@ -260,4 +248,10 @@ need instructions on adding end users to the app in the Integrated application i
 * **JB Anderson**,  Senior Cloud Engineer, NACIE
 =======
 * **JB Anderson**, Senior Cloud Engineer, NACIE
+<<<<<<< HEAD
 >>>>>>> cbe8cd27398fc33e577ba1ee68674d22ff6e5d0f
+=======
+
+**Last Updated By/Date:**
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
+>>>>>>> ea4f922b32512aae2cb7b1f811871a438725dca0
