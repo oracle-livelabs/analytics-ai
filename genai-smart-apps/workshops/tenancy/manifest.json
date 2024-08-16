@@ -11,31 +11,31 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Setup",
+            "title": "LAB 1: Setup",
             "filename": "../../2-setup/setup.md"
         },
         {
-            "title": "Gen Ai Chat App",
+            "title": "LAB 2: Gen Ai Chat App",
             "filename": "../../3-oci-genai-chat-application/oci-genai-chat-application.md"
         },
         {
-            "title": "Chat with PDF documents",
+            "title": "LAB 3: Chat with PDF documents",
             "filename": "../../4-chat-with-pdf/chat-with-pdf.md"
         },
         {
-            "title": "Compare PDF files",
+            "title": "LAB 4: Compare PDF files",
             "filename": "../../5-pdf-comparison/pdf-comparison.md"
         },
         {
-            "title": "Document Summarization application",
+            "title": "LAB 5: Document Summarization application",
             "filename": "../../6-document-summarization/document-summarization.md"
         },
         {
-            "title": "Chat and summarize web pages",
+            "title": "LAB 6: Chat and summarize web pages",
             "filename": "../../7-web-content-chat-summarize/web-content-chat-summarize.md"
         },
         {
-            "title": "Chat and summarize youTube Videos",
+            "title": "LAB 7: Chat and summarize youTube Videos",
             "filename": "../../8-chat-with-youtube/chat-with-youtube.md"
         },
         {

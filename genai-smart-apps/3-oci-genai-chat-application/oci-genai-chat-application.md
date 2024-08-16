@@ -300,3 +300,5 @@ To learn more about the Oracle Gen AI Chat Application and its capabilities, you
 ## Acknowledgements
 
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea , AI and App Integration Specialist Leader
+
+**Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024

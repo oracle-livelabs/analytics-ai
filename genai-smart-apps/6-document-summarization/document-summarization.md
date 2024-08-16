@@ -174,3 +174,5 @@ By following the documentation and utilizing the provided code snippets, users c
 ## Acknowledgements
 
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea , AI and App Integration Specialist Leader
+
+**Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
