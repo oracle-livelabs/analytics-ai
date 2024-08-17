@@ -52,6 +52,8 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     **Note:** The Gen AI Agents service currently supports .pdf and .txt file formats
 
+    <!--TODO: should we provide a sample dataset? -->
+
     ![object storage select files](images/os_file_select.png)
 
 2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
@@ -132,7 +134,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 ## Task 5: Update Agent's Knowledge Base (optional)
 
-You may want to update your agent's knowledge base for a variety of reasons in the future. This optional tasks walks through how to do this.
+You may want to update your agent's knowledge base for a variety of reasons in the future. This optional tasks walks through how to do this manually.
 
 <!-- TODO: update task description with: You will also be able to deploy a function in the next lab, which will run an ingestion job when any Object Storage event is emitted in your bucket-->
 
@@ -153,12 +155,10 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
     ![data source details](images/data_source.png)
     * Click **Create Ingestion Job**
-    * Provide a unique name and optional desciption
+    * Provide a unique name and optional description
     * click **Create**
 
-    **Note:** Data ingestion Jobs perform incremental ingestions from 2nd run onwards. The time this job takes is proportional to the amount of changes you made to your data source.
-
-
+    **Note:** Data ingestion Jobs perform incremental ingestion from 2nd run onwards. The time this job takes is proportional to the amount of changes you made to your data source.
 
 ## Acknowledgements
 

@@ -15,9 +15,8 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
+
 * All previous labs successfully completed
 
 ## Task 1: Create Resource Manager Stack
@@ -59,9 +58,7 @@ This lab assumes you have:
     ![variables genai agent configuration](images/variables_agent.png)
 
     * Supply the Regional url for the GenAI Agent Endpoint. Chicago's is provided by default
-    * Provide the OCID for the Agent's Endpoint that was created in lab 1
-    <!-- TODO: link to lab task where this is shown-->
-
+    * Provide the OCID for the Agent's Endpoint that was created in [lab 1](../agent/agent.md#task-4-provision-agent)
 
 5. Functions Configuration
 
@@ -83,7 +80,6 @@ This lab assumes you have:
     * You can also choosing an existing vcn and subnet
 
     <!--TODO: validate what the networking requirements are. Currently provide a SGW and very minimal traffic rules. Not sure we even need that. How many ip addresses does a function application require?-->
-
 
     Click Next
 
@@ -114,8 +110,6 @@ This lab assumes you have:
     ![stack breadcrumbs](images/stack_breadcrumbs.png)
 
     **NOTE** You can navigate back from a job details page by clicking the **Stack details** breadcrumb in the top left
-    <!-- TODO: consider scaling down this image https://oracle-livelabs.github.io/common/sample-livelabs-templates/create-labs/labs/workshops/livelabs/?lab=4-labs-markdown-develop-content#Task8:Scaleanimage-->
-
 
 3. Click on the **Apply** button
 
@@ -123,7 +117,6 @@ This lab assumes you have:
     * This will bring up a window on the right side.
     * In the **Apply job plan resolution** dropdown menu, select the Plan job you just reviewed
     * Click **Apply** again to initiate the job
-
 
 4. Wait for the job to be completed
 
