@@ -95,17 +95,18 @@ Estimated time - 20 minutes
 
 >>**Note:** The host is the URL of the analytics instance from step 6. The project path is the object id from the step 8.
 
->>**Note:** Make sure Compatability Mode is **yes**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
+>>**Note:** Make sure Compatability Mode is **no**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
 
   ![Analytics configuration menu](images/update-analytics.png)
 
 13. Repeat steps **11** and **12** for the page **watch-live-tiny** and confirm that the Analytics canvas is showing. 
-
->>**Note:** If th
-
   ![app structure tree](images/watch-live-tiny.png)
 
-14. Confirm that the page loads the view of the canvas.
+>>**Note:** If the OAC canvas is not loading, verify the runtime version of the VB instance is up to date and adjust the compatability mode of the Analytics add-on.
+
+14.   Confirm that the page loads the view of the canvas.
+
+  ![app structure tree](images/full-dashboard.png)
 
 You may now **proceed to the next lab**.
 
@@ -119,4 +120,4 @@ You may now **proceed to the next lab**.
 	* Nicholas Cusato - Cloud Engineer
 	* Malia German - Cloud Engineer
 	* Miles Novotny - Cloud Engineer
-* **Last Updated by/Date** - Nicholas Cusato, May 2024
+* **Last Updated by/Date** - Nicholas Cusato, August 2024

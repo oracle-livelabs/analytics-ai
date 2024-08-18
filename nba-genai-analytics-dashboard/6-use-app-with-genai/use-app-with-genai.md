@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab 
+This lab walks the user through the app. Providing insights to how the analytics can help aid in NBA performance analysis. 
 
 Estimated time - 20 minutes
 
@@ -17,6 +17,8 @@ Estimated time - 20 minutes
 1. Test the endpoints in the app by navigating to the service connections. Select **`question`**, then **`Endpoints`**, and select ther
 
   ![Navigate to test question endpoint](./images/test-question.png "")
+
+2. 
 
 ## Task 2: 
 

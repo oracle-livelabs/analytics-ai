@@ -21,7 +21,6 @@ In this lab, you will:
 
 1. From the OCI home page, click on the hamburger menu in the top right corner. Choose **Oracle Database** then **Autonomous Data Warehouse**.
 
-
 ![Navigate to Autonomous Database](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
 2. Click the **Create Autonomous Database** button.
@@ -38,19 +37,69 @@ In this lab, you will:
 
 3. Your Autonomous Database will now begin creation. It's status is initially set as **Provisioning**. After a couple minutes this will update to **Available** and your database will be ready to use.
 
+## Task 2: Create User
+
+1. Navigate to the SQL worksheet by clicking **Database Actions** and then **SQL** once the database is finished provisioning.
+
+![Navigate to DB Actions](images/sql-worksheet.png "DB Actions")
+
+2. Copy and run this code in the SQL worksheet to create a user.
+
+>>**Note:** Be sure to change the pasword on the first line if running in a production environmment.
+
+	```
+	<copy>
+	CREATE USER nba IDENTIFIED BY "ThisLLR0cks123!";
+	GRANT DWROLE TO nba;
+	ALTER USER nba QUOTA UNLIMITED ON USERS;
+	GRANT PDB_DBA TO nba;
+	GRANT CONNECT TO nba;
+	GRANT RESOURCE TO nba;
+	GRANT DWROLE To nba;
+	GRANT EXECUTE ON DBMS_CLOUD_AI TO NBA;
+	BEGIN
+		ORDS_ADMIN.ENABLE_SCHEMA(
+			p_enabled => TRUE,
+			p_schema => 'NBA',
+			p_url_mapping_type => 'BASE_PATH',
+			p_url_mapping_pattern => 'nba',
+			p_auto_rest_auth => FALSE
+		);
+
+		-- ENABLE DATA SHARING
+		C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+			SCHEMA_NAME => 'NBA',
+			ENABLED => TRUE
+		);
+		COMMIT;
+	END;
+	/
+	</copy>
+	```
+
+![Run script in SQL worksheet](images/run-script.png "Run Script")
+
+3. Click the drop down button at the top right named **Admin** and select **Sign Out**.
+
+![Sign out from admin](images/sign-out-admin.png "Sign Out")
+
 ## Task 2: Load Datasets into Database
 
-1. Once your database has finished provisioning, click on **Database actions** then **Data Load**.
+1. Sign in using your new credentials **nba** and password.
 
-![Navigate to DB Actions](images/adb-db-actions.png "DB Actions")
+![Sign in as nba](images/sign-in-nba.png "Sign In")
 
-2. Choose **Load Data** then **Select Files**. Choose the lab files named **nba\_game\_summary\_stats\_2024\_regular\_season.csv** and **nba\_shotchart\_2024\_regular\_season.csv** from your desktop. This files can be downloaded from THIS link.
+2. Click on the **top menu button** then **Data Load** under the data studio options.
+
+![Navigate to DB Actions](images/data-load.png "DB Actions")
+
+3. Choose **Load Data** then **Select Files**. Choose the lab files named **nba\_game\_summary\_stats\_2024\_regular\_season.csv** and **nba\_shotchart\_2024\_regular\_season.csv** from your desktop. This files can be downloaded from THIS link.
 
 ![Choose Data Load](images/db-actions-dataload.png "Data Load")
 
 ![Choose Files to Upload](images/db-actions-dataload2.png "Choose Datasets")
 
-1. You may review the settings for either dataset before the data is loaded by pressing the edit icon at the right side of the page. Here details like the table name and column data types can be set. No updates are required for these two datasets. Press the **Start** button and the database tables will be created after a few moments.
+4. You may review the settings for either dataset before the data is loaded by pressing the edit icon at the right side of the page. Here details like the table name and column data types can be set. No updates are required for these two datasets. Press the **Start** button and the database tables will be created after a few moments.
 
 ![Start Data Load](images/db-actions-dataload3.png "Start Data Load")
 
@@ -74,4 +123,4 @@ You may now **proceed to the next lab**.
 	* Nicholas Cusato - Cloud Engineer
 	* Malia German - Cloud Engineer
 	* Miles Novotny - Cloud Engineer
-* **Last Updated by/Date** - Miles Novotny, May 2024
+* **Last Updated by/Date** - Nicholas Cusato, August 2024

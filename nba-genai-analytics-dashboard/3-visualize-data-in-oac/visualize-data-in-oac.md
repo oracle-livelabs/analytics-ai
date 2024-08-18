@@ -128,11 +128,11 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
   - **Available Values**: Column - PLAYER_NAME
   - **Initial Value**: First Available Value
     ![Make a 2nd parameter](images/playerparameter.png "Player parameter settings")
-5. Next we'll create a set of calculations we'll use. Create a calculation for **Field Goal %**. In the calculation field input **SHOT_MADE_FLAG/SHOT_ATTEMPTED_FLAG**.
+5. Next we'll create a set of calculations we'll use. Create a calculation for **Field Goal %**. In the calculation field input **SHOT\_MADE\_FLAG/SHOT\_ATTEMPTED\_FLAG**.
    ![Field Goal Calculation](images/fieldgoalcalc.png "Field Goal % Calculation")
 6. Next create a calculation to count the amount of games titled **Game Count**. In the calculation field input **count(GAME_ID)**.
    ![Game Count Calculation](images/gamecountcalc.png "Game Count Calculation")
-7. Lastly, create a calculation titled **Shot Zone Map**. In the calculation field input **CONCAT(CONCAT(SHOT_ZONE_BASIC, ' '), SHOT_ZONE_AREA)**.
+7. Lastly, create a calculation titled **Shot Zone Map**. In the calculation field input **CONCAT(CONCAT(SHOT\_ZONE\_BASIC, ' '), SHOT\_ZONE\_AREA)**.
    ![Shot Zone Map](images/shotzonemapcalc.png "Shot Zone Map Calculation")
 8. Rename the canvas **Team Season Statistics** the first canvas we will make allows users to select a team and see their stats.
    ![Name your canvas](images/teamseasonstats.png "Rename your canvas")
@@ -146,7 +146,7 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
     ![Add to filter controls](images/filtercontrols.png "Add to filter controls")
 13. Now add a treemap with your **Game Count** calculation and **WL** column.
     ![Create a treemap](images/treemap.png "Create a treemap")
-14. Now add a table with **GAME_DATE(day)**, **MATCHUP**, **WL**, **PTS**, **FGM**, **FGA**, **FG_PCT**, and any additional statistics you would like.
+14. Now add a table with **GAME\_DATE(day)**, **MATCHUP**, **WL**, **PTS**, **FGM**, **FGA**, **FG\_PCT**, and any additional statistics you would like.
     ![Create a stat table](images/statstable.png "Create a table of season stats")
 15. You can now move on to another canvas, title this one **Player Statistics.**
     ![Rename your canvas](images/playerstatisticsrename.png "Rename your 2nd column")
@@ -160,7 +160,7 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
     ![Add two tiles](images/tileviz.png "Add two tiles to your canvas")
 20. Now drag **Shot Zone Map** and **field Goal %** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
     ![Check the map layer](images/NBAshotzonesfieldgoalmap.png "Check your map layer")
-21. Next drag **Shot Zone Map** and **SHOT_ATTEMPTED_FLAG** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
+21. Next drag **Shot Zone Map** and **SHOT\_ATTEMPTED\_FLAG** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
     ![Check the map layer](images/attemptedshotmap.png "Check your map layer")
 22. Lastly, for this canvas we will create a pivot table. Bring P**ERIOD**, **GAME_DATE (Day)**, **HTM**, **VTM**, and **Field Goal %** onto the canvas, make sure **PERIOD** is put into the columns category for the visualization.
     ![Profile my profile](images/pivottable.png "Create a pivot table visualization")
@@ -229,4 +229,4 @@ You may now **proceed to the next lab**.
 	* Nicholas Cusato - Cloud Engineer
 	* Malia German - Cloud Engineer
 	* Miles Novotny - Cloud Engineer
-* **Last Updated by/Date** - Miles Novotny, May 2024
+* **Last Updated by/Date** - Miles Novotny, August 2024
