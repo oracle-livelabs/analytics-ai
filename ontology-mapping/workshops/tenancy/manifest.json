@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "OCI Gen AI: Leverage Gen AI models to label and standardize text data - examples from industry",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Setup",
+            "filename": "../../2-setup/setup.md"
+        },
+        {
+            "title": "Perform the Mapping",
+            "filename": "../../3-perform-the-mapping/perform-the-mapping.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
