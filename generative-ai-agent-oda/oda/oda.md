@@ -65,14 +65,16 @@ This task involves creating REST service which will be used by ODA to connect to
     * Authentication Type: OCI Resource Principal
     * Method: Post
     * Request Body: Update the json payload provided below
-        * For the “endpoint_id”, use the endpoint OCID that you copied in Lab 2 Task 2 Step 4
         * For the “user_message”, use appropriate question whose answer is in the PDF document that you uploaded earlier to Object Storage Bucket.
 
-    ```json
+    ```
     <copy>{
+        "user_message": "what is the XXXXX XXXXX?",
+        "endpoint_url": "",
+        "endpoint_id": "",
+        "delete_session":"",
+        "keep_alive_session":"",
         "session_id": "",
-        "endpoint_id": "ocid1.genaiagentendpoint.oc1.us-chicago-1.amaaXXXXXXXXXXXXXXXXXXXXXXX",
-        "user_message": "what is the XXXXX XXXXX?"
     }</copy>
     ```
     <!-- TODO: technically only the user message is required-->

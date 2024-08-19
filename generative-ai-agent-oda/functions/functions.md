@@ -267,15 +267,7 @@ The rest of the the instructions in this task expand upon the directions provide
 
     <!-- TODO should we update the dev and prod function names to match currently dev is 'genai-agent' and prod is 'genai-agent-func'-->
 
-
 <!-- X. Explore Logs and Traces (optional) TODO: create-->
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 
