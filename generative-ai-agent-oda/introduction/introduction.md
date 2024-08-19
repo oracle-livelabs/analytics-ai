@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop will help to configure Generative AI powered chatbot (ATOM) on your own OCI tenancy. 
+This workshop will help to configure Generative AI powered chatbot (ATOM) on your own OCI tenancy.
 This workshop enables developers to perform GenAI RAG on custom PDF documents (stored in OCI Object Storage) using the OCI Generative AI Agent Service.
 The users can then
 

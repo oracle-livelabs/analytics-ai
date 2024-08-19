@@ -69,11 +69,11 @@ This task involves creating REST service which will be used by ODA to connect to
         * For the “user_message”, use appropriate question whose answer is in the PDF document that you uploaded earlier to Object Storage Bucket.
 
     ```json
-    {
+    <copy>{
         "session_id": "",
         "endpoint_id": "ocid1.genaiagentendpoint.oc1.us-chicago-1.amaaXXXXXXXXXXXXXXXXXXXXXXX",
         "user_message": "what is the XXXXX XXXXX?"
-    }
+    }</copy>
     ```
     <!-- TODO: technically only the user message is required-->
 
