@@ -191,13 +191,13 @@ The rest of the the instructions in this task expand upon the directions provide
 
 1. Setup local environment variables
 
-    ```zsh
+    ```<copy>zsh
     export PROFILE_NAME=<profile name> #name of the profile created in task 3, step 2
     export ENDPOINT_URL=https://agent-runtime.generativeai.us-chicago-1.oci.oraclecloud.com #update for your region
     export ENDPOINT_ID=ocid1.genaiagentendpoint.oc1.us-chicago-1.**** #update for your endpoint
-    export KEEP_ALIVE_SESSION=False
+    export KEEP_ALIVE_SESSION=False</copy>
     ```
-
+git 
     **NOTE** most of these values are also set in the function application configuration. These are the default values used if the parameters are not passed in the request body
 
 
@@ -210,7 +210,7 @@ The rest of the the instructions in this task expand upon the directions provide
 
 3. Send a local http request
     Run this command in another terminal
-    `curl -v --unix-socket /tmp/func.sock -H "Fn-Call-Id: 0000000000000000" -H "Fn-Deadline: 2030-01-01T00:00:00.000Z" -XPOST http://function/call -d '{"user_message":"Which account is associated with bill number 28676209?"}'`
+    `<copy>curl -v --unix-socket /tmp/func.sock -H "Fn-Call-Id: 0000000000000000" -H "Fn-Deadline: 2030-01-01T00:00:00.000Z" -XPOST http://function/call -d '{"user_message":"Which account is associated with bill number 28676209?"}'</copy>`
     * you can update the user message to fit your knowledge base and agent
     * Any of these parameters can be used in the request body: endpoint_url, endpoint_id, delete_session, user_message, session_id, and keep_alive_session
 
