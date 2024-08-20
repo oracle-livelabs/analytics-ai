@@ -1,10 +1,10 @@
-# Provision of Oracle Visual Builder
+# Setup OCI Visual Builder (VB)
 
 ## Introduction
 
 This lab will take you through the steps needed to provision Oracle Visual Builder (VB)
 
-Estimated Time: -- minutes
+Estimated Time: 30 minutes
 
 ### About Visual Builder
 
@@ -21,13 +21,14 @@ In this lab, you will:
 * Customize the Application to use your ODA skill
 * Provide end user access to the Application
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
+* Must have an Administrator Account or Permissions to manage several OCI Services: Visual Builder, IDCS/Identity Domain Confidential Applications
 
-## Task 1: Create VBCS Instance & embed ODA skill in VBCS Application
+## Task 1: Create VBCS Instance & Embed ODA Skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -72,7 +73,6 @@ This lab assumes you have:
 7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
-
 
 ## Task 2: (optional) Setup Production version of VB
 

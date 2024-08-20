@@ -1,26 +1,29 @@
-# Provision of Oracle Digital Assistant Instance
+# Setup OCI Digital Assistant (ODA)
 
 ## Introduction
 
 This lab will take you through the steps needed to provision Oracle Digital Assistant Cloud Service
 
-Estimated Time: -- minutes
+Estimated Time: 30 minutes
 
 ### About OCI Digital Assistant
 
-<!-- TODO-->
+Oracle Digital Assistant (ODA) is a platform that allows you to create and deploy digital assistants for your users. Digital assistants are virtual devices that help users accomplish tasks through natural language conversations, without having to seek out and wade through various apps and web sites. Each digital assistant contains a collection of specialized skills. When a user engages with the digital assistant, the digital assistant evaluates the user input and routes the conversation to and from the appropriate skills.
 
 ### Objectives
 
 In this lab, you will:
 
-<!-- TODO-->
+* Provision an ODA instance
+* Import and configure a skill to use GenAI Agents
+* Create a Channel to connect the skill to a frontend
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
+* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
 
 ## Task 1: Provision Oracle Digital Assistant
 
@@ -41,7 +44,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create REST Service for the OCI Functions
+## Task 2: Create a REST Service for the OCI Functions
 
 This task involves creating REST service which will be used by ODA to connect to OCI Functions. The REST Service will be created for the ODA created in Task 1.
 
@@ -108,7 +111,7 @@ This task involves creating REST service which will be used by ODA to connect to
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview.png)
 
-## Task 4: Create Channel to embed ODA in Visual Builder Application or in any custom Web App
+## Task 4: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
 
@@ -157,7 +160,6 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 <!-- TODO: add screenshot-->
-
 
 ## Acknowledgements
 

@@ -12,10 +12,7 @@ By following the workshop users can install this ATOM application in their own t
 
 ![User View](images/atom_agent_screenshot.png)
 
-Estimated Workshop Time: 3 hours -- minutes
-<!-- (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-TODO update estimate
--->
+Estimated Workshop Time: 2 hours 15 minutes
 
 ### Objectives
 
@@ -50,7 +47,7 @@ This lab assumes you have:
 * An Oracle Cloud Account
 * Enrolled in Beta for [OCI Generative AI Agents for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
+* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, OCIR, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More
@@ -72,3 +69,4 @@ This lab assumes you have:
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
     * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+

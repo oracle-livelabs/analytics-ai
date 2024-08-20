@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to setup an OCI Generative AI Agent including ingesting a knowledge base from OCI Object Storage
 
-Estimated Time: -- minutes
+Estimated Time: 30 minutes
 
 ### About Generative AI Agents
 
@@ -21,13 +21,14 @@ In this lab, you will:
 * (optional) test agent in console
 * (optional) update Agent's Knowledge Base
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
 * Approval for [OCI Gen AI Agents Beta for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
 * Permissions to manage OCI Services: Generative AI Agents, Object Storage
+* Access to a Region where the Agent service is available: Chicago, Frankfurt
 
 ## Task 1: Provision Oracle Object Storage Bucket
 
@@ -44,7 +45,7 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     <!--TODO: may need object events and may want object versioning -->
 
-## Task 2: Upload custom PDF document in the Object Storage Bucket
+## Task 2: Upload PDF Document(s) to the Object Storage Bucket
 
 1. Click on the Bucket name, then Objects -> Upload button
 
@@ -59,7 +60,6 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
 
     ![object storage upload files](images/os_upload.png)
-
 
 ## Task 3: Provision Knowledge Base
 
@@ -79,7 +79,7 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     Select “Object storage” in the “Select data source” dropdown, and then click on the “Specify data source” button
 
-    1[knowledge base creation wizard](images/kb_wizard.png)
+    ![knowledge base creation wizard](images/kb_wizard.png)
 
 4. Specify the name of the data source and Description (Optional)
 
@@ -96,7 +96,6 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 6. In few minutes the status of recently created Knowledge Base will change from Creating to Active
 
     ![knowledge base active](images/kb_active.png)
-
 
 ## Task 4: Provision Agent
 
@@ -136,11 +135,9 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 You may want to update your agent's knowledge base for a variety of reasons in the future. This optional tasks walks through how to do this manually.
 
-<!-- TODO: update task description with: You will also be able to deploy a function in the next lab, which will run an ingestion job when any Object Storage event is emitted in your bucket-->
-
 1. Add/Update/Remove files from Object Storage
 
-    follow the same steps as in [Task 2](#task-2-upload-custom-pdf-document-in-the-object-storage-bucket)
+    follow the same steps as in [Task 2](#task-2-upload-pdf-documents-to-the-object-storage-bucket)
 
 2. Navigate to Data Source
 
@@ -149,7 +146,6 @@ You may want to update your agent's knowledge base for a variety of reasons in t
     * In the Generative AI Agents Service, navigate to the **knowledge bases** view
     * Click on the name of your knowledge base in the list
     * Click on the name of your data source in the list
-
 
 3. Run Ingestion Job
 
@@ -169,3 +165,4 @@ You may want to update your agent's knowledge base for a variety of reasons in t
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
     * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+

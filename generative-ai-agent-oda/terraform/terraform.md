@@ -13,11 +13,12 @@ In this lab, you will:
 * Create OCI Functions on an existing or new network
 * Create Dynamic Groups and Policies for Functions and ODA services
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
+* Must have an Administrator Account or Permissions to manage several OCI Services: Functions, Logging, APM, Network, Dynamic Groups, Policies, Resource Manager
 
 ## Task 1: Create Resource Manager Stack
 
@@ -93,7 +94,7 @@ This lab assumes you have:
 
     You can select **Run Apply** and skip Task 2, but it is recommended you perform this separately so you can review the Terraform plan before applying.
 
-## Task 2: Run Terraform stack
+## Task 2: Run Terraform Stack
 
 1. Click on the **Plan** button
 

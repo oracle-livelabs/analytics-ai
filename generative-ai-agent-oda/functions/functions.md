@@ -1,10 +1,10 @@
-# (optional) Explore Functions in depth
+# (optional) Explore Functions in Depth
 
 ## Introduction
 
 This lab will walk you through how to deploy a test and dev environment for your functions as well as promoting a version to production.
 
-Estimated Time: 1 hour <!-- TODO update-->
+Estimated Time: 1 hour
 
 ### Objectives
 
@@ -16,11 +16,12 @@ In this lab, you will:
 * Deploy the Function to Dev
 * Deploy the Function to Prod
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
+* Must have an Administrator Account or Permissions to manage several OCI Services: Functions, OCIR, Logging, APM, Network, Dynamic Groups, Policies, Resource Manager
 
 ## Task 1: Create Resource Manager Stack
 
@@ -97,7 +98,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
     You can select **Run Apply** and skip Tasks 2, but it is recommended you perform these tasks separately so you can review the Terraform plan before applying.
 
-## Task 2: Run Terraform stack
+## Task 2: Run Terraform Stack
 
 1. Click on the **Plan** button
 
@@ -126,7 +127,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
 
     ![stack apply success](../terraform/images/stack_apply_success.png)
 
-## Task 3: Set up your local host dev environment
+## Task 3: Set up your Local Host Dev Environment
 
 Complete section C of the [localhost functions quickstart guide](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm#functionsquickstartlocalhost_topic_start_setting_up_local_dev_environment)
 
@@ -188,7 +189,7 @@ The rest of the the instructions in this task expand upon the directions provide
 
     <!-- TODO Sometimes the auth token doesn't copy/paste correctly for me. I have to copy to an intermediate text file, then copy/paste again-->
 
-## task 4: Setup Local Environment
+## task 4: Setup Codebase
 
 1. Download and unzip Function code
     [genai-agent-function](https://objectstorage.us-chicago-1.oraclecloud.com/p/lITopjMfdLTOKL9IQz8Ej6oP4TwQsp8G_n7IYRvEep1HSxHoyEwyqCqnWBnkgc3C/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-function-8-12-24.zip)
@@ -201,7 +202,7 @@ The rest of the the instructions in this task expand upon the directions provide
 4. Install requirements
     Navigate to the function code folder, activate your virtual environment, and run `pip install -r requirements.txt`
 
-## task 5: Test function locally
+## task 5: Test Function Locally
 
 1. Setup local environment variables
 

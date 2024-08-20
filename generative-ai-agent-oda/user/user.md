@@ -13,13 +13,13 @@ In this lab, you will:
 * login to the application
 * Chat with the agent
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
-* All previous labs successfully completed
+* Access to a fully deployed application
 
-## Task 1: Login to the application
+## Task 1: Login to the Application
 
 1. Navigate to the website url your application administrator provided you.
 
@@ -35,7 +35,7 @@ This lab assumes you have:
     * If you have issues logging in or do not know what credentials to use, reach out to your application administrator
     * If this is your first time logging into the tenancy, you may need to setup a MFA device
 
-## Task 2: Chat with the agent
+## Task 2: Chat with the Agent
 
 1. Agent Chat loop
     This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the agent's knowledge base
