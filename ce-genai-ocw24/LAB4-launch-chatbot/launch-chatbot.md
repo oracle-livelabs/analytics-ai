@@ -22,6 +22,14 @@ Let's try out the Generative AI Agent chat widget.
 
 <img width="943" alt="image" src="https://github.com/user-attachments/assets/ea18f52a-8443-453b-84e8-88302a85a9ee">
 
+5. For example, let's enter the prompt "give me inventory report details".
+
+<img width="791" alt="image" src="https://github.com/user-attachments/assets/cb3346cb-1c36-40c5-9a53-df1d701bf97b">
+
+6. We will directly get the link of the Dashboard from the AI Agent as a response along with the available metric details. Let's click the link to review the dashboard.
+
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/cf1f81c4-9a3f-487a-b086-23c8f445aa50">
+
 
 
 ## Acknowledgements
