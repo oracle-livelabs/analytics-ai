@@ -191,7 +191,6 @@ ALLOW any-user to use functions-family in compartment id ocid1.compartment.oc1..
     ![Policy details](images/postgres-genai-policy4.png)
 
 ## Task 8: PostgreSQL Database System
-
 OCI Database with PostgreSQL allows us to store extracted text from documents including their corresponding vector embeddings by using the pgvector extension so we can perform a semantic search. Database with PostgreSQL is a fully managed PostgreSQL service with intelligent sizing, tuning and high durability.
 
 Go the Cloud console 3-bar/hamburger menu and select the following

@@ -2,7 +2,6 @@
 # Introduction
 
 ## About This Workshop
-
 We will create a Generative AI / Hybrid Search web application, using Terraform. This application will search documents using OCI Database with PostgreSQL and the pgvector extension. pgvector will turn our OCI Database with PostgreSQL into a vector database where we can natively store and manage vector embeddings while handling unstructured data like documents, images, video, or audio.
 
 We’ll be able to search documents like:
