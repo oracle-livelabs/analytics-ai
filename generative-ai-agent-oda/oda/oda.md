@@ -100,7 +100,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![user start flow](images/user_startflow.png)
 
-4. Open the second step “SetGenAIEndpointId”, and set the correct OCID Value (the endpoint OCID that you copied in Lab 2 Task 2 Step 4) of GenAIEndpointId variable.
+4. Open the second step “SetGenAIEndpointId”, and set the correct OCID Value (the endpoint OCID that you copied in Lab 1 Task 4 Step 4) of GenAIEndpointId variable.
 
     Then click on the “Preview” button at top-right corner.
 
@@ -169,4 +169,4 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, August 2024
