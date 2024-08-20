@@ -32,8 +32,11 @@ Let's try out the Generative AI Agent chat widget.
 
 7. Here are some of the sample prompts to try
     “which dashboards has sales information”
+   
     “show me the facility utilization report”
+
     “give me the key metrics in Retail Analytics”
+
     “list some of the preventive maintenance metrics for manufacturing”
 
 ## Acknowledgements
