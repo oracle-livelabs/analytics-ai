@@ -24,16 +24,10 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-<<<<<<< HEAD
-* An Oracle Cloud account
-* Access to the Chicago Region
-* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder, and Identity Domains
-=======
 
 * An Oracle account
 * Access to the Chicago Region
 * Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder and Identity Domains
->>>>>>> cbe8cd27398fc33e577ba1ee68674d22ff6e5d0f
 
 ## Task 1: Provision Oracle Digital Assistant
 
@@ -244,14 +238,6 @@ This task involves creating REST service which will be used by ODA to connect to
 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-<<<<<<< HEAD
 * **JB Anderson**,  Senior Cloud Engineer, NACIE
-=======
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-<<<<<<< HEAD
->>>>>>> cbe8cd27398fc33e577ba1ee68674d22ff6e5d0f
-=======
-
 **Last Updated By/Date:**
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
->>>>>>> ea4f922b32512aae2cb7b1f811871a438725dca0
