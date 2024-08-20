@@ -32,7 +32,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
     <!-- https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm
     TODO: update package url when available
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-chicago-1.oraclecloud.com/p/kV1zhJYS_PWDJPYHXYpO0UXv1ay0dDZuDIhDzMAYrJehFaLLeoxdugihZjuzSHPe/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-oda-teraform-8-12-24.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs.zip)
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
 
@@ -192,7 +192,8 @@ The rest of the the instructions in this task expand upon the directions provide
 ## task 4: Setup Codebase
 
 1. Download and unzip Function code
-    [genai-agent-function](https://objectstorage.us-chicago-1.oraclecloud.com/p/lITopjMfdLTOKL9IQz8Ej6oP4TwQsp8G_n7IYRvEep1HSxHoyEwyqCqnWBnkgc3C/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/genai-agent-function-8-12-24.zip)
+
+    [genai-agent-function](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-function-livelabs.zip)
 
 2. In a terminal, navigate to the recently unzipped folder
 
@@ -272,10 +273,10 @@ The rest of the the instructions in this task expand upon the directions provide
 
     From stack details page, edit -> edit stack -> next:
 
-    For the functions variables,
-    * you can either copy the full image url from the function details page
-    * or provide the local image details
+    For the functions variables, copy the full image url from the function details page
+    <!-- * or provide the local image details
 
+    <!-- TODO: reenable local image instructions once code is fixed
     ![variables function local image](images/variables_functions_local_image.png)
     <!--TODO: Can we let user provide an easier value than OCIR OCID? -->
 
