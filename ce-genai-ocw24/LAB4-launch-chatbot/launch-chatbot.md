@@ -30,7 +30,11 @@ Let's try out the Generative AI Agent chat widget.
 
 <img width="947" alt="image" src="https://github.com/user-attachments/assets/cf1f81c4-9a3f-487a-b086-23c8f445aa50">
 
-
+7. Here are some of the sample prompts to try
+    “which dashboards has sales information”
+    “show me the facility utilization report”
+    “give me the key metrics in Retail Analytics”
+    “list some of the preventive maintenance metrics for manufacturing”
 
 ## Acknowledgements
 * **Author** - Pavan Kumar Manuguri
