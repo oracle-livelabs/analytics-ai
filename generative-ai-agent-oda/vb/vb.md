@@ -28,7 +28,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Visual Builder, IDCS/Identity Domain Confidential Applications
 
-## Task 1: Create VBCS Instance & Embed ODA Skill in VBCS Application
+## Task 1: Create VBCS Instance & Import Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -59,22 +59,49 @@ This lab assumes you have:
 
     ![Visual Builder import configuration](images/vb_import_config.png)
 
-6. Once import is completed, update the index.html file
+## Task 2: Configure and Customize Application
+
+1. Once import is completed, update the ODA JavaScript
     * In the Web Applications sidebar on the left
-    * Click on **atom**
-    * On the main screen, make sure you are on the **HTML** tab for the **atom** Web Application
+    * Click on the carrot next to **atom** -> **main** -> **main-embedded-chat**
+    * On the main screen, make sure you are on the **JavaScript** tab for **main-embedded-chat**
     * update the details as follows:
         * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
-            * URI is the hostname of the ODA instance provisioned in Task 1 of the previous lab
+            * URI is the hostname of the ODA instance provisioned in [Task 1 of the previous lab](../oda/oda.md#task-1-provision-oracle-digital-assistant)
+            * You can copy the base web url from the digital assistant instance details, but remove the **botsui/** path
         * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
             * channelId is created during Task 5 - Step 3 of the previous lab
     ![Visual Builder update HTML](images/vb_update.png)
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+2. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under const chatSettings in this Javascript
+    Recommended Customizations:
+    * icons -> logo
+    * icons -> avatarBot
 
-8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+3. Install the Markdown Component
+    * In the **components** sidebar on the left
+    * Browse for **Markdown Document Viewer** and install it
 
-## Task 2: (optional) Setup Production version of VB
+    ![visual builder install markdown viewer](images/vb_install_markdown.png)
+
+4. Update the Acknowledgement page
+    * In the Web Applications sidebar on the left
+    * Click on the carrot next to **atom** -> **main** -> **main-start**
+    * On the main screen, make sure you are on the **Page Designer** tab for **main-start**
+    * Under Structure, look for the **Markdown Document Viewer** under the flex containers
+    * To edit a line, click on the corresponding **Markdown Document Viewer** component and click on it's data tab on the right (under Properties)
+
+    ![Visual Builder update acknowledgement](images/vb_acknowledgement.png)
+
+    Recommended Customizations:
+    * Company name
+    * valid Employees/users
+    * Knowledge Base topics
+    * Links to corporate policies, standards, Data use, and/or Personal Information
+
+5. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+
+## Task 3: (optional) Setup Production version of VB
 
 In this Task, we will use VB's development lifecycle to create a **Live** version of the app and get the corresponding url. Then we will setup access the app through OCI IAM. Once complete, you can distribute this app url to your end users. Before accessing the app, users will need to login using your Tenancy's login page.
 
@@ -117,19 +144,16 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
         * check the box next to each group to add
         * click **Assign**
 
-3. Troubleshooting Errors
-    * You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
-    ![vb forbidden error](images/vb_forbidden_error.png)
+3. Remove Authentication (Not Recommended)
+    You can remove the authentication requirement for this application by updating the security settings in the **JSON** tab from **Root Pages/shell**. Set **requiresAuthentication** to false.
 
-<!-- TODO: no mention of security access or roles in shell page
-
-  "security": {
-    "access": {
-      "requiresAuthentication": false
-    }
-  }
--->
-
+    ```
+    <copy>"security": {
+        "access": {
+            "requiresAuthentication": false
+        }
+    }</copy>
+    ```
 
 <!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
 
