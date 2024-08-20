@@ -62,7 +62,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 4. Click on Add REST Service. Provide the following details:
 
-    * Name: `GENAI_AGENT`
+    * Name: `GenAI_Agent`
     * Endpoint: Use the Functions Endpoint URL that you copied in the previous lab
     * Description: optional
     * Authentication Type: OCI Resource Principal
@@ -77,7 +77,7 @@ This task involves creating REST service which will be used by ODA to connect to
         "endpoint_id": "",
         "delete_session":"",
         "keep_alive_session":"",
-        "session_id": "",
+        "session_id": ""
     }</copy>
     ```
     <!-- TODO: technically only the user message is required-->
