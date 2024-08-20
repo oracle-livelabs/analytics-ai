@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "4fea1d17-3df8-40be-9fd3-781402c16265",
+		"name": "Customization API Collection",
+		"description": "Customization API Uses for Postman Livelabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26238078"
+	},
+	"item": [
+		{
+			"name": "POST Customization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"compartmentId\": \"ocid1.compartment.oc1..<uniqueId>\",\n    \"description\": \"<descriptionPlaceholder>\",\n    \"displayName\": \"<displayNamePlaceholder>\",\n    \"alias\": \"<aliasPlaceHolder>\",\n    \"modelDetails\": {\n        \"domain\": \"GENERIC\",\n        \"languageCode\": \"en-US\"\n    },\n    \"trainingDataset\": {\n        \"datasetType\": \"ENTITY_LIST\",\n        \"referenceExamples\": [\n            \"Private data is <private>\",\n            \"Bird name is <bird>\"\n        ],\n        \"entityList\": [{\n            \"entityType\": \"private\",\n            \"entities\": [{\n                    \"entityValue\": \"hello\",\n                    \"pronunciations\": [{\n                            \"soundsLike\": \"helloo\"\n                        }\n                    ],\n                    \"weight\": 1\n                }\n            ]\n        },{\n                \"entityType\": \"bird\",\n                \"entities\": [{\n                        \"entityValue\": \"Tweeteee3\",\n                        \"pronunciations\": [{\n                                \"soundsLike\": \"tweetyy\"\n                            }\n                        ],\n                        \"weight\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/customizations?compartmentId=ocid1.compartment.oc1..<uniqueId>",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"customizations"
+					],
+					"query": [
+						{
+							"key": "compartmentId",
+							"value": "ocid1.compartment.oc1..<uniqueId>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customization (Alias/CustomizationID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/customizations/ocid1.aispeechcustomization.dev.dev",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"customizations",
+						"ocid1.aispeechcustomization.dev.dev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customization (LIST)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/customizations?compartmentId=ocid1.compartment.oc1..<uniqueId>",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"20220101",
+						"customizations"
+					],
+					"query": [
+						{
+							"key": "compartmentId",
+							"value": "ocid1.compartment.oc1..<uniqueId>"
+						}
+					]
+				},
+				"description": "Needs the compartment ID"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Customization",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"compartmentId\": \"ocid1.compartment.oc1..<uniqueId>\",\n    \"description\": \"<descriptionPlaceholder>\",\n    \"displayName\": \"<displayNamePlaceholder>\",\n    \"alias\": \"<aliasPlaceHolder>\",\n    \"modelDetails\": {\n        \"domain\": \"GENERIC\",\n        \"languageCode\": \"en-US\"\n    },\n    \"trainingDataset\": {\n        \"datasetType\": \"ENTITY_LIST\",\n        \"referenceExamples\": [\n            \"Private data is <private>\",\n            \"Bird name is <bird>\"\n        ],\n        \"entityList\": [{\n            \"entityType\": \"private\",\n            \"entities\": [{\n                    \"entityValue\": \"hello\",\n                    \"pronunciations\": [{\n                            \"soundsLike\": \"helloo\"\n                        }\n                    ],\n                    \"weight\": 1\n                }\n            ]\n        },{\n                \"entityType\": \"bird\",\n                \"entities\": [{\n                        \"entityValue\": \"Robin\",\n                        \"pronunciations\": [{\n                                \"soundsLike\": \"Robun\"\n                            }\n                        ],\n                        \"weight\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://100.111.136.72:21000/20220101/customizations/ocid1.compartment.oc1..<uniqueId>",
+					"protocol": "http",
+					"host": [
+						"100",
+						"111",
+						"136",
+						"72"
+					],
+					"port": "21000",
+					"path": [
+						"20220101",
+						"customizations",
+						"ocid1.compartment.oc1..<uniqueId>"
+					]
+				},
+				"description": "Updates customization using an alias"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Customization",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/customizations/ocid1.aispeechcustomization.dev.dev",
+					"protocol": "https",
+					"host": [
+						"speech",
+						"aiservice",
+						"us-phoenix-1",
+						"oci",
+						"oraclecloud",
+						"com"
+					],
+					"path": [
+						"customizations",
+						"ocid1.aispeechcustomization.dev.dev"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
