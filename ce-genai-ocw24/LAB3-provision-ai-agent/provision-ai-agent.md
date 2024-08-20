@@ -1,48 +1,47 @@
-# Introduction
+# Provision Agent
 
 ## About this Workshop
 
-Enterprise runs multiple lines of business and have different business groups who generates, maintains, and consumes many business dashboards. Having an intelligent search engine allows business user to 
-easily search and quickly find the right business dashboard within enterprise's system can accelerate user's daily work. Leveraging the power of Large Language Model (LLM) and Retrieval Augmented  Generation (RAG),
-company can build a chatbot where user can search for business dashboards based on dashboard contents, data sources, or other dashboards metadata in natural language style. 
+In this lab you will learn how to provision Generative AI Agent.
 
-Large Language Models (LLM) are machine learning models that can comprehend and generate human language text. Retrieval Augmented Generation (RAG) is a method for generating text 
-using additional information fetched from an external data source.
+Agent is an LLM-based autonomous system that understands and generates human-like text, enabling natural-language processing interactions. 
+The Generative AI Agents supports retrieval-augmented generation (RAG) agents. 
+A RAG agent connects to a data source, retrieves data, and augments model responses with the information from the data sources to generate more relevant responses. 
 
-In this workshop, we will create a chatbot empowered by Generative AI and RAG to search Oracle Analytics Cloud (OAC) dashboards using Oracle Generative AI Agents, Open Search, and OCI services.
-
-Architecture of the workshop:
-![](./images/architecture.png =60%x*)
-
-Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 10 minutes
 
 
 ### Objectives
 
 In this workshop, you will learn how to:
-* Provision AI Agent stack 
-* Configure AI Agent data source with Open Search
-* Ingest data into Open Search cluster
-* Launch AI Agent chatbot and make query of analytics dashboards
+* Create Generative AI Agent
+
 
 ### Prerequisites
 
-This lab assumes you have:
-* An Oracle account
-* Familiarity with Oracle Cloud is preferred, but not required
-* Familiarity with Large Language Model (LLM), Generative AI, Retrieval Augmented  Generation (RAG) is preferred, but not required
+* Oracle cloud tenancy that is subscribed to Chicago region, and configured to work with Generative AI Agents
+* familiar with Oracle Cloud Infrastructure is advantage, but not required
 
 
-In general, the Introduction does not have Steps.
+## Task 1: Provision Agent
+1. From Generative AI Agents console, click Agents, then Create agent.
+![agent_console](./images/agent_console.png )
+2. Provide name and compartment. Choose the knowledge base which is created in Lab 2. Select Automatically create an endpoint for this agent. Then click Create.
+![create_agent](./images/create_agent.png )
+   Agent will take few minutes to provision.
+
+
+## Task 2: Review Agent
+1. Once the Agent is active, you can select the Agent from console to review the knowledge base and endpoint associated.
+![agent](./images/agent_page.png )
+
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [Managing Agents in Generative AI Agents](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/generative-ai-agents/ai-agents.htm)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Cloud Engineer
-* **Contributors** -  Pavan Kumar Manuguri
-* **Last Updated By/Date** - Jiayuan Yang, June 2024
+* **Author** - Jiayuan Yang, Principal Cloud Engineer 
+* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Last Updated By/Date** - Jiayuan Yang, August 2024

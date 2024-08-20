@@ -1,48 +1,52 @@
-# Introduction
+# Provision Knowledge Base
 
 ## About this Workshop
 
-Enterprise runs multiple lines of business and have different business groups who generates, maintains, and consumes many business dashboards. Having an intelligent search engine allows business user to 
-easily search and quickly find the right business dashboard within enterprise's system can accelerate user's daily work. Leveraging the power of Large Language Model (LLM) and Retrieval Augmented  Generation (RAG),
-company can build a chatbot where user can search for business dashboards based on dashboard contents, data sources, or other dashboards metadata in natural language style. 
+In this lab you will learn how to provision AI Agent Knowledge Base with OCI Open Search Cluster.
 
-Large Language Models (LLM) are machine learning models that can comprehend and generate human language text. Retrieval Augmented Generation (RAG) is a method for generating text 
-using additional information fetched from an external data source.
+An agent connects to a knowledge base, which is a vector-based storage that enables the integration or ingestion of data from a data source. Data sources provide connection information to the data stores that an agent uses to generate responses.
+Generative AI Agent can connect with supported data sources using Oracle Vector 23ai, OCI Open Search Cluster, Object Storage, and MySQL Heatwave.
 
-In this workshop, we will create a chatbot empowered by Generative AI and RAG to search Oracle Analytics Cloud (OAC) dashboards using Oracle Generative AI Agents, Open Search, and OCI services.
-
-Architecture of the workshop:
-![](./images/architecture.png =60%x*)
-
-Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 15 minutes
 
 
 ### Objectives
 
 In this workshop, you will learn how to:
-* Provision AI Agent stack 
-* Configure AI Agent data source with Open Search
-* Ingest data into Open Search cluster
-* Launch AI Agent chatbot and make query of analytics dashboards
+* Provision Knowledge Base
+* Configur Knowledge Base with OCI Open Search
+
 
 ### Prerequisites
 
-This lab assumes you have:
-* An Oracle account
-* Familiarity with Oracle Cloud is preferred, but not required
-* Familiarity with Large Language Model (LLM), Generative AI, Retrieval Augmented  Generation (RAG) is preferred, but not required
+* Oracle cloud tenancy that is subscribed to Chicago region, and configured to work with Generative AI Agents
+* familiar with Oracle Cloud Infrastructure is advantage, but not required
 
 
-In general, the Introduction does not have Steps.
+## Task 1: Provision Knowledge Base
+1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Analytics & AI -> Generative AI Agents
+![oci_console](./images/oci_console.png )
+2. Click Create knowledge base.
+![agent_console](./images/agent_console.png )
+3. Fill a knowledge base name and select the compartment where you want the resource to be created. Choose OCI OpenSearch as the Data store type, then select the OpenSearch cluster created in Lab 1.
+![create_kb](./images/create_kb_1.png )
+   In OpenSearch index panel, provide following input:
+    - Index name: ocw_dashboard
+    - Body key: metadata
+    - URL key: url
+    - Title key: dashboard 
+
+  Choose Basic auth secret, select the Vault Secret you've created from previous lab. Click Create.
+![create_kb](./images/create_kb_2.png )
+Once the provision is completed, the Knowledge base will become Active and you can review it from console.
+
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [Managing Knowledge Bases in Generative AI Agents](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/generative-ai-agents/knowledge-bases.htm)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Cloud Engineer
-* **Contributors** -  Pavan Kumar Manuguri
-* **Last Updated By/Date** - Jiayuan Yang, June 2024
+* **Author** - Jiayuan Yang, Principal Cloud Engineer 
+* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Last Updated By/Date** - Jiayuan Yang, August 2024

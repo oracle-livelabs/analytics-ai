@@ -18,30 +18,21 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Get Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../../../labs/cloud-login/cloud-login-direct-signin.md"
-        },
-        {
             "title": "Lab 1: Provision AI Agent Stack",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../lab1-provision-ai-agent-stack/provision.md"
         },
         {
-            "title": "Lab 2: Upload File to Object Storage",
-            "filename": "../../lab2-upload-data-to-bucket/upload-file.md"
+            "title": "Lab 2: Provision Knowledge Base",
+            "filename": "../../LAB2-provision-knowledge-base/provision-kb.md"
         },
         {
-            "title": "Lab 3: Ingest Data into Open Search",
-            "filename": "../../lab3-ingest-data-into-open-search-load/ingest-data.md"
+            "title": "Lab 3: Provision AI Agent",
+            "filename": "../../LAB3-provision-ai-agent/provision-ai-agent.md"
         },
         {
-            "title": "Lab 4: Config AI Agent",
-            "filename": "../../lab4-config-ai-agent/config-ai-agent.md"
-        },
-        {
-            "title": "Lab 5: Launch the Chatbot",
-            "filename": "../../lab5-launch-chatbot/launch-chatbot.md"
+            "title": "Lab 4: Launch the Chatbot",
+            "filename": "../../LAB4-launch-chatbot/launch-chatbot.md"
         },
         {
             "title": "Need Help?",
