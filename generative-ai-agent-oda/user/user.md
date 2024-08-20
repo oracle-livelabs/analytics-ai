@@ -23,7 +23,9 @@ This lab assumes you have:
 
 1. Navigate to the website url your application administrator provided you.
 
-    The url may be a vanity url or look like this: `https://<vb_instance_name>-vb-<tenancy_namespace>.builder.<region>.ocp.oraclecloud.com/ic/builder/rt/<vb_app_name>/live/webApps/atom/`
+    The url may be a vanity url or look like this:
+
+    `https://<vb_instance_name>-vb-<tenancy_namespace>.builder.<region>.ocp.oraclecloud.com/ic/builder/rt/<vb_app_name>/live/webApps/atom/`
 
 2. If you do not have an active session, you will be prompted to login to the OCI tenancy.
 
@@ -35,12 +37,23 @@ This lab assumes you have:
 
 ## Task 2: Chat with the agent
 
-1. 
+1. Agent Chat loop
+    This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the agent's knowledge base
 
-    <!-- TODO:
-    explain the chat loop
-    screenshot of chat
-    example prompts for provided dataset-->
+    ![agent example](../introduction/images/atom_agent_screenshot.png)
+
+    **NOTE** While the frontend application will display your chat history for your current session, the behind the scenes agent currently does not support chat history. From it's point of view, every message is an independent question.
+
+2. Example Dataset Prompts
+    The below questions are example prompts you can use if your administrator setup the application with the provided example dataset. If your administrator used a custom or company-specific dataset, you will need to ask them what topics the agent knows about
+
+    <!-- TODO: provide a couple prompts that will work with provided example dataset-->
+
+3. Agent Response Limitations
+    The Generative AI agents service uses pre-trained foundational models from the Generative AI Inference service. However, the agents service limits responses to only knowledge found in the agent's data-sources. This means it will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
+
+    ![agent ungrounded response](images/agent_ungrounded_response.png)
+
 
 ## Acknowledgements
 

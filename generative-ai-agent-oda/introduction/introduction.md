@@ -10,7 +10,7 @@ The users can then
 - Get responses of their question (in natural language) from those custom PDF documents.
 By following the workshop users can install this ATOM application in their own tenancy
 
-![User View](images/atom_agent_screenshot.jpg)
+![User View](images/atom_agent_screenshot.png)
 
 Estimated Workshop Time: 3 hours -- minutes
 <!-- (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)

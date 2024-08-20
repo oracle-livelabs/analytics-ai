@@ -59,15 +59,15 @@ This lab assumes you have:
     ![Visual Builder import configuration](images/vb_import_config.png)
 
 6. Once import is completed, update the index.html file
-    * Click on source in the navigation sidebar
-    * filepath: webApps/atom/index.html
+    * In the Web Applications sidebar on the left
+    * Click on **atom**
+    * On the main screen, make sure you are on the **HTML** tab for the **atom** Web Application
     * update the details as follows:
         * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
             * URI is the hostname of the ODA instance provisioned in Task 1 of the previous lab
         * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
             * channelId is created during Task 5 - Step 3 of the previous lab
-        * Please set value of initUserHiddenMessage on Line 32 to “Hi” <!--TODO: Why don't we do this in the artifact? Why is sending Hi necessary?-->
-    ![Visual Builder update HTML](images/vb_update_html.png)
+    ![Visual Builder update HTML](images/vb_update.png)
 
 7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
 
@@ -121,7 +121,14 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
     * You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
     ![vb forbidden error](images/vb_forbidden_error.png)
 
-<!-- TODO: no mention of security access or roles in shell page-->
+<!-- TODO: no mention of security access or roles in shell page
+
+  "security": {
+    "access": {
+      "requiresAuthentication": false
+    }
+  }
+-->
 
 
 <!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
