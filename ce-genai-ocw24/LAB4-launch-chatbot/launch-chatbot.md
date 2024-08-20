@@ -1,48 +1,30 @@
-# Introduction
+# Launch the Chatbot
 
-## About this Workshop
+Let's try out the Generative AI Agent chat widget.
 
-Enterprise runs multiple lines of business and have different business groups who generates, maintains, and consumes many business dashboards. Having an intelligent search engine allows business user to 
-easily search and quickly find the right business dashboard within enterprise's system can accelerate user's daily work. Leveraging the power of Large Language Model (LLM) and Retrieval Augmented  Generation (RAG),
-company can build a chatbot where user can search for business dashboards based on dashboard contents, data sources, or other dashboards metadata in natural language style. 
+1. On your cloud console, navigate to the Generative AI Agents in Analytics & AI. Click on Agents to see the list of all Agents created.
 
-Large Language Models (LLM) are machine learning models that can comprehend and generate human language text. Retrieval Augmented Generation (RAG) is a method for generating text 
-using additional information fetched from an external data source.
-
-In this workshop, we will create a chatbot empowered by Generative AI and RAG to search Oracle Analytics Cloud (OAC) dashboards using Oracle Generative AI Agents, Open Search, and OCI services.
-
-Architecture of the workshop:
-![](./images/architecture.png =60%x*)
-
-Estimated Workshop Time: 1 hour 30 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+<img width="146" alt="image" src="https://github.com/user-attachments/assets/4bec9084-f21e-4e38-81bd-bc87333fd05f">
 
 
-### Objectives
+2. Select the Agent created.
 
-In this workshop, you will learn how to:
-* Provision AI Agent stack 
-* Configure AI Agent data source with Open Search
-* Ingest data into Open Search cluster
-* Launch AI Agent chatbot and make query of analytics dashboards
-
-### Prerequisites
-
-This lab assumes you have:
-* An Oracle account
-* Familiarity with Oracle Cloud is preferred, but not required
-* Familiarity with Large Language Model (LLM), Generative AI, Retrieval Augmented  Generation (RAG) is preferred, but not required
+<img width="564" alt="image" src="https://github.com/user-attachments/assets/8a60e8ab-baed-40e1-afab-8f64610c5049">
 
 
-In general, the Introduction does not have Steps.
 
-## Learn More
+3. Click on the Agent and select the option "Launch Chat with Agent"
 
-*(optional - include links to docs, white papers, blogs, etc)*
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/811f4b7a-ddf1-420b-90d3-dc0a70fcc9ea">
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+
+4. Start communicating with the Agent by asking for help and/or making specific questions, such as listing available metrics.
+
+<img width="943" alt="image" src="https://github.com/user-attachments/assets/ea18f52a-8443-453b-84e8-88302a85a9ee">
+
+
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Cloud Engineer
-* **Contributors** -  Pavan Kumar Manuguri
-* **Last Updated By/Date** - Jiayuan Yang, June 2024
+* **Author** - Pavan Kumar Manuguri
+* **Contributors** -  Jiayuan Yang
+* **Last Updated By/Date** - Pavan Kumar Manuguri, August 20 2024
