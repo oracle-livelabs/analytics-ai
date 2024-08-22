@@ -25,23 +25,19 @@ In this lab, we will learn more about the Autonomous Database's built-in Data Lo
 
 In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
+1. In your ADW database's details page, under the Database actions tab go to Data Load. Click **Data Load**
 
-	  ![Click Tools, then Database Actions](./images/dbactions1.png " ")
+	  ![Under Database actions, click Data Load](./images/dbactionsload1.png " ")
 
-2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
+3. Under **Data Studio**, click **LOAD DATA**
 
-3. Enter the password for the ADMIN user you entered when creating the database.
+    ![Click LOAD DATA](./images/dataload.png " ")
 
-4. Under **Data Studio**, click **DATA LOAD**
+4. Now you can put in the Cloud Store URL to connect to object storage for the files to load. Click **Cloud Store** to see location field.
 
-    ![Click DATA LOAD](./images/dataload.png " ")
+    ![Click CLOUD Store](./images/cloudlocations.png " ")
 
-5. In the **What do you want to do with your data?** section, click **LOAD DATA** and choose **CLOUD STORE** for **Where is you data?** to set up the connection from your Autonomous Database to OCI Object Storage.
-
-    ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
-
-6. Data Load > Load Cloud Object window will pop up and you need to copy the bucket URI into this field.
+5. In the location field, you need to copy the bucket URI into this field.
 
     Copy and paste the following URI into the URI + Load Data from Cloud Store:
 
@@ -57,23 +53,17 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 In this step, we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our Autonomous Database.
 
-1. You will see a list of folders which is the data available from the object storage bucket that we can load into our Autonomous Database.
+1. You will see a list of folders which is the data available from the object storage bucket that we can load into our Autonomous Database. Select all of the files and drag them over to the right for adding files.
 
-    ![Click Data Load](./images/backtodataload.png " ")
+    ![Drag files to load](./images/backtodataload.png " ")
 
-4. From the listed folders, drag the **customer\_contact**, **customer\_extension**, and **customer\_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
-
-5. Drag the **genre** and **movie** folders over to the right hand pane and click **OK**.
-
-6. And for fun, drag the **pizza_location** folder over to the right hand pane and click **OK**.
-
-7. Click the Play button to run the data load job.
+2. Click the Start button to run the data load job.
 
     ![Run the data load job](./images/runload2.png " ")
 
     The job should take about 20 seconds to run.
 
-8. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+3. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](./images/loadcompleted2.png " ")
 
@@ -85,4 +75,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2023
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2024

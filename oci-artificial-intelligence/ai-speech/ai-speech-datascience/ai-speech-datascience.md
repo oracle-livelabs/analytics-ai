@@ -1,4 +1,4 @@
-# Lab 5: Use OCI speech with datascience notebook session (Optional)
+# Lab 7: Use OCI speech with datascience notebook session (Optional)
 
 ## Introduction
 
