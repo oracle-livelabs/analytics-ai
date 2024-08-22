@@ -1,6 +1,27 @@
 # Launch the Chatbot
 
-Let's try out the Generative AI Agent chat widget.
+## About this Workshop
+
+OCI Generative AI Agents is a fully managed service that combines the power of large language models (LLMs) with an intelligent retrieval system to create contextually relevant answers by searching your knowledge base,
+making your AI applications smart and efficient.
+
+In this lab, you'll create a new **OCI Generative AI Agent**, connect to a Knowledge Base and chat with the Agent.
+
+Estimated Workshop Time: 10 minutes
+
+### Objectives
+
+In this workshop, you will learn how to:
+* Create OCI Generative AI Agent
+* Launch Chat with Agent
+* Example Prompts
+
+### Prerequisites
+
+* Oracle cloud tenancy that is subscribed to Chicago region, and configured to work with OCI Object Storage service and OCI Open Search Cluster.
+* Completed Previous Labs to create Open Search Cluster or create a bucket with sample documents in Storage for reviewing the RAG feature using Agent.  
+
+#### Let's try out the Generative AI Agent chat widget.
 
 1. On your cloud console, navigate to the Generative AI Agents in Analytics & AI. Click on Agents to see the list of all Agents created.
 
