@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
+    "workshoptitle": "Intelligent Business Dashboard Search using RAG",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -18,30 +18,21 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Get Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../../../labs/cloud-login/cloud-login-direct-signin.md"
-        },
-        {
-            "title": "Lab 1: Provision AI Agent Stack",
+            "title": "Lab 1: Provision OpenSearch Cluster",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab1-provision-ai-agent-stack/provision.md"
+            "filename": "../../lab1-provision-open-search-cluster/provision-open-search.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../lab2-upload-data-to-bucket/upload-file.md"
+            "title": "Lab 2: Provision Knowledge Base",
+            "filename": "../../lab2-provision-knowledge-base/provision-kb.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../lab3-ingest-data-into-open-search-load/ingest-data.md"
+            "title": "Lab 3: Provision AI Agent",
+            "filename": "../../lab3-provision-ai-agent/provision-ai-agent.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../lab4-config-ai-agent/config-ai-agent.md"
-        },
-        {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../lab5-launch-chatbot/launch-chatbot.md"
+            "title": "Lab 4: Launch the Chatbot",
+            "filename": "../../lab4-launch-chatbot/launch-chatbot.md"
         },
         {
             "title": "Need Help?",
