@@ -30,35 +30,32 @@ In this workshop, you will learn how to:
 
 * Oracle cloud tenancy that is subscribed to Chicago region, and configured to work with OCI Object Storage service
 * Familiar with Oracle Cloud Infrastructure is advantage, but not required
-* Download the data file by clicking the url: [dashboar_metadat.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
+* Download the data file by clicking the url: [dashboard_metadata.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
 
 ### About the data
 *explain json data here*
-[dashboar_metadat.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
+[dashboard_metadata.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
 
-## Task 1: Create Object Storage Bucket to Upload Data
+
+## Task 1: Upload Data to Object Storage and Create Pre-Authenticated Request URL
 1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Storage -> Buckets
 ![oci_console](./images/oci_console.png )
 2. Select the compartment you have created. 
 ![create_bucket](./images/object_storage_console.png )
 3. Click Create Bucket, enter Bucket Name, then click Create
 ![create_bucket](./images/create_bucket.png )
-4. Open the Bucket just created, click Upload. Drag and drop the xxx.json you just downloaded, upload
+4. Open the Bucket just created, click Upload. Drag and drop the dashboard_metadata.json you just downloaded, upload
 ![upload_file](./images/upload1.png )
 ![upload_file](./images/upload2.png )
-## Task 2: Create Pre-Authenticated Request
-1. Now you have uploaded the json file, click the 3 dots on the right of console, click Create Pre-Authenticated Request
+5. Now you have uploaded the json file, click the 3 dots on the right of console, click Create Pre-Authenticated Request
 ![create_par](./images/create_par1.png )
-2. Select Object, Permit object reads. Choose an expiration date, then click Create Pre-Authenticated Request
+6. Select Object, Permit object reads. Choose an expiration date, then click Create Pre-Authenticated Request
 ![create_par](./images/create_par2.png )
-3. In the pop-up window, copy the PAR-URL and paste into your notepad. Make sure you take the copy of url, it will show up once.
+7. In the pop-up window, copy the PAR-URL and paste into your notepad. Make sure to copy of url before close the window, it will show up only once.
 ![create_par](./images/get_par_url.png )
 
 
-
-
-
-
+## Task 2: Provision OpenSearch Cluster - Pavan
 <img width="908" alt="image" src="https://github.com/user-attachments/assets/69c36069-fcac-4893-bd2d-69c9a3e3fc5f">
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/d4b305d4-102c-4692-8962-e2e69eb1ee27">
@@ -76,12 +73,29 @@ In this workshop, you will learn how to:
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/97a98644-7211-4e11-b644-983db1cd4bc4">
 
 
-## Learn More
+## Task 3: Create Vault Secret
+1. Navigate to OCI Vault by clicking Menu bar -> Identity & Security -> Vault.
+![oci_vault](./images/oci_vault.png )
+2. Click Create Vault, provide name to create.
+![create_vault1](./images/create_vault1.png )
+![create_vault2](./images/create_vault2.png )
+3. In the Vault, click Create Key. Pick software protection mode, AES Algorithm, 256 bits. Click Create Key.
+![create_master_key](./images/create_master_key.png )
+4. In the Vault, click Secrets, then create Secret. Provide name, select the encryption key created from last step. Choose Plain-Text type, then provide following text as secret contents:
+```
+   osmaster:Osmaster@123
+```
+![create_secret1](./images/create_secret1.png)
+![create_secret2](./images/create_secret2.png)  
 
+
+## Learn More
+* [OpenSearch Guidelines for Generative AI Agents](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/generative-ai-agents/opensearch-guidelines.htm)
 * [Getting Started with OCI Object Storage](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
 
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Cloud Engineer 
-* **Contributors** -  Pavan Kumar Manuguri, Senior Cloud Engineer
-* **Last Updated By/Date** - Jiayuan Yang, June 2024
+* **Author** 
+  - Jiayuan Yang, Principal Cloud Engineer 
+  - Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Last Updated By/Date** - Pavan Kumar Manuguri, August 2024
