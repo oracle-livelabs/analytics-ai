@@ -42,14 +42,16 @@ In this workshop, you will learn how to:
       allow dynamic-group <dynamic-group-name> to read secret-bundle in tenancy
     ```
 
-### About the data
-* Before you start, download the data [dashboard_metadata.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
+### Download the data
+* Before you start, download the data:
+    - [genaiagent_stack](https://objectstorage.us-chicago-1.oraclecloud.com/p/7-Tbg6kk0p11-HNj3p4kbJHS9X9SasoGb4c7mOXaUM5Ge8s0jyndHD2Oaj-0_Jyb/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/genaiagent-solution-accelerator-quickstart_v2.zip)
+    - [dashboard_metadata.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
 
 
 ## Task 1: Upload Data to Object Storage and Create Pre-Authenticated Request URL
 1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Storage -> Buckets
 ![oci_console](./images/oci-console.png )
-2. Select the compartment you have created. 
+2. Select the compartment where you want the bucket to be created. 
 ![create_bucket](./images/object-storage-console.png )
 3. Click Create Bucket, enter Bucket Name, then click Create
 ![create_bucket](./images/create-bucket.png )
