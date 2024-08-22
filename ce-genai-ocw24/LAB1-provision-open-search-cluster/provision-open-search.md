@@ -47,13 +47,7 @@ In this workshop, you will learn how to:
 * *explain json data here*
 
 
-## Task 1: Setup Policy
-Before you start using AI Agent service, you need set up the required policies by following below steps:
-1. Log into OCI Cloud console. Navigate to menu bar -> Identity & Security -> Policies. Click Create Policy.
-![oci console](./images/oci-console-policy.png )
-2. 
-
-## Task 2: Upload Data to Object Storage and Create Pre-Authenticated Request URL
+## Task 1: Upload Data to Object Storage and Create Pre-Authenticated Request URL
 1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Storage -> Buckets
 ![oci_console](./images/oci-console.png )
 2. Select the compartment you have created. 
@@ -71,7 +65,7 @@ Before you start using AI Agent service, you need set up the required policies b
 ![create_par](./images/get-par-url.png )
 
 
-## Task 3: Provision OpenSearch Cluster
+## Task 2: Provision OpenSearch Cluster
 
 1. Go to OCI Cloud Console Menu -> Developer Services -> Resource Manager -> Stack
 
@@ -115,7 +109,7 @@ Before you start using AI Agent service, you need set up the required policies b
 
 12. Click Next to Review all variable again and Submit. The above steps will provision all the resources required for Open Search Clusters, Redis Cluster and a Compute Instance for Management.
 
-## Task 4: Create Vault Secret
+## Task 3: Create Vault Secret
 1. Navigate to OCI Vault by clicking Menu bar -> Identity & Security -> Vault.
 ![oci_vault](./images/oci-vault.png )
 2. Click Create Vault, provide name to create.
