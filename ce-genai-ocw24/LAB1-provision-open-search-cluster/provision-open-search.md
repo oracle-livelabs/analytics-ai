@@ -44,7 +44,6 @@ In this workshop, you will learn how to:
 
 ### About the data
 * Before you start, download the data [dashboard_metadata.json](https://objectstorage.us-chicago-1.oraclecloud.com/p/zaJxpillGZNeRFdZjaZoCn_TPlkjIypkQw6LEFspMa2ItWxD_mZ9HpQVBgBcUQRZ/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/dashboard_metadata.json)
-* *explain json data here*
 
 
 ## Task 1: Upload Data to Object Storage and Create Pre-Authenticated Request URL
