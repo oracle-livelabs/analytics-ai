@@ -133,6 +133,6 @@ In this workshop, you will learn how to:
 
 ## Acknowledgements
 * **Author** 
-  - Jiayuan Yang, Principal Cloud Engineer 
-  - Pavan Kumar Manuguri, Principal Cloud Engineer
+  - Jiayuan Yang, Principal Cloud Architect 
+  - Pavan Kumar Manuguri, Principal Cloud Architect
 * **Last Updated By/Date** - Pavan Kumar Manuguri, August 2024
