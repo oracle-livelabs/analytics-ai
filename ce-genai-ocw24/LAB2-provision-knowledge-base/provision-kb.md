@@ -25,11 +25,11 @@ In this workshop, you will learn how to:
 
 ## Task 1: Provision Knowledge Base
 1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Analytics & AI -> Generative AI Agents
-![oci_console](./images/oci_console.png )
+![oci_console](./images/oci-console.png )
 2. Click Create knowledge base.
-![agent_console](./images/agent_console.png )
+![agent_console](./images/agent-console.png )
 3. Fill a knowledge base name and select the compartment where you want the resource to be created. Choose OCI OpenSearch as the Data store type, then select the OpenSearch cluster created in Lab 1.
-![create_kb](./images/create_kb_1.png )
+![create_kb](./images/create-kb-1.png )
    In OpenSearch index panel, provide following input:
     - Index name: ocw_dashboard
     - Body key: metadata
@@ -37,7 +37,7 @@ In this workshop, you will learn how to:
     - Title key: dashboard 
 
   Choose Basic auth secret, select the Vault Secret you've created from previous lab. Click Create.
-![create_kb](./images/create_kb_2.png )
+![create_kb](./images/create-kb-2.png )
 Once the provision is completed, the Knowledge base will become Active and you can review it from console.
 
 

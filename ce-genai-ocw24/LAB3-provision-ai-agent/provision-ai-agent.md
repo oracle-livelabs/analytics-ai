@@ -25,15 +25,15 @@ In this workshop, you will learn how to:
 
 ## Task 1: Provision Agent
 1. From Generative AI Agents console, click Agents, then Create agent.
-![agent_console](./images/agent_console.png )
+![agent_console](./images/agent-console.png )
 2. Provide name and compartment. Choose the knowledge base which is created in Lab 2. Select Automatically create an endpoint for this agent. Then click Create.
-![create_agent](./images/create_agent.png )
-   Agent will take few minutes to provision.
+![create_agent](./images/create-agent.png )
+   Agent will take few minutes to turn to active.
 
 
 ## Task 2: Review Agent
-1. Once the Agent is active, you can select the Agent from console to review the knowledge base and endpoint associated.
-![agent](./images/agent_page.png )
+1. Once the Agent is active, you can select the Agent from console to review the knowledge base and the endpoint associated.
+![agent](./images/agent-page.png )
 
 
 ## Learn More
