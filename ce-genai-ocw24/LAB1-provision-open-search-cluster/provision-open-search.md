@@ -71,23 +71,49 @@ Before you start using AI Agent service, you need set up the required policies b
 ![create_par](./images/get-par-url.png )
 
 
-## Task 3: Provision OpenSearch Cluster - Pavan
+## Task 3: Provision OpenSearch Cluster
+
+1. Go to OCI Cloud Console Menu -> Developer Services -> Resource Manager -> Stack
+
 <img width="908" alt="image" src="https://github.com/user-attachments/assets/69c36069-fcac-4893-bd2d-69c9a3e3fc5f">
 
+2. Create a Stack
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/d4b305d4-102c-4692-8962-e2e69eb1ee27">
+
+3. Please use this link to download instructions on OCI Resource Manager Terraform stack that creates an OCI Search with OpenSearch cluster with a public management instance.
+   
+4. In Stack Configuration, Select zip file, Browse and upload the file downloaded from above link.
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/88380940-7435-4559-a938-2e2e05df9a36">
 
+5. Select Terraform version 1.2.x.
+   
+6. If you're using OCI Identity Domain for authentication, in the Consele, navigate to the domain section and copy the domain URL.
+   For example, https://idcs-xxx.identity.oraclecloud.com:443
+
+   <img width="492" alt="image" src="https://github.com/user-attachments/assets/9e404811-8d94-4206-ad77-0eb7707c0988">
+
+7. If you're using a federation-based tenancy, in the Console, navigate to Federation and under Identity, select your identity provider.
+   Get the OpenID URL by copying the IDCS URL. For example, https://idcs-xxxx.identity.oraclecloud.com
+   
 <img width="954" alt="image" src="https://github.com/user-attachments/assets/0c944851-8da1-408f-ba41-4f175b44279b">
+
+8. Review the Configure variables. 
 
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/0e28eee1-f8c2-4097-b726-e6f03e7d8478">
 
+9. Save the Open Search paramters, both master username and password.
+    
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/21c7f846-6b45-495d-8a76-52e2f55fbeed">
 
+10. Review the Redis parameters (optional). No changes.
+    
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/0b0cb806-1139-4aea-87e1-5935143189b7">
 
+11. Review the Compute Instance variables. 
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/97a98644-7211-4e11-b644-983db1cd4bc4">
 
+12. Click Next to Review all variable again and Submit. The above steps will provision all the resources required for Open Search Clusters, Redis Cluster and a Compute Instance for Management.
 
 ## Task 4: Create Vault Secret
 1. Navigate to OCI Vault by clicking Menu bar -> Identity & Security -> Vault.
