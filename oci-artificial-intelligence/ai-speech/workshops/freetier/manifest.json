@@ -18,39 +18,54 @@
             "filename": "../../object-storage/object-storage.md"
         },
         {
-            "title": "Lab 1: Transcribe audio with the console",
+            "title": "Lab 1: Transcribe audio files with the console",
             "description": "Learn how to transcribe audio files using oci console",
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },
         {
-            "title": "Lab 2: Access OCI speech with OCI SDKs",
+            "title": "Lab 2: Transcribe live audio with the console and SDK",
+            "description": "Learn how to transcribe live audio using oci console",
+            "filename": "../../transcribe-live-audio/transcribe-live-audio.md"
+        },
+        {
+            "title": "Lab 3: Create and manage customizations in OCI Console and using REST API",
+            "description": "Learn how to create, manage and use customizations",
+            "filename": "../../customizations/customizations.md"
+        },
+        {
+            "title": "Lab 4: Access OCI speech with OCI SDKs (Optional)",
             "description": "Learn how to access OCI Speech with Speech SDKs",
             "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
         },
         {
-            "title": "Lab 3: Access OCI speech with OCI CLI",
+            "title": "Lab 5: Access OCI speech with OCI CLI",
             "description": "Learn how to access OCI Speech with CLI",
             "filename": "../../ai-speech-cli/ai-speech-cli.md"
         },
         {
-            "title": "Lab 4: Access OCI speech with REST APIs",
+            "title": "Lab 6: Access OCI speech with REST APIs (Optional)",
             "description": "Learn how to access OCI Speech with REST API.",
             "filename": "../../oci-speech-rest/oci-speech-rest.md"
         },
         {
-            "title": "Lab 5: Use OCI speech with datascience notebook session",
+            "title": "Lab 7: Use OCI speech with datascience notebook session (Optional)",
             "description": "Learn how to access OCI Speech in DataScience Notebook Session.",
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
         {
-            "title": "Lab 6: Enable notifications for OCI speech transcription jobs",
+            "title": "Lab 8: Enable notifications for OCI speech transcription jobs",
             "description": "Learn how to use e-mail notification feature in OCI Speech.",
             "filename": "../../oci-speech-notifications/oci-speech-notifications.md"
         },
         {
-            "title": "Lab 7: Trigger functions for OCI speech transcription jobs",
+            "title": "Lab 9: Trigger functions for OCI speech transcription jobs (Optional)",
             "description": "Learn how to use Faas feature in OCI Speech.",
             "filename": "../../oci-speech-faas/oci-speech-faas.md"
+        },
+        {
+            "title": "Lab 10: Convert Text to Speech in OCI Console and SDK",
+            "description": "Learn how to use and manage TTS feature",
+            "filename": "../../ai-speech-tts/ai-speech-tts.md"
         },
         {
             "title": "Need Help?",

@@ -29,7 +29,17 @@ FILE_NAMES = ["<file1>", "<file2>"] # List of audio files present in the bucket
 NEW_COMPARTMENT_OCID = "<new_compartment>" # Destination Compartmnet OCID
 NEW_DISPLAY_NAME = "<new_name>" # New Job Name in the Destination compartment
 NEW_DESCRIPTION = "<new_description>" # Optional can be left blank
-SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
+MODEL_TYPE = "ORACLE" # Supported MODEL_TYPE values: ORACLE, WHISPER_MEDIUM
+IS_DIARIZATION_ENABLED = True  # Boolean value to enable or disable diarization
+# Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+# Supported language codes for WHISPER_MEDIUM MODEL: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, # mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
+SAMPLE_MODEL_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(model_type="ORACLE", domain="GENERIC",  language_code=LANGUAGE_CODE,
+transcription_settings=oci.ai_speech.models.TranscriptionSettings(
+    diarization=oci.ai_speech.models.Diarization(
+        is_diarization_enabled=IS_DIARIZATION_ENABLED               
+    )
+)
+)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
 SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(
@@ -43,7 +53,7 @@ UPDATE_JOB_DETAILS = oci.ai_speech.models.UpdateTranscriptionJobDetails(display_
 transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=SAMPLE_DISPLAY_NAME,
                                                                                compartment_id=SAMPLE_COMPARTMENT_OCID,
                                                                                description=SAMPLE_DESCRIPTION,
-                                                                               model_details=SAMPLE_MODE_DETAILS,
+                                                                               model_details=SAMPLE_MODEL_DETAILS,
                                                                                input_location=SAMPLE_INPUT_LOCATION,
                                                                                output_location=SAMPLE_OUTPUT_LOCATION)
  

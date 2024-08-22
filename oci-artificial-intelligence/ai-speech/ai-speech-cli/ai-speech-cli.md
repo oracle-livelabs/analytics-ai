@@ -1,4 +1,4 @@
-# Lab 3: Access OCI speech with OCI CLI
+# Lab 5: Access OCI speech with OCI CLI
 
 ## Introduction
 
@@ -90,7 +90,12 @@ pip install oci-cli
         }' --model-details '{
             "modelType": "ORACLE",
             "domain": "GENERIC",
-            "languageCode": "en-US"
+            "languageCode": "en-US",
+            "transcriptionSettings": {
+                "diarization": {
+                    "isDiarizationEnabled": true
+                }
+            }
         }' --normalization '{
             "filters": [{"type": "PROFANITY", "mode": "TAG"}],
             "isPunctuationEnabled": true
@@ -121,7 +126,12 @@ pip install oci-cli
         }' --model-details '{
             "modelType": "ORACLE",
             "domain": "GENERIC",
-            "languageCode": "en-US"
+            "languageCode": "en-US",
+            "transcriptionSettings": {
+                "diarization": {
+                    "isDiarizationEnabled": true
+                }
+            }
         }' --normalization '{
             "filters": [{"type": "PROFANITY", "mode": "TAG"}],
             "isPunctuationEnabled": true
@@ -132,6 +142,7 @@ pip install oci-cli
     * Supported values for modelType are ORACLE, WHISPER_MEDIUM
     * Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
     * Supported language codes for WHISPER_MEDIUM MODEL: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
+    * You can either enable or disable diarization by configuring the boolean value of field *isDiarizationEnabled* in the above oci-cli command. If you have enabled diarization, you can provide the number of speakers optionally.
 
         
 
