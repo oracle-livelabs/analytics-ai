@@ -5,7 +5,7 @@
 In this lab you will learn how to provision AI Agent Knowledge Base with OCI Open Search Cluster.
 
 An agent connects to a knowledge base, which is a vector-based storage that enables the integration or ingestion of data from a data source. Data sources provide connection information to the data stores that an agent uses to generate responses.
-Generative AI Agent can connect with supported data sources using Oracle Vector 23ai, OCI Open Search Cluster, Object Storage, and MySQL Heatwave.
+Generative AI Agent can connect with supported data sources using Oracle Vector 23ai, OCI Open Search Cluster, and Object Storage.
 
 Estimated Workshop Time: 15 minutes
 
@@ -47,6 +47,6 @@ Once the provision is completed, the Knowledge base will become Active and you c
 
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Principal Cloud Engineer 
-* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Author** - Jiayuan Yang, Principal Cloud Architect 
+* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Architect
 * **Last Updated By/Date** - Jiayuan Yang, August 2024

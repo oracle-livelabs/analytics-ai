@@ -42,6 +42,6 @@ In this workshop, you will learn how to:
 
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Principal Cloud Engineer 
-* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Author** - Jiayuan Yang, Principal Cloud Architect 
+* **Contributors** -  Pavan Kumar Manuguri, Principal Cloud Architect
 * **Last Updated By/Date** - Jiayuan Yang, August 2024
