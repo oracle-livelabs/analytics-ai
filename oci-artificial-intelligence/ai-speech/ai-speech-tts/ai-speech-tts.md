@@ -55,7 +55,7 @@ To change transcription parameters, look to the <strong>Configure transcription<
 
 1. Configure transcription
 
-    Here you can change parameters such as Language, Speaker, Audio format, Enable Streaming and Enable SSML
+    Here you can change parameters such as Model type, Language, Speaker, Audio format, Enable Streaming and Enable SSML
         ![Configure transcription](./images/configure-transcription.png " ")
 
     <strong>Model type:</strong> Use this parameter to specify the model type required. Currently we offer two model types "TTS-Standard" and "TTS-Natural". Based on the model type selected, the options for speaker will change.
