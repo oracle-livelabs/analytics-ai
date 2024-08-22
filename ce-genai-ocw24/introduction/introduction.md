@@ -12,10 +12,9 @@ using additional information fetched from an external data source.
 In this workshop, we will create a chatbot empowered by Generative AI and RAG to search Oracle Analytics Cloud (OAC) dashboards using Oracle Generative AI Agents, Open Search, and OCI services.
 
 Architecture of the workshop:
-![architecture](./images/architecture.png =60%x*)
+![](./images/architecture.png =60%x*)
 
 Estimated Workshop Time: 1 hour 45 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-
 
 ### Objectives
 
@@ -42,6 +41,7 @@ In general, the Introduction does not have Steps.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Jiayuan Yang, Cloud Engineer
-* **Contributors** -  Pavan Kumar Manuguri
-* **Last Updated By/Date** - Jiayuan Yang, June 2024
+* **Author** 
+    - Jiayuan Yang, Principal Cloud Engineer
+    - Pavan Kumar Manuguri, Principal Cloud Engineer
+* **Last Updated By/Date** - Jiayuan Yang, August 2024
