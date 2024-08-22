@@ -81,23 +81,25 @@ In this workshop, you will learn how to:
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/88380940-7435-4559-a938-2e2e05df9a36">
 
-5. Select Terraform version 1.2.x.
+5. From Zip file, all variables in Stack are reflected automatically. We have to Select Terraform version 1.2.x. to get started. 
    
-6. If you're using OCI Identity Domain for authentication, in the Console, navigate to the domain section and copy the domain URL.
-   For example, https://idcs-xxx.identity.oraclecloud.com:443
+6. First we need to get the OpenID URL.
+
+   a. If you're using OCI Identity Domain for authentication, in the Console, navigate to the domain section and copy the domain URL. For example, https://idcs-xxx.identity.oraclecloud.com:443
 
    <img width="492" alt="image" src="https://github.com/user-attachments/assets/9e404811-8d94-4206-ad77-0eb7707c0988">
 
-7. If you're using a federation-based tenancy, in the Console, navigate to Federation and under Identity, select your identity provider.
-   Get the OpenID URL by copying the IDCS URL. For example, https://idcs-xxxx.identity.oraclecloud.com
+   b. If you're using a federation-based tenancy, in the Console, navigate to Federation and under Identity, select your identity provider. Get the OpenID URL by copying the IDCS URL. For example, https://idcs-xxxx.identity.oraclecloud.com
    
 <img width="954" alt="image" src="https://github.com/user-attachments/assets/0c944851-8da1-408f-ba41-4f175b44279b">
 
-8. Review the Configure variables. 
+7. Get the PAR URL we copied earlier from Object Storage. 
+
+8. Review all Configuration variables. 
 
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/0e28eee1-f8c2-4097-b726-e6f03e7d8478">
 
-9. Save the Open Search paramters, both master username and password.
+9. By default, both master username and password are generated from Zip file. Save them for future use in a notepad. 
     
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/21c7f846-6b45-495d-8a76-52e2f55fbeed">
 
@@ -109,6 +111,8 @@ In this workshop, you will learn how to:
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/97a98644-7211-4e11-b644-983db1cd4bc4">
 
 12. Click Next to Review all variable again and Submit. The above steps will provision all the resources required for Open Search Clusters, Redis Cluster and a Compute Instance for Management.
+
+13. Note: It takes around 45-50mins to complete and create all the resources listed in the stack configuration. 
 
 ## Task 3: Create Vault Secret
 1. Navigate to OCI Vault by clicking Menu bar -> Identity & Security -> Vault.
