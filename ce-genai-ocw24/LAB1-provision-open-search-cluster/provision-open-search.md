@@ -75,7 +75,7 @@ In this workshop, you will learn how to:
 2. Create a Stack
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/d4b305d4-102c-4692-8962-e2e69eb1ee27">
 
-3. Please use this link to download instructions on OCI Resource Manager Terraform stack that creates an OCI Search with OpenSearch cluster with a public management instance.
+3. If you haven't done so, download the [OCI Resource Manager Terraform stack](https://objectstorage.us-chicago-1.oraclecloud.com/p/7-Tbg6kk0p11-HNj3p4kbJHS9X9SasoGb4c7mOXaUM5Ge8s0jyndHD2Oaj-0_Jyb/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/genaiagent-solution-accelerator-quickstart_v2.zip) that creates an OCI Search with OpenSearch cluster with a public management instance.
    
 4. In Stack Configuration, Select zip file, Browse and upload the file downloaded from above link.
 
@@ -83,7 +83,7 @@ In this workshop, you will learn how to:
 
 5. Select Terraform version 1.2.x.
    
-6. If you're using OCI Identity Domain for authentication, in the Consele, navigate to the domain section and copy the domain URL.
+6. If you're using OCI Identity Domain for authentication, in the Console, navigate to the domain section and copy the domain URL.
    For example, https://idcs-xxx.identity.oraclecloud.com:443
 
    <img width="492" alt="image" src="https://github.com/user-attachments/assets/9e404811-8d94-4206-ad77-0eb7707c0988">
