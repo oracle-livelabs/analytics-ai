@@ -3,6 +3,7 @@ from oci.ai_speech.models import *
 from oci.config import from_file
 from oci.signer import load_private_key_from_file
 from oci.auth.signers import SecurityTokenSigner
+
    
 """
 configure these constant variables as per your use case
@@ -12,7 +13,7 @@ configurable values begin
 endpoint = "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com"
   
 # Replace compartment with your tenancy compartmentId
-compartmentId = "ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa"
+compartmentId = "<compartment-id>"
    
 # the text for which you want to generate speech
 text = "A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs."
@@ -65,17 +66,21 @@ def main():
         save_response(response.data)
           
    
-def get_client():
-    config = from_file()
+def getSigner(profile_name):
+    config = oci.config.from_file(profile_name=profile_name)
     token_file = config['security_token_file']
     token = None
     with open(token_file, 'r') as f:
         token = f.read()
-   
-    private_key = load_private_key_from_file(config['key_file'])
-   
-    return AIServiceSpeechClient({}, signer=SecurityTokenSigner(token, private_key),
-                          service_endpoint=endpoint)
+    private_key = oci.signer.load_private_key_from_file(config['key_file'])
+    signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+    return config, signer
+ 
+def get_client():
+    config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    return ai_client
+
         
 def get_payload():
     return SynthesizeSpeechDetails(

@@ -100,6 +100,18 @@ Speech Synthesis Markup Language (SSML) is an XML-based markup language for spee
 3. Upon selecting an tag from the dropdown menu, he input text box will be filled with an example using that specific tag.
     ![SSML Examples](./images/ssml-examples.png " ")
 
+    <strong>Sub Tag:</strong> Allows you to specify a substitution for a word or phrase or abbreviation as per requirement.
+
+    <strong>Paragraph and Sentence Tag:</strong> Wraps a single sentence or group of sentences, helping the speech synthesizer to determine the correct prosody (intonation, rhythm, and stress).
+
+    <strong>Say As Tag:</strong> Specifies how a text should be interpreted and pronounced, such as reading numbers as digits, dates, units, currencies or telephone numbers.
+
+    <strong>Break Tag:</strong> Inserts a pause of a specified duration or strength between words or sentences, providing better control over the flow of speech.
+
+    <strong>Phoneme Tag:</strong> Provides phonetic pronunciation for words or phrases, allowing you to specify how the text should be pronounced using a phonetic alphabet like IPA (International Phonetic Alphabet).
+
+    <strong>Prosody Tag:</strong> Controls the pitch, rate, and volume of the spoken text to adjust how it is delivered.
+
 4. Click *Generate* button to generate the audio response for the ssml input
     ![SSML audio response](./images/ssml-output.png " ")
 
@@ -139,9 +151,9 @@ If you installed Python from source, with an installer from python.org, or via H
 
 3. Install OCI
 
-    Now, install oci preview version containing TTS service by running:
+    Now, install oci running:
     ```
-    <copypip install --trusted-host=artifactory.oci.oraclecorp.com -i https://artifactory.oci.oraclecorp.com/api/pypi/global-dev-pypi/simple -U oci==2.129.1+preview.1.1805</copy>
+    <copy> pip install oci</copy>
     ```
 
 4. OCI Speech TTS example code
@@ -217,17 +229,20 @@ def main():
         save_response(response.data)
           
    
-def get_client():
-    config = from_file()
+def getSigner(profile_name):
+    config = oci.config.from_file(profile_name=profile_name)
     token_file = config['security_token_file']
     token = None
     with open(token_file, 'r') as f:
         token = f.read()
-   
-    private_key = load_private_key_from_file(config['key_file'])
-   
-    return AIServiceSpeechClient({}, signer=SecurityTokenSigner(token, private_key),
-                          service_endpoint=endpoint)
+    private_key = oci.signer.load_private_key_from_file(config['key_file'])
+    signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+    return config, signer
+ 
+def get_client():
+    config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    return ai_client
         
 def get_payload():
     return SynthesizeSpeechDetails(
