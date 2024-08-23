@@ -8,6 +8,8 @@ in a compelling and easily digestible to format, this is the right workshop for 
 Generative AI is the hottest topic in machine learning right now, and this lab will go through a compelling NBA performance analysis use case that
 shows how GenAI and Analytics can be used alongside each other to improve the ways that analysts learn about the game.
 
+  ![Dashboard for NBA Analysis](./images/dashboard.png "")
+
 This workshop starts with the Autonomous Database, the single source of truth which will house our NBA data. You will build dashboards in Oracle Analytics Cloud (OAC) and enable a Generative AI model to access this data and use it to inform its responses to queries. The dashboards and Generative AI model you set up will then be combined together in a VisualBuilder application where they can be used in tandem.
 
 The target audience for this workshop is analysts, data scientists, and app developers who are interested in finding the best ways to deliver analytics and AI solutions to end users. 
