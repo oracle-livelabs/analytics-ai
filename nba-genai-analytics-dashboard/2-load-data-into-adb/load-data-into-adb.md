@@ -1,4 +1,4 @@
-# Loading your data into an Autonomous Database
+# Learn how to Load Data into a Database
 
 ## Introduction
 
@@ -16,7 +16,7 @@ In this lab, you will:
 ### Prerequisites
 
 * An OCI cloud account
-* Download the lab files [Here.](https://orasenatdpltsecitom03.objectstorage.us-ashburn-1.oci.customer-oci.com/p/7_l6sJ-PEj4wAUlr2P3elYRiBF2-CK6LtJzyagRaXPFRkLTeDkxd2-1vM4db_99L/n/orasenatdpltsecitom03/b/BBALL_LL_FILES/o/NBA_LL.zip)
+* Download the lab files [Here.](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
 
 ## Task 1: Provision Autonomous Data Warehouse
 
@@ -84,7 +84,7 @@ In this lab, you will:
 
 ![Sign out from admin](images/sign-out-admin.png "Sign Out")
 
-4. Download the files for the next lab [Here.](https://orasenatdpltsecitom03.objectstorage.us-ashburn-1.oci.customer-oci.com/p/7_l6sJ-PEj4wAUlr2P3elYRiBF2-CK6LtJzyagRaXPFRkLTeDkxd2-1vM4db_99L/n/orasenatdpltsecitom03/b/BBALL_LL_FILES/o/NBA_LL.zip)
+4. Download the files for the next task [Here.](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
 
 ## Task 2: Load Datasets into Database
 
@@ -96,7 +96,7 @@ In this lab, you will:
 
 ![Navigate to DB Actions](images/data-load.png "DB Actions")
 
-3. Choose **Load Data** then **Select Files**. Choose the lab files named **nba\_game\_summary\_stats\_2024\_regular\_season.csv** and **nba\_shotchart\_2024\_regular\_season.csv** from your desktop. This files can be downloaded from THIS link.
+3. Choose **Load Data** then **Select Files**. Choose the lab files named **nba\_game\_summary\_stats\_2024\_regular\_season.csv** and **nba\_shotchart\_2024\_regular\_season.csv** from your desktop after unzipping the folder from the previous task. This files can be downloaded from THIS link.
 
 ![Choose Data Load](images/db-actions-dataload.png "Data Load")
 

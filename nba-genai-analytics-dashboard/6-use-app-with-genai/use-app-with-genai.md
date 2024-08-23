@@ -48,7 +48,11 @@ Estimated time - 20 minutes
 
   ![This button generates AI response to question](./images/question.png "")
 
-6. Select **Pick a Game** toggle button to pick a game from the list and select **Game Summary** to display the summary.
+6. Observe the result is obtained from the data stored in the database.
+
+  ![Question results](./images/question-result.png "")
+
+7. Select **Pick a Game** toggle button to pick a game from the list and select **Game Summary** to display the summary.
 
   ![This button generates a summary for the game](./images/summary.png "")
 
