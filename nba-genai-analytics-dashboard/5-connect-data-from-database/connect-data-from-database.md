@@ -1,4 +1,4 @@
-# Connect your data from the database to your app
+# Connecting your data from the database
 
 ## Introduction
 

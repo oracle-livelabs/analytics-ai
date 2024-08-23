@@ -13,25 +13,25 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab1: Load your data into an Autonomous Database",
+            "title": "Lab 1: Loading your data into an Autonomous Database",
             "description": "",
             "filename": "../../2-load-data-into-adb/load-data-into-adb.md"
         },
         {
-            "title": "Lab 2: Visualize your data in Oracle Analytic Cloud",
+            "title": "Lab 2: Visualizing your data in Oracle Analytic Cloud",
             "description": "",
             "filename": "../../3-visualize-data-in-oac/visualize-data-in-oac.md"
         },
         {
-            "title": "Lab 3: Import a Visual Builder App quickly and easily",
+            "title": "Lab 3: Importing a Visual Builder App quickly and easily",
             "filename": "../../4-import-visual-builder-app/import-visual-builder-app.md"
         },
         {
-            "title": "Lab 4: Connect your data from the database",
+            "title": "Lab 4: Connecting your data from the database",
             "filename": "../../5-connect-data-from-database/connect-data-from-database.md"
         },
         {
-            "title": "Lab 5: Enhance your application on NBA Analytics with Generative AI",
+            "title": "Lab 5: Enhancing your application on NBA Analytics with Generative AI",
             "filename": "../../6-use-app-with-genai/use-app-with-genai.md"
         },
         {

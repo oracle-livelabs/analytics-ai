@@ -1,4 +1,4 @@
-# Enhance your application on NBA Analytics with Generative AI
+# Enhancing your application on NBA Analytics with Generative AI
 
 ## Introduction
 
@@ -28,7 +28,8 @@ Estimated time - 20 minutes
 
 ## Task 2: Analyze NBA Performance using the Application
 
-1. Find a video on Youtube of an NBA game that you would like to analyze along with the data.
+1. Find a video on Youtube of an NBA game that you would like to analyze along with the data. 
+	* For example: `https://www.youtube.com/watch?v=UI_CpSH-CXY&ab_channel=NBA`
 
 2. Scroll to the bottom of the page and update the video using the **Update video text box** and press the button **Load Video** to submit.
 
@@ -43,6 +44,7 @@ Estimated time - 20 minutes
   ![This button switches the view of the analytics](./images/toggle-view.png "")
 
 5. Type in a question to the text input box **Type AI Question** and select **Ask a question** to submit. 
+	* For example: `What is the best performing team in the nba?`
 
   ![This button generates AI response to question](./images/question.png "")
 

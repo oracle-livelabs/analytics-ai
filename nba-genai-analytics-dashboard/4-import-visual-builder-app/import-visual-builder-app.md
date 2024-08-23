@@ -1,4 +1,4 @@
-# Import a Visual Builder App quickly and easily
+# Importing a Visual Builder App quickly and easily
 
 ## Introduction
 
