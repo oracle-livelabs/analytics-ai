@@ -192,8 +192,7 @@ ALLOW any-user to use functions-family in compartment id ocid1.compartment.oc1..
 
 ## Task 8: PostgreSQL Database System
 
-The PostgreSQL Database System allow to store extracted text from documents including their corresponding vector embeddings and perform semantic search.
-OCI Database with PostgreSQL is a fully managed PostgreSQL-compatible service with intelligent sizing, tuning, and high durability.
+OCI Database with PostgreSQL allows us to store extracted text from documents including their corresponding vector embeddings by using the pgvector extension so we can perform a semantic search. Database with PostgreSQL is a fully managed PostgreSQL service with intelligent sizing, tuning and high durability.
 
 Go the Cloud console 3-bar/hamburger menu and select the following
   1. Database
