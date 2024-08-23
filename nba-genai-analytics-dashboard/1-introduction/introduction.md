@@ -57,7 +57,7 @@ You may now **proceed to the next lab**.
 	* Miles Novotny - Cloud Engineer
 * **Last Updated by/Date** - Nicholas Cusato, August 2024
 
-Data about the NBA in this workshop were sourced from [**NBA.com**.](www.nba.com)
+Data about the NBA in this workshop were sourced from [nba.com](https://www.nba.com/)
 
 Copyright (c) 2024 Oracle Corporation.
 
