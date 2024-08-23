@@ -1,4 +1,4 @@
-# Lab 10: Convert Text to Speech in OCI Console and SDK
+# Lab 7: Convert Text to Speech in OCI Console and SDK
 
 ## Introduction
 
@@ -102,15 +102,17 @@ Speech Synthesis Markup Language (SSML) is an XML-based markup language for spee
 
     <strong>Sub Tag:</strong> Allows you to specify a substitution for a word or phrase or abbreviation as per requirement.
 
-    <strong>Paragraph and Sentence Tag:</strong> Wraps a single sentence or group of sentences, helping the speech synthesizer to determine the correct prosody (intonation, rhythm, and stress).
+    <strong>Paragraph and Sentence Tag:</strong> Wraps a single sentence or a paragraph, helping the speech synthesizer to determine the correct break between sentences and paragraphs.
 
-    <strong>Say As Tag:</strong> Specifies how a text should be interpreted and pronounced, such as reading numbers as digits, dates, units, currencies or telephone numbers.
+    <strong>Say As Tag:</strong> Specifies how a text should be interpreted and pronounced, such as reading numbers as digits, dates, units, currencies, telephone numbers or abbreviations.
 
     <strong>Break Tag:</strong> Inserts a pause of a specified duration or strength between words or sentences, providing better control over the flow of speech.
 
     <strong>Phoneme Tag:</strong> Provides phonetic pronunciation for words or phrases, allowing you to specify how the text should be pronounced using a phonetic alphabet like IPA (International Phonetic Alphabet).
 
     <strong>Prosody Tag:</strong> Controls the pitch, rate, and volume of the spoken text to adjust how it is delivered.
+
+    <strong>Voice Tag:</strong> Allows you to use multiple voices in a single SSML request.
 
 4. Click *Generate* button to generate the audio response for the ssml input
     ![SSML audio response](./images/ssml-output.png " ")
@@ -162,25 +164,30 @@ If you installed Python from source, with an installer from python.org, or via H
 
 ```Python
 <copy>
+import oci
+import json
 from oci.ai_speech import AIServiceSpeechClient
 from oci.ai_speech.models import *
 from oci.config import from_file
 from oci.signer import load_private_key_from_file
 from oci.auth.signers import SecurityTokenSigner
+
    
 """
 configure these constant variables as per your use case
 configurable values begin
 """
   
-endpoint = "https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com"
+endpoint = "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com"
   
 # Replace compartment with your tenancy compartmentId
-compartmentId = "ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa"
+compartmentId = "<compartment_ID>"
    
 # the text for which you want to generate speech
 text = "A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs."
    
+# Supported voices for ModelType TTS_2_Natural are: "Brian", "Annabelle", "Bob", "Phil", "Cindy" and "Stacy"
+# Supported voices for ModelType TTS_1_Standard are: "Bob", "Phil", "Cindy" and "Stacy"
 # the voiceId that you want to use for generated speech. Only "Brian" and "Annabelle" are supported as of now.
 voiceId = "Annabelle"
    
@@ -220,6 +227,18 @@ def main():
        
     # create payload object
     payload = get_payload()
+
+    # voices = get_voices(client)
+
+    # This will list voices available for model
+    # print(f'List of voices available {json.dumps(voices)}')
+
+    # print(json.dumps(payload))
+    print(json.dumps(
+            payload,
+            default=lambda o: o.__dict__, 
+            sort_keys=True,
+            indent=4))
    
     # handle response
     response = client.synthesize_speech(payload)
@@ -228,7 +247,9 @@ def main():
     else:
         save_response(response.data)
           
-   
+def get_voices(client):
+    return client.list_voices(compartment_id = compartmentId) # model_name
+
 def getSigner(profile_name):
     config = oci.config.from_file(profile_name=profile_name)
     token_file = config['security_token_file']
@@ -241,8 +262,9 @@ def getSigner(profile_name):
  
 def get_client():
     config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
-    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer, service_endpoint=endpoint)
     return ai_client
+
         
 def get_payload():
     return SynthesizeSpeechDetails(

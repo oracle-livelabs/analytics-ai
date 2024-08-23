@@ -1,3 +1,5 @@
+import oci
+import json
 from oci.ai_speech import AIServiceSpeechClient
 from oci.ai_speech.models import *
 from oci.config import from_file
@@ -13,11 +15,13 @@ configurable values begin
 endpoint = "https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com"
   
 # Replace compartment with your tenancy compartmentId
-compartmentId = "<compartment-id>"
+compartmentId = "<compartment_ID>"
    
 # the text for which you want to generate speech
 text = "A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs."
    
+# Supported voices for ModelType TTS_2_Natural are: "Brian", "Annabelle", "Bob", "Phil", "Cindy" and "Stacy"
+# Supported voices for ModelType TTS_1_Standard are: "Bob", "Phil", "Cindy" and "Stacy"
 # the voiceId that you want to use for generated speech. Only "Brian" and "Annabelle" are supported as of now.
 voiceId = "Annabelle"
    
@@ -57,6 +61,18 @@ def main():
        
     # create payload object
     payload = get_payload()
+
+    # voices = get_voices(client)
+
+    # This will list voices available for model
+    # print(f'List of voices available {json.dumps(voices)}')
+
+    # print(json.dumps(payload))
+    print(json.dumps(
+            payload,
+            default=lambda o: o.__dict__, 
+            sort_keys=True,
+            indent=4))
    
     # handle response
     response = client.synthesize_speech(payload)
@@ -65,7 +81,9 @@ def main():
     else:
         save_response(response.data)
           
-   
+def get_voices(client):
+    return client.list_voices(compartment_id = compartmentId) # model_name
+
 def getSigner(profile_name):
     config = oci.config.from_file(profile_name=profile_name)
     token_file = config['security_token_file']
@@ -78,7 +96,7 @@ def getSigner(profile_name):
  
 def get_client():
     config, signer = getSigner("DEFAULT") # Change the profile name from DEFAULT, if you are using some other profile
-    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer)
+    ai_client = oci.ai_speech.AIServiceSpeechClient(config, signer=signer, service_endpoint=endpoint)
     return ai_client
 
         
