@@ -1,4 +1,4 @@
-# Use application to analyze player performance with Generative AI
+# Enhance your application on NBA Analytics with Generative AI
 
 ## Introduction
 

@@ -1,8 +1,8 @@
-# Use application to analyze player performance with Generative AI
+# Import a Visual Builder App quickly and easily
 
 ## Introduction
 
-This lab will show you how to create a visual builder instance and import an app with Analytics Iframe to 
+This lab will show you how to create a visual builder instance and import an app with Analytics Iframe to enhance your analysis of NBA gameplay.
 
 Estimated time - 20 minutes
 
