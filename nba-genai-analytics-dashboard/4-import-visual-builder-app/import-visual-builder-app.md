@@ -6,12 +6,17 @@ This lab will show you how to create a visual builder instance and import an app
 
 Estimated time - 20 minutes
 
-
 ### Objectives
 
 * Create a Visual Builder Instance
 * Import the application
 * Enable the Analytics iframe
+
+
+### Prerequisites
+
+* Your tenancy **must be subscribed to the US Midwest (Chicago)** region.
+* Downloaded the previous lab files from lab 1.
 
 ## Task 1: Create a Visual Builder Instance
 
