@@ -1,4 +1,4 @@
-# Enhancing your application on NBA Analytics with Generative AI
+# Enhance your application on NBA Analytics with Generative AI
 
 ## Introduction
 

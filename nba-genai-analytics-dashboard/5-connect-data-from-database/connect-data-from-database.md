@@ -1,4 +1,4 @@
-# Connecting your data from the database
+# Connect your data from the database
 
 ## Introduction
 

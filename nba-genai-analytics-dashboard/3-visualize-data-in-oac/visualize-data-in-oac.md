@@ -1,4 +1,4 @@
-# Visualizing your data in Oracle Analytic Cloud (OAC)
+# Visualize your data in Oracle Analytic Cloud (OAC)
 
 ## Introduction
 This lab walks you through the steps of creating self-service data visualizations in Oracle Analytics Cloud.
