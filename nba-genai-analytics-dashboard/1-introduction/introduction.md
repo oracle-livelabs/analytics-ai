@@ -45,8 +45,9 @@ You may now **proceed to the next lab**.
 
 * [Oracle Autonomous Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
-* [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.htm)
-
+* [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.html)
+* [Overview of Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/index.html)
+* [Overview of Visual Builder](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/index.html)
 
 ## Acknowledgements
 
@@ -54,7 +55,7 @@ You may now **proceed to the next lab**.
 	* Nicholas Cusato - Cloud Engineer
 	* Malia German - Cloud Engineer
 	* Miles Novotny - Cloud Engineer
-* **Last Updated by/Date** - Nicholas Cusato, May 2024
+* **Last Updated by/Date** - Nicholas Cusato, August 2024
 
 Data about the NBA in this workshop were sourced from [**NBA.com**.](www.nba.com)
 

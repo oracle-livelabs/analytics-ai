@@ -41,7 +41,7 @@ Estimated time - 20 minutes
 
   ![button to import from file](images/app-from-file.png)
 
-3. Drag and drop the zip file to update the fields and click **Import**.
+3. Drag and drop the zip file downloaded in the first lab to update the fields and click **Import**.
 
   ![import menu with updated fields](images/drag-and-drop.png)
 

@@ -16,6 +16,7 @@ In this lab, you will:
 ### Prerequisites
 
 * An OCI cloud account
+* Download the lab files [Here.](https://orasenatdpltsecitom03.objectstorage.us-ashburn-1.oci.customer-oci.com/p/7_l6sJ-PEj4wAUlr2P3elYRiBF2-CK6LtJzyagRaXPFRkLTeDkxd2-1vM4db_99L/n/orasenatdpltsecitom03/b/BBALL_LL_FILES/o/NBA_LL.zip)
 
 ## Task 1: Provision Autonomous Data Warehouse
 
@@ -82,6 +83,8 @@ In this lab, you will:
 3. Click the drop down button at the top right named **Admin** and select **Sign Out**.
 
 ![Sign out from admin](images/sign-out-admin.png "Sign Out")
+
+4. Download the files for the next lab [Here.](https://orasenatdpltsecitom03.objectstorage.us-ashburn-1.oci.customer-oci.com/p/7_l6sJ-PEj4wAUlr2P3elYRiBF2-CK6LtJzyagRaXPFRkLTeDkxd2-1vM4db_99L/n/orasenatdpltsecitom03/b/BBALL_LL_FILES/o/NBA_LL.zip)
 
 ## Task 2: Load Datasets into Database
 
