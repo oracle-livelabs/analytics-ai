@@ -24,6 +24,8 @@ Natural language processing is the ability of a computer application to understa
 
 Generative AI enables users to quickly generate new content based on a variety of inputs. Inputs and outputs to these models can include text, images, sounds, animation, 3D models, and other types of data.
 
+Estimated time - 1 hour & 55 minutes
+
 ### Objectives
 
 In this workshop, you will learn how to:

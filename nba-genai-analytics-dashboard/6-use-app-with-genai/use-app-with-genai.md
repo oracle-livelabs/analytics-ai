@@ -12,6 +12,12 @@ Estimated time - 20 minutes
 * Analyze NBA Performance using the Application
 * Deploy the application (Optional)
 
+### Prerequisites
+
+* An OCI cloud account
+* Access to YouTube for researching videos
+
+
 ## Task 1: Test the Application Endpoint
 
 1. Test the endpoints in the app by navigating to the service connections. Select **`question`**, then **`Endpoints`**, and select ther
