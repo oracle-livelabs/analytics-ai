@@ -34,10 +34,10 @@ In this workshop, you will learn how to:
 
 ### Prerequisites
 
-* Your tenancy must be subscribed to the US Midwest (Chicago) region
-* Basic database  and SQL knowledge
+* Your tenancy **must be subscribed to the US Midwest (Chicago)** region.
+* Basic database and SQL knowledge.
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful.
-* Familiarity with the role of REST services
+* Familiarity with the role of REST services.
 
 You may now **proceed to the next lab**.
 
