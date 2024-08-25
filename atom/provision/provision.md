@@ -66,7 +66,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 
 ## Task 3: Create REST Service for the OCI Generative AI Service
 
-This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**.
+This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**.  This step only needs to be done once per ODA instance. If users are sharing one ODA instance to create multiple chatbot, only the first person will need to perform this step
 
 1. Locate the ODA created in **Task 1**
 
@@ -198,7 +198,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
 
-5. Import the application in provisioned instance as per the screenshots
+5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
     * Click on Import from Visual Builder Instance
 
@@ -224,7 +224,13 @@ This task involves creating REST service which will be used by ODA to connect to
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+
+8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
+
+9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+
+    ![VB Error](images/vb_error.png)
 
 ## Acknowledgements
 
@@ -232,4 +238,6 @@ This task involves creating REST service which will be used by ODA to connect to
 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
+* **JB Anderson**,  Senior Cloud Engineer, NACIE
+**Last Updated By/Date:**
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
