@@ -78,7 +78,7 @@ update_ambari_config
 
 ```
 
-You can download the [odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh).
+You can download the [odh_bootstrap_update_config.sh](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh).
 
 **2.Upload the bootstrap script to object storage**
 
@@ -142,7 +142,7 @@ Pre-Authenticated Request Details page display. And Copy the Pre-Authenticated R
 
 Here is the URL sample:
 
-[odh_bootstrap_update_config.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh)
+[odh_bootstrap_update_config.sh](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/odh_bootstrap_update_config.sh)
 
 ## Task 1: Create a Cluster
 

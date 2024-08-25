@@ -25,70 +25,45 @@ In this lab, we will learn more about the Autonomous Database's built-in Data Lo
 
 In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
+1. In your ADW database's details page, under the Database actions tab go to Data Load. Click **Data Load**
 
-	  ![Click Tools, then Database Actions](./images/DBActions.png " ")
+	  ![Under Database actions, click Data Load](./images/dbactionsload1.png " ")
 
-2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
+3. Under **Data Studio**, click **LOAD DATA**
 
-3. Enter the password for the ADMIN user you entered when creating the database.
+    ![Click LOAD DATA](./images/dataload.png " ")
 
-4. Under **Data Tools**, click **DATA LOAD**
+4. Now you can put in the Cloud Store URL to connect to object storage for the files to load. Click **Cloud Store** to see location field.
 
-    ![Click DATA LOAD](./images/dataload.png " ")
+    ![Click CLOUD Store](./images/cloudlocations.png " ")
 
-5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
+5. In the location field, you need to copy the bucket URI into this field.
 
-    ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
-
-6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
-
-    In the **Name** field, enter 'MovieStreamLanding'
-
-    > **Note:** Take care not to use spaces in the name.
-
-    Leave the Cloud Store selected as **Oracle**.
-
-    Copy and paste the following URI into the URI + Bucket field:
+    Copy and paste the following URI into the URI + Load Data from Cloud Store:
 
    ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/movieload
     </copy>
     ```
+    Select No Credential as this is a public bucket and then click **Create**.
 
-    Select **No Credential** as this is a public bucket and then click **Create**.
-    
 
 ## Task 2: Load data from files in Object Storage using Data Tools
 
 In this step, we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our Autonomous Database.
 
-1. To load or link data from our newly configured cloud storage, click the **Data Load** link in the top left of your screen. Or if you are still in the same view with MOVIESTREAMLANDING Cloud Storage, skip down to step 3 to choose the objects you want to load.
+1. You will see a list of folders which is the data available from the object storage bucket that we can load into our Autonomous Database. Select all of the files and drag them over to the right for adding files.
 
-    ![Click Data Load](./images/backtodataload.png " ")
+    ![Drag files to load](./images/backtodataload.png " ")
 
-2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**.
-
-    ![Select Load Data, then Cloud Storage](./images/loadfromstorage.png " ")
-
-3. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
-
-    ![Click Data Load](./images/selectlanding.png " ")
-
-4. From the MOVIESTREAMLANDING location, drag the **customer\_contact**, **customer\_extension**, and **customer\_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
-
-5. Drag the **genre** and **movie** folders over to the right hand pane and click **OK**.
-
-6. And for fun, drag the **pizza_location** folder over to the right hand pane and click **OK**.
-
-7. Click the Play button to run the data load job.
+2. Click the Start button to run the data load job.
 
     ![Run the data load job](./images/runload2.png " ")
 
     The job should take about 20 seconds to run.
 
-8. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+3. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](./images/loadcompleted2.png " ")
 
@@ -100,4 +75,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, May 2022
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, June 2024

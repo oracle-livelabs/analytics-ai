@@ -31,7 +31,7 @@ Now that you have your two map layers created and imported, we need to associate
     ![Create a file for the map turns](./images/turns.png)
 
     ![Create a file for the map segments](./images/segments.png)  
-    > **Note:** you can use [Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)
+    > **Note:** you can use [Netherlands GrandPrix.xlsx](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)
 
 2. On the top right of the **Oracle Analytics Home Page**, choose **Create** and then **Data Set**
 
@@ -149,7 +149,7 @@ Go to Save icon from top right, enter your workbook **Name** and click **Save**
 
     ![Click Create Dataset](./images/add-dataset-create2.png)
 
-3. Browse for **[Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)** file and click **Open**
+3. Browse for **[Netherlands GrandPrix.xlsx](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)** file and click **Open**
 
     ![Navigate to the Netherlands GrandPrix file](./images/add-dataset-create-turns2.png)
 
@@ -221,10 +221,10 @@ If you were able to successfully complete the workshop, you can ignore this task
 Otherwise, please find the dva for this project for use of troubleshooting or reviewing the implementation.  
 
 1. Follow the steps from **Lab 3: Import your GeoJSON code into OAC** and import the following files:  
-    [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)  
-    [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
+    [Zandvoort Sector LineString.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)  
+    [Zandvoort Sector Point.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
-2. Download the OAC dva project file. (link to the file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Red%20Bull%20Racing%20Honda.dva))  
+2. Download the OAC dva project file. (link to the file [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Red%20Bull%20Racing%20Honda.dva))  
 
 3. On the top right of the **Oracle Analytics Home Page**, choose the stacked icons and select **Import Workbook/Flow**
 

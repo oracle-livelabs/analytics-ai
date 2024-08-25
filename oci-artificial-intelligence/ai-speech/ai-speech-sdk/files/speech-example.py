@@ -29,6 +29,7 @@ FILE_NAMES = ["<file1>", "<file2>"] # List of audio files present in the bucket
 NEW_COMPARTMENT_OCID = "<new_compartment>" # Destination Compartmnet OCID
 NEW_DISPLAY_NAME = "<new_name>" # New Job Name in the Destination compartment
 NEW_DESCRIPTION = "<new_description>" # Optional can be left blank
+<<<<<<< HEAD
 MODEL_TYPE = "ORACLE" # Supported MODEL_TYPE values: ORACLE, WHISPER_MEDIUM
 IS_DIARIZATION_ENABLED = True  # Boolean value to enable or disable diarization
 # Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
@@ -40,6 +41,9 @@ transcription_settings=oci.ai_speech.models.TranscriptionSettings(
     )
 )
 )
+=======
+SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
+>>>>>>> upstream/main
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
 SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(

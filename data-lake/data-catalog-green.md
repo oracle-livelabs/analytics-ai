@@ -59,8 +59,7 @@ allow any-user to use buckets in compartment lakehouse1 where ALL {request.princ
 
 allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
 
-allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE WITH WORKSPACE OCID'
-}
+    allow any-user to manage buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace', request.principal.id='REPLACE_WITH_WORKSPACE OCID', request.permission='PAR_MANAGE'}
 
 </copy>
 ```

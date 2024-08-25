@@ -72,17 +72,16 @@ Next, select the <strong>Enable customizations</strong> box in the "Configure tr
 
 Specify a compartment and select a customization to include in your next transcription session
 
-Congratulations on completing this lab!
-
-You may now **proceed to the next lab**
 
 ## Task 5: Using OCI AI Speech live transcription SDK
 
 First, refer to lab 4 (Access OCI speech with OCI SDKs (Optional)) for API signing key and config file setup
 
-<strong>Python example:</strong>
+Click [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdks.htm) for documentation regarding AI Speech SDK
 
-OCI AI Speech live transcription uses websockets to relay audio data and text transcriptions in real time. This means your client must implement some key listener functions:
+OCI AI Speech live transcription uses websockets to relay audio data and receive text transcriptions in real time. This means your client must implement some key listener functions:
+
+<strong>Python example:</strong>
 ```
 on_result(result)
     // This function will be called whenever a result is returned from the 
@@ -168,11 +167,13 @@ class MyRealtimeListener(RealtimeClientListener):
         return self.errormessage
 ```
 
-<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session
+<strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session.
 
-`language_code` : <strong>"en-US", "pt-BR", "es-ES", "hi-IN", "de-DE", "fr-FR", "it-IT"</strong>
+*example values:*
 
-`model_domain` : <strong>"GENERIC", "MEDICAL"</strong>
+`language_code` : <strong>"en-US"</strong>
+
+`model_domain` : <strong>"MEDICAL"</strong>
 
 `partial_silence_threshold_in_ms` : <strong>500</strong>
 
@@ -180,11 +181,11 @@ class MyRealtimeListener(RealtimeClientListener):
 
 `encoding` : <strong>"audio/raw;rate=16000"</strong>
 
-`should_ignore_invalid_customizations` : <strong>True, False</strong>
+`should_ignore_invalid_customizations` : <strong>True</strong>
 
-`stabilize_partial_results` : <strong>True, False</strong>
+`stabilize_partial_results` : <strong>True</strong>
 
-`customizations` : <strong>[Customization1, Customization2]</strong>
+`customizations` : <strong>[Customization1]</strong>
 
 <strong>Example of setting realtime parameters</strong>
 
@@ -217,7 +218,7 @@ realtime_speech_parameters.customizations = [
 ]
 ```
 
-Download a fully implemented python example [here](./files/realtime_example.py) code file and save it your directory.
+Download a fully implemented python example [here.](./files/realtime_example.py)
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services

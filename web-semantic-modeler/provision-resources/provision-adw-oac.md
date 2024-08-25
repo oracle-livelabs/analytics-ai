@@ -37,10 +37,6 @@ _Estimated Time:_ 15 minutes
 
   ![Config adw](./images/config-db.png =700x*)
 
-    >**Note:** **Not recommended for this lab**, but you can select Always Free configuration to start enjoying your free Autonomous Database. With the Always Free option you will not be able to scale the database when needed.
-
-  If you select 'Always Free Tier On', please click this [link](https://www.oracle.com/uk/cloud/free/#always-free).
-
 5. Enter a password under **Create administration credentials**. Select Secure access from everywhere under **Choose network access**.
 
     >**Reminder:** Record your password in a safe location as this cannot be easily reset.

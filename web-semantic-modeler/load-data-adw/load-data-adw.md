@@ -18,7 +18,7 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator role
-* Downloaded the [BISAMPLE.data.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EwriB0Oq1hUYAPvkceXZMLTsxcywHAimwkYVc-l03mxWzVWGX79a8QO1lap5wMXz/n/c4u04/b/livelabsfiles/o/ai-ml-library/BISAMPLE_data.xlsx) file
+* Downloaded the [BISAMPLE.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vL6XiAFR-g1xAcok3aqWKH2z2rWobXtgI-3SWEhEFpeplt002IHSwY9cEMMvYeWe/n/idmqvvdwzckf/b/OAC-Workshops/o/BISAMPLE.xlsx) file
 * All previous labs successfully completed
 
 ## Task 1: Create a BISAMPLE user
@@ -26,19 +26,15 @@ In this section we will create the necessary user/schema required for this lab.
 
 >**Note:** This process is done by the ADMIN user
 
-1. Navigate back to your SemanticModelerDB details page and click **Database actions**.
-
-	![DB Actions](./images/adw-details.png)
-
-2. Scroll down to **Administration** and select **DATABASE USERS**.
+1. Navigate back to your SemanticModelerDB details page and click **Database actions**. Then select **Database Users**.
 
 	![DB Users](./images/db-users.png =500x*)
 
-3. Click **Create User**.
+2. Click **Create User**.
 
 	![Create user](./images/create-user.png =500x*)
 
-4. Enter the following information in the **User** tab:
+3. Enter the following information in the **User** tab:
 	* User Name: BISAMPLE
 	* Password: Choose a valid password (You will need this to log in to the BISAMPLE user in the next task)
 	* Quota on tablespace DATA: Unlimited
@@ -46,7 +42,7 @@ In this section we will create the necessary user/schema required for this lab.
 
 	![User info](./images/user-info.png =500x*)
 
-5. Click the **Granted Roles** tab and grant the role **"DWROLE"** and check all three options. Then click **Create User**.
+4. Click the **Granted Roles** tab and grant the role **"DWROLE"** and check all three options. Then click **Create User**.
 
 	![Grant roles](./images/grant-roles.png =600x*)
 
@@ -63,38 +59,55 @@ In this section, you will login to the BISAMPLE user you just created and load t
 
 	![Sign in](./images/sign-in.png =300x*)
 
-3. Under **Data Studio**, click **DATA LOAD**.
+3. Click **Data Studio**, then click **Data Load**.
 
 	![Data Load](./images/data-load.png =500x*)
 
-4. Choose **LOAD DATA** and **LOCAL FILE**, then click **Next**.
+4. Choose **Load Data**.
 
 	![Local file](./images/local-file.png)
 
-5. Drag and drop or select the BISAMPLE_date.xlsx file from your local machine.
+5. Drag and drop or select the BISAMPLE.xlsx file from your local machine.
 
-	>**Note**: Find the BISAMPLE_data excel file download in the prerequisites section above.
+	>**Note**: Find the BISAMPLE.xls file download in the prerequisites section above.
 
 	![Select data](./images/select-data.png)
 
-6. Once your files are ready, click the green **Start** button to start the data load. This should take about a minute.
+6. Once your files are ready for loading, find the **SAMP\_ADDRESSES\_D** table and click the **Settings** icon.
+
+	![Settings](./images/settings-icon.png)
+
+7. Under **Mapping**, change the **POSTAL_CODE** data type to **VARCHAR2**. This will prevent issues while loading the data since this dataset includes postal codes from around the world which have letters and numbers in the format. Close the table editor.
+
+	![Data Type](./images/varchar.png)
+
+8. Now let's make one more change. Find **SAMP\_TIME\_DAY\_D** and click the **Settings** icon.
+
+	![Settings](./images/settings-icon-day.png)
+
+9. Under **Mapping**, change the **DAY_KEY** data type to **NUMBER**. Close the table editor.
+
+	![Data Type](./images/number.png)
+
+10. We're now ready to load the data. Click the **Start** button to start the data load. This should take about 2 minutes.
 
 	![Start data load](./images/start-load.png)
 
-7. Click **Done** on the bottom of the page once the data load is complete.
+11. Once the data load is complete, you will see the tables.
 
 	![Load done](./images/load-done.png)
 
-8. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
+12. To verify that your data has loaded successfully, click the **Hamburger menu** and select **SQL** under Development.
 
 	![SQL Development](./images/sql.png =500x*)
 
-9. All your tables should be listed here under the BISAMPLE user/schema. Right click SAMP_ REVENUE _F and select **Open**. We'll take a closer look to confirm all the data is there.
+13. All your tables should be listed here under the **BISAMPLE** user/schema. Right-click **SAMP\_REVENUE\_F** and select **Open**. We'll take a closer look to confirm all the data is there.
 
 	![Open revenue](./images/open-revenue.png)
 
-10. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
+14. Click the **Data** column and right click on the table. Select **Count Rows** to make sure all the rows were loaded. There should be 71,000 rows.
 
+	![Count Rows](./images/count-rows.png)
 	![Row count](./images/row-count.png =300x*)
 
 You have just loaded data into the BISAMPLE schema using the Data Load feature in the ADW.
@@ -152,4 +165,4 @@ You have just created the connection to the Autonomous Data Warehouse.
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
 * **Contributors** - Lucian Dinescu, Peter Monteiro
-* **Last Updated By/Date** - Nagwang Gyamtso, February, 2023
+* **Last Updated By/Date** - Nagwang Gyamtso, February, 2024

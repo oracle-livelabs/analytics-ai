@@ -54,7 +54,8 @@ Under documentation you can find helpful links relevant to OCI speech service
     Provide the type of the entities and then list them in the box below
         ![Define entity list](./images/entity-list.png " ")
 
-    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage
+    Alternatively, click <strong>Object storage</strong> to select predefined training entities from object storage. [Here](./files/clmpayload.json) is an
+    example customization definition you can use
         ![Select entities](./images/object-storage-entity.png " ")
 
     Configure model details
@@ -103,6 +104,174 @@ To view your newly created customization, click on your customization's name fro
     From either the customization details page or list customizations page, click <strong>delete</strong> to delete your customization
         ![delete customization](./images/delete-customization.png " ")
 
+## Task 4: Using the customizations API
+
+The Postman REST Collection for Customizations setup can be downloaded from [OCI Customization REST Collection](./files/Customization_API_Collection.postman_collection.json). Refer to "Access OCI speech with REST APIs" lab for Postman setup
+
+OCI Speech Service EndPoints for all the services:
+
+*Note:* The list of region identifiers for each region can be found [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm), update the endpoints with appropriate region identifiers.
+
+1. <u>Create Customization - POST</u>
+
+
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?
+    </copy>
+    ```
+    Body:
+    ```
+    <copy>
+    {
+        "compartmentId": "<uniqueCompartmentID>>",
+        "description": "<descriptionPlaceholder>",
+        "displayName": "<displayNamePlaceholder>",
+        "alias": "<aliasPlaceHolder>",
+        "modelDetails": {
+            "domain": "GENERIC",
+            "languageCode": "en-US"
+        },
+        "trainingDataset": {
+            "datasetType": "ENTITY_LIST",
+            "referenceExamples": [
+                "Private data is <private>",
+                "Bird name is <bird>"
+            ],
+            "entityList": [{
+                "entityType": "private",
+                "entities": [{
+                        "entityValue": "hello",
+                        "pronunciations": [{
+                                "soundsLike": "helloo"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            },{
+                    "entityType": "bird",
+                    "entities": [{
+                            "entityValue": "Tweeteee3",
+                            "pronunciations": [{
+                                    "soundsLike": "tweetyy"
+                                }
+                            ],
+                            "weight": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </copy>
+    ```
+    *Note:*
+    * Supported values for domain are GENERIC, and MEDICAL
+    * Supported values for languageCode are en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
+
+
+2. <u>Get Customization - GET</u>
+
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+    `<customizationID>` should be replaced with the actual customization ID/Alias
+     `<region-identifier>` should be replaced with a valid region like us-phoenix-1
+
+3. <u>List Customizations - GET</u>
+
+    Endpoint:
+    ```
+    <copy> 
+        https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/20220101/customizations?compartmentId=<uniqueCompartmentID>&lifecycleState=<STATE>&displayName=<name>&id=<customizationId>
+    </copy>
+    ```
+    Filter your list query results using query params:
+
+    ```compartmentId```: <strong>view all customizations in a certain compartment</strong>
+
+    ```lifecycleState```: <strong>view all customizations with a certain lifecycle state</strong>
+
+    ```displayName```: <strong>view all customizations with a certain displayName</strong>
+
+    ```id```: <strong>view customizations with matching customizationId</strong>
+
+4. <u>Update Customization - PUT</u>
+
+    With the updated Customization body. We can submit a PUT request to update the Customization
+    
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+
+    Body:
+    ```
+    <copy>
+    {
+    "compartmentId": "<uniqueCompartmentID>>",
+    "description": "<descriptionPlaceholder>",
+    "displayName": "<displayNamePlaceholder>",
+    "alias": "<aliasPlaceHolderNew>",
+    "modelDetails": {
+        "domain": "GENERIC",
+        "languageCode": "en-US"
+    },
+    "trainingDataset": {
+        "datasetType": "ENTITY_LIST",
+        "referenceExamples": [
+            "Private data is <private>",
+            "Bird name is <bird>"
+        ],
+        "entityList": [{
+            "entityType": "private",
+            "entities": [{
+                    "entityValue": "hello",
+                    "pronunciations": [{
+                            "soundsLike": "helloo"
+                        }
+                    ],
+                    "weight": 1
+                }
+            ]
+        },{
+                "entityType": "bird",
+                "entities": [{
+                        "entityValue": "Robin",
+                        "pronunciations": [{
+                                "soundsLike": "Robun"
+                            }
+                        ],
+                        "weight": 1
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+    </copy>
+    ```
+4. <u>Delete Customization - DELETE</u>
+
+    Endpoint:
+    ```
+    <copy>
+    https://speech.aiservice.<region-identifier>.oci.oraclecloud.com/customizations/<customizationID>
+    </copy>
+    ```
+
+    
+
+
+
 
 Congratulations on completing this lab!
 
@@ -111,3 +280,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
+    * Rishabh Tewari - Oracle AI Services
