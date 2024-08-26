@@ -113,7 +113,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 	);
 
 	INSERT INTO NBA.GENAI_PROJECT (ID, NAME, QUERY, TASK, TASK_RULES)
-	VALUES (1, 'RECENT', 'SELECT * FROM NBA.NBA_GAME_SUMMARY_STATS_2024_REGULAR_SEASON WHERE GAME_ID = :game_id', 'Summarize the basketball game and follow the task rules.', '1. Summarize the data. 2. Provide insight into game statistics. 3. Use the perspective of an NBA fan');
+	VALUES (1, 'RECENT', 'SELECT * FROM NBA.NBA_GAME_SUMMARY_STATS_2024_REGULAR_SEASON WHERE GAME_ID = :game_id FETCH FIRST ROW ONLY', 'Summarize the basketball game and follow the task rules.', '1. Summarize the data. 2. Provide insight into game statistics. 3. Use the perspective of an NBA fan');
 	</copy>
 	```
 
