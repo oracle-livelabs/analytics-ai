@@ -41,6 +41,6 @@ In general, the Introduction does not have Steps.
 
 ## Acknowledgements
 * **Author** 
-    - Jiayuan Yang, Principal Cloud Architect
-    - Pavan Kumar Manuguri, Principal Cloud Architect
+    - Jiayuan Yang, Principal Cloud Architect (jiayuan.yang@oracle.com)
+    - Pavan Kumar Manuguri, Principal Cloud Architect (pavan.kumar.manuguri@oracle.com)
 * **Last Updated By/Date** - Jiayuan Yang, August 2024
