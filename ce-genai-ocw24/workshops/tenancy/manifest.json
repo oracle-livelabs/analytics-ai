@@ -20,19 +20,19 @@
         {
             "title": "Lab 1: Provision OpenSearch Cluster",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab1-provision-open-search-cluster/provision-open-search.md"
+            "filename": "../../LAB1-provision-open-search-cluster/provision-open-search.md"
         },
         {
             "title": "Lab 2: Provision Knowledge Base",
-            "filename": "../../lab2-provision-knowledge-base/provision-kb.md"
+            "filename": "../../LAB2-provision-knowledge-base/provision-kb.md"
         },
         {
             "title": "Lab 3: Provision AI Agent",
-            "filename": "../../lab3-provision-ai-agent/provision-ai-agent.md"
+            "filename": "../../LAB3-provision-ai-agent/provision-ai-agent.md"
         },
         {
             "title": "Lab 4: Launch the Chatbot",
-            "filename": "../../lab4-launch-chatbot/launch-chatbot.md"
+            "filename": "../../LAB4-launch-chatbot/launch-chatbot.md"
         },
         {
             "title": "Need Help?",
