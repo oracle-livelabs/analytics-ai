@@ -34,45 +34,45 @@ This section describes the mapping Load TRG\_CUSTOMER that will be created in th
 The Load TRG\_CUSTOMER mapping uses the following data and transformations:
   * One target datastore. Details:
 
-| Model                 | Datastore     | Description |  Type        |
-|-----------------------|---------------|-------------|--------------|
-| Sales Administration  | TRG\_CUSTOMER |              | Oracle Table |
+| Model                | Datastore     | Description | Type         |
+| -------------------- | ------------- | ----------- | ------------ |
+| Sales Administration | TRG\_CUSTOMER |             | Oracle Table |
 
   * Three source datastores:
 
-| Model                 | Datastore     | Description |  Type        |
-|-----------------------|---------------|-------------|--------------|
-| Orders Application    | SRC\_CUSTOMER | Customers in the source system | Oracle Table |
-| Parameters            | SRC\_AGE_GROUP | Age bracket file | File delimited by semicolons |
-| Parameters            | SRC\_SALES\_PERSON | Salesperson File | File delimited by semicolons |
+| Model              | Datastore          | Description                    | Type                         |
+| ------------------ | ------------------ | ------------------------------ | ---------------------------- |
+| Orders Application | SRC\_CUSTOMER      | Customers in the source system | Oracle Table                 |
+| Parameters         | SRC\_AGE_GROUP     | Age bracket file               | File delimited by semicolons |
+| Parameters         | SRC\_SALES\_PERSON | Salesperson File               | File delimited by semicolons |
 
   * One Join:
 
-| Join                  | Description                                | SQL RULE                   |
-|-----------------------|--------------------------------------------|----------------------------|
+| Join                                | Description                               | SQL RULE                                                           |
+| ----------------------------------- | ----------------------------------------- | ------------------------------------------------------------------ |
 | Sales Representatives and Customers | Join SRC\_SALES\_PERSON and SRC\_CUSTOMER | SRC\_CUSTOMER.SALES\_PERS\_ID = SRC\_SALES\_PERSON.SALES\_PERS\_ID |
 
   * One **Lookup** table:
 
-| Lookup                   | Description   | SQL RULE                                                        |
-|--------------------------|---------------------------------------------|-----------------------------------|
-| Customers and age range  | The customers age must be between the min and max ages in the file | SRC\_CUSTOMER.AGE between SRC\_AGE\_GROUP.AGE\_MIN and SRC\_AGE\_GROUP.AGE\_MAX  |
+| Lookup                  | Description                                                        | SQL RULE                                                                        |
+| ----------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Customers and age range | The customers age must be between the min and max ages in the file | SRC\_CUSTOMER.AGE between SRC\_AGE\_GROUP.AGE\_MIN and SRC\_AGE\_GROUP.AGE\_MAX |
 
   * Several transformation rules:
 
-| Target Column  | Origin                               | SQL Rule(Expression)                                                       |
-|----------------|--------------------------------------|----------------------------------------------------------------------------|
-| CUST\_ID       | SRC\_CUSTOMER.CUSTID                 | SRC\_CUSTOMER.CUSTID      |
-| DEAR           | If SRC\_CUSTOMER.DEAR = 0 then 'Mr'  If SRC\_CUSTOMER.DEAR = 1 then 'MRS' else 'MS'| CASE  WHEN CUSTOMER.DEAR=0 THEN 'Mr' WHEN CUSTOMER.DEAR=1 THEN 'Mrs' ELSE 'MS' END |
-| CUST\_NAME     | Concatenation of SRC\_CUSTOMER.FIRST\_NAME and SRC\_CUSTOMER.LAST\_NAME in upper case | TRIM(SRC\_CUSTOMER.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_CUSTOMER.LAST\_NAME))    |
-| ADDRESS        | SRC\_CUSTOMER.ADDDRESS                | SRC\_CUSTOMER.ADDRESS   |
-| CITY\_ID       | SRC\_CUSTOMER.CITY\_ID                | SRC\_CUSTOMER.CITY\_ID   |
-| PHONE          | SRC\_CUSTOMER.PHONE                   | SRC\_CUSTOMER.PHONE     |
-| AGE            | SRC\_CUSTOMER.AGE                     | SRC\_CUSTOMER.AGE       |
-| AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
-| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
-| CRE\_DATE      | Today's date                         | SYSDATE                 |
-| UPD\_DATE      | Today's date            | SYSDATE                 |
+| Target Column | Origin                                                                                          | SQL Rule(Expression)                                                                          |
+| ------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| CUST\_ID      | SRC\_CUSTOMER.CUSTID                                                                            | SRC\_CUSTOMER.CUSTID                                                                          |
+| DEAR          | If SRC\_CUSTOMER.DEAR = 0 then 'Mr'  If SRC\_CUSTOMER.DEAR = 1 then 'MRS' else 'MS'             | CASE  WHEN CUSTOMER.DEAR=0 THEN 'Mr' WHEN CUSTOMER.DEAR=1 THEN 'Mrs' ELSE 'MS' END            |
+| CUST\_NAME    | Concatenation of SRC\_CUSTOMER.FIRST\_NAME and SRC\_CUSTOMER.LAST\_NAME in upper case           | TRIM(SRC\_CUSTOMER.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_CUSTOMER.LAST\_NAME))           |
+| ADDRESS       | SRC\_CUSTOMER.ADDDRESS                                                                          | SRC\_CUSTOMER.ADDRESS                                                                         |
+| CITY\_ID      | SRC\_CUSTOMER.CITY\_ID                                                                          | SRC\_CUSTOMER.CITY\_ID                                                                        |
+| PHONE         | SRC\_CUSTOMER.PHONE                                                                             | SRC\_CUSTOMER.PHONE                                                                           |
+| AGE           | SRC\_CUSTOMER.AGE                                                                               | SRC\_CUSTOMER.AGE                                                                             |
+| AGE\_RANGE    | SRC\_AGE\_GROUP.AGE\_RANGE                                                                      | SRC\_AGE\_GROUP.AGE\_RANGE                                                                    |
+| SALES\_PERS   | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
+| CRE\_DATE     | Today's date                                                                                    | SYSDATE                                                                                       |
+| UPD\_DATE     | Today's date                                                                                    | SYSDATE                                                                                       |
 
 ## Task 2: Creating the Mapping
 
@@ -390,5 +390,3 @@ You may proceed to the next lab.
  - **Contributors** - Srivishnu Gullapalli
  - **Last Updated By/Date** - Srivishnu Gullapalli, March 2023
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
