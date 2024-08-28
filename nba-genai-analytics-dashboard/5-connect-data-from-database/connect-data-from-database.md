@@ -49,7 +49,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
   ![navigate to the sql worksheet](images/adb-sql.png)
 
-2. Right click **NBA_GAME_SUMMARY** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
+2. Right click **NBA\_GAME\_SUMMARY** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
 
   ![navigate to the AutoREST](images/enable-rest.png)
 
