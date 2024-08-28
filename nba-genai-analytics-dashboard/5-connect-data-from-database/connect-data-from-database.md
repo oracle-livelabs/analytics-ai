@@ -49,13 +49,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
   ![navigate to the sql worksheet](images/adb-sql.png)
 
-2. Right click **NBA\_GAME\_SUMMARY** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
-
-  ![navigate to the AutoREST](images/enable-rest.png)
-
-  ![Enable REST Dialogue](images/copy-autorest.png)
-
-3. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
+2. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
 
     ```
     <copy>
@@ -72,8 +66,14 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 >**Note:** if you experience errors in the api for GenAI, it may be because the policy hasn't updated for the new schema user - try to disable and re-enable the resource principal.
 
 4. Sign out from admin and sign back in as **nba** user that was created in lab 1.
+   
+5. Right click **NBA\_GAME\_SUMMARY\_STATS\_2024\_REGULAR\_SEASON** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
 
-4. Create an AI profile for the **Meta Llama 2 Chat model**. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
+  ![navigate to the AutoREST](images/enable-rest.png)
+
+  ![Enable REST Dialogue](images/copy-autorest.png)
+
+6. Create an AI profile for the **Meta Llama 2 Chat model**. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
 
     ```
     <copy>
@@ -100,7 +100,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
     ```
     ![Create AI profile](./images/profile.png "")
 
-5. Create the GENAI_PROJECT table and a row insert by copying and pasting the following SQL statement in the SQL Worksheet, and then click the **Run Script** icon.
+7. Create the GENAI_PROJECT table and a row insert by copying and pasting the following SQL statement in the SQL Worksheet, and then click the **Run Script** icon.
 
 	```
 	<copy>
@@ -211,7 +211,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
     ![Create GenAI_project table](./images/genai-project.png "")
 
-1.  Copy and paste the following to create the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
+8.  Copy and paste the following to create the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
 
   ```
   <copy>

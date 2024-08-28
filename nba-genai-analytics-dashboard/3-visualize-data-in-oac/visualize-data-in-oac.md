@@ -15,6 +15,7 @@ In this lab, you will learn how to:
 ### Prerequisites
 * A provisioned Oracle Analytics Cloud Instance
 * BIServiceAdministrator Role assigned
+* Downloaded the lab files from lab 1
 
 ## Task 1: Provision an Oracle Analytics Cloud Instance
 
@@ -30,13 +31,13 @@ In this lab, you will learn how to:
    - **Capacity OCPU Count**: 2
    - **License: License Included**
    - **Edition**: Enterprise Edition
-   ![OAC Settings](images/OACSettings.png "OAC Settings")
+   ![OAC Settings](images/oac-settings.png "OAC Settings")
 
 6. Press **Create.** It may take a few moments for your instance to be provisioned.
 
 ## Task 2: Import Custom Maps in OAC
 
-1. CLICK HERE to download a zip file with the map layers and map backgrounds we will use in this task
+1. Locate the files downloaded in the first lab, unzip the directory `OAC_BACKGROUNDS` with the map layers and map backgrounds we will use in this task
 2. From the OAC homepage, navigate to the console.
    ![Open the console](images/navmenuconsole.png "Open the console")
 3. From the console, open **Maps** under **Visualizations and Sharing**.
@@ -88,25 +89,29 @@ In this lab, you will learn how to:
 
    ![Choose database tables](images/choose-tables.png "Choose database tables")
 
-4. Now we need to do some data preparation before visualizing this data. Click on **NBA\_SHOTCHART\_2024\_REGULAR\_SEASON** at the bottom of the screen.
+4. Adjust the join conditions to include `TEAM_NAME` and `GAME_ID` by clicking the **conjoined circles**  between the two datasets. Click **Add Join Condition** to sync the datasets. Click **out of the dialog** to move to the next step.
+
+   ![Join datasets](images/join-data.png)
+
+5. Now we need to do some data preparation before visualizing this data. Click on **NBA\_SHOTCHART\_2024\_REGULAR\_SEASON** at the bottom of the screen.
 
    ![Choose dataset](images/data-prep1.png "Choose dataset")
 
-5. We need to make sure that the **X** and **Y** columns are set as attributes. They can be set as so by clicking the icon to the left of the column name and choosing **Attribute**.
+6. We need to make sure that the **X** and **Y** columns are set as attributes. They can be set as so by clicking the icon to the left of the column name and choosing **Attribute**.
 
    ![Set as attribute](images/data-prep2.png "Set as attribute")
 
-6. Hover over the **X** column, click the three dots that appear on its right side, then choose **Location Details**
+7. Hover over the **X** column, click the three dots that appear on its right side, then choose **Location Details**
 
    ![Change location details](images/data-prep3.png "Change location details")
 
-7. In the box that appears, make sure that **Map Layer** is set to **Latitude, Longitude** and under **Location Type** select **Longitude**. Click **Okay**.
+8. In the box that appears, make sure that **Map Layer** is set to **Latitude, Longitude** and under **Location Type** select **Longitude**. Click **Okay**.
 
    ![Set longitude](images/data-prep4.png "Set longitude")
 
-8. Repeat exactly the same steps for the **Y** column, except choose **Latitude** as the **Location Type** this time. Now that the location details have been set for these columns they can be used to map out shot locations.
+9.  Repeat exactly the same steps for the **Y** column, except choose **Latitude** as the **Location Type** this time. Now that the location details have been set for these columns they can be used to map out shot locations.
 
-9. Click the save button in the top right corner, give your dataset a name, and click **OK**.
+10. Click the save button in the top right corner, give your dataset a name, and click **OK**.
 
    ![Save dataset changes](images/save-dataset.png "Save dataset changes")
 
@@ -164,7 +169,7 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 20. Add separate tiles for **Field Goal %** and **SHOT\_ATTEMPTED\_FLAG** by dragging and dropping them onto the canvas.
     ![Add two tiles](images/tileviz.png "Add two tiles to your canvas")
 21. Now drag **Shot Zone Map** and **field Goal %** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
-    ![Check the map layer](images/NBAshotzonesfieldgoalmap.png "Check your map layer")
+    ![Check the map layer](images/nba-shotzonesfieldgoalmap.png "Check your map layer")
 22. Next drag **Shot Zone Map** and **SHOT\_ATTEMPTED\_FLAG** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
     ![Check the map layer](images/attemptedshotmap.png "Check your map layer")
 23. Lastly, for this canvas we will create a pivot table. Bring **PERIOD**, **GAME_DATE (Day)**, **HTM**, **VTM**, and **Field Goal %** onto the canvas, make sure **PERIOD** is put into the columns category for the visualization.
@@ -229,6 +234,25 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 35. Save the workbook by clicking the save icon at the top right and give it a memorable name, such as **NBA Analytics**.
 
     ![Save Workbook button](images/save-workbook.png "")
+
+36. Click the **back button** to navigate to the home page of the OAC instance.
+
+    ![Back button to return home](images/return-home.png "")
+
+37. Click the **ellipsis** for the workbook and select **Move to**.
+
+    ![Move to shared button](images/move-to-shared.png "")
+
+38. Select **Shared Folder** and click **New Folder**. Give the new folder a name, such as `Shared NBA` and click **Create**. Select the new folder and click **Move**.
+
+    ![Move to shared button](images/select-shared.png "")
+
+
+    ![Move to shared button](images/shared-name.png "")
+
+>>**Note:** Share the related artifacts so the workbook is usable.
+
+
 
 You may now **proceed to the next lab**.
 
