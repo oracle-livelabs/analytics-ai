@@ -1,7 +1,7 @@
 # Visualize your data in Oracle Analytic Cloud (OAC)
 
 ## Introduction
-This lab walks you through the steps of creating self-service data visualizations in Oracle Analytics Cloud.
+This lab walks you through the steps of creating self-service data visualizations in Oracle Analytics Cloud. You will learn the creation of custom visualizations using custom map backgrounds and custom map layers. 
 
 Estimated time - 35 minutes
 
@@ -252,9 +252,11 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 
 >>**Note:** Share the related artifacts so the workbook is usable.
 
-
-
 You may now **proceed to the next lab**.
+
+## Learn More
+
+* [Apply Map Backgrounds and Map Layers to Enhance Visualizations](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/apply-map-backgrounds-and-map-layers-enhance-visualizations.html)
 
 ## Acknowledgements
 
