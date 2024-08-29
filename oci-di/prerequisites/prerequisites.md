@@ -19,7 +19,7 @@ Set up these **prerequisites** before starting our Data Integration journey in O
 * **Free Tier/ Paid Oracle Cloud Account**
 * **OCI user** that is assigned to an **OCI group**.
 
-*Note*: If you want to create a new OCI user or assign the user to a group, see the [Identity and Access Management workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566).
+*Note*: If you want to create a new OCI user or assign the user to a group, see the [Identity and Access Management workshop](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624).
 
 ## Task 1: Create an OCI Compartment
 

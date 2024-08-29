@@ -274,7 +274,7 @@ You should keep this terminal running until the process finished as below:
 
 1. Map the Private IP Address of the First Master Node to a Public IP Address.
 
-Refer to lab4 in [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
+Refer to lab4 in [Get Started with Oracle Big Data Service (non-HA)](https://livelabs.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
 
 In this example, we replaced the ip-address with the private IP address of our first Master node like below.
 ![get_first_master_node_IP](images/02_lab2_task3_step1.png)

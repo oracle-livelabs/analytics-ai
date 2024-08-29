@@ -36,43 +36,43 @@ This section describes the mapping Load TRG\_SALES that will be created in this 
 
 The Load TRG\_SALES mapping uses the following data and transformations:
   * One target datastore.
-  | Model                 | Datastore            | Description                                           |  Type        |
-  |-----------------------|----------------------|-------------------------------------------------------|--------------|
-  | Sales Administration  | TRG\_SALES           | Target table in the Sales Administration System | Oracle Table |
+  | Model                | Datastore  | Description                                     | Type         |
+  | -------------------- | ---------- | ----------------------------------------------- | ------------ |
+  | Sales Administration | TRG\_SALES | Target table in the Sales Administration System | Oracle Table |
 
   * Two source datastores.
-  | Model                 | Datastore          | Description                                     |  Type        |
-  |-----------------------|--------------------|------------------------------------------------------|--------------|
-  | Orders Application    | SRC\_ORDERS        | Orders table in the source systems              | Oracle Table |
-  | Orders Application    | SRC\_ORDER\_LINES  | Order lines table in the source systems         | Oracle Table |
+  | Model              | Datastore         | Description                             | Type         |
+  | ------------------ | ----------------- | --------------------------------------- | ------------ |
+  | Orders Application | SRC\_ORDERS       | Orders table in the source systems      | Oracle Table |
+  | Orders Application | SRC\_ORDER\_LINES | Order lines table in the source systems | Oracle Table |
 
   * One **Join**.
 
-  | Join                      | Description                                  | SQL Rule                                           |
-  |---------------------------|----------------------------------------------|----------------------------------------------------|
-  | Commands and Order Lines  | Join SRC\_ORDERS and SRC\_ORDER\_LINES       | SRC\_ORDERS.ORDER\_ID = SRC\_ORDER\_LINES.ORDER_ID |
+  | Join                     | Description                            | SQL Rule                                           |
+  | ------------------------ | -------------------------------------- | -------------------------------------------------- |
+  | Commands and Order Lines | Join SRC\_ORDERS and SRC\_ORDER\_LINES | SRC\_ORDERS.ORDER\_ID = SRC\_ORDER\_LINES.ORDER_ID |
 
 
   * One **Filter**
 
-  | Description                      | SQL Rule                                  |
-  |----------------------------------|-------------------------------------------|
-  | Only retrieve completed orders   | SRC\_ORDERS.STATUS = 'CLO'                |
-  | Orders Application               | Order lines table in the source system    |
+  | Description                    | SQL Rule                               |
+  | ------------------------------ | -------------------------------------- |
+  | Only retrieve completed orders | SRC\_ORDERS.STATUS = 'CLO'             |
+  | Orders Application             | Order lines table in the source system |
 
   * Several transformation rules.
 
-  | Target Column         | Origin                                             | SQL Rule (expression)            |
-  |-----------------------|----------------------------------------------------|----------------------------------|
-  |CUST\_ID               |CUST_ID from SRC\_ORDERS                            | SRC\_ORDERS.CUST\_ID             |
-  |PRODUCT\_ID            |PRODUCT_ID from SRC\_ORDERS\_LINES                  | SRC\_ORDER\_LINES.PRODUCT\_ID    |
-  |FIRST\_ORD\_ID         |Smallest value of ORDER_ID                          | MIN(SRC\_ORDERS.ORDER\_ID)       |
-  |FIRST\_ORD\_DATE       |Smallest value of the ORDER\_DATE from SRC\_ORDERS  | MIN(SRC\_ORDERS.ORDER\_DATE)     |
-  |LAST\_ORD\_ID          |Largest value of ORDER\_ID                          | MAX(SRC\_ORDERS.ORDER\_ID)       |
-  |LAST\_ORD\_DATE        |Largest value of the ORDER\_DATE from SRC\_ORDERS   | MAX(SRC\_ORDERS.ORDER\_DATE)     |
-  |QTY                    |Sum of the QTY quantities from the order lines      | SUM(SRC\_ORDER\_LINES.QTY)       |
-  |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC\_ORDER\_LINES.AMOUNT)    |
-  |PROD\_AVG\_PRICE       |Average amount from the order lines                 | AVG(SRC\_ORDER\_LINES.AMOUNT)    |
+  | Target Column    | Origin                                             | SQL Rule (expression)         |
+  | ---------------- | -------------------------------------------------- | ----------------------------- |
+  | CUST\_ID         | CUST_ID from SRC\_ORDERS                           | SRC\_ORDERS.CUST\_ID          |
+  | PRODUCT\_ID      | PRODUCT_ID from SRC\_ORDERS\_LINES                 | SRC\_ORDER\_LINES.PRODUCT\_ID |
+  | FIRST\_ORD\_ID   | Smallest value of ORDER_ID                         | MIN(SRC\_ORDERS.ORDER\_ID)    |
+  | FIRST\_ORD\_DATE | Smallest value of the ORDER\_DATE from SRC\_ORDERS | MIN(SRC\_ORDERS.ORDER\_DATE)  |
+  | LAST\_ORD\_ID    | Largest value of ORDER\_ID                         | MAX(SRC\_ORDERS.ORDER\_ID)    |
+  | LAST\_ORD\_DATE  | Largest value of the ORDER\_DATE from SRC\_ORDERS  | MAX(SRC\_ORDERS.ORDER\_DATE)  |
+  | QTY              | Sum of the QTY quantities from the order lines     | SUM(SRC\_ORDER\_LINES.QTY)    |
+  | AMOUNT           | Sum of the amounts from the order lines            | SUM(SRC\_ORDER\_LINES.AMOUNT) |
+  | PROD\_AVG\_PRICE | Average amount from the order lines                | AVG(SRC\_ORDER\_LINES.AMOUNT) |
 
 ## Task 2: Creating the Mapping
 
@@ -272,6 +272,3 @@ You may proceed to the next lab.
  - **Author** - Narayanan Ramakrishnan, December 2020
  - **Contributors** - Srivishnu Gullapalli
  - **Last Updated By/Date** - Srivishnu Gullapalli, March 2023
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

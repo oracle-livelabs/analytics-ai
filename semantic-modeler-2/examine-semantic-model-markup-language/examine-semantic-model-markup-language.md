@@ -25,7 +25,7 @@ This lab assumes you have:
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator Problems
 * Access to the Sample Sales Semantic Model
 * Access to a Git Repository using your Github account
-* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566&clear=RR,180&session=107559302574644)
+* Completion of [Model Your Data With the Semantic Modeler in Oracle Analytics Cloud (OAC): Part 1](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3566)
 
 
 
