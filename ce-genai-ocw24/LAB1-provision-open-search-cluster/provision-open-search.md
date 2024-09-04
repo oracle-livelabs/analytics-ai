@@ -134,7 +134,7 @@ In this workshop, you will learn how to:
 
 ## Learn More
 * [OpenSearch Guidelines for Generative AI Agents](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/generative-ai-agents/opensearch-guidelines.htm)
-* [Getting Started with OCI Object Storage](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
+* [Getting Started with OCI Object Storage](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
 * [Creating Dynamic Group](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Identity/dynamicgroups/To_create_a_dynamic_group.htm)
 
 ## Acknowledgements
