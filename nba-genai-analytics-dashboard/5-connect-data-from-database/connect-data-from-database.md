@@ -49,13 +49,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 
   ![navigate to the sql worksheet](images/adb-sql.png)
 
-2. Right click **NBA_GAME_SUMMARY** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
-
-  ![navigate to the AutoREST](images/enable-rest.png)
-
-  ![Enable REST Dialogue](images/copy-autorest.png)
-
-3. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
+2. Enable the use of the resource principal by the Admin user. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
 
     ```
     <copy>
@@ -72,8 +66,14 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 >**Note:** if you experience errors in the api for GenAI, it may be because the policy hasn't updated for the new schema user - try to disable and re-enable the resource principal.
 
 4. Sign out from admin and sign back in as **nba** user that was created in lab 1.
+   
+5. Right click **NBA\_GAME\_SUMMARY\_STATS\_2024\_REGULAR\_SEASON** and enable **REST** by selecting **Enable**. Select **Enable** on the popup dialogue. 
 
-4. Create an AI profile for the **Meta Llama 2 Chat model**. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
+  ![navigate to the AutoREST](images/enable-rest.png)
+
+  ![Enable REST Dialogue](images/copy-autorest.png)
+
+6. Create an AI profile for the **Meta Llama 2 Chat model**. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script** icon.
 
     ```
     <copy>
@@ -100,7 +100,7 @@ Create a policy that will allow you to use OCI Generative AI within your previou
     ```
     ![Create AI profile](./images/profile.png "")
 
-5. Create the GENAI_PROJECT table and a row insert by copying and pasting the following SQL statement in the SQL Worksheet, and then click the **Run Script** icon.
+7. Create the GENAI_PROJECT table and a row insert by copying and pasting the following SQL statement in the SQL Worksheet, and then click the **Run Script** icon.
 
 	```
 	<copy>
@@ -113,13 +113,105 @@ Create a policy that will allow you to use OCI Generative AI within your previou
 	);
 
 	INSERT INTO NBA.GENAI_PROJECT (ID, NAME, QUERY, TASK, TASK_RULES)
-	VALUES (1, 'RECENT', 'SELECT * FROM NBA.NBA_GAME_SUMMARY_STATS_2024_REGULAR_SEASON WHERE GAME_ID = :game_id', 'Summarize the basketball game and follow the task rules.', '1. Summarize the data. 2. Provide insight into game statistics. 3. Use the perspective of an NBA fan');
+	VALUES (1, 'RECENT', 'WITH NumberedGameSummary AS (
+    SELECT 
+        SEASON_ID,
+        GAME_DATE,
+        TEAM_ID,
+        TEAM_ABBREVIATION,
+        GAME_ID,
+        TEAM_NAME,
+        MATCHUP,
+        WL,
+        MIN,
+        PTS,
+        FGM,
+        FGA,
+        FG_PCT,
+        FG3M,
+        FG3A,
+        FG3_PCT,
+        FTM,
+        FTA,
+        FT_PCT,
+        OREB,
+        DREB,
+        REB,
+        AST,
+        STL,
+        BLK,
+        TOV,
+        PF,
+        PLUS_MINUS,
+        UNIQUE_ROW_IDENTIFIER,
+        ROW_NUMBER() OVER (ORDER BY UNIQUE_ROW_IDENTIFIER) AS row_num
+    FROM NBA_GAME_SUMMARY_STATS_2024_REGULAR_SEASON
+    WHERE GAME_ID = :game_id )
+    SELECT 
+      MAX(CASE WHEN row_num = 1 THEN SEASON_ID ELSE NULL END) AS SEASON_ID_1,
+      MAX(CASE WHEN row_num = 1 THEN GAME_DATE ELSE NULL END) AS GAME_DATE_1,
+      MAX(CASE WHEN row_num = 1 THEN TEAM_ID ELSE NULL END) AS TEAM_ID_1,
+      MAX(CASE WHEN row_num = 1 THEN TEAM_ABBREVIATION ELSE NULL END) AS TEAM_ABBREVIATION_1,
+      MAX(CASE WHEN row_num = 1 THEN TEAM_NAME ELSE NULL END) AS TEAM_NAME_1,
+      MAX(CASE WHEN row_num = 1 THEN MATCHUP ELSE NULL END) AS MATCHUP_1,
+      MAX(CASE WHEN row_num = 1 THEN WL ELSE NULL END) AS WL_1,
+      MAX(CASE WHEN row_num = 1 THEN MIN ELSE NULL END) AS MIN_1,
+      MAX(CASE WHEN row_num = 1 THEN PTS ELSE NULL END) AS PTS_1,
+      MAX(CASE WHEN row_num = 1 THEN FGM ELSE NULL END) AS FGM_1,
+      MAX(CASE WHEN row_num = 1 THEN FGA ELSE NULL END) AS FGA_1,
+      MAX(CASE WHEN row_num = 1 THEN FG_PCT ELSE NULL END) AS FG_PCT_1,
+      MAX(CASE WHEN row_num = 1 THEN FG3M ELSE NULL END) AS FG3M_1,
+      MAX(CASE WHEN row_num = 1 THEN FG3A ELSE NULL END) AS FG3A_1,
+      MAX(CASE WHEN row_num = 1 THEN FG3_PCT ELSE NULL END) AS FG3_PCT_1,
+      MAX(CASE WHEN row_num = 1 THEN FTM ELSE NULL END) AS FTM_1,
+      MAX(CASE WHEN row_num = 1 THEN FTA ELSE NULL END) AS FTA_1,
+      MAX(CASE WHEN row_num = 1 THEN FT_PCT ELSE NULL END) AS FT_PCT_1,
+      MAX(CASE WHEN row_num = 1 THEN OREB ELSE NULL END) AS OREB_1,
+      MAX(CASE WHEN row_num = 1 THEN DREB ELSE NULL END) AS DREB_1,
+      MAX(CASE WHEN row_num = 1 THEN REB ELSE NULL END) AS REB_1,
+      MAX(CASE WHEN row_num = 1 THEN AST ELSE NULL END) AS AST_1,
+      MAX(CASE WHEN row_num = 1 THEN STL ELSE NULL END) AS STL_1,
+      MAX(CASE WHEN row_num = 1 THEN BLK ELSE NULL END) AS BLK_1,
+      MAX(CASE WHEN row_num = 1 THEN TOV ELSE NULL END) AS TOV_1,
+      MAX(CASE WHEN row_num = 1 THEN PF ELSE NULL END) AS PF_1,
+      MAX(CASE WHEN row_num = 1 THEN PLUS_MINUS ELSE NULL END) AS PLUS_MINUS_1,
+      MAX(CASE WHEN row_num = 1 THEN UNIQUE_ROW_IDENTIFIER ELSE NULL END) AS UNIQUE_ROW_IDENTIFIER_1,
+
+      MAX(CASE WHEN row_num = 2 THEN SEASON_ID ELSE NULL END) AS SEASON_ID_2,
+      MAX(CASE WHEN row_num = 2 THEN GAME_DATE ELSE NULL END) AS GAME_DATE_2,
+      MAX(CASE WHEN row_num = 2 THEN TEAM_ID ELSE NULL END) AS TEAM_ID_2,
+      MAX(CASE WHEN row_num = 2 THEN TEAM_ABBREVIATION ELSE NULL END) AS TEAM_ABBREVIATION_2,
+      MAX(CASE WHEN row_num = 2 THEN TEAM_NAME ELSE NULL END) AS TEAM_NAME_2,
+      MAX(CASE WHEN row_num = 2 THEN MATCHUP ELSE NULL END) AS MATCHUP_2,
+      MAX(CASE WHEN row_num = 2 THEN WL ELSE NULL END) AS WL_2,
+      MAX(CASE WHEN row_num = 2 THEN MIN ELSE NULL END) AS MIN_2,
+      MAX(CASE WHEN row_num = 2 THEN PTS ELSE NULL END) AS PTS_2,
+      MAX(CASE WHEN row_num = 2 THEN FGM ELSE NULL END) AS FGM_2,
+      MAX(CASE WHEN row_num = 2 THEN FGA ELSE NULL END) AS FGA_2,
+      MAX(CASE WHEN row_num = 2 THEN FG_PCT ELSE NULL END) AS FG_PCT_2,
+      MAX(CASE WHEN row_num = 2 THEN FG3M ELSE NULL END) AS FG3M_2,
+      MAX(CASE WHEN row_num = 2 THEN FG3A ELSE NULL END) AS FG3A_2,
+      MAX(CASE WHEN row_num = 2 THEN FG3_PCT ELSE NULL END) AS FG3_PCT_2,
+      MAX(CASE WHEN row_num = 2 THEN FTM ELSE NULL END) AS FTM_2,
+      MAX(CASE WHEN row_num = 2 THEN FTA ELSE NULL END) AS FTA_2,
+      MAX(CASE WHEN row_num = 2 THEN FT_PCT ELSE NULL END) AS FT_PCT_2,
+      MAX(CASE WHEN row_num = 2 THEN OREB ELSE NULL END) AS OREB_2,
+      MAX(CASE WHEN row_num = 2 THEN DREB ELSE NULL END) AS DREB_2,
+      MAX(CASE WHEN row_num = 2 THEN REB ELSE NULL END) AS REB_2,
+      MAX(CASE WHEN row_num = 2 THEN AST ELSE NULL END) AS AST_2,
+      MAX(CASE WHEN row_num = 2 THEN STL ELSE NULL END) AS STL_2,
+      MAX(CASE WHEN row_num = 2 THEN BLK ELSE NULL END) AS BLK_2,
+      MAX(CASE WHEN row_num = 2 THEN TOV ELSE NULL END) AS TOV_2,
+      MAX(CASE WHEN row_num = 2 THEN PF ELSE NULL END) AS PF_2,
+      MAX(CASE WHEN row_num = 2 THEN PLUS_MINUS ELSE NULL END) AS PLUS_MINUS_2,
+      MAX(CASE WHEN row_num = 2 THEN UNIQUE_ROW_IDENTIFIER ELSE NULL END) AS UNIQUE_ROW_IDENTIFIER_2
+    FROM NumberedGameSummary', 'Summarize the basketball game and follow the task rules.', '1. Summarize the data. 2. Provide insight into game statistics. 3. Use the perspective of an NBA fan');
 	</copy>
 	```
 
     ![Create GenAI_project table](./images/genai-project.png "")
 
-6.  Copy and paste the following to create the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
+8.  Copy and paste the following to create the modules for both **`question\`** and **`summary\:game_id`**. Click the **run button** to run the PL/SQL.
 
   ```
   <copy>

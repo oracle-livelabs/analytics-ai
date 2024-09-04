@@ -46,8 +46,6 @@ In this lab, you will:
 
 2. Copy and run this code in the SQL worksheet to create a user.
 
->>**Note:** Be sure to change the pasword on the first line if running in a production environmment.
-
 	```
 	<copy>
 	CREATE USER nba IDENTIFIED BY "ThisLLR0cks123!";
@@ -77,6 +75,7 @@ In this lab, you will:
 	/
 	</copy>
 	```
+>>**Note:** Be sure to change the pasword on the first line if running in a production environmment.
 
 ![Run script in SQL worksheet](images/run-script.png "Run Script")
 

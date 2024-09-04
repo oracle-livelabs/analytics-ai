@@ -56,11 +56,15 @@ Estimated time - 20 minutes
 
     ![Menu navigation to settings](images/vb-settings.png)
 
-2. Click **New Origin** and paste in the **Origin Address** from the previous lab. Click the **check mark** to save.
+2. Click **New Origin** and paste in the **Origin Address**. Click the **check mark** to save.
 
     ![Add new Cross-Origin Address](images/cross-origins.png)
 
-3. Update the Analytics app with the visual builder information for safe domains by navigating back to the Oracle Analyics Cloud dashboard,  selecting the **side menu button** and clicking the **Console** button.
+>>**Note:** The Origin address can be copied from the URL of the OAC tab used in the previous lab. Be sure to copy the root url - up to the `.com/`
+
+  ![copy new origin from OAC tab](images/new-origin.png)
+
+3. Copy the URL of the Visual Builder app - up to the `.com` root - and then navigate back to the Analytics Tab with the visual builder information for safe domains by navigating back to the Oracle Analyics Cloud dashboard,  selecting the **side menu button** and clicking the **Console** button.
 
   ![menu for the OAC console](images/oac-console.png)
 
@@ -74,7 +78,8 @@ Estimated time - 20 minutes
 
   ![Enter field of Safe Domains](images/embedding.png) 
 
-6. Copy the URL of the instance for Step 12, excluding everything after the **oraclecloud.com/**.
+
+6. Copy the URL of the instance for OAC again, excluding everything after the **oraclecloud.com/**.
 
 7. Navigate back to the homepage of the Analytics by clicking the **side-menu button** and then **Home**. On the home page, the the **ellipsis** of the workbook just created and select **Inspect**.
 
@@ -103,6 +108,12 @@ Estimated time - 20 minutes
 >>**Note:** Make sure Compatability Mode is **no**. The iframe in the preview of the webpage will automatically update with the Analytics workbook. If it does not, the you will need to repeat steps the steps from the previous lab to ensure you have it correctly mapped.
 
   ![Analytics configuration menu](images/update-analytics.png)
+  
+>>**Note:** If the OAC visual is still not working, go to the app settings to **update the Runtime**
+
+  ![App settings button](images/settings.png)
+
+  ![Update runtime button](images/update-runtime.png)
 
 13. Repeat steps **11** and **12** for the page **watch-live-tiny** and confirm that the Analytics canvas is showing. 
   ![app structure tree](images/watch-live-tiny.png)
@@ -117,7 +128,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* https://blogs.oracle.com/analytics/post/embedding-oracle-analytics-cloud-data-visualizations-into-oracle-visual-builder-applications
+* [Embedding Oracle Analytics Cloud Data Visualizations into Oracle Visual Builder Applications](https://blogs.oracle.com/analytics/post/embedding-oracle-analytics-cloud-data-visualizations-into-oracle-visual-builder-applications)
 
 ## Acknowledgements
 
