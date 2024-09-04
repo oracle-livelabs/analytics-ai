@@ -127,71 +127,71 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
   - **Available Values**: Column - TEAM_NAME
   - **Initial Value**: First Available Value
     ![Make a parameter](images/teamparameter.png "Team parameter settings")
-4. Create a **Player** parameter in the parameter tab with the following settings:
+5. Create a **Player** parameter in the parameter tab with the following settings:
   - **Name**: Player
   - **Data Type**: Text
   - **Available Values**: Column - PLAYER_NAME
   - **Initial Value**: First Available Value
     ![Make a 2nd parameter](images/playerparameter.png "Player parameter settings")
-5. Navigate to the new calculation by clicking the **database symbol** and then the **Plus Sign**. 
+6. Navigate to the new calculation by clicking the **database symbol** and then the **Plus Sign**. 
 
     ![Navigate to the Calculation](./images/calculation.png "")
 
-6. Create a calculation for **Field Goal %**. In the calculation field input **SHOT\_MADE\_FLAG/SHOT\_ATTEMPTED\_FLAG**.
+7. Create a calculation for **Field Goal %**. In the calculation field input **SHOT\_MADE\_FLAG/SHOT\_ATTEMPTED\_FLAG**.
    ![Field Goal Calculation](images/fieldgoalcalc.png "Field Goal % Calculation")
-7. Create a calculation to count the amount of games titled **Game Count**. In the calculation field input **count(GAME_ID)**.
+8. Create a calculation to count the amount of games titled **Game Count**. In the calculation field input **count(GAME_ID)**.
     ![Navigate to the Calculation](./images/calculation.png "")
    ![Game Count Calculation](images/gamecountcalc.png "Game Count Calculation")
-8. Lastly, create a calculation titled **Shot Zone Map**. In the calculation field input **CONCAT(CONCAT(SHOT\_ZONE\_BASIC, ' '), SHOT\_ZONE\_AREA)**.
+9. Lastly, create a calculation titled **Shot Zone Map**. In the calculation field input **CONCAT(CONCAT(SHOT\_ZONE\_BASIC, ' '), SHOT\_ZONE\_AREA)**.
    ![Shot Zone Map](images/shotzonemapcalc.png "Shot Zone Map Calculation")
-9.  Rename the canvas **Team Season Statistics** the first canvas we will make allows users to select a team and see their stats.
+10.  Rename the canvas **Team Season Statistics** the first canvas we will make allows users to select a team and see their stats.
    ![Name your canvas](images/teamseasonstats.png "Rename your canvas")
-10. Add **TEAM_NAME** to the filter bar and bind the **Team** parameter you created. This will filter the entire canvas to show team data.
+11. Add **TEAM_NAME** to the filter bar and bind the **Team** parameter you created. This will filter the entire canvas to show team data.
    ![Team name filter](images/teamnamefilter.png "Add team name to filterbar")
-11. Right-click **TEAM_NAME** in the data column and select **Pick Visualization** then **List**. This will display the team name to users.
+12. Right-click **TEAM_NAME** in the data column and select **Pick Visualization** then **List**. This will display the team name to users.
     ![Team name list](images/teamnamelistviz.png "Make a team list")
-12. Right-click **MATCHUP** in the data column and select **Pick Visualization** then **Dashboard Filters**.
+13. Right-click **MATCHUP** in the data column and select **Pick Visualization** then **Dashboard Filters**.
     ![Matchup filter](images/matchupfilterviz.png "Create a matchup filter")
-13. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
+14. Add your Team parameter and the WL column to the dashboard filters by dragging and dropping it into the filter controls section.
     ![Add to filter controls](images/filtercontrols.png "Add to filter controls")
-14. Now add a treemap with your **Game Count** calculation and **WL** column.
+15. Now add a treemap with your **Game Count** calculation and **WL** column.
     ![Create a treemap](images/treemap.png "Create a treemap")
-15. Now add a table with **GAME\_DATE(day)**, **MATCHUP**, **WL**, **PTS**, **FGM**, **FGA**, **FG\_PCT**, and any additional statistics you would like.
+16. Now add a table with **GAME\_DATE(day)**, **MATCHUP**, **WL**, **PTS**, **FGM**, **FGA**, **FG\_PCT**, and any additional statistics you would like.
     ![Create a stat table](images/statstable.png "Create a table of season stats")
-16. You can now move on to another canvas, title this one **Player Statistics.**
+17. You can now move on to another canvas, title this one **Player Statistics.**
     ![Rename your canvas](images/playerstatisticsrename.png "Rename your 2nd column")
-17.  Add **PLAYER_NAME** to the filter bar and bind the **Player** parameter you created. This will filter the entire canvas to show team data.
+18.  Add **PLAYER_NAME** to the filter bar and bind the **Player** parameter you created. This will filter the entire canvas to show team data.
     ![Create a player filter](images/playernamefilterbar.png "Create a player name filter")
-18. Right-click **PLAYER_NAME** in the data column and select **Pick Visualization** then **List**. This will display the player name to users.
+19. Right-click **PLAYER_NAME** in the data column and select **Pick Visualization** then **List**. This will display the player name to users.
     ![Create a player list](images/playernamelist.png "Create a player name list")
-19. Right-click **MATCHUP** in the data column and select **Pick Visualization** then **Dashboard Filters**. Then add your Player parameter to the dashboard filters by dragging and dropping it into the filter controls section.
+20. Right-click **MATCHUP** in the data column and select **Pick Visualization** then **Dashboard Filters**. Then add your Player parameter to the dashboard filters by dragging and dropping it into the filter controls section.
     ![Create a matchup filter on the dash](images/playernamefilterviz.png "Create filter visualization with player name and matchup")
-20. Add separate tiles for **Field Goal %** and **SHOT\_ATTEMPTED\_FLAG** by dragging and dropping them onto the canvas.
+21. Add separate tiles for **Field Goal %** and **SHOT\_ATTEMPTED\_FLAG** by dragging and dropping them onto the canvas.
     ![Add two tiles](images/tileviz.png "Add two tiles to your canvas")
-21. Now drag **Shot Zone Map** and **field Goal %** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
+22. Now drag **Shot Zone Map** and **field Goal %** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
     ![Check the map layer](images/nba-shotzonesfieldgoalmap.png "Check your map layer")
-22. Next drag **Shot Zone Map** and **SHOT\_ATTEMPTED\_FLAG** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
+23. Next drag **Shot Zone Map** and **SHOT\_ATTEMPTED\_FLAG** onto the canvas and pick the map visualization. Check the properties panel to make sure the correct map background is selected in the **Map** tab and correct map layer is selected in the **Data Layers Tab**.
     ![Check the map layer](images/attemptedshotmap.png "Check your map layer")
-23. Lastly, for this canvas we will create a pivot table. Bring **PERIOD**, **GAME_DATE (Day)**, **HTM**, **VTM**, and **Field Goal %** onto the canvas, make sure **PERIOD** is put into the columns category for the visualization.
+24. Lastly, for this canvas we will create a pivot table. Bring **PERIOD**, **GAME_DATE (Day)**, **HTM**, **VTM**, and **Field Goal %** onto the canvas, make sure **PERIOD** is put into the columns category for the visualization.
     ![Profile my profile](images/pivottable.png "Create a pivot table visualization")
 
-24. To create your 3rd canvas click the plus icon at the bottom of the page. Then hover over the new canvas, hit the arrow that appears and choose **Rename**. Name the canvas **Shot Chart**
+25. To create your 3rd canvas click the plus icon at the bottom of the page. Then hover over the new canvas, hit the arrow that appears and choose **Rename**. Name the canvas **Shot Chart**
 
     ![Create canvas and rename](images/rename-canvas.png "Create canvas and rename")
 
-25. First you will create a set of filters that will adjust the data visible on this canvas. Select **TEAM\_NAME**, **PLAYER\_NAME**, **GAME\_DATE**, and **SHOT\_TYPE** from the **NBA\_SHOTCHART\_2024\_REGULAR\_SEASON** dataset. You can select these all at once by holding down shift as you choose each of them. With all of them selected right click, then choose **Pick Visualization** and choose the **Dashboard Filters** visualization.
+26. First you will create a set of filters that will adjust the data visible on this canvas. Select **TEAM\_NAME**, **PLAYER\_NAME**, **GAME\_DATE**, and **SHOT\_TYPE** from the **NBA\_SHOTCHART\_2024\_REGULAR\_SEASON** dataset. You can select these all at once by holding down shift as you choose each of them. With all of them selected right click, then choose **Pick Visualization** and choose the **Dashboard Filters** visualization.
 
     ![Make filter visualization](images/create-filter.png "Make filter visulization")
 
-26. Click on the **Properties** tab then choose the box icon and hit the arrow next to **PLAYER_NAME**. Change the option for **Default Value** from None to **First in List**. This is important because attempting to show too many shots at once makes the map difficult to view.
+27. Click on the **Properties** tab then choose the box icon and hit the arrow next to **PLAYER_NAME**. Change the option for **Default Value** from None to **First in List**. This is important because attempting to show too many shots at once makes the map difficult to view.
 
     ![Set default value](images/default-value.png "Set default value")
 
-27. Next, you will create a few calculations that will be important for our shot chart visualization. Right click **My Calculations** and hit **Create Calculation**.
+28. Next, you will create a few calculations that will be important for our shot chart visualization. Right click **My Calculations** and hit **Create Calculation**.
 
     ![Create a custom calculations](images/create-calc.png "Create a custom calculation")
 
-28. Name your calculation **FG% By Location** and paste in the following text into the calculation field. Then hit **Validate** and **Save**
+29. Name your calculation **FG% By Location** and paste in the following text into the calculation field. Then hit **Validate** and **Save**
 >**Note:** you may have to reenter the column names manually into the calculation if they do not paste correctly.
 ```
 <copy>AGGREGATE((AVG(SHOT_MADE_FLAG/SHOT_ATTEMPTED_FLAG)) BY SHOT_ZONE_BASIC, SHOT_ZONE_AREA)</copy>
@@ -199,51 +199,51 @@ We will now develop a workbook with 3 canvases that will be used throughout the 
 
 ![create field goal calculation](images/fg-calc.png "Create field goal calculation")
 
-28. Repeat the same process, this time naming the calculation **Attempts** and pasting the following text into the calculation field.
+30. Repeat the same process, this time naming the calculation **Attempts** and pasting the following text into the calculation field.
 
 ```
 <copy>AGGREGATE(SHOT_ATTEMPTED_FLAG BY SHOT_ZONE_BASIC, SHOT_ZONE_AREA)</copy>
 ```
 
-29. And one final time do the same process, naming the calculation **Makes** and pasting the following text.
+31. And one final time do the same process, naming the calculation **Makes** and pasting the following text.
 
 ```
 <copy>AGGREGATE(SHOT_MADE_FLAG BY SHOT_ZONE_BASIC, SHOT_ZONE_AREA)</copy>
 ```
 
-30. Now we can make our map visualization. Shift-click the columns **X** and **Y**. Right click, choose **Pick Visualization** and click the map visualization.
+32. Now we can make our map visualization. Shift-click the columns **X** and **Y**. Right click, choose **Pick Visualization** and click the map visualization.
 
     ![Create map visualization](images/create-map.png "Create map visualization")
 
-31. Now you need to enable the basketball court custom map background. Navigate to the **Properties** tab, choose the map icon then under **Background Map** choose ______.
+33. Now you need to enable the basketball court custom map background. Navigate to the **Properties** tab, choose the map icon then under **Background Map** choose ______.
 
     ![Choose nba court background](images/choose-background.png "Choose nba court background")
 
-32. Then you will add your custom calculations. Drag **FG% by Location** and put it under the **Color** tap. Shift-click **Attempts** and **Makes** and put them under the **Tooltips** tab.
+34. Then you will add your custom calculations. Drag **FG% by Location** and put it under the **Color** tap. Shift-click **Attempts** and **Makes** and put them under the **Tooltips** tab.
 
     ![Add created calcs](images/add-calcs.png "Add created calcs")
 
-33. For our final visualization, select **SHOT_TYPE**, **FG% by Location**, **Attempts**, and **Makes**. Right click and choose the table visualization. Move the table to be below the shot chart, as this will look best when displayed in the VisualBuilder app.
+35. For our final visualization, select **SHOT_TYPE**, **FG% by Location**, **Attempts**, and **Makes**. Right click and choose the table visualization. Move the table to be below the shot chart, as this will look best when displayed in the VisualBuilder app.
 
     ![Add table visualization](images/add-table.png "Add table visualization")
 
-34. You now have an interactive shot chart that displays where shots were taken as well as FG% and the number of attempts/makes in different areas of the court. You can change the coloring to your liking to best show off the FG% differences, as well as play with the filters at the top of the canvas to look at shot charts for different players and teams, use the date filter to look at charts from specific games, and use the shot type filter to look at specific shots like step-backs, floaters, or hook shots. The table will also respond to these filters, giving you a granular view of the information shown in the shot chart.
+36. You now have an interactive shot chart that displays where shots were taken as well as FG% and the number of attempts/makes in different areas of the court. You can change the coloring to your liking to best show off the FG% differences, as well as play with the filters at the top of the canvas to look at shot charts for different players and teams, use the date filter to look at charts from specific games, and use the shot type filter to look at specific shots like step-backs, floaters, or hook shots. The table will also respond to these filters, giving you a granular view of the information shown in the shot chart.
 
     ![Final dashboard look](images/final-dash.png "Final dashboard look")
 
-35. Save the workbook by clicking the save icon at the top right and give it a memorable name, such as **NBA Analytics**.
+37. Save the workbook by clicking the save icon at the top right and give it a memorable name, such as **NBA Analytics**.
 
     ![Save Workbook button](images/save-workbook.png "")
 
-36. Click the **back button** to navigate to the home page of the OAC instance.
+38. Click the **back button** to navigate to the home page of the OAC instance.
 
     ![Back button to return home](images/return-home.png "")
 
-37. Click the **ellipsis** for the workbook and select **Move to**.
+39. Click the **ellipsis** for the workbook and select **Move to**.
 
     ![Move to shared button](images/move-to-shared.png "")
 
-38. Select **Shared Folder** and click **New Folder**. Give the new folder a name, such as `Shared NBA` and click **Create**. Select the new folder and click **Move**.
+40. Select **Shared Folder** and click **New Folder**. Give the new folder a name, such as `Shared NBA` and click **Create**. Select the new folder and click **Move**.
 
     ![Move to shared button](images/select-shared.png "")
 
