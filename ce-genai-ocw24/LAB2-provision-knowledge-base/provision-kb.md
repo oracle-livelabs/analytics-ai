@@ -24,7 +24,7 @@ In this workshop, you will learn how to:
 
 
 ## Task 1: Provision Knowledge Base
-1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar ![menu_bar](./images/menu_bar.png ) -> Analytics & AI -> Generative AI Agents
+1. Log into the OCI Cloud Console, switch to Chicago region. Click Menu bar -> Analytics & AI -> Generative AI Agents
 ![oci_console](./images/oci-console.png )
 2. Click Create knowledge base.
 ![agent_console](./images/agent-console.png )

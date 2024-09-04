@@ -70,16 +70,17 @@ In this workshop, you will learn how to:
 
 1. Go to OCI Cloud Console Menu -> Developer Services -> Resource Manager -> Stack
 
-<img width="908" alt="image" src="https://github.com/user-attachments/assets/69c36069-fcac-4893-bd2d-69c9a3e3fc5f">
+![oci-console](./images/oci-console-stack.png)
 
 2. Create a Stack
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/d4b305d4-102c-4692-8962-e2e69eb1ee27">
+
+![oci-create-stack](./images/oci-create-stack.png)
 
 3. If you haven't done so, download the [OCI Resource Manager Terraform stack](https://objectstorage.us-chicago-1.oraclecloud.com/p/7-Tbg6kk0p11-HNj3p4kbJHS9X9SasoGb4c7mOXaUM5Ge8s0jyndHD2Oaj-0_Jyb/n/orasenatdpltintegration03/b/AI_Agent_workshop/o/genaiagent-solution-accelerator-quickstart_v2.zip) that creates an OCI Search with OpenSearch cluster with a public management instance.
    
 4. In Stack Configuration, Select zip file, Browse and upload the file downloaded from above link.
 
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/88380940-7435-4559-a938-2e2e05df9a36">
+![oci-config-stack](./images/oci-config-stack.png)
 
 5. From Zip file, all variables in Stack are reflected automatically. We have to Select Terraform version 1.2.x. to get started. 
    
@@ -87,28 +88,29 @@ In this workshop, you will learn how to:
 
    a. If you're using OCI Identity Domain for authentication, in the Console, navigate to the domain section and copy the domain URL. For example, https://idcs-xxx.identity.oraclecloud.com:443
 
-   <img width="492" alt="image" src="https://github.com/user-attachments/assets/9e404811-8d94-4206-ad77-0eb7707c0988">
+      ![oci-domain-id1](./images/oci-domain-id1.png)
 
    b. If you're using a federation-based tenancy, in the Console, navigate to Federation and under Identity, select your identity provider. Get the OpenID URL by copying the IDCS URL. For example, https://idcs-xxxx.identity.oraclecloud.com
    
-<img width="954" alt="image" src="https://github.com/user-attachments/assets/0c944851-8da1-408f-ba41-4f175b44279b">
+![oci-config-var1](./images/oci-config-var1.png)
 
 7. Get the PAR URL we copied earlier from Object Storage. 
 
 8. Review all Configuration variables. 
 
-<img width="955" alt="image" src="https://github.com/user-attachments/assets/0e28eee1-f8c2-4097-b726-e6f03e7d8478">
+![oci-config-var2](./images/oci-config-var2.png)
 
 9. By default, both master username and password are generated from Zip file. Save them for future use in a notepad. 
     
-<img width="956" alt="image" src="https://github.com/user-attachments/assets/21c7f846-6b45-495d-8a76-52e2f55fbeed">
+![oci-config-var3](./images/oci-config-var3.png)
 
 10. Review the Redis parameters (optional). No changes.
     
-<img width="960" alt="image" src="https://github.com/user-attachments/assets/0b0cb806-1139-4aea-87e1-5935143189b7">
+![oci-config-var4](./images/oci-config-var4.png)
 
 11. Review the Compute Instance variables. 
-<img width="960" alt="image" src="https://github.com/user-attachments/assets/97a98644-7211-4e11-b644-983db1cd4bc4">
+
+![oci-config-var5](./images/oci-config-var5.png)
 
 12. Click Next to Review all variable again and Submit. The above steps will provision all the resources required for Open Search Clusters, Redis Cluster and a Compute Instance for Management.
 
@@ -132,7 +134,7 @@ In this workshop, you will learn how to:
 
 ## Learn More
 * [OpenSearch Guidelines for Generative AI Agents](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/generative-ai-agents/opensearch-guidelines.htm)
-* [Getting Started with OCI Object Storage](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
+* [Getting Started with OCI Object Storage](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=655&clear=RR,180&session=35038433542341)
 * [Creating Dynamic Group](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Identity/dynamicgroups/To_create_a_dynamic_group.htm)
 
 ## Acknowledgements
