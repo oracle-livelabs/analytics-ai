@@ -315,14 +315,14 @@ Language AI
 * [Language AI Documentation](https://docs.oracle.com/en-us/iaas/language/using/language.htm)
 * [Language AI API](https://docs.oracle.com/en-us/iaas/api/#/en/language/20210101/)
 * [Sentiment Analysis API](https://docs.oracle.com/en-us/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments)
-* [LiveLab - Perform Sentiment Analysis with OCI AI Language Service and OAC](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3214&clear=RR,180&session=114878582023421)
+* [LiveLab - Perform Sentiment Analysis with OCI AI Language Service and OAC](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=3214)
 
 Vision AI
 
 * [Vision AI Documentation](https://docs.oracle.com/en-us/iaas/vision/vision/using/home.htm)
 * [Vision AI API](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/)
 * [Analyze Image API](https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125/AnalyzeImageResult/AnalyzeImage)
-* [LiveLab - Introduction to OCI Vision](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=931)
+* [LiveLab - Introduction to OCI Vision](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=931)
 
 ## Acknowledgements
 
