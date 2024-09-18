@@ -12,11 +12,11 @@
         },
         {
             "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset.md"
+            "filename": "../../3-prepare-the-dataset/prepare-the-dataset-sandbox.md"
         },
         {
             "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base.md"
+            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base-sandbox.md"
         },
         {
             "title": "Create an Agent",
@@ -24,7 +24,7 @@
         },
         {
             "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data.md"
+            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data-sandbox.md"
         },
         {
             "title": "Need Help?",
