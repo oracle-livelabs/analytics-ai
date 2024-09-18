@@ -25,7 +25,7 @@ This lab assumes you have:
 
 1. From the OCI Generative AI Agents service overview page, click the **Agents** link on the left.
 
-1. Make sure that the root compartment is selected in the **Compartment** list under the **List scope** section on the left.
+1. Make sure that the compartment created for you as part of the Sandbox environment is selected in the **Compartment** list under the **List scope** section on the left. See [Get Started](?lab=cloud-login-livelabs2) for help with locating the compartment name. Please note that you may have to expand the **root** and **LiveLabs** compartments in order to locate the right compartment.
 
 1. Click the **Create agent** button at the top of the **Agents** table.
 
@@ -33,11 +33,11 @@ This lab assumes you have:
 
 1. Provide a name for the Agent (for example: oci-generative-ai-agents-cw24-hol-agent)
 
-1. Make sure that the root compartment is selected in the **Compartment** list.
+1. Make sure that the compartment created for you as part of the Sandbox environment is selected in the **Compartment** list. See [Get Started](?lab=cloud-login-livelabs2) for help with locating the compartment name. Please note that you may have to expand the **root** and **LiveLabs** compartments in order to locate the right compartment.
 
 1. Optionally, provide a **Welcome message** for the Agent to display at the start of a new conversation (also called the `Preamble`, for example: Hello, i'm the OCI Generative AI documentation helper! How can i help you today?).
 
-1. Under the **Add knowledge bases** section, make sure that the root compartment is selected in the **Compartments** list.
+1. Under the **Add knowledge bases** section, make sure that the compartment created for you as part of the Sandbox environment is selected in the **Compartments** list. See [Get Started](?lab=cloud-login-livelabs2) for help with locating the compartment name. Please note that you may have to expand the **root** and **LiveLabs** compartments in order to locate the right compartment.
 
 1. Check the box next to the knowledge base we have created in the previous lab to let the Agent know it should interact with the data specified in the knowledge base.
 
