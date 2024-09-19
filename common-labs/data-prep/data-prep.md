@@ -18,7 +18,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* Downloaded [Sample Order Lines DS-data prep](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WgVOW5chzTLBbCKTKaxBEyGH9fQzLbF5G7hNm9XYgDLXUKyqHhRcDtUeVvDZxcWg/n/idtlyhmtj68r/b/LiveLabFiles/o/Sample%20Order%20Lines%20DS-data%20prep.xlsx)
+* Downloaded [Sample Order Lines DS-data prep](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L_hC6GSZiMMOOUEf8RPvyqwSwGxT3zJp-PCI9s9iYFwbq_BRntpj4cl7deyd50ju/n/idmqvvdwzckf/b/LiveLabs-Files/o/Sample%20Order%20Lines%20DS-data%20prep.xlsx)
 
 
 ## Task 1: Import Data Into Oracle Analytics

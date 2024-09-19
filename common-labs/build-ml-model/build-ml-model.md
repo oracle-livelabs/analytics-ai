@@ -17,8 +17,8 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* [Heart Disease Likelihood Predict](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lPEd8jFuO-X4VGKgOZR-jA5lXQA7Ow9BNJGJBAwYtCeEyJHZAJnw4rq8XWTTRXQR/n/idtlyhmtj68r/b/LiveLabFiles/o/Heart%20Disease%20Likelihood%20Predict.xlsx) dataset
-* [Heart Disease Likelihood Training](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zNOs1fttsFlQ4BksyCkpjmVOw-1Z0cZfL6lQ7KshqLWLccMnl2Z0_cqerRlXYlpa/n/idtlyhmtj68r/b/LiveLabFiles/o/Heart%20Disease%20Likelihood%20Training.xlsx) dataset
+* [Heart Disease Likelihood Predict](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bKHNgjJfla3hV-Z-9lM6YSlJRmjNdj8WjKXyhmgF-W3ZB7y22Du-5mhTVni9-trJ/n/idmqvvdwzckf/b/LiveLabs-Files/o/Heart%20Disease%20Likelihood%20Predict.xlsx) dataset
+* [Heart Disease Likelihood Training](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WPnJyNIDo7OXU2-QrPi3PhvAvCWuYydaRA3YVA8IxMmmXQ-_t6LlHRfaG-QNgTR_/n/idmqvvdwzckf/b/LiveLabs-Files/o/Heart%20Disease%20Likelihood%20Training.xlsx) dataset
 
 ## Task 1: Train a Machine Learning Model
 
