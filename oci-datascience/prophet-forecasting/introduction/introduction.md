@@ -4,8 +4,6 @@
 
 Time series is a series of data points that is indexed over time. The goal of time series models is to describe and predict the pattern of the data as it changes over time.
 
-This lab is the sequence to the livelab 'Times Series Forecasting with fb Prophet'. Please complete the lab ![here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=771&p210_type=1&session=104277712897414) before attempting part two.
-
 In this workshop, you will provision an Oracle Data Science Notebook session and upload SP500 data. You will then build a model to predict future SP500 prices using detailed explanations and instructions throughout the entire Data Science lifecycle. Upon completion, you will analyze the results of your model and deploy the model to OCI Model Catalog.
 
 You will be introduced to Oracle Cloud and gain a high-level overview of the products involved in Data Science and Machine Learning. You will learn at a high level about OCI Data Science, Oracle Advanced Data Science (ADS) SDK, OCI Model Catalog and OCI Object Storage.

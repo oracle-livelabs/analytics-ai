@@ -4,7 +4,7 @@
 
 You'll create a load balancer that can be used as a front end for securely accessing Cloudera Manager, Hue, and Oracle Data Studio on your non highly available (HA) Big Data Service cluster.  
 
-If you want to create a load balancer for a HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=810) workshop.
+If you want to create a load balancer for a HA cluster, see the [Use a Load Balancer to Access Services on Big Data Service (HA Cluster)](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=810) workshop.
 
 Typically, a load balancer is used to spread workloads across multiple mirrored servers (for example, cluster nodes), to optimize resource usage and to ensure high-availability. However, in this workshop you'll use a load balancer to direct traffic to multiple ports on a single Big Data Service node.
 
@@ -32,7 +32,7 @@ In this workshop, you will:
 
 * This workshop assumes you're using a recent installation of Windows, such as Windows 10, which includes Windows PowerShell, `ssh`, and `scp`.  
 
-  * An **Oracle Cloud Infrastructure environment** with a **virtual cloud network (VCN)**, a **public subnet**, the appropriate **security rules** for creating a load balancer, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this workshop is to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop. You can complete the entire workshop if you want, but you must complete at least the following labs:
+  * An **Oracle Cloud Infrastructure environment** with a **virtual cloud network (VCN)**, a **public subnet**, the appropriate **security rules** for creating a load balancer, and a **Big Data Service non-HA cluster**. The fastest way to set up the environment for this workshop is to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop. You can complete the entire workshop if you want, but you must complete at least the following labs:
 
     * **Set Up Your BDS Environment**
     * **Create a BDS Hadoop Cluster**
@@ -40,7 +40,7 @@ In this workshop, you will:
 
     Once you've completed those labs, you can start with TASK 1: Gather Information. (But first, be sure to read the overview)
 
-* If you choose *not* to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, you must create and configure:
+* If you choose *not* to complete the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, you must create and configure:
 
   * A **non-HA Oracle Big Data Service cluster** running in a **VCN** with an internet gateway and a public regional subnet (for a public load balancer). See [Set Up Oracle Cloud Infrastructure for Oracle Big Data Service](https://docs-uat.us.oracle.com/en/cloud/paas/big-data-service/user/set-oracle-cloud-infrastructure-oracle-big-data-  service.html) and [Create a Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-cluster.html) in *Using Big Data Service*.
 

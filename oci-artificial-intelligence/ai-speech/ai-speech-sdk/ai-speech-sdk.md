@@ -1,4 +1,4 @@
-# Lab 2: Access OCI speech with OCI SDKs (Optional)
+# Lab 4: Access OCI speech with OCI SDKs (Optional)
 
 ## Introduction 
 
@@ -148,7 +148,17 @@ NEW_DESCRIPTION = "<new_description>"
 # Supported MODEL_TYPE values: ORACLE, WHISPER_MEDIUM
 # Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
 # Supported language codes for WHISPER_MEDIUM MODEL: af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, # mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
+<<<<<<< HEAD
+SAMPLE_MODEL_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(model_type=MODEL_TYPE, domain="GENERIC",  language_code=LANGUAGE_CODE,
+transcription_settings=oci.ai_speech.models.TranscriptionSettings(
+    diarization=oci.ai_speech.models.Diarization(
+        is_diarization_enabled=True    # Boolean value to enable or disable diarization           
+    )
+)
+)
+=======
 SAMPLE_MODEL_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(model_type=MODEL_TYPE, domain="GENERIC", language_code=LANGUAGE_CODE)
+>>>>>>> upstream/main
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)
 SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(

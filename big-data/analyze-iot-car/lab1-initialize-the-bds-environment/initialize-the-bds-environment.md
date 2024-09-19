@@ -19,7 +19,7 @@ BDS, MDS and OAC environment. Then, you will be guided to download a source code
 ## Task 1: Prepare BDS Environment
 
 1. Create an BDS (ODH 2.0) environment on OCI.Please select 3 OCPU for worker nodes. And set the cluster name as bds-cluster. Refer to the following link to created BDS cluster.
-   [Get Started with Oracle Big Data Service (non-HA)](https://apexapps.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
+   [Get Started with Oracle Big Data Service (non-HA)](https://livelabs.oracle.com/pls/apex/f?p=133:180:115193385491492::::wid:762)
 
    You should follow below labs:
 
