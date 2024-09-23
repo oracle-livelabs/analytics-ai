@@ -173,7 +173,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ```text
     <copy>
-    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText
+    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/chat
      </copy>
     ```
 
@@ -212,13 +212,13 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/genai.png)
 
-    * Step 2: Select Generation (under **Playground** heading)
+    * Step 2: Select Chat (under **Playground** heading)
 
-    ![API Services](images/generation_model_1.png)
+    ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **ccohere.command-r-plus** and **version** = 1.2
 
-    ![API Services](images/generation_model_2.png)
+    ![API Services](images/chat_screenshot.png)
 
 6. Click **Test Request** to make sure the connection is successful
 
