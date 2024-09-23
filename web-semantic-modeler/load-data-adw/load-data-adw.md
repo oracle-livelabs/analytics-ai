@@ -18,7 +18,7 @@ In this lab, you will:
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
 * Access to DV Content Author, BI Data Model Author, or a BI Service Administrator role
-* Downloaded the [BISAMPLE.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vL6XiAFR-g1xAcok3aqWKH2z2rWobXtgI-3SWEhEFpeplt002IHSwY9cEMMvYeWe/n/idmqvvdwzckf/b/OAC-Workshops/o/BISAMPLE.xlsx) file
+* Downloaded the [BISAMPLE.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MEEVGbde4470Y9o9lSGjNyjHf-XpJCDKCrkm34t0Ks7JySX4kFMc8MR8rFB8UJmc/n/idmqvvdwzckf/b/LiveLabs-Files/o/BISAMPLE.xlsx) file
 * All previous labs successfully completed
 
 ## Task 1: Create a BISAMPLE user
