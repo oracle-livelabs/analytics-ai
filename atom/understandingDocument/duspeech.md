@@ -54,7 +54,7 @@ Go to Identity>>Domains>>Default domain>>Dynamic groups
 Click on Create dynamic group and name it as odaDynamicGroup
 
 Select radio button - Match any rules defined below
-Add the following rules
+Add the following rules. Please change the values of OCIDs to your own values here.
 
 Rule 1
 
@@ -94,7 +94,7 @@ Note - This will be ocid of Digital Assistant in Ashburn region
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
-1. Attach the policy at the root compartment level
+1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
 
     ODA_Access - Policy to allow users access to ODA
 
@@ -160,7 +160,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/oda_api_service.png)
 
-4. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values.
+4. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values in the Body section.
     * **Name**
 
     ```text
@@ -272,7 +272,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
    ![API Services](images/oci_rest_service_3.png)
 
-9. Click on **Add REST Service**. Provide the following details:
+9. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID, bucket name, namespace and object name to your own values in the Body section.
     * **Name**
 
     ```text
@@ -336,9 +336,11 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![Click Components](images/components.png)
 
-4. Click on Add Service and give this service a name of your choice. For example - RPlus_Service. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in R_transformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
+4. Click on Add Service and give this service a name of your choice. For example - RPlus_Service. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
 
 5. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+
+    ![Import LLM](images/import_llm.png)
 
 6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
 
