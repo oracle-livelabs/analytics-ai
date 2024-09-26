@@ -71,7 +71,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services.png)
 
-    * Import the CreateSession service first
+    * Import the GenAIAgentCreateSession Rest API service (using agent-RESTService-GenAIAgentCreateSession.yaml), and then GenAiAgentChat Rest API service (using agent-RESTService-GenAiAgentChat.yaml)
     * to test request, first update the value for key GenAIAgentEndpointId (and click save)
     * repeat the same process for the Chat service
     * In addition to the updating the Endpoint ID, you need to provide a valid session id in the body to test the Chat service. You can get a session ID from the response of the CreateSession service
