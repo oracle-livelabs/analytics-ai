@@ -44,53 +44,46 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create a REST Service for the OCI Functions
+## Task 2: Create REST Services for the OCI Functions
 
 This task involves creating REST service which will be used by ODA to connect to OCI Functions. The REST Service will be created for the ODA created in Task 1.
 
-1. Locate the ODA created in Task 1
+1. Download the two REST Service Configurations
+
+[agent-RESTService-GenAIAgentCreateSession.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAIAgentCreateSession.yaml)
+
+[agent-RESTService-GenAiAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAiAgentChat.yaml)
+
+
+2. Locate the ODA created in Task 1
 
     ![ODA locate](images/oda_locate.png)
 
-2. Select the earlier created ODA Instance and click on Service Console
+3. Select the earlier created ODA Instance and click on Service Console
 
     ![ODA service console](images/oda_service_console.png)
 
-3. Click on hamburger menu and locate & click API Services
+4. Click on hamburger menu and locate & click API Services
 
     ![ODA API Services](images/oda_api_services.png)
 
-4. Click on Add REST Service. Provide the following details:
+5. Click on More -> Import REST Services
 
-    * Name: `GenAI_Agent`
-    * Endpoint: Use the Functions Endpoint URL that you copied in the previous lab
-    * Description: optional
-    * Authentication Type: OCI Resource Principal
-    * Method: Post
-    * Request Body: Update the json payload provided below
-        * For the “user_message”, use appropriate question whose answer is in the PDF document that you uploaded earlier to Object Storage Bucket.
+    ![ODA import rest services](images/oda_import_rest_services.png)
 
-    ```
-    <copy>{
-        "user_message": "what is the XXXXX XXXXX?",
-        "endpoint_url": "",
-        "endpoint_id": "",
-        "delete_session":"",
-        "keep_alive_session":"",
-        "session_id": ""
-    }</copy>
-    ```
-    <!-- TODO: technically only the user message is required-->
+    * Import the CreateSession service first
+    * to test request, first update the value for key GenAIAgentEndpointId (and click save)
+    * repeat the same process for the Chat service
+    * In addition to the updating the Endpoint ID, you need to provide a valid session id in the body to test the Chat service. You can get a session ID from the response of the CreateSession service
 
-5. Click Test Request to make sure the connection is successful
+    ![ODA test request](images/oda_test_request.png)
 
-    ![api configuration](images/api_config.png)
 
 ## Task 3: Import Skill (Provided)
 
 1. Click on the link to download the required skill
 
-    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs.zip)
+    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs-stage.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
@@ -100,7 +93,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![user start flow](images/user_startflow.png)
 
-4. Open the second step “SetGenAIEndpointId”, and set the correct OCID Value (the endpoint OCID that you copied in [Lab 1 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)) of GenAIEndpointId variable.
+4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID Value (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
     Then click on the “Preview” button at top-right corner.
 
@@ -134,20 +127,12 @@ This task involves creating REST service which will be used by ODA to connect to
 ## Task 5: (optional) Customize ODA Conversation
 
 1. Customize predefined agent messages
-
-    * In the ODA Service Console, click on the appropriate skill
-    * In the **Flows** tab, click on user.StartFlow
-    * To modify the initial agent message: "Hi there, I'm the Gen AI Agent Bot! I can help answer any questions you may have."
-        * update AskFirstQuestion block -> component tab -> question
-    * To modify the continuation question: "If you have any other question, you can please ask me."
-        * update AskQuestion -> component tab -> question
-
-    ![flow update question](images/flow_update_question.png)
+    * The oda now passes through the agent's welcome message
 
 2. Customize citation format
     * In the ODA Service Console, click on the appropriate skill
-    * In the **Flows** tab, click on user.InvokeGenAIAgent
-    * For the three OutputCitation blocks, update the component tab -> messages
+    * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
+    * In the ShowCitation block, update the component tab -> messages
 
     ![flow update citations](images/flow_update_citations.png)
 
@@ -169,4 +154,4 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, September 2024

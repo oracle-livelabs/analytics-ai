@@ -45,7 +45,6 @@ In this workshop, you will learn how to:
 This lab assumes you have:
 
 * An Oracle Cloud Account
-* Enrolled in Beta for [OCI Generative AI Agents for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
 * Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, OCIR, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
@@ -68,5 +67,5 @@ This lab assumes you have:
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, September 2024
 
