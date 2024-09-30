@@ -166,10 +166,10 @@ This task involves creating REST service which will be used by ODA to connect to
         npm install @oracle/bots-node-sdk
         </copy>
         ```
-    > * Once installed - cd into the folder and run the below command to zip the folder. Replace folder-name with the name of your folder.
+    > * Once installed - cd into the folder and run the below command to zip the folder.
         ```text
         <copy>
-        npx @oracle/bots-node-sdk pack folder-name
+        npx @oracle/bots-node-sdk pack
         </copy>
         ```
 
