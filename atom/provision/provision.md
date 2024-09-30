@@ -215,6 +215,10 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![Invoke LLM](images/invoke_llm.png)
 
+16. Click on Preview in the top right corner and start chatting with ATOM Chatbot.
+
+    ![Preview ATOM](images/preview_atom.png)
+
 ## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
