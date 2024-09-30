@@ -160,13 +160,13 @@ This task involves creating REST service which will be used by ODA to connect to
      ![Service Package](images/service_package.png)
 
     > **Note:**
-        > *You will need to use the bots node sdk to zip the folder. Run this command in your terminal to install -
+    > * You will need to use the bots node sdk to zip the folder. Run this command in your terminal to install -
         ```text
         <copy>
         npm install @oracle/bots-node-sdk
         </copy>
         ```
-        >* Once installed - cd into the folder and run the below command to zip the folder. Replace folder-name with the name of your folder.
+    > * Once installed - cd into the folder and run the below command to zip the folder. Replace folder-name with the name of your folder.
         ```text
         <copy>
         npx @oracle/bots-node-sdk pack folder-name
