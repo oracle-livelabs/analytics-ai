@@ -116,23 +116,24 @@ This task involves creating REST service which will be used by ODA to connect to
 
 ## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
-1. Click on hamburger menu and select Development > Channels
+1. Click on hamburger menu and select Development > Channels, and click on Add Channel
 
-    ![channel navigation](images/channel_nav.png)
+    ![channel navigation](images/channel_nav2.png)
 
-2. Select the following option on the form:
+2.  Enter the Channel Name and DFescription. Select the following option on the form:
     * Channel Type = Oracle Web
     * Allowed Domain = *
+    * Client Authentication Enabled = Toggle off 
 
     ![channel configuration](images/channel_config.png)
 
 3. After channel creation, route it to skill imported in Task 3, and enable the Channel by using the toggle button.
 
-    ![enable channel](images/channel_enable.png)
+    ![enable channel](images/channel_enable2.png)
 
 4. Ensure that the Client Authentication Enabled is disabled. Take note of Channel Id.
 
-    ![channel id](images/channel_id.png)
+    ![channel id](images/channel_id2.png)
 
 ## Task 6: (optional) Customize ODA Conversation
 
