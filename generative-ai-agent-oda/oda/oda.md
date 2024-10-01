@@ -71,7 +71,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-    Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAiAgentChat.yaml")
+    Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml")
 
 7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
@@ -95,24 +95,24 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![import skill](images/import_skill.png)
 
-3. Open the GenAIRAGAgentChatbot1, go to “Flows” and click on “user.StartFlow”
+3. Open the GenAIRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow1.png)
+    ![user start flow](images/user_startflow2.png)
 
-4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
+4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
-    ![flow update endpoint](images/flow_update_endpoint.png)
+    ![flow update endpoint](images/flow_update_endpoint2.png)
 
 5. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
-    ![flow update endpoint](images/oda_trainflow1.png)
+    ![flow update endpoint](images/oda_trainflow2.png)
 
 6. You should be able to successfully the ODA Skill
 
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
-    ![flow preview](images/flow_preview.png)
+    ![flow preview](images/flow_preview2.png)
 
 ## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
