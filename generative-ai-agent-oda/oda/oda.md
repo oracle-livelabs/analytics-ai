@@ -25,7 +25,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
 
-## Task 1: Provision Oracle Digital Assistant
+## Task 2: Provision Oracle Digital Assistant
 
 This task will help you to create Oracle Digital Assistant under your chosen compartment.
 
@@ -44,9 +44,9 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create REST Services for the OCI Functions
+## Task 3: Create REST Services for the OCI Generative AI Agent
 
-This task involves creating REST service which will be used by ODA to connect to OCI Functions. The REST Service will be created for the ODA created in Task 1.
+This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service. 
 
 1. Download the two REST Service Configurations
 
@@ -55,31 +55,37 @@ This task involves creating REST service which will be used by ODA to connect to
 [agent-RESTService-GenAIAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAIAgentChat.yaml)
 
 
-2. Locate the ODA created in Task 1
+2. Locate the ODA instance (created in Task 2)
 
     ![ODA locate](images/oda_locate.png)
 
-3. Select the earlier created ODA Instance and click on Service Console
+3. Select the ODA Instance and click on Service Console
 
     ![ODA service console](images/oda_service_console.png)
 
-4. Click on hamburger menu and locate & click API Services
+4. In the ODA Console, click on hamburger menu. Under Settings, click API Services
 
     ![ODA API Services](images/oda_api_services.png)
 
 5. Click on More -> Import REST Services
 
-    ![ODA import rest services](images/oda_import_rest_services.png)
+    ![ODA import rest services](images/oda_import_rest_services2.png)
 
-    * Import the CreateSession service first
-    * to test request, first update the value for key GenAIAgentEndpointId (and click save)
-    * repeat the same process for the Chat service
-    * In addition to the updating the Endpoint ID, you need to provide a valid session id in the body to test the Chat service. You can get a session ID from the response of the CreateSession service
+    Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAiAgentChat.yaml")
 
-    ![ODA test request](images/oda_test_request.png)
+7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
+    ![ODA import rest services](images/oda_create_session_api1.png)
 
-## Task 3: Import Skill (Provided)
+8. In the Value field, remove the existing value 1, and put the value of the GenAI Agent Endpoint Id (from Lab 2 Task 4 Step 4), and then click the Tick icon
+
+    ![ODA import rest services](images/oda_create_session_api2.png)
+
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+
+    ![ODA import rest services](images/oda_create_session_api3.png)
+
+## Task 4: Import Skill (Provided)
 
 1. Click on the link to download the required skill
 
@@ -89,22 +95,26 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![import skill](images/import_skill.png)
 
-3. Open the GenAIAgentSkill, go to “Flows” and click on “user.StartFlow”
+3. Open the GenAIRAGAgentChatbot1, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow.png)
+    ![user start flow](images/user_startflow1.png)
 
-4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID Value (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
-
-    Then click on the “Preview” button at top-right corner.
+4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
     ![flow update endpoint](images/flow_update_endpoint.png)
 
-5. You should be able to successfully the ODA Skill
+5. Ensure the Chatbot Training is completed
+
+   Then click on the “Preview” button at top-right corner.
+
+    ![flow update endpoint](images/oda_trainflow1.png)
+
+6. You should be able to successfully the ODA Skill
 
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview.png)
 
-## Task 4: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
+## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
 
@@ -124,7 +134,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id.png)
 
-## Task 5: (optional) Customize ODA Conversation
+## Task 6: (optional) Customize ODA Conversation
 
 1. Customize predefined agent messages
     * The oda now passes through the agent's welcome message
@@ -136,7 +146,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update citations](images/flow_update_citations.png)
 
-## Task 6: (optional) View Conversation Analytics
+## Task 7: (optional) View Conversation Analytics
 
 From ODA service console homepage -> skill **Dislpay name** -> **Insights** on side nav bar
 
@@ -154,4 +164,4 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, September 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, October 2024
