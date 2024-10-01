@@ -25,11 +25,11 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
 
-## Task 1: Provision Oracle Digital Assistant
+## Task 2: Provision Oracle Digital Assistant
 
 This task will help you to create Oracle Digital Assistant under your chosen compartment.
 
-1. Ensure that you are in US Midwest (Chicago) region. Locate Digital Assistant under AI Services
+1. Locate Digital Assistant under AI Services
 
     ![ODA Navigation](images/oda_nav.png)
 
@@ -44,7 +44,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create REST Services for the OCI Functions
+## Task 3: Create REST Services for the OCI Generative AI Agent
 
 This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service. 
 
@@ -55,7 +55,7 @@ This task involves creating REST service which will be used by ODA to connect to
 [agent-RESTService-GenAiAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAiAgentChat.yaml)
 
 
-2. Locate the ODA instance (created in Task 1) in US Midwest (Chicago) region
+2. Locate the ODA instance (created in Task 2)
 
     ![ODA locate](images/oda_locate.png)
 
@@ -79,7 +79,7 @@ This task involves creating REST service which will be used by ODA to connect to
     ![ODA test request](images/oda_test_request.png)
 
 
-## Task 3: Import Skill (Provided)
+## Task 4: Import Skill (Provided)
 
 1. Click on the link to download the required skill
 
@@ -104,7 +104,7 @@ This task involves creating REST service which will be used by ODA to connect to
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview.png)
 
-## Task 4: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
+## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
 
@@ -124,7 +124,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id.png)
 
-## Task 5: (optional) Customize ODA Conversation
+## Task 6: (optional) Customize ODA Conversation
 
 1. Customize predefined agent messages
     * The oda now passes through the agent's welcome message
@@ -136,7 +136,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update citations](images/flow_update_citations.png)
 
-## Task 6: (optional) View Conversation Analytics
+## Task 7: (optional) View Conversation Analytics
 
 From ODA service console homepage -> skill **Dislpay name** -> **Insights** on side nav bar
 
@@ -154,4 +154,4 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, September 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, October 2024
