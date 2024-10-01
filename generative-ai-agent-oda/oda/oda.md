@@ -29,7 +29,7 @@ This lab assumes you have:
 
 This task will help you to create Oracle Digital Assistant under your chosen compartment.
 
-1. Locate Digital Assistant under AI Services
+1. Ensure that you are in US Midwest (Chicago) region. Locate Digital Assistant under AI Services
 
     ![ODA Navigation](images/oda_nav.png)
 
@@ -46,7 +46,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 ## Task 2: Create REST Services for the OCI Functions
 
-This task involves creating REST service which will be used by ODA to connect to OCI Functions. The REST Service will be created for the ODA created in Task 1.
+This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service. 
 
 1. Download the two REST Service Configurations
 
@@ -55,15 +55,15 @@ This task involves creating REST service which will be used by ODA to connect to
 [agent-RESTService-GenAiAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAiAgentChat.yaml)
 
 
-2. Locate the ODA created in Task 1
+2. Locate the ODA instance (created in Task 1) in US Midwest (Chicago) region
 
     ![ODA locate](images/oda_locate.png)
 
-3. Select the earlier created ODA Instance and click on Service Console
+3. Select the ODA Instance and click on Service Console
 
     ![ODA service console](images/oda_service_console.png)
 
-4. Click on hamburger menu and locate & click API Services
+4. In the ODA Console, click on hamburger menu. Under Settings, click API Services
 
     ![ODA API Services](images/oda_api_services.png)
 
