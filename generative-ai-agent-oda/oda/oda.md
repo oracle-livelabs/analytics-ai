@@ -71,13 +71,21 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-    * Import the GenAIAgentCreateSession Rest API service (using agent-RESTService-GenAIAgentCreateSession.yaml), and then GenAiAgentChat Rest API service (using agent-RESTService-GenAiAgentChat.yaml)
-    * to test request, first update the value for key GenAIAgentEndpointId (and click save)
-    * repeat the same process for the Chat service
-    * In addition to the updating the Endpoint ID, you need to provide a valid session id in the body to test the Chat service. You can get a session ID from the response of the CreateSession service
+    Import 2 Rest Services
+    a. The GenAIAgentCreateSession Rest API service (using agent-RESTService-GenAIAgentCreateSession.yaml),
+    b. The GenAiAgentChat Rest API service (using agent-RESTService-GenAiAgentChat.yaml)
 
-    ![ODA test request](images/oda_test_request.png)
+7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
+    ![ODA import rest services](images/oda_create_session_api1.png)
+
+8. In the Value field, remove the existing value 1, and put the value of the GenAI Agent Endpoint Id (from Lab 2 Task 4 Step 4), and then click the Tick icon
+
+    ![ODA import rest services](images/oda_create_session_api2.png)
+
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+
+    ![ODA import rest services](images/oda_create_session_api3.png)
 
 ## Task 4: Import Skill (Provided)
 
