@@ -71,9 +71,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-    Import 2 Rest Services
-    a. The GenAIAgentCreateSession Rest API service (using agent-RESTService-GenAIAgentCreateSession.yaml),
-    b. The GenAiAgentChat Rest API service (using agent-RESTService-GenAiAgentChat.yaml)
+    Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAiAgentChat.yaml")
 
 7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
@@ -97,17 +95,21 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![import skill](images/import_skill.png)
 
-3. Open the GenAIAgentSkill, go to “Flows” and click on “user.StartFlow”
+3. Open the GenAIRAGAgentChatbot1, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow.png)
+    ![user start flow](images/user_startflow1.png)
 
-4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID Value (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
-
-    Then click on the “Preview” button at top-right corner.
+4. Open the second step “SetGenAIAgentEndpointIdVariable”, and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
     ![flow update endpoint](images/flow_update_endpoint.png)
 
-5. You should be able to successfully the ODA Skill
+5. Ensure the Chatbot Training is completed
+
+   Then click on the “Preview” button at top-right corner.
+
+    ![flow update endpoint](images/oda_trainflow1.png)
+
+6. You should be able to successfully the ODA Skill
 
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview.png)
