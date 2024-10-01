@@ -2,6 +2,8 @@
 
 ## Introduction
 
+<!-- TODO: this lab needs a major update to TF stack and functions used as examples-->
+
 This lab will walk you through how to deploy a test and dev environment for your functions as well as promoting a version to production.
 
 Estimated Time: 1 hour
