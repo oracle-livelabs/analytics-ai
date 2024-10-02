@@ -60,6 +60,10 @@ This lab assumes you have:
 
     ![Visual Builder import configuration](images/vb_import_config.png)
 
+    **Note** If you are do not see the standard left hand menu bar and instead see a yellow upgrade banner like the image below, upgrade the runtime dependency by clicking on the **Upgrade** button in the top right. After the migration is successful and you close the window. The page should refresh and you should now have a nav bar on the left hand side.
+
+    ![Visual Builder app needs upgrading](images/vb_need_upgrade.png)
+
 ## Task 2: Configure and Customize Application
 
 1. Once import is completed, update the ODA JavaScript
@@ -78,6 +82,7 @@ This lab assumes you have:
     Recommended Customizations:
     * icons -> logo
     * icons -> avatarBot
+    * i18n -> en -> chatTitle
 
 3. Install the Markdown Component
     * In the **components** sidebar on the left
