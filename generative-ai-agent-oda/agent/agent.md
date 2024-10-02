@@ -108,7 +108,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
 
-    Select the Knowledge Base that you created in the previous task
+    Select the Knowledge Base that you created in the previous task. Provide a Welcome message.
 
     Click the “Create” button.
 
