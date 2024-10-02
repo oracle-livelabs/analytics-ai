@@ -1,6 +1,5 @@
 # Lab 3: Build RAG Pipeline
 
-
 ## Introduction
 
 Today, generative AI is one of the fastest growing fields in technology. Thanks to the advancement in research and industry, companies can now query their unstructured data intelligently using Vector AI Search and generate new content, analysis of events and much more using generative models. In this section we will define, explore and use OCI Embedding and Generative Chat models as well as build a modular RAG pipeline from user provided text data. This section is meant to be educational in nature. If you have experience with Generative AI, feel free to skip the steps marked optional.
@@ -22,15 +21,13 @@ Vectors are numerical representations of data that capture the semantic meaning 
 
 1. To experiment with embedding models, navigate to the OCI Console.
     ![Generative AI Menu](images/navigation_menu)
-2. Click on **Launch OCI** and login with the username and password provided in the Reservation Information.
-    ![Launch OCI](images/launch-oci.png)
-3. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
     ![Navigation to OCI Generative AI](images/navigation_menu_ai.png  )
-4. On the left navigation panel under **playground**, click **Embedding**.
+3. On the left navigation panel under **playground**, click **Embedding**.
     ![Gen AI Playground](images/embedding_left_side.png)
-5. Use one of the example templates to embed text or bring in your own data.
+4. Use one of the example templates to embed text or bring in your own data.
     ![Example data](images/embedding_example.png)
-6. Click run to visualize results. Pay special attention to how similar sentences are grouped together.
+5. Click run to visualize results. Pay special attention to how similar sentences are grouped together.
     ![Visualize embeddings](images/embedding_graph.png)
 
 This concludes our section on embedding models. Embedding models are a crucial step in our RAG pipeline, enabling us to uncover similarities in text and perform other semantic applications. Next we will experiment with OCI Generative AI Chat models.
@@ -59,26 +56,26 @@ Everything that we have covered in the previous sections and labs have been buil
 
 This architecture diagram shows the process of creating a RAG pipeline, we will introduce a few concepts before we go ahead and build our application that uses this architecture.
 
-RAG Pipeline Components
+RAG Pipeline Components:
 
-	1.	Data Ingestion
-	•	Collect and preprocess domain-specific data.
-	•	Generate embeddings using an embedding model.
-	2.	Vector Storage
-	•	Store embeddings in the Autonomous Vector Database.
-	•	Utilize the vector datatype for efficient storage and retrieval.
-	3.	Query Processing
-	•	User inputs a query.
-	•	Generate an embedding of the query.
-	4.	Similarity Search
-	•	Search the vector database using the query embedding.
-	•	Retrieve the most relevant documents or data points.
-	5.	Response Generation
-	•	Feed the retrieved information into a generative AI model.
-	•	Generate a context-aware and accurate response.
+1.	Data Ingestion
+	* Collect and preprocess domain-specific data.
+	* Generate embeddings using an embedding model.
+2.	Vector Storage
+	* Store embeddings in the Autonomous Vector Database.
+	* Utilize the vector datatype for efficient storage and retrieval.
+3.	Query Processing
+    * User inputs a query.
+	* Generate an embedding of the query.
+4.	Similarity Search
+	* Search the vector database using the query embedding.
+	* Retrieve the most relevant documents or data points.
+5.	Response Generation
+    * Feed the retrieved information into a generative AI model.
+	* Generate a context-aware and accurate response.
 
+Now that we have an understanding of our RAG components, we can go ahead and proceed to the final step, setting up our front end and finally experimenting with our RAG pipeline
 
-Now that we have an understanding of our RAG components, we can go ahead and proceed to the final step.
 You can **proceed to the next lab**.
 
 ## **Acknowledgements**
