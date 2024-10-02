@@ -35,7 +35,7 @@
 3. Enter the following details for the user:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;a. Username: <b>AIUSER</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;b. Quota on tablespace DATA: <b>UNLIMITED</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;c. Password: <b>Livelabpassword1!</b>
+&nbsp;&nbsp;&nbsp;&nbsp;c. Password: <b>Livelabpassword1!</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;Enable the slider for "Web Access"<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb12.png" width="823" height="713"> <br>
 4. Click the "ADMIN" profile button in the top right of the page, and select "Sign Out".<br>
