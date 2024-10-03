@@ -1,10 +1,44 @@
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
-1. Navigate to the **Autonomous Database** that we created on [Lab 1](../1-create-vector-db/create-vector-db.md).
-    ![ADB Navigation Menu](images/adb_navigation_menu.png)
-2. Once you are in Autonomous Database details page, click **Database Connections**.
-    ![Database Connections](images/database-connections.png)
-3. Scroll down to the bottom and copy one of the **service names**.
-    ![ODB Service Names](images/adb-service-names.png)
-4. Navigate to your favorite code editor in the remote compute instance and fill out the DB details.
-    ![Config File](images/config_file.png)
+1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lab21.png" width="300" height="320"><br>
+
+2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
+bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="300" height="320"><br>
+
+3. Fill in the following information 
+    Name: LiveLab
+    Shape: VM.Standard.A1.FLEX
+    Image: Oracle Linux 
+    Click on 'Edit' on Primary VNIC Information
+    Click 'Create New Virtual Cloud Network' 
+    Download SSH Private Key and Save Public Key 
+    Click 'Create' <br>
+
+bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab23.png" width="300" height="320"><br>
+
+5. Go to Cloud Shell <br>
+
+bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab24.png" width="300" height="320"><br>
+   
+6. Log into your instance 
+    ssh i ~/[private-key] <username>@<public_ip_address> <br>
+
+bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="300" height="320"><br>
+
+6.install python 3.11
+    sudo yum update
+    sudo yum upgrade
+    sudo wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
+    sudo tar -xf Python-3.11.0.tgz
+    cd Python-3.11.0
+    ./configure --enable-optimizations
+    sudo make altinstall
+    python3.11 --version <br>
+
+bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="300" height="320"><br>
+
+7. Install requirement.text
+   pip install -r requirement.txt <br>
+
+
