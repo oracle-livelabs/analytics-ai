@@ -4,7 +4,7 @@
  &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lab21.png" width="500" height="320"><br>
 
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
-&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="450" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="750" height="320"><br>
 
 3. Fill in the following information 
     Name: LiveLab
@@ -24,9 +24,9 @@
 6. Log into your instance 
     ssh i ~/[private-key] <username>@<public_ip_address> <br>
 
-&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="600" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="1000" height="320"><br>
 
-6.install python 3.11
+7.install python 3.11
     sudo yum update
     sudo yum upgrade
     sudo wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
@@ -36,9 +36,9 @@
     sudo make altinstall
     python3.11 --version <br>
 
-&nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="600" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="1000" height="320"><br>
 
-7. Install requirement.text
+8. Install requirement.text
    pip install -r requirement.txt <br>
 
 
