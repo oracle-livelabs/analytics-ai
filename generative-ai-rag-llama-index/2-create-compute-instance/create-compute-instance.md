@@ -4,7 +4,7 @@
  &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lab21.png" width="300" height="320"><br>
 
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
-bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="300" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="300" height="320"><br>
 
 3. Fill in the following information 
     Name: LiveLab
@@ -15,16 +15,16 @@ bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="300" height="320"><br>
     Download SSH Private Key and Save Public Key 
     Click 'Create' <br>
 
-bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab23.png" width="300" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab23.png" width="300" height="320"><br>
 
 5. Go to Cloud Shell <br>
 
-bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab24.png" width="300" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab24.png" width="300" height="320"><br>
    
 6. Log into your instance 
     ssh i ~/[private-key] <username>@<public_ip_address> <br>
 
-bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="300" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="300" height="320"><br>
 
 6.install python 3.11
     sudo yum update
@@ -36,7 +36,7 @@ bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab25.png" width="300" height="320"><br>
     sudo make altinstall
     python3.11 --version <br>
 
-bsp;&nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="300" height="320"><br>
+&nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="300" height="320"><br>
 
 7. Install requirement.text
    pip install -r requirement.txt <br>
