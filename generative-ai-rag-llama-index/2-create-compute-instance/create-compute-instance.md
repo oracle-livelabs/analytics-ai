@@ -45,5 +45,7 @@
     IP protocol: TCP
     Destination Port Range: 8501
 
+   &nbsp;&nbsp;&nbsp;<img src="images/lab27.png" width="750" height="320"><br>
+
 
 
