@@ -8,6 +8,8 @@ This lab you will be creating a virtual machine that will install python 3.11, c
 
 Estimated Time: 30 minutes
 
+## Task 1: Set up the VM Machine
+
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
  &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/hamburger-menu-compute.png" width="500" height="320"><br>
 
@@ -25,16 +27,20 @@ Estimated Time: 30 minutes
 
 &nbsp;&nbsp;&nbsp;<img src="images/On-Creation-VM.png" width="450" height="320"><br>
 
-5. Go to Cloud Shell <br>
+
+## Task 2: Install Python and Clone the Repo
+1. Go to Cloud Shell <br>
 
 &nbsp;&nbsp;&nbsp;<img src="images/Download-Private-Public-Key.png" width="450" height="320"><br>
    
-6. Log into your instance 
+2. Log into your instance 
     ssh i ~/[private-key] <username>@<public_ip_address> <br>
 
 &nbsp;&nbsp;&nbsp;<img src="images/Open-Cloud-Shell.png" width="1000" height="320"><br>
 
-7.install python 3.11 <br>
+
+
+3.install python 3.11 <br>
     sudo yum update <br>
     sudo yum upgrade <br>
     sudo yum install python3.11-devel <br>
@@ -42,10 +48,13 @@ Estimated Time: 30 minutes
 
 &nbsp;&nbsp;&nbsp;<img src="images/Clone-Repo.png" width="1000" height="320"><br>
 
-8. Install requirement.text
+4. Install requirement.text
    pip install -r requirement.txt <br>
 
-9. On your network open port 8501
+
+## Task 3: Open Port on VCN
+
+1. On your network open port 8501
    Go your VCN <br>
    Go to Default Security Lists <br>
    Add ingress rules <br>
