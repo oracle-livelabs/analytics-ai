@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
@@ -49,3 +50,5 @@
 
 
 
+=======
+>>>>>>> Stashed changes
