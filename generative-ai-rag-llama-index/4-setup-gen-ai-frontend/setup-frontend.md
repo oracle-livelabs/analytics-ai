@@ -50,8 +50,10 @@ If you run into any issues in this portion of the lab, you can check error messa
      ![RAG Chat](images/)
 4. Evaluate results and pay attention to citations retrieved from document.
 5. This RAG frontend allows for may customization options. Try adjusting the model, hyperparameters, minimum similarity score and more. To get more information on model hyperparameters visit [this](https://docs.oracle.com/en-us/iaas/Content/generative-ai/chat-models.htm#parameters-chat) link.
-     ![Customize](images/)
+     ![Customize RAG Pipeline](images/)
     
+You may now **proceed to the next lab**.
+
 ## **Acknowledgements**
 
 * **Authors** - Enis Aras
