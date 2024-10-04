@@ -1,6 +1,6 @@
 # Introduction
 
-Oracle DB 23ai Vector Search using OCI Generative AI and Llama Index
+Oracle DB 23ai Vector Search using OCI Generative AI and Llama-Index
 
 # Get started - Cloud login
 
