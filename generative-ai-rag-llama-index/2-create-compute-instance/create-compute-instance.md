@@ -1,5 +1,12 @@
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
+This lab you will be creating a virtual machine that will install python 3.11, clone the GitHub Repo, and open necessary port. 
+
+### Prerequisites
+* Labs 1 of this Livelab completed.
+
+Estimated Time: 30 minutes
+
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
  &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lab21.png" width="500" height="320"><br>
 
@@ -47,5 +54,7 @@
 
    &nbsp;&nbsp;&nbsp;<img src="images/lab27.png" width="750" height="320"><br>
 
+## **Acknowledgements**
 
+* **Authors** - Shay Hameed
 
