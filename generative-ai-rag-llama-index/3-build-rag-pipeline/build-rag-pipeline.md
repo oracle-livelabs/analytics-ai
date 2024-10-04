@@ -1,7 +1,6 @@
 # Lab 3: Build RAG Pipeline
 
 ## Introduction
-
 Today, generative AI is one of the fastest growing fields in technology. Thanks to the advancement in research and industry, companies can now query their unstructured data intelligently using Vector AI Search and generate new content, analysis of events and much more using generative models. In this section we will define, explore and use OCI Embedding and Generative Chat models as well as build a modular RAG pipeline from user provided text data. This section is meant to be educational in nature. If you have experience with Generative AI, feel free to skip the steps marked optional.
 
 Estimated Time: 30 minutes
@@ -76,7 +75,7 @@ RAG Pipeline Components:
 
 Now that we have an understanding of our RAG components, we can go ahead and proceed to the final step, setting up our front end and finally experimenting with our RAG pipeline
 
-You can **proceed to the next lab**.
+You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
