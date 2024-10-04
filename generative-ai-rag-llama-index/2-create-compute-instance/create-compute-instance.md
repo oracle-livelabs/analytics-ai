@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
@@ -47,8 +46,3 @@
     Destination Port Range: 8501 <br<
 
    &nbsp;&nbsp;&nbsp;<img src="images/lab27.png" width="750" height="320"><br>
-
-
-
-=======
->>>>>>> Stashed changes
