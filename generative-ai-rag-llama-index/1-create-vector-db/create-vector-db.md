@@ -1,4 +1,4 @@
-### Lab *: Create and configure Autonomous Database
+### Lab 1: Create and configure Autonomous Database
 <details>
 <summary>Step 1: Create the Autonomous Database</summary>    	
 1. Log in to your OCI console.<br>
