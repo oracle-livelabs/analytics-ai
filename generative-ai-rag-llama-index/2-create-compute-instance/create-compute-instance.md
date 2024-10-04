@@ -6,13 +6,13 @@
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
 &nbsp;&nbsp;&nbsp;<img src="images/lab22.png" width="750" height="320"><br>
 
-3. Fill in the following information 
-    Name: LiveLab
-    Shape: VM.Standard.A1.FLEX
-    Image: Oracle Linux 
-    Click on 'Edit' on Primary VNIC Information
-    Click 'Create New Virtual Cloud Network' 
-    Download SSH Private Key and Save Public Key 
+3. Fill in the following information <br>
+    Name: LiveLab <br>
+    Shape: VM.Standard.A1.FLEX <br>
+    Image: Oracle Linux <br>
+    Click on 'Edit' on Primary VNIC Information <br>
+    Click 'Create New Virtual Cloud Network'  <br>
+    Download SSH Private Key and Save Public Key  <br>
     Click 'Create' <br>
 
 &nbsp;&nbsp;&nbsp;<img src="images/lab23.png" width="450" height="320"><br>
