@@ -29,16 +29,21 @@
 7.install python 3.11
     sudo yum update
     sudo yum upgrade
-    sudo wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
-    sudo tar -xf Python-3.11.0.tgz
-    cd Python-3.11.0
-    ./configure --enable-optimizations
-    sudo make altinstall
+    sudo yum install python3.11-devel
     python3.11 --version <br>
 
 &nbsp;&nbsp;&nbsp;<img src="images/lab26.png" width="1000" height="320"><br>
 
 8. Install requirement.text
    pip install -r requirement.txt <br>
+
+9. On your network open port 8501
+   Go your VCN
+   Go to Default Security Lists
+   Add ingress rules
+    CIDR: 0.0.0.0/0
+    IP protocol: TCP
+    Destination Port Range: 8501
+
 
 
