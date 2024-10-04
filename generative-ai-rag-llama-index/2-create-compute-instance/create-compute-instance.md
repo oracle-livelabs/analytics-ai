@@ -27,12 +27,11 @@ Estimated Time: 30 minutes
 
 &nbsp;&nbsp;&nbsp;<img src="images/On-Creation-VM.png" width="450" height="320"><br>
 
+&nbsp;&nbsp;&nbsp;<img src="images/Download-Private-Public-Key.png" width="450" height="320"><br>
 
 ## Task 2: Install Python and Clone the Repo
 1. Go to Cloud Shell <br>
 
-&nbsp;&nbsp;&nbsp;<img src="images/Download-Private-Public-Key.png" width="450" height="320"><br>
-   
 2. Log into your instance 
     ssh i ~/[private-key] <username>@<public_ip_address> <br>
 
