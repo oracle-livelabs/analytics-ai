@@ -1,30 +1,43 @@
-### Lab *: Create and configure Autonomous Database
-<details>
-<summary>Step 1: Create the Autonomous Database</summary>    	
+# Lab 1: Create and configure Autonomous Database
+
+## Introduction
+
+In this lab we will provision an Oracle Autonomous Database to use as the vector store for the following labs. We will be using the new vector data type in Oracle Database 23ai.
+
+Estimated Time: 20 mins
+
+### Prerequisites
+
+* An Oracle Cloud Infrastructure Account
+* Permissions to create an Autonomous Database
+
+## Task 1: Create the Autonomous Database
+
 1. Log in to your OCI console.<br>
 2. Open the main "hamburger" menu in the top left corner of the Console. Select "Oracle Database" and then click "Autonomous Database."<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb1.png" width="300" height="320"><br>
+![Opening main OCI menu](images/adb1.png)
 3. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Autonomous Database" button.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb2.png" width="820" height="595"><br>
+![Selecting compartment on OCI console](images/adb2.png)
 4. Change the "Display name" and "Database name" to "LiveLabVS" and choose the "Transaction Processing" workload. Everything else can remain as the default.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb3.png" width="820" height="425"><br>
+![Entering details to create database](images/adb3.png)
 5. Make sure the database version is "23ai". Everything else can remain as the default.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb4.png" width="820" height="308"><br>
+![Selecting database version 23ai](images/adb4.png)
 6. Enter an administrator password. For this lab, we will use "<b>Livelabpassword1!</b>".<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb5.png" width="820" height="215"><br>
+![Entering database admin password](images/adb5.png)
 7. Leave everything else as the default, and click the "Create Autonomous Database" button.<br>
 8. Wait while the database is fully provisioned. Once the "ADW" icon turns from orange to green, and the word "AVAILABLE" appears under it, the database is ready.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb6.png" width="280" height="332"><br>
-</details>
+![Green "ADW" tile on OCI console](images/adb6.png)
 
-<details>
-<summary>Step 2: Download the Autonomous Database Wallet File</summary>    
+## Task 2: Download the Autonomous Database Wallet File
+
 1. Once the database is ready, click the "Database connection" button on the database details page.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb7.png" width="823" height="240"><br>
+![Clicking "Database connection" button on OCI console](images/adb7.png)
 2. Leave "Wallet Type" as "Instance wallet" and click the "Download wallet" button. Enter a password for the wallet. For this lab, we will be using "<b>Livelabpassword1!</b>". Click the "Download" button.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb8.png" width="400" height="337"> &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/adb9.png" width="400" height="337"><br>
-3. Close the database connection page
-</details>
+
+![ADB Wallet download interface](images/adb-wallet-download.png)
+![ADB Wallet password](images/adb-wallet-password.png) ]
+
+4. Close the database connection page
 
 <details>
 <summary>Step 3(Optional): Create an AIUSER Database Account</summary>    
