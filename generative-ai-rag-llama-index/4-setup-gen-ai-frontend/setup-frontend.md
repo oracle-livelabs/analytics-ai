@@ -1,6 +1,10 @@
 # Lab 4: Setting up and Experimenting with Streamlit Frontend
 
+## Introduction
+
 The final lab will cover setting up our front end, which is built on the open source Python package **streamlit**. To orchastrate our RAG pipeline(refer to detailed explanation in Lab 3 for detailed overview) we will use **Llama-Index** to setup our LLM Chain and experiment with hyperparameters.
+
+Estimated time: 30 Minutes
 
 ### Prerequisites
 * Labs 1 and 2 of this Livelab completed.
@@ -9,7 +13,6 @@ The final lab will cover setting up our front end, which is built on the open so
 ## Task 1: Update Config File(Database)
 
 Assuming that you have gone through all the previous steps, you should now have all the infrastructure you need to run our application. One final thing we need to do before running the app is collect the paramaters that we need to run it:
-
 
 1. Navigate to the **Autonomous Database** that we created on [Lab 1](../1-create-vector-db/create-vector-db.md).
     ![ADB Navigation Menu](images/adb_navigation_menu.png)
