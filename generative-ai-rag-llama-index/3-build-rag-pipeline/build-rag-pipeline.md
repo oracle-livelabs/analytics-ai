@@ -16,10 +16,10 @@ The first step to any machine learning task is data. For a very long time, compa
 
 Vectors are numerical representations of data that capture the semantic meaning of unstructured content. These vectors can then be used to perform tasks such as similarity search, clustering, and classification, allowing companies to query, analyze, and retrieve insights from their unstructured data efficiently.
 
-![Embedding Models](images/basic_transform)
+![Embedding Models](images/basic_transform.png)
 
 1. To experiment with embedding models, navigate to the OCI Console.
-    ![Generative AI Menu](images/navigation_menu)
+    ![Generative AI Menu](images/navigation_menu.png)
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
     ![Navigation to OCI Generative AI](images/navigation_menu_ai.png  )
 3. On the left navigation panel under **playground**, click **Embedding**.
