@@ -10,61 +10,67 @@ Estimated Time: 30 minutes
 
 ## Task 1: Set up the VM Machine
 
-1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
-
+1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances."
 ![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute.png)
 
-2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
-
+2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.
 ![Clicking Create Compute Instance Button](images/create-instance.png)
 
-3. Fill in the following information <br>
-    Name: LiveLab <br>
-    Shape: VM.Standard.A1.FLEX <br>
-    Image: Oracle Linux <br>
-    Click on 'Edit' on Primary VNIC Information <br>
-    Click 'Create New Virtual Cloud Network'  <br>
-    Download SSH Private Key and Save Public Key  <br>
-    Click 'Create' <br>
-
+3. Fill in the following information:    
+**Name:** LiveLab    
+**Shape:** VM.Standard.A1.FLEX    
+**Image:** Oracle Linux    
+Click on **'Edit'** on Primary VNIC Information    
+Click **'Create New Virtual Cloud Network'**    
+Download SSH Private Key and Save Public Key    
+Click **'Create'**    
 ![Creation Page of the VM](images/on-creation-vm.png)
-
 ![Downloading the Private/Public Keys](images/download-private-public-key.png)
 
 ## Task 2: Install Python and Clone the Repo
 
 1. Open a cloud shell instance.
 
-2. Log into your instance 
-    ```bash ssh i ~/[private-key] <username>@<public_ip_address>``` <br>
+2. Log into your instance
+
+<copy>
+
+```bash
+ssh i ~/[private-key] <username>@<public_ip_address>
+```
+</copy>
 ![Opening Cloud Shell](images/open-cloud-shell.png)
 
-3.install python 3.11
-    <copy>
-    ```bash
-    sudo yum update
-    sudo yum upgrade
-    sudo yum install python3.11-devel
-    python3.11 --version
-    ```
-     </copy>
-    
-    ![Clone Repo](images/clone-repo.png)
+3. Install Python 3.11:
+<copy>
 
-4. Install requirement.text
-    <copy>
-    ```pip install -r requirement.txt```
-    </copy>
+```bash
+sudo yum update
+sudo yum upgrade
+sudo yum install python3.11-devel
+python3.11 --version
+```
+</copy>
+![Clone Repo](images/clone-repo.png)
+
+4. Install requirements.txt:
+
+<copy>
+
+```pip 
+install -r requirement.txt
+```
+</copy>
 
 ## Task 3: Open Port on VCN
 
-1. On your network, open port 8501.
-   Go your VCN <br>
-   Go to Default Security Lists <br>
-   Add ingress rules <br>
-    CIDR: 0.0.0.0/0 <br> 
-    IP protocol: TCP <br>
-    Destination Port Range: 8501 <br>
+1. On your network, open port 8501:    
+Go your VCN    
+Go to Default Security Lists    
+Add ingress rules:    
+    CIDR: 0.0.0.0/0    
+    IP protocol: TCP    
+    Destination Port Range: 8501
 
    ![Open Port 8501](images/vcn-port-opening.png)
 
