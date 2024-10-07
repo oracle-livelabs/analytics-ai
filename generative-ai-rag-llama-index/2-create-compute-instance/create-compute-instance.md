@@ -8,8 +8,6 @@ Estimated Time: 30 minutes
 ### Prerequisites
 * Lab 1 of this Livelab completed.
 
-
-
 ## Task 1: Set up the VM Machine
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
@@ -17,7 +15,6 @@ Estimated Time: 30 minutes
 ![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute1.png)
 
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
-
 
 ![Clicking Create Compute Instance Button](images/compute-instance-create-instance-button1.png)
 
@@ -30,19 +27,15 @@ Estimated Time: 30 minutes
     Download SSH Private Key and Save Public Key  <br>
     Click 'Create' <br>
 
-
 ![Creation Page of the VM](images/on-creation-vm1.png)
 
 ![Downloading the Private/Public Keys](images/download-private-public-key1.png)
-
 
 ## Task 2: Install Python and Clone the Repo
 1. Go to Cloud Shell <br>
 
 2. Log into your instance 
-    ssh i ~/[private-key] <username>@<public_ip_address> <br>
-
-
+    ```bash ssh i ~/[private-key] <username>@<public_ip_address>``` <br>
 ![Opening Cloud Shell](images/open-cloud-shell1.png)
 
 
@@ -57,7 +50,6 @@ Estimated Time: 30 minutes
 
 4. Install requirement.text
    pip install -r requirement.txt <br>
-
 
 ## Task 3: Open Port on VCN
 
