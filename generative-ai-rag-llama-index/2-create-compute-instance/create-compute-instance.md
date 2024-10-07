@@ -33,29 +33,32 @@ Estimated Time: 30 minutes
 
 ## Task 2: Install Python and Clone the Repo
 
-1. Go to Cloud Shell <br>
+1. Open a cloud shell instance.
 
 2. Log into your instance 
     ```bash ssh i ~/[private-key] <username>@<public_ip_address>``` <br>
 ![Opening Cloud Shell](images/open-cloud-shell.png)
 
 3.install python 3.11
-
-    ```bash 
-        sudo yum update
-        sudo yum upgrade
-        sudo yum install python3.11-devel
-        python3.11 --version
+    <copy>
+    ```bash
+    sudo yum update
+    sudo yum upgrade
+    sudo yum install python3.11-devel
+    python3.11 --version
     ```
+     </copy>
     
     ![Clone Repo](images/clone-repo.png)
 
 4. Install requirement.text
-    ```pip install -r requirement.txt``` <br>
+    <copy>
+    ```pip install -r requirement.txt```
+    </copy>
 
 ## Task 3: Open Port on VCN
 
-1. On your network open port 8501
+1. On your network, open port 8501.
    Go your VCN <br>
    Go to Default Security Lists <br>
    Add ingress rules <br>
