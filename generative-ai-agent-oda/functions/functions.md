@@ -34,7 +34,7 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
     <!-- https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm
     TODO: update package url when available
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.1.zip)
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
 
@@ -49,48 +49,20 @@ This task is mostly the same as when we deployed the Stack in lab 2. The only re
     * Optionally, update the name and description of the stack.
     * Click Next
 
-3. General Configuration
 
-    ![variables general configuration](images/variables_general.png)
+3. Functions Configuration
 
-    * Optionally, You can select another compartment to deploy your resources in
-    * Customize the prefix used to name resources
-        * It is required to use a different **prefix** from your first stack to avoid name collisions in a single compartment
-    * Setting up IAM will enable a policy that allows all ODA instances to talk to functions and all functions to talk to the genai agent service in this compartment.
-        * These are required to be deployed in your home region
-    * Setting up Functions will deploy a function application enabled with logging and tracing on top of a Network
+    Setup the variables in the stack like you did before except for two
 
-4. GenAI Agent Configuration
-
-    ![variables genai agent configuration](../terraform/images/variables_agent.png)
-
-    * Supply the Regional url for the GenAI Agent Endpoint. Chicago's is provided by default
-    * Provide the OCID for the Agent's Endpoint that was created in lab 1 <!-- should we have this be it's own task or ask reader to write down this value when resource is created in lab 1>
-
-5. Functions Configuration
+    * It is recommended to use a different **prefix** in the General configuration at the top
 
     ![variables functions configuration](images/variables_functions.png)
 
-    * Change the **Function Deployment Method** to **fn_cli**
-    * Optionally you can increase log retention
-
-6. VCN
-
-    You have the choice of creating a new vcn or choosing an existing one.
-
-    ![variables create vcn](../terraform/images/variables_create_vcn.png)
-
-    * If you are creating a vcn, You can customize the cidr block ranges
-
-    ![variables existing vcn](../terraform/images/variables_existing_vcn.png)
-
-    * You can also choosing an existing vcn and subnet
-
-    <!--TODO: validate what the networking requirements are. Currently provide a SGW and very minimal traffic rules. Not sure we even need that. How many ip addresses does a function application require?-->
+    * In the functions section at the bottom, click the box to **Manually Deploy Functions**
 
     Click Next
 
-7. Review and Create
+4. Review and Create
 
     ![stack review](../terraform/images/stack_review.png)
 
@@ -195,7 +167,7 @@ The rest of the the instructions in this task expand upon the directions provide
 
 1. Download and unzip Function code
 
-    [genai-agent-function](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-function-livelabs.zip)
+    [genai-agent-function](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-function-livelabs-1.1.zip)
 
 2. In a terminal, navigate to the recently unzipped folder
 
@@ -204,6 +176,13 @@ The rest of the the instructions in this task expand upon the directions provide
 
 4. Install requirements
     Navigate to the function code folder, activate your virtual environment, and run `pip install -r requirements.txt`
+
+The Following Tasks showcase how to set up the Agent-ODA Chat integration function used in an earlier version of this lab. There are additional functions available in the source code including:
+
+- Chat (default/root folder)
+- create_agent (Terraform stand-in)
+- auto_ingest (Coming Soon)
+
 
 ## task 5: Test Function Locally
 
@@ -299,6 +278,25 @@ The rest of the the instructions in this task expand upon the directions provide
 
 <!-- X. Explore Logs and Traces (optional) TODO: create-->
 
+## task 8: (optional) Get the details of an API call including the opc-request-id
+
+![Look up API call through Console Browser including OPC request ID](images/console_opc_request_id.png)
+The screenshot above shows how to find the opc request id for a chat message
+
+- When you execute operations on the console, they are transformed into api calls.
+- You can view these calls by using the dev tools built into your browser.
+- For Firefox,
+    - right click -> inspect will bring up dev tools
+    - if you go to the network tab, you can see any api requests
+    - After the network tab is open, perform the action you want more info on in the console window.
+    - It is helpful to filter to just the service you are interested in
+        - agent cp: agent.generativeai
+        - agent dp: agent-runtime.generativeai
+    - you should see a stream of api requests. You need to identify what api request you care about based on the status, method, and file columns
+    - After you click on an individual request, you can see details on the right hand side including the Request and Response Payloads
+    - The opc-request-id is located in the headers section. You can filter for it
+
+
 ## Acknowledgements
 
 * **Author**
@@ -307,4 +305,4 @@ The rest of the the instructions in this task expand upon the directions provide
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
