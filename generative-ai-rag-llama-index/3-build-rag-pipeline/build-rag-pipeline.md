@@ -19,7 +19,7 @@ Vectors are numerical representations of data that capture the semantic meaning 
 ![Embedding Models](images/basic_transform.png)
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
-    ![Navigation to OCI Generative AI](images/navigation_menu_ai.png  )
+    ![Navigation to OCI Generative AI](images/navigation_menu_ai.png )
 2. On the left navigation panel under **playground**, click **Embedding**.
     ![Gen AI Playground](images/embedding_left_side.png)
 3. Use one of the example templates to embed text or bring in your own data.
@@ -43,7 +43,7 @@ To enable enterprises to take advantage of the ever growing Generative AI models
 
 ## Task 3 (Optional): Overview of Retrieval Augmented Generation
 
-Everything that we have covered in the previous sections and labs have been building up to a RAG pipeline. We first created the 23ai Autonomous Vector Database, a compute instance for our front-end and went over Embedding and Chat models. In this task we will introduce you to retrieval augmented generation and talk about each component of the **RAG Pipeline**. 
+Everything that we have covered in the previous sections and labs have been building up to a RAG pipeline. We first created the 23ai Autonomous Vector Database, a compute instance for our front-end and went over Embedding and Chat models. In this task we will introduce you to retrieval augmented generation and talk about each component of the **RAG Pipeline**.
 
 RAG Pipeline Components:
 

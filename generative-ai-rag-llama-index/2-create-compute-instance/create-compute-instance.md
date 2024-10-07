@@ -12,11 +12,11 @@ Estimated Time: 30 minutes
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances." <br>
 
-![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute1.png)
+![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute.png)
 
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button. <br>
 
-![Clicking Create Compute Instance Button](images/compute-instance-create-instance-button1.png)
+![Clicking Create Compute Instance Button](images/create-instance.png)
 
 3. Fill in the following information <br>
     Name: LiveLab <br>
@@ -27,17 +27,17 @@ Estimated Time: 30 minutes
     Download SSH Private Key and Save Public Key  <br>
     Click 'Create' <br>
 
-![Creation Page of the VM](images/on-creation-vm1.png)
+![Creation Page of the VM](images/on-creation-vm.png)
 
-![Downloading the Private/Public Keys](images/download-private-public-key1.png)
+![Downloading the Private/Public Keys](images/download-private-public-key.png)
 
 ## Task 2: Install Python and Clone the Repo
+
 1. Go to Cloud Shell <br>
 
 2. Log into your instance 
     ```bash ssh i ~/[private-key] <username>@<public_ip_address>``` <br>
-![Opening Cloud Shell](images/open-cloud-shell1.png)
-
+![Opening Cloud Shell](images/open-cloud-shell.png)
 
 3.install python 3.11 <br>
     sudo yum update <br>
@@ -45,8 +45,7 @@ Estimated Time: 30 minutes
     sudo yum install python3.11-devel <br>
     python3.11 --version <br>
 
-
-![Clone Repo](images/clone-repo1.png)
+![Clone Repo](images/clone-repo.png)
 
 4. Install requirement.text
    pip install -r requirement.txt <br>
@@ -62,7 +61,7 @@ Estimated Time: 30 minutes
     Destination Port Range: 8501 <br>
 
   
-   ![Open Port 8501](images/vcn-port-opening1.png)
+   ![Open Port 8501](images/vcn-port-opening.png)
 
 ## **Acknowledgements**
 
