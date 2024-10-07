@@ -39,6 +39,7 @@ Click **'Create'**
 ssh i ~/[private-key] <username>@<public_ip_address>
 ```
 </copy>
+
 ![Opening Cloud Shell](images/open-cloud-shell.png)
 
 3. Install Python 3.11:
@@ -51,6 +52,7 @@ sudo yum install python3.11-devel
 python3.11 --version
 ```
 </copy>
+
 ![Clone Repo](images/clone-repo.png)
 
 4. Install requirements.txt:
