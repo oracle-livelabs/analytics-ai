@@ -39,16 +39,19 @@ Estimated Time: 30 minutes
     ```bash ssh i ~/[private-key] <username>@<public_ip_address>``` <br>
 ![Opening Cloud Shell](images/open-cloud-shell.png)
 
-3.install python 3.11 <br>
-    sudo yum update <br>
-    sudo yum upgrade <br>
-    sudo yum install python3.11-devel <br>
-    python3.11 --version <br>
+3.install python 3.11
 
-![Clone Repo](images/clone-repo.png)
+    ```bash 
+        sudo yum update
+        sudo yum upgrade
+        sudo yum install python3.11-devel
+        python3.11 --version
+    ```
+    
+    ![Clone Repo](images/clone-repo.png)
 
 4. Install requirement.text
-   pip install -r requirement.txt <br>
+    ```pip install -r requirement.txt``` <br>
 
 ## Task 3: Open Port on VCN
 
@@ -60,7 +63,6 @@ Estimated Time: 30 minutes
     IP protocol: TCP <br>
     Destination Port Range: 8501 <br>
 
-  
    ![Open Port 8501](images/vcn-port-opening.png)
 
 ## **Acknowledgements**
