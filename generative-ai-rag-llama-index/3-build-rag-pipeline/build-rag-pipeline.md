@@ -18,15 +18,13 @@ Vectors are numerical representations of data that capture the semantic meaning 
 
 ![Embedding Models](images/basic_transform.png)
 
-1. To experiment with embedding models, navigate to the OCI Console.
-    ![Generative AI Menu](images/navigation_menu.png)
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Generative AI**.
     ![Navigation to OCI Generative AI](images/navigation_menu_ai.png  )
-3. On the left navigation panel under **playground**, click **Embedding**.
+2. On the left navigation panel under **playground**, click **Embedding**.
     ![Gen AI Playground](images/embedding_left_side.png)
-4. Use one of the example templates to embed text or bring in your own data.
+3. Use one of the example templates to embed text or bring in your own data.
     ![Example data](images/embedding_example.png)
-5. Click run to visualize results. Pay special attention to how similar sentences are grouped together.
+4. Click run to visualize results. Pay special attention to how similar sentences are grouped together.
     ![Visualize embeddings](images/embedding_graph.png)
 
 This concludes our section on embedding models. Embedding models are a crucial step in our RAG pipeline, enabling us to uncover similarities in text and perform other semantic applications. Next we will experiment with OCI Generative AI Chat models.
@@ -42,18 +40,10 @@ To enable enterprises to take advantage of the ever growing Generative AI models
     ![Model Details](images/model_details.png)
 4. Test out models with the examples provided, or use your own queries.
     ![Gen AI Playground](images/chat_example.png)
-5. Use one of the example templates to embed text or bring in your own data.
-    ![Example data](images/embedding_example.png)
-6. Click run to visualize results. Pay special attention to how similar sentences are grouped together.
-    ![Visualize embeddings](images/embedding_graph.png)
 
 ## Task 3 (Optional): Overview of Retrieval Augmented Generation
 
 Everything that we have covered in the previous sections and labs have been building up to a RAG pipeline. We first created the 23ai Autonomous Vector Database, a compute instance for our front-end and went over Embedding and Chat models. In this task we will introduce you to retrieval augmented generation and talk about each component of the **RAG Pipeline**. 
-
-![Architecture Diagram](images/arch_diagram.png)
-
-This architecture diagram shows the process of creating a RAG pipeline, we will introduce a few concepts before we go ahead and build our application that uses this architecture.
 
 RAG Pipeline Components:
 
