@@ -67,7 +67,7 @@ Estimated Time: 30 minutes
    Add ingress rules <br>
     CIDR: 0.0.0.0/0 <br> 
     IP protocol: TCP <br>
-    Destination Port Range: 8501 <br<
+    Destination Port Range: 8501 <br>
 
   
    ![Open Port 8501](images/vcn-port-opening1.png)
