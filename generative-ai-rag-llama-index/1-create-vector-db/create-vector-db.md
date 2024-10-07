@@ -87,6 +87,7 @@ CONSTRAINT fk_book
 );
 ```
 </copy>
+
 ## **Acknowledgements**
 
 * **Authors** - Travis Ledbetter
