@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Oracle DB 23ai Vector Search using OCI Generative AI and Llama Index",
+    "help": "livelabs-help-aimldb_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Introduction",
+        "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+        "filename": "../../0-introduction/introduction.md"
+      },
+      {
+        "title": "Getting Started",
+        "description": "Get a Free Trial",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Create and configure Autonomous Database",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../1-create-vector-db/create-vector-db.md"
+      },
+      {
+        "title": "Lab 2: Set up the Compute Instance and Connect to GitHub Code",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../2-create-compute-instance/create-compute-instance.md"
+      },
+      {
+        "title": "Lab 3: Build RAG Pipeline",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../3-build-rag-pipeline/build-rag-pipeline.md"
+      },
+      {
+        "title": "Lab 4: Set up and Experiment with Streamlit Frontend",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../4-setup-gen-ai-frontend/setup-frontend.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+  }

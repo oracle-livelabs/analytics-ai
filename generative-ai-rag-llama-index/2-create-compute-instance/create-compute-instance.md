@@ -21,13 +21,13 @@ Estimated Time: 30 minutes
 
 ![Clicking Create Compute Instance Button](images/compute-instance-create-instance-button1.png)
 
-3. Fill in the following information 
-    Name: LiveLab
-    Shape: VM.Standard.A1.FLEX
-    Image: Oracle Linux 
-    Click on 'Edit' on Primary VNIC Information
-    Click 'Create New Virtual Cloud Network' 
-    Download SSH Private Key and Save Public Key 
+3. Fill in the following information <br>
+    Name: LiveLab <br>
+    Shape: VM.Standard.A1.FLEX <br>
+    Image: Oracle Linux <br>
+    Click on 'Edit' on Primary VNIC Information <br>
+    Click 'Create New Virtual Cloud Network'  <br>
+    Download SSH Private Key and Save Public Key  <br>
     Click 'Create' <br>
 
 
@@ -77,4 +77,3 @@ Estimated Time: 30 minutes
 * **Authors** - Shay Hameed
 
 You may now **proceed to the next lab**
-
