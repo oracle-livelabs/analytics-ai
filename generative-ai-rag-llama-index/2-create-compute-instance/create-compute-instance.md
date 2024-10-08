@@ -1,6 +1,6 @@
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
-### Objective 
+## Introduction
 This lab you will be creating a virtual machine that will install python 3.11, clone the GitHub Repo, and open necessary port. 
 
 Estimated Time: 30 minutes
@@ -8,7 +8,7 @@ Estimated Time: 30 minutes
 ### Prerequisites
 * Lab 1 of this Livelab completed.
 
-## Task 1: Set up the VM Machine
+## Task 1: Set up OCI Compute Instance
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances."
 ![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute.png)
