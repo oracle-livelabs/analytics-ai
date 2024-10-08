@@ -33,36 +33,39 @@ Click **'Create'**
 
 2. Log into your instance
 
-<copy>
 
 ```bash
+<copy>
 ssh i ~/[private-key] <username>@<public_ip_address>
-```
 </copy>
+```
 
 ![Opening Cloud Shell](images/open-cloud-shell.png)
 
 3. Install Python 3.11:
-<copy>
 
 ```bash
+<copy>
 sudo yum update
 sudo yum upgrade
 sudo yum install python3.11-devel
 python3.11 --version
-```
 </copy>
+```
+
 
 ![Clone Repo](images/clone-repo.png)
 
 4. Install requirements.txt:
 
-<copy>
 
-```pip 
-install -r requirement.txt
+
 ```
+<copy>
+pip install -r requirement.txt
 </copy>
+```
+
 
 ## Task 3: Open Port on VCN
 

@@ -65,9 +65,10 @@ b. Password: <b>Livelabpassword1!</b><br>
 2. Copy and paste the SQL code from the create_tables.sql file into the SQL worksheet and click the "Run Script" button (or press F5).<br>
 ![ADB SQL worksheet](images/adb-sql-worksheet.png)
 
-<copy>
+
 
 ```sql
+<copy>
 create table BOOKS
 ("ID" NUMBER NOT NULL,
 "NAME" VARCHAR2(100) NOT NULL,
@@ -85,8 +86,8 @@ CONSTRAINT fk_book
         FOREIGN KEY (BOOK_ID)
         REFERENCES BOOKS (ID)
 );
-```
 </copy>
+```
 
 ## **Acknowledgements**
 
