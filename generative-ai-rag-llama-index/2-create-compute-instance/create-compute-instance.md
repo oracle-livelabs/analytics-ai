@@ -1,6 +1,6 @@
 # Lab 2: Set up the Compute Instance and Connect to GitHub Code
 
-### Objective 
+## Introduction
 This lab you will be creating a virtual machine that will install python 3.11, clone the GitHub Repo, and open necessary port. 
 
 Estimated Time: 30 minutes
@@ -8,61 +8,75 @@ Estimated Time: 30 minutes
 ### Prerequisites
 * Lab 1 of this Livelab completed.
 
-## Task 1: Set up the VM Machine
+## Task 1: Set up OCI Compute Instance
 
-1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances."    
+1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances."
+![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute.png)
+2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.
+![Clicking Create Compute Instance Button](images/create-instance.png)
+3. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.    
+4. Fill in the following information:    
+**Name:** LiveLab
 
-![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute1.png)
+**Shape:** VM.Standard.A1.FLEX 
 
-2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.    
+**Image:** Oracle Linux
 
-![Clicking Create Compute Instance Button](images/compute-instance-create-instance-button1.png)
+Click on **'Edit'** on Primary VNIC Information  
 
-3. Fill in the following information    
-    Name: LiveLab    
-    Shape: VM.Standard.A1.FLEX    
-    Image: Oracle Linux    
-    Click on 'Edit' on Primary VNIC Information    
-    Click 'Create New Virtual Cloud Network'    
-    Download SSH Private Key and Save Public Key    
-    Click 'Create'    
+Click **'Create New Virtual Cloud Network'** 
 
-![Creation Page of the VM](images/on-creation-vm1.png)
+5. Save private key for access.
+    ![Downloading the Private/Public Keys](images/download-private-public-key.png)
+    
+6. Click **'Create'**    
 
-![Downloading the Private/Public Keys](images/download-private-public-key1.png)
+![Creation Page of the VM](images/on-creation-vm.png)
 
 ## Task 2: Install Python and Clone the Repo
-1. Go to Cloud Shell    
+1. Launch Cloud Shell    
+   ![Opening Cloud Shell](images/open-cloud-shell1.png)
+2. Ssh into compute instance.
+```bash
+<copy>
+ssh i ~/[private-key] <username>@<public_ip_address>
+</copy>
+```
 
-2. Log into your instance 
-    ```bash ssh i ~/[private-key] <username>@<public_ip_address>```    
-![Opening Cloud Shell](images/open-cloud-shell1.png)
+3. Install Python 3.11 on VM.
 
+```bash
+<copy>
+sudo yum update
+sudo yum upgrade
+sudo yum install python3.11-devel
+python3.11 --version
+</copy>
+```
 
-3.install python 3.11    
-    sudo yum update    
-    sudo yum upgrade    
-    sudo yum install python3.11-devel    
-    python3.11 --version    
+4. Install requirements.txt:
 
 
 ![Clone Repo](images/clone-repo3.png)
 
-4. Install requirement.text    
-   pip install -r requirement.txt    
+4. Install requirement.txt  
+   ```
+   <copy>
+   pip install -r requirements.txt 
+   </copy>
+   ```
 
 ## Task 3: Open Port on VCN
 
-1. On your network open port 8501
-   Go your VCN    
-   Go to Default Security Lists    
-   Add ingress rules    
-    CIDR: 0.0.0.0/0     
+1. On your network, open port 8501:  
+Go your VCN    
+Go to Default Security Lists    
+Add ingress rules:    
+    CIDR: 0.0.0.0/0    
     IP protocol: TCP    
-    Destination Port Range: 8501    
+    Destination Port Range: 8501
 
-  
-   ![Open Port 8501](images/vcn-port-opening1.png)
+   ![Open Port 8501](images/vcn-port-opening.png)
 
 ## **Acknowledgements**
 

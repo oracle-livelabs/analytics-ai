@@ -1,8 +1,8 @@
-# Lab 4: Setting up and Experimenting with Streamlit Frontend
+# Lab 4: Set up and Experiment with Streamlit Frontend
 
 ## Introduction
 
-The final lab will cover setting up our front end, which is built on the open source Python package **streamlit**. To orchastrate our RAG pipeline(refer to detailed explanation in Lab 3 for detailed overview) we will use **Llama-Index** to setup our LLM Chain and experiment with hyperparameters.
+The final lab will cover setting up our front end, which is built on the open source Python package **Streamlit**. To orchastrate our RAG pipeline(refer to detailed explanation in Lab 3 for detailed overview) we will use **Llama-Index** to setup our LLM Chain and experiment with hyperparameters.
 
 Estimated time: 30 Minutes
 
@@ -19,17 +19,16 @@ Assuming that you have gone through all the previous steps, you should now have 
 2. Once you are in Autonomous Database details page, click **Database Connections**.
     ![Database Connections](images/database_connection.png)
 3. Scroll down to the bottom and copy one of the **service names**.
-    ![ODB Service Names](images/adb-service-names.png)
+    ![ODB Service Names](images/tns_names.png)
 4. Navigate to your favorite code editor in the remote compute instance and fill out the DB details.
     ![Config File DB](images/db_config.png)
 
 ## Task 2: Update Config File(OCI Generative AI)
 
 1. Click the hamburger menu, navigate to **Identity & Security** then **Compartments**.
-    ![Compartments](images/compartments.png)
+    ![Compartments](images/navigate-compartment.png)
 2. Choose the compartment where you provisioned your ADB, Copy OCID of the Compartment.
-    ![Compartment OCID](images/compartment_ocid.png)
-3. Navigate back to config file and paste details.
+3. Navigate back to config file and paste details in their respective fields.
     ![GenAI Config](images/genai_config.png)
 
 ## Task 3: (Optional) Obtain Cohere Reranker API Key
@@ -42,9 +41,9 @@ Reranker is an optional step on our pipeline, but one that can improve relevancy
 2. Change directory into the code repository we have previously cloned in Lab 2.
 3. Create a new directory called **wallet** and unzip the previously downloaded zip file in this directory.
 4. Enter the following command to run the front end application.
-
+<copy>
 ```streamlit run app.py```
-
+</copy>
 If you run into any issues in this portion of the lab, you can check error messages and detailed logging on your terminal.
 
 ## Task 5: Experimenting with RAG Frontend
@@ -58,7 +57,6 @@ If you run into any issues in this portion of the lab, you can check error messa
 5. Optionally, disable RAG to ask model questions without context provided.
      ![Disable RAG](images/disable_rag.png)
 6. This RAG application allows for many customization options. Try adjusting the model, hyperparameters, minimum similarity score and more. To get more information on model hyperparameters visit [this](https://docs.oracle.com/en-us/iaas/Content/generative-ai/chat-models.htm#parameters-chat) link.
-     ![Customize RAG Pipeline](images/)
     
 You may now **proceed to the next lab**.
 
