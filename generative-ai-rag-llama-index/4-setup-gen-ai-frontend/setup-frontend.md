@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The final lab will cover setting up our front end, which is built on the open source Python package **streamlit**. To orchastrate our RAG pipeline(refer to detailed explanation in Lab 3 for detailed overview) we will use **Llama-Index** to setup our LLM Chain and experiment with hyperparameters.
+The final lab will cover setting up our front end, which is built on the open source Python package **Streamlit**. To orchastrate our RAG pipeline(refer to detailed explanation in Lab 3 for detailed overview) we will use **Llama-Index** to setup our LLM Chain and experiment with hyperparameters.
 
 Estimated time: 30 Minutes
 
