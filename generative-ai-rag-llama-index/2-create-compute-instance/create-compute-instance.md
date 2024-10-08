@@ -46,7 +46,7 @@ Estimated Time: 30 minutes
     python3.11 --version    
 
 
-![Clone Repo](images/clone-repo2.png)
+![Clone Repo](images/clone-repo3.png)
 
 4. Install requirement.text    
    pip install -r requirement.txt    
