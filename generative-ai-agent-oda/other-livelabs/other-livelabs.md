@@ -1,3 +1,3 @@
 # Other LiveLabs you might like
 
-- [Deploy ATOM (AI Powered) Chatbot](https://go.oracle.com/LP=142427?Campaignid=549559)
+- [Deploy ATOM (AI Powered) Chatbot](https://oracle-livelabs.github.io/analytics-ai/atom/workshops/tenancy/)
