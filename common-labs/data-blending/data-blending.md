@@ -17,8 +17,8 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* [Sample Order Lines DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/J6wePlhCmLfKoZRTdaMTEKerOCkYrnN3cPd4-g899hTOureVn6tHRZ048xjb4tTv/n/idtlyhmtj68r/b/LiveLabFiles/o/Sample%20Order%20Lines%20DS.xlsx)
-* [Customer Subscription Type DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/DqhiVhuQpWcRGVh0XjuKZ5en-MGUc0PcvpGGWN04NEEWAc-MumwMvjRkuBx5xZO_/n/idtlyhmtj68r/b/LiveLabFiles/o/Customer%20Subscription%20Type%20DS.xlsx)
+* [Sample Order Lines DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/x4wryiFOjhANhy2yDOy08kMOKKaR_b3jW6KX2Dpbi3cN3QCcdradiPZ7BJBNmtAM/n/idmqvvdwzckf/b/LiveLabs-Files/o/Sample%20Order%20Lines%20DS.xlsx)
+* [Customer Subscription Type DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/KW-qcAh5exl3ldrR-uVrSMCwTluBI6EEkJvnxKC5v-9U0ZpD0W4TIZjp2u6NFWo3/n/idmqvvdwzckf/b/LiveLabs-Files/o/Customer%20Subscription%20Type%20DS.xlsx)
 
 
 ## Task 1: Blend Datasets

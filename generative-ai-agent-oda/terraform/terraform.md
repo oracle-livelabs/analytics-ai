@@ -112,7 +112,7 @@ This lab assumes you have:
 
     Click Next
 
-9. Review and Create
+11. Review and Create
 
     ![stack review](images/stack_review.png)
 

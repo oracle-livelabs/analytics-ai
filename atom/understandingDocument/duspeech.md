@@ -54,7 +54,7 @@ Go to Identity>>Domains>>Default domain>>Dynamic groups
 Click on Create dynamic group and name it as odaDynamicGroup
 
 Select radio button - Match any rules defined below
-Add the following rules
+Add the following rules. Please change the values of OCIDs to your own values here.
 
 Rule 1
 
@@ -94,7 +94,7 @@ Note - This will be ocid of Digital Assistant in Ashburn region
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
-1. Attach the policy at the root compartment level
+1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
 
     ODA_Access - Policy to allow users access to ODA
 
@@ -160,7 +160,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/oda_api_service.png)
 
-4. Click on **Add REST Service**. Provide the following details:
+4. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values in the Body section. You can follow the next step - Step 5 to see how to retrieve model ID.
     * **Name**
 
     ```text
@@ -173,7 +173,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ```text
     <copy>
-    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText
+    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/chat
      </copy>
     ```
 
@@ -190,18 +190,10 @@ This task involves creating REST service which will be used by ODA to connect to
             "modelId": "ocid1.generativeaimodel.oc1.us-chicago-1.XXXXXXXX",
             "servingType": "ON_DEMAND"
         },
-        "inferenceRequest": {
-            "prompt": "What is OCAF?",
-            "maxTokens": 600,
-            "temperature": 1,
-            "frequencyPenalty": 0,
-            "presencePenalty": 0,
-            "topP": 0.75,
-            "topK": 0,
-            "returnLikelihoods": "GENERATION",
-            "isStream": true,
-            "stopSequences": [],
-            "runtimeType": "COHERE"
+        "chatRequest": {
+            "apiFormat": "COHERE",
+            "message": "Hi, how are you",
+            "isStream": true
         }
     }
     </copy>
@@ -212,13 +204,13 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/genai.png)
 
-    * Step 2: Select Generation (under **Playground** heading)
+    * Step 2: Select Chat (under **Playground** heading)
 
-    ![API Services](images/generation_model_1.png)
+    ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
 
-    ![API Services](images/generation_model_2.png)
+    ![API Services](images/chat_screenshot.png)
 
 6. Click **Test Request** to make sure the connection is successful
 
@@ -280,7 +272,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
    ![API Services](images/oci_rest_service_3.png)
 
-9. Click on **Add REST Service**. Provide the following details:
+9. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID, bucket name, namespace and object name to your own values in the Body section.
     * **Name**
 
     ```text
@@ -334,11 +326,39 @@ This task involves creating REST service which will be used by ODA to connect to
 
 ## Task 4: Import Skill
 
-1. Click on the link to download the required skill (zip file): [Atom_Skill_DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
+1. Click on the link to download the required skill (zip file): [Atom Skill DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
    ![Import Skill](images/import_skill.png)
+
+3. Once the skill is imported. Click on the Skill and go to Components as shown in the image below.
+
+    ![Click Components](images/components.png)
+
+4. Click on Add Service and give this service a name of your choice. For example - RPlusService. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. Click to download the file [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
+
+    ![Service Package](images/service_package.png)
+
+5. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+
+    ![Import LLM](images/import_llm.png)
+
+6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
+
+    ![API Services](images/oci_rest_service_4.png)
+
+7. Provide a name of your choice for this Service. Give LLM Provider value as the one you imported in Step 5. Give Transformation Handler value as the one you imported in Step 4. Click on Check mark under Action to save it as shown in the image below.
+
+    ![LLM Service](images/llm_service.png)
+
+8. Go to Skills -> Flows. Click on Chat.
+
+    ![Chat Services](images/chat.png)
+
+9. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 7.
+
+    ![Invoke LLM](images/invoke_llm.png)
 
 ## Task 5: Changes to Skill
 
@@ -376,7 +396,7 @@ Provide a value to da.privateKey (Any Password)
     ![Create Channel](images/visual_builder.png)
 
 2. Create Visual Builder Instance by providing the details and click **Create Visual Builder Instance**:
-    * **Name** = <suitable_name>
+    * **Name** = <name_of_your_choice>
     * **Compartment** = <same_compartment_as_oda>
     * **Node** = <as_per_need>
 
@@ -426,4 +446,4 @@ Provide a value to da.privateKey (Any Password)
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Sep 2024

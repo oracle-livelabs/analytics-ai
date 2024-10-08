@@ -163,5 +163,5 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
 
