@@ -35,7 +35,7 @@ Click **'Create New Virtual Cloud Network'**
 
 ## Task 2: Install Python and Clone the Repo
 1. Launch Cloud Shell    
-   ![Opening Cloud Shell](images/open-cloud-shell1.png)
+   ![Opening Cloud Shell](images/open-cloud-shell.png)
 2. Ssh into compute instance.
 ```bash
 <copy>
