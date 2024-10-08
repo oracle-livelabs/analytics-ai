@@ -1,8 +1,8 @@
-# Provision Infrastructure via Terraform
+# (Optionally) Provision Infrastructure via Terraform
 
 ## Introduction
 
-This lab helps you deploy the required OCI Infrastructure and Services via a Resource Manager stack for Terraform
+This lab helps you deploy the required OCI Infrastructure and Services via a Resource Manager stack for Terraform. This lab is optional as the next several labs will walk through how to manually configure each service.
 
 Estimated Time: 30 minutes
 
@@ -10,15 +10,17 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
-* Create OCI Functions on an existing or new network
-* Create Dynamic Groups and Policies for Functions and ODA services
+* Create Dynamic Groups and Policies required for interservice api calls
+* Create an Object Storage Bucket
+* Create or connect to an existing GenAI Agent including knowledge base, datasource, and endpoint with a function
+* Create or connect to an existing ODA Instance
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Functions, Logging, APM, Network, Dynamic Groups, Policies, Resource Manager
+* Must have an Administrator Account or Permissions to manage several OCI Services: GenAI Agents, Functions, Logging, APM, Network, Dynamic Groups, Policies, Resource Manager, Digital Assistant
 
 ## Task 1: Create Resource Manager Stack
 
@@ -28,7 +30,7 @@ This lab assumes you have:
     TODO: update package url when available
     use current OS PAR format. New format throws an error
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.1.zip)
 
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
@@ -50,30 +52,56 @@ This lab assumes you have:
 
     * Optionally, You can select another compartment to deploy your resources in
     * Optionally, You can customize the prefix used to name resources
-    * Setting up IAM will enable a policy that allows all ODA instances to talk to functions and all functions to talk to the genai agent service in this compartment.
-        * These are required to be deployed in your home region
-    * Setting up Functions will deploy a function application enabled with logging and tracing on top of a Network
+    * Setting up IAM will enable policies that allow the configured OCI services to communicate with each other
+        * IAM Resources are required to be deployed in your home region
 
-4. GenAI Agent Configuration
+4. GenAI Backend Configuration
+
+    ![variables genai backend configuration](images/variables_genai_backend.png)
+
+    * Leave these as the default values
+
+5. Frontend Application
+
+    ![variables frontend application configuration](images/variables_frontend_application.png)
+
+    * You can turn off the frontend service automation for ODA and VB by selecting Application Type None
+    * You can deploy your frontend components in a different region, but this will introduce additional latency
+
+6. Existing Agent resources
+
+    ![variablest existing agent](images/variables_existing_agent.png)
+
+    * Selecting this option will deploy the resources necessary automatically deploy GenAI Agents
+    * You will have the option later to use the provided function container or build it yourself from source code
+
+
+7. GenAI Agent Configuration
 
     ![variables genai agent configuration](images/variables_agent.png)
 
-    * Supply the Regional url for the GenAI Agent Endpoint. Chicago's is provided by default
-    * Provide the OCID for the Agent's Endpoint that was created in [lab 1](../agent/agent.md#task-4-provision-agent)
+    * You can customize your agent with whatever features you want. However, the ODA skill currently requires Multi-turn Sessions and Citations to be enabled
 
-5. Functions Configuration
+8. Object Storage Configuration
+
+    ![variables object storage](images/variables_object_storage.png)
+
+    * You can either provide an existing Bucket, or a new one will be created for you
+
+9. OCI Digital Assistant Configuration
+
+    ![variables Digital Assistant](images/variables_digital_assistant.png)
+
+    * You can either provide an existing instance, or a new one will be created for you
+    * If you are setting up IAM policies, a dynamic group and policy will be set up for the new/existing instance
+
+
+10. Functions Configuration
 
     ![variables functions configuration](images/variables_functions.png)
 
-    * Leave the **Function Deployment Method** and **Image Full URL** as is
-    * Optionally you can increase log retention
-
-6. VCN
-
-    You have the choice of creating a new vcn or choosing an existing one.
-
-    ![variables create vcn](images/variables_create_vcn.png)
-
+    * You can choose to manually deploy the functions or use the provided container image
+    * You have the choice of creating a new vcn or choosing an existing one.
     * If you are creating a vcn, You can customize the cidr block ranges
 
     ![variables existing vcn](images/variables_existing_vcn.png)
@@ -84,7 +112,7 @@ This lab assumes you have:
 
     Click Next
 
-7. Review and Create
+11. Review and Create
 
     ![stack review](images/stack_review.png)
 
@@ -129,13 +157,17 @@ This lab assumes you have:
 
 ## Task 3: Inspect Created Resources
 
-1. Find Function Invoke Endpoint
+
+
+<!-- TODO: overhaul this task with RM schema output section-->
+
+1. Find Output Variables
 
     In the latest Apply Job's View menu in the lower left, select **Outputs**
 
     ![apply output](images/apply_output.png)
 
-    Note down the **function_invoke_endpoint** url. You will need it when configuring ODA
+    * These outputs provide a set of quick reference urls to the various services you provisioned as well as key ocids you may need later
 
 2. List all created resources (optional)
 
@@ -154,4 +186,4 @@ This lab assumes you have:
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024

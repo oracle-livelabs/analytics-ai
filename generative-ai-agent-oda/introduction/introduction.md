@@ -24,8 +24,7 @@ Objective of this workshop is to set-up the required OCI services to create a fu
 Users can then upload their own unstructured PDF manuals / documents in those buckets.
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in OCI Object Storage, using OCI Generative AI Agent Service.
-* OCI Functions – Users can configure OCI Functions, using the provided automation scripts.
-Users can then connect to OCI Generative AI Agent Service using OCI Functions. The OCI Functions can be exposed as a Rest Service
+* OCI Functions – Users can optionally enable some automation features using the provided OCI Function code
 * OCI Digital Assistant (ODA) – Users can create ODA instance and import the provided ODA Skill.
 Users can then connect from ODA chatbot to OCI Generative AI Agent Service, leveraging OCI Functions Rest Service.
 * OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
@@ -35,7 +34,6 @@ In this workshop, you will learn how to:
 
 * Create Object Storage Buckets, and upload custom PDF documents in those buckets
 * Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
-* Setup & configure Functions to connect to Generative AI Agent Service
 * Setup & configure ODA as an LLM powered chatbot
 * Setup & configure Visual Builder as a frontend channel for ODA
 * Test out the features and capabilities of this ATOM application
@@ -45,7 +43,6 @@ In this workshop, you will learn how to:
 This lab assumes you have:
 
 * An Oracle Cloud Account
-* Enrolled in Beta for [OCI Generative AI Agents for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
 * Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, OCIR, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
@@ -68,5 +65,5 @@ This lab assumes you have:
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
 
