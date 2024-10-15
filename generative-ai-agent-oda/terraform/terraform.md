@@ -94,6 +94,23 @@ This lab assumes you have:
 
     * You can either provide an existing instance, or a new one will be created for you
     * If you are setting up IAM policies, a dynamic group and policy will be set up for the new/existing instance
+    * It is important to setup the correct policies for your ODA instance based on your desired ODA configuration.
+
+    ![variables non-default domain digital assistant](images/variables_non_default_domain_digital_assistant.png)
+
+
+    * If your oda instance in this tenancy uses a non default domain for authentication (and you are not still on IDCS), you will need to provide the name of the domain as well as the IDCS web url. You can find it on the domain details console page and will be in this format: https://idcs-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.identity.oraclecloud.com:443
+
+    ![variables cross tenancy Digital Assistant](images/variables_cross_tenancy_digital_assistant.png)
+
+    * If your existing oda instance is in another tenancy like a Fusion SaaS environment, you will need to set up cross tenancy policies. By providing ocid for the other tenancy, the proper policy will be created for this tenancy. However, you will still need to create a policy in the ODA tenancy. For Fusion SaaS customers, that will require a Service Request to create the policy on your behalf as well as get the ocid of the oda instance. The policy on the oda tenancy should look like this:
+
+    ```
+      <copy>endorse any-user to manage genai-agent-session in any-tenancy where request.principal.type='odainstance'
+      endorse any-user to manage genai-agent-endpoint in any-tenancy where all {request.principal.type='odainstance', request.permission='GENAI_AGENT_ENDPOINT_CHAT'}</copy>
+    ```
+
+        * You can find more details about [setting up cross tenancy policies for ODA here](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/users-groups-and-policies1.html)
 
 
 10. Functions Configuration
@@ -177,6 +194,8 @@ This lab assumes you have:
 
     * This page lists all of the resources managed by this stack as well as their attributes.
     * Some resources have direct link to their details
+
+<!-- TODO create new task outlining where automation stops and where you need to start doing manual steps again-->
 
 ## Acknowledgements
 
