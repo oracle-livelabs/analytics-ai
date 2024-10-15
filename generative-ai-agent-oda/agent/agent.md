@@ -26,7 +26,6 @@ In this lab, you will:
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Approval for [OCI Gen AI Agents Beta for RAG](https://apexadb.oracle.com/ords/f?p=108:501:508002131060566::::P501_SELF_NOMINATION:Self-Nomination)
 * Permissions to manage OCI Services: Generative AI Agents, Object Storage
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
 
@@ -65,7 +64,7 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
 This task will help you to create Oracle Generative AI Agent’s Knowledge Base under your chosen compartment.
 
-1. Locate Generative AI Agents (new Beta) under AI Services
+1. Locate Generative AI Agents under AI Services
 
     ![genai agent navigation](images/agent_nav.png)
 
@@ -109,7 +108,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
 
-    Select the Knowledge Base that you created in the previous task
+    Select the Knowledge Base that you created in the previous task. Provide a Welcome message.
 
     Click the “Create” button.
 
@@ -164,5 +163,5 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
 
