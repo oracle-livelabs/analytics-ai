@@ -110,7 +110,7 @@ This lab assumes you have:
       endorse any-user to manage genai-agent-endpoint in any-tenancy where all {request.principal.type='odainstance', request.permission='GENAI_AGENT_ENDPOINT_CHAT'}</copy>
     ```
 
-        * You can find more details about [setting up cross tenancy policies for ODA here](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/users-groups-and-policies1.html)
+    * You can find more details about [setting up cross tenancy policies for ODA here](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/users-groups-and-policies1.html)
 
 
 10. Functions Configuration
