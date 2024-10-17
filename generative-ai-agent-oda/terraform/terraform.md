@@ -46,7 +46,10 @@ This lab assumes you have:
     * Optionally, update the name and description of the stack.
     * Click Next
 
-3. General Configuration
+
+## Task 2: High level configuration
+
+1. General Configuration
 
     ![variables general configuration](images/variables_general.png)
 
@@ -55,20 +58,23 @@ This lab assumes you have:
     * Setting up IAM will enable policies that allow the configured OCI services to communicate with each other
         * IAM Resources are required to be deployed in your home region
 
-4. GenAI Backend Configuration
+2. GenAI Backend Configuration
 
     ![variables genai backend configuration](images/variables_genai_backend.png)
 
     * Leave these as the default values
 
-5. Frontend Application
+3. Frontend Application
 
     ![variables frontend application configuration](images/variables_frontend_application.png)
 
     * You can turn off the frontend service automation for ODA and VB by selecting Application Type None
     * You can deploy your frontend components in a different region, but this will introduce additional latency
 
-6. Existing Agent resources
+
+## Task 3: Detailed configuration for Gen AI Agent
+
+1. Existing Agent resources
 
     ![variablest existing agent](images/variables_existing_agent.png)
 
@@ -76,17 +82,33 @@ This lab assumes you have:
     * You will have the option later to use the provided function container or build it yourself from source code
 
 
-7. GenAI Agent Configuration
+2. GenAI Agent Configuration
 
     ![variables genai agent configuration](images/variables_agent.png)
 
     * You can customize your agent with whatever features you want. However, the ODA skill currently requires Multi-turn Sessions and Citations to be enabled
 
-8. Object Storage Configuration
+## Task 4a Object Storage Data Source Configuration
+
+1. Object Storage Configuration
 
     ![variables object storage](images/variables_object_storage.png)
 
     * You can either provide an existing Bucket, or a new one will be created for you
+
+2. Auto Ingest Configuration
+
+    ![Variables Object Storage Data Source Auto Ingest](images/variables_object_storage_data_source_auto_ingest.png)
+
+    * You can optionally deploy a function to automatically start ingestion jobs for you. Currently only trigger is object storage events.
+
+<!--
+## Task 4b 23AI Autonomous Data Source Configuration
+
+## Task 4c OpenSearch Data Source Configuration
+
+-->
+
 
 9. OCI Digital Assistant Configuration
 
