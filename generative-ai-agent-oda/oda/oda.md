@@ -137,17 +137,17 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Open the GenAIRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow2.png)
+    ![user start flow](images/user_startflow3.png)
 
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
-    ![flow update endpoint](images/flow_update_endpoint2.png)
+    ![flow update endpoint](images/flow_update_endpoint3.png)
 
 5. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
-    ![ODA Train](images/oda_trainflow2.png)
+    ![ODA Train](images/oda_trainflow3.png)
 
 6. You should be able to successfully the ODA Skill
 
@@ -185,7 +185,7 @@ This task involves creating REST service which will be used by ODA to connect to
     * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
     * In the ShowCitation block, update the component tab -> messages
 
-    ![flow update citations](images/flow_update_citations2.png)
+    ![flow update citations](images/flow_update_citations3.png)
 
 ## Task 7: (optional) View Conversation Analytics
 
@@ -230,15 +230,15 @@ If the Policy Definitions are not correctly defined, please define them as follo
 2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" 
    compartment, and then define the following policies.
 
-   _Please ensure to replace the <ODATenancyOCID> and <ODAInstanceOCID> with the proper OCID values._
+   _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
 
    ```<copy>
-    define tenancy oda-instance-tenancy as <ODATenancyOCID>
-    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
-    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
-    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')</copy>
+    define tenancy oda-instance-tenancy as ODATenancyOCI
+    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')</copy>
    ```
-   
+
    ![ODA Instance Policy](images/CreatePolicy.png)
 
 ## Acknowledgements
