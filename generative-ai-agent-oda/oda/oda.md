@@ -29,9 +29,9 @@ This lab assumes you have:
 
 This task will help you ensure that the required Dynamic Group and Policy are correctly defined. If the Dynamic Group and Policy Definition are not correctly defined, please define them as follows.
 
-These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and GenAI Agent are in the same tenancy.
+These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and Generative AI Agent are in the same tenancy.
 
-For Policy Definitions required for multi-tenancy deployment (where ODA and GenAI Agent are in different tenancies), please refer to Task 8.
+For Policy Definitions required for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies), please refer to Task 8.
 
 1. Locate Domains under Identity & Security
 
@@ -199,16 +199,47 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 
 ## Task 8: (optional) Policy Definitions for multi-tenancy deployment
 
-This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and GenAI Agent are in different tenancies). 
+This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies). 
 
 If the Policy Definitions are not correctly defined, please define them as follows.
 
-Required Information:
+**Required Information:**
 
-* ODATenancyOCID - The OCID of the Tenancy, where the ODA Instance is created.
-* ODAInstanceOCID - The OCID of the ODA Instance.
+* _ODATenancyOCID_ - The OCID of the Tenancy, where the ODA Instance is created.
 
+    In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
 
+    ![Tenancy OCID](images/TenancyOCID.png)
+
+* _ODAInstanceOCID_ - The OCID of the ODA Instance.
+
+    In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
+
+    ![ODA Instance OCID](images/ODAInstanceOCID.png)
+
+1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
+
+   ```
+    endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
+   ```
+
+   ![ODA Instance Policy](images/CreatePolicy.png)
+
+2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" 
+   compartment, and then define the following policies.
+
+   _Please ensure to replace the <ODATenancyOCID> and <ODAInstanceOCID> with the proper OCID values._
+
+   ```
+    define tenancy oda-instance-tenancy as <ODATenancyOCID>
+    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
+    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
+   ```
+   
+   ![ODA Instance Policy](images/CreatePolicy.png)
 
 ## Acknowledgements
 
