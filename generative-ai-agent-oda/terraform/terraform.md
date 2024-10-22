@@ -88,7 +88,7 @@ This lab assumes you have:
 
     * You can customize your agent with whatever features you want. However, the ODA skill currently requires Multi-turn Sessions and Citations to be enabled
 
-## Task 4a Object Storage Data Source Configuration
+## Task 4a: Object Storage Data Source Configuration
 
 1. Object Storage Configuration
 
@@ -109,19 +109,25 @@ This lab assumes you have:
 
 -->
 
+## Task 5a: Oracle Digital Assistant Configuration
 
-9. OCI Digital Assistant Configuration
+1. OCI Digital Assistant Configuration
 
     ![variables Digital Assistant](images/variables_digital_assistant.png)
 
     * You can either provide an existing instance, or a new one will be created for you
     * If you are setting up IAM policies, a dynamic group and policy will be set up for the new/existing instance
-    * It is important to setup the correct policies for your ODA instance based on your desired ODA configuration.
+    * It is important to setup the correct policies for your ODA instance based on your desired ODA configuration. The next couple steps show how to setup advanced configurations with non-default domains and cross tenancy for fusion
+
+
+2. (optional) Configuration for non-default Domains
 
     ![variables non-default domain digital assistant](images/variables_non_default_domain_digital_assistant.png)
 
-
     * If your oda instance in this tenancy uses a non default domain for authentication (and you are not still on IDCS), you will need to provide the name of the domain as well as the IDCS web url. You can find it on the domain details console page and will be in this format: https://idcs-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.identity.oraclecloud.com:443
+
+
+3. (optional) Configuration for Cross tenancy setup
 
     ![variables cross tenancy Digital Assistant](images/variables_cross_tenancy_digital_assistant.png)
 
@@ -135,7 +141,9 @@ This lab assumes you have:
     * You can find more details about [setting up cross tenancy policies for ODA here](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/users-groups-and-policies1.html)
 
 
-10. Functions Configuration
+## Task 6: Function and final configuration
+
+1. Functions Configuration
 
     ![variables functions configuration](images/variables_functions.png)
 
@@ -151,7 +159,7 @@ This lab assumes you have:
 
     Click Next
 
-11. Review and Create
+2. Review and Create
 
     ![stack review](images/stack_review.png)
 
@@ -161,7 +169,7 @@ This lab assumes you have:
 
     You can select **Run Apply** and skip Task 2, but it is recommended you perform this separately so you can review the Terraform plan before applying.
 
-## Task 2: Run Terraform Stack
+## Task 7: Run Terraform Stack
 
 1. Click on the **Plan** button
 
@@ -194,9 +202,9 @@ This lab assumes you have:
 
     ![stack apply success](images/stack_apply_success.png)
 
-## Task 3: Inspect Created Resources
 
 
+## Task 8: Inspect Created Resources
 
 <!-- TODO: overhaul this task with RM schema output section-->
 
@@ -218,6 +226,14 @@ This lab assumes you have:
     * Some resources have direct link to their details
 
 <!-- TODO create new task outlining where automation stops and where you need to start doing manual steps again-->
+
+## Task 9: Complete non-automated sections of the lab
+
+This Terraform stack currently does not automate all steps necessary to deploy this solution. If you chose to deploy the IAM resources along with an ODA instance, you can start with:
+
+* Lab 3: Setup OCI Digital Assistant (ODA), Task 3: Create REST Services for the OCI Generative AI Agent
+
+You will also need to complete all of Lab 4: Setup OCI Visual Builder (VB)
 
 ## Acknowledgements
 
