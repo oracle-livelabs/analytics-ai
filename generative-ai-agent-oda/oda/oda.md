@@ -27,7 +27,11 @@ This lab assumes you have:
 
 ## Task 1: Dynamic Group and Policy Definition
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+This task will help you ensure that the required Dynamic Group and Policy are correctly defined. If the Dynamic Group and Policy Definition are not correctly defined, please define them as follows.
+
+These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and GenAI Agent are in the same tenancy.
+
+For Policy Definitions required for multi-tenancy deployment (where ODA and GenAI Agent are in different tenancies), please refer to Task 8.
 
 1. Locate Domains under Identity & Security
 
@@ -192,6 +196,19 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 <!-- TODO: add screenshot-->
+
+## Task 8: (optional) Policy Definitions for multi-tenancy deployment
+
+This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and GenAI Agent are in different tenancies). 
+
+If the Policy Definitions are not correctly defined, please define them as follows.
+
+Required Information:
+
+* ODATenancyOCID - The OCID of the Tenancy, where the ODA Instance is created.
+* ODAInstanceOCID - The OCID of the ODA Instance.
+
+
 
 ## Acknowledgements
 
