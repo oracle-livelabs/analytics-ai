@@ -230,13 +230,13 @@ If the Policy Definitions are not correctly defined, please define them as follo
 2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" 
    compartment, and then define the following policies.
 
-   _Please ensure to replace the <ODATenancyOCID> and <ODAInstanceOCID> with the proper OCID values._
+   _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
 
    ```
-    define tenancy oda-instance-tenancy as <ODATenancyOCID>
-    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
-    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
-    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('<ODAInstanceOCID>')
+    define tenancy oda-instance-tenancy as ODATenancyOCID
+    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
    ```
    
    ![ODA Instance Policy](images/CreatePolicy.png)
