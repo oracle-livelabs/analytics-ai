@@ -51,15 +51,15 @@ This task involves running SQL statements to create a vector table and load data
 
 3. Create the credentials to access OCI GenAI service. Check and find the credential information below with your information.
 
-* user ocid: You can find under Profile -> My Profile when you click the top right section of OCI console.
-* tenancy ocid: You can find under Profile -> tenancy when you click the top right section of OCI console.
-* compartment ocid: Go to your compartment under Identity and copy compartment ocid
-* private_key
-* fingerprint
+    * user ocid: You can find under Profile -> My Profile when you click the top right section of OCI console.
+    * tenancy ocid: You can find under Profile -> tenancy when you click the top right section of OCI console.
+    * compartment ocid: Go to your compartment under Identity and copy compartment ocid
+    * private_key
+    * fingerprint
 
-For private key and fingerprint go to Profile -> My Profile when you click the top right section of OCI console. Click on API Keys under Resources and add an API Key
+    For private key and fingerprint go to Profile -> My Profile when you click the top right section of OCI console. Click on API Keys under Resources and add an API Key
 
-![API Key](images/api_key.png)
+    ![API Key](images/api_key.png)
 
 4. DBMS_CLOUD credentials: (Important Note: Put the private key all on a single line.)
 
@@ -123,10 +123,10 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
 
 7. Create a table from a PDF file. Please upload the PDF file to a storage bucket and get the Pre-Authenticated Request link to access the PDF file.
 
-* Upload the PDF file to a storage bucket.
-* Get the Pre-Authenticated Request link to access the PDF file.
-* Divide the BLOB into chunks using 'utl to chunks'. Adjust the chunk settings according to your needs. For more details, check this link: [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html)
-* Use 'utl to text' for further processing. More details can be found here: [UTL TO CHUNKS](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/dbms_vector_chain1.html#GUID-4E145629-7098-4C7C-804F-FC85D1F24240)
+    * Upload the PDF file to a storage bucket.
+    * Get the Pre-Authenticated Request link to access the PDF file.
+    * Divide the BLOB into chunks using 'utl to chunks'. Adjust the chunk settings according to your needs. For more details, check this link: [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html)
+    * Use 'utl to text' for further processing. More details can be found here: [UTL TO CHUNKS](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/dbms_vector_chain1.html#GUID-4E145629-7098-4C7C-804F-FC85D1F24240)
 
      ```text
        <copy>
@@ -167,7 +167,7 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
 
 9. Create a vector table and load data from an existing table: If your existing data hasn't been processed into chunks yet, your chunk size might exceed 512, which would prevent embedding generation. To address this, refer to [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html) to convert content to chunk.
 
-* Create  the vector table from an existing table: For the existing table, there will be at least two columns: one for the record ID to locate each record, and a content column (typically of 'CLOB' data type) for processing vector search.
+    * Create  the vector table from an existing table: For the existing table, there will be at least two columns: one for the record ID to locate each record, and a content column (typically of 'CLOB' data type) for processing vector search.
 
      ```text
        <copy>
@@ -220,11 +220,11 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
 
 12. Create Function against vector table
 
-* When returning the results, rename (alias) the record ID as 'DOCID', the content column as 'BODY', and the VECTOR DISTANCE between text vec and query vec as 'SCORE'. These 3 columns are required. If the vector table includes 'URL' and 'Title' columns, rename them (alias) as 'URL' and 'TITLE' respectively.
+    * When returning the results, rename (alias) the record ID as 'DOCID', the content column as 'BODY', and the VECTOR DISTANCE between text vec and query vec as 'SCORE'. These 3 columns are required. If the vector table includes 'URL' and 'Title' columns, rename them (alias) as 'URL' and 'TITLE' respectively.
 
-* For more details, please check [Vector Distance Functions and Operators](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/vector-distance-functions-and-operators.html)
+    * For more details, please check [Vector Distance Functions and Operators](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/vector-distance-functions-and-operators.html)
 
-* For specific information on vector distance, refer to [VECTOR DISTANCE](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/vector_distance.html#GUID-BA4BCFB2-D905-43DC-87B0-E53522CF07B7)
+    * For specific information on vector distance, refer to [VECTOR DISTANCE](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/vector_distance.html#GUID-BA4BCFB2-D905-43DC-87B0-E53522CF07B7)
 
      ```text
        <copy>

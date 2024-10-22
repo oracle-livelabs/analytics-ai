@@ -55,9 +55,6 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Contributors**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024

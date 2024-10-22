@@ -195,5 +195,5 @@ From ODA service console homepage -> skill **Display name** -> **Insights** on s
 
 * **Author**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **JB Anderson**, Senior Cloud Engineer, NACIE
