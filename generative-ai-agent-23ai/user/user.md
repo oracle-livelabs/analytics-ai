@@ -47,13 +47,10 @@ This lab assumes you have:
 2. Example Dataset Prompts
     The below questions are example prompts you can use if your administrator setup the application with the provided example dataset. If your administrator used a custom or company-specific dataset, you will need to ask them what topics the agent knows about
 
-    <!-- TODO: provide a couple prompts that will work with provided example dataset-->
-
 3. Agent Response Limitations
     The Generative AI agents service uses pre-trained foundational models from the Generative AI Inference service. However, the agents service limits responses to only knowledge found in the agent's data-sources. This means it will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
 
     ![agent ungrounded response](images/agent_ungrounded_response.png)
-
 
 ## Acknowledgements
 

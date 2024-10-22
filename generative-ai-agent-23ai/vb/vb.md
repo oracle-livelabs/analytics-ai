@@ -72,7 +72,7 @@ This lab assumes you have:
     * On the main screen, make sure you are on the **JavaScript** tab for **main-embedded-chat**
     * update the details as follows:
         * URI = 'oda-XXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/'
-            * URI is the hostname of the ODA instance provisioned in [Task 1 of the previous lab](../oda/oda.md#task-1-provision-oracle-digital-assistant)
+            * URI is the hostname of the ODA instance provisioned in Task 2 of the previous lab.
             * You can copy the base web url from the digital assistant instance details, but remove the **botsui/** path
         * channelId = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
             * channelId is created during Task 5 - Step 3 of the previous lab
@@ -127,7 +127,7 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
         * The url will follow the format `https://<VB_service_name>-vb-<tenancy_namespace>.builder.<region>.ocp.oraclecloud.com/ic/builder/rt/<VB_app_name>/live/webApps/atom/`
 
 2. Enable Access to VB Apps
-    * Note your VB instance name that was [created in Task 1 step 2](#task-1-create-vbcs-instance--embed-oda-skill-in-vbcs-application)
+    * Note your VB instance name that was created in Task 1 step 2.
     * Navigate in the OCI Console to Identity & Security -> Identity -> Domains
         * If your tenancy does not have Identity Domains yet, follow [these instructions](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/visual-builder-oci-admin/setting-users-and-groups-cloud-accounts-that-do-not-use-identity-domains-1.html#GUID-8B11C575-3CB9-4E46-BD09-17BD9B9897EE)
     ![Domain navigation](images/domain_nav.png)
@@ -160,8 +160,6 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
         }
     }</copy>
     ```
-
-<!--TODO: add optional step to track application access: https://console.us-ashburn-1.oraclecloud.com/loganalytics/explorer?savedSearchId=ocid1.manageme[…]df7ouna&jobId=77990570-11a2-ee33-03c8-62170cac7f82-->
 
 ## Acknowledgements
 

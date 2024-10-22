@@ -2,28 +2,31 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection
+This lab walks you through the steps to setup an OCI Generative AI Agent including ingesting a knowledge base from 23ai adb.
 
 Estimated Time: 30 minutes
 
-### About OCI Digital Assistant
+### About Generative AI Agents
 
-Oracle Digital Assistant (ODA) is a platform that allows you to create and deploy digital assistants for your users. Digital assistants are virtual devices that help users accomplish tasks through natural language conversations, without having to seek out and wade through various apps and web sites. Each digital assistant contains a collection of specialized skills. When a user engages with the digital assistant, the digital assistant evaluates the user input and routes the conversation to and from the appropriate skills.
+OCI Generative AI Agents is a fully managed service that combines the power of large language models (LLMs) with an intelligent retrieval system to create contextually relevant answers by searching your knowledge base, making your AI applications smart and efficient.
+
+OCI Generative AI Agents supports several ways to onboard your data and then allows you and your customers to interact with your data using a chat interface or API.
 
 ### Objectives
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Create a Channel to connect the skill to a frontend
+* Create Knowledge base
+* Create Agent
+* Chat with agent
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
+* Permissions to manage OCI Services: Generative AI Agents
+* Access to a Region where the Agent service is available: Chicago, Frankfurt
 
 ## Task 1: Create Knowledge Base
 
@@ -43,9 +46,17 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![Agent Navigation](images/locate_agent.png)
 
-2. Click on Create Agent. Provide Name, an optional welcome message - Hi I'm 23ai Vector DB RAG Agent. How can I help you? Select the Knowledge base created in previous task. Click on Create. It may take 15-20 minutes for agent to become active.
+2. Click on Create Agent. Provide Name, an optional welcome message - Hi I'm 23ai Vector DB RAG Agent. How can I help you? Select the Knowledge base created in previous task. Click on Create.
 
     ![Create Agent](images/create_agent.png)
+
+3. In few minutes the status of recently created Agent will change from Creating to Active. Click on "Endpoints" menu item in the left panel and then the Endpoint link in the right panel.
+
+    ![Endpoint Agent](images/agent_active_endpoint.png)
+
+4. It’ll open up the Endpoint Screen. Copy and keep the OCID of the Endpoint. It’ll be used later. Click on "Launch chat" button
+
+    ![Agent Endpoint](images/agent_endpoint.png)
 
 ## Task 3: Chat with Agent
 

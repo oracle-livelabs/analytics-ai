@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Deploy an ODA Chatbot powered by Generative AI Agents 23ai",
+  "workshoptitle": "Deploy an ODA Chatbot powered by Generative AI Agents using 23ai Vector DB",
   "help": "livelabs-help-aiservices_us@oracle.com",
   "tutorials": [
     {
@@ -13,20 +13,16 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: (Optional) Create Autonomous DB",
+      "title": "Lab 1: (Optional) Create ADB and DB Tools Connection",
       "filename": "../../adb/adb.md"
     },
     {
-      "title": "Lab 2: (Optional) Load vector data in ADB",
+      "title": "Lab 2: (Optional) Load vector data in ADB using sql",
       "filename": "../../sql/sql.md"
     },
     {
-      "title": "Lab 3: Create Knowledge Base",
+      "title": "Lab 3: Create Knowledge base and chat with agent",
       "filename": "../../kb/kb.md"
-    },
-    {
-      "title": "Lab 4: Create Agent",
-      "filename": "../../agent/agent.md"
     },
     {
       "title": "Lab 5: Setup OCI Digital Assistant (ODA)",

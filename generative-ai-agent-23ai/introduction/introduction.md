@@ -3,7 +3,7 @@
 ## About this Workshop
 
 This workshop will help to configure Generative AI powered chatbot (ATOM) on your own OCI tenancy.
-This workshop enables developers to perform GenAI RAG on documents stored in 23AI database using the OCI Generative AI Agent Service.
+This workshop enables developers to perform GenAI RAG on documents stored in 23ai database using the OCI Generative AI Agent Service.
 The users can then
 
 - Connect to OCI Generative AI Agent Service from OCI Digital Assistant Chatbot (hosted in OCI Visual Builder ATOM Application)
@@ -12,7 +12,7 @@ By following the workshop users can install this ATOM application in their own t
 
 ![User View](images/23ai_atom.png)
 
-Estimated Workshop Time: 2 hours 15 minutes
+Estimated Workshop Time: 3 hours
 
 ### Objectives
 
@@ -42,7 +42,7 @@ This lab assumes you have:
 * An Oracle Cloud Account
 * Access to OCI Generative AI Agents
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, 23AI database, OCIR, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
+* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, 23ai database, OCIR, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More

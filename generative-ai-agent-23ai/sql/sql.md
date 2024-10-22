@@ -1,35 +1,30 @@
-# Create ADB and DB Tools Connection
+# Load vector data in ADB using sql
 
 ## Introduction
 
-This lab will take you through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection
+This lab will take you through the steps needed to load data and create a vector search function in your ADB 23ai.
 
 Estimated Time: 30 minutes
-
-### About OCI Digital Assistant
-
-Oracle Digital Assistant (ODA) is a platform that allows you to create and deploy digital assistants for your users. Digital assistants are virtual devices that help users accomplish tasks through natural language conversations, without having to seek out and wade through various apps and web sites. Each digital assistant contains a collection of specialized skills. When a user engages with the digital assistant, the digital assistant evaluates the user input and routes the conversation to and from the appropriate skills.
 
 ### Objectives
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Create a Channel to connect the skill to a frontend
+* Create a vector table and load data
+* Create vector search function
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
+* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle ADB
 
-## Task 1: Create SQL
+## Task 1: Run SQL statements to create a vector table
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+This task involves running SQL statements to create a vector table and load data into it. Finally we also create a vector search function.
 
-1. Go to your Database connection created in previous lab. Click on SQL worksheet and run the following ccode blocks one by one.
+1. Go to your Database connection created in previous lab. Click on SQL worksheet and run the following code blocks one by one.
 
     ![SQL work](images/dbconn_sql_wksheet.png)
 
@@ -56,17 +51,17 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 3. Create the credentials to access OCI GenAI service. Check and find the credential information below with your information.
 
-user_ocid - You can find under Profile -> My Profile when you click the top right section of OCI console.
-tenancy_ocid -  You can find under Profile -> tenancy when you click the top right section of OCI console.
-compartment_ocid - Go to your compartment under Identity and copy compartment ocid
-private_key
-fingerprint
+* user ocid: You can find under Profile -> My Profile when you click the top right section of OCI console.
+* tenancy ocid: You can find under Profile -> tenancy when you click the top right section of OCI console.
+* compartment ocid: Go to your compartment under Identity and copy compartment ocid
+* private_key
+* fingerprint
 
 For private key and fingerprint go to Profile -> My Profile when you click the top right section of OCI console. Click on API Keys under Resources and add an API Key
 
-    ![API Key](images/api_key.png)
+![API Key](images/api_key.png)
 
-4. DBMS_CLOUD credentials: - (Important Note: Put the private key all on a single line.)
+4. DBMS_CLOUD credentials: (Important Note: Put the private key all on a single line.)
 
      ```text
        <copy>
@@ -130,8 +125,8 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
 
 * Upload the PDF file to a storage bucket.
 * Get the Pre-Authenticated Request link to access the PDF file.
-* Divide the BLOB into chunks using 'utl_to_chunks'. Adjust the chunk settings according to your needs. For more details, check this link: [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html)
-* Use 'utl_to_text' for further processing. More details can be found here: [UTL_TO_CHUNKS](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/dbms_vector_chain1.html#GUID-4E145629-7098-4C7C-804F-FC85D1F24240)
+* Divide the BLOB into chunks using 'utl to chunks'. Adjust the chunk settings according to your needs. For more details, check this link: [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html)
+* Use 'utl to text' for further processing. More details can be found here: [UTL TO CHUNKS](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/dbms_vector_chain1.html#GUID-4E145629-7098-4C7C-804F-FC85D1F24240)
 
      ```text
        <copy>
@@ -170,7 +165,7 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
        </copy>
     ```
 
-9. Create a vector table and load data from an existing table: If your existing data hasn't been processed into chunks yet, your chunk size might exceed 512, which would prevent embedding generation. To address this, refer to [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html) to convert content to chunk. 
+9. Create a vector table and load data from an existing table: If your existing data hasn't been processed into chunks yet, your chunk size might exceed 512, which would prevent embedding generation. To address this, refer to [Custom Chunking Specifications](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/convert-text-chunks-custom-chunking-specifications.html) to convert content to chunk.
 
 * Create  the vector table from an existing table: For the existing table, there will be at least two columns: one for the record ID to locate each record, and a content column (typically of 'CLOB' data type) for processing vector search.
 
@@ -191,7 +186,7 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
             ) as text_vec
             from ai_extracted_data
             where chunk_id <= 400
-        )       
+        )
        </copy>
     ```
 
@@ -223,13 +218,13 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
        </copy>
     ```
 
-12. Create Function against vector table 
+12. Create Function against vector table
 
-* When returning the results, rename (alias) the record ID as 'DOCID', the content column as 'BODY', and the VECTOR_DISTANCE between text_vec and query_vec as 'SCORE'. These 3 columns are required. If the vector table includes 'URL' and 'Title' columns, rename them (alias) as 'URL' and 'TITLE' respectively.
+* When returning the results, rename (alias) the record ID as 'DOCID', the content column as 'BODY', and the VECTOR DISTANCE between text vec and query vec as 'SCORE'. These 3 columns are required. If the vector table includes 'URL' and 'Title' columns, rename them (alias) as 'URL' and 'TITLE' respectively.
 
 * For more details, please check [Vector Distance Functions and Operators](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/vector-distance-functions-and-operators.html)
 
-* For specific information on vector distance, refer to [VECTOR_DISTANCE](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/vector_distance.html#GUID-BA4BCFB2-D905-43DC-87B0-E53522CF07B7)
+* For specific information on vector distance, refer to [VECTOR DISTANCE](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/vector_distance.html#GUID-BA4BCFB2-D905-43DC-87B0-E53522CF07B7)
 
      ```text
        <copy>
@@ -251,19 +246,19 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
                     "model": "cohere.embed-multilingual-v3.0"
                 }')
             );
- 
+
             OPEN v_results FOR
                 SELECT DOCID, BODY, VECTOR_DISTANCE(text_vec, query_vec) as SCORE
                 FROM ai_extracted_data_vector
                 ORDER BY SCORE
                 FETCH FIRST top_k ROWS ONLY;
- 
+
             RETURN v_results;
         END;
        </copy>
     ```
 
-13. Run & check the function 
+13. Run & check the function
 
      ```text
        <copy>
@@ -278,17 +273,17 @@ For private key and fingerprint go to Profile -> My Profile when you click the t
             top_k NUMBER := 10;
        BEGIN
             v_results := retrieval_test_func(p_query, top_k);
- 
+
             DBMS_OUTPUT.PUT_LINE('DOCID | SCORE');
             DBMS_OUTPUT.PUT_LINE('--------|------');
- 
+
             LOOP
                 FETCH v_results INTO v_docid, v_body, v_score;
                 EXIT WHEN v_results%NOTFOUND;
- 
+
                 DBMS_OUTPUT.PUT_LINE(v_docid || ' | ' || v_score);
             END LOOP;
- 
+
             CLOSE v_results;
         END;
        </copy>

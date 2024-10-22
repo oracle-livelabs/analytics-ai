@@ -6,24 +6,25 @@ This lab will take you through the steps needed to provision Oracle Autonomous D
 
 Estimated Time: 30 minutes
 
-### About OCI Digital Assistant
+### About Oracle ADB 23ai
 
-Oracle Digital Assistant (ODA) is a platform that allows you to create and deploy digital assistants for your users. Digital assistants are virtual devices that help users accomplish tasks through natural language conversations, without having to seek out and wade through various apps and web sites. Each digital assistant contains a collection of specialized skills. When a user engages with the digital assistant, the digital assistant evaluates the user input and routes the conversation to and from the appropriate skills.
+Oracle Database 23ai is the next long-term support release of Oracle Database. It includes over 300 new features with a focus on artificial intelligence (AI) and developer productivity. Oracle AI Vector Search is designed for Artificial Intelligence (AI) workloads and allows you to query data based on semantics, rather than keywords.
+This feature provides a built-in VECTOR data type that enables vector similarity searches within the database.
+With a built-in VECTOR data type, you can run run AI-powered vector similarity searches within the database instead of having to move business data to a separate vector database.
 
 ### Objectives
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Create a Channel to connect the skill to a frontend
+* Provision an Oracle ADB 23ai
+* Create DB Tools Connection
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
+* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
 
 ## Task 1: Dynamic Group and Policy Definition
 
