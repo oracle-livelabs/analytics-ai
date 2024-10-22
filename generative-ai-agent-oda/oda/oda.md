@@ -209,13 +209,13 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
     In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
 
-    ![Tenancy OCID](images/TenancyOCID.png)
+    ![Tenancy OCID](images/tenancy_ocid.png)
 
 * _ODAInstanceOCID_ - The OCID of the ODA Instance.
 
     In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
 
-    ![ODA Instance OCID](images/ODAInstanceOCID.png)
+    ![ODA Instance OCID](images/oda_instance_ocid.png)
 
 1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
 
@@ -225,7 +225,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
     endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'</copy>
    ```
 
-   ![ODA Instance Policy](images/CreatePolicy.png)
+   ![ODA Instance Policy](images/create_policy.png)
 
 2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" 
    compartment, and then define the following policies.
@@ -239,7 +239,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
     admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')</copy>
    ```
 
-   ![ODA Instance Policy](images/CreatePolicy.png)
+   ![ODA Instance Policy](images/create_policy.png)
 
 ## Acknowledgements
 
