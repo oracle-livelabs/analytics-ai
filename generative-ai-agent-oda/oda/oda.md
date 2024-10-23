@@ -27,7 +27,11 @@ This lab assumes you have:
 
 ## Task 1: Dynamic Group and Policy Definition
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+This task will help you ensure that the required Dynamic Group and Policy are correctly defined. If the Dynamic Group and Policy Definition are not correctly defined, please define them as follows.
+
+These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and Generative AI Agent are in the same tenancy.
+
+For Policy Definitions required for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies), please refer to Task 8.
 
 1. Locate Domains under Identity & Security
 
@@ -125,7 +129,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs-1.1.zip)
+    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs-1.2.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
@@ -133,17 +137,17 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Open the GenAIRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow2.png)
+    ![user start flow](images/user_startflow3.png)
 
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
-    ![flow update endpoint](images/flow_update_endpoint2.png)
+    ![flow update endpoint](images/flow_update_endpoint3.png)
 
 5. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
-    ![ODA Train](images/oda_trainflow2.png)
+    ![ODA Train](images/oda_trainflow3.png)
 
 6. You should be able to successfully the ODA Skill
 
@@ -181,7 +185,7 @@ This task involves creating REST service which will be used by ODA to connect to
     * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
     * In the ShowCitation block, update the component tab -> messages
 
-    ![flow update citations](images/flow_update_citations2.png)
+    ![flow update citations](images/flow_update_citations3.png)
 
 ## Task 7: (optional) View Conversation Analytics
 
@@ -192,6 +196,50 @@ From ODA service console homepage -> skill **Dislpay name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 <!-- TODO: add screenshot-->
+
+## Task 8: (optional) Policy Definitions for multi-tenancy deployment
+
+This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies). 
+
+If the Policy Definitions are not correctly defined, please define them as follows.
+
+**Required Information:**
+
+* _ODATenancyOCID_ - The OCID of the Tenancy, where the ODA Instance is created.
+
+    In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
+
+    ![Tenancy OCID](images/tenancy_ocid.png)
+
+* _ODAInstanceOCID_ - The OCID of the ODA Instance.
+
+    In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
+
+    ![ODA Instance OCID](images/oda_instance_ocid.png)
+
+1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
+
+   ```<copy>
+    endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'</copy>
+   ```
+
+   ![ODA Instance Policy](images/create_policy.png)
+
+2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" 
+   compartment, and then define the following policies.
+
+   _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
+
+   ```<copy>
+    define tenancy oda-instance-tenancy as ODATenancyOCI
+    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')</copy>
+   ```
+
+   ![ODA Instance Policy](images/create_policy.png)
 
 ## Acknowledgements
 
