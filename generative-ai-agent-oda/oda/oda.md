@@ -63,7 +63,7 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
     ![Policy Details](images/policy_details.png)
 
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+    **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Provision Oracle Digital Assistant
 
@@ -121,7 +121,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper          Resoponse Body. Ensure that the "id" field is not blank / null. If the "welcomeMessage" field is blank in this Rest API response, a generic           message would be shown in the ODA chatbot.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
