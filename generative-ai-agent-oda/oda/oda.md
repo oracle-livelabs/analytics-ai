@@ -219,7 +219,8 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
 1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
 
-   ```<copy>
+   ```
+   <copy>
     endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
     endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
     endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
@@ -233,7 +234,8 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
    _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
 
-   ```<copy>
+   ```
+   <copy>
     define tenancy oda-instance-tenancy as ODATenancyOCI
     admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
     admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
