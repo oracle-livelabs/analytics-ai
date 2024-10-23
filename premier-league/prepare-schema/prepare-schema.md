@@ -32,23 +32,19 @@ This new user/schema will hold the football data.
 
    ![ADW Menu](images/open-db.png)
 
-3. Click **Database Actions**.
+3. Click **Database Actions** and select SQL from the drop down list.
 
    ![ADW Menu](images/open-database-actions.png)
 
    If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
-4. Click the **SQL** tile under **Development** section.
+4. **Download** [pl-create-user.sql](./files/pl-create-user.sql) Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
-    ![ADW Menu](images/open-sql.png)
-
-5. **Download** [pl-create-user.sql](./files/pl-create-user.sql) Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
-
-6. Open the `pl-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. 
+5. Open the `pl-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. 
 
     ![ADW Menu](images/copy-paste.png)
 
-7. Click the **run-script** button (**NOT** the Run button). 
+6. Click the **run-script** button (**NOT** the Run button). 
 
    You will be asked for a password for the new user "PL". The password should have a minimum of 8 characters, one special character and mix of upper and lowercase characters.
 
@@ -83,11 +79,11 @@ This new user/schema will hold the football data.
    - Username: PL
    - Password: Provide the secure password for the PL user (as chosen earlier in Task 1 Step 7).
 
-3. Click to the **Data Load** option, under the **Data Tools** section.
+3. Click the hamburger menu top left and then select the **Data Load** option.
 
    ![Open Data Load](images/open-data-load.png)
 
-4. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
+4. Select **Load Data**
 
     ![Start Data Load](images/start-data-load.png)
 

@@ -30,13 +30,13 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 <if type="advanced">
-    - [odi-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_EIwsXv5v6KkKcQldUQixExqAgJCbY826XovJec4I25rc4dHEZW4whrF-nb2QUye/n/natdsecurity/b/stack/o/odi-mkplc-advanced.zip)
+    - [odi-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9Y2vQL_icfw022dyrn2AcduNWAFrkOg3qzMt7mrOW5LfpoVIyk1PuE1sSEe8ZRAF/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-advanced.zip)
 </if>
 <if type="basics">
-    - [odi-mkplc-basics.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m4wcgeN1hw9D1zV3pgOkbRjwanAt5dIW7QsZS7znZNnHU63vh495UHhkiRtaDJHE/n/natdsecurity/b/stack/o/odi-mkplc-basics.zip)
+    - [odi-mkplc-basics.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oCBNgQoxZns_AjWEjYiGZd3-xlNWsmxezJfBTu8yrbesw9UIpSwKF7-PJk-yK_Ak/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-basics.zip)
 </if>
 <if type="ha">
-    - [odi-mkplc-ha.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Egai3bjUiIJF-xVL1Zr6s1ZfC_S2mN70rAWSmz5iU6INHuM9XJkeqcP-jGLPdtVB/n/natdsecurity/b/stack/o/odi-mkplc-ha.zip)
+    - [odi-mkplc-ha.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FI6NbIoMu-G3Wny6A5SKqt844UhUh-Glf1LS8eiUBuCPcdVw1k9F1DjC9obgHIRW/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-ha.zip)
 </if>
 
 

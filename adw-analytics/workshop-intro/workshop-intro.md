@@ -27,12 +27,6 @@ Before you launch into this workshop, you will need the following:
 
 2. Basic level of understanding of SQL query language
 
-3. ***You will need to have completed the related LiveLabs workshop***, [**ADW: Data Loading and Management Using SQL on the MovieStream Dataset**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=838&clear=180&session=102687399911158). The **Getting Started** section of that prerequisite workshop describes how to obtain an Oracle cloud account if you do not already have one. In that workshop you provision an Oracle Autonomous Database, and then load the MovieStream data needed for this analytics workshop.
-
-**Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with one OCPU, the response times and query times will be different to those shown in the various screenshots.
-
-If you have any questions about the topics covered in this workshop, please contact us by using the feedback section of LiveLabs or posting on our public forum on [cloudcustomerconnect.oracle.com](http://cloudcustomerconnect.oracle.com) and we will respond as soon as possible.
-
 ## Business Case: Oracle MovieStream
 
 To make this workshop as realistic as possible, let us introduce the business scenario you will use during this workshop - **Oracle MovieStream**.

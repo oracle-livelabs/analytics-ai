@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Unlock Your Enterprise Knowledge: Building Your First Oracle GenAI RAG Agent",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Prepare the dataset",
+            "filename": "../../3-prepare-the-dataset/prepare-the-dataset-sandbox.md"
+        },
+        {
+            "title": "Create a Knowledge Base",
+            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base-sandbox.md"
+        },
+        {
+            "title": "Create an Agent",
+            "filename": "../../5-create-an-agent/create-an-agent-sandbox.md"
+        },
+        {
+            "title": "Have a conversation with your data",
+            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data-sandbox.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

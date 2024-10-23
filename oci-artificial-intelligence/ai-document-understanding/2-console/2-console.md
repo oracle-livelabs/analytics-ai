@@ -1,78 +1,158 @@
-# Lab 2: Use OCI Document Understanding in the Console
+# Use OCI Document Understanding in the Console
 
 ## Introduction
 In this lab, we will learn how to use OCI Document Understanding in the OCI Console in order to test various features on demo documents as well as your own documents.
 
 *Estimated Time*: 20 minutes
 
-## Task 1: Upload data to Object Storage (Optional)
-This is an optional set of steps if you want to test OCI Document Understanding with a variety of sample documents
+## Task 1: Prepare to save configuration settings
 
-1. Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+1. Open a text editor and copy & paste this text into a text file and save it on your local computer. You will store settings there from your OCI tenancy that will be used during the lab.
+    ```text TODO
+    <copy>
+    lab compartment: 
+      ex. docu-lab
 
-  a. First, From the OCI Services menu, click Storage then Buckets.
+    lab compartment ocid: 
+      ex. ocid1.compartment.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+
+    object storage bucket name: 
+      ex. docu-bucket
+
+    root compartment ocid: 
+      ex. ocid1.tenancy.oc1..aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+      
+    private key file location: 
+      ex. C:\Users\MYNAME\Downloads\mykeyfile.pem
+
+    object storage namespace: 
+      ex. axabc9efgh5x
+
+    job ID: 
+      ex. ocid1.aidocumentprocessorjob.oc1.phx.aaaaaaaabcdefghijk0123456789lmnopqrstuvwxyz9876543210abcdefg
+    </copy>
+    ```
+
+
+## Task 2: Create a compartment
+You will create a compartment for the object storage bucket you will use in this workshop. 
+
+You can use an existing compartment to run the lab but we recommend you create a new one in case you want to delete the components later
+
+1. Login to your OCI account/tenancy
+
+1. Go the burger menu of the console and select **Identity & Security**
+
+1. Then, under *Identity*, select **Compartments**
+    ![Menu Compartment](images/compartment1.png)
+
+1. Click **Create Compartment**
+
+1. In the *Create Compartment* dialog, 
+    1. Enter a name: **docu-lab** (recommended) (If you created a policy for a specific compartment in Lab 1, enter the same name here.)
+    1. Enter a description
+    1. Ensure *Parent Compartment* is set to the root compartment
+    1. Click **Create Compartment**
+    ![Create Compartment](images/compartment2.png)
+
+1. Save the name of your new compartment in the text file you created in the previous task
+
+1. The *Compartments* page is displayed and lists all of the compartments.  Click the name of the lab compartment you just created (i.e. docu-lab).
+	    
+1. On the *Compartment details* page, click **Copy** next to the compartment *OCID*.
+	    ![OCI comparment details page](./images/compartment-copy.png " ")
+    
+1. Save the compartment OCID to your text file as the *lab compartment ocid*
+
+
+## Task 3: Download sample files
+Some sample files have been provided that you can use when testing OCI Document Understanding on the cloud console.
+
+1. Download the zip file at this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample_images.zip) and save it to your local computer.
+
+1. Unzip the file to a folder on your local computer. You will use these files in the next task.
+
+## Task 4: Upload sample files to Object Storage
+You will upload the sample files to object storage for this lab and later labs. You'll create an Object Storage bucket in your lab compartment then upload sample files to it.
+
+1. From the OCI console burger menu, click **Storage** then **Buckets**.
     ![Console navigation window](./images/consolebucketbutton.png)
 
-  b. Then, Select Compartment from the left dropdown menu. Choose the compartment that you gave rights to according to your policies in Lab 1. If you have a new trial tenancy, you can select the root compartment.
+1. In the *Compartment* dropdown, select the lab compartment (*docu-lab*). (If you created a policy for a specific compartment in Lab 1, select the same name here.)
     ![Create object storage compartment window](./images/consolecompartmentsearch.png)
 
-  c. Next click Create Bucket.
+1. Next, click **Create Bucket**
     ![Create bucket window](./images/consolecreatebucket.png)
 
-  d. Next, fill out the dialog box:
-  -Bucket Name: Provide a name
-  -Storage Tier: Standard
-
-  e. Click create
+1. Next, fill out the *Create Bucket* dialog box:
+    - Bucket Name: **docu-bucket** (recommended)
+    - Storage Tier: Standard
+    - Click **Create**
     ![Create bucket window](./images/consolecreatenewbucket.png)
 
-2. Upload image files into Storage Bucket
+1. Save the name of the bucket to the text file you created in Task 1
 
-  a. Bucket detail window should be visible. 
+1. Click on the name of the bucket that you just created, i.e. **docu-bucket**, to open the *Bucket details* window 
+
+1. Click **Upload** 
     ![Console navigation window](./images/consolebucketselection.png)
 
-  b.Click on Upload and then click Select Files to browse to select your desired files to upload. 
+1. In the *Upload Objects* dialog, click *select files*, browse to the folder where you unzipped the sample files, and select images to upload. Upload all the files that were in the .zip file you downloaded.
     ![Console navigation window](./images/consolebucketupload.png)
 
-## Task 2: Analyze Document Data
+1. Click **Upload** and wait a few seconds until all the files show *Finished*
 
-  1. Navigate to the Document Understanding page
-    Using the Burger Menu on the top left corner, navigate to Analytics and AI and click it, and then select Document Understanding
+1. Click **Close** to close the *Upload Objects* dialog
+
+## Task 5: Analyze Document Data
+Use features of Document Understanding to analyze document files.
+
+  1. Using the burger menu on the top left corner of the OCI console, select **Analytics and AI**, then select **Document Understanding** under *AI Services*
       ![Console navigation window](./images/ocinavigationmenu.png)
 
-  2. Test with a demo image
-    On the panel under Document Understanding, select a feature page like text detection. Toggle between sample image buttons to see the different extraction results on the right hand Results panel. 
-      ![DUS demo window](./images/documentconsoletext.PNG)
-
-    If you're curious about the raw JSON response, scroll down on the results panel
-      ![Results panel](./images/results-highlighted.PNG)
+  2. On the Document Understanding page, select the first feature in the left list, **Text extraction** 
   
-    Then select the dropdown button under "Response"
-      ![Results panel](./images/documentconsoleresults.PNG)
+  1. A demo file is automatically processed by default. After a few seconds, view the extraction results on the right hand *Results* panel. Note that you can view the results by line or by word.
+      ![DUS demo window](./images/documentconsoletext.png)
 
-    You can repeat these steps to try other features like table detection, key value detection, and document classification panels in the console.
-      ![DUS navigation panel](./images/documentconsolenav.PNG)
+  1. If you're curious about the raw JSON response, scroll down on the results panel... 
+      ![Results panel](./images/results-highlighted.png)
+  
+  1. ...then expand *Request* and/or *Response*  
+      ![Results panel](./images/documentconsoleresults.png)
 
-  3. Test with your own documents
-    To test with your own documents, you have two options: either select a local file from your machine or a document in Object storage. To select either option, click either radio button next to "Demo Files" at the top of the page:
-      ![Local file panel](./images/documentconsolefile.PNG)
+  1. Select the **second demo file** and view its results
+      ![Local file panel](./images/documentconsolefile.png)
 
-    You'll be prompted to choose an output location in Object Storage for Document Understanding service to store the JSON result. On this prompt window, choose a compartment, bucket, and prefix. Then select submit.
-      ![Local file panel](./images/documentconsoleoutput.PNG)
+  1. Change *Document source* from *Demo files* to **Local files**
+    ![Local file panel](./images/documentconsolelocalfile.png)
 
-    Now you can select a local file or file you uploaded to object storage in Task 1.
-      ![Local file panel](./images/documentconsolelocalfile.PNG)
+  1. You will be prompted to enter details for an output object storage bucket. JSON output from the document processing will be written to this location. Enter the following values in the *Output location* dialog:
+    
+      - Compartment: **docu-lab**
+      - Output object storage location: **docu-bucket**
+      - Prefix: **console-output**
+      - Click **Submit**
+    ![Local file panel](./images/documentconsoleoutput.png) 
+
+  1. On the *Text extraction* page, under *Upload image*, click **select one...**, browse to one of the downloaded sample images, and select it. It will be analyzed and you can review the results.
+  ![Local file panel](./images/documentconsolelocalfile.png)
+
+  1. Repeat the previous step for other sample files.
+  
+## Task 6 - Try other Document Understanding features
+There are more features you can try in the console.
+
+  1. You can repeat the steps in the previous task to test other features like *Table extraction*, *Key value extraction*, and *Document classification* in the console. Some sample documents are not applicable to some features. For example some documents don't have tables to extract. (You won't need to set the output location again though.)
+      ![DUS navigation panel](./images/documentconsolenav.png)
+
 
 ## Summary
+In this lab you learned how use OCI Document Understanding in the OCI console with the demo files and additional sample files. You can apply this knowledge to your own files.
 
-Congratulations! </br>
-In this lab you have learnt how use OCI Document Understanding in the conosle.
-
-You may now **proceed to the next lab**.
+You may now **proceed to next lab**.
 
 ## Acknowledgements
-* **Authors**
-    * Kate D'Orazio - Product Manager
+* **Authors** - Kate D'Orazio - Product Manager
 
-
-* **Last Updated By/Date**
+* **Last Updated By/Date** - Wes Prichard, Product Manager, July 2023

@@ -16,33 +16,33 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to Oracle Analytics Cloud
-* Downloaded [Sample Order Lines DS](https://objectstorage.us-phoenix-1.oraclecloud.com/p/TBMVACa7qZgj8ijJ3j5wlILzaVVtw1jo6n4rO8mREaAKjRoWAPX0OVTaEL39buPQ/n/idbwmyplhk4t/b/LiveLabsFiles/o/Sample%20Order%20Lines%20DS.xlsx) dataset
+* Downloaded [Sample Order Lines DS](https://objectstorage.us-ashburn-1.oraclecloud.com/p/x4wryiFOjhANhy2yDOy08kMOKKaR_b3jW6KX2Dpbi3cN3QCcdradiPZ7BJBNmtAM/n/idmqvvdwzckf/b/LiveLabs-Files/o/Sample%20Order%20Lines%20DS.xlsx) dataset
 
 
 ## Task 1: Create a Dataset
 In this section, you will upload the Sample Order Lines DS into Oracle Analytics and create a dataset.
 
-1. Once you have downloaded the Sample Order Lines DS dataset, we need to create a dataset in Oracle Analytics. From the homepage, click "Create" and select "Dataset."
+1. Once you have downloaded the Sample Order Lines DS dataset, we need to create a dataset in Oracle Analytics. From the homepage, click **Create** and select **Dataset.**
 
   ![Create dataset](images/create-dataset.png =200x*)
 
-2. Click "Drop data file here or click to browse" and choose the "Sample Order Lines DS" dataset.
+2. Click **Drop data file here or click to browse** and choose the **Sample Order Lines DS** dataset.
 
   ![Drop data file](images/drop-data.png =600x*)
 
-3. Click "OK".
+3. Click **OK**.
 
   ![Click OK](images/click-ok.png)
 
-4. Once the dataset is loaded, click save the dataset by clicking the "Save" button.
+4. Once the dataset is loaded, click save the dataset by clicking the **Save** button.
 
   ![Save dataset](images/save-dataset.png)
 
-5. Enter "Sample Order Lines DS" for "Name" and click "OK".
+5. Enter **Sample Order Lines DS** for **Name** and click **OK**.
 
   ![Enter dataset name](images/enter-name.png =400x*)
 
-6. There are two ways to create a Workbook. Click the "Go Back" button to create a Workbook from the homepage, or click "Create Workbook" on the top right after saving your dataset.
+6. There are two ways to create a Workbook. Click the **Go Back** button to create a Workbook from the homepage, or click **Create Workbook** on the top right after saving your dataset.
 
   ![Create Workbook](images/create-workbook.png)
 
@@ -55,4 +55,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * Author - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
-* Last Updated By/Date - Nagwang Gyamtso, February 2023
+* Last Updated By/Date - Nagwang Gyamtso, July 2023

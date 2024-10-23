@@ -45,7 +45,7 @@ In this lab you will:
 
    ![](./images/create-atp-03.png)
 
-5. Choose the Shared Infrastructure deployment type.
+5. Choose the Serverless Infrastructure deployment type.
 
    ![](./images/create-atp-serverless.png)
 
@@ -78,7 +78,7 @@ In this lab you will:
 
 We will develop the machine learning model using Zeppelin, which comes included in the autonomous database. Zeppelin is a web-based notebook environment that allows us to analyze and experiment with data. In our case we will be using it to build a machine learning model. First we will set up a user for Zeppelin.
 
- 1. On the main page of your ATP instance, go to Tools, then "Oracle ML User Administration"
+ 1. On the main page of your ATP instance, select Database Actions, then "Database users" in the drop down menu.
 
     ![](images/manage-ml-users.png)
 
@@ -96,10 +96,9 @@ We will develop the machine learning model using Zeppelin, which comes included 
  3. Create a user called "MLUSER1".
 
     - Username: MLUSER1
-    - First Name: Zeppelin
-    - Last Name: User
-    - Email address: Use any email address (it is not relevant)
-    - _Deselect_ "Generate password..." and enter a password yourself: Oracle_12345
+    - Enter a password yourself: Oracle_12345
+    - select "OML" to on
+    - select "create user"
 
     ![](images/create-ml-user.png)
 

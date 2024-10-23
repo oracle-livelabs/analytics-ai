@@ -72,7 +72,7 @@ In this lab, you will:
 
 4. Browse the connection type or simply type in the search section _**MySQL**_, and Click it.
   
-  	![Oracle Analytics dashboard connection creation](./images/select-mysql..png)
+  	![Oracle Analytics dashboard connection creation](./images/select-mysql.png)
 
  	In the new window we have a lot of information we need to provide. Host name is a little bit tricky, we need to provide the Internal FQDN (fully qualified domain name) of the MySQL Database Instance. To find this out, you need to go back to the MySQL instance details.
 
@@ -220,7 +220,7 @@ In this lab, you will:
 
 ## Learn More
 
-- If you want to discover more on how to use Oracle Analytics Cloud check our **[Tutorials](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html)** and **[Live Labs!](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?p100_focus_area=28&me=117&clear=100&session=107258786260970)**
+- If you want to discover more on how to use Oracle Analytics Cloud check our **[Tutorials](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html)** and **[Live Labs!](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?p100_focus_area=28&me=117&clear=100&session=107258786260970)**
 
 
 ## Acknowledgements

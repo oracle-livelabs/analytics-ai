@@ -22,10 +22,6 @@ Estimated time: 15 minutes
 
 ### Prerequisites
 
-- You will need to have completed the related LiveLabs workshop, [**ADW: Data Loading and Management Using SQL on the MovieStream Dataset**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=838&clear=180&session=102687399911158). The **Getting Started** section of that prerequisite workshop describes how to obtain an Oracle cloud account if you do not already have one. In that workshop you provision an Oracle Autonomous Database, and then load the MovieStream data needed for this analytics workshop.
-
-- The **ADW: Data Loading and Management Using SQL on the MovieStream Dataset** workshop includes some simple SQL queries, so this workshop assumes familiarity with those simple queries by layering new concepts and functionality to extend those previous examples.
-
 Before starting to run the code in this workshop, we need to manage the resources we are going to use to query our sales data. You will notice that when you open SQL Worksheet, it automatically defaults to using the LOW consumer group - this is shown in the top right section of your worksheet.
 
 ![LOW consumer group shown in worksheet](images/3054194710.png)
@@ -37,7 +33,7 @@ Before starting to run the code in this workshop, we need to manage the resource
 * MEDIUM: A typical connection service for reporting and batch workloads. Workloads also run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to 4.
 * LOW: A connection service for all other reporting or batch processing workloads. This connection service does not run with parallelism.
 
-For more information about how to use consumer groups to manage concurrency and prioritization of user requests in Autonomous Data Warehouse, please click the following link: [Manage Concurrency and Priorities on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953). If you want to explore this topic using a workshop, [click here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=618) to launch the **Managing and Monitoring in Autonomous Database** workshop.
+For more information about how to use consumer groups to manage concurrency and prioritization of user requests in Autonomous Data Warehouse, please click the following link: [Manage Concurrency and Priorities on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953). If you want to explore this topic using a workshop, [click here](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=618) to launch the **Managing and Monitoring in Autonomous Database** workshop.
 
 Change the consumer group by simply clicking the downward pointing arrow next to the word LOW, and from the pulldown menu select **HIGH**.
 

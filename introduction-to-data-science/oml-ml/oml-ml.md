@@ -17,9 +17,38 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## Task 1: Open the Oracle machine learning 
+## Task 1: Alter the tables to allow access to new user "MLUSER1" 
 
-1. Back in the Datbase Actions home page, select Oracle Machine Learning.
+1. Back in the ATP console, Select Database Actions.
+ 
+   ![](images/open-sql.png)
+
+2. Copy and paste the two commands below,then select "run script" and you should get the out puts of "Grant succeeded" and "User MLUSER1 altered".
+
+    ```
+    <copy>
+    SELECT * GRANT UNLIMITED TABLESPACE TO MLUSER1
+    </copy>
+    ```
+
+    ![](images/grant-access.png)
+
+     ```
+    <copy>
+    SELECT * ALTER USER MLUSER1 QUOTA 100M ON DATA
+    </copy>
+    ```
+
+    ![](images/alter-user.png)
+
+
+    ![](images/alter.png)    
+
+3. Sign out as "admin" at the top right hand side of the page.
+
+## Task 2: Open the Oracle machine learning 
+
+1. Back in the Datbase Actions home page, select trhe hamburger menu top left and select Oracle Machine Learning.
 
    ![](images/open-ml.png)
 
@@ -39,7 +68,7 @@ In this lab you will:
 
    ![](images/examples-2.png)
 
-## Task 2: Build the machine learning model with Zeppelin
+## Task 3: Build the machine learning model with Zeppelin
 
 Our goal is to predict which customers are interested in buying Y Box Games. In this case we will build a model by letting it learn from existing customers purchasing behavior.
 

@@ -19,7 +19,7 @@ Set up these **prerequisites** before starting our Data Integration journey in O
 * **Free Tier/ Paid Oracle Cloud Account**
 * **OCI user** that is assigned to an **OCI group**.
 
-*Note*: If you want to create a new OCI user or assign the user to a group, see the [Identity and Access Management workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566).
+*Note*: If you want to create a new OCI user or assign the user to a group, see the [Identity and Access Management workshop](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624).
 
 ## Task 1: Create an OCI Compartment
 
@@ -220,7 +220,7 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
   ![](./images/create-user-sql.png " ")
 
-9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
+9. **Download** the zip file [OCI DI Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
 
 10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
 

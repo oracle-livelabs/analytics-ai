@@ -1,4 +1,8 @@
-# Lab 7: Use OCI speech to enable Functions
+<<<<<<< HEAD
+# Lab 10: Trigger functions for OCI speech transcription jobs (Optional)
+=======
+# Lab 9: Trigger functions for OCI speech transcription jobs (Optional)
+>>>>>>> upstream/main
 
 ## Introduction
 
@@ -6,7 +10,7 @@ Oracle Cloud Infrastructure Functions is a fully managed, multi-tenant, highly s
 In this lab session, We will cover how you can create a simple Java function and trigger the function using OCI Speech service.
 
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives:
 
@@ -62,12 +66,19 @@ Create a VCN with Internet access.
     ![Fill application details](./images/create-app.png " ")
 
 5. Application will navigate to Getting Started page,
-    *NOTE:* We need to edit the hello-world function to print the function parameter so that we can access Event Json information in Logs.
+    ![Configure CLI](./images/configurecloudshell.png " ")
 
-6. Click on the **console icon** on the top right, then click **Code Shell**  to open Code Shell.
+6.	Click **Cloud Shell Setup**
+7.	Click the **Launch Cloud Shell** button.
+ This will start a Linux virtual machine with all the configurations to set up functions.
+8.	Follow steps **1** through **7** under the “Setup fn CLI on Cloud Shell” section
+	* If you need more specific and detailed instructions, see this [Document](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm)
+	* You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
+
+9. To open the cloud shell, Click on the **console icon** on the top right, then click **Code Shell**  to open Code Shell.
     ![Open cloud shell](./images/open-cloud-shell.png " ")
 
-7. In the console run the following command to generate a 'hello-world' boilerplate function
+10. In the console run the following command to generate a 'hello-world' boilerplate function
         ```
         <copy>
         fn init --runtime java hello-java
@@ -75,20 +86,22 @@ Create a VCN with Internet access.
         ```
 
 
-8. Click on the **console icon** on the top right, then click **Code Editor**  to open Code Editor.
+11. Click on the **console icon** on the top right, then click **Code Editor**  to open Code Editor.
+
+    *NOTE:* We need to edit the hello-world function to print the function parameter so that we can access Event Json information in Logs.
     ![Open cloud editor](./images/open-cloud-editor.png " ")
 
-9. Goto **options** and select, **File > Open...** Then open **HelloFunction.java** under **hello-java** folder.
+12. Goto **options** and select, **File > Open...** Then open **HelloFunction.java** under **hello-java** folder.
     ![Navigate to hello java folder](./images/open-hello-java.png " ")
 
-10. Add following code snippet as shown below,
+13. Add following code snippet as shown below,
     
         <copy>System.out.println("Input parameter to the HelloWorld function: "+ input);</copy>
     ![Edit the hello world java file](./images/edit-hello-java.png " ")
 
-11. Save the file and continue function deployment
+14. Save the file and continue function deployment
 
-12. Open the **Cloud Shell** again. Run the following two commands to deploy your function
+15. Open the **Cloud Shell** again. Run the following two commands to deploy your function
         ```
         <copy>
         cd hello-java
@@ -100,7 +113,7 @@ Create a VCN with Internet access.
         </copy>
         ```
 
-13. On the **Application** details page, Under **Resources** click **Logs** and then click on the slider under **Enable Log**. This will be useful to check logs if hello-world function is called.
+16. On the **Application** details page, Under **Resources** click **Logs** and then click on the slider under **Enable Log**. This will be useful to check logs if hello-world function is called.
     ![Enable logs](./images/enable-logs.png " ")
 
 
