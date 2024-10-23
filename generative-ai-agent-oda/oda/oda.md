@@ -236,7 +236,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
    ```
    <copy>
-    define tenancy oda-instance-tenancy as ODATenancyOCI
+    define tenancy oda-instance-tenancy as ODATenancyOCID
     admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
     admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
     admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
