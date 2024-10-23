@@ -222,7 +222,8 @@ If the Policy Definitions are not correctly defined, please define them as follo
    ```<copy>
     endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
     endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
-    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'</copy>
+    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
+    </copy>
    ```
 
    ![ODA Instance Policy](images/create_policy.png)
@@ -236,7 +237,8 @@ If the Policy Definitions are not correctly defined, please define them as follo
     define tenancy oda-instance-tenancy as ODATenancyOCI
     admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
     admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
-    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')</copy>
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    </copy>
    ```
 
    ![ODA Instance Policy](images/create_policy.png)
