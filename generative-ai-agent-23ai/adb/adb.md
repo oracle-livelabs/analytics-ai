@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection
+This lab will take you through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection. Keep in mind this is an optional lab if you already have a 23ai db provisioned and an existing DB tools connection.
 
 Estimated Time: 30 minutes
 

@@ -20,9 +20,39 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Oracle ADB
 
-## Task 1: Run SQL statements to create a vector table
+## Task 1: Oracle 23ai Prerequisites
 
-This task involves running SQL statements to create a vector table and load data into it. Finally we also create a vector search function.
+The user must have the Oracle 23ai Database with the following components:
+
+* Table: Used to store records with 'docid', 'body', and 'vector'.
+* Database Function: Provides vector search results against the provided query.
+
+### Table
+
+The table should have the following required fields:
+
+* 'docid': The record or document ID.
+* 'body': The content used for the search.
+* 'vector': The vector generated from an embedding model based on the 'body' content.
+
+Optional fields include:
+
+* 'chunkid': The chunk ID for the same 'docid' in case of large content.
+* 'url': A URL reference for the content, if available.
+* 'title': The title of the body content.
+
+### Function
+
+A function with the following requirements:
+
+* Return Type: 'SYS_REFCURSOR'
+* Input Parameters:
+  * 'p_query' (query string)
+  * 'top_k' (number of top results)The embedding model used for the query string should be the same as the one used for embedding the 'body' field. The return fields should match the table's required (DOCID, BODY and SCORE) and optional fields (CHUNKID, TITLE, and URL)
+
+Note: Names can vary but must be aliased as follows in the function.
+
+## Task 2: Run SQL statements to create a vector table
 
 1. Go to your Database connection created in previous lab. Click on SQL worksheet and run the following code blocks one by one.
 

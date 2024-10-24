@@ -10,7 +10,7 @@ The users can then
 - Get responses of their question (in natural language) from those custom documents.
 By following the workshop users can install this ATOM application in their own tenancy
 
-![User View](images/23ai_atom.png)
+![User View](images/image_intro.png)
 
 Estimated Workshop Time: 3 hours
 
@@ -21,7 +21,7 @@ Objective of this workshop is to set-up the required OCI services to create a fu
 ![Architecture Diagram](images/architecture_23ai.png)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
-Users can then ingest and perform RAG on the user’s documents in 23AI database, using OCI Generative AI Agent Service.
+Users can then ingest and perform RAG on the user’s documents in 23ai database, using OCI Generative AI Agent Service.
 * OCI Digital Assistant (ODA) – Users can create ODA instance and import the provided ODA Skill.
 Users can then connect from ODA chatbot to OCI Generative AI Agent Service.
 * OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
