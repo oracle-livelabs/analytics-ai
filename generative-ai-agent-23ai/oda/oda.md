@@ -124,25 +124,25 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [GenAI-23AI-RagAgent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0BJLctVh8x6T_jp613TNRde7d5laF7IdHu8p_6YdmSfpv3Hsjwl_Au5xen5ZA7_d/n/c4u02/b/hosted_workshops/o/GenAI23AIVDBRAGAgentChatbot1.zip)
+    [GenAI-23AI-RagAgent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rkAHVPn54B5ODcUdzzZP9GtyML84SrheDbIrl4W5JT6lZfPVHwTIEJVkIUwpNp0h/n/c4u02/b/hosted_workshops/o/GenAI23aiRAGAgentChatbot.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
     ![import skill](images/import_skill.png)
 
-3. Open the GenAIRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
+3. Open the GenAI23aiRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_startflow2.png)
+    ![user start flow](images/user_flow.png)
 
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in Lab 3 Task 2 Step 4).
 
-    ![flow update endpoint](images/flow_update_endpoint2.png)
+    ![flow update endpoint](images/user_flow1.png)
 
 5. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
-    ![ODA Train](images/oda_trainflow2.png)
+    ![ODA Train](images/user_flow2.png)
 
 6. You should be able to successfully import the ODA Skill
 
@@ -180,7 +180,7 @@ This task involves creating REST service which will be used by ODA to connect to
     * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
     * In the ShowCitation block, update the component tab -> messages
 
-    ![flow update citations](images/flow_update_citations2.png)
+    ![flow update citations](images/show_citation.png)
 
 ## Task 7: (optional) View Conversation Analytics
 
