@@ -63,7 +63,7 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
     ![Policy Details](images/policy_details.png)
 
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+    **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Provision Oracle Digital Assistant
 
@@ -121,7 +121,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper          Resoponse Body. Ensure that the "id" field is not blank / null. If the "welcomeMessage" field is blank in this Rest API response, a generic           message would be shown in the ODA chatbot.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
@@ -219,10 +219,12 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
 1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
 
-   ```<copy>
+   ```
+   <copy>
     endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
     endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
-    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'</copy>
+    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
+    </copy>
    ```
 
    ![ODA Instance Policy](images/create_policy.png)
@@ -232,11 +234,13 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
    _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
 
-   ```<copy>
-    define tenancy oda-instance-tenancy as ODATenancyOCI
+   ```
+   <copy>
+    define tenancy oda-instance-tenancy as ODATenancyOCID
     admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
     admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
-    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')</copy>
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    </copy>
    ```
 
    ![ODA Instance Policy](images/create_policy.png)
