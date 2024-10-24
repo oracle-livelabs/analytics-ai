@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to load data and create a vector search function in your ADB 23ai.
+This lab will take you through the steps needed to load data and create a vector search function in your ADB 23ai. Keep in mind this is an optional lab if you already have your table ready with a vector search function. If yes, you can skip this lab and move to lab 3.
 
 Estimated Time: 30 minutes
 

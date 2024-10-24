@@ -132,7 +132,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Open the GenAI23aiRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
 
-    ![user start flow](images/user_flow.png)
+    ![user start flow](images/user_start.png)
 
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in Lab 3 Task 2 Step 4).
 
