@@ -191,6 +191,54 @@ From ODA service console homepage -> skill **Display name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 
+## Task 8: (optional) Policy Definitions for multi-tenancy deployment
+
+This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies). 
+
+If the Policy Definitions are not correctly defined, please define them as follows.
+
+**Required Information:**
+
+* _ODATenancyOCID_ - The OCID of the Tenancy, where the ODA Instance is created.
+
+    In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
+
+    ![Tenancy OCID](images/tenancy_ocid.png)
+
+* _ODAInstanceOCID_ - The OCID of the ODA Instance.
+
+    In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
+
+    ![ODA Instance OCID](images/oda_instance_ocid.png)
+
+1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
+
+   ```
+   <copy>
+    endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
+    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
+    </copy>
+   ```
+
+   ![ODA Instance Policy](images/create_policy.png)
+
+2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root"
+   compartment, and then define the following policies.
+
+   _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
+
+   ```
+   <copy>
+    define tenancy oda-instance-tenancy as ODATenancyOCID
+    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
+    </copy>
+   ```
+
+   ![ODA Instance Policy](images/create_policy.png)
+
 ## Acknowledgements
 
 * **Author**
