@@ -193,7 +193,7 @@ From ODA service console homepage -> skill **Display name** -> **Insights** on s
 
 ## Task 8: (optional) Policy Definitions for multi-tenancy deployment
 
-This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies). 
+This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies).
 
 If the Policy Definitions are not correctly defined, please define them as follows.
 
