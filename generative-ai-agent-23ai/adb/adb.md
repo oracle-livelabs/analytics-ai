@@ -148,3 +148,5 @@ This task involves creating a Database Tools Connection which will be used to qu
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024

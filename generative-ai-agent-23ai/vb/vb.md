@@ -167,3 +167,5 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
+* **Last Updated By/Date**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024

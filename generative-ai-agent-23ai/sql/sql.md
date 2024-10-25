@@ -325,3 +325,5 @@ Note: Names can vary but must be aliased as follows in the function.
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
