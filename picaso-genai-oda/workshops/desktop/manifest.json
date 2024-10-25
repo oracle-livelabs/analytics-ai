@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Deploy an ODA Chatbot powered by Generative AI Agents",
+  "workshoptitle": "Deploy PICASO Chatbot powered by Generative AI Agents",
   "help": "livelabs-help-aiservices_us@oracle.com",
   "tutorials": [
     {
@@ -13,29 +13,25 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: (Optionally) Provision Infrastructure via Terraform",
+      "title": "Lab 1: Provision PeopleSoft Marketplace Image and Setup PICASO Digital Assistant (ODA)",
+      "filename": "../../picaso/picaso.md"
+    },
+    {
+      "title": "Lab 2: (Optionally) Provision Infrastructure via Terraform",
       "filename": "../../terraform/terraform.md"
     },
     {
-      "title": "Lab 2: Provision Generative AI Agents Service",
+      "title": "Lab 3: Provision Generative AI Agents Service",
       "filename": "../../agent/agent.md"
     },
     {
-      "title": "Lab 3: Setup OCI Digital Assistant (ODA)",
+      "title": "Lab 4: Import GenAI RAG Skill and configure in PICASO (ODA)",
       "filename": "../../oda/oda.md"
-    },
-    {
-      "title": "Lab 4: Setup OCI Visual Builder (VB)",
-      "filename": "../../vb/vb.md"
-    },
+    },    
     {
       "title": "Lab 5: Demo User Experience",
       "filename": "../../user/user.md"
-    },
-    {
-      "title": "Lab 6: (optional) Explore Functions in Depth",
-      "filename": "../../functions/functions.md"
-    },
+    },    
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
