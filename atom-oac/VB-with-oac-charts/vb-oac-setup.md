@@ -1,25 +1,26 @@
-# Provision of Oracle Digital Assistant & Visual Builder Instance
+# Configure Visual Builder Application with OAC Charts
 
 ## Introduction
 
-This lab will take you through the steps needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
+This lab will take you through the steps needed to configure a VB application with OAC integration
 
-Estimated Time: 1 hours 30 minutes
+Estimated Time: 4 hours
 
-### About Oracle Digital Assistant
+### About Visual Builder and Oracle Analytics Cloud 
 
-Oracle Digital Assistant delivers a complete AI platform to create conversational experiences for business applications through text, chat, and voice interfaces
+Oracle Visual Builder and Oracle Analytics Cloud are powerful tools that enable users to quickly and easily develop and deploy cloud-based applications and gain insights from their data. 
+
+Visual Builder provides a visual, drag-and-drop development experience, allowing users to create sophisticated applications without the need for complex coding. With a wide range of pre-built components and templates, users can build and customize applications tailored to their specific needs. 
+
+Oracle Analytics Cloud offers a comprehensive suite of tools for data analysis and visualization. It enables users to explore and understand their data, gain valuable insights, and make data-driven decisions. With self-service capabilities and advanced analytics, organizations can empower their users to discover patterns, predict outcomes, and drive business success. 
+
+Together, Oracle Visual Builder and Oracle Analytics Cloud provide a robust and user-friendly platform for developing applications and deriving valuable insights from data, helping businesses streamline their processes and achieve their goals.
 
 ### Objectives
 
-Provisioning of ODA
+To integrate OAC into a VB application. Please see the VB + OAC block on the right-hand of the architecture diagram below for a better understanding.
 
-In this lab, you will:
-
-* **Provision ODA Instance**
-  * Follow Task 1 to Task 5 to set-up ODA Instance
-* **Provision VBCS Instance**
-  * Follow Task 6
+![Architecture ](images/atom-oac-diagram.drawio.png)
 
 ### Prerequisites
 
@@ -30,63 +31,111 @@ This lab assumes you have:
 * Administrator permissions or permissions to use Analytics Cloud, Digital Assistant, Visual Builder, and Identity Domains
 * (Recommended, not required) Access to the Chicago Region
 
-## Task 1: Provision Oracle Digital Assistant
+## Task 1: Provision Oracle Analytics Cloud 
 
-This task will help you to create Oracle Digital Assistant under your choosen compartment.
+This task will help you to create Oracle Analytics Cloud under your chosen compartment. 
 
-1. Locate Digital Assistant under AI Services
+1. Locate Analytics Cloud under Analytics & AI
 
-   ![Navigate to Digital Assistant](images/oda_provision_1.png)
+   ![Navigate to Analytics Cloud](images/provision-oac-1.png)
 
-   > **Note:** You can find Digital Assistant under the AI Services.
+2. Provide the information for **Name**, **Capacity** , **License & Edition**, & **Network Access**. This lab is set up with the following default settings -
+    - Capacity Type: OCPU 
+        - OCPU Count: 1 (Non-production)
+    - License and Edition
+        - (Choose your own)
+        - Edition: Enterprise
+    - Network Access: Public
+    - Identity Management 
+        - Compartment: root
+        - Identity Domain: Default
+        - Admin User: (your user)
+    - Data Encryption 
+        - Encrypt using Oracle-managed Keys
+    
+    Click **Create**
 
-2. Provide the information for **Compartment**, **Name** , **Description** (optional) & **Shape**. Click **Create**
+    ![Create OAC](images/provision-oac-2.png)
 
-    ![Create ODA](images/oda_provision_3.png)
+3. In few minutes the status of recently created Analytics Cloud instance will change from **Provisioning** to **Active**
 
-3. In few minutes the status of recently created Digital Assistant will change from **Provisioning** to **Active**
+    ![Active OAC Instance](images/provision-oac-3.png)
 
-    ![Active ODA Instance](images/oda_provision_4.png)
+## Task 2: Provision Visual Builder Service
 
-## Task 2: Dynamic Group & Policy creation for Oracle Digital Assistant
+This task will help you create a Visual Builder instance in your compartment 
 
-This task will help you to create desired dynamic group & necessary policy for the Oracle Digital Assistant
+1. Locate Visual Builder under Developer Services
+
+   ![Navigate to Visual Builder](images/visual_builder.png)
+
+2. Provide the information for **Name** & **Nodes**. 
+    
+    Click **Create**
+
+    ![Create VB](images/provision-vb-1.png)
+
+3. In few minutes the status of recently created Visual Builder instance will change from **Provisioning** to **Active**
+
+    ![Active VB Instance](images/provision-vb-2.png)
+
+## Task 3: Policy creation for Oracle Analytics Cloud and Visual Builder Access
+
+
+![Navigate to Domains](images/domain.png)
+
+Click on Create dynamic group and name it as atomDynamicGroup
+
+Select radio button - Match any rules defined below
+Add the following rules. Please change the values of OCIDs to your own values here.
+
+Rule 1
+
+```text
+    <copy>
+    All {instance.compartment.id = '<compartment_ocid>' }
+    </copy>
+```
+
+Note - This will be ocid of the compartment with the OAC and VB instance
+
+This task will help you to create necessary policy for the API Gateway
 
 1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
 
-    Add policies for managing OAC, VB, API Gateway, Functions
-    - Go to Identity & Security > Identity > Policies
-    - Create new policy
-    - Add the following rules 
-
+    Fn_Access - Policy to allow dynamic group to access functions
     ```text
-    <copy>
-    ALLOW any-user to use functions-family in compartment <compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<compartment-id>'}
-    </copy>
+        <copy>
+        Allow dynamic-group atomDynamicGroup to use fn-invocation in tenancy
+        </copy>
+    ```
 
-    # Full manage permissions for OAC (Create, View, Update, Delete, Scale, Start, Stop...)
-    <copy>
-    allow group <group> to manage analytics-instances in tenancy
-    allow group <group> to manage analytics-instance-work-requests in tenancy
-    </copy>
+    API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
 
-    # Full manage permissions for Visual Builder
-    <copy>
-    allow group <admin_group> to manage visualbuilder-instance in compartment  <compartmentId>
-    </copy>
-
-    # Access for Dynamic Group 
-    <copy>
-    Allow dynamic-group <dynamic-oda-group> to use fn-invocation in tenancy
-    </copy>
+     ```text
+        <copy>
+        ALLOW any-user to use functions-family in compartment <compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        </copy>
     ```
 
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
 
-## Task 3: Import Skill (Provided)
+## Task 4: Configure Oracle Analytics Cloud
 
-1. Click on the link to download the required skill (zip file): [Atom Skill txt.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_txt.zip)
+## Task 4a: Add Visual Builder as Allowed Origin in Analytics Cloud
+
+## Task 4b: Import Sample Chart 
+
+## Task 5: Configure Visual Builder
+
+## Task 5a: Add OAC Instance as Allowed Origin in Visual Builder
+
+## Task 5b: Import VB App
+
+## Task 7: Import Skill
+
+1. Click on the link to download the required skill (zip file): [Atom Skill DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
@@ -120,7 +169,14 @@ This task will help you to create desired dynamic group & necessary policy for t
 
     ![Invoke LLM](images/invoke_llm.png)
 
-## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
+## Task 5: Changes to Skill
+
+1. Go to Skills -> Settings -> Configuration
+Provide a value to da.privateKey (Any Password)
+
+2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC, getSpeechLifecyleState, searchFlow and speechComponent of the flows
+
+## Task 6: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
 
@@ -142,7 +198,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 
     ![Create Channel](images/skill_channel1.png)
 
-## Task 6: Create VBCS Instance & embed ODA skill in VBCS Application (Please directly move to Step 5 incase you already have a VBCS instance provisioned)
+## Task 7: Create VBCS Instance & embed ODA skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -196,7 +252,4 @@ This task will help you to create desired dynamic group & necessary policy for t
 ## Acknowledgements
 
 **Authors**
-
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Luke Farley**, Staff Cloud Engineer, NACIE
-
