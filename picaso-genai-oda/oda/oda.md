@@ -72,14 +72,14 @@ This task will help you to check Oracle Digital Assistant (PICASO) under your ch
 
     **Note** You can find Digital Assistant under the AI Services.
 
-2. Click on Service Console of your PICASO ODA Instance as shown below
+2. Click on Service Console of your PICASO ODA Instance to open ODA Console as shown below
 
     ![ODA service console](images/picaso_oda.png)
 
 
 3. Make sure you are able to see PICASO Digital Assistant as shown below
 
-    ![ODA PICASO Skill](images/picaso_oda.png)
+    ![ODA PICASO Skill](images/picaso_da1..png)
 
 **NOTE:**  If you are not able to find PICASO DA Skill then please make sure you're selected correct Region, Compartment in OCI. Also, Make sure the previous Lab 1 Task 2 was completed successfully.
 
