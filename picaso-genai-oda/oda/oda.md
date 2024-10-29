@@ -1,4 +1,4 @@
-# Import GenAI RAG Skill and configure in PICASO (ODA)
+# Import GenAI RAG Skill and Re-configure PICASO (ODA) Assistant
 
 ## Introduction
 
@@ -14,16 +14,15 @@ Oracle Digital Assistant (ODA) is a platform that allows you to create and deplo
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Add new Skill to PICASO (ODA)
+* Import and configure a skill to use GenAI Agent
+* Add newly imported Skill to PICASO (ODA)
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant
+* Must have an Administrator Account or Permissions to manage several OCI Services: Digital Assistant, Generative AI agent, IAM.
 
 ## Task 1: Dynamic Group and Policy Definition
 
@@ -61,11 +60,11 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
    **NOTE:** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
 
-## Task 2: Provision Oracle Digital Assistant
+## Task 2: Oracle Digital Assistant (PICASO) setup
 
-This task will help you to create Oracle Digital Assistant under your chosen compartment.
+This task will help you to check Oracle Digital Assistant (PICASO) under your chosen compartment.
 
-**NOTE:** If you have already created Oracle Digital Assistant (PICASO) as part of Lab 2 Please skip to Task 3
+**NOTE:** If you have already created Oracle Digital Assistant (PICASO) as part of Lab 1, Please skip to Task 3
 
 1. Locate Digital Assistant under AI Services
 
@@ -73,14 +72,17 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     **Note** You can find Digital Assistant under the AI Services.
 
-2. Provide the information for Compartment, Name , Description (optional) & Shape. Click Create
+2. Click on Service Console of your PICASO ODA Instance as shown below
 
-    ![ODA creation wizard](images/oda_create_wizard.png)
+    ![ODA service console](images/picaso_oda.png)
 
 
-3. In few minutes the status of recently created Digital Assistant will change from Provisioning to Active
+3. Make sure you are able to see PICASO Digital Assistant as shown below
 
-    ![ODA Active](images/picaso_oda.png)
+    ![ODA PICASO Skill](images/picaso_oda.png)
+
+**NOTE:**  If you are not able to find PICASO DA Skill then please make sure you're selected correct Region, Compartment in OCI. Also, Make sure the previous Lab 1 Task 2 was completed successfully.
+
 
 ## Task 3: Create REST Services for the OCI Generative AI Agent
 
@@ -93,7 +95,7 @@ This task involves creating REST service which will be used by ODA to connect to
 [agent-RESTService-GenAIAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-RESTService-GenAIAgentChat-1.1.yaml)
 
 
-2. Locate the ODA instance (created in [Lab 2 Task 2](../picaso/picaso.md#task-2-setup-picaso-digital-assistant-oda))
+2. Locate the ODA instance (created in [Lab 1 Task 2](../picaso/picaso.md#task-2-setup-picaso-digital-assistant-oda))
 
     ![ODA locate](images/oda_locate.png)
 
@@ -109,6 +111,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
+    
     Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml")
 
 7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
@@ -123,7 +126,8 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
-## Task 4: Import Skill (Provided)
+
+## Task 4: Import GenAI Agent Skill (Provided)
 
 1. Click on the link to download the required skill
 
@@ -152,9 +156,10 @@ This task involves creating REST service which will be used by ODA to connect to
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview2.png)
 
+
 ## Task 5: Create Channel to Embed ODA in PeopleSoft Application or in any custom Web App
 
-**NOTE:** If you have already created Channel for PICASO in Lab 2 Task 2, Please skip to Task 7
+**NOTE:** If you have already created Channel for PICASO in Lab 1 Task 2, Please skip to Task 6
 
 1. Click on hamburger menu and select Development > Channels, to check existing PeopleSoft Channel
 
@@ -164,7 +169,7 @@ This task involves creating REST service which will be used by ODA to connect to
     * Channel Type = Oracle Web
     * Allowed Domain = *
     * Client Authentication Enabled = Toggle off
-    * route it to PeopleSoft DA (created in Lab 2 Task 2) 
+    * route it to PeopleSoft DA (created in Lab 1 Task 2) 
 
     ![channel configuration](images/psft_channel1.1.png)
 
@@ -172,29 +177,29 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/psft_channel2.png)
 
-## Task 7: Add new Skill to PICASO (ODA) DA
+## Task 6: Add new Skill to PICASO (ODA) Assistant
 
-From ODA service console homepage -> Click on **Digital Assistant** -> Select PICASO Skill
+1. From ODA service console homepage -> Click on **Digital Assistant** -> Select PICASO Skill
 
-![flow update citations](images/picaso_da1.png)
+    ![flow update citations](images/picaso_da1.png)
 
-Click on Add Skill and Select newly imported SKill (GenAIRAGAgentChatbot)
+2. Click on Add Skill and Select newly imported SKill (GenAIRAGAgentChatbot)
 
-![flow update citations](images/picaso_da2.png)
+    ![flow update citations](images/picaso_da2.png)
 
-![flow update citations](images/picaso_da3.png)
+    ![flow update citations](images/picaso_da3.png)
 
-Modify Utterances for new Skill (Note: Utterance must be: PSFT Document Search)
+3. Modify Utterances for new Skill (Note: Utterance must be: PSFT Document Search)
 
-![flow update citations](images/picaso_da2.2.png)
+    ![flow update citations](images/picaso_da2.2.png)
 
-Click on Train to train the DA
+4. Click on Train to train the DA
 
-![flow update citations](images/picaso_da5.png)
+    ![flow update citations](images/picaso_da5.png)
 
-Test new skill using Preview button of PSFT DA
+5. Test new skill using Preview button of PSFT DA
 
-![flow update citations](images/psftda_test.png)
+    ![flow update citations](images/psftda_test.png)
 
 ## Task 7: (optional) Customize ODA Conversation
 

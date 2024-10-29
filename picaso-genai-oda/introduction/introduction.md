@@ -25,7 +25,6 @@ Objective of this workshop is to set-up the required OCI services to create a fu
 Users can then upload their own unstructured PDF manuals / documents in those buckets.
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in OCI Object Storage, using OCI Generative AI Agent Service.
-* OCI Functions – Users can optionally enable some automation features using the provided OCI Function code
 * OCI Digital Assistant (ODA) – Users can create ODA instance and import the provided ODA Skill.
 Users can then connect from ODA chatbot to OCI Generative AI Agent Service, leveraging OCI Functions Rest Service.
 * OCI PeopleSoft Application – User can create OCI PeopleSoft instance using OCI Marketplace image.
@@ -35,7 +34,7 @@ In this workshop, you will learn how to:
 
 * Create Object Storage Buckets, and upload custom PDF documents in those buckets
 * Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
-* Setup & configure ODA (PICASO) as a LLM pwered chatbot in PeopleSoft Application
+* Setup & configure ODA (PICASO) as a LLM powered chatbot in PeopleSoft Application
 * Test out the features and capabilities of PICASO Chatbot in PeopleSoft
 
 ### Prerequisites
@@ -44,7 +43,7 @@ This lab assumes you have:
 
 * An Oracle Cloud Account
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, Object Storage, Functions, OCIR, Logging, APM, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
+* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More

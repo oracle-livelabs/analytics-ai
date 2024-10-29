@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through using the PeopleSoft application as an end user.
+This lab walks you through using the PICASO Chabtbot in PeopleSoft application as an end user.
 
 Estimated Time: 15 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 15 minutes
 In this lab, you will:
 
 * login to the PeopleSoft application
-* Chat with the agent
+* Chat with the Gen AI Agent
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ This lab assumes you have:
 
     `http://psfthcm.subnet.vcn.oraclevcn.com:8000/`
 
-2. If you do not have an active session, you will be prompted to login to the OCI tenancy.
+2. If you do not have an active session, you will be prompted to login to the PeopleSoft Application.
 
     ![login](images/peoplesoft_login.png)
 
@@ -66,8 +66,6 @@ This lab assumes you have:
 
 * **Author**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Contributors**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+    * **Mahesh Sirikonda**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **Mahesh Sirikonda**, Senior Cloud Engineer, NACIE, August 2024
