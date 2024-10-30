@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop offers several hands-on labs that highlight the Essbase web interface in Oracle Essbase release 21.5. It shows how Essbase administrators can use the web interface to build and manage applications and cubes. The Essbase web interface is new to many Essbase users migrating from earlier releases. This workshop is a good starting place if you are making the transition from Essbase Administration Services (EAS) to the Essbase web interface in 21c.
+This workshop offers several hands-on labs that highlight the Essbase web interface in Oracle Essbase release 21.7. It shows how Essbase administrators can use the web interface to build and manage applications and cubes. The Essbase web interface is new to many Essbase users migrating from earlier releases. This workshop is a good starting place if you are making the transition from Essbase Administration Services (EAS) to the Essbase web interface in 21c.
 
 Estimated Workshop Time: 45 minutes
 
@@ -32,4 +32,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse November, 2024
