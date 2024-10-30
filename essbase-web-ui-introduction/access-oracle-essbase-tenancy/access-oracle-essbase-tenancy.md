@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This workshop assumes you have access to an Essbase Release 21.5 instance that is deployed and ready to use.
+This workshop assumes you have access to an Essbase Release 21.7 instance that is deployed and ready to use.
 
 The labs in this workshop will work whether you have an Essbase stack deployment, or an independent deployment.
 
@@ -51,4 +51,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse November, 2024

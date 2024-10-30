@@ -24,7 +24,7 @@ This lab assumes you have:
 
 1. On the **Applications** page, click **Import**.
 
-    ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button selected.](images/application-import.png)
+    ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button highlighted.](images/application-import-redwood.png)
 
 2. In the **Import** dialog box, click **Catalog**.
 
