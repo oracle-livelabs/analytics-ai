@@ -45,9 +45,9 @@ This lab assumes you have:
 
     ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500-rule.png)
 
-8. Click **Verify**.
+9. Click **Verify**.
 
-9. Click **Save and Close**.
+10. Click **Save and Close**.
 
 ## Task 2: Run the data load job
 
