@@ -53,19 +53,22 @@ python3.11 --version
 </copy>
 ```
 
-
+4. Clone the [git repository](https://github.com/enisaras/Oracle-23ai-ADB-Vector-Search-Chatbot):
+```bash
+<copy>
+git clone https://github.com/enisaras/Oracle-23ai-ADB-Vector-Search-Chatbot.git
+</copy>
+```
 ![Clone Repo](images/clone-repo.png)
 
-4. Install requirements.txt:
+5. Install requirements.txt:
 
-
-
-```
+```bash
 <copy>
+cd Oracle-23ai-ADB-Vector-Search-Chatbot
 pip install -r requirement.txt
 </copy>
 ```
-
 
 ## Task 3: Open Port on VCN
 
