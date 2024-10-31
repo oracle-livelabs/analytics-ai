@@ -38,19 +38,21 @@ This lab assumes you have:
 
 ## Task 2: Display active alias names in the outline
 
-1. On the **Applications** page, expand the **Sample** application.
+1. On the **Applications** page, select the **Sample** application and select the **Basic** cube.
 
-2. Click the **Actions** menu to the right of the **Basic** cube and click **Outline**.
+2. Click **Launch Outline**.
 
 3. In the outline viewer, expand the **Product** dimension, then expand product **100** to see its children.
 
 4. In the outline toolbar, click **Display selected columns in the table**.
 
-    ![Image of the outline toolbar with the Display selected columns in the table icon selected.](images/outline-toolbar.png)
+    ![Image of the outline toolbar with the Display selected columns in *the table icon selected.](images/outline-toolbar-redwood.png)
 
-5. In the **Select the member properties to display** dialog box, scroll down and select the check box next to **Active alias name**, and select **Apply and Close**.
+5. In the **Select the member properties to display** dialog box, under **Available Columns** scroll down and select the check box next to **Active alias name**, then click the right arrow to move it under **Selected Columns** and select the **Show in Name** check box.
 
-6. Product aliases are displayed in the outline.
+6. Click **Apply and Close**.
+
+7. Product aliases are displayed in the outline.
 
     ![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)
 
