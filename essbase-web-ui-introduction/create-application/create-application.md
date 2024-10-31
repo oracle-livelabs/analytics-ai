@@ -30,7 +30,7 @@ This lab assumes you have:
 
 3. In the **Select Files from Catalog** dialog box, navigate to **gallery** &gt; **Applications** &gt; **Demo Samples** &gt; **Block Storage**, click **Sample\_Basic.xlsx** and click **Select**.
 
-    ![Image of the Select files from catalog dialog box with Sample\_Basic.xlsx selected](images/select-files-from-catalog.png)
+    ![Image of the Select files from catalog dialog box with Sample\_Basic.xlsx selected](images/select-files-from-catalog-redwood.png)
 
 4. In the **Import** dialog box, click **OK**.
 
