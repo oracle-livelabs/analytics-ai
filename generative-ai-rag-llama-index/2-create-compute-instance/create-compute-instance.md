@@ -12,37 +12,38 @@ Estimated Time: 30 minutes
 
 1. Open the main "hamburger" menu in the top left corner of the Console. Select "Compute" and then click "Instances."
 ![Selecting Compute from Hamburger Menu](images/hamburger-menu-compute.png)
-
 2. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.
 ![Clicking Create Compute Instance Button](images/create-instance.png)
+3. Select the correct compartment from the "List Scope"→"Compartment" on the left side of the page, and then click the "Create Instance" button.    
+4. Fill in the following information:    
+**Name:** LiveLab
 
-3. Fill in the following information:    
-**Name:** LiveLab    
-**Shape:** VM.Standard.A1.FLEX    
-**Image:** Oracle Linux    
-Click on **'Edit'** on Primary VNIC Information    
-Click **'Create New Virtual Cloud Network'**    
-Download SSH Private Key and Save Public Key    
-Click **'Create'**    
+**Shape:** VM.Standard.A1.FLEX 
+
+**Image:** Oracle Linux
+
+Click on **'Edit'** on Primary VNIC Information  
+
+Click **'Create New Virtual Cloud Network'** 
+
+5. Save private key for access.
+    ![Downloading the Private/Public Keys](images/download-private-public-key.png)
+    
+6. Click **'Create'**    
+
 ![Creation Page of the VM](images/on-creation-vm.png)
-![Downloading the Private/Public Keys](images/download-private-public-key.png)
 
 ## Task 2: Install Python and Clone the Repo
-
-1. Open a cloud shell instance.
-
-2. Log into your instance
-
-
+1. Launch Cloud Shell    
+   ![Opening Cloud Shell](images/open-cloud-shell.png)
+2. Ssh into compute instance.
 ```bash
 <copy>
 ssh i ~/[private-key] <username>@<public_ip_address>
 </copy>
 ```
 
-![Opening Cloud Shell](images/open-cloud-shell.png)
-
-3. Install Python 3.11:
+3. Install Python 3.11 on VM.
 
 ```bash
 <copy>
@@ -72,7 +73,7 @@ pip install -r requirement.txt
 
 ## Task 3: Open Port on VCN
 
-1. On your network, open port 8501:    
+1. On your network, open port 8501:  
 Go your VCN    
 Go to Default Security Lists    
 Add ingress rules:    

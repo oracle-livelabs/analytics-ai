@@ -30,7 +30,7 @@ This lab assumes you have:
     TODO: update package url when available
     use current OS PAR format. New format throws an error
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.1.zip)
+    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.2.zip)
 
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page
@@ -46,7 +46,10 @@ This lab assumes you have:
     * Optionally, update the name and description of the stack.
     * Click Next
 
-3. General Configuration
+
+## Task 2: High level configuration
+
+1. General Configuration
 
     ![variables general configuration](images/variables_general.png)
 
@@ -55,20 +58,23 @@ This lab assumes you have:
     * Setting up IAM will enable policies that allow the configured OCI services to communicate with each other
         * IAM Resources are required to be deployed in your home region
 
-4. GenAI Backend Configuration
+2. GenAI Backend Configuration
 
     ![variables genai backend configuration](images/variables_genai_backend.png)
 
     * Leave these as the default values
 
-5. Frontend Application
+3. Frontend Application
 
     ![variables frontend application configuration](images/variables_frontend_application.png)
 
     * You can turn off the frontend service automation for ODA and VB by selecting Application Type None
     * You can deploy your frontend components in a different region, but this will introduce additional latency
 
-6. Existing Agent resources
+
+## Task 3: Detailed configuration for Gen AI Agent
+
+1. Existing Agent resources
 
     ![variablest existing agent](images/variables_existing_agent.png)
 
@@ -76,27 +82,68 @@ This lab assumes you have:
     * You will have the option later to use the provided function container or build it yourself from source code
 
 
-7. GenAI Agent Configuration
+2. GenAI Agent Configuration
 
     ![variables genai agent configuration](images/variables_agent.png)
 
     * You can customize your agent with whatever features you want. However, the ODA skill currently requires Multi-turn Sessions and Citations to be enabled
 
-8. Object Storage Configuration
+## Task 4a: Object Storage Data Source Configuration
+
+1. Object Storage Configuration
 
     ![variables object storage](images/variables_object_storage.png)
 
     * You can either provide an existing Bucket, or a new one will be created for you
 
-9. OCI Digital Assistant Configuration
+2. Auto Ingest Configuration
+
+    ![Variables Object Storage Data Source Auto Ingest](images/variables_object_storage_data_source_auto_ingest.png)
+
+    * You can optionally deploy a function to automatically start ingestion jobs for you. Currently only trigger is object storage events.
+
+<!--
+## Task 4b 23AI Autonomous Data Source Configuration
+
+## Task 4c OpenSearch Data Source Configuration
+
+-->
+
+## Task 5a: Oracle Digital Assistant Configuration
+
+1. OCI Digital Assistant Configuration
 
     ![variables Digital Assistant](images/variables_digital_assistant.png)
 
     * You can either provide an existing instance, or a new one will be created for you
     * If you are setting up IAM policies, a dynamic group and policy will be set up for the new/existing instance
+    * It is important to setup the correct policies for your ODA instance based on your desired ODA configuration. The next couple steps show how to setup advanced configurations with non-default domains and cross tenancy for fusion
 
 
-10. Functions Configuration
+2. (optional) Configuration for non-default Domains
+
+    ![variables non-default domain digital assistant](images/variables_non_default_domain_digital_assistant.png)
+
+    * If your oda instance in this tenancy uses a non default domain for authentication (and you are not still on IDCS), you will need to provide the name of the domain as well as the IDCS web url. You can find it on the domain details console page and will be in this format: https://idcs-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.identity.oraclecloud.com:443
+
+
+3. (optional) Configuration for Cross tenancy setup
+
+    ![variables cross tenancy Digital Assistant](images/variables_cross_tenancy_digital_assistant.png)
+
+    * If your existing oda instance is in another tenancy like a Fusion SaaS environment, you will need to set up cross tenancy policies. By providing ocid for the other tenancy, the proper policy will be created for this tenancy. However, you will still need to create a policy in the ODA tenancy. For Fusion SaaS customers, that will require a Service Request to create the policy on your behalf as well as get the ocid of the oda instance. The policy on the oda tenancy should look like this:
+
+    ```
+      <copy>endorse any-user to manage genai-agent-session in any-tenancy where request.principal.type='odainstance'
+      endorse any-user to manage genai-agent-endpoint in any-tenancy where all {request.principal.type='odainstance', request.permission='GENAI_AGENT_ENDPOINT_CHAT'}</copy>
+    ```
+
+    * You can find more details about [setting up cross tenancy policies for ODA here](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/users-groups-and-policies1.html)
+
+
+## Task 6: Function and final configuration
+
+1. Functions Configuration
 
     ![variables functions configuration](images/variables_functions.png)
 
@@ -112,7 +159,7 @@ This lab assumes you have:
 
     Click Next
 
-11. Review and Create
+2. Review and Create
 
     ![stack review](images/stack_review.png)
 
@@ -122,7 +169,7 @@ This lab assumes you have:
 
     You can select **Run Apply** and skip Task 2, but it is recommended you perform this separately so you can review the Terraform plan before applying.
 
-## Task 2: Run Terraform Stack
+## Task 7: Run Terraform Stack
 
 1. Click on the **Plan** button
 
@@ -155,9 +202,9 @@ This lab assumes you have:
 
     ![stack apply success](images/stack_apply_success.png)
 
-## Task 3: Inspect Created Resources
 
 
+## Task 8: Inspect Created Resources
 
 <!-- TODO: overhaul this task with RM schema output section-->
 
@@ -177,6 +224,16 @@ This lab assumes you have:
 
     * This page lists all of the resources managed by this stack as well as their attributes.
     * Some resources have direct link to their details
+
+<!-- TODO create new task outlining where automation stops and where you need to start doing manual steps again-->
+
+## Task 9: Complete non-automated sections of the lab
+
+This Terraform stack currently does not automate all steps necessary to deploy this solution. If you chose to deploy the IAM resources along with an ODA instance, you can start with:
+
+* Lab 3: Setup OCI Digital Assistant (ODA), Task 3: Create REST Services for the OCI Generative AI Agent
+
+You will also need to complete all of Lab 4: Setup OCI Visual Builder (VB)
 
 ## Acknowledgements
 
