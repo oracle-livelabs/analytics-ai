@@ -16,11 +16,14 @@ In this workshop, you will learn how to:
 * Build a RAG Pipeline
 * Host complete RAG application on OCI Compute
 
-Prerequisites
+Prerequisites:
 * Oracle Cloud account with access to the OCI Generative AI service
 * Enough privileges to use OCI
 * Basic knowledge of Python
 * Basic Linux knowledge
+
+Code used in this livelab can be found below:
+* [GitHub Repository](https://github.com/enisaras/Oracle-23ai-ADB-Vector-Search-Chatbot)
 
 ## Learn More
 * [OCI Generative AI Service](https://www.oracle.com/artificial-intelligence/generative-ai/generative-ai-service/)
