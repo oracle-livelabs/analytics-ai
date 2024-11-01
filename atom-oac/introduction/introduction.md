@@ -47,7 +47,6 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-**Authors**
-
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **Luke Farley**, Staff Cloud Engineer, NACIE
+* **Author** Luke Farley, Staff Cloud Engineer, NACIE
+* **Contributor**, Kaushik Kundu, Master Principal Cloud Architect, NACIE
+* **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE

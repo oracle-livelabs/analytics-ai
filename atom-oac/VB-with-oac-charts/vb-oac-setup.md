@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to configure a VB application with OAC integration
 
-Estimated Time: 4 hours
+Estimated Time: 2 hours
 
 ### About Visual Builder and Oracle Analytics Cloud 
 
@@ -18,7 +18,7 @@ Together, Oracle Visual Builder and Oracle Analytics Cloud provide a robust and 
 
 ### Objectives
 
-To integrate OAC into a VB application. Please see the VB + OAC block on the right-hand of the architecture diagram below for a better understanding.
+The objective is to integrate OAC into a VB application. Please see the VB + OAC block on the right-hand of the architecture diagram below for a better understanding.
 
 ![Architecture ](images/atom-oac-diagram.drawio.png)
 
@@ -123,133 +123,126 @@ This task will help you to create necessary policy for the API Gateway
 
 ## Task 4: Configure Oracle Analytics Cloud
 
-## Task 4a: Add Visual Builder as Allowed Origin in Analytics Cloud
+### Task 4a: Add Visual Builder as Allowed Origin in Analytics Cloud
 
-## Task 4b: Import Sample Chart 
+1. Navigate to your Analytics Cloud instance and select the "Analytics Home Page" button
+
+    ![Open Analytics Cloud](images/provision-oac-3.png)
+
+2. Navigate to the console in the navigation bar 
+
+    ![Navigate to console](images/oac-config-dashboard.png)
+
+3. Select "Safe Domains" 
+
+    ![Safe Domain](images/oac-safe-domain.png)
+
+4. Open a new tab and navigate to the Visual Builder instance you created in Task 2 
+    - Take note of the root domain when you open the home page 
+        - e.g. https://<your-vb>-<tenancy>.builder.<region>.ocp.oraclecloud.com
+
+5. Add the new safe domain from the previous step and make sure to check "Allow Frames" and "Embedding"
+
+    ![Add Safe Domain](images/oac-add-safe-domain.png)
+
+### Task 4b: Import Sample Charts 
+
+1. Return to home and select 'Create' at the top right > Create a new dataset
+
+    ![Create New Dataset](images/oac-create-dataset.png)
+
+2. Import the following file 
+
+    - [Sample Employees](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employees.xlsx)
+
+3. From the OAC Dashboard, select the three dots next to 'Create' > Import Workbook
+
+    ![Create New Dataset](images/oac-create-workbook.png)
+
+    Import the following file 
+
+    - [Sample Employee Barchart](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employee%20Barchart.dva)
+
+    Note: Make sure to save the workbook to the 'Shared' directory in the Catalog. Saving to your personal folder can cause issues displaying the charts in visual builder. 
+
+4. Open the imported workbook and select edit
+
+    ![Edit Mode](images/oac-edit-workbook.png)
+    
+    - Once in edit select developer mode 
+
+    ![Open Developer Mode](images/oac-open-developer.png)
+
+    - Copy the canvas and script tags under the 'Embed' tab 
+
+    ![Copy Canvas and Script](images/oac-copy-canvas-script.png)
+
+    - Open the JSON tab and take note of the XSA expression for departments. Your expression should have your name. This will be required later to configure the VB app
+
+    ![XSA Formula](images/oac-xsa-expression.png)
+
+5. From the OAC Dashboard, import another workbook 
+
+    [Sample Employee 80/20 chart](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employee%2080_20%20Workbook.dva)
+
+    - As in the previous step, open the new workbook in developer mode and take note of canvas and script tags
 
 ## Task 5: Configure Visual Builder
 
-## Task 5a: Add OAC Instance as Allowed Origin in Visual Builder
+1. Open your Visual Builder Instance
 
-## Task 5b: Import VB App
+2. Go to Settings and add your OAC instance root domain to allowed origins 
 
-## Task 7: Import Skill
+    ![Configure Allowed Origin](images/vb-config-allowed-origin.png)
 
-1. Click on the link to download the required skill (zip file): [Atom Skill DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
+3. Download the following VB application
 
-2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
+    [VB-OAC-Integration](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FVB_OAC_ATOM_Integration-1.0.24.zip)
 
-   ![Import Skill](images/import_skill.png)
+4. Import the downloaded app in your VB instance by selecting 'Import' at the top right  
 
-3. Once the skill is imported. Click on the Skill and go to Components as shown in the image below.
+    ![Import VB App](images/vb-import-app.png)
 
-    ![Click Components](images/components.png)
+5. Open the application and expand the web app atom > main > main-oac
+    - In the structure tab select the 'Oracle Analytics Project' to open its properties 
+    - Add your own OAC host and project path to your OAC workbook as described in step 4b-4 
+        - Also make sure the display tab reflects your own OAC workbook tab 
 
-4. Click on Add Service and give this service a name of your choice. For example - RPlusService. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. Click to download the file [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
+    ![Configure OAC in VB](images/vb-configure-oac-chart-1.png)
 
-    ![Service Package](images/service_package.png)
+6. Import your second chart using the same steps in step 5
+    - In the structure tab select the second 'Oracle Analytics Project' to open its properties
+    - Add the same OAC host, with the other project path to the second OAC workbook as described in 4b-5 (80/20 chart)
 
-5. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+7. Open the action chain for the vbEnterListener 
 
-    ![Import LLM](images/import_llm.png)
+    ![Open Action Chain](images/vb-action-chain-1.png)
 
-6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
+8. Make sure the filter sColFormula matches the XSA expression noted in OAC Configuration Step 4b-4
 
-    ![API Services](images/oci_rest_service_4.png)
+    ![Configure Action Chain](images/vb-action-chain-2.png)
 
-7. Provide a name of your choice for this Service. Give LLM Provider value as the one you imported in Step 5. Give Transformation Handler value as the one you imported in Step 4. Click on Check mark under Action to save it as shown in the image below.
+9. If configured correctly, you should be able to see the chart in the VB preview 
+    - You can refresh the preview by selecting the refresh icon below 
 
-    ![LLM Service](images/llm_service.png)
+    ![OAC Chart in VB](images/vb-oac-preview.png)
 
-8. Go to Skills -> Flows. Click on Chat.
+    Note: If you cannot see the chart, double check the OAC host, Project Path, and Display tab are correct in the OAC component; Also double check the Allowed Origins in both OAC and VB instances are correct, as well as making sure you saved your chart to a shared directory in OAC.
 
-    ![Chat Services](images/chat.png)
+10. Stage the application
 
-9. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 7.
+    ![VB Stage](images/vb-stage-app.png)
 
-    ![Invoke LLM](images/invoke_llm.png)
+    Note: You might still get some errors here since this app is dependent on the user prompt message at runtime. If you can see the chart, you should be able to proceed. 
 
-## Task 5: Changes to Skill
+11. Publish the application
+    - The publish option will only appear once staged 
 
-1. Go to Skills -> Settings -> Configuration
-Provide a value to da.privateKey (Any Password)
+    ![Publish VB](images/vb-publish.png)
 
-2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC, getSpeechLifecyleState, searchFlow and speechComponent of the flows
-
-## Task 6: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
-
-1. Click on hamburger menu and select Development > Channels
-
-    ![Create Channel](images/create_channel.png)
-
-2. Select the following option on the form:
-
-    * **Channel Type** = Oracle Web
-    * **Allowed Domain** = *
-
-    ![Create Channel](images/create_channel_1.png)
-
-3. After channel creation, enable the Channel by using the toggle button (screenshot).
-   * Route it to skill imported in Task 4
-
-   ![Create Channel](images/route_skill1.png)
-
-4. Disable the **Client Authentication Enabled** toggle. (Take note of channelId for **Task 6** in later step).
-
-    ![Create Channel](images/skill_channel1.png)
-
-## Task 7: Create VBCS Instance & embed ODA skill in VBCS Application
-
-1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
-
-    ![Create Channel](images/visual_builder.png)
-
-2. Create Visual Builder Instance by providing the details and click **Create Visual Builder Instance**:
-    * **Name** = <name_of_your_choice>
-    * **Compartment** = <same_compartment_as_oda>
-    * **Node** = <as_per_need>
-
-    ![Create Channel](images/create_vbcs.png)
-
-3. Wait for the instance to come to **Active** (green color) status
-
-4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
-
-5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
-
-    * Click on Import from Visual Builder Instance
-
-        ![Create Channel](images/import_vbapp.png)
-
-    * Choose the option as below
-
-        ![Create Channel](images/import_vbapp_1.png)
-
-    * Provide the App Name with other details and select the provided application zip file
-
-        ![Create Channel](images/import_vbapp_2.png)
-
-6. Once import is completed, open the index.html file in the VB Instance and update the details as follows:
-
-    * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
-    * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
-
-    ![Create Channel](images/vbapp_setup.png)
-
-    > **Note**
-    > * URI is the hostname of ODA instance provisioned in **Task 1**
-    > * channelId is created during **Task 5** - **Step 3**
-
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
-
-8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
-
-9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
-
-    ![VB Error](images/vb_error.png)
+    - Take note of the live url of the application for the next lab 
 
 ## Acknowledgements
 
-**Authors**
-* **Luke Farley**, Staff Cloud Engineer, NACIE
+* **Author** Luke Farley, Staff Cloud Engineer, NACIE
+* **Contributor** Kaushik Kundu, Master Principal Cloud Architect, NACIE

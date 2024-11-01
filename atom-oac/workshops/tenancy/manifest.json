@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy ATOM (AI Powered) Chatbot",
+    "workshoptitle": "ATOM Digital Assistant with Analytics Cloud Integration",
     "help": "livelabs-help-aiservices_us@oracle.com",
     "tutorials": [
       {
@@ -13,19 +13,19 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
-        "title": "Lab 1: Provision ODA and VBCS",
+        "title": "Lab 1: Configure Visual Builder Application with OAC Charts",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../provision/provision.md"
+        "filename": "../../VB-with-oac-charts/vb-oac-setup.md"
       },
       {
-        "title": "Lab 2: Document Understanding and Speech Services",
+        "title": "Lab 2: Expose Visual Builder Application as Webview in ODA",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../understandingDocument/duspeech.md"
+        "filename": "../../expose-vb-webview/expose-vb-webview.md"
       },
       {
-        "title": "Lab 3: How to use ATOM",
+        "title": "Lab 3: Expose ODA Skill as VB Application",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../usingAtom/useatom.md"
+        "filename": "../../expose-oda-vb/expose-oda-vb.md"
       },
       {
         "title": "Need Help?",
