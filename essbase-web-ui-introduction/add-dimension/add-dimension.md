@@ -38,44 +38,47 @@ This lab assumes you have:
     1. Log in to the Essbase web interface.
     2. Go to the **Files** page.
     3. Select the **Shared** folder.
-    4. Select **Upload Files** and click **Drag or select files**.
+    4. Select **Upload** and click **Drag and Drop**.
     5. Browse to the files you downloaded, select them, and click **Open**.
+    6. Click **Close** and the uploaded files are displayed in the **Shared** folder.
 
 ## Task 2: Add a dimension manually
 
-1. In the outline editor, select the Scenario dimension.
+1. Open the **Sample** application and the **Basic** cube (database), and click **Launch Outline**.
 
-2. Click **Edit Outline** ![Image of the edit outline icon in the outline editor](images/icon-edit-outline.png) in the upper right hand corner of the editor.
+2. In the outline editor, select the Scenario dimension.
 
-3. Under **Actions**, select **Add a sibling below the selected member**.
+3. Click **Edit Outline** ![Image of the edit outline icon in the outline editor](images/icon-edit-outline-redwood.png) in the upper right hand corner of the editor.
 
-    ![Image of the outline editor toolbar, actions group, with the Add sibling below the selected member icon selected.](images/add-sibling.png)
+4. Under the actions icon, select **Add sibling member below**.
 
-4. Type **Calendar**, press Enter, and then Escape.
+    ![Image of the outline editor toolbar, actions icon, with Add Sibling Member Below selected.](images/add-sibling-redwood.png)
 
-5. Under **Actions**, press **Add a child to the selected member**.
+5. Type **Calendar**, press Enter, and then Escape.
+
+6. Under **Actions**, press **Add a child to the selected member**.
 
     ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
 
-6. Type **FY2023** and press Enter.
+7. Type **FY2023** and press Enter.
 
-7. Type **FY2024** and press Enter, then press Escape.
+8. Type **FY2024** and press Enter, then press Escape.
 
-8. Select **Calendar**, and under **Data storage type**, select **Label Only**.
+9. Select **Calendar**, and under **Data storage type**, select **Label Only**.
 
     ![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
 
-9. Select **FY2023**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+10. Select **FY2023**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
 
     ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
 
-10. Select **FY2024**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+11. Select **FY2024**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
 
-11. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
+12. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
 
-12. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon.png).
+13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon.png).
 
-13. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
+14. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
 
     ![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
 
