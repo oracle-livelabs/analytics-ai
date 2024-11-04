@@ -108,7 +108,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
 
-    Select the Knowledge Base that you created in the previous task. Provide a Welcome message.
+    Select the Knowledge Base that you created in the previous task. Providing the Welcome message is optional.
 
     Click the “Create” button.
 
@@ -163,4 +163,4 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, October 2024
