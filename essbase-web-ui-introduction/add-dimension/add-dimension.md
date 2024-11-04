@@ -54,25 +54,25 @@ This lab assumes you have:
 
     ![Image of the outline editor toolbar, actions icon, with Add Sibling Member Below selected.](images/add-sibling-redwood.png)
 
-5. Type **Calendar**, press Enter, and then Escape.
+5. Type **Calendar** in the **Member name** text box, click **Add** and then click the x to close the add member slider.
 
-6. Under **Actions**, press **Add a child to the selected member**.
+6. Under the actions icon, select **Add child**.
 
-    ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
+    ![Image of the outline editor toolbar, actions icon, with Add child selected.](images/add-child-redwood.png)
 
-7. Type **FY2023** and press Enter.
+7. Type **FY2024** in the **Member name** text box, and press **Add**.
 
-8. Type **FY2024** and press Enter, then press Escape.
+8. Still in the **Add Member** slider, type **FY2025** and press **Add**, then click the x to exit the slider.
 
-9. Select **Calendar**, and under **Data storage type**, select **Label Only**.
+9. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
 
-    ![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
+    ![Image of the outline editor, data storage type menu, with label only selected.](images/label-only-redwood.png)
 
-10. Select **FY2023**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+10. Select **FY2024**, and under the operator menu, choose **~ Excluded from consolidation** (Ignore).
 
-    ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
+    ![Image of the outline editor, operator menu, with ~ exclude from consolidation selected.](images/operator-ignore-redwood.png)
 
-11. Select **FY2024**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+11. Select **FY2025**, and under the operator menu, choose **~ Excluded from consolidation** (Ignore).
 
 12. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
 
