@@ -54,15 +54,13 @@ This lab assumes you have:
 
     ![Image of the outline editor toolbar, actions icon, with Add Sibling Member Below selected.](images/add-sibling-redwood.png)
 
-5. Type **Calendar** in the **Member name** text box, click **Add** and then click the x to close the add member slider.
+5. Type **Calendar** in the **Member name** text box, click **Add**.
 
-6. Under the actions icon, select **Add child**.
-
-    ![Image of the outline editor toolbar, actions icon, with Add child selected.](images/add-child-redwood.png)
+6. In the **Add** dialog box, change the selection to **As child for Calendar**.
 
 7. Type **FY2024** in the **Member name** text box, and press **Add**.
 
-8. Still in the **Add Member** slider, type **FY2025** and press **Add**, then click the x to exit the slider.
+8. In the **Member name** text box,type **FY2025** and press **Add**, then click the x to exit the slider.
 
 9. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
 
@@ -74,13 +72,13 @@ This lab assumes you have:
 
 11. Select **FY2025**, and under the operator menu, choose **~ Excluded from consolidation** (Ignore).
 
-12. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
+12. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify icon in the outline editor](images/verify-outline-icon-redwood.png).
 
-13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon.png).
+13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
 
-14. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
+14. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2024** as the member with which data should be associated, and click **OK**.
 
-    ![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
+    ![Image of the Restructure Database Options dialog box, with All Data and FY2024 selected.](images/restructure-database-options-redwood.png)
 
 ## Task 3: Create a dimension build rule file
 
