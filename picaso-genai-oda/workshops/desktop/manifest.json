@@ -10,21 +10,17 @@
     {
       "title": "Lab 1: Provision PeopleSoft Marketplace Image and Setup PICASO Digital Assistant (ODA)",
       "filename": "../../picaso/picaso.md"
-    },
+    },    
     {
-      "title": "Lab 2: (Optionally) Provision Infrastructure via Terraform",
-      "filename": "../../terraform/terraform.md"
-    },
-    {
-      "title": "Lab 3: Provision Generative AI Agents Service",
+      "title": "Lab 2: Provision Generative AI Agents Service",
       "filename": "../../agent/agent.md"
     },
     {
-      "title": "Lab 4: Import GenAI RAG Skill and configure in PICASO (ODA)",
+      "title": "Lab 3: Import GenAI RAG Skill and configure in PICASO (ODA)",
       "filename": "../../oda/oda.md"
     },    
     {
-      "title": "Lab 5: Demo User Experience",
+      "title": "Lab 4: Demo User Experience",
       "filename": "../../user/user.md"
     },    
     {
