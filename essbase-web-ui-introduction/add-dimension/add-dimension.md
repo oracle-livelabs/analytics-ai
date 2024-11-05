@@ -76,21 +76,13 @@ This lab assumes you have:
 
 13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
 
-14. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2024** as the member with which data should be associated, and click **OK**.
-
-    ![Image of the Restructure Database Options dialog box, with All Data and FY2024 selected.](images/restructure-database-options-redwood.png)
-
 ## Task 3: Create a dimension build rule file
 
-1. On the **Applications** page, and to the right of the **Basic** cube, click the **Actions** menu.
+1. On the **Applications** page, select the application and select the cube (database).
 
-2. Select **Inspect**.
-
-3. In the cube inspector, select the **Scripts** tab.
+3. Select the **Scripts** page.
 
 4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
-
-    A new browser tab is opened.
 
 5. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
 
@@ -102,11 +94,11 @@ This lab assumes you have:
 
 9. For **Delimiter**, change to **Tab** delimited.
 
-    ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
+    ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule-redwood.png)
 
 10. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
-    ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
+    ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data-redwood.png)
 
 11. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
@@ -118,7 +110,7 @@ This lab assumes you have:
 
 15. In **Field - 4** set **Type** to **Alias**.
 
-    ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
+    ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor-redwood.png)
 
 16. Click **Verify**.
 
@@ -130,15 +122,17 @@ This lab assumes you have:
 
 2. Select the **Sample** application and the **Basic** cube.
 
-3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
+3. For **Script**, click the **Choose Catalog File** icon and navigate to **Addprods.rul** in your cube directory, and select it.
 
-4. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder, and select it.
+4. For **Load Type** choose **File**.
+
+5. For **Data File** click the **Choose Catalog File** icon and navigate to **add-products-with-aliases.txt** in the **Shared** directory, and select it. 
 
 5. For **Restructure Options**, choose **Preserve All Data**.
 
-    ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
+    ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job-redwood.png)
 
-6. Click **OK**.
+6. Click **Submit**.
 
 7. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
 
@@ -148,7 +142,7 @@ This lab assumes you have:
 
 ## Task 5: Analyze data for the newly created product group
 
-1. On the **Applications** page, click the **Actions** menu next to the **Basic** cube and select **Analyze Data**.
+1. Open the **Sample** application and the **Basic** cube, and click **Analyze Data**.
 
 2. On the **Reports** tab, click **Create**.
 
@@ -164,7 +158,7 @@ This lab assumes you have:
     CrossJoin ({[New York]}, {Descendants([Product].[500])})
     ON ROWS
     FROM Sample.Basic
-    WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])
+    WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2024])
     </copy>
     ```
 
@@ -189,4 +183,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse November, 2024
