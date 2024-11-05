@@ -61,6 +61,8 @@ This lab assumes you have:
 
     ![agent ungrounded response](images/agent_ungrounded_response.png)
 
+    ![agent view document](images/agent_viewdoc.png)
+
 
 ## Acknowledgements
 
