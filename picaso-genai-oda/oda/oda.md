@@ -194,7 +194,8 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update citations](images/picaso_da3.png)
 
-3. Modify Utterances for new Skill (Note: Utterance must be: PSFT Document Search)
+3. Make sure the Utterances of new Skill as shown below:
+   (Note: Utterance must be: PSFT Document Search)
 
     ![flow update citations](images/picaso_da2.2.png)
 
