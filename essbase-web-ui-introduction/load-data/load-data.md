@@ -23,27 +23,27 @@ This lab assumes you have:
 
 ## Task 1: Create a data load rule file
 
-1. Go to Sample Basic cube inspector &gt; **Scripts** and create a new data load rule.
+1. Open the Sample application and the Basic cube, select **Scripts** and create a new data load rule.
 
 2. For the **Rule Name**, use **Data500**.
 
 3. For **Source Type**, select **File**.
 
-4. Navigate to the **load-sales-cogs.txt** data load file. The file is in the **Catalog** under **All Files** &gt; **shared** &gt; **load-sales-cogs.txt**.
+4. In the **Select a file** field, click the **Select a file** icon and navigate to the **load-sales-cogs.txt** data load file and click **Select**. The file is in the **Catalog** under **All Files** &gt; **shared** &gt; **load-sales-cogs.txt**.
 
 5. Change **Data Load Record** number to 1 because row 0 is the header row in the data file.
 
 6. Leave as **Comma** delimited because this source file is comma delimited.
 
-    ![Image of the New Rule dialog box, with entries as described in the preceding steps.](images/new-data-load-rule.png)
+    ![Image of the New Rule dialog box, with entries as described in the preceding steps.](images/new-data-load-rule-redwood.png)
 
 7. Click **Preview data** to be sure it looks as expected.
 
-    ![Image of Preview Data in the New Rule dialog box, showing columns for the 500-10 product group, New York, Year and Scenario members, with Sales and COGS columns containing numeric data values.](images/load-rule-preview-data.png)
+    ![Image of Preview Data in the New Rule dialog box, showing columns for the 500-10 product group, New York, Year and Scenario members, with Sales and COGS columns containing numeric data values.](images/load-rule-preview-data-redwood.png)
 
 8. Click **Proceed**. The Data500 data load rule file is displayed.
 
-    ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500-rule.png)
+    ![Image of the Data500 data load rule file, with seven fields: Product, Market, Year, Scenario, Calendar, Sales, and COGS.](images/data500-rule-redwood.png)
 
 9. Click **Verify**.
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
 4. Click **Select files from catalog**.
 
-5. Select the **load-sales-cogs.txt** data load file and the **Data500** data load rule file and click **OK**.
+5. Select the **load-sales-cogs.txt** data load file and the **Data500** data load rule file and click **Submit**.
 
 6. Look for the green checkmark under **Status** to confirm success. You may need to refresh the page.
 
@@ -67,7 +67,7 @@ This lab assumes you have:
 
     Data exists for 500-10 and 500-20, but not 500. This is because we have not calculated the data yet.
 
-    ![Image of an analyze data grid with existing data for 500-10 and 500-20 and #Missing for 500.](images/analyze-missing-500.png)
+    ![Image of an analyze data grid with existing data for 500-10 and 500-20 and #Missing for 500.](images/analyze-missing-500-redwood.png)
 
 ## Task 3: Calculate and analyze the newly loaded data
 
@@ -75,15 +75,15 @@ This lab assumes you have:
 
 2. Select the **Sample** application, the **Basic** database, and the **CalcAll** calculation script.
 
-3. Click **OK**.
+3. Click **Submit**.
 
-4. Look for the green check mark under **Status** to check the status of the job.
+4. Look for the check mark under **Status** to check the status of the job.
 
 5. Open **Analyze Data** and re-run the MDX query.
 
     Data now exists for product 500.
 
-    ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze-data-in-500.png)
+    ![Image of an analyze data grid with existing data for 500-10, and 500-20, and for 500.](images/analyze-data-in-500-redwood.png)
 
 You may now **proceed to the next lab**.
 
@@ -95,4 +95,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse November, 2024
