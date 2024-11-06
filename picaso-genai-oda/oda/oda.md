@@ -83,7 +83,7 @@ This task will help you to check Oracle Digital Assistant (PICASO) under your ch
 
 3. Make sure you are able to see PICASO Digital Assistant as shown below
 
-    ![ODA PICASO Skill](images/picaso_da1..png)
+    ![ODA PICASO Skill](images/picaso_da1.png)
 
 **NOTE:**  If you are not able to find PICASO DA Skill then please make sure you're selected correct Region, Compartment in OCI. Also, Make sure the previous Lab 1 Task 2 was completed successfully.
 
@@ -135,7 +135,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs-1.1.zip)
+    [picaso-agent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/picaso-agent-livelabs-1.1.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
@@ -159,6 +159,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview2.png)
+    ![flow preview](images/flow_preview3.png)
 
 
 ## Task 5: Create Channel to Embed ODA in PeopleSoft Application or in any custom Web App
