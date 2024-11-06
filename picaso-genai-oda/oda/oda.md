@@ -135,7 +135,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [picaso-agent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/picaso-agent-livelabs-1.1.zip)
+    [picaso-agent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/PSFTGenAIRAGAgentBot(1.0).zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
