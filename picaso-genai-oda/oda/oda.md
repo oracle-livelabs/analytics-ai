@@ -141,7 +141,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![import skill](images/import_skill.png)
 
-3. Open the GenAIRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
+3. Open the PSFTGenAIRAGAgentBot, go to “Flows” and click on “user.StartFlow”
 
     ![user start flow](images/user_startflow2.png)
 
@@ -188,7 +188,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update citations](images/picaso_da1.png)
 
-2. Click on Add Skill and Select newly imported SKill (GenAIRAGAgentChatbot)
+2. Click on Add Skill and Select newly imported SKill (PSFTGenAIRAGAgentBot)
 
     ![flow update citations](images/picaso_da2.png)
 
