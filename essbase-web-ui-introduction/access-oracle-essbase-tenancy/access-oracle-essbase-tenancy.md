@@ -41,6 +41,8 @@ This lab assumes you have:
 
 3. Enter your login credentials.
 
+4. Click **OK** to open the new Redwood interface.
+
 You may now **proceed to the next lab**.
 
 ## Learn More

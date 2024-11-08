@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you’ll learn how to create an Essbase application by importing a structured Excel file called an application workbook. After you create the application, you’ll view the outline and set it to display active alias names.
+In this lab, you’ll learn how to create an Essbase application by importing a structured Excel file called an application workbook. <!--(After you create the application, you’ll view the outline and set it to display active alias names-->
 
 Estimated Time: 5 minutes
 
@@ -36,7 +36,7 @@ This lab assumes you have:
 
 5. The **Sample** application and the **Basic** cube are created.
 
-## Task 2: Display active alias names in the outline
+<!--## Task 2: Display active alias names in the outline
 
 1. On the **Applications** page, select the **Sample** application and select the **Basic** cube.
 
@@ -54,7 +54,7 @@ This lab assumes you have:
 
 7. Product aliases are displayed in the outline.
 
-    ![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)
+    ![Image of the outline editor showing the product dimension with aliases displayed.](images/outline-with-aliases.png)-->
 
 You may now **proceed to the next lab**.
 
