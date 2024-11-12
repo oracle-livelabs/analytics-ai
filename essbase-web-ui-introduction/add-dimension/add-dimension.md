@@ -76,6 +76,10 @@ This lab assumes you have:
 
 13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
 
+14. In the **Restructure Database Options** dialog box, select **All Data** and click **Save**.
+
+    ![Image of the Restructure Database Options dialog box, with Save selected.](images/restructure-database-options-redwood.png)
+
 ## Task 3: Create a dimension build rule file
 
 1. On the **Applications** page, select the application and select the cube (database).
@@ -126,7 +130,7 @@ This lab assumes you have:
 
 4. For **Load Type** choose **File**.
 
-5. For **Data File** click the **Choose Catalog File** icon and navigate to **add-products-with-aliases.txt** in the **Shared** directory, and select it. 
+5. For **Data File** click the **Choose Catalog File** icon and navigate to **add-products-with-aliases.txt** in the **Shared** directory, and select it.
 
 5. For **Restructure Options**, choose **Preserve All Data**.
 
@@ -138,7 +142,7 @@ This lab assumes you have:
 
 8. Open the outline and see that the new product 500 group was created.
 
-    ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
+    ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products-redwood.png)
 
 ## Task 5: Analyze data for the newly created product group
 
