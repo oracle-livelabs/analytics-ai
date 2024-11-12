@@ -63,27 +63,29 @@ This lab assumes you have:
 
 1. Expand the **Year** dimension in **Target.Basic** and notice that the **Year** dimension in **Source.Basic** is expanded as well.
 
-2. In the outline toolbar, under **Compare**, click the **Auto expand/collapse target members** icon to deselect it (it is selected by default) ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon.png).
+2. In the outline toolbar, click the **Auto expand/collapse target members** icon to deselect it (it is selected by default) ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon-redwood.png).
 
 3. Collapse the **Year** dimension in **Source.Basic** and notice that the **Year** dimension in **Target.Basic** is still expanded. Collapse the **Year** dimension in **Target.Basic**.
 
 ## Task 4: Synchronize scrolling
 
-1. Click the **Auto expand/collapse target members** icon ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon.png) and expand several dimensions so that you need to scroll up and down in order to see the entire outline.
+1. Click the **Auto expand/collapse target members** icon ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon-redwood.png) and expand several dimensions so that you need to scroll up and down in order to see the entire outline.
 
-2. Scroll the **Target.Basic** outline and observe that the **Source.Basic** outline scrolls in sync with it.
+2. Scroll the **Target.Basic** outline horizontally and observe that the **Source.Basic** outline scrolls in sync with it.
 
-## Task 5: Synchronize showing and hiding columns
+3. Scroll the **Target.Basic** outline vertically and observe that you can view member properties for both **Target.Basic** and **Source.Basic**.
+
+<!--## Task 5: Synchronize showing and hiding columns
 
 1. In the outline toolbar, under **Inspect**, click **Display selected columns in the table**.
 
     ![Image of the outline toolbar with the display selected columns icon highlighted.](images/outline-toolbar-display-selected-columns-icon.png)
 
-2. In the **Select member properties to display** dialog box, clear the selections for **operator** and **data storage type** and click **Apply and Close**. Notice that the displayed columns in both **Target.Basic** and **Source.Basic** change accordingly.
+2. In the **Select member properties to display** dialog box, clear the selections for **operator** and **data storage type** and click **Apply and Close**. Notice that the displayed columns in both **Target.Basic** and **Source.Basic** change accordingly.-->
 
-## Task 6: Copy members from the source outline to the target outline
+## Task 5: Copy members from the source outline to the target outline
 
-1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/edit-outline-icon.png).
+1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/icon-edit-outline-redwood.png).
 
 2. In the **Source.Basic** outline, expand the **Product** dimension.
 
@@ -95,7 +97,7 @@ This lab assumes you have:
 
    **Audio** and its children are added as children of **Product**.
 
-## Task 7: Search either the source or the target outline
+## Task 6: Search either the source or the target outline
 
 1. In the outline toolbar, under **Actions**, click the **Search members in the outline** icon.
 
@@ -110,4 +112,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse November, 2024
