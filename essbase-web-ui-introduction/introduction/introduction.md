@@ -11,7 +11,6 @@ Estimated Workshop Time: 45 minutes
 In this workshop, you will learn how to:
 
 * Create an application by importing an application workbook
-* Change outline display options
 * Add a dimension manually in the outline editor
 * Create a dimension build rule file and build a dimension using Jobs
 * Load data

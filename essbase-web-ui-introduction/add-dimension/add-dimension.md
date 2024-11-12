@@ -60,7 +60,7 @@ This lab assumes you have:
 
 7. Type **FY2024** in the **Member name** text box, and press **Add**.
 
-8. In the **Member name** text box,type **FY2025** and press **Add**, then click the x to exit the slider.
+8. In the **Member name** text box, type **FY2025** and press **Add**, then click the x to exit the slider.
 
 9. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
 
