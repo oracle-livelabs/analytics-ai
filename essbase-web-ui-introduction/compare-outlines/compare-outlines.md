@@ -14,7 +14,6 @@ In this lab, you will:
 * Open the two outlines side-by-side
 * Synchronize expanding and collapsing hierarchies
 * Synchronize scrolling
-* Synchronize showing and hiding columns
 * Copy members from the source to the target outline
 * Search the source or the target outline
 
