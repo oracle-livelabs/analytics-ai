@@ -47,7 +47,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Access Oracle Essbase](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/access-oracle-essbase.html#GUID-9B07C1B6-D7D0-4F2D-87A4-A14F8CF8B8C6)
+* [Access Oracle Essbase](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/access-oracle-essbase1.html#GUID-9B07C1B6-D7D0-4F2D-87A4-A14F8CF8B8C6)
 * [Understand Your Access Permissions in Essbase](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/understand-your-access-permissions-essbase.html#GUID-406C17E5-6020-4812-A3D7-98A13FB2ED8A)
 
 ## Acknowledgements

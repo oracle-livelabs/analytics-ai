@@ -70,9 +70,9 @@ This lab assumes you have:
 
 1. Click the **Auto expand/collapse target members** icon ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon-redwood.png) and expand several dimensions so that you need to scroll up and down in order to see the entire outline.
 
-2. Scroll the **Target.Basic** outline horizontally and observe that the **Source.Basic** outline scrolls in sync with it.
+2. Scroll the **Target.Basic** outline vertically and observe that the **Source.Basic** outline scrolls in sync with it.
 
-3. Scroll the **Target.Basic** outline vertically and observe that you can view member properties for both **Target.Basic** and **Source.Basic**.
+3. Scroll the **Target.Basic** outline horizontally and observe that you can view member properties for both **Target.Basic** and **Source.Basic**.
 
 <!--## Task 5: Synchronize showing and hiding columns
 
@@ -84,7 +84,7 @@ This lab assumes you have:
 
 ## Task 5: Copy members from the source outline to the target outline
 
-1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/icon-edit-outline-redwood.png).
+1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/icon-edit-outline-redwood.png) if it is not already in edit mode.
 
 2. In the **Source.Basic** outline, expand the **Product** dimension.
 

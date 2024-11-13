@@ -60,7 +60,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [About Application Workbooks](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-create-cubes-using-application-workbooks.html#GUID-15D76E2D-7302-4F77-B0BC-062305E3538E)
+* [Design and Create Cubes Using Application Workbooks](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-create-cubes-using-application-workbooks.html#GUID-15D76E2D-7302-4F77-B0BC-062305E3538E)
 
 ## Acknowledgements
 
