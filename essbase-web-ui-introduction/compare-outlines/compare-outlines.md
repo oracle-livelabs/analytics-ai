@@ -98,7 +98,7 @@ This lab assumes you have:
 
 ## Task 6: Search either the source or the target outline
 
-1. In the outline toolbar, under **Actions**, click the **Search members in the outline** icon.
+1. In the outline toolbar click the **Search members in the outline** icon ![Image of the search members in the outline icon in the outline toolbar.](images/search-members-in-the-outline-icon-redwood.png).
 
 2. Notice that search bars open for both **Source.Basic** and **Target.Basic**, allowing you to search either one.
 
