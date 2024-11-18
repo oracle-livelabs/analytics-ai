@@ -204,7 +204,7 @@ The data is provided in CSV format and your objective is to convert this data to
 
 ## Task 2: Upload application and data to the Object store
 
-> **Note:** If you not familar on how to upload the content to object, it is recommended that you refer to this [lab](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=655) to learn more.
+> **Note:** If you not familar on how to upload the content to object, it is recommended that you refer to this [lab](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=655) to learn more.
 
 
  1. From the Console navigate to the object storage

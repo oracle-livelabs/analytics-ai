@@ -51,7 +51,7 @@ This task will help you to create Oracle Digital Assistant under your choosen co
 
 This task will help you to create desired dynamic group & necessary policy for the Oracle Digital Assistant
 
-1. Attach the policy at the root compartment level
+1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
 
     ```text
     <copy>
@@ -80,7 +80,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/oda_api_service.png)
 
-4. Click on **Add REST Service**. Provide the following details:
+4. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values in the Body section. You can follow the next step - Step 5 to see how to retrieve model ID.
     * **Name**
 
     ```text
@@ -93,7 +93,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ```text
     <copy>
-    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/generateText
+    https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/20231130/actions/chat
      </copy>
     ```
 
@@ -111,18 +111,10 @@ This task involves creating REST service which will be used by ODA to connect to
             "modelId": "ocid1.generativeaimodel.oc1.us-chicago-1.XXXXXXXX",
             "servingType": "ON_DEMAND"
         },
-        "inferenceRequest": {
-            "prompt": "What is OCAF?",
-            "maxTokens": 600,
-            "temperature": 1,
-            "frequencyPenalty": 0,
-            "presencePenalty": 0,
-            "topP": 0.75,
-            "topK": 0,
-            "returnLikelihoods": "GENERATION",
-            "isStream": true,
-            "stopSequences": [],
-            "runtimeType": "COHERE"
+        "chatRequest": {
+            "apiFormat": "COHERE",
+            "message": "Hi, how are you",
+            "isStream": true
         }
     }
     </copy>
@@ -133,13 +125,13 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/genai.png)
 
-    * Step 2: Select Generation (under **Playground** heading)
+    * Step 2: Select Chat (under **Playground** heading)
 
-    ![API Services](images/generation_model_1.png)
+    ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command.v15.6**, Click **View Model Details**, and then click on **copy** link for the **cohere.command** and **version** = 15.6
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
 
-    ![API Services](images/generation_model_2.png)
+    ![API Services](images/chat_screenshot.png)
 
 6. Click **Test Request** to make sure the connection is successful
 
@@ -147,17 +139,85 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
-    > * If you are using a different name (and not Gen_AI_Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI_LLM and  GenAI_Truncate_LLM
+    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI LLM and  GenAI Truncate LLM
 
     ![API Services](images/oci_rest_service_4.png)
 
 ## Task 4: Import Skill (Provided)
 
-1. Click on the link to download the required skill (zip file): [Atom_Skill_txt.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_txt.zip)
+1. Click on the link to download the required skill (zip file): [Atom Skill txt.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_txt.zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
    ![Import Skill](images/import_skill.png)
+
+3. Once the skill is imported. Click on the Skill and go to Components as shown in the image below.
+
+    ![Click Components](images/components.png)
+
+4. Click on Add Service and give this service a name of your choice. For example - RPlusService. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again (using bots-node-sdk by following the steps provided in the note section below) to tgz format. Click to download the file [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
+
+     ![Service Package](images/service_package.png)
+
+    > **Note:**
+    > * You will need to use the bots node sdk to zip the folder. Run this command in your terminal to install -
+        ```text
+        <copy>
+        npm install @oracle/bots-node-sdk
+        </copy>
+        ```
+    > * Once installed - cd into the folder and run the below command to zip the folder.
+        ```text
+        <copy>
+        npx @oracle/bots-node-sdk pack
+        </copy>
+        ```
+
+5. Click on Add Service again and give a name - ProcessAttachmentService. Upload the following .tgz file under Component Service Package Creation Type section. Click to download the file [Process.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/O9BuH61wORNYq5E13l9b7GKbMnCXaBRNd2SiUtW0v1dTjCXYGcHkCTlbEM7ZOeDk/n/c4u02/b/hosted_workshops/o/process-attachment-component-1.tgz)
+
+6. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+
+    ![Import LLM](images/import_llm.png)
+
+7. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
+
+    ![API Services](images/oci_rest_service_4.png)
+
+8. Provide a name of your choice for this Service. Give LLM Provider value as the one you imported in Step 6. Give Transformation Handler value as the one you imported in Step 4. Click on Check mark under Action to save it as shown in the image below.
+
+    ![LLM Service](images/llm_service.png)
+
+9. Go to Skills -> Flows. Click on Attachment.
+
+    ![Chat Services](images/chat.png)
+
+10. Click on Process attachment. In the pop up box under Custom Component section choose the one under ProcessAttachmentService.
+
+    ![Process Attach](images/process_attach.png)
+
+11. Next, under Component tab fill in the following values as shown in the screenshot.
+
+    ![Component Attach](images/component_attach.png)
+
+12. Click on invokeLLM in the Attachment flow as shown.
+
+    ![Invoke LLMS](images/invoke_llms.png)
+
+13. Under Component change the LLM Service to the one in Step 8.
+
+    ![LLM Ser](images/llm_ser.png)
+
+14. Go to Skills -> Flows. Click on Chat.
+
+    ![Chat Services](images/chat.png)
+
+15. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 8.
+
+    ![Invoke LLM](images/invoke_llm.png)
+
+16. Click on Preview in the top right corner and start chatting with ATOM Chatbot.
+
+    ![Preview ATOM](images/preview_atom.png)
 
 ## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
@@ -188,7 +248,7 @@ This task involves creating REST service which will be used by ODA to connect to
     ![Create Channel](images/visual_builder.png)
 
 2. Create Visual Builder Instance by providing the details and click **Create Visual Builder Instance**:
-    * **Name** = <suitable_name>
+    * **Name** = <name_of_your_choice>
     * **Compartment** = <same_compartment_as_oda>
     * **Node** = <as_per_need>
 
@@ -238,7 +298,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
+* **JB Anderson**,  Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Aug 2024
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Sep 2024

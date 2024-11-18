@@ -31,7 +31,7 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 * Access to the Chicago Region
-* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder and Identity Domains
+* Administrator permissions or permissions to use the Generative AI family, the AI services family, Digital Assistant, Visual Builder, and Identity Domains
 
 ## Learn More
 
