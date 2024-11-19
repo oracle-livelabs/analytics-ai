@@ -20,9 +20,9 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
-
 
 ## Task 1: Import two sample cubes
 
@@ -110,5 +110,6 @@ This lab assumes you have:
 * [Copy and Paste Members Within and Between Outlines](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/copy-and-paste-members-and-outlines.html#GUID-630F6AEC-6951-4975-A4FD-94E329A0BDB4)
 
 ## Acknowledgements
+
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
 * **Last Updated By/Date** - Dori Woodhouse November, 2024

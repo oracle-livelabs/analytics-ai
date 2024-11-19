@@ -84,41 +84,41 @@ This lab assumes you have:
 
 1. On the **Applications** page, select the application and select the cube (database).
 
-3. Select the **Scripts** page.
+2. Select the **Scripts** page.
 
-4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
+3. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
 
-5. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
+4. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
 
-6. For the **Source Type**, select **File**.
+5. For the **Source Type**, select **File**.
 
-7. For **File**, navigate to **Catalog** > **All Files** > **Shared** > and double-click **add-products-with-aliases.txt**.
+6. For **File**, navigate to **Catalog** > **All Files** > **Shared** > and double-click **add-products-with-aliases.txt**.
 
-8. For **File Type**, select **Delimited**.
+7. For **File Type**, select **Delimited**.
 
-9. For **Delimiter**, change to **Tab** delimited.
+8. For **Delimiter**, change to **Tab** delimited.
 
     ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule-redwood.png)
 
-10. Click **Preview data** and check that the results look right, and then click **Proceed**.
+9. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
     ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data-redwood.png)
 
-11. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
+10. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
-12. Set the **Type** in field 1 to be **Parent**.
+11. Set the **Type** in field 1 to be **Parent**.
 
-13. In **Field - 2** set **Type** to **Alias**.
+12. In **Field - 2** set **Type** to **Alias**.
 
-14. In **Field - 3** set **Type** to **Child**.
+13. In **Field - 3** set **Type** to **Child**.
 
-15. In **Field - 4** set **Type** to **Alias**.
+14. In **Field - 4** set **Type** to **Alias**.
 
     ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor-redwood.png)
 
-16. Click **Verify**.
+15. Click **Verify**.
 
-17. Click **Save and Close**.
+16. Click **Save and Close**.
 
 ## Task 4: Create a dimension build job
 
@@ -132,15 +132,15 @@ This lab assumes you have:
 
 5. For **Data File** click the **Choose Catalog File** icon and navigate to **add-products-with-aliases.txt** in the **Shared** directory, and select it.
 
-5. For **Restructure Options**, choose **Preserve All Data**.
+6. For **Restructure Options**, choose **Preserve All Data**.
 
     ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job-redwood.png)
 
-6. Click **Submit**.
+7. Click **Submit**.
 
-7. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
+8. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
 
-8. Open the outline and see that the new product 500 group was created.
+9. Open the outline and see that the new product 500 group was created.
 
     ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products-redwood.png)
 
