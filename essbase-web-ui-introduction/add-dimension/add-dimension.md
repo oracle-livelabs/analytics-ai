@@ -154,7 +154,7 @@ This lab assumes you have:
 
 4. In the **Query** field, paste the following MDX query:
 
-    ```
+    ```MDX
     <copy>
     SELECT
       {[Measures].[Sales]}
