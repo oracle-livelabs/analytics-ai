@@ -54,29 +54,29 @@ This lab assumes you have:
 
     ![Image of the outline editor toolbar, actions icon, with Add Sibling Member Below selected.](images/add-sibling-redwood.png)
 
-5. Type **Calendar** in the **Member name** text box, click **Add**.
+5. Type **Calendar** in the **Member name** text box and click **Add**.
 
 6. In the **Add** dialog box, change the selection to **As child for Calendar**.
 
-7. In the **Member name** text box type **FY2024** and press **Add**.
+7. In the **Member name** text box, type **FY2024**.
 
-8. In the **Member name** text box, type **FY2025** and press **Add**, then click the **Close add member slider** icon ![Image of close add member slider icon](images/close-slider-icon-redwood.png).
+8. In the **Operator** text box, select **~(Ignore)** and then click **Add**.
 
-9. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
+9. In the **Member name** text box, type **FY2025**.
+
+10. In the **Operator** text box, select **~(Ignore)** and then click **Add**.
+
+11. Click the **Close add member slider** icon ![Image of close add member slider icon](images/close-slider-icon-redwood.png).
+
+12. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
 
     ![Image of the outline editor, data storage type menu, with label only selected.](images/label-only-redwood.png)
 
-10. Select **FY2024**, and under the operator menu, choose **~ Excluded from consolidation** (Ignore).
+13. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify icon in the outline editor](images/verify-outline-icon-redwood.png).
 
-    ![Image of the outline editor, operator menu, with ~ exclude from consolidation selected.](images/operator-ignore-redwood.png)
+14. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
 
-11. Select **FY2025**, and under the operator menu, choose **~ Excluded from consolidation** (Ignore).
-
-12. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify icon in the outline editor](images/verify-outline-icon-redwood.png).
-
-13. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
-
-14. In the **Restructure Database Options** dialog box, select **All Data** and click **Save**.
+15. In the **Restructure Database Options** dialog box, select **All Data** and click **Save**.
 
     ![Image of the Restructure Database Options dialog box, with Save selected.](images/restructure-database-options-redwood.png)
 
