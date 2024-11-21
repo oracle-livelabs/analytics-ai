@@ -24,9 +24,9 @@ Objective of this workshop is to set-up ATOM and its required OCI services:
 
 In this workshop, you will learn how to: <!-- TODO: these should mostly match our labs and lab sections -->
 
-* Create VB application with OAC charts
-* Expose VB application as a Web View
-* Expose ODA skill as new VB application
+* Configure visual builder application with OAC charts
+* Expose visual builder application as a web view
+* Expose digital assistant skill as new visual builder application
 
 ### Prerequisites
 
@@ -48,5 +48,6 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** Luke Farley, Staff Cloud Engineer, NACIE
+* **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor**, Kaushik Kundu, Master Principal Cloud Architect, NACIE
 * **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE

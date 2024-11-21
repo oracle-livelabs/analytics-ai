@@ -85,7 +85,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the sample function
 
-    [fn-oac-oda.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2Ffn-oda-oac-livelab.zipg)
+    [fn-oac-oda.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2Ffn-oda-oac-livelab.zip)
 
 2. Extract the contents and replace the url with the url of your live vb application created in the previous lab 
 
@@ -104,7 +104,9 @@ In this section, we will delve into the process of creating and deploying an Ora
         - Logging in to the container registry 
         - Deploying the function to your application
 
-    Note: Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3 
+   > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3 
+
+   > **Note** Switch into the function directory and/or run the commands from VS code console before running the fn commands
 
     ![Fn Deploy Steps](images/fn-deploy-steps.png)
 
@@ -123,7 +125,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     ![API GW Deployment](images/fn-api-gw-basic-info.png)
 
-    Note: you can restrict allowed origins if you'd like; this is for demo purposes only.
+   > **Note:** you can restrict allowed origins if you'd like; this is for demo purposes only.
 
 4. Select 'Next'
 
@@ -135,7 +137,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     ![Gateway Route](images/fn-api-gw-route.png)
 
-    Note: the route name you give will be needed later to configure the Webview
+    > **Note:** the route name you give will be needed later to configure the Webview
 
     - Expand 'Show route request policies and add the following 
 
@@ -165,7 +167,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![Active ODA Instance](images/oda_provision_4.png)
 
-Note: Once provisioned, take note of the base web url. This will be used in later labs. 
+> **Note:** Once provisioned, take note of the base web url. This will be used in later labs. 
 
 ## Task 5: Dynamic Group & Policy creation for Oracle Digital Assistant
 
@@ -237,5 +239,6 @@ You are now ready to move on to the final lab, which will expose your skill on a
 
 ## Acknowledgements
 * **Author** - Luke Farley, Staff Cloud Engineer, NACIE
+* **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE
 * **Contributor** -  Master Principal Cloud Architect, NACIE

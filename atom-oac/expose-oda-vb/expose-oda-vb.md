@@ -1,4 +1,4 @@
-# Expose ODA Skill as VB Application
+# Expose digital assistant skill as visual builder application
 
 ## Introduction
 
@@ -24,7 +24,29 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Administrator permissions or permissions to manage & use Visual Builder, Digital Assistant
 
-## Task 1: Expose your ODA OAC Skill as a Channel
+## Task 1: Add yourself to the application role in OAC
+
+1. Navigate to Identity & Security > Domains from the cloud console 
+
+    ![Identity Domain](images/oac-identity-domain.png)
+
+2. Select your domain e.g. Default 
+
+3. Select "Cloud Services" 
+
+    ![Cloud Services](images/oac-cloud-services.png)
+
+4. Navigate to your OAC instance > application roles
+
+    ![OAC Instance](images/oac-analytics-instance.png)
+
+5. Expand the Service Administrator role and select 'Manage' next to assigned users 
+
+6. Select 'Show available users', search for your name, then add yourself to the role 
+
+    ![Assign role](images/oac-assign-user.png)
+
+## Task 2: Expose your ODA OAC Skill as a Channel
 
 1. Open your ODA instance and navigate to Development > Channels
 
@@ -43,9 +65,9 @@ This lab assumes you have:
     ![Enable Channel](images/oda-enable-channel.png)
     ![Channel ID](images/oda-channel-id.png)
 
-You are now ready to expose the channel in Visual Builder
+You are now ready to expose the channel in Visual Builder.
 
-## Task 2: Import Sample Application in Visual Builder
+## Task 3: Import Sample Application in Visual Builder
 
 0. In settings, add your ODA instance base url to your allowed origins
 
@@ -69,7 +91,9 @@ You are now ready to expose the channel in Visual Builder
 
     ![VB Preview](images/vb-preview.png)
 
-## Task 3: Publish the Application
+**Note** If you are getting a 404 error when viewing the charts, double check you are assigned the OAC admin application role in step 1.
+
+## Task 4: Publish the Application
 
 1. If the app is working as expected, you can stage and publish the application 
 
@@ -87,4 +111,5 @@ You are now ready to expose the channel in Visual Builder
 
 ## Acknowledgements
 * **Author** - Luke Farley, Staff Cloud Engineer, NACIE>
-* **Contributor** -  Master Principal Cloud Architect, NACIE
+* **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
+* **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE

@@ -236,13 +236,16 @@ This task will help you to create necessary policy for the API Gateway
     Note: You might still get some errors here since this app is dependent on the user prompt message at runtime. If you can see the chart, you should be able to proceed. 
 
 11. Publish the application
-    - The publish option will only appear once staged 
+    - The publish option will only appear once staged. 
 
     ![Publish VB](images/vb-publish.png)
 
-    - Take note of the live url of the application for the next lab 
+    - Take note of the live url of the application for the next lab. 
+
+You are now ready to proceed to the next lab. 
 
 ## Acknowledgements
 
-* **Author** Luke Farley, Staff Cloud Engineer, NACIE
-* **Contributor** Kaushik Kundu, Master Principal Cloud Architect, NACIE
+* **Author** - Luke Farley, Staff Cloud Engineer, NACIE
+* **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
+* **Contributor** - Kaushik Kundu, Master Principal Cloud Architect, NACIE

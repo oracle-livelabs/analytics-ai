@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Deploy ATOM (AI Powered) Chatbot",
+  "workshoptitle": "ATOM Digital Assistant with Analytics Cloud Integration",
   "help": "livelabs-help-aiservices_us@oracle.com",
   "tutorials": [
     {
@@ -8,29 +8,29 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get Started with noVNC Remote Desktop",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "title": "Getting Started",
+      "description": "Get a Free Trial",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
-      "title": "Lab 1: Provision an Instance",
+      "title": "Lab 1: Configure Visual Builder Application with OAC Charts",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../provision/provision.md"
+      "filename": "../../VB-with-oac-charts/vb-oac-setup.md"
     },
     {
-      "title": "Lab 2: Document Understanding and Speech Services",
+      "title": "Lab 2: Expose Visual Builder Application as Webview in ODA",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../understandingDocument/duspeech.md"
+      "filename": "../../expose-vb-webview/expose-vb-webview.md"
     },
     {
-      "title": "Lab 3: How to use ATOM",
+      "title": "Lab 3: Expose ODA Skill as VB Application",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../usingAtom/useatom.md"
+      "filename": "../../expose-oda-vb/expose-oda-vb.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }
