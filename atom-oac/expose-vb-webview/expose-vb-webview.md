@@ -106,7 +106,6 @@ In this section, we will delve into the process of creating and deploying an Ora
 
    > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3. Also make sure to switch into the function directory and/or run the commands from VS code console before running the fn commands.
    
-    ![Fn Deploy Steps](images/fn-deploy-steps.png)
 
 ## Task 3: Add your Function as a Route on API Gateway
 
