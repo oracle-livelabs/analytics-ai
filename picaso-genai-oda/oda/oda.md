@@ -149,13 +149,19 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update endpoint](images/flow_update_endpoint2.png)
 
+5. Make sure the component 'callGenAIAgentChat' in the Flow 'user.GenAIAgentAPIChatFlow' has REST Service and other values are populated as shown below:
+
+    ![flow GenAIAgentChat](images/flow_chatagent_1.png)
+
+    ![flow GenAIAgentChat](images/flow_chatagent_2.png)
+
 5. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
     ![ODA Train](images/oda_trainflow2.png)
 
-6. You should be able to successfully the ODA Skill
+6. You should be able to successfully test the ODA Skill
 
     **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/flow_preview2.png)
