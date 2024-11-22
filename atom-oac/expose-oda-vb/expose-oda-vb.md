@@ -1,4 +1,4 @@
-# Expose digital assistant skill as visual builder application
+# Expose Digital Assistant Skill as Visual Builder Application
 
 ## Introduction
 
