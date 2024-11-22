@@ -24,7 +24,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Administrator permissions or permissions to manage & use Visual Builder, Digital Assistant
 
-## Task 1: Add yourself to the application role in OAC
+## Task 1: Add Yourself to the Application Role in OAC
 
 1. Navigate to Identity & Security > Domains from the cloud console 
 
@@ -73,9 +73,9 @@ You are now ready to expose the channel in Visual Builder.
 
     ![Allowed Origins](images/vb-config-allowed-origin.png)
 
-1. Download the following VB applicatoin
+1. Download the following VB application
 
-        [ODA VB App](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FATOM_OAC_ODA_LL_VB.zip)
+    [ODA VB App](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FATOM_OAC_ODA_LL_VB.zip)
 
 2. Import the app in your visual builder instance > Import from file
 

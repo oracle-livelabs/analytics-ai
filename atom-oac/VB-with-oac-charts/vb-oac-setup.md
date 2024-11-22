@@ -37,7 +37,7 @@ This task will help you to create Oracle Analytics Cloud under your chosen compa
 
 1. Locate Analytics Cloud under Analytics & AI
 
-   ![Navigate to Analytics Cloud](images/provision-oac-1.png)
+   ![Navigate to Analytics Cloud](images/analytics-oac.png)
 
 2. Provide the information for **Name**, **Capacity** , **License & Edition**, & **Network Access**. This lab is set up with the following default settings -
     - Capacity Type: OCPU 

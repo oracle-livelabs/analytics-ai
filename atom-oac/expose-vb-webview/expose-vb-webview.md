@@ -39,7 +39,7 @@ In this section, we will deploy a VCN, an API Gateway for centralized API manage
 1. Create VCN
     - In the cloud console, go to Networking > Virtual Cloud Networks
 
-    ![Create VCN](images/create-vcn.png)
+    ![Create VCN](images/networking-vcn.png)
 
     - Select 'Start VCN Wizard' 
 
@@ -106,7 +106,9 @@ In this section, we will delve into the process of creating and deploying an Ora
 
    > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3 
 
+
    > **Note** Switch into the function directory and/or run the commands from VS code console before running the fn commands
+   
 
     ![Fn Deploy Steps](images/fn-deploy-steps.png)
 
@@ -155,9 +157,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 1. Locate Digital Assistant under AI Services
 
-   ![Navigate to Digital Assistant](images/oda_provision_1.png)
-
-   > **Note:** You can find Digital Assistant under the AI Services.
+   ![Navigate to Digital Assistant](images/analytics-assist.png)
 
 2. Provide the information for **Compartment**, **Name** , **Description** (optional) & **Shape**. Click **Create**
 
