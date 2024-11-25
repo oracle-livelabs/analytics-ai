@@ -236,4 +236,4 @@ You are now ready to move on to the final lab, which will expose your skill on a
 * **Author** - Luke Farley, Staff Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE
-* **Contributor** -  Master Principal Cloud Architect, NACIE
+* **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE
