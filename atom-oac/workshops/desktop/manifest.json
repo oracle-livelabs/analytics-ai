@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "ATOM Digital Assistant with Analytics Cloud Integration",
+  "help": "livelabs-help-aiservices_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Get a Free Trial",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+    },
+    {
+      "title": "Lab 1: Configure Visual Builder Application with OAC Charts",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../VB-with-oac-charts/vb-oac-setup.md"
+    },
+    {
+      "title": "Lab 2: Expose Visual Builder Application as Webview in ODA",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../expose-vb-webview/expose-vb-webview.md"
+    },
+    {
+      "title": "Lab 3: Expose ODA Skill as VB Application",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../expose-oda-vb/expose-oda-vb.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
