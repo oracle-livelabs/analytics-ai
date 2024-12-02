@@ -18,7 +18,6 @@ In this lab, you will:
 
 * Create Object Storage Bucket and upload files
 * Create OCI Gen AI RAG Agent
-* (optional) test agent in console
 * (optional) update Agent's Knowledge Base
 
 ### Prerequisites

@@ -26,9 +26,9 @@ This lab assumes you have:
 
 ## Task 1: Dynamic Group and Policy Definition
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined. If the Dynamic Group and Policy Definition are not correctly defined, please define them as follows.
+This task will help you to create the Dynamic Group and Policies in your tenancy. Please follow below mentioned steps:
 
-These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and Generative AI Agent are in the same tenancy.
+These Dynamic Group and Policy Definitions are for single-tenancy deployment - where ODA and Generative AI Agent are in the same tenancy.
 
 For Policy Definitions required for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies), please refer to Task 9.
 
@@ -46,7 +46,14 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
     **Note** The name of your dynamic group can be different.
 
-4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
+4. Ensure that your Dynamic Group is properly defined with Rules - as follows. Then click on Identity
+    
+    ```
+   <copy>
+    resource.type='odainstance'
+    resource.compartment.id='<ocid1.compartment.*************>'
+    </copy>
+   ```
 
     ![DG Details](images/dg_details.png)
 
@@ -60,9 +67,17 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
 6. Ensure that your Policy is properly defined - as follows.
 
+   ```
+   <copy>
+    allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage agent-family in tenancy
+    allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage genai-agent-family in tenancy
+    allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage object-family in tenancy
+    </copy>
+   ```
+
     ![Policy Details](images/policy_details.png)
 
-   **NOTE:** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+   **NOTE:** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Oracle Digital Assistant (PICASO) setup
 
@@ -126,7 +141,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. Ensure that the "id" field is not blank / null. If the "welcomeMessage" field is blank in this Rest API response, a generic message would be shown in the ODA chatbot.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
@@ -148,12 +163,6 @@ This task involves creating REST service which will be used by ODA to connect to
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
     ![flow update endpoint](images/flow_update_endpoint2.png)
-
-5. Make sure the component 'callGenAIAgentChat' in the Flow 'user.GenAIAgentAPIChatFlow' has REST Service and other values are populated as shown below:
-
-    ![flow GenAIAgentChat](images/flow_chatagent_1.png)
-
-    ![flow GenAIAgentChat](images/flow_chatagent_2.png)
 
 5. Ensure the Chatbot Training is completed
 
