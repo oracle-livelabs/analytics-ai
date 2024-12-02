@@ -3,11 +3,11 @@
 ## About this Workshop
 
 This workshop will help to configure Generative AI powered chatbot (PICASO) on your own OCI tenancy.
-This workshop enables developers to perform GenAI RAG on custom PDF documents (stored in OCI Object Storage) using the OCI Generative AI Agent Service.
+This workshop enables developers to perform GenAI RAG on custom PeopleSoft PDF documents (stored in OCI Object Storage) using the OCI Generative AI Agent Service.
 The users can then
 
 - Connect to OCI Generative AI Agent Service from OCI Digital Assistant Chatbot PICASO (hosted in PeopleSoft Application)
-- Get responses of their question (in natural language) from those custom PDF documents.
+- Get responses of their question (in natural language) from those custom PeopleSoft PDF documents.
 
 By following the workshop users can install PICASO with Gen AI Agent integration in their own tenancy
 
