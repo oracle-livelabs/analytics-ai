@@ -76,7 +76,8 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
     allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage object-family in tenancy
     </copy>
    ```
-   
+    
+    ![Click Policy](images/click_policy.png)
     ![Policy Details](images/policy_details.png)
 
    **NOTE:** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
