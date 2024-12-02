@@ -117,9 +117,10 @@ Next, we will create the access policies:
   allow group <your-user-group-name> to manage genai-agent-family in tenancy
   allow group <your-user-group-name> to manage object-family in tenancy
   allow dynamic-group <dynamic-group-name-created-above> to manage all-resources in tenancy
+  allow any-user to manage genai-agent-family in tenancy where request.principal.id=<ODA OCID> 
   </copy>
   ```
-
+  Make sure to put the ODA OCID in the above policy in single inverted commas instead of <ODA OCID>
   Make sure to replace `<your-user-group-name>` with the user group your user is associated with (for example: `Administrators`).
   Also, please replace `<dynamic-group-name-created-above>` with the name you've provided for the dynamic group created above.
 
