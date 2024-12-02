@@ -49,7 +49,8 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 4. Ensure that your Dynamic Group is properly defined with Rules - as follows. Then click on Identity
     
     ```
-   <copy>
+    <copy>
+    Example:
     resource.type='odainstance'
     resource.compartment.id='<ocid1.compartment.*************>'
     </copy>
@@ -68,13 +69,14 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 6. Ensure that your Policy is properly defined - as follows.
 
    ```
-   <copy>
+    <copy>
+    Example:
     allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage agent-family in tenancy
     allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage genai-agent-family in tenancy
     allow dynamic-group GenAI-Agent-ODA-Dynamic-Group to manage object-family in tenancy
     </copy>
    ```
-
+   
     ![Policy Details](images/policy_details.png)
 
    **NOTE:** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
