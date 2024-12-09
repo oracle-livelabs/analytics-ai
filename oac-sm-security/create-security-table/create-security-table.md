@@ -1,20 +1,18 @@
-# Title of the Lab
+# Create Security Table
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to create a database table USER_RESPONSIBILITIES which contains country assignments for analytics users.
 
-Estimated Time: -- minutes
+Estimated Time: 20 minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
+* Set up a security table in ADB
 * Objective 2
 * Objective 3
 
@@ -25,61 +23,56 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
+* You have a running ADB instance
 
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Configure the security table
 
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
-
-1. Step 1
+1. Navigate to the Database Schema
 
 	![Image alt text](images/sample1.png)
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+	> **Note:** You can use any sql interface of your choice (SQL Developer, Toad, Database Actions and etc
 
-2. Step 2
+2. Copy and paste the SQL Code in the worksheet
 
   ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+  ```
+   </copy> CREATE TABLE ADMIN.USER_RESPONSIBILITIES 
+(
+  USER_NAME VARCHAR2(80) 
+, COUNTRY_ISO_CODE VARCHAR2(20) 
+);
+
+INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('CHENAI.JARIMANI', 'GB');
+INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('CHENAI.JARIMANI', 'US');
+INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('JUDE.WILSON', 'NZ');
+INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('JUDE.WILSON', 'AU');
+INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('ADRIENNE.HOWARD', 'US');
+
+COMMIT; </copy>
+    ```
+
+4. Test your table is configured by writing a select * statement
+
+ ![Image alt text](images/sample2.png) click **Navigation**.
 
 5. Example with bold **text**.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Concise Task Description
+## Task 2: Test the security table
 
-1. Step 1 - tables sample
+1. Test your table is configured by writing a select * statement
 
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+ ![Image alt text](images/sample2.png) click **Navigation**.
 
 2. You can also include bulleted lists - make sure to indent 4 spaces:
 
     - List item 1
     - List item 2
 
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 
