@@ -2,84 +2,92 @@
 
 ## Introduction
 
-This lab walks you through the steps to ...
+This lab walks you through the steps to create an init block with a session variable that execute each time a user logs into OAC. The block will query the security table to identify which countries each user is allowed to see.
 
-Estimated Time: -- minutes
+Estimated Time: 20 minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create an Initialization Block
+* Add the session variable
+* Test the variable
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* A working semantic modeler
+* Created your database connection to the OAC instance
 
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Task 1: Create the Init Block
 
 (optional) Task 1 opening paragraph.
 
-1. Step 1
+1. Navigate to Semantic Models, then Click the Semantic Model to open it
 
 	![Image alt text](images/sample1.png)
 
 	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
-2. Step 2
+2. Navigate to Physical Layer, Click the Database, Connection Pool and verify the second connection pool exists, if not Click the **+** to add
 
   ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+  **Note:** For init blocks you need a separate connection pool
 
-5. Example with bold **text**.
+3. Navigate to **Variables** tab, Click Create Initialization Block **+** 
 
-   If you add another paragraph, add 3 spaces before the line.
+  ![Image alt text](images/sample1.png)
 
-## Task 2: Concise Task Description
+  **Note:** Once you Save the Init block opens the **Variables** tab
 
-1. Step 1 - tables sample
 
-  Use tables sparingly:
+## Task 2: Configure the Session Variable
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+1. Navigate to **Variables** tab, Click CountyDataSec Initialization Block 
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  ![Image alt text](images/sample1.png)
 
-    - List item 1
-    - List item 2
+  **Note:** Once you Save the Init block opens the **Variables** tab
 
-3. Code examples
+2. Under Query Returns Choose **Variable names and values** 
 
-    ```
+  ![Image alt text](images/sample1.png)
+
+3. Paste below query in the Select Statement pane:
+  ```
     Adding code examples
   	Indentation is important for the code example to appear inside the step
     Multiple lines of code
   	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
-4. Code examples that include variables
+4. Under Query Returns Choose **Variable names and values** 
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+  ![Image alt text](images/sample1.png)
+
+5. Select Connection Pool, Add the one you configured 
+
+  ![Image alt text](images/sample1.png)  
+
+6. Click Add Variable, Detail View tab, Enter Name and **fx** for Value('99') and Enable any user to set the value 
+
+  ![Image alt text](images/sample1.png)  
+
+7. Click Save 
+
+  ![Image alt text](images/sample1.png)  
+
+8. Under Variables the new Session Variable is listed on the left side 
+
+  ![Image alt text](images/sample1.png)  
+
 
 ## Learn More
 
