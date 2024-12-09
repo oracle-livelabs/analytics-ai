@@ -70,6 +70,8 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
     ![Policy Details](images/policy_details.png)
   
+      **NOTE:** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.    
+    
    ```
     <copy>
     Example:
@@ -79,8 +81,6 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
     </copy>
    ```
 
-    **NOTE:** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.    
-    
 
 ## Task 2: Oracle Digital Assistant (PICASO) setup
 
