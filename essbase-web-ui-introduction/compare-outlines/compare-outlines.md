@@ -112,4 +112,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse November, 2024
+* **Last Updated By/Date** - Dori Woodhouse January, 2025
