@@ -33,9 +33,11 @@ This lab assumes you have:
 
     The basic format of the URL is:
 
-    ```
+    ```URL
+
     <copy>https://Host:port/essbase/jet</copy>
     ```
+
     The default secured port is 9001, unless it was changed during stack creation.
 2. Open a browser window and enter the URL for the Essbase web interface.
 
