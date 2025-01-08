@@ -44,7 +44,34 @@ Note: The lab should work also with any Database 19c+ with APEX and DBMS_CLOUD. 
     allow any-user to manage object-family in tenancy where ALL { request.principal.id='ocid1.autonomousdatabase.oc1.eu-frankfurt-1.abcdefghj...', request.permission = 'PAR_MANAGE' }
     ```   
 
-## Task 2: Configure Autonomous Database 
+## Task 2: Configure APEX Workspage
+
+1. Click the hamburger menu on the left-hand corner and go to **Oracle Database > Autonomous Transaction Processing**.
+
+    ![Autonomous Database](./images/ai_agent_atp.png)
+
+2. Click on your database name   
+3. Click on the button **Database Actions / View All Database Actions**
+4. Choose **SQL**. Click **Open**
+
+    This step assumes that you have already an existing APEX Workspace. If not, instead of clicking SQL, choose APEX and create a workspace.
+
+5. (Optional) Login as ADMIN
+
+6. In Database Actions / SQL
+     - Look for the name of your Workspace user (for example: WKSP_XXXX). 
+     - Run the following commands
+   
+     ```
+     EXEC DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL('WKSP_XXXX')
+     /
+     grant execute on DBMS_CLOUD to WKSP_XXXX
+     /
+     ```
+
+     ![Grants](./images/ai_agent_atp_grant.png)
+
+## Task 3: Configure APEX 
 
 1. Click the hamburger menu on the left-hand corner and go to **Oracle Database > Autonomous Transaction Processing**.
 
@@ -75,7 +102,7 @@ Note: The lab should work also with any Database 19c+ with APEX and DBMS_CLOUD. 
 12. Edit the agent endpoint id. Save and Run
     ![Endpoint](./images/ai_agent_apex_endpoint.png)
  
- ## Task 3: Test the application
+ ## Task 4: Test the application
 
 1. Type your question in message. Then Send
 
