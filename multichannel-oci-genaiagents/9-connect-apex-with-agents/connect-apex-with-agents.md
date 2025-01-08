@@ -63,10 +63,12 @@ Note: The lab should work also with any Database 19c+ with APEX and DBMS_CLOUD. 
      - Run the following commands
    
      ```
+     <copy>
      EXEC DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL('WKSP_XXXX')
      /
      grant execute on DBMS_CLOUD to WKSP_XXXX
      /
+     </copy>
      ```
 
      ![Grants](./images/ai_agent_atp_grant.png)
