@@ -114,7 +114,8 @@ Under documentation you can find helpful links relevant to OCI speech service
 
     <strong>Configure transcription:</strong> Choose the model model type and the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
         ![Job details selection page](./images/basic-information-page-1.png " ")
-    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model.
+    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model. Additionally, the Whisper Medium model also offers auto-detection of language. This can be chosen in the language drop-down list once the Whisper model is selected.
+    ![Language dropdown for Whisper](./images/whisper-model-auto-language.png " ")
     
     You can also enable diarazation feature by checking the box which helps you with segmenting audio recordings by speaker labels
         ![Model selection page](./images/basic-information-page-2.png " ")
