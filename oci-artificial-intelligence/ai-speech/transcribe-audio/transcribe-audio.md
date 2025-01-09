@@ -120,7 +120,7 @@ Under documentation you can find helpful links relevant to OCI speech service
     You can also enable diarazation feature by checking the box which helps you with segmenting audio recordings by speaker labels
         ![Model selection page](./images/basic-information-page-2.png " ")
     If you enable the diarization feature, a new dropdown for selecting specifing the number of speaker in the audio file will be shown. You can provide the number of speakers to label in the audio file or you can keep the default option *Auto detect* which will automatically detect the number of speakers in the audio file.
-        ![Diarization Speakers dropdown](./images/diarization-speakers.png " ")
+        ![Diarization Speakers dropdown](./images/diarization-dropdown.png " ")
 
     Filters allow you to remove, tag or mask certain words from the transcription, such as profanity
         ![Filters selection page](./images/filters.png " ")
