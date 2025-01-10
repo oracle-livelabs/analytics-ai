@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Lab 8: Use OCI speech with datascience notebook session (Optional)
-=======
-# Lab 7: Use OCI speech with datascience notebook session (Optional)
->>>>>>> upstream/main
 
 ## Introduction
 
