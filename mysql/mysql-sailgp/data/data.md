@@ -230,7 +230,8 @@ CREATE TABLE SAILGP.SAILGP_SGP_STRM_PIVOT(
 		"format": "csv",
 		"field_delimiter": ",",
 		"record_delimiter": "\\n",
-                "skip_rows": 1
+        "check_constraints": false,
+        "skip_rows": 1
 	}
 }';
 	</copy>
