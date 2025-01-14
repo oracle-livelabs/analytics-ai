@@ -225,7 +225,7 @@ In this task, we will Enable the HeatWave option on our MySQL database.
 
 2. On the left bottom of the screen, select HeatWave, then click "Add HeatWave cluster".
 
-  ![Add HeatWave](./images/add-heatwave.png)
+  ![Add HeatWave](./images/add-heatwave.png "Add HeatWave Cluster")
 
 3. Keep the default Shape, and set Node Count to 2, **select the MySQL HeatWave Lakehouse** option and then click the button _**Add HeatWave Cluster**_.
 

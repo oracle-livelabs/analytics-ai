@@ -1,4 +1,4 @@
-# Machine Learning On SailGP Data: Predicting the best sailing direction
+# Machine Learning On SailGP Data: Predict the best sailing direction
 
 ## Introduction
 
