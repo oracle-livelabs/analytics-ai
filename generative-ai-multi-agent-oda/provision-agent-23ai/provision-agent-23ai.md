@@ -1,4 +1,4 @@
-# Lab 2: Provision Generative AI Agent based on ADB 23ai 
+# Lab 2: Provision Generative AI Agent based on ADB 23ai
 
 ## Introduction
 
@@ -148,7 +148,6 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     ![Validate DBTools](images/dbconn_validate.png)
 
-
 # Load vector data in ADB using sql
 
 This section will take you through the steps needed to load data and create a vector search function in your ADB 23ai. 
@@ -185,7 +184,7 @@ A function with the following requirements:
 
 Note: Names can vary but must be aliased as follows in the function.
 
-This is a high level overview. We will go through the implementation in the following tasks. 
+This is a high level overview. We will go through the implementation in the following tasks.
 
 ## Task 6: Run SQL statements to create a vector table
 
@@ -501,6 +500,9 @@ This task will help you create a knowledge base using 23ai database as source.
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
+
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 
+* **Last Updated By/Date**
+    * **Luke Farley**, Staff Cloud Engineer, NACIE, January 2025

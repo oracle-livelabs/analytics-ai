@@ -11,7 +11,6 @@ When the user asks natural language question, then the ODA Chatbot leverages Gen
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-
 ![User View](images/ATOM_Demo_Screenshot.jpg)
 
 Estimated Workshop Time: 3 hours
@@ -24,7 +23,7 @@ Objective of this workshop is to set-up the required OCI services to create a Mu
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.
-* OCI Integration Cloud (OIC) - Users can use Oracle Integration Cloud to pull a city's weather information leceraging Weather API
+* OCI Integration Cloud (OIC) - Users can use Oracle Integration Cloud to pull a city's weather information leveraging Weather API
 * OCI Digital Assistant (ODA) – Users can create ODA Digital Assistance and import the provided ODA Skills for Generative AI Agents and OIC APIs.
 Users can then connect from ODA chatbot and get responses of their natural language questions.
 * OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
@@ -33,9 +32,9 @@ Users can then embed the ODA chatbot in ATOM VB application, and interact with t
 In this workshop, you will learn how to:
 
 * Create Object Storage Bucket, and upload custom PDF documents in that bucket.
-* Setup & configure Generative AI RAG Agent Service (Knowledge Bases and Agents) conected to that Object Storage Bucket.
+* Setup & configure Generative AI RAG Agent Service (Knowledge Bases and Agents) connected to that Object Storage Bucket.
 * Create Autonomous Database 23ai and upload vectorized document content in the database.
-* Setup & configure Generative AI RAG Agent Service (Knowledge Bases and Agents) conected to that Autonomous Database 23ai.
+* Setup & configure Generative AI RAG Agent Service (Knowledge Bases and Agents) connected to that Autonomous Database 23ai.
 * Setup & configure Oracle Integration Cloud to integrate with Weather API.
 * Setup & configure Oracle Digital Assistant (ODA) as an OCI Generative AI powered chatbot.
 * Setup & configure Visual Builder as a frontend channel for ODA.

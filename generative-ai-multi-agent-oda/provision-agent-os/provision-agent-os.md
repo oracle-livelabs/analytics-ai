@@ -42,8 +42,6 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     ![object storage bucket creation](images/os_bucket_create.png)
 
-    <!--TODO: may need object events and may want object versioning -->
-
 ## Task 2: Upload PDF Document(s) to the Object Storage Bucket
 
 1. Download the following files:
@@ -57,8 +55,6 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
     Click on “select files” link to select files from your machine. This step can be repeated to select multiple files to upload to the bucket.
 
     **Note:** The Gen AI Agents service currently supports .pdf and .txt file formats
-
-    <!--TODO: should we provide a sample dataset? -->
 
     ![object storage select files](images/os_file_select.png)
 
@@ -165,6 +161,9 @@ You may want to update your agent's knowledge base for a variety of reasons in t
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
+
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
+* **Last Updated By/Date**
+    * **Luke Farley**, Staff Cloud Engineer, NACIE, January 2025

@@ -45,7 +45,7 @@ This lab assumes you have:
 
 4. Click on the link to download the VB application (zip file)
 
-    [agent-vb-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-vb-livelabs-1.1.zip)
+    [MultiStepAgentAPIOrchestration-1.0.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/1RihiAG-eK8EEOa5rEL-lbJSbqHEYinN_S_zioLaijvTUaTjxqCJUL0axv_1eQyt/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestration-1.0.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
     * Click on Import from Visual Builder Instance
@@ -167,5 +167,7 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
+    * **Luke Farley**, Staff Cloud Engineer, NACIE
+
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, January 2025

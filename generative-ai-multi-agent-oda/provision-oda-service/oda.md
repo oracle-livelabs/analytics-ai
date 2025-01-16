@@ -88,8 +88,6 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 ## Task 3: Create REST Services for the OCI Generative AI Agent
 
-## Task 4: Create REST Services for the OCI Generative AI Agent
-
 This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service.
 
 1. Download the the three REST Service Configurations
@@ -99,6 +97,8 @@ This task involves creating REST service which will be used by ODA to connect to
     b. [agent-RESTService-GenAIAgentChat.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-GenAIAgentChat.yaml)
 
     c. [RESTService-CohereToolChatService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatService.yaml)
+
+    d. [RESTService-OIC_Weather_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
 
 2. Locate the ODA instance (created in Task 2)
 
@@ -136,7 +136,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
+    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
 
 2. Import the Digital Assistant (downloaded). Click on Import Digital Assistant & select the zip file to import
 
@@ -150,15 +150,28 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update endpoint](images/user_flow1.png)
 
-5. Ensure the Chatbot Training is completed
+5. Import the following skills
+
+    a. [MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/G8xg4x5OdkLCzWwTeEMVwGxZbMjE2prl3p3Bpz9X-M2-U-FXFgQ-U2R2t3GaK77N/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-aget/MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent(2.0).zip)
+
+    b. [MultiStepAgentAPIOrchestrationOICWeatherAPI(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/xuz7BFhuDc-2rGAawurUKYyFnSn2AinsFu6dzYcaBQnnGb6USjMDZt8sj42zlMkt/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationOICWeatherAPI(2.0).zip)
+
+    c. [MultiStepAgentAPIOrchestrationTool(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Is9WnAVu3RYFuRNA9IATs4iTHGFQaDVW5EACENOJ_Z7AefHTuQ6H2WEwTbqmRyo7/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationTool(2.0).zip)
+
+    d. [MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/wDJXTpTLid-uKz8Cb6HehRpx1NlcZ1sda7OIzX8fT35oaC7OJiWwHQplxHBs2MtP/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip)
+
+6. Go to Skills -> Settings -> Configuration -> Custom Parameters. Please provide your own values for Compartment ID and agent Endpoint IDs for both the agents. Please refer below screenshot for the changes
+
+    ![ODA Skill change](images/oda_skillchange.png)
+
+7. Ensure the Chatbot Training is completed
 
    Then click on the “Preview” button at top-right corner.
 
     ![ODA Train](images/user_flow2.png)
 
-6. You should be able to successfully import the ODA Skill
+8. To start the conversation loop in ODA preview, send this initial message: "Hi"
 
-    **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
     ![flow preview](images/vector_search.png)
 
 ## Task 6: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
@@ -257,5 +270,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **JB Anderson**, Senior Cloud Engineer, NACIE
+    * **Luke Farley**, Staff Cloud Engineer, NACIE
+
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, January 2025
