@@ -40,7 +40,7 @@ This lab assumes you have:
 1. Agent Chat loop
     This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the agent's knowledge base
 
-    ![agent example](images/image_intro.png)
+    ![agent example](images/ATOM_Demo_Screenshot.jpg)
 
     **NOTE** While the frontend application will display your chat history for your current session, the behind the scenes agent currently does not support chat history. From it's point of view, every message is an independent question.
 
@@ -50,7 +50,31 @@ This lab assumes you have:
 3. Agent Response Limitations
     The Generative AI agents service uses pre-trained foundational models from the Generative AI Inference service. However, the agents service limits responses to only knowledge found in the agent's data-sources. This means it will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
 
-    ![agent ungrounded response](images/image_intro1.png)
+4. Some Sample prompts for you to try
+
+```text
+       <copy>
+       1. How do I administer EPM?
+
+       2. Which role do I need to create a group?
+
+       3. How do I export groups to csv?
+
+       4. What is the maximum amount of groups a user can be a part of?
+
+       5. Which search option does not support wildcards (*)?
+
+       6. What are the 5 S's of wine tasting?
+
+       7. How is the weather in New York?
+
+       8. Is it raining in London?
+
+       9. My computer is not working.
+
+       10. What are the steps of the cheese making process?
+       </copy>
+    ```
 
 ## Acknowledgements
 
