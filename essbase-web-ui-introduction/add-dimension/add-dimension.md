@@ -38,90 +38,87 @@ This lab assumes you have:
     1. Log in to the Essbase web interface.
     2. Go to the **Files** page.
     3. Select the **Shared** folder.
-    4. Select **Upload Files** and click **Drag or select files**.
+    4. Select **Upload** and click **Drag and Drop**.
     5. Browse to the files you downloaded, select them, and click **Open**.
+    6. Click **Close** and the uploaded files are displayed in the **Shared** folder.
 
 ## Task 2: Add a dimension manually
 
-1. In the outline editor, select the Scenario dimension.
+1. Open the **Sample** application and the **Basic** cube (database), and click **Launch Outline**.
 
-2. Click **Edit Outline** ![Image of the edit outline icon in the outline editor](images/icon-edit-outline.png) in the upper right hand corner of the editor.
+2. In the outline editor, select the Scenario dimension.
 
-3. Under **Actions**, select **Add a sibling below the selected member**.
+3. Click **Edit Outline** ![Image of the edit outline icon in the outline editor](images/icon-edit-outline-redwood.png) in the upper right hand corner of the editor.
 
-    ![Image of the outline editor toolbar, actions group, with the Add sibling below the selected member icon selected.](images/add-sibling.png)
+4. Under the actions icon, select **Add sibling member below**.
 
-4. Type **Calendar**, press Enter, and then Escape.
+    ![Image of the outline editor toolbar, actions icon, with Add Sibling Member Below selected.](images/add-sibling-redwood.png)
 
-5. Under **Actions**, press **Add a child to the selected member**.
+5. Type **Calendar** in the **Member name** text box and click **Add**.
 
-    ![Image of the outline editor toolbar, actions group, with the Add child to the selected member icon selected.](images/add-child.png)
+6. In the **Add** dialog box, change the selection to **As child for Calendar**.
 
-6. Type **FY2023** and press Enter.
+7. In the **Member name** text box, type **FY2024**.
 
-7. Type **FY2024** and press Enter, then press Escape.
+8. In the **Operator** text box, select **~(Ignore)** and then click **Add**.
 
-8. Select **Calendar**, and under **Data storage type**, select **Label Only**.
+9. In the **Member name** text box, type **FY2025**.
 
-    ![Image of the outline editor, storage type menu, with label only selected.](images/label-only.png)
+10. In the **Operator** text box, select **~(Ignore)** and then click **Add**.
 
-9. Select **FY2023**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+11. Click the **Close add member slider** icon ![Image of close add member slider icon](images/close-slider-icon-redwood.png).
 
-    ![Image of the outline editor, operator menu, with ~ ignore selected.](images/operator-ignore.png)
+12. Select **Calendar**, and from the menu under the **Data storage type** icon, select **Label Only**.
 
-10. Select **FY2024**, and under **Operator**, choose **~ Excluded from consolidation** (Ignore).
+    ![Image of the outline editor, data storage type menu, with label only selected.](images/label-only-redwood.png)
 
-11. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify  icon in the outline editor](images/verify-outline-icon.png).
+13. In the upper right-hand corner of the outline editor, click **Verify** ![Image of the verify icon in the outline editor](images/verify-outline-icon-redwood.png).
 
-12. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon.png).
+14. In the upper right-hand corner of the outline editor, click **Save** ![Image of the save icon in the outline editor](images/save-outline-icon-redwood.png).
 
-13. In the **Restructure Database Options** dialog box, leave **All Data** selected, and under **added/deleted dimensions** select **FY2023** as the member with which data should be associated, and click **OK**.
+15. In the **Restructure Database Options** dialog box, select **All Data** and click **Save**.
 
-    ![Image of the Restructure Database Options dialog box, with All Data and FY2023 selected.](images/restructure-database-options.png)
+    ![Image of the Restructure Database Options dialog box, with Save selected.](images/restructure-database-options-redwood.png)
 
 ## Task 3: Create a dimension build rule file
 
-1. On the **Applications** page, and to the right of the **Basic** cube, click the **Actions** menu.
+1. On the **Applications** page, select the application and select the cube (database).
 
-2. Select **Inspect**.
+2. Select the **Scripts** page.
 
-3. In the cube inspector, select the **Scripts** tab.
+3. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
 
-4. Select **Rules**, and from the **Create** menu, select **Dimension Build (Regular)**.
+4. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
 
-    A new browser tab is opened.
+5. For the **Source Type**, select **File**.
 
-5. In the New Rule dialog box, for the **Rule Name**, enter **Addprods**.
+6. For **File**, navigate to **Catalog** > **All Files** > **Shared** > and double-click **add-products-with-aliases.txt**.
 
-6. For the **Source Type**, select **File**.
+7. For **File Type**, select **Delimited**.
 
-7. For **File**, navigate to **Catalog** > **All Files** > **Shared** > and double-click **add-products-with-aliases.txt**.
+8. For **Delimiter**, change to **Tab** delimited.
 
-8. For **File Type**, select **Delimited**.
+    ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule-redwood.png)
 
-9. For **Delimiter**, change to **Tab** delimited.
+9. Click **Preview data** and check that the results look right, and then click **Proceed**.
 
-    ![Image of the New Rule dialog box with the Addprods information filled in.](images/addprods-rule.png)
+    ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data-redwood.png)
 
-10. Click **Preview data** and check that the results look right, and then click **Proceed**.
+10. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
 
-    ![Image of the Preview Data dialog box with the addprods data populated.](images/addprods-rule-preview-data.png)
+11. Set the **Type** in field 1 to be **Parent**.
 
-11. In the Rule editor, set the **Dimension** in Field 1 to be **Product**.
+12. In **Field - 2** set **Type** to **Alias**.
 
-12. Set the **Type** in field 1 to be **Parent**.
+13. In **Field - 3** set **Type** to **Child**.
 
-13. In **Field - 2** set **Type** to **Alias**.
+14. In **Field - 4** set **Type** to **Alias**.
 
-14. In **Field - 3** set **Type** to **Child**.
+    ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor-redwood.png)
 
-15. In **Field - 4** set **Type** to **Alias**.
+15. Click **Verify**.
 
-    ![Image of the dimension build rule editor, with the data and settings for Addprods filled in.](images/dimension-build-rule-editor.png)
-
-16. Click **Verify**.
-
-17. Click **Save and Close**.
+16. Click **Save and Close**.
 
 ## Task 4: Create a dimension build job
 
@@ -129,25 +126,27 @@ This lab assumes you have:
 
 2. Select the **Sample** application and the **Basic** cube.
 
-3. For **Script**, navigate to **Addprods.rul** in your cube directory, and select it.
+3. For **Script**, click the **Choose Catalog File** icon and navigate to **Addprods.rul** in your cube directory, and select it.
 
-4. For **File**, navigate to **add-products-with-aliases.txt** in the **Shared** folder, and select it.
+4. For **Load Type** choose **File**.
 
-5. For **Restructure Options**, choose **Preserve All Data**.
+5. For **Data File** click the **Choose Catalog File** icon and navigate to **add-products-with-aliases.txt** in the **Shared** directory, and select it.
 
-    ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job.png)
+6. For **Restructure Options**, choose **Preserve All Data**.
 
-6. Click **OK**.
+    ![Image of the Build Dimension job dialog box, with the options filled in as described in the preceding steps.](images/build-dimension-job-redwood.png)
 
-7. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
+7. Click **Submit**.
 
-8. Open the outline and see that the new product 500 group was created.
+8. Check the status of the job and see that it succeeded with the green check mark under **Status**. You may need to refresh the page.
 
-    ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products.png)
+9. Open the outline and see that the new product 500 group was created.
+
+    ![Image of the Sample Basic outline with the 500 product group selected.](images/outline-with-500-products-redwood.png)
 
 ## Task 5: Analyze data for the newly created product group
 
-1. On the **Applications** page, click the **Actions** menu next to the **Basic** cube and select **Analyze Data**.
+1. Open the **Sample** application and the **Basic** cube, and click **Analyze Data**.
 
 2. On the **Reports** tab, click **Create**.
 
@@ -155,7 +154,7 @@ This lab assumes you have:
 
 4. In the **Query** field, paste the following MDX query:
 
-    ```
+    ```MDX
     <copy>
     SELECT
       {[Measures].[Sales]}
@@ -163,7 +162,7 @@ This lab assumes you have:
     CrossJoin ({[New York]}, {Descendants([Product].[500])})
     ON ROWS
     FROM Sample.Basic
-    WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2023])
+    WHERE ([Scenario].[Actual], [Year].[Qtr1], [Calendar].[FY2024])
     </copy>
     ```
 
@@ -188,4 +187,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse January, 2025

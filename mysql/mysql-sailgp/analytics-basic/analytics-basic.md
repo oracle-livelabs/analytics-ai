@@ -309,4 +309,4 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025
