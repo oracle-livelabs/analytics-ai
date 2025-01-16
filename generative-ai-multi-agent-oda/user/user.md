@@ -52,7 +52,7 @@ This lab assumes you have:
 
 4. Some Sample prompts for you to try
 
-```text
+     ```text
        <copy>
        1. How do I administer EPM?
 
