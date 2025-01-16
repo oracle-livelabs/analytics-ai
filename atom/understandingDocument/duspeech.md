@@ -324,7 +324,68 @@ This task involves creating REST service which will be used by ODA to connect to
 
    ![API Services](images/oci_rest_service_3.png)
 
-## Task 4: Import Skill
+## Task 4: Deploy Function Application
+In this section, we will deploy a VCN, OCI Function application, and deploy a serverless Function for document understanding.
+
+1. Create VCN
+    - In the cloud console, go to Networking > Virtual Cloud Networks
+
+    ![Create VCN](images/networking-vcn.png)
+
+    - Select 'Start VCN Wizard' 
+
+    ![Start VCN Wizard](images/vcn-wizard.png)
+
+    - Choose 'Create VCN with Internet Connectivity' 
+
+    ![Select Internet Connectivity](images/vcn-with-internet.png)
+
+    - Give your VCN a name and keep the default options 
+
+    ![Default VCN](images/vcn-default-options.png)
+
+    - Navigate to Review and Create and select 'Create'
+
+3. Create function application using subnet in previous step
+
+    - From the Cloud Console, navigate to Developer Services > Functions > Applications 
+
+    ![Create Fn Application](images/fn-create-app.png)
+
+    - Give your application a name and select the VCN + Subnet you created in the previous step. Also select GENERIC_X86 for shape.
+
+    ![Fn App Config](images/fn-app-config.png)
+
+## Task 5: Create and Deploy a Function 
+
+In this section, we will delve into the process of creating and deploying an Oracle Function. OCI Functions provide a serverless environment, allowing you to focus on your code without worrying about server management. We will guide you through the steps of developing and deploying an OCI Function, which can be a powerful tool for extending your application's capabilities. You will learn how to create a function, configure its settings, and deploy it using the Oracle Cloud Infrastructure console or command-line interface. By the end of this section, you will be ready to connect the function to the API Gateway.
+
+1. Download the following file: 
+
+    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FODA-Document-Understanding-livelab.zip)
+
+2. Extract the contents and open in your favorite IDE
+
+    > **Note:** Make sure to save your file when making changes in your IDE
+
+3. Navigate back to your function application created in Task 4 step 3
+
+4. Select Getting Started > Local setup
+
+    ![Fn Local Setup](images/fn-local-setup.png)
+
+    - This will give you your specific instructions for: 
+        - Setting the context
+        - Logging in to the container registry 
+        - Deploying the function to your application
+
+   > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3. Also make sure to switch into the function directory and/or run the commands from VS code console before running the fn commands.
+
+5. Deploy the function. Once deployed, take note of the endpoint of the function. This will be used later for configuring the skill. 
+
+![Deployed Function](images/deploy_function.png)
+
+## Task 5: Import Skill
 
 1. Click on the link to download the required skill (zip file): [Atom Skill DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
 
@@ -360,14 +421,22 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![Invoke LLM](images/invoke_llm.png)
 
-## Task 5: Changes to Skill
+## Task 6: Changes to Skill
 
 1. Go to Skills -> Settings -> Configuration
 Provide a value to da.privateKey (Any Password)
 
+2. Go to Skills -> Components and modify the 'analyzedocfn' service with your own function endpoint id from Task 4 Step 5
+
+    ![Analyze Document Service](images/update_analyzedoc.png)
+
+    > **Note** if analyzedocumentfn is not available, go ahead and create a new service with your function invoke endpoint
+
+    ![Create New Service](images/create_new_component.png)
+
 2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC, getSpeechLifecyleState, searchFlow and speechComponent of the flows
 
-## Task 6: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
+## Task 7: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels
 
@@ -389,7 +458,7 @@ Provide a value to da.privateKey (Any Password)
 
     ![Create Channel](images/skill_channel1.png)
 
-## Task 7: Create VBCS Instance & embed ODA skill in VBCS Application
+## Task 8: Create VBCS Instance & embed ODA skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -404,7 +473,7 @@ Provide a value to da.privateKey (Any Password)
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
+4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -420,19 +489,19 @@ Provide a value to da.privateKey (Any Password)
 
         ![Create Channel](images/import_vbapp_2.png)
 
-6. Once import is completed, open the index.html file in the VB Instance and update the details as follows:
+6. Once import is completed, open the javascript tab in the VB Instance and update the details as follows:
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
 
-    ![Create Channel](images/vbapp_setup.png)
+    ![Create Channel](images/vb_config.png)
 
     > **Note**
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting in the embedded-chat javascript tab
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
@@ -445,5 +514,8 @@ Provide a value to da.privateKey (Any Password)
 **Authors**
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
+**Contributors**
+* **Luke Farley**, Staff Cloud Engineer, NACIE
+
 **Last Updated By/Date:**
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Sep 2024
+* **Luke Farley**, Staff Cloud Engineer, NACIE, Jan 2025
