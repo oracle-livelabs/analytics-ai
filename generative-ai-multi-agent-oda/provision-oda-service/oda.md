@@ -136,7 +136,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
+    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Ky7AZMg_NVvFPqprfAbp9HHLI8f5d_l0zcMpnPrnZacn_uFpnpNa0CeRhfboVcck/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
 
 2. Import the Digital Assistant (downloaded). Click on Import Digital Assistant & select the zip file to import
 
@@ -172,7 +172,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 8. To start the conversation loop in ODA preview, send this initial message: "Hi"
 
-    ![flow preview](images/vector_search.png)
+    ![flow preview](images/oda_starter.png)
 
 ## Task 6: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
@@ -195,19 +195,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel id](images/channel_id2.png)
 
-## Task 7: (optional) Customize ODA Conversation
-
-1. Customize predefined agent messages
-    * The oda now passes through the agent's welcome message
-
-2. Customize citation format
-    * In the ODA Service Console, click on the appropriate skill
-    * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
-    * In the ShowCitation block, update the component tab -> messages
-
-    ![flow update citations](images/show_citation.png)
-
-## Task 8: (optional) View Conversation Analytics
+## Task 7: (optional) View Conversation Analytics
 
 From ODA service console homepage -> skill **Display name** -> **Insights** on side nav bar
 
@@ -216,7 +204,7 @@ From ODA service console homepage -> skill **Display name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 
-## Task 9: (optional) Policy Definitions for multi-tenancy deployment
+## Task 8: (optional) Policy Definitions for multi-tenancy deployment
 
 This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies).
 
