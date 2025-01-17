@@ -136,7 +136,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Ky7AZMg_NVvFPqprfAbp9HHLI8f5d_l0zcMpnPrnZacn_uFpnpNa0CeRhfboVcck/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
+    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/MRhUmdVL6Nl6aWZmbGXRgK6JzJkt83ixKV6Ic0lKK2wB7GOb-8tvn-H38VpW7x2P/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
 
 2. Import the Digital Assistant (downloaded). Click on Import Digital Assistant & select the zip file to import
 
@@ -160,7 +160,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     d. [MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/wDJXTpTLid-uKz8Cb6HehRpx1NlcZ1sda7OIzX8fT35oaC7OJiWwHQplxHBs2MtP/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip)
 
-6. Go to Skills -> Settings -> Configuration -> Custom Parameters. Please provide your own values for Compartment ID and agent Endpoint IDs for both the agents. Please refer below screenshot for the changes
+6. Once MultiStepAgentAPIOrchestrationTool is imported. Go to Skills -> Settings -> Configuration -> Custom Parameters. Please provide your own values for Compartment ID and agent Endpoint IDs for both the agents. Please refer below screenshot for the changes
 
     ![ODA Skill change](images/oda_skillchange.png)
 
