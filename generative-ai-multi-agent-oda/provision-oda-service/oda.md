@@ -136,7 +136,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Ky7AZMg_NVvFPqprfAbp9HHLI8f5d_l0zcMpnPrnZacn_uFpnpNa0CeRhfboVcck/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
+    [MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Ky7AZMg_NVvFPqprfAbp9HHLI8f5d_l0zcMpnPrnZacn_uFpnpNa0CeRhfboVcck/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA(1.0)%20(1).zip)
 
 2. Import the Digital Assistant (downloaded). Click on Import Digital Assistant & select the zip file to import
 
