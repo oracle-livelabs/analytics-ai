@@ -30,6 +30,8 @@ This lab assumes you have:
 
 This task will help you to create Oracle Digital Assistant under your chosen compartment. OCI Document Understanding service is only available in Ashburn region. Since we're using Ashburn region for this we will have to create a new Digital Assistant in Ashburn region.
 
+> **Note:** Update 1/25 Document Understanding is now available in chicago region as well.
+
 1. Locate Digital Assistant under AI Services
 
    ![Navigate to Digital Assistant](images/oda_provision_1.png)
@@ -90,7 +92,7 @@ Rule 4
     </copy>
 ```
 
-Note - This will be ocid of Digital Assistant in Ashburn region
+Note - This will be ocid of Digital Assistant
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
@@ -141,12 +143,11 @@ This task will help you to create necessary policy for the Oracle Document Under
         </copy>
      ```
 
-    > **Note:**
-    > * Please make sure that the compartmentId should be the one under which the resource is  created.
+    > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
 
 ## Task 3: Create REST Service
 
-This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**. This step only needs to be done once per ODA instance. If users are sharing one ODA instance to create multiple chatbot, only the first person will need to perform this step
+This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**. This step only needs to be done once per ODA instance. If users are sharing one ODA instance to create multiple chatbot, only the first person will need to perform this step.
 
 1. Locate the ODA created in **Task 1**
 

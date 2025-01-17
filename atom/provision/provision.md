@@ -129,7 +129,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.7**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.7
+
+        > **Note:** v1.7 is the latest model as of this livelab release. This lab should work with any version of the cohere model. 
 
     ![API Services](images/chat_screenshot.png)
 
