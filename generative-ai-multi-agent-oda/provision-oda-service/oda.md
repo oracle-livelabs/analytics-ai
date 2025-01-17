@@ -90,7 +90,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service.
 
-1. Download the the three REST Service Configurations
+1. Download the four REST Service Configurations
 
     a. [agent-RESTService-GenAIAgentCreateSession.yaml](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-GenAIAgentCreateSession.yaml)
 
