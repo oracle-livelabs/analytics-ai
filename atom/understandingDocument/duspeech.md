@@ -208,7 +208,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.7**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.7
+
+        > **Note:** v1.7 is the latest model as of this livelab release. This lab should work with any version of the cohere model. 
 
     ![API Services](images/chat_screenshot.png)
 
@@ -247,6 +249,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
    ![API Services](images/oci_rest_service_3.png)
 
+    > **Note:** You would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** to test the connection to the endpoint. However, this connection test is optional because 
+    the skill itself generates the **transcriptionJobId** at runtime. 
+
 8. Click on **Add REST Service**. Provide the following details:
     * **Name**
 
@@ -271,6 +276,8 @@ This task involves creating REST service which will be used by ODA to connect to
     Click **Test Request** to make sure the connection is successful.
 
    ![API Services](images/oci_rest_service_3.png)
+
+   > **Note:** As above, you would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** and **transcriptionTaskId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime.
 
 9. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID, bucket name, namespace and object name to your own values in the Body section.
     * **Name**
@@ -325,7 +332,7 @@ This task involves creating REST service which will be used by ODA to connect to
    ![API Services](images/oci_rest_service_3.png)
 
 ## Task 4: Deploy Function Application
-In this section, we will deploy a VCN, OCI Function application, and deploy a serverless Function for document understanding.
+In this section, we will deploy a VCN, OCI Function application, and a serverless Function for document understanding.
 
 1. Create VCN
     - In the cloud console, go to Networking > Virtual Cloud Networks
@@ -358,7 +365,7 @@ In this section, we will deploy a VCN, OCI Function application, and deploy a se
 
 ## Task 5: Create and Deploy a Function 
 
-In this section, we will delve into the process of creating and deploying an Oracle Function. OCI Functions provide a serverless environment, allowing you to focus on your code without worrying about server management. We will guide you through the steps of developing and deploying an OCI Function, which can be a powerful tool for extending your application's capabilities. You will learn how to create a function, configure its settings, and deploy it using the Oracle Cloud Infrastructure console or command-line interface. By the end of this section, you will be ready to connect the function to the API Gateway.
+In this section, we will delve into the process of creating and deploying an Oracle Function. OCI Functions provide a serverless environment, allowing you to focus on your code without worrying about server management. We will guide you through the steps of developing and deploying an OCI Function, which can be a powerful tool for extending your application's capabilities. You will learn how to create a function, configure its settings, and deploy it using the Oracle Cloud Infrastructure console or command-line interface. By the end of this section, you will be ready to connect the function to the ODA skill.
 
 1. Download the following file: 
 
