@@ -100,7 +100,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     c. [RESTService-CohereToolChatService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatService.yaml)
 
-    d. [RESTService-OIC_Weather_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
+    d. [RESTService-OIC\_Weather\_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
 
 2. Locate the ODA instance (created in Task 2)
 
@@ -118,7 +118,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), the CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml") and the OIC_Weather_Service (using "RESTService-OIC_Weather_Service.yaml").
+     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), the CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml") and the OIC_Weather_Service (using "RESTService-OIC\_Weather\_Service.yaml").
 
 6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
@@ -128,7 +128,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null. If the "welcomeMessage" field is blank in this Rest API response, a generic message would be shown in the ODA chatbot.
+8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
