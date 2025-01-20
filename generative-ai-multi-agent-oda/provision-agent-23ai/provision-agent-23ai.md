@@ -18,13 +18,18 @@ In this lab, you will:
 
 * Provision an Oracle ADB 23ai
 * Create DB Tools Connection
+* Create a vector table and load data
+* Create vector search function
+* Create Generative AI Agent - Knowledge base
+* Create Generative AI Agent
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
+* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies, Oracle ADB, Generative AI Agents.
+* Access to a Region where the Agent service is available: Chicago, Frankfurt
 
 ## Task 1: Dynamic Group and Policy Definition
 
@@ -498,7 +503,6 @@ This task will help you create a knowledge base using 23ai database as source.
 
 * **Authors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Contributors**
