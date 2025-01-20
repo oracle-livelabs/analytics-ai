@@ -7,11 +7,13 @@ Each Agent / API brings unique capabilities, combining to create an intelligent 
 
 Using this workshop, the developers can create multiple OCI Generative AI RAG Agents (connected to OCI Object Storage or OCI Autonomous Database 23ai) and different APIs (connecting through OCI Integration Cloud Service - OIC), and expose them to a OCI Generative AI Tools-powered OCI Digital Assistant (ODA) Chatbot.
 
-When the user asks natural language question, then the ODA Chatbot leverages Generative AI Multi-Step Tools to dynamically orchestrate and route the user’s request to appropriate Generative AI RAG Agent or OIC API, and thereby fetches the correct response to user’s question.
+When the user asks natural language question, then the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to appropriate Generative AI RAG Agent or OIC API, and thereby fetches the correct response to user’s question.
+
+This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to the another tool.
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/ATOM_Demo_Screenshot.jpg)
+![User View](images/ATOM_Demo_Screenshot2.jpg)
 
 Estimated Workshop Time: 3 hours
 
@@ -19,7 +21,7 @@ Estimated Workshop Time: 3 hours
 
 Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
 
-![Architecture Diagram](images/MultiStepAgentAPIOrchestrationArchDiagram1.jpg)
+![Architecture Diagram](images/MultiAgentODAGenAIArchDiagram2.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.
