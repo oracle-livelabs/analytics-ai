@@ -50,15 +50,17 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     [Making Cheese](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMaking%20Cheese-1.pdf)
 
-2. Click on the Bucket name, then Objects -> Upload button
+    [Plymouth Cheese Counter](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2Fplymouth_cheese_counter_press_release_-_updated_-_5-23.pdf)
 
-    Click on “select files” link to select files from your machine. This step can be repeated to select multiple files to upload to the bucket.
+3. Click on the Bucket name, then Objects -> Upload button
+
+    Click on “select files” link to select the downloaded files from your machine. This step can be repeated to select multiple files to upload to the bucket.
 
     **Note:** The Gen AI Agents service currently supports .pdf and .txt file formats
 
     ![object storage select files](images/os_file_select.png)
 
-3. Click Upload -> Close to upload the PDF files in Task 2 step 1 to the Object Storage Bucket.
+4. Click Upload -> Close to upload the PDF files in Task 2 step 1 to the Object Storage Bucket.
 
 ## Task 3: Provision Knowledge Base
 
@@ -120,7 +122,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![agent active](images/agent_active_endpoint.png)
 
-4. It’ll open up the Endpoint Screen. Copy and keep the OCID of the Endpoint. It’ll be used later.
+4. It’ll open up the Endpoint Screen. **Copy and keep the OCID of the Endpoint**. It’ll be used later.
 
    Click on “Launch chat” button
 
@@ -159,11 +161,10 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
 * **Author**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Luke Farley**, Staff Cloud Engineer, NACIE, January 2025
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025
