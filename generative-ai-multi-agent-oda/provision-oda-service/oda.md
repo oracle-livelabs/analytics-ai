@@ -14,9 +14,11 @@ Oracle Digital Assistant (ODA) is a platform that allows you to create and deplo
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Create a Channel to connect the skill to a frontend
+* Create Dynamic Group and Policy to enable ODA connectivity to other OIC Services.
+* Provision an ODA instance.
+* Import and configure ODA Rest API Services to connect to different solution components.
+* Import and configure ODA Digital Assistant and ODA Skills to use different solution components.
+* Create a Channel to connect the ODA Digital Assistant to a frontend.
 
 ### Prerequisites
 
@@ -65,7 +67,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
     allow dynamic-group <dynamic-group-name> to manage object-family in tenancy
     ```
 
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+    **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Provision Oracle Digital Assistant
 
@@ -116,7 +118,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), and RESTService-CohereToolChatService.yaml.
+     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), the CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml") and the OIC_Weather_Service (using "RESTService-OIC_Weather_Service.yaml").
 
 6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
@@ -126,7 +128,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null. If the "welcomeMessage" field is blank in this Rest API response, a generic message would be shown in the ODA chatbot.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
