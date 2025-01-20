@@ -21,7 +21,7 @@ Estimated Workshop Time: 3 hours
 
 Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
 
-![Architecture Diagram](images/MultiAgentODAGenAIArchDiagram2.jpg)
+![Architecture Diagram](images/MultiStepAgentAPIOrchestrationArchDiagram2.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.
