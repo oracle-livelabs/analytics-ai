@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection. We will upload the EPM Administration document using sql to 23ai, then reference the new agent in a later lab.
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes
 
 ### About Oracle ADB 23ai
 
@@ -69,7 +69,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
     allow dynamic-group genaiagentdg to read secret-bundle in compartment <compartment-name>
     ```
 
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+    **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Create VCN and private subnet
 
@@ -487,7 +487,7 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![Endpoint Agent](images/agent_active_endpoint.png)
 
-4. It’ll open up the Endpoint Screen. Copy and keep the OCID of the Endpoint. It’ll be used later. Click on "Launch chat" button
+4. It’ll open up the Endpoint Screen. **Copy and keep the OCID of the Endpoint**. It’ll be used later. Click on "Launch chat" button
 
     ![Agent Endpoint](images/agent_endpoint.png)
 
