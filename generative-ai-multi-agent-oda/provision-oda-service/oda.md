@@ -128,25 +128,25 @@ This task involves creating REST service which will be used by ODA to connect to
    - CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml")
    - OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml")
 
-7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
+6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
     ![ODA create session api](images/oda_create_session_api1.png)
 
-8. In the Value field, remove the existing value 1, and put the value of the GenAI Agent (based on Object Storage) Endpoint Id (from Lab 1 Task 4 Step 4), and then click the Tick icon
+7. In the Value field, remove the existing value 1, and put the value of the GenAI Agent (based on Object Storage) Endpoint Id (from Lab 1 Task 4 Step 4), and then click the Tick icon
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null.
+8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
-10. Repeat Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
+9. Repeat Step 6 and Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
 
-11. For the OIC\_Weather\_Service, update the Endpoint, User Name, Password (from Lab 3), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
+10. For the OIC\_Weather\_Service, update the Endpoint, User Name, Password (from Lab 3), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
 
     ![ODA OIC Service API](images/oic_service_api.png)
 
-12. Test the CohereToolChatService. Make sure in the request payload (in Edit Request Body) you reference your own compartment id.
+11. Test the CohereToolChatService. Make sure in the request payload (in Edit Request Body) you reference your own compartment id.
 
     ![ODA Cohere Service API](images/llm_tools_service.png)
 
@@ -210,7 +210,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![enable channel](images/channel_enable3.png)
 
-4. Ensure that the Client Authentication Enabled is disabled. Take note of Channel Id.
+4. Ensure that the Client Authentication Enabled is disabled. **Take note of Channel Id**.
 
     ![channel id](images/channel_id3.png)
 
