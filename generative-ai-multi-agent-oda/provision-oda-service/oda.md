@@ -166,30 +166,30 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Click on the Menu -> Development -> Skills.
 
-   You'll see 4 new ODA Skills -
-   -    MultiStepAgentAPIOrchestrationTool,
-   -    MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent
-   -    MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent
-   -    MultiStepAgentAPIOrchestrationOICWeatherAPI
+    You'll see 4 new ODA Skills -
+    - MultiStepAgentAPIOrchestrationTool,
+    - MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent
+    - MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent
+    - MultiStepAgentAPIOrchestrationOICWeatherAPI
 
     ![skills](images/skills.png)
 
-6. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. 
+4. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. 
 
-   Please provide your own values for:
-   - CompartmentOCID
-   - EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4)
-   - WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4)
+    Please provide your own values for:
+    - CompartmentOCID
+    - EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4)
+    - WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4)
 
     ![ODA Skill change](images/oda_skillchange.png)
 
-8. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
+5. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
 
    Then click on the “Preview” button at top-right corner.
 
     ![ODA Train](images/user_flow2.png)
 
-9. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
+6. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
 
     ![ODA Preview](images/preview.png)
 
