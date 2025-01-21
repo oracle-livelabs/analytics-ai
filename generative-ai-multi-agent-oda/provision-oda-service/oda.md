@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to provision Oracle Digital Assistant Cloud Service
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes
 
 ### About OCI Digital Assistant
 
@@ -14,7 +14,7 @@ Oracle Digital Assistant (ODA) is a platform that allows you to create and deplo
 
 In this lab, you will:
 
-* Create Dynamic Group and Policy to enable ODA connectivity to other OIC Services.
+* Create Dynamic Group and Policy to enable ODA connectivity to other OCI Services.
 * Provision an ODA instance.
 * Import and configure ODA Rest API Services to connect to different solution components.
 * Import and configure ODA Digital Assistant and ODA Skills to use different solution components.
@@ -122,13 +122,13 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), the CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml") and the OIC_Weather_Service (using "RESTService-OIC\_Weather\_Service.yaml").
+     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), the CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml") and the OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml").
 
 6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
     ![ODA create session api](images/oda_create_session_api1.png)
 
-7. In the Value field, remove the existing value 1, and put the value of the GenAI Agent Endpoint Id (from Lab 2 Task 8 Step 4), and then click the Tick icon
+7. In the Value field, remove the existing value 1, and put the value of the GenAI Agent (based on Object Storage) Endpoint Id (from Lab 1 Task 4 Step 4), and then click the Tick icon
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
@@ -136,7 +136,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
-9. Test the CohereToolChatService. Make sure in the request payload you reference your own compartment id.
+9. Repeat Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
+
+10. Test the CohereToolChatService. Make sure in the request payload you reference your own compartment id.
 
 ## Task 4: Import Digital Assistant (Provided)
 
@@ -154,21 +156,32 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Click on the Menu -> Development -> Skills.
 
-    You'll see 4 new ODA Skills - MultiStepAgentAPIOrchestrationTool, MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent, MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent, MultiStepAgentAPIOrchestrationOICWeatherAPI
+   You'll see 4 new ODA Skills -
+   - MultiStepAgentAPIOrchestrationTool,
+   - MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent
+   - MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent
+   - MultiStepAgentAPIOrchestrationOICWeatherAPI
+
+    ![skills](images/skills.png)
 
 6. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. 
 
-    Please provide your own values for CompartmentOCID and EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4) and WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4). Please refer below screenshot for the changes
+   Please provide your own values for:
+   - CompartmentOCID
+   - EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4)
+   - WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4)
 
     ![ODA Skill change](images/oda_skillchange.png)
 
-7. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
+8. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
 
    Then click on the “Preview” button at top-right corner.
 
     ![ODA Train](images/user_flow2.png)
 
-8. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
+9. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
+
+    ![ODA Preview](images/preview.png)
 
 ## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
@@ -185,11 +198,11 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. After channel creation, route it to Digital Assistant imported in Task 4, and enable the Channel by using the toggle button.
 
-    ![enable channel](images/channel_enable2.png)
+    ![enable channel](images/channel_enable3.png)
 
 4. Ensure that the Client Authentication Enabled is disabled. Take note of Channel Id.
 
-    ![channel id](images/channel_id2.png)
+    ![channel id](images/channel_id3.png)
 
 ## Task 6: (optional) View Conversation Analytics
 
