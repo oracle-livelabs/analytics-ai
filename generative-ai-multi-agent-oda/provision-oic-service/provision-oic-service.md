@@ -75,7 +75,7 @@ This task will help you to create Oracle Integration Cloud under your chosen com
 
 2. Click Create Instance
 
-    ![OIC creation wizard](images/createoic.png)
+    ![OIC creation wizard](images/createinstoic.png)
 
 3. Provide the information for Name , Edition Enterprise & License type as Subscribe to a new Oracle Integration License
    and Message packs as 1.Click Create
@@ -84,7 +84,7 @@ This task will help you to create Oracle Integration Cloud under your chosen com
 
 4. In few minutes the status of recently created Oracle Integration will change from Creating to Active
 
-    ![OIC Active](images/instanceactive.png)
+    ![OIC Active](images/instancesactive.png)
 
 ## Task 3: Create User with admin roles to manage and run the integrations in Oracle Integration Cloud
 
@@ -96,7 +96,7 @@ This task will help you ensure that the required users are correctly defined. If
 
 2. Click on your current domain name
 
-    ![Default Domain](images/defaultdomain.png)
+    ![Default Domain](images/defaultdomains.png)
 
 3. In the Users Menu Click Users to create a  new user devuser3.
    Provide the Last name and Username and your email and Uncheck the checkbox Use the email address as the username
@@ -147,7 +147,7 @@ This task will help you to import the required integrations along with the relat
 
 1. Goto Developer Services>>Application Integration >>Integration in your compartment to open the OIC Console
 
-    ![Developer Services OIC](images/developerservicesoic.png)
+    ![Developer Services OIC](images/developerservicesinoic.png)
 
 2. Click on the OIC Instance Name
 
