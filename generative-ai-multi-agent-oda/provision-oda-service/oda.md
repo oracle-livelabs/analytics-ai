@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to provision Oracle Digital Assistant Cloud Service
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes
 
 ### About OCI Digital Assistant
 
@@ -14,9 +14,11 @@ Oracle Digital Assistant (ODA) is a platform that allows you to create and deplo
 
 In this lab, you will:
 
-* Provision an ODA instance
-* Import and configure a skill to use GenAI Agents
-* Create a Channel to connect the skill to a frontend
+* Create Dynamic Group and Policy to enable ODA connectivity to other OCI Services.
+* Provision an ODA instance.
+* Import and configure ODA Rest API Services to connect to different solution components.
+* Import and configure ODA Digital Assistant and ODA Skills to use different solution components.
+* Create a Channel to connect the ODA Digital Assistant to a frontend.
 
 ### Prerequisites
 
@@ -27,7 +29,11 @@ This lab assumes you have:
 
 ## Task 1: Dynamic Group and Policy Definition
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+This task will help you configure the Dynamic Group and Policy.
+
+These Dynamic Group and Policy Definition are for single-tenancy deployment - where ODA and Generative AI Agent are in the same tenancy.
+
+For Policy Definitions required for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies), please refer to Task 7.
 
 1. Locate Domains under Identity & Security
 
@@ -65,7 +71,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
     allow dynamic-group <dynamic-group-name> to manage object-family in tenancy
     ```
 
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
+    **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
 ## Task 2: Provision Oracle Digital Assistant
 
@@ -90,7 +96,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service.
 
-1. Download the the three REST Service Configurations
+1. Download the four REST Service Configurations
 
     a. [agent-RESTService-GenAIAgentCreateSession.yaml](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-GenAIAgentCreateSession.yaml)
 
@@ -98,7 +104,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     c. [RESTService-CohereToolChatService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatService.yaml)
 
-    d. [RESTService-OIC_Weather_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
+    d. [RESTService-OIC\_Weather\_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
 
 2. Locate the ODA instance (created in Task 2)
 
@@ -116,65 +122,78 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA import rest services](images/oda_import_rest_services2.png)
 
-     **Note** Import all Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml"), GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml"), and RESTService-CohereToolChatService.yaml.
+    **Note** Import all Rest Services:
+    - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml")
+    - GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml")
+    - CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml")
+    - OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml")
 
-6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
+7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
 
     ![ODA create session api](images/oda_create_session_api1.png)
 
-7. In the Value field, remove the existing value 1, and put the value of the GenAI Agent Endpoint Id (from Lab 2 Task 8 Step 4), and then click the Tick icon
+8. In the Value field, remove the existing value 1, and put the value of the GenAI Agent (based on Object Storage) Endpoint Id (from Lab 1 Task 4 Step 4), and then click the Tick icon
 
     ![ODA create session api](images/oda_create_session_api2.png)
 
-8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
+9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null.
 
     ![ODA create session api](images/oda_create_session_api3.png)
 
-9. Test the CohereToolChatService. Make sure in the request payload you reference your own compartment id.
+10. Repeat Step 6 and Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
 
-## Task 5: Import Digital Assistant (Provided)
+11. For the OIC\_Weather\_Service, update the Endpoint, User Name, Password (from Lab 3), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
+
+    ![ODA OIC Service API](images/oic_service_api.png)
+
+12. Test the CohereToolChatService. Make sure in the request payload (in Edit Request Body) you reference your own compartment id.
+
+    ![ODA Cohere Service API](images/llm_tools_service.png)
+
+## Task 4: Import Digital Assistant (Provided)
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/ip1PWHwmF8nznyjlX8zmO2TsdoajMPW2TEMdd4gp7XR5-sCJ1gUw8i-bFdgqi2XN/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationDA.zip)
+    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(2.0).zip)
 
-2. Import the Digital Assistant (downloaded). Click on Import Digital Assistant & select the zip file to import
+2. Import the downloaded Digital Assistant. 
+
+   Click on the Menu -> Development -> Assistants.
+   
+   Click on Import Digital Assistant & select the zip file to import
 
     ![import digital assistant](images/import_da.png)
 
-3. Open the GenAI23aiRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
+3. Click on the Menu -> Development -> Skills.
 
-    ![user start flow](images/user_start.png)
+    You'll see 4 new ODA Skills -
+    - MultiStepAgentAPIOrchestrationTool,
+    - MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent
+    - MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent
+    - MultiStepAgentAPIOrchestrationOICWeatherAPI
 
-4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in Lab 3 Task 2 Step 4).
+    ![skills](images/skills.png)
 
-    ![flow update endpoint](images/user_flow1.png)
+4. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. 
 
-5. Import the following skills
-
-    a. [MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/G8xg4x5OdkLCzWwTeEMVwGxZbMjE2prl3p3Bpz9X-M2-U-FXFgQ-U2R2t3GaK77N/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-aget/MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent(2.0).zip)
-
-    b. [MultiStepAgentAPIOrchestrationOICWeatherAPI(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/xuz7BFhuDc-2rGAawurUKYyFnSn2AinsFu6dzYcaBQnnGb6USjMDZt8sj42zlMkt/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationOICWeatherAPI(2.0).zip)
-
-    c. [MultiStepAgentAPIOrchestrationTool(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Is9WnAVu3RYFuRNA9IATs4iTHGFQaDVW5EACENOJ_Z7AefHTuQ6H2WEwTbqmRyo7/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationTool(2.0).zip)
-
-    d. [MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/wDJXTpTLid-uKz8Cb6HehRpx1NlcZ1sda7OIzX8fT35oaC7OJiWwHQplxHBs2MtP/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent(2.0).zip)
-
-6. Once MultiStepAgentAPIOrchestrationTool is imported. Go to Skills -> Settings -> Configuration -> Custom Parameters. Please provide your own values for Compartment ID and agent Endpoint IDs for both the agents. Please refer below screenshot for the changes
+    Please provide your own values for:
+    - CompartmentOCID
+    - EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4)
+    - WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4)
 
     ![ODA Skill change](images/oda_skillchange.png)
 
-7. Ensure the Chatbot Training is completed
+5. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
 
    Then click on the “Preview” button at top-right corner.
 
     ![ODA Train](images/user_flow2.png)
 
-8. To start the conversation loop in ODA preview, send this initial message: "Hi"
+6. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
 
-    ![flow preview](images/oda_starter.png)
+    ![ODA Preview](images/preview.png)
 
-## Task 6: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
+## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels, and click on Add Channel
 
@@ -187,15 +206,15 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![channel configuration](images/channel_config.png)
 
-3. After channel creation, route it to skill imported in Task 3, and enable the Channel by using the toggle button.
+3. After channel creation, route it to Digital Assistant imported in Task 4, and enable the Channel by using the toggle button.
 
-    ![enable channel](images/channel_enable2.png)
+    ![enable channel](images/channel_enable3.png)
 
-4. Ensure that the Client Authentication Enabled is disabled. Take note of Channel Id.
+4. Ensure that the Client Authentication Enabled is disabled. **Take note of Channel Id**.
 
-    ![channel id](images/channel_id2.png)
+    ![channel id](images/channel_id3.png)
 
-## Task 7: (optional) View Conversation Analytics
+## Task 6: (optional) View Conversation Analytics
 
 From ODA service console homepage -> skill **Display name** -> **Insights** on side nav bar
 
@@ -204,7 +223,7 @@ From ODA service console homepage -> skill **Display name** -> **Insights** on s
 * The Channels filter allows you to filter data from a specific frontend channel
 * The Conversations tab allows you to see user messages and the agent's responses
 
-## Task 8: (optional) Policy Definitions for multi-tenancy deployment
+## Task 7: (optional) Policy Definitions for multi-tenancy deployment
 
 This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies).
 
@@ -255,10 +274,11 @@ If the Policy Definitions are not correctly defined, please define them as follo
 ## Acknowledgements
 
 * **Author**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
+ 
+* **Contributors**
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, January 2025
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025

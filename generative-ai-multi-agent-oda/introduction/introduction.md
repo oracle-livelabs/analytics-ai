@@ -3,15 +3,17 @@
 ## About this Workshop
 
 This workshop helps to configure and deploy a cutting-edge chatbot solution utilizing a multi-agent architecture to revolutionize conversational AI.
-Each Agent / API brings unique capabilities, combining to create an intelligent and versatile system.
+Each Agent/API brings unique capabilities, combining to create an intelligent and versatile system.
 
 Using this workshop, the developers can create multiple OCI Generative AI RAG Agents (connected to OCI Object Storage or OCI Autonomous Database 23ai) and different APIs (connecting through OCI Integration Cloud Service - OIC), and expose them to a OCI Generative AI Tools-powered OCI Digital Assistant (ODA) Chatbot.
 
-When the user asks natural language question, then the ODA Chatbot leverages Generative AI Multi-Step Tools to dynamically orchestrate and route the user’s request to appropriate Generative AI RAG Agent or OIC API, and thereby fetches the correct response to user’s question.
+When the user asks question in natural language, then the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to appropriate Generative AI RAG Agent or OIC API, and thereby fetches the correct response to user’s question.
+
+This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool.
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/ATOM_Demo_Screenshot.jpg)
+![User View](images/ATOM_Demo_Screenshot2.jpg)
 
 Estimated Workshop Time: 3 hours
 
@@ -19,7 +21,7 @@ Estimated Workshop Time: 3 hours
 
 Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
 
-![Architecture Diagram](images/MultiStepAgentAPIOrchestrationArchDiagram1.jpg)
+![Architecture Diagram](images/MultiStepAgentAPIOrchestrationArchDiagram2.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.
@@ -58,6 +60,8 @@ This lab assumes you have:
 * [What Is Generative AI? How Does It Work?](https://www.oracle.com/artificial-intelligence/generative-ai/what-is-generative-ai/)
 * [What Is Retrieval-Augmented Generation (RAG)?](https://www.oracle.com/artificial-intelligence/generative-ai/retrieval-augmented-generation-rag/)
 * [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.htm)
+* [Overview of Generative AI Agents Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm)
+* [Overview of Oracle Integration](https://docs.oracle.com/en-us/iaas/application-integration/doc/overview.html)
 * [Overview of Digital Assistants and Skills](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/overview-digital-assistants-and-skills.html)
 * [Overview of Visual Builder](https://docs.oracle.com/en-us/iaas/visual-builder/doc/oracle-visual-builder.html)
 * [Oracle Digital Assistant's large language model integration](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/llm-blocks-skills.html)
