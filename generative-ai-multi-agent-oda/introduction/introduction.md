@@ -15,7 +15,7 @@ This multi-agent approach offers a powerful and flexible framework for developer
 
 ![User View](images/ATOM_Demo_Screenshot2.jpg)
 
-Estimated Workshop Time: 3 hours
+Estimated Workshop Time: 5 hours
 
 ### Objectives
 
