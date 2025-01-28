@@ -40,7 +40,7 @@ This lab assumes you have:
 1. Agent Chat loop
     This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the agent's knowledge base
 
-    ![agent example](images/ATOM_Demo_Screenshot.jpg)
+    ![agent example](images/atom_demo_ss.jpg)
 
     **NOTE** While the frontend application will display your chat history for your current session, the behind the scenes agent currently does not support chat history. From it's point of view, every message is an independent question.
 

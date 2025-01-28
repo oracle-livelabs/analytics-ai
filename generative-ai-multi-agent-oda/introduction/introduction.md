@@ -13,7 +13,7 @@ This solution implements OCI Generative AI Multi-step Tool, so it also supports 
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/ATOM_Demo_Screenshot2.jpg)
+![User View](images/atom_demo_ss.jpg)
 
 Estimated Workshop Time: 5 hours
 
@@ -21,7 +21,7 @@ Estimated Workshop Time: 5 hours
 
 Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
 
-![Architecture Diagram](images/MultiStepAgentAPIOrchestrationArchDiagram2.jpg)
+![Architecture Diagram](images/multi_agent_api_ss.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.

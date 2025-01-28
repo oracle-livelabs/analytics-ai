@@ -253,7 +253,7 @@ This task will help you to import the required integrations along with the relat
 
     ![View OIC Response](images/oicresponse.png)
 
-28. Copy the endpoint URL and provide it alongwith the Username/Password to the external applications like Oracle Digital Assistant
+28. Copy the endpoint URL and provide it along with the Username/Password to the external applications like Oracle Digital Assistant
     https://******-**************************************************** /ic/api/integration/v1/flows/rest/GETWEATHERUPDBYCITY2ERR/1.0/getTemperature1?city=[city-value]
 
     ![Copy Endpoint URL for ODA](images/cpendpointurl.png)
