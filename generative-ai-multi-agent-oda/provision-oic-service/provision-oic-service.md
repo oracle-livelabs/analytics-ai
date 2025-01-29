@@ -96,7 +96,7 @@ This task will help you ensure that the required users are correctly defined. If
 
 2. Click on your current domain name
 
-    ![Default Domain](images/defaultdomainss.png)
+    ![Default Domain](images/defaultsdomain.png)
 
 3. In the Users Menu Click Users to create a  new user devuser3.
    Provide the Last name and Username and your email and Uncheck the checkbox Use the email address as the username
