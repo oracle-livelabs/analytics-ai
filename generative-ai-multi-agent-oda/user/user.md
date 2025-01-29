@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* login to the application
+* Login to the application
 * Chat with the agent
 
 ### Prerequisites
@@ -37,40 +37,33 @@ This lab assumes you have:
 
 ## Task 2: Chat with the Agent
 
-1. Agent Chat loop
-    This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the agent's knowledge base
+1. Agent Chat loop:
+    This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the Agent's knowledge base or APIs configured.
+    It will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
 
     ![agent example](images/atom_demo_ss.jpg)
 
-    **NOTE** While the frontend application will display your chat history for your current session, the behind the scenes agent currently does not support chat history. From it's point of view, every message is an independent question.
-
-2. Example Dataset Prompts
-    The below questions are example prompts you can use if your administrator setup the application with the provided example dataset. If your administrator used a custom or company-specific dataset, you will need to ask them what topics the agent knows about
-
-3. Agent Response Limitations
-    The Generative AI agents service uses pre-trained foundational models from the Generative AI Inference service. However, the agents service limits responses to only knowledge found in the agent's data-sources. This means it will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
-
-4. Some Sample prompts for you to try
+2. Some sample prompts for you to try:
 
      ```text
        <copy>
        1. How do I administer EPM?
 
-       2. Which role do I need to create a group?
+       2. What are the 5 S's of wine tasting?
 
-       3. How do I export groups to csv?
+       3. How is the weather in New York?
 
-       4. What is the maximum amount of groups a user can be a part of?
+       4. How do I export groups to CSV?
 
-       5. Which search option does not support wildcards (*)?
+       5. How is the weather at World Cheese Capital?
 
-       6. What are the 5 S's of wine tasting?
+       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
 
-       7. How is the weather in New York?
+       7. What is the maximum amount of groups a user can be a part of?
 
-       8. Is it raining in London?
+       8. Does search option support wildcards (*)?
 
-       9. My computer is not working.
+       9. Which role do I need to create a group?
 
        10. What are the steps of the cheese making process?
        </copy>
@@ -81,6 +74,5 @@ This lab assumes you have:
 * **Author**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025
