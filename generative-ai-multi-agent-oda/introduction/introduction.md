@@ -9,11 +9,11 @@ Using this workshop, the developers can create multiple OCI Generative AI RAG Ag
 
 When the user asks question in natural language, then the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to appropriate Generative AI RAG Agent or OIC API, and thereby fetches the correct response to user’s question.
 
-This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool.
+This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool. Thus this solution can even support highly complex questions, that requires leveraging multiple different Tools (Agents/APIs) together.
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/atom_demo_ss.jpg)
+![User View](images/atom_demo_ss1.jpg)
 
 Estimated Workshop Time: 5 hours
 
@@ -21,7 +21,7 @@ Estimated Workshop Time: 5 hours
 
 Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
 
-![Architecture Diagram](images/multi_agent_api_ss.jpg)
+![Architecture Diagram](images/multi_aget_api_ss.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in Object Storage or 23ai database, using OCI Generative AI Agent Service.
