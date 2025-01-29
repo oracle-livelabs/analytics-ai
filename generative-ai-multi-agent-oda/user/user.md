@@ -41,7 +41,7 @@ This lab assumes you have:
     This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the Agent's knowledge base or APIs configured.
     It will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
 
-    ![agent example](images/atom_demo_ss.jpg)
+    ![agent example](images/atom_demo_ss1.jpg)
 
 2. Some sample prompts for you to try:
 
