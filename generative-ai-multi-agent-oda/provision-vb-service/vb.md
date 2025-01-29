@@ -107,6 +107,32 @@ This lab assumes you have:
 
 5. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
+    You can use the following sample prompts to chat:
+
+     ```text
+       <copy>
+       1. How do I administer EPM?
+
+       2. What are the 5 S's of wine tasting?
+
+       3. How is the weather in New York?
+
+       4. How do I export groups to CSV?
+
+       5. How is the weather at World Cheese Capital?
+
+       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
+
+       7. What is the maximum amount of groups a user can be a part of?
+
+       8. Does search option support wildcards (*)?
+
+       9. Which role do I need to create a group?
+
+       10. What are the steps of the cheese making process?
+       </copy>
+    ```
+
 ## Task 3: (optional) Setup Production version of VB
 
 In this Task, we will use VB's development lifecycle to create a **Live** version of the app and get the corresponding url. Then we will setup access the app through OCI IAM. Once complete, you can distribute this app url to your end users. Before accessing the app, users will need to login using your Tenancy's login page.
@@ -166,7 +192,6 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
 * **Author**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **JB Anderson**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
