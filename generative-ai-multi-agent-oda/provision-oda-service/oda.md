@@ -142,7 +142,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
 10. Repeat Step 6 and Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
 
-11. For the OIC\_Weather\_Service, update the Endpoint, User Name, Password (from Lab 3), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
+11. For the OIC\_Weather\_Service, update the Endpoint (from Lab 3 Task 4 Step 28), UserName/Password (from Lab 3 Task 3 Step 6), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
+
+    Endpoint URL should have the format "https://****/getTemperature1?city"
 
     ![ODA OIC Service API](images/oic_service_api.png)
 
