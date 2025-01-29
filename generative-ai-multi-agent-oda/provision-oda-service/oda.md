@@ -193,6 +193,32 @@ This task involves creating REST service which will be used by ODA to connect to
 
 6. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
 
+    You can use the following sample prompts to test this Digital Assistant:
+
+     ```text
+       <copy>
+       1. How do I administer EPM?
+
+       2. What are the 5 S's of wine tasting?
+
+       3. How is the weather in New York?
+
+       4. How do I export groups to CSV?
+
+       5. How is the weather at World Cheese Capital?
+
+       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
+
+       7. What is the maximum amount of groups a user can be a part of?
+
+       8. Does search option support wildcards (*)?
+
+       9. Which role do I need to create a group?
+
+       10. What are the steps of the cheese making process?
+       </copy>
+    ```
+
     ![ODA Preview](images/preview.png)
 
 ## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
