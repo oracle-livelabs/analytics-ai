@@ -499,6 +499,8 @@ This task will help you create a knowledge base using 23ai database as source.
 
 2. Select agent created in the previous task from the dropdown. Also, select the endpoint associated with that agent. Ask a relevant question depending on information stored in DB and start chatting with the agent.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 * **Authors**

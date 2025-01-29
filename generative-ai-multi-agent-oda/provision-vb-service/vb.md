@@ -186,6 +186,7 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
         }
     }</copy>
     ```
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

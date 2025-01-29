@@ -157,6 +157,8 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
     **Note:** Data ingestion Jobs perform incremental ingestion from 2nd run onwards. The time this job takes is proportional to the amount of changes you made to your data source.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 * **Author**

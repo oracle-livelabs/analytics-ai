@@ -158,10 +158,10 @@ This task involves creating REST service which will be used by ODA to connect to
 
     [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(2.0).zip)
 
-2. Import the downloaded Digital Assistant. 
+2. Import the downloaded Digital Assistant.
 
    Click on the Menu -> Development -> Assistants.
-   
+
    Click on Import Digital Assistant & select the zip file to import
 
     ![import digital assistant](images/import_da.png)
@@ -176,7 +176,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![skills](images/skills.png)
 
-4. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. 
+4. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters.
 
     Please provide your own values for:
     - CompartmentOCID
@@ -299,11 +299,13 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
    ![ODA Instance Policy](images/create_policy.png)
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 * **Author**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
- 
+
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Luke Farley**, Staff Cloud Engineer, NACIE

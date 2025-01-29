@@ -69,22 +69,22 @@ This task will help you to create Oracle Integration Cloud under your chosen com
 
 1. Locate Integration under Developer Services in Application Integration
 
-    ![OIC Navigation](images/developerservices.png)
+    ![OIC Navigation](images/developerservicess.png)
 
     **Note** You can find Oracle Integration under the Deevloper Services
 
 2. Click Create Instance
 
-    ![OIC creation wizard](images/createinstoic.png)
+    ![OIC creation wizard](images/createinstoics.png)
 
 3. Provide the information for Name , Edition Enterprise & License type as Subscribe to a new Oracle Integration License
    and Message packs as 1.Click Create
 
-    ![OIC Details](images/oicdetails.png)
+    ![OIC Details](images/oicdetailss.png)
 
 4. In few minutes the status of recently created Oracle Integration will change from Creating to Active
 
-    ![OIC Active](images/instancesactive.png)
+    ![OIC Active](images/instancesactives.png)
 
 ## Task 3: Create User with admin roles to manage and run the integrations in Oracle Integration Cloud
 
@@ -92,11 +92,11 @@ This task will help you ensure that the required users are correctly defined. If
 
 1. Locate Domains under Identity & Security
 
-    ![Locate Domain](images/locatedomains.png)
+    ![Locate Domain](images/locatedomainss.png)
 
 2. Click on your current domain name
 
-    ![Default Domain](images/defaultdomains.png)
+    ![Default Domain](images/defaultdomainss.png)
 
 3. In the Users Menu Click Users to create a  new user devuser3.
    Provide the Last name and Username and your email and Uncheck the checkbox Use the email address as the username
@@ -118,8 +118,8 @@ This task will help you ensure that the required users are correctly defined. If
 7. Goto Identity>>Domains>>Default domain>>Oracle Cloud Services and search with the name of  the OIC Instance  that was created in
    Task2 in Lab3
 
-    ![Oracle Cloud Services](images/oracloudservices.png)
-    ![Oracle Cloud Services Instance](images/oracloudservicesinstance.png)
+    ![Oracle Cloud Services](images/oracloudservicess.png)
+    ![Oracle Cloud Services Instance](images/oracloudservicesinstancess.png)
 
 8. Click on the required Oracle Cloud Services
 
@@ -127,7 +127,7 @@ This task will help you ensure that the required users are correctly defined. If
 
 9. Goto Application Roles and Expand ServiceAdministrator role
 
-    ![Application Role SvcAdmin](images/approlessvcadmin.png)
+    ![Application Role SvcAdmin](images/approlessvcadminss.png)
 
 10. Click Manage and then Click the Show available users and search based on the user devuser3
 
@@ -147,15 +147,15 @@ This task will help you to import the required integrations along with the relat
 
 1. Goto Developer Services>>Application Integration >>Integration in your compartment to open the OIC Console
 
-    ![Developer Services OIC](images/developerservicesinoic.png)
+    ![Developer Services OIC](images/developerservicesinoicss.png)
 
 2. Click on the OIC Instance Name
 
-    ![Click OIC Instance](images/clickoicinstance.png)
+    ![Click OIC Instance](images/clickoicinstancess.png)
 
 3. Click Open Console to launch the Homepage of OIC
 
-    ![Open OIC Console](images/openoicconsole.png)
+    ![Open OIC Console](images/openoicconsoless.png)
 
 4. The OIC Homepage is now opened
 
@@ -260,6 +260,8 @@ This task will help you to import the required integrations along with the relat
 
     Click Cancel once you have copied the Endpoint URL
     This concludes the OIC Lab !
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
