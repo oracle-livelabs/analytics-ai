@@ -169,13 +169,11 @@ This task will help you to import the required integrations along with the relat
 
     ![Click on Integration](images/integrations.png)
 
-7. Click on Drag and Drop to Import the OIC Integration by importing the .iar files.Click Import
+7. Click on Drag and Drop to Import the OIC Integration by importing the .iar files. Click Import
 
-    ![Import Integration DragnDrop](images/importintdnd.png)
+    ![Import Integration Drag and Drop](images/importintdnd.png)
 
-8. Goto the path where the .iar file is located and Click Open
-
-    ![Upload Integration Archive](images/uploadintarchive.png)
+8. Click on the link to download the .iar file and upload this file [IAR FILE](https://objectstorage.us-chicago-1.oraclecloud.com/p/7rce4cq7HH_EFTzbJV2gu0Z5m_Zc6cSqgtn9v1c8htK0OpztEjfqAzsnOXTQS1wo/n/idb6enfdcxbl/b/OICCodeBucket/o/GETWEATHERUPDBYCITY2ERR1_01.00.0000.iar)
 
 9. Click Import
 
