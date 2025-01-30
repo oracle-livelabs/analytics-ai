@@ -183,7 +183,14 @@ This task will help you to import the required integrations along with the relat
 
     ![Config Editor Connection1](images/ceconfigconnection1.png)
 
-11. Modify the Properties like Connection URL and Security as Basic Authentication and provide the Username and password with Access
+11. Modify the Properties like Connection URL and Security as Basic Authentication and provide the Username and password with Access. Connection URL is
+
+    ```text
+       <copy>
+       https://design.integration.us-chicago-1.ocp.oraclecloud.com
+       </copy>
+    ```
+
     Type as Public Gateway
 
     ![Config Connection1](images/configconn1.png)
@@ -266,4 +273,4 @@ You may now proceed to the next lab.
 * **Author**
     * **Nisith Apurb**, Principal Cloud Architect, NACIE
 * **Last Updated By/Date**
-    * **Nisith Apurb**, Principal Cloud Architect, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, January 2025
