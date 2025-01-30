@@ -14,7 +14,7 @@ This is your chance to see what it is to be a "Data Athlete" for SailGP and help
 
 Off to the races!
 
-[](youtube:Z-2HT1PGEq8)
+<!--![](youtube:Z-2HT1PGEq8)-->
 
 Estimated Workshop Time: 150 minutes
 
@@ -38,4 +38,4 @@ Your account is ready? let's start learning!
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager, Rawan Aboukoura - Technology Product Strategy Manager
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
+- **Last Updated By/Date** - Perside Foster, MySQL Principal Solution Engineering, January 2025
