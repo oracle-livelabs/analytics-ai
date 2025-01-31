@@ -129,7 +129,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.7**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.7
+
+        > **Note:** v1.7 is the latest model as of this livelab release. This lab should work with any version of the cohere model. 
 
     ![API Services](images/chat_screenshot.png)
 
@@ -256,7 +258,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
+4. Click on the link to download the VB application (zip file): [ATOM_Training.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -272,24 +274,25 @@ This task involves creating REST service which will be used by ODA to connect to
 
         ![Create Channel](images/import_vbapp_2.png)
 
-6. Once import is completed, open the index.html file in the VB Instance and update the details as follows:
+6. Once import is completed, open the embedded-chat javascript file in the VB Instance and update the details as follows:
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
 
-    ![Create Channel](images/vbapp_setup.png)
+    ![Create Channel](images/vb_config.png)
 
     > **Note**
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from embedded-chat javscript file.
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
-9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+**Troubleshooting** 
 
+You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
     ![VB Error](images/vb_error.png)
 
 ## Acknowledgements
@@ -300,5 +303,8 @@ This task involves creating REST service which will be used by ODA to connect to
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **JB Anderson**,  Senior Cloud Engineer, NACIE
 
+**Contributors**
+* **Luke Farley**, Staff Cloud Engineer, NACIE
+
 **Last Updated By/Date:**
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Sep 2024
+* **Luke Farley**, Staff Cloud Engineer, NACIE, Jan 2025

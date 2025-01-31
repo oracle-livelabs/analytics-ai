@@ -1,4 +1,4 @@
-# Machine Learning On SailGP Data: Predicting the best sailing direction
+# Machine Learning On SailGP Data: Predict the best sailing direction
 
 ## Introduction
 
@@ -389,4 +389,4 @@ Congratulations on completing the lab! Now you've learned the basics of machine 
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025
