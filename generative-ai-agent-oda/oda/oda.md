@@ -143,7 +143,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![flow update endpoint](images/flow_update_endpoint3.png)
 
-5. In "user.StartFlow" pen the third block "SetObjectStorageURLVariable" and change the value under Component to your own object storage PAR for the bucket that was created in previous lab.
+5. In "user.StartFlow" open the third block "SetObjectStorageURLVariable" and change the value under Component to your own object storage PAR for the bucket that was created in previous lab.
 
     ![object storage flow](images/objectstorage_flow.png)
 
@@ -257,4 +257,4 @@ If the Policy Definitions are not correctly defined, please define them as follo
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, October 2024
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025

@@ -175,5 +175,5 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, October 2024
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
 
