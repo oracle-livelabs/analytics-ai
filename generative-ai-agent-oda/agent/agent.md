@@ -38,7 +38,7 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
     ![object storage navigation](images/os_nav.png)
 
 2. Provide the information for **Compartment** and **Bucket Name**. Click Create.
-    The Object Storage Bucket will be created
+    The Object Storage Bucket will be created. Keep the visibility of bucket as Private.
 
     ![object storage bucket creation](images/os_bucket_create.png)
 
@@ -59,6 +59,18 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
 
     ![object storage upload files](images/os_upload.png)
+
+3. Create a PAR (Pre-Authenticated Request) for your newly created bucket.
+
+    ![create par](images/create_par.png)
+
+4. Create this PAR at the bucket level and not the object level. Also, change the expiration date to a future date preferably 4-5 years from now.
+
+    ![create par bucket](images/create_par_bucket.png)
+
+5. Copy over the PAR URL highlighted in the image below. Please copy over the second URL and not the first one.
+
+    ![par url](images/par_url.png)
 
 ## Task 3: Provision Knowledge Base
 

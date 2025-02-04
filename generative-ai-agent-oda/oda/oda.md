@@ -129,7 +129,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [agent-oda-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-oda-livelabs-1.2.zip)
+    [agent-oda-livelabsnew.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/Yx1k6yaJJV4MNpfmzQnwaKJFCYuVHwPPrg0xmI_HJund0MmO9ghpPZt_d5rp1cz-/n/idb6enfdcxbl/b/generative-ai-agent-oda/o/agent-oda-livelabsnew.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 
@@ -142,6 +142,10 @@ This task involves creating REST service which will be used by ODA to connect to
 4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in [Lab 2 Task 4 Step 4](../agent/agent.md#task-4-provision-agent)).
 
     ![flow update endpoint](images/flow_update_endpoint3.png)
+
+5. In "user.StartFlow" pen the third block "SetObjectStorageURLVariable" and change the value under Component to your own object storage PAR for the bucket that was created in previous lab.
+
+    ![object storage flow](images/objectstorage_flow.png)
 
 5. Ensure the Chatbot Training is completed
 
