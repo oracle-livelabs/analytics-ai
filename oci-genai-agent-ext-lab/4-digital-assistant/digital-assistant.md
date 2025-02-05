@@ -10,6 +10,8 @@ Estimated time: 30 min
 
 ### Prerequisites
 - The lab 1 must have been completed.
+- Download the [zip file](https://github.com/mgueury/oci-genai-agent-ext/archive/refs/heads/main.zip).
+    In the subdirectory "oda", you will find the files needed below.
 
 ## Task 1: Install Oracle Digital Assistant
 
