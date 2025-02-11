@@ -153,10 +153,6 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     ![Validate DBTools](images/dbconn_validate.png)
 
-# Load vector data in ADB using sql
-
-This section will take you through the steps needed to load data and create a vector search function in your ADB 23ai. 
-
 ## Oracle 23ai Prerequisites
 
 The user must have the Oracle 23ai Database with the following components:
@@ -458,8 +454,6 @@ This is a high level overview. We will go through the implementation in the foll
         END;
        </copy>
     ```
-
-# Create Knowledge base and chat with agent
 
 ## Task 7: Create Knowledge Base
 
