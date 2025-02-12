@@ -153,7 +153,9 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     ![Validate DBTools](images/dbconn_validate.png)
 
-## Oracle 23ai Prerequisites
+## Task 6: Load vector data in ADB using sql
+
+### Oracle 23ai Prerequisites
 
 The user must have the Oracle 23ai Database with the following components:
 
@@ -187,7 +189,7 @@ Note: Names can vary but must be aliased as follows in the function.
 
 This is a high level overview. We will go through the implementation in the following tasks.
 
-## Task 6: Run SQL statements to create a vector table
+## Task 7: Run SQL statements to create a vector table
 
 1. Go to your Database connection created in Task 5. Click on SQL worksheet and run the following code blocks one by one.
 
@@ -455,7 +457,7 @@ This is a high level overview. We will go through the implementation in the foll
        </copy>
     ```
 
-## Task 7: Create Knowledge Base
+## Task 8: Create Knowledge Base
 
 This task will help you create a knowledge base using 23ai database as source.
 
@@ -505,4 +507,4 @@ You may now proceed to the next lab.
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 
 * **Last Updated By/Date**
-    * **Luke Farley**, Staff Cloud Engineer, NACIE, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
