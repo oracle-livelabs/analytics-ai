@@ -11,7 +11,7 @@ Estimated time: 10 min
 ### Prerequisites
 - The lab 1 must have been completed.
 
-## Task 1: Test with APEX
+## Task 1: Test
 
 1. Check the URL at the end of the terraform run
     
