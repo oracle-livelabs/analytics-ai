@@ -469,7 +469,7 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![KB creation](images/create_kb.png)
 
-## Task 8: Create Agent
+## Task 9: Create Agent
 
 1. Locate Agents under Analytics & AI -> Generative AI Agents.
 
@@ -487,7 +487,7 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![Agent Endpoint](images/agent_endpoint.png)
 
-## Task 9: Chat with Agent
+## Task 10: Chat with Agent
 
 1. Locate Chat under Analytics & AI -> Generative AI Agents.
 
