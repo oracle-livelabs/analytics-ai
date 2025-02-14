@@ -156,7 +156,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentAPIOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FMultiStepAgentAPIOrchestrationDA(2.0).zip)
+    [MultiStepAgentOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/KjBKc36lERmhtvcp01tckJ0s7EcMGYckWVWkihq3SDrKJSiEQ9p7xsmEWRKzM5g_/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentOrchestrationDA.zip)
 
 2. Import the downloaded Digital Assistant.
 
@@ -203,17 +203,17 @@ This task involves creating REST service which will be used by ODA to connect to
 
        3. How is the weather in New York?
 
-       4. How do I export groups to CSV?
+       4. In EPM, How do I export groups to CSV?
 
-       5. How is the weather at World Cheese Capital?
+       5. Where is the World Cheese capital and how is the weather there?
 
-       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
+       6. The wine LA PLUMA ROSE OF SAUV BLANC is from where, and how is the weather there?
 
-       7. What is the maximum amount of groups a user can be a part of?
+       7. What is the maximum amount of groups a user can be a part of in EPM?
 
-       8. Does search option support wildcards (*)?
+       8. Does EPM search option support wildcards (*)?
 
-       9. Which role do I need to create a group?
+       9. Which role do I need to create an EPM group?
 
        10. What are the steps of the cheese making process?
        </copy>
@@ -311,4 +311,4 @@ You may now proceed to the next lab.
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
