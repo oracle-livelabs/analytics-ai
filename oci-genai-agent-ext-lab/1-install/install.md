@@ -248,7 +248,7 @@ You can
 
     In such case, just rerunning ./starter.sh build fixed the issue.
 
-4. 409- Already Exist
+4. 409 - XXXXXAlreadyExists
     ```
     <copy>    
     Error: 409-PolicyAlreadyExists, Policy 'agent-fn-policy' already exists
