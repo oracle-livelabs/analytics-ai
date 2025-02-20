@@ -153,11 +153,9 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     ![Validate DBTools](images/dbconn_validate.png)
 
-# Load vector data in ADB using sql
+## Task 6: Load vector data in ADB using sql
 
-This section will take you through the steps needed to load data and create a vector search function in your ADB 23ai. 
-
-## Oracle 23ai Prerequisites
+### Oracle 23ai Prerequisites
 
 The user must have the Oracle 23ai Database with the following components:
 
@@ -191,7 +189,7 @@ Note: Names can vary but must be aliased as follows in the function.
 
 This is a high level overview. We will go through the implementation in the following tasks.
 
-## Task 6: Run SQL statements to create a vector table
+## Task 7: Run SQL statements to create a vector table
 
 1. Go to your Database connection created in Task 5. Click on SQL worksheet and run the following code blocks one by one.
 
@@ -459,9 +457,7 @@ This is a high level overview. We will go through the implementation in the foll
        </copy>
     ```
 
-# Create Knowledge base and chat with agent
-
-## Task 7: Create Knowledge Base
+## Task 8: Create Knowledge Base
 
 This task will help you create a knowledge base using 23ai database as source.
 
@@ -473,7 +469,7 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![KB creation](images/create_kb.png)
 
-## Task 8: Create Agent
+## Task 9: Create Agent
 
 1. Locate Agents under Analytics & AI -> Generative AI Agents.
 
@@ -491,7 +487,7 @@ This task will help you create a knowledge base using 23ai database as source.
 
     ![Agent Endpoint](images/agent_endpoint.png)
 
-## Task 9: Chat with Agent
+## Task 10: Chat with Agent
 
 1. Locate Chat under Analytics & AI -> Generative AI Agents.
 
@@ -511,4 +507,4 @@ You may now proceed to the next lab.
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 
 * **Last Updated By/Date**
-    * **Luke Farley**, Staff Cloud Engineer, NACIE, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
