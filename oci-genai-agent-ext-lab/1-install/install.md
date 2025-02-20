@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will install all the components needed for this workshop. Oracle Digital Assistant will be provisioned manually. The rest will be provisioned automatically using a provided Terraform script.
 
-Estimated time: 40 min
+Estimated time: 45 min
 
 ### Objectives
 
@@ -146,8 +146,10 @@ You can
 
     Answer the question about Authorization Token and Compartment OCID.
 
+    In case of errors, check **Known Issues** below
+
 8. **Please proceed to the [next lab](#next) while Terraform is running.** 
-    Do not wait for the Terraform script to finish because it takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
+    Do not wait for the Terraform script to finish because it takes about 45 minutes and you can check the steps in the next labs while it's running. However, you will need to come back to this lab when it is done and complete the next step.
 9. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
@@ -246,15 +248,16 @@ You can
 
     In such case, just rerunning ./starter.sh build fixed the issue.
 
-4. During terraform:
+4. 409- Already Exist
     ```
     <copy>    
     Error: 409-PolicyAlreadyExists, Policy 'agent-fn-policy' already exists
+    or
+    Error: 409-BucketAlreadyExists, Either the bucket "agext-public-bucket' in namespace "xxxxxx" already exists or you are not authorized to create it
     </copy>    
     ```
 
     Several persons are probably trying to install this tutorial on the same tenancy.
-
     Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
     ```
     <copy>    
@@ -263,7 +266,38 @@ You can
     </copy>    
     ```
 
+ 5. BadErrorResponse - CreateDynamicResourceGroup 
+ 
+    If your user does has no right to create Dynamic Group in the Default Identity Domain, you will get this error:
+     
+    ```
+    Error: 400-BadErrorResponse,
+    Suggestion: Please retry or contact support for help with service: Identity Domains Dynamic Resource Group
+    Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_domains_dynamic_resource_group
+    API Reference:
+    Request Target: POST https://idcs-xxxxxx.identity.oraclecloud.com:443/admin/v1/DynamicResourceGroups
+    Provider version: 6.21.0, released on 2024-12-22. This provider is 8 Update(s) behind to current.
+    Service: Identity Domains Dynamic Resource Group
+    Operation Name: CreateDynamicResourceGroup
+    OPC request ID: xxxxxx
+    with oci_identity_domains_dynamic_resource_group.search-fn-dyngroup,
+    on search_dyngroup_identity_domain.tf line 1, in resource “oci_identity_domains_dynamic_resource_group” “search-fn-dyngroup”:
+    1: resource “oci_identity_domains_dynamic_resource_group” “search-fn-dyngroup” {
+    ```
+    Solution:
+    1. If the Default Domain exists, it is probably a privilege right. Ask to your tenancy administrator.
+    2. If your Identity Domain is “OracleIdentityCloudService” (for tenancy upgraded from IDCS)
+        - edit the file starter/env.sh 
+        - add the line
+        ```
+        export TF_VAR_idcs_domain_name="OracleIdentityCloudService"
+        ```
 
+6. Error: 400-LimitExceeded, The following service limits were exceeded: xxxxxxx
+   
+    Solution:
+    - Ask your administrator to increase your quota or the limits of the tenancy.
+   
 ## Acknowledgements
 
 - **Author**
