@@ -53,17 +53,17 @@ This lab assumes you have:
 
        3. How is the weather in New York?
 
-       4. How do I export groups to CSV?
+       4. In EPM, How do I export groups to CSV?
 
-       5. How is the weather at World Cheese Capital?
+       5. Where is the World Cheese capital and how is the weather there?
 
-       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
+       6. The wine LA PLUMA ROSE OF SAUV BLANC is from where, and how is the weather there?
 
-       7. What is the maximum amount of groups a user can be a part of?
+       7. What is the maximum amount of groups a user can be a part of in EPM?
 
-       8. Does search option support wildcards (*)?
+       8. Does EPM search option support wildcards (*)?
 
-       9. Which role do I need to create a group?
+       9. Which role do I need to create an EPM group?
 
        10. What are the steps of the cheese making process?
        </copy>
@@ -75,4 +75,4 @@ This lab assumes you have:
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
