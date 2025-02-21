@@ -105,6 +105,7 @@ Estimated time: 30 min
     - Copy the Channel Id and save for later
     ![Channel3](images/oda-channel3.png)
 4. Go back to the OCI cloud shell where you installed the previous lab and edit the settings.js as follows:
+
     ```
     <copy>
     ./starter.sh ssh bastion
@@ -115,6 +116,7 @@ Estimated time: 30 min
     vi settings.js
     </copy>
     ```
+
     - The hostname part of your ODA console (without https://)
     - The Channel ID copied in the previous step
     ![WebSettings](images/oda-web-settings.png)
