@@ -72,17 +72,21 @@ Estimated time: 30 min
    ![Import](images/oda-import.png)
 3. Open the imported skill by clicking its tile
    ![Skill](images/oda-skill.png)
-4. Click 'Train' in the top-right
+4. Edit the settings 
+   ![Skill](images/oda-settings.png)
+5. Replace de Value with the Generative AI Agent endpoint OCID:
+   ![Skill](images/oda-agentendpoint.png)
+6. Click 'Train' in the top-right
    ![Train](images/oda-train.png)
-5. Select 'Trainer Tm' and press 'Submit'
+7. Select 'Trainer Tm' and press 'Submit'
    ![TrainTm](images/oda-train-tm.png)
-6. During training we can have familiarize ourselves with the flow that calls AI Agent
+8. During training we can have familiarize ourselves with the flow that calls AI Agent
    ![Flow](images/oda-flow.png)
-7. When training is finished we can click 'Preview' in the top-right
+9. When training is finished we can click 'Preview' in the top-right
    ![Preview](images/oda-preview.png)
-8. In the tester we can ask a question about the content in our AI Agent
+10. In the tester we can ask a question about the content in our AI Agent
    ![odaTester](images/oda-tester.png)
-9. Beside the answer coming from AI Agent, we can also see how the flow executed on the right
+11. Beside the answer coming from AI Agent, we can also see how the flow executed on the right
    ![TesterResp](images/oda-tester-resp.png)
 
 ## Task 4: Creating the web channel
