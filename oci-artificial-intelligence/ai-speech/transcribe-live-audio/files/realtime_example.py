@@ -121,6 +121,9 @@ if __name__ == "__main__":
     realtime_speech_parameters.partial_silence_threshold_in_ms = 0
     realtime_speech_parameters.final_silence_threshold_in_ms = 2000
     # realtime_speech_parameters.encoding="audio/raw;rate=16000"
+    # realtime_speech_parameters.punctuation = (
+    #     realtime_speech_parameters.PUNCTUATION_AUTO
+    # )
     realtime_speech_parameters.should_ignore_invalid_customizations = False
     realtime_speech_parameters.stabilize_partial_results = (
         realtime_speech_parameters.STABILIZE_PARTIAL_RESULTS_NONE
