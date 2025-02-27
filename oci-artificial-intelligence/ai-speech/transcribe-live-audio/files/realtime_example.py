@@ -146,7 +146,7 @@ if __name__ == "__main__":
     #     }
     # ]
 
-    realtime_speech_url = "wss://realtime.aiservice-preprod.uk-london-1.oci.oraclecloud.com"
+    realtime_speech_url = "wss://realtime.aiservice-preprod.ap-sydney-1.oci.oraclecloud.com"
     client =  RealtimeSpeechClient(
             realtime_speech_parameters=realtime_speech_parameters,
             config=config,

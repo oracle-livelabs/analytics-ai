@@ -177,13 +177,15 @@ class MyRealtimeListener(RealtimeClientListener):
 
 `language_code` : <strong>"en-US"</strong>
 
-`model_domain` : <strong>"MEDICAL"</strong>
+`model_domain` : <strong>"GENERIC"</strong>
 
 `partial_silence_threshold_in_ms` : <strong>500</strong>
 
 `final_silence_threshold_in_ms` : <strong>2000</strong>
 
 `encoding` : <strong>"audio/raw;rate=16000"</strong>
+
+`punctuation` : <strong>AUTO</strong>
 
 `should_ignore_invalid_customizations` : <strong>True</strong>
 
