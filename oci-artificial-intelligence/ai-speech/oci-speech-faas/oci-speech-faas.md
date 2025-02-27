@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Lab 10: Trigger functions for OCI speech transcription jobs (Optional)
-=======
-# Lab 9: Trigger functions for OCI speech transcription jobs (Optional)
->>>>>>> upstream/main
 
 ## Introduction
 
