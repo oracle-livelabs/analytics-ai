@@ -35,8 +35,9 @@
             "filename": "../../4-explore-images/4-explore-images.md"
         },
         {
-            "title": "Oracle CloudWorld 2022 - Get Help",
-            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
-                    }
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
     ]
 }
