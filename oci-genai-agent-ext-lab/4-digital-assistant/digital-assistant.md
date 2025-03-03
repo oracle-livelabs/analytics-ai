@@ -120,7 +120,7 @@ Estimated time: 30 min
     - The hostname part of your ODA console (without https://)
     - The Channel ID copied in the previous step
     ![WebSettings](images/oda-web-settings.png)
-5. In your browser, open the web-widget with http://##BASTION\_IP##
+5. In your browser, open the web-widget with http://##BASTION\_IP## (You got that URL at the end of Lab 1)
     ![Webchat](images/oda-webchat.png)
 
 
