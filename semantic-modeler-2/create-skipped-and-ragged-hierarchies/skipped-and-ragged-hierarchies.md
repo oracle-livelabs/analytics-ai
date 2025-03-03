@@ -210,7 +210,7 @@ workbook with the updated Sample Sales subject area.
 You may now **proceed to the next lab**
 
 ## Learn More
-* [About Working with Logical Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/working-logical-hierarchies.html#GUID-9AF96F03-ABBA-43EF-80C9-A8ED6F018DE8)
+* [About Working with Logical Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-semantic-models-logical-hierarchies.html#GUID-299129AF-FABC-43C3-9FD2-5CB927E0B744)
 * [About Data Granularity](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-data-granularity.html#GUID-299129AF-FABC-43C3-9FD2-5CB927E0B744)
 
 ## Acknowledgements
