@@ -14,28 +14,27 @@ In this lab, you will:
 * Open the two outlines side-by-side
 * Synchronize expanding and collapsing hierarchies
 * Synchronize scrolling
-* Synchronize showing and hiding columns
 * Copy members from the source to the target outline
 * Search the source or the target outline
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
-
 
 ## Task 1: Import two sample cubes
 
 1. On the **Applications** page, click **Import**.
 
-    ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button selected](images/application-import.png)
+    ![Image of top of the Essbase web interface with the Applications icon selected, and the Import button selected](images/application-import-redwood.png)
 
 2. In the **Import** dialog box, click **Catalog**.
 
 3. In the **Select Files from Catalog** dialog box, navigate to **gallery** &gt; **Applications** &gt; **Demo Samples** &gt; **Block Storage**, click **Sample\_Basic.xlsx** and click **Select**.
 
-    ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog.png)
+    ![Image of the Select files from catalog dialog box with Sample_Basic.xlsx selected](images/select-files-from-catalog-redwood.png)
 
 4. In the **Import** dialog box, rename the application to **Target** and click **OK** to create the cube.
 
@@ -43,45 +42,49 @@ This lab assumes you have:
 
 ## Task 2: Open two outlines side-by-side
 
-1. On the **Applications** page, expand the **Target** application, and from the **Actions** menu to the right of the cube name, choose **Outline**.
+1. On the **Applications** page, open the **Target** application and the **Basic** cube, and click **Launch Outline**.
 
-2. On the outline toolbar, click the **To compare outlines** icon.
+2. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/icon-edit-outline-redwood.png).
 
-    ![Image of the outline toolbar with the To compare outlines icon selected](images/compare-outlines-toolbar-icon.png)
+3. On the outline toolbar, click the **To compare outlines** icon.
 
-3. In the **Compare outline** dialog box, keep the **(Current)** connection and select the **Source** application and the **Basic** database.
+    ![Image of the outline toolbar with the To compare outlines icon selected](images/compare-outlines-toolbar-icon-redwood.png)
+
+4. In the **Compare outline** dialog box, keep the **(Current)** connection and select the **Source** application and the **Basic** database.
 
    Alternatively, you can select a connection to another server in the **Connection** drop down menu, and compare two outlines on different servers.
 
-4. Click **Open**, and **Source.Basic** is opened to the right of **Target.Basic**. Notice that **Source.Basic** is read only. The read only outline is the source outline. The writeable outline is the target outline.
+5. Click **Compare**, and **Source.Basic** is opened to the right of **Target.Basic**. **Source.Basic** is read only. The read only outline is the source outline. The writeable outline is the target outline.
 
-    ![Image of the source and target outlines opened side-by-side.](images/compare-side-by-side.png)
+    ![Image of the source and target outlines opened side-by-side.](images/compare-side-by-side-redwood.png)
 
 ## Task 3: Synchronize expanding and collapsing hierarchies
 
 1. Expand the **Year** dimension in **Target.Basic** and notice that the **Year** dimension in **Source.Basic** is expanded as well.
 
-2. In the outline toolbar, under **Compare**, click the **Auto expand/collapse target members** icon to deselect it (it is selected by default) ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon.png).
+2. In the outline toolbar, click the **Auto expand/collapse target members** icon to deselect it (it is selected by default) ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon-redwood.png).
 
 3. Collapse the **Year** dimension in **Source.Basic** and notice that the **Year** dimension in **Target.Basic** is still expanded. Collapse the **Year** dimension in **Target.Basic**.
 
 ## Task 4: Synchronize scrolling
 
-1. Click the **Auto expand/collapse target members** icon ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon.png) and expand several dimensions so that you need to scroll up and down in order to see the entire outline.
+1. Click the **Auto expand/collapse target members** icon ![Image of the auto expand/collapse target members icon in the outline toolbar.](images/auto-expand-collapse-icon-redwood.png) and expand several dimensions so that you need to scroll up and down in order to see the entire outline.
 
-2. Scroll the **Target.Basic** outline and observe that the **Source.Basic** outline scrolls in sync with it.
+2. Scroll the **Target.Basic** outline vertically and observe that the **Source.Basic** outline scrolls in sync with it.
 
-## Task 5: Synchronize showing and hiding columns
+3. Scroll the **Target.Basic** outline horizontally and observe that you can view member properties for both **Target.Basic** and **Source.Basic**.
+
+<!--## Task 5: Synchronize showing and hiding columns
 
 1. In the outline toolbar, under **Inspect**, click **Display selected columns in the table**.
 
     ![Image of the outline toolbar with the display selected columns icon highlighted.](images/outline-toolbar-display-selected-columns-icon.png)
 
-2. In the **Select member properties to display** dialog box, clear the selections for **operator** and **data storage type** and click **Apply and Close**. Notice that the displayed columns in both **Target.Basic** and **Source.Basic** change accordingly.
+2. In the **Select member properties to display** dialog box, clear the selections for **operator** and **data storage type** and click **Apply and Close**. Notice that the displayed columns in both **Target.Basic** and **Source.Basic** change accordingly.-->
 
-## Task 6: Copy members from the source outline to the target outline
+## Task 5: Copy members from the source outline to the target outline
 
-1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/edit-outline-icon.png).
+1. In the upper right-hand corner of the outline editor, click **Edit outline** ![Image of the Edit Outline icon.](images/icon-edit-outline-redwood.png) if it is not already in edit mode.
 
 2. In the **Source.Basic** outline, expand the **Product** dimension.
 
@@ -93,9 +96,9 @@ This lab assumes you have:
 
    **Audio** and its children are added as children of **Product**.
 
-## Task 7: Search either the source or the target outline
+## Task 6: Search either the source or the target outline
 
-1. In the outline toolbar, under **Actions**, click the **Search members in the outline** icon.
+1. In the outline toolbar click the **Search members in the outline** icon ![Image of the search members in the outline icon in the outline toolbar.](images/search-members-in-the-outline-icon-redwood.png).
 
 2. Notice that search bars open for both **Source.Basic** and **Target.Basic**, allowing you to search either one.
 
@@ -107,5 +110,6 @@ This lab assumes you have:
 * [Copy and Paste Members Within and Between Outlines](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/copy-and-paste-members-and-outlines.html#GUID-630F6AEC-6951-4975-A4FD-94E329A0BDB4)
 
 ## Acknowledgements
+
 * **Author** - Dori Woodhouse, Principal User Assistance Developer, Essbase documentation team
-* **Last Updated By/Date** - Dori Woodhouse July, 2023
+* **Last Updated By/Date** - Dori Woodhouse January, 2025

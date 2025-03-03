@@ -114,12 +114,13 @@ Under documentation you can find helpful links relevant to OCI speech service
 
     <strong>Configure transcription:</strong> Choose the model model type and the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
         ![Job details selection page](./images/basic-information-page-1.png " ")
-    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model.
+    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model. Additionally, the Whisper Medium model also offers auto-detection of language. This can be chosen in the language drop-down list once the Whisper model is selected.
+    ![Language dropdown for Whisper](./images/whisper-model-auto-language.png " ")
     
     You can also enable diarazation feature by checking the box which helps you with segmenting audio recordings by speaker labels
         ![Model selection page](./images/basic-information-page-2.png " ")
     If you enable the diarization feature, a new dropdown for selecting specifing the number of speaker in the audio file will be shown. You can provide the number of speakers to label in the audio file or you can keep the default option *Auto detect* which will automatically detect the number of speakers in the audio file.
-        ![Diarization Speakers dropdown](./images/diarization-speakers.png " ")
+        ![Diarization Speakers dropdown](./images/diarization-dropdown.png " ")
 
     Filters allow you to remove, tag or mask certain words from the transcription, such as profanity
         ![Filters selection page](./images/filters.png " ")
@@ -205,3 +206,6 @@ You may now **proceed to the next lab**
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
     * Veluvarthi Narasimha Reddy - Oracle AI Services
+    * Sai Krishna Anand - Oracle AI Services <br />
+
+#### 10th January, 2025

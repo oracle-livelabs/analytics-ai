@@ -45,7 +45,7 @@ This lab assumes you have:
 
 4. Click on the link to download the VB application (zip file)
 
-    [agent-vb-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-vb-livelabs.zip)
+    [agent-vb-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-vb-livelabs-1.1.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
     * Click on Import from Visual Builder Instance
@@ -59,6 +59,10 @@ This lab assumes you have:
     * Provide the App Name with other details and select the provided application zip file
 
     ![Visual Builder import configuration](images/vb_import_config.png)
+
+    **Note** If you are do not see the standard left hand menu bar and instead see a yellow upgrade banner like the image below, upgrade the runtime dependency by clicking on the **Upgrade** button in the top right. After the migration is successful and you close the window. The page should refresh and you should now have a nav bar on the left hand side.
+
+    ![Visual Builder app needs upgrading](images/vb_need_upgrade.png)
 
 ## Task 2: Configure and Customize Application
 
@@ -78,6 +82,7 @@ This lab assumes you have:
     Recommended Customizations:
     * icons -> logo
     * icons -> avatarBot
+    * i18n -> en -> chatTitle
 
 3. Install the Markdown Component
     * In the **components** sidebar on the left
@@ -166,4 +171,4 @@ In this Task, we will use VB's development lifecycle to create a **Live** versio
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **JB Anderson**, Senior Cloud Engineer, NACIE, August 2024
+    * **JB Anderson**, Senior Cloud Engineer, NACIE, October 2024
