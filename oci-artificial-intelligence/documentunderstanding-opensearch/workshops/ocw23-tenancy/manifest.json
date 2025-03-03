@@ -21,10 +21,11 @@
         {
             "title": "Lab 3: Create a search user interface and run searches",
             "filename": "./../../3-visual_builder/visual_builder.md"
-        },        
+        },
         {
-            "title": "Oracle CloudWorld 2023 - Support",
-            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
