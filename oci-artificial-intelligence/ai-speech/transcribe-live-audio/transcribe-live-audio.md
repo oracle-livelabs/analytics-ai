@@ -48,8 +48,7 @@ To change transcription parameters, look to the <strong>Configure transcription<
 
 1. Configure transcription
 
-    Here you can change parameters such as transcription model type, audio language, partial and final silence thresholds
-    and enable customizations
+    Here you can change parameters such as transcription model type, audio language, punctuation, partial and final silence thresholds partial results stability and enable customizations
         ![Configure transcription](./images/configure-transcription.png " ")
 
     <strong>Choose domain:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific medial terminology
