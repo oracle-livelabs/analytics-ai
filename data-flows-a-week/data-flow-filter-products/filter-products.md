@@ -83,9 +83,9 @@ You will create two datasets: the first dataset will be a products dataset creat
 
 	![create dataset](images/create-dataset-upload.png =450x*)
 
-3. Click the **Upload** option and from your local machine, select the [**SALES\_REPS\_ALL\_PRODUCT**](https://objectstorage.us-phoenix-1.oraclecloud.com/p/S3gWL_n0qhXhs-7Th2JpvZ-_p-Y2-h9dinh37je_2nthEpsvVGDAhkwfuAnfhcH6/n/idbwmyplhk4t/b/LiveLabsFiles/o/SALES_REPS_ALL_PRODUCTS.csv) dataset.
+3. Click the **Upload** option and from your local machine, select the [**SALES\_REPS\_ALL\_PRODUCT**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RnFjKSuqS6yEJU70osDy0u5KHKmDCQZD-SH17-dP9tleYrgiOKt4ncewHO_XYXP8/n/idmqvvdwzckf/b/LiveLabs-Files/o/SALES_REPS_ALL_PRODUCTS.csv) dataset.
 
-	**Note:** Download the sales reps dataset [here](https://objectstorage.us-phoenix-1.oraclecloud.com/p/S3gWL_n0qhXhs-7Th2JpvZ-_p-Y2-h9dinh37je_2nthEpsvVGDAhkwfuAnfhcH6/n/idbwmyplhk4t/b/LiveLabsFiles/o/SALES_REPS_ALL_PRODUCTS.csv).
+	**Note:** Download the sales reps dataset [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RnFjKSuqS6yEJU70osDy0u5KHKmDCQZD-SH17-dP9tleYrgiOKt4ncewHO_XYXP8/n/idmqvvdwzckf/b/LiveLabs-Files/o/SALES_REPS_ALL_PRODUCTS.csv).
 
 	![add dataset](images/add-dataset.png =450x*)
 

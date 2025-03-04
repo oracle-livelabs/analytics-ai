@@ -309,7 +309,7 @@ workbook with the updated Sample Sales subject area.
 You may now **proceed to the next lab**
 
 ## Learn More
-* [Create and Manage Parent-Child Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-manage-parent-child-hierarchies.html#GUID-81468B64-80D2-4AB5-9E35-A7C19215D440)
+* [Create and Manage Parent-Child Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-manage-parent-child-hierarchies-semantic-model.html#GUID-8A7A6FA5-2817-43D6-9987-951CE6066504)
 * [What Are Driving Tables?](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/work-logical-joins.html#GUID-D59DD499-4459-4E04-B8D9-25F42C045E43)
 * [Manage Logical Tables Sources](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/manage-logical-table-sources.html#ACMDG-GUID-700A5FA9-87B3-40A2-991A-9E0FA6341950)
 

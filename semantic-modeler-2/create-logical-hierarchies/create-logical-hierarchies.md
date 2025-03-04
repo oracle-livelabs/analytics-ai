@@ -187,8 +187,8 @@ workbook with the updated Sample Sales subject area.
 You may now **proceed to the next lab**
 
 ## Learn More
-* [About Working with Logical Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/working-logical-hierarchies.html#ACMDG-GUID-9AF96F03-ABBA-43EF-80C9-A8ED6F018DE8)
-* [Create Logical Time Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data.html#ACMDG-GUID-8EC7B9D0-7A0D-4520-9A90-82D625518D4E)
+* [About Working with Logical Hierarchies](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/working-logical-hierarchies-semantic-model.html#GUID-9AF96F03-ABBA-43EF-80C9-A8ED6F018DE8)
+* [Create Logical Time Dimensions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data-semantic-model.html#GUID-8EC7B9D0-7A0D-4520-9A90-82D625518D4E)
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy

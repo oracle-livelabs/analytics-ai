@@ -148,7 +148,7 @@ workbook with the updated Sample Sales subject area.
 You may now **proceed to the next lab**
 
 ## Learn More
-* [Model Time Series Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data.html#GUID-D390BE0D-EB9F-48EB-A686-A0AFDA12AD72)
+* [Model Time Series Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/model-time-series-data-semantic-model.html#GUID-57B5BB73-FE23-4B00-986A-50013035685A)
 
 ## Acknowledgements
 * **Author** - Nagwang Gyamtso, Product Manager, Analytics Product Strategy
