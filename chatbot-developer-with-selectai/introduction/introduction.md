@@ -9,6 +9,7 @@ This solution implements OCI Generative AI Multi-step Tool, so it also supports 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
 ![User View](images/atom_apex_how_many_regions.png)
+![User View](images/atom_apex_add_region.png)
 
 Estimated Workshop Time: 5 hours
 
@@ -44,18 +45,23 @@ This lab assumes you have:
 * Access to OCI Integration Cloud (OIC)
 * Access to OCI Digital Assistant (ODA)
 * Access to OCI Visual Builder (VB)
+* Access to OCI Autonomous Database (ADB)
 * Access to a Region where the Generative AI service is available: Chicago, Frankfurt
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Services, Digital Assistant, Visual Builder, Autonomous database, Object Storage, Integration Cloud, OCIR, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
+* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Services, Digital Assistant, Visual Builder, Autonomous Database, Integration Cloud, Dynamic Groups, Policies, Identity Access Management, Resource Manager
+
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More
 
 * [What Is Generative AI? How Does It Work?](https://www.oracle.com/artificial-intelligence/generative-ai/what-is-generative-ai/)
 * [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.htm)
+* [Overview of Autonomous Database Serverless](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/index.html)
+* [Overview of Select AI](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/sql-generation-ai-autonomous.html)
+* [Overview of Oracle APEX Application Development](https://docs.oracle.com/en/cloud/paas/apex/index.html)
 * [Overview of Oracle Integration](https://docs.oracle.com/en-us/iaas/application-integration/doc/overview.html)
 * [Overview of Digital Assistants and Skills](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/overview-digital-assistants-and-skills.html)
 * [Overview of Visual Builder](https://docs.oracle.com/en-us/iaas/visual-builder/doc/oracle-visual-builder.html)
-* [Oracle Digital Assistant's large language model integration](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/llm-blocks-skills.html)
+
 
 ## Acknowledgements
 
@@ -66,7 +72,7 @@ This lab assumes you have:
 
 * **Contributors**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-    * **Luke Farley**, Staff Cloud Engineer, NACIE
+    * **Luke Farley**, Senior Cloud Engineer, NACIE
    
 * **Last Updated By/Date**
     * **Jadd Jennings**, Principal Cloud Architect, NACIE, March 2025
