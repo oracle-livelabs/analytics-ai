@@ -1,8 +1,6 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
-  "variables": ["../../variables/variables.json",
-    "../../variables/variables-in-another-file.json"],
+  "workshoptitle": "Chatbot Developer with Select AI",
+  "help": "livelabs-help-aiservices_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
@@ -15,34 +13,41 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Provision an Instance",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../provision/provision.md"
+      "title": "Lab 1: Provision Autonomous Database",
+      "filename": "../../provision-autonomous-database/autonomous-database.md"
     },
     {
-      "title": "Lab 2: Setup the Environment",
-      "filename": "../../setup/setup.md"
+      "title": "Lab 2: Deploy Sample Apex App",
+      "filename": "../../deploy-sample-apex-app/apex.md"
     },
     {
-      "title": "Lab 3: Load Data into an Instance",
-      "filename": "../../data-load/data-load.md"
+      "title": "Lab 3: Implement Select AI and REST Services",
+      "filename": "../../implement-rest-select-ai/rest_select_ai.md"
     },
     {
-      "title": "Lab 4: Query Data",
-      "filename": "../../query/query.md"
+      "title": "Lab 4: Provision OCI Integration Cloud Service",
+      "filename": "../../provision-oic-service/provision-oic-service.md"
     },
     {
-        "title": "Lab 5: Tables in LiveLabs",
-        "filename": "../../tables/tables.md"
+      "title": "Lab 5: Setup OCI Digital Assistant (ODA)",
+      "filename": "../../provision-oda-service/oda.md"
     },
     {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
+      "title": "Lab 6: Setup OCI Visual Builder (VB)",
+      "filename": "../../provision-vb-service/vb.md"
+    },
+    {
+      "title": "Lab 7: Demo User Experience",
+      "filename": "../../user/user.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    },
+    {
+      "title": "Other Livelabs you might like?",
+      "filename": "../../other-livelabs/other-livelabs.md"
     }
   ]
 }

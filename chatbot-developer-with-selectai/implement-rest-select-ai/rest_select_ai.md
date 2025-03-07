@@ -139,7 +139,7 @@ This task involves implementing Select AI for the autonomous database created pr
 
 6. Test the handler using the open in new.
 
-![DB Actions Test Handler](images/db_actions_handler_done.png)
+![DB Actions Test Handler](images/db_actions_create_handler_done.png)
 
 
 ## Acknowledgements
