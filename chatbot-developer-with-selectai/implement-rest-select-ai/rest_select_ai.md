@@ -115,7 +115,7 @@ This task involves implementing Select AI for the autonomous database created pr
      ![Test Select AI](images/db_actions_test_select_ai.png)
 
 
-## Task 4: Create Rest for Select AI
+## Task 4: Implement REST for Select AI
 
 1. Locate the Autonomous Database created in Lab 1, and click thru the name to view the details.
 
@@ -137,7 +137,7 @@ This task involves implementing Select AI for the autonomous database created pr
 
 ![DB Actions Create Handler](images/db_actions_create_handler.png)
 
-6. Test the handler using the open in new.
+6. Test the handler using the open in new and save the endpoint to be used later 
 
 ![DB Actions Test Handler](images/db_actions_create_handler_done.png)
 

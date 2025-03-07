@@ -98,9 +98,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Download the four REST Service Configurations
 
-    a. [agent-RESTService-GenAIAgentCreateSession.yaml](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-GenAIAgentCreateSession.yaml)
+    a. [RESTService-DBSelectAIService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-DBSelectAIService.yaml)
 
-    b. [agent-RESTService-GenAIAgentChat.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-GenAIAgentChat.yaml)
+    b.  [RESTService-DBAddRegionDataService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-DBAddRegionDataService.yaml)
 
     c. [RESTService-CohereToolChatService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatService.yaml)
 
@@ -120,29 +120,30 @@ This task involves creating REST service which will be used by ODA to connect to
 
 5. Click on More -> Import REST Services
 
-    ![ODA import rest services](images/oda_import_rest_services2.png)
+    ![ODA import rest services](images/oda_import_rest_services2b.png)
 
     **Note** Import all Rest Services:
-    - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml")
-    - GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml")
+    - The DBSelectAIService Rest API service (using "RESTService-DBSelectAIService.yaml")
+    - DBAddRegionDataService Rest API service (using "RESTService-DBAddRegionDataService.yaml")
     - CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml")
     - OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml")
 
-7. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
+7. In the DBSelectAIService Rest API service, update the Endpoint field by replacing "<REST ENDPOINT HERE>" with the ORDS endpoint (Lab 3 Task 4) url up to the "/:prompt". Do not include the "/:prompt".
+    ![ODA create session api](images/.png)
 
-    ![ODA create session api](images/oda_create_session_api1.png)
+8. Test the DBSelectAIService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 
 
-8. In the Value field, remove the existing value 1, and put the value of the GenAI Agent (based on Object Storage) Endpoint Id (from Lab 1 Task 4 Step 4), and then click the Tick icon
+    ![ODA create session api](images/.png)
 
-    ![ODA create session api](images/oda_create_session_api2.png)
+9. In the DBAddRegionDataService Rest API service, update the Endpoint field by replacing "<APEX REST ENDPOINT HERE>>" with the APEX endpoint (Lab 3 Task 1) url
+.
+    ![ODA create session api](images/.png)
 
-9. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Resoponse Body. Ensure that the "id" field is not blank / null.
+10. Test the DBAddRegionDataService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 
 
-    ![ODA create session api](images/oda_create_session_api3.png)
+    ![ODA create session api](images/.png)
 
-10. Repeat Step 6 and Step 7 and Step 8 to successfully test the GenAIAgentCreateSession Rest API service with the value of the GenAI Agent (based on ADB 23ai) Endpoint Id (from Lab 2 Task 8 Step 4)
-
-11. For the OIC\_Weather\_Service, update the Endpoint (from Lab 3 Task 4 Step 28), UserName/Password (from Lab 3 Task 3 Step 6), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
+11. For the OIC\_Weather\_Service, update the Endpoint (from Lab 3 Task 4 Step 28), UserName/Password (from Lab 4 Task 3 Step 6), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
 
     Endpoint URL should have the format "https://****/getTemperature1?city"
 
@@ -156,7 +157,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required Digital Assistant
 
-    [MultiStepAgentOrchestrationDA.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/KjBKc36lERmhtvcp01tckJ0s7EcMGYckWVWkihq3SDrKJSiEQ9p7xsmEWRKzM5g_/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/MultiStepAgentOrchestrationDA.zip)
+    [DBMultiStepAgentAPIOrchestrationDA(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FDBMultiStepAgentAPIOrchestrationDA(2.0).zip)
 
 2. Import the downloaded Digital Assistant.
 
@@ -169,53 +170,34 @@ This task involves creating REST service which will be used by ODA to connect to
 3. Click on the Menu -> Development -> Skills.
 
     You'll see 4 new ODA Skills -
-    - MultiStepAgentAPIOrchestrationTool,
-    - MultiStepAgentAPIOrchestrationEPM23aiGenAIAgent
-    - MultiStepAgentAPIOrchestrationWineCheeseOSGenAIAgent
+    - DBMultiStepAgentAPIOrchestrationTool,
+    - MultiStepAgentAPIOrchestrationDBSelectAIAPI
+    - MultiStepAgentAPIOrchestrationDBAddRegionAPI
     - MultiStepAgentAPIOrchestrationOICWeatherAPI
 
     ![skills](images/skills.png)
 
-4. Open the MultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters.
-
-    Please provide your own values for:
-    - CompartmentOCID
-    - EPMGenAIAgentEndpointIdInput (from Lab 2 Task 8 Step 4)
-    - WineCheeseGenAIAgentEndpointIdInput (from Lab 1 Task 4 Step 4)
-
-    ![ODA Skill change](images/oda_skillchange.png)
-
-5. Ensure the Chatbot Training is completed for the Digital Assistant and Skills
-
-   Then click on the “Preview” button at top-right corner.
-
-    ![ODA Train](images/user_flow2.png)
-
-6. To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
+4.  To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
 
     You can use the following sample prompts to test this Digital Assistant:
 
      ```text
        <copy>
-       1. How do I administer EPM?
 
-       2. What are the 5 S's of wine tasting?
+       1. Where is the store Oracle Eats located?
 
-       3. How is the weather in New York?
+       2. When did the store All U Can Eat open?
 
-       4. In EPM, How do I export groups to CSV?
+       3. What is address of the store Moscone Store?
 
-       5. Where is the World Cheese capital and how is the weather there?
+       4. Where is the store Big Grab located, and how is the weather there?
 
-       6. The wine LA PLUMA ROSE OF SAUV BLANC is from where, and how is the weather there?
+       5. What are the available regions?
 
-       7. What is the maximum amount of groups a user can be a part of in EPM?
+       6. Add Denver region?
 
-       8. Does EPM search option support wildcards (*)?
+       7. What are the available regions?
 
-       9. Which role do I need to create an EPM group?
-
-       10. What are the steps of the cheese making process?
        </copy>
     ```
 
