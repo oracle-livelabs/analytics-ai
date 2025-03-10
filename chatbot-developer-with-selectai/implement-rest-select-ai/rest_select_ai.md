@@ -76,10 +76,10 @@ This lab assumes you have:
                     THEN
                         :errmsg := 'Error';
                         :status_code := 400;
-                when others then
+                WHEN others then
                     :status_code := 400; 
                     :errmsg := sqlerrm;
-                end;
+                END;
        </copy>
     ```
 
@@ -97,13 +97,13 @@ This lab assumes you have:
 
 ## Task 2: Create API Key in OCI
 
-This task involves implementing Select AI for the autonomous database created previously. It also requires an API Key
+This task involves creating and API Key in OCI, the key will be used to implement Select AI.
 
-1. Login the OCI Console and click the person icon on the top right
+1. Login the OCI Console and click the person icon on the top right.
 
     ![open oci profile](images/oci_profile.png)
 
-2. Click API keys at the bottom left, then click the add API Key button
+2. Click API keys at the bottom left, then click the add API Key button.
 
     ![API Key](images/oci_add_api_key.png)
 
@@ -111,11 +111,13 @@ This task involves implementing Select AI for the autonomous database created pr
 
     ![API Key](images/oci_add_api_key_generate.png)
 
-4. Make note of the API configurations, it will be needed later
+4. Make note of the API configurations, it will be needed later.
 
     ![API Key](images/add_api_key_config_view.png)
 
 ## Task 3: Enable SELECT AI on the APEX workspace objects
+
+This task involves implementing Select AI for the autonomous database created in previous lab, you will also need the API Key created in the previous task.
 
 1. Locate the Autonomous Database created in Lab 1, and click thru the name to view the details.
 
@@ -126,19 +128,68 @@ This task involves implementing Select AI for the autonomous database created pr
     ![Goto SQL Developer ](images/open_sql_developer.png)
     
 3.  Type the following sql code in the worksheet area and update with API Key configurations in four places. Update for user_ocid, tenancy_ocid, private_key, and fingerprint. Each value can be found in task 1, step 3/4. Click the run script button and check the script output to make sure it completed successfully.
+        
+    Paste the PL/SQL:
+
+    ```text
+        <copy>
+            BEGIN                                                                         
+            DBMS_CLOUD.CREATE_CREDENTIAL(                                               
+                credential_name => 'GENAI_CRED',                                          
+                user_ocid       => '<UPDATE HERE>',
+                tenancy_ocid    => '<UPDATE HERE>',
+                private_key     => '<UPDATE HERE>',
+                fingerprint     => '<UPDATE HERE>'
+        </copy>
+    ```
 
     ![Create Credential ](images/db_actions_sql_create_credential.png)
 
 4. Clear the worksheet are and type the following sql code in the worksheet. Update for the name of the workspace you created in Lab 2 Step 3. Click the run script button and check the script output to make sure it completed successfully.
 
+    Paste the PL/SQL:
+
+    ```text
+        <copy>
+            BEGIN                                                                        
+                DBMS_CLOUD_AI.CREATE_PROFILE(                                              
+                profile_name =>'GENAI',                                                             
+                attributes   =>'{"provider": "oci",                                                                   
+                                "credential_name": "GENAI_CRED",
+                                "object_list": [
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_EVENT_LOG"},    
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_HIST_GEN_LOG"},    
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_STORE_ITEMS"},                
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_PREFERENCES"},                
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_REGIONS"},
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_SALES_HISTORY"},                  
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_STORES"},               
+                                        {"owner": "WKSP_<PUT WORKSPACE NAME HERE>", "name": "OOW_DEMO_STORE_PRODUCTS"}]
+                }');                                                                  
+            END;
+        </copy>
+    ```
      ![Create Profile](images/db_actions_sql_create_profile_oci.png)
 
-5. Test that Select AI is working with the following query. Clear the worksheet area, type in the query and click run script. The query result should give you an understandable result with no errors.
+5. Test that Select AI is working with the following query. Clear the worksheet area, type in the query below and click run script. The query result should give you an understandable result with no errors.
 
-     ![Test Select AI](images/db_actions_test_select_ai.png)
+Paste the PL/SQL:
+
+    ```text
+        <copy>
+            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => 'how many customers',
+                                    profile_name => 'GENAI',
+                                    action       => 'narrate')
+            FROM dual
+        </copy>
+    ```
+
+![Test Select AI](images/db_actions_test_select_ai.png)
 
 
 ## Task 4: Implement REST for Select AI
+
+This task involves creating REST services for Select AI, it will allow Select AI to be called via REST Endpoint. 
 
 1. Locate the Autonomous Database created in Lab 1, and click thru the name to view the details.
 
@@ -148,7 +199,7 @@ This task involves implementing Select AI for the autonomous database created pr
     
     ![Goto REST  ](images/open_sql_developer.png)
 
-3. Click thru the Modules box then click the Create Module button, use the values in screenshot and select "Not protected" in the Protected by Privilege drop down. Click create and move to next step
+3. Click thru the Modules box then click the Create Module button, use the values in screenshot and select "Not protected" in the Protected by Privilege drop down. Click create and move to next step.
 
 ![DB Actions Create Module](images/db_actions_create_module.png)
 
@@ -156,11 +207,22 @@ This task involves implementing Select AI for the autonomous database created pr
 
 ![DB Actions Create Template](images/db_actions_create_template.png)
 
-5. The previous step should bring you to the handlers page, click the Create Handler button. Match the Method, Source Type and Source values with the example in the screenshot. Click Save
+5. The previous step should bring you to the handlers page, click the Create Handler button. Match the Method, Source Type and Source values with the example in the screenshot. Click Save.
+    
+    Paste the PL/SQL:
+
+    ```text
+        <copy>
+            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => 'how many customers',
+                                    profile_name => 'GENAI',
+                                    action       => 'narrate')
+            FROM dual
+        </copy>
+    ```
 
 ![DB Actions Create Handler](images/db_actions_create_handler.png)
 
-6. Test the handler using the open in new and save the endpoint to be used later 
+6. Test the handler using the open in new and save the endpoint to be used later.
 
 ![DB Actions Test Handler](images/db_actions_create_handler_done.png)
 
