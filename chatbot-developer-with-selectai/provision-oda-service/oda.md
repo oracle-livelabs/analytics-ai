@@ -102,7 +102,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     b.  [RESTService-DBAddRegionDataService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-DBAddRegionDataService.yaml)
 
-    c. [RESTService-CohereToolChatService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatService.yaml)
+    c. [RESTService-CohereToolChatServiceV2.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-CohereToolChatServiceV2.yaml)
 
     d. [RESTService-OIC\_Weather\_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
 
@@ -125,23 +125,23 @@ This task involves creating REST service which will be used by ODA to connect to
     **Note** Import all Rest Services:
     - The DBSelectAIService Rest API service (using "RESTService-DBSelectAIService.yaml")
     - DBAddRegionDataService Rest API service (using "RESTService-DBAddRegionDataService.yaml")
-    - CohereToolChatService Rest API service (using "RESTService-CohereToolChatService.yaml")
+    - CohereToolChatService Rest API service (using "RESTService-CohereToolChatServiceV2.yaml")
     - OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml")
 
 7. In the DBSelectAIService Rest API service, update the Endpoint field by replacing "<REST ENDPOINT HERE>" with the ORDS endpoint (Lab 3 Task 4) url up to the "/:prompt". Do not include the "/:prompt".
-    ![ODA create session api](images/.png)
+    ![ODA DBSelectAIService api](images/oda_rest_db_select_ai.png)
 
 8. Test the DBSelectAIService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 
 
-    ![ODA create session api](images/.png)
+   ![ODA DBSelectAIService api test](images/oda_rest_db_select_ai_test.png)
 
 9. In the DBAddRegionDataService Rest API service, update the Endpoint field by replacing "<APEX REST ENDPOINT HERE>>" with the APEX endpoint (Lab 3 Task 1) url
 .
-    ![ODA create session api](images/.png)
+    ![ODA DBAddRegionDataService api](images/oda_db_add_region_api.png)
 
 10. Test the DBAddRegionDataService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 
 
-    ![ODA create session api](images/.png)
+    ![ODA DBAddRegionDataService api test](images/oda_db_add_region_test.png)
 
 11. For the OIC\_Weather\_Service, update the Endpoint (from Lab 3 Task 4 Step 28), UserName/Password (from Lab 4 Task 3 Step 6), click on the pencil icon to change the value of the city parameter to London, and then test the service using the Test Request button. You should see Response Status 200.
 
@@ -149,7 +149,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA OIC Service API](images/oic_service_api.png)
 
-12. Test the CohereToolChatService. Make sure in the request payload (in Edit Request Body) you reference your own compartment id.
+12. Test the CohereToolChatService. Make sure in the request payload (in Edit Request Body) you reference your tenancy id from the API Key configuration (Lab 3, Task 2) or your own compartment id.
 
     ![ODA Cohere Service API](images/llm_tools_service.png)
 
@@ -286,11 +286,12 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE
 
 * **Contributors**
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-    * **Luke Farley**, Staff Cloud Engineer, NACIE
+    * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE, February 2025
