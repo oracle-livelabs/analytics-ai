@@ -111,25 +111,19 @@ This lab assumes you have:
 
      ```text
        <copy>
-       1. How do I administer EPM?
+       1. Where is the store Oracle Eats located?
 
-       2. What are the 5 S's of wine tasting?
+       2. When did the store All U Can Eat open?
 
-       3. How is the weather in New York?
+       3. What is address of the store Moscone Store?
 
-       4. How do I export groups to CSV?
+       4. Where is the store Big Grab located, and how is the weather there?
 
-       5. How is the weather at World Cheese Capital?
+       5. What are the available regions?
 
-       6. Is it raining at the place where LA PLUMA ROSE OF SAUV BLANC wine is from?
+       6. Add Denver region?
 
-       7. What is the maximum amount of groups a user can be a part of?
-
-       8. Does search option support wildcards (*)?
-
-       9. Which role do I need to create a group?
-
-       10. What are the steps of the cheese making process?
+       7. What are the available regions?
        </copy>
     ```
 

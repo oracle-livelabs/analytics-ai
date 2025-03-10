@@ -2,23 +2,24 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to implement SELECT AI on the autonomous database created in a previous lab and implement REST services for SELECT AI and APEX
+This lab will take you through the steps needed to implement SELECT AI on the autonomous database created in the previous lab and implement REST services for SELECT AI and APEX
 
-Estimated Time: 30 minutes
+Estimated Time: 120 minutes
 
 ### About Oracle Database Actions Services
+Oracle's Select AI is an innovative feature within the Autonomous Database system. It allows users to interact with their data using natural language queries. By employing Large Language Models (LLMs) and generative AI techniques, Select AI translates user-inputted text into Oracle SQL. The process involves interpreting the natural language prompt, enhancing it with relevant database metadata, and subsequently generating and executing a SQL query, if desired.
 
 ### About Oracle REST Data Services
-
-### About Oracle RESTful Services in Oracle APEX
+Oracle REST Data Services (ORDS) is a service that enables the development of REST interfaces for relational data in a database. ORDS can map HTTP(S) verbs (like GET, POST...) to database transactions and return results as JSON data.
 
 ### Objectives
 
 In this lab, you will:
 
-* Implement SELECT AI
+* Create an OCI API Key
+* Implement SELECT AI  
 * Implement REST services that allows SELECT AI to be called from outside sources 
-* Implement REST services that allow for updates on the data used in the APEX app
+* Implement REST services that allow for updates on the APEX app
 
 
 ### Prerequisites
@@ -40,31 +41,53 @@ This lab assumes you have:
 
     ![Object Browser View](images/object_browser_view.png)
 
-3. Note the tables of the app, they will be used later to enable Select AI
+3. Note the tables of the app, they will be used later to enable Select AI.
 
     ![Object Browser Tables](images/object_browser_expand_tables.png)
 
-4. Navigate to RESTFull services via the SQL Workshop drop down menu.
+4. Navigate to RESTFul services via the SQL Workshop drop down menu.
 
-    ![RESTFull Services](images/navigate_to_rest_from_object_browser.png)
+    ![RESTFul Services](images/navigate_to_rest_from_object_browser.png)
 
-5. Look for the button named "Register Schema with ORDS", disable Install Sample Service and leave others as default. Click the "Save Schema Attributes" button
+5. Look for the button named "Register Schema with ORDS" and click it, disable Install Sample Service and leave others as default. Click the "Save Schema Attributes" button.
 
     ![Register Schema ](images/register_schema_ords.png)
 
-6. Click the Module item under Restful Data Services, then Click the "Create Module" button. Use the values in screenshot and click the "Create Module" button.
+6. Click the Module item under Restful Data Services on the left side, then Click the "Create Module" button. Use the values in screenshot (or similar) and click the "Create Module" button.
 
     ![Create Module](images/create_rest_module_apex.png)
 
-7. From the same screen, click the "Create Template" button. Use the values in the screenshot and click "Create Template".
+7. From the same screen, click the "Create Template" button. Use the values in the screenshot (or similar)  and click "Create Template".
 
     ![Create Template](images/create_rest_template_apex.png)
 
-8. From the same screen, click the "Create Handler" button. Make sure Method is POST, type/paste in the same source thats shown in the screenshot and click "Create Handler".
+8. From the same screen, click the "Create Handler" button. Make sure Method is POST, type/paste the source from below and click "Create Handler".
+
+    Paste the PL/SQL:
+
+    ```text
+       <copy>
+            BEGIN
+                    INSERT INTO OOW_DEMO_REGIONS (REGION_NAME)
+                    values (:region_name);
+                    :status_code := 201;
+                exception
+                WHEN VALUE_ERROR
+                    THEN
+                        :errmsg := 'Error';
+                        :status_code := 400;
+                when others then
+                    :status_code := 400; 
+                    :errmsg := sqlerrm;
+                end;
+       </copy>
+    ```
 
     ![Create Handler](images/create_rest_post_region_apex.png)
 
+
 9. Look towards the bottom of the same page for the Parameters section, click "Add Row" and use the values in the screenshot. Click "Apply Changes" to update the handler.
+
 
     ![Create Parameter](images/create_rest_post_region_param_apex.png)
 

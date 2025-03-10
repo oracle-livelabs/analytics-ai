@@ -6,14 +6,19 @@ This lab will take you through the steps needed to access APEX Administrative se
 
 Estimated Time: 30 minutes
 
-### About Oracle APEX REST Services
+### About Oracle APEX 
+
+Oracle APEX is a powerful low-code platform that empowers developers to create scalable and secure web and mobile applications with ease. Its robust features allow for deployment in various environments, whether in the cloud or on-premises.
+
+With APEX, the development process is streamlined, enabling developers to rapidly build and launch innovative apps that address real-world challenges and deliver tangible results. The platform simplifies the development process, eliminating the need for expertise in numerous technologies. Developers can concentrate on problem-solving, while APEX handles the technical intricacies behind the scenes. 
 
 ### Objectives
 
 In this lab, you will:
 
+* Learn how to access APEX Administrative Services
+* Learn how to create an APEX Workspace 
 * Deploy an APEX sample app that is accessible from the public internet 
-* Implement REST services that allow for updates on the data used in the app
 
 
 ### Prerequisites
@@ -24,7 +29,7 @@ This lab assumes you have:
 * have the Administrator credentials for the Autonomous Database in Lab 1
 
 
-## Task 1: Open APEX Administration Services
+## Task 1: Access APEX Administration Services
 
 This task involves logging into APEX Administration Services
 
