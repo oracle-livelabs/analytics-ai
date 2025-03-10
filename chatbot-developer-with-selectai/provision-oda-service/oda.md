@@ -294,4 +294,4 @@ You may now proceed to the next lab.
     * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Jadd Jennings**, Principal Cloud Architect, NACIE, February 2025
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE, March 2025
