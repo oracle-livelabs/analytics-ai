@@ -14,9 +14,9 @@ This solution implements OCI Generative AI Multi-step Tool, so it also supports 
 
 This multi-tool approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View 1](images/atom_tool_bot.jpg)
+![User View 1](images/atom_tool_bot.png)
 
-![User View 2](images/atom_apex_app.jpg)
+![User View 2](images/atom_apex_app.png)
 
 Estimated Workshop Time: 5 hours
 
