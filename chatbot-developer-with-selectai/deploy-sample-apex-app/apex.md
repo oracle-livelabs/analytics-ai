@@ -62,7 +62,7 @@ This task involves creating Autonomous Database 23ai.
 
 This task involves logging into APEX Administration Services
 
-1. Locate the Autonomous Database created in Lab 1, and click thru the name to view the details.
+1. Locate the Autonomous Database created in task 1, and click thru the name to view the details.
 
     ![View ADB Details](images/adb_details.png)
 
@@ -74,7 +74,7 @@ This task involves logging into APEX Administration Services
 
     ![Launch APEX](images/launch_apex.png)
 
-4. Open APEX Administration Services, use the autonomous database admin password created in Lab 1.
+4. Open APEX Administration Services, use the autonomous database admin password created in task 1.
 
     ![Create ADB Password](images/apex_admin_services.png)
 
@@ -96,7 +96,7 @@ This task involves Creating an APEX workspace from APEX Administration Services
 
      ![Create APEX Workspace Name and User](images/apex_create_workspace_name_user.png)
 
-4. Finish Creating new workspace, use the link to log into your new workspace or logout and use the Launch APEX button from task 1, step 3.
+4. Finish Creating new workspace, use the link to log into your new workspace or logout and use the Launch APEX button from task 2, step 3.
 
     ![Finish creating APEX Workspace](images/apex_create_workspace_done.png)
 
@@ -104,7 +104,7 @@ This task involves Creating an APEX workspace from APEX Administration Services
 
 In this task we deploy a sample Apex app into the workspace
 
-1. Login into the workspace using the name and credentials you created in task 2.
+1. Login into the workspace using the name and credentials you created in task 3.
 
     ![Login APEX Workspace](images/apex_login_workspace.png)
 
