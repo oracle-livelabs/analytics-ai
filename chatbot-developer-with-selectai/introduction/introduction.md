@@ -2,27 +2,34 @@
 
 ## About this Workshop
 
-This workshop goes thru the step to create a multi-skilled chatbot you can use to interact with the backend of a live app (APEX Sample App) and without requiring the use of Structured Query Language (SQL). The chatbot allows you update the application backend with natural language, you can also combine the results with other chatbot skills like getting a weather report for location-based data. When its all put together, you have an intelligent and robust system.
+This workshop helps to configure and deploy a cutting-edge chatbot solution utilizing a multi-api architecture to revolutionize conversational AI. Each API/Tool brings unique capabilities, combining to create an intelligent and versatile system.
 
-This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
+Using this workshop, the developers can create multiple Database APIs (connecting through Oracle REST Data Services - ORDS) and third-party APIs (connecting through OCI Integration Cloud Service - OIC), and expose them through an OCI Digital Assistant (ODA) Chatbot. 
+
+The Database APIs can be data retrieval NL2SQL APIs (using Autonomous Database Select AI) or data addition APIs. The Autonomous Database can be accessed by an APEX App.
+
+When the user asks question in natural language, then the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to appropriate API, and thereby fetches the correct response to user’s question.
+
+This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool. Thus this solution can even support highly complex questions, that requires leveraging multiple different Tools/APIs together.
+
+This multi-tool approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
 ![User View](images/Atom_Tool_Bot.jpg)
 
-![User View](images/atom_apex_add_region.png)
+![User View](images/Atom_APEX_App.jpg)
 
-Estimated Workshop Time: 6 hours
+Estimated Workshop Time: 5 hours
 
 ### Objectives
 
-Objective of this workshop is to use OCI to create a chatbot solution that can update and query the data from a live Apex App using natural language.
+Objective of this workshop is to set-up the required OCI services to create a Multi Tool/API Chatbot solution for Database NL2SQL operations.
 
 ![Architecture Diagram](images/chatbot_developer_arch.png)
 
-* Oracle Autonomous database – world's first autonomous database that is self-driving, self-repairing, self-securing.
-* Oracle APEX - low-code development environment that enables users to quickly build and deploy a wide range of business applications.
+* Oracle Autonomous database – World's first autonomous database that is self-driving, self-repairing, self-securing.
+* Oracle APEX - Low-code development environment that enables users to quickly build and deploy a wide range of business applications.
 * OCI Integration Cloud (OIC) - Users can use Oracle Integration Cloud to pull a city's weather information leveraging Weather API.
-* OCI Digital Assistant (ODA) – Users can create ODA Digital Assistance and import the provided ODA Skills for Generative AI Agents and OIC APIs.
-Users can then connect from ODA chatbot and get responses of their natural language questions.
+* OCI Digital Assistant (ODA) – Users can create ODA Digital Assistance and import the provided ODA Skills for DB APIs and OIC APIs. Users can then connect from ODA chatbot and get responses of their natural language questions.
 * OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
 Users can then embed the ODA chatbot in ATOM VB application, and interact with the ODA Chatbot.
 
