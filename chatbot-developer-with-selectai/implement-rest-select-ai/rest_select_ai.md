@@ -4,10 +4,10 @@
 
 This lab will take you through the steps needed to implement SELECT AI on the autonomous database created in the previous lab and implement REST services for SELECT AI and APEX
 
-Estimated Time: 120 minutes
+Estimated Time: 60 minutes
 
-### About Oracle Database Actions Services
-Oracle's Select AI is an innovative feature within the Autonomous Database system. It allows users to interact with their data using natural language queries. By employing Large Language Models (LLMs) and generative AI techniques, Select AI translates user-inputted text into Oracle SQL. The process involves interpreting the natural language prompt, enhancing it with relevant database metadata, and subsequently generating and executing a SQL query, if desired.
+### About Oracle Select AI
+Oracle's Select AI is an innovative feature within the Autonomous Database system. It allows users to interact with their data using natural language queries. By employing Large Language Models (LLMs) and generative AI techniques, Select AI translates user-inputted text into Oracle SQL. The process involves interpreting the natural language prompt, enhancing it with relevant database metadata, and subsequently generating and executing a SQL query.
 
 ### About Oracle REST Data Services
 Oracle REST Data Services (ORDS) is a service that enables the development of REST interfaces for relational data in a database. ORDS can map HTTP(S) verbs (like GET, POST...) to database transactions and return results as JSON data.
@@ -16,10 +16,11 @@ Oracle REST Data Services (ORDS) is a service that enables the development of RE
 
 In this lab, you will:
 
-* Create an OCI API Key
+
 * Implement SELECT AI  
 * Implement REST services that allows SELECT AI to be called from outside sources 
 * Implement REST services that allow for updates on the APEX app
+* Create an OCI API Key
 
 
 ### Prerequisites
