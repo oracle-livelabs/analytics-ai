@@ -6,7 +6,8 @@ This workshop goes thru the step to create a multi-skilled chatbot you can use t
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/atom_apex_how_many_regions.png)
+![User View](images/Atom_Tool_Bot.jpg)
+
 ![User View](images/atom_apex_add_region.png)
 
 Estimated Workshop Time: 6 hours
