@@ -228,6 +228,8 @@ This task involves creating REST services for Select AI, it will allow Select AI
 ![DB Actions Test Handler](images/db_actions_create_handler_done.png)
 
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 * **Author**

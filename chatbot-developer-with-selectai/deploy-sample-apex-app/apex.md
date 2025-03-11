@@ -128,6 +128,8 @@ In this task we deploy a sample Apex app into the workspace
 
     ![Login sample App](images/apex_workspace_sample_login.png)
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
 * **Author**
