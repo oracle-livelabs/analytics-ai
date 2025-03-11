@@ -81,7 +81,7 @@ This task involves creating REST service which will be used by ODA to connect to
     - CohereToolChatService Rest API service (using "RESTService-CohereToolChatServiceV2.yaml")
     - OIC\_Weather\_Service (using "RESTService-OIC\_Weather\_Service.yaml")
 
-7. In the DBSelectAIService Rest API service, update the Endpoint field by replacing " < REST ENDPOINT HERE > " with the ORDS endpoint (Lab 2 Task 4) url up to the "/:prompt". Do not include the "/:prompt".
+7. In the DBSelectAIService Rest API service, update the Endpoint field by replacing '< REST ENDPOINT HERE >' with the ORDS endpoint (Lab 2 Task 4) url up to the "/:prompt". Do not include the "/:prompt".
     ![ODA DBSelectAIService api](images/oda_rest_db_select_ai.png)
 
 8. Test the DBSelectAIService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 

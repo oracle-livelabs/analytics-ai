@@ -1,10 +1,14 @@
-# Deploy APEX Sample Application 
+# Create ADB and Deploy APEX Sample Application 
 
 ## Introduction
 
-This lab will take you through the steps needed to access APEX Administrative services, create an APEX workspace and deploy a sample APEX app.
+This lab will take you through the steps needed to provision an Oracle Autonomous Database for APEX workload types. It also covers how to access APEX Administrative services, create an APEX workspace and deploy a sample APEX app.
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes
+
+### About Oracle ADB for APEX workloads
+
+Oracle Autonomous Database is an autonomous database that can drive, secure and repair itself. It offers elastic scalability, rapid query performance and eliminates the need for manual database administration. It can also be provisioned in manner where performance and features are positioned for APEX workloads.
 
 ### About Oracle APEX 
 
@@ -12,24 +16,49 @@ Oracle APEX is a powerful low-code platform that empowers developers to create s
 
 With APEX, the development process is streamlined, enabling developers to rapidly build and launch innovative apps that address real-world challenges and deliver tangible results. The platform simplifies the development process, eliminating the need for expertise in numerous technologies. Developers can concentrate on problem-solving, while APEX handles the technical intricacies behind the scenes. 
 
+
 ### Objectives
 
 In this lab, you will:
 
+* Provision an Oracle Autonomous Database for APEX workloads
 * Learn how to access APEX Administrative Services
 * Learn how to create an APEX Workspace 
 * Deploy an APEX sample app that is accessible from the public internet 
-
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* Successfully Provisioned the Autonomous Database from Lab 1
-* have the Administrator credentials for the Autonomous Database in Lab 1
+* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
 
 
-## Task 1: Access APEX Administration Services
+## Task 1: Create Autonomous Database
+
+This task involves creating Autonomous Database 23ai.
+
+1. Locate Autonomous Databases under Oracle Databases. Click on Create Autonomous Database.
+
+    ![Create ADB](images/create_adb.png)
+
+2. Provide information for Compartment, Display name, Database name. Also, choose workload type as APEX.
+    
+    ![Create ADB Name](images/create_adb_name_workload.png)
+    
+3. Choose deployment type as Serverless, database version as 23ai and disable Compute auto scaling.
+
+    ![Create ADB Deployment](images/create_adb_deployment_type.png)
+
+4. Make sure Network Access is Secure access from everywhere, provide password, valid email ID and click on Create Autonomous Database.
+
+    ![Create ADB Password](images/create_adb_password_network.png)
+
+5. After deployment is complete, check to make sure your autonomous database is available on the autonomous databases page with the specified compartment selected.
+
+    ![Create ADB Done](images/create_adb_complete.png)
+
+ 
+## Task 2: Access APEX Administration Services
 
 This task involves logging into APEX Administration Services
 
@@ -50,7 +79,7 @@ This task involves logging into APEX Administration Services
     ![Create ADB Password](images/apex_admin_services.png)
 
 
-## Task 2: Create APEX workspace 
+## Task 3: Create APEX workspace 
 
 
 This task involves Creating an APEX workspace from APEX Administration Services
@@ -71,7 +100,7 @@ This task involves Creating an APEX workspace from APEX Administration Services
 
     ![Finish creating APEX Workspace](images/apex_create_workspace_done.png)
 
-## Task 3: Deploy Sample App
+## Task 4: Deploy Sample App
 
 In this task we deploy a sample Apex app into the workspace
 
