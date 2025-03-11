@@ -63,7 +63,7 @@ This lab assumes you have:
 
        5. What are the available regions?
 
-       6. Add Denver region?
+       6. Add Las Vegas region?
 
        7. What are the available regions?
        </copy>
