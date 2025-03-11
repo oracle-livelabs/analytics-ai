@@ -35,13 +35,19 @@ This lab assumes you have:
     * If you have issues logging in or do not know what credentials to use, reach out to your application administrator
     * If this is your first time logging into the tenancy, you may need to setup a MFA device
 
-## Task 2: Chat with the Agent
+## Task 2: Collaborate with Chatbot
 
-1. Agent Chat loop:
-    This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about topics or documentation found in the Agent's knowledge base or APIs configured.
+1.  Chatbot loop:
+    This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about the apex sample app you deployed in lab 1 or APIs configured.
     It will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
 
-    ![agent example](images/atom_demo_ss1.jpg)
+    ![chatbot example1](images/atom_demo_ss1.png)
+
+    ![chatbot example2](images/atom_demo_ss2.png)
+    
+    ![chatbot example1](images/atom_demo_ss3.png)
+
+    ![chatbot example2](images/atom_demo_ss4.png)
 
 2. Some sample prompts for you to try:
 
@@ -66,7 +72,7 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE March 2025
