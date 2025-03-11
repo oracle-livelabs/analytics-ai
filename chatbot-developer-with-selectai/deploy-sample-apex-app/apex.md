@@ -37,7 +37,7 @@ This task involves logging into APEX Administration Services
 
     ![View ADB Details](images/adb_details.png)
 
-2. Scroll down and find the APEX instance name, click thru the instance name to view APEX. Instance details
+2. Scroll down and find the APEX instance name, click thru the instance name to view APEX Instance details.
     
     ![Goto APEX Instance](images/apex_instance_name.png)
     
@@ -72,6 +72,8 @@ This task involves Creating an APEX workspace from APEX Administration Services
     ![Finish creating APEX Workspace](images/apex_create_workspace_done.png)
 
 ## Task 3: Deploy Sample App
+
+In this task we deploy a sample Apex app into the workspace
 
 1. Login into the workspace using the name and credentials you created in task 2.
 
