@@ -39,7 +39,7 @@ This lab assumes you have:
 
 1.  Chatbot loop:
     This chatbot provides a simple continuous loop for you to ask questions against. These questions should be about the apex sample app you deployed in lab 1 or APIs configured.
-    It will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question
+    It will not be able to answer general world questions like a foundational model typically does. Instead, the agent will respond saying it cannot answer your question.
 
     ![chatbot example1](images/atom_demo_ss1.png)
 

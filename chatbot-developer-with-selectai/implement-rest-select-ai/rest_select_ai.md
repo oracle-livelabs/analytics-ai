@@ -1,8 +1,8 @@
-# Implement SELECT AI, REST for SELECT AI and REST for APEX
+# Implement Select AI, REST for Select AI and REST for APEX
 
 ## Introduction
 
-This lab will take you through the steps needed to implement SELECT AI on the autonomous database created in the previous lab and implement REST services for SELECT AI and APEX
+This lab will take you through the steps needed to implement Select AI on the autonomous database created in the previous lab and implement REST services for Select AI and APEX
 
 Estimated Time: 60 minutes
 
@@ -17,8 +17,8 @@ Oracle REST Data Services (ORDS) is a service that enables the development of RE
 In this lab, you will:
 
 
-* Implement SELECT AI  
-* Implement REST services that allows SELECT AI to be called from outside sources 
+* Implement Select AI  
+* Implement REST services that allows Select AI to be called from outside sources 
 * Implement REST services that allow for updates on the APEX app
 * Create an OCI API Key
 
@@ -116,7 +116,7 @@ This task involves creating and API Key in OCI, the key will be used to implemen
 
     ![API Key](images/add_api_key_config_view.png)
 
-## Task 3: Enable SELECT AI on the APEX workspace objects
+## Task 3: Enable Select AI on the APEX workspace objects
 
 This task involves implementing Select AI for the autonomous database created in previous lab, you will also need the API Key created in the previous task.
 

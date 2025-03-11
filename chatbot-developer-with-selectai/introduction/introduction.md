@@ -14,9 +14,9 @@ This solution implements OCI Generative AI Multi-step Tool, so it also supports 
 
 This multi-tool approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
-![User View](images/atom_tool_bot.jpg)
+![User View 1](images/atom_tool_bot.jpg)
 
-![User View](images/atom_apex_app.jpg)
+![User View 2](images/atom_apex_app.jpg)
 
 Estimated Workshop Time: 5 hours
 
@@ -36,7 +36,7 @@ Users can then embed the ODA chatbot in ATOM VB application, and interact with t
 In this workshop, you will learn how to:
 
 
-* Provision Autonomous Database and enable SELECT AI.
+* Provision Autonomous Database and enable Select AI.
 * Create a sample APEX app and add REST Services.
 * Setup & configure Oracle Integration Cloud to integrate with Weather API.
 * Setup & configure Oracle Digital Assistant (ODA) as an OCI Generative AI powered chatbot.
