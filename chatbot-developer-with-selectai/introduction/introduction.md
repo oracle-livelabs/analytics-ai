@@ -2,30 +2,28 @@
 
 ## About this Workshop
 
-This workshop helps you interact with the backend of a live app (APEX Sample App) using a multi skilled chatbot  and without requiring any knowledge of Structured Query Language (SQL). The chatbot allows you update the application backend with natural language, you can even combine the results with the other chatbot skills like getting a weather report via api. When everything is put together, it makes have a very intelligent and robust system.
-
-This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool. Thus this solution can even support highly complex questions, that requires leveraging multiple different Tools (Agents/APIs) together.
+This workshop goes thru the step to create a multi-skilled chatbot you can use to interact with the backend of a live app (APEX Sample App) and without requiring the use of Structured Query Language (SQL). The chatbot allows you update the application backend with natural language, you can also combine the results with other chatbot skills like getting a weather report for location-based data. When its all put together, you have an intelligent and robust system.
 
 This multi-agent approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
 
 ![User View](images/atom_apex_how_many_regions.png)
 ![User View](images/atom_apex_add_region.png)
 
-Estimated Workshop Time: 5 hours
+Estimated Workshop Time: 6 hours
 
 ### Objectives
 
-Objective of this workshop is to set-up the required OCI services to create a Multi Agent/API Chatbot solution.
+Objective of this workshop is to use OCI to create a chatbot solution that can update and query the data from a live Apex App using natural language.
 
-![Architecture Diagram](images/chatbot_developer_arch.png))
+![Architecture Diagram](images/chatbot_developer_arch.png)
 
-* Oracle Autonomous database – 
-* Oracle APEX 
-* OCI Integration Cloud (OIC) - Users can use Oracle Integration Cloud to pull a city's weather information leveraging Weather API
+* Oracle Autonomous database – world's first autonomous database that is self-driving, self-repairing, self-securing.
+* Oracle APEX - low-code development environment that enables users to quickly build and deploy a wide range of business applications.
+* OCI Integration Cloud (OIC) - Users can use Oracle Integration Cloud to pull a city's weather information leveraging Weather API.
 * OCI Digital Assistant (ODA) – Users can create ODA Digital Assistance and import the provided ODA Skills for Generative AI Agents and OIC APIs.
 Users can then connect from ODA chatbot and get responses of their natural language questions.
 * OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
-Users can then embed the ODA chatbot in ATOM VB application, and interact with the ODA Chatbot
+Users can then embed the ODA chatbot in ATOM VB application, and interact with the ODA Chatbot.
 
 In this workshop, you will learn how to:
 

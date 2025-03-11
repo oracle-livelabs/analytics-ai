@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to provision an Oracle Autonomous Database for APEX workload types. 
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### About Oracle ADB for APEX workloads
 

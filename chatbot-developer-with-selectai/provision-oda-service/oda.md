@@ -135,8 +135,8 @@ This task involves creating REST service which will be used by ODA to connect to
 
    ![ODA DBSelectAIService api test](images/oda_rest_db_select_ai_test.png)
 
-9. In the DBAddRegionDataService Rest API service, update the Endpoint field by replacing "<APEX REST ENDPOINT HERE>>" with the APEX endpoint (Lab 3 Task 1) url
-.
+9. In the DBAddRegionDataService Rest API service, update the Endpoint field by replacing "<APEX REST ENDPOINT HERE>" with the APEX endpoint (Lab 3 Task 1) url.
+
     ![ODA DBAddRegionDataService api](images/oda_db_add_region_api.png)
 
 10. Test the DBAddRegionDataService Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. 

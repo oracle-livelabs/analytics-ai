@@ -37,15 +37,15 @@ This task involves logging into APEX Administration Services
 
     ![View ADB Details](images/adb_details.png)
 
-2. Scroll down and find the APEX instance name, click thru the instance name to view APEX Instance details
+2. Scroll down and find the APEX instance name, click thru the instance name to view APEX. Instance details
     
     ![Goto APEX Instance](images/apex_instance_name.png)
     
-3. From the APEX Instance Details click the Launch APEX button
+3. From the APEX Instance Details click the Launch APEX button.
 
     ![Launch APEX](images/launch_apex.png)
 
-4. Open APEX Administration Services, use the autonmous database admin password created in Lab 1
+4. Open APEX Administration Services, use the autonomous database admin password created in Lab 1.
 
     ![Create ADB Password](images/apex_admin_services.png)
 
