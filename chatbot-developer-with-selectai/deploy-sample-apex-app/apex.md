@@ -83,7 +83,7 @@ In this task we deploy a sample Apex app into the workspace
 
     ![APEX Workspace App Builder button](images/apex_workspace_home.png)
 
-3. Click the install Starter or Sample app button
+3. Click the install Starter or Sample app button.
 
     ![Install sample App](images/apex_workspace_install_sample.png)
 
@@ -95,7 +95,7 @@ In this task we deploy a sample Apex app into the workspace
 
     ![Run sample App](images/apex_workspace_run_sample_brookstrut.png)
 
-6. Login to the sample app using the workspace credentials 
+6. Login to the sample app using the workspace credentials. 
 
     ![Login sample App](images/apex_workspace_sample_login.png)
 
