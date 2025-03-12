@@ -187,7 +187,7 @@ You may now proceed to the next lab.
 * **Author**
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **Luke Farley**, Staff Cloud Engineer, NACIE
+    * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, January 2025
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE, March 2025

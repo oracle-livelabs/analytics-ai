@@ -28,28 +28,28 @@ This lab assumes you have:
 
 ## Task 1: Provision Oracle Digital Assistant
 
-This task will help you to create Oracle Digital Assistant under your chosen compartment.
+This task will help you to create Oracle Digital Assistant under your chosen compartment
 
-1. Locate Digital Assistant under AI Services
+1. Locate Digital Assistant under AI Services.
 
     ![ODA Navigation](images/oda_nav.png)
 
     **Note** You can find Digital Assistant under the AI Services.
 
-2. Provide the information for Compartment, Name , Description (optional) & Shape. Click Create
+2. Provide the information for Compartment, Name , Description (optional) & Shape. Click Create.
 
     ![ODA creation wizard](images/oda_create_wizard.png)
 
 
-3. In few minutes the status of recently created Digital Assistant will change from Provisioning to Active
+3. In few minutes the status of recently created Digital Assistant will change from Provisioning to Active.
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create REST Services for the OCI Generative AI Agent
+## Task 2: Create REST Services for the ODA Skills
 
-This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service.
+This task involves creating REST service which will be used by ODA to connect to the endpoints for Select AI, Generative AI, APEX and OIC services
 
-1. Download the four REST Service Configurations
+1. Download the four REST Service Configurations.
 
     a. [RESTService-DBSelectAIService.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FRESTService-DBSelectAIService.yaml)
 
@@ -59,19 +59,19 @@ This task involves creating REST service which will be used by ODA to connect to
 
     d. [RESTService-OIC\_Weather\_Service.yaml](https://objectstorage.us-chicago-1.oraclecloud.com/p/HIomV4YoAvkW7IqNJA_T7KqSFb6ZxX21ObHS9jBchxkCa8_J0tcEJ-UErkj_Ij9I/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs/genai-multi-agent/RESTService-OIC_Weather_Service.yaml)
 
-2. Locate the ODA instance (created in Task 1)
+2. Locate the ODA instance (created in Task 1).
 
     ![ODA locate](images/oda_locate.png)
 
-3. Select the ODA Instance and click on Service Console
+3. Select the ODA Instance and click on Service Console.
 
     ![ODA service console](images/oda_service_console.png)
 
-4. In the ODA Console, click on hamburger menu. Under Settings, click API Services
+4. In the ODA Console, click on hamburger menu. Under Settings, click API Services.
 
     ![ODA API Services](images/oda_api_services.png)
 
-5. Click on More -> Import REST Services
+5. Click on More -> Import REST Services.
 
     ![ODA import rest services](images/oda_import_rest_services2b.png)
 
@@ -108,7 +108,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 ## Task 3: Import Digital Assistant (Provided)
 
-1. Click on the link to download the required Digital Assistant
+1. Click on the link to download the required Digital Assistant.
 
     [DBMultiStepAgentAPIOrchestrationDA(2.0).zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fgenai-multi-agent%2FDBMultiStepAgentAPIOrchestrationDA(2.0).zip)
 
@@ -130,15 +130,11 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![skills](images/skills.png)
 
-4.  Open the DBMultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters.
-
-    Please provide your own values for CompartmentOCID
+4.  Open the DBMultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. Please provide your own values for CompartmentOCID, you can use the tenancy id from the API Key configuration (Lab 2, Task 2) or your own compartment id.
 
     ![Update Configuration](images/Update_Configuration.jpg)   
 
-5.  Ensure the Chatbot Training is completed for the Digital Assistant and Skills.
-
-    Then click on the “Preview” button at top-right corner.
+5.  Ensure the Chatbot Training is completed for the Digital Assistant and Skills. Then click on the “Preview” button at top-right corner.
 
     ![Train](images/train.jpg)
 
@@ -170,7 +166,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 ## Task 4: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
-1. Click on hamburger menu and select Development > Channels, and click on Add Channel
+1. Click on hamburger menu and select Development > Channels, and click on Add Channel.
 
     ![channel navigation](images/channel_nav2.png)
 

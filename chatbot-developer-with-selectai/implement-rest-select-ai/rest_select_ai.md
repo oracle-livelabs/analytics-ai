@@ -27,7 +27,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Successfully completed Labs 1 and 2
+* Successfully completed Lab 1 
 * have the Administrator credentials for the Autonomous Database in Lab 1
 * OCI Privileges to create API Keys and access generative AI services
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
     ![Object Browser](images/navigate_to_object_browser.png)
 
-2. Expand the Tables tree towards  the top left of page.
+2. Expand the Tables tree towards the top left of page.
 
     ![Object Browser View](images/object_browser_view.png)
 
@@ -52,9 +52,9 @@ This lab assumes you have:
 
 5. Look for the button named "Register Schema with ORDS" and click it, disable Install Sample Service and leave others as default. Click the "Save Schema Attributes" button.
 
-    ![Register Schema ](images/register_schema_ords.png)
+    ![Register Schema](images/register_schema_ords.png)
 
-6. Click the Module item under Restful Data Services on the left side, then Click the "Create Module" button. Use the values in screenshot (or similar) and click the "Create Module" button.
+6. Click the Module item under Restful Data Services on the left side, then Click the "Create Module" button. Use the values in screenshot (or similar) and click the other "Create Module" button.
 
     ![Create Module](images/create_rest_module_apex.png)
 
@@ -94,7 +94,7 @@ This lab assumes you have:
 
 10. Note the Full URL for the Resource Handler, this will be used later in the workshop.
 
-  ![Create Handler](images/create_rest_handler_apex_done.png)
+    ![Create Handler](images/create_rest_handler_apex_done.png)
 
 ## Task 2: Create API Key in OCI
 
@@ -102,19 +102,19 @@ This task involves creating and API Key in OCI, the key will be used to implemen
 
 1. Login the OCI Console and click the person icon on the top right.
 
-    ![open oci profile](images/oci_profile.png)
+    ![Open OCI Profile](images/oci_profile.png)
 
 2. Click API keys at the bottom left, then click the add API Key button.
 
-    ![API Key](images/oci_add_api_key.png)
+    ![Add API Key](images/oci_add_api_key.png)
 
 3. Select the generate API Key Pair and click the add button. Make sure to download the private key.
 
-    ![API Key](images/oci_add_api_key_generate.png)
+    ![Generate API Key](images/oci_add_api_key_generate.png)
 
 4. Make note of the API configurations, it will be needed later.
 
-    ![API Key](images/add_api_key_config_view.png)
+    ![View API Key](images/add_api_key_config_view.png)
 
 ## Task 3: Enable Select AI on the APEX workspace objects
 
@@ -128,7 +128,7 @@ This task involves implementing Select AI for the autonomous database created in
     
     ![Goto SQL Developer ](images/open_sql_developer.png)
     
-3.  Type the following sql code in the worksheet area and update with API Key configurations in four places. Update for user_ocid, tenancy_ocid, private_key, and fingerprint. Each value can be found in task 1, step 3/4. Click the run script button and check the script output to make sure it completed successfully.
+3.  Type the following sql code in the worksheet area and update with API Key configurations in four places. Update for user_ocid, tenancy_ocid, private_key, and fingerprint. Each value can be found in task 1, steps 3/4. Click the run script button and check the script output to make sure it completed successfully.
         
     Paste the PL/SQL:
 
@@ -146,7 +146,7 @@ This task involves implementing Select AI for the autonomous database created in
 
     ![Create Credential ](images/db_actions_sql_create_credential.png)
 
-4. Clear the worksheet are and type the following sql code in the worksheet. Update for the name of the workspace you created in Lab 2 Step 3. Click the run script button and check the script output to make sure it completed successfully.
+4. Clear the worksheet area and type the script below in the worksheet. Update script for the name(use uppercase) of the workspace you created in Lab 2 Step 3. Click the run script button and check the script output to make sure it completed successfully.
 
     Paste the PL/SQL:
 
@@ -172,7 +172,7 @@ This task involves implementing Select AI for the autonomous database created in
     ```
      ![Create Profile](images/db_actions_sql_create_profile_oci.png)
 
-5. Test that Select AI is working with the following query. Clear the worksheet area, type in the query below and click run script. The query result should give you an understandable result with no errors.
+5. Test that Select AI is working with the query below. Clear the worksheet area, type in the query and click run script. The query result should give you an understandable result with no errors.
 
 Paste the PL/SQL:
 
@@ -192,7 +192,7 @@ Paste the PL/SQL:
 
 This task involves creating REST services for Select AI, it will allow Select AI to be called via REST Endpoint. 
 
-1. Locate the Autonomous Database created in Lab 1, and click thru the name to view the details.
+1. Locate the Autonomous Database created in Lab 1 and click thru the name to view the details.
 
     ![View ADB Details](images/adb_details.png)
 
@@ -202,11 +202,11 @@ This task involves creating REST services for Select AI, it will allow Select AI
 
 3. Click thru the Modules box then click the Create Module button, use the values in screenshot and select "Not protected" in the Protected by Privilege drop down. Click create and move to next step.
 
-![DB Actions Create Module](images/db_actions_create_module.png)
+    ![DB Actions Create Module](images/db_actions_create_module.png)
 
 4. You should be in page of the module you just created, click Create Template, make sure values match example in screenshot and click Create.
 
-![DB Actions Create Template](images/db_actions_create_template.png)
+    ![DB Actions Create Template](images/db_actions_create_template.png)
 
 5. The previous step should bring you to the handlers page, click the Create Handler button. Match the Method, Source Type and Source values with the example in the screenshot. Click Save.
     
@@ -221,11 +221,11 @@ This task involves creating REST services for Select AI, it will allow Select AI
         </copy>
     ```
 
-![DB Actions Create Handler](images/db_actions_create_handler.png)
+    ![DB Actions Create Handler](images/db_actions_create_handler.png)
 
-6. Test the handler using the open in new and save the endpoint to be used later.
+6. Test the handler using the open in new tab button. Also, use the copy button to paste/save the endpoint url for later.
 
-![DB Actions Test Handler](images/db_actions_create_handler_done.png)
+    ![DB Actions Test Handler](images/db_actions_create_handler_done.png)
 
 
 You may now proceed to the next lab.

@@ -62,7 +62,7 @@ This task involves creating Autonomous Database 23ai.
 
 This task involves logging into APEX Administration Services
 
-1. Locate the Autonomous Database created in task 1, and click thru the name to view the details.
+1. Locate the Autonomous Database created in task 1 and click thru the name to view the details.
 
     ![View ADB Details](images/adb_details.png)
 
@@ -90,15 +90,15 @@ This task involves Creating an APEX workspace from APEX Administration Services
 
 2. In the next screen, click the New Schema button.
 
-     ![Create APEX Workspace New Schema](images/apex_create_workspace_schema.png)
+    ![Create APEX Workspace New Schema](images/apex_create_workspace_schema.png)
 
 3. You should now be at the screen where you can name the workspace and add an admin user. Type in a name for your workspace, also type in a user name and password for the admin. Note, you can use the same name for workspace and user.
 
-     ![Create APEX Workspace Name and User](images/apex_create_workspace_name_user.png)
+    ![Create APEX Workspace Name and User](images/apex_create_workspace_name_user.png)
 
-4. Finish Creating new workspace, use the link to log into your new workspace or logout and use the Launch APEX button from task 2, step 3.
+4. Finish creating new workspace, use the link to log into your new workspace or logout and use the Launch APEX button from task 2, step 3.
 
-    ![Finish creating APEX Workspace](images/apex_create_workspace_done.png)
+    ![Finish Creating APEX Workspace](images/apex_create_workspace_done.png)
 
 ## Task 4: Deploy Sample App
 
@@ -110,23 +110,23 @@ In this task we deploy a sample Apex app into the workspace
 
 2. From the workspace home screen click the App Builder button.
 
-    ![APEX Workspace App Builder button](images/apex_workspace_home.png)
+    ![APEX Workspace App Builder Button](images/apex_workspace_home.png)
 
-3. Click the install Starter or Sample app button.
+3. Click the Install a Starter or Sample App button.
 
-    ![Install sample App](images/apex_workspace_install_sample.png)
+    ![Install Sample App](images/apex_workspace_install_sample.png)
 
 4.  Type in Brookstrut in the search bar and click the install button in the Bookstrut Sample App card.
 
-    ![Select sample App](images/apex_workspace_select_sample_brookstrut.png)
+    ![Select Sample App](images/apex_workspace_select_sample_brookstrut.png)
 
 5.  After installation completes, you should see the install button replaced with a run button. Click the button to login the app and save the url for later.
 
-    ![Run sample App](images/apex_workspace_run_sample_brookstrut.png)
+    ![Run Sample App](images/apex_workspace_run_sample_brookstrut.png)
 
 6. Login to the sample app using the workspace credentials. 
 
-    ![Login sample App](images/apex_workspace_sample_login.png)
+    ![Login Sample App](images/apex_workspace_sample_login.png)
 
 You may now proceed to the next lab.
 
