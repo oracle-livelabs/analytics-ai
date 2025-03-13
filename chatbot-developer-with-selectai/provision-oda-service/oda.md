@@ -45,7 +45,24 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![ODA Active](images/oda_active.png)
 
-## Task 2: Create REST Services for the ODA Skills
+## Task 2: Dynamic Group & Policy creation for Oracle Digital Assistant
+
+This task will help you to create desired dynamic group & necessary policy for the Oracle Digital Assistant
+
+1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
+
+    ```text
+    <copy>
+    Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
+    Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
+    Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+    </copy>
+    ```
+
+    > **Note:**
+    > * Please make sure that the compartmentId should be the one under which the resource is  created.
+
+## Task 3: Create REST Services for the ODA Skills
 
 This task involves creating REST service which will be used by ODA to connect to the endpoints for Select AI, Generative AI, APEX and OIC services
 
@@ -106,7 +123,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA Cohere Service API](images/llm_tools_service.png)
 
-## Task 3: Import Digital Assistant (Provided)
+## Task 4: Import Digital Assistant (Provided)
 
 1. Click on the link to download the required Digital Assistant.
 
@@ -164,7 +181,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![ODA Preview](images/preview.png)
 
-## Task 4: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
+## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
 
 1. Click on hamburger menu and select Development > Channels, and click on Add Channel.
 
