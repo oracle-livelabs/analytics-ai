@@ -73,6 +73,19 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
     **Note** If you are using a non-default identity domain - then instead of of just indicating the dynamic group name, you need to indicate domain-name/group-name in the policy statements.
 
+7. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
+
+    ```text
+    <copy>
+    Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
+    Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
+    Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+    </copy>
+    ```
+
+    > **Note:**
+    > * Please make sure that the compartmentId should be the one under which the resource is  created.
+
 ## Task 2: Provision Oracle Digital Assistant
 
 This task will help you to create Oracle Digital Assistant under your chosen compartment.
@@ -311,4 +324,4 @@ You may now proceed to the next lab.
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, March 2025
