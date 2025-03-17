@@ -48,19 +48,22 @@ To change transcription parameters, look to the <strong>Configure transcription<
 
 1. Configure transcription
 
-    Here you can change parameters such as transcription model type, audio language, partial and final silence thresholds
-    and enable customizations
+    Here you can change parameters such as transcription model type, audio language, punctuation, partial and final silence thresholds partial results stability and enable customizations
         ![Configure transcription](./images/configure-transcription.png " ")
 
-    <strong>Choose specialization:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific medial terminology
+    <strong>Choose domain:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific medial terminology
     
     <strong>Choose language:</strong> Use this parameter to configure the language of the speaker
-    
+
+    <strong>Choose punctuation:</strong> Use this parameter to configure the punctuation mode for the transcription model
+
     <strong>Partial silence threshold:</strong> Use this parameter to configure how quickly partial results should be 
     returned
     
     <strong>Final silence threshold:</strong> Use this parameter to configure how long to wait before a partial result is finalized 
-    
+
+    <strong>Partial results stability:</strong> Use this parameter to configure the stability of partial results (amount of confidence required before returning a partial result)
+
     <strong>Enable customizations:</strong> Check this box to choose a customization to use during your transcription session
 
 ## Task 4: Enabling a customization
@@ -173,13 +176,15 @@ class MyRealtimeListener(RealtimeClientListener):
 
 `language_code` : <strong>"en-US"</strong>
 
-`model_domain` : <strong>"MEDICAL"</strong>
+`model_domain` : <strong>"GENERIC"</strong>
 
 `partial_silence_threshold_in_ms` : <strong>500</strong>
 
 `final_silence_threshold_in_ms` : <strong>2000</strong>
 
 `encoding` : <strong>"audio/raw;rate=16000"</strong>
+
+`punctuation` : <strong>AUTO</strong>
 
 `should_ignore_invalid_customizations` : <strong>True</strong>
 
@@ -198,6 +203,10 @@ realtime_speech_parameters.model_domain = (
 realtime_speech_parameters.partial_silence_threshold_in_ms = 0
 realtime_speech_parameters.final_silence_threshold_in_ms = 2000
 realtime_speech_parameters.encoding="audio/raw;rate=16000"
+realtime_speech_parameters.punctuation = (
+    realtime_speech_parameters.PUNCTUATION_AUTO
+)
+
 realtime_speech_parameters.should_ignore_invalid_customizations = False
 realtime_speech_parameters.stabilize_partial_results = (
     realtime_speech_parameters.STABILIZE_PARTIAL_RESULTS_NONE

@@ -386,7 +386,7 @@ Unable to test connection RestVisionAI_1711400081.
     Currently (March 2024), "Document understanding" is not available in some regions (ex: Chicago). 
     
     If it is your case:  
-    - Import the OIC package "oic/chicago/OPENSEARCH_OIC_CHICAGO.par" instead. 
+    - Import the OIC package "oic/chicago/OPENSEARCH\_OIC\_CHICAGO.par" instead. 
     - Use any other region to configure the "Document Understanding" rest endpoint (ex: ashburn region) 
 
 ## Acknowledgements
