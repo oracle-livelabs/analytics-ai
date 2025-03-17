@@ -149,7 +149,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 4.  Open the DBMultiStepAgentAPIOrchestrationTool Skill, go to Settings -> Configuration -> Custom Parameters. Please provide your own values for CompartmentOCID, you can use the tenancy id from the API Key configuration (Lab 2, Task 2) or your own compartment id.
 
-    ![Update Configuration](images/Update_Configuration.jpg)   
+    ![Update Configuration](images/update_configuration.png)   
 
 5.  Ensure the Chatbot Training is completed for the Digital Assistant and Skills. Then click on the “Preview” button at top-right corner.
 
