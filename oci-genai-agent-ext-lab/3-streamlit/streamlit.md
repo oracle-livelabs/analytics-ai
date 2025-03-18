@@ -40,7 +40,7 @@ Estimated time: 10 min
 
 
 ## Task 2: Optional - Test additional files
-This is an optional test you can run with more sample files. If you do this test, you will have more content in the database. If you're running short of time, then you can skip it or come back to it later.
+This is an optional test you can upload more sample files in the Object Storage Bucket "agext-public-bucket". If you're running short of time, then you can skip it or come back to it later.
 
 **You may now proceed to the [next lab.](#next)**
 
