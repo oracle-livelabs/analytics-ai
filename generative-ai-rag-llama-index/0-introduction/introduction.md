@@ -2,7 +2,7 @@
 
 ## About This Workshop
 
-The main purpose of this workshop is to get started with using Oracle 23ai Vector Similarity Search, OCI Generative AI Service and Llama-Index for putting together a Retrieval Augmented Generation application that can be utilized with unstructured data.
+The main purpose of this workshop is to get started with using Oracle Database 23ai Vector Similarity Search, OCI Generative AI Service and Llama-Index for putting together a Retrieval Augmented Generation application that can be utilized with unstructured data.
 
 Estimated time: 120 minutes
 
