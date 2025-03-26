@@ -27,6 +27,10 @@
             "filename": "./../../4-digital-assistant/digital-assistant.md"
         },        
         {
+            "title": "Lab 5: Customize",
+            "filename": "./../../5-customize/customize.md"
+        },        
+        {
             "title": "Need Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
