@@ -87,7 +87,7 @@ With this lab, you have learned how to blend two datasets together, apply dashbo
 ## Learn More
 * [Add Joins Between Dataset Tables](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/add-joins-dataset-tables.html)
 
-* [Export a Visualization or Story](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/export-visualization-or-story.html)
+* [Export a Visualization or Story](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/export-visualization.html#GUID-97DE652F-24AD-4C6B-BA2D-E68358595DAD)
 
 * [Getting Started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873)
 
