@@ -20,9 +20,9 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Oracle ADB
 
-## Task 1: Oracle 23ai Prerequisites
+## Task 1: Oracle Database 23ai Prerequisites
 
-The user must have the Oracle 23ai Database with the following components:
+The user must have the Oracle Database 23ai with the following components:
 
 * Table: Used to store records with 'docid', 'body', and 'vector'.
 * Database Function: Provides vector search results against the provided query.

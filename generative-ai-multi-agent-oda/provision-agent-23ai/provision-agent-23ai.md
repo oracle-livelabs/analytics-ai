@@ -155,9 +155,9 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 ## Task 6: Load vector data in ADB using sql
 
-### Oracle 23ai Prerequisites
+### Oracle Database 23ai Prerequisites
 
-The user must have the Oracle 23ai Database with the following components:
+The user must have the Oracle Database 23ai with the following components:
 
 * Table: Used to store records with 'docid', 'body', and 'vector'.
 * Database Function: Provides vector search results against the provided query.
