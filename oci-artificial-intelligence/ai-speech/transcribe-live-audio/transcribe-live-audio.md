@@ -82,6 +82,23 @@ First, refer to lab 4 (Access OCI speech with OCI SDKs (Optional)) for API signi
 
 Click [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdks.htm) for documentation regarding AI Speech SDK
 
+Along with the OCI SDK, install the OCI AI Speech live transcription SDK:
+
+```
+pip install oci-ai-speech-realtime
+```
+
+To allow recording and streaming of audio install the PyAudio package:
+
+```
+pip install pyaudio>=0.2.14
+```
+
+Alternatively, both the required packages can be installed using the `requirements.txt` present [here](./files/requirements.txt):
+```
+pip install -r requirements.txt
+```
+
 OCI AI Speech live transcription uses websockets to relay audio data and receive text transcriptions in real time. This means your client must implement some key listener functions:
 
 <strong>Python example:</strong>
@@ -178,7 +195,7 @@ class MyRealtimeListener(RealtimeClientListener):
 
 `model_domain` : <strong>"GENERIC"</strong>
 
-`partial_silence_threshold_in_ms` : <strong>500</strong>
+`partial_silence_threshold_in_ms` : <strong>0</strong>
 
 `final_silence_threshold_in_ms` : <strong>2000</strong>
 
