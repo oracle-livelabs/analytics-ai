@@ -155,6 +155,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![Train](images/train.jpg)
 
+
 6.  To start the conversation loop in ODA preview, send this initial message: "MultiAgentAPIChat"
 
     You can use the following sample prompts to test this Digital Assistant:
@@ -201,6 +202,7 @@ This task involves creating REST service which will be used by ODA to connect to
 4. Ensure that the Client Authentication Enabled is disabled. **Take note of Channel Id**.
 
 ## Task 6: (optional) View Conversation Analytics
+
 
 From ODA service console homepage -> skill **Display name** -> **Insights** on side nav bar
 
