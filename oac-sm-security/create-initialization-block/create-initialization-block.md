@@ -27,66 +27,56 @@ This lab assumes you have:
 
 ## Task 1: Create the Init Block
 
-(optional) Task 1 opening paragraph.
-
 1. Navigate to Semantic Models, then Click the Semantic Model to open it
 
-	![Image alt text](images/sample1.png)
+	![Image alt text](images/smodel1.png)
 
 	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
-2. Navigate to Physical Layer, Click the Database, Connection Pool and verify the second connection pool exists, if not Click the **+** to add
+2. Navigate to Physical Layer, Click the **Database**, **Connection Pool** and verify the second connection pool exists, if not Click the **+** to add
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/smodel2.png)
 
   **Note:** For init blocks you need a separate connection pool
 
 3. Navigate to **Variables** tab, Click Create Initialization Block **+** 
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/smodel3.png)
+
+4. Enter Name, and under Type choose **Session** 
+
+  ![Image alt text](images/smodel4.png)
 
   **Note:** Once you Save the Init block opens the **Variables** tab
 
 
 ## Task 2: Configure the Session Variable
 
-1. Navigate to **Variables** tab, Click CountyDataSec Initialization Block 
+1. Navigate to **Variables** tab, Click CountyDataSec Initialization Block , then Variables Tab
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/smodel5.png)
 
-  **Note:** Once you Save the Init block opens the **Variables** tab
-
-2. Under Query Returns Choose **Variable names and values** 
-
-  ![Image alt text](images/sample1.png)
-
-3. Paste below query in the Select Statement pane:
+2. Paste below query in the Select Statement pane:
   ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    SELECT DISTINCT 'USER_RESPONSIBILITIES', COUNTRY_ISO_CODE FROM USER_RESPONSIBILITIES WHERE UPPER(USER_NAME) = UPPER(':USER') <copy></copy>.</copy>
     ```
+3. Under Query Returns Choose **Variable names and values** 
 
-4. Under Query Returns Choose **Variable names and values** 
+  ![Image alt text](images/smodel6.png)
 
-  ![Image alt text](images/sample1.png)
+4. Select Connection Pool, Add the one you configured 
 
-5. Select Connection Pool, Add the one you configured 
+  ![Image alt text](images/smodel7.png)  
 
-  ![Image alt text](images/sample1.png)  
+5. Click **+**, Detail View tab, Enter Name **USER_RESPONSIBILITIES** , CLick **fx** Enter ('99') and Enable any user to set the value 
 
-6. Click Add Variable, Detail View tab, Enter Name and **fx** for Value('99') and Enable any user to set the value 
+  ![Image alt text](images/smodel8.png)  
 
-  ![Image alt text](images/sample1.png)  
+6. Click Save 
 
-7. Click Save 
+7. Under Variables the new Session Variable is listed on the left side 
 
-  ![Image alt text](images/sample1.png)  
-
-8. Under Variables the new Session Variable is listed on the left side 
-
-  ![Image alt text](images/sample1.png)  
+  ![Image alt text](images/smodel9.png)  
 
 
 ## Learn More
