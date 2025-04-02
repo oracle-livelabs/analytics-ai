@@ -142,6 +142,7 @@ This task involves implementing Select AI for the autonomous database created in
                 private_key     => '<UPDATE HERE>',
                 fingerprint     => '<UPDATE HERE>'
                 );
+            END;
         </copy>
     ```
 
