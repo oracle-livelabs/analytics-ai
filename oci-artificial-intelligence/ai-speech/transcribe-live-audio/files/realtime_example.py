@@ -5,7 +5,7 @@ import oci
 from oci.config import from_file
 from oci.auth.signers.security_token_signer import SecurityTokenSigner
 
-from oci.ai_speech_realtime import (
+from oci_ai_speech_realtime import (
     RealtimeSpeechClient, 
     RealtimeSpeechClientListener
 )
@@ -109,6 +109,9 @@ class MyListener(RealtimeSpeechClientListener):
 
     def on_error(self):
         return super().on_error()
+    
+    def on_close(self, error_code, error_message):
+        return super().on_close(error_code, error_message)
 
 
 if __name__ == "__main__":
@@ -123,7 +126,7 @@ if __name__ == "__main__":
     )
     realtime_speech_parameters.partial_silence_threshold_in_ms = 0
     realtime_speech_parameters.final_silence_threshold_in_ms = 2000
-    # realtime_speech_parameters.encoding="audio/raw;rate=16000"
+    realtime_speech_parameters.encoding="audio/raw;rate=16000"
     realtime_speech_parameters.punctuation = (
         realtime_speech_parameters.PUNCTUATION_AUTO
     )
@@ -146,7 +149,7 @@ if __name__ == "__main__":
     #     }
     # ]
 
-    realtime_speech_url = "wss://realtime.aiservice-preprod.ap-sydney-1.oci.oraclecloud.com"
+    realtime_speech_url = "wss://realtime.aiservice.uk-london-1.oci.oraclecloud.com"
     client =  RealtimeSpeechClient(
             realtime_speech_parameters=realtime_speech_parameters,
             config=config,
