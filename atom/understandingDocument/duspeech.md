@@ -143,6 +143,15 @@ This task will help you to create necessary policy for the Oracle Document Under
         </copy>
      ```
 
+     Document Understanding Policy - Allows connection to document understanding 
+     
+     ```text
+        <copy>
+        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        allow dynamic-group odaDynamicGroup to manage ai-service-document-family in tenancy
+        </copy>
+    ```
+
     > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
 
 ## Task 3: Create REST Service
