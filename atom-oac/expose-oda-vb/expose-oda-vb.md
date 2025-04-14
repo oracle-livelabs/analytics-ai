@@ -110,6 +110,6 @@ You are now ready to expose the channel in Visual Builder.
     ![Manager View](images/manager-view.png)
 
 ## Acknowledgements
-* **Author** - Luke Farley, Staff Cloud Engineer, NACIE>
+* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE

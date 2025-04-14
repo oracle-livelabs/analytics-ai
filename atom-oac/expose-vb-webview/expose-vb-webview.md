@@ -106,6 +106,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
    > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3. Also make sure to switch into the function directory and/or run the commands from VS code console before running the fn commands.
    
+   > **Note:** If you are still having problems deploying the function after following the steps as described, you might need to redeploy the function application with an arm architecture (Task 1 Step 3)
 
 ## Task 3: Add your Function as a Route on API Gateway
 
@@ -233,7 +234,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 You are now ready to move on to the final lab, which will expose your skill on a Visual Builder Application for users.
 
 ## Acknowledgements
-* **Author** - Luke Farley, Staff Cloud Engineer, NACIE
+* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE
 * **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE

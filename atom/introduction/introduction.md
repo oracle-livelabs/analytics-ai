@@ -52,7 +52,7 @@ This lab assumes you have:
 * **JB Anderson**, Senior Cloud Engineer, NACIE
 
 **Contributors**
-* **Luke Farley**, Staff Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Staff Cloud Engineer, NACIE, Jan 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025

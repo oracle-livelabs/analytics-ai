@@ -246,6 +246,6 @@ You are now ready to proceed to the next lab.
 
 ## Acknowledgements
 
-* **Author** - Luke Farley, Staff Cloud Engineer, NACIE
+* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** - Kaushik Kundu, Master Principal Cloud Architect, NACIE
