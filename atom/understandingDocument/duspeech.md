@@ -144,7 +144,7 @@ This task will help you to create necessary policy for the Oracle Document Under
      ```
 
      Document Understanding Policy - Allows connection to document understanding 
-     
+
      ```text
         <copy>
         ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
@@ -535,4 +535,4 @@ Provide a value to da.privateKey (Any Password)
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, Jan 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025
