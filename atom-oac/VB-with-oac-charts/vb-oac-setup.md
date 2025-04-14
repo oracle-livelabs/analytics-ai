@@ -153,7 +153,7 @@ This task will help you to create necessary policy for the API Gateway
 
 2. Import the following file 
 
-    - [Sample Employees](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employees.xlsx)
+    - [Sample Employees](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_Sample%20Employees.xlsx)
 
 3. From the OAC Dashboard, select the three dots next to 'Create' > Import Workbook
 
@@ -161,7 +161,7 @@ This task will help you to create necessary policy for the API Gateway
 
     Import the following file 
 
-    - [Sample Employee Barchart](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employee%20Barchart.dva)
+    - [Sample Employee Barchart](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_Sample%20Employee%20Barchart.dva)
 
     Note: Make sure to save the workbook to the 'Shared' directory in the Catalog. Saving to your personal folder can cause issues displaying the charts in visual builder. 
 
@@ -183,7 +183,7 @@ This task will help you to create necessary policy for the API Gateway
 
 5. From the OAC Dashboard, import another workbook 
 
-    [Sample Employee 80/20 chart](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FSample%20Employee%2080_20%20Workbook.dva)
+    [Sample Employee 80/20 chart](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_Sample%20Employee%2080_20%20Workbook.dva)
 
     - As in the previous step, open the new workbook in developer mode and take note of canvas and script tags
 
@@ -197,7 +197,7 @@ This task will help you to create necessary policy for the API Gateway
 
 3. Download the following VB application
 
-    [VB-OAC-Integration](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FVB_OAC_ATOM_Integration-1.0.24.zip)
+    [VB-OAC-Integration](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_VB_OAC_ATOM_Integration-1.0.24.zip)
 
 4. Import the downloaded app in your VB instance by selecting 'Import' at the top right  
 

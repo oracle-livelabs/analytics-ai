@@ -85,7 +85,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the sample function
 
-    [fn-oac-oda.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2Ffn-oda-oac-livelab.zip)
+    [fn-oac-oda.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_fn-oda-oac-livelab.zip)
 
 2. Extract the contents and replace the url with the url of your live vb application created in the previous lab 
 
@@ -212,7 +212,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 
 4. Download and import the following skill 
 
-    [OAC Skill](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FOAC_Livelab_Skill(1.0).zip)
+    [OAC Skill](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_OAC_Livelab_Skill.zip)
 
 5. Once imported, open the skill and navigate to components > webview
     ![Add Webview](images/da-add-webview.png)
