@@ -379,7 +379,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the following file: 
 
-    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FLivelabs_doc-understanding_ODA-Document-Understanding-livelab.zip)
+    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fdoc-understanding-fn.zip)
 
 2. Extract the contents and open in your favorite IDE
 
