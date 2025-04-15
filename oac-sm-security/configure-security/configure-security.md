@@ -80,7 +80,7 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
 3. Click Validate and Save 
 
-![Image alt text](images/configsecurity7.png)
+ ![Image alt text](images/configsecurity7.png)
 
  **Note:** A data filter is created on the SALES table with joins to the CUSTOMERS and COUNTRIES tables
 
@@ -93,19 +93,60 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
  1. Sign in as ABC
 
- ![Image alt text](images/sample1.png)
+ ![Image alt text](images/testsecurity1.png)
 
- 2. Create a Project
+ 2. Create a Workbook
 
- ![Image alt text](images/sample1.png)
+ ![Image alt text](images/testsecurity2.png)
+ 
+ 3. In **Add Data** select the Security Subject Area then click **Add to Workbook**
 
- 3. Create an Analysis
+ ![Image alt text](images/testsecurity3.png)
 
- ![Image alt text](images/sample1.png)
+ 4. In the **Data pane**, expand **Countries**, **Sales**, select **Country Name** and select **Amount Sold** from **Sales**. Right-click, select **Pick Visualization**.
 
- 4. View the Session Log
+ ![Image alt text](images/testsecurity5.png)
 
- ![Image alt text](images/sample1.png)
+ 5. Select the **Table visualization** type.
+
+ ![Image alt text](images/testsecurity6.png)
+
+ 6. LocalUserOne is only allowed to see data for Japan. 
+
+ ![Image alt text](images/testsecurity7.png)
+
+   **Note:** This is based on the User Responsibilities that was set up in the Database.
+
+ ![Image alt text](images/testsecurity9.png)
+ 
+ 7. Click **Save**. In Save Workbook, enter Name, and then click **Save**
+
+  ![Image alt text](images/testsecurity8.png)
+
+ 8. View the Session Log using **Developer**
+
+ ![Image alt text](images/testsecurity10.png)
+ 
+ 9. Under **Performance Tools** Click **Refresh**
+
+ ![Image alt text](images/testsecurity11.png)
+
+ 10. Click **Execution Log** then Scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause
+
+ ![Image alt text](images/testsecurity12.png)
+
+ 11. Login with a user with **BI Service Administrator**, run same report.
+
+ ![Image alt text](images/testsecurity13.png)
+
+ **Note:** The report displays all the countries
+
+ 12. View the Session Log using **Developer**
+
+ ![Image alt text](images/testsecurity14.png)
+
+  **Note:** Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
+
 
 ## Learn More
 
