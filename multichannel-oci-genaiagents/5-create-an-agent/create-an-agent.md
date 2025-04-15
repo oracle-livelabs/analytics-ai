@@ -41,7 +41,7 @@ This lab assumes you have:
 
 1. Check the box next to the knowledge base we have created in the previous lab to let the Agent know it should interact with the data specified in the knowledge base.
 
-1. Make sure that the **Automatically create an endpoint for this agent** option is checked. Edited by vlad.
+1. Make sure that the **Automatically create an endpoint for this agent** option is checked.
 
 1. Click the **Create** button at the bottom of the page.
 
