@@ -37,7 +37,9 @@ This lab assumes you have:
 
 1. Make sure that the root compartment is selected in the **Compartment** list.
 
-1. Make sure that the **Object storage** option is selected in the **Select data store** list.
+1. Make sure that the **Object storage** option is selected in the **Data Store type** list.
+
+1. Click the **Enable hybrid search** option to enhance the results of the search.
 
 1. Click the **Specify data source** button at the top of the **Data sources** table.
 
@@ -47,11 +49,11 @@ This lab assumes you have:
 
 1. Select the storage bucket into which you've uploaded the dataset text files in the previous lab.
 
-1. Select the **Select all in bucket** option from the **Object prefixes** list.
+1. Select the **Select all in bucket** option.
 
 1. Click the **Create** button at the bottom of the pane.
 
-  ![Create knowledge base and data source](./images/create-data-source.png)
+  ![Create knowledge base and data source](./images/create-data-source-updated.png)
 
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked.
 
