@@ -157,4 +157,4 @@ Next, we will create the access policies:
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea
 , AI and App Integration Specialist Leader
 
-* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
+* **Last Updated By/Date** - Vlad Man, Digital Adoption Manager - AI Initiatives, April 2025

@@ -31,21 +31,57 @@ This lab assumes you have:
 
   ![Create Agent navigation](./images/create-agent-navigation.png)
 
-1. Provide a name for the Agent (for example: oci-generative-ai-agents-cw24-hol-agent)
+1. Provide a name for the Agent (for example: oci-generative-ai-agents-agent-ko4)
 
 1. Make sure that the root compartment is selected in the **Compartment** list.
 
 1. Optionally, provide a **Welcome message** for the Agent to display at the start of a new conversation (also called the `Preamble`, for example: Hello, i'm the OCI Generative AI documentation helper! How can i help you today?).
 
-1. Under the **Add knowledge bases** section, make sure that the root compartment is selected in the **Compartments** list.
+1. Click the **Next** button on the bottom of the page.
 
-1. Check the box next to the knowledge base we have created in the previous lab to let the Agent know it should interact with the data specified in the knowledge base.
+  ![Create Agent - Basic Information](./images/create-agent-basic-information.png)
 
-1. Make sure that the **Automatically create an endpoint for this agent** option is checked.
+1. On the next page click on **Create tool**.
 
-1. Click the **Create** button at the bottom of the page.
+  ![Create Agent - Add tool](./images/create-agent-add-tool.png)
 
-  ![Create knowledge base and data source](./images/create-agent.png)
+1. In the next page select **RAG** as tool type.
+
+1. Provide a name for the tool (for example: oci-generative-ai-agents-tool-ko4) and a description. This description is important for the agent, it outlines the purpose of this tool. In case you have multiple tools, it is recommended to have a good and specific description which allows to differentiate clearly between them. For example, as "bad practice", a tool description should not be "Tool description 1". A proper name would be "Tool contains knowledge about the following topic: Leave policies".
+
+1. In the **Add knowledge bases** section, select the right compartment and then click on the knowledge base we created earlier.
+
+1. You can finish this step by clicking the **Create tool** button.
+
+  ![Create Agent - Create tool](./images/create-agent-create-tool.png)
+
+1. After the tool is created, proceed to the next step by clicking **Next**
+
+  ![Create Agent - Confirm tool](./images/create-agent-confirm-tool.png)
+
+1. For the **Setup agent endpoint** section we can have a lot of options for configuration.
+
+1. First select the **Automatically create an endpoint for this agent** option.
+
+1. For this laboratory, make sure that the **Enable human in the loop** option is **Disabled**.
+
+1. We can proceed by configuring **Guardrails**, which are safety measures for our agent. The recommended option for each of them is the middle one, which aims to **Block** malicious intents.
+
+1. First we select the Guardrails for **Content moderation**. You can click the options in there to select a specific level.
+
+  ![Create Agent - Setup agent endpoint 1](./images/create-agent-setup-endpoint-1.png)
+
+1. Scroll down the page and you will find **Prompt injection (PI) protection** and **Personally identifiable information (PII) protection**.
+
+1. Select **Block** for all the options.
+
+1. To finish this step, click the **Next** button.
+
+  ![Create Agent - Setup agent endpoint 2](./images/create-agent-setup-endpoint-1.png)
+
+1. For the final step, review the **Basic information**, **Tools** and **Endpoint configuration** and the click on the **Create agent** button.
+
+  ![Create Agent - Setup agent review](./images/create-agent-review.png)
 
 If everything went to plan, your Agent will be created. This can take a few minutes.
 
@@ -65,15 +101,15 @@ Please wait until the **Lifecycle state** shows the **Active** state before movi
 
     1. Agent **name**.
     2. Agent **OCID**.
-    3. **Knowledge Bases** associated with the Agent.
+    3. **Tools** associated with the Agent.
     4. **Endpoints** which can be used to access the Agent programmatically (a default one was created when we created the Agent).
 
     > In addition, you can **Launch a chat** session with the Agent as well as **Edit**, **Move** and **Delete** the Agent.
 
-  ![Agent details](./images/agent-details.png)
+  ![Agent details](./images/inspect-agent-metadata.png)
 
 ## Acknowledgements
 
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader
 
-* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
+* **Last Updated By/Date** - Vlad Man, Digital Adoption Manager - AI Initiatives, April 2025
