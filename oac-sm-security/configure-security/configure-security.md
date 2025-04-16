@@ -2,67 +2,61 @@
 
 ## Introduction
 
-This lab walks you through the steps to configure the security in the semantic modeler using the application roles and session variables defined in the previous tasks to filter the data. The Data Filter is where the expression is created that is appended to the OAC Where clause for each query.
-Please note Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
+This lab walks you through the steps to configure the data-level security in the semantic modeler using the application roles and session variables defined in the previous tasks to filter the data. The Data Filter is where the expression is created that is appended to the Oracle Analytics Where clause for each query. Please note Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
 
 Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Identify the tables
-* Objective 2
-* Objective 3
+* Create data filters in the Semantic Modeler
+* Create a Workbook to verify the filters
+* Use Developer tools to analyze the queries
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * Working knowledge of the Semantic Modeler
-* Modeled a few tables to apply the RL Security
-
-
-*This is the "fold" - below items are collapsed by default*
+* Modeled a few tables to apply the Row-Level Security
 
 ## Task 1:  Create a Data Filter on the Countries Table
 
-In this scenario i have Countries, Customers and Sales tables already modeled in the SM. The goal is to aTask 1 opening paragraph.
+In this scenario there are three tables:- Countries, Customers and Sales modeled in the Semantic Modeler. The goal is to apply data filters such that each user can only view Sales amounts applicable to their specific country/region. The regions were defined in Lab 1 in the User Responsibilities security table.
 
 1. Review the joins of the 3 tables
 
 	![Image alt text](images/verifyjoins.png)
 
-	> **Note:** The COUNTRIES table is secured.  It is also secured with a join to the SALES table. The COUNTRY_ISO_CODE values are used to filter the data returned to an OAC query.
+	> **Note:** The **COUNTRIES** table is secured.  It is also secured with a join to the **SALES** table. The **COUNTRY ISO CODE** values are used to filter the data returned to an Oracle Analytics query.
 
-2. Navigate to Presentation Layer , then double click Countries table, then **Click** Data Filters
+2. Navigate to **Presentation Layer** , double click **Countries** table, click **Data Filters**
 
   ![Image alt text](images/configsecurity1.png)
 
-3. Under **Add** search for the CountryRole that was created in Lab 3.
+3. Under **Add** search for the **CountryRole** that was created in Lab 3.
 
- ![Image alt text](images/configsecurity2.png) click **Navigation**.
+ ![Image alt text](images/configsecurity2.png)
 
-4. Click CountryRole, then fx and Open Expression Editor and enter below code
+4. Click **CountryRole**, then **f(x)** and Open Expression Editor and enter below code
 
-   ```
-      	<copy>Country Iso Code"=VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES) <copy></copy>.</copy>
-    ```
+     ```
+      	<copy>Country Iso Code =VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES) <copy></copy>.</copy>
+     ```
 
      
 5. Click **Validate** and then **Save** 
 
  ![Image alt text](images/configsecurity3.png)
 
-> **Note:** A data filter is created on the COUNTRIES table to restrict what rows are returned to the user.  
+ > **Note:** A data filter is created on the **Countries** table to restrict what rows are returned to the user.  
 
  ![Image alt text](images/configsecurity8.png)
 
 ## Task 2:  Create a Data Filter on the Sales Table
 
-In case the user does not choose the COUNTRIES table for the analysis, the SALES table needs to be filtered so sales totals are displayed only for the countries the user is entitled to see. The appropriate joins to the COUNTRIES table are added to the filter.
+In case the user does not choose the **Countries** table for the analysis, the **Sales** table needs to be filtered so sales totals are displayed only for the countries the user is permitted to see. The appropriate joins to the **Countries** table are added to the filter.
 
-1. Navigate to Presentation Layer , then double click Sales table, then **Click** Data Filters
+1. Navigate to **Presentation Layer** , double click **Sales** table, click **Data Filters**
 
   ![Image alt text](images/configsecurity4.png)
 
@@ -78,32 +72,32 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
  ![Image alt text](images/configsecurity5.png)
 
-3. Click Validate and Save 
+3. Click **Validate** and **Save** 
 
  ![Image alt text](images/configsecurity7.png)
 
- **Note:** A data filter is created on the SALES table with joins to the CUSTOMERS and COUNTRIES tables
+  > **Note:** A data filter is created on the **Sales** table with joins to the **Customers** and **Countries** tables
 
-4. Save the Semantic Modeler, check consistency and deploy
+4. **Save** the Semantic Modeler, check consistency and deploy
 
  ![Image alt text](images/configsecurity6.png)
 
 
 ## Task 3:  Validate Data Level Security
 
- 1. Sign in as ABC
+ 1. **Sign in** as one of the user's defined in the security table.
 
  ![Image alt text](images/testsecurity1.png)
 
- 2. Create a Workbook
+ 2. Create a **Workbook**
 
  ![Image alt text](images/testsecurity2.png)
  
- 3. In **Add Data** select the Security Subject Area then click **Add to Workbook**
+ 3. In **Add Data** select the Subject Area in which you configured security, click **Add to Workbook**
 
  ![Image alt text](images/testsecurity3.png)
 
- 4. In the **Data pane**, expand **Countries**, **Sales**, select **Country Name** and select **Amount Sold** from **Sales**. Right-click, select **Pick Visualization**.
+ 4. In the **Data pane**, expand **Countries** , select **Country Name** and select **Amount Sold** from **Sales**. Right-click, select **Pick Visualization**.
 
  ![Image alt text](images/testsecurity5.png)
 
@@ -111,15 +105,15 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
  ![Image alt text](images/testsecurity6.png)
 
- 6. LocalUserOne is only allowed to see data for Japan. 
+ 6. Based on the results the user **LocalUserOne** can only view data for Japan. 
 
  ![Image alt text](images/testsecurity7.png)
 
-   **Note:** This is based on the User Responsibilities that was set up in the Database.
+   > **Note:** This is based on the User Responsibilities security table that was set up in the Database.
 
  ![Image alt text](images/testsecurity9.png)
  
- 7. Click **Save**. In Save Workbook, enter Name, and then click **Save**
+ 7. Click **Save**. In Save Workbook, enter **Name**, and then click **Save**
 
   ![Image alt text](images/testsecurity8.png)
 
@@ -127,11 +121,11 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
  ![Image alt text](images/testsecurity10.png)
  
- 9. Under **Performance Tools** Click **Refresh**
+ 9. Under **Performance Tools** click **Refresh**
 
  ![Image alt text](images/testsecurity11.png)
 
- 10. Click **Execution Log** then Scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause
+ 10. Click **Execution Log** then scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause
 
  ![Image alt text](images/testsecurity12.png)
 
@@ -139,23 +133,22 @@ In case the user does not choose the COUNTRIES table for the analysis, the SALES
 
  ![Image alt text](images/testsecurity13.png)
 
- **Note:** The report displays all the countries
+  > **Note:** The report displays all the countries
 
  12. View the Session Log using **Developer**
 
  ![Image alt text](images/testsecurity14.png)
 
-  **Note:** Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
+  > **Note:** Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
 
 
 ## Learn More
+* [Build a Semantic Model](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/build-semantic-models-physical-layer.html)
+* [Deploy Semantic Model](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/deploy-semantic-model.html)
+* [Build a Workbook in OAC](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/begin-build-workbook-and-create-visualizations.html)
+* [Developer Options in OAC](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/developer-options.html#GUID-5A0BD6CE-EEB3-4028-B64C-BE3178B69C21)
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - <Chenai Jarimani, Cloud Architect, NACI>
+* **Last Updated By/Date** - <Chenai Jarimani, April 2025>

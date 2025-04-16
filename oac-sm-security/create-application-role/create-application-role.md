@@ -90,10 +90,8 @@ This lab assumes you have:
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [About Application Roles](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/application-roles.html#GUID-3CEED4DB-F124-45AF-A115-75AF7392974C)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - <Chenai Jarimani, Cloud Architect, NACI>
+* **Last Updated By/Date** - <Chenai Jarimani, April 2025>
