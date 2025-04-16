@@ -6,20 +6,19 @@ Data-level security defines what a user in an analytics application can access i
 
 Estimated Workshop Time: 60 minutes
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
 
-  [](youtube:zNKxJjkq0Pw)
+  [](youtube:MrV_5PK9Rrw)
 
 ### Objectives
 
 In this workshop, you will learn how to:
 
-* Setup Security Table in ADW
-* Create Application Roles in OAC
+* Setup Security Table in Autonomous Data Warehouse(ADW)
+* Create Application Roles in Oracle Analytics Cloud(OAC)
 * Create Initialization Block in Semantic Modeler
 * Configure Row-level Security in Semantic Modeler
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
@@ -28,13 +27,9 @@ This lab assumes you have:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Build Semantic Models in OAC](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-build-your-model.html)
 
 ## Acknowledgements
 
 * **Author** - Chenai Jarimani, Cloud Architect, NACI
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Chenai Jarimani, April 2025
