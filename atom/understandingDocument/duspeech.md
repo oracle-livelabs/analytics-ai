@@ -143,6 +143,15 @@ This task will help you to create necessary policy for the Oracle Document Under
         </copy>
      ```
 
+     Document Understanding Policy - Allows connection to document understanding 
+
+     ```text
+        <copy>
+        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        allow dynamic-group odaDynamicGroup to manage ai-service-document-family in tenancy
+        </copy>
+    ```
+
     > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
 
 ## Task 3: Create REST Service
@@ -370,7 +379,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the following file: 
 
-    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FODA-Document-Understanding-livelab.zip)
+    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fdoc-understanding-fn.zip)
 
 2. Extract the contents and open in your favorite IDE
 
@@ -481,7 +490,7 @@ Provide a value to da.privateKey (Any Password)
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
+4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FLivelabs_doc-understanding_ATOM_Training-1.0.1.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -523,7 +532,7 @@ Provide a value to da.privateKey (Any Password)
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Contributors**
-* **Luke Farley**, Staff Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Staff Cloud Engineer, NACIE, Jan 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025
