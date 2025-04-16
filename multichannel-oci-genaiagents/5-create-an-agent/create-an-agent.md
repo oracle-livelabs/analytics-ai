@@ -69,7 +69,7 @@ This lab assumes you have:
 
 1. First we select the Guardrails for **Content moderation**. You can click the options in there to select a specific level.
 
-  ![Create Agent - Setup agent endpoint 1](./images/create-agent-setup-endpoint-1.png)
+  ![Create Agent - Setup agent endpoint Content moderation Guardrails](./images/create-agent-setup-endpoint-1.png)
 
 1. Scroll down the page and you will find **Prompt injection (PI) protection** and **Personally identifiable information (PII) protection**.
 
@@ -77,7 +77,7 @@ This lab assumes you have:
 
 1. To finish this step, click the **Next** button.
 
-  ![Create Agent - Setup agent endpoint 2](./images/create-agent-setup-endpoint-1.png)
+  ![Create Agent - Setup agent endpoint PI & PII Guardrails](./images/create-agent-setup-endpoint-2.png)
 
 1. For the final step, review the **Basic information**, **Tools** and **Endpoint configuration** and the click on the **Create agent** button.
 
