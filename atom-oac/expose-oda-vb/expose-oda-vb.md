@@ -75,7 +75,7 @@ You are now ready to expose the channel in Visual Builder.
 
 1. Download the following VB application
 
-    [ODA VB App](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FATOM_OAC_ODA_LL_VB.zip)
+    [ODA VB App](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_ATOM_OAC_ODA_LL_VB.zip)
 
 2. Import the app in your visual builder instance > Import from file
 
@@ -110,6 +110,6 @@ You are now ready to expose the channel in Visual Builder.
     ![Manager View](images/manager-view.png)
 
 ## Acknowledgements
-* **Author** - Luke Farley, Staff Cloud Engineer, NACIE>
+* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE
