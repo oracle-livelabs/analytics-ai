@@ -77,6 +77,7 @@ This lab assumes you have:
 
   ![Verify Available Roles](images/approle10.png)
 
+You may now **proceed to the next lab.**
 
 ## Learn More
 

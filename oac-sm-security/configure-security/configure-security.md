@@ -25,32 +25,33 @@ In this scenario there are three tables:- Countries, Customers and Sales modeled
 
 1. Review the joins of the 3 tables
 
-	![Image alt text](images/verifyjoins.png)
+	![Verify Joins](images/verifyjoins.png)
 
 	> **Note:** The **COUNTRIES** table is secured.  It is also secured with a join to the **SALES** table. The **COUNTRY ISO CODE** values are used to filter the data returned to an Oracle Analytics query.
 
 2. Navigate to **Presentation Layer** , double click **Countries** table, click **Data Filters**
 
-  ![Image alt text](images/configsecurity1.png)
+  ![Open Countries Table](images/configsecurity1.png)
 
 3. Under **Add** search for the **CountryRole** that was created in Lab 3.
 
- ![Image alt text](images/configsecurity2.png)
+ ![Search Application Role](images/configsecurity2.png)
 
 4. Click **CountryRole**, then **f(x)** and Open Expression Editor and enter below code
 
      ```
-      	<copy>Country Iso Code =VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES) <copy></copy>.</copy>
+      <copy>
+      Country Iso Code =VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES)
+      </copy>
      ```
-
      
 5. Click **Validate** and then **Save** 
 
- ![Image alt text](images/configsecurity3.png)
+ ![Validate Expression](images/configsecurity3.png)
 
- > **Note:** A data filter is created on the **Countries** table to restrict what rows are returned to the user.  
+   > **Note:** A data filter is created on the **Countries** table to restrict what rows are returned to the user.  
 
- ![Image alt text](images/configsecurity8.png)
+  ![Verify Data Filter](images/configsecurity8.png)
 
 ## Task 2:  Create a Data Filter on the Sales Table
 
@@ -58,7 +59,7 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
 1. Navigate to **Presentation Layer** , double click **Sales** table, click **Data Filters**
 
-  ![Image alt text](images/configsecurity4.png)
+  ![Open Sales Table](images/configsecurity4.png)
 
 2. Add the below using the expression builder:
 
@@ -70,76 +71,76 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
     **Enter** VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES)
 
- ![Image alt text](images/configsecurity5.png)
+ ![Validate Expression Filter](images/configsecurity5.png)
 
 3. Click **Validate** and **Save** 
 
- ![Image alt text](images/configsecurity7.png)
+ ![Verify Data Filter](images/configsecurity7.png)
 
-  > **Note:** A data filter is created on the **Sales** table with joins to the **Customers** and **Countries** tables
+   > **Note:** A data filter is created on the **Sales** table with joins to the **Customers** and **Countries** tables
 
-4. **Save** the Semantic Modeler, check consistency and deploy
+4. **Save** the Semantic Modeler, **Check Consistency** and **Deploy**
 
- ![Image alt text](images/configsecurity6.png)
+  ![Deploy Semantic Model](images/configsecurity6.png)
 
 
-## Task 3:  Validate Data Level Security
+## Task 3:  Validate Data-Level Security
 
- 1. **Sign in** as one of the user's defined in the security table.
+ 1. **Sign in** as one of the users defined in the security table.
 
- ![Image alt text](images/testsecurity1.png)
+ ![Sign into OAC](images/testsecurity1.png)
 
  2. Create a **Workbook**
 
- ![Image alt text](images/testsecurity2.png)
+ ![Create Workbook](images/testsecurity2.png)
  
  3. In **Add Data** select the Subject Area in which you configured security, click **Add to Workbook**
 
- ![Image alt text](images/testsecurity3.png)
+ ![Select Subject Area](images/testsecurity3.png)
 
  4. In the **Data pane**, expand **Countries** , select **Country Name** and select **Amount Sold** from **Sales**. Right-click, select **Pick Visualization**.
 
- ![Image alt text](images/testsecurity5.png)
+ ![Create Visualization](images/testsecurity5.png)
 
  5. Select the **Table visualization** type.
 
- ![Image alt text](images/testsecurity6.png)
+ ![Add Table](images/testsecurity6.png)
 
  6. Based on the results the user **LocalUserOne** can only view data for Japan. 
 
- ![Image alt text](images/testsecurity7.png)
+  ![Verify Results](images/testsecurity7.png)
 
    > **Note:** This is based on the User Responsibilities security table that was set up in the Database.
 
- ![Image alt text](images/testsecurity9.png)
+  ![Database Query](images/testsecurity9.png)
  
  7. Click **Save**. In Save Workbook, enter **Name**, and then click **Save**
 
-  ![Image alt text](images/testsecurity8.png)
+  ![Save Workbook](images/testsecurity8.png)
 
  8. View the Session Log using **Developer**
 
- ![Image alt text](images/testsecurity10.png)
+ ![Open Developer Tools](images/testsecurity10.png)
  
  9. Under **Performance Tools** click **Refresh**
 
- ![Image alt text](images/testsecurity11.png)
+ ![Refresh Report](images/testsecurity11.png)
 
  10. Click **Execution Log** then scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause
 
- ![Image alt text](images/testsecurity12.png)
+ ![Execution Log](images/testsecurity12.png)
 
  11. Login with a user with **BI Service Administrator**, run same report.
 
- ![Image alt text](images/testsecurity13.png)
+ ![Run Workbook](images/testsecurity13.png)
 
-  > **Note:** The report displays all the countries
+   > **Note:** The report displays all the countries
 
  12. View the Session Log using **Developer**
 
- ![Image alt text](images/testsecurity14.png)
+ ![Analyze Log](images/testsecurity14.png)
 
-  > **Note:** Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
+   > **Note:** Data Filters are not executed for users who explicitly or implicitly have the BI Service Administrator role.
 
 
 ## Learn More
@@ -150,5 +151,5 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
 
 ## Acknowledgements
-* **Author** - <Chenai Jarimani, Cloud Architect, NACI>
-* **Last Updated By/Date** - <Chenai Jarimani, April 2025>
+* **Author** - Chenai Jarimani, Cloud Architect, NACI
+* **Last Updated By/Date** - Chenai Jarimani, April 2025
