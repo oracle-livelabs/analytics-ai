@@ -106,13 +106,13 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
  ![Add Table](images/testsecurity6.png)
 
- 6. Based on the results the user **LocalUserOne** can only view data for Japan. 
+ 6. The results show user **LocalUserOne** can view sales data for Japan.
 
   ![Verify Results](images/testsecurity7.png)
 
    > **Note:** This is based on the User Responsibilities security table that was set up in the Database.
 
-  ![Database Query](images/testsecurity9.png)
+   ![Database Query](images/testsecurity9.png)
  
  7. Click **Save**. In Save Workbook, enter **Name**, and then click **Save**
 

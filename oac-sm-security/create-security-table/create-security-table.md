@@ -16,7 +16,6 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
 * You have a running ADB instance
 
 
@@ -26,7 +25,7 @@ This lab assumes you have:
 
 	![Database Actions](images/opensqldev.png)
 
-	> **Note:** You can use any SQL interface of your choice (SQL Developer, Toad, Database Actions and etc
+	> **Note:** You can use any SQL interface of your choice (SQL Developer, Toad, Database Actions and etc)
 
 2. Copy and paste the SQL Code in the worksheet and execute.
  
@@ -50,7 +49,7 @@ This lab assumes you have:
 
 ## Task 2: Test the security table
 
-1. Test your table is configured by writing a select * statement
+1. Test your table is configured by writing a **select *** SQL statement
 
  ![Write SQL](images/testsql.png) 
 
