@@ -1,8 +1,8 @@
-# Using Document Understanding & Speech service
+# Using Document Understanding Service
 
 ## Introduction
 
-This lab will take you through the steps needed to use Document Understanding & Speech service
+This lab will take you through the steps needed to use the Document Understanding service
 
 Estimated Time: 2 hours 30 minutes
 
@@ -10,11 +10,9 @@ Estimated Time: 2 hours 30 minutes
 
 Oracle Cloud Infrastructure (OCI) Document Understanding is an AI service that enables developers to extract text, tables, and other key data from document files through APIs and command line interface tools. With OCI Document Understanding, you can automate tedious business processing tasks with prebuilt AI models and customize document extraction to fit your industry-specific needs.
 
-OCI Speech is an AI service that uses automatic speech recognition technology to transform audio content to text and textual content to speech. Get accurate, text-normalized, time-stamped transcriptions via the OCI console, OCI Data Science notebooks, and REST APIs as well as command-line interfaces or SDKs.
-
 ### Objectives
 
-To use Document Understanding & Speech services.Please find detail architecture diagram for better understanding.
+To use the Document Understanding service. Please find detail architecture diagram for better understanding.
 
 ![Arch DU](images/diag_1.png)
 
@@ -46,7 +44,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
     ![Active ODA Instance](images/oda_provision_4.png)
 
-## Task 2: Policy creation for Oracle Document Understanding and Speech Access
+## Task 2: Policy creation for Oracle Document Understanding Access
 
 Create a Dynamic Group
 Go to Identity>>Domains>>Default domain>>Dynamic groups
@@ -66,8 +64,6 @@ Rule 1
      </copy>
 ```
 
-Note - This will be ocid of Digital Assistant in Chicago region
-
 Rule 2
 
 ```text
@@ -84,15 +80,7 @@ Rule 3
      </copy>
 ```
 
-Rule 4
-
-```text
-     <copy>
-    All {instance.id = 'ocid1.odainstance.oc1.iad.XXX'}
-    </copy>
-```
-
-Note - This will be ocid of Digital Assistant
+> **Note:** Please make sure that the compartmentId should be the one under which the resources are created.
 
 This task will help you to create necessary policy for the Oracle Document Understanding Service
 
@@ -109,50 +97,15 @@ This task will help you to create necessary policy for the Oracle Document Under
         </copy>
     ```
 
-    API-Gateway-Policy - Policy to allow API Gateway to access functions for atom
+     Document Understanding Policy - Allows function to connect to document understanding 
 
      ```text
         <copy>
-        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+        Allow dynamic-group odaDynamicGroup to manage ai-service-document-family in tenancy
         </copy>
     ```
 
-    ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes access to object storage.
-
-    ```text
-        <copy>
-        allow any-user to manage ai-service-speech-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
-
-        allow any-user to manage object-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
-
-        allow any-user to read tag-namespaces in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXX'
-
-        allow dynamic-group odaDynamicGroup to manage ai-service-speech-family in tenancy
-
-        allow dynamic-group odaDynamicGroup to manage object-family in tenancy
-
-        allow dynamic-group odaDynamicGroup to read tag-namespaces in tenancy
-
-        ALLOW dynamic-group odaDynamicGroup to use fn-invocation in compartment vb
-
-        Allow dynamic-group odaDynamicGroup to read objectstorage-namespaces in tenancy
-
-        Allow dynamic-group odaDynamicGroup to manage logging-family in compartment vb
-
-        Allow dynamic-group odaDynamicGroup to read metrics in compartment vb
-        </copy>
-     ```
-
-     Document Understanding Policy - Allows connection to document understanding 
-
-     ```text
-        <copy>
-        ALLOW any-user to use functions-family in compartment vb where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
-        allow dynamic-group odaDynamicGroup to manage ai-service-document-family in tenancy
-        </copy>
-    ```
-
-    > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
+> **Note** It can take a couple minutes for policies to reflect.
 
 ## Task 3: Create REST Service
 
@@ -230,116 +183,11 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
-    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both Gen AI LLM and  Gen AI Truncate LLM
+    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for the Gen AI LLM 
 
     ![API Services](images/oci_rest_service_4.png)
 
-7. Click on **Add REST Service**. Provide the following details:
-    * **Name**
-
-    ```text
-    <copy>
-    getTranscriptionJobListService
-    </copy>
-    ```
-
-    * **Endpoint**
-
-    ```text
-    <copy>
-    https://speech.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/
-    </copy>
-    ```
-
-    * **Description (Optional)** : `Optional`
-    * **Authentication Type** : OCI Resource Principal
-    * **Method** : GET
-
-    Click **Test Request** to make sure the connection is successful.
-
-   ![API Services](images/oci_rest_service_3.png)
-
-    > **Note:** You would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** to test the connection to the endpoint. However, this connection test is optional because 
-    the skill itself generates the **transcriptionJobId** at runtime. 
-
-8. Click on **Add REST Service**. Provide the following details:
-    * **Name**
-
-    ```text
-    <copy>
-    getTranscriptionTaskService
-    </copy>
-    ```
-
-    * **Endpoint**
-
-    ```text
-    <copy>
-    https://speech.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/{transcriptionTaskId}
-     </copy>
-    ```
-
-    * **Description (Optional)** : `Optional`
-    * **Authentication Type** : OCI Resource Principal
-    * **Method** : GET
-
-    Click **Test Request** to make sure the connection is successful.
-
-   ![API Services](images/oci_rest_service_3.png)
-
-   > **Note:** As above, you would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** and **transcriptionTaskId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime.
-
-9. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID, bucket name, namespace and object name to your own values in the Body section.
-    * **Name**
-
-    ```text
-    <copy>
-    SpeechService
-    </copy>
-    ```
-
-    * **Endpoint**
-
-    ```text
-    <copy>
-    https://speech.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/transcriptionJobs
-     </copy>
-    ```
-
-    * **Description (Optional)** : `Optional`
-    * **Authentication Type** : OCI Resource Principal
-    * **Method** : POST
-    * **Content Type** : application/json
-    * **Body**
-
-    ```text
-    <copy>
-    {
-    "compartmentId": "ocid1.compartment.oc1..aXXXXXX",
-    "inputLocation": {
-        "locationType": "OBJECT_LIST_INLINE_INPUT_LOCATION",
-        "objectLocations": [
-            {
-                "bucketName": "Your bucket",
-                "namespaceName": "Your namespace",
-                "objectNames": [
-                    "Your_test_file.mp4"
-                ]
-            }
-        ]
-    },
-    "outputLocation": {
-        "bucketName": "Your bucket",
-        "namespaceName": "Your namespace",
-        "prefix": "output/"
-    }
-    }
-    </copy>
-    ```
-
-    Click **Test Request** to make sure the connection is successful
-
-   ![API Services](images/oci_rest_service_3.png)
+    ![LLM Services Config](images/lllm-services-skill-config.png)
 
 ## Task 4: Deploy Function Application
 In this section, we will deploy a VCN, OCI Function application, and a serverless Function for document understanding.
@@ -379,54 +227,83 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the following file: 
 
-    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fdoc-understanding-fn.zip)
+    [Document Understanding Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fdoc-function.zip)
 
-2. Extract the contents and open in your favorite IDE
+2. Navigate back to your function application created in Task 4 step 3
 
-    > **Note:** Make sure to save your file when making changes in your IDE
+3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
 
-3. Navigate back to your function application created in Task 4 step 3
-
-4. Select Getting Started > Local setup
-
-    ![Fn Local Setup](images/fn-local-setup.png)
+    ![Fn Cloud Setup](images/cloud-shell.png)
 
     - This will give you your specific instructions for: 
         - Setting the context
         - Logging in to the container registry 
         - Deploying the function to your application
 
-   > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3. Also make sure to switch into the function directory and/or run the commands from VS code console before running the fn commands.
+   > **Note:** You don't need to run the last invoke command. We will be invoking the function later from ODA. 
 
-5. Deploy the function. Once deployed, take note of the endpoint of the function. This will be used later for configuring the skill. 
+4. At the top right of the oci console, open a new cloud shell
+
+    ![Open Cloud Shell](images/open-cloud-shell.png)
+
+
+5. Select the gear icon at the top right of the shell and upload the zip file from step 1 
+
+    ![upload-zip-cloudshell.png](images/upload-zip-cloudshell.png)
+
+6. Create a new directory for your document understanding function and move the zip to the directory
+
+``` text 
+<copy>
+    mkdir docunderstanding
+    mv docunderstanding_doc-function.zip /docunderstanding
+    unzip docunderstanding_doc-function.zip
+</copy>
+```
+
+7. Deploy the function 
+
+``` text 
+<copy>
+    fn -v deploy --app <your-function-app>
+</copy>
+```
+
+    - Take note of the function invoke endpoint once created
 
 ![Deployed Function](images/deploy_function.png)
 
+> **Note** If you get an error with the architecture, you can change the architecture from the cloud shell 
+
+![Change Architecture](images/change-architecture-cs.png)
+
 ## Task 5: Import Skill
 
-1. Click on the link to download the required skill (zip file): [Atom Skill DU.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zlXC_E0MVuy2edcz4Zs5GQNTOTy6wVx5ObK3EDNMUVz7ptSUmx90lnA9uj7Dad6V/n/c4u02/b/hosted_workshops/o/ATOM_DU.zip)
+1. Click on the link to download the required skill (zip file): [Atom Skill.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FATOM_DU_Livelab_Deployment_skill(1.0.1).zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
    ![Import Skill](images/import_skill.png)
 
-3. Once the skill is imported. Click on the Skill and go to Components as shown in the image below.
+3. Once the skill is imported. Click on the Skill and go to Components.
 
-    ![Click Components](images/components.png)
+4. Edit the R Transformer by selecting the pencil icon in the top right 
 
-4. Click on Add Service and give this service a name of your choice. For example - RPlusService. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. Click to download the file [R_Transformer.tgz](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fr-transformer.tgz)
+    ![Open R Transformer](images/edit-r-transformer.png)
 
-    ![Service Package](images/service_package.png)
+5. Edit the model and compartment id to your own 
 
-5. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+    ![Edit Id](images/edit-comp-model-id.png)
+
+4. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
 
     ![Import LLM](images/import_llm.png)
 
-6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
+5. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Configure the LLM Service.
 
     ![API Services](images/oci_rest_service_4.png)
 
-7. Provide a name of your choice for this Service. Give LLM Provider value as the one you imported in Step 5. Give Transformation Handler value as the one you imported in Step 4. Click on Check mark under Action to save it as shown in the image below.
+6. Configure the LLM Provider value as the one you imported in Step 4. Use the R Transformer as the transformation handler. Click on Check mark under Action to save it as shown in the image below.
 
     ![LLM Service](images/llm_service.png)
 
@@ -441,7 +318,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 ## Task 6: Changes to Skill
 
 1. Go to Skills -> Settings -> Configuration
-Provide a value to da.privateKey (Any Password)
+Provide a value to da.privateKey 'None'
 
 2. Go to Skills -> Components and modify the 'analyzedocfn' service with your own function endpoint id from Task 4 Step 5
 
@@ -451,7 +328,7 @@ Provide a value to da.privateKey (Any Password)
 
     ![Create New Service](images/create_new_component.png)
 
-2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC, getSpeechLifecyleState, searchFlow and speechComponent of the flows
+2. Go to Skills -> Flow Designer and make sure there are no errors in documentUnderstandingCC flow
 
 ## Task 7: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
@@ -522,10 +399,26 @@ Provide a value to da.privateKey (Any Password)
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
-9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+9. From here you should be able to converse with the contents of your file 
+
+    ![Document Understanding](images/doc-understanding.png)
+
+> **Note** As mentioned at the beginning of this lab, there is a limit to the size of the files that can be shared. This is due to the context window of the llm. If you are looking for a solution to analyze larger files, please see our other RAG solutions: 
+
+[Deploy an ODA Chatbot powered by GenAI Agents (Object Storage)](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=4022&p210_wec=&session=126701828086940)
+ 
+[Deploy an ODA Chatbot powered by Generative AI Agents using 23ai Vector DB (23AI DB)](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=4070&p210_wec=&session=105575298156069)
+
+**Appendix** 
+
+1. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
 
     ![VB Error](images/vb_error.png)
 
+2. If you get the message 'Unable to route message', confirm the private key is set as mentioned in Task 6 step 1 
+
+    ![Unable to Route Message](images/troubleshooting-privatekey.png)
+    
 ## Acknowledgements
 
 **Authors**
