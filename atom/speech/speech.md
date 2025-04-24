@@ -6,7 +6,7 @@ This lab will show how to implement mp4 video processing with genai.
 
 OCI Speech is an AI service that uses automatic speech recognition technology to transform audio content to text and textual content to speech. Get accurate, text-normalized, time-stamped transcriptions via the OCI console, OCI Data Science notebooks, and REST APIs as well as command-line interfaces or SDKs.
 
-Estimated Time: 1 hours 30 minutes
+Estimated Time: 2 hours 30 minutes
 
 ### Objectives
 
@@ -74,11 +74,53 @@ ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes a
     * **Authentication Type** : OCI Resource Principal
     * **Method** : GET
 
+    - You will need to generate a sample test job in the oci console to get a job id. 
+
+    - Upload a sample mp4 file to your bucket. Note your mp4 file should be less than 25mb, as this is the limit for the web sdk. 
+
+    - Go to OCI console > Hamburger menu > Storage > Buckets
+
+![Buckets](images/buckets.png)
+
+    - Use your existing bucket from the previous lab or create a new private one 
+
+    - Upload your mp4 file to the bucket 
+
+![Upload mp4](images/upload-mp4-bucket.png)
+
+    - Go to OCI console > Hamburger menu > search 'speech' 
+
+![Speech Service](images/speech-service.png)
+
+    - Select 'Create Job' 
+
+![Create Job](images/create-job.png)
+
+    - Enter the details for a speech job 
+
+![Job Details](images/speech-job-details.png)
+
+    - Keep the default transcription details 
+
+![Default Transcription](images/default-transcription.png)
+
+    - Select next then choose the video you uploaded to the bucket. Select 'Submit'
+
+    - Open the new test job created 
+
+![Open Test Job](images/open-test-job.png)
+
+![Copy Job OCID](images/copy-job-ocid.png)
+
+    - Go back to your ODA instance > API services > getTranscriptionJobListService and paste the job ocid as the path variable. 
+
     Click **Test Request** to make sure the connection is successful.
 
-   ![API Services](images/oci_rest_service_3.png)
+![API Services](images/test-request.png)
 
-> **Note:** You would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime. 
+> **Note:** If you get a 404 error, that most likely means the policies are not set up correctly. Please review the policies.
+
+> **Note:** We created a transcription job in the speech service of OCI console to get a new **transcriptionJobId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime. 
 
 2. Click on **Add REST Service**. Provide the following details:
     * **Name**
@@ -101,11 +143,27 @@ ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes a
     * **Authentication Type** : OCI Resource Principal
     * **Method** : GET
 
+    - Go back to your sample job created in the previous step 
+
+    - Select the video under the task heading 
+
+    ![Get Task](images/select-task.png)
+
+    - Copy the task id 
+
+    ![Copy Task ID](images/copy-task-id.png)
+
+    - Paste the job and task ids respectively as the path parameters in the connection 
+
+    ![Paste Parameters](images/copy-job-task-ids.png)
+
     Click **Test Request** to make sure the connection is successful.
 
-   ![API Services](images/oci_rest_service_3.png)
+   ![API Services](images/test-task-job.png)
 
-   > **Note:** As above, you would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** and **transcriptionTaskId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime.
+    > **Note:** If you get a 404 error, that most likely means the policies are not set up correctly. Please review the policies.
+
+    > **Note:** As above, you would need to run a sample job in the speech service of OCI console to get a new **transcriptionJobId** and **transcriptionTaskId** to test the connection to the endpoint. However, this connection test is optional because the skill itself generates the **transcriptionJobId** at runtime.
 
 3. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID, bucket name, namespace and object name to your own values in the Body section.
     * **Name**
@@ -157,8 +215,9 @@ ODA-Speech-Policy - Allows ODA Dev to connect to speech service. Also includes a
 
     Click **Test Request** to make sure the connection is successful
 
-   ![API Services](images/oci_rest_service_3.png)
+    ![API Services](images/test-speech-service.png)
 
+    > **Note:** If you get a 404 error, that most likely means the policies are not set up correctly. Please review the policies.
 
 ## Task 3: Create and Deploy a Function 
 
@@ -168,7 +227,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     [Speech Functions](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2Fspeech-functions-livelab.zip)
 
-2. Navigate back to your function application created in the Document Understanding Lab Task 4
+2. Navigate back to your function application created in the Document Understanding Lab
 
 3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
 
@@ -211,6 +270,8 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     - Change the bucket name atom-dev to the bucket in your tenancy you'd like to store the transcriptions in 
 
+    - To insert changes, press the 'i' key. 
+
 ![dnupload config](images/dnupload-config.png)
 
     - Press escape then ':wq' to save the file 
@@ -241,13 +302,13 @@ In this section, we will delve into the process of creating and deploying an Ora
 </copy>
 ```
 
-## Task 3: Update Skill Flow and Components with Deployed Function Endpoints 
+## Task 4: Update Skill Flow and Components with Deployed Function Endpoints 
 
-2. In the components of the skill, change the endpoints of the downloadUploadObjectStorageFn and getTranscriptCC components to the dnuploadcc function and gettranscriptcc endpoints respectively.
+1. In the components of the skill imported in the previous lab, change the endpoints of the downloadUploadObjectStorageFn and getTranscriptCC components to the dnuploadcc function and gettranscriptcc endpoints respectively.
 
     ![Configure Speech Endpoints](images/oda-configure-dnupload-fn.png)
 
-3. Within the speechComponent flow select the callSpeechService and change the bucket name of the request payload to the bucket you'd like to upload to. Also change the namespace name to your tenancy namespace and the compartment id to your compartment id. 
+2. Within the speechComponent flow select the callSpeechService. Configure the REST service to the speech REST service 'SpeechService'. Change the bucket name of the request payload to the bucket you'd like to upload to. Also change the namespace name to your tenancy namespace and the compartment id to your compartment id. 
 
     ``` text 
     <copy>
@@ -276,6 +337,26 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     ![Configure Speech REST Bucket](images/configure-speech-rest-bucket.png)
 
+3. Go to the getSpeechLifecycle state and select the getTranscriptionTaskList component 
+
+    - Configure the REST service to getTranscriptionJobListService
+
+    ![Configure Job List Service](images/get-transcription-job-list-config.png)
+
+    - Scroll down and confirm the parameters are mapped as shown 
+
+    ![Validate Parameters](images/validate-parameters.png)
+
+4. Go to the getTranscriptionTaskList in the same flow 
+
+    - Configure the REST service to getTranscriptionTaskService
+
+    ![Configure Task Service](images/configure-task-service.png)
+
+    - Validate the parameters are mapped as shown 
+
+    ![Validate Task Parameters](images/validate-task-parameters.png)
+
 4. Make sure there are no errors in the speechComponent and getSpeechLifecycleState flows 
 
 >**Note** After updating the endpoints in the components, you may need to reselect the function component in the visual flow designer
@@ -300,7 +381,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 > **Note** If you get 404 errors, that likely means a policy is missing. Please review the policies. Also note it can take a couple minutes for policies to reflect. 
 
-> **Note** If you have issues with larger files, try increasing the memory of your function. Also note the limit for the size of uploads via the web sdk is 25 mb. 
+> **Note** If you have issues with larger files, try increasing the memory and/or timeout of your function. Also note the limit for the size of uploads via the web sdk is 25 mb. 
 
 ## Acknowledgements
 
