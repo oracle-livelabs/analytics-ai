@@ -1,4 +1,4 @@
-# Provision of Oracle Digital Assistant & Visual Builder Instance
+# Configure Chat with ATOM LLM
 
 ## Introduction
 
