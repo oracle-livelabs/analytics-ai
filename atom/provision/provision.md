@@ -287,10 +287,18 @@ This task involves creating REST service which will be used by ODA to connect to
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
+**Note** The Document Understanding and Analyze Speech flows aren't configured yet. Continue to the next lab for instructions.
+
+9. If the preview is working as expected, you can open your visual builder application and begin conversing with ATOM 
+
+    ![Converse with ATOM](images/chat-with-atom.png)
+
 **Troubleshooting** 
 
-You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+1. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
     ![VB Error](images/vb_error.png)
+
+2. If you get 404 errors, it's likely a permission issue. Please review the policies. 
 
 > **Note:** (Optional) If you would like to edit the custom components locally in your IDE, you will need to install the bots node sdk
 
