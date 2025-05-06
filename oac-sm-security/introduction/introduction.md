@@ -13,10 +13,10 @@ Estimated Workshop Time: 60 minutes
 
 In this workshop, you will learn how to:
 
-* Setup Security Table in Autonomous Data Warehouse(ADW)
-* Create Application Roles in Oracle Analytics Cloud(OAC)
-* Create Initialization Block in Semantic Modeler
-* Configure Row-Level Security in Semantic Modeler
+* Setup Security Table in Autonomous Data Warehouse(ADW).
+* Create Application Roles in Oracle Analytics Cloud(OAC).
+* Create Initialization Block in Semantic Modeler.
+* Configure Row-Level Security in Semantic Modeler.
 
 ### Prerequisites
 
@@ -32,4 +32,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Chenai Jarimani, Cloud Architect, NACI
-* **Last Updated By/Date** - Chenai Jarimani, April 2025
+* **Last Updated By/Date** - Chenai Jarimani, May 2025

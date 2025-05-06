@@ -9,9 +9,9 @@ Estimated Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Create data filters in the Semantic Modeler
-* Create a Workbook to verify the filters
-* Use Developer tools to analyze the queries
+* Create data filters in the Semantic Modeler.
+* Create a Workbook to verify the filters.
+* Use Developer tools to analyze the queries.
 
 ### Prerequisites 
 
@@ -23,21 +23,21 @@ This lab assumes you have:
 
 In this scenario there are three tables:- Countries, Customers and Sales modeled in the Semantic Modeler. The goal is to apply data filters such that each user can only view Sales amounts applicable to their specific country/region. The regions were defined in Lab 1 in the User Responsibilities security table.
 
-1. Review the joins of the 3 tables
+1. Review the joins of the 3 tables.
 
 	![Verify Joins](images/verifyjoins.png)
 
 	> **Note:** The **COUNTRIES** table is secured.  It is also secured with a join to the **SALES** table. The **COUNTRY ISO CODE** values are used to filter the data returned to an Oracle Analytics query.
 
-2. Navigate to **Presentation Layer** , double click **Countries** table, click **Data Filters**
+2. Navigate to **Presentation Layer** , double click **Countries** table, click **Data Filters**.
 
   ![Open Countries Table](images/configsecurity1.png)
 
-3. Under **Add** search for the **CountryRole** that was created in Lab 3.
+3. Under **Add** search for the **CountryRole** that was created in **Lab 3**.
 
  ![Search Application Role](images/configsecurity2.png)
 
-4. Click **CountryRole**, then **f(x)** and Open Expression Editor and enter below code
+4. Click **CountryRole**, then **f(x)** and Open Expression Editor and enter below code.
 
      ```
       <copy>
@@ -45,7 +45,7 @@ In this scenario there are three tables:- Countries, Customers and Sales modeled
       </copy>
      ```
      
-5. Click **Validate** and then **Save** 
+5. Click **Validate** and then **Save**. 
 
  ![Validate Expression](images/configsecurity3.png)
 
@@ -57,7 +57,7 @@ In this scenario there are three tables:- Countries, Customers and Sales modeled
 
 In case the user does not choose the **Countries** table for the analysis, the **Sales** table needs to be filtered so sales totals are displayed only for the countries the user is permitted to see. The appropriate joins to the **Countries** table are added to the filter.
 
-1. Navigate to **Presentation Layer** , double click **Sales** table, click **Data Filters**
+1. Navigate to **Presentation Layer** , double click **Sales** table, click **Data Filters**.
 
   ![Open Sales Table](images/configsecurity4.png)
 
@@ -73,13 +73,13 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
  ![Validate Expression Filter](images/configsecurity5.png)
 
-3. Click **Validate** and **Save** 
+3. Click **Validate** and **Save**. 
 
  ![Verify Data Filter](images/configsecurity7.png)
 
-   > **Note:** A data filter is created on the **Sales** table with joins to the **Customers** and **Countries** tables
+   > **Note:** A data filter is created on the **Sales** table with joins to the **Customers** and **Countries** tables.
 
-4. **Save** the Semantic Modeler, **Check Consistency** and **Deploy**
+4. **Save** the Semantic Modeler, **Check Consistency** and **Deploy**.
 
   ![Deploy Semantic Model](images/configsecurity6.png)
 
@@ -90,11 +90,11 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
  ![Sign into OAC](images/testsecurity1.png)
 
- 2. Create a **Workbook**
+ 2. Create a **Workbook**.
 
  ![Create Workbook](images/testsecurity2.png)
  
- 3. In **Add Data** select the Subject Area in which you configured security, click **Add to Workbook**
+ 3. In **Add Data** select the Subject Area in which you configured security, click **Add to Workbook**.
 
  ![Select Subject Area](images/testsecurity3.png)
 
@@ -114,19 +114,19 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
    ![Database Query](images/testsecurity9.png)
  
- 7. Click **Save**. In Save Workbook, enter **Name**, and then click **Save**
+ 7. Click **Save**. In Save Workbook, enter **Name**, and then click **Save**.
 
   ![Save Workbook](images/testsecurity8.png)
 
- 8. View the Session Log using **Developer**
+ 8. View the Session Log using **Developer**.
 
  ![Open Developer Tools](images/testsecurity10.png)
  
- 9. Under **Performance Tools** click **Refresh**
+ 9. Under **Performance Tools** click **Refresh**.
 
  ![Refresh Report](images/testsecurity11.png)
 
- 10. Click **Execution Log** then scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause
+ 10. Click **Execution Log** then scroll to view the **Physical Query** sent to the Database. Notice the assigned country in the **where** clause.
 
  ![Execution Log](images/testsecurity12.png)
 
@@ -134,9 +134,9 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
  ![Run Workbook](images/testsecurity13.png)
 
-   > **Note:** The report displays all the countries
+   > **Note:** The report displays all the countries.
 
- 12. View the Session Log using **Developer**
+ 12. View the Session Log using **Developer**.
 
  ![Analyze Log](images/testsecurity14.png)
 
@@ -152,4 +152,4 @@ In case the user does not choose the **Countries** table for the analysis, the *
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, NACI
-* **Last Updated By/Date** - Chenai Jarimani, April 2025
+* **Last Updated By/Date** - Chenai Jarimani, May 2025

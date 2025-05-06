@@ -9,8 +9,8 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Configure the security table in ADB
-* Test the security table
+* Configure the security table in ADB.
+* Test the security table.
 
 ### Prerequisites 
 
@@ -21,11 +21,11 @@ This lab assumes you have:
 
 ## Task 1: Configure the security table
 
-1. Navigate to the Database Schema
+1. Navigate to the Database Schema.
 
 	![Database Actions](images/opensqldev.png)
 
-	> **Note:** You can use any SQL interface of your choice (SQL Developer, Toad, Database Actions and etc)
+	> **Note:** You can use any SQL interface of your choice (SQL Developer, Toad, Database Actions and etc).
 
 2. Copy and paste the SQL Code in the worksheet and execute.
  
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 ## Task 2: Test the security table
 
-1. Test your table is configured by writing a **select *** SQL statement
+1. Test your table is configured by writing a **select** SQL statement.
 
  ![Write SQL](images/testsql.png) 
 
@@ -60,4 +60,4 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, NACI
-* **Last Updated By/Date** - Chenai Jarimani, April 2025
+* **Last Updated By/Date** - Chenai Jarimani, May 2025
