@@ -22,7 +22,8 @@ This lab assumes you have:
 
 ## Task 1: Ensure Chicago region subscription
 
-The OCI Generative AI Agents service is currently only available in the Chicago region.
+The OCI Generative AI Agents service is currently available in the following regions: Chicago, London, Frankfurt, Osaka and Sao Paulo.
+The workshop includes prebuilt scripts compatible only with the Chicago region.
 If your tenancy is already subscribed to the Chicago region, please skip to the next task.
 
 1. On the top right, click the Regions drop down menu.
@@ -156,4 +157,4 @@ Next, we will create the access policies:
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea
 , AI and App Integration Specialist Leader
 
-* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
+* **Last Updated By/Date** - Vlad Man, Digital Adoption Manager - AI Initiatives, April 2025

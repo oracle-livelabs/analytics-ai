@@ -26,7 +26,7 @@ Estimated time: 10 min
 
 1. Type "what is Oracle Analytics", then *Enter*
 
-    ![Test Jazz](images/test-video.png)  
+    ![Test Video](images/test-video.png)  
 
 1. Try more questions:
 
