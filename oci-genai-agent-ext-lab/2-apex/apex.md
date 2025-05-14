@@ -42,6 +42,9 @@ Estimated time: 10 min
     | Video     | .mp4      | What is Oracle Analytics                          | 
     | Audio     | .mp3      | Summarize the audio file Voice_SupportRobot.mp3   |
 
+1. Refresh the browser to start a new session. Test the filter. Set the filter to *Oracle*.
+   Ask again the same question. You will see that based on the metadata, you can filter files.
+
 **You may now proceed to the [next lab.](#next)**
 
 ## Known issues

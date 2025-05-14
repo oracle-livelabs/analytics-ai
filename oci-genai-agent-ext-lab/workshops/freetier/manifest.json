@@ -31,6 +31,10 @@
             "filename": "./../../5-customize/customize.md"
         },        
         {
+            "title": "Lab 6: Tools",
+            "filename": "./../../6-tools/tools.md"
+        },            
+        {
             "title": "Need Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
