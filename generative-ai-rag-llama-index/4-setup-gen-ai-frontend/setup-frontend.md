@@ -49,7 +49,7 @@ If you run into any issues in this portion of the lab, you can check error messa
 ## Task 5: Experimenting with RAG Frontend
 1. After completing the previous task, navigate to ```http://localhost:8501``` on your browser.
      ![Streamlit Frontend](images/frontend_splash_page.png)
-2. Upload a file for processing. This may take some time depending on the size of your file. Supported file types are .txt, .pdf, .csv and .tsv. You can use the example file used in this lab [Oracle 23ai Vector Search User Guide](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/oracle-ai-vector-search-users-guide.pdf).
+2. Upload a file for processing. This may take some time depending on the size of your file. Supported file types are .txt, .pdf, .csv and .tsv. You can use the example file used in this lab [Oracle Database 23ai Vector Search User Guide](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/oracle-ai-vector-search-users-guide.pdf).
      ![Upload File](images/browse_files.png)
 3. Once the data is preprocessed and vector generation is finished, your RAG Agent is ready to chat with. Make your first query.
      ![Chat with RAG Agent](images/RAG_text_generated.png)
