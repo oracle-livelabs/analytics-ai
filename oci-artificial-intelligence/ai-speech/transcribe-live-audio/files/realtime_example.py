@@ -5,9 +5,12 @@ import oci
 from oci.config import from_file
 from oci.auth.signers.security_token_signer import SecurityTokenSigner
 
-from oci.ai_speech_realtime import (
-    RealtimeClient,
-    RealtimeClientListener,
+from oci_ai_speech_realtime import (
+    RealtimeSpeechClient, 
+    RealtimeSpeechClientListener
+)
+
+from oci.ai_speech.models import (
     RealtimeParameters,
 )
 
@@ -81,7 +84,7 @@ async def send_audio(client):
     # client.close()
 
 
-class MyListener(RealtimeClientListener):
+class MyListener(RealtimeSpeechClientListener):
     def on_result(self, result):
         if result["transcriptions"][0]["isFinal"]:
             logger.info(
@@ -106,6 +109,9 @@ class MyListener(RealtimeClientListener):
 
     def on_error(self):
         return super().on_error()
+    
+    def on_close(self, error_code, error_message):
+        return super().on_close(error_code, error_message)
 
 
 if __name__ == "__main__":
@@ -120,7 +126,10 @@ if __name__ == "__main__":
     )
     realtime_speech_parameters.partial_silence_threshold_in_ms = 0
     realtime_speech_parameters.final_silence_threshold_in_ms = 2000
-    # realtime_speech_parameters.encoding="audio/raw;rate=16000"
+    realtime_speech_parameters.encoding="audio/raw;rate=16000"
+    realtime_speech_parameters.punctuation = (
+        realtime_speech_parameters.PUNCTUATION_AUTO
+    )
     realtime_speech_parameters.should_ignore_invalid_customizations = False
     realtime_speech_parameters.stabilize_partial_results = (
         realtime_speech_parameters.STABILIZE_PARTIAL_RESULTS_NONE
@@ -140,8 +149,8 @@ if __name__ == "__main__":
     #     }
     # ]
 
-    realtime_speech_url = "wss://realtime.aiservice-preprod.uk-london-1.oci.oraclecloud.com"
-    client = RealtimeClient(
+    realtime_speech_url = "wss://realtime.aiservice.uk-london-1.oci.oraclecloud.com"
+    client =  RealtimeSpeechClient(
             realtime_speech_parameters=realtime_speech_parameters,
             config=config,
             listener=MyListener(),

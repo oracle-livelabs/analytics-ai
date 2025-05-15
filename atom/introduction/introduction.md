@@ -9,6 +9,12 @@ Users can either chat with the bot or upload a document to either summarize it o
 
 Estimated Workshop Time: 1 hours 30 minutes
 
+> **Note** The document understanding feature is used for analyzing smaller documents ~20,000 words. If you are looking for a solution to analyze larger files, please see our other RAG solutions: 
+
+[Deploy an ODA Chatbot powered by GenAI Agents (Object Storage)](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=4022&p210_wec=&session=126701828086940)
+ 
+[Deploy an ODA Chatbot powered by Generative AI Agents using 23ai Vector DB (23AI DB)](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=4070&p210_wec=&session=108259438887587)
+
 ### Objectives
 
 Objective of this workshop is to set-up ATOM and its required OCI services:
@@ -19,10 +25,11 @@ Objective of this workshop is to set-up ATOM and its required OCI services:
 * Digital Assistant - ODA is required to enable chatbot with it's Out Of the Box features and its integration with OCI Gen AI service.
 * Visual Builder - VB can be used to embed ODA in a Web Based Application.
 
-In this workshop, you will learn how to: <!-- TODO: these should mostly match our labs and lab sections -->
+In this workshop, you will learn how to: 
 
 * Install, configure & set-up ODA as an LLM powered chatbot
 * Install, configure & set-up Visual Builder as a frontend channel for ODA
+* (Optionally) Integrate Document Understanding and Analyze Speech services
 * Test out the features and capabilities of ATOM
 
 ### Prerequisites
@@ -49,3 +56,9 @@ This lab assumes you have:
 * **Nitin Jain**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **JB Anderson**, Senior Cloud Engineer, NACIE
+
+**Contributors**
+* **Luke Farley**, Senior Cloud Engineer, NACIE
+
+**Last Updated By/Date:**
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025

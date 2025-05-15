@@ -33,17 +33,17 @@ This lab assumes you have:
 
 1. You should see the greeting message we've entered during the Agent creation displayed in the chat section.
 
-  ![Start chatting](./images/start-chat.png)
+  ![Start chatting](./images/start-chat-updated.png)
 
 1. At this point, we can start asking our Agent questions about the data we provided and get intelligent answers as well as references to the original data that the answers are based on.
 
-Let's type the following question into the chat: "How can i create a fine-tuned model?" and click the **Submit** button.
+Let's type the following question into the chat: "How many free days do i have?" and click the **Submit** button.
 
-  ![Ask first question](./images/ask-first-question.png)
+  ![Ask first question](./images/ask-first-question-updated.png)
 
 1. The Agent will scan the data for relevant information and compose a similar to the following:
 
-  ![First answer](./images/first-answer.png)
+  ![First answer](./images/first-answer-updated.png)
 
 1. The Agent can also provide a direct reference to the data in our dataset where the answer was extracted from. 
 
@@ -51,11 +51,11 @@ Let's type the following question into the chat: "How can i create a fine-tuned 
 
   Providing citations makes sure that the Agent bases it's responses on our data and decreases the chances for hallucinations or made up answers.
 
-  ![First answer citations](./images/first-answer-citations.png)
+  ![First answer citations](./images/first-answer-citations-updated.png)
 
-  In addition to citations, you can also observe the log section on the right of the screen to which search query the Agent is using as well as which data files were found to have relevant answers and the text generated for the response.
+  In addition to citations, you can also observe the **Traces** section on the right of the screen to see the internal thinking process of the agent, planning, which search query the Agent is using as well as which data files were found to have relevant answers and the text generated for the response.
 
-  ![Logs](./images/logs.png)
+  ![Traces](./images/traces.png)
 
 Feel free to experiment and ask the Agent additional questions related to your uploaded document.
 
@@ -64,4 +64,4 @@ Feel free to experiment and ask the Agent additional questions related to your u
 
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea, AI and App Integration Specialist Leader
 
-* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
+* **Last Updated By/Date** - Vlad Man, Digital Adoption Manager - AI Initiatives, April 2025

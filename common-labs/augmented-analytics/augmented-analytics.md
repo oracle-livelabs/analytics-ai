@@ -108,11 +108,11 @@ This lab assumes you have:
 In this lab, you have successfully learned how to use Oracle Analytics' Augmented Analytics capabilities. You may now **proceed to the next lab**.
 
 ## Learn More
-* [Let Oracle Analytics Suggest the Best Visualizations for a Dataset Using Auto Insights](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/let-oracle-analytics-suggest-best-visualizations-dataset.html)
+* [Using Auto Insights](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-auto-insights-understand-your-data.html)
 
 * [Add a Language Narrative Visualization](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/add-language-narrative-visualization.html#GUID-F25DA183-DFFB-4788-8581-B6D935A26EE9)
 
-* [Analyze Data with Explain](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/analyze-data-explain.html#GUID-D1C86E85-5380-4566-B1CB-DC14E0D3919E)
+* [Analyze Data with Explain](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-explain-understand-your-data.html)
 
 * [4 Reasons Why Augmented Analytics is the Future of Business Intelligence](https://blogs.oracle.com/cloud-infrastructure/post/4-reasons-why-augmented-analytics-is-the-future-of-business-intelligence)
 

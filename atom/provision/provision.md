@@ -1,10 +1,12 @@
-# Provision of Oracle Digital Assistant & Visual Builder Instance
+# Configure Chat with ATOM LLM
 
 ## Introduction
 
-This lab will take you through the steps needed to provision Oracle Digital Assistant & Visual Builder Cloud Service
+This lab will take you through the steps needed to provision Oracle Digital Assistant & Visual Builder Cloud Service. It will also cover dynamic group and policy creation along with the configuration of the LLM component. 
 
-Estimated Time: 1 hours 30 minutes
+Document understanding and speech configuration will be covered in the following labs.
+
+Estimated Time: 2 hours 30 minutes
 
 ### About Oracle Digital Assistant
 
@@ -16,7 +18,7 @@ Provisioning of ODA
 
 In this lab, you will:
 
-* **Provision ODA Instance**
+* **Provision and Configure ODA Instance**
   * Follow Task 1 to Task 5 to set-up ODA Instance
 * **Provision VBCS Instance**
   * Follow Task 6
@@ -51,6 +53,40 @@ This task will help you to create Oracle Digital Assistant under your choosen co
 
 This task will help you to create desired dynamic group & necessary policy for the Oracle Digital Assistant
 
+Create a Dynamic Group
+Go to Identity>>Domains>>Default domain>>Dynamic groups
+
+![Navigate to Domains](images/domain.png)
+
+Click on Create dynamic group and name it as odaDynamicGroup
+
+Select radio button - Match any rules defined below
+Add the following rules. Please change the values of OCIDs to your own values here.
+
+Rule 1
+
+```text
+     <copy>
+    All {instance.id = 'ocid1.odainstance.oc1.us-chicago-1.XXXX'}
+     </copy>
+```
+
+Rule 2
+
+```text
+     <copy>
+    All {resource.type='odainstance', resource.compartment.id='ocid1.compartment.oc1..XXXX' }
+    </copy>
+ ```
+
+Rule 3
+
+```text
+    <copy>
+    ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..XXXX'}
+     </copy>
+```
+
 1. Attach the policy at the root compartment level. Please change the values of OCIDs to your own values here.
 
     ```text
@@ -58,13 +94,14 @@ This task will help you to create desired dynamic group & necessary policy for t
     Allow any-user to use ai-service-generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXXXXXX'
     Allow any-user to use generative-ai-family in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXXXX'
     Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
+    Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
     </copy>
     ```
 
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
 
-## Task 3: Create REST Service for the OCI Generative AI Service
+## Task 3: Create LLM REST Service for the OCI Generative AI Service
 
 This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Service. The REST Service will be created for the ODA created in **Task 1**.  This step only needs to be done once per ODA instance. If users are sharing one ODA instance to create multiple chatbot, only the first person will need to perform this step
 
@@ -80,7 +117,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/oda_api_service.png)
 
-4. Click on **Add REST Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values in the Body section. You can follow the next step - Step 5 to see how to retrieve model ID.
+4. Click on **Add LLM Service**. Provide the following details. Please note you will have to change values of CompartmentID and modelID to your own ID values in the Body section. You can follow the next step - Step 5 to see how to retrieve model ID.
     * **Name**
 
     ```text
@@ -129,7 +166,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command-r-plus v1.2**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.2
+    * Step 3: For the **Model**=**cohere.command-r-plus v1.7**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.7
+
+        > **Note:** v1.7 is the latest model as of this livelab release. This lab should work with any version of the cohere model. 
 
     ![API Services](images/chat_screenshot.png)
 
@@ -139,37 +178,35 @@ This task involves creating REST service which will be used by ODA to connect to
 
     > **Note**
     > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
-    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for both GenAI LLM and  GenAI Truncate LLM
+    > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for the GenAI LLM 
 
     ![API Services](images/oci_rest_service_4.png)
 
 ## Task 4: Import Skill (Provided)
 
-1. Click on the link to download the required skill (zip file): [Atom Skill txt.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2ZHprOu2tSai8mJNQQm34NX65oLDcFMs46FiPKlA4cHZD0XJpvIFeycEd2aPMdkm/n/c4u02/b/hosted_workshops/o/ATOM_Skill_txt.zip)
+1. Click on the link to download the required skill (zip file): [Atom Skill.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FATOM_DU_Livelab_Deployment_skill(1.0.1).zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
    ![Import Skill](images/import_skill.png)
 
-3. Once the skill is imported. Click on the Skill and go to Components as shown in the image below.
+3. Once the skill is imported. Click on the Skill and go to Components.
 
-    ![Click Components](images/components.png)
+4. Edit the R Transformer by selecting the pencil icon in the top right 
 
-4. Click on Add Service and give this service a name of your choice. For example - RPlusService. And upload the following .tgz file under Component Service Package Creation Type section. Please make sure to change the CompartmentID and modelID located in Rtransformer.js file in components folder to your own CompartmentID and modelID. So in short, you have to unzip it, change those IDs and zip it again to tgz format. Click to download the file [R_Transformer.tgz](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IZm77Vl42_dHGMca5-8XFpMm8rvAebL44L-7C_mXzVb7KfOrY1G_Uy7Ilqd6Vg9w/n/c4u02/b/hosted_workshops/o/R_Transformer.tgz)
+    ![Open R Transformer](images/edit-r-transformer.png)
 
-    ![Service Package](images/service_package.png)
+5. Edit the model and compartment id to your own 
 
-5. Click on hamburger menu and locate & click **API Services** under Settings section. Click on LLM Services and Import the following LLM Service as shown in the image below. Please make sure to change the CompartmentID and modelID located in yaml file to your own CompartmentID and modelID. Click to download the file [LLMService-ChatRPlusLLM.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/L3-NZ_Z7sZheGNvgA6hprS4D_5LXTIBN4WKusdq3llb_QtAxvHZLSpBD4KH3HnBK/n/c4u02/b/hosted_workshops/o/LLMService-ChatRPlusLLM.yaml)
+    ![Edit Id](images/edit-comp-model-id.png)
 
-    ![Import LLM](images/import_llm.png)
-
-6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Click on New LLM Service.
+6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Configure the LLM Service.
 
     ![API Services](images/oci_rest_service_4.png)
 
-7. Provide a name of your choice for this Service. Give LLM Provider value as the one you imported in Step 5. Give Transformation Handler value as the one you imported in Step 4. Click on Check mark under Action to save it as shown in the image below.
+7. Configure the LLM Provider value as the one you configured in Task 3. Use the R Transformer as the transformation handler. Click on Check mark under Action to save it as shown in the image below.
 
-    ![LLM Service](images/llm_service.png)
+    ![LLM Service](images/lllm-services-skill-config.png)
 
 8. Go to Skills -> Flows. Click on Chat.
 
@@ -178,6 +215,8 @@ This task involves creating REST service which will be used by ODA to connect to
 9. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 7.
 
     ![Invoke LLM](images/invoke_llm.png)
+
+> **Note** The document understanding and speech flows are configured in the next lab. This lab focuses on configuring the LLM component.
 
 ## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
@@ -216,7 +255,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_VB.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UcaJRNLr-UXQ55zFIOdS_rloRYfUSYA49sRGZsBON3ZNYncODcwC1DLdz7Xw4PJd/n/c4u02/b/hosted_workshops/o/ATOM_VB.zip)
+4. Click on the link to download the VB application (zip file): [ATOM_Training.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -232,25 +271,49 @@ This task involves creating REST service which will be used by ODA to connect to
 
         ![Create Channel](images/import_vbapp_2.png)
 
-6. Once import is completed, open the index.html file in the VB Instance and update the details as follows:
+6. Once import is completed, open the embedded-chat javascript file in the VB Instance and update the details as follows:
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
 
-    ![Create Channel](images/vbapp_setup.png)
+    ![Create Channel](images/vb_config.png)
 
     > **Note**
     > * URI is the hostname of ODA instance provisioned in **Task 1**
     > * channelId is created during **Task 5** - **Step 3**
 
-7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from index.html
+7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from embedded-chat javscript file.
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
 
-9. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
+**Note** The Document Understanding and Analyze Speech flows aren't configured yet. Continue to the next lab for instructions.
 
+9. If the preview is working as expected, you can open your visual builder application and begin conversing with ATOM 
+
+    ![Converse with ATOM](images/chat-with-atom.png)
+
+**Troubleshooting** 
+
+1. You may face an issue when you go to publish the live link of the application. It may throw a "forbidden" error. The solution is to remove the "Admin" and "User" role in the JSON tab from all the vb pages - main-start, main-embedded-chat, and the shell page as shown in the image below.
     ![VB Error](images/vb_error.png)
+
+2. If you get 404 errors, it's likely a permission issue. Please review the policies. 
+
+> **Note:** (Optional) If you would like to edit the custom components locally in your IDE, you will need to install the bots node sdk
+
+> * Run this command in your terminal to install -
+        ```text
+        <copy>
+        npm install @oracle/bots-node-sdk
+        </copy>
+        ```
+> * Once installed - cd into the folder and run the below command to zip the folder.
+        ```text
+        <copy>
+        npx @oracle/bots-node-sdk pack
+        </copy>
+        ```
 
 ## Acknowledgements
 
@@ -260,5 +323,8 @@ This task involves creating REST service which will be used by ODA to connect to
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **JB Anderson**,  Senior Cloud Engineer, NACIE
 
+**Contributors**
+* **Luke Farley**, Senior Cloud Engineer, NACIE
+
 **Last Updated By/Date:**
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE, Sep 2024
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025
