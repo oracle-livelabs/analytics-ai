@@ -4,13 +4,15 @@
 
 This lab will go through the steps on configuring the GenAI Agent tools. First we'll go through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection, then define the tools through the console. After the tools are configured we will deploy a function that invokes the agent service. The function we deploy will be used in the next lab.
 
-Estimated Time: 90 minutes
+Estimated Time: 120 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Define agent tools in the oci console
-* Deploy agent function to function application
+* Deploy VCN and subnet for ADB
+* Create Vault to store DB secret
+* Define agent tools in the OCI console
+* Deploy agent functions to function application
 * Provision an Oracle ADB 23ai
 * Create DB Tools Connection
 
@@ -21,6 +23,8 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
+
+  > **Note** Tasks 3-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. However, you would need to make sure the function code provisioned later doesn't include the reference to the sql tool.
 
 ## Task 1: Dynamic Group and Policy Definition for ADB and DB Tools Connection
 
@@ -72,7 +76,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
     **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
 
-## Task X: Create RAG Tool 
+## Task 2: Create RAG Tool 
 
 1. Navigate to your GenAI Agent created in the previous lab 
 
@@ -90,7 +94,9 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 ![Test RAG Tool](./images/rag/test-rag.png)
 
-## Task 2: Create VCN and Private Subnet
+  > **Note** Take note of the RAG Tool id, this will be used later in the lab for the function deployment. 
+
+## Task 3: Create VCN and Private Subnet
 
 This task will help you to create a VCN and private subnet in your compartment. This will be used for the ADB for the SQL Tool.
 
@@ -102,7 +108,7 @@ This task will help you to create a VCN and private subnet in your compartment. 
 
     ![Ingress Rules](images/adb/ingress_rules.png)
 
-## Task 3: Create Vault to store database secrets
+## Task 4: Create Vault to store database secrets
 
 This task will help you to create vault which would be used to save secrets for the database. The secrets are used for the agent to connect to your database with the db tool connection.
 
@@ -116,7 +122,7 @@ This task will help you to create vault which would be used to save secrets for 
 
     ![Create Key](images/adb/create_key.png)
 
-## Task 4: Create Autonomous Database
+## Task 5: Create Autonomous Database
 
 This task involves creating Autonomous Database 23ai.
 
@@ -124,7 +130,7 @@ This task involves creating Autonomous Database 23ai.
 
     ![Create ADB](images/adb/create_adb.png)
 
-2. Provide information for Compartment, Display name, Database name. Choose workload type as Transaction Processing. Choose deployment type as Serverless. Choose database version as 23ai and give it a password of your preference. Check the Developer mode option.
+2. Provide information for Compartment, Display name, Database name. Choose workload type as Transaction Processing. Choose deployment type as Serverless. Choose database version as 23ai and give it a password of your preference. 
 
     ![Create ATP](images/atp/create-atp-1.png)
 
@@ -134,7 +140,7 @@ This task involves creating Autonomous Database 23ai.
 
 4. Finally provide a valid email ID and click on Create Autonomous Database.
 
-## Task 5: Create Database Tools Connection
+## Task 6: Create Database Tools Connection
 
 This task involves creating a Database Tools Connection which will be used to query the database using SQL Worksheet.
 
@@ -164,7 +170,7 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 8. Choose newly created private endpoint as Private Endpoint.
 
-9. Choose Wallet format as None in SSO details.
+9. Choose Wallet format as None in SSL details.
 
 10. Click on Create to create a database tools connection.
 
@@ -175,7 +181,7 @@ This task involves creating a Database Tools Connection which will be used to qu
     ![Validate DBTools](images/adb/dbconn_validate.png)
 
 
-## Task X: Create and Populate Employee Table
+## Task 7: Create and Populate Employee Table
 
 1. Navigate to the SQL Worksheet of your newly created ADB and run the following statements: 
 
@@ -206,14 +212,14 @@ SELECT * FROM dual;
 </copy>
 ```
 
-## Task C: Create SQL Tool
+## Task 8: Create SQL Tool
 1. In the console navigate to your agent and create a new SQL Tool
 
   ![Navigate to Agent](./images/console/agents-service-navigation.png)
 
 2. Enter name e.g. atomlab-sql and description, along with the database schema 
 
-> *Note* Make sure to use the same schema defined from the previous task.
+> **Note** Make sure to use the same schema defined from the previous task.
 
 ```text
 <copy>
@@ -226,6 +232,8 @@ CREATE TABLE Employees (
 </copy>
 ```
 
+> **Note** If you are using your own table, you can get a better idea of the schema by running DESC table_name;
+
 ![Create SQL Tool](images/sqltool/create-tool.png)
 
 3. Select Oracle SQL as the dialect and select the database tool connection configured in the previous task. Enable SQL Execution and self correction. 
@@ -235,13 +243,23 @@ CREATE TABLE Employees (
 
 5. Create the tool 
 
+  > **Note** Take note of the toolId, this will be used in a later step. 
+
 6. Navigate to your endpoint and launch the chat. Ask a question such as "Give me list of employees". The agent should invoke the SQL Tool and convert the query to Oracle SQL, then return the result - 
 
   ![Test SQL Tool](./images/sql/test-sql-tool.png)
 
   ![Test SQL Tool](./images/sql/test-sql-tool-2.png)
 
-## Task D: Create Analyze Document Tool from Console 
+  > **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
+
+  > **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description
+
+  > **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
+
+  > **Note** The SQL Tool will occasionally throw 500 errors. This is a bug and should be fixed soon. 
+
+## Task 9: Create Analyze Document Tool from Console 
 
   1. Navigate back to the tools of your agent and create a new function tool - 
 
@@ -265,9 +283,9 @@ CREATE TABLE Employees (
 
   2. Create the tool 
 
-  > *Note* You will not be able to test the analyze_doc function yet; this tool will depend on the function we will deploy later.
+  > **Note** You will not be able to test the analyze_doc function yet; this tool will depend on the function we will deploy later.
 
-## Task E: Create a General Chat Tool
+## Task 10: Create a General Chat Tool
 
   1. Navigate to your agent tools and create a new tool - 
 
@@ -291,7 +309,7 @@ CREATE TABLE Employees (
 
   2. Create the tool 
 
-## Task E: Create a Weather Tool
+## Task 11: Create a Weather Tool
 
   1. Navigate to your agent tools and create a new tool called "get_weather" 
 
@@ -312,49 +330,93 @@ CREATE TABLE Employees (
 
   2. Create the tool 
 
-## Task F: Create an API Endpoint Tool 
+<!---
+## Task F: Create an API Endpoint Tool
+--> 
 
-## Task Y: Deploy Function to Function Application
+## Task 12: Deploy Function to Function Application
 
 The function to be deployed will invoke the agent from the ODA application.
 
-1. Files that you want the reader to download:
+In this section, we will delve into the process of creating and deploying an Oracle Function. OCI Functions provide a serverless environment, allowing you to focus on your code without worrying about server management. We will guide you through the steps of developing and deploying an OCI Function, which can be a powerful tool for extending your application's capabilities. You will learn how to create a function, configure its settings, and deploy it using the Oracle Cloud Infrastructure console or command-line interface. By the end of this section, you will be ready to connect the function to the ODA skill.
 
-  When the file type is not recognized by the browser, you can use the following format.
+1. Download the following file: 
 
-  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
+    [Agent ADK Fn](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fagent-multi-tool-fn.zip)
 
-  Download the [starter SQL code](files/starter-file.sql).
+2. Navigate back to your function application created in Task 2
 
-  When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
 
-  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
+    ![Fn Cloud Setup](images/fn-deploy/cloud-shell.png)
 
-  Download the [sample JSON code](files/sample.json?download=1).
+    - This will give you your specific instructions for: 
+        - Setting the context
+        - Logging in to the container registry 
+        - Deploying the function to your application
 
-  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+   > **Note:** You don't need to run the last invoke command. We will be invoking the function later from ODA. 
 
-3. Conditional content example (type="livelabs")
+4. At the top right of the oci console, open a new cloud shell
 
-    Select your compartment. <if type="livelabs">If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="alwaysfree">Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
+    ![Open Cloud Shell](images/fn-deploy/open-cloud-shell.png)
 
-    ![](images/atp-settings-1.png)
-    <if type="livelabs">![](images/atp-settings-2-notaf.png)</if>
-    <if type="alwaysfree">![](images/atp-settings-2.png)</if>
-    ![](images/atp-settings-3.png)
+
+5. Select the gear icon at the top right of the shell and upload the zip file from step 1 
+
+    ![upload-zip-cloudshell.png](images/fn-deploy/upload-zip-cloudshell.png)
+
+6. Create a new directory for your agent multi tool function and move the zip to the directory
+
+``` text 
+<copy>
+    mkdir agent-multi-tool-fn
+    mv agent-multi-tool-fn.zip /agent-multi-tool-fn
+    cd /agent-multi-tool-fn
+    unzip agent-multi-tool-fn.zip
+</copy>
+```
+
+7. open the func.yaml and enter your agentEndpointId, sqlToolId, and ragToolId
+
+``` text 
+<copy>
+    vi func.yaml 
+</copy>
+```
+
+  - Press 'i' to insert your changes then press escape then ':wq' to save your changes. 
+
+  > **Note** Your agentEndpointId is *not* the same as your AgentId. Please make sure you use the endpoint id.
+
+x. Deploy the function 
+
+``` text 
+<copy>
+    fn -v deploy --app <your-function-app>
+</copy>
+```
+
+    - Take note of the function invoke endpoint once created
+
+![Deployed Function](images/fn-deploy/deploy_function.png)
+
+> **Note** If you get an error with the architecture, you can change the architecture from the cloud shell 
+
+![Change Architecture](images/fn-deploy/change-architecture-cs.png)
+
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-
 * [SQL Tool Guidelines for Generative AI Agents](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm)
+* [ADB Shared with Private Endpoint Access](https://docs.oracle.com/en-us/iaas/database-tools/doc/oracle-database-use-cases.html#OCDBT-GUID-C2C8BC15-EDB1-47D6-BDFC-852558C8D650)
 * [Database Tools - ADB Shared with Public IP](https://docs.oracle.com/en-us/iaas/database-tools/doc/oracle-database-use-cases.html#OCDBT-GUID-87796740-BAE4-4805-BF6D-C75A02A3D1D4)
 * [RAG Tool Oracle Database Guidelines for Generative AI Agents](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/oracle-db-guidelines.htm)
 
 ## Acknowledgements
 
-* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
+* **Author** 
+    * **Luke Farley**, Senior Cloud Engineer, NACIE
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE

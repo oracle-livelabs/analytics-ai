@@ -4,7 +4,7 @@
 
 This lab will take you through the steps needed to provision and configure Oracle Digital Assistant & Visual Builder Cloud Service. It will also cover dynamic group and policy creation along with the integration with OCI Functions. 
 
-Estimated Time: 2 hours 30 minutes
+Estimated Time: 60 minutes
 
 ### About Oracle Digital Assistant
 
@@ -12,7 +12,7 @@ Oracle Digital Assistant delivers a complete AI platform to create conversationa
 
 ## Task 1: Provision Oracle Digital Assistant
 
-This task will help you to create Oracle Digital Assistant under your choosen compartment.
+This task will help you to create Oracle Digital Assistant under your chosen compartment.
 
 1. Locate Digital Assistant under AI Services
 
@@ -78,13 +78,96 @@ Rule 3
     > **Note:**
     > * Please make sure that the compartmentId should be the one under which the resource is  created.
 
+## Task 2: Configure Create Session API Endpoint 
+
+1. Import the following sample yaml file 
+
+    [Create Session yaml](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2FRESTService-GenAIAgentCreateSession.yaml)
+
+    > **Note** The endpoint can also be configured manually by referring to the [Create Session API Documentation](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-agents-client/20240531/Session/CreateSession)
+
+2. Change the path variable to point to your agent endpoint id 
+
+    ![Agent Endpoint Config](images/oda/agent-endpoint-config.png)
+
+3. Test the connection. If successful, you should get a 200 response with a session id. Note the session id for the next Task. 
+
+    > **Note** If you get a 404 error, that likely means a policy is missing or misconfigured. Check Task 2 and make sure the ODA service can connect to the agent service. 
+
 ## Task 3: Configure API Endpoint to Agent Function
+
+1. Open your ODA service console provisioned in Task 1 and navigate to API services > Add Service
+
+    ![API Services](images/oda/oda-configure-fn.png)
+
+2. Add your function invoke endpoint in the endpoint field and use the following test payload to test the connection 
+
+    ![Test Connection](images/oda/oda-test-payload.png)
+
+    ``` text 
+    <copy>
+        {
+            "prompt": "Hello how are you",
+            "sessionId": "<sample-session-id>" 
+        }
+    </copy>
+    ```
+    
+3. If configured correctly, you should get a success response 
+
+    ![200 Response](images/oda/success-response.png)
+
+    > **Note** 404 responses usually indicate a policy is missing/misconfigured. Please refer back to Task 2.
+
+    > **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
 
 ## Task 4: Import Skill
 
+1. Import the following skill 
+
+    [genai-agent-adk-livelab](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenaiagentadklivelab(1.0).zip)
+
+2. Open the 'Create Session' Flow and select the 'createSession' state 
+
+3. Input your agent endpoint id as the value for the parameter 
+
+    ![Configure Agent Endpoint](images/oda/skill-config-agent-endpoint.png)
+
+4. Open the 'UnresolvedIntent' flow and select the 'callAgent' state
+
+5. In the REST service select your own function api endpoint 
+
+    ![Configure Agent Fn](images/oda/skill-config-fn.png)
+
+6. In the request body pass the following 
+
+    ``` text 
+    <copy>
+        {
+            "prompt": "${userInput}",
+            "sessionId": "${skill.sessionIdResponse.value.responsePayload.id}"
+        }
+    </copy>
+    ```
+
+7. Train the bot and select preview (top right). Ask a question such as 'How are you'. If everything was configured correctly, you should get a response. 
+
+    > **Note** You can review any unexpected behavior in the preview of ODA to diagnose any issues. 
+    
 ## Task 5: Configure & Expose Skill
 
-## Task 6: Create VBCS Instance & embed ODA skill in VBCS Application (Please directly move to Step 5 incase you already have a VBCS instance provisioned)
+1. Navigate to Development > Channels and select 'Add Channel' 
+
+    ![Add Channel](images/oda/add-channel.png)
+
+2. Select Oracle Web, disable client authentication, and put '*' as allowed domains 
+
+    ![Create Channel](images/oda/create-channel.png)
+
+3. Create the channel and take note of the channel ID. This will be used in the next task.
+
+
+## Task 6: Create VBCS Instance & Embed ODA Skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -99,7 +182,7 @@ Rule 3
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_Training.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
+4. Click on the link to download the VB application (zip file): [ATOM-Multi-Tool-Agent-VB.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2FATOM-Multi-Tool-Agent-VB.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -133,8 +216,19 @@ Rule 3
 
 9. If the preview is working as expected, you can open your visual builder application and begin conversing with ATOM 
 
-    ![Converse with Agent](images/...)
+    ![Converse with Agent](images/vb/chat.png)
 
+    ![Invoke Tools](images/vb/chat-2.png)
+
+    - You can also upload documents which will automatically route to the document understanding function
+
+    ![Upload Documentes](images/vb/chat-3.png)
+
+
+    > **Note** For uploading documents, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of this livelab.
+
+    > **Note** There will not be a bubble when uploading a document to inform the document is being processed. 
+    
 **Troubleshooting** 
 
 1. If you get 404 errors, it's likely a permission issue. Please review the policies. 
