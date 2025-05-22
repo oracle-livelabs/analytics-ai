@@ -225,10 +225,10 @@ Rule 3
     ![Upload Documentes](images/vb/chat-3.png)
 
 
-    > **Note** For uploading documents, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of this livelab.
+    > **Note** For uploading documents, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab.
 
-    > **Note** There will not be a bubble when uploading a document to inform the document is being processed. 
-    
+    > **Note** There will not be a bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
+
 **Troubleshooting** 
 
 1. If you get 404 errors, it's likely a permission issue. Please review the policies. 
@@ -238,7 +238,9 @@ Rule 3
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
-**Contributors**
+* **Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+* **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025

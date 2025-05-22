@@ -15,7 +15,7 @@ Remember, this lab is designed to provide a practical, interactive learning expe
 ### Objectives
 By the end of this lab you will be able to converse with an agent equipped with multiple tool calling capabilities such as general llm chat, get weather, analyze document and more.
 
-![Architecture Diagram](images/...)
+![Architecture Diagram](images/multo-tool-architecture.png)
 
 * Generative AI Agent - Gen AI Agent Service is fully managed with integrated LLM and tool calling capabilities.
 * Digital Assistant - ODA is required to enable chatbot with it's Out Of the Box features and its integration with OCI Gen AI service.
@@ -36,5 +36,10 @@ In this workshop, you will learn how to:
 * [Overview of Visual Builder](https://docs.oracle.com/en-us/iaas/visual-builder/doc/oracle-visual-builder.html)
 
 ## Acknowledgements
+
 * **Author** - Luke Farley, Senior Cloud Engineer, NACIE
+
+* **Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+
 * **Last Updated By/Date** - Luke Farley, May 2025

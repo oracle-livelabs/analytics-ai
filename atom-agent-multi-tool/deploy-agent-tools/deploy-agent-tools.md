@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will go through the steps on configuring the GenAI Agent tools. First we'll go through the steps needed to provision Oracle Autonomous Database 23ai and Database Tools Connection, then define the tools through the console. After the tools are configured we will deploy a function that invokes the agent service. The function we deploy will be used in the next lab.
+This lab will go through the steps on configuring the GenAI Agent tools. First we'll go through the steps needed to provision the RAG tool, then we'll set up the Oracle Autonomous Database 23ai and Database Tools Connection. Once the DB is provisioned, we'll define the tools through the console. After the tools are configured we will deploy a function that invokes the agent service. The function we deploy will be used in the next lab.
 
 Estimated Time: 120 minutes
 
@@ -24,9 +24,37 @@ This lab assumes you have:
 * All previous labs successfully completed
 * Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
 
-  > **Note** Tasks 3-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. However, you would need to make sure the function code provisioned later doesn't include the reference to the sql tool.
+  > **Note** Tasks 2-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. 
 
-## Task 1: Dynamic Group and Policy Definition for ADB and DB Tools Connection
+## Task 1: Add Agent Routing Instructions and Create RAG Tool 
+
+1. Navigate to your GenAI Agent created in the previous lab 
+
+![Screenshot showing how to navigate to the Agents service from the main menu](./images/console/agents-service-navigation.png)
+
+2. Edit your agent and add the following routing instructions: 
+
+    ```text
+     <copy>
+      You are a helpful assistant. If user asks about <info on your dataset>, use the rag tool. If user asks about employees, use atomlivelab-sql tool. If user uploads url, use analyze_doc tool. If user asks about the weather, use the weather tool. If user asks a general question, use your general knowledge, no tools.
+     </copy>
+    ```
+
+    > **Note** Be sure to replace "info on your dataset" above with a relevant term to your knowledge base to help the agent route to the correct tool. In our example, our dataset relates to wines.
+
+3. Select your agent and create a new tool 
+
+![Create RAG Tool](./images/rag/create-rag-tool.png)
+
+4. Give a description of the tool and select the knowledge base you created in the previous lab 
+
+![Configure RAG Tool](./images/rag/config-rag.png)
+
+5. Navigate to the agent endpoint and launch the chat. You should now be able to ask questions about your dataset - 
+
+![Test RAG Tool](./images/rag/test-rag.png)
+
+## Task 2: Dynamic Group and Policy Definition for ADB and DB Tools Connection
 
 This task will help you ensure that the Dynamic Group and Policy are correctly defined.
 
@@ -75,26 +103,6 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
     ```
 
     **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
-
-## Task 2: Create RAG Tool 
-
-1. Navigate to your GenAI Agent created in the previous lab 
-
-![Screenshot showing how to navigate to the Agents service from the main menu](./images/console/agents-service-navigation.png)
-
-2. Select your agent and create a new tool 
-
-![Create RAG Tool](./images/rag/create-rag-tool.png)
-
-3. Give a description of the tool and select the knowledge base you created in the previous lab 
-
-![Configure RAG Tool](./images/rag/config-rag.png)
-
-4. Navigate to the agent endpoint and launch the chat. You should now be able to ask questions about your dataset - 
-
-![Test RAG Tool](./images/rag/test-rag.png)
-
-  > **Note** Take note of the RAG Tool id, this will be used later in the lab for the function deployment. 
 
 ## Task 3: Create VCN and Private Subnet
 
@@ -180,12 +188,11 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     ![Validate DBTools](images/adb/dbconn_validate.png)
 
-
 ## Task 7: Create and Populate Employee Table
 
 1. Navigate to the SQL Worksheet of your newly created ADB and run the following statements: 
 
-> *Note* You can create or use your own tables here; we provided the table below for illustration purposes. 
+> **Note** You can create or use your own tables here; we provided the table below for illustration purposes. 
 
 ```text
 <copy>
@@ -212,12 +219,14 @@ SELECT * FROM dual;
 </copy>
 ```
 
+  > **Note** If you use your own table, large queries can cause timeouts in the agent service & ODA. Try filtering your results to avoid timeouts.
+
 ## Task 8: Create SQL Tool
 1. In the console navigate to your agent and create a new SQL Tool
 
   ![Navigate to Agent](./images/console/agents-service-navigation.png)
 
-2. Enter name e.g. atomlab-sql and description, along with the database schema 
+2. Enter name e.g. atomlivelab-sql and description, along with the database schema 
 
 > **Note** Make sure to use the same schema defined from the previous task.
 
@@ -243,8 +252,6 @@ CREATE TABLE Employees (
 
 5. Create the tool 
 
-  > **Note** Take note of the toolId, this will be used in a later step. 
-
 6. Navigate to your endpoint and launch the chat. Ask a question such as "Give me list of employees". The agent should invoke the SQL Tool and convert the query to Oracle SQL, then return the result - 
 
   ![Test SQL Tool](./images/sql/test-sql-tool.png)
@@ -253,11 +260,11 @@ CREATE TABLE Employees (
 
   > **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
 
-  > **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description
+  > **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
 
   > **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
 
-  > **Note** The SQL Tool will occasionally throw 500 errors. This is a bug and should be fixed soon. 
+  > **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. Please reach out to the Agent team for questions. 
 
 ## Task 9: Create Analyze Document Tool from Console 
 
@@ -285,31 +292,7 @@ CREATE TABLE Employees (
 
   > **Note** You will not be able to test the analyze_doc function yet; this tool will depend on the function we will deploy later.
 
-## Task 10: Create a General Chat Tool
-
-  1. Navigate to your agent tools and create a new tool - 
-
-  ![Create General Chat Tool](./images/general-chat/create-general-chat-tool.png)
-
-  - Give the following description - 
-
-    ```text
-    <copy>
-      Takes a general user input and returns answer 
-    </copy>
-    ```
-
-  - Paste the following function parameters - 
-
-    ```text
-    <copy>
-      {"type":"object","properties":{"userInput":{"type":"string"}},"required":"['userInput']"}
-    </copy>
-    ```
-
-  2. Create the tool 
-
-## Task 11: Create a Weather Tool
+## Task 10: Create a Weather Tool
 
   1. Navigate to your agent tools and create a new tool called "get_weather" 
 
@@ -334,7 +317,7 @@ CREATE TABLE Employees (
 ## Task F: Create an API Endpoint Tool
 --> 
 
-## Task 12: Deploy Function to Function Application
+## Task 11: Deploy Function to Function Application
 
 The function to be deployed will invoke the agent from the ODA application.
 
@@ -342,7 +325,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the following file: 
 
-    [Agent ADK Fn](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fagent-multi-tool-fn.zip)
+    [Agent ADK Fn](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenai-agent-fn.zip)
 
 2. Navigate back to your function application created in Task 2
 
@@ -370,14 +353,14 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 ``` text 
 <copy>
-    mkdir agent-multi-tool-fn
-    mv agent-multi-tool-fn.zip /agent-multi-tool-fn
-    cd /agent-multi-tool-fn
-    unzip agent-multi-tool-fn.zip
+    mkdir genai-agent-fn
+    mv genai-agent-fn.zip /genai-agent-fn
+    cd /genai-agent-fn
+    unzip genai-agent-fn.zip
 </copy>
 ```
 
-7. open the func.yaml and enter your agentEndpointId, sqlToolId, and ragToolId
+7. open the func.yaml and enter your agentEndpointId
 
 ``` text 
 <copy>
