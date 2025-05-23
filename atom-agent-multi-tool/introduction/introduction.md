@@ -37,9 +37,10 @@ In this workshop, you will learn how to:
 
 ## Acknowledgements
 
-* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
+**Author** 
+* **Luke Farley**, Senior Cloud Engineer, NACIE
 
-* **Contributors**
+**Contributors**
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 
-* **Last Updated By/Date** - Luke Farley, May 2025
+**Last Updated By/Date** - Luke Farley, May 2025

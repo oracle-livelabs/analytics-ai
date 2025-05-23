@@ -4,13 +4,6 @@
 
 This lab will walk through the steps of writing access policies to the agent service, deploying and configuring a Generative AI Agent, and deploying a function application. 
 
-The following agent tools will be configured: 
-* General LLM Chat
-* Document Understanding
-* Weather
-* RAG 
-* SQL
-
 Estimated Time: 120 minutes
 
 ### Objectives

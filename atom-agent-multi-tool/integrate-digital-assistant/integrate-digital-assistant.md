@@ -37,10 +37,10 @@ Go to Identity>>Domains>>Default domain>>Dynamic groups
 
 ![Navigate to Domains](images/domain/domain.png)
 
-Click on Create dynamic group and name it as odaDynamicGroup
+- Click on Create dynamic group and name it as odaDynamicGroup
 
-Select radio button - Match any rules defined below
-Add the following rules. Please change the values of OCIDs to your own values here.
+- Select radio button - Match any rules defined below
+- Add the following rules. Please change the values of OCIDs to your own values here.
 
 Rule 1
 
@@ -75,8 +75,7 @@ Rule 3
     </copy>
     ```
 
-    > **Note:**
-    > * Please make sure that the compartmentId should be the one under which the resource is  created.
+    > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
 
 ## Task 2: Configure Create Session API Endpoint 
 
@@ -182,7 +181,7 @@ Rule 3
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM-Multi-Tool-Agent-VB.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2FATOM-Multi-Tool-Agent-VB.zip)
+4. Click on the link to download the VB application (zip file): [ATOM-Multi-Tool-Livelab-Export.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2FATOM_Multi_Tool_Livelab_Export-1.0.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -218,16 +217,18 @@ Rule 3
 
     ![Converse with Agent](images/vb/chat.png)
 
-    ![Invoke Tools](images/vb/chat-2.png)
+    ![Invoke Tools](images/vb/chat-sql.png)
 
     - You can also upload documents which will automatically route to the document understanding function
 
     ![Upload Documentes](images/vb/chat-3.png)
 
 
-    > **Note** For uploading documents, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab.
+    > **Note** For uploading documents in the web ui, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab. For larger files, upload them to the RAG object storage bucket as described in lab 1. Note only pdf and txt is supported for RAG.
 
-    > **Note** There will not be a bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
+    > **Note** There will not be a chat bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
+
+    > **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
 
 **Troubleshooting** 
 
@@ -238,7 +239,7 @@ Rule 3
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
-* **Contributors**
+**Contributors**
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 

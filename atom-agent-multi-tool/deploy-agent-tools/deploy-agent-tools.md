@@ -4,6 +4,13 @@
 
 This lab will go through the steps on configuring the GenAI Agent tools. First we'll go through the steps needed to provision the RAG tool, then we'll set up the Oracle Autonomous Database 23ai and Database Tools Connection. Once the DB is provisioned, we'll define the tools through the console. After the tools are configured we will deploy a function that invokes the agent service. The function we deploy will be used in the next lab.
 
+The following agent tools will be configured: 
+* General LLM Chat (Built-in)
+* Document Understanding
+* Weather
+* RAG 
+* SQL
+
 Estimated Time: 120 minutes
 
 ### Objectives
@@ -70,7 +77,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
     ![Click DG](images/adb/click_dg.png)
 
-    **Note** The name of your dynamic group can be different.
+    > **Note** The name of your dynamic group can be different.
 
 4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
 
@@ -86,7 +93,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
     ![Click Policy](images/adb/click_policy.png)
 
-    **Note** The name of your policy can be different.
+    > **Note** The name of your policy can be different.
 
 6. Ensure that your Policy is properly defined - as follows. Make sure to change the compartment to your own compartment name where the respective services are hosted. 
 
@@ -94,8 +101,8 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
     ```text
      <copy>
-      Allow dynamic-group atom-dev-dg to read database-tools-family in compartment <comp-with-database-connection>
-      Allow dynamic-group atom-dev-dg to read secret-bundle in compartment <comp-with-vault-secret>
+      Allow dynamic-group <your-dynamic-group> to read database-tools-family in compartment <comp-with-database-connection>
+      Allow dynamic-group <your-dynamic-group> to read secret-bundle in compartment <comp-with-vault-secret>
       allow any-user to read database-tools-family in compartment <database-connection-comp> where any {request.principal.type='genaiagent'}
       allow any-user to read secret-bundle in compartment <vault-comp> where any {request.principal.type='genaiagent'}
       Allow any-user to use database-tools-connections in compartment <database-connection-comp> where any {request.principal.type='genaiagent'}
@@ -262,9 +269,11 @@ CREATE TABLE Employees (
 
   > **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
 
+
   > **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
 
-  > **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. Please reach out to the Agent team for questions. 
+
+  > **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
 
 ## Task 9: Create Analyze Document Tool from Console 
 
@@ -372,15 +381,15 @@ In this section, we will delve into the process of creating and deploying an Ora
 
   > **Note** Your agentEndpointId is *not* the same as your AgentId. Please make sure you use the endpoint id.
 
-x. Deploy the function 
+8. Deploy the function 
 
-``` text 
-<copy>
-    fn -v deploy --app <your-function-app>
-</copy>
-```
+  ``` text 
+  <copy>
+      fn -v deploy --app <your-function-app>
+  </copy>
+  ```
 
-    - Take note of the function invoke endpoint once created
+  - Take note of the function invoke endpoint once created
 
 ![Deployed Function](images/fn-deploy/deploy_function.png)
 
@@ -398,10 +407,10 @@ x. Deploy the function
 
 ## Acknowledgements
 
-* **Author** 
-    * **Luke Farley**, Senior Cloud Engineer, NACIE
-* **Contributors**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+**Author** 
+  * **Luke Farley**, Senior Cloud Engineer, NACIE
+**Contributors**
+  * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+  * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 * **Last Updated By/Date**
-    * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
+  * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
