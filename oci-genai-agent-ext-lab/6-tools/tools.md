@@ -3,7 +3,7 @@
 ## Introduction
 
 In this lab, we will add a SQL and custom tool of the previous demos.
-At the end, we will have an agent with RAG, SQL and Tool. 
+At the end, we will have an agent with RAG, SQL and a custom Tool **implemented on client side**.
 
 ### Objectives
 
@@ -161,35 +161,73 @@ Note: it is possible that your OCI Admin does not allow you to create Dynamic Gr
    ![Custom tool](images/custom-tool.png)
 - Choose **Custom Tool** 
 - Enter:
-    - **Name** = hello-tool
-    - **Description** = Say hello
+    - **Name** = add-tool
+    - **Description** = Add 2 numbers
     - Choose **Function Calling (Client API)**
-    - **Function Name** = hello
-    - **Function description** = Say hello
+    - **Function Name** = add
+    - **Function description** = Add 2 numbers
     - **Function parameters** = 
         ```
-        {"type":"object","properties":"{\"response\":{\"type\":\"string\",\"description\":\"Response to hello.\"}","additionalProperties":"false"}
+        {
+            "type": "object",
+            "properties": {
+                "number1": {
+                    "type": "string",
+                    "description": "Number 1 to add "
+                },
+                "number2": {
+                    "type": "string",
+                    "description": "Number 2 to add"
+                }
+
+            },
+            "required": ["number1","number2"],
+            "additionalProperties": false
+        }
         ```
 - Click **Create Tool**
 
 Wait that all is active.
 
-## Task 2. Test 
+## Task 2. Test in the console
+
+Using Google Chrome ( there is a known issue at the time of writing with Firefox ), go to the Agent in the OCI console
+1. Click **Launch chat**
+2. Type "when was Jazz created ?", then *Enter*
+    - The result should come from the RAG tool
+3. Type "List the departments", then *Enter*
+    - The result should come from the SQL tool - table Dept
+4. Type "Add 2 and 3", then *Enter*
+    - The result should come from the Custom Add Tool
+    - Notice that it is a Client tool where the implementation is done on the client side 
+    - Type 5, then Submit
+
+![Console rag/tool/sql](images/console-rag-sql-tool.png)
+
+## Task 3. Test with APEX
 
 1. Go back to the APEX app (see APEX lab)
 2. Type "when was Jazz created ?", then *Enter*
     - The result should come from the RAG tool
 3. Type "List the departments", then *Enter*
     - The result should come from the SQL tool - table Dept
-4. Type "Hello, how are you", then *Enter*
-    - The result should come from the Custom Tool Hello Tool
+4. Type "Add 2 and 3", then *Enter*
+    - The result should come from the Custom Add Tool implemented in APEX 
+    - See the PLSQL Package body : AI_AGENT / ADD_TOOL
 
-![Test rag/tool/sql](images/apex-rag-sql-tool.png)
+![APEX rag/tool/sql](images/apex-rag-sql-tool.png)
 
 5. Put your mouse over the notes of the different results. Note that you can see:
     - for RAG: document citation, 
     - for SQL: the SQL Query
-    - for Custom Tool, function call and parameters
+    - for Custom Tool, function name and arguments
+
+## Task 4: Test with Streamlit 
+
+1. Go back to the Streamlit app (see Streamlit lab)
+2. Redo the step of Task 3 - APEX
+
+![Streamlit rag/tool/sql](images/streamlit-rag-sql-tool.png)
 
 ## Known issues
 
