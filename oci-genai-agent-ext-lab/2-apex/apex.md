@@ -47,7 +47,7 @@ Estimated time: 10 min
 
 ## Task 2. Filter
 
-One additional step is needed to use the filter working in the APEX app, We need to add a RAG tool.
+One additional step is needed to use the RAG filter. We need to add a RAG tool.
 
 ### 1. Rag Tool ###
 
@@ -59,9 +59,9 @@ One additional step is needed to use the filter working in the APEX app, We need
 - Choose **RAG** 
    ![Custom tool](../6-tools/images/rag-tool.png)
 - Enter:
-    **Name** = rag-tool
-    **Description** = Use this tool for any question that are not covered by the other tools. It contains generic documentation.
-    Select the knowledge base - agext-agent-kb
+    - **Name** = rag-tool
+    - **Description** = Use this tool for any question that are not covered by the other tools. It contains generic documentation.
+- Select the knowledge base - agext-agent-kb
 - Click **Create Tool**
 
 ### 2. Test again ###

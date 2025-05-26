@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will add a SQL and custom tool of the previous demos.
+In this lab, we will add a SQL and a custom tool.
 At the end, we will have an agent with RAG, SQL and a custom Tool **implemented on client side**.
 
 ### Objectives
@@ -11,21 +11,20 @@ At the end, we will have an agent with RAG, SQL and a custom Tool **implemented 
 
 ### Prerequisites
 
-1. The lab 1 is have been completed.
-2. The APEX lab is completed. You added the **rag-tool** in the OCI Agent tools.
-3. Find the password of the database in the terraform output of Lab1 ##DB_PASSWORD##
+1. The **Install lab** has been completed.
+2. The **APEX lab** is completed too. You added the **rag-tool** in the OCI Agent tools.
+3. Find the password of the database in the terraform output of Lab1: **##DB_PASSWORD##**
 
 During the lab 1, terraform has done a part of the work to use the SQL agent. It has created:
-    - An Autonomous database
-    - Tables DEPT and EMP in the schema ADMIN of this database.
+- An Autonomous database
+- Tables DEPT and EMP in the schema ADMIN of this database.
 
 ## Task 1: Setup
 
 In the first steps, we will create: 
 - A connection to the database.
-- 3 tools:
-    - RAG
-    - SQL
+- 2 tools:
+    - SQL tool
     - Custom tool
 
 ### 1. Secret ###
@@ -51,15 +50,15 @@ In the first steps, we will create:
 ### 2. Database Tools Connection ##
 - In the hamburger menu, go to **Developer Services / Database Tools / Connection**
 - Click **Create Connection**
-    - **Name** = agext-db-connection    
+    - Name = **agext-db-connection**
     - Select Database
-    - **Database Cloud Service** = Autonomous Database
-    - **Database** = agentatp
-    - **Username** = admin
-    - **Secret** = agext-db-password-secret (created above)
+    - Database Cloud Service = **Autonomous Database**
+    - Database = **agentatp**
+    - Username = **admin**
+    - Secret = **agext-db-password-secret** (created above)
     - Click **Create Private Endpoint**
-        - **Name** = agext-db-private-endpoint
-        - **Subnet** = agext-db-subnet
+        - Name = **agext-db-private-endpoint**
+        - Subnet = **agext-db-subnet**
         - Click **Create**
     - Click **Create**    
 - Wait that the connection is created and active. 
@@ -96,9 +95,9 @@ Note: it is possible that your OCI Admin does not allow you to create Dynamic Gr
    ![sql](images/sql-tool.png)
 - Choose **SQL**
 - Enter:
-    - **Name** = sql-tool
-    - **Description** = Query department and employee table
-    - **Database Schema / Inline** =
+    - Name = **sql-tool**
+    - Description** = **Query department and employee table**
+    - Database Schema / Inline =
         ```
         create table dept(  
         deptno     number(2,0),  
@@ -120,13 +119,13 @@ Note: it is possible that your OCI Admin does not allow you to create Dynamic Gr
         constraint fk_deptno foreign key (deptno) references dept (deptno)  
         );
         ```
-    - **Dialect**: Oracle SQL
-    - **Database Connection**: agext-db-connection (created above)
+    - Dialect: **Oracle SQL**
+    - Database Connection: **agext-db-connection** (created above)
     -  Click Test connection
-    - **Enable SQL Execution**: Enabled
+    - Enable SQL Execution: **Enabled**
     - Optional:
-        - **Description of tables and columns** = inline
-        - **Description of tables and columns** 
+        - Description of tables and columns = **inline**
+        - Description of tables and columns 
             ```
             Description of the important tables in the schema:
 
@@ -161,12 +160,12 @@ Note: it is possible that your OCI Admin does not allow you to create Dynamic Gr
    ![Custom tool](images/custom-tool.png)
 - Choose **Custom Tool** 
 - Enter:
-    - **Name** = add-tool
-    - **Description** = Add 2 numbers
+    - Name = **add-tool**
+    - Description = **Add 2 numbers**
     - Choose **Function Calling (Client API)**
-    - **Function Name** = add
-    - **Function description** = Add 2 numbers
-    - **Function parameters** = 
+    - Function Name = **add**
+    - Function description = **Add 2 numbers**
+    - Function parameters = 
         ```
         {
             "type": "object",
@@ -193,7 +192,7 @@ Wait that all is active.
 
 Using Google Chrome ( there is a known issue at the time of writing with Firefox ), go to the Agent in the OCI console
 1. Click **Launch chat**
-2. Type "when was Jazz created ?", then *Enter*
+2. Type "When was Jazz created ?", then *Enter*
     - The result should come from the RAG tool
 3. Type "List the departments", then *Enter*
     - The result should come from the SQL tool - table Dept
@@ -207,7 +206,7 @@ Using Google Chrome ( there is a known issue at the time of writing with Firefox
 ## Task 3. Test with APEX
 
 1. Go back to the APEX app (see APEX lab)
-2. Type "when was Jazz created ?", then *Enter*
+2. Type "When was Jazz created ?", then *Enter*
     - The result should come from the RAG tool
 3. Type "List the departments", then *Enter*
     - The result should come from the SQL tool - table Dept
@@ -225,7 +224,10 @@ Using Google Chrome ( there is a known issue at the time of writing with Firefox
 ## Task 4: Test with Streamlit 
 
 1. Go back to the Streamlit app (see Streamlit lab)
-2. Redo the step of Task 3 - APEX
+2. Ask again:
+    - When was Jazz created ?
+    - List the departments
+    - Add 2 and 3
 
 ![Streamlit rag/tool/sql](images/streamlit-rag-sql-tool.png)
 
