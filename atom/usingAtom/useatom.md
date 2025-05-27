@@ -109,7 +109,7 @@ OCI Speech is an AI service that applies automatic speech recognition technology
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Contributors**
-* **Luke Farley**, Staff Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Staff Cloud Engineer, NACIE, Jan 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Jan 2025

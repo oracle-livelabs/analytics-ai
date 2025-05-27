@@ -11,7 +11,11 @@
             "entities": [
                 {
                     "entityValue": "Erkki Melartin",
-                    "pronunciations": null,
+                    "pronunciations": [
+                        {
+                            "soundsLike": "Air key  Melaretin"
+                        }
+                    ],
                     "weight": 1
                 },
                 {

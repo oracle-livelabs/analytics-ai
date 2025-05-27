@@ -141,6 +141,8 @@ This task involves implementing Select AI for the autonomous database created in
                 tenancy_ocid    => '<UPDATE HERE>',
                 private_key     => '<UPDATE HERE>',
                 fingerprint     => '<UPDATE HERE>'
+                );
+            END;
         </copy>
     ```
 
@@ -214,7 +216,7 @@ This task involves creating REST services for Select AI, it will allow Select AI
 
     ```text
         <copy>
-            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => 'how many customers',
+            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => :prompt,
                                     profile_name => 'GENAI',
                                     action       => 'narrate')
             FROM dual
