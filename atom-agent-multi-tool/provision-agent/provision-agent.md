@@ -70,7 +70,7 @@ First, we are going to create a dynamic group which will allow us to grant acces
 
 1. On the left click **Dynamic Groups**.
 
-1. Click thd **Create dynamic group** button at the top of the **Dynamic groups** table.
+1. Click the **Create dynamic group** button at the top of the **Dynamic groups** table.
 
   ![Screenshot showing how to navigate to the dynamic groups section](./images/policies/dynamic-group.png)
 
@@ -293,10 +293,15 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 
     ![Fn App Config](images/functions/fn-app-config.png)
 
+4. You may now **proceed to the next lab*
+
 ## Learn More
 
 * [Region subscription](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm#ariaid-title7)
 * [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm)
+
+
+## Acknowledgements
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, NACIE

@@ -1,10 +1,26 @@
-## Lab 3: Provision and Configure Digital Assistant 
+# Lab 3: Provision and Configure Digital Assistant 
 
 ## Introduction
 
 This lab will take you through the steps needed to provision and configure Oracle Digital Assistant & Visual Builder Cloud Service. It will also cover dynamic group and policy creation along with the integration with OCI Functions. 
 
 Estimated Time: 60 minutes
+
+### Objectives
+
+In this lab, you will:
+* Create Digital Assistant
+* Configure ODA skill
+* Create Visual Builder Application
+* Expose ODA skill on VB application
+
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account
+* All previous labs successfully completed
+* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Digital Assistant, Visual Builder, Policies.
 
 ### About Oracle Digital Assistant
 
@@ -77,7 +93,7 @@ Rule 3
 
     > **Note:** Please make sure that the compartmentId should be the one under which the resource is created.
 
-## Task 2: Configure Create Session API Endpoint 
+## Task 3: Configure Create Session API Endpoint 
 
 1. Import the following sample yaml file 
 
@@ -93,7 +109,7 @@ Rule 3
 
     > **Note** If you get a 404 error, that likely means a policy is missing or misconfigured. Check Task 2 and make sure the ODA service can connect to the agent service. 
 
-## Task 3: Configure API Endpoint to Agent Function
+## Task 4: Configure API Endpoint to Agent Function
 
 1. Open your ODA service console provisioned in Task 1 and navigate to API services > Add Service
 
@@ -120,7 +136,7 @@ Rule 3
 
     > **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
 
-## Task 4: Import Skill
+## Task 5: Import Skill
 
 1. Import the following skill 
 
@@ -153,7 +169,7 @@ Rule 3
 
     > **Note** You can review any unexpected behavior in the preview of ODA to diagnose any issues. 
     
-## Task 5: Configure & Expose Skill
+## Task 6: Configure & Expose Skill
 
 1. Navigate to Development > Channels and select 'Add Channel' 
 
@@ -166,7 +182,7 @@ Rule 3
 3. Create the channel and take note of the channel ID. This will be used in the next task.
 
 
-## Task 6: Create VBCS Instance & Embed ODA Skill in VBCS Application
+## Task 7: Create VBCS Instance & Embed ODA Skill in VBCS Application
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
@@ -224,11 +240,11 @@ Rule 3
     ![Upload Documentes](images/vb/chat-3.png)
 
 
-    > **Note** For uploading documents in the web ui, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab. For larger files, upload them to the RAG object storage bucket as described in lab 1. Note only pdf and txt is supported for RAG.
+    > * **Note** For uploading documents in the web ui, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab. For larger files, upload them to the RAG object storage bucket as described in lab 1. Note only pdf and txt is supported for RAG.
 
-    > **Note** There will not be a chat bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
+    > * **Note** There will not be a chat bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
 
-    > **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
+    > * **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
 
 **Troubleshooting** 
 

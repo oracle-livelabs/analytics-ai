@@ -322,10 +322,6 @@ CREATE TABLE Employees (
 
   2. Create the tool 
 
-<!---
-## Task F: Create an API Endpoint Tool
---> 
-
 ## Task 11: Deploy Function to Function Application
 
 The function to be deployed will invoke the agent from the ODA application.
@@ -336,7 +332,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
     [Agent ADK Fn](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenai-agent-fn.zip)
 
-2. Navigate back to your function application created in Task 2
+2. Navigate back to your function application created in the previous lab.
 
 3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
 
@@ -397,6 +393,11 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 ![Change Architecture](images/fn-deploy/change-architecture-cs.png)
 
+> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, you can enable provisioned concurrency on your function to enable hot starts. 
+
+![Provisioned Concurrency](images/fn-deploy/provisioned-concurrency.png)
+
+9. You may now **proceed to the next lab*
 
 ## Learn More
 
@@ -409,8 +410,10 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 **Author** 
   * **Luke Farley**, Senior Cloud Engineer, NACIE
+
 **Contributors**
   * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
   * **Abhinav Jain**, Senior Cloud Engineer, NACIE
-* **Last Updated By/Date**
+
+**Last Updated By/Date**
   * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
