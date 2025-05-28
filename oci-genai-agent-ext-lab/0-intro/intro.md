@@ -25,7 +25,11 @@ From the lab 2/3/4, we will create 3 user interfaces for the above using the fol
 - APEX
 - A Python library Streamlit  
 - Oracle Digital Assistant
-  
+    
+Lab 5 explain how to customize the demo to your needs.
+
+Lab 6 shows how to change the Agent to have a RAG, SQL and Custom tool
+
 Estimated Workshop Time: 90 minutes
 
 ### Logical Architecture
