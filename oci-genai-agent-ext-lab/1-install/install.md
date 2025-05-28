@@ -298,6 +298,29 @@ You can
     Solution:
     - Ask your administrator to increase your quota or the limits of the tenancy.
    
+7. Error: Attempt to index null value
+
+  ```
+  on datasource.tf line 64, in locals:
+  64:   idcs_url = (var.idcs_url!="")?var.idcs_url:data.oci_identity_domains.starter_domains.domains[0].url
+    ├────────────────
+    │ data.oci_identity_domains.starter_domains.domains is null
+  ```
+
+  Work-around:
+  - This is due to a lack of privilege to access the list of domains in your tenancy.
+  - edit file env.sh and add this line:
+    ```
+    export TF_VAR_idcs_url=https://idcs-xxxxxx.identity.oraclecloud.com:443
+    ````
+    You can find this URL by 
+    - going to OCI Console / Hamburger menu / Identity and Security / Domains 
+    - go to the root compartment
+    - choose the default Domain
+    - look for the Domain URL. It will look like this: https://idcs-xxxxxx.identity.oraclecloud.com:443
+  - Rerun ./starter.sh build
+
+
 ## Acknowledgements
 
 - **Author**
