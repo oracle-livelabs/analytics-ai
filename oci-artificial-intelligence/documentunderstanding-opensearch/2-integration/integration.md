@@ -56,14 +56,22 @@ Then, we need data about the user
 
 ![User API Keys](images/opensearch-user2.png)
 
-In your computer, or in the bastion (NOT in cloud shell), you need to convert the PEM key to RSA format
-- Run the below command 
+You need to convert the PEM PRIVATE_KEY to RSA format. There are several tools to do it. OpenSSL for example.
+- In your computer, 
+- or in the bastion 
+
+You need to convert the PEM key to RSA format
+- Run the openssl below command 
 - And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
 
-- If openssl is not installed on your computer, here are the instructions to do it on the bastion:
+If openssl is not installed on your computer, here are the instructions to do it on the bastion. 
+- Run the below command from the Cloud Shell terminal
+- It will ssh to the bastion
+- Then do the convertion overthere.
 ```
+<copy>
 ./starter.sh ssh bastion
-cat <<EOF > private_key.pem
+cat > private_key.pem << EOF
 -----BEGIN PRIVATE KEY-----
 ... <YOUR KEY HERE> ....
 -----END PRIVATE KEY-----
@@ -72,9 +80,10 @@ openssl rsa -in private_key.pem -out private_key.rsa
 cat private_key.rsa
 rm private_key.pem private_key.rsa
 history -c
+</copy>
 ```
 
-Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
+Important: Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -377,7 +386,7 @@ Unable to test connection RestVisionAI_1711400081.
     Currently (March 2024), "Document understanding" is not available in some regions (ex: Chicago). 
     
     If it is your case:  
-    - Import the OIC package "oic/chicago/OPENSEARCH_OIC_CHICAGO.par" instead. 
+    - Import the OIC package "oic/chicago/OPENSEARCH\_OIC\_CHICAGO.par" instead. 
     - Use any other region to configure the "Document Understanding" rest endpoint (ex: ashburn region) 
 
 ## Acknowledgements

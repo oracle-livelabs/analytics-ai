@@ -39,6 +39,10 @@
             "filename": "../../8-connect-oda-with-slack/connect-oda-with-slack.md"
         },
         {
+            "title": "LAB 7: Connect APEX with GenAI Agent",
+            "filename": "../../9-connect-apex-with-agents/connect-apex-with-agents.md"
+        },        
+        {
             "title": "Need Help?",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }

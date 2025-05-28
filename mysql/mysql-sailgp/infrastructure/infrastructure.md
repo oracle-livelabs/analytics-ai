@@ -225,7 +225,7 @@ In this task, we will Enable the HeatWave option on our MySQL database.
 
 2. On the left bottom of the screen, select HeatWave, then click "Add HeatWave cluster".
 
-  ![Add HeatWave](./images/add-heatwave.png)
+  ![Add HeatWave](./images/add-heatwave.png "Add HeatWave Cluster")
 
 3. Keep the default Shape, and set Node Count to 2, **select the MySQL HeatWave Lakehouse** option and then click the button _**Add HeatWave Cluster**_.
 
@@ -262,4 +262,4 @@ This task is necessary so that Oracle Analytics Cloud can access the data of MyS
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager, Rawan Aboukoura - Technology Product Strategy Manager
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025 
