@@ -265,15 +265,13 @@ CREATE TABLE Employees (
 
   ![Test SQL Tool](./images/sql/test-sql-tool-2.png)
 
-  > **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
+  > * **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
 
-  > **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
+  > * **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
 
+  > * **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
 
-  > **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
-
-
-  > **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
+  > * **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
 
 ## Task 9: Create Analyze Document Tool from Console 
 

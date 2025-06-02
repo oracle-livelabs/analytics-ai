@@ -132,9 +132,9 @@ Rule 3
 
     ![200 Response](images/oda/success-response.png)
 
-    > **Note** 404 responses usually indicate a policy is missing/misconfigured. Please refer back to Task 2.
+    > * **Note** 404 responses usually indicate a policy is missing/misconfigured. Please refer back to Task 2.
 
-    > **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
+    > * **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
 
 ## Task 5: Import Skill
 
