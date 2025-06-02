@@ -397,7 +397,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 ![Provisioned Concurrency](images/fn-deploy/provisioned-concurrency.png)
 
-9. You may now **proceed to the next lab*
+9. You may now **proceed to the next lab**
 
 ## Learn More
 
