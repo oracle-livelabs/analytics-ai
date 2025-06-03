@@ -43,7 +43,7 @@ This lab assumes you have:
 
     ```text
      <copy>
-      You are a helpful assistant. If user asks about <info on your dataset>, use the rag tool. If user asks about employees, use atomlivelab-sql tool. If user uploads url, use analyze_doc tool. If user asks about the weather, use the weather tool. If user asks a general question, use your general knowledge, no tools.
+      You are a helpful assistant. If user asks about <info on your dataset>, use the rag tool. If user asks about employees, use atomlivelab-sql tool. If user asks about the weather, use the weather tool. If user asks a general question, use your general knowledge, no tools.
      </copy>
     ```
 
@@ -273,33 +273,7 @@ CREATE TABLE Employees (
 
   > * **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
 
-## Task 9: Create Analyze Document Tool from Console 
-
-  1. Navigate back to the tools of your agent and create a new function tool - 
-
-  ![Create Analyze Doc Tool](./images/analyze-doc/create-analyze-doc-tool.png)
-
-  - Give the following description - 
-
-    ```text
-    <copy>   
-      Analyzes document and returns text 
-    </copy>
-    ```
-
-  - Paste the following function parameters - 
-
-    ```text
-    <copy>
-      {"type":"object","properties":{"url":{"type":"string"}},"required":"['url']"}
-    </copy>
-    ```
-
-  2. Create the tool 
-
-  > **Note** You will not be able to test the analyze_doc function yet; this tool will depend on the function we will deploy later.
-
-## Task 10: Create a Weather Tool
+## Task 9: Create a Weather Tool
 
   1. Navigate to your agent tools and create a new tool called "get_weather" 
 
@@ -320,7 +294,7 @@ CREATE TABLE Employees (
 
   2. Create the tool 
 
-## Task 11: Deploy Function to Function Application
+## Task 10: Deploy Function to Function Application
 
 The function to be deployed will invoke the agent from the ODA application.
 
@@ -328,7 +302,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the following file: 
 
-    [Agent ADK Fn](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenai-agent-fn.zip)
+    [Agent ADK Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenai-fn-livelab.zip)
 
 2. Navigate back to your function application created in the previous lab.
 
@@ -356,10 +330,10 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 ``` text 
 <copy>
-    mkdir genai-agent-fn
-    mv genai-agent-fn.zip /genai-agent-fn
-    cd /genai-agent-fn
-    unzip genai-agent-fn.zip
+    mkdir genai-fn-livelab
+    mv genai-fn-livelab.zip /genai-fn-livelab
+    cd /genai-fn-livelab
+    unzip genai-fn-livelab.zip
 </copy>
 ```
 

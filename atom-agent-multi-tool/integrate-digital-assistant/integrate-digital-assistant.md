@@ -235,16 +235,11 @@ Rule 3
 
     ![Invoke Tools](images/vb/chat-sql.png)
 
-    - You can also upload documents which will automatically route to the document understanding function
+     > * **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
 
-    ![Upload Documentes](images/vb/chat-3.png)
+    * You can also invoke the raq tool or ask general questions 
 
-
-    > * **Note** For uploading documents in the web ui, only smaller documents < 20,000 words are supported. This is because the context window of the backend llm is 128k as of the publishing of this livelab. For larger files, upload them to the RAG object storage bucket as described in lab 1. Note only pdf and txt is supported for RAG.
-
-    > * **Note** There will not be a chat bubble when uploading a document to inform the document is being processed. However the file will still be processed assuming it meets the requirements above. 
-
-    > * **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
+    ![RAG and General Questions](images/vb/chat-3.png)
 
 **Troubleshooting** 
 
