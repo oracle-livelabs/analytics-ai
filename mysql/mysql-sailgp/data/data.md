@@ -230,7 +230,8 @@ CREATE TABLE SAILGP.SAILGP_SGP_STRM_PIVOT(
 		"format": "csv",
 		"field_delimiter": ",",
 		"record_delimiter": "\\n",
-                "skip_rows": 1
+        "check_constraints": false,
+        "skip_rows": 1
 	}
 }';
 	</copy>
@@ -254,4 +255,4 @@ Well done, you can now proceed to the next lab!
 
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
-- **Last Updated By/Date** - Jeroen Kloosterman - Technology Product Strategy Director, October 2023
+- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025

@@ -22,7 +22,8 @@ This lab assumes you have:
 
 ## Task 1: Ensure Chicago region subscription
 
-The OCI Generative AI Agents service is currently only available in the Chicago region.
+The OCI Generative AI Agents service is currently available in the following regions: Chicago, London, Frankfurt, Osaka and Sao Paulo.
+The workshop includes prebuilt scripts compatible only with the Chicago region.
 If your tenancy is already subscribed to the Chicago region, please skip to the next task.
 
 1. On the top right, click the Regions drop down menu.
@@ -117,9 +118,10 @@ Next, we will create the access policies:
   allow group <your-user-group-name> to manage genai-agent-family in tenancy
   allow group <your-user-group-name> to manage object-family in tenancy
   allow dynamic-group <dynamic-group-name-created-above> to manage all-resources in tenancy
+  allow any-user to manage genai-agent-family in tenancy where request.principal.id=<ODA OCID> 
   </copy>
   ```
-
+  Make sure to put the ODA OCID in the above policy in single inverted commas instead of <ODA OCID>
   Make sure to replace `<your-user-group-name>` with the user group your user is associated with (for example: `Administrators`).
   Also, please replace `<dynamic-group-name-created-above>` with the name you've provided for the dynamic group created above.
 
@@ -155,4 +157,4 @@ Next, we will create the access policies:
 * **Author** - Anshuman Panda, Principal Generative AI Specialist, Alexandru Negrea
 , AI and App Integration Specialist Leader
 
-* **Last Updated By/Date** - Anshuman Panda, Principal Generative AI Specialist, Aug 2024
+* **Last Updated By/Date** - Vlad Man, Digital Adoption Manager - AI Initiatives, April 2025

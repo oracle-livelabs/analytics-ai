@@ -13,13 +13,12 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Provision Generative AI Agents Service",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../agent/agent.md"
+      "title": "Lab 1: (Optionally) Provision Infrastructure via Terraform",
+      "filename": "../../terraform/terraform.md"
     },
     {
-      "title": "Lab 2: Provision Infrastructure via Terraform",
-      "filename": "../../terraform/terraform.md"
+      "title": "Lab 2: Provision Generative AI Agents Service",
+      "filename": "../../agent/agent.md"
     },
     {
       "title": "Lab 3: Setup OCI Digital Assistant (ODA)",

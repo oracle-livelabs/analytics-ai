@@ -13,17 +13,22 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
-        "title": "Lab 1: Provision ODA and VBCS",
+        "title": "Lab 1: Configure Chat with ATOM LLM",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../provision/provision.md"
       },
       {
-        "title": "Lab 2: Document Understanding and Speech Services",
+        "title": "Lab 2: Using the Document Understanding Service",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../understandingDocument/duspeech.md"
+        "filename": "../../understandingDocument/atomdu.md"
       },
       {
-        "title": "Lab 3: How to use ATOM",
+        "title": "Lab 3: Using the Speech Service",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../speech/speech.md"
+      },
+      {
+        "title": "Lab 4: How to use ATOM",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../usingAtom/useatom.md"
       },
