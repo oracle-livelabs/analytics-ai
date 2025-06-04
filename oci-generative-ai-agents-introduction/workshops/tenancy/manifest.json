@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Introduction to Building Your Own Agent",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights-tenancy.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Initial setup",
+            "filename": "../../2-setup/setup-tenancy.md"
+        },
+        {
+            "title": "Create your database",
+            "filename": "../../3-setup-database/setup-database-tenancy.md"
+        },
+        {
+            "title": "Create your agent",
+            "filename": "../../4-create-an-agent/create-an-agent-tenancy.md"
+        },
+        {
+            "title": "Test our solution",
+            "filename": "../../5-test-our-solution/test-our-solution-tenancy.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
