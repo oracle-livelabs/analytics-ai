@@ -1,4 +1,4 @@
-# Create an Agent
+# Create the Agent
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 
 - All previous labs successfully completed.
 
-## Task 1: Create our Agent
+## Task 1: Create the agent
 
 1. Click the navigation menu on the top left.
 1. Click **Analytics & AI**.

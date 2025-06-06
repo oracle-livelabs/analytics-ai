@@ -1,4 +1,4 @@
-# Test our solution
+# Test the solution
 
 ## Introduction
 
@@ -95,17 +95,28 @@ This lab assumes you have:
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.jpg)
 
-1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve the first token. Type the following question: _Do we have a knowledge article that can help me configure routers, switches and firewalls?_
+1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve "Complex Network Configuration Issue" ticket. Type the following question: _Do we have a knowledge article that can help with network configuration?_
 1. Click the **Submit** button.
-1. As you can see, for this questions, the agent figured out that the information required might be in the knowledge base articles. For this task is employed the RAG tool which returned references to some knowledge articles stored in our storage bucket. Feel free to look at the traces for this interaction as well to see the steps the agent took to give us the information we needed.
+1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our knowledge base articles stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the article was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the article(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
 
-    ![test](./images)
+    ![test](./images/fourth-question-response.jpg)
 
-1. We invite you to try some questions of your own to experiment with agent.
+1. We invite you to try some prompts of your own to experiment with agent.
+
+## Task 3: (Optional) More prompts to try
+
+Here are a few more prompts to try with the agent:
+
+- _Show me how many tickets are assigned to each support agent_
+- _Are there any support agents which do not have any tickets assigned to them?_
+- _How many tickets have been resolved or closed in the past 2 days?_
+- _Give me the most important stats for our customer support system_
 
 ## Summary
 
 As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and sources and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
+
+Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
 Although our use-case was focused on customer support, the OCI Generative AI service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
 

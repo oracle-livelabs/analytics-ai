@@ -15,16 +15,16 @@
             "filename": "../../2-setup/setup-tenancy.md"
         },
         {
-            "title": "Create your database",
+            "title": "Setup the database",
             "filename": "../../3-setup-database/setup-database-tenancy.md"
         },
         {
-            "title": "Create your agent",
-            "filename": "../../4-create-an-agent/create-an-agent-tenancy.md"
+            "title": "Setup the agent",
+            "filename": "../../4-create-the-agent/create-the-agent-tenancy.md"
         },
         {
-            "title": "Test our solution",
-            "filename": "../../5-test-our-solution/test-our-solution-tenancy.md"
+            "title": "Test the solution",
+            "filename": "../../5-test-the-solution/test-the-solution-tenancy.md"
         },
         {
             "title": "Need Help?",
