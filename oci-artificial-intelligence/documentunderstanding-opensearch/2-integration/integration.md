@@ -45,7 +45,7 @@ Then, we need data about the user
 - On the top, right, click *Your username*
 - Copy the username *##USERNAME##* (without oracleidentitycloudservice )
 - Copy the user OCID *##USER\_OCID##*
-- Click on *API Keys*
+- Go to tab *Token and Keys*
 
 ![User](images/opensearch-user.png)
 
@@ -134,12 +134,8 @@ We start with the public connections first because these don't depend on compone
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
     - Connection URL = *##AI\_GENAI\_URL##*
-        - ex: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-    - Security policy = *OCI Signature Version 1*
-    - Tenancy OCID = ##TENANCY\_OCID##
-    - User OCID = ##USER\_OCID##
-    - Private KEY = ##PRIVATE\_KEY\_RSA\_FORMAT##
-    - FingerPrint = ##FINGERPRINT##
+        - ex: https://inference.generativeai.eu-frankfurt-1.oci.oraclecloud.com
+    - Security policy = *OCI Service Invocation*        
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
   
@@ -303,8 +299,6 @@ You will load a file into object storage which will be ingested by OIC, processe
     ![Test OIC](images/opensearch-oic-test-os-buckets.png)
 
 1. In the *Buckets* list, select **search-public-bucket**.
-    ![Test OIC](images/opensearch-oic-test-opensearch-bucket.png)
-
 1. On your local computer, go to the directory that you previously downloaded from GITHUB
 
     - Alternatively, you can download the file below from the Cloud Shell:
@@ -312,7 +306,7 @@ You will load a file into object storage which will be ingested by OIC, processe
         ```
         <copy>
         oci-genai-searchlab/sample_files/shakespeare_macbeth.tif
-        <\copy>
+        </copy>
         ```
         ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)
 
