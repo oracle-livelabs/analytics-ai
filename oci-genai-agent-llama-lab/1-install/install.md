@@ -271,6 +271,7 @@ You can
 6. 404-NotAuthorizedOrNotFound in Createsecret.
 
     ```
+    <copy>
     Error: 404-NotAuthorizedOrNotFound, Authorization failed or requested resource not found.
     Suggestion: Either the resource has been deleted or service Vault secret need policy to access this resource. Policy reference: https://docs.oracle.com/en-us/iaas/Content/Identity/Reference/po
     Documentation: https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/vault_secret
@@ -283,6 +284,7 @@ You can
     with oci_vault_secret.starter_secret_atp,
     on db_connection.tf line 45, in resource "oci_vault_secret" "starter_secret_atp":
     45: resource "oci_vault_secret" "starter_secret_atp"
+    </copy>
     ```
 
     You have no access to the vault.
@@ -290,7 +292,9 @@ You can
     Solution: 
     - Ask your administrator to give you access to your vault. Ex: add this policy
         ```
+        <copy>
         allow group OracleIdentityCloudService/specialists to use secret-family in compartment xxxxx-shared
+        </copy>
         ```
     - Check that the installation is done in the same region than the Vault.
 

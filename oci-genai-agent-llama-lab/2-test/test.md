@@ -124,6 +124,7 @@ For more information about the Custom Tools. Go [here](https://docs.oracle.com/e
 1. Run again the Cloud shell
 2. Run these commands:
 ```
+<copy>
 cd oci-genai-agent-llama
 ./starter.sh ssh bastion
 ls
@@ -132,6 +133,7 @@ ls
 cat api_server.py
 cat api_server.log
 cat restart.sh
+</copy>
 ```
 
 ![Compute](images/llama-ssh.png)   
