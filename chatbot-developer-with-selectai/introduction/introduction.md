@@ -1,18 +1,17 @@
 # Introduction
 
 ## About this Workshop
+This workshop guides participants in configuring and deploying a cutting-edge chatbot solution that leverages a multi-API architecture to revolutionize conversational AI. Each API or tool contributes unique capabilities, combining to create an intelligent and versatile system.  
 
-This workshop helps to configure and deploy a cutting-edge chatbot solution utilizing a multi-api architecture to revolutionize conversational AI. Each API/Tool brings unique capabilities, combining to create an intelligent and versatile system.
+Through this workshop, developers can create multiple Database APIs (connected via Oracle REST Data Services - ORDS) and third-party APIs (integrated through OCI Integration Cloud Service - OIC). These APIs are then exposed through an OCI Digital Assistant (ODA) Chatbot.  
 
-Using this workshop, the developers can create multiple Database APIs (connecting through Oracle REST Data Services - ORDS) and third-party APIs (connecting through OCI Integration Cloud Service - OIC), and expose them through an OCI Digital Assistant (ODA) Chatbot. 
+The Database APIs can serve as data retrieval NL2SQL APIs (using Autonomous Database Select AI) or data addition APIs. The Autonomous Database can also be accessed by an APEX App.  
 
-The Database APIs can be data retrieval NL2SQL APIs (using Autonomous Database Select AI) or data addition APIs. The Autonomous Database can be accessed by an APEX App.
+When a user asks a question in natural language, the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to the appropriate API, fetching the correct response.  
 
-When the user asks question in natural language, then the ODA Chatbot leverages Generative AI Tools to dynamically orchestrate and route the user’s request to appropriate API, and thereby fetches the correct response to user’s question.
+This solution implements the OCI Generative AI Multi-step Tool, enabling sequential tool-calling. The output of one tool can serve as the input for another, allowing the system to handle highly complex questions that require multiple tools or APIs working together.  
 
-This solution implements OCI Generative AI Multi-step Tool, so it also supports tool-calling in a sequence. The output of one tool can be the input to another tool. Thus this solution can even support highly complex questions, that requires leveraging multiple different Tools/APIs together.
-
-This multi-tool approach offers a powerful and flexible framework for developers to create next-generation conversational AI applications, catering to a wide range of user needs.
+This multi-tool approach provides a powerful and flexible framework for developers to build next-generation conversational AI applications, catering to a wide range of user needs.
 
 ![User View 1](images/atom_tool_bot.png)
 
