@@ -85,7 +85,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 1. Download the sample function
 
-    [fn-oac-oda.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2Ffn-oda-oac-livelab.zip)
+    [fn-oac-oda.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_fn-oda-oac-livelab.zip)
 
 2. Extract the contents and replace the url with the url of your live vb application created in the previous lab 
 
@@ -106,6 +106,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
    > **Note:** Since we imported the example function file, you don't need to initialize a new fn. Instead, start at step 3. Also make sure to switch into the function directory and/or run the commands from VS code console before running the fn commands.
    
+   > **Note:** If you are still having problems deploying the function after following the steps as described, you might need to redeploy the function application with an arm architecture (Task 1 Step 3)
 
 ## Task 3: Add your Function as a Route on API Gateway
 
@@ -212,7 +213,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 
 4. Download and import the following skill 
 
-    [OAC Skill](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Foac-vb-charts%2FOAC_Livelab_Skill(1.0).zip)
+    [OAC Skill](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/oac-vb-charts%2FLivelabs_oac-vb-charts_OAC_Livelab_Skill.zip)
 
 5. Once imported, open the skill and navigate to components > webview
     ![Add Webview](images/da-add-webview.png)
@@ -233,7 +234,7 @@ This task will help you to create desired dynamic group & necessary policy for t
 You are now ready to move on to the final lab, which will expose your skill on a Visual Builder Application for users.
 
 ## Acknowledgements
-* **Author** - Luke Farley, Staff Cloud Engineer, NACIE
+* **Author** - Luke Farley, Senior Cloud Engineer, NACIE
 * **Contributor** - Jadd Jennings, Principal Cloud Architect, NACIE
 * **Contributor** -  Abhinav Jain, Senior Cloud Engineer, NACIE
 * **Contributor** -  Kaushik Kundu, Master Principal Cloud Architect, NACIE

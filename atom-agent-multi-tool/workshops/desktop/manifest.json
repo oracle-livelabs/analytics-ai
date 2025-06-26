@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Build Agentic AI Solution with Multi-Tool Capabilities powered by OCI AI Agent Framework",
+  "help": "livelabs-help-aiservices_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: Provision and Configure Agent",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../provision-agent/provision-agent.md"
+    },
+    {
+      "title": "Lab 2: Deploy Agent Tools",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../deploy-agent-tools/deploy-agent-tools.md"
+    },
+    {
+      "title": "Lab 3: Integrate and Expose Digital Assistant",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../integrate-digital-assistant/integrate-digital-assistant.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
