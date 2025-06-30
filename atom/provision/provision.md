@@ -184,7 +184,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 ## Task 4: Import Skill (Provided)
 
-1. Click on the link to download the required skill (zip file): [Atom Skill.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FATOM_DU_Livelab_Deployment_skill(1.0.1).zip)
+1. Click on the link to download the required skill (zip file): [Atom Skill.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/docunderstanding%2FATOM_Livelab(1.0.1).zip)
 
 2. Import the skill (downloaded). Click on **Import Skill** & select the zip file to import
 
@@ -215,8 +215,6 @@ This task involves creating REST service which will be used by ODA to connect to
 9. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 7.
 
     ![Invoke LLM](images/invoke_llm.png)
-
-> **Note** The document understanding and speech flows are configured in the next lab. This lab focuses on configuring the LLM component.
 
 ## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
@@ -286,8 +284,6 @@ This task involves creating REST service which will be used by ODA to connect to
 7. The UI of the chatbot such as theme, color and icon can be changed by modifying the parameters under var chatWidgetSetting from embedded-chat javscript file.
 
 8. Click on the Play button shown in the above image on the top right corner to launch ATOM chatbot and start chatting with ATOM.
-
-**Note** The Document Understanding and Analyze Speech flows aren't configured yet. Continue to the next lab for instructions.
 
 9. If the preview is working as expected, you can open your visual builder application and begin conversing with ATOM 
 
