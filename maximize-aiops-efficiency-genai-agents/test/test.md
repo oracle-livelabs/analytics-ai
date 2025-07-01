@@ -27,7 +27,7 @@ This lab assumes you have:
 2. Query2: **can you tell me list of steps you will take to remediate OCI instances with CPU_ALARM ?**
 ![Image3](./images/image3.png "Image 3")
 
-3. Query3: **Please remediate if any instance in CPU_ALARM state and notify <n.nikhilverma89@gmail.com>.**
+3. Query3: **Please remediate if any instance in CPU_ALARM state and notify **email**
 ![Image4](./images/image4.png "Image 4")
 Identified test02 instance in **CPU_ALARM** state.
 ![Image5](./images/image5.png "Image 5")

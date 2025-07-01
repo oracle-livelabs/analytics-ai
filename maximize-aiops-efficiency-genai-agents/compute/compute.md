@@ -41,7 +41,7 @@ This lab assumes you have:
 
 5. Scroll down to Primary VNIC Information section and edit the following:
 
-    Virtual cloud network: Choose the VCN you created in Task 1
+    Virtual cloud network: Choose the VCN you created in Lab 1
 
     Subnet: Choose the Public Subnet under Public Subnets (it should be named Public Subnet-NameOfVCN)
 
