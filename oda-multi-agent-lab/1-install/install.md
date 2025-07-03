@@ -1,9 +1,9 @@
 # Install the Components
 
 ## Introduction
-In this lab, you will install all the components needed for this workshop. It will be provisioned automatically using a provided Terraform script.
+In this lab, you will install all the components needed for this workshop. 
 
-Estimated time: 45 min
+Estimated time: 60 min
 
 ### Objectives
 
@@ -22,23 +22,12 @@ Estimated time: 45 min
     ##BUCKET_URL##=https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/xxxxxx/b/bucket-api/o/
     </copy>
     ```
-2. Download the sample files. Here: (https://github.com/mgueury/oda-multi-agent/archive/refs/heads/main.zip)[https://github.com/mgueury/tools/archive/refs/heads/main.zip]
+2. Download the sample files. Here: [https://github.com/mgueury/oda-multi-agent/archive/refs/heads/main.zip](https://github.com/mgueury/tools/archive/refs/heads/main.zip)
 3. An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
-4. Check that your tenancy has access to the **Frankfurt, London or Chicago Region**
-    - For Paid Tenancy
-        - Click on region on top of the screen
-        - Check that the Frankfurt, London, Chicago Region is there
-        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
-        - For ex, click on the US MidWest (Chicago)
-        - Click Subscribe
-
-    ![Chicago Region](images/chicago-region.png)
-
-    - For Free Trial, the HOME region should be Frankfurt, London or Chicago.
 
 ## Task 1: Create a Compartment
 
-The compartment will be used to contain all the components of the lab. You can use an existing one too.
+The compartment will be used to contain all the components of the lab. 
 
 You can
 - Use an existing compartment to run the lab 
@@ -50,14 +39,15 @@ You can
     1. Compartments
     ![Menu Compartment](images/compartment1.png =40%x*)
 2. Click ***Create Compartment***
-    - Give a name: ex: ***multi-agent***
+    - Give a name: ex: ***oda-multi-agent***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/compartment2.png)
 4. When the compartment is created copy the compartment ocid ##COMPARTMENT\_OCID## and put it in your notes
 
 ## Task 2: Create an Oracle Digital Assistant.
 
-If you do not have an  Oracle Digital Assistant (ODA) installation yet, create one.
+Oracle Digital Assistant (ODA) is the main tool that we use in this lab.
+If you do not have an Oracle Digital Assistant (ODA) installation yet, create one. You can use an existing one.
 
 **ODA**
 - Go to the OCI Console menu, and choose *Analytics & AI* / *Digital Assistant*
@@ -69,12 +59,13 @@ If you do not have an  Oracle Digital Assistant (ODA) installation yet, create o
     ![ODA Create](images/oda-create.png)
 - Click on the name of the ODA instance
     - Copy the OCID. Ex: ocid1.odainstance.oc1.eu-frankfurt-1.xxxxxxx
-    - Take note of it ##ODA\_OCID##
+    - Take note of it in your text editor ##ODA\_OCID##
 
 Don't wait that it gets created, go to the next step.
 
-## Task 3: Create a OCI RAG Agent
+## Task 3: Create an OCI Generative AI Agent with a RAG tool
 
+Let's create a Agent with RAG to search inside your PDF files.
 We will need to create several items in the OCI Console.
 
 **Bucket**
@@ -86,7 +77,7 @@ We will need to create several items in the OCI Console.
     ![Bucket Create](images/bucket-create.png)
 - Open the created bucket
 - Click *Upload*
-    - Upload the files from the downloaded directory above 
+    - Upload *sample_files* from the downloaded directory (See prerequisites) 
     - Click Upload
     - Click Close
     ![Bucket Upload](images/bucket-upload.png)
@@ -96,7 +87,7 @@ We will need to create several items in the OCI Console.
     ![Bucket Menu](images/agent-menu.png)
 - On the left, go to *Agents*
 - Click *Create*
-- In the *Basic Information* tab, enter
+- In the *Basic Information* tab, enter the following values:
     - Name: *rag-agent*
     - Description: *Get info from files*
     - Click *Next*
@@ -128,13 +119,13 @@ We will need to create several items in the OCI Console.
 - Below, click the name of the Agent Endpoint that was created.
     - Copy the OCID. Ex: ocid1.genaiagentendpoint.oc1.eu-frankfurt-1.xxxxxxx
     - Take note of it ##AGENT\_ENDPOINT\_OCID##
-    - Notice you need the AGENT ENDPOINT OCID and not the AGENT OCID. 
+    - Notice you need to copy the **AGENT ENDPOINT OCID** and not the AGENT OCID. 
 
     ![Agent Endpoint OCID](images/agent-endpoint-ocid.png)
 
 ## Task 4: Create fake APIs
 
-We will need to create several items in the OCI Console.
+In Digital Assistant, we will use the REST APIs for a lot of tool. To make the installation easier, instead of implementing real REST APIs in Java, Python, or NodeJS, we will fake REST APIs by storing static JSON files in an Object Storage Bucket.
 
 **Bucket**
 - Go to the OCI Console menu, and choose *Storage* / *Bucket*
@@ -159,6 +150,9 @@ We will need to create several items in the OCI Console.
     ![Bucket URL](images/bucket-url.png)
 
 ## Task 5: Create a Policy
+
+Digital Assistant will call the OCI APIs of Generative AI. For this, it needs an authorization that we will give using Policies.
+
 - Go to the OCI Console menu, and choose *Identity & Security* / *Policies*
     ![Policy Menu](images/policy-menu.png)
 - Click *Create Policy*
@@ -175,6 +169,8 @@ We will need to create several items in the OCI Console.
 
 ## Task 6: Import the APIs in ODA
 
+Let's import all the APIs definition in ODA. We will test them in the next lab.
+
 - Go to the OCI Console menu, and choose *Analytics & AI* / *Digital Assistant*
 - Choose *oda-multi-agent* that you created before
 - Click *Service Console*
@@ -183,12 +179,13 @@ We will need to create several items in the OCI Console.
   There is a known issue that can lead to a blank page. If you have this, in the open the *more tools*/*Developer Console*. And reload the page (CTRL+R)
 
 Remark about regions:
-- All the API here refers to eu-frankfurt-1. 
-- If you want to use it without changing the URLS, your tenancy need to have access to Frankfurt. You can ask your admin to subscribe the region.
+- All the configuration here refers to eu-frankfurt-1. 
+- If you want to use this lab without changing the URLS, your tenancy need to have access to Frankfurt. You can ask your admin to subscribe the region.
 - If not, all URL needs containing eu-frankfurt-1 needs to be replaced by your AI region of choice ex: us-chicago-1
+- You can find the list of regions and their abbreviations [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
 **Import LLM Service**
-- Open the hamburger menu
+- Open ODA hamburger menu
 - Choose *Settings* / *API Services*
 - Go to tab *LLM Services*
 - Click *Import LLM Services*
@@ -197,33 +194,36 @@ Remark about regions:
 - In the body, change to compartment_ocid to the one of your notes ##COMPARTMENT\_OCID##
 - Click *Test Service*
     ![LLM Service Test](images/llm-service-test.png)
-- The API should answer to the joke question 
+- The API should answer successfully.
 
-**Import REST Services - labAgentConnect**
+**Import REST Services**
 - Open the hamburger menu
 - Choose *Settings* / *API Services*
 - Go to tab *REST Services*
 - Click *Import REST Services*
 - Import the file: *RESTService.yaml*
+
+**Configure REST Services - labAgentConnect**
+- Go to Rest Service *labAgentConnect*
 - In the parameters, change the agentEndpointId to the one of your notes ##AGENT\_ENDPOINT\_OCID##
 - Click the *Save* icon
 - Click *Test Service*
     ![API Test](images/api-rag-test.png)
 - The API should answer to the session_id 
 
-**Import REST Services - labAgentAsk**
+**Configure REST Services - labAgentAsk**
 - Go to Rest Service *labAgentAsk*
-- In the parameters, change the agentEndpointId to the one of your notes ##BU\_ENDPOINT\_OCID##
+- In the parameters, change the agentEndpointId to the one of your notes ##AGENT\_ENDPOINT\_OCID##
 - Click the *Save* icon
 
-**Import REST Services - toolEmailAll**
+**Configure REST Services - toolEmailAll**
 - Go to Rest Service *toolEmailAll*
 - Change the URL to the one of your notes ##BUCKET\_URL##
 - Click *Test Service*
 - The API should answer to the json file that we uploaded before 
     ![API Test](images/api-toolemailall.png)
 
-**Import REST Services - toolEmailOne**
+**Configure REST Services - toolEmailOne**
 - Go to Rest Service *toolEmailOne*
 - Change the URL to the one of your notes ##BUCKET\_URL##
     - Take care to keep the format with the parameter email_id.
@@ -232,7 +232,7 @@ Remark about regions:
 - The API should answer to the json file of one email uploaded before 
     ![API Test](images/api-toolemailone.png)
 
-**Import REST Services - toolHrPolicy**
+**Configure REST Services - toolHrPolicy**
 - Go to Rest Service *toolHrPolicy*
 - Change the URL to the one of your notes ##BUCKET\_URL##
     - Take care to keep the format.
@@ -244,13 +244,15 @@ Remark about regions:
 **Import REST Services - toolWeather**
 - Go to Rest Service *toolWeather*
 - Change the URL to the one of your notes ##BUCKET\_URL##
-    - Take care to keep the format with the parameter email_id.
+    - Take care to keep the format with the parameter city.
     - Ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/xxxxxxx/b/bucket-api/o/weather_{city}.json
 - Click *Test Service*
 - The API should answer to the json file of one email uploaded before 
     ![API Test](images/api-toolweather.png)    
 
-## Task 7: Import the Samples in ODA
+## Task 7: Import the Skills in ODA
+
+Let's import all the ODA Skills. We will test them in the next lab.
 
 **Import ODA Skills**
 - Open the hamburger menu
@@ -279,18 +281,56 @@ Redo the same import for all the other zip files.
 
     ![Skill Agent Endpoint](images/skill-agent-endpoint.png)    
 
+- Redo the same for *mgLlmSupervisor* skill
 
-## Task 8: (Optional) Install Custom Components in Compute
 
-The goal of this step it to improve the startup time of the custom component that is used
-to translate the LLM Block request to a real LLM API request. By default, it takes some seconds to wake up.
-To avoid this, the custom component can be installed on a compute. This is not explained in this lab in details.
+## Task 8: (Optional) Install LLM Transformation Handler in Compute
 
+This is really optional. Mostly read it and potentially do it after completing the lab, as a bonus.
+
+When using the sample of the next lab, you will notice that the first response of the bot takes 10+ seconds to come.
+The reason is that each LLM call from ODA is first using a LLM Transformation Handler. 
+The goal of that Transformation Handler is to convert your question in a LLM API format (Cohere, Llama, any LLM, ...).
+
+In the sample that you have imported, the Transformation Handler is inside a custom components running in ODA. 
+Since the first call takes 10+ seconds to wake it up, the goal of this step it to remove this startup time by using a Virtual machine where the custom component is always running.
+
+This lab does not explained it in details.
 But the code to do this is here: 
 
 https://github.com/mgueury/tools
 
-It has 2 sample custom components: Cohere and Meta LLama.
+When installed, it will create 2 custom components: Cohere and Meta LLama.
+
+You will have also an URL like this:
+- http://your-compute-ip:3000/components
+- Check that the URL answer in your browser with some JSON payload.
+
+To use it inside a skill (ex mgLlmAgent), please do this:
+- Open the Skill of *mgLlmAgent*
+- On the left bar, click on the icon *Custom Components*
+- Click *Add Service*
+- Fill these details
+    - Name: *LlamaVM*
+    - Service Type: *External*
+    - Metadata URL: *http://your-compute-ip:3000/components*
+    - User Name: *dummy*
+    - Password: *dummy*
+    - Click *Create*
+    ![Create Custom Component](images/llamavm-create.png)   
+- On the left bar, click on the icon *Settings*
+- Go to the tab *Configuration* and scroll down.
+    ![Custom Component Settings](images/llamavm-settings.png)   
+- Add a LLM Service
+    - Click *New LLM Service*
+    - Name: *mgLlamaVM*
+    - LLM Provider: *mgLlama*
+    - Transformation Handler: *LlamaVM* / *Llama* (or *Cohere*)
+    - Default: *True*
+    - Click *Save*
+    ![Custom Component Settings](images/llamavm-service.png)   
+
+That is it. The chat should answer now faster mostly after some period where it was not used.
 
 **You may now proceed to the [next lab](#next)**
 

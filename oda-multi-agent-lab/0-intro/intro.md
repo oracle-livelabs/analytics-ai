@@ -1,21 +1,20 @@
 # Introduction
 
 ## About This Workshop
-In this workshop, we will see how to build AI Agent using Oracle Digital Assistant.
+In this workshop, we will see how to build AI Agents using Oracle Digital Assistant.
 
-The lab does not use any code, all is done with Oracle Digital Assistant low code and intuitive user interface.
+The lab does not use any code, all is done using Oracle Digital Assistant low code and intuitive web user interface.
 
 ![Screenshot](images/app-screenshot.png =50%x*)
 
-
-Here is a a **definition of an AI Agent**: 
-- An AI agent interacts autonomously with its environment, and uses tools and data to perform self-determined tasks to meet predetermined goals. 
+Here is a **definition of an AI Agent**: 
+- An AI agent interacts autonomously with its environment. It uses tools and data to perform self-determined tasks to meet predetermined goals. 
 
 ![Definition](images/oda-agent-definition.png =50%x*)
 
 Unlike normal programming language, an AI Agent decides itself what steps and what actions to use to reach the goal.
 
-Practically that means that an agent has:
+Practically that means that an AIagent has:
 - **Tools**
 - **Data**
 
@@ -31,7 +30,7 @@ There will be a several architectures of AI Agents in this LiveLab.
 
 ![Router](images/oda-agent-router.png =50%x*)
 
-Then more complex architectures, where we will see how to use memory, how to make multi-agent installation and we will finish with several example of multi-agent systems.
+Then more complex architectures, where we will see how to use memory, how to build multi-agents and we will finish with several examples of multi-agent systems.
 - **Reflection**
 - **Human in the loop**
 - **Supervisor**, ....
@@ -40,15 +39,15 @@ Then more complex architectures, where we will see how to use memory, how to mak
 
 ### Physical Architecture
 
-The physical architecture is mostly Oracle Digital Assistant that in the practice should call REST API for the tool.
-In the lab, we will keep thing easy to install by using public API or faking the API with static JSON payloads.
+The physical architecture is mostly Oracle Digital Assistant that calls REST APIs for the tools. 
+In the lab, we will keep thing easy and fake the REST APIs using static JSON files accessed via an URL (Object storage).
 
 ![Physical Architecture](images/physical-architecture.png =50%x*)
 
 ### Objectives
 
 - Provision Oracle Digital Assistant
-- Import all the sample and test them
+- Import all the samples and test them
 
 **Please proceed to the [next lab.](#next)**
 

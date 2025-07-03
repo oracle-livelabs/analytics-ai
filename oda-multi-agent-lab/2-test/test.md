@@ -1,13 +1,13 @@
 # Explore and Test
 
 ## Introduction
-In this lab, we will explore and test the installation.
-Estimated time: 10 min
+In this lab, we will explore and test what we have installed in Lab 1.
+Estimated time: 20 min
 
 ### Objectives
 
-- Explore what has been installed 
-- Test using the OCI Console
+- Explore what we have installed 
+- Test the skills using the OCI Console
 
 We will test the following architecture:
 1. Agent 
@@ -48,7 +48,7 @@ Let's look at our first Agent. It is an Agent who is using Tools and Data.
 
     ![Agent preview](images/mgllmagent-llm.png)   
 
-7. Come back to the flow and look how it is build. Check the LLM block and the LLM prompt.
+7. Come back to the flow and look how it is built. Check the LLM block and the LLM prompt.
 
     ![Agent edit](images/mgllmagent-edit.png)   
 
@@ -69,14 +69,14 @@ Let's look at our first Agent. It is an Agent who is using Tools and Data.
 
 ## Task 2: Agent with history (memory)
 
-In the previous sample, the LLM has no access to the chat history and conversation. Let's do a small change to solve this.
+In the previous sample, the LLM has no access to the chat history. Let's do a small change to solve this.
 
 1. In the home page or in the list of skills, open *mgLlmHistory*
 2. Click on the *Flow icon* and check the *outputFlow*, notice the last block.
 
     ![History agent edit](images/mgllmhistory-edit.png)   
 
-    The history of the chat is kept in the *questionAnswerHistory variable*. It is a design choice, several other options exists.
+    The history of the chat is kept in the *questionAnswerHistory variable*. It is a design choice, several other options exists. This one has the advantage to be compatible with all LLMs.
 
 3. Check the *agentFlow* is nearly identical to the previous sample.
 4. Click *Preview*
@@ -86,7 +86,7 @@ In the previous sample, the LLM has no access to the chat history and conversati
 
     ![History agent preview](images/mgllmhistory-preview.png)  
 
-     Notice that the answer of the question 2 refer to the question 1 context.
+     Notice that the answer of the question 2 refer to the question 1 of the chat history.
 
 6. In the preview, go to the *LLM Calls* tabs and check the LLM calls.
 
@@ -148,8 +148,9 @@ The difference between Agent and Tool is:
 
 ## Task 4: Reflection
 
-Here we will use 2 agents that will work together. One will producer a document based on a wikipedia page. The other one will check the quality. The result is shown to the user only when the check agent is happy about the quality.
-like number, data, string, ... 
+Here we will use 2 agents that will work together. 
+- One will produce a document based on a wikipedia page. 
+- The other one will check the quality. The result is shown to the user only when the check agent is happy about the quality.
 
 ![Reflection Architecture](images/mgllmreflect-architecture.png)   
 
@@ -167,11 +168,11 @@ like number, data, string, ...
 
 ## Task 5: Supervisor
 
-Here we will use a group of agent working together. The supervisor receive a goal (a question). 
+Here, we will use a group of agents working together with a supervisor to supervise the work of the other agents. 
 
 The supervisor has 2 tasks:
 - Divide the work to the other agents
-- Evaluate the response of each agent and check if he need to call more agents, more tools or get other data to answer to the question of the end-user.
+- Evaluate the response of each agent and check if he needs to call more agents, more tools or get other data to answer to the question of the end-user.
 
 ![Supervisor Architecture](images/mgllmsupervisor-architecture.png)   
 
@@ -207,9 +208,6 @@ The supervisor has 2 tasks:
 
 Congratulation ! You have finished the lab !!
 We hope that you learned something useful.
-
-
-**You may now proceed to the [next lab.](#next)**
 
 ## Known issues
 
