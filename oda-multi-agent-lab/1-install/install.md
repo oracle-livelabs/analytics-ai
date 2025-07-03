@@ -22,7 +22,7 @@ Estimated time: 60 min
     ##BUCKET_URL##=https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/xxxxxx/b/bucket-api/o/
     </copy>
     ```
-2. Download the sample files. Here: [https://github.com/mgueury/oda-multi-agent/archive/refs/heads/main.zip](https://github.com/mgueury/tools/archive/refs/heads/main.zip)
+2. Download the sample files. Here: [https://github.com/mgueury/oda-multi-agent/archive/refs/heads/main.zip](https://github.com/mgueury/oda-multi-agent/archive/refs/heads/main.zip)
 3. An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
 
 ## Task 1: Create a Compartment
@@ -47,11 +47,12 @@ You can
 ## Task 2: Create an Oracle Digital Assistant.
 
 Oracle Digital Assistant (ODA) is the main tool that we use in this lab.
-If you do not have an Oracle Digital Assistant (ODA) installation yet, create one. You can use an existing one.
+If you do not have an Oracle Digital Assistant (ODA) installation yet, let's create one.
 
 **ODA**
 - Go to the OCI Console menu, and choose *Analytics & AI* / *Digital Assistant*
     ![ODA Menu](images/oda-menu.png)
+- Be sure that you are in the compartment that you created above. 
 - Click *Create digital assistant instance*
     - Name *oda-multi-agent*
     - Choose the *shape*, ex: *Development*
@@ -180,9 +181,10 @@ Let's import all the APIs definition in ODA. We will test them in the next lab.
 
 Remark about regions:
 - All the configuration here refers to eu-frankfurt-1. 
-- If you want to use this lab without changing the URLS, your tenancy need to have access to Frankfurt. You can ask your admin to subscribe the region.
-- If not, all URL needs containing eu-frankfurt-1 needs to be replaced by your AI region of choice ex: us-chicago-1
-- You can find the list of regions and their abbreviations [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+- If you want to use this lab without changing the URLs and that your tenancy is not registered to Frankfurt. You will hit HTTP 404 errors.
+- Solution:
+    - Ask your admin to subscribe the Frankfurt region.
+    - Or better, modify all URL needs containing eu-frankfurt-1 needs to be replaced by your AI region of choice where GenAI is installed. Ex: Frankfurt, London, Chicago, ... You can find the list of regions and their abbreviations (ex: us-chicago-1) [here](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
 **Import LLM Service**
 - Open ODA hamburger menu
@@ -201,7 +203,7 @@ Remark about regions:
 - Choose *Settings* / *API Services*
 - Go to tab *REST Services*
 - Click *Import REST Services*
-- Import the file: *RESTService.yaml*
+- Import the file: *RESTServices.yaml*
 
 **Configure REST Services - labAgentConnect**
 - Go to Rest Service *labAgentConnect*
@@ -293,7 +295,7 @@ The reason is that each LLM call from ODA is first using a LLM Transformation Ha
 The goal of that Transformation Handler is to convert your question in a LLM API format (Cohere, Llama, any LLM, ...).
 
 In the sample that you have imported, the Transformation Handler is inside a custom components running in ODA. 
-Since the first call takes 10+ seconds to wake it up, the goal of this step it to remove this startup time by using a Virtual machine where the custom component is always running.
+Since the first call takes 10+ seconds to wake it up, the goal of this step it to remove this startup time by using a Virtual machine.
 
 This lab does not explained it in details.
 But the code to do this is here: 

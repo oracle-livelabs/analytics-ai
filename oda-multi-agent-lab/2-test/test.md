@@ -35,14 +35,14 @@ Let's look at our first Agent. It is an Agent who is using Tools and Data.
     ![Agent](images/mgllmagent.png)   
 
 5. Run the following questions:
-    - *hello
+    - *hello*
     - *what is the weather in Brussels*
 
     ![Agent preview](images/mgllmagent-preview.png)   
 
 6. In the preview, go to the LLM Calls tab and check the LLM calls.
     - Go to tab *LLM Calls*
-    - Right click on of the call
+    - Right click on the *column Request* of the call
     - Choose *Full Text*
     - Check the *LLM Request* and *LLM Response*
 
@@ -125,7 +125,7 @@ The difference between Agent and Tool is:
 ![Router Architecture](images/mgllmrouter-architecture.png)   
 
 1. In the home page or in the list of skills, open *mgLlmRouter*
-2. Click on the *Flow icon* and check the *ragFlow*, notice that the Agent is calling another Agent (OCI GenAI agent). He will just pass the Natural Language question.
+2. Click on the *Flow icon* and check the *ragAgent*, notice that the Agent is calling another Agent (OCI GenAI agent). He will just pass the Natural Language question.
 
     ![History agent edit](images/mgllmrouter-edit.png)   
 
@@ -197,8 +197,8 @@ The supervisor has 2 tasks:
 
 5. Reset the conversation (to avoid inference with the history of the conversation before)
     - *Get email 3 and send a mail back with an answer based on the hr policy*
-    - *Send a mail to toto@mail.com about the weather in brussels*
-    - *Send a mail to toto@mail.com and explain what is jazz*
+    - *What is the weather in brussels ? Send a mail about it to toto@gmail.com*
+    - *Look when was jazz created. Send a mail about it to toto@gmail.com*
 
     ![Supervisor agent preview](images/mgllmsupervisor-preview2.png)  
 

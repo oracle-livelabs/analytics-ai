@@ -14,7 +14,7 @@ Here is a **definition of an AI Agent**:
 
 Unlike normal programming language, an AI Agent decides itself what steps and what actions to use to reach the goal.
 
-Practically that means that an AIagent has:
+Practically that means that an AI Agent has:
 - **Tools**
 - **Data**
 
