@@ -12,6 +12,8 @@ During the lab, you will:
 By the end of this LiveLab, you'll have a solid understanding of building and customizing agentic AI solutions, opening up a world of possibilities for virtual assistants, customer support bots, and smart automation. Get ready to unleash your creativity and harness the power of OCI's AI services.
 Remember, this lab is designed to provide a practical, interactive learning experience, so feel free to experiment and explore the potential of agentic AI!
 
+Estimated Time: 5 hours
+
 ### Objectives
 By the end of this lab you will be able to converse with an agent equipped with multiple tool calling capabilities such as general llm chat, get weather, analyze document and more.
 
