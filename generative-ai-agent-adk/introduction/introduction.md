@@ -2,17 +2,15 @@
 
 ## About this Workshop
 
-This workshop will help to configure Generative AI powered chatbot (ATOM) on your own OCI tenancy.
-This workshop enables developers to perform GenAI RAG on documents stored in 23ai database using the OCI Generative AI Agent Service.
-The users can then
+This workshop will help to configure,deploy and run a chat powered by OCI Generative AI Agents using OCI Agent Development Kit (`adk`).During the flow the learner will 
 
-- Connect to OCI Generative AI Agent Service from OCI Digital Assistant Chatbot (hosted in OCI Visual Builder ATOM Application)
-- Get responses of their question (in natural language) from those custom documents.
-By following the workshop users can install this ATOM application in their own tenancy
+- Create and configure OCI Generative AI agents.
+- Configure tools such as Retrival Augmented Generation(RAG),Nl2SQL,Custom tools including Model Context Protocol(MCP) based tools.
+- Use `adk` for all the above tasks. 
 
-![User View](images/image_intro.png)
+![User View](images/user_flow.jpg)
 
-Estimated Workshop Time: 3 hours
+Estimated Workshop Time: 2 hours
 
 ### Objectives
 
@@ -57,8 +55,8 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+    * **Rahul MR**, Prinicipal Solutions Architect - OCI 
 * **Contributors**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **Sanjeeva Kalva**, Principal Data Scientist - OCI 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
+    * **TBD**, TBD
