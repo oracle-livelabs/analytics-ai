@@ -14,33 +14,26 @@ Estimated Workshop Time: 2 hours
 
 ### Objectives
 
-Objective of this workshop is to set-up the required OCI services to create a full Generative AI Agent solution with RAG capabilities:
+Objective of this workshop is to configure ,build ,deploy and run OCI Generative AI Agents using Agent Development Kit (**ADK**).The following services and features will be covered during the lab
 
-![Architecture Diagram](images/architecture_23ai.png)
 
-* OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
-Users can then ingest and perform RAG on the user’s documents in 23ai database, using OCI Generative AI Agent Service.
-* OCI Digital Assistant (ODA) – Users can create ODA instance and import the provided ODA Skill.
-Users can then connect from ODA chatbot to OCI Generative AI Agent Service.
-* OCI Visual Builder (VB) ATOM Application – User can create OCI Visual Builder (VB) instance and import ATOM VB web application.
-Users can then embed the ODA chatbot in ATOM application. Then the users can get responses from their PDF manuals / documents, using the ATOM application.
 
-In this workshop, you will learn how to:
+* OCI Generatvie AI Agent build and deploy.
+* Configure and use inbuild Retrival Augmented Generation (**RAG**)tool.
+* Configure and use inbuilt Natural Language 2 to SQL tool (**NL2SQL**).
+* Usage of Model Context Protocol(**MCP**) with OCI Generative AI Agent.
+* Configure and use Customer tools with OCI Generatvie AI Agents.
 
-* Create autonomous database and upload documents in the database.
-* Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
-* Setup & configure ODA as an LLM powered chatbot
-* Setup & configure Visual Builder as a frontend channel for ODA
-* Test out the features and capabilities of this ATOM application
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud Account
-* Access to OCI Generative AI Agents
-* Access to a Region where the Agent service is available: Chicago, Frankfurt
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Digital Assistant, Visual Builder, 23ai database, OCIR, Network, Dynamic Groups, Policies, IDCS/Identity Domain Confidential Applications, Resource Manager
+* An Oracle Cloud Account (Non Free Tier)
+* Access to OCI Generative AI Agents 
+* Access to a Region where the Agent service is available.
+    * Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
+* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity.
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More
