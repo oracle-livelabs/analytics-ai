@@ -21,212 +21,222 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
     ![Domain Navigation](images/locate_domain.png)
 
-2. Click on your current domain name
+1. Click on your desired  domain name
+1. Click on Dynamic Groups, and then your Dynamic Group name
 
-    ![Click Domain](images/click_domain.png)
+    ![Dynamic group](images/domain_dg.png)
+1. Click create dynamic group.Provide a name and a description.Select option Match any rules defined below.
 
-3. Click on Dynamic Groups, and then your Dynamic Group name
-
-    ![Click DG](images/click_dg.png)
-
-    **Note** The name of your dynamic group can be different.
-
-4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
-
-    ![DG Details](images/dg_details.png)
-
-    **Note** The resource.compartment.id should be set to the OCID of your Compartment - that is having your ODA Instance.
-
-5. Click on Policies, ensure that you are in your "root" compartment, then click on your Policy name
-
-    ![Click Policy](images/click_policy.png)
-
-    **Note** The name of your policy can be different.
-
-6. Ensure that your Policy is properly defined - as follows.
-
-    ![Policy Details](images/policy_details.png)
-
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
-
-## Task 2: Provision Oracle Digital Assistant
-
-This task will help you to create Oracle Digital Assistant under your chosen compartment.
-
-1. Locate Digital Assistant under AI Services
-
-    ![ODA Navigation](images/oda_nav.png)
-
-    **Note** You can find Digital Assistant under the AI Services.
-
-2. Provide the information for Compartment, Name , Description (optional) & Shape. Click Create
-
-    ![ODA creation wizard](images/oda_create_wizard.png)
-
-
-3. In few minutes the status of recently created Digital Assistant will change from Provisioning to Active
-
-    ![ODA Active](images/oda_active.png)
-
-## Task 3: Create REST Services for the OCI Generative AI Agent
-
-This task involves creating REST service which will be used by ODA to connect to OCI Generative AI Agent service.
-
-1. Download the two REST Service Configurations
-
-    [agent-RESTService-GenAIAgentCreateSession.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rd2pNEFjpyzebrAx5qbDv5rkDtbQxuRPkZ3bsI3BzrqAViGMEsIzt9TGjudPzQAp/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentCreateSession.yaml)
-
-    [agent-RESTService-GenAIAgentChat.yaml](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Cw2wkNoAfnmHQetzh5jmcQhvErJZa188Wl_sjxBoWPGhiAliHFculEAwIYvqS2Oj/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentChat.yaml)
-
-2. Locate the ODA instance (created in Task 2)
-
-    ![ODA locate](images/oda_locate.png)
-
-3. Select the ODA Instance and click on Service Console
-
-    ![ODA service console](images/oda_service_console.png)
-
-4. In the ODA Console, click on hamburger menu. Under Settings, click API Services
-
-    ![ODA API Services](images/oda_api_services.png)
-
-5. Click on More -> Import REST Services
-
-    ![ODA import rest services](images/oda_import_rest_services2.png)
-
-     **Note** Import both Rest Services - The GenAIAgentCreateSession Rest API service (using "agent-RESTService-GenAIAgentCreateSession.yaml") and the GenAIAgentChat Rest API service (using "agent-RESTService-GenAIAgentChat.yaml")
-
-6. In the GenAIAgentCreateSession Rest API service, under Parameters, click on the pencil icon to change the value of the GenAIAgentEndpointId
-
-    ![ODA create session api](images/oda_create_session_api1.png)
-
-7. In the Value field, remove the existing value 1, and put the value of the GenAI Agent Endpoint Id (from Lab 3 Task 2 Step 4), and then click the Tick icon
-
-    ![ODA create session api](images/oda_create_session_api2.png)
-
-8. Test the GenAIAgentCreateSession Rest API service, by clicking on the Test Request button. You should see Response Status 200, with a proper Response Body. Ensure that the "welcomeMessage and "id" fields are not blank / null.
-
-    ![ODA create session api](images/oda_create_session_api3.png)
-
-## Task 4: Import Skill (Provided)
-
-1. Click on the link to download the required skill
-
-    [GenAI-23AI-RagAgent-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rkAHVPn54B5ODcUdzzZP9GtyML84SrheDbIrl4W5JT6lZfPVHwTIEJVkIUwpNp0h/n/c4u02/b/hosted_workshops/o/GenAI23aiRAGAgentChatbot.zip)
-
-2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
-
-    ![import skill](images/import_skill.png)
-
-3. Open the GenAI23aiRAGAgentChatbot, go to “Flows” and click on “user.StartFlow”
-
-    ![user start flow](images/user_start.png)
-
-4. Open the second step “SetGenAIAgentEndpointIdVariable”, remove the old value and set the correct OCID value of the GenAI Agent Endpoint (the endpoint OCID that you copied in Lab 3 Task 2 Step 4).
-
-    ![flow update endpoint](images/user_flow1.png)
-
-5. Ensure the Chatbot Training is completed
-
-   Then click on the “Preview” button at top-right corner.
-
-    ![ODA Train](images/user_flow2.png)
-
-6. You should be able to successfully import the ODA Skill
-
-    **NOTE** to start the conversation loop in ODA preview, send this initial message: "Hi"
-    ![flow preview](images/vector_search.png)
-
-## Task 5: Create Channel to Embed ODA in Visual Builder Application or in any custom Web App
-
-1. Click on hamburger menu and select Development > Channels, and click on Add Channel
-
-    ![channel navigation](images/channel_nav2.png)
-
-2. Enter the Channel Name and Description. Select the following option on the form:
-    * Channel Type = Oracle Web
-    * Allowed Domain = *
-    * Client Authentication Enabled = Toggle off
-
-    ![channel configuration](images/channel_config.png)
-
-3. After channel creation, route it to skill imported in Task 3, and enable the Channel by using the toggle button.
-
-    ![enable channel](images/channel_enable2.png)
-
-4. Ensure that the Client Authentication Enabled is disabled. Take note of Channel Id.
-
-    ![channel id](images/channel_id2.png)
-
-## Task 6: (optional) Customize ODA Conversation
-
-1. Customize predefined agent messages
-    * The oda now passes through the agent's welcome message
-
-2. Customize citation format
-    * In the ODA Service Console, click on the appropriate skill
-    * In the **Flows** tab, click on user.GenAIAgentAPIChatFlow
-    * In the ShowCitation block, update the component tab -> messages
-
-    ![flow update citations](images/show_citation.png)
-
-## Task 7: (optional) View Conversation Analytics
-
-From ODA service console homepage -> skill **Display name** -> **Insights** on side nav bar
-
-* On this overview page, you can see stats such as **Total number of Conversations** and **Number of Unique users
-* The View dropdown on the top right allows you to set a time window
-* The Channels filter allows you to filter data from a specific frontend channel
-* The Conversations tab allows you to see user messages and the agent's responses
-
-## Task 8: (optional) Policy Definitions for multi-tenancy deployment
-
-This task will help you ensure that the required Policy Definitions are correctly defined for multi-tenancy deployment (where ODA and Generative AI Agent are in different tenancies).
-
-If the Policy Definitions are not correctly defined, please define them as follows.
-
-**Required Information:**
-
-* _ODATenancyOCID_ - The OCID of the Tenancy, where the ODA Instance is created.
-
-    In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
-
-    ![Tenancy OCID](images/tenancy_ocid.png)
-
-* _ODAInstanceOCID_ - The OCID of the ODA Instance.
-
-    In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
-
-    ![ODA Instance OCID](images/oda_instance_ocid.png)
-
-1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
+    ![Create Dynamic group](images/create_dg.png)
+1. Add below rules to the dynamic group.
 
    ```
    <copy>
-    endorse any-user to manage agent-family in any-tenancy where request.principal.type='odainstance'
-    endorse any-user to manage genai-agent-family in any-tenancy where request.principal.type='odainstance'
-    endorse any-user to manage object-family in any-tenancy where request.principal.type='odainstance'
+    all {resource.type='datasciencenotebooksession', resource.compartment.id='OCID of the Compartment'}
+    ALL {resource.type='genaiagent',resource.compartment.id='OCID of the Compartment'}
     </copy>
    ```
+1. Create the dynamic group.
 
-   ![ODA Instance Policy](images/create_policy.png)
+    ![Created group](images/created_dg.png)
 
-2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root"
-   compartment, and then define the following policies.
 
-   _Please ensure to replace the ODATenancyOCID and ODAInstanceOCID with the proper OCID values._
+1. Make a note of *dynamic group's OCID* for further usage.
+
+    ![DG OCID](images/dg_ocid.png)
+
+## Task 2: Create policies.
+
+The tasks will help you to assoicate necessary policies with the dynamic group
+
+1. Select policies from section Identity & Security.
+
+    ![Select policy](images/create_policies.png)
+
+1. Ensure the compartment selected as the desired one.
+1. Click *Create policy*.
+1. Provide a name and description.
+
+    ![create policy](images/create_policy.png)
+
+1. Click *Show manual editor* option.
+1. Add below policy statements,ensure to update OCI accordingly.
 
    ```
    <copy>
-    define tenancy oda-instance-tenancy as ODATenancyOCID
-    admit any-user of tenancy oda-instance-tenancy to manage agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
-    admit any-user of tenancy oda-instance-tenancy to manage genai-agent-family in tenancy where request.principal.id in ('ODAInstanceOCID')
-    admit any-user of tenancy oda-instance-tenancy to manage object-family in tenancy where request.principal.id in ('ODAInstanceOCID')
-    </copy>
+    allow dynamic-group <OCID of the Dynamic group> to manage genai-agent-family in compartment id <OCID of the compartment>
+    allow any-user to manage genai-agent-family in compartment id <OCID of the compartment>  where ALL {request.principal.type = 'datasciencenotebooksession'}
+    allow dynamic-group <OCID of the Dynamic group> to read database-tools-family compartment id <OCID of the compartment>
+    allow dynamic-group <OCID of the Dynamic group> to read secret-bundle in compartment id <OCID of the compartment>
+    allow dynamic-group <OCID of the Dynamic group> to use database-tools-connections in compartment id <OCID of the compartment>
+    allow dynamic-group <OCID of the Dynamic group> to use database-family in compartment id <OCID of the compartment>
+    allow dynamic-group <OCID of the Dynamic group> to manage  all-resources  in compartment id <OCID of the compartment> 
+   </copy>
    ```
+1. Click create and validate.
 
-   ![ODA Instance Policy](images/create_policy.png)
+    ![Validate policy](images/validate_policies.png)
 
+## Task 3: Create virtual cloud network and subnet.
+
+The tasks allows your to create our VCN that we will use for various transactions.
+
+1. From OCI console ,select Network > *Virtuale Cloud Networks*
+
+    ![VCN View] (images/vcn_view.png)
+
+1. Click *Actions* > *Start VCN Wizard*.
+
+    ![Create VCN](images/create_vcn.png)
+
+1. Select option *Create VCN with Internet Connectivity*.
+
+    ![VCN options](images/vcn_options.png)
+
+1. Provide name ,description and use default information and create the VCN.
+1. Wait for the vcn state to be *Active*.
+
+    ![VCN State](images/vcn_active.png)
+
+## Task 4: Create Autonomous Database(ADB).
+
+The task help to create ADB that we will use for Nl2SQL tool usage.
+
+1. From *OCI Console* > *Oracle Database* > *Autonomous Databases*.
+
+    ![ADB View](images/create_adb.png)
+
+1. Click create autonomous database.
+1. Provide a friendly name for display and table name.
+
+    ![Create DB](images/create_db_basic.png)
+
+1. Select version as *23ai*.Select other default configuration values.
+
+    ![ADB config](images/adb_base_config.png)
+
+1. Provide a complex password for the database.
+
+    ![Admin credentials](images/db_admin_password.png)
+
+1. As this for lab purpose select the option *Secure access from everywhere*.
+1. Provide a contact mail id and click *Create*.
+1. It will take several minutes to have the resource in Available status.
+
+    ![ADB finale view](images/adb_final_view.png)
+1. Make a note of Admin password for further usage.
+
+## Task 5: Create a vault.
+
+The task helps to setup the OCI Vault.
+
+1. From OCI console > *Identity & Security* > *Key Management & Secret Management* > *Vault*
+
+    ![Create vault](images/create_vault.png)
+
+1. Click *Create vault*.Provide a name and click *Create Vault*.
+
+    ![Create vault](images/vault_master.png)
+
+1. Click *Create Master Key*.Provide a name and use default options.Click *Create Key*.
+
+    ![Create master key](images/create_vault_key.png)
+
+1. Wait till the resources are in active state before moving to next section.
+
+## Task 6: Create database connection.
+
+The task allow to create a DB connection for agent usage.
+
+1. From OCI console > *Developer Services* > *Connections*.
+
+    ![DB connections](images/db_connection.png)
+
+1. Click *Create connection*.Provide name for the connection.Always ensure you are selected  the desired compartment. 
+
+    ![DB connection create](images/connection_basics.png)
+
+1. Use *Select Database* option.
+1. Select option as *Oracle Autonomous Database*.
+1. Select the compartment and the database created earlier.
+
+    ![Select db](images/select_db.png)
+1. Click *Create password secret*.
+1. Provide name and description.
+1. Select the vault and master key created.
+1. Use the same password that used during ADB creation.
+1. Click *Create*.
+
+    ![Admin password creation](images/connection_admin_password.png)
+
+1. Click *Create wallet content secret*.
+
+    ![Wallet secrets](images/create_wallet_password.png)
+
+1. Provide *Name*, *Description*,Select *Vault* and *Key*.
+1. Use option *Retrieve regional wallet from Autonomous Database*.
+
+    ![Wallet secret creation](images/create_secrets_wallet.png)
+
+1. Click create.Wait for the resource to become active.
+
+    ![Validate connection](images/validate_connection.png)
+
+1. Provide confirmation. Wait for the validation.If there is an error fix accordingly.
+
+    ![Connection validation](images/connect_validation.png)
+
+1. Click *Close*.
+
+
+## Task 7: Create OCI Object storage.
+
+The task help to create a object storage bucket to store artifacts for RAG usages.
+
+1. From OCI Console > *Object Storage & Archive Storage* > *Buckets*.
+
+    ![buckets](images/bucket_view.png)
+
+1. Click *Create bucket*.
+1. Provide name and use with default options.
+
+    ![Bucket created](images/bucket_created.png)
+
+
+## Task 8: Create OCI Generative AI agents.
+
+The task help to create a basic agent to which we will add further tools later.
+
+1. From OCI console > *Analytics&AI* > *Generative AI Agents*.
+
+    ![Create agent](images/create_agent.png)
+
+1. Click *Agents* > *Create Agent*.Provide basic information and click *Next*.
+
+    ![Agent basic](images/agent_basic_input.png)
+
+1. Skip the tools page and click *Next*.
+1. With in page *Setup agent endpoint* , check option *Automatically create an endpoint for this agent
+*.
+
+1. Enable option *Enable human in the loop*.
+
+    ![Enable HIL](images/enable_hil.png)
+
+1. Select option *Inform* for all the option of Guardrails.
+
+    ![Guardrails](images/guardrails.png)
+
+1. Click *Next* and click *Create agent*
+
+    ![Create agent](images/create_agent_final.png)
+
+1. Wait for the agent and endpoint to become active,once completed make a note of the *OCID of the Agent endpoint*.
+
+    ![Agent endpoint ocid](images/agent_endpoint.png)
+
+
+**Proceed to the next lab.**
 
 ## Acknowledgements
 

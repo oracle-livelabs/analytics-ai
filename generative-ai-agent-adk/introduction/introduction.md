@@ -33,6 +33,7 @@ This lab assumes you have:
 * Access to OCI Generative AI Agents 
 * Access to a Region where the Agent service is available.
     * Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
+* An OCI compartment on which we will allocate all the necessary resources.
 * Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity.
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
