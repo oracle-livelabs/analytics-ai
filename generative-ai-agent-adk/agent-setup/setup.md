@@ -70,6 +70,7 @@ The tasks will help you to assoicate necessary policies with the dynamic group
     allow dynamic-group <OCID of the Dynamic group> to read secret-bundle in compartment id <OCID of the compartment>
     allow dynamic-group <OCID of the Dynamic group> to use database-tools-connections in compartment id <OCID of the compartment>
     allow dynamic-group <OCID of the Dynamic group> to use database-family in compartment id <OCID of the compartment>
+    allow dynamic-group <OCID of the Dynamic group> to use object-family in compartment id <OCID of the compartment>
     allow dynamic-group <OCID of the Dynamic group> to manage  all-resources  in compartment id <OCID of the compartment> 
    </copy>
    ```
@@ -201,6 +202,7 @@ The task help to create a object storage bucket to store artifacts for RAG usage
 1. Provide name and use with default options.
 
     ![Bucket created](images/bucket_created.png)
+1. Make a note of *Name space name* and *Bucket name*.
 
 
 ## Task 8: Create OCI Generative AI agents.

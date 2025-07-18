@@ -36,6 +36,8 @@ Estimated Time: 30 minutes
 1. Provide credentials and multi factor auth when prompted.Wait for the notebook to be opened.
 
     ![NB Opended](images/nb_open_view.png)
+    
+1. Click *extend* and extend the notbook timeout.
 
 **You can skip the next section and follow to Task 3** 
 
@@ -60,6 +62,7 @@ Estimated Time: 30 minutes
    ```
    <copy>
     pip install "oci[adk]"
+    pip install oci-cli
    </copy>
    ```
 1. Create an *API Signing Key* and store for further usage. Refer [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two) for detailed steps.
