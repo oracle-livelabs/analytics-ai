@@ -113,7 +113,7 @@ Estimated Time: 30 minutes
 
     ![KB final](images/kb_active.png)
 
-1. We will associate the KB with agents later.
+1. We will associate the knowledge base with agents later.
 
 
 **Proceed to the next lab.**
