@@ -1,4 +1,4 @@
-# Setup OCI Agent RAG tool
+# Setup OCI Agent SQL tool
 
 ## Introduction
 

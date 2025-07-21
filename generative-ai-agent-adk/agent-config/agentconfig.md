@@ -1,4 +1,4 @@
-# Setup OCI Agent RAG tool
+# Configure OCI Agent RAG tool
 
 ## Introduction
 
@@ -171,7 +171,7 @@ The tasks imports various ADK python modules as well as some of the optional lib
 During the process the ADK will check the tools defined and associate with the Agent.
 The process may take several minutes depends on the tools and their configuration.
 
-1. Run below to setup and run a sample query.A setup process is only needed for the first time or for any configuration changes that needs to push from local or notebook to agents.
+1. Run below to setup and run a sample query.A setup process is only needed for the first time or for any configuration changes that needs to push from local or notebook to agents.You may update your query as well.
 
     ```
     <copy>
@@ -182,6 +182,10 @@ The process may take several minutes depends on the tools and their configuratio
     ```
     ![Tool sync](images/tool_sync.png)
 
+
+1. Wait for the execution to complete and validate the result.A result would look like as below.
+
+    ![Result](images/mcp_results.png)
 
 
 **Proceed to the next lab.**
