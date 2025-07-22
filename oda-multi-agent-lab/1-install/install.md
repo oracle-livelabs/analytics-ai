@@ -162,8 +162,10 @@ Digital Assistant will call the OCI APIs of Generative AI. For this, it needs an
 - Click *Show Manual editor*
 - Copy this with your value of ##COMPARTMENT\_OCID## and ##ODA\_ID##
     ```
+    <copy>
     allow any-user to manage genai-agent-family in compartment id ocid1.compartment.oc1..xxxxxxx where request.principal.id='ocid1.oda-instance.oc1..xxxxxxx'
     allow any-user to manage generative-ai-family in compartment id ocid1.compartment.oc1..xxxxxxx where request.principal.id='ocid1.oda-instance.oc1..xxxxxxx'
+    </copy>
     ```
 - Click *Create*
     ![Policy Create](images/policy-create.png)

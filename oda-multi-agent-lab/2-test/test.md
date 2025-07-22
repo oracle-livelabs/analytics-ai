@@ -53,6 +53,7 @@ Let's look at our first Agent. It is an Agent who is using Tools and Data.
     ![Agent edit](images/mgllmagent-edit.png)   
 
     ```
+    <copy>
     ## Rules
     - Based on the user question below, choose the next tool to call.
 
@@ -65,6 +66,7 @@ Let's look at our first Agent. It is an Agent who is using Tools and Data.
 
     ## Question
     ${question}
+    </copy>
     ```
 
 ## Task 2: Agent with history (memory)
@@ -93,6 +95,7 @@ In the previous sample, the LLM has no access to the chat history. Let's do a sm
 7. Come back to the flow and look how it is build. Check the LLM block and the LLM prompt. Notice *questionAnswerHistory*
 
     ```
+    <copy>
     ## Previous questions/answers
     ${questionAnswerHistory}
 
@@ -112,6 +115,7 @@ In the previous sample, the LLM has no access to the chat history. Let's do a sm
     ## Response format
     {"tool": "name of the tools", "parameter": "value"}
     Only respond with the JSON payload. Do not put any sentence in front to explain the choice.
+    </copy>
     ```
 
 ## Task 3: Router + Human in the loop
@@ -180,9 +184,11 @@ The supervisor has 2 tasks:
 2. Click on the *Flow icon* and check the *supervisorFlow*. Look at the LLM Block and its definition. It is more complex than before but like you see he has the same structure than before, the only main difference is that during the supervisor flow. The history of the tools calls is kept to make the thinking of the LLM progress to respond to the user question.
 
     ```
+    <copy>
     [...]
     ## Tools History
     ${toolsHistory}
+    </copy>
     ```
 
     ![Supervisor agent edit](images/mgllmsupervisor-edit.png)   
