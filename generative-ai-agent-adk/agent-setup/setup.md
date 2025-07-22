@@ -47,7 +47,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 ## Task 2: Create policies.
 
-The tasks will help you to assoicate necessary policies with the dynamic group
+The tasks will help you to associate necessary policies with the dynamic group
 
 1. Select policies from section Identity & Security.
 
@@ -82,7 +82,7 @@ The tasks will help you to assoicate necessary policies with the dynamic group
 
 The tasks allows your to create our VCN that we will use for various transactions.
 
-1. From OCI console ,select Network > *Virtuale Cloud Networks*
+1. From OCI console ,select Network > *Virtual Cloud Networks*
 
     ![VCN View] (images/vcn_view.png)
 
@@ -243,6 +243,6 @@ The task help to create a basic agent to which we will add further tools later.
 ## Acknowledgements
 
 * **Author**
-    * **Rahul MR**, Prinicipal Solutions Architect - OCI 
+    * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 

@@ -5,7 +5,7 @@
 This lab will take details the steps to configure Agent using the tools that created.It will also provide the steps to add additional client side tools such as Custom tools using function as well as integration with *Model Context Protocol- MCP*.
 
 ## Task 1: Import ADK modules.
-The tasks imports various ADK python modules as well as some of the optional libaries for our usage.All these instructions works for python script as well as OCI Datascience notebooks.
+The tasks imports various ADK python modules as well as some of the optional libraries for our usage.All these instructions works for python script as well as OCI Data science notebooks.
 
 1. Add below to the notebook cell.
 
@@ -43,7 +43,7 @@ The tasks imports various ADK python modules as well as some of the optional lib
     ```
     <copy>
     agent_endpoint="endpoint OCID"
-    knowledge_id="knowledgebase OCID"
+    knowledge_id="knowledgeBase OCID"
     </copy>
     ```
 1. Define instructions for agents.
@@ -68,7 +68,7 @@ The tasks imports various ADK python modules as well as some of the optional lib
     ```
     <copy>
 
-    #Defenition of our tool and dont forget the @tool
+    #Definition of our tool and do not forget the @tool
     @tool(description="Get the season for a location")
     def check_season(location:str) -> Dict[str, Any]:
         """Get the season for a given location
@@ -94,15 +94,15 @@ The tasks imports various ADK python modules as well as some of the optional lib
 
 ## Task 4: Define mcp call using stdIO mode.
 
-* We are using an opensource mcp library to fetch information from public internet.
+* We are using an open source mcp library to fetch information from public internet.
 * The library details and credit goes to https://github.com/openbnb-org/mcp-server-airbnb.
-* If you are using local client execution ,enusre nodejs and npx is available for run.
+* If you are using local client execution ,ensure nodejs and npx is available for run.
 
 1. Copy the below to notebook or local script to define the MCP.
 
     ```
     <copy>
-    #MCP with Local Libarary Params 
+    #MCP with Local Library Params 
     bnb_mcp_params = StdioServerParameters(
             command="npx",
             args=["-y" ,"@openbnb/mcp-server-airbnb", "--ignore-robots-txt"],
@@ -111,16 +111,16 @@ The tasks imports various ADK python modules as well as some of the optional lib
     </copy>
     ```
 
-    ![MCP Defenition](images/mcp.png)
+    ![MCP Definition](images/mcp.png)
 
 
 ## Task 5: Connect Knowledge base to the RAG too.
 
-1. Connect knowledge base id and RAG tool with the agent.To do so copy below snippet and pase to the notbook or python script.
+1. Connect knowledge base id and RAG tool with the agent.To do so copy below snippet and pase to the notebook or python script.
 
     ```
     <copy>
-    #RAG tool defenitons
+    #RAG tool detentions
     core_rag_tool = AgenticRagTool(
             name="oci_hol_rag_tool",
             description="RAG tool to answer oracle linux,vector search and sql related queries",
@@ -167,7 +167,7 @@ The tasks imports various ADK python modules as well as some of the optional lib
 
 
 
-## Task 7: Intialize and setup the agent.
+## Task 7: Initialize and setup the agent.
 During the process the ADK will check the tools defined and associate with the Agent.
 The process may take several minutes depends on the tools and their configuration.
 

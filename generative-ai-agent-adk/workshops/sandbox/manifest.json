@@ -1,49 +1,60 @@
 {
-    "workshoptitle": "Deploy an ODA Chatbot powered by Generative AI Agents using 23ai Vector DB",
-    "help": "livelabs-help-aiservices_us@oracle.com",
-    "tutorials": [
-      {
-        "title": "Introduction",
-        "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
-        "filename": "../../introduction/introduction.md"
-      },
-      {
+  "workshoptitle": "How to use OCI Generative AI Agent development kit (ADK) to build,deploy and run agents",
+  "help": "livelabs-help-aiservices_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction about the lab.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
         "title": "Get Started",
         "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
-      },
-      {
-        "title": "Lab 1: (Optional) Create ADB and DB Tools Connection",
-        "filename": "../../adb/adb.md"
-      },
-      {
-        "title": "Lab 2: (Optional) Load vector data in ADB using sql",
-        "filename": "../../sql/sql.md"
-      },
-      {
-        "title": "Lab 3: Create Knowledge base and chat with agent",
-        "filename": "../../kb/kb.md"
-      },
-      {
-        "title": "Lab 4: Setup OCI Digital Assistant (ODA)",
-        "filename": "../../oda/oda.md"
-      },
-      {
-        "title": "Lab 5: Setup OCI Visual Builder (VB)",
-        "filename": "../../vb/vb.md"
-      },
-      {
-        "title": "Lab 6: Demo User Experience",
-        "filename": "../../user/user.md"
-      },
-      {
-        "title": "Need Help?",
-        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-        "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
-      },
-      {
-        "title": "Other Livelabs you might like?",
-        "filename": "../../other-livelabs/other-livelabs.md"
-      }
-    ]
-  }
+    },
+    {
+      "title": "Lab 1: Provision infrastructure",
+      "description":"Provision OCI Infrastructure resources for the lab",
+      "filename": "../../agent-setup/setup.md"
+    },
+    {
+      "title": "Lab 2: Install Agent development kit (ADK)",
+      "description": "Install ADK using Data science notebook or local setup",
+      "filename": "../../adk-installation/adk_install.md"
+    },
+    {
+      "title": "Lab 3: Setup knowledge base for RAG tool",
+      "description": "Configure knowledge base for RAG tool",
+      "filename": "../../rag-tools/ragtools.md"
+    },
+    {
+      "title": "Lab 4: Setup SQL Tool",
+      "description": "Setup Nl2SQL tool for agent.",
+      "filename": "../../sql-tools/sqltool.md"
+    },
+    {
+      "title": "Lab 5: Configure Agents with tool",
+      "description": "Connect various tools with Agent",
+      "filename": "../../agent-config/agentconfig.md"
+    },
+    {
+      "title": "Lab 6: Run the agent",
+      "description":"Run agent and validate",
+      "filename": "../../agent-run/agentrun.md"
+    },
+    {
+      "title": "Lab 7: (Optional)Additional references",
+      "description":"Additional reference for read",
+      "filename": "../../references/references.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    },
+    {
+      "title": "Other Livelabs you might like?",
+      "filename": "../../other-livelabs/other-livelabs.md"
+    }
+  ]
+}

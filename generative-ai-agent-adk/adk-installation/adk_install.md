@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to install ADK using pythonic way.We recomend to use *OCI DATA Science* based notebook to run the operation as it comes with all the necessary software in place,however we have added an optional steps to follow local machine for ADK client setup.
+This lab will take you through the steps needed to install ADK using python installer .We recommend to use *OCI DATA Science* based notebook to run the operation as it comes with all the necessary software in place,however we have added an optional steps to follow local machine for ADK client setup.
 
 Estimated Time: 30 minutes
 
@@ -12,32 +12,32 @@ Estimated Time: 30 minutes
 
 1. From OCI Console > *AI & Analytics* > *Data science*
 
-    ![Datascience view](images/datascience_view.png)
+    ![Data science view](images/datascience_view.png)
 1. Select *Create project*.Provide name and description.
 
-    ![Datascience project](images/create_ds_project.png)
+    ![Data science project](images/create_ds_project.png)
 
-1. With in the project,click *Create notbook session*.
+1. With in the project,click *Create notebook session*.
 
-    ![Create notbook](images/create_nb.png)
+    ![Create notebook](images/create_nb.png)
 
 1. Provide a name and retain all the other default settings and click *Create*.
 
-    ![Create notbook completed](images/create_nb_final.png)
+    ![Create notebook completed](images/create_nb_final.png)
 
 1. Wait for the resource to become active.
 
-    ![Active notbook](images/nb_active.png)
+    ![Active notebook](images/nb_active.png)
 
-1. Open the notbook detail page and click *Open*.
+1. Open the notebook detail page and click *Open*.
 
     ![NB details](images/nb_detail_page.png)
 
 1. Provide credentials and multi factor auth when prompted.Wait for the notebook to be opened.
 
-    ![NB Opended](images/nb_open_view.png)
+    ![NB Opened](images/nb_open_view.png)
     
-1. Click *extend* and extend the notbook timeout.
+1. Click *extend* and extend the notebook timeout.
 
 **You can skip the next section and follow to Task 3** 
 
@@ -69,17 +69,17 @@ Estimated Time: 30 minutes
 
 ## Task 3: Validate ADK installation using OCI Data science.
 
-1. Follow below steps if you are using a data science notbook.If not move to Task 4.
+1. Follow below steps if you are using a data science notebook.If not move to Task 4.
 
 * Click File > New >Notebook.
 
-    ![New Notbook](images/new_notbook.png)
+    ![New Notebook](images/new_notbook.png)
 
-1. Right click on Untitled notbook and rename the same.
+1. Right click on Untitled notebook and rename the same.
 
     ![Rename the NB](images/rename_nb.png)
 
-1. Run below and validate it retruns the correct name reference.
+1. Run below and validate it returns the correct name reference.
 
    ```
    <copy>
@@ -106,6 +106,6 @@ Estimated Time: 30 minutes
 ## Acknowledgements
 
 * **Author**
-    * **Rahul MR**, Prinicipal Solutions Architect - OCI 
+    * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 

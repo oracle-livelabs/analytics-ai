@@ -40,7 +40,7 @@ We will be using the *Database connection* created during the initial step to pr
 
     ![Sql routes](images/sqltool_routes.png)
 
-1. Select `Inline` for schema and provide below informatin.We will be using some of the default tables availale with our database.
+1. Select `Inline` for schema and provide below information.We will be using some of the default tables available with our database.
 
     ```
     <copy>
@@ -82,7 +82,7 @@ We will be using the *Database connection* created during the initial step to pr
     Oracle SQL: SELECT PROD_CATEGORY FROM sh.products WHERE PROD_NAME = 'Y Box'     
     </copy>
     ```
-    ![incontext learning](images/context_learning.png)
+    ![context learning](images/context_learning.png)
 1. Select `Inline` for option `Description of tables and columns`.
 1. Copy below and update.
 
@@ -143,6 +143,6 @@ We will be using the *Database connection* created during the initial step to pr
 ## Acknowledgements
 
 * **Author**
-    * **Rahul MR**, Prinicipal Solutions Architect - OCI 
+    * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 

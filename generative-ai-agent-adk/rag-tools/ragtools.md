@@ -42,7 +42,7 @@ Estimated Time: 30 minutes
 
 1.Run below commands to push PDFs to object storage
 
-*  via OCI datascience notebook.
+*  via OCI Data science notebook.
 
     ```
     <copy>
@@ -62,7 +62,7 @@ Estimated Time: 30 minutes
     
     </copy>
     ```
-* You can  download and upload the files mannaully too.
+* You can  download and upload the files manually too.
 
 1. Validate the files via object storage bucket.
 
@@ -70,7 +70,7 @@ Estimated Time: 30 minutes
 
 ## Task 2: Create OCI AI Agents knowledge base.
 
-1. Open OCI console > `Analytics & AI` > `Generatvie AI Agents`
+1. Open OCI console > `Analytics & AI` > `Generative AI Agents`
 
     ![Agents view](images/agents_view.png)
 
@@ -121,7 +121,7 @@ Estimated Time: 30 minutes
 ## Acknowledgements
 
 * **Author**
-    * **Rahul MR**, Prinicipal Solutions Architect - OCI 
+    * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 
 
