@@ -141,7 +141,7 @@ In Digital Assistant, we will use the REST APIs for a lot of tool. To make the i
     - Click *Save Changes*    
     ![Bucket Visibility](images/bucket-public.png)
 - Click *Upload*
-    - Upload the files from the downloaded directory above 
+    - Upload the files from the *api* directory of the downloaded zip file above 
     - Click Upload
     - Click Close
 - After uploading, at the end of the line with the email.json, click on the 3 dots *...*, Choose *View Object Details*
@@ -221,6 +221,8 @@ Remark about regions:
 **Configure REST Services - toolEmailAll**
 - Go to Rest Service *toolEmailAll*
 - Change the URL to the one of your notes ##BUCKET\_URL##
+    - Take care to keep the format with the parameter email.json
+    - Ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/xxxxxxx/b/bucket-api/o/email.json
 - Click *Test Service*
 - The API should answer to the json file that we uploaded before 
     ![API Test](images/api-toolemailall.png)
@@ -267,8 +269,8 @@ Let's import all the ODA Skills. We will test them in the next lab.
 
 Redo the same import for all the other zip files.
 - *mgLlmHistory(1.0).zip*
+- *mgLlmReflect(1.0).zip*
 - *mgLlmRouter(1.0).zip*
-- *mgLlmReflection(1.0).zip*
 - *mgLlmSupervisor(1.0).zip*
 
 **Agent Endpoint OCID**
