@@ -118,23 +118,12 @@ You can
     cd oci-postgres-genai/starter/
     </copy>
     ```
-
-    Generate an Authorization token for your user:
-    ```
-    <copy>
-    bin/gen_auth_token.sh
-    </copy>
-    ```
-    You should see the following in the results of the *gen\_auth\_token.sh* script:
-    - AUTH\_TOKEN stored in env.sh
-    - TF\_VAR\_auth\_token='a generated token'
-
-    
     ````
     <copy>
     ./build.sh
     </copy>
     ````
+
 11. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
 12. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
