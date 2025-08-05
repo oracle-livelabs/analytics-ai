@@ -12,8 +12,8 @@ In this lab, you will:
 
 - Create an ADB instance.
 - Create the database schema.
-- Insert data.
-- Create vault for to securely store the database connection information.
+- Insert data into the database.
+- Create a vault to securely store the database connection information.
 - Create a database connection.
 
 ### Prerequisites
@@ -56,17 +56,17 @@ In this task we are going to create a new ADB instance.
 
 1. Click the **Create** button at the bottom of the screen.
 
-Once the database instance is created, you can move on to the next task.
+Once the database instance is created, you can move on to the next task (this may take a few minutes).
 
-## Task 2: Create database schema
+## Task 2: Create the database schema
 
-I this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of the various IDs like the ticket ID or customer ID etc.).
+In this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of inserting unique values for the various IDs like the ticket ID or customer ID etc.).
 
-1. Once the ADB instance is created, click the **Database actions** drop down and select the **SQL** option.
+1. Once the ADB instance is created, click the **Database actions** drop down and select the **SQL** option. This should launch a new tab in your browser with the SQL application (dismiss any messages if you see any).
 
    ![Screenshot showing how to launch the SQL database action](./images/database-actions.jpg)
 
-1. Copy the following database schema and paste into the **SQL worksheet**.
+1. Copy the following sql statements, paste them into the **SQL worksheet** and click the green **Run Statement** button at the top.
 
     ```sql
     <copy>
@@ -124,7 +124,7 @@ I this task we are going to use SQL scripts to create the database schema which 
     </copy>
     ```
 
-You should see an output similar to the following:
+   You should see an output similar to the following:
 
    ![Screenshot showing the successful output of the schema creation](./images/schema-creation-output.jpg)
 
@@ -163,7 +163,7 @@ After you execute a statement look for an output similar to the following:
     ```sql
     <copy>
     INSERT INTO SupportAgents (FirstName, LastName, Email, Phone)
-    VALUES 
+    VALUES
     ('Gabriel', 'White', 'gabriel.white@support.com', '456-789-0123'),
     ('Emily', 'Chen', 'emily.chen@support.com', '555-123-4567'),
     ('Michael', 'Kim', 'michael.kim@support.com', '987-654-3210'),
@@ -183,7 +183,7 @@ After you execute a statement look for an output similar to the following:
     ('Mason', 'Garcia', 'mason.garcia@support.com', '012-345-6789'),
     ('Harper', 'Martinez', 'harper.martinez@support.com', '123-456-7890'),
     ('Logan', 'Robinson', 'logan.robinson@support.com', '234-567-8901'),
-    ('Evelyn', 'Thompson', 'evelyn.thompson@support.com', '345-678-9012'); 
+    ('Evelyn', 'Thompson', 'evelyn.thompson@support.com', '345-678-9012');
     </copy>
     ```
 
@@ -192,7 +192,7 @@ After you execute a statement look for an output similar to the following:
     ```sql
     <copy>
     INSERT INTO Customers (FirstName, LastName, Email, Phone, Address)
-    VALUES 
+    VALUES
     ('John', 'Doe', 'john.doe@example.com', '123-456-7890', '123 Main St, Anytown, USA'),
     ('Jane', 'Smith', 'jane.smith@example.com', '987-654-3210', '456 Elm St, Othertown, USA'),
     ('Bob', 'Johnson', 'bob.johnson@example.com', '555-123-4567', '789 Oak St, Smallville, USA'),
@@ -221,7 +221,7 @@ After you execute a statement look for an output similar to the following:
     ```sql
     <copy>
     INSERT INTO Tickets (CustomerID, Subject, Description, CreatedDate, LastUpdatedDate, StatusID, AssignedToAgentID)
-    VALUES 
+    VALUES
     (2, 'Cloud Computing Migration Issue', 'I am in the process of migrating my organization''s IT infrastructure to the cloud, but I am encountering difficulties with ensuring seamless integration and minimizing downtime. Specifically, I am struggling to migrate our critical applications and data to the cloud while maintaining their functionality and performance. I require expert assistance in developing a customized migration plan, including risk assessment, application evaluation, and data transfer strategies, as well as guidance on how to optimize our cloud infrastructure for maximum efficiency and scalability.', TO_DATE('12-SEP-24', 'DD-MON-YY'), TO_DATE('12-SEP-24', 'DD-MON-YY'), 4, 2),
     (4, 'Virtual Private Network (VPN) Configuration', 'I am attempting to configure a Virtual Private Network (VPN) for remote access to my organization''s internal resources, but I am experiencing difficulties with setting up the necessary infrastructure and ensuring secure connections. Specifically, I am struggling to select the most suitable VPN protocol, configure the VPN server, and deploy the VPN client software to our remote users. I would greatly appreciate expert guidance on how to design and implement a secure and reliable VPN solution, including recommendations on VPN protocols, encryption methods, and authentication mechanisms.', TO_DATE('14-SEP-24', 'DD-MON-YY'), TO_DATE('14-SEP-24', 'DD-MON-YY'), 4, 2),
     (6, 'Network Monitoring and Analysis', 'I am responsible for monitoring and analyzing my organization''s network performance, but I am facing challenges in selecting the most effective tools and techniques to achieve this goal. Specifically, I am struggling to choose between various network monitoring software options, configure the monitoring parameters, and interpret the collected data to identify trends and anomalies. I require expert assistance in developing a comprehensive network monitoring strategy, including recommendations on monitoring tools, data collection methods, and analysis techniques.', TO_DATE('16-SEP-24', 'DD-MON-YY'), TO_DATE('16-SEP-24', 'DD-MON-YY'), 1, 6),
@@ -284,7 +284,7 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 ## Task 5: Create a database connection
 
-In this section we are going to create a connection to the database we've created in the previous tasks. This connection is going to be used by the agent to retrieve information from the database.
+In this section we are going to create a connection to our database. This connection is going to be used by the agent to retrieve information from the database.
 
 1. Click the navigation menu on the top left.
 1. Click **Developer Services**.

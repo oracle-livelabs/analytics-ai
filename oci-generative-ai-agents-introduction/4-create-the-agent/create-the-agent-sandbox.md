@@ -15,12 +15,6 @@ In this lab, you will:
 
 - Create our agent including the RAG & SQL Tools and assign the relevant knowledge base to each.
 
-### Prerequisites
-
-This lab assumes you have:
-
-- All previous labs successfully completed.
-
 ## Task 1: Create the agent
 
 1. Click the navigation menu on the top left.
@@ -30,18 +24,18 @@ This lab assumes you have:
    ![Screenshot showing how to navigate to the agents service](./images/navigate-to-agents.jpg)
 
 1. In the overview page, click the **Agents** link
-1. Under the **List scope** section, make sure that the **root** compartment is selected.
+1. Under the **List scope** section, make sure that your compartment is selected.
 1. Click the **Create Agent** button at the top of the **Agents** table.
 
-   ![Screenshot showing how to create a new agent](./images/create-new-agent.jpg)
+   ![Screenshot showing how to create a new agent](./images/create-new-agent-sandbox.jpg)
 
 1. For the **Name** field use: _customer support agent_
-1. For the **Compartment** field, make sure that the **root** compartment is selected.
+1. For the **Compartment** field, make sure that your compartment is selected.
 1. For the **Description** field, use: _This agent will help streamline the work of customer support representatives_.
 1. For the **Welcome message** field, use: _Hello! I’m your customer support helper, how can I help?_
 1. Click the **Next** button.
 
-   ![Screenshot showing the basic information for the agent](./images/basic-agent-info.jpg)
+   ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.jpg)
 
 1. Under the **Tools** section, click the **Add tool** button to create our first tool.
 
@@ -53,18 +47,18 @@ This lab assumes you have:
 
    ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.jpg)
 
-1. Under the **Add knowledge bases** section, make sure that the **root** compartment is selected in the **Compartment** field.
+1. Under the **Add knowledge bases** section, make sure that your compartment is selected in the **Compartment** field.
 1. Click the **Create knowledge base** button. In this step we are going to create a knowledge base which references the storage bucket into which we've uploaded the knowledge articles.
 
-   ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2.jpg)
+   ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2-sandbox.jpg)
 
 1. In the **New knowledge base** form, use: _Customer support knowledge base articles_ for the **Name** field.
-1. Make sure that the **root** compartment is selected in the **Compartment** field.
+1. Make sure that your compartment is selected in the **Compartment** field.
 1. In the **Data store type** field, we will select **Object storage** to be able to retrieve information from our storage bucket.
 1. Make sure that **Enable hybrid search** is checked. Enabling this option instructs the system to combine lexical and semantic search when scanning our documents.
 1. Click the **Specify data source** button.
 
-   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-1.jpg)
+   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-1-sandbox.jpg)
 
 1. In the **Specify data source** form, use: _Knowledge base articles_ for the **Name** field.
 1. Make sure that the **Enable multi-modal parsing** option is **not** checked. This option enable parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our knowledge articles so right now this option is not required.
@@ -72,7 +66,7 @@ This lab assumes you have:
 1. Check the **Select all in bucket option**. This option will automatically flag all of the file in the bucket for ingestion instead of us having to select each file individually.
 1. Click the **Create** button.
 
-   ![Screenshot showing the data source configuration](./images/data-source-info.jpg)
+   ![Screenshot showing the data source configuration](./images/data-source-info-sandbox.jpg)
 
 1. Back in the **New knowledge base** panel, the **Knowledge base articles** data source was added to the **Data source** table.
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
@@ -189,23 +183,19 @@ This lab assumes you have:
       </copy>
       ```
 
+   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2-sandbox.jpg)
+
 1. For **Model customization**, select the **Small** option.
 1. For **Dialect**, select **Oracle SQL**.
-1. In the **Database tool connection in...** select the **customer-support** connection we've previously created.
+1. In the **Database tool connection in...** select the **customer-supportXXXX** connection we've previously created.
 1. Click the **Test connection** button.
-
-   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2.jpg)
-
 1. If the connection test succeeded, you should see a message similar to the following:
-
-   ![Screenshot showing a successful connection test result](./images/sql-connection-test-successful.jpg)
-
 1. Enable the **SQL execution** option. This option will instruct the tool to execute the SQL queries generated by the tool as a result of the user's requests. This will allow the agent to craft intelligent responses based on the data returned from the queries.
 1. Enable the **Self correction** option. Enabling this option will allow the tool to automatically detect and correct syntax errors in generated SQL queries.
 
 1. Click the **Add tool** button.
 
-   ![Screenshot showing the last set of the SQL tool configuration](./images/sql-tool-info-3.jpg)
+   ![Screenshot showing the last set of the SQL tool configuration](./images/sql-tool-info-3-sandbox.jpg)
 
 1. Back in the **Tools** section, Click **Next**
 

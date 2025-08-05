@@ -24,6 +24,7 @@ This lab assumes you have:
 
 The OCI Generative AI Agents service is currently available in the following regions:
 
+- US East (us-ashburn-1)
 - Brazil East (sa-saopaulo-1)
 - Germany Central (eu-frankfurt-1)
 - Japan Central (ap-osaka-1)
@@ -56,6 +57,9 @@ The operation might take a few minutes to complete. When complete, the new regio
 
 In this task, we are going to create policies which will grant us access to the OCI Generative AI Agents service as well as the additional services we are going to use in this workshop such as Object Storage, ADB, Key Vault and others.
 
+> **Note:** If you are an administrator of the current tenancy, please skip to the next task.
+If you are **NOT** an administrator of the current tenancy, and you don't you have permissions to create the required policies, please reach out to the tenancy administrator to create those on your behalf.
+
 In addition to granting access to your user or user group to access the various resources required for the use-case, we will also need to grant the OCI Generative AI service access to resources like Object Storage or Database Tools for it to be able to process the data on those resources.
 
 In order to facilitate those permissions, we will create a Dynamic Group which will help us control the access the service itself will have.
@@ -77,7 +81,7 @@ In order to facilitate those permissions, we will create a Dynamic Group which w
    ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.jpg)
 
 1. Name the dynamic group: _oci-genai-agents-service_
-1. Provide an optional description (example: This group represents the OCI Generative AI Agents service)
+1. Provide an optional description (example: `This group represents the OCI Generative AI Agents service`)
 1. Select the **Match any rules defined below** option in the **Matching rules** section.
 1. Enter the following expression in the **Rule 1** textbox:
 
@@ -103,8 +107,8 @@ Next, we will create the access policies:
 
    ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.jpg)
 
-1. Provide a name for the policy (example: oci-generative-ai-agents-workshop).
-1. Provide a description (example: OCI Generative AI Agents Hands-On-Lab Policy).
+1. Provide a name for the policy (example: _oci-generative-ai-agents-workshop_).
+1. Provide a description (example: _OCI Generative AI Agents Hands-On-Lab Policy_).
 1. Make sure that the root compartment is selected.
 1. Enable the **Show manual editor** option.
 1. In the **Policy Builder** textbox, enter the following policy statements:
@@ -113,6 +117,7 @@ Next, we will create the access policies:
       <copy>
       allow group <your-user-group-name> to manage genai-agent-family in tenancy
       allow group <your-user-group-name> to manage object-family in tenancy
+      allow group <your-user-group-name> to manage secret-family in tenancy
       allow dynamic-group oci-genai-agents-service to read objects in tenancy
       allow dynamic-group oci-genai-agents-service to read secret-bundle in tenancy
       allow dynamic-group oci-genai-agents-service to read database-tools-family in tenancy
@@ -126,6 +131,7 @@ Next, we will create the access policies:
 
       - Your user group to create agents, knowledge bases etc.
       - Your user group to create storage buckets and upload files into them.
+      - Your user group to create vaults & secrets.
       - The OCI Generative AI Agents service to read files uploaded to object storage.
       - The OCI Generative AI Agents service to read secrets stored in key vaults.
       - The OCI Generative AI Agents service to read information about database connections.
@@ -159,7 +165,7 @@ The knowledge article PDFs that we are going to upload into a storage bucket in 
    ![Screenshot showing how to select the newly created storage buckets](./images/select-storage-bucket.jpg)
 
 1. At this point, we will prepare the knowledge base articles to be uploaded to the storage bucket:
-      1. Click [here](https://files.com) to download the knowledge articles zip file.
+      1. Click [here](./files/knowledge-articles.zip) to download the knowledge articles zip file.
 
       ![Screenshot the downloaded knowledge articles zip file](./images/downloaded-knowledge-articles-zip-file.jpg)
 

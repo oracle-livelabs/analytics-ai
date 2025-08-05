@@ -4,27 +4,19 @@
     "tutorials": [
         {
             "title": "Overview and Highlights",
-            "filename": "../../1-overview-and-highlights/overview-and-highlights.md"
+            "filename": "../../1-overview-and-highlights/overview-and-highlights-sandbox.md"
         },
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Prepare the dataset",
-            "filename": "../../3-prepare-the-dataset/prepare-the-dataset-sandbox.md"
+            "title": "Setup the agent",
+            "filename": "../../4-create-the-agent/create-the-agent-sandbox.md"
         },
         {
-            "title": "Create a Knowledge Base",
-            "filename": "../../4-create-a-knowledge-base/create-a-knowledge-base-sandbox.md"
-        },
-        {
-            "title": "Create an Agent",
-            "filename": "../../5-create-an-agent/create-an-agent-sandbox.md"
-        },
-        {
-            "title": "Have a conversation with your data",
-            "filename": "../../6-have-a-conversation-with-your-data/have-a-conversation-with-your-data-sandbox.md"
+            "title": "Test the solution",
+            "filename": "../../5-test-the-solution/test-the-solution-sandbox.md"
         },
         {
             "title": "Need Help?",

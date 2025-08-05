@@ -32,13 +32,13 @@ This lab assumes you have:
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
 1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list.
 
-    ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table.jpg)
+    ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.jpg)
 
 1. In the agent details page, click the **Launch chat** button.
 
     ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.jpg)
 
-1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to the **root** compartment.
+1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
 1. On the top of the page, the **Agent** drop down should show **customer support agent** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
@@ -48,7 +48,7 @@ This lab assumes you have:
     - The **Submit** and **Reset chat session** buttons, which you'll use to send the message you've typed in the message text box and reset all communications up until that point, respectively.
     - On the right, you'll see the **Traces** pane where the agent will communicate the various steps it took while reasoning over your requests.
 
-    ![Screenshot showing the initial chat page](./images/initial-chat-page.jpg)
+    ![Screenshot showing the initial chat page](./images/initial-chat-page-sandbox.jpg)
 
 ## Task 2: Let's test our agent
 
@@ -114,7 +114,7 @@ Here are a few more prompts to try with the agent:
 
 ## Summary
 
-As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and sources and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
+As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
 
 Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
