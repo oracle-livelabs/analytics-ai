@@ -365,6 +365,8 @@ In this task we are going to make sure that the connection was created successfu
 
    ![Screenshot showing how to exist the validation dialog](./images/close-validation-dialog.jpg)
 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 - [Provision an Autonomous Database Instance](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/autonomous-provision.html)

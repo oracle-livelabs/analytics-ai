@@ -199,6 +199,8 @@ The knowledge article PDFs that we are going to upload into a storage bucket in 
 
    ![Screenshot showing the knowledge articles listed in the bucket](./images/knowledge-articles-listed-in-bucket.png)
 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 - [Region subscription](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm#ariaid-title7)

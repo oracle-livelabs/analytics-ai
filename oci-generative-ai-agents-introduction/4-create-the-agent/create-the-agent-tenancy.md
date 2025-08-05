@@ -231,6 +231,8 @@ This lab assumes you have:
 
 1. The agent will take a few minutes to create. When complete, the agent's **Lifecycle state** will show **Active**.
 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 - [Creating an Agent in Generative AI Agents](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/create-agent.htm#create-agent)
