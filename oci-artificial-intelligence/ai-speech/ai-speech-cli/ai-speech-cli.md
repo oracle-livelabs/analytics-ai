@@ -94,6 +94,9 @@ pip install oci-cli
             "transcriptionSettings": {
                 "diarization": {
                     "isDiarizationEnabled": true
+                },
+                additionalSettings={
+                    "whisperPrompt": "<Sample Prompt Input>"
                 }
             }
         }' --normalization '{
@@ -130,6 +133,9 @@ pip install oci-cli
             "transcriptionSettings": {
                 "diarization": {
                     "isDiarizationEnabled": true
+                },
+                additionalSettings={
+                    "whisperPrompt": "<Sample Prompt Input>"
                 }
             }
         }' --normalization '{
@@ -144,6 +150,7 @@ pip install oci-cli
     * Supported language codes for WHISPER_MEDIUM MODEL: auto, af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
     * For the WHISPER_MEDIUM model, selecting "auto" as the language code performs detection of language, prior to transcribing the audio. The output is transcribed in the detected language.
     * You can either enable or disable diarization by configuring the boolean value of field *isDiarizationEnabled* in the above oci-cli command. If you have enabled diarization, you can provide the number of speakers optionally.
+    * additionalSettings field is only supported for WHISPER models.
 
         
 
@@ -225,7 +232,4 @@ You may now **proceed to the next lab**
     * Veluvarthi Narasimha Reddy - Oracle AI Services
     * Sai Krishna Anand - Oracle AI Services <br/>
 
-#### 10th January, 2025
-
-    
-
+#### 6th August, 2025
