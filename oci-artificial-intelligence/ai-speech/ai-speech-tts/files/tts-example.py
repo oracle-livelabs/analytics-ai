@@ -19,10 +19,25 @@ compartmentId = "<compartment_ID>"
    
 # the text for which you want to generate speech
 text = "A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs."
+
+# Supported language codes for TTS_1_Standard: en-US
+# Supported language codes for TTS_2_Natural: en-US, en-GB, it-IT, pt-BR, hi-IN, fr-FR, es-ES, ja-JP, cmn-CN
+languageCode = "en-US"
    
-# Supported voices for ModelType TTS_2_Natural are: "Brian", "Annabelle", "Bob", "Phil", "Cindy" and "Stacy"
-# Supported voices for ModelType TTS_1_Standard are: "Bob", "Phil", "Cindy" and "Stacy"
-# the voiceId that you want to use for generated speech. Only "Brian" and "Annabelle" are supported as of now.
+# Supported voices for ModelType TTS_2_Natural are: 
+# en-US: Brian, Annabelle, Bob, Stacy, Phil, Cindy, Brad, Richard, Mary, Amanda, Grace, Laura, Megan,, Olivia, Rachel, Stephanie, Teresa, Victoria, Ashley, Adam, Ethan, Henry, Jack, Chris, Mark, Paul, Steve and Kevin
+# en-GB: Charlotte, Emily, Sophie, Isla, Oliver, Harry, Theo and Arthur
+# es-ES: Carmen, Mateo, Lucas
+# pt-BR: Mariana, Felix, Miguel
+# fr-FR: Claire
+# it-IT: Giulia, Luca
+# hi-IN: Asha, Priya, Arjun, Rahul
+# ja-JP: Aiko, Hana, Sakura, Yuki, Satoshi
+# cmn-CN: Jia, Ling, Mei, Xiu, Jun, Hao, Ming, Wang
+#
+# Supported voices for ModelType TTS_1_Standard are: 
+# en-US: Bob, Stacy, Phil and Cindy
+# the voiceId that you want to use for generated speech.
 voiceId = "Annabelle"
    
 # If you want to enable streaming, set this value to true.
@@ -107,7 +122,8 @@ def get_payload():
         compartment_id = compartmentId,
         configuration = TtsOracleConfiguration(
             model_details = TtsOracleTts2NaturalModelDetails (
-                voice_id=voiceId
+                voice_id=voiceId,
+                language_code = languageCode
             ),
             speech_settings = TtsOracleSpeechSettings(
                 text_type = textType,
