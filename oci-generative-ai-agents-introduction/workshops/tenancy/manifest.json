@@ -11,19 +11,19 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Initial setup",
+            "title": "Lab 1: Initial setup",
             "filename": "../../2-setup/setup-tenancy.md"
         },
         {
-            "title": "Setup the database",
+            "title": "Lab 2: Setup the database",
             "filename": "../../3-setup-the-database/setup-the-database-tenancy.md"
         },
         {
-            "title": "Create the Agent",
+            "title": "Lab 3: Create the Agent",
             "filename": "../../4-create-the-agent/create-the-agent-tenancy.md"
         },
         {
-            "title": "Test the solution",
+            "title": "Lab 4: Test the solution",
             "filename": "../../5-test-the-solution/test-the-solution-tenancy.md"
         },
         {
