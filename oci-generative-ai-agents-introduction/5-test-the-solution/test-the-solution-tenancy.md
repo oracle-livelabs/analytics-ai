@@ -86,7 +86,7 @@ This lab assumes you have:
     ![Screenshot showing an alternative response for the second question](./images/second-question-response-2.jpg)
 
 1. Feel free to take a look at the **Traces** generated for this response.
-1. Next we'll ask the following: _Show me the title and description for Emily Chen's assigned tickets_
+1. Next we'll ask the following: _Show me the title and description for all of the tickets assigned to the support agent Emily Chen_
 1. Click the **Submit** button.
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.jpg)
@@ -95,7 +95,7 @@ This lab assumes you have:
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.jpg)
 
-1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve "Complex Network Configuration Issue" ticket. Type the following question: _Do we have a knowledge article that can help with network configuration?_
+1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve "Complex Network Configuration Issue" ticket. Type the following question: _Do we have a knowledge article which can help resolve the "Complex Network Configuration Issue" ticket?_
 1. Click the **Submit** button.
 1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our knowledge base articles stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the article was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the article(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
 
