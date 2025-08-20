@@ -29,7 +29,7 @@ This lab assumes you have:
 
 	**Alternatively**, you can also directly execute **wget https://downloads.mysql.com/docs/airport-db.tar.gz** command on your Compute instance to download “**airport-db.tar.gz**” file in specified location.
 
-  ![airport](images/airport.png)
+    ![airport](images/airport.png)
 
 3. Now unzip/untar “**airport-db.tar.gz**” file by running command “**tar -xf airport-db.tar.gz**” from your Compuete machine where you have downloaded this file.
 
@@ -52,7 +52,7 @@ This lab assumes you have:
   	```
 		<copy>util.loadDump("airport-db", {threads: 16, loadIndexes: "false", ignoreVersion: true,resetProgress: true})</copy>
 		```
-  ![load-command](images/load-command.png)
+    ![load-command](images/load-command.png)
 
 6. Once data is loaded you can verify **Database** and **Tables**.
 
