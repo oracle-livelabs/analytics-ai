@@ -10,7 +10,6 @@ You can find more information about VCN configuration for Oracle Data Integratio
 
 The **Oracle Cloud Infrastructure Object Storage service** is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
 
-
 [](youtube:RHIfvO9aTQ0)
 
 Estimated time: 15 minutes
@@ -35,13 +34,15 @@ In this section, you will:
 
 2. Go to **Menu**, **Networking** and then click **Virtual Cloud Networks**.
 
+   ![VCN menu](images/vcn-navigation.png)
+
    ![VCN menu](images/vcn-menu.png)
 
    > Note: If you have not picked a compartment, pick the **root** compartment for this Lab.
    >
    > ![Pick Compartment](images/pick-compartment.png)
 
-3. Click **Start VCN Wizard**.
+3. Click **Actions** and then select **Start VCN Wizard**.
 
    ![Start VCN Wizard](images/start-vcn-wizard.png)
 
@@ -70,17 +71,17 @@ In this section, you will:
 
    ![VCN Creation OK](images/vcn-create-ok.png)
 
-9. Go to your new **Private Subnet-nature**.
+9. Go to your new **private subnet-nature** by clicking on **Subnets** from the top navigation bar.
 
    ![VCN Private Subnet](images/vcn-private-subnet.png)
 
-10. Click **Security List for Private Subnet-nature**.
+10. Click **security list for private subnet-nature** from **Security** tab.
 
    ![VCN Security List](images/vcn-security-list.png)
 
    We need to open the ports for MySQL and MySQL X protocols: `3306` and `33060`.
 
-11. Click **Add Ingress Rules** and fill the form with the following information:
+11. Click **Add Ingress Rules** from the **Security rules** tab and fill the form with the following information:
 
    ![VCN Add Ingress Rule](images/vcn-add-ingress-rules.png)
 
@@ -114,6 +115,8 @@ In this section, you will:
 
 2. Go to **Menu**, **Compute** and then click **Instances**.
 
+   ![VCN menu](images/vcn-navigation.png)
+
    ![Compute Instance Menu](images/compute-instance-menu.png)
 
 3. Click **Create Instance**.
@@ -131,18 +134,24 @@ In this section, you will:
       - Shape for Always Free: `VM.Standard.E2.1.Micro`
       - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
       - Virtual cloud network: `nature`
-      - Subnet: `Public Subnet-nature`
+      - Subnet: `public subnet-nature`
       - Assign a public IPv4 address: `Yes`
 
    ![Instance Values](images/compute-create-values-new.png)
 
+   ![Instance Values](images/compute-create-values-new-1.png)
+
+   ![Instance Values](images/compute-create-values-new-2.png)
+
 5. On the section **Add SSH Keys**, make sure **Generate SSH Keypair** is checked.
 
-6. Click **Save Private Key** and **Save Public Key**.
+6. Click **Download private key** and **Download public key**.
 
-7. After the files are stored on your computer, click **Create**.
+7. After the files are stored on your computer, click **Next** by keeping the other values at default and click on **Create**.
 
    ![Instance Values](images/compute-create-ssh.png)
+
+   ![Review Values](images/compute-review.png)
 
    The **provisioning** takes few minutes.
 
@@ -232,7 +241,7 @@ In this section, you will:
       <copy>sudo yum update -y</copy>
       ```
 
-20. **Install** MYSQL Shell with the following commands:
+20. **Install** MySQL Shell with the following commands:
 
       ```bash
       <copy>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
@@ -278,7 +287,7 @@ In this section, you will:
 
    ![Create Bucket](images/os-bucket-study.png)
 
-6. On the section **Objects**, click **Upload**.
+6. On the section **Objects**, click **Upload objects**.
 
    ![Create Bucket](images/os-object-upload.png)
 
@@ -288,9 +297,11 @@ In this section, you will:
 
    ![Object Select File](images/os-object-select-file.png)
 
-9. Click **Upload**.
+9. Click **Next** and finally **Upload objects**.
 
    ![Object Upload Reef File](images/os-object-reef-upload.png)
+
+   ![Object Upload Reef File](images/os-object-reef-upload-1.png)
 
 10. Click **Close**.
 
@@ -302,7 +313,7 @@ In this section, you will:
 
    ![Object Details Menu](images/os-object-details-menu.png)
 
-12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use the **OCI Region** part (in our case eu-frankfurt-1) in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.us-ashburn-1.oraclecloud.com`. We will use the **OCI Region** part (in our case us-ashburn-1) in the Lab number 3, Create Data Integration Instance.
 
    ![Object Details URL](images/os-object-details-url.png)
 
@@ -312,4 +323,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025
