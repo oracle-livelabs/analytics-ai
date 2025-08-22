@@ -224,13 +224,9 @@ You can **expand / shrink** the Properties canvas.
 
    ![DI application integration run](images/di-application-integration-run.png)
 
-4. Wait few seconds and the **Status** will change from `Not Started` to `Queued`, and after to `Running`. 
+4. Wait few seconds and the **Status** will change from `Not Started` to `Queued`, and after to `Running`.
 
    ![DI application integration not started](images/di-application-integration-not-started.png)
-
-   ![DI application integration queued](images/di-application-integration-queued.png)
-
-   ![DI application integration running](images/di-application-integration-running.png)
 
 5. Feel free to click **Refresh** from time to time until you see `Success` on the Status.
 
@@ -279,5 +275,5 @@ Congratulations, you are ready for the next Lab!
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Contributors** - Priscila Iruela, Sindhuja Banka
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025

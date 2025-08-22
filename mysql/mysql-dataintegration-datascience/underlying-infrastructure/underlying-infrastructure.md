@@ -313,7 +313,7 @@ In this section, you will:
 
    ![Object Details Menu](images/os-object-details-menu.png)
 
-12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.us-ashburn-1.oraclecloud.com`. We will use the **OCI Region** part (in our case us-ashburn-1) in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Ashburn region should look like `https://objectstorage.us-ashburn-1.oraclecloud.com`. We will use the **OCI Region** part (in our case us-ashburn-1) in the Lab number 3, Create Data Integration Instance.
 
    ![Object Details URL](images/os-object-details-url.png)
 
