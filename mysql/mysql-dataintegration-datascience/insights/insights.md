@@ -28,8 +28,8 @@ In this section, you will:
 
 1. Create **Dynamic Group**, go to **Menu**, **Identity & Security** and then click **Dynamic Groups**.
 
-> Note: If you can't see **Dynamic Groups** under **Identity & Security** section, please select **Domains**, **Default (Current domain)** and then click **Dinamycs Group** in the left side menu.
- 
+> Note: If you can't see **Dynamic Groups** under **Identity & Security** section, please select **Domains**, **Default (Current domain)** and then click **Dynamic Group** in the left side menu.
+
    ![Dynamic group menu](images/ds-dynamic-group-menu.png)
 
 2. Click **Create Dynamic Group**.
@@ -96,7 +96,9 @@ In this section, you will:
 
 4. Click **Create**.
 
-   ![Identity policies created](images/ds-policies-create.png)
+   ![Identity policies created](images/ds-policies-create-1.png)
+
+   ![Identity policies created](images/ds-policies-create-2.png)
 
 5. The **Policy** for Data Science has been created.
 
@@ -248,5 +250,5 @@ Continue to the Next Steps for more information!
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Contributors** - Priscila Iruela, Sindhuja Banka
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025
