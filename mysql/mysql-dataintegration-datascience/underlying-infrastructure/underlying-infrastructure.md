@@ -322,5 +322,5 @@ Congratulations! You are ready to go to the next Lab!
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
+- **Contributors** - Priscila Iruela, Sindhuja Banka
 - **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025

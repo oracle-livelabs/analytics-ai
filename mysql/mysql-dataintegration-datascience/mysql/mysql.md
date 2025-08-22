@@ -26,6 +26,8 @@ In this section, you will:
 
 1. Go to **Menu**, **Databases** and then click **DB Systems**.
 
+   ![DB menu](images/db-navigation.png)
+
    ![DB System Dashboard](images/mysql-menu.png)
 
 2. Click **Create MySQL DB System**.
@@ -43,7 +45,7 @@ In this section, you will:
          <copy>MySQL instance for Analytics</copy>
          ```
 
-3. Between the three options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
+3. Between the two options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
 
    For Username and password:
 
@@ -59,7 +61,7 @@ In this section, you will:
 4. **Network** configuration:
 
       - Virtual Cloud Network: `nature`
-      - Subnet: `Private Subnet-nature (Regional)`
+      - Subnet: `private subnet-nature (Regional)`
 
    ![MySQL vcn fields](images/mysql-vcn-fields.png)
 
@@ -143,5 +145,5 @@ Congratulations! You are ready to go to the next Lab!
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Contributors** - Priscila Iruela, Sindhuja Banka
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025

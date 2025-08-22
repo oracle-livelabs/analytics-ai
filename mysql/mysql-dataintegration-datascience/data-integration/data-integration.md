@@ -29,6 +29,8 @@ In this section, you will:
 
 2. Go to **Identity & Security** and then click **Policies**.
 
+   ![Policy Menu](images/policy-navigation.png)
+
    ![Identity Policy Menu](images/identity-policies-menu.png)
 
 3. Click **Create Policy**.
@@ -53,7 +55,9 @@ In this section, you will:
       <copy>allow service dataintegration to use virtual-network-family in tenancy</copy>
       ```
 
-   ![Policy fields for DI](images/identity-policy-fields.png)
+   ![Policy fields for DI](images/identity-policy-fields-1.png)
+
+   ![Policy fields for DI](images/identity-policy-fields-2.png)
 
    > Note: If you have created an Oracle Cloud Account to do the workshop, you are already the Administrator. **You DO NOT NEED TO DO THIS STEP**.
    >
@@ -235,7 +239,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
       ![Data asset fields](images/dataasset-fields1-new.png)
     
-      - OCI region: `eu-frankfurt-1`. You can find this information as part of the Object Storage URL that we copied on Lab 1, Task 3, Step 12. You can copy the OCI region, from the summary table of Object Srotage regions URLs on Step 1 of this Task, if you know which region you are using.
+      - OCI region: `us-ashburn-1`. You can find this information as part of the Object Storage URL that we copied on Lab 1, Task 3, Step 12. You can copy the OCI region, from the summary table of Object Srotage regions URLs on Step 1 of this Task, if you know which region you are using.
 
       - Default connection information: Leave the connection paratemers as they are.
 
@@ -251,7 +255,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![Data asset homepage](images/dataasset-os-back-home.png)
 
-10. Click **Create Data Assets** again.
+10. Click **Create Data Asset** again.
 
    ![Data asset create button](images/dataasset-create-button.png)
 
@@ -308,5 +312,5 @@ Congratulations, you are ready for the next Lab!
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Contributors** - Priscila Iruela, Sindhuja Banka
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025
