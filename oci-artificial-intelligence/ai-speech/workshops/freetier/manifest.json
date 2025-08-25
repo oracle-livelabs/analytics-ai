@@ -28,8 +28,8 @@
             "filename": "../../transcribe-live-audio/transcribe-live-audio.md"
         },
         {
-            "title": "Lab 3: Create and manage customizations in OCI Console and using REST API",
-            "description": "Learn how to create, manage and use customizations",
+            "title": "Lab 3: Create, enable and manage customizations using OCI Console",
+            "description": "Learn how to create, enable and manage customizations",
             "filename": "../../customizations/customizations.md"
         },
         {
