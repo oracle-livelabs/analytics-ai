@@ -100,11 +100,11 @@ This lab assumes you have:
 
 This task involves creating and API Key in OCI, the key will be used to implement Select AI.
 
-1. Login the OCI Console and click the person icon on the top right.
+1. Login the OCI Console, click the person icon on the top right and then click your username.
 
     ![Open OCI Profile](images/oci_profile.png)
 
-2. Click API keys at the bottom left, then click the add API Key button.
+2. Select the Tokens and API keys tab, then click the add API Key button.
 
     ![Add API Key](images/oci_add_api_key.png)
 
