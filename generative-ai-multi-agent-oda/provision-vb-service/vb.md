@@ -32,14 +32,14 @@ This lab assumes you have:
 
 1. Click on main hamburger menu on OCI cloud console and navigate Developer Services > Visual Builder
 
-    ![Visual Builder Navigation](images/vb_nav.png)
+    ![Visual Builder Navigation](images/visual_builder.png)
 
 2. Create Visual Builder Instance by providing the details and click Create Visual Builder Instance:
     * Name =
     * Compartment =
     * Node =
 
-    ![Visual Builder Create Wizard](images/vb_create_wizard.png)
+    ![Visual Builder Create Wizard](images/create_visual_builder.png)
 
 3. Wait for the instance to come to Active (green color) status
 
@@ -196,4 +196,4 @@ You may now proceed to the next lab.
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, January 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, August 2025
