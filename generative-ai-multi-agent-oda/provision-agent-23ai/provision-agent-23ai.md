@@ -37,29 +37,29 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 1. Locate Domains under Identity & Security
 
-    ![Domain Navigation](images/locate_domain.png)
+    ![Domain Navigation](images/domains.png)
 
 2. Click on your current domain name
 
-    ![Click Domain](images/click_domain.png)
+    ![Click Domain](images/default_domains.png)
 
 3. Click on Dynamic Groups, and then your Dynamic Group name e.g. **genaiagentdg**
 
-    ![Click DG](images/click_dg.png)
+    ![Click DG](images/dynamic_group.png)
 
 4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
 
-    ![DG Details](images/dg_details.png)
+    ![DG Details](images/matching_rule.png)
 
 5. Click on Policies, ensure that you are in your "root" compartment, then create a new Policy e.g. **policyforgenaiagentvector**
 
-    ![Click Policy](images/click_policy.png)
+    ![Click Policy](images/policies.png)
 
     **Note** The name of your policy can be different.
 
 6. Ensure that your Policy is properly defined - as follows.
 
-    ![Policy Details](images/policy_details.png)
+    ![Policy Details](images/policy_statements.png)
 
     **Assuming genaiagentgd is name of dynamic group**
     ```
@@ -89,7 +89,7 @@ This task will help you to create vault which would be used to save secrets for 
 
 1. Locate Vault under Key Management & Secret Management. Provide Name e.g. **genaiagentvault** and click on Create Vault.
 
-    ![Vault](images/create_vault.png)
+    ![Vault](images/vault.png)
 
 2. Go to the newly created Vault. Click on Create Key.
 
@@ -103,7 +103,7 @@ This task involves creating Autonomous Database 23ai.
 
 1. Locate Autonomous Databases under Oracle Databases. Click on Create Autonomous Database.
 
-    ![Create ADB](images/create_adb.png)
+    ![Create ADB](images/create_adatab.png)
 
 2. Provide information for Compartment, Display name, Database name. Choose workload type as Data Warehouse. Choose deployment type as Serverless. Choose database version as 23ai and give it a password of your preference.
 
@@ -119,7 +119,7 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 1. Locate Database Tools Connections under Developer Services. Click on Create connection.
 
-    ![Create conn](images/dbconn.png)
+    ![Create conn](images/db_tools.png)
 
 2. Provide Name and Compartment information. Choose Oracle Autonomous Database as Database cloud service. Provide Username as admin.
 
@@ -151,7 +151,7 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 11. Go to newly create Database Tools connection. Click on Validate.
 
-    ![Validate DBTools](images/dbconn_validate.png)
+    ![Validate DBTools](images/validate_tools.png)
 
 ## Task 6: Load vector data in ADB using sql
 
@@ -193,7 +193,7 @@ This is a high level overview. We will go through the implementation in the foll
 
 1. Go to your Database connection created in Task 5. Click on SQL worksheet and run the following code blocks one by one.
 
-    ![SQL work](images/dbconn_sql_wksheet.png)
+    ![SQL work](images/sql_worksheet.png)
 
 2. First code block is for Access Control List to let user go out everywhere. This is required for ADB user to access Bucket public link and GenAI Embedding model. It's not required for Oracle Base Database.
 
@@ -226,7 +226,7 @@ This is a high level overview. We will go through the implementation in the foll
 
     For private key and fingerprint go to Profile -> My Profile when you click the top right section of OCI console. Click on API Keys under Resources and add an API Key
 
-    ![API Key](images/api_key.png)
+    ![API Key](images/api_keys.png)
 
 4. DBMS_CLOUD credentials: (Important Note: Put the private key all on a single line.)
 
@@ -463,17 +463,15 @@ This task will help you create a knowledge base using 23ai database as source.
 
 1. Locate Knowledge Bases under Analytics & AI -> Generative AI Agents.
 
-    ![KB Navigation](images/locate_kb.png)
+    ![KB Navigation](images/create_genaikb.png)
 
 2. Click on your Create knowledge base. Provide Name, Data store type as Oracle AI Vector Search, Provide Database tool connection and click on Test connection. Once successful provide the vector search function created in Task 6 or your own vector search function. Lastly, click on create to create the Knowledge base.
-
-    ![KB creation](images/create_kb.png)
 
 ## Task 9: Create Agent
 
 1. Locate Agents under Analytics & AI -> Generative AI Agents.
 
-    ![Agent Navigation](images/locate_agent.png)
+    ![Agent Navigation](images/create_genaiagent.png)
 
 2. Click on Create Agent. Provide Name, an optional welcome message - Hi I'm 23ai Vector DB RAG Agent. How can I help you? Select the Knowledge base created in previous task. Click on Create.
 
@@ -481,17 +479,17 @@ This task will help you create a knowledge base using 23ai database as source.
 
 3. In few minutes the status of recently created Agent will change from Creating to Active. Click on "Endpoints" menu item in the left panel and then the Endpoint link in the right panel.
 
-    ![Endpoint Agent](images/agent_active_endpoint.png)
+    ![Endpoint Agent](images/create_genaiendpoint.png)
 
 4. It’ll open up the Endpoint Screen. **Copy and keep the OCID of the Endpoint**. It’ll be used later. Click on "Launch chat" button
 
-    ![Agent Endpoint](images/agent_endpoint.png)
+    ![Agent Endpoint](images/copy_endpoint.png)
 
 ## Task 10: Chat with Agent
 
 1. Locate Chat under Analytics & AI -> Generative AI Agents.
 
-    ![Chat Navigation](images/locate_chat.png)
+    ![Chat Navigation](images/chat_detail.png)
 
 2. Select agent created in the previous task from the dropdown. Also, select the endpoint associated with that agent. Ask a relevant question depending on information stored in DB and start chatting with the agent.
 
@@ -507,4 +505,4 @@ You may now proceed to the next lab.
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, February 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, August 2025
