@@ -35,12 +35,10 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
 1. Locate Buckets under Object Storage & Archive Storage
 
-    ![object storage navigation](images/os_nav.png)
+    ![object storage navigation](images/buckets.png)
 
 2. Provide the information for **Compartment** and **Bucket Name**. For this lab you can use **Multi Agent Bucket** Click Create.
     The Object Storage Bucket will be created
-
-    ![object storage bucket creation](images/os_bucket_create.png)
 
 ## Task 2: Upload PDF Document(s) to the Object Storage Bucket
 
@@ -68,19 +66,19 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
 1. Locate Generative AI Agents under AI Services
 
-    ![genai agent navigation](images/agent_nav.png)
+    ![genai agent navigation](images/kb.png)
 
 2. Locate Knowledge Bases in the left panel, select the correct Compartment.
 
     Then click on “Create knowledge base” button
 
-    ![knowledge base navigation](images/kb_nav.png)
+    ![knowledge base navigation](images/create_kb.png)
 
 3. Specify the name of the knowledge base e.g. **WineCheeseKb**, ensure that you have selected the correct compartment.
 
     Select “Object storage” in the “Select data source” dropdown, and then click on the “Specify data source” button
 
-    ![knowledge base creation wizard](images/kb_wizard.png)
+    ![knowledge base creation wizard](images/creation_kb.png)
 
 4. Specify the name of the data source and Description (Optional)
 
@@ -88,15 +86,15 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     Click the “Create” button
 
-    ![knowledge base data source](images/kb_data_source.png)
+    ![knowledge base data source](images/specify_ds.png)
 
 5. Click the “Create” button to create the knowledge base
 
-    ![knowledge base creation](images/kb_create.png)
+    ![knowledge base creation](images/creation_kb.png)
 
 6. In few minutes the status of recently created Knowledge Base will change from Creating to Active
 
-    ![knowledge base active](images/kb_active.png)
+    ![knowledge base active](images/genaikb_active.png)
 
 ## Task 4: Provision Agent
 
@@ -106,7 +104,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     Then click on “Create agent” button
 
-    ![agent](images/agent.png)
+    ![agent](images/create_agent.png)
 
 2. Specify the agent name e.g. **WineCheeseAgent**, ensure the correct compartment is selected and indicate a suitable welcome message
 
@@ -114,23 +112,23 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     Click the “Create” button.
 
-    ![agent creation wizard](images/agent_wizard.png)
+    ![agent creation wizard](images/create_agent_button.png)
 
 3. In few minutes the status of recently created Agent will change from Creating to Active
 
     Click on “Endpoints” menu item in the left panel and then the Endpoint link in the right panel.
 
-    ![agent active](images/agent_active_endpoint.png)
+    ![agent active](images/create_endpoint.png)
 
 4. It’ll open up the Endpoint Screen. **Copy and keep the OCID of the Endpoint**. It’ll be used later.
 
    Click on “Launch chat” button
 
-   ![agent endpoint](images/agent_endpoint.png)
+   ![agent endpoint](images/copy_endpoint.png)
 
 5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
 
-    ![Agent Chat Playground](images/agent_launch_chat.png)
+    ![Agent Chat Playground](images/chat_detail.png)
 
 ## Task 5: Update Agent's Knowledge Base (optional)
 
@@ -142,7 +140,7 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
 2. Navigate to Data Source
 
-    ![knowledge base nav](images/kb_nav.png)
+    ![knowledge base nav](images/create_kb.png)
 
     * In the Generative AI Agents Service, navigate to the **knowledge bases** view
     * Click on the name of your knowledge base in the list
@@ -169,4 +167,4 @@ You may now proceed to the next lab.
     * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, January 2025
+    * **Abhinav Jain**, Master Principal Cloud Architect, NACIE, August 2025
