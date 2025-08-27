@@ -25,7 +25,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Must Complete Lab 5
+- Must Complete Lab 4
 
 ## Task 1: Create SSH Key on OCI Cloud Shell
 
@@ -40,6 +40,10 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ![cloud shell button](./images/cloud-shell-setup.png  "cloud shell button " )
 
     ![open cloud shell](./images/cloud-shell-open.png "open cloud shell" )
+
+    ![click public network](./images/cloud-shell-public-ntework.png "click public network" )
+
+
 
     _Note: You can use the icons in the upper right corner of the Cloud Shell window to minimize, maximize, restart, and close your Cloud Shell session._
 
@@ -75,92 +79,105 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 You will need a compute Instance to connect to your brand new MySQL database.
 
-1. Before creating the Compute instance open a notepad 
+1. Before creating the Compute instance open a notepad
 
 2. Do the followings steps to copy the public SSH key to the  notepad
 
     Open the Cloud shell
     ![open cloud shell large](./images/cloud-shell-open-large.png "open cloud shell large ")
 
-    Enter the following command  
+    Enter the following command
 
     ```bash
     <copy>cat ~/.ssh/id_rsa.pub</copy>
     ```
 
-    ![ssh key display](./images/ssh-key-display.png "ssh key display ") 
+    ![ssh key display](./images/ssh-key-display.png "ssh key display ")
 
 3. Copy the id_rsa.pub content the notepad
 
     Your notepad should look like this
-    ![show ssh key](./images/notepad-rsa-key.png "show ssh key")  
+    ![show ssh key](./images/notepad-rsa-key.png "show ssh key")
 
 4. Minimize cloud shell
 
-    ![minimize cloud shell](./images/ssh-key-display-minimize.png "minimize cloud shell")  
+    ![minimize cloud shell](./images/ssh-key-display-minimize.png "minimize cloud shell")
 
-5. To launch a Linux Compute instance, go to 
-    Navigation Menu
-    Compute
-    Instances
+5. To launch a Linux Compute instance, click the **Navigation menu** in the upper left, navigate to **Compute**, and under **Compute**, select **Instances**.
+
     ![navigation compute](./images/navigation-compute.png "navigation compute")
 
-6. On Instances in **turbo** Compartment, click  **Create Instance**
-    ![compute menu create instance](./images/compute-menu-create-instance.png "ccompute menu create instance ")
+6. Ensure **turbo** compartment is selected, and click **Create instance**.
 
-7. On Create Compute Instance 
+     ![Create instance](./images/compute-menu-create-instance.png "Create instance")
 
-    Enter Name
+7. On **Create compute instance** page, enter the name of the compute instance.
 
     ```bash
-    <copy>HEATWAVE-Client</copy>
+    <copy>heatwave-compute</copy>
     ```
 
-8. Make sure **turbo** compartment is selected 
+8. Ensure **turbo** compartment is selected.
 
-9. On Placement, keep the selected Availability Domain
+    ![Compute instance name](./images/compute-name.png "Compute instance name")
 
-10. On Security, keep the default
+9. In the **Placement** field, keep the selected **Availability domain**.
 
-    - Shielded instance: Disabled
-    - Confidential computing:Disabled
+10. In the **Image and Shape** field, keep the default shape.
 
-      ![compute create security](./images/compute-create-security.png "compute create security ") 
+    Click the **Change Image** button to selected image, **Oracle Linux 8**.
+    ![Change Image Button](./images/compute-image-change-button.png "Change Image Button")
 
-11. On Image  keep the selected Image, Oracle Linux 8 and click Edit
+11. In the **Select Image Screen** do the followings:
+    1. Click the **Oracle Linux Box**
+    2. Enter the following in the search box:
 
-      ![compute create image](./images/compute-create-image.png "compute create image ")  
+        ```bash
+        <copy>Oracle Linux 8</copy>
+        ```
 
-12. Click Change Shape
+    3. Select the **Oracle Linux 8** entry
+    4. Click the **Select Image** button
+        ![Compute image and shape change](./images/compute-image-change.png "Compute image and shape change")
 
-      ![compute create change shape](./images/compute-create-change-shape.png "compute create change shape")  
+12. In the final **Image and Shape** field, keep the default shape and the new **Oracle Linux 8** image , and click **Next**.
+   ![New Compute image and shape](./images/compute-image-shape.png "New Compute image and shape")
 
-13. Select Instance Shape: VM.Standard.E2.2
+13. Under **Security** panel, click **Next**.
 
-      ![compute create select shape](./images/compute-create-select-shape.png "compute create select shape")  
+14. Under **Networking** panel, in **Primary network** field, select **Select existing virtual cloud network**, and ensure the following settings are selected:
 
-14. On Networking, click Edit
+    - **Virtual cloud network compartment**: **turbo**
 
-      ![compute create networking](./images/compute-create-networking.png "compute create networking ")  
+    - **Virtual cloud network**: **heatwave-vcn**
 
-15. Make sure **HEATWAVE-VCN**  and  and  **public subnet-HEATWAVE-VCN** are selected. Keep Public IPV4 address **Assign..** default
+15. Under **Subnet**, ensure the following are selected:
 
-      ![compute create networking](./images/compute-create-networking-select.png "compute create networking ")
+    - **Subnet compartment**: **turbo**
 
-16. On Add SSH keys, paste the public key from the notepad.
-  
+    - **Subnet**: **public-subnet-heatwave-vcn**
+
+16. In **Primary VNIC IP addresses** field, ensure the following settings are selected:
+
+    - **Private IPv4 address**: **Automatically assign private IPv4 address**
+
+    - **Automatically assign public IPv4 address**: Enabled
+
+    ![Network settings](./images/networking.png "Network settings")
+
+17. On Add SSH keys, paste the public key from the notepad.
+
     ![compute create add ssh key](./images/compute-create-add-ssh-key.png "compute create add ssh key ")
 
-17. Keep Boot Volume default and Click **Create** button to finish creating your Compute Instance.
+18. Click **Next**, and then **Next**.
 
-    ![compute create boot volue](./images/compute-create-boot-volume.png "compute create boot volume")
+19. Click **Create** to create your compute instance.
 
-18. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
-    ![compute provisioning](./images/compute-provisioning.png "compute provisioning ")
+20. The compute instance will be ready to use after a few minutes. The state is shown as **Provisioning** while the instance is creating.
 
-19. The state 'Running' indicates that the Virtual Machine is ready to use.
+21. When the compute instance is ready to use, the state is shown as **Running**. *Note* the **Public IP address** and the **Username**.
 
-    ![compute active](./images/compute-active.png "compute active")
+    ![Compute instance is created](./images/compute.png "Compute instance is created")
 
 ## Task 3: Connect to MySQL Database System
 
@@ -178,17 +195,21 @@ You will need a compute Instance to connect to your brand new MySQL database.
         - Databases 
         - MySQL
         - Click the `HEATWAVE-DB` Database System link
-     ![navigation mysqlwith instance](./images/navigation-mysql-with-instance.png " navigation mysqlwith instance")
 
 3. Copy the HEATWAVE-DB  `Private IP Address` to the notepad
-     ![mysql detail ip](./images/mysql-detail-ip.png "mysql detail ip")
+     ![heatwave Private IP](./images/navigation-mysql-with-instance.png " heatwave Private IP")
 
 4. Your notepad should look like the following:
      ![notepad rsa key compute db](./images/notepad-rsa-key-compute-db.png "notepad rsa key compute db ")
 
 5. Go to Cloud shell to SSH into the new Compute Instance
 
-    Enter the username **opc** and the Public **IP Address**.
+    - Setup the **Public Cloud** access wait a few minutes. 
+
+        ![Public Cloud](./images/cloud-shell-public-ntework.png " Public Cloud")
+
+   
+    - Enter the username **opc** and the Public **IP Address**.
 
     Note: The **HEATWAVE-Client**  shows the  Public IP Address as mentioned on TASK 5: #1
 
@@ -300,7 +321,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     a. Install php:7.4
 
     ```bash
-    <copy> sudo dnf module install php:7.4 -y</copy>
+    <copy> sudo dnf install @php:8.2 -y</copy>
     ```
 
     b. Install associated php libraries
@@ -399,41 +420,58 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 5. Add the following code to the editor and save the file (ctr + o) (ctl + x)
 
-    ```bash
-    <copy><?php
-    require_once "config.php";
-    $query = "select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking
-    where booking.passenger_id = passenger.passenger_id
-    and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong')
-    and booking.price > 400.00 group by firstname, lastname;";
-    if ($stmt = $link->prepare($query)) {
+```bash
+<copy><?php
+require_once "config.php";
+
+$query = "SELECT firstname, lastname, COUNT(booking.passenger_id) as count_bookings 
+          FROM passenger, booking 
+          WHERE booking.passenger_id = passenger.passenger_id 
+          AND (passenger.lastname = ? OR (passenger.firstname = ? AND passenger.lastname = ?)) 
+          AND booking.price > ? 
+          GROUP BY firstname, lastname;";
+
+if ($stmt = $link->prepare($query)) {
+    $lastname = 'Aldrin';
+    $firstname = 'Neil';
+    $lastnameArmstrong = 'Armstrong';
+    $price = 400.00;
+    $stmt->bind_param("sssd", $lastname, $firstname, $lastnameArmstrong, $price);
     $stmt->execute();
-    $stmt->bind_result($firstname,$lastname,$count_bookings);
-    echo "<table>";
-            echo "<tr>";
-            echo "<th>Firstname</th>";
-            echo "<th>Lastname</th>";
-            echo "<th>Count</th>";
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Firstname</th>";
+        echo "<th>Lastname</th>";
+        echo "<th>Count</th>";
         echo "</tr>";
 
-        while ($stmt->fetch()) {
+        while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $firstname ."</td>";
-            echo "<td>" . $lastname . "</td>";
-            echo "<td>" . $count_bookings . "</td>";
+            echo "<td>" . $row['firstname'] . "</td>";
+            echo "<td>" . $row['lastname'] . "</td>";
+            echo "<td>" . $row['count_bookings'] . "</td>";
             echo "</tr>";
         }
 
-        $stmt->close();
+        echo "</table>";
+    } else {
+        echo "No results found.";
     }
-    ?>
 
-    </copy>
-    ```
+    $stmt->close();
+} else {
+    echo "Failed to prepare the query.";
+}
+?>
+</copy>
+```
 
 6. From your local  machine connect to dbtest.php
 
-    Example: http://129.213.167..../dbtest.php  
+    Example: http://129.213.167..../dbtest.php 
 
 ## Task 7: Create Google Chart Application
 

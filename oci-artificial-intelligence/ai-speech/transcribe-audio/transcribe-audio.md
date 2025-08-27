@@ -98,34 +98,44 @@ Under documentation you can find helpful links relevant to OCI speech service
     Click "Transcription jobs" to navigate to jobs list.
         ![Speech service job page](./images/click-transcription-job.png " ")
 
-2. Create Job
+2. **Create Job**
 
     Select the compartment in which you want to create your job, then
-    click the "Create job" button to begin job creation process
+    click the "Create job" button to begin job creation process.
         ![Create job button](./images/create-transcription-job.png " ")    
 
-3. Enter Job Information on Basic Information Page
+3. Enter Job Information on Basic Information Page:
 
-    This page is split into three sections
+    This page is split into three sections - 
 
-    <strong>Job information:</strong> Optionally enter a name and description for your job, as well as choose the compartment you want your job to be in
+    <strong>Job information:</strong> Optionally enter a name and description for your job, as well as choose the compartment you want your job to be in.
 
-    <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names
+    <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names.
 
-    <strong>Configure transcription:</strong> Choose the model model type and the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
+    <strong>Configure transcription:</strong> Choose the model type and the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
         ![Job details selection page](./images/basic-information-page-1.png " ")
-    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model. Additionally, the Whisper Medium model also offers auto-detection of language. This can be chosen in the language drop-down list once the Whisper model is selected.
+    From the Choose model type dropdown, You can choose either oracle model or whisper medium model. Currently, we support 10 languages for Oracle model, and 57 languages for the Whisper Medium model. Additionally, the Whisper Medium model also offers **auto-detection** of language. This can be chosen in the language drop-down list once the Whisper model is selected.
     ![Language dropdown for Whisper](./images/whisper-model-auto-language.png " ")
     
-    You can also enable diarazation feature by checking the box which helps you with segmenting audio recordings by speaker labels
+    You can also enable diarazation feature by checking the box which helps you with segmenting audio recordings by speaker labels.
         ![Model selection page](./images/basic-information-page-2.png " ")
     If you enable the diarization feature, a new dropdown for selecting specifing the number of speaker in the audio file will be shown. You can provide the number of speakers to label in the audio file or you can keep the default option *Auto detect* which will automatically detect the number of speakers in the audio file.
         ![Diarization Speakers dropdown](./images/diarization-dropdown.png " ")
 
-    Filters allow you to remove, tag or mask certain words from the transcription, such as profanity
+    Filters allow you to remove, tag or mask certain words from the transcription, such as profanity.
         ![Filters selection page](./images/filters.png " ")
 
-    Click "Next" to continue to file selection
+
+    If Whisper Medium is selected as the model type, an additional button will be visible in the console called **Additional settings**. Using this button, additional model-related parameters can be sent to assist in the transcription. Whisper Medium supports prompting, which is a custom string assisting in spellings and formatting of the transcription output, and can be passed in the additional settings. **Note:** Using a prompt can cause **unusual outputs** in the transcription and trigger *non-deterministic* behaviour. For more information about Whisper prompting, [check out this guide.](https://cookbook.openai.com/examples/whisper_prompting_guide)
+    
+    To pass in the prompt, click on the **Add Additional Settings** button.
+    ![Whisper Prompt button enablement](./images/whisper-add-set-1.png)
+
+    The only supported key, currently, is **whisperPrompt**, which should be used to pass in the prompt. In the right-side text box, enter the desired prompt. The maximum length of the prompt is 4000 characters, allowing only alphanumeric characters and punctuation (. , ! ? - : ; ' "). The validation is performed in the background, and the job creation fails if the prompt fails the aforementioned constraints.
+    ![Whisper Prompt usage](./images/whisper-add-set-2.png)
+
+
+    Click "Next" to continue to file selection.
 
 
 4. Select Which File(s) From Object Storage to Transcribe in this Job
@@ -188,7 +198,7 @@ To view the result of the transcription we will navigate to each the job and tas
 
 ## Task 5: Downloading and Viewing the Results in JSON
 
-Click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
+Click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format. If selected language is *auto* (Only for Whisper), then the JSON also contains **token-specific language codes**, useful in multi-language audios and conversations.
     ![Job transcription JSON format selection button](./images/show-json-button.png " ")
 
 Click "Show Standard Results" button to leave the JSON view. 
@@ -208,4 +218,4 @@ You may now **proceed to the next lab**
     * Veluvarthi Narasimha Reddy - Oracle AI Services
     * Sai Krishna Anand - Oracle AI Services <br />
 
-#### 10th January, 2025
+#### 6th August, 2025
