@@ -39,7 +39,7 @@ This lab assumes you have:
     * Compartment =
     * Node =
 
-    ![Visual Builder Create Wizard](images/create_visual_builder.png)
+    ![Visual Builder Create Wizard](images/create_visual_builders.png)
 
 3. Wait for the instance to come to Active (green color) status
 
