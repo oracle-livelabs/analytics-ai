@@ -37,33 +37,33 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
 1. Locate Domains under Identity & Security
 
-    ![Domain Navigation](images/locate_domain.png)
+    ![Domain Navigation](images/doomains.png)
 
 2. Click on your current domain name
 
-    ![Click Domain](images/click_domain.png)
+    ![Click Domain](images/defaults_domains.png)
 
 3. Click on Dynamic Groups, and then your Dynamic Group name
 
-    ![Click DG](images/click_dg.png)
+    ![Click DG](images/dynamic_group.png)
 
     **Note** The name of your dynamic group can be different.
 
 4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
 
-    ![DG Details](images/dg_details.png)
+    ![DG Details](images/matching_rules.png)
 
     **Note** The resource.compartment.id should be set to the OCID of your Compartment - that is having your ODA Instance.
 
 5. Click on Policies, ensure that you are in your "root" compartment, then click on your Policy name
 
-    ![Click Policy](images/click_policy.png)
+    ![Click Policy](images/policiess.png)
 
     **Note** The name of your policy can be different.
 
 6. Ensure that your Policy is properly defined - as follows.
 
-    ![Policy Details](images/policy_details.png)
+    ![Policy Details](images/policy_statementss.png)
 
     ```
     allow dynamic-group <dynamic-group-name> to manage agent-family in tenancy
@@ -92,7 +92,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
 1. Locate Digital Assistant under AI Services
 
-    ![ODA Navigation](images/oda_nav.png)
+    ![ODA Navigation](images/provision_oda.png)
 
     **Note** You can find Digital Assistant under the AI Services.
 
@@ -276,13 +276,13 @@ If the Policy Definitions are not correctly defined, please define them as follo
 
     In the OCI Console, you can click on your profile icon in the top right corner, click on your Tenancy name, and then copy the OCID of the tenancy.
 
-    ![Tenancy OCID](images/tenancy_ocid.png)
+    ![Tenancy OCID](images/odas_tenancy.png)
 
 * _ODAInstanceOCID_ - The OCID of the ODA Instance.
 
     In the OCI Console, you can go to your Digital Assistance instance (Menu -> Analytics & AI -> Digital Assistant), and then copy the OCID of the       ODA instance
 
-    ![ODA Instance OCID](images/oda_instance_ocid.png)
+    ![ODA Instance OCID](images/oda_ocids.png)
 
 1. In the tenancy where the ODA instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root" compartment, and      then define the following policies.
 
@@ -294,7 +294,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
     </copy>
    ```
 
-   ![ODA Instance Policy](images/create_policy.png)
+   ![ODA Instance Policy](images/policy_statementss.png)
 
 2. In the tenancy where the Generative AI instance is hosted - Locate Policies under Identity & Security, ensure that you are in your "root"
    compartment, and then define the following policies.
@@ -310,7 +310,7 @@ If the Policy Definitions are not correctly defined, please define them as follo
     </copy>
    ```
 
-   ![ODA Instance Policy](images/create_policy.png)
+   ![ODA Instance Policy](images/policy_statementss.png)
 
 You may now proceed to the next lab.
 
@@ -324,4 +324,4 @@ You may now proceed to the next lab.
     * **Luke Farley**, Staff Cloud Engineer, NACIE
 
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, March 2025
+    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, August 2025
