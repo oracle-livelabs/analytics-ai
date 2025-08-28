@@ -72,13 +72,13 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     Then click on “Create knowledge base” button
 
-    ![knowledge base navigation](images/create_kb.png)
+    ![knowledge base navigation](images/create_genaikbs.png)
 
 3. Specify the name of the knowledge base e.g. **WineCheeseKb**, ensure that you have selected the correct compartment.
 
     Select “Object storage” in the “Select data source” dropdown, and then click on the “Specify data source” button
 
-    ![knowledge base creation wizard](images/creation_kb.png)
+    ![knowledge base creation wizard](images/creation_kbs.png)
 
 4. Specify the name of the data source and Description (Optional)
 
@@ -86,15 +86,15 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     Click the “Create” button
 
-    ![knowledge base data source](images/specify_ds.png)
+    ![knowledge base data source](images/specify_dss.png)
 
 5. Click the “Create” button to create the knowledge base
 
-    ![knowledge base creation](images/creation_kb.png)
+    ![knowledge base creation](images/creation_kbs.png)
 
 6. In few minutes the status of recently created Knowledge Base will change from Creating to Active
 
-    ![knowledge base active](images/genaikb_active.png)
+    ![knowledge base active](images/genaikb_actives.png)
 
 ## Task 4: Provision Agent
 
@@ -104,7 +104,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     Then click on “Create agent” button
 
-    ![agent](images/create_agent.png)
+    ![agent](images/create_genaiagents.png)
 
 2. Specify the agent name e.g. **WineCheeseAgent**, ensure the correct compartment is selected and indicate a suitable welcome message
 
@@ -118,17 +118,17 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     Click on “Endpoints” menu item in the left panel and then the Endpoint link in the right panel.
 
-    ![agent active](images/create_endpoint.png)
+    ![agent active](images/create_genaiendpoints.png)
 
 4. It’ll open up the Endpoint Screen. **Copy and keep the OCID of the Endpoint**. It’ll be used later.
 
    Click on “Launch chat” button
 
-   ![agent endpoint](images/copy_endpoint.png)
+   ![agent endpoint](images/copy_endpoints.png)
 
 5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
 
-    ![Agent Chat Playground](images/chat_detail.png)
+    ![Agent Chat Playground](images/chats_detail.png)
 
 ## Task 5: Update Agent's Knowledge Base (optional)
 
@@ -140,7 +140,7 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
 2. Navigate to Data Source
 
-    ![knowledge base nav](images/create_kb.png)
+    ![knowledge base nav](images/create_genaikbs.png)
 
     * In the Generative AI Agents Service, navigate to the **knowledge bases** view
     * Click on the name of your knowledge base in the list
@@ -148,7 +148,7 @@ You may want to update your agent's knowledge base for a variety of reasons in t
 
 3. Run Ingestion Job
 
-    ![data source details](images/data_source.png)
+    ![data source details](images/run_ingestions.png)
     * Click **Create Ingestion Job**
     * Provide a unique name and optional description
     * click **Create**
