@@ -10,14 +10,14 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 [](youtube:0BN8Ws2qJGQ)
 
-Estimated Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this section, you will:
 
-- Create Your OCI Data Integration Instance.
-- Create the Data Assets.
+- Create Your OCI Data Integration Instance
+- Create the data assets
 
 ### Prerequisites
 
@@ -79,7 +79,7 @@ In this section, you will:
     <copy>allow group <group-name> to manage tag-namespaces in compartment <compartment-name></copy>
     ```
 
-5. Go to **Menu**, **Analytics & AI** and then click **Data Integration**.
+5. Go to **Menu**, select **Analytics & AI**, and then click **Data Integration**.
 
    ![DI menu](images/di-menu.png)
 
@@ -87,7 +87,7 @@ In this section, you will:
 
    ![DI menu workspaces](images/di-menu-workspaces.png)
 
-7. Click **Create Workspace**.
+7. Click **Create workspace**.
 
    ![DI menu worksphop button](images/di-create-workshop-button-new.png)
 
@@ -117,7 +117,7 @@ In this section, you will:
 
    ![identity policies menu](images/identity-policies-menu.png)
 
-13. **Click** on the `dataintegration` policy name.
+13. Click on the `dataintegration` policy name.
 
    ![DI policy link](images/di-policy-link.png)
 
@@ -125,7 +125,7 @@ In this section, you will:
 
    ![DI policy edit button](images/di-policy-edit-button.png)
 
-15. Click **+ Another Statement**.
+15. Click **+ Additional rule**.
    
    ![DI policy add policy](images/di-policy-add-policy.png)
 
@@ -143,7 +143,7 @@ In this section, you will:
       <copy>allow any-user to manage objects in tenancy where ALL {request.principal.type='disworkspace',request.principal.id='DATA_INTEGRATION_WORKSPACE_OCID'}</copy>
       ```
 
-17. Click **Save Changes**.
+17. Click **Save changes**.
 
    ![DI policy save changes](images/di-policy-save-changes.png)
 
@@ -151,13 +151,11 @@ In this section, you will:
 
    ![DI menu](images/di-menu.png)
 
-19. Go to **Workspaces** page, at the moment you are on **Overview**.Second tab on the left side of the menu. Check the **Data Integration Workspace** is `Active` and click the link.
+19. Go to **Workspaces** page, at the moment you are on **Overview**. Second tab on the left side of the menu. Check the **Data Integration Workspace** is `Active` and click the link.
 
    ![DI active go to workspace](images/di-active-go-to-workspace.png)
 
----
-
-## Task 2: Create the Data Assets
+## Task 2: Create the data assets
 
 We are going to need the **Object Storage URL** and **Tenancy ID**.
 
@@ -204,7 +202,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
 3. Let's create the **Data Asset** now. Go back to Your **Data Integration Workspace**.
 
-   Go to **Menu**, **Analytics & AI** and then click **Data Integration**:
+   Go to **Menu**, **Analytics & AI** and then click **Data Integration**.
 
    ![DI menu](images/di-menu.png)
 
@@ -216,9 +214,9 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![DI homepage](images/di-home-page.png)
 
-   The first task is to create the data assets that represent the source and target for the data integration. In our case, the data source is an Object Storage bucket, and the target is our MySQL database.
+   The first task is to create the data assets that represent the source and target for the data integration. In our case, the data source is an Object Storage bucket, and the target is our MySQL HeatWave database.
 
-5. Click **Create Data Asset**.
+5. Click **Create data asset**.
 
    ![DI homepage create asset bucket](images/di-home-create-asset-bucket.png)
 
@@ -255,7 +253,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![Data asset homepage](images/dataasset-os-back-home.png)
 
-10. Click **Create Data Asset** again.
+10. Click **Create data asset** again.
 
    ![Data asset create button](images/dataasset-create-button.png)
 
@@ -301,15 +299,13 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
 ## Task 3: It Works
 
-1. Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
+1. Go back to the **Home** Screen. You have just created the **two data assets** needed for the next Lab. Your **Recents** should look like this:
 
    ![Data asset MySQL success homepage](images/di-dataassets-success.png)
 
 Congratulations, you are ready for the next Lab!
 
----
-
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela, Sindhuja Banka

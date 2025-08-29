@@ -18,21 +18,21 @@ Estimated time: 15 minutes
 
 In this section, you will:
 
-- Create Virtual Cloud Network.
-- Create Bastion Host.
-- Create Object Storage and upload files.
+- Create Virtual cloud network
+- Create Bastion Host
+- Create Object Storage and upload files
 
 ### Prerequisites
 
 - This section assumes you have logged into your to Oracle Cloud account.
 
-## Task 1: Create Virtual Cloud Network (VCN)
+## Task 1: Create Virtual cloud network (VCN)
 
 1. We are going to **create a network with a public subnet** (with access from the Internet) and a **private subnet** (no direct access from the Internet).
 
    This **network** layout is interesting to protect those services that don't need to be exposed to the Internet (living in the Private subnet) meanwhile other services and virtual machines with **direct access from the internet**, like Bastion hosts or Web Servers (living in the Public Subnet).
 
-2. Go to **Menu**, **Networking** and then click **Virtual Cloud Networks**.
+2. Go to **Menu**, **Networking** and then click **Virtual cloud networks**.
 
    ![VCN menu](images/vcn-navigation.png)
 
@@ -42,7 +42,7 @@ In this section, you will:
    >
    > ![Pick Compartment](images/pick-compartment.png)
 
-3. Click **Actions** and then select **Start VCN Wizard**.
+3. Click **Actions** and select **Start VCN Wizard**.
 
    ![Start VCN Wizard](images/start-vcn-wizard.png)
 
@@ -67,11 +67,11 @@ In this section, you will:
 
    The creation process takes few seconds. Confirm everything is created (green tick on all resources) before you continue.
 
-8. Click **View Virtual Cloud Network**.
+8. Click **View VCN**.
 
    ![VCN Creation OK](images/vcn-create-ok.png)
 
-9. Go to your new **private subnet-nature** by clicking on **Subnets** from the top navigation bar.
+9. Go to your new **private subnet-nature** by clicking **Subnets** in the top navigation bar.
 
    ![VCN Private Subnet](images/vcn-private-subnet.png)
 
@@ -130,7 +130,7 @@ In this section, you will:
 
    Make sure the rest of the **properties** are like the following:
 
-      - Image: `Oracle Linux 7.9` or Superior - `Oracle Linux 8`
+      - Image: `Oracle Linux 8`
       - Shape for Always Free: `VM.Standard.E2.1.Micro`
       - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
       - Virtual cloud network: `nature`
@@ -165,7 +165,7 @@ In this section, you will:
 
    To avoid install tools on your local computer, we are going to use **Cloud Shell**. Cloud Shell is a small and **free Linux virtual machine** with a lot of DevOps tools preinstalled that Oracle Cloud offers.
 
-9. Click on the **Cloud Shell** icon on the top-right menu bar.
+9. Click on the **Cloud Shell** on the top-right menu bar from **Developer tools** icon.
 
    ![Cloud Shell](images/compute-cloud-shell.png)
 
@@ -173,7 +173,7 @@ In this section, you will:
 
    ![Cloud Shell terminal](images/cloud-shell.png)
 
-10. Click on the Cloud Shell **menu** icon and then in **Upload**.
+10. Click on Cloud Shell **menu** icon and then in **Upload**.
 
    ![Cloud Shell terminal](images/cloud-shell-upload.png)
 
@@ -233,7 +233,7 @@ In this section, you will:
       <copy>ssh -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
       ```
 
-   This time you should be inside of the bastion host. This is the machine we will use to access MySQL Database Service that lives in a private subnet.
+   This time you should be inside of the bastion host. This is the machine we will use to access MySQL HeatWave that lives in a private subnet.
 
 19. **Update** your Linux (it might take few minutes):
 
@@ -319,7 +319,7 @@ In this section, you will:
 
 Congratulations! You are ready to go to the next Lab!
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela, Sindhuja Banka

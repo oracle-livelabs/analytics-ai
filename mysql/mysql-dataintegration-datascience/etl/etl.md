@@ -10,31 +10,30 @@ The flow of data from source to target can undergo a series of transforms to agg
 
 Data engineers and ETL developers can then analyze or gather insights and use that data to make business decisions.
 
-
-Estimated Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this section, you will:
 
-- Create the Data Flow.
-- Create the Integration Task.
-- Publish the Integration Task.
-- Run the Task.
+- Create the data flow
+- Create the Integration task
+- Publish the Integration task
+- Run the Task
 
 ### Prerequisites
 
 - All previous sections have been successfully completed.
 
-## Task 1: Create the Data Flow
+## Task 1: Create the data flow
 
-1. Click **Create Data Flow**.
+1. Click **Create data flow**.
 
    ![Data Flow create button](images/dataflow-create-button.png)
 
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
-      - Name: `CSV to MySQL` 
+      - Name: `CSV to MySQL`
       ```
       <copy>CSV to MySQL</copy>
       ```
@@ -72,15 +71,15 @@ In this section, you will:
 
    ![Data Flow source data asset bucket](images/dataflow-source-data-asset-bucket.png)
 
-7. **Select** `Default Connection` in the Connection section. In the **Schema** section, select the **Compartment** that you have used to create for this workshop, `root`. Then click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
+7. Select `Default Connection` in the Connection section. In the **Schema** section, select the **Compartment** that you have used to create for this workshop, `root`. Then click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data entity**.
 
    ![Data Flow source data entity](images/dataflow-source-data-entity.png)
 
-8. Browse by **Name**:
+8. Browse by **name**:
 
    ![Data Flow source data entity browser](images/dataflow-source-data-entity-browse.png)
 
-9. **Select** `mds-di-ds-reef_life_survey_fish.csv` file.
+9. Select `mds-di-ds-reef_life_survey_fish.csv` file.
 
    ![Data Flow source data entity file](images/dataflow-source-data-entity-file.png)
 
@@ -157,11 +156,9 @@ You can **expand / shrink** the Properties canvas.
 
    ![Data Flow source to target validate](images/dataflow-validate.png)
 
----
+## Task 2: Create the Integration task
 
-## Task 2: Create the Integration Task
-
-1. Go back to **Home** and Click **Create Integration Task**.
+1. Go back to **Home** and Click **Create Integration task**.
 
    ![Integration task create](images/integrationtask-create-button.png)
 
@@ -184,9 +181,7 @@ You can **expand / shrink** the Properties canvas.
 
    ![Integration task save](images/integrationtask-save.png)
 
----
-
-## Task 3: Publish the Integration Task
+## Task 3: Publish the Integration task
 
 1. Go to **Projects** on the home screen.
 
@@ -207,8 +202,6 @@ You can **expand / shrink** the Properties canvas.
 5. **Select** (if not selected by default) your **Default Application**. Click **Publish**.
 
    ![DI projects tasks publish integration to app](images/di-project-tasks-publish-integration-to-default-app.png)
-
----
 
 ## Task 4: Run the Task
 
@@ -231,8 +224,6 @@ You can **expand / shrink** the Properties canvas.
 5. Feel free to click **Refresh** from time to time until you see `Success` on the Status.
 
    ![DI application integration success](images/di-application-integration-success.png)
-
----
 
 ## Task 5: It Works
 
@@ -270,9 +261,7 @@ You can **expand / shrink** the Properties canvas.
 
 Congratulations, you are ready for the next Lab!
 
----
-
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela, Sindhuja Banka

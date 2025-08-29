@@ -8,17 +8,17 @@
 
 [](youtube:_Z5PdpdEklI)
 
-Estimated Time: 15 minutes.
+Estimated Time: 15 minutes
 
 ### Objectives
 
 In this section, you will:
 
-- Create Policies.
-- Create Policies for Data Science.
-- Create a Data Science Project.
-- Install libraries.
-- Create Jupyter Notebook environment.
+- Create Policies
+- Create Policies for Data Science
+- Create a Data Science Project
+- Install libraries
+- Create Jupyter Notebook environment
 
 ### Prerequisites
 
@@ -55,11 +55,9 @@ In this section, you will:
 
    ![Dynamic group created](images/ds-dynamic-group-create.png)
 
-5. The **Dynamic Group** for Data Science has been created. Don't worry if the colour can vary from the picture, **Green** and **Blue** in this case mean the same.
+5. The **Dynamic Group** for Data Science has been created.
 
    ![Dynamic group review](images/ds-dynamic-group-review.png)
-
----
 
 ## Task 2: Create Policies for Data Science
 
@@ -115,8 +113,6 @@ In this section, you will:
    > ```
     <copy>allow group [data-scientists] to manage data-science-family in tenancy</copy>
    ```
-
----
 
 ## Task 3: Create a Data Science Project
 
@@ -184,7 +180,6 @@ In this section, you will:
 
    ![DS notebook login](images/ds-notebook-login.png)
 
----
 
 ## Task 4: Install Libraries
 
@@ -202,8 +197,6 @@ In this section, you will:
 
 3. Wait for the installation to **complete**. It should take less than one minute.
 
----
-
 ## Task 5: Create Jupyter Notebook Environment
 
 1. **Download** the Notebook <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/accWutecVkW3_TtuapnHBzeCEGkAYiFijcU4slJLVBBZwoO00Bxicgreqs1mBFGQ/n/fruktknlrefu/b/workshop-marine-life/o/mds-di-ds-FishSurvey.ipynb" target="\_blank">here</a>.
@@ -220,7 +213,7 @@ In this section, you will:
 
 5. **Double click** on **mds-di-ds-FishSurvey.ipynb**.
 
-6. Make sure you **modify** `PRIVATE_IP` and **passwd** on the following code in the **Notebook** with the **Private IP and Password from MySQL Database Service**.
+6. Make sure you **modify** `PRIVATE_IP` and **passwd** on the following code in the **Notebook** with the **Private IP and Password from MySQL HeatWave**.
 
    ```
    cnx = mysql.connector.connect(
@@ -245,9 +238,7 @@ Congratulations! Well done!
 
 Continue to the Next Steps for more information!
 
----
-
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela, Sindhuja Banka
