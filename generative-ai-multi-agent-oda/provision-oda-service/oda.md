@@ -51,7 +51,7 @@ For Policy Definitions required for multi-tenancy deployment (where ODA and Gene
 
 4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
 
-    ![DG Details](images/matching_rules.png)
+    ![DG Details](images/dg_details.png)
 
     **Note** The resource.compartment.id should be set to the OCID of your Compartment - that is having your ODA Instance.
 

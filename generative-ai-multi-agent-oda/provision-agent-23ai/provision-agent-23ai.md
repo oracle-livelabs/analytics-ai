@@ -49,7 +49,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
 
-    ![DG Details](images/matching_rules.png)
+    ![DG Details](images/dg_details.png)
 
 5. Click on Policies, ensure that you are in your "root" compartment, then create a new Policy e.g. **policyforgenaiagentvector**
 
