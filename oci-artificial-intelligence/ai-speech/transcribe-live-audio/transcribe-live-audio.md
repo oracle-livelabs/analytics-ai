@@ -59,7 +59,7 @@ Here you can change parameters such as transcription model type, model domain, a
     
 - <strong>Model domain:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific media terminology. Currently supported model domains are: `GENERIC` and `MEDICAL`
 
-   > Note: `MEDICAL` domain is only supported by `ORACLE` model
+    > Note: `MEDICAL` domain is only supported by `ORACLE` model
     
 - <strong>Language:</strong> Use this parameter to configure the trancription language. `WHISPER` model supports automatic language detection.
 
