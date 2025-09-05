@@ -170,25 +170,13 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     **Note:** The Gen AI Agents service currently supports .pdf and .txt file formats
 
-    <!--TODO: should we provide a sample dataset? -->
+    If you would like to use a sample pdf, click [here](https://objectstorage.us-chicago-1.oraclecloud.com/p/FGxCnVLMgA-0O62bDnhbQCc-0dHHE8nbUaWpCGITsYtkeX3LA8dXp7NYeL_F609R/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab/Design%20Considerations%20for%20GenAI%20Apps.pdf)
 
     ![object storage select files](images/kb/os_file_select.png)
 
 2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
 
     ![object storage upload files](images/kb/os_upload.png)
-
-3. Create a PAR (Pre-Authenticated Request) for your newly created bucket.
-
-    ![create par](images/kb/create_par.png)
-
-4. Create this PAR at the bucket level and not the object level. Also, change the expiration date to a future date preferably 4-5 years from now.
-
-    ![create par bucket](images/kb/create_par_bucket.png)
-
-5. Copy over the PAR URL highlighted in the image below. Please copy over the second URL and not the first one.
-
-    ![par url](images/kb/par_url.png)
 
 ## Task 6: Provision Knowledge Base
 
@@ -244,6 +232,8 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![agent creation wizard](images/agent/agent_wizard.png)
 
+    > **Note** The agent tools will be configured in the next lab.
+
 3. In few minutes the status of recently created Agent will change from Creating to Active
 
     Click on “Endpoints” menu item in the left panel and then the Endpoint link in the right panel.
@@ -269,7 +259,7 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 
     ![Create VCN](images/functions/networking-vcn.png)
 
-    - Select 'Start VCN Wizard' 
+    - Select Actions > 'Start VCN Wizard' 
 
     ![Start VCN Wizard](images/functions/vcn-wizard.png)
 
@@ -293,7 +283,7 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 
     ![Fn App Config](images/functions/fn-app-config.png)
 
-4. You may now **proceed to the next lab*
+4. You may now **proceed to the next lab**
 
 ## Learn More
 
@@ -314,4 +304,4 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 * **Yanir Shahak**, Senior Principal Software Engineer
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025

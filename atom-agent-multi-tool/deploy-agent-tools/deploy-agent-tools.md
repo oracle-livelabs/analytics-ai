@@ -6,7 +6,6 @@ This lab will go through the steps on configuring the GenAI Agent tools. First w
 
 The following agent tools will be configured: 
 * General LLM Chat (Built-in)
-* Document Understanding
 * Weather
 * RAG 
 * SQL
@@ -115,11 +114,9 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 This task will help you to create a VCN and private subnet in your compartment. This will be used for the ADB for the SQL Tool.
 
-1. Go to Networking -> Virtual cloud networks and Create VCN. Provide IPv4 CIDR Blocks as 10.0.0.0/16
+1. Go to Networking -> Virtual cloud networks and select the VCN created in Lab 1.
 
-2. Go to the newly created VCN and click on Create Subnet. Provide IPv4 CIDR Block as 10.0.1.0/24 and click on Private Subnet. You can leave rest as default. Click on Create Subnet.
-
-3. Click on newly created subnet and go to the Security List. Add following ingress rules in the security list. Make sure to have the ingress rule to access database port 1521-1522
+2. Click on the private subnet and go to the Security List. Add following ingress rules in the security list. Make sure to have the ingress rule to access database port 1521-1522
 
     ![Ingress Rules](images/adb/ingress_rules.png)
 
@@ -275,7 +272,7 @@ CREATE TABLE Employees (
 
 ## Task 9: Create a Weather Tool
 
-  1. Navigate to your agent tools and create a new tool called "get_weather" 
+  1. Navigate to your agent tools and create a new custom function tool called "get_weather" 
 
   - Give the following description - 
 
@@ -306,7 +303,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 2. Navigate back to your function application created in the previous lab.
 
-3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
+3. Select Application > Cloud shell setup > View guide and take note of the steps to login and deploy the functions.
 
     ![Fn Cloud Setup](images/fn-deploy/cloud-shell.png)
 
@@ -315,7 +312,7 @@ In this section, we will delve into the process of creating and deploying an Ora
         - Logging in to the container registry 
         - Deploying the function to your application
 
-   > **Note:** You don't need to run the last invoke command. We will be invoking the function later from ODA. 
+   > **Note:** You dont need to run the init command since the fn is already provided. You also don't need to run the last invoke command. We will be invoking the function later from ODA. 
 
 4. At the top right of the oci console, open a new cloud shell
 
@@ -363,6 +360,14 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 > **Note** If you get an error with the architecture, you can change the architecture from the cloud shell 
 
+> **Note** If you run into space issues, you can delete any unused containers with 
+
+```bash
+$ docker image prune 
+or 
+$ docker image prune -a 
+```
+
 ![Change Architecture](images/fn-deploy/change-architecture-cs.png)
 
 > **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, you can enable provisioned concurrency on your function to enable hot starts. 
@@ -388,4 +393,4 @@ In this section, we will delve into the process of creating and deploying an Ora
   * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date**
-  * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
+  * **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025

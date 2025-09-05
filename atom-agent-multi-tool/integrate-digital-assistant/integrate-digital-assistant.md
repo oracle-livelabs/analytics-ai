@@ -87,7 +87,8 @@ Rule 3
     ```text
     <copy>
     Allow any-user to use fn-invocation in tenancy where request.principal.id='ocid1.odainstance.oc1.us-chicago-1.XXXXXXXXXXXXXXXXXXXX'
-    Allow dynamic-group odaDynamicGroup to use fn-invocation in tenancy
+    Allow dynamic-group <your-dynamic-group> to use fn-invocation in tenancy
+    Allow dynamic-group <your-dynamic-group> to manage genai-agent-family in tenancy
     </copy>
     ```
 
@@ -128,6 +129,8 @@ Rule 3
     </copy>
     ```
     
+    > * **Note** Be sure to include OCI Resource Principal as authentication. 
+
 3. If configured correctly, you should get a success response 
 
     ![200 Response](images/oda/success-response.png)
@@ -136,9 +139,11 @@ Rule 3
 
     > * **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
 
+    > * **Note** If your function isn't enabled to have hot starts, the function might need to be invoked twice before getting a 200 response. 
+
 ## Task 5: Import Skill
 
-1. Import the following skill 
+1. Import the following skill under Development > Skills > Import Skill (top right)
 
     [genai-agent-adk-livelab](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenaiagentadklivelab(1.0).zip)
 
@@ -165,7 +170,9 @@ Rule 3
     </copy>
     ```
 
-7. Train the bot and select preview (top right). Ask a question such as 'How are you'. If everything was configured correctly, you should get a response. 
+7. Set the Result variable to 'agentResult'.
+
+8. Train the bot and select preview (top right). Ask a question such as 'How are you'. If everything was configured correctly, you should get a response. 
 
     > **Note** You can review any unexpected behavior in the preview of ODA to diagnose any issues. 
     
@@ -175,7 +182,7 @@ Rule 3
 
     ![Add Channel](images/oda/add-channel.png)
 
-2. Select Oracle Web, disable client authentication, and put '*' as allowed domains 
+2. Select Oracle Web, disable client authentication, and put '*' as allowed domains. Also make sure the channel is routed to the skill and enabled.
 
     ![Create Channel](images/oda/create-channel.png)
 
@@ -217,7 +224,7 @@ Rule 3
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
+    * Please make sure the initUserHiddenMessage on Line 32 is 'Hello'
 
     ![Create Channel](images/vb/vb_config.png)
 
@@ -243,7 +250,9 @@ Rule 3
 
 **Troubleshooting** 
 
-1. If you get 404 errors, it's likely a permission issue. Please review the policies. 
+1. If there are 404 errors, it's likely a permission issue. Please review the policies. 
+
+2. For other errors, logging can be enabled in the function application under Monitoring > Function Invocation logs.
 
 ## Acknowledgements
 
@@ -255,4 +264,4 @@ Rule 3
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025
