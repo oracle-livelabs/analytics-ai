@@ -34,7 +34,7 @@ This task will help you to create Oracle Digital Assistant under your chosen com
 
    ![Navigate to Digital Assistant](images/oda/oda_provision_1.png)
 
-   > **Note:** You can find Digital Assistant under the AI Services.
+   > **Note:** Digital Assistant can be found under AI Services.
 
 2. Provide the information for **Compartment**, **Name** , **Description** (optional) & **Shape**. Click **Create**
 
@@ -108,11 +108,11 @@ Rule 3
 
 3. Test the connection. If successful, you should get a 200 response with a session id. Note the session id for the next Task. 
 
-    > **Note** If you get a 404 error, that likely means a policy is missing or misconfigured. Check Task 2 and make sure the ODA service can connect to the agent service. 
+    > **Note** If it's throwing a 404 error, that likely means a policy is missing or misconfigured. Check [Task 2](./integrate-digital-assistant.md#task-2-dynamic-group--policy-creation-for-oracle-digital-assistant) and make sure the ODA service can connect to the agent service. 
 
 ## Task 4: Configure API Endpoint to Agent Function
 
-1. Open your ODA service console provisioned in Task 1 and navigate to API services > Add Service
+1. Open the ODA service console provisioned in Task 1 and navigate to API services > Add Service
 
     ![API Services](images/oda/oda-configure-fn.png)
 
@@ -131,15 +131,15 @@ Rule 3
     
     > * **Note** Be sure to include OCI Resource Principal as authentication. 
 
-3. If configured correctly, you should get a success response 
+3. If configured correctly, there should be a success response 
 
     ![200 Response](images/oda/success-response.png)
 
-    > * **Note** 404 responses usually indicate a policy is missing/misconfigured. Please refer back to Task 2.
+    > * **Note** 404 responses usually indicate a policy is missing/misconfigured. Please refer back to [Task 2](./integrate-digital-assistant.md#task-2-dynamic-group--policy-creation-for-oracle-digital-assistant).
 
-    > * **Note** Session IDs by default last for one hour. After one hour you will have to generate a new session id. 
+    > * **Note** Session IDs by default last for one hour. After one hour a new session id will have to be created. 
 
-    > * **Note** If your function isn't enabled to have hot starts, the function might need to be invoked twice before getting a 200 response. 
+    > * **Note** If the function isn't enabled to have hot starts, the function might need to be invoked twice before getting a 200 response. 
 
 ## Task 5: Import Skill
 
@@ -155,7 +155,7 @@ Rule 3
 
 4. Open the 'UnresolvedIntent' flow and select the 'callAgent' state
 
-5. In the REST service select your own function api endpoint 
+5. In the REST service select the function api endpoint 
 
     ![Configure Agent Fn](images/oda/skill-config-fn.png)
 
@@ -174,7 +174,7 @@ Rule 3
 
 8. Train the bot and select preview (top right). Ask a question such as 'How are you'. If everything was configured correctly, you should get a response. 
 
-    > **Note** You can review any unexpected behavior in the preview of ODA to diagnose any issues. 
+    > **Note** Any unexpected behavior can be reviewed in the preview of ODA to diagnose issues. 
     
 ## Task 6: Configure & Expose Skill
 
@@ -242,7 +242,7 @@ Rule 3
 
     ![Invoke Tools](images/vb/chat-sql.png)
 
-     > * **Note** If you are using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing your sql queries. This can be done by filtering your results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the previous lab on creating sql tools. 
+     > * **Note** If using your own tables with lots of data and it occasionally throws 'Oops' errors, this can be fixed by optimizing the sql queries. This can be done by filtering the results to remove unnecessary columns, specifically by providing in-line sql example to the sql tool. Refer back to the [previous lab](../deploy-agent-tools/deploy-agent-tools.md#task-8-create-sql-tool) on creating sql tools. 
 
     * You can also invoke the raq tool or ask general questions 
 

@@ -245,7 +245,13 @@ CREATE TABLE Employees (
 </copy>
 ```
 
-> **Note** If you are using your own table, you can get a better idea of the schema by running DESC table_name;
+> **Note** If using your own table, to get a better idea of the schema run
+
+```sql
+DESC table_name;
+```
+ 
+in SQL Developer. 
 
 ![Create SQL Tool](images/sqltool/create-tool.png)
 
@@ -262,17 +268,17 @@ CREATE TABLE Employees (
 
   ![Test SQL Tool](./images/sql/test-sql-tool-2.png)
 
-  > * **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
+  > * **Note** If the sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
 
-  > * **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
+  > * **Note** Also make sure the agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
 
-  > * **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
+  > * **Note** If returning 404 errors, there is likely a missing policy. Refer back to [Task 2 step 6](./deploy-agent-tools.md#task-2-dynamic-group-and-policy-definition-for-adb-and-db-tools-connection). 
 
-  > * **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
+  > * **Note** If querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to the query to reduce size of response. 
 
 ## Task 9: Create a Weather Tool
 
-  1. Navigate to your agent tools and create a new custom function tool called "get_weather" 
+  1. Navigate to the agent tools and create a new custom function tool called "get_weather" 
 
   - Give the following description - 
 
@@ -312,7 +318,7 @@ In this section, we will delve into the process of creating and deploying an Ora
         - Logging in to the container registry 
         - Deploying the function to your application
 
-   > **Note:** You dont need to run the init command since the fn is already provided. You also don't need to run the last invoke command. We will be invoking the function later from ODA. 
+   > **Note:** The init command doesn't need to be run since the fn is already provided. The last invoke command also doesn't need to be ran. We will be invoking the function later from ODA. 
 
 4. At the top right of the oci console, open a new cloud shell
 
@@ -354,11 +360,11 @@ In this section, we will delve into the process of creating and deploying an Ora
   </copy>
   ```
 
-  - Take note of the function invoke endpoint once created
+  - Take note of the function invoke endpoint once created.
 
 ![Deployed Function](images/fn-deploy/deploy_function.png)
 
-> **Note** If you get an error with the architecture, you can change the architecture from the cloud shell 
+> **Note** If there is an error with the architecture, the architecture can be changed from the cloud shell. 
 
 > **Note** If you run into space issues, you can delete any unused containers with 
 
@@ -370,7 +376,7 @@ $ docker image prune -a
 
 ![Change Architecture](images/fn-deploy/change-architecture-cs.png)
 
-> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, you can enable provisioned concurrency on your function to enable hot starts. 
+> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, enable provisioned concurrency on the function to enable hot starts. 
 
 ![Provisioned Concurrency](images/fn-deploy/provisioned-concurrency.png)
 

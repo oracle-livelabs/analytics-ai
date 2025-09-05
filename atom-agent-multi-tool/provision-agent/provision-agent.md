@@ -273,7 +273,7 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 
     - Navigate to Review and Create and select 'Create'
 
-3. Create function application using subnet in previous step
+3. Create function application using the public subnet in previous step
 
     - From the Cloud Console, navigate to Developer Services > Functions > Applications 
 
