@@ -14,38 +14,32 @@
           },
      
           {
-              "title": "Lab 1: Create MySQL Database System",
-              "filename": "../../create-dbs/create-dbs.md"
+              "title": "Lab 1: Create HeatWave Instance",
+              "filename": "../../create-heatwave/create-heatwave.md"
           },
   
           {
-            "title": "Lab 2: Connect to MySQL HeatWave With Cloud Shell Private Access and OCI Shell",
+            "title": "Lab 2: Connect to MySQL HeatWave With Cloud Shell and load data",
             "filename": "../../connect-dbs-ocishell-mysqlshell/connect-dbs-ocishell-mysqlshell.md"
           },
   
           {
-              "title": "Lab 3: Load HeatWave cluster",
-              "filename": "../../load-heatwave/load-heatwave.md"
-          },
-          
-          {
-              "title": "Lab 4: Run Queries in HeatWave and MySQL ",
+              "title": "Lab 3: Run Queries in HeatWave and MySQL ",
               "filename": "../../run-queries/run-queries.md"
           },
         
           {
-            "title": "Lab 5:  (Bonus) Build a real-time dashboard in Oracle Analytics Cloud with MySQL HeatWave",
+            "title": "Lab 4:  (Bonus) Build a real-time dashboard in Oracle Analytics Cloud with MySQL HeatWave",
             "filename": "../../do-oac/do-oac.md"
-          }, 
-    
-        
+          },
+
           {
-            "title": "Lab 6: (Bonus) Build a LAMP application with MySQL HeatWave",
+            "title": "Lab 5: (Bonus) Build a LAMP application with MySQL HeatWave",
             "filename": "../../create-lamp/create-lamp.md"
           },
         
           {
-            "title": "Lab7: Stop OCI Services",
+            "title": "Lab 6: Stop OCI Services",
             "filename": "../../stop-services/stop-services.md"
           },
 
