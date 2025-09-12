@@ -1,2 +1,2 @@
 PyAudio>=0.2.14
-oci-ai-speech-realtime>=2.1.0
+oci-ai-speech-realtime>=2.2.0

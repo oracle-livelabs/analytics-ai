@@ -124,6 +124,7 @@ if __name__ == "__main__":
     realtime_speech_parameters.model_domain = (
         realtime_speech_parameters.MODEL_DOMAIN_GENERIC
     )
+    realtime_speech_parameters.model_type = "ORACLE"
     realtime_speech_parameters.partial_silence_threshold_in_ms = 0
     realtime_speech_parameters.final_silence_threshold_in_ms = 2000
     realtime_speech_parameters.encoding="audio/raw;rate=16000"
