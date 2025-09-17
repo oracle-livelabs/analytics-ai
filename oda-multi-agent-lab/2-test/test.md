@@ -14,7 +14,7 @@ We will test the following architecture:
 2. Agent with history (memory)
 3. Router - Agent calling other agents
 4. Reflection (2 agents working in team)
-5. Supervisor (a main agent calling other agent and looping until the good answer is found)
+5. Supervisor, a main agent calling other agents and looping until the good answer is found
 
 ![Agent Architecture](images/agent-architecture.png =50%x*)  
 
