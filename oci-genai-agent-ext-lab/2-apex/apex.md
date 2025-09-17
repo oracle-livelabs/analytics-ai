@@ -22,7 +22,7 @@ Estimated time: 10 min
 1. Type "when was jazz created", then *Enter*
 
     Hover on the citation. Note that you can see the page number. Click on the link.
-    ![Test Jazz](images/test-when-jazz.png)    
+    ![Test Jazz](../0-introl/images/when-was-jazz-created.png)    
 
 1. Type "what is Oracle Analytics", then *Enter*
 
@@ -36,7 +36,7 @@ Estimated time: 10 min
     |           |           | What is Document Understanding                    |
     | Word      | .docx     | What is OCI ?                                     |
     | Image     | .png      | List the countries in the map of brazil           |
-    | Website   | .sitemap  | What is Digital Assistant ?                       |
+    | Website   | .selenium | What is Digital Assistant ?                       |
     | FAX       | .tif      | Is there an invoice for Optika ?                  | 
     |           |           | What does the file invoice.tif contains ?         |
     | Video     | .mp4      | What is Oracle Analytics                          | 

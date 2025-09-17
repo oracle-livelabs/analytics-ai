@@ -66,8 +66,7 @@ What will happen internally, depending of the file type, it will be processed in
 - If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision. The output is stored in the AGENT Object storage 
 - If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech.
 - If the file has the extension **.tif**, it is processed by OCI Document Understanding.
-- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. 
-- All other file types like **.doc**, **.docx**, **,xlsx**, **.pptx** are sent to OCI Function with a document parser.
+....
 
 ## Known issues
 
@@ -87,8 +86,15 @@ cat target/ssh_key_starter
 SSH to Bastion
 ./starter.sh ssh bastion
 
+# Check the log
 cd app
 cat ingest.log
+
+# Check the choice of the program by extension
+cd src
+vi document.py
+
+...
 ```
 
 ## Acknowledgements
