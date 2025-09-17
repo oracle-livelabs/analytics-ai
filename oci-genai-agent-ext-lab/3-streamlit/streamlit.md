@@ -32,7 +32,7 @@ Estimated time: 10 min
     |           |           | What is Document Understanding                    |
     | Word      | .docx     | What is OCI ?                                     |
     | Image     | .png      | List the countries in the map of brazil           |
-    | Website   | .sitemap  | What is Digital Assistant ?                       |
+    | Website   | .selenium | What is Digital Assistant ?                       |
     | FAX       | .tif      | Is there an invoice for Optika ?                  | 
     |           |           | What does the file invoice.tif contains ?         |
     | Video     | .mp4      | What is Oracle Analytics                          | 
