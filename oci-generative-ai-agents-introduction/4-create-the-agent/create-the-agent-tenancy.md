@@ -45,11 +45,13 @@ This lab assumes you have:
 
 1. Under the **Tools** section, click the **Add tool** button to create our first tool.
 
-   ![Screenshot showing how to create a new tool](./images/create-new-tool.jpg)
+   ![Screenshot showing how to create a new tool](./images/create-new-tool.png)
 
 1. Select the **RAG** tool option.
 1. Under the **RAG Configuration** section, use _Knowledge base articles_ in the **Name** field.
-1. For the **Description** field, use: _This tool will retrieve knowledge base support articles whenever a customer support representative requires troubleshooting information to resolve a support ticket_. It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
+1. For the **Description** field, use: _This tool will retrieve knowledge base support articles whenever a customer support representative requires troubleshooting information to resolve a support ticket_.
+
+   It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
 
    ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.jpg)
 
@@ -86,9 +88,9 @@ This lab assumes you have:
 
    ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.jpg)
 
-1. Now that we have our RAG tool configured, let's configure our SQL tool. In the **Tools** section Click the **Create tool** button.
+1. Now that we have our RAG tool configured, let's configure our SQL tool. In the **Tools** section Click the **Add tool** button.
 
-   ![Screenshot showing the create tool button for creating the SQL tool](./images/create-sql-tool.jpg)
+   ![Screenshot showing the create tool button for creating the SQL tool](./images/create-new-tool.png)
 
 1. Click the **SQL** option.
 1. For the **Name** field, use: _Customer support database_.
@@ -191,7 +193,7 @@ This lab assumes you have:
 
 1. For **Model customization**, select the **Small** option.
 1. For **Dialect**, select **Oracle SQL**.
-1. In the **Database tool connection in...** select the **customer-support** connection we've previously created.
+1. In the **Database tool connection in...** select the **connection-customersupportXXXX** connection we've previously created.
 1. Click the **Test connection** button.
 
    ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2.jpg)

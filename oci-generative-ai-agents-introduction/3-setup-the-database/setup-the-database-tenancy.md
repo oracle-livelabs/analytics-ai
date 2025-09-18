@@ -256,7 +256,7 @@ In this task we are going to create a Vault and an encryption key. We are going 
    ![Screenshot showing how to navigate to the vault page](./images/navigate-to-vault.jpg)
 
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
-1. Click the **Create Autonomous Database** button at the top of the **Autonomous Databases** table.
+1. Click the **Create Vault** button at the top of the **Vaults** table.
 
    ![Screenshot showing how to navigate to the create vault page](./images/create-vault-button.jpg)
 
