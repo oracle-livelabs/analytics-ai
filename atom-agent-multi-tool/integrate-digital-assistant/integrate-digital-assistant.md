@@ -96,9 +96,11 @@ Rule 3
 
 ## Task 3: Configure Create Session API Endpoint 
 
-1. Import the following sample yaml file 
+1. Download & import the following sample yaml file in ODA > Settings > API Services > More > Import REST Services
 
     [Create Session yaml](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2FRESTService-GenAIAgentCreateSession.yaml)
+
+    ![Import Create Session yaml](images/oda/import-yaml.png)
 
     > **Note** The endpoint can also be configured manually by referring to the [Create Session API Documentation](https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai-agents-client/20240531/Session/CreateSession)
 
@@ -106,6 +108,8 @@ Rule 3
 
     ![Agent Endpoint Config](images/oda/agent-endpoint-config.png)
 
+    > **Note** This will be the agent endpoint id, not the agent ocid 
+    
 3. Test the connection. If successful, you should get a 200 response with a session id. Note the session id for the next Task. 
 
     > **Note** If it's throwing a 404 error, that likely means a policy is missing or misconfigured. Check [Task 2](./integrate-digital-assistant.md#task-2-dynamic-group--policy-creation-for-oracle-digital-assistant) and make sure the ODA service can connect to the agent service. 
