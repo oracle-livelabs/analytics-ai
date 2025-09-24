@@ -226,13 +226,17 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
 
+    Select Add tool > Choose RAG tool 
+
+    ![Create Tool](images/agent/create-tool.png)
+
     Select the Knowledge Base that you created in the previous task. Providing the Welcome message is optional.
 
     Click the “Create” button.
 
     ![agent creation wizard](images/agent/agent_wizard.png)
 
-    > **Note** The agent tools will be configured in the next lab.
+    > **Note** The other agent tools will be configured in the next lab.
 
 3. In few minutes the status of recently created Agent will change from Creating to Active
 
