@@ -39,28 +39,52 @@ This lab assumes you have:
 
 ## Task 2: Create Australia map and add map color to it
 
-1. Double Click Country column from live locations data set and change viz to maps
+1. Expand the live location data set and double click Country column
 
-    ![map](./images/54-Add-country-and-change-viz-to-maps.jpg)
+    ![expand_live_location](./images/54.1%20ExpandLivedataset.png)
 
-2. Select the Map layer and change it to world countries and change color to #fbcb05
+2. From the visualization pane, change the viz type to Map
 
-    ![Map color](./images/55-Map-change-layer-and-add-color.jpg)
+    ![map](./images/54.2select_map_viz.png)
+
+3. Select the properties panel
+
+    ![properties_panel](./images/54.3proerties_panel.png)
+
+4. Select the layers and change the Map Layer to world countries and change color to #fbcb05
+
+    ![Map_color](./images/55-Map-change-layer-and-add-color.jpg)
 
     You have now created a map of Australia and applied color to it.
     Next we will layer it with speed, route and add labels.
 
 ## Task 3: Add layers to the map
 
-1. Add a new layer to the map by selecting the three dots. Select add Data Layer
+1. Return to the grammar pane
+
+    ![return_to_grammar](./images/54.4retrun_to_grammar_pane.png)
+
+2. Add a new layer to the map by selecting the three dots. Select add Data Layer
 
     ![Add data layer](./images/56-Add-Layer-2-to-Map.jpg)
 
-2. Add Route_WKT column in the category and Avg_vehicle_velocity to the Color section
+3. Expand the route data set and drag Route_WKT column in the category and expand the seed data set and add Avg_vehicle_velocity to Color
 
     ![add route and speed](./images/57-Add-Route-and-Speed-to-layer-2.jpg)
 
-3. Go to Layers and rename the layer to Route and change color to #0b4574
+4. Go to properties again and select Layers. Expand Route_WKT.
+
+    ![properties_again](./images/56.1properties_again.png)
+
+5. For the Name , select Auto and then choose Custom option. Rename it as route.
+
+    ![add route](./images/56.2change_name.png)
+
+6. Rename the layer to Route
+
+    ![add route](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
+
+7. Change color of the race track to #0b4574, by right clicking any point of the segment and selecting Color and then Manage Assignments
 
     ![add route](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
 
