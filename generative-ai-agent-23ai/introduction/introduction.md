@@ -18,7 +18,7 @@ Estimated Workshop Time: 3 hours
 
 Objective of this workshop is to set-up the required OCI services to create a full Generative AI Agent solution with RAG capabilities:
 
-![Architecture Diagram](images/architecture_23ai.png)
+![Architecture Diagram](images/ODAGenAI23AIArchDiagram3.jpg)
 
 * OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in 23ai database, using OCI Generative AI Agent Service.
