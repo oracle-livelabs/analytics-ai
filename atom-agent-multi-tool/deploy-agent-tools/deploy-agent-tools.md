@@ -32,7 +32,7 @@ This lab assumes you have:
 
   > **Note** Tasks 2-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. 
 
-## Task 1: Add Agent Routing Instructions and Create RAG Tool 
+## Task 1: Add Agent Routing Instructions and Confirm RAG Tool Configuration
 
 1. Navigate to your GenAI Agent created in the previous lab 
 
@@ -48,11 +48,11 @@ This lab assumes you have:
 
     > **Note** Be sure to replace "info on your dataset" above with a relevant term to your knowledge base to help the agent route to the correct tool. In our example, our dataset relates to wines.
 
-3. Select your agent and create a new tool 
+3. Select your agent and confirm it has a RAG tool as configured in the previous lab. If not, create a new tool.
 
 ![Create RAG Tool](./images/rag/create-rag-tool.png)
 
-4. Give a description of the tool and select the knowledge base you created in the previous lab 
+4. Confirm the description of the tool and the knowledge base you created in the previous lab 
 
 ![Configure RAG Tool](./images/rag/config-rag.png)
 
