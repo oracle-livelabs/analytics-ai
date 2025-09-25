@@ -29,17 +29,17 @@ This lab assumes you have:
 
     ![Create workbook](./images/51-CreateWorkbook.jpg)
 
-2. Import the data sets created in lab 3 , using the + icon . **Use the Add Data to upload the data sets one by one in this workbook**
+2. Import the data sets created in lab 3 , using the + icon .Use the Add Data to upload the data sets one by one in this workbook
 
     ![Drag data file](./images/52-Add-both-data.png)
 
-3. The data pane looks like this when the data sets get uploaded.
+3. The data pane looks like this when the data sets get uploaded
 
     ![Data Pane](./images/53-The-data-pane-should-look-like-this.png)
 
 ## Task 2: Create Australia map and add map color to it
 
-1. Expand the live location data set and double click Country column
+1. Expand the live location data set and double click Country
 
     ![expand_live_location](./images/54.1%20ExpandLivedataset.png)
 
@@ -51,7 +51,7 @@ This lab assumes you have:
 
     ![properties_panel](./images/54.3proerties_panel.png)
 
-4. Select the layers and change the Map Layer to world countries and change color to #fbcb05
+4. Select the properties and change the Map Layer to world countries and change color to #fbcb05
 
     ![Map_color](./images/55-Map-change-layer-and-add-color.jpg)
 
@@ -68,15 +68,15 @@ This lab assumes you have:
 
     ![Add data layer](./images/56-Add-Layer-2-to-Map.jpg)
 
-3. Expand the route data set and drag Route_WKT column in the category and expand the seed data set and add Avg_vehicle_velocity to Color
+3. Expand the route data set and drag Route WKT column in the category and expand the seed data set and add Avg vehicle velocity to Color
 
     ![add route and speed](./images/57-Add-Route-and-Speed-to-layer-2.jpg)
 
-4. Go to properties again and select Layers. Expand Route_WKT.
+4. Go to properties and then Layers. Expand Route WKT.
 
     ![properties_again](./images/56.1properties_again.png)
 
-5. For the Name , select Auto and then choose Custom option. Rename it as route.
+5. For the Name, select Auto and then choose Custom option.
 
     ![add route](./images/56.2change_name.png)
 
