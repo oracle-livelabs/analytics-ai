@@ -12,7 +12,6 @@ In this lab, you will:
 
 - Generate a map of Australia and give it a color
 - Add multiple layers to the map
-- Add layers to the map
 - Add color background
 
 ### Prerequisites
@@ -37,9 +36,9 @@ This lab assumes you have:
 
     ![Data Pane](./images/53-The-data-pane-should-look-like-this.png)
 
-## Task 2: Create Australia map and add map color to it
+## Task 2: Create Australia map and add color to it
 
-1. Expand the live location data set and double click Country
+1. Expand the live location dataset and double click Country
 
     ![expand_live_location](./images/54.1%20ExpandLivedataset.png)
 
@@ -51,7 +50,7 @@ This lab assumes you have:
 
     ![properties_panel](./images/54.3proerties_panel.png)
 
-4. Select the properties and change the Map Layer to world countries and change color to #fbcb05
+4. Go to Layers and then change the Map Layer to world countries and color to #fbcb05
 
     ![Map_color](./images/55-Map-change-layer-and-add-color.jpg)
 
@@ -68,7 +67,7 @@ This lab assumes you have:
 
     ![Add data layer](./images/56-Add-Layer-2-to-Map.jpg)
 
-3. Expand the route data set and drag Route WKT column in the category and expand the seed data set and add Avg vehicle velocity to Color
+3. Expand the route dataset and drag Route WKT column in the category and expand the speed dataset and add Avg vehicle velocity to Color
 
     ![add route and speed](./images/57-Add-Route-and-Speed-to-layer-2.jpg)
 
@@ -84,23 +83,23 @@ This lab assumes you have:
 
     ![rename layer](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
 
-7. Change color of the race track by right clicking any point of the segment and selecting Color and then Manage Assignments
+7. Change color of the race track by right clicking any point on the race track. Select Color and then Manage Assignments
 
     ![add route](./images/56.3color_route.png)
 
-8. Once the pop up window appears for color, enter the color #0b4574
+8. Once the pop up window appears, enter the color #0b4574
 
     ![add route color](./images/56.4changecolorofroute2.png)
 
-9. Return to Grammar pane and sdd another layer by selecting the three dots
+9. Return to Grammar pane and add another layer by selecting the three dots
 
     ![add layer 3](./images/59-Add-layer-3.jpg)
 
-10. From the route data set add Segment_name in the Category
+10. From the route dataset add Segment name in the Category
 
     ![segment name](./images/59.1-Add-Segment-name-to-Layer-3.jpg)
 
-11. Go to the properties and then to layers. Expand the segment_name layer and change the name to Segment Name , color to Black and outline to custom size of 8, change the data labels option to  right and set columns to SEGMENT_NAME
+11. Go to the properties and then to layers. Expand the segment name layer and change name to Segment Name , color it Black and outline to custom size of 8, change the data labels option to  right and set columns to SEGMENT NAME
 
     ![add layer 3 properties](./images/60-Add-layer-3-Properties.jpg)
 

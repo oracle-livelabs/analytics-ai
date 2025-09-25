@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will **upload the excel files** required to create the map provided in the resources section. First, we will upload the live race excel file and save it. Next, we will create another dataset by integrating two excel files (race route and speed data) into OAC using an inner join to produce a combined dataset.
+In this lab, you will **upload the excel files** required to create the map provided in the resources section. First, we will upload the live race excel file and save it. Next, we will create another dataset by integrating two excel files (race route and speed) into OAC using an inner join to produce a combined dataset.
 
 _Estimated Time:_ 10 minutes
 
@@ -10,7 +10,7 @@ _Estimated Time:_ 10 minutes
 
 In this lab, you will:
 
-- Upload the excel file in OAC as datasets
+- Upload the excel files in OAC as datasets
 
 ### Prerequisites
 
@@ -19,7 +19,7 @@ This lab assumes you have:
 - An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
 - Provisioned Oracle Analytics Cloud
 - All previous labs successfully completed
-- Downloaded all the three excels files provided in the resources
+- All three excels files provided in the resources have been downloaded
 
 ## Task 1: Upload the live race excel file
 
@@ -65,11 +65,11 @@ This lab assumes you have:
 
     ![Change data type](./images/2%20Upload%20joint%20excel%20file/5%20Select%20all%20the%20highlighted%20columns%20and%20change%20the%20property%20to%20Attribute%20from%20numeric.gif)
 
-6. Go back to the Join Diagram tab and, at the top of the page, select the **+** button
+6. Go back to the Join Diagram tab and, at the top of the page, select the **+** button and Add File
 
     ![Add data](./images/2%20Upload%20joint%20excel%20file/6%20Go%20back%20to%20join%20diagram%20tab%20and%20add%20File%20.jpg)
 
-7. Select the Excel file speed from your computer. Once the speed file populates, click **OK**
+7. Select the excel file speed from your computer. Once the speed file populates, click **OK**
 
     ![import data](./images/2%20Upload%20joint%20excel%20file/7%20Add%20speed%20file%20and%20click%20ok.png)
 
@@ -77,7 +77,7 @@ This lab assumes you have:
 
     ![Change data type](./images/2%20Upload%20joint%20excel%20file/8%20Speed%20Tab%20and%20change%20the%20data%20type.jpg)
 
-9. Go to the Join Diagram tab and create an Inner Join by selecting Segment from route data and Segment ID from speed data.
+9. Go to the Join Diagram tab and create an inner join by selecting Segment from route data and Segment ID from speed data.
 
     ![Inner join](./images/2%20Upload%20joint%20excel%20file/9%20Inner%20Join.gif)
 
@@ -96,4 +96,3 @@ You may now *proceed to the next lab*.
 
 - **Author** - Anita Gupta (Oracle Analytics Product Strategy)
 - **Contributors** - Gautam Pisharam (Oracle Analytics Product Management)
-- **Last Updated By/Date** -

@@ -8,7 +8,7 @@ In October 2025, the University of Michigan Solar Car Team joined top student en
 
 ### About this Workshop
 
-Oracle Analytics Cloud supports the configuration of numerous [map background](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/apply-map-backgrounds-and-map-layers-enhance-visualizations.html) types that can be used to visualize your data to tell a story in a way that no conventional map could. Enhancing the map with information such as historical race results, weather conditions,speeds, turn and altitude variations, and driver statistics, makes for a more powerful, interactive presentation.
+Oracle Analytics Cloud supports the configuration of numerous [map background](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/apply-map-backgrounds-and-map-layers-enhance-visualizations.html) types that can be used to visualize your data to tell a story in a way that no conventional map could. Enhancing the map with information such as historical race results, weather conditions, speed, turn and altitude variations and driver statistics makes for a more powerful interactive presentation.
 
 In this hands-on lab you will learn how to create this interactive map. Let’s see how
 simple it is to do.
@@ -19,11 +19,11 @@ _Estimated Time:_ 50 minutes
 
 ### Objectives
 
-In this workshop, you will learn how to create a custom interactive map for the solar car project using real-world data. Specifically, you will:
+In this workshop, you will learn how to create a custom interactive map for the solar car race using real-world data. Specifically, you will:
 
 - Download the excel files provided in resources section
 
-- Load data into OAC as a Dataset
+- Load data into OAC as Datasets
 
 - Build a map with multiple layers in OAC
 
