@@ -67,9 +67,10 @@ This lab assumes you have:
 
     ![Add data layer](./images/56-Add-Layer-2-to-Map.jpg)
 
-3. Expand the route dataset and drag Route WKT column in the category and expand the speed dataset and add Avg vehicle velocity to Color. Notice that the Route WKT is marked with a globe icon, indicating that it is a geometry data type supported by OAC.
+3. Expand the route dataset and drag Route WKT column in the category and expand the speed dataset and add Avg vehicle velocity to Color.
 
     ![add route and speed](./images/57-Add-Route-and-Speed-to-layer-2.jpg)
+Notice that the Route WKT is marked with a globe icon, indicating that it is a geometry data type supported by OAC.
 
 4. Go to properties and then Layers. Expand Route WKT.
 
