@@ -82,37 +82,41 @@ This lab assumes you have:
 
 6. Rename the layer to Route
 
-    ![add route](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
+    ![rename layer](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
 
 7. Change color of the race track to #0b4574, by right clicking any point of the segment and selecting Color and then Manage Assignments
 
-    ![add route](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
+    ![add route](./images/56.3color_route.png)
 
-4. Add another layer by selecting the three dots
+8. Once the pop up window appears for color, enter the color #0b4574
+
+    ![add route color](./images/56.4changecolorofroute2.png)
+
+9. Return to Grammar pane and sdd another layer by selecting the three dots
 
     ![add layer 3](./images/59-Add-layer-3.jpg)
 
-5. Add Segment name in the Category
+10. From the route data set add Segment_name in the Category
 
     ![segment name](./images/59.1-Add-Segment-name-to-Layer-3.jpg)
 
-6. Go to the layers and change the name to Segment Name , color to Black and outline to custom size of 8, change the data labels option to  right and set columns to SEGMENT_NAME
+11. Go to the properties and then to layers. Expand the segment_name layer and change the name to Segment Name , color to Black and outline to custom size of 8, change the data labels option to  right and set columns to SEGMENT_NAME
 
     ![add layer 3 properties](./images/60-Add-layer-3-Properties.jpg)
 
-7. Add layer 4 to the map
+12. Go back to grammar and add layer 4 to the map
 
     ![add layer 4](./images/61-Add-Layer-4.jpg)
 
-8. Add latitude and longitude to layer 4
+13. Expand the live location data set and drag latitude and longitude to category and driver to shape. Then click the arrow in the shape section.
 
     ![add layer 4 attributes](./images/62-Add-elements-to-Layer4.jpg)
 
-9. In the shape section, select the down arrow to reset the custom shapes and change the shape to down triangle
+14. Select the custom shapes and change the shape to down triangle
 
     ![add shape to layer 4](./images/63-Custom-shape-of-Car.jpg)
 
-10. Go to layers and rename this layer to live race position, change color to #fbcb05, change outline to custom and size it to 18
+15. Go to properties and rename this layer to live race position, change color to #fbcb05, change outline to custom and size it to 18
 
     ![add shape to layer 4](./images/64-Live-Race-properties-add.jpg)
 
@@ -136,4 +140,3 @@ Congratulations on completing this workshop!
 
 - **Author** - Anita Gupta (Oracle Analytics Product Strategy)
 - **Contributors** - Gautam Pisharam (Oracle Analytics Product Management)
-- **Last Updated By/Date** -

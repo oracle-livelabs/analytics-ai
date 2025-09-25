@@ -43,4 +43,3 @@ This lab includes three Excel files. Please download and save them to a folder o
 
 - **Author** - Anita Gupta (Oracle Analytics Product Strategy)
 - **Contributors** - Gautam Pisharam (Oracle Analytics Product Management)
-- **Last Updated By/Date** -
