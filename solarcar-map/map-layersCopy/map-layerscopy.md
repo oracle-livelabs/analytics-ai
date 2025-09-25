@@ -84,7 +84,7 @@ This lab assumes you have:
 
     ![rename layer](./images/58-Add-color-to-Layer-2-and-rename-layer-2-as-route.jpg)
 
-7. Change color of the race track to #0b4574, by right clicking any point of the segment and selecting Color and then Manage Assignments
+7. Change color of the race track by right clicking any point of the segment and selecting Color and then Manage Assignments
 
     ![add route](./images/56.3color_route.png)
 
