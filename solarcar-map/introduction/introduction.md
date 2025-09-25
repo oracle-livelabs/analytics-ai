@@ -39,7 +39,7 @@ This lab includes three Excel files. Please download and save them to a folder o
 - [speed](./files/speed.csv?download=1)
 - [live location](./files/live%20location.csv?download=1)
 
-_Note:_The race route was created using an open-source mapping tool by plotting the control stops and connecting them with line strings to represent the race path. It was first generated on OpenStreetMap, downloaded as GeoJSON, and then converted into Excel for ease of use. The final route data is stored in WKT (Well-Known Text) format, which is a standard for representing geographic shapes such as points, lines, and polygons. For simplicity, we have also provided the route in Excel, ready to use directly for this live lab.
+_Note:_The race route was created using an open-source mapping tool by plotting the control stops and connecting them with line strings to represent the race path. It was first generated on OpenStreetMap, downloaded as GeoJSON, and then converted into Excel for ease of use. The final route data is stored in WKT (Well-Known Text) format, which is a standard for representing geographic shapes such as points, lines, and polygons. For simplicity, we have provided the route in excel, ready to use directly for this live lab.
 
 ## **Acknowledgements**
 
