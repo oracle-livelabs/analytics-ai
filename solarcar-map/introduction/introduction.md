@@ -21,7 +21,7 @@ _Estimated Time:_ 50 minutes
 
 In this workshop, you will learn how to create a custom interactive map for the solar car race using real-world data. Specifically, you will:
 
-- Download the excel files provided in resources section
+- Download the csv files provided in resources section
 
 - Load data into OAC as Datasets
 
@@ -33,13 +33,13 @@ _At this point, you are ready to start learning! Please proceed._
 
 _Resources:_
 
-This lab includes three Excel files. Please download and save them to a folder of your choice:
+This lab includes three csv files. Please download and save them to a folder of your choice:
 
 - [route](./files/route.csv?download=1)
 - [speed](./files/speed.csv?download=1)
 - [live location](./files/live%20location.csv?download=1)
 
-_Note:_The race route was created using an open-source mapping tool by plotting the control stops and connecting them with line strings to represent the race path. It was first generated on OpenStreetMap, downloaded as GeoJSON, and then converted into Excel for ease of use. The final route data is stored in WKT (Well-Known Text) format, which is a standard for representing geographic shapes such as points, lines, and polygons. For simplicity, we have provided the route in excel, ready to use directly for this live lab.
+_Note:_The route was first generated on OpenStreetMap, exported as GeoJSON, and then converted into a csv file containing Well-Known Text (WKT) geometry. This format provides a standardized way of representing geographic features such as points, lines, and polygons. For simplicity, we have also provided the csv, ready to use directly for this live lab.
 
 ## **Acknowledgements**
 

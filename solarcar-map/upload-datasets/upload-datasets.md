@@ -1,8 +1,8 @@
-# Upload the excel file in OAC as datasets
+# Upload the csv file in OAC as datasets
 
 ## Introduction
 
-In this lab, you will **upload the excel files** required to create the map provided in the resources section. First, we will upload the live race excel file and save it. Next, we will create another dataset by integrating two excel files (race route and speed) into OAC using an inner join to produce a combined dataset.
+In this lab, you will **upload the csv files** required to create the map provided in the resources section. First, we will upload the live race csv file and save it. Next, we will create another dataset by integrating two csv files (race route and speed) into OAC using an inner join to produce a combined dataset.
 
 _Estimated Time:_ 10 minutes
 
@@ -10,7 +10,7 @@ _Estimated Time:_ 10 minutes
 
 In this lab, you will:
 
-- Upload the excel files in OAC as datasets
+- Upload the csv files in OAC as datasets
 
 ### Prerequisites
 
@@ -19,15 +19,15 @@ This lab assumes you have:
 - An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
 - Provisioned Oracle Analytics Cloud
 - All previous labs successfully completed
-- All three excels files provided in the resources have been downloaded
+- All three csv files provided in the resources have been downloaded
 
-## Task 1: Upload the live race excel file
+## Task 1: Upload the live race csv file
 
 1. Go to Create and select Dataset (**Create**)
 
     ![Select the create icon](./images/1%20Create%20Dataset.jpg)
 
-2. A dialog box will open. Select the option Drag data file, then choose the live location excel file from your computer. **Drag data file here or click to browse**
+2. A dialog box will open. Select the option Drag data file, then choose the live location csv file from your computer. **Drag data file here or click to browse**
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
@@ -43,19 +43,20 @@ This lab assumes you have:
 
     ![live location file](./images/5%20Save%20the%20file.jpg)
 
-## Task 2: Upload the route and speed excel files as one joint file
+## Task 2: Upload the route and speed csv files as one joint file
 
 1. Go to Create and select Dataset (**Create**)
 
     ![Select the create icon](./images/1%20Create%20Dataset.jpg)
 
-2. A dialog box will open. Select the option Drag Data File, then choose the route excel file from your computer. **Drag data file here or click to browse**
+2. A dialog box will open. Select the option Drag Data File, then choose the route csv file from your computer. **Drag data file here or click to browse**
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
 3. Once the Route data loads, click **OK**
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
+Note that the Route_WKT is the geometry data type column, and the column with the value [Geometry] contain the linestring information
 
 4. Open the route data tab and go to **meta data icon**
 
@@ -69,7 +70,7 @@ This lab assumes you have:
 
     ![Add data](./images/2%20Upload%20joint%20excel%20file/6%20Go%20back%20to%20join%20diagram%20tab%20and%20add%20File%20.jpg)
 
-7. Select the excel file speed from your computer. Once the speed file populates, click **OK**
+7. Select the csv file speed from your computer. Once the speed file populates, click **OK**
 
     ![import data](./images/2%20Upload%20joint%20excel%20file/7%20Add%20speed%20file%20and%20click%20ok.png)
 
@@ -85,7 +86,7 @@ This lab assumes you have:
 
     ![save](./images/2%20Upload%20joint%20excel%20file/10%20Save%20the%20file.jpg)
 
-You have now loaded the excel files as **datasets** into OAC.
+You have now loaded the csv files as **datasets** into OAC.
 Next we will build the map and add layers to it.
 
 Congratulations on completing this lab!
