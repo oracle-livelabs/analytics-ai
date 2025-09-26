@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will **upload the csv files** required to create the map provided in the resources section. First, we will upload the live race csv file and save it. Next, we will create another dataset by integrating two csv files (race route and speed) into OAC using an inner join to produce a combined dataset.
+In this lab, you will **upload the csv files** required to create the map provided in the resources section. First, we will upload the live race csv file and save it. Next, we will create another dataset by integrating two csv files (route and speed) into OAC using an inner join to produce a combined dataset.
 
 _Estimated Time:_ 10 minutes
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 - All previous labs successfully completed
 - All three csv files provided in the resources have been downloaded
 
-## Task 1: Upload the live race csv file
+## Task 1: Upload the live location csv file
 
 1. Go to Create and select Dataset (**Create**)
 
@@ -49,11 +49,11 @@ This lab assumes you have:
 
     ![Select the create icon](./images/1%20Create%20Dataset.jpg)
 
-2. A dialog box will open. Select the option Drag Data File, then choose the route csv file from your computer. **Drag data file here or click to browse**
+2. A dialog box will open. Select the option drag data file, then choose the route csv file from your computer. **Drag data file here or click to browse**
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
-3. Once the Route data loads, click **OK**. Note that RouteWKT is the geometry data type column. You can read this by creating a calculation using GeometryAsText(RouteWKT). Steps 4 to 7 are provided to demonstrate how to read this geometry data. This is optional, and you may go directly to Step 7 if you prefer to skip it.
+3. Once the route data loads, click **OK**. Note that RouteWKT is geometry data type column. You can read this geometry data by creating a calculation using GeometryAsText(RouteWKT). Steps 4 to 7 are provided to demonstrate how to read this geometry data. This is optional, and you may go directly to Step 7 if you prefer to skip it.
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
 
