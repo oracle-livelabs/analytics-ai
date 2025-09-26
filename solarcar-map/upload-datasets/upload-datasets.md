@@ -53,36 +53,49 @@ This lab assumes you have:
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
-3. Once the Route data loads, click **OK**
+3. Once the Route data loads, click **OK**. Note that Route_WKT is the geometry data type column. We can read this by creating a calculation using GeometryAsText(Route_WKT).Note steps 4 to 7 are meant to demonstrate how we can read this geometry data. This is optional, and you may go directly to Step 7 if you want to skip it.
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
-Note that the Route_WKT is the geometry data type column, and the column with the value [Geometry] contain the linestring information
 
-4. Open the route data tab and go to **meta data icon**
+4. Create a calculation to read the geometry data type
 
-    ![metadata"](./images/2%20Upload%20joint%20excel%20file/4%20Select%20the%20route%20and%20go%20to%20meta%20data.png)
+  ![Create a calculation](./images/2%20Upload%20joint%20excel%20file/Create%20Calculation.png)
+5. A dialogue box will open, select the GeometryAsText function
 
-5. Change all columns to Attribute (they should not be numerical)
+  ![GeomTextFunction](./images/2%20Upload%20joint%20excel%20file/GeomText%20Function.png)
+6. Double click the GeometryAsText Function and add the route_wkt column in the formula and give the calculation a name as geometry and save.
+
+  ![calculation](./images/2%20Upload%20joint%20excel%20file/write%20formula.png)
+7. Open a new canvas and double click the calculated column, geometry. We observe that the data is in linestring format.
+
+  ![Linestring_format_check](./images/2%20Upload%20joint%20excel%20file/linestring_format_check.png)
+
+This was to demonstrate that GeometryAsText() enables you to read geometry data types, indicating whether the data is a point, linestring, or polygon. In this case, the data is a linestring.
+8. Open the route data tab and go to **meta data icon**
+
+    ![metadata](./images/2%20Upload%20joint%20excel%20file/4%20Select%20the%20route%20and%20go%20to%20meta%20data.png)
+
+9. Change all columns to Attribute (they should not be numerical)
 
     ![Change data type](./images/2%20Upload%20joint%20excel%20file/5%20Select%20all%20the%20highlighted%20columns%20and%20change%20the%20property%20to%20Attribute%20from%20numeric.gif)
 
-6. Go back to the Join Diagram tab and, at the top of the page, select the **+** button and Add File
+10. Go back to the Join Diagram tab and, at the top of the page, select the **+** button and Add File
 
     ![Add data](./images/2%20Upload%20joint%20excel%20file/6%20Go%20back%20to%20join%20diagram%20tab%20and%20add%20File%20.jpg)
 
-7. Select the csv file speed from your computer. Once the speed file populates, click **OK**
+11. Select the csv file speed from your computer. Once the speed file populates, click **OK**
 
     ![import data](./images/2%20Upload%20joint%20excel%20file/7%20Add%20speed%20file%20and%20click%20ok.png)
 
-8. Open the speed tab and change the highlighted column Segment ID to Attribute.
+12. Open the speed tab and change the highlighted column Segment ID to Attribute.
 
     ![Change data type](./images/2%20Upload%20joint%20excel%20file/8%20Speed%20Tab%20and%20change%20the%20data%20type.jpg)
 
-9. Go to the Join Diagram tab and create an inner join by selecting Segment from route data and Segment ID from speed data.
+13. Go to the Join Diagram tab and create an inner join by selecting Segment from route data and Segment ID from speed data.
 
     ![Inner join](./images/2%20Upload%20joint%20excel%20file/9%20Inner%20Join.gif)
 
-10. Save this file as route.
+14. Save this file as route.
 
     ![save](./images/2%20Upload%20joint%20excel%20file/10%20Save%20the%20file.jpg)
 
@@ -91,7 +104,7 @@ Next we will build the map and add layers to it.
 
 Congratulations on completing this lab!
 
-You may now *proceed to the next lab*.
+You may now _proceed to the next lab_.
 
 ## **Acknowledgements**
 
