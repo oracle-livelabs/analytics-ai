@@ -53,7 +53,7 @@ This lab assumes you have:
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
-3. Once the Route data loads, click **OK**. Note that Route_WKT is the geometry data type column. We can read this by creating a calculation using GeometryAsText(Route_WKT).Note steps 4 to 7 are meant to demonstrate how we can read this geometry data. This is optional, and you may go directly to Step 7 if you want to skip it.
+3. Once the Route data loads, click **OK**. Note that RouteWKT is the geometry data type column. You can read this by creating a calculation using GeometryAsText(RouteWKT). Steps 4 to 7 are provided to demonstrate how to read this geometry data. This is optional, and you may go directly to Step 7 if you prefer to skip it.
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 
   ![Linestring_format_check](./images/2%20Upload%20joint%20excel%20file/linestring_format_check.png)
 
-This was to demonstrate that GeometryAsText() enables you to read geometry data types, indicating whether the data is a point, linestring, or polygon. In this case, the data is a linestring.
+This demonstrates that GeometryAsText() enables reading geometry data types, indicating whether the data is a point, linestring, or polygon. In this case, the data type is a linestring.
 8. Open the route data tab and go to **meta data icon**
 
     ![metadata](./images/2%20Upload%20joint%20excel%20file/4%20Select%20the%20route%20and%20go%20to%20meta%20data.png)
