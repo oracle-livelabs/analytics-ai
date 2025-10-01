@@ -28,7 +28,7 @@ This lab assumes you have:
 
     ![Create workbook](./images/51-CreateWorkbook.jpg)
 
-2. Import the data sets created in lab 3 , using the + icon .Use the Add Data to upload the data sets one by one in this workbook
+2. Import the data sets created in lab 2 , using the + icon .Use the Add Data to upload the data sets one by one in this workbook
 
     ![Drag data file](./images/52-Add-both-data.png)
 
