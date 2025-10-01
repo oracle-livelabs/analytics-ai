@@ -96,11 +96,11 @@ Notice that the Route WKT is marked with a globe icon, indicating that it is a g
 
     ![add layer 3](./images/59-Add-layer-3.jpg)
 
-10. From the route dataset add Segment name in the Category
+10. From the route dataset, add Start Latitude and Start Longitude in Category and Segment name in tool top
 
-    ![segment name](./images/59.1-Add-Segment-name-to-Layer-3.jpg)
+    ![segment name](./images/segmentcontrolstops.png)
 
-11. Go to the properties and then to layers. Expand the segment name layer and change name to Segment Name , color it Black and outline to custom size of 8, change the data labels option to  right and set columns to SEGMENT NAME
+11. Go to the properties and then to layers. Expand this layer and change name to Segment Name , color it Black and set outline to custom and set Size to 8, change the data labels position to  right and set Columns to SEGMENT NAME
 
     ![add layer 3 properties](./images/60-Add-layer-3-Properties.jpg)
 
