@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In September 2025, the University of Michigan Solar Car Team joined top student engineering teams from around the world in the Solar Car Race across Australia, covering more than 3,000 km from Darwin to Adelaide. Powered solely by the sun, the team navigated the vast Australian outback with precision and endurance, ultimately finishing 7th overall. Oracle supported their journey with Oracle Cloud Infrastructure, powering interactive maps that tracked real-time progress and delivered performance insights along this iconic route.
+In August 2025, the University of Michigan Solar Car Team joined top student engineering teams from around the world in the Solar Car Race across Australia, covering more than 3,000 km from Darwin to Adelaide. Powered solely by the sun, the team navigated the vast Australian outback with precision and endurance, ultimately finishing 7th overall. Oracle supported their journey with Oracle Cloud Infrastructure, powering interactive maps that tracked real-time progress and delivered performance insights along this iconic route.
 
 ![a map of Australia showing the route of the Solar Car Race from Darwin to Port Augusta](./images/route-solarcar.png)
 
