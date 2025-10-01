@@ -53,7 +53,7 @@ This lab assumes you have:
 
     ![Drag data file](./images/2.%20Drag%20Data%20set%20.jpg)
 
-3. Once the route data loads, click **OK**. Note that RouteWKT is geometry data type column. You can read this geometry data by creating a calculation using GeometryAsText(RouteWKT). Steps 4 to 7 are provided to demonstrate how to read this geometry data. This is optional, and you may go directly to Step 7 if you prefer to skip it.
+3. Once the route data loads, click **OK**. Note that RouteWKT is geometry data type column. You can read this geometry data by creating a calculation using GeometryAsText(RouteWKT). Steps 4 to 7 are provided to demonstrate how to read this geometry data. This is optional, and you may go directly to Step 8 if you prefer to skip it.
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
 
@@ -63,7 +63,7 @@ This lab assumes you have:
 5. A dialogue box will open, select the GeometryAsText function
 
   ![GeomTextFunction](./images/2%20Upload%20joint%20excel%20file/GeomText%20Function.png)
-6. Double click the GeometryAsText Function and add the route_wkt column in the formula and give the calculation a name as geometry and save.
+6. Double click the GeometryAsText Function and add the route_wkt variable in the formula and give the calculation a name as geometry and save.
 
   ![calculation](./images/2%20Upload%20joint%20excel%20file/write%20formula.png)
 7. Open a new canvas and double click the calculated column, geometry. We observe that the data is in linestring format.
