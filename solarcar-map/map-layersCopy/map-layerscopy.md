@@ -96,11 +96,11 @@ Notice that the Route WKT is marked with a globe icon, indicating that it is a g
 
     ![add layer 3](./images/59-Add-layer-3.jpg)
 
-10. From the route dataset, add Start Latitude and Start Longitude in Category and Segment name in tool top
+10. From the route dataset, select both Start Latitude and Start Longitude and drag to Category and drag Segment name in to Tooltip
 
     ![segment name](./images/segmentcontrolstops.png)
 
-11. Go to the properties and then to layers. Expand this layer and change name to Segment Name , color it Black and set outline to custom and set Size to 8, change the data labels position to  right and set Columns to SEGMENT NAME
+11. Go to the properties and then to layers. Expand this layer and change name to Segment Name , color it Black and set outline to custom and set Size to 8, set data labels position to right and set Columns to SEGMENT NAME
 
     ![add layer 3 properties](./images/60-Add-layer-3-Properties.jpg)
 
@@ -108,7 +108,7 @@ Notice that the Route WKT is marked with a globe icon, indicating that it is a g
 
     ![add layer 4](./images/61-Add-Layer-4.jpg)
 
-13. Expand the live location data set and drag latitude and longitude to category and driver to shape. Then click the arrow in the shape section.
+13. Expand the live location data set. Select latitude and longitude and drag to category and driver to shape. Then click the arrow in the shape section.
 
     ![add layer 4 attributes](./images/62-Add-elements-to-Layer4.jpg)
 
