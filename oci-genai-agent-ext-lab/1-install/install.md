@@ -94,10 +94,8 @@ You can
 - Or create a new one (recommended)
 
 1. Login to your OCI account/tenancy
-2. Go the 3-bar/hamburger menu of the console and select
-    1. Identity & Security
-    1. Compartments
-    ![Menu Compartment](images/compartment1.png =40%x*)
+2. Go the 3-bar/hamburger menu of the console, go to Identity & Security / Compartments
+    ![Menu Compartment](images/compartment1.png)
 2. Click ***Create Compartment***
     - Give a name: ex: ***genai-agent***
     - Then again: ***Create Compartment***
@@ -155,7 +153,7 @@ You can
     ```
     <copy>    
     -----------------------------------------------------------------------
-    AGENT_ENDPOINT_OCID=$AGENT_ENDPOINT_OCID
+    TF_VAR_agent_endpoint_ocid=ocid1.xxxxx.xxxxx
     
     -----------------------------------------------------------------------
     Streamlit:
@@ -258,11 +256,11 @@ You can
     ```
 
     Several persons are probably trying to install this tutorial on the same tenancy.
-    Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
+    Solution:  edit the file *terraform.tfvars* and use a unique *prefix*
     ```
     <copy>    
-    OLD: export TF_VAR_prefix="agent"
-    NEW: export TF_VAR_prefix="agent2"
+    OLD: prefix="agent"
+    NEW: prefix="agent2"
     </copy>    
     ```
 
@@ -287,10 +285,10 @@ You can
     Solution:
     1. If the Default Domain exists, it is probably a privilege right. Ask to your tenancy administrator.
     2. If your Identity Domain is “OracleIdentityCloudService” (for tenancy upgraded from IDCS)
-        - edit the file starter/env.sh 
+        - edit the file starter/terraform.tfvars 
         - add the line
         ```
-        export TF_VAR_idcs_domain_name="OracleIdentityCloudService"
+        idcs_domain_name="OracleIdentityCloudService"
         ```
 
 6. Error: 400-LimitExceeded, The following service limits were exceeded: xxxxxxx
@@ -298,6 +296,29 @@ You can
     Solution:
     - Ask your administrator to increase your quota or the limits of the tenancy.
    
+7. Error: Attempt to index null value
+
+  ```
+  on datasource.tf line 64, in locals:
+  64:   idcs_url = (var.idcs_url!="")?var.idcs_url:data.oci_identity_domains.starter_domains.domains[0].url
+    ├────────────────
+    │ data.oci_identity_domains.starter_domains.domains is null
+  ```
+
+  Work-around:
+  - This is due to a lack of privilege to access the list of domains in your tenancy.
+  - edit file terraform.tfvars and add this line:
+    ```
+    idcs_url=https://idcs-xxxxxx.identity.oraclecloud.com:443
+    ````
+    You can find this URL by 
+    - going to OCI Console / Hamburger menu / Identity and Security / Domains 
+    - go to the root compartment
+    - choose the default Domain
+    - look for the Domain URL. It will look like this: https://idcs-xxxxxx.identity.oraclecloud.com:443
+  - Rerun ./starter.sh build
+
+
 ## Acknowledgements
 
 - **Author**

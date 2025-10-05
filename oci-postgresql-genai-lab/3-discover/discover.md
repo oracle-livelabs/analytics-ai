@@ -126,40 +126,7 @@ You can designate a subnet as either public or private when you create it. Priva
 
     ![VCV security list details](images/postgres-genai-vcn3.png)
 
-## Task 6: Dynamic group
-
-Two Dynamic Groups allow us to give rights to the compute instande and the function (explored later) to read documents on the Object Storage.
-Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances and service instances as "principal" actors (similar to user groups). You can then create policies to permit compute or service instances to make API calls against Oracle Cloud Infrastructure services. 
-
-Go the Cloud console 3-bar/hamburger menu and select the following
-  1. Identity & Security 
-  2. Domains
- 
-    ![Menu Dynamic Group](images/postgres-genai-dyngroup1.png)
- 
-  3. Click on Default domain. Note that you might need to change the compartment to root compartment in order to see the Default domain
-  4. Dynamic Groups
-  6. Notice the two dynamic groups in Default Domain:  *psql-fn-dyngroup* and *psql-bastion-dyngroup*  
-
-    ![Menu Dynamic Group](images/postgres-genai-dyngroup2.png)
-
-When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
-
-  6. Click on the dynamic group name: psql-bastion-dyngroup
-  7. Notice Matching rules: e.g. instance.id = 'ocid1.instance.oc1.aaaabbbbbbcccccc'
-  
-    ![Menu Dynamic Group](images/postgres-genai-dyngroup3.png)
-  
-  8. Go back to the list of dynamic groups in Default Domain
-  9. Click on the dynamic group name: *psql-fn-dyngroup*
-  10. Notice Matching rules: Match all rules defined below
-    Rule 1: resource.type = 'fnfunc'
-    Rule 2: e.g. resource.compartment.id = 'ocid1.compartment.oc1..aaaaaaaanmnkccccc'
-
-    ![Create Dynamic Group](images/postgres-genai-dyngroup4.png)
-
-
-## Task 7: Policies
+## Task 6: Policies
 
 The policies will give the rights to the components to access other Oracle Cloud Infrastructure services, e.g. to read documents on the Object Storage
 Access is granted at the group and compartment level, which means you can write a policy that gives a group a specific type of access within a specific compartment, or to the tenancy itself. 
@@ -190,7 +157,7 @@ ALLOW any-user to use functions-family in compartment id ocid1.compartment.oc1..
 
     ![Policy details](images/postgres-genai-policy4.png)
 
-## Task 8: PostgreSQL Database System
+## Task 7: PostgreSQL Database System
 
 OCI Database with PostgreSQL allows us to store extracted text from documents including their corresponding vector embeddings by using the pgvector extension so we can perform a semantic search. Database with PostgreSQL is a fully managed PostgreSQL service with intelligent sizing, tuning and high durability.
 
@@ -215,7 +182,7 @@ A Database system is PostgreSQL database cluster running on one or more OCI VM C
 
     ![PostgreSQL details](images/postgres-genai-cluster2.png)
 
-## Task 9: Functions Application
+## Task 8: Functions Application
 
 The function takes a binary file as input (Word, PDF, ...), parse it and give his content in text back.
 Oracle Cloud Infrastructure Functions is a fully managed Functions-as-a-Service platform. The serverless and elastic architecture of OCI Functions means there's no infrastructure administration or software administration for you to perform. You don't provision or maintain compute instances, and operating system software patches and upgrades are applied automatically. OCI Functions simply ensures your app is highly-available, scalable, secure, and monitored. With OCI Functions, you can write code in Java, Python, Node, Go, Ruby, and C# (and for advanced use cases, bring your own Dockerfile, and Graal VM). You can then deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
@@ -235,7 +202,7 @@ Go the Cloud console 3-bar/hamburger menu and select the following
     ![Details Application](images/postgres-genai-fn2.png)
 
 
-## Task 10: Compute Instance
+## Task 9: Compute Instance
 
 Compute instance is used to host the application logic.
 
@@ -274,7 +241,7 @@ Compute instance is used to host the application logic.
 
     ![Compute details](images/postgres-genai-compute4.png)
 
-## Task 11: AI Services
+## Task 10: AI Services
 
 AI services are a collection of offerings, including generative AI, with prebuilt machine learning models that make it easier for developers to apply AI to applications and business operations. The models can be custom trained for more accurate business results. Teams within an organization can reuse the models, data sets, and data labels across services. The services let developers easily add machine learning to apps without slowing application development.
 In this step you will explore the AI Services that are leveraged in the solution. 
@@ -294,7 +261,7 @@ In this step you will explore the AI Services that are leveraged in the solution
         
         4. Use the generation, summarization, and embedding playgrounds to try the pretrained models: input text, adjust the parameters, and repeat until you get the desired results.
 
-        ![Test GenerativeAI](images/postgres-genai-ai1.png) 
+        ![Test GenerativeAI](images/postgres-genai-ai2.png) 
   
   2. Explore the Vision AI Service used in the solution. Common use cases of the Vision AI Service include: Image Classification, Object Detaction, Text Detection
     1. Go the Cloud console 3-bar/hamburger menu and select the following    

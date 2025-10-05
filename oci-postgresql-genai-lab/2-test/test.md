@@ -45,9 +45,6 @@ You will load a file into object storage which will be ingested, processed with 
 1. In the *Buckets* list, select **psql-public-bucket**.
 1. On your local computer, go to the directory that you previously downloaded from GITHUB
 1. Under *Objects* click the **Upload* button. 
-
-    ![Test Bucket](images/test-bucket2.png)
-
 1. In the *Upload Objects* dialog, upload all the files of the **sample_files** directory. Then click the **Upload** button.
 
     ![Test Upload](images/test-upload.png)
