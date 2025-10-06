@@ -90,7 +90,7 @@ This lab assumes you have:
 ## Task 2: Download and Stage Workshop Artifacts (on local PC/Mac)
 Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on the remote desktop. As a result, return to your local computer/workstation and perform the following:
 
-1. Download [`essbase_21c_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l1F9budyZgwDjzJC6mc5400vsmAHGsGiqU_cKpUj_dkhgLOcWsMOqPDm6WgFj0DA/n/c4u02/b/hosted_workshops/o/stacks/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
+1. Download [`essbase_21c_labfiles.zip`](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/y7vcwwovAOosfweXxaaLIjx9cfUCoJ7QC92hKWrjhousIklrlax3GTC1nHybxopX/n/c4u02/b/hosted_workshops/o/stacks/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive.
 
