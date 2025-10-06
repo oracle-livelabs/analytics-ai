@@ -23,13 +23,13 @@ In OCI Generative AI Agents, depending on the use case, you can empower each age
 
 In this workshop you will learn how to harness the power of conversational generative AI to unlock the information hidden in your documents and databases to automate business processes and increase productivity.
 
-As a use case for this workshop, we are going to create a customer support representative assistant. This assistant, powered by an intelligent agent, will simplify the work of the support representative by searching and analyzing information from multiple data sources seamlessly and returning relevant information in human-readable form.
+As a use case for this workshop, we are going to create a loan officer assistant. This assistant, powered by an intelligent agent, will simplify the work of the loan officer by searching and analyzing information from multiple data sources seamlessly and returning relevant information in human-readable form.
 
 Estimated Workshop Time: 1 hour 20 minutes
 
 ## Solution Architecture
 
-The following is a simplified solution architecture diagram for our customer support representative assistant:
+The following is a simplified solution architecture diagram for our loan officer assistant:
 
 ![simplified solution architecture diagram for customer support representative assistant](./images/solution-architecture.jpg =50%x*)
 
@@ -37,20 +37,20 @@ As described in the diagram, our solution makes use of the following resources:
 
 - **Oracle Autonomous Database (ADB) instance** - In this database, we are going to save information about the following entities relevant to our customer support system:
 
-    - Customers
-    - Support representatives
-    - Support tickets
+    - Applicants
+    - Loan Officers
+    - Loan Applications
     - Helper tables
 
   Here is the database schema:
 
-  ![Tickets database schema](./images/database-schema.jpg)
+  ![Tickets database schema](./images/database-schema.png)
 
-- **Storage Bucket** - The storage bucket will store knowledge articles (provided for you as part of this workshop). The agent  will retrieve the relevant knowledge articles whenever a customer support representative requires this information to resolve a customer ticket.
+- **Storage Bucket** - The storage bucket will store loan policy documents (provided for you as part of this workshop). The agent will retrieve the relevant loan policies whenever a loan officer requires this information.
 - **Vault** - In this vault, we are going to securely store the credentials required to access the ADB instance.
 - **Database Connection** - This resource will contain all of the information required to retrieve data from our ADB instance. The connection will will securely retrieve the required credentials from the vault.
 - **Knowledge bases** - The two knowledge bases reference our two data sources, the Storage Bucket and the ADB instance, and are used by the relevant agent tools.
-- **RAG tool** - This tool is used by the agent to retrieve, reason over and analyze information from unstructured data such as the knowledge articles stored in the storage bucket. The agent will use this tool whenever specific knowledge is required to complete a task. The RAG tool is also capable of providing references to the origins of the information retrieved (which document, page and paragraph).
+- **RAG tool** - This tool is used by the agent to retrieve, reason over and analyze information from unstructured data such as the loan policy documents stored in the storage bucket. The agent will use this tool whenever specific knowledge is required to complete a task. The RAG tool is also capable of providing references to the origins of the information retrieved (which document, page and paragraph).
 
   In addition, the RAG tool is capable of analyzing text files as well as PDF files; And, if instructed to do so, can also analyze images within the PDF files.
 
@@ -64,7 +64,7 @@ In order to accelerate the development process, in this workshop we are going to
 In this workshop, you will learn how to:
 
 - Create the agent and supporting resources to make our solution come alive.
-- As a customer service representative, have a conversation with our agent and see how it can supercharge your productivity.
+- As financial loan officer, have a conversation with our agent and see how it can supercharge your productivity.
 
 Some of the resources mentioned in the solution architecture were already created for such as the Database, storage bucket with knowledge articles etc., you so that you could focus on the most important part of the workshop - creating your first agent.
 
@@ -78,4 +78,5 @@ Some of the resources mentioned in the solution architecture were already create
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Uma Kumar
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino

@@ -223,4 +223,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 
 - **Author** - Uma Kumar
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino

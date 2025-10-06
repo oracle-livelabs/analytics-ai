@@ -126,4 +126,4 @@ Although our use-case was focused on loan compliance, the OCI Generative AI serv
 ## Acknowledgements
 
 - **Author** - Uma Kumar
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
