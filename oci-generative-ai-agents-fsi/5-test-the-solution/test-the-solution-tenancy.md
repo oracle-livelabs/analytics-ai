@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **loan compliance agent** agent in the **Agents** list.
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table.jpg)
 
@@ -40,7 +40,7 @@ This lab assumes you have:
 
 1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to the **root** compartment.
 
-1. On the top of the page, the **Agent** drop down should show **customer support agent** and the **Agent endpoint** drop down should show the newly created endpoint.
+1. On the top of the page, the **Agent** drop down should show **loan compliance agent** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
 1. Other elements in the page include:
 
@@ -75,7 +75,7 @@ This lab assumes you have:
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.jpg)
 
-1. Our next question would be: _Who is the busiest support agent right now?_. I've phrased this question this way on purpose. "Busiest" is a subjective term that requires deep understanding of the context of the system. In our case, the busiest customer support agent would be the person which has the most tickets assigned to them. Let's see if the agent will be able to figure that out...
+1. Our next question would be: _Who is the busiest support agent right now?_. I've phrased this question this way on purpose. "Busiest" is a subjective term that requires deep understanding of the context of the system. In our case, the busiest loan compliance agent would be the person which has the most tickets assigned to them. Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.jpg)
@@ -110,7 +110,7 @@ Here are a few more prompts to try with the agent:
 - _Show me how many tickets are assigned to each support agent_
 - _Are there any support agents which do not have any tickets assigned to them?_
 - _How many tickets have been resolved or closed in the past 2 days?_
-- _Give me the most important stats for our customer support system_
+- _Give me the most important stats for our loan compliance system_
 
 ## Summary
 
@@ -118,7 +118,7 @@ As you've experienced, the OCI Generative AI service allows you to ask complex q
 
 Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
-Although our use-case was focused on customer support, the OCI Generative AI service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
+Although our use-case was focused on loan compliance, the OCI Generative AI service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
 
 ## Learn More
 
