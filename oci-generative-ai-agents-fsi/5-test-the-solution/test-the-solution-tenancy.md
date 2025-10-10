@@ -107,8 +107,8 @@ This lab assumes you have:
 
 Here are a few more prompts to try with the agent:
 
-- _Show me how many tickets are assigned to each support agent_
-- _Are there any support agents which do not have any tickets assigned to them?_
+- _Show me how many tickets are assigned to each compliance agent_
+- _Are there any compliance agents which do not have any tickets assigned to them?_
 - _How many tickets have been resolved or closed in the past 2 days?_
 - _Give me the most important stats for our loan compliance system_
 
@@ -126,4 +126,5 @@ Although our use-case was focused on loan compliance, the OCI Generative AI serv
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Uma Kumar
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
