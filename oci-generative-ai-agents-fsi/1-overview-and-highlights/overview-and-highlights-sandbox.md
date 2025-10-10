@@ -31,7 +31,7 @@ Estimated Workshop Time: 1 hour 20 minutes
 
 The following is a simplified solution architecture diagram for our loan officer assistant:
 
-![simplified solution architecture diagram for customer support representative assistant](./images/solution-architecture.jpg =50%x*)
+![simplified solution architecture diagram for customer support representative assistant](./images/architecture.png =50%x*)
 
 As described in the diagram, our solution makes use of the following resources:
 
