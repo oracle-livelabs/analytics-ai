@@ -46,7 +46,7 @@ As described in the diagram, our solution makes use of the following resources:
 
   ![Tickets database schema](./images/database-schema.png)
 
-- **Storage Bucket** - The storage bucket will store loan policy manuals (provided for you as part of this workshop). The agent  will retrieve the relevant loan policy manuals whenever a loan compliance requires this information.
+- **Storage Bucket** - The storage bucket will store loan policy manuals (provided for you as part of this workshop). The agent  will retrieve the relevant loan policy manuals whenever a **loan compliance officer** requires this information.
 - **Vault** - In this vault, we are going to securely store the credentials required to access the ADB instance.
 - **Database Connection** - This resource will contain all of the information required to retrieve data from our ADB instance. The connection will will securely retrieve the required credentials from the vault.
 - **Knowledge bases** - The two knowledge bases reference our two data sources, the Storage Bucket and the ADB instance, and are used by the relevant agent tools.
@@ -54,7 +54,7 @@ As described in the diagram, our solution makes use of the following resources:
 
   In addition, the RAG tool is capable of analyzing text files as well as PDF files; And, if instructed to do so, can also analyze images within the PDF files.
 
-- **SQL tool** - This to is used by the agent to retrieve, reason over and respond using information found in our ADB instance. This tool knows how to convert natural language requests or questions into SQL and can retrieve the information for the agent to use in it's replies.
+- **SQL tool** - This to is used by the agent to retrieve, reason over and respond using information found in our ADB instance. This tool knows how to convert natural language requests or questions into SQL and can retrieve the information for the agent to use in its replies.
 - **Agent** - The agent will receive all requests from the user, come up with an execution plan, will ask clarifying questions if required and route requests to the tools if needed. The agent will collect all of the pieces of information collected during the execution of the plan and compile a coherent response for the user.
 
 In order to accelerate the development process, in this workshop we are going to use the chat feature built into the OCI console to communicate with the agent without writing or deploying a single line of code.
@@ -67,7 +67,7 @@ In this workshop, you will learn how to:
 - Set up our knowledge base data source.
 - Create our ADB instance with all of the required data and configuration.
 - Create the agent and supporting resources to make our solution come alive.
-- As a loan officer, have a conversation with our agent and see how it can supercharge your productivity.
+- As a **loan compliance officer**, have a conversation with our agent and see how it can supercharge your productivity.
 
 ## Learn More
 
@@ -79,5 +79,5 @@ In this workshop, you will learn how to:
 
 ## Acknowledgements
 
-- **Author** - Uma Kumar
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
+- **Author** - Uma Kumar, Yanir Shahak
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino, Renu Bhatt
