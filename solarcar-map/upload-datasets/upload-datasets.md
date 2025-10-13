@@ -35,7 +35,7 @@ This lab assumes you have:
 
     ![Select "OK"](./images/3%20Upload%20Click%20OK.jpg)
 
-4. Go to the live location tab, select the columns Latitude and Longitude one by one, and change their data type to Attribute.
+4. Go to the live location tab, select the columns Latitude and Longitude one by one, and change Treat As to Attribute.
 
     ![Data Type change](./images/4%20Change%20Data%20Type%20to%20Attribute.jpg)
 
@@ -80,9 +80,11 @@ We observe that the data is in linestring format.This demonstrates that Geometry
     ![import data](./images/2%20Upload%20joint%20excel%20file/7%20Add%20speed%20file%20and%20click%20ok.png)
 12. Open the speed tab and change the highlighted column Segment ID to Attribute and Data Type to Text.
     ![Change data type](./images/2%20Upload%20joint%20excel%20file/8%20Speed%20Tab%20and%20change%20the%20data%20type.jpg)
-13. Go to the Join Diagram tab and create an inner join by selecting Segment from route data and Segment ID from speed data.
+13. Go to the Join Diagram tab.Hover over the route data set to see a small circle on the right side. Click and drag the circle to the speed data set.
+    ![Change data type](./images/2%20Upload%20joint%20excel%20file/Innerjoincircle.png)
+14. A Join box will appear. Create an inner join by selecting Segment from route data and Segment ID from speed data.
     ![Inner join](./images/2%20Upload%20joint%20excel%20file/9%20Inner%20Join.gif)
-14. Save this file as route.
+15. Save this file as route.
     ![save](./images/2%20Upload%20joint%20excel%20file/10%20Save%20the%20file.jpg)
 
 You have now loaded the csv files as **datasets** into OAC.

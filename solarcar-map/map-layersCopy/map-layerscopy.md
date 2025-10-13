@@ -24,11 +24,11 @@ This lab assumes you have:
 
 ## Task 1: Import the data sets created in lab 2
 
-1. Go to Create and select workbook (**Create**)
+1. Go to Create and select workbook. Once workbook is selected , a dialogue box will appear to Add Data, click cancel.
 
     ![Create workbook](./images/51-CreateWorkbook.jpg)
 
-2. Import the data sets created in lab 2 , using the + icon .Use the Add Data to upload the data sets one by one in this workbook
+2. Add the data sets created in lab 2 , using the + icon. Use the Add Data to upload the two data sets (route, live location) one by one in this workbook
 
     ![Drag data file](./images/52-Add-both-data.png)
 
@@ -100,7 +100,7 @@ Notice that the Route WKT is marked with a globe icon, indicating that it is a g
 
     ![segment name](./images/segmentcontrolstops.png)
 
-11. Go to the properties and then to layers. Expand this layer and change name to Segment Name , color it Black and set outline to custom and set Size to 8, set data labels position to right and set Columns to SEGMENT NAME
+11. Go to the properties and then to layers. Expand this new layer and change name to Segment Name , color it Black and set outline to custom and set Size to 8, set data labels position to right and set Columns to SEGMENT NAME
 
     ![add layer 3 properties](./images/60-Add-layer-3-Properties.jpg)
 
@@ -116,17 +116,17 @@ Notice that the Route WKT is marked with a globe icon, indicating that it is a g
 
     ![add shape to layer 4](./images/63-Custom-shape-of-Car.jpg)
 
-15. Go to properties and rename this layer to live race position, change color to #fbcb05, change outline to custom and size it to 18
+15. Go to properties and rename this layer to live race position, change color to #fbcb05, change outline to custom, outline color to black and size to 18
 
     ![add shape to layer 4](./images/64-Live-Race-properties-add.jpg)
 
 ## Task 4: Add color background
 
-1. Go to canvas properties.
+1. Right click canvas tab at the bottom of the workbook and go to canvas properties
 
     ![add color background](./images/65-Canvas-Properties-for-background.jpg)
 
-2. Select the custom option for the background and change the color as #0b4574
+2. Select the custom option for the background and change the color as #0b4574. Click ok
 
     ![change color to blue](./images/66_Change_background_to_blue.jpg)
 
