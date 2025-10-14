@@ -12,8 +12,9 @@ In this lab, you will:
 
 - Create an ADB instance.
 - Create the database schema.
-- Insert data into the database tables (LoanStatus → LoanOfficers → Applicants → LoanApplications).
-- Create a vault and connection for secure access.
+- Insert data into the database.
+- Create a vault to securely store the database connection information.
+- Create a database connection.
 
 ### Prerequisites
 
@@ -59,7 +60,7 @@ Once the database instance is created, you can move on to the next task (this ma
 
 ## Task 2: Create the database schema
 
-In this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of inserting unique values for the various IDs like the ticket ID or customer ID etc.).
+In this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of inserting unique values for the various IDs like the loan application ID or applicant ID etc.).
 
 1. Once the ADB instance is created, click the **Database actions** drop down and select the **SQL** option. This should launch a new tab in your browser with the SQL application (dismiss any messages if you see any).
 
@@ -388,4 +389,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Daniel Hart, Yanir Shahak
+- **Contributors** - Uma Kumar, Hanna Rakhsha, Deion Locklear, Anthony Marino
