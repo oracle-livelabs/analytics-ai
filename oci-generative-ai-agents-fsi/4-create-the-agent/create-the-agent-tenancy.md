@@ -33,12 +33,12 @@ This lab assumes you have:
 1. Under the **List scope** section, make sure that your compartment is selected.
 1. Click the **Create Agent** button at the top of the **Agents** table.
 
-   ![Screenshot showing how to create a new agent](./images/create-new-agent-sandbox.jpg)
+   ![Screenshot showing how to create a new agent](./images/create-new-agent-tenancy.png)
 
 1. For the **Name** field use: _loan compliance agent_
 1. For the **Compartment** field, make sure that your compartment is selected.
 1. For the **Description** field, use: _This agent assists compliance officers in reviewing applications, workloads, and policy compliance_.
-1. For the **Welcome message** field, use: _Hello! I’m your compliance assistant. How can I help with loan applications today?_
+1. For the **Welcome message** field, use: _Hello! I’m your compliance assistant. How can I help?_
 1. Click the **Next** button.
 
    ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.png =50%x*)
@@ -50,7 +50,7 @@ This lab assumes you have:
    ![Screenshot showing how to create a new tool](./images/create-new-tool.png)
 
 1. Select the **RAG** tool option.
-1. Under the **RAG Configuration** section, use _Loan Policy Knowledge Base_ in the **Name** field.
+1. Under the **RAG Configuration** section, use _Knowledge base loan policy articles_ in the **Name** field.
 1. For the **Description** field, use: _Retrieves lending policy manuals and underwriting rules (DTI, credit score thresholds, FHA/VA limits, manual underwriting guidance)_.
 
    It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
@@ -62,7 +62,7 @@ This lab assumes you have:
 
    ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2-sandbox.jpg)
 
-1. In the **New knowledge base** form, use: _Loan Policy Documents_ for the **Name** field.
+1. In the **New knowledge base** form, use: _Compliance officer knowledge base loan policy articles_ for the **Name** field.
 1. Make sure that your compartment is selected in the **Compartment** field.
 1. In the **Data store type** field, we will select **Object storage** to be able to retrieve information from our storage bucket.
 1. Make sure that **Enable hybrid search** is checked. Enabling this option instructs the system to combine lexical and semantic search when scanning our documents.
@@ -78,7 +78,7 @@ This lab assumes you have:
 
    ![Screenshot showing the data source configuration](./images/data-source-info-sandbox.png)
 
-1. Back in the **New knowledge base** panel, the **loan policy docs** data source was added to the **Data source** table.
+1. Back in the **New knowledge base** panel, the **Loan policy manuals** data source was added to the **Data source** table.
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
 1. Click the **Create** button.
 
@@ -236,5 +236,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Uma Kumar
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
+- **Author** - Deion Locklear 
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino

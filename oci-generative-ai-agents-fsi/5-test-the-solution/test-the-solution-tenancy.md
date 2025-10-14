@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **loan compliance agent** agent in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **loan compliance agent** in the **Agents** list.
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.png)
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
     ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.png)
 
-1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to the **root** compartment.
+1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
 1. On the top of the page, the **Agent** drop down should show **loan compliance agent** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
@@ -52,12 +52,12 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into you message box: _How many tickets do we have in the system?_.
+1. To start, type the following question into you message box: _How many loan applications are pending review?_.
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
 
-1. As you can see, the agent generated a SQL query because according to our descriptions for the agent and various tools, it figured that the answer to our question can be found in the database. The agent responded correctly with **20** as we have exactly 20 tickets in our database. In addition, you can see that a trace was generated on the right.
+1. As you can see, the agent generated a SQL query because according to our descriptions for the agent and various tools, it figured that the answer to our question can be found in the database. The agent responded correctly with **2** as we have exactly 2 pending applications in our database. In addition, you can see that a trace was generated on the right.
 1. Click the **View** button next to the first trace.
 
     ![Screenshot showing the response for the first question](./images/first-question-response.png)
@@ -75,29 +75,28 @@ This lab assumes you have:
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
-1. Our next question would be: _Who is the busiest compliance agent right now?_. I've phrased this question this way on purpose. "Busiest" is a subjective term that requires deep understanding of the context of the system. In our case, the busiest loan compliance agent would be the person which has the most tickets assigned to them. Let's see if the agent will be able to figure that out...
+1. Our next question would be: _Which loan agent has the most applications assigned?_. Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
 
-1. Here are a couple of possible responses that the agent can generate for our question. They both show the correct answer: **Emily Chen**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that the busiest agent would be the one with the most tickets assigned to them.
+1. The agent shows the correct answer: **Olivia Brown**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that the loan agent with the most applications assigned to them.
 
     ![Screenshot showing the response for the second question](./images/second-question-response.png)
-    ![Screenshot showing an alternative response for the second question](./images/second-question-response-2.png)
 
 1. Feel free to take a look at the **Traces** generated for this response.
-1. Next we'll ask the following: _Show me the title and description for all of the tickets assigned to the compliance agent Emily Chen_
+1. Next we'll ask the following: _List applications that have been pending for more than 7 days._
 1. Click the **Submit** button.
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
 
-1. As you can see, the response included the title and description for the two tickets assigned to Emily Chen.
+1. As you can see, the response included the type and amount for the two loans that have been pending for more than 7 days.
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
-1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve "Complex Network Configuration Issue" ticket. Type the following question: _Do we have a knowledge article which can help resolve the "Complex Network Configuration Issue" ticket?_
+1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: _Retrieve the policy document section that defines Debt-to-Income (DTI) limits and any exceptions._
 1. Click the **Submit** button.
-1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our knowledge base articles stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the article was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the article(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
 
     ![test](./images/fourth-question-response.png)
 
@@ -107,14 +106,14 @@ This lab assumes you have:
 
 Here are a few more prompts to try with the agent:
 
-- _Show me how many tickets are assigned to each compliance agent_
-- _Are there any compliance agents which do not have any tickets assigned to them?_
-- _How many tickets have been resolved or closed in the past 2 days?_
-- _Give me the most important stats for our loan compliance system_
+- _What is the minimum credit score for FHA vs Conventional loans?_
+- _Show the distribution of credit scores by loan type_
+- _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
+- _Give me a risk dashboard: counts by status, average credit score and DTI by loan type, and total requested amount; include links to policy sections that define ‘risk’_
 
 ## Summary
 
-As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and sources and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
+As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
 
 Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
@@ -126,5 +125,5 @@ Although our use-case was focused on loan compliance, the OCI Generative AI serv
 
 ## Acknowledgements
 
-- **Author** - Uma Kumar
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
+- **Author** - Deion Locklear
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
