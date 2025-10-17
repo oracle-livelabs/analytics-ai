@@ -35,7 +35,7 @@ The following is a simplified solution architecture diagram for our compliance o
 
 As described in the diagram, our solution makes use of the following resources:
 
-- **Oracle Autonomous Database (ADB) instance** - In this database, we are going to save information about the following entities relevant to our loan compliance system:
+- **Autonomous AI Database** - In this database, we are going to save information about the following entities relevant to our loan compliance system:
 
     - Applicants
     - Loan Officers
