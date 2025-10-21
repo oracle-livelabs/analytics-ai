@@ -12,7 +12,7 @@ In this lab, you will:
 
 - Verify that your tenancy is subscribed to one of the supported regions.
 - Create the required access policies.
-- Create a storage bucket & update knowledge articles into it.
+- Create a storage bucket & update loan policy manuals into it.
 
 ### Prerequisites
 
@@ -68,17 +68,17 @@ In order to facilitate those permissions, we will create a Dynamic Group which w
 1. Click **Identity & Security**.
 1. Click **Domains**.
 
-   ![Screenshot showing how to navigate to the domains section of the console](./images/domains-navigation.jpg)
+   ![Screenshot showing how to navigate to the domains section of the console](./images/domains-navigation.png)
 
 1. Under the **List scope**, make sure that the **root** compartment is selected.
 1. Click the **Default** domain from the **Domains** table.
 
-   ![Screenshot showing how to navigate to the default domain section](./images/default-domain-navigation.jpg)
+   ![Screenshot showing how to navigate to the default domain section](./images/default-domain-navigation.png)
 
 1. On the left click **Dynamic Groups**.
 1. Click thd **Create dynamic group** button at the top of the **Dynamic groups** table.
 
-   ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.jpg)
+   ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.png)
 
 1. Name the dynamic group: _oci-genai-agents-service_
 1. Provide an optional description (example: `This group represents the OCI Generative AI Agents service`)
@@ -99,13 +99,13 @@ Next, we will create the access policies:
 1. Click **Identity & Security**.
 1. Click **Policies**.
 
-   ![Screenshot showing how to navigate to the policies section](./images/policies-navigation.jpg)
+   ![Screenshot showing how to navigate to the policies section](./images/policies-navigation.png)
 
 1. On the left under **List scope**, select the root compartment. The root compartment should appear first in the list, have the same name as the tenancy itself and have the text **(root)** next to it's name.
 
 1. Click the **Create Policy** button on the top left of the **Policies** table.
 
-   ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.jpg)
+   ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.png)
 
 1. Provide a name for the policy (example: _oci-generative-ai-agents-workshop_).
 1. Provide a description (example: _OCI Generative AI Agents Hands-On-Lab Policy_).
@@ -138,66 +138,64 @@ Next, we will create the access policies:
 
 1. Click the **Create**
 
-![Screenshot showing the steps to create a new policy](./images/create-new-policy.jpg)
+![Screenshot showing the steps to create a new policy](./images/create-new-policy.png)
 
-## Task 3: Create a storage bucket for the knowledge articles
+## Task 3: Create a storage bucket for the loan policy manuals
 
-The knowledge article PDFs that we are going to upload into a storage bucket in this task will be used by the agent whenever a customer support representative will require specialized internal knowledge to resolve a customer issue.
+The loan policy manual PDFs that we are going to upload into a storage bucket in this task will be used by the agent whenever a loan compliance officer  requires specific internal policy guidance to evaluate loan applications.
 
-1. Click the navigation menu on the top left.
+1. Click the **navigation** menu on the top left.
 1. Click **Storage**.
 1. Click **Buckets**.
 
-   ![Screenshot showing how to navigate to the storage buckets section](./images/navigate-to-buckets.jpg)
+   ![Screenshot showing how to navigate to the storage buckets section](./images/navigate-to-buckets.png)
 
 1. On the left under **List scope**, select the root compartment.
 1. Click the **Create Bucket** button on the top left of the **Buckets** table.
 
    ![Screenshot showing the create bucket button](./images/create-new-storage-bucket.png)
 
-1. Name the bucket: _knowledge-base-articles_
+1. Name the bucket: _loan-policy-manuals_
 1. Keep all other settings with their default values and click the **Create** button.
 
-   ![Screenshot showing how to create a storage buckets](./images/create-storage-bucket.jpg)
+   ![Screenshot showing how to create a storage buckets](./images/create-storage-bucket.png)
 
-1. Click the newly created **knowledge-base-articles** bucket from the **Buckets** list.
+1. Click the newly created **loan-policy-manuals** bucket from the **Buckets** list.
 
-   ![Screenshot showing how to select the newly created storage buckets](./images/select-storage-bucket.jpg)
+   ![Screenshot showing how to select the newly created storage buckets](./images/select-storage-bucket.png)
 
-1. At this point, we will prepare the knowledge base articles to be uploaded to the storage bucket:
-      1. Click [here](./files/knowledge-articles.zip) to download the knowledge articles zip file.
+1. At this point, we will prepare the loan policy manuals to be uploaded to the storage bucket:
+      1. Click [here](./files/loan_policy_manuals.zip) to download the loan policy manuals zip file.
 
-      ![Screenshot the downloaded knowledge articles zip file](./images/downloaded-knowledge-articles-zip-file.jpg)
+      ![Screenshot the downloaded loan policy manuals zip file](./images/downloaded-loan-policy-manuals-zip-file.png)
 
-      1. Unzip the file (the file will usually be found in the _Downloads_ folder).
-         On a Mac, you can double click the zip file and on Windows, you can right click the file and select **Extract All**.
-         At this point you should have 8 PDF files extracted and ready to be uploaded into the storage bucket.
+      1. Unzip the file — you should have multiple PDF files representing different compliance manuals (e.g., DTI Policy, Credit Score Policy, VA Loan Policy, FHA Loan Policy, etc.).
 
-      ![Screenshot showing the unzipped knowledge articles](./images/unzipped-knowledge-articles.jpg)
+      ![Screenshot showing the unzipped loan policy manuals](./images/unzipped-loan-policy-manuals.png)
 
-1. Click the **Upload** button on the top left of the **Objects** table.
+1. Click the **Upload** button on the top left of the **Objects** table *or* on the top right of the bucket details page.
 
-   ![Screenshot showing the storage bucket upload button](./images/click-upload.jpg)
+   ![Screenshot showing the storage bucket upload button](./images/click-upload.png)
 
 1. Click the **select files** link under the **Choose Files from your Computer** section.
 
-   ![Screenshot showing the select files for upload links](./images/select-files-to-upload.jpg)
+   ![Screenshot showing the select files for upload links](./images/select-files-to-upload.png)
 
-1. Navigate to the location in which you have unzipped the knowledge articles (typically the _Download_ folder) and select all 8 of the knowledge articles. The files may have been saved under a subfolder named _knowledge_articles_ or a similar name. After all files have been selected, click **Open** button
+1. Navigate to the location in which you have unzipped the loan policy manuals (typically the _Download_ folder) and select all 8 of the loan policy manuals. The files may have been saved under a subfolder named _loan\_policy\_manuals_ or a similar name. After all files have been selected, click **Open** button
 
-    ![Screenshot showing all of the knowledge articles selected for upload](./images/select-all-knowledge-articles.jpg)
+    ![Screenshot showing all of the loan policy manuals selected for upload](./images/select-all-loan-policy-manuals.png)
 
 1. Click the **Upload** button to start the upload process.
 
-   ![Screenshot showing upload button](./images/upload-knowledge-articles.jpg)
+   ![Screenshot showing upload button](./images/upload-loan-policy-manuals.png)
 
 1. Once all of the files have **Finished** showing next to them, click the **Close** button.
 
-   ![Screenshot showing the knowledge articles finished uploading](./images/knowledge-articles-finished-uploading.jpg)
+   ![Screenshot showing the loan policy manuals finished uploading](./images/loan-policy-manuals-finished-uploading.png)
 
-1. At this point you should see all 8 of the knowledge articles listed under the **Objects** table.
+1. At this point you should see all 8 of the loan policy manuals listed under the **Objects** table.
 
-   ![Screenshot showing the knowledge articles listed in the bucket](./images/knowledge-articles-listed-in-bucket.png)
+   ![Screenshot showing the loan policy manuals listed in the bucket](./images/loan-policy-manuals-listed-in-bucket.png)
 
 You may now **proceed to the next lab**
 
@@ -209,4 +207,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Daniel Hart, Yanir Shahak
+- **Contributors** - Uma Kumar, Hanna Rakhsha, Deion Locklear, Anthony Marino

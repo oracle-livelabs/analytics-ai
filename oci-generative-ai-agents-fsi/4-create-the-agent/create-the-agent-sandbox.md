@@ -1,5 +1,3 @@
-# Create the Agent
-
 ## Introduction
 
 In this lab we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform it's work effectively. Tools are resources the agent can use to perform it's tasks. In our use-case, we are going to use two tools:
@@ -15,6 +13,12 @@ In this lab, you will:
 
 - Create our agent including the RAG & SQL Tools and assign the relevant knowledge base to each.
 
+### Prerequisites
+
+This lab assumes you have:
+
+- All previous labs successfully completed.
+
 ## Task 1: Create the agent
 
 1. Click the navigation menu on the top left.
@@ -27,22 +31,24 @@ In this lab, you will:
 1. Under the **List scope** section, make sure that your compartment is selected.
 1. Click the **Create Agent** button at the top of the **Agents** table.
 
-   ![Screenshot showing how to create a new agent](./images/create-new-agent-sandbox.jpg)
+   ![Screenshot showing how to create a new agent](./images/create-new-agent-tenancy.png)
 
 1. For the **Name** field use: _loan compliance agent_
 1. For the **Compartment** field, make sure that your compartment is selected.
 1. For the **Description** field, use: _This agent assists compliance officers in reviewing applications, workloads, and policy compliance_.
-1. For the **Welcome message** field, use: _Hello! I’m your compliance assistant. How can I help with loan applications today?_
+1. For the **Welcome message** field, use: _Hello! I’m your compliance assistant. How can I help?_
 1. Click the **Next** button.
 
    ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.png =50%x*)
+
+## Task 2: Add the RAG Tool
 
 1. Under the **Tools** section, click the **Add tool** button to create our first tool.
 
    ![Screenshot showing how to create a new tool](./images/create-new-tool.png)
 
 1. Select the **RAG** tool option.
-1. Under the **RAG Configuration** section, use _Loan Policy Knowledge Base_ in the **Name** field.
+1. Under the **RAG Configuration** section, use _Knowledge base loan policy articles_ in the **Name** field.
 1. For the **Description** field, use: _Retrieves lending policy manuals and underwriting rules (DTI, credit score thresholds, FHA/VA limits, manual underwriting guidance)_.
 
    It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
@@ -54,7 +60,7 @@ In this lab, you will:
 
    ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2-sandbox.jpg)
 
-1. In the **New knowledge base** form, use: _Loan Policy Documents_ for the **Name** field.
+1. In the **New knowledge base** form, use: _Compliance officer knowledge base loan policy articles_ for the **Name** field.
 1. Make sure that your compartment is selected in the **Compartment** field.
 1. In the **Data store type** field, we will select **Object storage** to be able to retrieve information from our storage bucket.
 1. Make sure that **Enable hybrid search** is checked. Enabling this option instructs the system to combine lexical and semantic search when scanning our documents.
@@ -70,7 +76,7 @@ In this lab, you will:
 
    ![Screenshot showing the data source configuration](./images/data-source-info-sandbox.png)
 
-1. Back in the **New knowledge base** panel, the **loan policy docs** data source was added to the **Data source** table.
+1. Back in the **New knowledge base** panel, the **Loan policy manuals** data source was added to the **Data source** table.
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
 1. Click the **Create** button.
 
@@ -78,9 +84,11 @@ In this lab, you will:
 
 1. The knowledge base will take a few minutes to create and ingest the data.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
-1. Click the **Create tool** button.
+1. Click the **Add tool** button.
 
    ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.png)
+
+## Task 3: Add the SQL Tool
 
 1. Now that we have our RAG tool configured, let's configure our SQL tool. In the **Tools** section Click the **Add tool** button.
 
@@ -193,6 +201,8 @@ In this lab, you will:
 
    ![Screenshot showing how to move to the next agent creation section after tools were created](./images/complete-tools.png)
 
+## Task 4: Setup the Agent Endpoint
+
 1. In the **Setup agent endpoint** section, check the **Automatically create an endpoint for this agent**.
 1. Enable the **Enable human in the loop** option. This will enable the agent to ask for additional human input or information if needed.
 
@@ -202,6 +212,8 @@ In this lab, you will:
 1. Click the **Next** button.
 
    ![Screenshot showing how to move to the next section in the agent's creation after the endpoint configuration](./images/agent-endpoint-info-2.jpg)
+
+## Task 5: Review and Create
 
 1. In the **Review and create** page, review the agent information and click the **Create agent** button.
 

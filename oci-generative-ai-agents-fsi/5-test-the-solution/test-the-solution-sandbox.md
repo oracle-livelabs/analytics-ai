@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **loan compliance officer** agent in the **Agents** list.
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.png)
 
@@ -40,7 +40,7 @@ This lab assumes you have:
 
 1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
-1. On the top of the page, the **Agent** drop down should show **customer support agent** and the **Agent endpoint** drop down should show the newly created endpoint.
+1. On the top of the page, the **Agent** drop down should show **loan compliance officer** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
 1. Other elements in the page include:
 

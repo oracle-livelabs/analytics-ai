@@ -31,11 +31,11 @@ Estimated Workshop Time: 1 hour 20 minutes
 
 The following is a simplified solution architecture diagram for our loan officer assistant:
 
-![simplified solution architecture diagram for customer support representative assistant](./images/solution-architecture.jpg =50%x*)
+![simplified solution architecture diagram for customer support representative assistant](./images/architecture.png =50%x*)
 
 As described in the diagram, our solution makes use of the following resources:
 
-- **Oracle Autonomous Database (ADB) instance** - In this database, we are going to save information about the following entities relevant to our customer support system:
+- **Autonomous AI Database** - In this database, we are going to save information about the following entities relevant to our customer support system:
 
     - Applicants
     - Loan Officers

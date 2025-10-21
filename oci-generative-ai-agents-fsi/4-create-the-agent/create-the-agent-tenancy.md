@@ -30,113 +30,121 @@ This lab assumes you have:
    ![Screenshot showing how to navigate to the agents service](./images/navigate-to-agents.jpg)
 
 1. In the overview page, click the **Agents** link
-1. Under the **List scope** section, make sure that the **root** compartment is selected.
+1. Under the **List scope** section, make sure that your compartment is selected.
 1. Click the **Create Agent** button at the top of the **Agents** table.
 
-   ![Screenshot showing how to create a new agent](./images/create-new-agent.jpg)
+   ![Screenshot showing how to create a new agent](./images/create-new-agent-tenancy.png)
 
-1. For the **Name** field use: _customer support agent_
-1. For the **Compartment** field, make sure that the **root** compartment is selected.
-1. For the **Description** field, use: _This agent will help streamline the work of customer support representatives_.
-1. For the **Welcome message** field, use: _Hello! I’m your customer support helper, how can I help?_
+1. For the **Name** field use: _loan compliance agent_
+1. For the **Compartment** field, make sure that your compartment is selected.
+1. For the **Description** field, use: _This agent assists compliance officers in reviewing applications, workloads, and policy compliance_.
+1. For the **Welcome message** field, use: _Hello! I’m your compliance assistant. How can I help?_
 1. Click the **Next** button.
 
-   ![Screenshot showing the basic information for the agent](./images/basic-agent-info.jpg)
+   ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.png =50%x*)
+
+## Task 2: Add the RAG Tool
 
 1. Under the **Tools** section, click the **Add tool** button to create our first tool.
 
    ![Screenshot showing how to create a new tool](./images/create-new-tool.png)
 
 1. Select the **RAG** tool option.
-1. Under the **RAG Configuration** section, use _Knowledge base articles_ in the **Name** field.
-1. For the **Description** field, use: _This tool will retrieve knowledge base support articles whenever a customer support representative requires troubleshooting information to resolve a support ticket_.
+1. Under the **RAG Configuration** section, use _Knowledge base loan policy articles_ in the **Name** field.
+1. For the **Description** field, use: _Retrieves lending policy manuals and underwriting rules (DTI, credit score thresholds, FHA/VA limits, manual underwriting guidance)_.
 
    It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
 
-   ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.jpg)
+   ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.png)
 
-1. Under the **Add knowledge bases** section, make sure that the **root** compartment is selected in the **Compartment** field.
+1. Under the **Add knowledge bases** section, make sure that your compartment is selected in the **Compartment** field.
 1. Click the **Create knowledge base** button. In this step we are going to create a knowledge base which references the storage bucket into which we've uploaded the knowledge articles.
 
-   ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2.jpg)
+   ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2-sandbox.jpg)
 
-1. In the **New knowledge base** form, use: _Customer support knowledge base articles_ for the **Name** field.
-1. Make sure that the **root** compartment is selected in the **Compartment** field.
+1. In the **New knowledge base** form, use: _Compliance officer knowledge base loan policy articles_ for the **Name** field.
+1. Make sure that your compartment is selected in the **Compartment** field.
 1. In the **Data store type** field, we will select **Object storage** to be able to retrieve information from our storage bucket.
 1. Make sure that **Enable hybrid search** is checked. Enabling this option instructs the system to combine lexical and semantic search when scanning our documents.
 1. Click the **Specify data source** button.
 
-   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-1.jpg)
+   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-1-sandbox.png)
 
-1. In the **Specify data source** form, use: _Knowledge base articles_ for the **Name** field.
+1. In the **Specify data source** form, use: _loan policy docs_ for the **Name** field.
 1. Make sure that the **Enable multi-modal parsing** option is **not** checked. This option enable parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our knowledge articles so right now this option is not required.
-1. Under the **Data bucket** option, select the _knowledge-base-articles_ bucket into which we've previously uploaded the knowledge articles PDF files.
+1. Under the **Data bucket** option, select the _loan-policy-manuals_ bucket into which we've previously uploaded the knowledge articles PDF files.
 1. Check the **Select all in bucket option**. This option will automatically flag all of the file in the bucket for ingestion instead of us having to select each file individually.
 1. Click the **Create** button.
 
-   ![Screenshot showing the data source configuration](./images/data-source-info.jpg)
+   ![Screenshot showing the data source configuration](./images/data-source-info-sandbox.png)
 
-1. Back in the **New knowledge base** panel, the **Knowledge base articles** data source was added to the **Data source** table.
+1. Back in the **New knowledge base** panel, the **Loan policy manuals** data source was added to the **Data source** table.
 1. Make sure that the **Automatically start ingestion job for above data sources** option is checked. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
 1. Click the **Create** button.
 
-   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-2.jpg)
+   ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-2.png)
 
 1. The knowledge base will take a few minutes to create and ingest the data.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
-1. Click the **Create tool** button.
+1. Click the **Add tool** button.
 
-   ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.jpg)
+   ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.png)
+
+## Task 3: Add the SQL Tool
 
 1. Now that we have our RAG tool configured, let's configure our SQL tool. In the **Tools** section Click the **Add tool** button.
 
    ![Screenshot showing the create tool button for creating the SQL tool](./images/create-new-tool.png)
 
 1. Click the **SQL** option.
-1. For the **Name** field, use: _Customer support database_.
-1. For the **Description** field, use: _The tables contain information about tickets created by customers as well as the customer support agents which will handle those tickets as well as the customers who reported the issues_.
+1. For the **Name** field, use: _Loan Applications database_.
+1. For the **Description** field, use: _Tables contain applicants, loan applications, statuses, and officers for compliance review._.
 
-   ![Screenshot showing the initial set of the SQL tool configuration](./images/sql-tool-info-1.jpg)
+   ![Screenshot showing the initial set of the SQL tool configuration](./images/sql-tool-info-1.png)
 
 1. Under **Import database schema configuration for this tool**, selec the **Inline** option which will allow us to use the same schema text we've used when we created the database.
 1. Copy the following text and paste it into the **Database schema** field:
 
       ```sql
       <copy>
-      CREATE TABLE Customers (
-         CustomerID NUMBER PRIMARY KEY,
-         FirstName VARCHAR2(50) NOT NULL,
-         LastName VARCHAR2(50) NOT NULL,
-         Email VARCHAR2(100) UNIQUE NOT NULL,
-         Phone VARCHAR2(20),
-         Address VARCHAR2(200)
+      CREATE TABLE Applicants (
+      ApplicantID NUMBER PRIMARY KEY,
+      ExternalCustomerID VARCHAR2(20) UNIQUE,
+      FirstName VARCHAR2(50) NOT NULL,
+      LastName  VARCHAR2(50) NOT NULL,
+      Address   VARCHAR2(200),
+      City      VARCHAR2(50),
+      State     VARCHAR2(2),
+      ZipCode   VARCHAR2(10),
+      Age NUMBER,
+      AnnualIncome NUMBER,
+      CreditScore NUMBER
       );
-
-      CREATE TABLE SupportAgents (
-         AgentID NUMBER PRIMARY KEY,
-         FirstName VARCHAR2(50) NOT NULL,
-         LastName VARCHAR2(50) NOT NULL,
-         Email VARCHAR2(100) UNIQUE NOT NULL,
-         Phone VARCHAR2(20)
+      CREATE TABLE LoanOfficers (
+      OfficerID NUMBER PRIMARY KEY,
+      FirstName VARCHAR2(50) NOT NULL,
+      LastName  VARCHAR2(50) NOT NULL,
+      Email VARCHAR2(100) UNIQUE NOT NULL,
+      Phone VARCHAR2(20)
       );
-
-      CREATE TABLE TicketStatus (
-         StatusID NUMBER PRIMARY KEY,
-         StatusName VARCHAR2(50) NOT NULL
+      CREATE TABLE LoanStatus (
+      StatusID NUMBER PRIMARY KEY,
+      StatusName VARCHAR2(50) NOT NULL
       );
-
-      CREATE TABLE Tickets (
-         TicketID NUMBER PRIMARY KEY,
-         CustomerID NUMBER NOT NULL,
-         Subject VARCHAR2(200) NOT NULL,
-         Description CLOB NOT NULL,
-         CreatedDate DATE DEFAULT SYSTIMESTAMP NOT NULL,
-         LastUpdatedDate DATE DEFAULT SYSTIMESTAMP NOT NULL,
-         StatusID NUMBER NOT NULL,
-         AssignedToAgentID NUMBER,
-         FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
-         FOREIGN KEY (StatusID) REFERENCES TicketStatus(StatusID),
-         FOREIGN KEY (AssignedToAgentID) REFERENCES SupportAgents(AgentID)
+      CREATE TABLE LoanApplications (
+      LoanApplicationID NUMBER PRIMARY KEY,
+      ApplicationID NUMBER UNIQUE NOT NULL,
+      ApplicantID NUMBER NOT NULL,
+      LoanType VARCHAR2(50) NOT NULL,
+      RequestedAmount NUMBER NOT NULL,
+      DebtToIncomeRatio NUMBER NOT NULL,
+      CreatedDate DATE NOT NULL,
+      LastUpdatedDate DATE NOT NULL,
+      StatusID NUMBER NOT NULL,
+      AssignedToOfficerID NUMBER,
+      EducationLevel VARCHAR2(50),
+      TotalDebt NUMBER,
+      Veteran VARCHAR2(3)
       );
       </copy>
       ```
@@ -146,72 +154,56 @@ This lab assumes you have:
 
       ```text
       <copy>
-      Customers table - Each record in this table contains information about a customer which may or may not have created a support ticket
-      Columns:
-      CustomerID - number, a unique identifier for the customer
-      FirstName - string, the customer's first name
-      LastName - string, the customer's last name
-      Email - string, the customer's email for communications
-      Phone - string, the customer's phone for communications
-      Address - string - the customer's address for communications
+      Applicants — customer demographic and financial details.
+         ApplicantID (number): PK
+      ExternalCustomerID (string): business ID (e.g., CUST_22000)
+         FirstName, LastName, Address, City, State, ZipCode
+      Age (number)
+         AnnualIncome (number)
+         CreditScore (number)
+      LoanOfficers — officer directory.
+         OfficerID (number): PK
+      FirstName, LastName, Email, Phone
+      LoanStatus — application lifecycle statuses.
+         StatusID (number): PK
+      StatusName (string): one of Pending Review, In Progress, Approved, Denied
+      LoanApplications — each loan application and its state.
+         LoanApplicationID (number): PK
+      ApplicationID (number): external app ID (unique)
+         ApplicantID (number): FK → Applicants.ApplicantID
+      LoanType (string): Conventional, FHA, VA, Jumbo
+      RequestedAmount (number)
+         DebtToIncomeRatio (number)
+         CreatedDate (date)
+         LastUpdatedDate (date)
+         StatusID (number): FK → LoanStatus.StatusID
+      AssignedToOfficerID (number): FK → LoanOfficers.OfficerID
+      EducationLevel (string)
+         TotalDebt (number)
+         Veteran (string): 'Yes'/'No'
 
-      SupportAgents table - Each in this table contains information about a support agent which handles support tickets
-      Columns:
-      AgentID - number, a unique identifier for the support agent
-      FirstName - string, the support agent's first name
-      LastName - string, the support agent's last name
-      Email - string, the support agent's work email
-      Phone - string, the support agent's work phone
 
-      TicketStatus table - Contains a list of possible statuses a support ticket can be in
-      Columns:
-      StatusID - number, a unique identifier for the status
-      StatusName - string, the name assigned to the status
-      The possible status names are:
-      New - When a support ticket is initially created and before it was triaged
-      Open - When the support ticket is triaged and assigned to a support agent
-      In Progress - When the support agent started working on the issue
-      On Hold - When an issue's resolution is delayed by an external factor or another issue
-      Resolved - When an issue has been successfully resolved to the customer's satisfaction
-      Closed - When the customer acknowledged the issue is resolved
-      Escalated - When an issue could not be resolved by a support agent or if an issue has been active for more than 3 days
-      Cancelled - When a customer reports that an issue has been resolved but no action was taken by the support agent
-
-      Tickets table - Each record in this table contains information about an issue reported by a customer alongside information about the issue as well as the status
-      this is issue is currently in and the support agent assigned to handle the issue.
-      Columns:
-      TicketID - number, a unique identifier for the ticket
-      CustomerID - number, a customer ID from the Customers table representing the customer that reported the issue
-      Subject - string, a short description of the issue
-      Description - string, a full description of the issue, contains all of the information required to understand and address the issue
-      CreatedDate - datetime, the date and time at which the ticket was created by the customer
-      LastUpdatedDate - datetime, the date and time of the last action taken by a support agent regarding this ticket
-      StatusID - number, a status ID from the TicketStatus table representing the current state or status of the ticket
-      AssignedToAgentID - number, a support agent ID from the SupportAgents table representing the support agent assigned to handle the ticket
       </copy>
       ```
 
+   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2-sandbox.png)
+
 1. For **Model customization**, select the **Small** option.
 1. For **Dialect**, select **Oracle SQL**.
-1. In the **Database tool connection in...** select the **connection-customersupportXXXX** connection we've previously created.
-1. Click the **Test connection** button.
-
-   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2.jpg)
-
-1. If the connection test succeeded, you should see a message similar to the following:
-
-   ![Screenshot showing a successful connection test result](./images/sql-connection-test-successful.jpg)
-
+1. In the **Database tool connection in...** select the **connection-loancomplianceXXXX** connection we've previously created.
+1. Click the **Test connection** button. You should see a successful connection connection attempt.
 1. Enable the **SQL execution** option. This option will instruct the tool to execute the SQL queries generated by the tool as a result of the user's requests. This will allow the agent to craft intelligent responses based on the data returned from the queries.
 1. Enable the **Self correction** option. Enabling this option will allow the tool to automatically detect and correct syntax errors in generated SQL queries.
 
 1. Click the **Add tool** button.
 
-   ![Screenshot showing the last set of the SQL tool configuration](./images/sql-tool-info-3.jpg)
+   ![Screenshot showing the last set of the SQL tool configuration](./images/sql-tool-info-3-sandbox.png)
 
 1. Back in the **Tools** section, Click **Next**
 
-   ![Screenshot showing how to move to the next agent creation section after tools were created](./images/complete-tools.jpg)
+   ![Screenshot showing how to move to the next agent creation section after tools were created](./images/complete-tools.png)
+
+## Task 4: Setup the Agent Endpoint
 
 1. In the **Setup agent endpoint** section, check the **Automatically create an endpoint for this agent**.
 1. Enable the **Enable human in the loop** option. This will enable the agent to ask for additional human input or information if needed.
@@ -223,9 +215,11 @@ This lab assumes you have:
 
    ![Screenshot showing how to move to the next section in the agent's creation after the endpoint configuration](./images/agent-endpoint-info-2.jpg)
 
+## Task 5: Review and Create
+
 1. In the **Review and create** page, review the agent information and click the **Create agent** button.
 
-   ![Screenshot of the agent creation review page](./images/agent-info-last.jpg)
+   ![Screenshot of the agent creation review page](./images/agent-info-last.png)
 
 1. In the license agreement dialog, review the agreement, check the concent checkbox and click the **Submit** button.
 
@@ -242,4 +236,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Deion Locklear 
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
