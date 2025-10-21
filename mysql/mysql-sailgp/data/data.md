@@ -29,39 +29,42 @@ In this lab, you will:
 
    Save the file on your local machine. Make sure that the file is saved with extension `.csv`.
 
-2. From the Console navigation menu, click Storage, then Buckets.
+2. From the Console, click _**Navigation menu**_, click _**Storage**_, then _**Buckets**_.
 
   ![Cloud shell](./images/go-to-buckets.png)
 
-3. Make sure you are in the same compartment where you created the other resources. Then click "Create" and name the new bucket "sailgp". Leave all the other options at default, then press Create.
+3. Make sure you are in the same compartment where you created the other resources. Then click _**Create bucket**_ and name the new bucket _**sailgp**_. Leave all the other options at default, then click _**Create**_.
 
   ![Cloud shell](./images/create-bucket.png)
 
-4. Open the bucket by clicking on its name.
+4. Open the bucket by clicking its name. Click _**Upload objects**_.
 
   ![Cloud shell](./images/open-bucket.png)
 
-5. Click Upload. Drag the file that you just downloaded to the indicated box. Finally, press Upload.
+5. Drag the file that you just downloaded to the indicated box. Click _**Next**_, and then click _**Upload**_.
 
   ![Cloud shell](./images/upload.png)
 
-6. Next, we are going to create a URL to access the file. This is called a "Pre Authenticated Request". We will use this PAR later to access the file on Object Storage directly from MySQL. 
+6. Next, we are going to create a URL to access the file. This is called a _**Pre-Authenticated Request**_ (PAR). We will use this PAR later to access the file on Object Storage directly from MySQL. 
 
-   Click on the 3 dots next to the file, select "Create Pre-authenticated Request", then click the button "Create Pre-Authenticated Request", and finally copy the URL with the indicated button.
+   Under _**Objects**_, click on the _**Actions menu**_ next to the file, and click _**Create pre-authenticated request**_.
 
   ![Cloud shell](./images/create-par1.png)
 
+7. Select _**Object**_, and click _**Create pre-authenticated request**_.
+
   ![Cloud shell](./images/create-par2.png)
+
+8. Copy the URL, and click _**Close**_. Keep this PAR somewhere (e.g. place it in notepad), as you will need it later.
 
   ![Cloud shell](./images/copy-par.png)
 
-   Keep this PAR somewhere (e.g. place it in notepad), as you will need it later.
 
 ## Task 2: Connect to the Bastion Host and install MySQL Shell
 
 1. In order to connect to the bastion host, we will use the cloud shell, a small linux terminal embedded in the OCI interface.
   
-  	To access cloud shell, click on the shell icon next to the name of the OCI region, on the top right corner of the page.
+  	To access cloud shell, click _**Cloud Shell**_.
 
   ![Cloud shell](./images/open-cloud-shell.png)
 
@@ -71,7 +74,7 @@ In this lab, you will:
 
 2. Drag and drop the previously saved private key into the cloud shell.   
 
-  ![Cloud Shell Darg&Drop Private key](./images/drag-private-key-to-cloud-shell.png)
+  ![Cloud Shell Drag & Drop Private key](./images/drag-private-key-to-cloud-shell.png)
 
   You can verify the key file name with the following command:
     
@@ -80,7 +83,7 @@ In this lab, you will:
     ```
   ![Cloud Shell list files](./images/verify-filename.png)
 
-3. Copy the _**Public IP Address**_ of the compute instance you have just created. Remember, you can find this from the main menu by going to "Compute", "Instances", "mysql-analytics-bastion".
+3. Copy the _**Public IP Address**_ of the compute instance you have just created. Remember, you can find this by going to _**Navigation menu**_ > _**Compute**_ > _**Instances**_ > _**mysql-analytics-bastion**_.
 
   	![Compute Instance Ip Address](./images/copy-public-ip.png)
 
@@ -91,7 +94,7 @@ In this lab, you will:
 	</copy>
 	```
 
-5. In order to establish an ssh connection with the bastion host using the Public IP, execute the following command in your Cloud Shell (first replace where indicated with the actual key filename and the public IP address of the Bastion compute instance):
+5. In order to establish an ssh connection with the bastion host using the Public IP, execute the following command in your Cloud Shell. Ensure to enter  the actual key filename and the public IP address of the Bastion compute instance:
 
 	```
 	<copy>
@@ -100,7 +103,7 @@ In this lab, you will:
 	```
   	![connect to compute instance](./images/connect-to-compute-instance.png)
 
-  	If prompted to accept the finger print, type _**yes**_ and hit enter, then you will get a Warning.
+  	If prompted to accept the finger print, type _**yes**_ and hit _**Enter**_.
 
 6. Run the following command to install MySQL Shell on the compute instance.
 
@@ -115,7 +118,7 @@ In this lab, you will:
 
 ## Task 3: Connect to MySQL Shell and configure the External Table
 
-1. First, get obtain the private IP address of the MySQL database. You can get this by going to "Databases", "DB Systems", "mysql-lakehouse", "Connections" and then copy the private IP address.
+1. First, get obtain the private IP address of the MySQL database. You can get this by going to _**Navigation menu**_ > _**Databases**_ > _**DB Systems**_ > _**mysql-lakehouse**_ > _**Connections**_ and then copy the private IP address.
 
   ![Cloud Shell list files](./images/get-private-ip-address.png)
 
@@ -255,4 +258,4 @@ Well done, you can now proceed to the next lab!
 
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025
+- **Last Updated By/Date** - Aijaz Fatima, Product Manager, Oct 2025

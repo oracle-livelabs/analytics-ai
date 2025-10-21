@@ -29,29 +29,21 @@ This lab assumes you have completed the lab for configuring the infrastructure.
 
 First we need to create a connection from Oracle Analytics Cloud to our MySQL HeatWave Lakehouse instance. 
 
-1. In order for OAC to be able to connect to MySQL HeatWave, we will need to provide our MySQL instance's Hostname. To find this out, you need to go back to the MySQL instance details.
+1. In order for OAC to be able to connect to MySQL HeatWave, we will need to provide our MySQL instance's Hostname. To find this out, go to _**Navigation menu**_ > _**Databases**_ > _**DB Systems**_ > _**mysql-lakehouse**_ > _**Connections**_, and copy the _**Internal FQDN**_ to the clipboard.
 
-  	Go to Databases section on your Cloud Home Page and select **DB Systems** and finally select **mysql-lakehouse** instance that we created previously and you will find all the information required such as **Hostname** and **MySQL Port** in the _Endpoint section_.
+   ![MySQL DB system dashboard](./images/hostname.png)
 
-   Copy the Hostname to the clipboard.
-
-  	![MySQL DB system dashboard](./images/endpoint.png)
-
-  	![MySQL DB system dashboard](./images/hostname.png)
-
-2. Open Oracle Analytics Cloud
-
-   In the **Oracle Cloud Infrastructure console** click on the menu icon on the left. Navigate to **Analytics & AI** and then **Analytics Cloud**.
+2. Open Oracle Analytics Cloud. Go to _**Navigation menu**_ > _**Analytics & AI**_ > _**Analytics Cloud**_.
 
    ![OAC Web Console](images/analytics-oac.png)
 
-3. **Open** the Cloud Analytics **URL** associated with your instance (the one that we created in Lab 2) by using the dots menu button on the right-hand side of your instance information and selecting **Analytics Home Page**.
+3. Open the Cloud Analytics URL associated with your instance (the one that we created in Lab 2) by using the Actions menu and selecting **Analytics Home Page**.
 
    ![Cloud Analytics URL](images/select-oac-instance.png)
 
    The **Oracle Analytics** page will open in a new browser **window/tab**.
 
-4. On the top right-hand side of the screen, click **Create**, and then **Connection**.
+4. Click **Create**, and then **Connection**.
 
    ![Connection Creation](images/oac-create-connection.png)
 
