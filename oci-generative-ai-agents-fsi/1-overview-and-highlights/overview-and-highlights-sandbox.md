@@ -52,9 +52,9 @@ As described in the diagram, our solution makes use of the following resources:
 - **Knowledge bases** - The two knowledge bases reference our two data sources, the Storage Bucket and the ADB instance, and are used by the relevant agent tools.
 - **RAG tool** - This tool is used by the agent to retrieve, reason over and analyze information from unstructured data such as the loan policy documents stored in the storage bucket. The agent will use this tool whenever specific knowledge is required to complete a task. The RAG tool is also capable of providing references to the origins of the information retrieved (which document, page and paragraph).
 
-  In addition, the RAG tool is capable of analyzing text files as well as PDF files; And, if instructed to do so, can also analyze images within the PDF files.
+  In addition, the RAG tool is capable of analyzing text files as well as PDF files; and, if instructed to do so, can also analyze images within the PDF files.
 
-- **SQL tool** - This to is used by the agent to retrieve, reason over and respond using information found in our ADB instance. This tool knows how to convert natural language requests or questions into SQL and can retrieve the information for the agent to use in it's replies.
+- **SQL tool** - This to is used by the agent to retrieve, reason over and respond using information found in our ADB instance. This tool knows how to convert natural language requests or questions into SQL and can retrieve the information for the agent to use in its replies.
 - **Agent** - The agent will receive all requests from the user, come up with an execution plan, will ask clarifying questions if required and route requests to the tools if needed. The agent will collect all of the pieces of information collected during the execution of the plan and compile a coherent response for the user.
 
 In order to accelerate the development process, in this workshop we are going to use the chat feature built into the OCI console to communicate with the agent without writing or deploying a single line of code.
@@ -78,5 +78,5 @@ Some of the resources mentioned in the solution architecture were already create
 
 ## Acknowledgements
 
-- **Author** - Uma Kumar
+- **Author** - Uma Kumar, Yanir Shahak
 - **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino

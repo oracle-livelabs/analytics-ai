@@ -142,7 +142,7 @@ Next, we will create the access policies:
 
 ## Task 3: Create a storage bucket for the loan policy manuals
 
-The loan policy manual PDFs that we are going to upload into a storage bucket in this task will be used by the agent whenever a loan compliance officer  requires specific internal policy guidance to evaluate loan applications.
+The loan policy manual PDFs that we are going to upload into a storage bucket in this task will be used by the agent whenever a loan compliance officer requires specific internal policy guidance to evaluate loan applications.
 
 1. Click the **navigation** menu on the top left.
 1. Click **Storage**.

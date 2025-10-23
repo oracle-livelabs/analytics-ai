@@ -125,5 +125,5 @@ Although our use-case was focused on loan compliance, the OCI AI Agents service 
 
 ## Acknowledgements
 
-- **Author** - Deion Locklear
+- **Author** - Deion Locklear, Yanir Shahak
 - **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
