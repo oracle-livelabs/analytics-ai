@@ -5,6 +5,9 @@
 Our provisioning work is now complete. It is now time to enjoy the fruits of our labor.
 In the previous labs we have:
 
+- Created the proper permissions & basic setup.
+- Uploaded the knowledge base articles to a storage bucket.
+- Created our ADB instance and filled it with data.
 - Created an agent as well as the SQL and RAG tools alongside their knowledge bases.
 - Configured the agent endpoint.
 
@@ -27,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **loan compliance agent** in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **loan compliance officer** agent in the **Agents** list.
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.png)
 
@@ -35,9 +38,9 @@ This lab assumes you have:
 
     ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.png)
 
-1. In the chat page, on the left, make sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
+1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
-1. On the top of the page, the **Agent** drop down should show **loan compliance agent** and the **Agent endpoint** drop down should show the newly created endpoint.
+1. On the top of the page, the **Agent** drop down should show **loan compliance officer** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
 1. Other elements in the page include:
 
@@ -49,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into your message box: _How many loan applications are pending review?_
+1. To start, type the following question into you message box: _How many loan applications are pending review?_.
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -72,12 +75,12 @@ This lab assumes you have:
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
-1. Our next question would be: _Which loan officer has the most applications assigned?_ Let's see if the agent will be able to figure that out...
+1. Our next question would be: _Which loan officer has the most applications assigned?_. Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
 
-1. The agent shows the correct answer: **Olivia Brown**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that Olivia Brown was the loan officer with the most applications assigned to them.
+1. The agent shows the correct answer: **Olivia Brown**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that the loan officer with the most applications assigned to them.
 
     ![Screenshot showing the response for the second question](./images/second-question-response.png)
 
@@ -122,5 +125,5 @@ Although our use-case was focused on loan compliance, the OCI Generative AI serv
 
 ## Acknowledgements
 
-- **Author** - Uma Kumar, Yanir Shahak
+- **Author** - Uma Kumar
 - **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
