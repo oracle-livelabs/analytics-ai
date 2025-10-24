@@ -236,5 +236,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Deion Locklear 
+- **Author** - Deion Locklear, Yanir Shahak
 - **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
