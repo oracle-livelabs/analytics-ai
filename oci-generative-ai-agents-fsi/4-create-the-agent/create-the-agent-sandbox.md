@@ -82,7 +82,7 @@ This lab assumes you have:
 
    ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-2.png)
 
-1. The knowledge base will take a few minutes to create and ingest the data.
+1. The knowledge base will take a few minutes to create and ingest the data. You may proceed to the next step while the knowledge base provisions.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
 1. Click the **Add tool** button.
 
@@ -146,7 +146,7 @@ This lab assumes you have:
       );
       </copy>
       ```
-
+1. Under the **In-context learning examples**, leave the **None** option selected.
 1. Under the **Description of tables and columns**, select the **Inline** option.
 1. Copy and paste the following text into the **Description of tables and columns**. This verbal description contains details about each table and column. This will allow the tool to better understand the data stored in our database:
 

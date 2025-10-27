@@ -46,7 +46,7 @@ As described in the diagram, our solution makes use of the following resources:
 
   ![Tickets database schema](./images/database-schema.png)
 
-- **Storage Bucket** - The storage bucket will store loan policy manuals (provided for you as part of this workshop). The agent will retrieve the relevant loan policy manuals whenever a **loan compliance officer** requires this information.
+- **Storage Bucket** - The storage bucket will store loan policy manuals (provided for you as part of this workshop). The agent  will retrieve the relevant loan policy manuals whenever a **loan compliance officer** requires this information.
 - **Vault** - In this vault, we are going to securely store the credentials required to access the ADB instance.
 - **Database Connection** - This resource will contain all of the information required to retrieve data from our ADB instance. The connection will will securely retrieve the required credentials from the vault.
 - **Knowledge bases** - The two knowledge bases reference our two data sources, the Storage Bucket and the ADB instance, and are used by the relevant agent tools.
