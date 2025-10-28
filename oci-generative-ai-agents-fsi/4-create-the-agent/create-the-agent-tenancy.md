@@ -86,7 +86,7 @@ This lab assumes you have:
 
 1. The knowledge base will take a few minutes to create and ingest the data.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
-1. Click the **Create tool** button.
+1. Click the **Add tool** button.
 
    ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.png)
 

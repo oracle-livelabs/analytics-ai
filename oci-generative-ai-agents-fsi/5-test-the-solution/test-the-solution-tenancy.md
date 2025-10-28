@@ -38,7 +38,7 @@ This lab assumes you have:
 
     ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.png)
 
-1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
+1. In the chat page, on the left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
 1. On the top of the page, the **Agent** drop down should show **loan compliance agent** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into you message box: _How many loan applications are pending review?_.
+1. To start, type the following question into you message box: _How many loan applications have been denied since June 2025?_.
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -85,12 +85,12 @@ This lab assumes you have:
     ![Screenshot showing the response for the second question](./images/second-question-response.png)
 
 1. Feel free to take a look at the **Traces** generated for this response.
-1. Next we'll ask the following: _List applications that have been pending for more than 7 days._
+1. Next we'll ask the following: _List applications that have been in progress for more than 7 days._
 1. Click the **Submit** button.
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
 
-1. As you can see, the response included the type and amount for the two loans that have been pending for more than 7 days.
+1. As you can see, the response included the type and amount for the two loans that have been in progress for more than 7 days.
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
@@ -108,16 +108,15 @@ Here are a few more prompts to try with the agent:
 
 - _What is the minimum credit score for FHA vs Conventional loans?_
 - _Show the distribution of credit scores by loan type_
-- _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
-- _Give me a risk dashboard: counts by status, average credit score and DTI by loan type, and total requested amount; include links to policy sections that define ‘risk’_
+- _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
 
 ## Summary
 
-As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
+As you've experienced, the OCI AI Agents service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
 
-Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
+Another interesting advantage of building solutions on top the OCI AI Agents service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
-Although our use-case was focused on loan compliance, the OCI Generative AI service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
+Although our use-case was focused on loan compliance, the OCI AI Agents service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
 
 ## Learn More
 
