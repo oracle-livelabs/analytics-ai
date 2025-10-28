@@ -13,14 +13,19 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
-        "title": "Lab 1: Configure Chat with ATOM LLM",
+        "title": "Lab 1: Create a Lakehouse with Airline Sample Data",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../provision/provision.md"
+        "filename": "../../create-lakehouse/create-lakehouse.md"
       },
       {
-        "title": "Lab 2: How to use ATOM",
+        "title": "Lab 2: Refine and Prepare Data with AIDP",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../usingAtom/useatom.md"
+        "filename": "../../aidp-refine/aidp-refine.md"
+      },
+      {
+        "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../oac-visualize/oac-visualize.md"
       },
       {
         "title": "Need Help?",
