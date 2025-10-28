@@ -44,10 +44,10 @@ This lab assumes you have:
 1. Test to see if you can connect to the gold AIRLINE_SAMPLE table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. **airlines_external_adb_gold**
 
 ```python
-airlines_sample_table = "<external-catalog-name>.gold.AIRLINE_SAMPLE"
+airlines_sample_table = "external-catalog-name.gold.AIRLINE_SAMPLE"
 
 # Confirm AIRLINE_SAMPLE table is reflected in spark
-spark.sql("SHOW TABLES IN <external-catalog-name>.gold").show(truncate=False)
+spark.sql("SHOW TABLES IN external-catalog-name.gold").show(truncate=False)
 
 df = spark.table(airlines_sample_table)
 
@@ -59,7 +59,7 @@ df.show()
 2. Write the new data frame to your Object Storage bucket 
 
 ```python 
-delta_path = "oci://<oci-bucket>@<os-namespace>/delta/airline_sample"
+delta_path = "oci://oci-bucket@os-namespace/delta/airline_sample"
 df.write.format("delta").mode("overwrite").save(delta_path)
 ```
 
@@ -110,7 +110,7 @@ df_v0.show()
 ## Write cleaned data to silver schema 
 df_clean = spark.table(bronze_table)
 
-silver_path = "oci://<os-bucket>@<os-namespace>/delta/silver/airline_sample"
+silver_path = "oci://os-bucket@os-namespace/delta/silver/airline_sample"
 silver_table = "airlines_data_catalog.silver.airline_sample_delta"
 
 # Create Silver Schema to store data
@@ -198,7 +198,7 @@ enhanced_df.show(10, False)
 ```python
 # Save Averaged Data to Gold Schema 
 
-gold_path = "oci://<os-bucket>@<os-namespace>/delta/gold/airline_sample_avg"
+gold_path = "oci://os-bucket@os-namespace/delta/gold/airline_sample_avg"
 gold_table = "airlines_data_catalog.gold.airline_sample_avg"
 
 # Create Gold Schema 
