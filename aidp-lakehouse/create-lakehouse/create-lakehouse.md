@@ -18,12 +18,12 @@ Oracle AI Data Platform combines the scalability of data lakes with the performa
 
 In this lab, you will:
 * **Provision and Configure Core Data Lakehouse Services**
-  * Create & Launch your Autonomous AI Data Lakehouse
+  - Create & Launch your Autonomous AI Data Lakehouse
 * **Create Gold Schema & Sample Tables**
-  * Configure sample airlines table
-  * Upload sample airline dataset to your lakehouse
+  - Configure sample airlines table
+  - Upload sample airline dataset to your lakehouse
 * **Provision AIDP for Delta Table Processing**
-  * Create AIDP with associated object storage bucket
+  - Create AIDP with associated object storage bucket
 
 ---
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 
 ![Create AI Database](./images/create-aidp-db-2.png)
 
-* **NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html)
+* **NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
 
 5. Create the AI Database. The provisioning process will take a few minutes.
 
@@ -65,7 +65,7 @@ This lab assumes you have:
 ## Task 2: Create Gold Schema 
 
 1. Create a Gold Schema (User) in Autonomous Data Lakehouse
-CREATE USER gold IDENTIFIED BY "<strong_password>";
+CREATE USER gold IDENTIFIED BY "strong_password";
 
 2. Grant Required Roles/Privileges to Gold Schema
 
@@ -200,11 +200,11 @@ For more information, see [IAM Policies for AI Data Platform](https://docs.oracl
 
 ![Create Catalog](./images/create-catalog.png)
 
-3. Provide a catalog name (e.g. **aidp_external_gold_catalog**), select Catalog type as External Catalog, External source type as Oracle Autonomous Data Warehouse. For External source method select 'Choose ADW instance' and select the AI Database in your respective compartment (e.g. **aidp**). Provide the gold schema as username and give associated password. Select Create - 
+3. Provide a catalog name (e.g. **"aidp_external_gold_catalog"**), select Catalog type as External Catalog, External source type as Oracle Autonomous Data Warehouse. For External source method select 'Choose ADW instance' and select the AI Database in your respective compartment (e.g. **aidp**). Provide the gold schema as username and give associated password. Select Create - 
 
 ![Create External Catalog](./images/create-external-catalog.png)
 
-* **NOTE** If you are connecting to an AI Database in a private subnet, you will need to enable private network. This is outside the scope of this livelab. For more details, see [Create an External Catalog for Private Networks](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html#GUID-F68CD62C-7D35-4A87-9234-9C88F6CDB60F)
+* **NOTE** If you are connecting to an AI Database in a private subnet, you will need to enable private network. This is outside the scope of this livelab. For more details, see [Create an External Catalog for Private Networks](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html#GUID-F68CD62C-7D35-4A87-9234-9C88F6CDB60F).
 
 ## Task 5: Set Up Object Storage
 
@@ -226,7 +226,7 @@ This task will help you create a bucket in OCI Object Storage where your raw dat
 
 Provision and open a workspace in Oracle AI Data Platform.
 
-1. Navigate back to AIDP service console. Click **Create Workspace** and enter name. Set the default catalog to the catalog created in previous task (e.g. **aidp_external_gold_catalog**)
+1. Navigate back to AIDP service console. Click **Create Workspace** and enter name. Set the default catalog to the catalog created in previous task (e.g. **"aidp_external_gold_catalog"**)
    ![Create AIDP Workspace](images/create-aidp-workspace.png)
 3. After the workspace is active, open it and create a new folder 'demo'
 
@@ -238,7 +238,7 @@ Provision and open a workspace in Oracle AI Data Platform.
 
 5. Edit the name of the notebook to something more instructive e.g. **airlines-notebook**
 
-6. Select Cluster at the top right and select 'Create Cluster'. Provide a name e.g. **my_workspace_cluster** and leave the options as default. Select create - 
+6. Select Cluster at the top right and select 'Create Cluster'. Provide a name e.g. **"my_workspace_cluster"** and leave the options as default. Select create - 
 
 ![Create Cluster](./images/create-cluster.png)
 

@@ -41,7 +41,7 @@ This lab assumes you have:
 
 ## Task 2: Load Airline Sample Data as Delta Table
 
-1. Test to see if you can connect to the gold AIRLINE_SAMPLE table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. **airlines_external_adb_gold**
+1. Test to see if you can connect to the gold "AIRLINE_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. **"airlines_external_adb_gold"**
 
 ```python
 airlines_sample_table = "external-catalog-name.gold.AIRLINE_SAMPLE"
@@ -65,7 +65,7 @@ df.write.format("delta").mode("overwrite").save(delta_path)
 
 * **NOTE** Only one table can be associated with a given delta path. If you try to create a table on a path that already is associated with another table, it will throw an error. You will have to delete the associated table and re-write the dataframe to the path. 
 
-3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called **airlines_data_catalog**. This is distinct from the external catalog to the AI Lakehouse created earlier. **airlines_data_catalog** will be used to store the bronze, silver, and gold layers of the medallian architecture.
+3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called **"airlines_data_catalog"**. This is distinct from the external catalog to the AI Lakehouse created earlier. **"airlines_data_catalog"** will be used to store the bronze, silver, and gold layers of the medallian architecture.
 
 ```python
 bronze_table = "airlines_data_catalog.bronze.airline_sample_delta"

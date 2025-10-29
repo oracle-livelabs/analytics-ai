@@ -24,7 +24,7 @@ By completing this workshop, you will:
 - Design data visualizations and dashboards with Oracle Analytics Cloud (OAC)
 
 **Architecture Overview:**  
-![Lakehouse Architecture Diagram](images/lakehouse_architecture.drawio.png)
+![Lakehouse Architecture Diagram](images/ai-lakehouse-aidp.png)
 
 **Key Oracle Services Touched:**
 * **AIDP:** Modern data engineering, Spark/Delta-based ETL, AI/ML-ready platform
