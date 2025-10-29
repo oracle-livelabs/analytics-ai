@@ -68,11 +68,11 @@ This lab assumes you have:
 
 ![Create Dataset](./images/create-dataset.png)
 
-8. Select the adl-conn just created 
+8. Select the **adl-conn** just created 
 
 ![Create ADL Dataset](./images/create-dataset-adl-conn.png)
 
-9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the **"AIRLINE_SAMPLE_GOLD"** table to the white space to the right 
+9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the AIRLINE_SAMPLE_GOLD table to the white space to the right 
 
 ![Create Gold Dataset](./images/create-dataset-gold.png)
 
@@ -89,8 +89,8 @@ This lab assumes you have:
 ![Select Dataset](./images/select-dataset.png)
 
 3. You can now drag and drop fields for visualization. For example, to create a pie chart of the average departure delay by airline, drag the following fields onto the canvas - 
-    - "AVG_DEP_DELAY"
-    - "AIRLINE"
+    - AVG_DEP_DELAY
+    - AIRLINE
 
 ![Average Departure Delay Pie Chart](./images/avg-dep-delay-pie.png)
 
@@ -98,7 +98,7 @@ This lab assumes you have:
 
 ![Average Departure Delay Pie Chart](./images/avg-dep-delay-pie-2.png)
 
-4. We can also create a bar chart by average departure delay. Drag and drop the field **"AVG_DEP_DELAY"** onto the canvas, outside of the existing pie chart. Map the following fields - 
+4. We can also create a bar chart by average departure delay. Drag and drop the field AVG_DEP_DELAY onto the canvas, outside of the existing pie chart. Map the following fields - 
 
 ![Average Departure Delay Bar Chart](./images/avg-dep-delay-bar.png)
 
@@ -106,7 +106,7 @@ This lab assumes you have:
 
 ![Average Departure Delay Bar Chart](./images/avg-dep-delay-bar-2.png)
 
-5. Finally we'll add a new table graph for the reviews and sentiments. Drag the **"AIRLINE"** field underneath the existing charts. Map the following fields - 
+5. Finally we'll add a new table graph for the reviews and sentiments. Drag the **AIRLINE** field underneath the existing charts. Map the following fields - 
 
 ![Sentiment Table](./images/sentiment-table.png)
 
