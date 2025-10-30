@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into you message box: _How many loan applications have been denied since June 2025?_.
+1. To start, type the following question into you message box: _How many loan applications have been denied since June 2025?_
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -71,11 +71,11 @@ This lab assumes you have:
     ![Screenshot showing the SQL tool trace](./images/first-question-traces-2.png)
 
 1. The third trace shows how the agent composed the final response using the output of the previous steps.
-1. Click the **Close** button to close the traces pane.
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
-1. Our next question would be: _Which loan agent has the most applications assigned?_. Let's see if the agent will be able to figure that out...
+1. Click the **Close** button to close the traces pane.
+1. Our next question would be: _Which loan officer has the most applications assigned?_ Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
@@ -90,13 +90,22 @@ This lab assumes you have:
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
 
-1. As you can see, the response included the type and amount for the two loans that have been in progress for more than 7 days.
+1. The agent returned information on the one application that has been pending review for more than 7 days.
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
 1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: _Retrieve the policy document section that defines Debt-to-Income (DTI) limits and any exceptions._
 1. Click the **Submit** button.
 1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+
+    ![test](./images/third-question-traces-1.png)
+
+1. Next we'll ask the following: _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
+1. Click the Submit button.
+
+    ![test](./images/send-fourth-question.png)
+
+1. The agent successfully detected an approved applicant whose credit score was inconsistent with the requirements outlined in the DTI and Credit Policy document.
 
     ![test](./images/fourth-question-response.png)
 
