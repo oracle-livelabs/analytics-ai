@@ -41,7 +41,11 @@ This lab assumes you have:
 
 ## Task 2: Load Airline Sample Data as Delta Table
 
-1. Test to see if you can connect to the gold "AIRLINE_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. airlines_external_adb_gold
+1. Test to see if you can connect to the gold "AIRLINE_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. aidp_external_gold_catalog.
+
+* **Quick Tip**: The catalog, schema, and table names can be copied by clicking the icon shown below - 
+
+![Select Catalog](./images/retrieve-catalog.png)
 
 ```python
 airlines_sample_table = "external-catalog-name.gold.AIRLINE_SAMPLE"
@@ -56,12 +60,16 @@ df.show()
 
 * **NOTE** for each iteration of code blocks it's recommended to run that section individually to validate the scripts. Once all the code blocks are validated, you can run this entire notebook as a job in a workflow.
 
-2. Write the new data frame to your Object Storage bucket 
+2. Write the new data frame to your Object Storage bucket. Replace 'oci-bucket' with your oci bucket name and 'os-namespace' with object storage namespace - 
 
 ```python 
 delta_path = "oci://oci-bucket@os-namespace/delta/airline_sample"
 df.write.format("delta").mode("overwrite").save(delta_path)
 ```
+
+* **NOTE** oci-bucket refers to the bucket name in OCI, and os-namespace is the namespace found in the bucket - 
+
+![Get OS Namespace](./images/get-os-namespace.png)
 
 * **NOTE** Only one table can be associated with a given delta path. If you try to create a table on a path that already is associated with another table, it will throw an error. You will have to delete the associated table and re-write the dataframe to the path. 
 

@@ -67,7 +67,7 @@ This lab assumes you have:
 
 ## Task 2: Create Gold Schema 
 
-1. Create a Gold Schema (User) in Autonomous Data Lakehouse
+1. Create a Gold Schema (User) in Autonomous Data Lakehouse. Replace "strong_password" with your own password.
 
 ```sql
 CREATE USER gold IDENTIFIED BY "strong_password";
@@ -111,6 +111,10 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 2. Provide gold as username and give password as defined in previous task. Sign in. 
 
 ![Sign in Gold Schema](./images/sign-in-gold.png)
+
+* **NOTE** If still unable to log in, try navigating back to database user page and click the following link - 
+
+![Access REST Gold](./images/access-rest-gold.png)
 
 3. Navigate to Development > SQL 
 
@@ -178,7 +182,7 @@ CREATE TABLE GOLD.AIRLINE_SAMPLE_GOLD (
 );
 ```
 
-## Task 3: Provision AIDP Instance 
+## Task 6: Provision AIDP Instance 
 
 1. Log in to your cloud tenancy and navigate to Analytics & AI > AI Data Platform 
 
@@ -192,11 +196,13 @@ CREATE TABLE GOLD.AIRLINE_SAMPLE_GOLD (
 
 ![Enable Object Deletion](./images/aidp-add-additional-policies.png)
 
+![Add Policies](./images/aidp-save-policies.png)
+
 For more information, see [IAM Policies for AI Data Platform](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html)
 
 4. Create the instance. This will take a few minutes to provision.
 
-## Task 4: Connect AIDP Catalog to Lakehouse Gold Schema
+## Task 7: Connect AIDP Catalog to Lakehouse Gold Schema
 
 1. Once AIDP is provisioned, navigate to the service console - 
 
@@ -212,7 +218,7 @@ For more information, see [IAM Policies for AI Data Platform](https://docs.oracl
 
 * **NOTE** If you are connecting to an AI Database in a private subnet, you will need to enable private network. This is outside the scope of this livelab. For more details, see [Create an External Catalog for Private Networks](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html#GUID-F68CD62C-7D35-4A87-9234-9C88F6CDB60F).
 
-## Task 5: Set Up Object Storage
+## Task 8: Set Up Object Storage
 
 This task will help you create a bucket in OCI Object Storage where your raw data files will reside.
 
@@ -228,7 +234,7 @@ This task will help you create a bucket in OCI Object Storage where your raw dat
 
 ---
 
-## Task 6: Launch Your AIDP Workspace
+## Task 9: Launch Your AIDP Workspace
 
 Provision and open a workspace in Oracle AI Data Platform.
 
@@ -244,7 +250,7 @@ Provision and open a workspace in Oracle AI Data Platform.
 
 5. Edit the name of the notebook to something more instructive e.g. **airlines-notebook**
 
-6. Select Cluster at the top right and select 'Create Cluster'. Provide a name e.g. my_workspace_cluster and leave the options as default. Select create - 
+6. Select Cluster at the top right and select 'Create Cluster' or 'Attach existing cluster' (if cluster is already created). Provide a name e.g. my_workspace_cluster and leave the options as default. Select create - 
 
 ![Create Cluster](./images/create-cluster.png)
 
