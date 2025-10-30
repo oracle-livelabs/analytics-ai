@@ -68,17 +68,17 @@ In order to facilitate those permissions, we will create a Dynamic Group which w
 1. Click **Identity & Security**.
 1. Click **Domains**.
 
-   ![Screenshot showing how to navigate to the domains section of the console](./images/domains-navigation.jpg)
+   ![Screenshot showing how to navigate to the domains section of the console](./images/domains-navigation.png)
 
 1. Under the **List scope**, make sure that the **root** compartment is selected.
 1. Click the **Default** domain from the **Domains** table.
 
-   ![Screenshot showing how to navigate to the default domain section](./images/default-domain-navigation.jpg)
+   ![Screenshot showing how to navigate to the default domain section](./images/default-domain-navigation.png)
 
 1. On the left click **Dynamic Groups**.
 1. Click thd **Create dynamic group** button at the top of the **Dynamic groups** table.
 
-   ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.jpg)
+   ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.png)
 
 1. Name the dynamic group: _oci-genai-agents-service_
 1. Provide an optional description (example: `This group represents the OCI Generative AI Agents service`)
@@ -99,13 +99,13 @@ Next, we will create the access policies:
 1. Click **Identity & Security**.
 1. Click **Policies**.
 
-   ![Screenshot showing how to navigate to the policies section](./images/policies-navigation.jpg)
+   ![Screenshot showing how to navigate to the policies section](./images/policies-navigation.png)
 
 1. On the left under **List scope**, select the root compartment. The root compartment should appear first in the list, have the same name as the tenancy itself and have the text **(root)** next to it's name.
 
 1. Click the **Create Policy** button on the top left of the **Policies** table.
 
-   ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.jpg)
+   ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.png)
 
 1. Provide a name for the policy (example: _oci-generative-ai-agents-workshop_).
 1. Provide a description (example: _OCI Generative AI Agents Hands-On-Lab Policy_).
@@ -138,7 +138,7 @@ Next, we will create the access policies:
 
 1. Click the **Create**
 
-![Screenshot showing the steps to create a new policy](./images/create-new-policy.jpg)
+![Screenshot showing the steps to create a new policy](./images/create-new-policy.png)
 
 ## Task 3: Create a storage bucket for the loan policy manuals
 
@@ -148,7 +148,7 @@ The loan policy manual PDFs that we are going to upload into a storage bucket in
 1. Click **Storage**.
 1. Click **Buckets**.
 
-   ![Screenshot showing how to navigate to the storage buckets section](./images/navigate-to-buckets.jpg)
+   ![Screenshot showing how to navigate to the storage buckets section](./images/navigate-to-buckets.png)
 
 1. On the left under **List scope**, select the root compartment.
 1. Click the **Create Bucket** button on the top left of the **Buckets** table.
@@ -207,4 +207,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Daniel Hart, Yanir Shahak
+- **Contributors** - Uma Kumar, Hanna Rakhsha, Deion Locklear, Anthony Marino
