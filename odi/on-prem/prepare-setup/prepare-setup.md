@@ -30,13 +30,13 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 <if type="advanced">
-    - [odi-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9Y2vQL_icfw022dyrn2AcduNWAFrkOg3qzMt7mrOW5LfpoVIyk1PuE1sSEe8ZRAF/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-advanced.zip)
+    - [odi-mkplc-advanced.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-advanced.zip)
 </if>
 <if type="basics">
-    - [odi-mkplc-basics.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oCBNgQoxZns_AjWEjYiGZd3-xlNWsmxezJfBTu8yrbesw9UIpSwKF7-PJk-yK_Ak/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-basics.zip)
+    - [odi-mkplc-basics.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-basics.zip)
 </if>
 <if type="ha">
-    - [odi-mkplc-ha.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FI6NbIoMu-G3Wny6A5SKqt844UhUh-Glf1LS8eiUBuCPcdVw1k9F1DjC9obgHIRW/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-ha.zip)
+    - [odi-mkplc-ha.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/odi-mkplc-ha.zip)
 </if>
 
 
