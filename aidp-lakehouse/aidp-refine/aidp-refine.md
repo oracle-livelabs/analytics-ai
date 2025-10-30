@@ -297,7 +297,7 @@ You are now ready to **proceed to the next lab** to visualize your data in OAC.
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Contributors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Enjing Li**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, NACIE, Oct 2025

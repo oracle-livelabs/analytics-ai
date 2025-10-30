@@ -60,7 +60,7 @@ This workshop assumes you have:
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Contributors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Enjing Li**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, NACIE, October 2025
