@@ -41,7 +41,7 @@ This lab assumes you have:
 
 ## Task 2: Load Airline Sample Data as Delta Table
 
-1. Test to see if you can connect to the gold "AIRLINE\_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. If using a different name for the external catalog, make sure to replace the name below. 
+1. Test to see if you can connect to the gold "**AIRLINE\_SAMPLE**" table. The table is in the format **external-catalog-name.schema.table**. If using a different name for the external catalog, make sure to replace the name below. 
 
 * **Quick Tip**: The catalog, schema, and table names can be copied by clicking the icon shown below - 
 
@@ -60,20 +60,20 @@ df.show()
 
 * **NOTE** for each iteration of code blocks it's recommended to run that section individually to validate the scripts. Once all the code blocks are validated, you can run this entire notebook as a job in a workflow.
 
-2. Write the new data frame to your Object Storage bucket. Replace 'oci-bucket' with your oci bucket name and 'os-namespace' with object storage namespace - 
+2. Write the new data frame to your Object Storage bucket. Replace '**oci-bucket**' with your oci bucket name and '**os-namespace**' with object storage namespace - 
 
 ```python 
 delta_path = "oci://oci-bucket@os-namespace/delta/airline_sample"
 df.write.format("delta").mode("overwrite").save(delta_path)
 ```
 
-* **NOTE** oci-bucket refers to the bucket name in OCI, and os-namespace is the namespace found in the bucket - 
+* **NOTE** **oci-bucket** refers to the bucket name in OCI, and **os-namespace** is the namespace found in the bucket - 
 
 ![Get OS Namespace](./images/get-os-namespace.png)
 
 * **NOTE** Only one table can be associated with a given delta path. If a table is created on a path that already is associated with another table, it will throw an error. The associated table will have to be deleted then re-write the dataframe to the path. 
 
-3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "airlines\_data\_catalog". This is distinct from the external catalog to the AI Lakehouse created earlier. "airlines\_data\_catalog" will be used to store the bronze, silver, and gold layers of the medallian architecture.
+3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "**airlines\_data\_catalog**". This is distinct from the external catalog to the AI Lakehouse created earlier. "**airlines\_data\_catalog**" will be used to store the bronze, silver, and gold layers of the medallian architecture.
 
 ```python
 bronze_table = "airlines_data_catalog.bronze.airline_sample_delta"
@@ -199,7 +199,7 @@ enhanced_df = df_with_review.withColumn("SENTIMENT",\
 enhanced_df.show(10, False)
 ```
 
-* **NOTE** As of writing (Oct 2025), AIDP only supports cohere and grok models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. A temporary workaround can be to remove the 'default.oci\_ai\_models' prefix from the model path. This should be fixed in the near future. 
+* **NOTE** As of writing (Oct 2025), AIDP only supports cohere and grok models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. A temporary workaround can be to remove the '**default.oci\_ai\_models**' prefix from the model path. This should be fixed in the near future. 
 
 10. Save new data to gold schema 
 

@@ -72,7 +72,7 @@ This lab assumes you have:
 
 ![Create ADL Dataset](./images/create-dataset-adl-conn.png)
 
-9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the AIRLINE\_SAMPLE\_GOLD table to the white space to the right 
+9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the **AIRLINE\_SAMPLE\_GOLD** table to the white space to the right 
 
 ![Create Gold Dataset](./images/create-dataset-gold.png)
 
