@@ -41,17 +41,17 @@ This lab assumes you have:
 
 ## Task 2: Load Airline Sample Data as Delta Table
 
-1. Test to see if you can connect to the gold "AIRLINE_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. Replace **external-catalog-name** with the name of your external catalog, e.g. aidp_external_gold_catalog.
+1. Test to see if you can connect to the gold "AIRLINE\_SAMPLE" table. The table is in the format **external-catalog-name.schema.table**. If using a different name for the external catalog, make sure to replace the name below. 
 
 * **Quick Tip**: The catalog, schema, and table names can be copied by clicking the icon shown below - 
 
 ![Select Catalog](./images/retrieve-catalog.png)
 
 ```python
-airlines_sample_table = "external-catalog-name.gold.AIRLINE_SAMPLE"
+airlines_sample_table = "aidp_external_gold_catalog.gold.AIRLINE_SAMPLE"
 
 # Confirm AIRLINE_SAMPLE table is reflected in spark
-spark.sql("SHOW TABLES IN external-catalog-name.gold").show(truncate=False)
+spark.sql("SHOW TABLES IN aidp_external_gold_catalog.gold").show(truncate=False)
 
 df = spark.table(airlines_sample_table)
 
@@ -71,9 +71,9 @@ df.write.format("delta").mode("overwrite").save(delta_path)
 
 ![Get OS Namespace](./images/get-os-namespace.png)
 
-* **NOTE** Only one table can be associated with a given delta path. If you try to create a table on a path that already is associated with another table, it will throw an error. You will have to delete the associated table and re-write the dataframe to the path. 
+* **NOTE** Only one table can be associated with a given delta path. If a table is created on a path that already is associated with another table, it will throw an error. The associated table will have to be deleted then re-write the dataframe to the path. 
 
-3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "airlines_data_catalog". This is distinct from the external catalog to the AI Lakehouse created earlier. "airlines_data_catalog" will be used to store the bronze, silver, and gold layers of the medallian architecture.
+3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "airlines\_data\_catalog". This is distinct from the external catalog to the AI Lakehouse created earlier. "airlines\_data\_catalog" will be used to store the bronze, silver, and gold layers of the medallian architecture.
 
 ```python
 bronze_table = "airlines_data_catalog.bronze.airline_sample_delta"
@@ -199,7 +199,7 @@ enhanced_df = df_with_review.withColumn("SENTIMENT",\
 enhanced_df.show(10, False)
 ```
 
-* **NOTE** As of writing (Oct 2025), AIDP only supports cohere models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. This should be fixed in the near future. 
+* **NOTE** As of writing (Oct 2025), AIDP only supports cohere and grok models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. A temporary workaround can be to remove the 'default.oci\_ai\_models' prefix from the model path. This should be fixed in the near future. 
 
 10. Save new data to gold schema 
 
@@ -284,7 +284,7 @@ df_gold_typed.createOrReplaceTempView("df_gold")
 
 ```sql
 %sql
-INSERT into airlines_external_adb_gold.gold.airline_sample_gold select * from df_gold
+INSERT into aidp_external_gold_catalog.gold.airline_sample_gold select * from df_gold
 ```
 
 * **NOTE** We use the sql insert instead of the native spark insert, because spark causes the dataframe to be pushed with lowercase column names. This results in OAC unable to visualize the data. Using sql INSERT into avoids this issue. 
