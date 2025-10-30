@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Develop an Interactive Map of a Racetrack: Solar Car Race Across Australia",
+  "help": "livelabs-help-analytics_us@oracle.com”",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "In this hands-on lab you will learn how to create this map in OAC",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Provision Analytics Cloud",
+      "filename": "../../oac-provisioning/oac-provisioning.md"
+    },
+    {
+      "title": "Lab 2: Upload the excel files in OAC as datasets",
+      "filename": "../../upload-datasets/upload-datasets.md"
+    },
+    {
+      "title": "Lab 3: Build a map with multiple layers in OAC",
+      "filename": "../../map-layersCopy/map-layerscopy.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

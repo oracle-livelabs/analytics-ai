@@ -6,7 +6,6 @@ This lab will go through the steps on configuring the GenAI Agent tools. First w
 
 The following agent tools will be configured: 
 * General LLM Chat (Built-in)
-* Document Understanding
 * Weather
 * RAG 
 * SQL
@@ -33,7 +32,7 @@ This lab assumes you have:
 
   > **Note** Tasks 2-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. 
 
-## Task 1: Add Agent Routing Instructions and Create RAG Tool 
+## Task 1: Add Agent Routing Instructions and Confirm RAG Tool Configuration
 
 1. Navigate to your GenAI Agent created in the previous lab 
 
@@ -49,11 +48,11 @@ This lab assumes you have:
 
     > **Note** Be sure to replace "info on your dataset" above with a relevant term to your knowledge base to help the agent route to the correct tool. In our example, our dataset relates to wines.
 
-3. Select your agent and create a new tool 
+3. Select your agent and confirm it has a RAG tool as configured in the previous lab. If not, create a new tool.
 
 ![Create RAG Tool](./images/rag/create-rag-tool.png)
 
-4. Give a description of the tool and select the knowledge base you created in the previous lab 
+4. Confirm the description of the tool and the knowledge base you created in the previous lab 
 
 ![Configure RAG Tool](./images/rag/config-rag.png)
 
@@ -115,11 +114,9 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 This task will help you to create a VCN and private subnet in your compartment. This will be used for the ADB for the SQL Tool.
 
-1. Go to Networking -> Virtual cloud networks and Create VCN. Provide IPv4 CIDR Blocks as 10.0.0.0/16
+1. Go to Networking -> Virtual cloud networks and select the VCN created in Lab 1.
 
-2. Go to the newly created VCN and click on Create Subnet. Provide IPv4 CIDR Block as 10.0.1.0/24 and click on Private Subnet. You can leave rest as default. Click on Create Subnet.
-
-3. Click on newly created subnet and go to the Security List. Add following ingress rules in the security list. Make sure to have the ingress rule to access database port 1521-1522
+2. Click on the private subnet and go to the Security List. Add following ingress rules in the security list. Make sure to have the ingress rule to access database port 1521-1522
 
     ![Ingress Rules](images/adb/ingress_rules.png)
 
@@ -248,7 +245,13 @@ CREATE TABLE Employees (
 </copy>
 ```
 
-> **Note** If you are using your own table, you can get a better idea of the schema by running DESC table_name;
+> **Note** If using your own table, to get a better idea of the schema run
+
+```sql
+DESC table_name;
+```
+ 
+in SQL Developer. 
 
 ![Create SQL Tool](images/sqltool/create-tool.png)
 
@@ -265,17 +268,17 @@ CREATE TABLE Employees (
 
   ![Test SQL Tool](./images/sql/test-sql-tool-2.png)
 
-  > * **Note** If your sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
+  > * **Note** If the sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
 
-  > * **Note** Also make sure your agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
+  > * **Note** Also make sure the agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
 
-  > * **Note** If you are getting 404 errors, you are likely missing a policy. Refer back to Task 1 step 6. 
+  > * **Note** If returning 404 errors, there is likely a missing policy. Refer back to [Task 2 step 6](./deploy-agent-tools.md#task-2-dynamic-group-and-policy-definition-for-adb-and-db-tools-connection). 
 
-  > * **Note** If you are querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to your query to reduce size of response. 
+  > * **Note** If querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to the query to reduce size of response. 
 
 ## Task 9: Create a Weather Tool
 
-  1. Navigate to your agent tools and create a new tool called "get_weather" 
+  1. Navigate to the agent tools and create a new custom function tool called "get_weather" 
 
   - Give the following description - 
 
@@ -306,7 +309,7 @@ In this section, we will delve into the process of creating and deploying an Ora
 
 2. Navigate back to your function application created in the previous lab.
 
-3. Select Getting Started > Cloud setup and take note of the steps to login and deploy the functions.
+3. Select Application > Cloud shell setup > View guide and take note of the steps to login and deploy the functions.
 
     ![Fn Cloud Setup](images/fn-deploy/cloud-shell.png)
 
@@ -315,7 +318,7 @@ In this section, we will delve into the process of creating and deploying an Ora
         - Logging in to the container registry 
         - Deploying the function to your application
 
-   > **Note:** You don't need to run the last invoke command. We will be invoking the function later from ODA. 
+   > **Note:** The init command doesn't need to be run since the fn is already provided. The last invoke command also doesn't need to be ran. We will be invoking the function later from ODA. 
 
 4. At the top right of the oci console, open a new cloud shell
 
@@ -357,15 +360,23 @@ In this section, we will delve into the process of creating and deploying an Ora
   </copy>
   ```
 
-  - Take note of the function invoke endpoint once created
+  - Take note of the function invoke endpoint once created.
 
 ![Deployed Function](images/fn-deploy/deploy_function.png)
 
-> **Note** If you get an error with the architecture, you can change the architecture from the cloud shell 
+> **Note** If there is an error with the architecture, the architecture can be changed from the cloud shell. 
+
+> **Note** If you run into space issues, you can delete any unused containers with 
+
+```bash
+$ docker image prune 
+or 
+$ docker image prune -a 
+```
 
 ![Change Architecture](images/fn-deploy/change-architecture-cs.png)
 
-> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, you can enable provisioned concurrency on your function to enable hot starts. 
+> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, enable provisioned concurrency on the function to enable hot starts. 
 
 ![Provisioned Concurrency](images/fn-deploy/provisioned-concurrency.png)
 
@@ -388,4 +399,4 @@ In this section, we will delve into the process of creating and deploying an Ora
   * **Abhinav Jain**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date**
-  * **Luke Farley**, Senior Cloud Engineer, NACIE, May 2025
+  * **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025

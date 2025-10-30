@@ -17,7 +17,7 @@ In this lab, you will:
 
 [Lab 4 Demo](youtube:DCc8FM6ZHtA)
 
-## Task 1: Create Oracle Analytics Cloud Instance 
+## Task 1: Create the Connection from Oracle Analytics Cloud to MySQL HeatWave
 
 1. From the Cloud shell connect to MySQL DB System:
 	
@@ -54,7 +54,7 @@ In this lab, you will:
   
   	![creating view analytics for OAC](./images/create-view-analytics.png)
 
-2. Now going back to the main page click on the _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_.
+2. Now going back to the main page click on the _**Navigation menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_.
 
 	![OCI Console](./images/open-oac.png)
 
