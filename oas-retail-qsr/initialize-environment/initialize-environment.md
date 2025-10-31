@@ -104,7 +104,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 In order to run this workshop, you will need a set of files that have been conveniently packaged and stage on the instance for you. If you are bypassing the remote desktop and connecting directly to OAS UI from your local computer/workstation, proceed as indicated below.
 
 1. Download and save to a staging area on your laptop or workstation.
-    - [`OAS_Retail_LiveLabs_Content.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VUvFeyN4eN_Q_bFdGoQT48K3ELFOr0OF0tGKlpK59xKOpMfErYK1v8h5UAXTLSdf/n/c4u02/b/hosted_workshops/o/stacks/OAS_Retail_LiveLabs_Content.zip)
+    - [`OAS_Retail_LiveLabs_Content.zip`](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/OAS_Retail_LiveLabs_Content.zip)
 
 2. Uncompress the ZIP archive
 </if>
