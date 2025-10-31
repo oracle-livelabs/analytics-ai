@@ -157,7 +157,7 @@ Open the Terminal in Node2 and execute the below commands.
       ls
       cd /tmp
       rm -rf odi_ha_file
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Gqrv5_pPSoRMH-flxzktvJVfso21tSFoykGnCFGvlTNZbKNozeJp2tQnskir5Kx1/n/c4u02/b/hosted_workshops/o/stacks/odi_ha_file.zip
+      wget https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/odi_ha_file.zip
       unzip -o  odi_ha_file.zip 
       cd odi_ha_file
       cp V12214.jar /u02/app/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
