@@ -12,8 +12,9 @@ In this lab, you will:
 
 - Create an ADB instance.
 - Create the database schema.
-- Insert data into the database tables (LoanStatus → LoanOfficers → Applicants → LoanApplications).
-- Create a vault and connection for secure access.
+- Insert data into the database.
+- Create a vault to securely store the database connection information.
+- Create a database connection.
 
 ### Prerequisites
 
@@ -29,7 +30,7 @@ In this task we are going to create a new ADB instance.
 1. Click **Oracle Database**.
 1. Click **Autonomous Database**.
 
-   ![Screenshot showing how to navigate to the ADB](./images/navigate-to-adb.jpg)
+   ![Screenshot showing how to navigate to the ADB](./images/navigate-to-adb.png)
 
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
 1. Click the **Create Autonomous Database** button at the top of the **Autonomous Databases** table.
@@ -59,7 +60,7 @@ Once the database instance is created, you can move on to the next task (this ma
 
 ## Task 2: Create the database schema
 
-In this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of inserting unique values for the various IDs like the ticket ID or customer ID etc.).
+In this task we are going to use SQL scripts to create the database schema which consists of tables and sequences (which will take care of inserting unique values for the various IDs like the loan application ID or applicant ID etc.).
 
 1. Once the ADB instance is created, click the **Database actions** drop down and select the **SQL** option. This should launch a new tab in your browser with the SQL application (dismiss any messages if you see any).
 
@@ -246,15 +247,40 @@ After you execute a statement look for an output similar to the following:
     ```sql
     <copy>
     -- Insert data into the LoanApplications table:
-    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)SELECT 1005, a.ApplicantID, 'VA', 200000, 46, TO_DATE('03-JUN-25','DD-MON-YY'), TO_DATE('16-JUN-25','DD-MON-YY'),
-         (SELECT StatusID FROM LoanStatus WHERE StatusName='Denied'), 1, 'PhD', 90000, 'Yes'
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1005, a.ApplicantID, 'VA', 200000, 46, TO_DATE('03-JUN-25','DD-MON-YY'), TO_DATE('16-JUN-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Denied'), 1, 'PhD', 90000, 'Yes'
     FROM Applicants a WHERE a.ExternalCustomerID='CUST_22000';
-    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)SELECT 1006, a.ApplicantID, 'VA', 100000, 57, TO_DATE('15-JUN-25','DD-MON-YY'), TO_DATE('30-JUN-25','DD-MON-YY'),
-         (SELECT StatusID FROM LoanStatus WHERE StatusName='Denied'), 2, 'High School', 89656, 'Yes'
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1006, a.ApplicantID, 'VA', 100000, 57, TO_DATE('15-JUN-25','DD-MON-YY'), TO_DATE('30-JUN-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Denied'), 2, 'High School', 89656, 'Yes'
     FROM Applicants a WHERE a.ExternalCustomerID='CUST_30000';
-    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)SELECT 1007, a.ApplicantID, 'VA', 95000, 20, TO_DATE('16-JUN-25','DD-MON-YY'), TO_DATE('01-JUL-25','DD-MON-YY'),
-         (SELECT StatusID FROM LoanStatus WHERE StatusName='Approved'), 3, 'PhD', 318639, 'Yes'
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1007, a.ApplicantID, 'VA', 95000, 20, TO_DATE('16-JUN-25','DD-MON-YY'), TO_DATE('01-JUL-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Approved'), 3, 'PhD', 318639, 'Yes'
     FROM Applicants a WHERE a.ExternalCustomerID='CUST_20000';
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1008, a.ApplicantID, 'FHA', 3000000, 15, TO_DATE('16-JUL-25','DD-MON-YY'), TO_DATE('01-AUG-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Pending Review'), 3, 'PhD', 90630, 'No'
+    FROM Applicants a WHERE a.ExternalCustomerID='CUST_21000';
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1011, a.ApplicantID, 'Conventional', 1000000, 35, TO_DATE('16-AUG-25','DD-MON-YY'), TO_DATE('26-AUG-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='In Progress'), 5, 'Bachelor', 75000, 'No'
+    FROM Applicants a WHERE a.ExternalCustomerID='CUST_28000';
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1013, a.ApplicantID, 'FHA', 50000, 5, TO_DATE('10-JUL-25','DD-MON-YY'), TO_DATE('20-JUL-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Approved'), 7, 'Masters', 650000, 'No'
+    FROM Applicants a WHERE a.ExternalCustomerID='CUST_13000';
+
+    INSERT INTO LoanApplications (ApplicationID, ApplicantID, LoanType, RequestedAmount, DebtToIncomeRatio, CreatedDate, LastUpdatedDate, StatusID, AssignedToOfficerID, EducationLevel, TotalDebt, Veteran)
+    SELECT 1015, a.ApplicantID, 'Conventional', 25000, 10, TO_DATE('26-JUL-25','DD-MON-YY'), TO_DATE('01-AUG-25','DD-MON-YY'),
+      (SELECT StatusID FROM LoanStatus WHERE StatusName='Pending Review'), 10, 'High School', 50000, 'No'
+    FROM Applicants a WHERE a.ExternalCustomerID='CUST_6000';
     -- … continue inserting each ApplicationID row exactly as in your sample data …
     </copy>
     ```
@@ -388,4 +414,5 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Yanir Shahak, Senior Principal Software Engineer
+- **Author** - Daniel Hart, Yanir Shahak
+- **Contributors** - Uma Kumar, Hanna Rakhsha, Deion Locklear, Anthony Marino
