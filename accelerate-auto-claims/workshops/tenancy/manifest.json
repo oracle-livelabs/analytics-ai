@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "All Common Analytics Labs",
+    "workshoptitle": "Accelerate Auto Claims",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -18,57 +18,24 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision OAC Instance",
+            "title": "Lab 1: Provision Autonomous AI Database ",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
         },
         {
-            "title": "Lab 2: Connect to ADW",
+            "title": "Lab 2: Apply Database Operations",
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
+        },
+        {
+            "title": "Lab 3: Provision OAC Instance",
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
+        },
+        {
+            "title": "Lab 4: Connect to ADW",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/connect-to-adw/connect-adw.md"
         },
         {
-            "title": "Lab 3: Explore the Oracle Analytics Homepage",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/explore-oa-homepage/explore-ui.md"
-        },
-        {
-            "title": "Lab 4: Create Dataset",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/create-dataset/create-dataset.md"
-        },
-        {
-            "title": "Lab 5: Data Prep",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-prep/data-prep.md"
-        },
-        {
-            "title": "Lab 6: Data Blending",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-blending/data-blending.md"
-        },
-        {
-            "title": "Lab 7: BI Ask",
+            "title": "Lab 5: BI Ask",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/bi-ask/bi-ask.md"
-        },
-        {
-            "title": "Lab 8: Dashboard Filters and Export Options",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/dashboard-filters-export/dashboard-filters-export.md"
-        },
-        {
-            "title": "Lab 9: Basic Data Visualizations",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/basic-data-visualization/basic-data-visualization.md"
-        },
-        {
-            "title": "Lab 10: Custom Calculations and Map Backgrounds",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/custom-calculation-map-background/custom-calculation-map-background.md"
-        },
-        {
-            "title": "Lab 11: Data Actions",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-actions/data-actions.md"
-        },
-        {
-            "title": "Lab 12: Augmented Analytics",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/augmented-analytics/augmented-analytics.md"
-        },
-        {
-            "title": "Lab 13: Advanced Analytics",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/advanced-analytics/advanced-analytics.md"
         },
         {
             "title": "Need Help?",
