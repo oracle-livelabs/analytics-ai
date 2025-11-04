@@ -43,7 +43,7 @@ This lab assumes you have:
 
 1. Log in to your cloud tenancy and navigate to Oracle AI Database > Autonomous AI Database
 
-![AI Database](./images/ai-database.png)
+![AI Database](https://github.com/oracle-livelabs/common/blob/main/images/console/database-adb.png)
 
 2. Select Create Autonomous AI Database 
 
