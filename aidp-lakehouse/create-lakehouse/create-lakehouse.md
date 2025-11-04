@@ -69,7 +69,9 @@ This lab assumes you have:
 1. Create a Gold Schema (User) in Autonomous Data Lakehouse. Replace "strong\_password" with your own password.
 
 ```sql
+<copy>
 CREATE USER gold IDENTIFIED BY "strong_password";
+</copy>
 ```
 
 2. Grant Required Roles/Privileges to Gold Schema
