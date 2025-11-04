@@ -56,7 +56,7 @@ This lab assumes you have:
 
 ![Create AI Database](./images/create-aidp-db-2.png)
 
-* **NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
+**NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
 
 5. Create the AI Database. The provisioning process will take a few minutes.
 
@@ -98,7 +98,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 ## Task 3: Add REST capabilities to GOLD Schema
 
-* **NOTE** If unable to sign in directly as gold schema, enable REST access
+**NOTE** If unable to sign in directly as gold schema, enable REST access
 
 1. Navigate to AI DB > database actions > database users > search for 'gold' > select three dots > enable rest > log in to sql developer web as gold
 
@@ -112,7 +112,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 ![Sign in Gold Schema](./images/sign-in-gold.png)
 
-* **NOTE** If still unable to log in, try navigating back to database user page and click the following link - 
+**NOTE** If still unable to log in, try navigating back to database user page and click the following link - 
 
 ![Access REST Gold](./images/access-rest-gold.png)
 
@@ -216,7 +216,7 @@ For more information, see [IAM Policies for AI Data Platform](https://docs.oracl
 
 ![Create External Catalog](./images/create-external-catalog.png)
 
-* **NOTE** If you are connecting to an AI Database in a private subnet, you will need to enable private network. This is outside the scope of this livelab. For more details, see [Create an External Catalog for Private Networks](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html#GUID-F68CD62C-7D35-4A87-9234-9C88F6CDB60F).
+**NOTE** If you are connecting to an AI Database in a private subnet, you will need to enable private network. This is outside the scope of this livelab. For more details, see [Create an External Catalog for Private Networks](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html#GUID-F68CD62C-7D35-4A87-9234-9C88F6CDB60F).
 
 ## Task 8: Set Up Object Storage
 
