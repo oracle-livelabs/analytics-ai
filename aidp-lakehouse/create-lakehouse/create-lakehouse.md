@@ -76,6 +76,7 @@ CREATE USER gold IDENTIFIED BY "strong_password";
 2. Grant Required Roles/Privileges to Gold Schema
 
 ```sql
+<copy>
 -- Data privileges
 GRANT CONNECT, RESOURCE TO gold;
 
@@ -92,6 +93,7 @@ GRANT EXECUTE ON DBMS_CLOUD TO gold;
 
 -- Grant access to data_pump_dir (used for saveAsTable operation in spark)
 GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
+</copy>
 ```
 
 3. Log out of admin schema once gold schema is created.
@@ -122,6 +124,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 1. Create the AIRLINE_SAMPLE table under gold schema 
 ```sql 
+<copy>
 CREATE TABLE AIRLINE_SAMPLE (
   FLIGHT_ID   NUMBER,
   AIRLINE     VARCHAR2(20),
@@ -131,11 +134,13 @@ CREATE TABLE AIRLINE_SAMPLE (
   ARR_DELAY   NUMBER,
   DISTANCE    NUMBER
 );
+</copy>
 ```
 
 2. Run the following sql for sample data 
 
 ```sql
+<copy>
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1001, 'Skynet Airways', 'JFK', 'LAX', 10, 5, 2475);
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1002, 'Sunwind Lines', 'ORD', 'SFO', -3, -5, 1846);
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1003, 'BlueJet', 'ATL', 'SEA', 0, 15, 2182);
@@ -161,11 +166,13 @@ INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DEL
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1023, 'Quantum Flyers', 'DEN', 'BOS', 2, -2, 1754);
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1024, 'Sunwind Lines', 'SFO', 'JFK', -6, -8, 2586);
 INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1025, 'Nebula Express', 'ORD', 'MIA', 11, 13, 1197);
+</copy>
 ```
 
 3. Create the Gold Table for AIRLINE data. This will be the table visualized in OAC once processed in AIDP
 
 ```sql
+<copy>
 CREATE TABLE GOLD.AIRLINE_SAMPLE_GOLD (
   FLIGHT_ID   NUMBER,
   AIRLINE     VARCHAR2(20),
@@ -180,6 +187,7 @@ CREATE TABLE GOLD.AIRLINE_SAMPLE_GOLD (
   REVIEW      VARCHAR2(4000),
   SENTIMENT VARCHAR2(200)
 );
+</copy>
 ```
 
 ## Task 6: Provision AI Data Platform Instance 
