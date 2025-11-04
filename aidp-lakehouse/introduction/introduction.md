@@ -27,9 +27,9 @@ By completing this workshop, you will:
 ![Lakehouse Architecture Diagram](images/ai-lakehouse-aidp.png)
 
 **Key Oracle Services Touched:**
-* **AIDP:** Modern data engineering, Spark/Delta-based ETL, AI/ML-ready platform
+* **AI Data Platform:** Modern data engineering, Spark/Delta-based ETL, AI/ML-ready platform
 * **Autonomous AI Lakehouse:** Fast, secure, and scalable analytics/lakehouse SQL
-* **OAC:** Interactive dashboards and self-service analytics
+* **Oracle Analytics Cloud:** Interactive dashboards and self-service analytics
 * **Object Storage:** Landing zone for raw data files
 
 ---

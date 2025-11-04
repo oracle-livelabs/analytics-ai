@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will guide you through refining and preparing your airline sample data using Oracle AI Data Platform (AIDP). Building on your lakehouse foundation from Lab 1, you’ll use Spark and Delta Lake to clean, transform, and enrich your data—producing analytics-ready “gold” tables.
+This lab will guide you through refining and preparing your airline sample data using **Oracle AI Data Platform** (AIDP). Building on your lakehouse foundation from Lab 1, you’ll use Spark and Delta Lake to clean, transform, and enrich your data—producing analytics-ready “gold” tables.
 
 > **Estimated Time:** 1 hour
 

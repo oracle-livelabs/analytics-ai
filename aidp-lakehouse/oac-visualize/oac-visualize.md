@@ -26,7 +26,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Completed **Lab 2: Refine and Prepare Data with AIDP**, with your gold airline data registered in Autonomous AI Data Lakehouse
+- Completed **Lab 2: Refine and Prepare Data with AI Data Platform**, with your gold airline data registered in Autonomous AI Data Lakehouse
 - Access to Oracle Analytics Cloud (OAC)
 - Basic familiarity with web-based dashboards (OAC is point-and-click, no prior BI experience needed)
 
