@@ -274,10 +274,10 @@ By completing this lab, you'll have a scalable, cloud-native lakehouse foundatio
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
 
 **Contributors**
-* **Enjing Li**, Senior Cloud Engineer, NACIE
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, October 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025

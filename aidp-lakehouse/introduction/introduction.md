@@ -11,7 +11,7 @@ You'll learn how to:
 - Serve curated datasets from **Autonomous AI Lakehouse** for interactive analytics
 - Visualize insights and KPIs in OAC dashboards
 
-> **Estimated Workshop Time:** 2 hours 30 minutes
+> **Estimated Workshop Time:** 3 hours
 
 ---
 
@@ -38,7 +38,7 @@ By completing this workshop, you will:
 
 This workshop assumes you have:
 - An Oracle Cloud account or lab credentials
-- Access to Oracle AI Data Platform (AIDP), **Autonomous AI Lakehouse**, OAC, and Object Storage in your tenancy/region
+- Access to **Oracle AI Data Platform** (AIDP), **Autonomous AI Lakehouse**, **Analytics Cloud** (OAC), **Generative AI** and **Object Storage** in your tenancy/region
 - Familiarity with databases and basic data/analytics concepts (helpful, but not required)
 - Basic comfort with navigating web-based Oracle Cloud interfaces
 
@@ -57,10 +57,10 @@ This workshop assumes you have:
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
 
 **Contributors**
-* **Enjing Li**, Senior Cloud Engineer, NACIE
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, October 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025

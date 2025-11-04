@@ -221,7 +221,7 @@ enhanced_df.show(10, False)
 </copy>
 ```
 
-**NOTE** As of writing (Oct 2025), AIDP only supports cohere and grok models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. A temporary workaround can be to remove the '**default.oci\_ai\_models**' prefix from the model path. This should be fixed in the near future. 
+**NOTE** AIDP as of writing (Nov 2025) supports cohere and grok models. Dragging and dropping the other sample models from the catalog can result in 'model not found' errors. A temporary workaround can be to remove the '**default.oci\_ai\_models**' prefix from the model path. This should be fixed in the near future. 
 
 ## Task 6: Write Enriched Data to Gold Schema 
 
@@ -326,10 +326,10 @@ You are now ready to **proceed to the next lab** to visualize your data in OAC.
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
 
 **Contributors**
-* **Enjing Li**, Senior Cloud Engineer, NACIE
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, Oct 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
