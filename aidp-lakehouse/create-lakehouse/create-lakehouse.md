@@ -1,4 +1,4 @@
-# Create a Data Lakehouse with AIDP
+# Create a Data Lakehouse with AI Data Platform
 
 ## Introduction
 
@@ -10,7 +10,7 @@ This lab will guide you through the foundational steps to build a modern data la
 
 ### About Oracle AI Data Platform (AIDP)
 
-Oracle AI Data Platform combines the scalability of data lakes with the performance and structure of data warehouses. AIDP leverages the power of Spark, Delta Lake, and Oracle Autonomous AI Data Lakehouse to make cloud-scale data engineering, advanced analytics, and AI approachable for every user.
+Oracle AI Data Platform combines the scalability of data lakes with the performance and structure of data warehouses. AIDP leverages the power of Spark, Delta Lake, and Oracle Autonomous AI Lakehouse to make cloud-scale data engineering, advanced analytics, and AI approachable for every user.
 
 ---
 
@@ -19,7 +19,7 @@ Oracle AI Data Platform combines the scalability of data lakes with the performa
 In this lab, you will:
 * **Provision and Configure Core Data Lakehouse Services**
 
-  - Create & Launch your Autonomous AI Data Lakehouse
+  - Create & Launch your Autonomous AI Lakehouse
 * **Create Gold Schema & Sample Tables**
 
   - Configure sample airlines table
@@ -40,7 +40,7 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Create Autonomous AI Data Lakehouse
+## Task 1: Create Autonomous AI Lakehouse
 
 1. Log in to your cloud tenancy and navigate to Oracle AI Database > Autonomous AI Database
 
@@ -118,7 +118,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 3. Navigate to Development > SQL 
 
-## Task 5: Populate ADL with Sample Airline Data 
+## Task 5: Populate AI Lakehouse with Sample Airline Data 
 
 1. Create the AIRLINE_SAMPLE table under gold schema 
 ```sql 
@@ -182,7 +182,7 @@ CREATE TABLE GOLD.AIRLINE_SAMPLE_GOLD (
 );
 ```
 
-## Task 6: Provision AIDP Instance 
+## Task 6: Provision AI Data Platform Instance 
 
 1. Log in to your cloud tenancy and navigate to Analytics & AI > AI Data Platform 
 
@@ -202,7 +202,7 @@ For more information, see [IAM Policies for AI Data Platform](https://docs.oracl
 
 4. Create the instance. This will take a few minutes to provision.
 
-## Task 7: Connect AIDP Catalog to Lakehouse Gold Schema
+## Task 7: Connect AI Data Platform Catalog to Lakehouse Gold Schema
 
 1. Once AIDP is provisioned, navigate to the service console - 
 
@@ -234,7 +234,7 @@ This task will help you create a bucket in OCI Object Storage where your raw dat
 
 ---
 
-## Task 9: Launch Your AIDP Workspace
+## Task 9: Launch Your AI Data Platform Workspace
 
 Provision and open a workspace in Oracle AI Data Platform.
 

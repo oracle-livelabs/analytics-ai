@@ -1,4 +1,4 @@
-# Refine and Prepare Data with AIDP
+# Refine and Prepare Data with AI Data Platform
 
 ## Introduction
 
@@ -27,7 +27,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Completed **Lab 1: Create a Data Lakehouse with AIDP**, with airline sample data loaded 
+- Completed **Lab 1: Create a Data Lakehouse with AI Data Platform**, with airline sample data loaded 
 - Access to an AIDP workspace and a running Spark notebook
 - Basic comfort navigating Oracle Cloud notebooks
 
@@ -47,7 +47,7 @@ This lab assumes you have:
 
 ![Select Catalog](./images/retrieve-catalog.png)
 
-```python
+```py
 airlines_sample_table = "aidp_external_gold_catalog.gold.AIRLINE_SAMPLE"
 
 # Confirm AIRLINE_SAMPLE table is reflected in spark
@@ -80,7 +80,7 @@ df.write.format("delta").mode("overwrite").save(delta_path)
 
 1. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "**airlines\_data\_catalog**". This is distinct from the external catalog to the AI Lakehouse created earlier. "**airlines\_data\_catalog**" will be used to store the bronze, silver, and gold layers of the medallian architecture.
 
-```python
+```py
 bronze_table = "airlines_data_catalog.bronze.airline_sample_delta"
 
 # Create New Internal Catalog & Schema to store data
@@ -98,9 +98,10 @@ spark.sql(f"""
 """)
 ```
 
+
 2. Clean the data 
 
-```python
+```py
 ## Clean data 
 spark.sql(f"""
     DELETE FROM {bronze_table}
@@ -110,7 +111,7 @@ spark.sql(f"""
 
 3. Test versioning capabilities of delta tables. With delta lake capabilities the user can now show older versions of tables before they were modified.
 
-```python
+```py
 ## Show versioning capabilities of delta tables 
 ## This will show old version of table before cleaning 
 df_v0 = spark.read.format("delta").option("versionAsOf", 0).load(delta_path)
@@ -121,7 +122,7 @@ df_v0.show()
 
 1. Write to Silver schema of medallian architecture 
 
-```python
+```py
 ## Write cleaned data to silver schema 
 df_clean = spark.table(bronze_table)
 
@@ -150,7 +151,7 @@ spark.sql(f"SELECT * FROM {silver_table}").show()
 
 2. Enrich the data 
 
-```python
+```py
 # Enrich data by adding aggregates/average delays and distance 
 from pyspark.sql import functions as F
 
@@ -171,7 +172,7 @@ enhanced_df.show()
 
 3. Add new column for Sentiment Analysis 
 
-```python
+```py
 # Add New Review Column for Sentiment Analysis 
 import random
 
@@ -193,7 +194,7 @@ df_with_review.show()
 
 4. Test and run AI model against reviews of flights
 
-```python
+```py
 # test model 
 spark.sql("select query_model('cohere.command-latest','What is Intelligent Data Lake Service in Oracle?') as questions").show(truncate=False)
 
@@ -212,7 +213,7 @@ enhanced_df.show(10, False)
 
 1. Save new data to gold schema 
 
-```python
+```py
 # Save Averaged Data to Gold Schema 
 
 gold_path = "oci://os-bucket@os-namespace/delta/gold/airline_sample_avg"
@@ -237,7 +238,7 @@ df_gold.show()
 
 2. Confirm all columns are upper case. This is because OAC requires upper case columns for visualizations, otherwise results in errors. 
 
-```python
+```py
 # Before pushing dataframe, make sure all columns are upper case to prevent visualization issues in OAC
 # (OAC needs all columns capitalized in order to analyze data) 
 for col_name in df_gold.columns:
@@ -248,7 +249,7 @@ df_gold.show()
 
 3. Cast columns to decimal type. This is to conform the spark data frames to the AI Lakehouse column definitions. 
 
-```python
+```py
 from pyspark.sql.functions import col
 from pyspark.sql.types import DecimalType, StringType
 

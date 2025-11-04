@@ -2,13 +2,13 @@
 
 ## About this Workshop
 
-Welcome to **Lakehouse Analytics with AIDP**!  
-This hands-on workshop guides you through building a modern data analytics pipeline on Oracle Cloud using Oracle AI Data Platform (AIDP), **Autonomous AI Data Lakehouse**, and Oracle Analytics Cloud (OAC). You will experience the full "lakehouse" pattern: ingesting, transforming, and analyzing airline operations data step by step.
+Welcome to **Lakehouse Analytics with AI Data Platform**!  
+This hands-on workshop guides you through building a modern data analytics pipeline on Oracle Cloud using Oracle AI Data Platform (AIDP), **Autonomous AI Lakehouse**, and Oracle Analytics Cloud (OAC). You will experience the full "lakehouse" pattern: ingesting, transforming, and analyzing airline operations data step by step.
 
 You'll learn how to:
 - Load raw airline data into Oracle Object Storage
 - Use AIDP and Delta Lake to clean, enrich, and prepare data for analytics
-- Serve curated datasets from **Autonomous AI Data Lakehouse** for interactive analytics
+- Serve curated datasets from **Autonomous AI Lakehouse** for interactive analytics
 - Visualize insights and KPIs in OAC dashboards
 
 > **Estimated Workshop Time:** 1 hour 30 minutes
@@ -20,7 +20,7 @@ You'll learn how to:
 By completing this workshop, you will:
 - Understand key lakehouse architecture principles using Oracle Cloud services
 - Build ETL (Extract, Transform, Load) pipelines with Spark and Delta Lake in AIDP
-- Prepare and publish analytics-ready data to **Autonomous AI Data Lakehouse**
+- Prepare and publish analytics-ready data to **Autonomous AI Lakehouse**
 - Design data visualizations and dashboards with Oracle Analytics Cloud (OAC)
 
 **Architecture Overview:**  
@@ -28,7 +28,7 @@ By completing this workshop, you will:
 
 **Key Oracle Services Touched:**
 * **AIDP:** Modern data engineering, Spark/Delta-based ETL, AI/ML-ready platform
-* **Autonomous AI Data Lakehouse:** Fast, secure, and scalable analytics/lakehouse SQL
+* **Autonomous AI Lakehouse:** Fast, secure, and scalable analytics/lakehouse SQL
 * **OAC:** Interactive dashboards and self-service analytics
 * **Object Storage:** Landing zone for raw data files
 
@@ -38,7 +38,7 @@ By completing this workshop, you will:
 
 This workshop assumes you have:
 - An Oracle Cloud account or lab credentials
-- Access to Oracle AI Data Platform (AIDP), **Autonomous AI Data Lakehouse**, OAC, and Object Storage in your tenancy/region
+- Access to Oracle AI Data Platform (AIDP), **Autonomous AI Lakehouse**, OAC, and Object Storage in your tenancy/region
 - Familiarity with databases and basic data/analytics concepts (helpful, but not required)
 - Basic comfort with navigating web-based Oracle Cloud interfaces
 
