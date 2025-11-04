@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will guide you through the foundational steps to build a modern data lakehouse on Oracle Cloud using the Oracle AI Data Platform (AIDP). You'll populate your lakehouse with airline sample data, land it in OCI Object Storage, and create Delta Lake tables with AIDP to establish a robust, analytics-ready foundation.
+This lab will guide you through the foundational steps to build a modern data lakehouse on Oracle Cloud using the Oracle AI Lakehouse & Data Platform (AIDP). You'll populate your lakehouse with airline sample data, land it in OCI Object Storage, and create Delta Lake tables with AIDP to establish a robust, analytics-ready foundation.
 
 > **Estimated Time:** 1 hour
 
@@ -17,15 +17,14 @@ Oracle AI Data Platform combines the scalability of data lakes with the performa
 ### Objectives
 
 In this lab, you will:
-* **Provision and Configure Core Data Lakehouse Services**
-
+- Provision and Configure Core AI Lakehouse Services
   - Create & Launch your Autonomous AI Lakehouse
-* **Create Gold Schema & Sample Tables**
 
+- Create Gold Schema & Sample Tables
   - Configure sample airlines table
   - Upload sample airline dataset to your lakehouse
-* **Provision AIDP for Delta Table Processing**
 
+- Provision AIDP for Delta Table Processing
   - Create AIDP with associated object storage bucket
 
 ---
@@ -34,7 +33,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account (or provided lab credentials)
-* Access to Oracle AI Data Platform (AIDP) and OCI Object Storage
+* Access to Oracle AI Lakehouse, Data Platform (AIDP) and OCI Object Storage
 * Basic familiarity with web-based Oracle Cloud interfaces (helpful but not required)
 * No prior Spark or cloud experience is necessary—step-by-step guidance is provided
 

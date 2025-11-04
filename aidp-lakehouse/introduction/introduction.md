@@ -3,7 +3,7 @@
 ## About this Workshop
 
 Welcome to **Lakehouse Analytics with AI Data Platform**!  
-This hands-on workshop guides you through building a modern data analytics pipeline on Oracle Cloud using Oracle AI Data Platform (AIDP), **Autonomous AI Lakehouse**, and Oracle Analytics Cloud (OAC). You will experience the full "lakehouse" pattern: ingesting, transforming, and analyzing airline operations data step by step.
+This hands-on workshop guides you through building a modern data analytics pipeline on Oracle Cloud using **Oracle AI Data Platform** (AIDP), **Autonomous AI Lakehouse**, and **Oracle Analytics Cloud** (OAC). You will experience the full "lakehouse" pattern: ingesting, transforming, and analyzing airline operations data step by step.
 
 You'll learn how to:
 - Load raw airline data into Oracle Object Storage
@@ -11,7 +11,7 @@ You'll learn how to:
 - Serve curated datasets from **Autonomous AI Lakehouse** for interactive analytics
 - Visualize insights and KPIs in OAC dashboards
 
-> **Estimated Workshop Time:** 1 hour 30 minutes
+> **Estimated Workshop Time:** 2 hours 30 minutes
 
 ---
 
@@ -19,9 +19,9 @@ You'll learn how to:
 
 By completing this workshop, you will:
 - Understand key lakehouse architecture principles using Oracle Cloud services
-- Build ETL (Extract, Transform, Load) pipelines with Spark and Delta Lake in AIDP
+- Build ETL (Extract, Transform, Load) pipelines with Spark and Delta Lake in **AI Data Platform**
 - Prepare and publish analytics-ready data to **Autonomous AI Lakehouse**
-- Design data visualizations and dashboards with Oracle Analytics Cloud (OAC)
+- Design data visualizations and dashboards with **Oracle Analytics Cloud** (OAC)
 
 **Architecture Overview:**  
 ![Lakehouse Architecture Diagram](images/ai-lakehouse-aidp.png)

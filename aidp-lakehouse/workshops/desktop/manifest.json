@@ -13,7 +13,7 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Create a Lakehouse with Airline Sample Data",
+      "title": "Lab 1: Create a Data Lakehouse with AI Data Platform",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../create-lakehouse/create-lakehouse.md"
     },

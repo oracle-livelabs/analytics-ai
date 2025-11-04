@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use Oracle Analytics Cloud (OAC) to explore, visualize, and share insights from your refined airline dataset. Building on your work in AIDP, you’ll connect OAC directly to your gold Delta table (now in Autonomous AI Data Lakehouse) and create impactful, interactive dashboards that unlock the story in your data.
+In this lab, you will use **Oracle Analytics Cloud** (OAC) to explore, visualize, and share insights from your refined airline dataset. Building on your work in **AI Data Platform**, you’ll connect OAC directly to your gold Delta table (now in **Autonomous AI Data Lakehouse**) and create impactful, interactive dashboards that unlock the story in your data.
 
 > **Estimated Time:** 1 hour
 
@@ -141,7 +141,7 @@ This lab assumes you have:
 
 ## Next Steps
 
-**Congratulations!** You now have a fully functioning pipeline from raw data to analytic insight using Autonomous AI Lakehouse, AI Data Platform, and Analytics Cloud. Feel free to experiment with more charts, filters, or custom calculations—and use your dashboard to present your findings.
+**Congratulations!** You now have a fully functioning pipeline from raw data to analytic insight using **Autonomous AI Lakehouse**, **AI Data Platform**, and **Analytics Cloud**. Feel free to experiment with more charts, filters, or custom calculations—and use your dashboard to present your findings.
 
 ---
 

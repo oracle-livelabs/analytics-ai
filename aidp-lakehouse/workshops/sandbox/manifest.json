@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Integrate and Accelerate Analytics with OAC, AIDP Data Platform, and Autonomous AI Lakehouse ",
+    "workshoptitle": "Integrate and Accelerate Analytics with OAC, AIDP Data Platform, and Autonomous AI Lakehouse",
     "help": "livelabs-help-aiservices_us@oracle.com",
     "tutorials": [
       {
@@ -9,8 +9,8 @@
       },
       {
         "title": "Getting Started",
-        "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        "description": "Sandbox",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
     },
     {
       "title": "Lab 1: Create a Lakehouse with Airline Sample Data",

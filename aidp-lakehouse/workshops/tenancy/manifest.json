@@ -9,11 +9,11 @@
       },
       {
         "title": "Getting Started",
-        "description": "Get a Free Trial",
-        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        "description": "Sign in to tenancy",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
       },
       {
-        "title": "Lab 1: Create a Lakehouse with Airline Sample Data",
+        "title": "Lab 1: Create a Data Lakehouse with AI Data Platform",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../create-lakehouse/create-lakehouse.md"
       },
