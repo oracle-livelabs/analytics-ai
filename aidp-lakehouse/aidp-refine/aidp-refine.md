@@ -48,6 +48,7 @@ This lab assumes you have:
 ![Select Catalog](./images/retrieve-catalog.png)
 
 ```python
+<copy>
 airlines_sample_table = "aidp_external_gold_catalog.gold.AIRLINE_SAMPLE"
 
 # Confirm AIRLINE_SAMPLE table is reflected in spark
@@ -56,6 +57,7 @@ spark.sql("SHOW TABLES IN aidp_external_gold_catalog.gold").show(truncate=False)
 df = spark.table(airlines_sample_table)
 
 df.show()
+</copy>
 ```
 
 **NOTE** for each iteration of code blocks it's recommended to run that section individually to validate the scripts. Once all the code blocks are validated, you can run this entire notebook as a job in a workflow.
@@ -65,8 +67,10 @@ df.show()
 1. Write the new data frame to your Object Storage bucket. Replace '**oci-bucket**' with your oci bucket name and '**os-namespace**' with object storage namespace - 
 
 ```python
+<copy>
 delta_path = "oci://oci-bucket@os-namespace/delta/airline_sample"
 df.write.format("delta").mode("overwrite").save(delta_path)
+</copy>
 ```
 
 **NOTE** **oci-bucket** refers to the bucket name in OCI, and **os-namespace** is the namespace found in the bucket - 
@@ -81,6 +85,7 @@ df.write.format("delta").mode("overwrite").save(delta_path)
 1. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "**airlines\_data\_catalog**". This is distinct from the external catalog to the AI Lakehouse created earlier. "**airlines\_data\_catalog**" will be used to store the bronze, silver, and gold layers of the medallian architecture.
 
 ```python
+<copy>
 bronze_table = "airlines_data_catalog.bronze.airline_sample_delta"
 
 # Create New Internal Catalog & Schema to store data
@@ -96,23 +101,28 @@ spark.sql(f"""
   USING DELTA
   LOCATION '{delta_path}'
 """)
+</copy>
 ```
 
 
 2. Clean the data 
 
 ```python
+<copy>
 spark.sql(f"""
     DELETE FROM {bronze_table}
     WHERE DISTANCE IS NULL OR DISTANCE < 0
 """)
+</copy>
 ```
 
 3. Test versioning capabilities of delta tables. With delta lake capabilities the user can now show older versions of tables before they were modified.
 
 ```python 
+<copy>
 df_v0 = spark.read.format("delta").option("versionAsOf", 0).load(delta_path)
 df_v0.show()
+</copy>
 ```
 
 ## Task 5: Create Silver Medallian Schema & Enrich Data with Generative AI 
@@ -120,6 +130,7 @@ df_v0.show()
 1. Write to Silver schema of medallian architecture 
 
 ```python
+<copy>
 df_clean = spark.table(bronze_table)
 
 silver_path = "oci://os-bucket@os-namespace/delta/silver/airline_sample"
@@ -143,11 +154,13 @@ spark.sql(f"""
 
 # Check table to make sure it's cleaned 
 spark.sql(f"SELECT * FROM {silver_table}").show()
+</copy>
 ```
 
 2. Enrich the data 
 
 ```python
+<copy>
 # Enrich data by adding aggregates/average delays and distance 
 from pyspark.sql import functions as F
 
@@ -164,11 +177,13 @@ avg_df = df.groupBy("AIRLINE").agg(
 enhanced_df = df.join(avg_df, on="AIRLINE", how="left")
 
 enhanced_df.show()
+</copy>
 ```
 
 3. Add new column for Sentiment Analysis 
 
 ```python
+<copy>
 # Add New Review Column for Sentiment Analysis 
 import random
 
@@ -186,11 +201,13 @@ from pyspark.sql.types import StringType
 random_review_udf = udf(lambda: random.choice(sample_reviews), StringType())
 df_with_review = enhanced_df.withColumn("REVIEW", random_review_udf())
 df_with_review.show()
+</copy>
 ```
 
 4. Test and run AI model against reviews of flights
 
 ```python
+<copy>
 # test model 
 spark.sql("select query_model('cohere.command-latest','What is Intelligent Data Lake Service in Oracle?') as questions").show(truncate=False)
 
@@ -201,6 +218,7 @@ enhanced_df = df_with_review.withColumn("SENTIMENT",\
 #.show(10, False)
 
 enhanced_df.show(10, False)
+</copy>
 ```
 
 **NOTE** As of writing (Oct 2025), AIDP only supports cohere and grok models due to a bug. Dragging and dropping the sample models from the catalog results in 'model not found' errors. A temporary workaround can be to remove the '**default.oci\_ai\_models**' prefix from the model path. This should be fixed in the near future. 
@@ -210,6 +228,7 @@ enhanced_df.show(10, False)
 1. Save new data to gold schema 
 
 ```python
+<copy>
 # Save Averaged Data to Gold Schema 
 
 gold_path = "oci://os-bucket@os-namespace/delta/gold/airline_sample_avg"
@@ -230,22 +249,26 @@ spark.sql(f"""
 
 df_gold = spark.table(gold_table) 
 df_gold.show()
+</copy>
 ```
 
 2. Confirm all columns are upper case. This is because OAC requires upper case columns for visualizations, otherwise results in errors. 
 
 ```python
+<copy>
 # Before pushing dataframe, make sure all columns are upper case to prevent visualization issues in OAC
 # (OAC needs all columns capitalized in order to analyze data) 
 for col_name in df_gold.columns:
     df_gold = df_gold.withColumnRenamed(col_name, col_name.upper())
 
 df_gold.show()
+</copy>
 ```
 
 3. Cast columns to decimal type. This is to conform the spark data frames to the AI Lakehouse column definitions. 
 
 ```python
+<copy>
 from pyspark.sql.functions import col
 from pyspark.sql.types import DecimalType, StringType
 
@@ -284,13 +307,16 @@ print(df_gold_typed.printSchema())
 
 # Register the DataFrame as a temp view for Spark SQL use (for INSERT INTO ... or further queries)
 df_gold_typed.createOrReplaceTempView("df_gold")
+</copy>
 ```
 
 4. Insert new gold data into external lakehouse table 
 
 ```sql
+<copy>
 %sql
 INSERT into aidp_external_gold_catalog.gold.airline_sample_gold select * from df_gold
+<copy>
 ```
 
 **NOTE** We use the sql insert instead of the native spark insert, because spark causes the dataframe to be pushed with lowercase column names. This results in OAC unable to visualize the data. Using sql INSERT into avoids this issue. 
