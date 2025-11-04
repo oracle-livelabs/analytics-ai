@@ -2,9 +2,11 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+This workshop is to get you started with Oracle AI Data Platform which allows you to manage your data and AI assets. You will learn how to provision your AI Data Platform Workbench, create essential components like a workspace and a compute cluster. You will also create your first catalog items, notebooks and run those.
+We will follow the structure of a medallion architecture where the raw data lands in the bronze layer as files. From there we will create and run some data processing notebooks to promote data from Bronze to Silver layer in an open table format. Once done we will use the nothebook funcitonalitey to use the data in the  silver layer and bring that in the external catalog, being the autonomous AI Lakehouse as Gold layer ready for analytics usage.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+
+Estimated Workshop Time: 4 hours (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
 *You may add an option video, using this format: [](youtube:YouTube video id)*
 
@@ -12,21 +14,21 @@ Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire wo
 
 ### Objectives
 
-*List objectives for the workshop*
-
 In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+* Provision an AI Data Platform Workbench
+* Setup a workspace.
+* Create a compute cluster
+* Create and run notebooks to process the data
+* Create a workflow to automate data processing
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* An Oracle OCI tenancy
+* Prequisites in place
+* Basic knowledge about Autonomous AI Database
+* Basic knowledge in Python and SQL
 
 *This is the "fold" - below items are collapsed by default*
 
