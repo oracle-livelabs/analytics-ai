@@ -46,7 +46,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 
 A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
 
-In this step of the Workshop, you will create a Data Loader task that will load Orders data from **REVENUE.csv** source file. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
+In this step of the Workshop, you will create a Data Loader task that will load Orders data from **REVENUE.csv** source file. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous AI Lakehouse. The Data Loader task will also create the target table on the Autonomous AI Lakehouse.
 
 1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 
@@ -161,7 +161,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
-You will create a data flow to ingest data from **two source files**, containing Customers (`CUSTOMERS.json`) and Orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the order status and country code of the customers, and in the end will be loaded to `CUSTOMERS_TARGET` table in Autonomous Data Warehouse.
+You will create a data flow to ingest data from **two source files**, containing Customers (`CUSTOMERS.json`) and Orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the order status and country code of the customers, and in the end will be loaded to `CUSTOMERS_TARGET` table in Autonomous AI Lakehouse.
 
 1. From the **Project Details** page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 
@@ -660,7 +660,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Data Asset**, select `Data_Warehouse`.
     - For **Connection**, select `Beta connection`.
     - For **Schema**, select `Beta`.
-    - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure_ that you ran on the Autonomous Data Warehouse).
+    - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure_ that you ran on the Autonomous AI Lakehouse).
     - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`).
     - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 
@@ -699,7 +699,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Data Asset**, select `Data_Warehouse`.
     - For **Connection**, select `Beta connection`.
     - For **Schema**, select `Beta`.
-    - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in OCI_ that you ran on the Autonomous Data Warehouse).
+    - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the SQL script from _Setting up the Data Integration prerequisites in OCI_ that you ran on the Autonomous AI Lakehouse).
     - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
     - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 
@@ -767,7 +767,7 @@ A **SQL task** lets you run a SQL stored procedure in pipeline. You create a SQL
 
 When you create a SQL task, you can configure values for **input parameters** only. If input parameters are configured in a SQL task, you can **override the default values** when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task.
 
-The SQL task that you create will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameter from the pipeline, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in _Create an Application, a Pipeline and publish tasks_. To understand better the SQL stored procedure, please check the `OCIDI_RESULT` procedure statement from the SQL script you downloaded and ran on Autonomous Data Warehouse in _Setting up the Data Integration prerequisites in OCI_.
+The SQL task that you create will write inside a statistics table on the Autonomous AI Lakehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameter from the pipeline, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in _Create an Application, a Pipeline and publish tasks_. To understand better the SQL stored procedure, please check the `OCIDI_RESULT` procedure statement from the SQL script you downloaded and ran on Autonomous AI Lakehouse in _Setting up the Data Integration prerequisites in OCI_.
 Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking the result in the Data Integration Application from OCI Console.
 
 1. From your Workspace home page in OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
@@ -803,9 +803,9 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
     - **Data Asset**: `Data_Warehouse`.
     - **Connection**: Choose the `Beta Connection`.
-    - **Schema**: `BETA` schema on your ADW.
+    - **Schema**: `BETA` schema on your ALK.
     - **Stored Procedure**: Choose the `OCIDI_RESULT` procedure.
-    *Note*: The `OCIDI_RESULT` procedure was created in the Autonomous Data Warehouse during "Setting up the Data Integration prerequisites in OCI." It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure.
+    *Note*: The `OCIDI_RESULT` procedure was created in the Autonomous AI Lakehouse during "Setting up the Data Integration prerequisites in OCI." It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure.
 
     ![](./images/sql-procedure-task.png " ")
 
@@ -852,4 +852,4 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, August 2021
+* **Last Updated By/Date** - Alex Porcescu, November 2025
