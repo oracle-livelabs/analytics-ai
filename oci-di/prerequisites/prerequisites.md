@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Set up these **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading the source files in an Object Storage bucket and creating the necessary database objects in Autonomous Data Warehouse. Steps 3, 4 and 5 below are not prerequisites for using OCI Data Integration, but are required to complete the workshop.
+Set up these **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading the source files in an Object Storage bucket and creating the necessary database objects in Autonomous AI Lakehouse. Steps 3, 4 and 5 below are not prerequisites for using OCI Data Integration, but are required to complete the workshop.
 
 **Estimated Time**: 45 minutes
 
@@ -10,8 +10,8 @@ Set up these **prerequisites** before starting our Data Integration journey in O
 
 * Create an OCI Compartment
 * Create a VCN and Subnet using VCN Wizard
-* Provision an Autonomous Data Warehouse and download Wallet
-* Prepare the Autonomous Data Warehouse
+* Provision an Autonomous AI Lakehouse and download Wallet
+* Prepare the Autonomous AI Lakehouse
 * Create an Object Storage bucket and upload the sample data
 
 ### Prerequisites
@@ -94,120 +94,93 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
   ![](./images/vcn-detail.png " ")
 
-## Task 3: Provision an Autonomous Data Warehouse and download Wallet
+## Task 3: Provision an Autonomous AI Lakehouse and download Wallet
 
-**Autonomous Data Warehouse** (ADW) is a cloud data warehouse service that eliminates all the complexities of operating a data warehouse, securing data, and developing data-driven applications. It automates provisioning, configuring, securing, tuning, scaling, and backing up of the data warehouse.
+**Autonomous AI Lakehouse** (ALK) is a data platform that combines the strengths of a data lakehouse—which merges the scalability and flexibility of a data lake with the structure and performance of a data warehouse—with autonomous and AI-driven capabilities.
 
-1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
+1. From the OCI console menu, click **Oracle Database** and then select **Autonomous AI Lakehouse** under Autonomous Database section.
 
-  ![](./images/oci-menu-adw.png " ")
+  ![](./images/oci-menu-alk.png " ")
 
-2. The console shows the Autonomous Data Warehouse databases that exist, if any. Make sure that you are in the compartment that you have created for the data integration resources (`DI-compartment`). Click on **Create Autonomous Database**.
+2. The console shows the Autonomous AI Lakehouse databases that exist, if any. Make sure that you are in the compartment that you have created for the data integration resources (`DI-compartment`). Click on **Create Autonomous Database**.
 
-  ![](./images/create-adw-button.png " ")
+  ![](./images/create-alk-button.png " ")
 
 3. Provide basic information for the Autonomous Database:
 
     - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`).
-    - **Display Name** - Enter a meaningful name for the database for display purposes. Use `ADW Workshop`.
-    - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. Use `ADWWORKSHOP`.
+    - **Display Name** - Enter a meaningful name for the database for display purposes. Use `ALK Workshop`.
+    - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. Use `ALKWORKSHOP`.
 
    *Note*: The same database name cannot be used for multiple Autonomous Databases in your tenancy, in the same region.
 
-   ![](./images/create-adw-info.png " ")
+   ![](./images/create-alk-info.png " ")
 
-4. Select **Data Warehouse** as the workload type.
+4. Select **Lakehouse** as the workload type.
 
-  ![](./images/adw-worload.png " ")
+  ![](./images/alk-worload.png " ")
 
-5. Choose **Shared Infrastructure** as the deployment type.
-
-  ![](./images/shared-infrastructure.png " ")
-
-6. Configure the database:
+5. Configure the database:
 
     - **Always Free** - Leave this option unchecked.
     - **Choose database version** - Select a database version from the available versions. Leave the default version 19c.
-    - **OCPU count** - Number of CPUs for your service. Specify 1 CPU.
+    - **OCPU count** - Number of ECPUs for your service. Specify 2 CPU.
     - **Storage (TB)** - Select your storage capacity in terabytes. Specify 1 TB of storage.
     - **Auto Scaling** - Keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand if needed.
 
-  ![](./images/adw-configure.png " ")
+  ![](./images/alk-configure.png " ")
 
 7. Create **Administrator credentials**:
 
     - Password and Confirm Password - Specify the password for `ADMIN` user of the service instance.
 
-    ![](./images/adw-admin.png " ")
+    ![](./images/alk-admin.png " ")
 
 8. Choose **Network access**:
 
-    - Accept the default **Allow secure access from everywhere**.
+    - Accept the default **Secure access from everywhere**.
 
-    ![](./images/adw-network.png " ")
+    ![](./images/alk-network.png " ")
 
-9. Choose a **license type**. Choose **License Included**. The two license types are:
+9. Click **Create Autonomous Database**.
 
-    - Bring Your Own License (BYOL) - Select this type when your organization has existing database licenses.
-    - License Included - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+  ![](./images/create-alk-final.png " ")
 
-    ![](./images/adw-license-type.png " ")
+10. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to **Available**. *At this point, your Autonomous AI Lakehouse database is ready to use!*
 
-10. Click **Create Autonomous Database**.
+  ![](./images/alk-available.png " ")
 
-  ![](./images/create-adw-final.png " ")
+11. Download the **Client Credentials (Wallet file)** for your Autonomous AI Lakehouse.  This will be used to connect OCI Data Integration to the Autonomous AI Lakehouse. From the alk details page you are currently in, click on **Database connection** button.
 
-11. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to **Available**. *At this point, your Autonomous Data Warehouse database is ready to use!*
+  ![](./images/alk-db-conn.png " ")
 
-  ![](./images/adw-available.png " ")
-
-12. Download the **Client Credentials (Wallet file)** for your Autonomous Data Warehouse.  This will be used to connect OCI Data Integration to the Autonomous Data Warehouse. From the ADW details page you are currently in, click on **DB Connection** button.
-
-  ![](./images/adw-db-conn.png " ")
-
-13. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
+12. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
 
   ![](./images/download-wallet-click.png " ")
 
-14. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
+13. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
 
   ![](./images/download-wallet.png " ")
 
-## Task 4: Prepare the Autonomous Data Warehouse
+## Task 4: Prepare the Autonomous AI Lakehouse
 
-In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete this workshop.
+In this workshop, **Autonomous AI Lakehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous AI Lakehouse database in order to complete this workshop.
 
-You will create a new user on the Autonomous Data Warehouse and will run a SQL script that will create the database objects you need for the following integration tasks.
+You will create a new user on the Autonomous AI Lakehouse and will run a SQL script that will create the database objects you need for the following integration tasks.
 
-1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
+1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Lakehouse** under Autonomous Database section.
 
-  ![](./images/oci-menu-adw.png " ")
+  ![](./images/oci-menu-alk.png " ")
 
-2. The console shows the Autonomous Data Warehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your Autonomous Data Warehouse**, the one you created in the previous step (`ADW Workshop`).
+2. The console shows the Autonomous AI Lakehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your Autonomous AI Lakehouse**, the one you created in the previous step (`alk Workshop`).
 
-  ![](./images/select-adw.png " ")
+  ![](./images/select-alk.png " ")
 
-3. On your Autonomous Database Details page, click on **Tools** tab.
+3. On your Autonomous AI Lakehouse Details page, click on **Database actions** and the to **SQL**.
 
-  ![](./images/click-tools.png " ")
+  ![](./images/click-sql.png " ")
 
-4. In the Tools tab, click on **Open Database Actions** under Database Actions section.
-
-  ![](./images/open-db-actions.png " ")
-
-5. When prompted, log in with `admin` **username** and click Next.
-
-  ![](./images/admin-user.png " ")
-
-6. A new window requiring the **password** will appear. Write your password for `admin` user and then click **Sign In**.
-
-  ![](./images/admin-pass.png " ")
-
-7. On Database Actions page, click on **SQL tile** under Development section.
-
-  ![](./images/sql-tile.png " ")
-
-8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
+4. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
 
     ```
     <copy>create user BETA identified by "password";
@@ -220,15 +193,15 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
   ![](./images/create-user-sql.png " ")
 
-9. **Download** the zip file [OCI DI Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
+5. **Download** the zip file [OCI DI Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
 
-10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
+6. In the same SQL worksheet, run the **alk\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
 
    This SQL script will create tables CUSTOMERS\_TARGET, EMPLOYEES\_WEST\_MIDWEST and EMPLOYEES\_NORTHEAST\_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
 
-   ![](./images/adw-run-sql-script.png " ")
+   ![](./images/alk-run-sql-script.png " ")
 
-11. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your tables were created successfully.
+7. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your tables were created successfully.
 
   ![](./images/beta-schema.png " ")
 
@@ -278,7 +251,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 ## Learn More
 
-* [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
+* [Autonomous AI Lakehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
 * [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm_)
 * [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
@@ -289,4 +262,4 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Last Updated By/Date** - Alex Porcescu, November 2025
