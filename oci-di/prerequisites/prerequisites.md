@@ -251,7 +251,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 ## Learn More
 
-* [Autonomous AI Lakehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
+* [Autonomous AI Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
 * [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm_)
 * [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
