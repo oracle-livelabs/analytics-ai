@@ -98,21 +98,21 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
 **Autonomous AI Lakehouse** (ALK) is a data platform that combines the strengths of a data lakehouse—which merges the scalability and flexibility of a data lake with the structure and performance of a data warehouse—with autonomous and AI-driven capabilities.
 
-1. From the OCI console menu, click **Oracle Database** and then select **Autonomous AI Lakehouse** under Autonomous Database section.
+1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Database**.
 
   ![](./images/oci-menu-alk.png " ")
 
-2. The console shows the Autonomous AI Lakehouse databases that exist, if any. Make sure that you are in the compartment that you have created for the data integration resources (`DI-compartment`). Click on **Create Autonomous Database**.
+2. The console shows the Autonomous AI Lakehouse databases that exist, if any. Make sure that you are in the compartment that you have created for the data integration resources (`DI-compartment`). Click on **Create Autonomous AI Database**.
 
   ![](./images/create-alk-button.png " ")
 
-3. Provide basic information for the Autonomous Database:
+3. Provide basic information for the Autonomous AI Database:
 
     - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`).
     - **Display Name** - Enter a meaningful name for the database for display purposes. Use `ALK Workshop`.
     - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. Use `ALKWORKSHOP`.
 
-   *Note*: The same database name cannot be used for multiple Autonomous Databases in your tenancy, in the same region.
+   *Note*: The same database name cannot be used for multiple Autonomous AI Databases in your tenancy, in the same region.
 
    ![](./images/create-alk-info.png " ")
 
@@ -142,7 +142,7 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
     ![](./images/alk-network.png " ")
 
-9. Click **Create Autonomous Database**.
+9. Click **Create**.
 
   ![](./images/create-alk-final.png " ")
 
@@ -168,11 +168,11 @@ In this workshop, **Autonomous AI Lakehouse** serves as the **target data asset*
 
 You will create a new user on the Autonomous AI Lakehouse and will run a SQL script that will create the database objects you need for the following integration tasks.
 
-1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Lakehouse** under Autonomous Database section.
+1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Database**.
 
   ![](./images/oci-menu-alk.png " ")
 
-2. The console shows the Autonomous AI Lakehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your Autonomous AI Lakehouse**, the one you created in the previous step (`alk Workshop`).
+2. The console shows the Autonomous AI Lakehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your Autonomous AI Lakehouse**, the one you created in the previous step (`ALK Workshop`).
 
   ![](./images/select-alk.png " ")
 
@@ -195,7 +195,7 @@ You will create a new user on the Autonomous AI Lakehouse and will run a SQL scr
 
 5. **Download** the zip file [OCI DI Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
 
-6. In the same SQL worksheet, run the **alk\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
+6. In the same SQL worksheet, run the **ALK\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
 
    This SQL script will create tables CUSTOMERS\_TARGET, EMPLOYEES\_WEST\_MIDWEST and EMPLOYEES\_NORTHEAST\_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
 
