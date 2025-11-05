@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Accelerate Analytics on OAC with Generative AI, AIDP Data Platform, and Autonomous AI Lakehouse",
+  "help": "livelabs-help-aiservices_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: Create a Data Lakehouse with AI Data Platform",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../create-lakehouse/create-lakehouse.md"
+    },
+    {
+      "title": "Lab 2: Refine and Prepare Data with AI Data Platform",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../aidp-refine/aidp-refine.md"
+    },
+    {
+      "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../oac-visualize/oac-visualize.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
