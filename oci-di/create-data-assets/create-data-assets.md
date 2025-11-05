@@ -1,17 +1,17 @@
-# Create the Object Storage and ADW Data Assets
+# Create the Object Storage and ALK Data Assets
 
 ## Introduction
 
-Learn how to create **Data assets** for your source and target data sources used in _Create an OCI Data Integration Workspace_. You will be using **Object Storage** as the source and **Autonomous Data Warehouse** as the target. Data assets can be databases, flat files, and so on.
+Learn how to create **Data assets** for your source and target data sources used in _Create an OCI Data Integration Workspace_. You will be using **Object Storage** as the source and **Autonomous AI Lakehouse** as the target. Data assets can be databases, flat files, and so on.
 
 **Estimated Time**: 25 minutes
 
 ### Objectives
 * Copy the Workspace OCID for further use in policies
-* Create policies for ADW and Object Storage
+* Create policies for ALK and Object Storage
 * Copy the Tenancy OCID for further use to create Object Storage data asset
 * Create Object Storage data asset
-* Create Autonomous Data Warehouse data asset
+* Create Autonomous AI Lakehouse data asset
 
 ## Task 1: Get the Workspace OCID
 
@@ -31,9 +31,9 @@ Learn how to create **Data assets** for your source and target data sources used
 
   ![](./images/notification-ocid-copied.png " ")
 
-## Task 2: Create policies for ADW and Object Storage
+## Task 2: Create policies for ALK and Object Storage
 
-Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. You must create all the required Object Storage **policies** and an additional one. This step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
+Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous AI Lakehouse** in Data Integration uses Object Storage. You must create all the required Object Storage **policies** and an additional one. This step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
 
@@ -51,7 +51,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
   ![](./images/policy-another-button.png " ")
 
-5. You will add the necessary policy statements to **enable access to Oracle Object Storage** and **to use Autonomous Data Warehouse** as target for _Create an OCI Data Integration Workspace_. In this workshop, the Data Integration workspace and Object Storage data asset belong to the same tenancy so the following statements are needed. Copy the following statements and paste them in the **Policy Builder** box, each statement as a new line:
+5. You will add the necessary policy statements to **enable access to Oracle Object Storage** and **to use Autonomous AI Lakehouse** as target for _Create an OCI Data Integration Workspace_. In this workshop, the Data Integration workspace and Object Storage data asset belong to the same tenancy so the following statements are needed. Copy the following statements and paste them in the **Policy Builder** box, each statement as a new line:
 
     - For **Object Storage**:
 
@@ -67,7 +67,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
     <copy>Allow any-user to manage objects in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>'}</copy>
     ```
 
-    - For **Autonomous Data Warehouse**:
+    - For **Autonomous AI Lakehouse**:
 
     ```
     <copy>Allow any-user to manage buckets in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>', request.permission = 'PAR_MANAGE'}</copy>
@@ -153,7 +153,7 @@ A success or failure message displays, indicating whether the test was successfu
   ![](./images/create-asset.png " ")
 
 
-## Task 5: Create Autonomous Data Warehouse data asset
+## Task 5: Create Autonomous AI Lakehouse data asset
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
@@ -167,7 +167,7 @@ A success or failure message displays, indicating whether the test was successfu
 
   ![](./images/home-assets.png " ")
 
-4. You can see your current existing Data Assets, more specifically the Object Storage. To create a new Data Asset for ADW, click on **Create Data Asset**.
+4. You can see your current existing Data Assets, more specifically the Object Storage. To create a new Data Asset for ALK, click on **Create Data Asset**.
 
   ![](./images/create-asset-new.png " ")
 
@@ -176,12 +176,12 @@ A success or failure message displays, indicating whether the test was successfu
     - **Name**: `Data_Warehouse`.
     - **Identifier**: Auto-generated based on the value you enter for Name.
     - **Description**: It is optional to give a description for your data asset.
-    - **Type**: Oracle Autonomous Data Warehouse.
-    - Choose the **Upload Wallet** option to provide the login credentials for the ADW
-    - **Wallet File**: Drag and drop or browse to select your wallet file. See the process to download the wallet in _Provision an Autonomous Data Warehouse and download Wallet_ under _Setting up the Data Integration prerequisites in OCI_.
+    - **Type**: Oracle Autonomous AI Lakehouse.
+    - Choose the **Upload Wallet** option to provide the login credentials for the ALK
+    - **Wallet File**: Drag and drop or browse to select your wallet file. See the process to download the wallet in _Provision an Autonomous AI Lakehouse and download Wallet_ under _Setting up the Data Integration prerequisites in OCI_.
     - Enter your **wallet password**.
-    - **Service Name**: Choose the **low** service of Autonomous Data Warehouse.
-   *Note*: For more information on predefined Database Service Names for Autonomous Data Warehouse, please see the following [link](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-database-service-names.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE).
+    - **Service Name**: Choose the **low** service of Autonomous AI Lakehouse.
+   *Note*: For more information on predefined Database Service Names for Autonomous AI Lakehouse, please see the following [link](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-database-service-names.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE).
 
    ![](./images/adw-asset-general.png " ")
 
@@ -202,7 +202,7 @@ A success or failure message displays, indicating whether the test was successfu
 
   ![](./images/create-asset.png " ")
 
-   **Congratulations!**  Now you have created the Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration.
+   **Congratulations!**  Now you have created the Data Assets for Autonomous AI Lakehouse and Object Storage, in OCI Data Integration.
 
 ## Learn More
 
@@ -213,4 +213,4 @@ A success or failure message displays, indicating whether the test was successfu
 
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Last Updated By/Date** - Alex Porcescu, November 2025
