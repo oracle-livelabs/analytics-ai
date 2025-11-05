@@ -46,7 +46,7 @@ In this step, you will do a **manual on-demand run** of your **Data Loader task*
 
   ![](./images/data-loader-task-running.png " ")
 
-7. After a short time, The **Data Loader task run ends successfully**. You can also check in the Autonomous Data Warehouse the inserted data.
+7. After a short time, The **Data Loader task run ends successfully**. You can also check in the Autonomous AI Lakehouse the inserted data.
 
   ![](./images/data-loader-task-successful.png " ")
 
@@ -165,7 +165,7 @@ In this step, you will now do a **manual on-demand run** of your pipeline task. 
 
   ![](./images/pipeline-running.png " ")
 
-4. The Pipeline task run has ended successfully. You can also check in the Autonomous Data Warehouse the inserted data.
+4. The Pipeline task run has ended successfully. You can also check in the Autonomous AI Lakehouse the inserted data.
 
   ![](./images/pipeline-success.png " ")
 
