@@ -6,17 +6,17 @@ This step gives you the necessary steps to make sure that you have have the righ
 
 Estimated Time: 15 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+### About prerequisites for provisioning AI Data platform Workbench
+The AI Data Platform Workbench ames use of various components of OCI like Object Storage and Autonomous AI Lakehouse. Next to that you may want to connect to various sources and targets that run in OCI or even outside. To be able to do so a set of policies needs to be in place. This can be done  in 2 basic forms. 1 is a more narrow scope while th other has a more OCI wide scope.
+Next to that, to demonstrate the integration with Autonomous AI Lakehouse it is useful to it already deployed and the credentials and wallet at hand.
+It is also very useful to have a compartment structure in place and that you have identified the compartment for AI Data Platform Workbench
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+check if prerequisistes are met and  if not, take the time to do the needful to meet those prerequisites.
 
 ### Prerequisites (Optional)
 
@@ -25,64 +25,15 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle Cloud account
 * An active tenancy
+* * Compartment where the AI Data Platform Workbench needs to be deployed.
 * An Autonomous AI Lakehouse provisioned. https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=928&clear=RR,180&session=108251526920614
-* Compartment where the AI Data Platform Workbench needs to be deployed.
 * Necessary IAM policies in place. Documentation can be found: https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html#GUID-C534FDF6-B678-4025-B65A-7217D9D9B3DA
 
+For the  creation of the IAM policies you may need the help of the OCI administrator.
+
+When you start to deploy your AI Data Platform Workbench the OCI console will perform a check if policies are in place.
 
 *This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
-
-1. Step 1
-
-	![Image alt text](images/sample1.png)
-
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
-
-2. Step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 

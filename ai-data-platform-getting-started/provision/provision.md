@@ -1,30 +1,21 @@
-# Title of the Lab
+# Provisioning the AI Data Platform Workbench
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This step is to provision the AI Data Platform Workbench.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 15 minutes
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+learn how to provision an AI Data Platform
 
-### Prerequisites (Optional)
+### Prerequisites
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+The prerequisites as listed in previous lab need to be met before this can be executed
 
 
 *This is the "fold" - below items are collapsed by default*
