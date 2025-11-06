@@ -133,6 +133,18 @@ Inside `public`, create `index.html` with the following content:
 
 **Congratulations!** You've deployed a MongoDB-compatible app on AJD.
 
+## Troubleshooting and Testing
+
+- **UI Not Loading:** Ensure the server is running and the public directory is correctly placed.
+
+- **Testing CRUD:** Besides the UI, you can test APIs with curl, e.g.:
+  - GET todos: `curl http://localhost:3000/api/todos`
+  - POST todo: `curl -X POST http://localhost:3000/api/todos -H "Content-Type: application/json" -d '{"text": "Test"}'`
+  - PUT complete: `curl -X PUT http://localhost:3000/api/todos/<id>`
+  - DELETE: `curl -X DELETE http://localhost:3000/api/todos/<id>`
+
+This helps verify backend before UI.
+
 ---
 
 ## Acknowledgements

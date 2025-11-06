@@ -54,7 +54,7 @@ Install Express and MongoDB driver:
 
 ```bash
 <copy>
-npm install express mongodb dotenv
+npm install express mongodb
 </copy>
 ```
 
@@ -65,7 +65,7 @@ Create a file named `server.js` with the following content:
 ```javascript
 <copy>
 // server.js
-require('dotenv').config();
+//require('dotenv').config(); // only if using .env
 
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
@@ -81,32 +81,47 @@ let db;
 async function connectDB() {
   const client = new MongoClient(process.env.MONGO_API_URL);
   await client.connect();
-  db = client.db();
-  console.log('Connected to AJD via MongoDB API');
+  db = client.db(); // use default DB from connection string
+  // Optional: Ping to test connection
+  await db.command({ ping: 1 });
+  console.log('Connected to Oracle AJD (Mongo API)');
 }
 
+app.get('/api/status', async (req, res) => {
+  try {
+    await db.command({ ping: 1 });
+    res.json({ status: 'ok' });
+  } catch (err) {
+    res.status(500).json({ status: 'error', error: err.message });
+  }
+});
+
+// Read todos
 app.get('/api/todos', async (req, res) => {
-  const todos = await db.collection('todos').find().toArray();
-  res.json(todos);
-});
-
+    const todos = await db.collection('todos').find().toArray();
+    res.json(todos);
+  });
+  
+// Create todo
 app.post('/api/todos', async (req, res) => {
-  const todo = { text: req.body.text, completed: false };
-  const result = await db.collection('todos').insertOne(todo);
-  res.json(result.ops ? result.ops[0] : todo);
+    const todo = { text: req.body.text, completed: false };
+    const result = await db.collection('todos').insertOne(todo);
+    res.json(result.ops ? result.ops[0] : todo);
 });
-
+  
+// Update todo (mark as completed)
 app.put('/api/todos/:id', async (req, res) => {
-  const result = await db.collection('todos').updateOne(
+const result = await db.collection('todos').updateOne(
     { _id: new ObjectId(req.params.id) },
     { $set: { completed: true } }
-  );
-  res.json({ modifiedCount: result.modifiedCount });
+);
+res.json({ modifiedCount: result.modifiedCount });
 });
-
+  
+// Delete todo
 app.delete('/api/todos/:id', async (req, res) => {
-  const result = await db.collection('todos').deleteOne({ _id: new ObjectId(req.params.id) });
-  res.json({ deletedCount: result.deletedCount });
+    const result = await db.collection('todos').deleteOne({ _id: new ObjectId(req.params.id) });
+    res.json({ deletedCount: result.deletedCount });
 });
 
 app.listen(PORT, async () => {
@@ -120,13 +135,15 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Create a `.env` file:
+Set the env variable **MONGO_API_URL**:
 
 ```bash
 <copy>
-MONGO_API_URL=your-connection-string
+export MONGO_API_URL='your-connection-string'
 </copy>
 ```
+
+**Note** Make sure to only use single quotes ' ' around the connection string.
 
 ## Task 5: Run the Server
 
@@ -141,6 +158,12 @@ node server.js
 Visit `http://localhost:3000` to test (frontend in next lab).
 
 You are now ready to proceed to the Frontend UI lab.
+
+## Troubleshooting
+
+- **Installation Errors:** If npm install fails with network errors (e.g., ENOTFOUND), ensure you're not on a VPN or behind a proxy interfering with the registry. For public users, it pulls from npmjs.org; internal users may need to configure accordingly.
+
+- **Server Startup Errors:** If you see syntax errors, confirm Node.js version (>=18). For connection issues, refer to the AJD Connect lab's troubleshooting.
 
 ---
 

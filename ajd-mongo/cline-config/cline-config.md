@@ -42,15 +42,17 @@ This lab assumes you have:
 
 4. Click Install on the chosen extension.
 
-![Install Extension](./images/install-extension.png)  <!-- Placeholder; replace with actual image if available -->
+![Install Extension](./images/cline-extension.png)  <!-- Placeholder; replace with actual image if available -->
 
 ## Task 2: Configure Cline
 
 1. Once installed, open the extension settings. For Cline, this is accessible via the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) by searching for "Cline".
 
-**NOTE** If cline is not appearing, try restarting the VS Code environment after install.
+![Focus on View](./images/focus-on-view.png)
 
 2. Set up the extension to point to your preferred LLM model.
+
+**Note** If cline is not appearing, try restarting the VS Code environment after install.
 
 **Note: Configure Your Own LLM**  
 To use Cline effectively, you'll need to set up your preferred Large Language Model (LLM) by providing API keys. This allows customization and avoids reliance on default or shared models.  
@@ -61,13 +63,11 @@ To use Cline effectively, you'll need to set up your preferred Large Language Mo
 
 3. Save the settings and restart VS Code if prompted.
 
-![Configure Settings](./images/configure-settings.png)  <!-- Placeholder; replace with actual image if available -->
-
 ## Task 3: Test the Installation
 
 1. Open a code file in VS Code.
 
-2. Activate Cline by using the extension's shortcut (e.g., for Continue, highlight code and press `Ctrl+L` or use the chat interface).
+2. Activate Cline by using the extension's shortcut (or ctrl+shift+p, Cline: Focus on view).
 
 3. Test with a simple query, like "Explain this code" or "Generate a function to sort an array."
 

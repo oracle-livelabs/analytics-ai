@@ -31,15 +31,27 @@ This lab assumes you have:
 
 1. Log in to the Oracle Cloud Console.
 
-2. Navigate to **Oracle Database > Autonomous Database**.
+2. Navigate to **Oracle Database > Autonomous AI Database**.
+
+![Autonomous AI Database](./images/ai-database.png)
 
 3. Click **Create Autonomous Database**.
 
 4. Select **JSON Database** as the workload type.
 
+![AJD Mongo Todo](./images/ajd-mongo-todo.png)
+
 5. Provide a display name (e.g., "ToDoAJD") and database name.
 
-6. Set admin password and configure network access (add your IP to the ACL for security).
+6. Set admin password and configure network access. Set access type to 'Secure access from allowed IPs and VCNs only' (add your IP to the ACL for security).
+
+![Access ACL](./images/ajd-acl.png)
+
+**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
+
+```bash
+curl -s ifconfig.me
+```
 
 7. Click **Create**.
 
@@ -47,13 +59,13 @@ Wait for the instance to provision (a few minutes).
 
 ## Task 2: Enable MongoDB API
 
-1. In the AJD details page, go to **More Actions > Database Actions**.
+1. In the AJD details page, go to **Tool Configuration**.
 
-2. Under **Development**, select **MongoDB API**.
+2. Under **MongoDB API** set the status to Enabled.
 
-3. Enable the API if not already active.
+![Enable Access](./images/public-access-url.png)
 
-4. Download the connection string or note it down.
+3. Download the connection string or note it down.
 
 The connection string format is:
 ```bash
@@ -62,21 +74,15 @@ mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSour
 </copy>
 ```
 
-Replace placeholders with your details. URL-encode special characters in the password.
-
-## Task 3: Test Connection (Optional)
-
-You can test the connection using a MongoDB client like mongo shell:
-
-```bash
-<copy>
-mongo "your-connection-string"
-</copy>
-```
-
-**Note:** If you encounter connection issues, Cline can suggest debugging steps or code adjustments.
+Replace placeholders with your details. URL-encode special characters in the password e.g. if using '@' encode as %40.
 
 You are now ready to proceed to the next lab to set up the Node.js/Express backend.
+
+## Troubleshooting
+
+- **Connection Errors:** If you encounter errors like ECONNRESET during TLS handshake, ensure your IP is added to the ACL and you're not on a VPN that interferes with external connections. Test connectivity with `openssl s_client -connect <hostname>:27017 -quiet`.
+
+- **Connection String:** Double-check URL-encoding (e.g., '@' as %40) and use single quotes when setting environment variables.
 
 ---
 
