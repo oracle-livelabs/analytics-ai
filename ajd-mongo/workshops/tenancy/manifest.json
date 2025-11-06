@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Accelerate Analytics on OAC with Generative AI, AIDP Data Platform, and Autonomous AI Lakehouse",
+    "help": "livelabs-help-aiservices_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Introduction",
+        "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+        "filename": "../../introduction/introduction.md"
+      },
+      {
+        "title": "Get Started",
+        "description": "Sign in to tenancy",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+      },
+      {
+        "title": "Lab 1 (Optional): Configure Cline for LLM Integration",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../cline-config/cline-config.md"
+      },
+      {
+        "title": "Lab 2: Project Setup and AJD Connectivity",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../ajd-connect/ajd-connect.md"
+      },
+      {
+        "title": "Lab 3: Build CRUD To-Do API with Node.js and Express",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../node-express/node-express.md"
+      },
+      {
+        "title": "Lab 4: Add a Minimal Frontend and End-to-End Validation",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../frontend-ui/frontend-ui.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+  }
