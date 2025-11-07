@@ -57,17 +57,15 @@ This lab assumes you have:
 
     ![Select "OK"](./images/2%20Upload%20joint%20excel%20file/3%20Select%20the%20route%20data%20set%20and%20name%20it%20route.png)
 
-4. Create a calculation to read the geometry data type
-
+4. Create a calculation to read the geometry data type.
   ![Create a calculation](./images/2%20Upload%20joint%20excel%20file/Create%20Calculation.png)
+
 5. A dialogue box will open, select the GeometryAsText function
 
   ![GeomTextFunction](./images/2%20Upload%20joint%20excel%20file/GeomText%20Function.png)
 6. Double click the GeometryAsText Function and add the route_wkt variable in the formula and give the calculation a name as geometry and save.
-
   ![calculation](./images/2%20Upload%20joint%20excel%20file/write%20formula.png)
 7. Open a new canvas and double click the calculated column, geometry.
-
   ![Linestring_format_check](./images/2%20Upload%20joint%20excel%20file/linestring_format_check.png)
 We observe that the data is in linestring format.This demonstrates that GeometryAsText() enables reading geometry data types, indicating whether the data is a point, linestring, or polygon. In this case, the data type is a linestring.
 8. Open the route data tab and go to **meta data icon**
