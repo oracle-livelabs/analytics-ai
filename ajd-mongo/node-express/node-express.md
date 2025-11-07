@@ -131,7 +131,7 @@ app.listen(PORT, async () => {
 </copy>
 ```
 
-**Note:** This code is from the sample app. Cline can help customize it, e.g., adding authentication.
+**Note:** This code is from the sample app. Cline can help customize it, e.g., adding authentication. The 'todos' collection will auto-create in AJD on the first insert operation; no explicit creation step is needed.
 
 ## Task 4: Configure Environment
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will guide you through the steps to install and configure Cline, an AI-powered software engineering assistant, in Visual Studio Code (VS Code). Cline helps with coding tasks, debugging, and more by leveraging AI tools directly in your editor.
+**Note:** This lab is optional. If you'd like to use Cline, an AI-powered software engineering assistant in Visual Studio Code (VS Code) for coding tasks, debugging, and more, follow these steps. Otherwise, skip to the next lab.
 
 > **Estimated Time:** 15-30 minutes
 
