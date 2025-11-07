@@ -89,7 +89,7 @@ You are now ready to proceed to the next lab to set up the Node.js/Express backe
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

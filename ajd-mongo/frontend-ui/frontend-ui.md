@@ -129,6 +129,8 @@ Inside `public`, create `index.html` with the following content:
 
 2. Open `http://localhost:3000` in your browser.
 
+![ToDo List](./images/todo-list.png)
+
 3. Add, complete, and delete todos to verify CRUD operations with AJD.
 
 **Congratulations!** You've deployed a MongoDB-compatible app on AJD.
@@ -150,7 +152,7 @@ This helps verify backend before UI.
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

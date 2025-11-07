@@ -43,8 +43,8 @@ This workshop assumes you have:
 
 ## Learn More
 
-* [Oracle Autonomous JSON Database Documentation](https://docs.oracle.com/en/database/oracle/autonomous-database-serverless/)
-* [MongoDB API in AJD](https://docs.oracle.com/en/database/oracle/autonomous-database-serverless/adbsb/mongodb-api.html)
+* [Oracle Autonomous JSON Database Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/index.html)
+* [MongoDB API in AJD](https://docs.oracle.com/en/database/oracle/mongodb-api/mgapi/overview-oracle-database-api-mongodb.html#GUID-D1F0C555-73AE-4263-B59C-448925B963A8)
 * [Node.js MongoDB Driver](https://www.mongodb.com/docs/drivers/node/current/)
 
 ---
@@ -52,7 +52,7 @@ This workshop assumes you have:
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

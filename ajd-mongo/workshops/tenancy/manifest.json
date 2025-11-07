@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "Accelerate Analytics on OAC with Generative AI, AIDP Data Platform, and Autonomous AI Lakehouse",
-    "help": "livelabs-help-aiservices_us@oracle.com",
+    "workshoptitle": "Create a MongoDB-Compatible App with Autonomous JSON Database",
+    "help": "livelabs-help-adbs_us@oracle.com",
     "tutorials": [
       {
         "title": "Introduction",
@@ -23,7 +23,7 @@
         "filename": "../../ajd-connect/ajd-connect.md"
       },
       {
-        "title": "Lab 3: Build CRUD To-Do API with Node.js and Express",
+        "title": "Lab 3: Set Up Node.js/Express Backend",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../node-express/node-express.md"
       },

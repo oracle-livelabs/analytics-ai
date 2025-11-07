@@ -58,6 +58,8 @@ npm install express mongodb
 </copy>
 ```
 
+*Note* To install node on your system, the instructions can be found on the [NodeJS Website](https://nodejs.org/en/download)
+
 ## Task 3: Create server.js
 
 Create a file named `server.js` with the following content:
@@ -135,7 +137,7 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Set the env variable **MONGO_API_URL**:
+Set the env variable **MONGO\_API\_URL**:
 
 ```bash
 <copy>
@@ -170,7 +172,7 @@ You are now ready to proceed to the Frontend UI lab.
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

@@ -84,7 +84,7 @@ With Cline installed, you can now use it for advanced coding tasks in your proje
 ## Acknowledgements
 
 **Authors**  
-* **Luke Farley**, Senior Cloud Engineer, NA Data Platform
+* **Luke Farley**, Senior Cloud Engineer, NA Data Platform S&E
 
 **Contributors**
 * **Cline AI** 
