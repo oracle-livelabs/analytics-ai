@@ -45,3 +45,4 @@ _Note:_The route was first generated on OpenStreetMap, exported as GeoJSON, and 
 
 - **Author** - Anita Gupta (Oracle Analytics Product Strategy)
 - **Contributors** - Gautam Pisharam (Oracle Analytics Product Management)
+- **Last Updated By/Date** - Anita Gupta, November 2025
