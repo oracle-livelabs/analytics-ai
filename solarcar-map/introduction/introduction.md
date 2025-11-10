@@ -37,7 +37,7 @@ This lab includes three csv files. Please download and save them to a folder of 
 
 - [route](./files/route.csv?download=1)
 - [speed](./files/speed.csv?download=1)
-- [live location](./files/live%20location.csv?download=1)
+- [live location](./files/livelocation.csv?download=1)
 
 _Note:_The route was first generated on OpenStreetMap, exported as GeoJSON, and then converted into a csv file containing Well-Known Text (WKT) geometry. This format provides a standardized way of representing geographic features such as points, lines, and polygons. For simplicity, we have provided the csv, ready to use directly for this live lab.
 

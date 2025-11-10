@@ -24,7 +24,7 @@ This lab assumes you have:
 
 ## Task 1: Import the data sets created in lab 2
 
-1. Go to Create and select workbook. Once workbook is selected , a dialogue box  titled 'Add Data' will appear—click Cancel.
+1. Go to Create and select workbook. Once workbook is selected, a dialogue box  titled 'Add Data' will appear, click Cancel.
 
     ![Create workbook](./images/51-createworkbook.jpg)
 
