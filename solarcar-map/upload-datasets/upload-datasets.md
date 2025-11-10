@@ -33,7 +33,7 @@ This lab assumes you have:
 
 3. Once the live location data loads, click **OK**
 
-    ![Select "OK"](./images/3Uploadclickok.jpg)
+    ![Select "OK"](./images/3uploadclickok.jpg)
 
 4. Go to the live location tab, select the columns Latitude and Longitude one by one, and change Treat As to Attribute.
 
