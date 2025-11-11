@@ -1,4 +1,4 @@
-# Title of the Lab
+# Load the Formula 1 test data in your object storage bucket
 
 ## Introduction
 

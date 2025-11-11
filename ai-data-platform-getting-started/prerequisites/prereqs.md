@@ -25,13 +25,16 @@ check if prerequisistes are met and  if not, take the time to do the needful to 
 This lab assumes you have:
 * An Oracle Cloud account
 * An active tenancy
-* * Compartment where the AI Data Platform Workbench needs to be deployed.
+* Compartment where the AI Data Platform Workbench needs to be deployed.
 * An Autonomous AI Lakehouse provisioned. https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=928&clear=RR,180&session=108251526920614
 * Necessary IAM policies in place. Documentation can be found: https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html#GUID-C534FDF6-B678-4025-B65A-7217D9D9B3DA
 
 For the  creation of the IAM policies you may need the help of the OCI administrator.
 
 When you start to deploy your AI Data Platform Workbench the OCI console will perform a check if policies are in place.
+
+Similar message like this may show up and policy creation as per instructions in above link are required.
+    ![Policy validation message](images/AIDP-Policies-message.png)
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -43,6 +46,5 @@ When you start to deploy your AI Data Platform Workbench the OCI console will pe
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe
 * **Last Updated By/Date** - <Name, Month Year>

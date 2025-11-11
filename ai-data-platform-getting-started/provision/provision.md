@@ -11,66 +11,43 @@ Estimated Time: 15 minutes
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-learn how to provision an AI Data Platform
+Learn how to provision an AI Data Platform.
 
 ### Prerequisites
 
-The prerequisites as listed in previous lab need to be met before this can be executed
+The prerequisites as listed in previous lab need to be met before this can be executed.
 
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
+## Task 1: Locate in OCI console where AI Data Platform is located and select the compartment as defined in the prerequisites
 
 1. Step 1
 
-	![Image alt text](images/sample1.png)
+	![OCI console](images/Provision-locate-service.png)
 
 	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
 2. Step 2
 
-  ![Image alt text](images/sample1.png)
+  ![AI Data Platform page](images/Provision-deploy-start.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+## Task 2: Start provisioning
 
-5. Example with bold **text**.
+1. Step 1 - Enter all required fields in the entry form
 
-   If you add another paragraph, add 3 spaces before the line.
+  ![AI Data Platform provisioning form](images/Provision-entry-screen.png)
 
-## Task 2: Concise Task Description
+    1. Choose a name for the AI Data Platform
+    2. Enter a description
+    3. In the next section provide the name of your default workspace. In this work also automatically the default management compute cluster will be provisioned
+    4. Optionally give it a description
+    5. Again the Policies check is taking place and here you have the option to add policies when you have the right permissions.
+    6. Click the **Create** button. 
+    7. Once the status of the provisioning becomes **Active** you can open AI Data Platform
+          ![AI Data Platform open screen](images/Open_AIDP.png)
 
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+The provisioning itself takes some time.
 
 ## Learn More
 
@@ -80,6 +57,5 @@ The prerequisites as listed in previous lab need to be met before this can be ex
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe
 * **Last Updated By/Date** - <Name, Month Year>
