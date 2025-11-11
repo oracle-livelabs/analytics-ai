@@ -17,15 +17,11 @@
       "filename": "../../infrastructure/infrastructure.md"
     },
     {
-      "title": "Lab 2: Enable HeatWave & Configure Private Access Channel",
-      "filename": "../../dbmds/dbmds.md"
-    },
-    {
-      "title": "Lab 3: Run Queries Leveraging HeatWave",
+      "title": "Lab 2: Run Queries Leveraging HeatWave",
       "filename": "../../heatwave/heatwave.md"
     },
     {
-      "title": "Lab 4: Use Analytics Cloud on MySQL Database Service Powered by HeatWave",
+      "title": "Lab 3: Use Analytics Cloud on MySQL Database Service Powered by HeatWave",
       "filename": "../../analytics/analytics.md"
     },
    

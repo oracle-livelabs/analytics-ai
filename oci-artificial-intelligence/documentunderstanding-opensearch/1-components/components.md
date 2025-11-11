@@ -109,8 +109,7 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 2. Check that you are in the intended compartment (*oci-starter* in this case)
 3. Click the *Create Instance* button and set the following options
     - Name: *oic*
-    - Version: *OIC Integration 3*
-    - Edition: *Standard*
+    - Edition: *Enterprise*
     - Shape: *Development*
     - Choose the license type (Use *Subscribe to a new...* unless you already have a license that you can reuse.)
     - Click *Create*
@@ -178,16 +177,7 @@ To enable Resource Principal, you need the OIC APPID.
     cd oci-genai-searchlab/starter/
     </copy>
     ```
-    ```
-    <copy>
-    bin/gen_auth_token.sh
-    </copy>
-    ```
-    You should see the following in the results of the *gen\_auth\_token.sh* script:
-    - AUTH\_TOKEN stored in env.sh
-    - TF\_VAR\_auth\_token='a generated token'
-
-    
+   
     ````
     <copy>
     ./build.sh

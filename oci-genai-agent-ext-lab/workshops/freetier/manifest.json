@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle GenAI Agent RAG: More formats: Video/Audio/Word/Excel/Websites, Custom UI",
+    "workshoptitle": "Oracle Generative AI Agent: Multi-Format Search. Installation to Advanced Techniques",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -26,6 +26,14 @@
             "title": "Lab 4: Digital Assistant",
             "filename": "./../../4-digital-assistant/digital-assistant.md"
         },        
+        {
+            "title": "Lab 5: Customize",
+            "filename": "./../../5-customize/customize.md"
+        },        
+        {
+            "title": "Lab 6: Tools",
+            "filename": "./../../6-tools/tools.md"
+        },            
         {
             "title": "Need Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

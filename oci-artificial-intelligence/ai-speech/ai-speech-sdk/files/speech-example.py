@@ -34,11 +34,14 @@ IS_DIARIZATION_ENABLED = True  # Boolean value to enable or disable diarization
 # Supported language codes for ORACLE MODEL: en-US, en-AU, en-IN, en-GB, it-IT, pt-BR, hi-IN, fr-FR, de-DE, es-ES
 # Supported language codes for WHISPER_MEDIUM MODEL: auto, af, ar, az, be, bg, bs, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gl, he, hi, hr, hu, hy, id, is, it, ja, kk,  kn, ko, lt, lv, # mi, mk, mr, ms, ne, nl, no, pl, pt, ro, ru, sk, sl, sr, sv, sw, ta, th, tl, tr, uk, ur, vi, zh
 SAMPLE_MODEL_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(model_type=MODEL_TYPE, domain="GENERIC",  language_code=LANGUAGE_CODE,
-transcription_settings=oci.ai_speech.models.TranscriptionSettings(
-    diarization=oci.ai_speech.models.Diarization(
-        is_diarization_enabled=IS_DIARIZATION_ENABLED               
+    transcription_settings=oci.ai_speech.models.TranscriptionSettings(
+        diarization=oci.ai_speech.models.Diarization(
+            is_diarization_enabled=IS_DIARIZATION_ENABLED               
+        ),
+        additional_settings={
+            "whisperPrompt": "<Sample Prompt Input>" # Only valid for Whisper models.
+        }
     )
-)
 )
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 object_names=FILE_NAMES)

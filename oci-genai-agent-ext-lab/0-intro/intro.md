@@ -15,7 +15,9 @@ We’ll be able to search documents like:
 - Images using OCI Vision
 - TIF files (FAX) using OCI Document Understanding
 - Word, Excel, Powerpoint, ... using OCI Functions
-- Websites using Sitemap 
+- Websites using 
+  - a Crawler (for all pages of a websites, based on Sitemap or not) 
+  - or Selenium (for a fixed number of URLs)   
 
 The installation uses Terraform.
 
@@ -25,7 +27,11 @@ From the lab 2/3/4, we will create 3 user interfaces for the above using the fol
 - APEX
 - A Python library Streamlit  
 - Oracle Digital Assistant
-  
+    
+Lab 5 explain how to customize the demo to your needs.
+
+Lab 6 shows how to change the Agent to have a RAG, SQL and Custom tool
+
 Estimated Workshop Time: 90 minutes
 
 ### Logical Architecture
@@ -48,7 +54,8 @@ Here's how various file types are processed.
 - If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech.
 - If the file has the extension **.tif**, it is processed by OCI Document Understanding.
 - If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. 
-- All other file types like **.doc**, **.docx**, **,xlsx**, **.pptx** are sent to OCI Function with a document parser.
+- If the file has the extension **.doc**, **.docx**, **.ppt**, **.pptx**, first convert it to PDF 
+- All other file types like are sent to an OCI Function with a generic document parser.
 
 ### Physical Architecture
 

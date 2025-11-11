@@ -45,7 +45,7 @@ This task involves creating Autonomous Database 23ai.
     
     ![Create ADB Name](images/create_adb_name_workload.png)
     
-3. Choose deployment type as Serverless, database version as 23ai and disable Compute auto scaling.
+3. Choose database version as 23ai and disable Compute auto scaling.
 
     ![Create ADB Deployment](images/create_adb_deployment_type.png)
 
@@ -62,19 +62,15 @@ This task involves creating Autonomous Database 23ai.
 
 This task involves logging into APEX Administration Services
 
-1. Locate the Autonomous Database created in task 1 and click thru the name to view the details.
-
-    ![View ADB Details](images/adb_details.png)
-
-2. Scroll down and find the APEX instance name, click thru the instance name to view APEX Instance details.
+1. Locate the Autonomous Database created in task 1, scroll down and find the APEX instance name. Click thru the instance name to view APEX Instance details.
     
     ![Goto APEX Instance](images/apex_instance_name.png)
     
-3. From the APEX Instance Details click the Launch APEX button.
+2. From the APEX Instance Details click the Launch APEX button.
 
     ![Launch APEX](images/launch_apex.png)
 
-4. Open APEX Administration Services, use the autonomous database admin password created in task 1.
+3. Open APEX Administration Services, use the autonomous database admin password created in task 1.
 
     ![Create ADB Password](images/apex_admin_services.png)
 
@@ -137,4 +133,4 @@ You may now proceed to the next lab.
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Last Updated By/Date**
-    * **Jadd Jennings**, Principal Cloud Architect, NACIE, March 2025
+    * **Jadd Jennings**, Principal Cloud Architect, NACIE, Aug 2025

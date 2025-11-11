@@ -17,7 +17,7 @@ Estimated time: 30 min
 
 1. Login to your OCI account/tenancy
 2. Follow the steps in 'Recipe for Quick Setup and Provisioning'
-    - https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-the-service-and-provision-an-instance.html#GUID-D5C6B0FE-5B54-487A-B130-843BCBEC7886
+    - https://docs.oracle.com/en-us/iaas/digital-assistant/doc/order-service-and-provision-instance.html
     - You can use the same compartment used for your AI Agent
     - In the end,
         - Bookmark the Base web url to go quickly to the ODA console in the future
@@ -49,7 +49,7 @@ Estimated time: 30 min
     ![RestImport](images/oda-rest-import.png)
 3. Import the 'RESTServices.yaml' provided in the zip-file
 4. On the left side click the 'labAgentConnect' service
-    - and edit the agentEndpointId to your Agent endpoint OCID (@MarcGueury)
+    - and edit the agentEndpointId to your Agent endpoint OCID (and not AGENT OCID !!!)
     ![ConnectId](images/oda-connect-id.png)
 5. Press 'Test Request' to see if all is good
 

@@ -100,11 +100,11 @@ This lab assumes you have:
 
 This task involves creating and API Key in OCI, the key will be used to implement Select AI.
 
-1. Login the OCI Console and click the person icon on the top right.
+1. Login the OCI Console, click the person icon on the top right and then click your username.
 
     ![Open OCI Profile](images/oci_profile.png)
 
-2. Click API keys at the bottom left, then click the add API Key button.
+2. Select the Tokens and API keys tab, then click the add API Key button.
 
     ![Add API Key](images/oci_add_api_key.png)
 
@@ -141,6 +141,8 @@ This task involves implementing Select AI for the autonomous database created in
                 tenancy_ocid    => '<UPDATE HERE>',
                 private_key     => '<UPDATE HERE>',
                 fingerprint     => '<UPDATE HERE>'
+                );
+            END;
         </copy>
     ```
 
@@ -214,7 +216,7 @@ This task involves creating REST services for Select AI, it will allow Select AI
 
     ```text
         <copy>
-            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => 'how many customers',
+            SELECT DBMS_CLOUD_AI.GENERATE(prompt       => :prompt,
                                     profile_name => 'GENAI',
                                     action       => 'narrate')
             FROM dual
