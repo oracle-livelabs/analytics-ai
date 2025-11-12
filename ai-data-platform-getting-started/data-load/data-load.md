@@ -2,9 +2,9 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab is to prepare your data and load it into your object storage bucket that you have prepared as prerequisite for this workshop 
 
-Estimated Time: -- minutes
+Estimated Time: 10 minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
@@ -14,24 +14,23 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Load the dataset needed for next labs into your object storage bucket
 
 ### Prerequisites (Optional)
 
 *List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
 This lab assumes you have:
-* An Oracle Cloud account
 * All previous labs successfully completed
+* The object storage bucket already created in the same compartment as the AI Data Platform and you have access to that bucket.
 
 
 *Below, is the "fold"--where items are collapsed by default.*
 
-## Task 1: Concise Task Description
+## Task 1: Open you bucket in Oracle OCI
 
-(optional) Task 1 opening paragraph.
+ai-data-platform-getting-started/data-load/files
+
 
 1. Step 1
 
