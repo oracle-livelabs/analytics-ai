@@ -2,11 +2,12 @@
 
 ## Introduction
 
-This lab will take provide various run modes with the *Agent* we have configured.
+This lab will provide various run modes with the Agent we have configured.
+
 
 ## Task 1: Run a query using RAG tool.
 
-1. Run below query to fetch answers from OCI Agent RAG tool based on the knowledge base attached.
+1. Run the query below to fetch answers from the OCI Agent RAG tool based on the attached knowledge base.
 
     ```
     <copy>
@@ -15,14 +16,14 @@ This lab will take provide various run modes with the *Agent* we have configured
     response.pretty_print()
     </copy>
     ```
-* The agent will run and share the information based on the RAG too.
 
+    The agent will run and share the information based on the RAG tool.
 
     ![Rag run](images/rag-run.png)
 
 ## Task 2: Validate SQL tool execution.
 
-1. Run below query to fetch information via agent ,which will fetch and report the information from OCI Autonomous Data Base.
+1. Run the query below to fetch information via the agent, which will retrieve and report the data from the Autonomous AI Database.
 
     ```
     <copy>
@@ -31,13 +32,13 @@ This lab will take provide various run modes with the *Agent* we have configured
     response.pretty_print()
     </copy>
     ```
-* Here the query about secondary category will translate to product subcategory based on the column description that we defined during SQL Tool setup.
+* Here, the query about the secondary category will be translated to the product subcategory based on the column description defined during SQL tool setup.
 
     ![SQL Run](images/sql-run.png)
 
-## Task 3: Validate function exeuction.
+## Task 3: Validate function execution.
 
-1. Run below to understand how agent reacts based on the function tool we defined.
+1. Run the command below to see how the agent reacts based on the function tool we defined.
 
     ```
     <copy>
@@ -49,8 +50,10 @@ This lab will take provide various run modes with the *Agent* we have configured
     ![Custom tool run](images/custom_tool_run.png)
 
 ## Task 4 : Sample agent run using OCI SDK.
-Here we are using OCI python SDK to run the agent endpoint and fetch results.
-1. Use below snippet to fetch results using OCI SDK.You may comment/uncomment the Auth section/Region and endpoint details accordingly.
+
+Here we are using the OCI Python SDK to run the agent endpoint and fetch results.
+
+1. Use the snippet below to fetch results using the OCI SDK. You may comment/uncomment the Auth section, region, and endpoint details accordingly.
 
     ```
     <copy>
@@ -114,13 +117,14 @@ Here we are using OCI python SDK to run the agent endpoint and fetch results.
     ```
     ![SDK Run](images/sdk-run.png)
 
-1. A sample execution result will be as follows.Its for demo purpose only and the same can be achieved using ADK .As you may refer the SDK goes at a lower API level while ADK remains at the upper layer.
+2. A sample execution result will be as follows. It is for demo purposes only, and the same can be achieved using ADK. As you may observe, the SDK operates at a lower API level, while ADK remains at a higher abstraction layer.
 
     ![SDK run output](images/sdk-output.png)
 
 
-## Task 5 : Additional samples.
-* You may refer [here](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/examples.htm) for additional samples and can run against the setup.
+## Task 5 : Additional samples
+
+* You may refer [here](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/examples.htm) for additional samples and run them against your setup.
 
 
 **Proceed to the next lab.**
