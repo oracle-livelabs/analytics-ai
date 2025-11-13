@@ -34,9 +34,7 @@ This task imports various ADK Python modules as well as some optional libraries 
     ```
 
     ![](images/module_import.png)
-
-3. For notebooks, you may use the Play button and run these commands. For Python scripts, you may use your editor or run using the python script.py format.
-
+1. In notebooks, use the *Play* button to run these commands. For Python scripts, use your editor or run with the *python script.py* command.
 
 ## Task 2: Define variables.
 
@@ -66,7 +64,7 @@ This task imports various ADK Python modules as well as some optional libraries 
 
 ## Task 3: Define a custom tool based on function.
 
-1. Use the below code to set a simple custom function-based tool, which will return the season based on a location.
+1. Use the code below to create a simple custom function-based tool that returns the season for a given location.
 
     ```
     <copy>
@@ -97,9 +95,9 @@ This task imports various ADK Python modules as well as some optional libraries 
 
 ## Task 4: Define MCP call using stdIO mode.
 
-* We are using an open-source MCP library to fetch information from the public internet.
-* The library details and credit goes to https://github.com/openbnb-org/mcp-server-airbnb.
-* If you are using local client execution, ensure Node.js and npx are available to run.
+* We use an open-source MCP library to fetch information from the public internet.
+* Library details and credit: https://github.com/openbnb-org/mcp-server-airbnb.
+* For local client execution, ensure Node.js and npx are available.
 
 1. Copy the below to a notebook or local script to define the MCP.
 
@@ -170,11 +168,10 @@ This task imports various ADK Python modules as well as some optional libraries 
 
 
 
-## Task 7: Initialize and set up the agent.
-During the process, the ADK will check the tools defined and associate them with the Agent.
-The process may take several minutes depending on the tools and their configuration.
+## Task 7: Initialize and setup the agent.
+During the process, ADK will check the defined tools and associate them with the Agent. This may take several minutes, depending on the tools and their configuration.
 
-1. Run the below to set up and run a sample query. The setup process is only needed for the first time or for any configuration changes that need to be pushed from the local environment or notebook to agents. You may update your query as well.
+1. Run the following to set up and execute a sample query. Setup is required only the first time or when configuration changes need to be pushed from local or notebook to the agent. You may also update your query as needed.
 
     ```
     <copy>

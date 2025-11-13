@@ -14,7 +14,13 @@ Estimated Workshop Time: 2 hours
 
 ### Objectives
 
-The objective of this workshop is to configure, build, deploy, and run OCI Generative AI Agents using the Agent Development Kit (ADK). The following services and features will be covered during the lab:
+The objective of this workshop is to configure, build, deploy, and run OCI Generative AI Agents using the Agent Development Kit (**ADK**). The following services and features will be covered during the lab:
+
+* OCI Generative AI Agent build and deploy
+* Configure and use the inbuilt Retrieval Augmented Generation (**RAG**) tool
+* Configure and use the inbuilt Natural Language to SQL tool (**NL2SQL**)
+* Use Model Context Protocol (**MCP**) with OCI Generative AI Agent
+* Configure and use custom tools with OCI Generative AI Agents
 
 - OCI Generative AI Agent build and deploy
 - Configure and use the inbuilt Retrieval Augmented Generation (RAG) tool
@@ -26,13 +32,13 @@ The objective of this workshop is to configure, build, deploy, and run OCI Gener
 
 This lab assumes you have:
 
-- An Oracle Cloud Account (non-Free Tier)
-- Access to OCI Generative AI Agents
-- Access to a region where the Agent service is available
-  - Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
-- An OCI compartment where we will allocate all the necessary resources
-- An Administrator account or permissions to manage several OCI services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity
-- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+* An Oracle Cloud Account (Non-Free Tier).
+* Access to OCI Generative AI Agents.
+* Access to a region where the Agent service is available. 
+    * Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
+* An OCI compartment for allocating all necessary resources.
+* An Administrator Account or permissions to manage the following OCI services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful.
 
 ## Learn More
 

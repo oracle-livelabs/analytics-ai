@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to install ADK using the Python installer. We recommend using an OCI Data Science-based notebook to run the operation, as it comes with all the necessary software in place. However, we have added optional steps to follow on a local machine for the ADK client setup.
+This lab guides you through installing ADK using the Python installer. We recommend using an *OCI Data Science* notebook, as it includes all necessary software. Optional steps are provided for installing the ADK client on a local machine.
 
 Estimated Time: 30 minutes
 
