@@ -1,9 +1,9 @@
 # References
 
 ## Introduction
-Reference section provides the sample snippet that we used as well some of the key links.
+The reference section provides sample snippets used in the lab, along with key links.
 
-* The full sample that we have used during the labs can be referred below.
+* The complete sample used during the labs is provided below.
 
 ```
 import nest_asyncio

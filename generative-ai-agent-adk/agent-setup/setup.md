@@ -15,7 +15,7 @@ Estimated Time: 30 minutes
 
 ## Task 1: Dynamic Group and Policy Definition
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+This task will help you setup and verify that the Dynamic Group and Policy are correctly defined.
 
 1. Locate Domains under Identity & Security
 
@@ -25,7 +25,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 1. Click on Dynamic Groups, and then your Dynamic Group name
 
     ![Dynamic group](images/domain_dg.png)
-1. Click create dynamic group.Provide a name and a description.Select option Match any rules defined below.
+1. Click *Create Dynamic Group.* Provide a name and description, then select the "Match any rules defined below" option.
 
     ![Create Dynamic group](images/create_dg.png)
 1. Add below rules to the dynamic group.
@@ -47,7 +47,7 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
 
 ## Task 2: Create policies.
 
-The tasks will help you to associate necessary policies with the dynamic group
+This task will help you associate the necessary policies with the dynamic group.
 
 1. Select policies from section Identity & Security.
 
@@ -60,7 +60,7 @@ The tasks will help you to associate necessary policies with the dynamic group
     ![create policy](images/create_policy.png)
 
 1. Click *Show manual editor* option.
-1. Add below policy statements,ensure to update OCI accordingly.
+1. Add below policy statements,ensure to update resource's OCIDs accordingly.
 
    ```
    <copy>
@@ -80,7 +80,7 @@ The tasks will help you to associate necessary policies with the dynamic group
 
 ## Task 3: Create virtual cloud network and subnet.
 
-The tasks allows your to create our VCN that we will use for various transactions.
+This task allows you to create the VCN that will be used for various transactions.
 
 1. From OCI console ,select Network > *Virtual Cloud Networks*
 
@@ -94,14 +94,14 @@ The tasks allows your to create our VCN that we will use for various transaction
 
     ![VCN options](images/vcn_options.png)
 
-1. Provide name ,description and use default information and create the VCN.
+1. Provide a name and description, use the default settings, and create the VCN.
 1. Wait for the vcn state to be *Active*.
 
     ![VCN State](images/vcn_active.png)
 
 ## Task 4: Create Autonomous Database(ADB).
 
-The task help to create ADB that we will use for Nl2SQL tool usage.
+This task helps you create the ADB for use with the NL2SQL tool.
 
 1. From *OCI Console* > *Oracle Database* > *Autonomous Databases*.
 
@@ -112,7 +112,7 @@ The task help to create ADB that we will use for Nl2SQL tool usage.
 
     ![Create DB](images/create_db_basic.png)
 
-1. Select version as *23ai*.Select other default configuration values.
+1. Select version as *26ai*.Select other default configuration values.
 
     ![ADB config](images/adb_base_config.png)
 
@@ -129,21 +129,15 @@ The task help to create ADB that we will use for Nl2SQL tool usage.
 
 ## Task 5: Create a vault.
 
-The task helps to setup the OCI Vault.
+This task helps you set up the OCI Vault.
 
-1. From OCI console > *Identity & Security* > *Key Management & Secret Management* > *Vault*
-
+1. From the OCI Console, go to *Identity & Security* > *Key Management & Secret Management* > *Vault*.
     ![Create vault](images/create_vault.png)
-
-1. Click *Create vault*.Provide a name and click *Create Vault*.
-
+1. Click *Create Vault*, provide a name, and click *Create Vault*.
     ![Create vault](images/vault_master.png)
-
-1. Click *Create Master Key*.Provide a name and use default options.Click *Create Key*.
-
+1. Click *Create Master Key*, provide a name, use the default options, and click *Create Key*.
     ![Create master key](images/create_vault_key.png)
-
-1. Wait till the resources are in active state before moving to next section.
+1. Wait until the resources are in the active state before proceeding to the next section.
 
 ## Task 6: Create database connection.
 
@@ -153,7 +147,7 @@ The task allow to create a DB connection for agent usage.
 
     ![DB connections](images/db_connection.png)
 
-1. Click *Create connection*.Provide name for the connection.Always ensure you are selected  the desired compartment. 
+1. Click *Create connection*.Provide name for the connection.Always ensure you have selected  the desired compartment. 
 
     ![DB connection create](images/connection_basics.png)
 

@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab will take provide various run modes with the *Agent* we have configured.
+This lab demonstrates various run modes available with the configured *Agent*.
 
 ## Task 1: Run a query using RAG tool.
 
-1. Run below query to fetch answers from OCI Agent RAG tool based on the knowledge base attached.
+1. Run the query below to fetch answers from the OCI Agent RAG tool, using the attached knowledge base.
 
     ```
     <copy>
@@ -15,14 +15,14 @@ This lab will take provide various run modes with the *Agent* we have configured
     response.pretty_print()
     </copy>
     ```
-* The agent will run and share the information based on the RAG too.
+* The agent will run and share the information based on the RAG tool.
 
 
     ![Rag run](images/rag-run.png)
 
 ## Task 2: Validate SQL tool execution.
 
-1. Run below query to fetch information via agent ,which will fetch and report the information from OCI Autonomous Data Base.
+1. Run the query below to fetch information through the agent, which will retrieve and report data from the OCI Autonomous Database.
 
     ```
     <copy>
@@ -31,13 +31,13 @@ This lab will take provide various run modes with the *Agent* we have configured
     response.pretty_print()
     </copy>
     ```
-* Here the query about secondary category will translate to product subcategory based on the column description that we defined during SQL Tool setup.
+* Here, the query about secondary category will be mapped to the product subcategory, based on the column description defined during SQL Tool setup.
 
     ![SQL Run](images/sql-run.png)
 
 ## Task 3: Validate function exeuction.
 
-1. Run below to understand how agent reacts based on the function tool we defined.
+1. Run the code below to see how the agent responds using the defined function tool.
 
     ```
     <copy>
@@ -49,8 +49,9 @@ This lab will take provide various run modes with the *Agent* we have configured
     ![Custom tool run](images/custom_tool_run.png)
 
 ## Task 4 : Sample agent run using OCI SDK.
-Here we are using OCI python SDK to run the agent endpoint and fetch results.
-1. Use below snippet to fetch results using OCI SDK.You may comment/uncomment the Auth section/Region and endpoint details accordingly.
+Here, we use the OCI Python SDK to run the agent endpoint and fetch results.
+
+1. Use the snippet below to retrieve results with the OCI SDK. Comment or uncomment the authentication section, region, and endpoint details as needed.
 
     ```
     <copy>
@@ -114,7 +115,7 @@ Here we are using OCI python SDK to run the agent endpoint and fetch results.
     ```
     ![SDK Run](images/sdk-run.png)
 
-1. A sample execution result will be as follows.Its for demo purpose only and the same can be achieved using ADK .As you may refer the SDK goes at a lower API level while ADK remains at the upper layer.
+1. A sample execution result is shown below for demonstration purposes. The same outcome can be achieved using ADK. The SDK operates at a lower API level, while ADK functions at a higher abstraction layer.
 
     ![SDK run output](images/sdk-output.png)
 

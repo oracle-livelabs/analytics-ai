@@ -2,17 +2,14 @@
 
 ## Introduction
 
-This lab will take you through the steps needed to setup a OCI Generative AI Agents SQL tool via console.Some of the key aspects that we cover as follows 
+This lab guides you through the steps to set up an OCI Generative AI Agents SQL tool via the console. Key aspects covered include:
 
-* *SQL Tool* - A SQL tool in Generative AI Agents converts natural language queries into Oracle SQL and SQLite statements and can run the SQL commands to generate responses against a connected database.
-
-* *Databases* - The SQL tool in Generative AI Agents supports Oracle Database (Base Database and Autonomous Database).
-
-* *Database Schema* - A valid database schema must be provided when you add a SQL tool to an agent in Generative AI Agents. SQL tool creation fails at the validation step if the schema is invalid.
-
-* *Model Customization* - When creating a SQL tool, you can select between using a small or large model.
-A small model provides faster response times. You'd select a small mode for simple queries such as "Get total sales for January 2025."
-A large model provides more accuracy but at the cost of higher latency. You'd select a large model for more complex queries such as "Show the average sales of the top 5 performing products in Q1 2023 grouped by region."
+* *SQL Tool* - In Generative AI Agents, the SQL tool converts natural language queries into Oracle SQL and SQLite statements, and can execute these commands to generate responses from a connected database.
+* *Databases* - The SQL tool supports Oracle Database (Base Database and Autonomous Database).
+* *Database Schema* - A valid database schema must be provided when adding a SQL tool to an agent. SQL tool creation will fail at the validation step if the schema is invalid.
+* *Model Customization* - When creating a SQL tool, you can choose between a small or large model.  
+  A small model offers faster response times and is recommended for simple queries, such as "Get total sales for January 2025."  
+  A large model provides higher accuracy but with increased latency, making it suitable for complex queries, such as "Show the average sales of the top 5 performing products in Q1 2023 grouped by region."
 
 Estimated Time: 30 minutes
 
