@@ -10,8 +10,6 @@ This lab will guide you through the steps to set up knowledge bases, configure d
 
 Estimated Time: 30 minutes
 
-
-
 ## Task 1: Download PDFs for the RAG usage.
 
 1. Run the command below for the Data Science notebook, or proceed to the next step for running ADK on a local machine.
@@ -27,7 +25,7 @@ Estimated Time: 30 minutes
 
     ![Download PDFs](images/download_pdfs.png)
 
-1. Run below for ADK that runs on a local machine.
+2. Run the commands below for ADK running on a local machine.
 
     ```
     <copy>
@@ -38,74 +36,76 @@ Estimated Time: 30 minutes
     </copy>
     ```
 
-## Task 2: Upload the PDFs to object storage.
+## Task 2: Upload the PDFs to Object Storage
 
-1.Run below commands to push PDFs to object storage
+1. Run the commands below to upload PDFs to Object Storage:
 
-*  via OCI Data science notebook.
+    Via OCI Data Science notebook:
 
     ```
     <copy>
 
-    !oci os object bulk-upload --src-dir pdfs  -bn "<Name of the Bucket>" -ns "<Namespace Name>" --auth "resource_principal" --prefix "oracle_pdfs/"
-    
+    oci os object bulk-upload --src-dir pdfs  -bn "<Name of the Bucket>" -ns "<Namespace Name>" --auth "resource_principal" --prefix "oracle_pdfs/"
     </copy>
     ```
+
     ![Uploaded file](images/file_uploaded.png)
 
-* via Locally installed OCI CLI. 
-
+    Via locally installed OCI CLI:
 
     ```
     <copy>
-    !oci os object bulk-upload --src-dir pdfs  -bn "<Name of the Bucket>" -ns "<Namespace Name>"  --prefix "oracle_pdfs/"
-    
+    oci os object bulk-upload --src-dir pdfs  -bn "<Name of the Bucket>" -ns "<Namespace Name>"  --prefix "oracle_pdfs/"
     </copy>
     ```
-* You can  download and upload the files manually too.
 
-1. Validate the files via object storage bucket.
+    You can also download and upload the files manually.
+
+1. Validate the uploaded files via the Object Storage bucket.
 
     ![List files](images/os_file_list.png)
 
-## Task 2: Create OCI AI Agents knowledge base.
+## Task 3: Create OCI AI Agents Knowledge Base
 
-1. Open OCI console > `Analytics & AI` > `Generative AI Agents`
+1. Open OCI Console > Analytics & AI > Generative AI Agents
 
     ![Agents view](images/agents_view.png)
 
-1. Click `Knowledge Bases` > `Create knowledge base`.
-
+2. Click Knowledge Bases > Create knowledge base.
 
     ![Create KB](images/create_kb_view.png)
 
-1. Provide a `name` and `description`.
-1. Select the compartment accordingly.
-1. Select `Data store type` as `Object storage`.
-1. Click option `Enable hybrid search`.
+3. Provide a Name and Description.
+
+4. Select the appropriate compartment.
+
+5. Select Data store type as Object Storage.
+
+6. Enable the option Enable hybrid search.
 
     ![New KB](images/new_kb.png)
 
-
-1. Click `Specify data source`.
+7. Click Specify data source.
 
     ![Click specify the DS](images/specify_datasource.png)
 
-1. Provide `Name`,`Description`,and select option `Enable multi-model parsing`.
+8. Provide Name, Description, and select the option Enable multi-model parsing.
 
     ![New DS](images/new_ds_basic.png)
 
-1. Select the bucket and select all the files that we have uploaded.
+9. Select the bucket and all the files that were uploaded.
 
-1. Click `Create`.
+10. Click Create.
 
     ![Select files](images/select_files_for_ds.png)
-1. It will take back the previous screen,ensure the option `Automatically start ingestion job for above data sources` selected.
-1. Click `Create`.
+
+11. You will return to the previous screen—ensure the option Automatically start ingestion job for above data sources is selected.
+
+12. Click Create.
 
     ![Create KB](images/create_kb.png)
 
-1. The status of the KB will be in `Creating`.
+13. The status of the knowledge base will show as Creating.
 
     ![KB progress](images/kb_in_progress.png)
 
@@ -113,7 +113,7 @@ Estimated Time: 30 minutes
 
     ![KB final](images/kb_active.png)
 
-1. We will associate the knowledge base with agents later.
+15. We will associate the knowledge base with agents later.
 
 
 **Proceed to the next lab.**

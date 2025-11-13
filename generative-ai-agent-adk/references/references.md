@@ -92,8 +92,6 @@ async def agent_handler(prompt:str="",init_run:bool=False,delete_session:bool=Tr
 question="give availability of room at The Palazzo at The Venetian Resort on 1st Aug 2025"
 response = asyncio.run(agent_handler(prompt=question,init_run=True)) 
 response.pretty_print()
-
-
 ```
 
 * Link to official documentation.

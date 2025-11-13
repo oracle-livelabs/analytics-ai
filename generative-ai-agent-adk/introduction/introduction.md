@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This workshop will help to configure,deploy and run a chat powered by OCI Generative AI Agents using OCI Agent Development Kit (`adk`).During the flow the learner will 
+This workshop will help you configure, deploy, and run a chat powered by OCI Generative AI Agents using the OCI Agent Development Kit (adk). During the flow, the learner will:
 
-- Create and configure OCI Generative AI agents.
-- Configure tools such as Retrieval Augmented Generation(RAG),Nl2SQL,Custom tools including Model Context Protocol(MCP) based tools.
-- Use `adk` for all the above tasks. 
+- Create and configure OCI Generative AI Agents.
+- Configure tools such as Retrieval Augmented Generation (RAG), NL2SQL, and custom tools including Model Context Protocol (MCP)-based tools.
+- Use adk for all the above tasks.
 
 ![User View](images/user_flow.jpg)
 
@@ -22,6 +22,11 @@ The objective of this workshop is to configure, build, deploy, and run OCI Gener
 * Use Model Context Protocol (**MCP**) with OCI Generative AI Agent
 * Configure and use custom tools with OCI Generative AI Agents
 
+- OCI Generative AI Agent build and deploy
+- Configure and use the inbuilt Retrieval Augmented Generation (RAG) tool
+- Configure and use the inbuilt Natural Language to SQL tool (NL2SQL)
+- Use Model Context Protocol (MCP) with OCI Generative AI Agents
+- Configure and use custom tools with OCI Generative AI Agents
 
 ### Prerequisites
 
@@ -50,5 +55,3 @@ This lab assumes you have:
     * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 
-* **Last Updated By/Date**
-    * **TBD**, TBD

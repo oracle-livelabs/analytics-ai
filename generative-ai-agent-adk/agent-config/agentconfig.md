@@ -2,10 +2,10 @@
 
 ## Introduction
 
-This lab details the steps to configure the Agent using the provided tools. It also outlines how to add additional client-side tools, such as custom tools using functions, and explains integration with *Model Context Protocol (MCP)*.
+This lab details the steps to configure an Agent using the tools that were created. It also provides steps to add additional client-side tools, such as custom tools using functions, as well as integration with Model Context Protocol - MCP.
 
 ## Task 1: Import ADK modules.
-This task imports various ADK Python modules and optional libraries as needed. These instructions apply to both Python scripts and OCI Data Science notebooks.
+This task imports various ADK Python modules as well as some optional libraries for our usage. All these instructions work for Python scripts as well as OCI Data Science notebooks.
 
 1. Add below to the notebook cell.
 
@@ -23,7 +23,8 @@ This task imports various ADK Python modules and optional libraries as needed. T
     from mcp.client.session_group import StreamableHttpParameters
     </copy>
     ```
-1. Add below snippet for enabling async run on notbook.
+
+2. Add the below snippet to enable async run for the notebook.
 
     ```
     <copy>
@@ -37,7 +38,7 @@ This task imports various ADK Python modules and optional libraries as needed. T
 
 ## Task 2: Define variables.
 
-1. Define variables for agent endpoint and RAG knowledge based IDs.
+1. Define variables for the agent endpoint and RAG knowledge base IDs.
 
     ```
     <copy>
@@ -45,7 +46,8 @@ This task imports various ADK Python modules and optional libraries as needed. T
     knowledge_id="knowledgeBase OCID"
     </copy>
     ```
-1. Define instructions for agents.
+
+2. Define instructions for agents.
 
     ```
     <copy>
@@ -91,13 +93,13 @@ This task imports various ADK Python modules and optional libraries as needed. T
 
     ![Custom function](images/custom_function.png)
 
-## Task 4: Define mcp call using stdIO mode.
+## Task 4: Define MCP call using stdIO mode.
 
 * We use an open-source MCP library to fetch information from the public internet.
 * Library details and credit: https://github.com/openbnb-org/mcp-server-airbnb.
 * For local client execution, ensure Node.js and npx are available.
 
-1. Copy the below to notebook or local script to define the MCP.
+1. Copy the below to a notebook or local script to define the MCP.
 
     ```
     <copy>
@@ -113,9 +115,9 @@ This task imports various ADK Python modules and optional libraries as needed. T
     ![MCP Definition](images/mcp.png)
 
 
-## Task 5: Connect Knowledge base to the RAG too.
+## Task 5: Connect Knowledge Base to the RAG tool.
 
-1. Connect the knowledge base ID and RAG tool to the agent. Copy and paste the snippet below into your notebook or Python script.
+   1. Connect the knowledge base ID and RAG tool with the agent. To do so, copy the below snippet and paste it into the notebook or Python script.
 
     ```
     <copy>
@@ -132,7 +134,7 @@ This task imports various ADK Python modules and optional libraries as needed. T
 
 ## Task 6: Define an agent and connect with the tools.
 
-1. Use the snippet below to define an agent with the specified tools. Update the placeholders as needed.
+   1. Use the below snippet to define an agent along with the tools. You need to update the placeholders accordingly.
 
     ```
     <copy>
@@ -181,7 +183,7 @@ During the process, ADK will check the defined tools and associate them with the
     ![Tool sync](images/tool_sync.png)
 
 
-1. Wait for the execution to complete and validate the result.A result would look like as below.
+2. Wait for the execution to complete and validate the result. A result would look like the one below.
 
     ![Result](images/mcp_results.png)
 

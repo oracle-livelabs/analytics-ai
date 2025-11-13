@@ -17,6 +17,7 @@ This lab demonstrates various run modes available with the configured *Agent*.
     ```
 * The agent will run and share the information based on the RAG tool.
 
+    The agent will run and share the information based on the RAG tool.
 
     ![Rag run](images/rag-run.png)
 
@@ -35,7 +36,7 @@ This lab demonstrates various run modes available with the configured *Agent*.
 
     ![SQL Run](images/sql-run.png)
 
-## Task 3: Validate function exeuction.
+## Task 3: Validate function execution.
 
 1. Run the code below to see how the agent responds using the defined function tool.
 
@@ -120,8 +121,9 @@ Here, we use the OCI Python SDK to run the agent endpoint and fetch results.
     ![SDK run output](images/sdk-output.png)
 
 
-## Task 5 : Additional samples.
-* You may refer [here](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/examples.htm) for additional samples and can run against the setup.
+## Task 5 : Additional samples
+
+* You may refer [here](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/adk/api-reference/examples.htm) for additional samples and run them against your setup.
 
 
 **Proceed to the next lab.**

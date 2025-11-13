@@ -13,31 +13,33 @@ This lab guides you through the steps to set up an OCI Generative AI Agents SQL 
 
 Estimated Time: 30 minutes
 
-
 ## Task 1: Configure SQL tool.
 
-We will be using the *Database connection* created during the initial step to proceed further.
+We will be using the database connection created during earlier steps.
 
-1. Using OCI console > `Analytics & AI` > `Generative AI Agents`
+1. Using OCI Console > Analytics & AI > Generative AI Agents
 
     ![Agent View](images/agent_view.png)
-1. Click on the name of the desired agent.
+
+2. Click on the name of the desired agent.
 
     ![Agent details](images/agent_details.png)
 
-1. Click `Tools` > `Create tool`.
+3. Click Tools > Create tool.
 
     ![Create tool](images/create_tool.png)
 
-1. Select option `SQL`
+4. Select the SQL option.
 
     ![Sql choice](images/sql_choice.png)
-1. Provide a name for the tool.
-1. Provide description as `Tools for product related queries`.
+
+5. Provide a name for the tool.
+
+6. Provide the description: Tool for product-related queries.
 
     ![Sql routes](images/sqltool_routes.png)
 
-1. Select `Inline` for schema and provide below information.We will be using some of the default tables available with our database.
+7. Select Inline for the schema option and provide the information below. We will be using some of the default tables available with our database.
 
     ```
     <copy>
@@ -70,8 +72,9 @@ We will be using the *Database connection* created during the initial step to pr
 
     ![Schema](images/schema.png)
 
-1. Select `Inline` for choice `In-context learning examples`.
-1. Provide below sample learning examples.
+8. Select Inline for the In-context learning examples option.
+
+9. Provide the following sample learning example:
 
     ```
     <copy>
@@ -80,8 +83,10 @@ We will be using the *Database connection* created during the initial step to pr
     </copy>
     ```
     ![context learning](images/context_learning.png)
-1. Select `Inline` for option `Description of tables and columns`.
-1. Copy below and update.
+
+10. Select Inline for the option Description of tables and columns.
+
+11. Copy and update the following:
 
     ```
     <copy>
@@ -105,20 +110,25 @@ We will be using the *Database connection* created during the initial step to pr
 
     ![Table reference](images/table_description.png)
 
-1. Select `Small (faster response)` for option `Model customization`
-1. Select ` Oracle SQL` for option `Dialect`.
+12. Select Small (faster response) for the Model customization option.
+
+13. Select Oracle SQL for the Dialect option.
 
     ![Custom model](images/custom_model.png)
-1. Select the database connection created earlier,if necessary change the compartment name.
-1. Click `Test connection` and validate the connection.
+
+14. Select the database connection created earlier. If necessary, change the compartment name.
+
+15. Click Test connection and validate the connection.
 
     ![Validate connection](images/validate_connection.png)
-1. Enable SQL execution option.
-1. Enable self correction option.
+
+16. Enable the SQL execution option.
+
+17. Enable the Self correction option.
 
     ![Sql options](images/options.png)
 
-1. Provide below custom instructions.
+18. Provide the following custom instructions:
 
     ```
     <copy>
@@ -129,8 +139,9 @@ We will be using the *Database connection* created during the initial step to pr
 
     ![Instructions](images/instruction.png)
 
-1. Click create.
-1. Wait for the tool to be `Active`.It may take few minutes.
+19. Click Create.
+
+20. Wait for the tool to become Active. It may take a few minutes.
 
     ![Active tool](images/active_tool.png)
 
