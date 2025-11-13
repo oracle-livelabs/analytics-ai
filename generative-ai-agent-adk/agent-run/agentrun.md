@@ -23,7 +23,7 @@ This lab demonstrates various run modes available with the configured *Agent*.
 
 ## Task 2: Validate SQL tool execution.
 
-1. Run the query below to fetch information through the agent, which will retrieve and report data from the OCI Autonomous Database.
+1. Run the query below to fetch information through the agent, which will retrieve and report data from the Autonomous AI Database.
 
     ```
     <copy>
