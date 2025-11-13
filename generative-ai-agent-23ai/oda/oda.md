@@ -86,9 +86,9 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Download the two REST Service Configurations
 
-    [agent-RESTService-GenAIAgentCreateSession.yaml](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/U7-_tN2QKpqcZNULEDfHh93KjzVmwhAMunES-OkovD2z_zpAuG60vDPJawZThOTf/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentCreateSession.yaml)
+    [agent-RESTService-GenAIAgentCreateSession.yaml](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentCreateSession.yaml)
 
-    [agent-RESTService-GenAIAgentChat.yaml](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/QFEJ1bOV27SIlYR7LHfH6sKvM1kfNXzVjwhUqUjiuDSnzVm0TCEO3ZtdAEGj91ib/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentChat.yaml)
+    [agent-RESTService-GenAIAgentChat.yaml](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/RESTService-GenAIAgentChat.yaml)
 
 2. Locate the ODA instance (created in Task 2)
 
@@ -124,7 +124,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 1. Click on the link to download the required skill
 
-    [GenAI-23AI-RagAgent-livelabs.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EjveEBQZPBg_0OHdouvvHBvmlfH8W6c2zn4Pg44mFnI7Nil4AVJmSkdjIUOznkar/n/c4u02/b/hosted_workshops/o/GenAI23aiRAGAgentChatbot.zip)
+    [GenAI-23AI-RagAgent-livelabs.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/GenAI23aiRAGAgentChatbot.zip)
 
 2. Import the skill (downloaded). Click on Import Skill & select the zip file to import
 

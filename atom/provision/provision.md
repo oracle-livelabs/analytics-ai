@@ -166,21 +166,37 @@ This task involves creating REST service which will be used by ODA to connect to
 
     ![API Services](images/model_screenshot.png)
 
-    * Step 3: For the **Model**=**cohere.command-r-plus v1.7**, Click **View Model Details**, and then click on **copy** link for the **cohere.command-r-plus** and **version** = 1.7
+    * Step 3: Take note of the name and optionally ocid of the cohere.command-a-03-2025 model. 
 
-        > **Note:** v1.7 is the latest model as of this livelab release. This lab should work with any version of the cohere model. 
+    ![API Services](images/get-model-id.png)
 
-    ![API Services](images/chat_screenshot.png)
+6. - Go to API Services > LLM Services > Add LLM Service.
 
-6. Click **Test Request** to make sure the connection is successful
+- Add the following payload in the body. 
 
-   ![API Services](images/oci_rest_service_3.png)
+```
+{
+    "compartmentId": "ocid1.compartment.oc1..xxx",
+    "servingMode": {
+        "modelId": "cohere.command-a-03-2025",
+        "servingType": "ON_DEMAND"
+    },
+    "chatRequest": {
+        "apiFormat": "COHERE",
+        "message": "Hi, how are you",
+        "isStream": true
+    }
+}
+```
+ Click **Test Request** to make sure the connection is successful
+
+   ![API Services](images/create-llm-service.png)
 
     > **Note**
-    > * Retrieve the modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
+    > * Retrieve the name & modelId (OCID) from OCI Gen AI Services Playground and use a compartmentId where the ODA is hosted inside
     > * If you are using a different name (and not Gen AI Service) for your Rest service then please make a change in your LLM Provider in Settings as well. To do that Go to Skills -> Settings -> Configuration -> Large Language Model Services -> LLM Provider. Choose the new Rest Service for the GenAI LLM 
 
-    ![API Services](images/oci_rest_service_4.png)
+![API Services](images/oci_rest_service_4.png)
 
 ## Task 4: Import Skill (Provided)
 
@@ -198,7 +214,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 5. Edit the model and compartment id to your own 
 
-    ![Edit Id](images/edit-comp-model-id.png)
+    ![Edit Id](images/create-id.png)
 
 6. Go to Skills -> Settings -> Configuration -> Large Language Model Services. Configure the LLM Service.
 
@@ -215,6 +231,10 @@ This task involves creating REST service which will be used by ODA to connect to
 9. Click on invokeLLM and then click on Component. Select the same LLM Service which was created in Step 7.
 
     ![Invoke LLM](images/invoke_llm.png)
+
+10. Click the preview in the top right of ODA and test to make sure ATOM is working 
+
+    ![Chat with ATOM](images/preview.png)
 
 ## Task 5: Create Channel to embed ODA in Visual Builder Application (provided) or in any custom Web App
 
@@ -253,7 +273,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
 3. Wait for the instance to come to **Active** (green color) status
 
-4. Click on the link to download the VB application (zip file): [ATOM_Training.zip](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Excel-Chicago/o/Livelabs%2Fdoc-understanding%2FATOM_Training-1.0.1.zip)
+4. Click on the link to download the VB application (zip file): [ATOM_Training.zip](https://objectstorage.us-chicago-1.oraclecloud.com/p/56ABJAkZ8jFEWhXNdDxQGq_EYzpa4ScoYGkY_xOpQil1YxnFpdkdewAaNgvnifhY/n/idb6enfdcxbl/b/Livelabs/o/atom/ATOM_Livelab_QA-1.0.zip)
 
 5. Import the application in provisioned instance as per the screenshots. Users only need one VCBS instance created. They can import/create multiple applications in the instance for each additional chatbot they have
 
@@ -273,7 +293,7 @@ This task involves creating REST service which will be used by ODA to connect to
 
     * **URI** = '<https://oda-XXXXXXXXXXXXXXXXXXXXXX.data.digitalassistant.oci.oraclecloud.com/>'
     * **channelId** = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    * Please change value of initUserHiddenMessage on Line 32 from 'what can you do' to 'Hello'
+    * Confirm the initUserHiddenMessage is 'Hello', or change the init message however you'd like. 
 
     ![Create Channel](images/vb_config.png)
 
@@ -323,4 +343,4 @@ This task involves creating REST service which will be used by ODA to connect to
 * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, Apr 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025
