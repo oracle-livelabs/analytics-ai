@@ -2,19 +2,18 @@
 
 ## Introduction
 
-This lab is to prepare your data and load it into your object storage bucket that you have prepared as prerequisite for this workshop 
+This lab is to prepare your environment, data and load it into your object storage bucket that you have prepared as prerequisite for this workshop.
 
-Estimated Time: 10 minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 30 minutes
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Load the dataset needed for next labs into your object storage bucket
+* Define a folder structure to load and structure various content elements like datasets, notebooks, files to use them in following labs
+* Load the datasets needed for next labs into your object storage bucket
+* Load notebook files in preparation of executing and building workflows
 
 ### Prerequisites (Optional)
 
@@ -27,75 +26,68 @@ This lab assumes you have:
 
 *Below, is the "fold"--where items are collapsed by default.*
 
-## Task 1: Open you bucket in Oracle OCI
+## Task 1: Open your bucket in Oracle OCI and load datasets.
 
-ai-data-platform-getting-started/data-load/files
+From the GitHub folder ai-data-platform-getting-started/data-load/files you can download the source files and upload them into your OCI Object storage bucket.
+In the upload screen you can drag an drop the files in the bucket. No need to adjust any settings
 
 
 1. Step 1
 
-	![Image alt text](images/sample1.png)
+	After you have downloaded the files from Github, navigate to your OCI Object storage bucket, select the **Objects** tab and use the **Upload Objects** button to upload your files.
 
-  To create a link to local file you want the reader to download, use the following formats. _The filename must be in lowercase letters and CANNOT include any spaces._
-
-	Download the [starter file](files/starter-file.sql) SQL code.
-
-	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
-
-	Download the [sample JSON code](files/sample.json?download=1).
-
-  > Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin, or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+  ![Bucket File Upload](images/Bucket-upload.png)
 
 2. Step 2
 
-  ![Image alt text](images/sample1.png)
+	Go to your AI Data Platform and open your master catalog. There you need to define 3 catalogs for each layer of the medallion architecture. In the example screenprint they are called: f1_bronze, f1_silver, f1_gold
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+  ![Creation if catalogs](images/Create-catalog-entry.png)
 
-5. Example with bold **text**.
+3. Step 3
 
-   If you add another paragraph, add 3 spaces before the line.
+	Open each catalog that you have created in step 2 and create schema inside each catalog. In the example screenprint they are called: bronze, silver, gold
 
-## Task 2: Concise Task Description
 
-1. Step 1 - tables sample
+  ![Creation if catalogs](images/Create-catalog-schema.png)
 
-  Use tables sparingly:
+4. Step 4
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+	In the **f1_bronze** catalog in the **bronze** schema you need to create a volume to store the data files as external catalog items. Select the **bronze** schema in the master catalog pane, and in the main pane you select **volume**. Once selected you click the **+** symbol to create a volume. In the example the volume name f1_bronze_volume is used. In the entry screen, create name, select **external** and select the comporatment, bucket, (and folder) where you stored you data files at steps 1. Make. sure you push the **upload** button.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  ![Creation if catalogs](images/Create-catalog-external-volume.png)
 
-    - List item 1
-    - List item 2
 
-3. Code examples
+## Task 3: Create a tables in Bronze from files that have been uploaded
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+As final step of loading data is the creation of tables in the bronze catalog of AI Data Platform based on data files we have uploaded as external data volume files.
 
-4. Code examples that include variables
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+1. Step 1
 
-## Learn More
+	Open the workspace you created and create following folder structure (You can create your own structure but that will require changes to the notebook content).
+  - Load-files
+  - Files-to-bronze
+  - Bronze-to-silver
+  - Silver-to-gold
 
-*(optional - include links to docs, white papers, blogs, etc)*
+  ![Workspace folder structure](images/Create-folders-workspace.png)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+2. Step 2
+
+	Upload notebook files into their respective workspace folder. The notebook files start with a number followed by a name.
+  In the **Files-to-bronze** folder upload files starting with 01_... to 07_...
+  In the **Bronze-to-silver** folder upload files starting with 08_... to 14_...
+  In the **Silver-to-gold** folder upload files starting with 15_... to 18_...
+
+  ![Creation if catalogs](images/Upload-files-to-workspace.png)
+
+
+bronze_folder_path    = "/Volumes/f1_bronze/bronze/f1_bronze_volume"
+bronze_catalog    = "f1_bronze"
+bronze_schema     = "bronze"
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Wilbert Poeliejoe
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
