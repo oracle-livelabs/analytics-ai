@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This workshop will help to configure,deploy and run a chat powered by OCI Generative AI Agents using OCI Agent Development Kit (`adk`).During the flow the learner will 
+This workshop will help you configure, deploy, and run a chat powered by OCI Generative AI Agents using the OCI Agent Development Kit (adk). During the flow, the learner will:
 
-- Create and configure OCI Generative AI agents.
-- Configure tools such as Retrieval Augmented Generation(RAG),Nl2SQL,Custom tools including Model Context Protocol(MCP) based tools.
-- Use `adk` for all the above tasks. 
+- Create and configure OCI Generative AI Agents.
+- Configure tools such as Retrieval Augmented Generation (RAG), NL2SQL, and custom tools including Model Context Protocol (MCP)-based tools.
+- Use adk for all the above tasks.
 
 ![User View](images/user_flow.jpg)
 
@@ -14,28 +14,25 @@ Estimated Workshop Time: 2 hours
 
 ### Objectives
 
-Objective of this workshop is to configure ,build ,deploy and run OCI Generative AI Agents using Agent Development Kit (**ADK**).The following services and features will be covered during the lab
+The objective of this workshop is to configure, build, deploy, and run OCI Generative AI Agents using the Agent Development Kit (ADK). The following services and features will be covered during the lab:
 
-
-
-* OCI Generative AI Agent build and deploy.
-* Configure and use inbuilt Retrieval Augmented Generation (**RAG**)tool.
-* Configure and use inbuilt Natural Language 2 to SQL tool (**NL2SQL**).
-* Usage of Model Context Protocol(**MCP**) with OCI Generative AI Agent.
-* Configure and use Customer tools with OCI Generative AI Agents.
-
+- OCI Generative AI Agent build and deploy
+- Configure and use the inbuilt Retrieval Augmented Generation (RAG) tool
+- Configure and use the inbuilt Natural Language to SQL tool (NL2SQL)
+- Use Model Context Protocol (MCP) with OCI Generative AI Agents
+- Configure and use custom tools with OCI Generative AI Agents
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud Account (Non Free Tier)
-* Access to OCI Generative AI Agents 
-* Access to a Region where the Agent service is available.
-    * Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
-* An OCI compartment on which we will allocate all the necessary resources.
-* Must have an Administrator Account or Permissions to manage several OCI Services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity.
-* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+- An Oracle Cloud Account (non-Free Tier)
+- Access to OCI Generative AI Agents
+- Access to a region where the Agent service is available
+  - Refer [here for more.](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm#regions)
+- An OCI compartment where we will allocate all the necessary resources
+- An Administrator account or permissions to manage several OCI services: Generative AI Agents, Autonomous Databases, Data Science, Object Storage, Network, Dynamic Groups, Policies, IDCS/Identity
+- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 ## Learn More
 
@@ -52,5 +49,3 @@ This lab assumes you have:
     * **Rahul MR**, Principal Solutions Architect - OCI 
 * **Contributors**
     * **Sanjeeva Kalva**, Principal Data Scientist - OCI 
-* **Last Updated By/Date**
-    * **TBD**, TBD
