@@ -25,7 +25,7 @@ In this lab, you will:
 This lab assumes you have:
 - Completed Lab 4
 - Your AJD URI from Lab 2
-- The To-Do app data in 'todos' collection
+- The To-Do app data in 'todos_source' collection
 
 ---
 
@@ -57,7 +57,8 @@ This lab assumes you have:
    const program = new Command();
 
    program
-     .requiredOption('--uri <uri>', 'AJD URI (used for both source and target)')
+     .requiredOption('--src <uri>', 'Source MongoDB URI')
+     .requiredOption('--tgt <uri>', 'Target AJD URI')
      .requiredOption('--source-collection <name>', 'Source collection name')
      .requiredOption('--target-collection <name>', 'Target collection name');
 
@@ -66,13 +67,15 @@ This lab assumes you have:
    const options = program.opts();
 
    async function migrateCollection() {
-     const client = new MongoClient(options.uri);
-     try {
-       await client.connect();
-       const db = client.db();
+     const srcClient = new MongoClient(options.src);
+     const tgtClient = new MongoClient(options.tgt);
 
-       const srcCol = db.collection(options.sourceCollection);
-       const tgtCol = db.collection(options.targetCollection);
+     try {
+       await srcClient.connect();
+       await tgtClient.connect();
+
+       const srcCol = srcClient.db().collection(options.sourceCollection);
+       const tgtCol = tgtClient.db().collection(options.targetCollection);
 
        const count = await srcCol.countDocuments();
        console.log(`Migrating ${count} documents from ${options.sourceCollection} to ${options.targetCollection}`);
@@ -97,7 +100,8 @@ This lab assumes you have:
      } catch (error) {
        console.error('Migration error:', error);
      } finally {
-       await client.close();
+       await srcClient.close();
+       await tgtClient.close();
      }
    }
 
@@ -105,7 +109,7 @@ This lab assumes you have:
    </copy>
    ```
 
-   This script uses the same URI for source and target, migrating between collections.
+   This script supports separate source and target URIs, allowing migration from a real MongoDB to AJD. For this workshop, you can use the same URI for both.
 
 ---
 
@@ -114,9 +118,11 @@ This lab assumes you have:
 1. Execute the CLI:
    ```bash
    <copy>
-   node migrate.js --uri 'your-ajd-uri' --source-collection todos --target-collection todos_target
+   node migrate.js --src 'your-ajd-uri' --tgt 'your-ajd-uri' --source-collection todos_source --target-collection todos_target
    </copy>
    ```
+
+   **Note:** Use the same URI for --src and --tgt in this workshop since we're migrating within one AJD instance. For real MongoDB migrations, provide the MongoDB URI for --src.
 
 2. Monitor the progress bar and output.
 
@@ -129,6 +135,8 @@ If needed, modify the script in Task 1 (e.g., in the while loop, adjust `doc` be
 ---
 
 ## Troubleshooting
+
+- **Node Version Issues:** Ensure you are using Node.js v24 or later in both the todo-app and migration-cli directories. If you encounter a SyntaxError on '??=', switch with `nvm use 24` and confirm with `node -v`. The mongodb package requires Node >=20.19.0.
 
 - **URI Encoding:** Ensure special characters are encoded.
 - **Large Datasets:** The cursor handles streaming for efficiency.

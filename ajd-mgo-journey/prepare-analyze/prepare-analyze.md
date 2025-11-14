@@ -50,7 +50,7 @@ This lab assumes you have:
 4. Run a query to view the data:
    ```sql
    <copy>
-   SELECT * FROM todos;
+   SELECT * FROM todos_source;
    </copy>
    ```
 
@@ -60,7 +60,7 @@ This lab assumes you have:
 
 ## Task 3: Analyze and Plan Migration
 
-1. Use Cline or manual analysis to review the 'todos' collection for migration.
+1. Use Cline or manual analysis to review the 'todos_source' collection for migration.
 
 2. Plan: For this simple app, map 1:1 to a new 'todos_target' collection. Identify any needed transformations (e.g., data types, indexes).
 

@@ -74,6 +74,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const COLLECTION_NAME = process.env.COLLECTION_NAME || 'todos_source';
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -100,20 +101,20 @@ app.get('/api/status', async (req, res) => {
 
 // Read todos
 app.get('/api/todos', async (req, res) => {
-    const todos = await db.collection('todos').find().toArray();
+    const todos = await db.collection(COLLECTION_NAME).find().toArray();
     res.json(todos);
   });
   
 // Create todo
 app.post('/api/todos', async (req, res) => {
     const todo = { text: req.body.text, completed: false };
-    const result = await db.collection('todos').insertOne(todo);
+    const result = await db.collection(COLLECTION_NAME).insertOne(todo);
     res.json(result.ops ? result.ops[0] : todo);
 });
   
 // Update todo (mark as completed)
 app.put('/api/todos/:id', async (req, res) => {
-const result = await db.collection('todos').updateOne(
+const result = await db.collection(COLLECTION_NAME).updateOne(
     { _id: new ObjectId(req.params.id) },
     { $set: { completed: true } }
 );
@@ -122,7 +123,7 @@ res.json({ modifiedCount: result.modifiedCount });
   
 // Delete todo
 app.delete('/api/todos/:id', async (req, res) => {
-    const result = await db.collection('todos').deleteOne({ _id: new ObjectId(req.params.id) });
+    const result = await db.collection(COLLECTION_NAME).deleteOne({ _id: new ObjectId(req.params.id) });
     res.json({ deletedCount: result.deletedCount });
 });
 
@@ -137,7 +138,7 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Set the env variable **MONGO_API_URL**:
+Set the env variable **MONGO\_API\_URL**:
 
 ```bash
 <copy>
@@ -262,6 +263,8 @@ node server.js
 You are now ready for Lab 4 to prepare source data and analyze for migration.
 
 ## Troubleshooting
+
+- **Node Version Issues:** Ensure you are using Node.js v24 or later in both the todo-app and migration-cli directories. If you encounter a SyntaxError on '??=', switch with `nvm use 24` and confirm with `node -v`. The mongodb package requires Node >=20.19.0.
 
 - **Installation Errors:** If npm install fails with network errors (e.g., ENOTFOUND), ensure you're not on a VPN or behind a proxy interfering with the registry. For public users, it pulls from npmjs.org.
 

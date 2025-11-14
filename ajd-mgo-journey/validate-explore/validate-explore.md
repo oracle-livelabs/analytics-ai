@@ -30,7 +30,8 @@ This lab assumes you have:
 
 ## Task 1: Repoint the Application to Target Collection
 
-1. In your `todo-app` directory from Lab 3, set the environment variable to the target collection:
+
+1. Set the environment variable to the target collection:
    
    ```bash
    <copy>
@@ -38,7 +39,7 @@ This lab assumes you have:
    </copy>
    ```
 
-   **Note:** For real migrations to a different AJD, you'd update the URI. Here, we switch collections within the same instance.
+   **Note:** For real migrations to a different AJD, you'd also update MONGO_API_URL. Here, we switch collections within the same instance.
 
 2. Restart the server:
    ```bash
@@ -51,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Validate Application Functionality
 
-1. Open `http://localhost:3000` in your browser. You should see the migrated tasks from 'todos'.
+1. Open `http://localhost:3000` in your browser. You should see the migrated tasks from 'todos_source'.
 
 ![Migrated Tasks](./images/migrated-tasks.png)
 
@@ -67,7 +68,7 @@ This lab assumes you have:
      SELECT * FROM todos_target;
      </copy>
      ```
-   - Compare with source data from Lab 4.
+   - Compare with source data in todos_source from Lab 4.
 
 ---
 
