@@ -30,27 +30,17 @@ This lab assumes you have:
 
 ## Task 1: Repoint the Application to AJD
 
-1. In your `todo-app` directory from Lab 2, update the `MONGO_URI` in `server.js` to your AJD connection string (keep collection as 'todos_target' if using explicit names from Lab 3; for standard real MongoDB migrations, only change the URI and keep 'todos'):
-
-   **Note:** For real MongoDB to AJD, typically only the URI changes—no code edits beyond that, as collections can match.
-
-   ```javascript
-   <copy>
-   const MONGO_URI = process.env.MONGO_URI || 'your-ajd-connection-string'; // Replace with AJD URI
-   </copy>
-   ```
-
-   If using 'todos_target':
-   Update collection in endpoints to 'todos_target'.
-
-   Or set it via environment variable:
+1. In your `todo-app` directory from Lab 2, since we're using the same AJD instance, no URI change is needed. To switch to the target collection, set the environment variable:
+   
    ```bash
    <copy>
-   export MONGO_URI='your-ajd-connection-string'
+   export COLLECTION_NAME='todos_target'
    </copy>
    ```
 
-2. Restart the server:
+   **Note:** For real MongoDB to AJD migrations, typically only the URI changes—no code edits needed, as AJD is compatible. Collections can remain the same or be specified via env for flexibility.
+
+2. Restart the server (with the new env set):
    ```bash
    <copy>
    node server.js
@@ -61,7 +51,9 @@ This lab assumes you have:
 
 ## Task 2: Validate Application Functionality
 
-1. Open `http://localhost:3000` in your browser.
+1. Open `http://localhost:3000` in your browser. You should see the previous tasks from your source Mongo instance. 
+
+![Migrated Tasks](./images/migrated-tasks.png)
 
 2. Test CRUD operations:
    - Add new to-do items.

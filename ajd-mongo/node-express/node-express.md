@@ -157,13 +157,13 @@ node server.js
 </copy>
 ```
 
-Visit `http://localhost:3000` to test (frontend in next lab).
+If successful, the server should be listening on port 3000. 
 
 You are now ready to proceed to the Frontend UI lab.
 
 ## Troubleshooting
 
-- **Installation Errors:** If npm install fails with network errors (e.g., ENOTFOUND), ensure you're not on a VPN or behind a proxy interfering with the registry. For public users, it pulls from npmjs.org; internal users may need to configure accordingly.
+- **Installation Errors:** If npm install fails with network errors (e.g., ENOTFOUND), ensure you're not on a VPN or behind a proxy interfering with the registry. For public users, it pulls from npmjs.org.
 
 - **Server Startup Errors:** If you see syntax errors, confirm Node.js version (>=18). For connection issues, refer to the AJD Connect lab's troubleshooting.
 

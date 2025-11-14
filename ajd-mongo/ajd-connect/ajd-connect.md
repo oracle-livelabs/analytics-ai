@@ -74,6 +74,12 @@ mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSour
 </copy>
 ```
 
+When setting env variable
+
+```bash
+export MONGO_API_URL='xxx'
+```
+
 Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
 
 You are now ready to proceed to the next lab to set up the Node.js/Express backend.

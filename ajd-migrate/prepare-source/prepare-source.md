@@ -30,18 +30,60 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Set Up AJD Source Database
+## Task 1: Provision AJD Instance
 
-**Note:** This lab uses AJD as both source and target for demonstration purposes, but a real MongoDB instance can be swapped interchangeably for the source.
+1. Log in to the Oracle Cloud Console.
 
-1. If you don't already have your own MongoDB instance, provision a new AJD instance in Oracle Cloud Console (see Lab 3 for details if needed). If using your own MongoDB, gather its connection details (URI) instead.
+2. Navigate to **Oracle Database > Autonomous AI Database**.
 
-2. Enable MongoDB API in Tool Configuration (for AJD).
+![Autonomous AI Database](./images/ai-database.png)
 
-3. Get the connection URI from the console (for AJD) or your MongoDB setup.
+3. Click **Create Autonomous Database**.
 
-4. Ensure your IP is in the ACL for access (for AJD).
+4. Select **JSON Database** as the workload type.
 
+![AJD Mongo Todo](./images/ajd-mongo-todo.png)
+
+5. Provide a display name (e.g., "ToDoAJD") and database name.
+
+6. Set admin password and configure network access. Set access type to 'Secure access from allowed IPs and VCNs only' (add your IP to the ACL for security).
+
+![Access ACL](./images/ajd-acl.png)
+
+**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
+
+```bash
+curl -s ifconfig.me
+```
+
+7. Click **Create**.
+
+Wait for the instance to provision (a few minutes).
+
+## Task 2: Enable MongoDB API
+
+1. In the AJD details page, go to **Tool Configuration**.
+
+2. Under **MongoDB API** set the status to Enabled.
+
+![Enable Access](./images/public-access-url.png)
+
+3. Download the connection string or note it down.
+
+The connection string format is:
+```bash
+<copy>
+mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+</copy>
+```
+
+When setting env variable
+
+```bash
+export MONGO_API_URL='xxx'
+```
+
+Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
 ---
 
 ## Task 2: Deploy the Sample To-Do App on AJD
@@ -76,7 +118,8 @@ This lab assumes you have:
 
    const app = express();
    const PORT = process.env.PORT || 3000;
-   const MONGO_URI = process.env.MONGO_URI || 'your-ajd-uri'; // Update with your AJD URI
+   const MONGO_API_URL = process.env.MONGO_API_URL || 'your-ajd-uri'; // Update with your AJD URI
+   const COLLECTION_NAME = process.env.COLLECTION_NAME || 'todos_source';
 
    app.use(express.json());
    app.use(express.static('public'));
@@ -84,27 +127,27 @@ This lab assumes you have:
    let db;
 
    async function connectDB() {
-     const client = new MongoClient(MONGO_URI);
+     const client = new MongoClient(MONGO_API_URL);
      await client.connect();
      db = client.db();
      console.log('Connected to AJD');
    }
 
-   // CRUD endpoints for 'todos_source' collection
+   // CRUD endpoints using COLLECTION_NAME
 
    app.get('/api/todos', async (req, res) => {
-     const todos = await db.collection('todos_source').find().toArray();
+     const todos = await db.collection(COLLECTION_NAME).find().toArray();
      res.json(todos);
    });
 
    app.post('/api/todos', async (req, res) => {
      const todo = { text: req.body.text, completed: false };
-     const result = await db.collection('todos_source').insertOne(todo);
+     const result = await db.collection(COLLECTION_NAME).insertOne(todo);
      res.json(result.ops ? result.ops[0] : todo);
    });
 
    app.put('/api/todos/:id', async (req, res) => {
-     const result = await db.collection('todos_source').updateOne(
+     const result = await db.collection(COLLECTION_NAME).updateOne(
        { _id: new ObjectId(req.params.id) },
        { $set: { completed: true } }
      );
@@ -112,7 +155,7 @@ This lab assumes you have:
    });
 
    app.delete('/api/todos/:id', async (req, res) => {
-     const result = await db.collection('todos_source').deleteOne({ _id: new ObjectId(req.params.id) });
+     const result = await db.collection(COLLECTION_NAME).deleteOne({ _id: new ObjectId(req.params.id) });
      res.json({ deletedCount: result.deletedCount });
    });
 
@@ -122,6 +165,9 @@ This lab assumes you have:
    });
    </copy>
    ```
+
+
+   **Note:** The collection name can be configured via the COLLECTION_NAME environment variable, defaulting to 'todos\_source'.
 
 5. Create `public/index.html` (simple frontend):
    ```html
@@ -215,7 +261,9 @@ This lab assumes you have:
 
 ## Task 3: Insert Sample Data
 
-1. Use the app UI to add a few to-do items (e.g., "Test Task 1", "Test Task 2"). Complete or delete one to test functionality.
+1. Use the app UI to add a few to-do items (e.g., "Source Task 1", "Source Task 2"). Complete or delete one to test functionality.
+
+![Insert Source Tasks](./images/source-tasks.png)
 
 ---
 

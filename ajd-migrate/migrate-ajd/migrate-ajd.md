@@ -31,39 +31,60 @@ This lab assumes you have:
 
 ## Task 1: Provision AJD Instance
 
+**Note:** This AJD instance will be the target instance of the migration.
+
 1. Log in to the Oracle Cloud Console.
 
 2. Navigate to **Oracle Database > Autonomous AI Database**.
+
+![Autonomous AI Database](./images/ai-database.png)
 
 3. Click **Create Autonomous Database**.
 
 4. Select **JSON Database** as the workload type.
 
+![AJD Mongo Todo](./images/ajd-mongo-todo.png)
+
 5. Provide a display name (e.g., "ToDoAJD") and database name.
 
 6. Set admin password and configure network access. Set access type to 'Secure access from allowed IPs and VCNs only' (add your IP to the ACL for security).
 
-   **Note:** To get your public IP address, you can go to whatismyipaddress.com or run `curl -s ifconfig.me`.
+![Access ACL](./images/ajd-acl.png)
+
+**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
+
+```bash
+curl -s ifconfig.me
+```
 
 7. Click **Create**.
 
 Wait for the instance to provision (a few minutes).
 
-## Task 2: Enable MongoDB API and Get Connection String
+## Task 2: Enable MongoDB API
 
 1. In the AJD details page, go to **Tool Configuration**.
 
-2. Under **MongoDB API**, set the status to Enabled.
+2. Under **MongoDB API** set the status to Enabled.
 
-3. Note the connection string format:
-   ```bash
-   <copy>
-   mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
-   </copy>
-   ```
+![Enable Access](./images/public-access-url.png)
 
-   Replace placeholders with your details. URL-encode special characters in the password (e.g., '@' as %40). Use single quotes when exporting as an environment variable.
+3. Download the connection string or note it down.
 
+The connection string format is:
+```bash
+<copy>
+mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+</copy>
+```
+
+When setting env variable
+
+```bash
+export MONGO_API_URL='xxx'
+```
+
+Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
 ---
 
 ## Task 3: Build the Migration CLI
