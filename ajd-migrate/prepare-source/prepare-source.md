@@ -30,7 +30,9 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Provision AJD Instance
+## Task 1 (Optional): Provision Source AJD Instance
+
+**Note** If you have an existing MongoDB instance, this step can be skipped. The steps to create a source db are included here for completeness. 
 
 1. Log in to the Oracle Cloud Console.
 
@@ -53,7 +55,9 @@ This lab assumes you have:
 **Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
 
 ```bash
+<copy>
 curl -s ifconfig.me
+</copy>
 ```
 
 7. Click **Create**.
@@ -84,6 +88,7 @@ export MONGO_API_URL='xxx'
 ```
 
 Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
+
 ---
 
 ## Task 2: Deploy the Sample To-Do App on AJD
@@ -166,10 +171,10 @@ Replace placeholders with your details. URL-encode special characters in the pas
    </copy>
    ```
 
-
    **Note:** The collection name can be configured via the COLLECTION_NAME environment variable, defaulting to 'todos\_source'.
 
 5. Create `public/index.html` (simple frontend):
+
    ```html
    <copy>
    <!DOCTYPE html>
@@ -248,13 +253,16 @@ Replace placeholders with your details. URL-encode special characters in the pas
    </body>
    </html>
    </copy>
+   ```
 
 6. Run the server:
+
    ```bash
    <copy>
    node server.js
    </copy>
    ```
+
    Visit `http://localhost:3000` to test.
 
 ---
@@ -278,9 +286,9 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 5: Analyze and Plan Migration
+## Task 5 (Optional): Analyze and Plan Migration
 
-1. Use Oracle Code Assist or MongoVibeAssist_Migrator (install via npm if needed; links to docs).
+1. Use Cline to run anaylsis on migration.
    - Example: Run analysis on 'todos_source' to suggest mappings.
 
 2. Plan: For this simple app, assume 1:1 migration to 'todos_target'. Identify any transformations if needed.
@@ -303,6 +311,8 @@ You are now ready for Lab 3 to migrate within AJD.
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**

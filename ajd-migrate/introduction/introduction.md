@@ -66,6 +66,8 @@ This workshop assumes you have:
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**

@@ -1,0 +1,51 @@
+{
+  "workshoptitle": "Mongo Developer Journey — Build, Migrate & Scale on Oracle AI Database 26ai",
+  "help": "livelabs-help-adbs_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Sign in to tenancy",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1 (Optional): Configure Cline AI Assistant",
+      "description": "Set up AI assistance",
+      "filename": "../../cline-config/cline-config.md"
+    },
+    {
+      "title": "Lab 2: Provision and Connect to AJD",
+      "description": "Setup AJD instance",
+      "filename": "../../provision-connect/provision-connect.md"
+    },
+    {
+      "title": "Lab 3: Build the To-Do App",
+      "description": "Create backend and frontend",
+      "filename": "../../build-app/build-app.md"
+    },
+    {
+      "title": "Lab 4: Prepare Source Data and Analyze",
+      "description": "Insert data and plan migration",
+      "filename": "../../prepare-analyze/prepare-analyze.md"
+    },
+    {
+      "title": "Lab 5: Build Migration CLI and Migrate",
+      "description": "Create CLI and perform migration",
+      "filename": "../../migrate/migrate.md"
+    },
+    {
+      "title": "Lab 6: Validate and Explore AJD Benefits",
+      "description": "Test app and explore features",
+      "filename": "../../validate-explore/validate-explore.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

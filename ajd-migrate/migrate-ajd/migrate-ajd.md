@@ -206,6 +206,8 @@ You are now ready for Lab 4 to validate.
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**

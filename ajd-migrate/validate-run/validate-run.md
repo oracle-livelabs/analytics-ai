@@ -61,7 +61,14 @@ This lab assumes you have:
    - Ensure the migrated data from Lab 3 appears correctly.
 
 3. Verify data integrity:
-   - Main check: In Oracle Database Actions, run SELECT * FROM todos_target; compare with source data.
+   - Main check: In Oracle Database Actions, run 
+
+   ```sql 
+   SELECT * FROM todos_target;
+   ```
+   
+   compare with source data.
+
    - Optional: Use mongo shell or compatible client for AJD to verify documents.
 
 ---
@@ -92,6 +99,8 @@ This lab assumes you have:
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**
