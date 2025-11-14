@@ -1,54 +1,41 @@
-# Tables in LiveLabs
+# Process data from Silver into Gold schema
 
-## Tables are cool!
+## Introduction
 
-You can define a table in Markdown just like so:
+In this lab we will promote the data that was curated and processed in the **Silver** catalog schema into the Gold schema to make it easily consumable for business users.
 
-```
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| **col 3 is**  | right-aligned | $1600 |
-| col 2 is      |  *centered*   |   $12 |
-| zebra stripes | ~~are neat~~  |    $1 |
-```
-The result looks like this:
+Estimated Lab Time: 30 minutes
 
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| **col 3 is**  | right-aligned | $1600 |
-| col 2 is      |  *centered*   |   $12 |
-| zebra stripes | ~~are neat~~  |    $1 |
+### Objectives
 
-You can see that there is a default table caption provided which is by default a concatenation of the workshop title and the lab title.
+In this lab, you will:
+* Use the notebook functionality of AI Data Platform to process data
+* Use data that is loaded in Silver schema and process into Gold layer
 
-If you don't like the default, you can also provide your own table title by adding the below the table definition:
+### Prerequisites 
 
-```
-{: title="My table title"}
-```
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
-The complete markdown looks like this:
+This lab assumes you have:
+* An Oracle Cloud account
+* All previous labs successfully completed
 
-```
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| **col 3 is**  | right-aligned | $1600 |
-| col 2 is      |  *centered*   |   $12 |
-| zebra stripes | ~~are neat~~  |    $1 |
-{: title="My table title"}
-```
+*This is the "fold" - below items are collapsed by default*
 
-Now our table looks like this:
+## Task 1: Process data with notebooks into Gold schema in AI Data Platform
 
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| **col 3 is**  | right-aligned | $1600 |
-| col 2 is      |  *centered*   |   $12 |
-| zebra stripes | ~~are neat~~  |    $1 |
-{: title="My table title"}
+1. Step 1
 
-As you can see, the numbering is added automatically.
+  Open the workspace you created and open the **Silver-to-gold** folder. In the main pane you open the file starting with name **17_silver_drivers.ipynb**. 
+  Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
+  
+  When you have completed the first notebook in the **Silver-to-gold** folder, you can open and run the other notebooks from that folder to populate the tables in the following order:
+  - 17_silver_drivers.ipynb
+  - 18-silver_constructors.ipynb
+  - 15_silver_team_ranking.ipynb
+  - 16_silver_driver_ranking.ipynb
 
-Isn't that cool?
-
-You can also refer to the [LiveLabs Markdown Cheatsheet](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/LiveLabs_MD_Cheat_Sheet.pdf)
+## Acknowledgements
+* **Author** - Wilbert Poeliejoe
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Month Year>

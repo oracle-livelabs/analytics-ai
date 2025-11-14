@@ -1,10 +1,11 @@
-# Load the Formula 1 test data in your object storage bucket
+# Load the Formula 1 test data in your AI Data platform in Bronze layer
 
 ## Introduction
 
-This lab is to prepare your environment, data and load it into your object storage bucket that you have prepared as prerequisite for this workshop.
+This lab is to prepare your environment, data and load it into your object storage bucket that you have prepared as prerequisite for this workshop. From Object storage the files get added to the volume in Bronze as external files.
+Once that is done the files will be loaded in the Bronze catalog schema in Delta format. For this part we provide a setup sample notebooks that we load into the workspace and we run the first set to load the files into delta lake tables.
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -75,17 +76,34 @@ As final step of loading data is the creation of tables in the bronze catalog of
 
 2. Step 2
 
-	Upload notebook files into their respective workspace folder. The notebook files start with a number followed by a name.
+	Upload notebook files that you downloaded from Github into their respective workspace folder. The notebook filenames start with a number followed by a name.
   In the **Files-to-bronze** folder upload files starting with 01_... to 07_...
   In the **Bronze-to-silver** folder upload files starting with 08_... to 14_...
   In the **Silver-to-gold** folder upload files starting with 15_... to 18_...
 
   ![Creation if catalogs](images/Upload-files-to-workspace.png)
 
+3. Step 3
 
-bronze_folder_path    = "/Volumes/f1_bronze/bronze/f1_bronze_volume"
-bronze_catalog    = "f1_bronze"
-bronze_schema     = "bronze"
+	Open the workspace you created and open the **Files-to-bronze** folder. In the main pane you open the file starting with name **01_git_file_pitstops.ipynb**. In the Notebook pane which looks like the picture you see the content of the notebook. The Notebook is structured in cells which contain code. For this example we mainly use **Python**.
+
+  In between the code cells you also find descriptions. Cell can be run 1 by 1 as highlighted with the small arrow at the cell. The entire notebook also can be run with one click in top right corner. Before you are able to run a notebook you first need to attach the compute cluster as highlighted in the picture by clicking on **cluster** get the drop down and click **attach existing cluster** 
+  If you get a message that **No CLusters area available** you need to start the cluster that you created previously by selecting **compute** in the left pane and start the compute cluster at the **...** at the right side of the line of your compute cluster. (This start will take a little while. The cluster being stopped related to the idle time set at creation of the cluster. This setting can be adjusted if needed). You can go back to your notebook and attach the cluster. A green message appears when the cluster is attached. AI Data Platform will remember the cluster that was attached previously, but it has to be active.
+
+  Once the cluster is attached you can run the notebook by clicking **Run all**, Or cell by cell if you prefer to track any errors.
+
+  The structure of the notebooks is, that in the first cell some parameters are defined related folder structure and file names. 
+
+  When you have completed the first notebook in the **Files-to-bronze** folder, you can open and run the other notebooks from that folder to populate the tables.
+
+  ![Open notebook file in workspace](images/Files-to-bronze-load.png)
+
+4. Step 4
+
+	This step is to verify the creation of the tables in the f1_bronze schema in the catalog.
+  After the notebook runs have completed successfully you can expland the f1_bronze catalog item and expand the bronze schema to view the created tables. If they are not appearing you may need to refresh the catalog by using the refresh button at the top of the catalog pane.
+
+  ![Creation if catalogs](images/Files-to-bronze-view-result.png)
 
 ## Acknowledgements
 * **Author** - Wilbert Poeliejoe

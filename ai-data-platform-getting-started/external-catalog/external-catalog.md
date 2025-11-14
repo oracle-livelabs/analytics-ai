@@ -1,68 +1,79 @@
-# Variables in LiveLabs
+# Process data from Silver into Gold schema into an Autonomous AI Lakehouse
 
 ## Introduction
 
-You can specify variables in another file and refer to them in your Markdown.
+In this lab we will promote the data that was curated and processed in the **Silver** catalog schema into the Gold schema to make it easily consumable for business users but we are not going to use the Delta format like in previous lab, but we are going to use an Autonomous AI Lakehouse as target.
 
+Estimated Lab Time: 45 minutes
 
-## Task 1:
+### Objectives
 
-Add the following to your manifest.json in the top section:
+In this lab, you will:
+* Use the notebook functionality of AI Data Platform to process data
+* Use data that is loaded in Silver schema and process into Autonomous AI Lakehouse Gold layer
 
+### Prerequisites 
+
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+
+This lab assumes you have:
+* An Oracle Cloud account
+* The Autonomous AI Lakehouse provisioned already
+  * A database user and schema that we will use
+  * Access to the Database tools to create tables
+* All previous labs successfully completed
+
+*This is the "fold" - below items are collapsed by default*
+
+## Task 1: Create external Catalog to Autonomous AI Lakehouse
+
+1. Step 1
+
+  Select the Master Catalog and use the **+** to create a new catalog entry. Provide all the details in the form. For **catalog type** select **External Catalog**. The form will change and at **External Source Type** select **Oracle Autonomous Data Warehouse**.
+  Fill in all the details and use the wallet, test the connection and create the catalog entry. 
+
+   ![Exteral Autonomous AI Lakehouse catalog ](images/Create-external-catalog-ADW.png)
+
+## Task 2: Prepare and run Silver to Gold notebooks to load data in Autonomous AI Lakehouse.
+
+1. Step 1
+
+  Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in taksk 1, using SQL , making use of prebuilt table definitions from file f1_DDL_ADW_Tables.txt which is available in Github.
+
+  2. Step 2
+
+  The Notebook parameters cell require some adjustments for the notebooks that are part of the Silver-to-gold workspace folder
+
+  The original content is e.g.:
+```json
+   target_type   =oidlUtils.parameters.getParameter("TARGET_TYPE", "table")
+   target_format =oidlUtils.parameters.getParameter("TARGET_FORMAT", "delta")
+   silver_catalog    = "f1_silver"
+   gold_catalog    = "f1_gold"
+   adw_catalog = "f1_gold_adw"
+   silver_schema     = "silver"
+   gold_schema     = "gold"
+   adw_schema =      "f1_gold"
+   gold_table_dlt = "f1_drivers_ranking_dlt"
+   gold_table_par = "f1_drivers_ranking_par"
 ```
-   "variables": ["../../variables/variables.json",
-                 "../../variables/variables-in-another-file.json"],
-```
-
-## Task 2
-
-Specify the variables in the .json file like this:
-
-*Example: variables.json*
-```
-{
-    "var1": "Variable 1 value",
-    "var2": "Variable 2 value",
-    "random_name": "LiveLabs rocks!",
-    "number_of_ocpu_paid": "24"
-    "number_of_ocpu_always_free": "2"
- }
- ```
-
-You can also add multiple files that specify variables (see the example in Task 1).
-
- *Example: variables_in_another_file.json*
-```
-{
-    "var11": "Variable 1 value but yet different",
-    "var22": "Variable 2 value is different",
-    "random_name2": "LiveLabs rocks & rules!",``
-    "name_of_database": "My-Database-Name-is-the-best",
-    "magic": "What is 2*2?"
- }
- ```
-
-## Task 3
-
-Now, you can refer to those variables using the following syntax (**Please note that you can see the syntax only in markdown**):
-
-[](var:var1)
-
-or
-
-[](var:magic)
+To use the autonomous AI Lakehouse line 2 **delta** needs to be replaced with **adw**
+The adw_catalog (line 5) name needs to be replaced by the name of the external catalog created at task 1. It is visible in the master catalog.
+The adw_schema  (line 8) needs to be replaced by the name of the schema you created the table definitions.
+Although autosave is enabled, make sure that changes are saved.
 
 
-### Examples
+  3. Step 3
 
-(Check the markdown to see the syntax - the bold text is the value of the variable)
+  Now you can run the notebooks again in following order:
+  - 17_silver_drivers.ipynb
+  - 18-silver_constructors.ipynb
+  - 15_silver_team_ranking.ipynb
+  - 16_silver_driver_ranking.ipynb
 
-- Do you know math? This is **[](var:magic)**
+For validation you can query the database tables to check if data has been inserted.
 
-- How many OCPUs do I need to run this service in my paid tenancy? You need **[](var:number_of_ocpu_paid)**
-
-- But what if am using 'Always free'? Then you need **[](var:number_of_ocpu_always_free)**
-
-- What is the best name for my database? It is **[](var:name_of_database)**
-
-- Here you can find more info: **[](var:doc_link)**
+## Acknowledgements
+* **Author** - Wilbert Poeliejoe
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Month Year>

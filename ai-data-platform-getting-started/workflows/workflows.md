@@ -1,22 +1,19 @@
-# Title of the Lab
+# Orchestrate data processing using workflows
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab we define the data processing orchestration using workflows. In workflows you can automate and schedule to execution of tasks. In this Lab w will use it to orchestrate the runs of Notebooks in subsequent phases (Bronze- Silver-Gold)
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Define workflows
+* Run workflows
+* Schedule Workflows
 
 ### Prerequisites (Optional)
 
@@ -29,64 +26,50 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
+## Task 1: Creation of Workflows
 
 1. Step 1
 
-	![Image alt text](images/sample1.png)
+  Select the Workspace. In the main pane start the creation of a job.
+  Enter the form with Name, Description and Max concurrent runs.
+  For concurrent runs select **5**. Create.
 
-2. Step 2
+  In the Job definition screen the first task is automatically created. The goal is to put all notebooks per phase in a workflow. All Bronze in one, All silver in one, and similar for Gold
 
-  ![Image alt text](images/sample1.png)
+  On the right side:
+  | Column 1 | Column 2 |
+  | --- | --- | 
+  | Name | Meaningful name |
+  |Task Type | Notebook Task |
+  | File location | Select the location of the notebook and notebook that you want to run |
+  | Cluster | Select the compute cluster |
+  | Execution timeout | 10 |
+  | retries | number of retries |
+  |retry on timeout | Enable |
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+![Image alt text](images/Create-workflow.png)
 
-5. Example with bold **text**.
+  When filled the form for the first task in the middle click **Add Task** to add next tasks.
 
-   If you add another paragraph, add 3 spaces before the line.
+  In the workflow pane it the runs can be monitored
 
-## Task 2: Concise Task Description
+![Image alt text](images/workflow-overview.png)
 
-1. Step 1 - tables sample
+  Repeat same for all notebook sin the phase.
+  For File to Bronze and Bronze to Silver, all tasks can run in parallel. 
+  At **Depends on** no dependency to be entered.
 
-  Use tables sparingly:
+  For the Silver to Gold it is important to run the tasks sequentially in following order.
+  - 17_silver_drivers.ipynb
+  - 18-silver_constructors.ipynb
+  - 15_silver_team_ranking.ipynb
+  - 16_silver_driver_ranking.ipynb
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+In the workflow details you find the possibility to schedule the workflow
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+![Image alt text](images/workflow-details-schedule.png)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Wilbert Poeliejoe
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

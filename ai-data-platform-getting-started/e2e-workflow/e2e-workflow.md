@@ -1,22 +1,17 @@
-# Title of the Lab
+# Orchestration workflow of workflows
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Finally the step to build a pipeline of workflows as workflow of workflows
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: -10 minutes
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Build a pipeline of workflows
 
 ### Prerequisites (Optional)
 
@@ -29,55 +24,16 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
+## Task 1: Create Workflow of Workflows
 
 1. Step 1
 
-	![Image alt text](images/sample1.png)
+  The creation of a workflow of workflows is straight forward and similar to the creation of a workflow, with one difference.
+  The task type needs to be **Nested Job task**
+  The jobs that you can select will be different.
+  It is possible to mix this with other task types
 
-2. Step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+![Pipeline creation](images/e2e-workflow-creation.png)
 
 ## Learn More
 
@@ -87,6 +43,6 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Wilbert Poeliejoe
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>

@@ -1,24 +1,18 @@
-# Title of the Lab
+# Load and curate data from Bronze into Silver schema of AI Data Platform
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab we will promote the data that was loaded in the bronze catalog schema into the SIlver schema. If needed we can curate and run quality checks when processing the data.
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Use the notebook functionality of AI Data Platform to process data
+* Use data that is loaded in Bronze schema and process into Silver layer
 
-### Prerequisites (Optional)
+### Prerequisites 
 
 *List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
@@ -26,67 +20,21 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
-
-(optional) Task 1 opening paragraph.
+## Task 1: Process data with notebooks into Silver schema in AI Data Platform
 
 1. Step 1
 
-	![Image alt text](images/sample1.png)
+  Open the workspace you created and open the **Bronze-to-silver** folder. In the main pane you open the file starting with name **08_bronze_pitstops.ipynb**. 
+  Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
+  You also can run the notebook for the second time and change the target format to "parquet".
 
-2. Step 2
+  When you have completed the first notebook in the **Bronze-to-silver** folder, you can open and run the other notebooks from that folder to populate the tables.
 
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+  ![Open notebook file in workspace](images/Workspace-notebooks-view.png)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Wilbert Poeliejoe
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
