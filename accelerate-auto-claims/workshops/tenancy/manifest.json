@@ -19,7 +19,7 @@
         },
         {
             "title": "Lab 1: Provision Autonomous AI Database ",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
+            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-adb/provision-adb.md"
         },
         {
             "title": "Lab 2: Apply Database Operations",
