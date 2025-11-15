@@ -16,7 +16,7 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment
 
-    - [oas-retail-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/A43rBqt1OPUAwE3Jrz54aLn5_cehGH7JcP5UXE2jl8DS6UAR8_FKBkZi5kHDRbZQ/n/c4u02/b/hosted_workshops/o/stacks/oas-retail-mkplc-freetier.zip)
+    - [oas-retail-mkplc-freetier.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/oas-retail-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
