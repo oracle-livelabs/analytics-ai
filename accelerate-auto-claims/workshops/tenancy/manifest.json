@@ -14,11 +14,11 @@
         },
         {
             "title": "Lab 1: Provision Autonomous AI Database ",
-            "filename": "../../2-provision-adb/provision_resources.md"
+            "filename": "../../1-provision-adb/provision_resources.md"
         },
         {
             "title": "Lab 2: Apply Database Operations",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
+            "filename": "../..2-apply-db-operations/apply_db_operations.md"
         },
         {
             "title": "Lab 3: Provision OAC Instance",
@@ -29,7 +29,11 @@
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/connect-to-adw/connect-adw.md"
         },
         {
-            "title": "Lab 5: BI Ask",
+            "title": "Lab 5: Implement OAC Instance",
+            "filename": "../../5-implement-oac-instance/implement_oac_instance.md"
+        },
+        {
+            "title": "Lab 6: BI Ask",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/bi-ask/bi-ask.md"
         },
         {
