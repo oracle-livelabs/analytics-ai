@@ -86,7 +86,7 @@ This lab assumes you have:
 
 1. The knowledge base will take a few minutes to create and ingest the data.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
-   >💡 _If your knowledge base does not appear (“No items found”), you can proceed to the next step._
+   >💡 _If your knowledge base does not appear (“No items found”), you can still continue to the next step. The knowledge base is already selected and provisioning in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is provisioning._
 
 22. Click the **Add tool** button.
 
