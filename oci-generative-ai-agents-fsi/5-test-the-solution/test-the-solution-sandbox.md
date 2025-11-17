@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **loan compliance agent** in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **loan compliance officer** agent in the **Agents** list.
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.png)
 
@@ -38,9 +38,9 @@ This lab assumes you have:
 
     ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.png)
 
-1. In the chat page, on the left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
+1. In the chat page, on th left, make sure sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
-1. On the top of the page, the **Agent** drop down should show **loan compliance agent** and the **Agent endpoint** drop down should show the newly created endpoint.
+1. On the top of the page, the **Agent** drop down should show **loan compliance officer** and the **Agent endpoint** drop down should show the newly created endpoint.
 1. In the chat window, you'll be able to see the greeting message we have configured for the agent.
 1. Other elements in the page include:
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into you message box: _How many loan applications have been denied since June 2025?_
+1. To start, type the following question into you message box: _How many loan applications are pending review?_
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -71,41 +71,32 @@ This lab assumes you have:
     ![Screenshot showing the SQL tool trace](./images/first-question-traces-2.png)
 
 1. The third trace shows how the agent composed the final response using the output of the previous steps.
+1. Click the **Close** button to close the traces pane.
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
-1. Click the **Close** button to close the traces pane.
 1. Our next question would be: _Which loan officer has the most applications assigned?_ Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
 
-1. The agent shows the correct answer: **Olivia Brown**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that the loan agent with the most applications assigned to them.
+1. The agent shows the correct answer: **Olivia Brown**. Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to decipher that the loan officer with the most applications assigned to them.
 
     ![Screenshot showing the response for the second question](./images/second-question-response.png)
 
 1. Feel free to take a look at the **Traces** generated for this response.
-1. Next we'll ask the following: _List applications that have been in progress for more than 7 days._
+1. Next we'll ask the following: _List applications that have been pending for more than 7 days._
 1. Click the **Submit** button.
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
 
-1. The agent returned information on the one application that has been pending review for more than 7 days.
+1. As you can see, the response included the type and amount for the two loans that have been pending for more than 7 days.
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
 1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: _Retrieve the policy document section that defines Debt-to-Income (DTI) limits and any exceptions._
 1. Click the **Submit** button.
 1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
-
-    ![test](./images/third-question-traces-1.png)
-
-1. Next we'll ask the following: _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
-1. Click the Submit button.
-
-    ![test](./images/send-fourth-question.png)
-
-1. The agent successfully detected an approved applicant whose credit score was inconsistent with the requirements outlined in the DTI and Credit Policy document.
 
     ![test](./images/fourth-question-response.png)
 
@@ -117,15 +108,16 @@ Here are a few more prompts to try with the agent:
 
 - _What is the minimum credit score for FHA vs Conventional loans?_
 - _Show the distribution of credit scores by loan type_
-- _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
+- _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
+- _Give me a risk dashboard: counts by status, average credit score and DTI by loan type, and total requested amount; include links to policy sections that define ‘risk’_
 
 ## Summary
 
-As you've experienced, the OCI AI Agents service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
+As you've experienced, the OCI Generative AI service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
 
-Another interesting advantage of building solutions on top the OCI AI Agents service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
+Another interesting advantage of building solutions on top the OCI Generative AI service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
-Although our use-case was focused on loan compliance, the OCI AI Agents service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
+Although our use-case was focused on loan compliance, the OCI Generative AI service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
 
 ## Learn More
 
@@ -133,5 +125,5 @@ Although our use-case was focused on loan compliance, the OCI AI Agents service 
 
 ## Acknowledgements
 
-- **Author** - Deion Locklear
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
+- **Author** - Uma Kumar
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
