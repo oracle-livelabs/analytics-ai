@@ -12,7 +12,7 @@ Estimated Time: 30 minutes
 In this lab, you will:
 * Provision an Autonomous Database
 * Create API Key in OCI
-* Create Autonomous Database user with access to Graph Studio
+* Create Autonomous Database user/schema to hold sample autoclaims data
  
 
 ### Prerequisites
@@ -116,10 +116,10 @@ This task involves creating and API Key in OCI, the key will be needed in creati
 ## Acknowledgements
 
 * **Author**
-    * **Jadd Jennings**, Principal Cloud Architect, NACIE
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America
 
 * **Contributors**
-    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
+    * **Kaan Burduroglu**, Distinguished Cloud Architect, Oracle North America
 
 * **Last Updated By/Date**
-    * **Jadd Jennings**, Principal Cloud Architect, NACIE, May 2025
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, May 2025
