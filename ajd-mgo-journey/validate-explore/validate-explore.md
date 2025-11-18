@@ -39,7 +39,7 @@ This lab assumes you have:
    </copy>
    ```
 
-   **Note:** For real migrations to a different AJD, you'd also update MONGO_API_URL. Here, we switch collections within the same instance.
+   **Note:** For real migrations to a different AJD, you'd also update MONGO\_API\_URL. Here, we switch collections within the same instance.
 
 2. Restart the server:
    ```bash

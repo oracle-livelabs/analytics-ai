@@ -33,7 +33,7 @@ This lab assumes you have:
 
 For this lab, we'll use the AJD instance provisioned in Lab 2 as the target. If not already set up, complete Tasks 1-3 in Lab 2: Prepare Source and Discover Data to provision the AJD instance, create the MONGO_USER, and enable the MongoDB API.
 
-Ensure you have the connection string ready as $MONGO_API_URL.
+Ensure you have the connection string ready as $MONGO\_API\_URL.
 
 ---
 
