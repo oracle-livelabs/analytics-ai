@@ -77,6 +77,9 @@ This lab assumes you have:
        const srcCol = srcClient.db().collection(options.sourceCollection);
        const tgtCol = tgtClient.db().collection(options.targetCollection);
 
+       // Clear target collection before migration to avoid unique constraint violations
+       await tgtCol.deleteMany({});
+
        const count = await srcCol.countDocuments();
        console.log(`Migrating ${count} documents from ${options.sourceCollection} to ${options.targetCollection}`);
 
@@ -139,6 +142,7 @@ If needed, modify the script in Task 1 (e.g., in the while loop, adjust `doc` be
 - **Node Version Issues:** Ensure you are using Node.js v24 or later in both the todo-app and migration-cli directories. If you encounter a SyntaxError on '??=', switch with `nvm use 24` and confirm with `node -v`. The mongodb package requires Node >=20.19.0.
 
 - **URI Encoding:** Ensure special characters are encoded.
+- **Unique Constraint Violations (ORA-00001):** If you encounter errors about unique constraints (e.g., duplicate _id), clear the target collection before migration by adding `await tgtCol.deleteMany({});` before the count and migration loop in migrate.js.
 - **Large Datasets:** The cursor handles streaming for efficiency.
 - **Errors:** Check connections; add logging if needed for debugging.
 

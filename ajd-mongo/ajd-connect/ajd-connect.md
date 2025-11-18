@@ -50,14 +50,36 @@ This lab assumes you have:
 **Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
 
 ```bash
+<copy>
 curl -s ifconfig.me
+</copy>
 ```
 
 7. Click **Create**.
 
 Wait for the instance to provision (a few minutes).
 
-## Task 2: Enable MongoDB API
+## Task 2: Create Mongo User 
+
+1. Navigate to Database Users in Autonomous AI Database  
+
+![Database Users](./images/database-user.png)
+
+2. Select Create User 
+
+![Create User](./images/create-user.png)
+
+3. Create new user e.g. **MONGO_USER** with associated password. Set Quota on tablespace to **UNLIMITED** and enable REST, GraphQL, MongoDB API, and Web access.
+
+![Create Mongo User](./images/mongo-user-1.png)
+
+4. In the Granted Roles tab add the **CONNECT** and **RESOURCE** roles. 
+
+![Grant User Roles](./images/mongo-user-2.png)
+
+* **Note** For more details on creating users for MongoDB, see [User Management for MongoDB](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/mongo-using-oracle-database-api-mongodb.html#GUID-613DD3CE-6E84-4D8E-B614-2CFC18A41784)
+
+## Task 3: Enable MongoDB API
 
 1. In the AJD details page, go to **Tool Configuration**.
 
@@ -77,7 +99,9 @@ mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSour
 When setting env variable
 
 ```bash
+<copy>
 export MONGO_API_URL='xxx'
+</copy>
 ```
 
 Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.

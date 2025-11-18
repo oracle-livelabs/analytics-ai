@@ -135,6 +135,17 @@ Inside `public`, create `index.html` with the following content:
 
 **Congratulations!** You've deployed a MongoDB-compatible app on AJD.
 
+## Task 4: Review Schema and Collections
+
+1. In Oracle Database Actions (SQL Web from AJD console):
+   - Log in to AJD as database user, e.g. **MONGO_USER**.
+   - Run: SELECT * FROM todos;
+   - Note the schema (e.g., DATA column with JSON: _id, text, completed).
+
+   ![AJD Tasks](./images/ajd-entries.png)
+
+2. Explore other tables if needed.
+
 ## Troubleshooting and Testing
 
 - **UI Not Loading:** Ensure the server is running and the public directory is correctly placed.

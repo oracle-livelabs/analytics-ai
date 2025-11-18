@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Welcome to **Migrating MongoDB Workloads to Oracle Autonomous JSON Database (AJD)**!  
+Welcome to **Creating a MongoDB-Compatible App with Autonomous JSON Database**!  
 This hands-on workshop is designed for MongoDB developers transitioning to Oracle Autonomous JSON Database. You'll deploy a simple CRUD To-Do list application using Node.js and Express, connecting to AJD via its MongoDB-compatible API. This demonstrates AJD as a drop-in replacement for MongoDB, requiring minimal changes.
 
 You'll learn how to:

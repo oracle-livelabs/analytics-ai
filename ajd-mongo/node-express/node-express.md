@@ -137,7 +137,15 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Set the env variable **MONGO\_API\_URL**:
+Confirm **$MONGO\_API\_URL** is set
+
+```bash
+<copy>
+echo $MONGO_API_URL
+</copy>
+```
+
+If the mongo url is not set, set the **MONGO\_API\_URL**:
 
 ```bash
 <copy>
@@ -165,7 +173,13 @@ You are now ready to proceed to the Frontend UI lab.
 
 - **Installation Errors:** If npm install fails with network errors (e.g., ENOTFOUND), ensure you're not on a VPN or behind a proxy interfering with the registry. For public users, it pulls from npmjs.org.
 
-- **Server Startup Errors:** If you see syntax errors, confirm Node.js version (>=18). For connection issues, refer to the AJD Connect lab's troubleshooting.
+- **Server Startup Errors:** If you see syntax errors, confirm Node.js version (>=18). For connection issues, refer to the AJD Connect lab's troubleshooting. You can also change the node version e.g. to 24 with 
+
+```bash
+<copy>
+nvm use 24
+</copy>
+```
 
 ---
 

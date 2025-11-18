@@ -16,7 +16,7 @@ In this lab, you will:
 - Set up and verify an AJD source database
 - Deploy and run the To-Do app on AJD
 - Review and understand the application schema and collections in Oracle SQL Web
-- Use Oracle Code Assist and MongoVibeAssist_Migrator to analyze your source environment and plan the migration
+- Use Oracle Code Assist and custom MongoVibeAssist_Migrator CLI to analyze your source environment and plan the migration
 
 ---
 
@@ -25,7 +25,7 @@ In this lab, you will:
 This lab assumes you have:
 - Completed Lab 1 (optional)
 - Node.js and NPM installed
-- An Oracle Cloud account with AJD provisioned (from Lab 1 or separately)
+- An Oracle Cloud account with AJD provisioned or MongoDB instance (from Lab 1 or separately)
 - Basic command-line familiarity
 
 ---
@@ -64,9 +64,32 @@ curl -s ifconfig.me
 
 Wait for the instance to provision (a few minutes).
 
-## Task 2: Enable MongoDB API
+
+## Task 2: Create Mongo User 
+
+1. Navigate to Database Users in Autonomous AI Database  
+
+![Database Users](./images/database-user.png)
+
+2. Select Create User 
+
+![Create User](./images/create-user.png)
+
+3. Create new user e.g. **MONGO_USER** with associated password. Set Quota on tablespace to **UNLIMITED** and enable REST, GraphQL, MongoDB API, and Web access.
+
+![Create Mongo User](./images/mongo-user-1.png)
+
+4. In the Granted Roles tab add the **CONNECT** and **RESOURCE** roles. 
+
+![Grant User Roles](./images/mongo-user-2.png)
+
+* **Note** For more details on creating users for MongoDB, see [User Management for MongoDB](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/mongo-using-oracle-database-api-mongodb.html#GUID-613DD3CE-6E84-4D8E-B614-2CFC18A41784)
+
+## Task 3: Enable MongoDB API
 
 1. In the AJD details page, go to **Tool Configuration**.
+
+![Tool Configuration](./images/tool-config.png)
 
 2. Under **MongoDB API** set the status to Enabled.
 
@@ -91,7 +114,7 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 2: Deploy the Sample To-Do App on AJD
+## Task 4: Deploy the Sample To-Do App on AJD
 
 1. Create a project directory:
    ```bash
@@ -267,7 +290,7 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 3: Insert Sample Data
+## Task 5: Insert Sample Data
 
 1. Use the app UI to add a few to-do items (e.g., "Source Task 1", "Source Task 2"). Complete or delete one to test functionality.
 
@@ -275,18 +298,20 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 4: Review Schema and Collections
+## Task 6: Review Schema and Collections
 
 1. In Oracle Database Actions (SQL Web from AJD console):
-   - Log in as ADMIN.
+   - Log in to AJD as database user, e.g. **MONGO_USER**.
    - Run: SELECT * FROM todos_source;
    - Note the schema (e.g., DATA column with JSON: _id, text, completed).
+
+   ![AJD Tasks](./images/ajd-entries.png)
 
 2. Explore other tables if needed.
 
 ---
 
-## Task 5 (Optional): Analyze and Plan Migration
+## Task 7 (Optional): Analyze and Plan Migration
 
 1. Use Cline to run anaylsis on migration.
    - Example: Run analysis on 'todos_source' to suggest mappings.

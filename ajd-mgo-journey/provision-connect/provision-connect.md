@@ -59,7 +59,27 @@ curl -s ifconfig.me
 
 Wait for the instance to provision (a few minutes).
 
-## Task 2: Enable MongoDB API
+## Task 2: Create Mongo User 
+
+1. Navigate to Database Users in Autonomous AI Database  
+
+![Database Users](./images/database-user.png)
+
+2. Select Create User 
+
+![Create User](./images/create-user.png)
+
+3. Create new user e.g. **MONGO_USER** with associated password. Set Quota on tablespace to **UNLIMITED** and enable REST, GraphQL, MongoDB API, and Web access.
+
+![Create Mongo User](./images/mongo-user-1.png)
+
+4. In the Granted Roles tab add the **CONNECT** and **RESOURCE** roles. 
+
+![Grant User Roles](./images/mongo-user-2.png)
+
+* **Note** For more details on creating users for MongoDB, see [User Management for MongoDB](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/mongo-using-oracle-database-api-mongodb.html#GUID-613DD3CE-6E84-4D8E-B614-2CFC18A41784)
+
+## Task 3: Enable MongoDB API
 
 1. In the AJD details page, go to **Tool Configuration**.
 

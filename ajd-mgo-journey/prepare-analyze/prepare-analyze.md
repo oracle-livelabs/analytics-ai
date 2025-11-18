@@ -41,20 +41,14 @@ This lab assumes you have:
 
 ## Task 2: Review Schema and Collections
 
-1. In the Oracle Cloud Console, go to your AJD instance details.
+1. In Oracle Database Actions (SQL Web from AJD console):
+   - Log in to AJD as database user, e.g. **MONGO_USER**.
+   - Run: SELECT * FROM todos_source;
+   - Note the schema (e.g., DATA column with JSON: _id, text, completed).
 
-2. Click **Database Actions** to open SQL Web.
+   ![AJD Tasks](./images/ajd-entries.png)
 
-3. Log in as ADMIN.
-
-4. Run a query to view the data:
-   ```sql
-   <copy>
-   SELECT * FROM todos_source;
-   </copy>
-   ```
-
-5. Note the schema (e.g., DATA column with JSON: _id, text, completed). Explore other metadata if needed.
+2. Explore other tables if needed.
 
 ---
 

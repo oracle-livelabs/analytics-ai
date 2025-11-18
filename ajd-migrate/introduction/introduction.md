@@ -3,13 +3,13 @@
 ## About this Workshop
 
 Welcome to **MongoDB Migration – Lift & Shift to Oracle AI Database**!  
-This hands-on workshop is designed for MongoDB developers looking to migrate their applications to Oracle Autonomous JSON Database (AJD) for improved performance, scalability, security, and ease of management. You'll start with a simple CRUD To-Do list application running on a real MongoDB instance, prepare and analyze your data, migrate it using a custom CLI tool you build, and validate the app on AJD via its MongoDB-compatible API. This demonstrates a straightforward "lift and shift" migration with minimal changes.
+This hands-on workshop is designed for MongoDB developers looking to migrate their applications to Oracle Autonomous JSON Database (AJD) for improved performance, scalability, security, and ease of management. You'll start with a simple CRUD To-Do list application running on a MongoDB-compatible AJD instance, prepare and analyze your data, migrate it using a custom CLI tool you build, and validate the app on AJD via its MongoDB-compatible API. This demonstrates a straightforward "lift and shift" migration with minimal changes.
 
 You'll learn how to:
-- Set up and analyze a source MongoDB database
+- Set up and analyze a source MongoDB database (AJD)
 - Build a simple CLI for data migration
-- Provision AJD and migrate data
-- Repoint your app to AJD and explore its benefits
+- Provision source/target AJD and migrate data
+- Repoint your app to target AJD and explore its benefits
 
 > **Estimated Workshop Time:** 1-2 hours
 
@@ -22,7 +22,7 @@ You'll learn how to:
 ### Objectives
 
 By completing this workshop, you will:
-- Understand how to prepare and migrate data from MongoDB to AJD
+- Understand how to prepare and migrate data from MongoDB-compatible source AJD to target AJD
 - Build and use a custom CLI for migration
 - Validate application functionality on AJD
 - Explore AJD benefits like auto-scaling, security, and monitoring
