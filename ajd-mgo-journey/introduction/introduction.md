@@ -40,7 +40,7 @@ This workshop assumes you have:
 - Node.js (v18+) and NPM installed
 - Familiarity with command-line tools
 
-**Note:** Ensure your Node.js version is at least v18 (ideally v24). Check with `node -v`. If lower, update or use nvm.
+**Note:** Ensure your Node.js version is at least v18 (ideally v24 for compatibility with dependencies). Check with `node -v`; use nvm if needed (e.g., `nvm install 24 && nvm use 24`).
 
 ---
 

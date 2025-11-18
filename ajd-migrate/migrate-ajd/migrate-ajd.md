@@ -29,65 +29,15 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Provision AJD Instance
+## Task 1: Configure AJD Instance (Target)
 
-**Note:** This AJD instance will be the target instance of the migration.
+For this lab, we'll use the AJD instance provisioned in Lab 2 as the target. If not already set up, complete Tasks 1-3 in Lab 2: Prepare Source and Discover Data to provision the AJD instance, create the MONGO_USER, and enable the MongoDB API.
 
-1. Log in to the Oracle Cloud Console.
+Ensure you have the connection string ready as $MONGO_API_URL.
 
-2. Navigate to **Oracle Database > Autonomous AI Database**.
-
-![Autonomous AI Database](./images/ai-database.png)
-
-3. Click **Create Autonomous Database**.
-
-4. Select **JSON Database** as the workload type.
-
-![AJD Mongo Todo](./images/ajd-mongo-todo.png)
-
-5. Provide a display name (e.g., "ToDoAJD") and database name.
-
-6. Set admin password and configure network access. Set access type to 'Secure access from allowed IPs and VCNs only' (add your IP to the ACL for security).
-
-![Access ACL](./images/ajd-acl.png)
-
-**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
-
-```bash
-curl -s ifconfig.me
-```
-
-7. Click **Create**.
-
-Wait for the instance to provision (a few minutes).
-
-## Task 2: Enable MongoDB API
-
-1. In the AJD details page, go to **Tool Configuration**.
-
-2. Under **MongoDB API** set the status to Enabled.
-
-![Enable Access](./images/public-access-url.png)
-
-3. Download the connection string or note it down.
-
-The connection string format is:
-```bash
-<copy>
-mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
-</copy>
-```
-
-When setting env variable
-
-```bash
-export MONGO_API_URL='xxx'
-```
-
-Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
 ---
 
-## Task 3: Build the Migration CLI
+## Task 2: Build the Migration CLI
 
 1. In a new directory (e.g., `migration-cli`), initialize the project:
    ```bash
@@ -117,8 +67,8 @@ Replace placeholders with your details. URL-encode special characters in the pas
    program
      .requiredOption('--src <uri>', 'Source MongoDB URI')
      .requiredOption('--tgt <uri>', 'Target AJD URI')
-     .requiredOption('--collection <name>', 'Source collection name')
-     .option('--target-collection <name>', 'Target collection name (defaults to source name)');
+     .requiredOption('--source-collection <name>', 'Source collection name')
+     .requiredOption('--target-collection <name>', 'Target collection name');
 
    program.parse(process.argv);
 
@@ -132,11 +82,14 @@ Replace placeholders with your details. URL-encode special characters in the pas
        await srcClient.connect();
        await tgtClient.connect();
 
-       const srcCol = srcClient.db().collection(options.collection);
-       const tgtCol = tgtClient.db().collection(options.targetCollection || options.collection);
+       const srcCol = srcClient.db().collection(options.sourceCollection);
+       const tgtCol = tgtClient.db().collection(options.targetCollection);
+
+       // Clear target collection before migration to avoid unique constraint violations
+       await tgtCol.deleteMany({});
 
        const count = await srcCol.countDocuments();
-       console.log(`Migrating ${count} documents from ${options.collection} to ${options.targetCollection || options.collection}`);
+       console.log(`Migrating ${count} documents from ${options.sourceCollection} to ${options.targetCollection}`);
 
        const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
        bar.start(count, 0);
@@ -146,8 +99,8 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
        while (await cursor.hasNext()) {
          const doc = await cursor.next();
-         // Optional: Basic transformation (e.g., add a field if needed)
-         // doc.newField = 'migrated';
+         // Optional: Basic transformation (e.g., add a field)
+         // doc.migrated = true;
          await tgtCol.insertOne(doc);
          migrated++;
          bar.update(migrated);
@@ -171,14 +124,14 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 4: Run the Migration
+## Task 3: Run the Migration
 
 **Note:** The source URI can be either a real MongoDB or AJD instance (interchangeable, as AJD mimics the MongoDB API).
 
 1. Execute the CLI:
    ```bash
    <copy>
-   node migrate.js --src 'your-mongo-uri' --tgt 'your-ajd-uri' --collection todos_source --target-collection todos_target
+   node migrate.js --src 'your-mongo-uri' --tgt 'your-ajd-uri' --source-collection todos_source --target-collection todos_target
    </copy>
    ```
 
@@ -186,7 +139,7 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
 ---
 
-## Task 5: Handle Transformations (Optional)
+## Task 4: Handle Transformations (Optional)
 
 If schemas differ, modify the script in Task 3 (e.g., in the while loop, adjust `doc` before inserting). For this workshop, assume a simple 1:1 migration. Cline can be used to help with handling transformations.
 
@@ -194,9 +147,12 @@ If schemas differ, modify the script in Task 3 (e.g., in the while loop, adjust 
 
 ## Troubleshooting
 
+- **Node Version Issues:** Ensure you are using Node.js v24 or later in both the todo-app and migration-cli directories. If you encounter a SyntaxError on '??=', switch with `nvm use 24` and confirm with `node -v`. The mongodb package requires Node >=20.19.0.
+
 - **URI Encoding:** Ensure special characters are encoded.
-- **Large Datasets:** Adjust batch sizes if needed (cursor handles streaming).
-- **Errors:** Check connections; use `--verbose` if added to script for debugging.
+- **Unique Constraint Violations (ORA-00001):** If you encounter errors about unique constraints (e.g., duplicate _id), clear the target collection before migration by adding `await tgtCol.deleteMany({});` before the count and migration loop in migrate.js.
+- **Large Datasets:** The cursor handles streaming for efficiency.
+- **Errors:** Check connections; add logging if needed for debugging.
 
 You are now ready for Lab 4 to validate.
 

@@ -29,7 +29,15 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Build the Migration CLI
+## Task 1: Configure AJD Instance (Target)
+
+For this lab, we'll use the AJD instance provisioned in Lab 2 as the target. If not already set up, complete Tasks 1-3 in Lab 2: Provision and Connect to AJD to provision the AJD instance, create the MONGO_USER, and enable the MongoDB API.
+
+Ensure you have the connection string ready as $MONGO_API_URL.
+
+---
+
+## Task 2: Build the Migration CLI
 
 1. In a new directory (e.g., `migration-cli`), initialize the project:
    ```bash
@@ -116,7 +124,7 @@ This lab assumes you have:
 
 ---
 
-## Task 2: Run the Migration
+## Task 3: Run the Migration
 
 1. Execute the CLI:
    ```bash
@@ -131,7 +139,7 @@ This lab assumes you have:
 
 ---
 
-## Task 3: Handle Transformations (Optional)
+## Task 4: Handle Transformations (Optional)
 
 If needed, modify the script in Task 1 (e.g., in the while loop, adjust `doc` before inserting). For this workshop, assume a simple 1:1 migration. Cline can assist with custom transformations.
 
