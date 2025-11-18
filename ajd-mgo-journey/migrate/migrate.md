@@ -137,6 +137,8 @@ Ensure you have the connection string ready as $MONGO_API_URL.
 
 2. Monitor the progress bar and output.
 
+![Migration CLI](./images/mongo-cli-migrate.png)
+
 ---
 
 ## Task 4: Handle Transformations (Optional)
