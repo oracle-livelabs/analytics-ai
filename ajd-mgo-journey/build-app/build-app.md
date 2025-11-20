@@ -82,7 +82,7 @@ app.use(express.static('public'));
 let db;
 
 async function connectDB() {
-  const client = new MongoClient(process.env.MONGO_API_URL);
+  const client = new MongoClient(process.env.SOURCE_MONGO_API_URL);
   await client.connect();
   db = client.db(); // use default DB from connection string
   // Optional: Ping to test connection
@@ -138,11 +138,11 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Set the env variable **MONGO\_API\_URL**:
+Set the env variable **SOURCE_MONGO_API_URL**:
 
 ```bash
 <copy>
-export MONGO_API_URL='your-connection-string'
+export SOURCE_MONGO_API_URL='your-connection-string'
 </copy>
 ```
 

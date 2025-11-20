@@ -30,6 +30,8 @@ By completing this workshop, you will:
 **Architecture Overview:**  
 The app uses Node.js/Express for the backend, connecting to AJD via the MongoDB driver. You'll then migrate data using a custom CLI and repoint the app.
 
+![Mongo Migration Architecture](./images/mongo-migration-architecture.png)
+
 ---
 
 ### Prerequisites
@@ -67,7 +69,10 @@ This workshop assumes you have:
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
 * **Cline**, AI Assistant
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

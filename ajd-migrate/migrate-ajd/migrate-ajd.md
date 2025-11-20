@@ -29,11 +29,15 @@ This lab assumes you have:
 
 ---
 
-## Task 1: Configure AJD Instance (Target)
+## Task 1: Provision Target AJD Instance
 
-For this lab, we'll use the AJD instance provisioned in Lab 2 as the target. If not already set up, complete Tasks 1-3 in Lab 2: Prepare Source and Discover Data to provision the AJD instance, create the MONGO_USER, and enable the MongoDB API.
+1. Follow Tasks 1-3 in Lab 2: Prepare Source and Discover Data to provision a new AJD instance for the target (e.g., name it "TargetAJD"). Create a separate MONGO_USER for the target if desired, and enable the MongoDB API.
 
-Ensure you have the connection string ready as $MONGO\_API\_URL.
+   **Note:** This keeps source and target separate to demonstrate the migration architecture clearly. Use your existing MongoDB or the Source-AJD from Lab 2 as the source.
+
+2. Ensure you have the source connection string ready (from Lab 2 as $SOURCE_MONGO_API_URL) and provision a new one for the target as $TARGET_MONGO_API_URL.
+
+**Note:** You can terminate both AJD instances after completing the LiveLab to avoid ongoing costs.
 
 ---
 
@@ -128,12 +132,14 @@ Ensure you have the connection string ready as $MONGO\_API\_URL.
 
 **Note:** The source URI can be either a real MongoDB or AJD instance (interchangeable, as AJD mimics the MongoDB API).
 
-1. Execute the CLI:
+1. Execute the CLI with separate source and target URIs:
    ```bash
    <copy>
-   node migrate.js --src 'your-mongo-uri' --tgt 'your-ajd-uri' --source-collection todos_source --target-collection todos_target
+   node migrate.js --src "$SOURCE_MONGO_API_URL" --tgt "$TARGET_MONGO_API_URL" --source-collection todos_source --target-collection todos_target
    </copy>
    ```
+
+   **Note:** If using the same instance for simplicity, set both --src and --tgt to the same URI, but prefer separate instances for a clear demonstration.
 
 2. Monitor the progress bar and output.
 

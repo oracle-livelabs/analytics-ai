@@ -1,10 +1,12 @@
-# Lab 2: Provision and Connect to AJD
+# Lab 2 (Optional): Provision and Connect to AJD
 
 ## Introduction
 
 In this lab, you'll provision an Oracle Autonomous JSON Database (AJD) instance and enable its MongoDB-compatible API. This allows your MongoDB applications to connect seamlessly, treating AJD as a drop-in replacement.
 
 > **Estimated Time:** 15 minutes
+
+**Note:** If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
 
 **Note:** Cline can help automate provisioning scripts or troubleshoot connection issues—let me know if you need assistance!
 
@@ -47,7 +49,13 @@ This lab assumes you have:
 
 ![Access ACL](./images/ajd-acl.png)
 
-**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
+Switch on “Add my IP address” -> That’ll directly include your IP Address in the ACL.
+
+![Add My IP](./images/ajd-public-ip)
+
+If you’re not sure from where you will want to connect from, you can change the IP notation type field to CIDR block, and enter a value of 0.0.0.0/0. That will allow you to connect from anywhere, but naturally you should only use that for testing.
+
+**Note** Alternatively, to get your public ip address, you can go to whatismyipaddress.com, or run the following command
 
 ```bash
 <copy>
@@ -100,7 +108,7 @@ When setting env variable
 
 ```bash
 <copy>
-export MONGO_API_URL='xxx'
+export SOURCE_MONGO_API_URL='xxx'
 </copy>
 ```
 

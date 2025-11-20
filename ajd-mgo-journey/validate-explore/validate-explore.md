@@ -31,15 +31,16 @@ This lab assumes you have:
 ## Task 1: Repoint the Application to Target Collection
 
 
-1. Set the environment variable to the target collection:
+1. Update the environment variable to point to the target AJD instance:
    
    ```bash
    <copy>
+   export SOURCE_MONGO_API_URL="$TARGET_MONGO_API_URL"
    export COLLECTION_NAME='todos_target'
    </copy>
    ```
 
-   **Note:** For real migrations to a different AJD, you'd also update MONGO\_API\_URL. Here, we switch collections within the same instance.
+   **Note:** This changes the connection from the source to the target AJD instance. For real MongoDB to AJD migrations, typically only the URI changes—no code edits needed, as AJD is compatible. Collections can remain the same or be specified via env for flexibility. If needed, update server.js to use process.env.SOURCE_MONGO_API_URL accordingly.
 
 2. Restart the server:
    ```bash

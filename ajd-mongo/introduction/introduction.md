@@ -27,6 +27,8 @@ By completing this workshop, you will:
 **Architecture Overview:**  
 The app uses Node.js/Express for the backend, connecting to AJD via the MongoDB driver. The frontend is a simple HTML/JS interface.
 
+![Mongo Architecture](./images/mongo-architecture.png)
+
 ---
 
 ### Prerequisites
@@ -53,6 +55,9 @@ This workshop assumes you have:
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

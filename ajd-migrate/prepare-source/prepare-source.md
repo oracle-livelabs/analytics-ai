@@ -1,10 +1,12 @@
-# Lab 2: Prepare Source and Discover Data
+# Lab 2 (Optional): Prepare Source and Discover Data
 
 ## Introduction
 
 In this lab, you'll set up an Oracle Autonomous JSON Database (AJD) instance as your source database (simulating MongoDB), deploy a simple To-Do list application on it, insert sample data via the UI, review the schema and collections in Oracle SQL Web, and use tools to analyze and plan your migration to a target collection in the same AJD instance. This step ensures you understand your data before migrating.
 
 > **Estimated Time:** 20-30 minutes
+
+**Note:** If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
 
 **Note:** If you're using Cline (from Lab 1), it can help generate code snippets or troubleshoot setup issues.
 
@@ -52,7 +54,13 @@ This lab assumes you have:
 
 ![Access ACL](./images/ajd-acl.png)
 
-**Note** To get your public ip address, you can go to whatismyipaddress.com, or run the following command
+Switch on “Add my IP address” -> That’ll directly include your IP Address in the ACL.
+
+![Add My IP](./images/ajd-public-ip)
+
+If you’re not sure from where you will want to connect from, you can change the IP notation type field to CIDR block, and enter a value of 0.0.0.0/0. That will allow you to connect from anywhere, but naturally you should only use that for testing.
+
+**Note** Alternatively, to get your public ip address, you can go to whatismyipaddress.com, or run the following command
 
 ```bash
 <copy>
@@ -107,7 +115,7 @@ mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSour
 When setting env variable
 
 ```bash
-export MONGO_API_URL='xxx'
+export SOURCE_MONGO_API_URL='xxx'
 ```
 
 Replace placeholders with your details. URL-encode special characters in the password, e.g., '@' as %40, '#' as %23, '/' as %2F, and ':' as %3A. For example, if your password is 'pass@word#1', encode it as 'pass%40word%231'. Always use single quotes around the full string when exporting as an environment variable to avoid shell interpretation.
@@ -146,7 +154,7 @@ Replace placeholders with your details. URL-encode special characters in the pas
 
    const app = express();
    const PORT = process.env.PORT || 3000;
-   const MONGO_API_URL = process.env.MONGO_API_URL || 'your-ajd-uri'; // Update with your AJD URI
+   const MONGO_API_URL = process.env.SOURCE_MONGO_API_URL || 'your-ajd-uri'; // Update with your AJD URI
    const COLLECTION_NAME = process.env.COLLECTION_NAME || 'todos_source';
 
    app.use(express.json());

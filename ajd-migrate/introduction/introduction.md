@@ -30,6 +30,8 @@ By completing this workshop, you will:
 **Architecture Overview:**  
 The workshop starts with a "MongoDB" source database running a To-Do app. You'll build a CLI to migrate data to AJD, then repoint the app to AJD's MongoDB API endpoint.
 
+![Mongo Migration Architecture](./images/mongo-migration-architecture.png)
+
 ---
 
 ### Prerequisites
@@ -69,6 +71,7 @@ This workshop assumes you have:
 
 **Contributors**
 * **Cline**, AI Assistant
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025
