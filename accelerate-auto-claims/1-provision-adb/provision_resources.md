@@ -53,9 +53,9 @@ This task involves creating Autonomous Database 23ai.
 
 1. Download the 2 following zip files and unzip to separate local folders
 
-https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip
+    a. [data.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip)
 
-https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip
+    b. [telematics.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip)
 
 2. Navigate to Object Buckets via Storage.
 
@@ -75,7 +75,7 @@ https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdc
 
 6. Name the folder telematics and click the create folder button.
 
-7. Repeat step 4 and name the folder data.
+7. Repeat step 5 and name the folder data.
 
 8. Open the telematics folder, click the upload objects button and select all the .parquet files from the telematics.zip file. Click the next button and then the Upload.
 
