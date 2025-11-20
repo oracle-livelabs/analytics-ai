@@ -102,6 +102,16 @@ mongodb://<user>:<password>@<hostname>:27017/<user>?authMechanism=PLAIN&authSour
 </copy>
 ```
 
+Before setting the environment variable, verify the connection string by running:
+
+```bash
+<copy>
+mongosh 'YOUR CONNECTION STRING'
+</copy>
+```
+
+Confirm that a successful connection message appears. This ensures the string is correct before proceeding.
+
 When setting env variable
 
 ```bash
@@ -129,6 +139,7 @@ You are now ready to proceed to the next lab to set up the Node.js/Express backe
 
 **Contributors**
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

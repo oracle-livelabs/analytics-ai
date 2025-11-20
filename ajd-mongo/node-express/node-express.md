@@ -48,6 +48,8 @@ npm init -y
 </copy>
 ```
 
+*Note* To install node on your system, the instructions can be found on the [NodeJS Website](https://nodejs.org/en/download)
+
 ## Task 2: Install Dependencies
 
 Install Express and MongoDB driver:
@@ -58,7 +60,6 @@ npm install express mongodb
 </copy>
 ```
 
-*Note* To install node on your system, the instructions can be found on the [NodeJS Website](https://nodejs.org/en/download)
 
 ## Task 3: Create server.js
 
@@ -187,6 +188,9 @@ nvm use 24
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

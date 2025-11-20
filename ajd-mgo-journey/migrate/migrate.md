@@ -130,6 +130,9 @@ This lab assumes you have:
 
 ## Task 3: Run the Migration
 
+When running the migration CLI, users reusing the AJD instance from 
+*Create a MongoDB-Compatible App with Autonomous JSON Database* or *MongoDB Migration – Lift & Shift to Oracle AI Database* Livelabs should ensure the source collection name matches the collection they intend to migrate. If not, the CLI may show a “successful migration” but migrate zero documents. The target collection can be any name since AJD will create it automatically.
+
 1. Execute the CLI with separate source and target URIs:
    ```bash
    <copy>
@@ -171,6 +174,7 @@ You are now ready for Lab 6 to validate and explore.
 
 **Contributors**
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform S&E
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**

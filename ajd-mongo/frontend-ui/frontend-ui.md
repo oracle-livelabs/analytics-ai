@@ -139,8 +139,8 @@ Inside `public`, create `index.html` with the following content:
 
 1. In Oracle Database Actions (SQL Web from AJD console):
    - Log in to AJD as database user, e.g. **MONGO_USER**.
-   - Run: SELECT * FROM todos;
-   - Note the schema (e.g., DATA column with JSON: _id, text, completed).
+   - Run: SELECT json_serialize(data) FROM todos;
+   - Note the schema (e.g., DATA column with JSON: _id, text, completed). If SELECT * FROM todos; doesn’t produce the expected output, use this alternative instead.
 
    ![AJD Tasks](./images/ajd-entries.png)
 
@@ -164,6 +164,9 @@ This helps verify backend before UI.
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025
