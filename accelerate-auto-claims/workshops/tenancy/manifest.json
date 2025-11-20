@@ -13,8 +13,8 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision Autonomous AI Database ",
-            "filename": "../../1-provision-adb/provision_resources.md"
+            "title": "Lab 1: Provision Resources",
+            "filename": "../../1-provision-resources/provision_resources.md"
         },
         {
             "title": "Lab 2: Apply Database Operations",
