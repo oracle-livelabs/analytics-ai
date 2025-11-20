@@ -72,6 +72,7 @@ This workshop assumes you have:
 **Contributors**
 * **Cline**, AI Assistant
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025
