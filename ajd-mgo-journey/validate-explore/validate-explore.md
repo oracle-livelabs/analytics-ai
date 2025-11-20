@@ -40,7 +40,7 @@ This lab assumes you have:
    </copy>
    ```
 
-   **Note:** This changes the connection from the source to the target AJD instance. For real MongoDB to AJD migrations, typically only the URI changes—no code edits needed, as AJD is compatible. Collections can remain the same or be specified via env for flexibility. If needed, update server.js to use process.env.SOURCE_MONGO_API_URL accordingly.
+   **Note:** This changes the connection from the source to the target AJD instance. For real MongoDB to AJD migrations, typically only the URI changes—no code edits needed, as AJD is compatible. Collections can remain the same or be specified via env for flexibility. If needed, update server.js to use process.env.SOURCE\_MONGO\_API\_URL accordingly.
 
 2. Restart the server:
    ```bash

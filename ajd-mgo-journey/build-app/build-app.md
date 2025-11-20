@@ -138,7 +138,7 @@ app.listen(PORT, async () => {
 
 ## Task 4: Configure Environment
 
-Set the env variable **SOURCE_MONGO_API_URL**:
+Set the env variable **SOURCE\_MONGO\_API\_URL**:
 
 ```bash
 <copy>

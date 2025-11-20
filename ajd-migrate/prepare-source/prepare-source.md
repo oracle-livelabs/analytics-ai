@@ -1,4 +1,4 @@
-# Lab 2 (Optional): Prepare Source and Discover Data
+# Lab 2: Prepare Source and Discover Data
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In this lab, you'll set up an Oracle Autonomous JSON Database (AJD) instance as 
 
 > **Estimated Time:** 20-30 minutes
 
-**Note:** If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
+**Note:** This lab is optional. If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
 
 **Note:** If you're using Cline (from Lab 1), it can help generate code snippets or troubleshoot setup issues.
 
@@ -346,6 +346,7 @@ You are now ready for Lab 3 to migrate within AJD.
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**

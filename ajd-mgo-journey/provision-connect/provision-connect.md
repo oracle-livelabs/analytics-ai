@@ -1,4 +1,4 @@
-# Lab 2 (Optional): Provision and Connect to AJD
+# Lab 2: Provision and Connect to AJD
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In this lab, you'll provision an Oracle Autonomous JSON Database (AJD) instance 
 
 > **Estimated Time:** 15 minutes
 
-**Note:** If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
+**Note:** This lab is optional. If you have an existing MongoDB instance, you can skip this entire lab and proceed to Lab 3, as the subsequent tasks depend on the provisioned instance.
 
 **Note:** Cline can help automate provisioning scripts or troubleshoot connection issues—let me know if you need assistance!
 
@@ -128,6 +128,10 @@ You are now ready for Lab 3 to build the To-Do app.
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
+
+**Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
+* **Cline AI** 
 
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

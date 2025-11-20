@@ -127,5 +127,8 @@ You are now ready to proceed to the next lab to set up the Node.js/Express backe
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
+**Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
+
 **Last Updated By/Date:**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E, November 2025

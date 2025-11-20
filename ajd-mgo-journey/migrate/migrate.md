@@ -35,7 +35,7 @@ This lab assumes you have:
 
    **Note:** This keeps source and target separate to demonstrate the migration architecture clearly. Use your existing MongoDB or the Source-AJD from Lab 2 as the source.
 
-2. Ensure you have the source connection string ready (from Lab 2 as $SOURCE_MONGO_API_URL) and provision a new one for the target as $TARGET_MONGO_API_URL.
+2. Ensure you have the source connection string ready (from Lab 2 as $SOURCE\_MONGO\_API\_URL) and provision a new one for the target as $TARGET\_MONGO\_API\_URL.
 
 **Note:** You can terminate both AJD instances after completing the LiveLab to avoid ongoing costs.
 
@@ -170,6 +170,7 @@ You are now ready for Lab 6 to validate and explore.
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform S&E
 
 **Contributors**
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform S&E
 * **Cline**, AI Assistant
 
 **Last Updated By/Date:**
