@@ -22,11 +22,7 @@ This lab assumes you have:
 * An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
  
 
-## Task 1: Create new Cloud Store Location
-
-## Task 2: Load Object Storage data into Autonomous Database via Cloud Store
- 
-## Task 3: Apply PL/SQL to prep data for visualization  
+## Task 1: Apply PL/SQL to prepare for data load
 
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
@@ -34,35 +30,95 @@ This lab assumes you have:
 
    ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
 
-
 2. Login as the ADMIN user for your Autonomous Database instance.
 
     ![Log in to your Autonomous Database instance](./images/sign-in-admin.png "Log in to your Autonomous Database instance")
 
-3. Click the **DATABASE USERS** tile under **Administration**.
+3. Open SQL Developer
 
-   ![Click the Database Actions tile](./images/db-actions-users.png "Click the Database Actions tile")
+    ![Open SQL Developer](./images/open_sql_developer.png)
 
-4. Click the **+ Create User** icon.
+4. Apply PL/SQL to enable Resource Principal, Create FSIDEMO schema and grant necessary roles.
 
-    ![Click Create User](./images/db-actions-create-user.png "Click Create User ")
+copy below
 
-5. Enter the required details, i.e. user name and password. Turn on the **Graph Enable** and **Web Access** radio buttons. And select a quota, e.g. **UNLIMITED**,  to allocate on the `DATA` tablespace.   
+    ```text
+        <copy>
+ BEGIN
+ DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL(); 
+END;
+/
 
-    >**Note:** The password should meet the following requirements:
+CREATE USER FSIDEMO IDENTIFIED BY "WElcome#-12345";
 
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    - The password cannot contain the username.
-    - The password cannot contain the double quote (“) character.
-    - The password must be different from the last 4 passwords used for this user.
-    - The password must not be the same password that is set less than 24 hours ago.
+-- USER SQL
 
-    ![Set Graph username and password, and select Create User](images/db-actions-create-graph-user.png "Set Graph username and password, and select Create User ")
+-- ADD ROLES
+GRANT AUDIT_ADMIN TO FSIDEMO;
+GRANT AQ_ADMINISTRATOR_ROLE TO FSIDEMO;
+GRANT DV_OWNER TO FSIDEMO;
+GRANT RESOURCE TO FSIDEMO;
+GRANT DGPDB_ROLE TO FSIDEMO;
+GRANT DB_DEVELOPER_ROLE TO FSIDEMO;
+GRANT CONSOLE_MONITOR TO FSIDEMO;
+GRANT CONSOLE_ADMIN TO FSIDEMO;
+GRANT CAPTURE_ADMIN TO FSIDEMO;
+GRANT ACCHK_READ TO FSIDEMO;
+GRANT GATHER_SYSTEM_STATISTICS TO FSIDEMO;
+GRANT CONSOLE_DEVELOPER TO FSIDEMO;
+GRANT DWROLE TO FSIDEMO;
+GRANT CONSOLE_OPERATOR TO FSIDEMO;
+GRANT ADPADMIN TO FSIDEMO;
+GRANT OML_DEVELOPER TO FSIDEMO;
+GRANT GRAPH_DEVELOPER TO FSIDEMO;
+GRANT AQ_USER_ROLE TO FSIDEMO;
+GRANT DATAPUMP_CLOUD_EXP TO FSIDEMO;
+GRANT DATAPUMP_CLOUD_IMP TO FSIDEMO;
+GRANT ADM_PARALLEL_EXECUTE_TASK TO FSIDEMO;
+GRANT APEX_ADMINISTRATOR_READ_ROLE TO FSIDEMO;
+GRANT DV_ACCTMGR TO FSIDEMO;
+GRANT CONNECT TO FSIDEMO;
+GRANT CTXAPP TO FSIDEMO;
+GRANT AUDIT_VIEWER TO FSIDEMO;
+GRANT ADB_MONITOR TO FSIDEMO;
+GRANT APEX_ADMINISTRATOR_ROLE TO FSIDEMO;
+GRANT GRAPH_ADMINISTRATOR TO FSIDEMO;
+GRANT EXECUTE on DBMS_CLOUD to FSIDEMO;
+GRANT EXECUTE on DBMS_CLOUD_AI to FSIDEMO;
+GRANT EXECUTE on DBMS_CLOUD_PIPELINE to FSIDEMO;
+ALTER USER FSIDEMO DEFAULT ROLE CONSOLE_DEVELOPER,DWROLE,OML_DEVELOPER;
 
-    >**Note:** Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user. The ADMIN user has additional privileges by default. 
+-- REST ENABLE
+BEGIN
+    ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'FSIDEMO',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'fsidemo',
+        p_auto_rest_auth=> TRUE
+    );
+    -- ENABLE DATA SHARING
+    C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
+            SCHEMA_NAME => 'FSIDEMO',
+            ENABLED => TRUE
+    );
+ 
+ DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL('FSIDEMO'); 
+    commit;
+END;
+/
 
-    Click the **Create User** button at the bottom of the panel to create the user with the specified credentials.
+-- ENABLE OML
+ALTER USER FSIDEMO GRANT CONNECT THROUGH OML$PROXY;
 
-    The newly created user will now be listed.
+-- QUOTA
+ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
+        </copy>
+    ```  
 
-    ![The newly created user will be listed](./images/db-actions-user-created.png "The newly created user will be listed ")   
+## Task 2: Create new Cloud Store Location
+
+## Task 3: Load Object Storage data into Autonomous Database via Cloud Store
+ 
+## Task 4: Apply PL/SQL to prep data for visualization  
+
