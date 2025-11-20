@@ -11,18 +11,21 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * Import OAC Workbooks
-* Update Datasets
+* Update Dataset Connection
+* Update Dataset's
 
 ### Prerequisites
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to manage Oracle Analytics Cloud
+* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
  
 
-## Task 1: Import OAC Workbooks
+## Task 1: Create Object Storage Bucket
 
-## Task 2: Refresh datasets
+## Task 2: Create external table for parquet files
 
-## Task 3: Edit
+## Task 3: Create new Cloud Store Location
+
+## Task 4: Load Object Storage data into Autonomous Database via Cloud Store
  

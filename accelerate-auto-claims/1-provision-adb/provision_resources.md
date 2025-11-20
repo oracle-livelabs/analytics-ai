@@ -11,15 +11,16 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * Provision an Autonomous Database
-* Create API Key in OCI
+* Create IAM groups and policies
 * Create Autonomous Database user/schema to hold sample autoclaims data
+
  
 
 ### Prerequisites
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
+* An Oracle Cloud account with privileges to manage tenancy Identity Access Management and provision Autonomous Database
  
 
 ## Task 1: Create Autonomous Database
@@ -48,68 +49,64 @@ This task involves creating Autonomous Database 23ai.
 
     ![Create ADB Done](images/create_adb_complete.png)
 
-## Task 2: Create API Key in OCI
+## Task 2: Create Dynamic Group for Autonomous AI Database
 
-This task involves creating and API Key in OCI, the key will be needed in creating an AI profile for the data generation.
+This task involves creating a dynamic group for autonomous database resources, it will be used later to allow for Object Storage access from the autonomous database
 
-1. Login the OCI Console, click the person icon on the top right and then click your username.
+1. Navigate to your current domain console view (or domain of your choice) via Identity and Security
 
-    ![Open OCI Profile](images/oci_profile.png)
+    ![Navigate To Domains](images/navigate_to_domains.png)
 
-2. Select the Tokens and API keys tab, then click the add API Key button.
+2. Select Dynamic Groups tab
 
-    ![Add API Key](images/oci_add_api_key.png)
+3. Click the Create dynamic group button
 
-3. Select the generate API Key Pair and click the add button. Make sure to download the private key.
+    ![Select Dynamic Groups](images/navigate_to_dynamic_groups.png)
 
-    ![Generate API Key](images/oci_add_api_key_generate.png)
+4. Type in a Name and Description
 
-4. Make note of the API configurations, it will be needed later.
+5. Select Match Any rules defined below and use the example to create a dynamic group for autonomous ai database resources in a specific compartment. Make sure to fill in value for compartment ID, use id of compartment where autonomous ai database was created
+    Paste the following:
 
-    ![View API Key](images/add_api_key_config_view.png)
+    ```text
+        <copy>
+            all {resource.type = 'autonomousdatabase', resource.compartment.id = '<COMPARTMENT ID HERE>'}
+        </copy>
+    ```
+
+    ![Create Dynamic Groups](images/create_dynamic_group.png)
+
+6. Click the Create button.
 
 
-## Task 3: Create the Graph User
+## Task 3: Create Identity and Access Management Policy for Dynamic Group
 
+This task involves creating an IAM policy to allow autonomous database resources to use resource principal authentication for interacting with Object Storage resources of specified compartment.
 
-1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+1. Navigate to policies via Identity and Security, select the root compartment.
 
-   Then click on **Database Actions** and select **View all database actions**. 
+    ![Navigate To Policies](images/navigate_to_policies.png)
 
-   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+2. Click the Create policy button.
 
+    ![Click Create Policy](images/navigate_to_policies.png)
 
-2. Login as the ADMIN user for your Autonomous Database instance.
+3. Type in a Name and Description.
 
-    ![Log in to your Autonomous Database instance](./images/sign-in-admin.png "Log in to your Autonomous Database instance")
+    Make sure to fill in values for Domain, Dynamic Group and compartment name
+    Paste the following:
 
-3. Click the **DATABASE USERS** tile under **Administration**.
+        ```text
+            <copy>
+                Allow dynamic-group '<DOMAIN HERE>'/'<>' to manage buckets in compartment <>
+                Allow dynamic-group '<DOMAIN HERE>'/'<>' to manage objects in compartment <>
+            </copy>
+        ```
 
-   ![Click the Database Actions tile](./images/db-actions-users.png "Click the Database Actions tile")
+    ![Select Dynamic Groups](images/create_policy.png)
 
-4. Click the **+ Create User** icon.
+4. Click the Create button.
 
-    ![Click Create User](./images/db-actions-create-user.png "Click Create User ")
-
-5. Enter the required details, i.e. user name and password. Turn on the **Graph Enable** and **Web Access** radio buttons. And select a quota, e.g. **UNLIMITED**,  to allocate on the `DATA` tablespace.   
-
-    >**Note:** The password should meet the following requirements:
-
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    - The password cannot contain the username.
-    - The password cannot contain the double quote (“) character.
-    - The password must be different from the last 4 passwords used for this user.
-    - The password must not be the same password that is set less than 24 hours ago.
-
-    ![Set Graph username and password, and select Create User](images/db-actions-create-graph-user.png "Set Graph username and password, and select Create User ")
-
-    >**Note:** Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user. The ADMIN user has additional privileges by default. 
-
-    Click the **Create User** button at the bottom of the panel to create the user with the specified credentials.
-
-    The newly created user will now be listed.
-
-    ![The newly created user will be listed](./images/db-actions-user-created.png "The newly created user will be listed ")   
 
 
 
@@ -122,4 +119,4 @@ This task involves creating and API Key in OCI, the key will be needed in creati
     * **Kaan Burduroglu**, Distinguished Cloud Architect, Oracle North America
 
 * **Last Updated By/Date**
-    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, May 2025
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, Nov 2025
