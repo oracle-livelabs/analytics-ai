@@ -49,7 +49,46 @@ This task involves creating Autonomous Database 23ai.
 
     ![Create ADB Done](images/create_adb_complete.png)
 
-## Task 2: Create Dynamic Group for Autonomous AI Database
+## Task 2: Create Object Storage Bucket and upload data for staging
+
+1. Download the 2 following zip files and unzip to separate local folders
+
+https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip
+
+https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip
+
+2. Navigate to Object Buckets via Storage.
+
+    ![Navigate to Object Storage](images/navigate_to_object_storage.png)
+
+3. Select appropriate compartment click Create bucket button.
+
+    ![Create Object Storage Buckt](images/create_bucket.png)
+
+4. Provide bucket name (or use default) and click Create bucket button.
+
+    ![Name Object Storage Bucket](images/name_create_bucket.png)
+
+5. Open the bucket, select the Objects tab, select the actions drop down and create new folder.
+
+    ![Create folder in Bucket](images/folder_name_create_folder.png)
+
+6. Name the folder telematics and click the create folder button.
+
+7. Repeat step 4 and name the folder data.
+
+8. Open the telematics folder, click the upload objects button and select all the .parquet files from the telematics.zip file. Click the next button and then the Upload.
+
+    ![Select Objects to upload](images/select_objects_to_upload.png)
+
+    ![Upload Objects to bucket](images/upload_objects_to_object_storage.png)
+
+9. Repeat step 8 but use the data folder and select all the .csv files from the data.zip file.
+ 
+
+
+
+## Task 3: Create Dynamic Group for Autonomous AI Database
 
 This task involves creating a dynamic group for autonomous database resources, it will be used later to allow for Object Storage access from the autonomous database
 
@@ -57,15 +96,13 @@ This task involves creating a dynamic group for autonomous database resources, i
 
     ![Navigate To Domains](images/navigate_to_domains.png)
 
-2. Select Dynamic Groups tab
-
-3. Click the Create dynamic group button
+2. Select Dynamic Groups tab and click the Create dynamic group button
 
     ![Select Dynamic Groups](images/navigate_to_dynamic_groups.png)
 
-4. Type in a Name and Description
+3. Type in a Name and Description
 
-5. Select Match Any rules defined below and use the example to create a dynamic group for autonomous ai database resources in a specific compartment. Make sure to fill in value for compartment ID, use id of compartment where autonomous ai database was created
+4. Select Match Any rules defined below and use the example to create a dynamic group for autonomous ai database resources in a specific compartment. Make sure to fill in value for compartment ID, use id of compartment where autonomous ai database was created
     Paste the following:
 
     ```text
@@ -79,33 +116,30 @@ This task involves creating a dynamic group for autonomous database resources, i
 6. Click the Create button.
 
 
-## Task 3: Create Identity and Access Management Policy for Dynamic Group
+## Task 4: Create Identity and Access Management Policy for Dynamic Group
 
 This task involves creating an IAM policy to allow autonomous database resources to use resource principal authentication for interacting with Object Storage resources of specified compartment.
 
-1. Navigate to policies via Identity and Security, select the root compartment.
+1. Navigate to policies via Identity and Security, select the root compartment and click the Create policy button.
+
 
     ![Navigate To Policies](images/navigate_to_policies.png)
 
-2. Click the Create policy button.
-
-    ![Click Create Policy](images/navigate_to_policies.png)
-
-3. Type in a Name and Description.
+2. Type in a Name, Description, click the Show manual editor button and look below to create a policy for autonomous database resources
 
     Make sure to fill in values for Domain, Dynamic Group and compartment name
     Paste the following:
 
-        ```text
-            <copy>
-                Allow dynamic-group '<DOMAIN HERE>'/'<>' to manage buckets in compartment <>
-                Allow dynamic-group '<DOMAIN HERE>'/'<>' to manage objects in compartment <>
-            </copy>
-        ```
+    ```text
+        <copy>
+            Allow dynamic-group '<DOMAIN HERE>'/'<DYNAMIC GROUP HERE>' to manage buckets in compartment <COMPARTMENT NAME HERE>
+            Allow dynamic-group '<DOMAIN HERE>'/'<DYNAMIC GROUP HERE>' to manage objects in compartment <COMPARTMENT NAME HERE>
+        </copy>
+    ```
 
     ![Select Dynamic Groups](images/create_policy.png)
 
-4. Click the Create button.
+3. Click the Create button.
 
 
 

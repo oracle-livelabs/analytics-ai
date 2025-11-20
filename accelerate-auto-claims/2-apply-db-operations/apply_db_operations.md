@@ -22,13 +22,11 @@ This lab assumes you have:
 * An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
  
 
-## Task 1: Create Object Storage Bucket and upload data for staging
+## Task 1: Create new Cloud Store Location
 
-## Task 2: Create new Cloud Store Location
-
-## Task 3: Load Object Storage data into Autonomous Database via Cloud Store
+## Task 2: Load Object Storage data into Autonomous Database via Cloud Store
  
-## Task 4: Apply PL/SQL to prep data for visualization  
+## Task 3: Apply PL/SQL to prep data for visualization  
 
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
