@@ -8,10 +8,6 @@ We will follow the structure of a medallion architecture where the raw data land
 
 Estimated Workshop Time: 4 hours (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
-
 ### Objectives
 
 In this workshop, you will learn how to:
@@ -38,10 +34,9 @@ In general, the Introduction does not have Steps.
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
 * **Last Updated By/Date** - <Name, Month Year>

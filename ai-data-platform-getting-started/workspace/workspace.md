@@ -3,17 +3,14 @@
 ## Introduction
 
 In this Lab we will create a workspace and a compute cluster within that workspace.
-A Workspace is the highest level of grouping tasks and activities, and as such also separating work at high level. Also compute cluster resources a segregated at this level.
+A workspace is the highest level of grouping tasks and activities, and as such also separating work at high level. Also compute cluster resources a segregated at this level.
+
+> **Note:** After the AI Data platform is deployed a default workspace is created with a default compute cluster. These are mandatory to run AI Data Platform and the compute cluster needs to be always on.
+It is a best practice to create a separate workspace(s) and compute cluster(s) for workloads. Later when applying Role Based Access Control this helps to segregate administrator tasks.
 
 Estimated Lab Time: 15 minutes
 
-### About <Product/Technology> (Optional)
-After the AI Data platform is deployed a default workspace is created with a default compute cluster. These are mandatory to run AI Data Platform and the compute cluster needs to be always on.
-It is a best practice to create a separate workspace(s) and compute cluster(s) for workloads. Later when applying Role Based Access Control this helps to segregate admininistrator tasks.
-
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Learn to create a workspace
@@ -22,11 +19,8 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
 * All previous labs successfully completed
-
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -62,12 +56,9 @@ This lab assumes you have:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
 ## Acknowledgements
-* **Author** - Wilbert Poeliejoe
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
 * **Last Updated By/Date** - <Name, Month Year>

@@ -14,8 +14,6 @@ In this lab, you will:
 
 ### Prerequisites 
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
 This lab assumes you have:
 * An Oracle Cloud account
 * The Autonomous AI Lakehouse provisioned already
@@ -74,6 +72,6 @@ Although autosave is enabled, make sure that changes are saved.
 For validation you can query the database tables to check if data has been inserted.
 
 ## Acknowledgements
-* **Author** - Wilbert Poeliejoe
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
 * **Last Updated By/Date** - <Name, Month Year>

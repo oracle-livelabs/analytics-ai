@@ -8,8 +8,6 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 Learn how to provision an AI Data Platform.
 
@@ -25,8 +23,6 @@ The prerequisites as listed in previous lab need to be met before this can be ex
 1. Step 1
 
 	![OCI console](images/Provision-locate-service.png)
-
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
 2. Step 2
 
@@ -51,11 +47,9 @@ The provisioning itself takes some time.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
 ## Acknowledgements
-* **Author** - Wilbert Poeliejoe
+* **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
 * **Last Updated By/Date** - <Name, Month Year>

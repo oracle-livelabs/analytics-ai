@@ -12,9 +12,7 @@ In this lab, you will:
 * Use the notebook functionality of AI Data Platform to process data
 * Use data that is loaded in Bronze schema and process into Silver layer
 
-### Prerequisites 
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
@@ -26,8 +24,8 @@ This lab assumes you have:
 
 1. Step 1
 
-  Open the workspace you created and open the **Bronze-to-silver** folder. In the main pane you open the file starting with name **08_bronze_pitstops.ipynb**. 
-  Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
+  Open the workspace you created and open the **Bronze-to-silver** folder. In the main pane you open the file starting with name **08_bronze_pitstops.ipynb**.
+  > **Note:**Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
   You also can run the notebook for the second time and change the target format to "parquet".
 
   When you have completed the first notebook in the **Bronze-to-silver** folder, you can open and run the other notebooks from that folder to populate the tables.
@@ -35,6 +33,6 @@ This lab assumes you have:
   ![Open notebook file in workspace](images/Workspace-notebooks-view.png)
 
 ## Acknowledgements
-* **Author** - Wilbert Poeliejoe
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
 * **Last Updated By/Date** - <Name, Month Year>

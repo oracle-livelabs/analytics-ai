@@ -13,14 +13,10 @@ It is also very useful to have a compartment structure in place and that you hav
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 check if prerequisistes are met and  if not, take the time to do the needful to meet those prerequisites.
 
 ### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
 This lab assumes you have:
 * An Oracle Cloud account
@@ -41,10 +37,7 @@ Similar message like this may show up and policy creation as per instructions in
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
 ## Acknowledgements
 * **Author** - Wilbert Poeliejoe
