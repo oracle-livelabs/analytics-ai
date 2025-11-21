@@ -51,19 +51,20 @@ This task involves creating Autonomous Database 23ai.
 
 ## Task 2: Create Object Storage Bucket and upload data for staging
 
-1. Download the 2 following zip files and unzip to separate local folders
+1. Download the 2 following zip files and the DVA file. Unzip zip files to separate local folders and store DVA file for later use.
 
     a. [data.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip)
 
     b. [telematics.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip)
 
+    c. [FSI Auto Claims Justin Report.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Justin%20Report.dva)
 2. Navigate to Object Buckets via Storage.
 
     ![Navigate to Object Storage](images/navigate_to_object_storage.png)
 
 3. Select appropriate compartment click Create bucket button.
 
-    ![Create Object Storage Buckt](images/create_bucket.png)
+    ![Create Object Storage Bucket](images/create_bucket.png)
 
 4. Provide bucket name (or use default) and click Create bucket button.
 
