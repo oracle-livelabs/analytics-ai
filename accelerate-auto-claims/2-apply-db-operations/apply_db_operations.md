@@ -42,7 +42,7 @@ This lab assumes you have:
 
 copy below
 
-    ```text
+```text
 <copy>
 BEGIN
 DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL(); 
@@ -112,7 +112,7 @@ ALTER USER FSIDEMO GRANT CONNECT THROUGH OML$PROXY;
 -- QUOTA
 ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 </copy>            
-    ```  
+```  
 
 ## Task 2: Create new Cloud Store Location
 
@@ -182,7 +182,7 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
     ![Open SQL Developer](./images/open_sql_developer.png) 
 
-4. Apply PL/SQL to add parquet files for datasets, make sure to update the file_uri_list to use the object storage url with the telematics folder (ex. https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics)
+4. Apply PL/SQL to add parquet files for datasets, make sure to update the file_uri_list to use the object storage url with the telematics folder (ex. https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics). After pasting and updating plsql, make sure to run the script with no errors.
 
 copy below
 
@@ -208,11 +208,12 @@ copy below
 
 copy below
 
-    ```text
-    <copy>
+```text
+<copy>
     
-    CREATE VIEW FSIDEMO.CLAIMS_MV ( CLAIM_NO, MONTHS_AS_CUSTOMER, NUMBER_OF_WITNESSES, POLICY_NO, SUSPICIOUS_ACTIVITY, CLAIM_DATE, INJURY_CLAIM_AMOUNT, PROPERTY_CLAIM_AMOUNT, TOTAL_CLAIM_AMOUNT, VEHICLE_CLAIM_AMOUNT, COLLISION_VEHICLES_INVOLVED, COLLISION_TYPE, INCIDENT_DATE, INCIDENT_HOUR, INCIDENT_SEVERITY, INCIDENT_TYPE, DRIVER_AGE, DRIVER_INSURED_RELATIONSHIP, DRIVER_LICENSE_ISSUE_DATE, CLAIM_STATUS, CLAIM_CLOSE_DATE, CLAIM_ADJUSTER, CLAIM_DAYS, DELAY_REASON ) AS
-    SELECT clm.CLAIM_NO,
+CREATE VIEW FSIDEMO.CLAIMS_MV ( CLAIM_NO, MONTHS_AS_CUSTOMER, NUMBER_OF_WITNESSES, POLICY_NO, SUSPICIOUS_ACTIVITY, CLAIM_DATE, INJURY_CLAIM_AMOUNT, PROPERTY_CLAIM_AMOUNT, TOTAL_CLAIM_AMOUNT, VEHICLE_CLAIM_AMOUNT, COLLISION_VEHICLES_INVOLVED, COLLISION_TYPE, INCIDENT_DATE, INCIDENT_HOUR, INCIDENT_SEVERITY, INCIDENT_TYPE, DRIVER_AGE, DRIVER_INSURED_RELATIONSHIP, DRIVER_LICENSE_ISSUE_DATE, CLAIM_STATUS, CLAIM_CLOSE_DATE, CLAIM_ADJUSTER, CLAIM_DAYS, DELAY_REASON ) AS
+
+SELECT clm.CLAIM_NO,
         clm.MONTHS_AS_CUSTOMER, 
         clm.NUMBER_OF_WITNESSES, 
         clm.POLICY_NO, 
@@ -244,8 +245,8 @@ copy below
     WHERE clm.claim_no = cs.claim_no AND
     clm.CLAIM_NO = dly.CLAIM_NO 
     ;
-    /
-    </copy>
-    ```  
+/
+</copy>
+```  
 
 ![Create Claims MV view](./images/create_claims_mv_view.png) 
