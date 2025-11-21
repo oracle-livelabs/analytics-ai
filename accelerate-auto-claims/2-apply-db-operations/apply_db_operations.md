@@ -116,7 +116,120 @@ copy below
 
 ## Task 2: Create new Cloud Store Location
 
+1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+
+   Then click on **Database Actions** and select **View all database actions**. 
+
+   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+
+2. Login as the FSIDEMO user for your Autonomous Database instance.
+
+    ![Log in to your Autonomous Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous Database instance")
+
+3. Open Data Load 
+
+    ![Open Data Load](./images/open_data_load.png) 
+
+4. Expand Data Load, select Connections, click the Create drop down and select New Cloud Store Location
+
+    ![New Cloud Store Location](./images/create_new_cloud_store_location.png) 
+
+5. Fill in a name, description, select the OCI$RESOURCE_PRINCIPAL as credential and type in the bucket URI from the bucket created in previous labs (follow tooltip and example).
+
+    ![Cloud Store Name Bucket](./images/cloud_store_name_bucket.png) 
+
+6. Click Next to make sure bucket contents are correct and/or Create to finish creating cloud store location
+
 ## Task 3: Load Object Storage data into Autonomous Database via Cloud Store
  
-## Task 4: Apply PL/SQL to prep data for visualization  
+1. Select Load Data under the Data Load expansion, then select Cloud Store
 
+2. Select the cloud store created in previous task as Cloud Store Location
+
+3. Expand the data folder in the bottom left panel, it should contain all the csv files uploaded in the previous lab
+
+4. Select each csv file and drag all into the data load 
+
+5. If necessary, review settings for each table, settings should be correct automatically
+
+6. Click the start button to run the Data Load, wait for each of the eight jobs to complete (should be about 2 mins)
+
+## Task 4: Apply final PL/SQL to prep data for visualization  
+
+1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+
+   Then click on **Database Actions** and select **View all database actions**. 
+
+   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+
+2. Login as the FSIDEMO user for your Autonomous Database instance.
+
+    ![Log in to your Autonomous Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous Database instance")
+
+3. Open SQL Developer
+
+    ![Open Data Load](./images/open_sql_developer.png) 
+
+4. Apply PL/SQL to add parquet files for datasets, make sure to update the file_uri_list to use the object storage url with the telematics folder (ex. https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics)
+
+copy below
+
+    ```text
+        <copy>
+  
+    BEGIN
+        
+    DBMS_CLOUD.CREATE_EXTERNAL_TABLE(
+        table_name =>'auto_telematics',
+        credential_name =>'OCI$RESOURCE_PRINCIPAL',
+        file_uri_list => '<OBJECT STORAGE URL WITH TELEMATICS FOLDER HERE>%2F*.*',
+        format => '{"type":"parquet", "schema": "first"}'
+    );
+    END;
+    /
+        </copy>
+    ```  
+
+5. Clear the worksheet and apply the following the create teh claims_mv view
+
+copy below
+
+    ```text
+        <copy>
+    
+    CREATE VIEW FSIDEMO.CLAIMS_MV ( CLAIM_NO, MONTHS_AS_CUSTOMER, NUMBER_OF_WITNESSES, POLICY_NO, SUSPICIOUS_ACTIVITY, CLAIM_DATE, INJURY_CLAIM_AMOUNT, PROPERTY_CLAIM_AMOUNT, TOTAL_CLAIM_AMOUNT, VEHICLE_CLAIM_AMOUNT, COLLISION_VEHICLES_INVOLVED, COLLISION_TYPE, INCIDENT_DATE, INCIDENT_HOUR, INCIDENT_SEVERITY, INCIDENT_TYPE, DRIVER_AGE, DRIVER_INSURED_RELATIONSHIP, DRIVER_LICENSE_ISSUE_DATE, CLAIM_STATUS, CLAIM_CLOSE_DATE, CLAIM_ADJUSTER, CLAIM_DAYS, DELAY_REASON ) AS
+    SELECT clm.CLAIM_NO,
+        clm.MONTHS_AS_CUSTOMER, 
+        clm.NUMBER_OF_WITNESSES, 
+        clm.POLICY_NO, 
+        cast(clm.SUSPICIOUS_ACTIVITY as varchar(5)) as SUSPICIOUS_ACTIVITY,
+        clm.CLAIM_DATE,
+        json_value(clm.CLAIM_AMOUNT, '$.injury') as injury_claim_amount,
+        json_value(clm.CLAIM_AMOUNT, '$.property') as property_claim_amount,
+        json_value(clm.CLAIM_AMOUNT, '$.total') as total_claim_amount,
+        json_value(clm.CLAIM_AMOUNT, '$.vehicle') as vehicle_claim_amount,
+        json_value(clm.COLLISION, '$.number_of_vehicles_involved') as collision_vehicles_involved,
+        json_value(clm.COLLISION, '$.type') as collision_type,
+        json_value(clm.INCIDENT, '$.date') as incident_date, 
+        json_value(clm.INCIDENT, '$.hour') as incident_hour, 
+        json_value(clm.INCIDENT, '$.severity') as incident_severity, 
+        json_value(clm.INCIDENT, '$.type') as incident_type,
+        json_value(clm.DRIVER, '$.age') as driver_age, 
+        json_value(clm.DRIVER, '$.insured_relationship') as driver_insured_relationship, 
+        json_value(clm.DRIVER, '$.license_issue_date') as driver_license_issue_date,
+    Cs.claim_status,
+    Cs.claim_close_date,
+    Cs.claim_adjuster,
+    CASE WHEN cs.claim_close_date is NULL THEN (CURRENT_DATE - clm.CLAIM_DATE) 
+    WHEN cs.claim_close_date is NOT NULL THEN (cs.CLAIM_CLOSE_DATE - clm.CLAIM_DATE) 
+    ELSE (CURRENT_DATE - CURRENT_DATE)
+    END
+    AS claim_days,
+    dly.DELAY_REASON
+    FROM claims clm, claim_status cs, CLAIMS_DELAY dly
+    WHERE clm.claim_no = cs.claim_no AND
+    clm.CLAIM_NO = dly.CLAIM_NO 
+    ;
+        /
+        </copy>
+    ```  
