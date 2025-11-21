@@ -22,4 +22,16 @@ This lab assumes you have:
 
 ## Task 2: View Insights 
 
+1. demo  
+    ![insights](./images/insights.png)
+
+2. pie
+    ![insights](./images/insights_pie.png)
+     
+3. index 
+ ![insights](./images/insights_index.png)
+
+4. butterfly 
+    ![insights](./images/insights_butterfly.png)
+
 ## Task 3: Use Assistant to as questions about Report
