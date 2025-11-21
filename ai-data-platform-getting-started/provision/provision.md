@@ -20,11 +20,11 @@ The prerequisites as listed in previous lab need to be met before this can be ex
 
 ## Task 1: Locate in OCI console where AI Data Platform is located and select the compartment as defined in the prerequisites
 
-1. Step 1
+1. Step 1 Find AI Data platform in OCI console
 
 	![OCI console](images/Provision-locate-service.png)
 
-2. Step 2
+2. Step 2 Provision AI Data Platform
 
   ![AI Data Platform page](images/Provision-deploy-start.png)
 
@@ -41,7 +41,8 @@ The prerequisites as listed in previous lab need to be met before this can be ex
     5. Again the Policies check is taking place and here you have the option to add policies when you have the right permissions.
     6. Click the **Create** button. 
     7. Once the status of the provisioning becomes **Active** you can open AI Data Platform
-          ![AI Data Platform open screen](images/Open_AIDP.png)
+
+![AI Data Platform open screen](images/Open-AIDP.png)
 
 The provisioning itself takes some time.
 

@@ -46,12 +46,12 @@ This lab assumes you have:
 
   When filled the form for the first task in the middle click **Add Task** to add next tasks.
 
-  In the workflow pane it the runs can be monitored
+  In the workflow pane the runs can be monitored
 
 ![Image alt text](images/workflow-overview.png)
 
-  Repeat same for all notebook sin the phase.
-  For File to Bronze and Bronze to Silver, all tasks can run in parallel. 
+  Repeat same for all notebooks in this phase.
+  For **File to Bronze** and **Bronze to Silver**, all tasks can run in parallel.
   At **Depends on** no dependency to be entered.
 
   For the Silver to Gold it is important to run the tasks sequentially in following order.

@@ -17,7 +17,7 @@ In this lab, you will:
 * Learn to create a compute cluster inside a workspace
 
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * All previous labs successfully completed
@@ -26,7 +26,7 @@ This lab assumes you have:
 
 ## Task 1: Creation of a workspace
 
-1. Step 1
+1. Step 1 create workspace
    Create your workspace. The initial step is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time 
 
 	![Workspace creation ](images/Workspace-create-1.png)

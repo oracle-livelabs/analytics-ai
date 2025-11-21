@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Process data with notebooks into Silver schema in AI Data Platform
 
-1. Step 1
+1. Step 1 Run notebooks to process data
 
   Open the workspace you created and open the **Bronze-to-silver** folder. In the main pane you open the file starting with name **08_bronze_pitstops.ipynb**.
   > **Note:**Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
@@ -31,6 +31,9 @@ This lab assumes you have:
   When you have completed the first notebook in the **Bronze-to-silver** folder, you can open and run the other notebooks from that folder to populate the tables.
 
   ![Open notebook file in workspace](images/Workspace-notebooks-view.png)
+
+After the notebook runs have completed, the master catalog will look like this:
+  ![results after silver notebooks](images/silver-results.png)
 
 ## Acknowledgements
 * **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
