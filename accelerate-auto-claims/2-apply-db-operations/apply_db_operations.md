@@ -142,7 +142,9 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 ## Task 3: Load Object Storage data into Autonomous Database via Cloud Store
  
-1. Select Load Data under the Data Load expansion, then select Cloud Store
+1. Select Load Data under the Data Load expansion, then select Cloud Store   
+
+ ![Navigate to cloud store data load](./images/navigate_to_cloud_store_data_load.png) 
 
 2. Select the cloud store created in previous task as Cloud Store Location
 
@@ -150,9 +152,19 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 4. Select each csv file and drag all into the data load 
 
+ ![Select csv data load](./images/select_csv_data_load.png) 
+
+ ![Automated job settings](./images/automated_job_settings.png) 
+
 5. If necessary, review settings for each table, settings should be correct automatically
 
+ ![Review job settings](./images/review_job_settings.png) 
+
+ ![Review job settings Detail](./images/review_job_settings_detail.png) 
+
 6. Click the start button to run the Data Load, wait for each of the eight jobs to complete (should be about 2 mins)
+
+
 
 ## Task 4: Apply final PL/SQL to prep data for visualization  
 
@@ -168,13 +180,13 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 3. Open SQL Developer
 
-    ![Open Data Load](./images/open_sql_developer.png) 
+    ![Open SQL Developer](./images/open_sql_developer.png) 
 
 4. Apply PL/SQL to add parquet files for datasets, make sure to update the file_uri_list to use the object storage url with the telematics folder (ex. https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics)
 
 copy below
 
-    ```text
+```text
 <copy>
   
     BEGIN
@@ -188,9 +200,11 @@ copy below
     END;
     /
 </copy>
-    ```  
+```  
 
-5. Clear the worksheet and apply the following the create teh claims_mv view
+![Create auto telematics table](./images/create_auto_telematics_table.png) 
+
+5. Clear the worksheet and apply the following PL/SQL to create the claims_mv view
 
 copy below
 
@@ -233,3 +247,5 @@ copy below
     /
     </copy>
     ```  
+
+![Create Claims MV view](./images/create_claims_mv_view.png) 
