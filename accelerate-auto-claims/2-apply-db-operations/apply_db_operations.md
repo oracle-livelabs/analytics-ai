@@ -38,7 +38,7 @@ This lab assumes you have:
 
     ![Open SQL Developer](./images/open_sql_developer.png)
 
-4. Apply PL/SQL to enable Resource Principal, Create FSIDEMO schema and grant necessary roles. (Change default password if needed)
+4. Apply PL/SQL to enable Resource Principal, Create FSIDEMO schema and grant necessary roles. Change default password if needed.
 
 copy below
 
@@ -50,8 +50,6 @@ copy below
         /
 
         CREATE USER FSIDEMO IDENTIFIED BY "FInance##54321";
-
-        -- USER SQL
 
         -- ADD ROLES
         GRANT AUDIT_ADMIN TO FSIDEMO;
@@ -91,18 +89,18 @@ copy below
         -- REST ENABLE
         BEGIN
             ORDS_ADMIN.ENABLE_SCHEMA(
-                p_enabled => TRUE,
-                p_schema => 'FSIDEMO',
-                p_url_mapping_type => 'BASE_PATH',
-                p_url_mapping_pattern => 'fsidemo',
-                p_auto_rest_auth=> TRUE
+        p_enabled => TRUE,
+        p_schema => 'FSIDEMO',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'fsidemo',
+        p_auto_rest_auth=> TRUE
             );
             -- ENABLE DATA SHARING
             C##ADP$SERVICE.DBMS_SHARE.ENABLE_SCHEMA(
-                    SCHEMA_NAME => 'FSIDEMO',
-                    ENABLED => TRUE
+            SCHEMA_NAME => 'FSIDEMO',
+            ENABLED => TRUE
             );
-        
+
         DBMS_CLOUD_ADMIN.ENABLE_RESOURCE_PRINCIPAL('FSIDEMO'); 
             commit;
         END;
