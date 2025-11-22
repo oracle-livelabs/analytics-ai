@@ -18,20 +18,55 @@ This lab assumes you have:
 * An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
  
 
-## Task 1: View FSI Auto Claims Report
+## Task 1: Check Auto Claims Predicted to be Approved
 
-## Task 2: View Insights 
+1. From the OAC Instance console, open the Justin Claims report 
 
-1. demo  
-    ![insights](./images/insights.png)
+![open report](./images/open_justin_report.png)
 
-2. pie
-    ![insights](./images/insights_pie.png)
-     
-3. index 
- ![insights](./images/insights_index.png)
+2. Select the Open in the Claims Status dropdown Filter and Yes in the Prediction in the drop down filter
 
-4. butterfly 
-    ![insights](./images/insights_butterfly.png)
+![open claims predicted yes](./images/open_claim_yes.png)
 
-## Task 3: Use Assistant to as questions about Report
+## Task 2: View Insights
+
+1. Open Justin Claims Report 
+
+![open report](./images/open_justin_report.png)
+
+2. Click the Edit Report button
+
+![edit report](./images/edit_report.png)
+
+3. Click the Auto Insights button
+
+  ![open auto insights](./images/open_auto_insights.png)
+
+4. Select the insights tab to view and/or add insights 
+
+  ![insights](./images/insights.png)
+
+
+## Task 3: Use Assistant to ask questions about Report
+
+1. Open Justin Claims Report 
+
+![open report](./images/open_justin_report.png)
+
+2. Click the Edit Report button
+
+![edit report](./images/edit_report.png)
+
+3. Click the Auto Insights button
+
+  ![open auto insights](./images/open_auto_insights.png)
+
+4. Select the Assistant tab and type the following question:
+
+![oac assistant](./images/oac_assistant.png)
+
+```text
+<copy>
+what is the average closure days for claims in year 2025 broken down by rpoduct in descending order?
+</copy>
+```
