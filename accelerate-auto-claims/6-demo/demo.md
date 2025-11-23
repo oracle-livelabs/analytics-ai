@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Task 2: View Insights
 
-1. Open Justin Claims Report 
+1. From the OAC Instance console, open the Justin Claims report 
 
 ![open report](./images/open_justin_report.png)
 
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 ## Task 3: Use Assistant to ask questions about Report
 
-1. Open Justin Claims Report 
+1. From the OAC Instance console, open the Justin Claims report 
 
 ![open report](./images/open_justin_report.png)
 
