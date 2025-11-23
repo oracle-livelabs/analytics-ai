@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
+This lab will go thru the staging and loading of autoclaims data, the data will be loaded into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the resource principal to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files staged in the object storage bucket.
 
 Estimated Time: 30 minutes
 
@@ -10,7 +10,6 @@ Estimated Time: 30 minutes
 
 
 In this lab, you will:
-* Create an Object Storage Bucket
 * Create Cloud Storage location for Object Storage Bucket
 * Load data from Object Storage bucket into Autonomous AI Database
 * Create an external table for telemetry in parquet format
@@ -19,7 +18,7 @@ In this lab, you will:
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous AI Database and add API keys
+* Completed previous labs sucessfully 
  
 
 ## Task 1: Apply PL/SQL to prepare for data load

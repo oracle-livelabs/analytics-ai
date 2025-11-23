@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
+This lab will bring you thru setting up the Oracle Analytics Cloud Instance with prebuilt workbooks and updating the data connections and datasets.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -17,7 +17,7 @@ In this lab, you will:
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to manage Oracle Analytics Cloud
+* You completed previous labs successfully 
  
 
 ## Task 1: Import OAC Workbooks

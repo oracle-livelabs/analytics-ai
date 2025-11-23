@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru provisioning an Autonomous AI Database, adding API keys in the Oracle Cloud Console and adding a database user for Graph studio. 
+This lab will walk you thru provisioning an Autonomous AI Database, creating an object storage bucket and creating the necessary Identity Access Management groups/policies.
 
 Estimated Time: 30 minutes
 
@@ -11,8 +11,8 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * Provision an Autonomous AI Database
+* Create Object Storage bucket
 * Create IAM groups and policies
-* Create Autonomous AI Database user/schema to hold sample autoclaims data
 
  
 
@@ -20,12 +20,12 @@ In this lab, you will:
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to manage tenancy Identity Access Management and provision Autonomous AI Database
+* An Oracle Cloud account with privileges to manage tenancy Identity Access Management, create object storage buckets and provision an Autonomous AI Database
  
 
 ## Task 1: Create Autonomous AI Database
 
-This task involves creating Autonomous AI Database 23ai.
+This task involves creating Autonomous AI Database.
 
 1. Locate Autonomous AI Databases under Oracle Databases. Click on Create Autonomous AI Database.
 
@@ -36,7 +36,7 @@ This task involves creating Autonomous AI Database 23ai.
     
     ![Create ADB Name](images/create_adb_name_workload.png)
     
-3. Choose database version as 23ai and disable Compute auto scaling.
+3. Choose database version as 26ai and disable Compute auto scaling.
 
     ![Create ADB Deployment](images/create_adb_deployment_type.png)
 

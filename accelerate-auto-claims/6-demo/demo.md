@@ -1,8 +1,8 @@
-# implement OAC Instance
+# Demo of Accelerated Auto Claims
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
+This lab will show clear demonstrations of use cases for the workshop. You will see how to use the workbook to check open claims that were predicted to be approved, create auto insights for workbook and use the assistant to ask questions about the workbook.
 
 Estimated Time: 15 minutes
 
