@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the autonomous database and create an auto table using parquet files in object storage bucket.
+This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
 
 Estimated Time: 30 minutes
 
@@ -48,7 +48,7 @@ This lab assumes you have:
 
     ![Select ADB Wallet](./images/select_adb_wallet.png)
 
-4. Open the wallet file of the autonomous database 
+4. Open the wallet file of the Autonomous AI Database 
 
 5. Input FSIDEMO as Username, the password from Lab 2 and click the Save button
  

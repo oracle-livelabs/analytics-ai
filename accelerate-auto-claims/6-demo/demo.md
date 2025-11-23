@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the autonomous database and create an auto table using parquet files in object storage bucket.
+This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
 
 Estimated Time: 15 minutes
 
@@ -15,10 +15,10 @@ In this lab, you will:
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
+* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous AI Database and add API keys
  
 
-## Task 1: Check Auto Claims Predicted to be Approved
+## Task 1: Check Claims Predicted to be Approved
 
 1. From the OAC Instance console, open the Justin Claims report 
 
@@ -61,7 +61,7 @@ This lab assumes you have:
 
   ![open auto insights](./images/open_auto_insights.png)
 
-4. Select the Assistant tab and type the following question:
+4. Select the Assistant tab and type in the question below:
 
 ![oac assistant](./images/oac_assistant.png)
 

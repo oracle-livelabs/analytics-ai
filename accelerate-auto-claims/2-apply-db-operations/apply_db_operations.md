@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru staging and loading of autoclaims data into the Autonomous Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the autonomous database and create an auto table using parquet files in object storage bucket.
+This lab will walk you thru staging and loading of autoclaims data into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the api key to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files in object storage bucket.
 
 Estimated Time: 30 minutes
 
@@ -12,27 +12,27 @@ Estimated Time: 30 minutes
 In this lab, you will:
 * Create an Object Storage Bucket
 * Create Cloud Storage location for Object Storage Bucket
-* Load data from Object Storage bucket into Autonomous database
+* Load data from Object Storage bucket into Autonomous AI Database
 * Create an external table for telemetry in parquet format
 
 ### Prerequisites
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous Database and add API keys
+* An Oracle Cloud account with privileges to access Generative AI services, provision Autonomous AI Database and add API keys
  
 
 ## Task 1: Apply PL/SQL to prepare for data load
 
-1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+1. Open the service detail page for your Autonomous AI Database instance in the OCI console.  
 
    Then click on **Database Actions** and select **View all database actions**. 
 
-   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+   ![Autonomous AI Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous AI Database home page pointing to the Database Actions button")
 
-2. Login as the ADMIN user for your Autonomous Database instance.
+2. Login as the ADMIN user for your Autonomous AI Database instance.
 
-    ![Log in to your Autonomous Database instance](./images/sign-in-admin.png "Log in to your Autonomous Database instance")
+    ![Log in to your Autonomous AI Database instance](./images/sign-in-admin.png "Log in to your Autonomous AI Database instance")
 
 3. Open SQL Developer
 
@@ -116,15 +116,15 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 ## Task 2: Create new Cloud Store Location
 
-1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+1. Open the service detail page for your Autonomous AI Database instance in the OCI console.  
 
    Then click on **Database Actions** and select **View all database actions**. 
 
-   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+   ![Autonomous AI Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous AI Database home page pointing to the Database Actions button")
 
-2. Login as the FSIDEMO user for your Autonomous Database instance.
+2. Login as the FSIDEMO user for your Autonomous AI Database instance.
 
-    ![Log in to your Autonomous Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous Database instance")
+    ![Log in to your Autonomous AI Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous AI Database instance")
 
 3. Open Data Load 
 
@@ -140,7 +140,7 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 6. Click Next to make sure bucket contents are correct and/or Create to finish creating cloud store location
 
-## Task 3: Load Object Storage data into Autonomous Database via Cloud Store
+## Task 3: Load Object Storage data into Autonomous AI Database via Cloud Store
  
 1. Select Load Data under the Data Load expansion, then select Cloud Store   
 
@@ -168,15 +168,15 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
 ## Task 4: Apply final PL/SQL to prep data for visualization  
 
-1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+1. Open the service detail page for your Autonomous AI Database instance in the OCI console.  
 
    Then click on **Database Actions** and select **View all database actions**. 
 
-   ![Autonomous Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous Database home page pointing to the Database Actions button")
+   ![Autonomous AI Database home page pointing to the Database Actions button](images/click-database-actions-updated.png "Autonomous AI Database home page pointing to the Database Actions button")
 
-2. Login as the FSIDEMO user for your Autonomous Database instance.
+2. Login as the FSIDEMO user for your Autonomous AI Database instance.
 
-    ![Log in to your Autonomous Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous Database instance")
+    ![Log in to your Autonomous AI Database instance](./images/sign-in-fsidemo.png "Log in to your Autonomous AI Database instance")
 
 3. Open SQL Developer
 

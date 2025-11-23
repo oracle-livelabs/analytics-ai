@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you thru provisioning an Autonomous Database, adding API keys in the Oracle Cloud Console and adding a database user for Graph studio. 
+This lab will walk you thru provisioning an Autonomous AI Database, adding API keys in the Oracle Cloud Console and adding a database user for Graph studio. 
 
 Estimated Time: 30 minutes
 
@@ -10,9 +10,9 @@ Estimated Time: 30 minutes
 
 
 In this lab, you will:
-* Provision an Autonomous Database
+* Provision an Autonomous AI Database
 * Create IAM groups and policies
-* Create Autonomous Database user/schema to hold sample autoclaims data
+* Create Autonomous AI Database user/schema to hold sample autoclaims data
 
  
 
@@ -20,14 +20,14 @@ In this lab, you will:
 
  
 This lab assumes you have:
-* An Oracle Cloud account with privileges to manage tenancy Identity Access Management and provision Autonomous Database
+* An Oracle Cloud account with privileges to manage tenancy Identity Access Management and provision Autonomous AI Database
  
 
-## Task 1: Create Autonomous Database
+## Task 1: Create Autonomous AI Database
 
-This task involves creating Autonomous Database 23ai.
+This task involves creating Autonomous AI Database 23ai.
 
-1. Locate Autonomous Databases under Oracle Databases. Click on Create Autonomous Database.
+1. Locate Autonomous AI Databases under Oracle Databases. Click on Create Autonomous AI Database.
 
     ![Create ADB Navigate To](images/create_adb_navigate_to_adb.png)
     ![Create ADB](images/create_adb.png)
@@ -45,7 +45,7 @@ This task involves creating Autonomous Database 23ai.
     ![Create ADB Password](images/create_adb_password_network.png)
     ![Create ADB Email](images/create_adb_contact_email.png)
 
-5. After deployment is complete, check to make sure your autonomous database is available on the autonomous databases page with the specified compartment selected.
+5. After deployment is complete, check to make sure your Autonomous AI Database is available on the Autonomous AI Databases page with the specified compartment selected.
 
     ![Create ADB Done](images/create_adb_complete.png)
 
@@ -91,7 +91,7 @@ This task involves creating Autonomous Database 23ai.
 
 ## Task 3: Create Dynamic Group for Autonomous AI Database
 
-This task involves creating a dynamic group for autonomous database resources, it will be used later to allow for Object Storage access from the autonomous database
+This task involves creating a dynamic group for Autonomous AI Database resources, it will be used later to allow for Object Storage access from the Autonomous AI Database
 
 1. Navigate to your current domain console view (or domain of your choice) via Identity and Security
 
@@ -119,14 +119,14 @@ This task involves creating a dynamic group for autonomous database resources, i
 
 ## Task 4: Create Identity and Access Management Policy for Dynamic Group
 
-This task involves creating an IAM policy to allow autonomous database resources to use resource principal authentication for interacting with Object Storage resources of specified compartment.
+This task involves creating an IAM policy to allow Autonomous AI Database resources to use resource principal authentication for interacting with Object Storage resources of specified compartment.
 
 1. Navigate to policies via Identity and Security, select the root compartment and click the Create policy button.
 
 
     ![Navigate To Policies](images/navigate_to_policies.png)
 
-2. Type in a Name, Description, click the Show manual editor button and look below to create a policy for autonomous database resources
+2. Type in a Name, Description, click the Show manual editor button and look below to create a policy for Autonomous AI Database resources
 
     Make sure to fill in values for Domain, Dynamic Group and compartment name
     Paste the following:
