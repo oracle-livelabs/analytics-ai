@@ -1,7 +1,7 @@
 {
   "workshoptitle": "Getting started with Oracle AI Data Platform Workbench - Data Engineering",
   "help": "livelabs-help-analytics_us@oracle.com",
-   "tutorials": [
+  "tutorials": [
     {
       "title": "Introduction",
       "description": "This workshop is to get you started with Oracle AI Data Platform which allows you to manage your data and AI assets.",
