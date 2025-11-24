@@ -68,3 +68,14 @@ This lab assumes you have:
     ![claims mv preserve grain](./images/claims_mv_preserve_grain.png)
 
 4. Repeat steps 1 and 2 for the Claims Fraud Predict Apply dataset.
+
+## Acknowledgements
+
+* **Author**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America
+
+* **Contributors**
+    * **Kaan Burduroglu**, Distinguished Cloud Architect, Oracle North America
+
+* **Last Updated By/Date**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, Nov 2025

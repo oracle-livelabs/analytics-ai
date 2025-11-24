@@ -86,3 +86,14 @@ This lab assumes you have:
 what is the average closure days for claims in year 2025 broken down by rpoduct in descending order?
 </copy>
 ```
+
+## Acknowledgements
+
+* **Author**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America
+
+* **Contributors**
+    * **Kaan Burduroglu**, Distinguished Cloud Architect, Oracle North America
+
+* **Last Updated By/Date**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, Nov 2025

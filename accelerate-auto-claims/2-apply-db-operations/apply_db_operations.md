@@ -1,4 +1,4 @@
-# apply database operations
+# Apply Database Operations
 
 ## Introduction
 
@@ -249,3 +249,15 @@ SELECT clm.CLAIM_NO,
 ```  
 
 ![Create Claims MV view](./images/create_claims_mv_view.png)
+
+
+## Acknowledgements
+
+* **Author**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America
+
+* **Contributors**
+    * **Kaan Burduroglu**, Distinguished Cloud Architect, Oracle North America
+
+* **Last Updated By/Date**
+    * **Jadd Jennings**, Principal Cloud Architect, Oracle North America, Nov 2025
