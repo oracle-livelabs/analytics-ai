@@ -71,9 +71,9 @@ This task involves creating Autonomous AI Database.
 
     b. [Telematics Files](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip)
 
-    c. [FSI Auto Claims Gail.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Gale.dva)
+    c. [FSI Auto Claims Gail](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Gale.dva)
 
-    d. [FSI Auto Claims Justin Report.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Justin%20Report.dva)
+    d. [FSI Auto Claims Justin Report](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Justin%20Report.dva)
 2. Navigate to Object Buckets via Storage.
 
     ![Navigate to Object Storage](images/navigate_to_object_storage.png)
