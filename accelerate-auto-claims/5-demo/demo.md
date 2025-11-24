@@ -19,9 +19,23 @@ This lab assumes you have:
 * Completed previous labs successfully.
  
 
-## Task 1: Check Claims Predicted to be Approved
+## Task 1: Filter Claims for previous 3 years
 
-1. From the OAC Instance console, open the Justin Claims report.
+1. From the OAC Instance console, open the Gail Claims workbook.
+
+![open gail workbook](./images/open_gail_claim.png)
+
+2. Select the "Claims Date" filter.
+
+![select gail claim date](./images/select_gail_claim_date.png)
+
+3. Filter claims date starting 12/31/2021.
+
+![filter gail claim](./images/filter_gail_claim.png)
+
+## Task 2: Check Claims Predicted to be Approved
+
+1. From the OAC Instance console, open the Justin Claims report workbook.
 
 ![open report](./images/open_justin_report.png)
 
@@ -29,7 +43,7 @@ This lab assumes you have:
 
 ![open claims predicted yes](./images/open_claim_yes.png)
 
-## Task 2: View Insights
+## Task 3: View Insights
 
 1. From the OAC Instance console, open the Justin Claims report.
 
@@ -48,7 +62,7 @@ This lab assumes you have:
   ![insights](./images/insights.png)
 
 
-## Task 3: Use Assistant to Ask Questions About the Report
+## Task 4: Use Assistant to Ask Questions About the Report
 
 1. From the OAC Instance console, open the Justin Claims report.
 
@@ -65,6 +79,7 @@ This lab assumes you have:
 4. Select the Assistant tab and type the question below:
 
 ![oac assistant](./images/oac_assistant.png)
+
 
 ```text
 <copy>

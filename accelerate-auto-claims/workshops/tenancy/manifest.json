@@ -25,16 +25,12 @@
             "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/provision-oac-instance/provision-oac.md"
         },
         {
-            "title": "Lab 4: Connect to ADW",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/connect-to-adw/connect-adw.md"
+            "title": "Lab 4: Implement OAC Instance",
+            "filename": "../../4-implement-oac-instance/implement_oac_instance.md"
         },
         {
-            "title": "Lab 5: Implement OAC Instance",
-            "filename": "../../5-implement-oac-instance/implement_oac_instance.md"
-        },
-        {
-            "title": "Lab 6: Demo",
-            "filename": "../../6-demo/demo.md"
+            "title": "Lab 5: Demo",
+            "filename": "../../5-demo/demo.md"
         },
         {
             "title": "Need Help?",

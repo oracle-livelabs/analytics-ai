@@ -49,15 +49,31 @@ This task involves creating Autonomous AI Database.
 
     ![Create ADB Done](images/create_adb_complete.png)
 
+6. Before going to next lab, download and store a copy of the database wallet for later use. Start by opening the Autonomous AI Database by drilling through the name link.
+
+7. Click the Database connection button.
+  
+    ![Open Database Connection](images/open_database_connection.png)
+
+8. Make sure Instant wallet is selected and click the Download wallet button.
+
+    ![Download Instant Wallet](images/download_instant_wallet.png)
+
+9. Type in a wallet password and click the download button
+
+    ![Wallet Password](images/wallet_password.png)
+
 ## Task 2: Create Object Storage Bucket and upload data for staging
 
-1. Download the 2 following zip files and the DVA file. Unzip zip files to separate local folders and store DVA file for later use.
+1. Download the following zip and DVA files. Unzip zip files to separate local folders and store DVA files for later use.
 
-    a. [data.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip)
+    a. [CSV Files](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/data%2Fdata.zip)
 
-    b. [telematics.zip](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip)
+    b. [Telematics Files](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/telematics%2Ftelematics.zip)
 
-    c. [FSI Auto Claims Justin Report.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Justin%20Report.dva)
+    c. [FSI Auto Claims Gail.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Gale.dva)
+
+    d. [FSI Auto Claims Justin Report.dva](https://idb6enfdcxbl.objectstorage.us-chicago-1.oci.customer-oci.com/n/idb6enfdcxbl/b/accelerate-auto-claims-processing/o/dva%2FFSI%20Auto%20Claims%20Justin%20Report.dva)
 2. Navigate to Object Buckets via Storage.
 
     ![Navigate to Object Storage](images/navigate_to_object_storage.png)
