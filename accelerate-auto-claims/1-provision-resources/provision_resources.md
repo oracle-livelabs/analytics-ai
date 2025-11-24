@@ -59,7 +59,7 @@ This task involves creating Autonomous AI Database.
 
     ![Download Instant Wallet](images/download_instant_wallet.png)
 
-9. Type in a wallet password and click the download button
+9. Type in a wallet password and click the download button.
 
     ![Wallet Password](images/wallet_password.png)
 
@@ -109,15 +109,15 @@ This task involves creating Autonomous AI Database.
 
 This task involves creating a dynamic group for Autonomous AI Database resources, it will be used later to allow for Object Storage access from the Autonomous AI Database
 
-1. Navigate to your current domain console view (or domain of your choice) via Identity and Security
+1. Navigate to your current domain console view (or domain of your choice) via Identity and Security.
 
     ![Navigate To Domains](images/navigate_to_domains.png)
 
-2. Select Dynamic Groups tab and click the Create dynamic group button
+2. Select Dynamic Groups tab and click the Create dynamic group button.
 
     ![Select Dynamic Groups](images/navigate_to_dynamic_groups.png)
 
-3. Type in a Name and Description
+3. Type in a Name and Description.
 
 4. Select Match Any rules defined below and use the example to create a dynamic group for autonomous ai database resources in a specific compartment. Make sure to fill in value for compartment ID, use id of compartment where autonomous ai database was created
     Paste the following:

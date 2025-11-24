@@ -19,7 +19,7 @@ This lab assumes you have:
 * Completed previous labs successfully.
  
 
-## Task 1: Filter Claims for previous 3 years
+## Task 1: Filter Claims for previous three years
 
 1. From the OAC Instance console, open the Gail Claims workbook.
 

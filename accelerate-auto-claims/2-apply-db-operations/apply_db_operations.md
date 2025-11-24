@@ -37,7 +37,7 @@ This lab assumes you have:
 
     ![Open SQL Developer](./images/open_sql_developer.png)
 
-4. Apply PL/SQL to enable the resource principal, create the FSIDEMO schema and grant necessary roles. Change default password if needed, this can be done by replacing the string after IDENTIFIED BY (ex. CREATE USER FSIDEMO IDENTIFIED BY "<My Password>";).
+4. Apply PL/SQL to enable the resource principal, create the FSIDEMO schema and grant necessary roles. Change default password if needed, this can be done by replacing the string after IDENTIFIED BY (ex. CREATE USER FSIDEMO IDENTIFIED BY "My Password";).
 
 copy below
 
