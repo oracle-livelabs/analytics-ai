@@ -1,71 +1,68 @@
-# implement OAC Instance
+# Implement OAC Instance
 
 ## Introduction
 
-This lab will bring you thru setting up the Oracle Analytics Cloud Instance with prebuilt workbooks and updating the data connections and datasets.
+This lab will guide you through setting up the Oracle Analytics Cloud instance with prebuilt workbooks and updating the data connections and datasets.
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
-
 In this lab, you will:
-* Import OAC Workbooks
-* Update Connection and Datasets
+* Import OAC workbooks
+* Update connections and datasets
 
 ### Prerequisites
 
- 
 This lab assumes you have:
-* You completed previous labs successfully 
+* Completed previous labs successfully
  
 
 ## Task 1: Import OAC Workbooks
 
-1. Open the OAC Instance Console
+1. Open the OAC Instance Console.
 
     ![Open OAC Instance Console](./images/navigate_to_oac_instance.png)
 
-2. Select import workbook/flow and open the FSI Auto Claims Justin Report.dva file
+2. Select Import Workbook/Flow and open the FSI Auto Claims Justin Report.dva file.
 
     ![Open OAC Instance Console](./images/import_workbook.png)
 
-3. Make sure Import Permissions (if available) is disabled and click the import button
+3. Make sure Import Permissions (if available) is disabled and click the Import button.
 
     ![Open OAC Instance Console](./images/import_workbook_permissions.png)
 
-## Task 2: Update data connection
+## Task 2: Update Data Connection
 
-1. find the FSIDEMO_ADB data connection via Data
-
-    ![Inspect data connection](./images/inspect_data_connection.png)
-
-2. click the three dot stack on the connection and select inspect
+1. Find the FSIDEMO_ADB data connection via Data.
 
     ![Inspect data connection](./images/inspect_data_connection.png)
 
-3. click the Select... button on the Client Credentials row
+2. Click the three-dot menu on the connection and select Inspect.
+
+    ![Inspect data connection](./images/inspect_data_connection.png)
+
+3. Click the Select... button on the Client Credentials row.
 
     ![Select ADB Wallet](./images/select_adb_wallet.png)
 
-4. Open the wallet file of the Autonomous AI Database 
+4. Open the wallet file for the Autonomous AI Database.
 
-5. Input FSIDEMO as Username, the password from Lab 2 and click the Save button
+5. Enter FSIDEMO as the Username, the password from Lab 2, and click the Save button.
  
 
-## Task 3: Refresh datasets
+## Task 3: Refresh Datasets
 
-1. Open the FSIAutoLeakage dataset
+1. Open the FSIAutoLeakage dataset.
 
     ![Open FSIAutoLeakage](./images/open_fsi_auto_leakage.png)
 
-2. Select each of the tables and refresh the data connection by clicking the try again button.
+2. Select each table and refresh the data connection by clicking the Try Again button.
 
     ![Refresh Connection](./images/refresh_connection.png)
 
-3. Make sure Claims MV has Preserve Grain enabled and save changes.
+3. Ensure that Claims MV has Preserve Grain enabled, and save the changes.
 
-    ![claims mv preserve grain](./images/claims_mv_preserve_grain.png)   
+    ![claims mv preserve grain](./images/claims_mv_preserve_grain.png)
 
-4. Repeat steps 1 and 2 with Claims Fraud Predict Apply dataset.
- 
+4. Repeat steps 1 and 2 for the Claims Fraud Predict Apply dataset.

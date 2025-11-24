@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab will go thru the staging and loading of autoclaims data, the data will be loaded into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the resource principal to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database and create an auto table using parquet files staged in the object storage bucket.
+This lab will guide you through the staging and loading of autoclaims data. The data will be loaded into the Autonomous AI Database created in previous steps. You will stage data in an object storage bucket, use the resource principal to create a cloud store for the object storage bucket, load data from the bucket into the Autonomous AI Database, and create an external table using Parquet files staged in the object storage bucket.
 
-Estimated Time: 30 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -12,13 +12,13 @@ Estimated Time: 30 minutes
 In this lab, you will:
 * Create Cloud Storage location for Object Storage Bucket
 * Load data from Object Storage bucket into Autonomous AI Database
-* Create an external table for telemetry in parquet format
+* Create an external table for telemetry in Parquet format
 
 ### Prerequisites
 
  
 This lab assumes you have:
-* Completed previous labs sucessfully 
+* Completed previous labs successfully 
  
 
 ## Task 1: Apply PL/SQL to prepare for data load
@@ -37,7 +37,7 @@ This lab assumes you have:
 
     ![Open SQL Developer](./images/open_sql_developer.png)
 
-4. Apply PL/SQL to enable Resource Principal, Create FSIDEMO schema and grant necessary roles. Change default password if needed.
+4. Apply PL/SQL to enable the resource principal, create the FSIDEMO schema and grant necessary roles. Change default password if needed.
 
 copy below
 
@@ -145,11 +145,11 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
  ![Navigate to cloud store data load](./images/navigate_to_cloud_store_data_load.png) 
 
-2. Select the cloud store created in previous task as Cloud Store Location
+2. Select the cloud store created in the previous task as Cloud Store Location
 
-3. Expand the data folder in the bottom left panel, it should contain all the csv files uploaded in the previous lab
+3. Expand the data folder in the bottom left panel. It should contain all the CSV files uploaded in the previous lab.
 
-4. Select each csv file and drag all into the data load 
+4. Select each CSV file and drag all into the data load
 
  ![Select csv data load](./images/select_csv_data_load.png) 
 
@@ -161,7 +161,7 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
  ![Review job settings Detail](./images/review_job_settings_detail.png) 
 
-6. Click the start button to run the Data Load, wait for each of the eight jobs to complete (should be about 2 mins)
+6. Click the start button to run the Data Load. Wait for each of the eight jobs to complete (should be about 2 minutes).
 
 
 
@@ -181,7 +181,7 @@ ALTER USER FSIDEMO QUOTA UNLIMITED ON DATA;
 
     ![Open SQL Developer](./images/open_sql_developer.png) 
 
-4. Apply PL/SQL to add parquet files for datasets, make sure to update the file_uri_list to use the object storage url with the telematics folder (ex. https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics). After pasting and updating plsql, make sure to run the script with no errors.
+4. Apply PL/SQL to add Parquet files for datasets. Make sure to update the file_uri_list to use the object storage URL with the telematics folder (e.g., https://xxx.objectstorage.us-chicago-1.oci.customer-oci.com/n/xxx/b/xxx/o/telematics). After pasting and updating the PL/SQL, make sure to run the script with no errors.
 
 copy below
 
@@ -248,4 +248,4 @@ SELECT clm.CLAIM_NO,
 </copy>
 ```  
 
-![Create Claims MV view](./images/create_claims_mv_view.png) 
+![Create Claims MV view](./images/create_claims_mv_view.png)

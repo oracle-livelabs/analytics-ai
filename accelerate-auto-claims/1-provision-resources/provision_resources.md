@@ -4,7 +4,7 @@
 
 This lab will walk you thru provisioning an Autonomous AI Database, creating an object storage bucket and creating the necessary Identity Access Management groups/policies.
 
-Estimated Time: 30 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
