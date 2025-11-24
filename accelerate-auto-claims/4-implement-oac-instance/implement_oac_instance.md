@@ -32,6 +32,8 @@ This lab assumes you have:
 
     ![Open OAC Instance Console](./images/import_workbook_permissions.png)
 
+4. Repeat steps 2 and 3 with the FSI Auto Claims Gail.dva file
+
 ## Task 2: Update Data Connection
 
 1. Find the FSIDEMO_ADB data connection via Data.
