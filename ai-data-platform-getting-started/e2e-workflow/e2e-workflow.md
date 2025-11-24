@@ -35,7 +35,8 @@ This lab assumes you have:
 
 * [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
+**proceed to the next lab**
+
 ## Acknowledgements
 * **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
 * **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
-* **Last Updated By/Date** - <Name, Month Year>

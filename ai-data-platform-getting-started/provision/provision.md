@@ -15,32 +15,29 @@ Learn how to provision an AI Data Platform.
 
 The prerequisites as listed in previous lab need to be met before this can be executed.
 
-
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Locate in OCI console where AI Data Platform is located and select the compartment as defined in the prerequisites
 
-1. Step 1 Find AI Data platform in OCI console
+Step 1 Find AI Data platform in OCI console
 
-	![OCI console](images/provision-locate-service.png)
+![OCI console](images/provision-locate-service.png)
 
-2. Step 2 Provision AI Data Platform
+Step 2 Provision AI Data Platform
 
-  ![AI Data Platform page](images/provision-deploy-start.png)
+![AI Data Platform page](images/provision-deploy-start.png)
 
 ## Task 2: Start provisioning
 
-1. Step 1 - Enter all required fields in the entry form
+Step 1 - Enter all required fields in the entry form
 
-  ![AI Data Platform provisioning form](images/provision-entry-screen.png)
+![AI Data Platform provisioning form](images/provision-entry-screen.png)
 
-    1. Choose a name for the AI Data Platform
-    2. Enter a description
-    3. In the next section provide the name of your default workspace. In this work also automatically the default management compute cluster will be provisioned
-    4. Optionally give it a description
-    5. Again the Policies check is taking place and here you have the option to add policies when you have the right permissions.
-    6. Click the **Create** button.
-    7. Once the status of the provisioning becomes **Active** you can open AI Data Platform
+1. Choose a name for the AI Data Platform
+2. Enter a description
+3. In the next section provide the name of your default workspace. In this work also automatically the default management compute cluster will be provisioned
+4. Optionally give it a description
+5. Again the Policies check is taking place and here you have the option to add policies when you have the right permissions.
+6. Click the **Create** button.
+7. Once the status of the provisioning becomes **Active** you can open AI Data Platform
 
 ![AI Data Platform open screen](images/open-aidp.png)
 
@@ -50,7 +47,9 @@ The provisioning itself takes some time.
 
 * [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
+**proceed to the next lab**
+
 ## Acknowledgements
+
 * **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
 * **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
-* **Last Updated By/Date** - <Name, Month Year>

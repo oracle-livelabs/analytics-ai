@@ -9,16 +9,16 @@ Estimated Lab Time: 30 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Use the notebook functionality of AI Data Platform to process data
 * Use data that is loaded in Bronze schema and process into Silver layer
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle Cloud account
 * All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Process data with notebooks into Silver schema in AI Data Platform
 
@@ -35,7 +35,9 @@ This lab assumes you have:
 After the notebook runs have completed, the master catalog will look like this:
   ![results after silver notebooks](images/silver-results.png)
 
+**proceed to the next lab**
+
 ## Acknowledgements
+
 * **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
 * **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
-* **Last Updated By/Date** - <Name, Month Year>
