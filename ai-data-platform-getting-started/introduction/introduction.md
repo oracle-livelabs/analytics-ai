@@ -3,7 +3,7 @@
 ## About this Workshop
 
 This workshop is to get you started with Oracle AI Data Platform which allows you to manage your data and AI assets. You will learn how to provision your AI Data Platform Workbench, create essential components like a workspace and a compute cluster. You will also create your first catalog items, notebooks and run those.
-We will follow the structure of a medallion architecture where the raw data lands in the bronze layer as files. From there we will create and run some data processing notebooks to promote data from Bronze to Silver layer in an open table format. Once done we will use the nothebook funcitonalitey to use the data in the  silver layer and bring that in the external catalog, being the autonomous AI Lakehouse as Gold layer ready for analytics usage.
+We will follow the structure of a medallion architecture where the raw data lands in the bronze layer as files. From there we will create and run some data processing notebooks to promote data from Bronze to Silver layer in an open table format. Once done we will use the notebook functionality to use the data in the  silver layer and bring that in the external catalog, being the autonomous AI Lakehouse as Gold layer ready for analytics usage.
 
 
 Estimated Workshop Time: 4 hours (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
@@ -25,6 +25,17 @@ This lab assumes you have:
 * Prequisites in place
 * Basic knowledge about Autonomous AI Database
 * Basic knowledge in Python and SQL
+
+### content to be covered in this workshop
+
+Lab 1: Create AI Data Platform - Instance in your tenancy
+Lab 2: Create AI Data Platform - Workspace and compute cluster
+Lab 3: Load files from Github into OCI Bucket and create Files to Bronze layer
+Lab 4: Cleanse and curate data from Bronze and save results into Silver layer into internal catalog entry
+Lab 5: Prepare data in Silver layer for serving Gold layer and save results into Gold layer into internal catalog
+Lab 6: Create external catalog with Autonomous AI Database and reuse content from Lab 5 to save in Autonomous AI DB
+Lab 7: Create workflows for Bronze, Silver, Gold and run each workflow
+Lab 8: Create workflow of workflows to run all notebooks and plan scheduling.
 
 *This is the "fold" - below items are collapsed by default*
 
