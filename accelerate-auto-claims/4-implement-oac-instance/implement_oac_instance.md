@@ -46,7 +46,7 @@ This lab assumes you have:
 
     ![Select ADB Wallet](./images/select_adb_wallet.png)
 
-4. Open the wallet file for the Autonomous AI Database.
+4. Open the wallet file for the Autonomous AI Database created in Lab 1.
 
 5. Enter FSIDEMO as the Username, the password from Lab 2, and click the Save button.
  
