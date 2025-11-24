@@ -20,11 +20,12 @@ In this workshop, you will learn how to:
 ### Prerequisites (Optional)
 
 This lab assumes you have:
-* An Oracle account
-* An Oracle OCI tenancy
-* Prequisites in place
-* Basic knowledge about Autonomous AI Database
-* Basic knowledge in Python and SQL
+* An Oracle Cloud account
+* An active OCI tenancy
+* Compartment where the AI Data Platform Workbench needs to be deployed.
+* You have an object storage bucket in the same compartment to store some data files.
+* An Autonomous AI Lakehouse provisioned. https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=928&clear=RR,180&session=108251526920614
+* Necessary IAM policies in place. Documentation can be found: https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html#GUID-C534FDF6-B678-4025-B65A-7217D9D9B3DA
 
 ### content to be covered in this workshop
 
