@@ -30,7 +30,7 @@ This lab assumes you have:
 
   When you have completed the first notebook in the **Bronze-to-silver** folder, you can open and run the other notebooks from that folder to populate the tables.
 
-  ![Open notebook file in workspace](images/Workspace-notebooks-view.png)
+  ![Open notebook file in workspace](images/workspace-notebooks-view.png)
 
 After the notebook runs have completed, the master catalog will look like this:
   ![results after silver notebooks](images/silver-results.png)

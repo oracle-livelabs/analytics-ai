@@ -11,6 +11,7 @@
       "title": "Prerequisites",
       "description": "It is important to have following things in place before starting the labs",
       "filename": "../../prerequisites/prereqs.md"
+    },
     {
       "title": "Lab 1: Create AI Data Platform - Instance in your tenancy",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",

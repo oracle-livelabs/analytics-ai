@@ -42,7 +42,7 @@ This lab assumes you have:
   | retries | number of retries |
   |retry on timeout | Enable |
 
-![Image alt text](images/Create-workflow.png)
+![Image alt text](images/create-workflow.png)
 
   When filled the form for the first task in the middle click **Add Task** to add next tasks.
 

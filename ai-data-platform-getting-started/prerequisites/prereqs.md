@@ -1,4 +1,4 @@
-# Prerequisites before you start 
+# Prerequisites before you start
 
 ## Introduction
 
@@ -14,7 +14,7 @@ It is also very useful to have a compartment structure in place and that you hav
 ### Objectives
 
 In this lab, you will:
-check if prerequisistes are met and  if not, take the time to do the needful to meet those prerequisites.
+check if prerequisites are met and  if not, take the time to do the needful to meet those prerequisites.
 
 ### Prerequisites (Optional)
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 When you start to deploy your AI Data Platform Workbench the OCI console will perform a check if policies are in place.
 
 Similar message like this may show up and policy creation as per instructions in above link are required.
-    ![Policy validation message](images/AIDP-Policies-message.png)
+    ![Policy validation message](images/aidp-policies-message.png)
 
 *This is the "fold" - below items are collapsed by default*
 

@@ -12,7 +12,7 @@ In this lab, you will:
 * Use the notebook functionality of AI Data Platform to process data
 * Use data that is loaded in Silver schema and process into Autonomous AI Lakehouse Gold layer
 
-### Prerequisites 
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account
@@ -30,7 +30,7 @@ This lab assumes you have:
   Select the Master Catalog and use the **+** to create a new catalog entry. Provide all the details in the form. For **catalog type** select **External Catalog**. The form will change and at **External Source Type** select **Oracle Autonomous Data Warehouse**.
   Fill in all the details and use the wallet, test the connection and create the catalog entry.
 
-   ![External Autonomous AI Lakehouse catalog ](images/Create-external-catalog-ADW.png)
+   ![External Autonomous AI Lakehouse catalog ](images/create-external-catalog-ADW.png)
 
 ## Task 2: Prepare and run Silver to Gold notebooks to load data in Autonomous AI Lakehouse.
 
