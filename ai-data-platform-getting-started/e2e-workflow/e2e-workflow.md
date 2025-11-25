@@ -24,7 +24,7 @@ This lab assumes you have:
 1. Step 1 creation of and end to end workflow
 
     The creation of a workflow of workflows is straight forward and similar to the creation of a workflow, with one difference.
-    The task type needs to be "Nested Job task"
+    The task type needs to be 'Nested Job task'
     The jobs that you can select will be different.
     It is possible to mix this with other task types
 
@@ -34,7 +34,7 @@ This lab assumes you have:
 
 * [AI Data Platform documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html)
 
-**"proceed to the next lab**
+**proceed to the next lab**
 
 ## Acknowledgements
 

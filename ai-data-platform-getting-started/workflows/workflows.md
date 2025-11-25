@@ -27,7 +27,7 @@ This lab assumes you have:
 
     Select the Workspace. In the main pane start the creation of a job.
     Enter the form with Name, Description and Max concurrent runs.
-    For concurrent runs select "5". Create.
+    For concurrent runs select '5'. Create.
 
     In the Job definition screen the first task is automatically created. The goal is to put all notebooks per phase in a workflow. All Bronze in one, All silver in one, and similar for Gold
 
@@ -45,15 +45,15 @@ This lab assumes you have:
 
     ![creation of workflow](./images/createworkflow.png)
 
-    When filled the form for the first task in the middle click "Add Task" to add next tasks.
+    When filled the form for the first task in the middle click 'Add Task' to add next tasks.
 
     In the workflow pane the runs can be monitored
 
     ![workflow overview](./images/workflowoverview.png)
 
     Repeat same for all notebooks in this phase.
-    For "File to Bronze" and "Bronze to Silver", all tasks can run in parallel.
-    At "Depends on" no dependency to be entered.
+    For 'File to Bronze' and 'Bronze to Silver', all tasks can run in parallel.
+    At 'Depends on' no dependency to be entered.
 
     For the Silver to Gold it is important to run the tasks sequentially in following order.
 

@@ -42,16 +42,16 @@ This lab assumes you have:
 
 2. Step 2: Compute Cluster creation
 
-    In the sub menu of the workspace you find the link to "Compute".
-    In the screen that opens you will find the "+" sign again to create a compute cluster
+    In the sub menu of the workspace you find the link to 'Compute'.
+    In the screen that opens you will find the '+' sign again to create a compute cluster
     A subscreen will open where several fields need to be entered.
 
     * Enter a Name, Description
     * Keep Runtine version at Spark (default)
     * Then you need to choose the Driver shape and Worker shape. We keep the shape sizes at default
     * Set the number of workers check box to Autoscale with a minimum worker of 1 and maximum worker of 10
-    * Set the Run duration checkbox to Idle timeout and enter "60" for minutes. This will stop the cluster after 60 minutes sitting idle. It will limit costs. If it takes somewhat longer to continue with your labs, you will need to start the compute cluster manually
-    * Click "create"
+    * Set the Run duration checkbox to Idle timeout and enter '60' for minutes. This will stop the cluster after 60 minutes sitting idle. It will limit costs. If it takes somewhat longer to continue with your labs, you will need to start the compute cluster manually
+    * Click 'create'
 
     ![compute creation](./images/computecreate2.png)
 

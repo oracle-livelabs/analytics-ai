@@ -36,8 +36,8 @@ The prerequisites as listed in previous lab need to be met before this can be ex
     3. In the next section provide the name of your default workspace. In this work also automatically the default management compute cluster will be provisioned
     4. Optionally give it a description
     5. Again the Policies check is taking place and here you have the option to add policies when you have the right permissions.
-    6. Click the "Create" button.
-    7. Once the status of the provisioning becomes "Active" you can open AI Data Platform
+    6. Click the 'Create' button.
+    7. Once the status of the provisioning becomes 'Active' you can open AI Data Platform
 
     ![ai data platform open screen](./images/openaidp.png)
 

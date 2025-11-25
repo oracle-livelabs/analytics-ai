@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will promote the data that was curated and processed in the **Silver** catalog schema into the Gold schema to make it easily consumable for business users but we are not going to use the Delta format like in previous lab, but we are going to use an Autonomous AI Lakehouse as target.
+In this lab we will promote the data that was curated and processed in the 'Silver' catalog schema into the Gold schema to make it easily consumable for business users but we are not going to use the Delta format like in previous lab, but we are going to use an Autonomous AI Lakehouse as target.
 
 Estimated Lab Time: 45 minutes
 
@@ -21,13 +21,11 @@ This lab assumes you have:
   * Access to the Database tools to create tables
 * All previous labs successfully completed
 
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Create external Catalog to Autonomous AI Lakehouse
 
 1. Step 1: Start External catalog creation
 
-  Select the Master Catalog and use the "+" to create a new catalog entry. Provide all the details in the form. For "catalog type" select "External Catalog". The form will change and at "External Source Type" select "Oracle Autonomous Data Warehouse".
+  Select the Master Catalog and use the '+' to create a new catalog entry. Provide all the details in the form. For 'catalog type' select 'External Catalog'. The form will change and at 'External Source Type' select 'Oracle Autonomous Data Warehouse'.
   Fill in all the details and use the wallet, test the connection and create the catalog entry.
 
   ![external autonomous ai lakehouse catalog ](./images/createexternalcatalogadw.png)
@@ -61,7 +59,7 @@ This lab assumes you have:
     gold_table_dlt = "f1_drivers_ranking_dlt"
     gold_table_par = "f1_drivers_ranking_par"
   ```
-  To use the autonomous AI Lakehouse line 2 "delta" needs to be replaced with "adw"
+  To use the autonomous AI Lakehouse line 2 'delta' needs to be replaced with 'adw'
 
   The adw_catalog (line 5) name needs to be replaced by the name of the external catalog created at task 1. It is visible in the master catalog.
   The adw_schema  (line 8) needs to be replaced by the name of the schema you created the table definitions.

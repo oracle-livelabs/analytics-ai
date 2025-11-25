@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will promote the data that was curated and processed in the "Silver" catalog schema into the Gold schema to make it easily consumable for business users.
+In this lab we will promote the data that was curated and processed in the 'Silver' catalog schema into the Gold schema to make it easily consumable for business users.
 
 Estimated Lab Time: 30 minutes
 
@@ -24,10 +24,10 @@ This lab assumes you have:
 
 1. Step 1 Open and run notebooks
 
-    Open the workspace you created and open the "Silver-to-gold" folder. In the main pane you open the file starting with name "17_silver_drivers.ipynb".
+    Open the workspace you created and open the 'Silver-to-gold' folder. In the main pane you open the file starting with name '17_silver_drivers.ipynb'.
     Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
 
-    When you have completed the first notebook in the "Silver-to-gold" folder, you can open and run the other notebooks from that folder to populate the tables "in following order":
+    When you have completed the first notebook in the 'Silver-to-gold' folder, you can open and run the other notebooks from that folder to populate the tables 'in following order':
 
     * 17_silver_drivers.ipynb
     * 18-silver_constructors.ipynb
