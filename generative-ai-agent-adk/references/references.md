@@ -1,9 +1,9 @@
 # References
 
 ## Introduction
-Reference section provides the sample snippet that we used as well some of the key links.
+The reference section provides sample snippets used in the lab, along with key links.
 
-* The full sample that we have used during the labs can be referred below.
+* The complete sample used during the labs is provided below.
 
 ```
 import nest_asyncio
@@ -92,8 +92,6 @@ async def agent_handler(prompt:str="",init_run:bool=False,delete_session:bool=Tr
 question="give availability of room at The Palazzo at The Venetian Resort on 1st Aug 2025"
 response = asyncio.run(agent_handler(prompt=question,init_run=True)) 
 response.pretty_print()
-
-
 ```
 
 * Link to official documentation.

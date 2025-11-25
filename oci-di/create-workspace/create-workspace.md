@@ -90,4 +90,4 @@ Before you can get started with Data Integration, you must first create a **Work
 
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Last Updated By/Date** - Alex Porcescu, November 2025

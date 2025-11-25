@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## Task 2: Let's test our agent
 
-1. To start, type the following question into you message box: _How many loan applications are pending review?_.
+1. To start, type the following question into you message box: _How many loan applications are pending review?_
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -75,7 +75,7 @@ This lab assumes you have:
 
     ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
-1. Our next question would be: _Which loan officer has the most applications assigned?_. Let's see if the agent will be able to figure that out...
+1. Our next question would be: _Which loan officer has the most applications assigned?_ Let's see if the agent will be able to figure that out...
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
