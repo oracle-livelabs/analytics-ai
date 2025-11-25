@@ -30,7 +30,7 @@ Step 1
 Select the Master Catalog and use the **+** to create a new catalog entry. Provide all the details in the form. For **catalog type** select **External Catalog**. The form will change and at **External Source Type** select **Oracle Autonomous Data Warehouse**.
 Fill in all the details and use the wallet, test the connection and create the catalog entry.
 
-![External Autonomous AI Lakehouse catalog ](images/create-external-catalog-ADW.png)
+![external autonomous ai lakehouse catalog ](images/create-external-catalog-ADW.png)
 
 ## Task 2: Prepare and run Silver to Gold notebooks to load data in Autonomous AI Lakehouse.
 
@@ -64,7 +64,7 @@ To use the autonomous AI Lakehouse line 2 **delta** needs to be replaced with **
 The adw_catalog (line 5) name needs to be replaced by the name of the external catalog created at task 1. It is visible in the master catalog.
 The adw_schema  (line 8) needs to be replaced by the name of the schema you created the table definitions.
 
-![After changes in parameter file for ADW](images/parameter-view.png)
+![after changes in parameter file for adw](images/parameter-view.png)
 
 Although autosave is enabled, make sure that changes are saved.
 
@@ -81,7 +81,7 @@ Now you can run the notebooks again in following order:
 
 For validation you can query the database tables to check if data has been inserted. In the tools section of the autonomous database open the cloud SQL to validate with a query like:
 
-![SQL: validation](images/sql-validation.png)
+![sql for validation](images/sql-validation.png)
 
 **proceed to the next lab**
 

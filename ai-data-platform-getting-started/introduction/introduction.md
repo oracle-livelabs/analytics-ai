@@ -3,7 +3,7 @@
 ## About this Workshop
 
 This workshop is to get you started with Oracle AI Data Platform which allows you to manage your data and AI assets. You will learn how to provision your AI Data Platform Workbench, create essential components like a workspace and a compute cluster. You will also create your first catalog items, notebooks and run those.
-We will follow the structure of a medallion architecture where the raw data lands in the bronze layer as files. From there we will create and run some data processing notebooks to promote data from Bronze to Silver layer in an open table format. Once done we will use the notebook functionality to use the data in the  silver layer and bring that in the external catalog, being the autonomous AI Lakehouse as Gold layer ready for analytics usage.
+We will follow the structure of a medallion architecture where the raw data lands in the bronze layer as files. From there we will create and run some data processing notebooks to cleanse and curate the data to store data from Bronze to Silver layer in an open table format. Once done we will use the notebook functionality to use the data in the  silver layer and bring that in the external catalog, being the autonomous AI Lakehouse as Gold layer ready for analytics usage.
 
 Estimated Workshop Time: 4 hours (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 

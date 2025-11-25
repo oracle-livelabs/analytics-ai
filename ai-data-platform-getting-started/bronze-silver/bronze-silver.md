@@ -24,13 +24,13 @@ This lab assumes you have:
 
 1. Step 1 Run notebooks to process data
 
-  Open the workspace you created and open the **Bronze-to-silver** folder. In the main pane you open the file starting with name **08_bronze_pitstops.ipynb**.
-  > **Note:**Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
+  Open the workspace you created and open the "Bronze-to-silver" folder. In the main pane you open the file starting with name "08_bronze_pitstops.ipynb".
+  > "Note: Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
   You also can run the notebook for the second time and change the target format to "parquet".
 
-  When you have completed the first notebook in the **Bronze-to-silver** folder, you can open and run the other notebooks from that folder to populate the tables.
+  When you have completed the first notebook in the "Bronze-to-silver" folder, you can open and run the other notebooks from that folder to populate the tables.
 
-  ![Open notebook file in workspace](images/workspace-notebooks-view.png)
+  ![open notebook file in workspace](images/workspace-notebooks-view.png)
 
 After the notebook runs have completed, the master catalog will look like this:
   ![results after silver notebooks](images/silver-results.png)
