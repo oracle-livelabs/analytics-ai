@@ -31,7 +31,7 @@ This lab assumes you have:
 When you start to deploy your AI Data Platform Workbench the OCI console will perform a check if policies are in place.
 
 Similar message like this may show up and policy creation as per instructions in above link are required.
-    ![policy validation message](./images/aidp-policies-message.png)
+    ![policy validation message](./images/aidp-policiesmessage.png)
 
 ## Learn More
 

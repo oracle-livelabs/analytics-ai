@@ -25,35 +25,35 @@ This lab assumes you have:
 
 ## Task 1: Creation of a workspace
 
-Step 1 create workspace
-Create your workspace. The initial step is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time
+1. Step 1: create workspace
+    Create your workspace. The initial step is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time
 
-![workspace creation step 1](./images/workspace-create-1.png)
+    ![workspace creation step 1](./images/workspacecreate1.png)
 
-![workspace creation step 2](./images/workspace-create-2.png)
+    ![workspace creation step 2](./images/workspacecreate2.png)
 
 ## Task 2: Open your workspace and create a compute cluster
 
-Step 1 - Open Workspace
+1. Step 1: Open Workspace
 
-Select your workspace and you will notice that the name appears in the left menu.
+    Select your workspace and you will notice that the name appears in the left menu.
 
-![compute opening](./images/compute-create-1.png)
+    ![compute opening](./images/computecreate1.png)
 
-Step 2 - Compute Cluster creation
+2. Step 2: Compute Cluster creation
 
-In the sub menu of the workspace you find the link to "Compute".
-In the screen that opens you will find the "+" sign again to create a compute cluster
-A subscreen will open where several fields need to be entered.
+    In the sub menu of the workspace you find the link to "Compute".
+    In the screen that opens you will find the "+" sign again to create a compute cluster
+    A subscreen will open where several fields need to be entered.
 
-* Enter a Name, Description
-* Keep Runtine version at Spark (default)
-* Then you need to choose the Driver shape and Worker shape. We keep the shape sizes at default
-* Set the number of workers check box to Autoscale with a minimum worker of 1 and maximum worker of 10
-* Set the Run duration checkbox to Idle timeout and enter "60" for minutes. This will stop the cluster after 60 minutes sitting idle. It will limit costs. If it takes somewhat longer to continue with your labs, you will need to start the compute cluster manually
-* Click "create"
+    * Enter a Name, Description
+    * Keep Runtine version at Spark (default)
+    * Then you need to choose the Driver shape and Worker shape. We keep the shape sizes at default
+    * Set the number of workers check box to Autoscale with a minimum worker of 1 and maximum worker of 10
+    * Set the Run duration checkbox to Idle timeout and enter "60" for minutes. This will stop the cluster after 60 minutes sitting idle. It will limit costs. If it takes somewhat longer to continue with your labs, you will need to start the compute cluster manually
+    * Click "create"
 
-![compute creation](./images/compute-create-2.png)
+    ![compute creation](./images/computecreate2.png)
 
 **proceed to the next lab**
 

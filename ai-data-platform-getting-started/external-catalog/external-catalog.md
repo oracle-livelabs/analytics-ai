@@ -25,63 +25,63 @@ This lab assumes you have:
 
 ## Task 1: Create external Catalog to Autonomous AI Lakehouse
 
-Step 1
+1. Step 1: Start External catalog creation
 
-Select the Master Catalog and use the **+** to create a new catalog entry. Provide all the details in the form. For **catalog type** select **External Catalog**. The form will change and at **External Source Type** select **Oracle Autonomous Data Warehouse**.
-Fill in all the details and use the wallet, test the connection and create the catalog entry.
+  Select the Master Catalog and use the "+" to create a new catalog entry. Provide all the details in the form. For "catalog type" select "External Catalog". The form will change and at "External Source Type" select "Oracle Autonomous Data Warehouse".
+  Fill in all the details and use the wallet, test the connection and create the catalog entry.
 
-![external autonomous ai lakehouse catalog ](./images/create-external-catalog-ADW.png)
+  ![external autonomous ai lakehouse catalog ](./images/createexternalcatalogadw.png)
 
 ## Task 2: Prepare and run Silver to Gold notebooks to load data in Autonomous AI Lakehouse.
 
-Step 1 Create table structures in Autonomous AI Lakehouse
+1. Step 1: Create table structures in Autonomous AI Lakehouse
 
-Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in task 1, using SQL , making use of prebuilt table definitions from file f1_DDL_ADW_Tables.txt which is available in Github.
-The tables can be created using SQL Developer or Cloud SQL as part of the Autonomous Database toolkit. Make sure that you use the right user/schema that is allowed access by the user that is used in the credentials when setting up the external catalog item.
 
-![create tables in sql ](./images/create-tables-sql.png)
+**show result picture  Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in task 1, using SQL , making use of prebuilt table definitions from file f1_DDL_ADW_Tables.txt which is available in Github.
+  The tables can be created using SQL Developer or Cloud SQL as part of the Autonomous Database toolkit. Make sure that you use the right user/schema that is allowed access by the user that is used in the credentials when setting up the external catalog item.
 
-You may need to refresh the catalog in AI Data Platform to make tables visible .
+  ![create tables in sql ](./images/createtablessql.png)
 
-Step 2 validate and adjust parameters
+  You may need to refresh the catalog in AI Data Platform to make tables visible .
 
-The Notebook parameters cell require some adjustments for the notebooks that are part of the Silver-to-gold workspace folder
+  Step 2: validate and adjust parameters
 
-The original content is e.g.:
-```json
-   target_type   =oidlUtils.parameters.getParameter("TARGET_TYPE", "table")
-   target_format =oidlUtils.parameters.getParameter("TARGET_FORMAT", "delta")
-   silver_catalog    = "f1_silver"
-   gold_catalog    = "f1_gold"
-   adw_catalog = "f1_gold_adw"
-   silver_schema     = "silver"
-   gold_schema     = "gold"
-   adw_schema =      "f1_gold"
-   gold_table_dlt = "f1_drivers_ranking_dlt"
-   gold_table_par = "f1_drivers_ranking_par"
-```
-To use the autonomous AI Lakehouse line 2 **delta** needs to be replaced with **adw**
-The adw_catalog (line 5) name needs to be replaced by the name of the external catalog created at task 1. It is visible in the master catalog.
-The adw_schema  (line 8) needs to be replaced by the name of the schema you created the table definitions.
+  The Notebook parameters cell require some adjustments for the notebooks that are part of the Silver-to-gold workspace folder
 
-![after changes in parameter file for adw](./images/parameter-view.png)
+  The original content is e.g.:
+  ```json
+    target_type   =oidlUtils.parameters.getParameter("TARGET_TYPE", "table")
+    target_format =oidlUtils.parameters.getParameter("TARGET_FORMAT", "delta")
+    silver_catalog    = "f1_silver"
+    gold_catalog    = "f1_gold"
+    adw_catalog = "f1_gold_adw"
+    silver_schema     = "silver"
+    gold_schema     = "gold"
+    adw_schema =      "f1_gold"
+    gold_table_dlt = "f1_drivers_ranking_dlt"
+    gold_table_par = "f1_drivers_ranking_par"
+  ```
+  To use the autonomous AI Lakehouse line 2 "delta" needs to be replaced with "adw"
 
-Although autosave is enabled, make sure that changes are saved.
+  The adw_catalog (line 5) name needs to be replaced by the name of the external catalog created at task 1. It is visible in the master catalog.
+  The adw_schema  (line 8) needs to be replaced by the name of the schema you created the table definitions.
 
-**show result picture**
+  ![after changes in parameter file for adw](./images/parameterview.png)
 
-Step 3 Run notebooks in specified order
+  Although autosave is enabled, make sure that changes are saved.
 
-Now you can run the notebooks again in following order:
+3. Step 3: Run notebooks in specified order
 
-* 17_silver_drivers.ipynb
-* 18-silver_constructors.ipynb
-* 15_silver_team_ranking.ipynb
-* 16_silver_driver_ranking.ipynb
+  Now you can run the notebooks again in following order:
 
-For validation you can query the database tables to check if data has been inserted. In the tools section of the autonomous database open the cloud SQL to validate with a query like:
+  * 17_silver_drivers.ipynb
+  * 18-silver_constructors.ipynb
+  * 15_silver_team_ranking.ipynb
+  * 16_silver_driver_ranking.ipynb
 
-![sql for validation](./images/sql-validation.png)
+  For validation you can query the database tables to check if data has been inserted. In the tools section of the autonomous database open the cloud SQL to validate with a query like:
+
+  ![sql for validation](./images/sqlvalidation.png)
 
 **proceed to the next lab**
 

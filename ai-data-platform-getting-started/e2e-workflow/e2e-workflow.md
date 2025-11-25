@@ -21,14 +21,14 @@ This lab assumes you have:
 
 ## Task 1: Create Workflow of Workflows
 
-Step 1
+1. Step 1 creation of and end to end workflow
 
-The creation of a workflow of workflows is straight forward and similar to the creation of a workflow, with one difference.
-The task type needs to be "Nested Job task"
-The jobs that you can select will be different.
-It is possible to mix this with other task types
+    The creation of a workflow of workflows is straight forward and similar to the creation of a workflow, with one difference.
+    The task type needs to be "Nested Job task"
+    The jobs that you can select will be different.
+    It is possible to mix this with other task types
 
-![pipeline creation](./images/e2e-workflow-creation.png)
+    ![pipeline creation](./images/e2eworkflowcreation.png)
 
 ## Learn More
 
