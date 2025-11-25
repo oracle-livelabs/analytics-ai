@@ -31,29 +31,29 @@ Step 1 Upload downloaded files into AI Data Platform
 
 After you have downloaded the files from Github, navigate to your OCI Object storage bucket, select the "Object" tab and use the "Upload Objects" button to upload your files.
 
-![file location](images/files-to-load.png)
+![file location](./images/files-to-load.png)
 
 Upload into bucket
 
-![bucket file upload](images/bucket-upload.png)
+![bucket file upload](./images/bucket-upload.png)
 
 Step 2 create catalog entry
 
 Go to your AI Data Platform and open your master catalog. There you need to define 3 catalogs for each layer of the medallion architecture. In the example screen print they are called: f1_bronze, f1_silver, f1_gold
 
-![creation of catalogs](images/create-catalog-entry.png)
+![creation of catalogs](./images/create-catalog-entry.png)
 
 Step 3 create schema
 
 Open each catalog that you have created in step 2 and create schema inside each catalog. In the example screen print they are called: bronze, silver, gold
 
-![creation of schema](images/create-catalog-schema.png)
+![creation of schema](./images/create-catalog-schema.png)
 
 Step 4 create volume and upload files
 
 In the "f1_bronze" catalog in the "bronze" schema you need to create a volume to store the data files as external catalog items. Select the "bronze" schema in the master catalog pane, and in the main pane you select "volume". Once selected you click the **+** symbol to create a volume. In the example the volume name f1_bronze_volume is used. In the entry screen, create name, select "external" and select the compartment, bucket, (and folder) where you stored you data files at steps 1. Make. sure you push the "upload" button.
 
-![creation of external volume](images/create-catalog-external-volume.png)
+![creation of external volume](./images/create-catalog-external-volume.png)
 
 ## Task 3: Create a tables in Bronze from files that have been uploaded
 
@@ -68,7 +68,7 @@ Open the workspace you created and create following folder structure (You can cr
 * Bronze-to-silver
 * Silver-to-gold
 
-![workspace folder structure](images/create-folders-workspace.png)
+![workspace folder structure](./images/create-folders-workspace.png)
 
 Step 2 upload notebooks
 
@@ -77,7 +77,7 @@ In the "Files-to-bronze" folder upload files starting with 01_... to 07_...
 In the "Bronze-to-silver" folder upload files starting with 08_... to 14_...
 In the "Silver-to-gold" folder upload files starting with 15_... to 18_...
 
-![upload of notebooks](images/upload-files-to-workspace.png)
+![upload of notebooks](./images/upload-files-to-workspace.png)
 
 Step 3 open and run notebooks
 
@@ -92,14 +92,14 @@ The structure of the notebooks is, that in the first cell some parameters are de
 
 When you have completed the first notebook in the "Files-to-bronze" folder, you can open and run the other notebooks from that folder to populate the tables.
 
-![open notebook file in workspace](images/files-to-bronze-load.png)
+![open notebook file in workspace](./images/files-to-bronze-load.png)
 
 Step 4 validate table creation
 
 This step is to verify the creation of the tables in the f1_bronze schema in the catalog.
 After the notebook runs have completed successfully you can expand the f1_bronze catalog item and expand the bronze schema to view the created tables. If they are not appearing you may need to refresh the catalog by using the refresh button at the top of the catalog pane.
 
-![validate table creation](images/files-to-bronze-view-result.png)
+![validate table creation](./images/files-to-bronze-view-result.png)
 
 **proceed to the next lab**
 

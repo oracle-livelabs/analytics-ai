@@ -43,13 +43,13 @@ On the right side:
 | retries | number of retries |
 |retry on timeout | Enable |
 
-![creation of workflow](images/create-workflow.png)
+![creation of workflow](./images/create-workflow.png)
 
 When filled the form for the first task in the middle click "Add Task" to add next tasks.
 
 In the workflow pane the runs can be monitored
 
-![workflow overview](images/workflow-overview.png)
+![workflow overview](./images/workflow-overview.png)
 
 Repeat same for all notebooks in this phase.
 For "File to Bronze" and "Bronze to Silver", all tasks can run in parallel.
@@ -64,7 +64,7 @@ For the Silver to Gold it is important to run the tasks sequentially in followin
 
 In the workflow details you find the possibility to schedule the workflow
 
-![workflow schedule details](images/workflow-details-schedule.png)
+![workflow schedule details](./images/workflow-details-schedule.png)
 
 **proceed to the next lab**
 

@@ -19,17 +19,17 @@ The prerequisites as listed in previous lab need to be met before this can be ex
 
 Step 1 Find AI Data platform in OCI console
 
-![oci console](images/provision-locate-service.png)
+![oci console](./images/provision-locate-service.png)
 
 Step 2 Provision AI Data Platform
 
-![ai data platform page](images/provision-deploy-start.png)
+![ai data platform page](./images/provision-deploy-start.png)
 
 ## Task 2: Start provisioning
 
 Step 1 - Enter all required fields in the entry form
 
-![ai data platform provisioning form](images/provision-entry-screen.png)
+![ai data platform provisioning form](./images/provision-entry-screen.png)
 
 1. Choose a name for the AI Data Platform
 2. Enter a description
@@ -39,7 +39,7 @@ Step 1 - Enter all required fields in the entry form
 6. Click the "Create" button.
 7. Once the status of the provisioning becomes "Active" you can open AI Data Platform
 
-![ai data platform open screen](images/open-aidp.png)
+![ai data platform open screen](./images/open-aidp.png)
 
 The provisioning itself takes some time.
 

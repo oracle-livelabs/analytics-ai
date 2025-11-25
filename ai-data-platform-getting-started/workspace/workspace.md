@@ -28,9 +28,9 @@ This lab assumes you have:
 Step 1 create workspace
 Create your workspace. The initial step is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time
 
-![workspace creation step 1](images/workspace-create-1.png)
+![workspace creation step 1](./images/workspace-create-1.png)
 
-![workspace creation step 2](images/workspace-create-2.png)
+![workspace creation step 2](./images/workspace-create-2.png)
 
 ## Task 2: Open your workspace and create a compute cluster
 
@@ -38,7 +38,7 @@ Step 1 - Open Workspace
 
 Select your workspace and you will notice that the name appears in the left menu.
 
-![compute opening](images/compute-create-1.png)
+![compute opening](./images/compute-create-1.png)
 
 Step 2 - Compute Cluster creation
 
@@ -53,7 +53,7 @@ A subscreen will open where several fields need to be entered.
 * Set the Run duration checkbox to Idle timeout and enter "60" for minutes. This will stop the cluster after 60 minutes sitting idle. It will limit costs. If it takes somewhat longer to continue with your labs, you will need to start the compute cluster manually
 * Click "create"
 
-![compute creation](images/compute-create-2.png)
+![compute creation](./images/compute-create-2.png)
 
 **proceed to the next lab**
 

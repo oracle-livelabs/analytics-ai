@@ -28,7 +28,7 @@ The task type needs to be "Nested Job task"
 The jobs that you can select will be different.
 It is possible to mix this with other task types
 
-![pipeline creation](images/e2e-workflow-creation.png)
+![pipeline creation](./images/e2e-workflow-creation.png)
 
 ## Learn More
 

@@ -35,7 +35,7 @@ When you have completed the first notebook in the "Silver-to-gold" folder, you c
 * 16_silver_driver_ranking.ipynb
 
 After the notebooks are completed. the master catalog will look something like:
-![catalog after notebooks](images/results.png)
+![catalog after notebooks](./images/results.png)
 
 **proceed to the next lab**
 
