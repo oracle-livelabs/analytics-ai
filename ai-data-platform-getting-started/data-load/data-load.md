@@ -24,7 +24,7 @@ This lab assumes you have:
 
 ## Task 1: Open your bucket in Oracle OCI and load datasets
 
-From the GitHub folder ai-data-platform-getting-started/data-load/files you can download the source files and upload them into your OCI Object storage bucket.
+From the GitHub folder [ai-data-platform-getting-started/data-load/files](./data-load/files/) you can download the source files and upload them into your OCI Object storage bucket.
 In the upload screen you can drag an drop the files in the bucket. No need to adjust any settings
 
 1. Step 1: Upload downloaded files into AI Data Platform
