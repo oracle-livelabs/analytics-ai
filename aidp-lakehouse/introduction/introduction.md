@@ -40,7 +40,7 @@ By completing this workshop, you will:
 
 This workshop assumes you have:
 - An Oracle Cloud account or lab credentials
-- Access to **Autonomous Transaction Processing (ATP)**, **Oracle AI Data Platform** (AIDP), **Autonomous AI Lakehouse**, **Analytics Cloud** (OAC), **Generative AI** and **Object Storage** in your tenancy/region
+- Access to **Autonomous Transaction Processing** (ATP), **Oracle AI Data Platform** (AIDP), **Autonomous AI Lakehouse**, **Analytics Cloud** (OAC), **Generative AI** and **Object Storage** in your tenancy/region
 - Familiarity with databases and basic data/analytics concepts (helpful, but not required)
 - Basic comfort with navigating web-based Oracle Cloud interfaces
 

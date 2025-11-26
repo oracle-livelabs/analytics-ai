@@ -46,6 +46,8 @@ This lab assumes you have:
 
 4. Set an administrator password and configure network access as needed (e.g., secure access from everywhere for simplicity).
 
+**NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
+
 5. Click **Create Autonomous Database**. Provisioning takes a few minutes.
 
 ---
@@ -58,7 +60,7 @@ This lab assumes you have:
 
 2. Sign in as the ADMIN user.
 
-3. Create the SOURCE_DATA schema (replace "strong\_password" with a secure password):
+3. Create the SOURCE\_DATA schema (replace "strong\_password" with a secure password):
 
 ```sql
 <copy>
@@ -87,9 +89,9 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO SOURCE_DATA;
 
 ## Task 3: Add REST capabilities to SOURCE_DATA Schema
 
-**NOTE** If unable to sign in directly as SOURCE_DATA schema, enable REST access
+**NOTE** If unable to sign in directly as SOURCE\_DATA schema, enable REST access
 
-1. Navigate to AI DB > database actions > database users > search for 'SOURCE_DATA' > select three dots > enable rest > log in to sql developer web as SOURCE_DATA
+1. Navigate to AI DB > database actions > database users > search for 'SOURCE\_DATA' > select three dots > enable rest > log in to sql developer web as SOURCE\_DATA
 
 ![Database Users](./images/atp-db-users.png)
 

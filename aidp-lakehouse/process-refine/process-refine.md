@@ -146,11 +146,11 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 ![Create Catalog](./images/create-catalog.png)
 
-3. For ATP: Provide catalog name (e.g. **atp_external_catalog**), select External Catalog, External source type Oracle Autonomous Transaction Processing, choose your ATP instance, provide SOURCE_DATA username and password.
+3. For ATP: Provide catalog name (e.g. **atp\_external\_catalog**), select External Catalog, External source type Oracle Autonomous Transaction Processing, choose your ATP instance, provide SOURCE_DATA username and password.
 
 ![ATP External Catalog](./images/atp-external-catalog.png)
 
-4. For AI Lakehouse: Provide catalog name (e.g. **airlines_external_adb_gold**), select External Catalog, External source type Oracle Autonomous Data Warehouse, choose your AI Lakehouse instance, provide GOLD username and password.
+4. For AI Lakehouse: Provide catalog name (e.g. **airlines\_external\_adb\_gold**), select External Catalog, External source type Oracle Autonomous Data Warehouse, choose your AI Lakehouse instance, provide GOLD username and password.
 
 ![Create External Catalog](./images/adl-external-catalog.png)
 
@@ -170,7 +170,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 ## Task 8: Launch AIDP Workspace and Notebook
 
-1. In AIDP, create workspace **airline-workspace** with default catalog **airlines_external_adb_gold**.
+1. In AIDP, create workspace **airline-workspace** with default catalog **airlines\_external\_adb\_gold**.
 
 ![Create AIDP Workspace](./images/create-aidp-workspace.png)
 
@@ -270,7 +270,7 @@ df_v0.show()
 
 ## Task 10: Create Silver Medallian Schema & Enrich Data with Generative AI 
 
-1. Write to Silver schema of medallian architecture 
+1. Write to silver schema of medallian architecture 
 
 ```python
 <copy>
@@ -490,6 +490,8 @@ INSERT into airlines_external_adb_gold.gold.airline_sample_gold select * from df
 ```
 
 **NOTE** We use the sql insert instead of the native spark insert, because spark causes the dataframe to be pushed with lowercase column names. This results in OAC unable to visualize the data. Using sql INSERT into avoids this issue. 
+
+**TROUBLESHOOTING NOTE:** If you encounter a CONNECTOR_0084 error ("Exception while writing data. Possible cause: Unable to determine if path is a directory") during the INSERT, restart the AIDP workspace cluster and re-run the notebook. This resolves connectivity issues with the external catalog. If this error occurs in other spark code blocks (e.g. when writing to delta lake), re-running the code block usually resolves the issue. 
 
 ---
 
