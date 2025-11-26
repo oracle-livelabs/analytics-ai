@@ -13,14 +13,14 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
       },
       {
-        "title": "Lab 1: Create a Data Lakehouse with AI Data Platform",
+        "title": "Lab 1: Set Up Source System and Extract Transactional Data",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../create-lakehouse/create-lakehouse.md"
+        "filename": "../../source-setup/source-setup.md"
       },
       {
-        "title": "Lab 2: Refine and Prepare Data with AI Data Platform",
+        "title": "Lab 2: Process and Refine Data in AI Data Platform and Lakehouse",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-        "filename": "../../aidp-refine/aidp-refine.md"
+        "filename": "../../process-refine/process-refine.md"
       },
       {
         "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
