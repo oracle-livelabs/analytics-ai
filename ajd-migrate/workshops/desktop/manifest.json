@@ -1,0 +1,41 @@
+{
+  "workshoptitle": "MongoDB Migration – Lift & Shift to Oracle AI Database",
+  "help": "livelabs-help-adbs_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1 (Optional): Set Up Cline",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../cline-config/cline-config.md"
+    },
+    {
+      "title": "Lab 2 (Optional): Prepare Source and Discover Data",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../prepare-source/prepare-source.md"
+    },
+    {
+      "title": "Lab 3: Migrate to Oracle Autonomous JSON Database",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../migrate-ajd/migrate-ajd.md"
+    },
+    {
+      "title": "Lab 4: Validate and Run on Oracle AI Database",
+      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "filename": "../../validate-run/validate-run.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
