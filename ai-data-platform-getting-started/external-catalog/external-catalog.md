@@ -113,7 +113,19 @@ This lab assumes you have:
   * 15\_silver\_team\_ranking.ipynb
   * 16\_silver\_driver\_ranking.ipynb
 
-  For validation you can query the database tables to check if data has been inserted. In the tools section of the autonomous database open the cloud SQL to validate with a query like:
+  When running notebook 16\_silver\_driver\_ranking.ipynb you will notice that the bottom cell will error out. The select statement is pointing to the wrong table.
+  We will use the AI Data Platform functionality to adjust.
+  In the screen print you see that if you expand the external catalog f1\_gold\_adw and hoover with your mouse over the right name name of the table you get 2 options to copy the table location. Make sure you highlighted the right cell and use the copy functionality to paste the right location in the cell.
+
+  ```sql
+  <copy>
+  %sql
+  select * from f1_gold_adw.demo_aidp.f1_drivers_ranking
+  ```
+
+  ![cell adjustment](./images/adjustnotebook.png)
+
+  For validation you can also query the database tables to check if data has been inserted. In the tools section of the autonomous database open the cloud SQL to validate with a query like:
 
   ![sql for validation](./images/sqlvalidation.png)
 
