@@ -24,18 +24,18 @@ This lab assumes you have:
 
 1. Step 1 Open and run notebooks
 
-    Open the workspace you created and open the 'Silver-to-gold' folder. In the main pane you open the file starting with name '17_silver_drivers.ipynb'.
+    Open the workspace you created and open the 'Silver-to-gold' folder. In the main pane you open the file starting with name '17\_silver\_drivers.ipynb'.
     Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
 
     When you have completed the first notebook in the 'Silver-to-gold' folder, you can open and run the other notebooks from that folder to populate the tables 'in following order':
 
-    * 17_silver_drivers.ipynb
-    * 18-silver_constructors.ipynb
-    * 15_silver_team_ranking.ipynb
-    * 16_silver_driver_ranking.ipynb
+    * 17\_silver\_drivers.ipynb
+    * 18\_silver\_constructors.ipynb
+    * 15\_silver\_team\_ranking.ipynb
+    * 16\_silver\_driver\_ranking.ipynb
 
     After the notebooks are completed. the master catalog will look something like:
-    ![catalog after notebooks](./images/results.png)
+    ![catalog after notebooks](./images/result.png)
 
 **proceed to the next lab**
 

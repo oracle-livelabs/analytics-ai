@@ -39,7 +39,7 @@ In the upload screen you can drag an drop the files in the bucket. No need to ad
 
 2. Step 2: create catalog entry
 
-    Go to your AI Data Platform and open your master catalog. There you need to define 3 catalogs for each layer of the medallion architecture. In the example screen print they are called: f1_bronze, f1_silver, f1_gold
+    Go to your AI Data Platform and open your master catalog. There you need to define 3 catalogs for each layer of the medallion architecture. In the example screen print they are called: f1\_bronze, f1\_silver, f1\_gold
 
     ![creation of catalogs](./images/createcatalogentry.png)
 
@@ -51,7 +51,7 @@ In the upload screen you can drag an drop the files in the bucket. No need to ad
 
 4. Step 4: create volume and upload files
 
-    In the 'f1_bronze' catalog in the 'bronze' schema you need to create a volume to store the data files as external catalog items. Select the 'bronze' schema in the master catalog pane, and in the main pane you select 'volume'. Once selected you click the '+' symbol to create a volume. In the example the volume name 'f1_bronze_volume' is used. In the entry screen, create name, select 'external' and select the compartment, bucket, (and folder) where you stored you data files at steps 1. Make. sure you push the 'upload' button.
+    In the 'f1\_bronze' catalog in the 'bronze' schema you need to create a volume to store the data files as external catalog items. Select the 'bronze' schema in the master catalog pane, and in the main pane you select 'volume'. Once selected you click the '+' symbol to create a volume. In the example the volume name 'f1\_bronze_volume' is used. In the entry screen, create name, select 'external' and select the compartment, bucket, (and folder) where you stored you data files at steps 1. Make. sure you push the 'upload' button.
 
     ![creation of external volume](./images/createcatalogexternalvolume.png)
 
@@ -73,15 +73,15 @@ As final step of loading data is the creation of tables in the bronze catalog of
 2. Step 2: upload notebooks
 
     Upload notebook files that you downloaded from Github into their respective workspace folder. The notebook filenames start with a number followed by a name.
-    In the 'Files-to-bronze' folder upload files starting with 01_... to 07_...
-    In the 'Bronze-to-silver' folder upload files starting with 08_... to 14_...
-    In the 'Silver-to-gold' folder upload files starting with 15_... to 18_...
+    In the 'Files-to-bronze' folder upload files starting with 01\_... to 07\_...
+    In the 'Bronze-to-silver' folder upload files starting with 08\_... to 14\_...
+    In the 'Silver-to-gold' folder upload files starting with 15\_... to 18\_...
 
     ![upload of notebooks](./images/uploadfilestoworkspace.png)
 
 3. Step 3: open and run notebooks
 
-    Open the workspace you created and open the 'Files-to-bronze' folder. In the main pane you open the file starting with name '01_git_file_pitstops.ipynb'. In the Notebook pane which looks like the picture you see the content of the notebook. The Notebook is structured in cells which contain code. For this example we mainly use 'Python'.
+    Open the workspace you created and open the 'Files-to-bronze' folder. In the main pane you open the file starting with name '01\_git\_file\_pitstops.ipynb'. In the Notebook pane which looks like the picture you see the content of the notebook. The Notebook is structured in cells which contain code. For this example we mainly use 'Python'.
 
     In between the code cells you also find descriptions. Cell can be run 1 by 1 as highlighted with the small arrow at the cell. The entire notebook also can be run with one click in top right corner. Before you are able to run a notebook you first need to attach the compute cluster as highlighted in the picture by clicking on 'cluster' get the drop down and click 'attach existing cluster'
     If you get a message that 'No Clusters area available' you need to start the cluster that you created previously by selecting 'compute' in the left pane and start the compute cluster at the '...' at the right side of the line of your compute cluster. (This start will take a little while. The cluster being stopped related to the idle time set at creation of the cluster. This setting can be adjusted if needed). You can go back to your notebook and attach the cluster. A green message appears when the cluster is attached. AI Data Platform will remember the cluster that was attached previously, but it has to be active.
@@ -96,8 +96,8 @@ As final step of loading data is the creation of tables in the bronze catalog of
 
 4. Step 4: validate table creation
 
-    This step is to verify the creation of the tables in the f1_bronze schema in the catalog.
-    After the notebook runs have completed successfully you can expand the f1_bronze catalog item and expand the bronze schema to view the created tables. If they are not appearing you may need to refresh the catalog by using the refresh button at the top of the catalog pane.
+    This step is to verify the creation of the tables in the f1\_bronze schema in the catalog.
+    After the notebook runs have completed successfully you can expand the f1\_bronze catalog item and expand the bronze schema to view the created tables. If they are not appearing you may need to refresh the catalog by using the refresh button at the top of the catalog pane.
 
     ![validate table creation](./images/filestobronzeviewresult.png)
 

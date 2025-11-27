@@ -24,7 +24,7 @@ This lab assumes you have:
 
 1. Step 1: Run notebooks to process data
 
-  Open the workspace you created and open the 'Bronze-to-silver' folder. In the main pane you open the file starting with name '08_bronze_pitstops.ipynb'.
+  Open the workspace you created and open the 'Bronze-to-silver' folder. In the main pane you open the file starting with name '08\_bronze\_pitstops.ipynb'.
   > "Note: Before  running this notebook, please check the parameter cell if the right catalog names and schema names are defined. Otherwise your notebook may error out.
   You also can run the notebook for the second time and change the target format to 'parquet'.
 
