@@ -68,7 +68,7 @@ This lab assumes you have:
 
 
 **show result picture  Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in task 1, using SQL , making use of prebuilt table definitions from file [f1\_DDL\_ADW\_Tables.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Ff1_DDL_ADW_tables.txt) which is available in Github.
-  The tables can be created using SQL Developer or Cloud SQL as part of the Autonomous Database toolkit. Make sure that you use the right user/schema that is allowed access by the user that is used in the credentials when setting up the external catalog item.
+  The tables can be created using SQL Developer or Cloud SQL as part of the Autonomous Database toolkit. Make sure that you use the user/schema created in Task 1.
 
   ![create tables in sql ](./images/createtablessql.png)
 
@@ -104,7 +104,7 @@ This lab assumes you have:
 
   Although autosave is enabled, make sure that changes are saved.
 
-3. Step 3: Run notebooks in specified order
+1. Step 3: Run notebooks in specified order
 
   Now you can run the notebooks again in following order:
 
