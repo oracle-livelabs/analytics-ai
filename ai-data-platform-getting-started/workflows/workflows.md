@@ -14,6 +14,39 @@ In this lab, you will:
 * Run workflows
 * Schedule Workflows
 
+Workflow for Files to Bronze loading of data needs following tasks
+
+|  Workflow name |  Taskname  | Notebook name  |  Dependency
+| ---- | ---- | ---- | ---- |
+| Files\_to\_bronze\_job	| Constructors\_file | 07\_git\_file\_constructors.ipynb | No |
+| Files\_to\_bronze\_job | Races\_file  | 03\_git\_file\_races.ipynb | No  |
+| Files\_to\_bronze\_job | Pitstops\_file     | 01\_git\_file\_pitstops.ipynb  | No  |
+| Files\_to\_bronze\_job | Driver\_file  | 06\_git\_file\_drivers.ipynb | Parallel  |
+| Files\_to\_bronze\_job | Laptimes\_file | 02\_git\_file\_laptimes.ipynb | No |
+| Files\_to\_bronze\_job | Results\_file  | 04\_git\_file\_results.ipynb  | No |
+| Files\_to\_bronze\_job | Driver\_standings\_file  | 05\_git\_file\_driver\_standings.ipynb  | No  |
+
+Workflow for Bronze to Silver loading of data needs following tasks
+
+|  Workflow name |  Taskname  | Notebook name  |  Dependency
+| ---- | ---- | ---- | ---- |
+| Bronze\_to\_silver | constructors\_silver | 14\_bronze\_constructors.ipynb | No |
+| Bronze\_to\_silver | races\_silver  | 10\_bronze\_races.ipynb | No  |
+| Bronze\_to\_silver | pitstops\_silver  | 08\_bronze\_pitstops.ipynb  | No  |
+| Bronze\_to\_silver | drivers\_silver  | 13\_bronze\_drivers.ipynb | Parallel  |
+| Bronze\_to\_silver | laptimes\_silver | 09\_bronze\_laptimes.ipynb | No |
+| Bronze\_to\_silver | results\_silver  | 11\_bronze\_results.ipynb  | No |
+| Bronze\_to\_silver | driver\_standings\_silver  | 12\_bronze\_driverstandings.ipynb  | No  |
+
+Workflow for Silver to Gold loading of data needs following tasks
+
+|  Workflow name |  Taskname  | Notebook name  |  Dependency
+| ---- | ---- | ---- | ---- |
+| Silver\_to\_gold | constructors\_gold | 18\_silver\_constructors.ipynb | No |
+| Silver\_to\_gold | drivers\_gold  | 17\_silver\_drivers.ipynb | No  |
+| Silver\_to\_gold | team\_rank\_gold | 15\_silver\_team\_ranking.ipynb  | constructors\_gold, drivers\_gold  |
+| Silver\_to\_gold | driver\_rank\_gold  | 16\_silver\_driver\_ranking.ipynb | team\_rank\_gold  |
+
 ### Prerequisites (Optional)
 
 This lab assumes you have:
