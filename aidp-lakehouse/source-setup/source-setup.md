@@ -64,6 +64,7 @@ This lab assumes you have:
 
 ```sql
 <copy>
+CREATE USER SOURCE_DATA IDENTIFIED BY "strong_password";
 -- Data privileges
 GRANT CONNECT, RESOURCE TO SOURCE_DATA;
 
