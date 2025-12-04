@@ -125,7 +125,9 @@ This lab assumes you have:
 
 1. Click the **Submit** button.
 
-1. 
+1. We can see the agent is able to pull important information about about limits for Back-End Debt-to-Income.
+
+    ![Screenshot showing the final question for the agent](./images/finalquestionresponse.png)
 
 1. Now we can see if there are any applications that violate a policy. Type into the message box:
 
