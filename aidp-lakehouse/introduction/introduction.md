@@ -24,8 +24,8 @@ By completing this workshop, you will:
 - Prepare and publish analytics-ready data to **Autonomous AI Lakehouse**
 - Design data visualizations and dashboards with **Oracle Analytics Cloud** (OAC)
 
-**Architecture Overview:**  
-![Lakehouse Architecture Diagram](images/ai-lakehouse-aidp-2.png)
+**Logical Architecture Overview:**  
+![Lakehouse Architecture Diagram](images/aidp-ai-lakehouse-logical.jpg)
 
 **Key Oracle Services Touched:**
 * **Autonomous Transaction Processing (ATP):** Transactional source for operational data
@@ -71,6 +71,7 @@ This workshop assumes you have:
 
 **Contributors**
 * **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
