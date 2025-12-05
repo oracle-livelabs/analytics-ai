@@ -366,6 +366,8 @@ enhanced_df.show(10, False)
 
 **NOTE** AIDP as of writing (Nov 2025) supports cohere and grok models. Dragging and dropping the other sample models from the catalog can result in 'model not found' errors. A temporary workaround can be to remove the '**default.oci\_ai\_models**' prefix from the model path. This should be fixed in the near future. 
 
+**NOTE** Cohere on demand is only available in Chicago region. In Ashburn, a different model would need to be used e.g. xai.grok-4. For more details on availablility, see [Pretrained Foundational Models](https://docs.oracle.com/en-us/iaas/Content/generative-ai/pretrained-models.htm)
+
 ---
 
 ## Task 11: Write Enriched Data to Gold Schema 
@@ -506,5 +508,9 @@ Proceed to Lab 3 to visualize the gold data in Oracle Analytics Cloud.
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
 
+**Contributors** 
+* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform
+
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, November 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
