@@ -182,7 +182,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold;
 
 ![Create Notebook](./images/create-notebook.png)
 
-4. Create/attach cluster **my_workspace_cluster**.
+4. Create/attach cluster **my\_workspace\_cluster**.
 
 ![Create Cluster](./images/create-cluster.png)
 

@@ -91,7 +91,7 @@ This lab assumes you have:
 ![Select Dataset](./images/select-dataset.png)
 
 3. You can now drag and drop fields for visualization. For example, to create a pie chart of the average departure delay by airline, drag the following fields onto the canvas - 
-    - AVG_DEP_DELAY
+    - AVG\_DEP\_DELAY
     - AIRLINE
 
 ![Average Departure Delay Pie Chart](./images/avg-dep-delay-pie.png)
@@ -100,7 +100,7 @@ This lab assumes you have:
 
 ![Average Departure Delay Pie Chart](./images/avg-dep-delay-pie-2.png)
 
-4. We can also create a bar chart by average departure delay. Drag and drop the field AVG_DEP_DELAY onto the canvas, outside of the existing pie chart. Map the following fields - 
+4. We can also create a bar chart by average departure delay. Drag and drop the field AVG\_DEP\_DELAY onto the canvas, outside of the existing pie chart. Map the following fields - 
 
 ![Average Departure Delay Bar Chart](./images/avg-dep-delay-bar.png)
 

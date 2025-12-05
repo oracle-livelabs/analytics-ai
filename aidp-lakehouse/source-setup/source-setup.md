@@ -118,7 +118,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO SOURCE_DATA;
 
 ## Task 3: Load Sample Airline Data into SOURCE_DATA Schema
 
-1. In SQL Developer Web (as SOURCE_DATA), create the AIRLINE_SAMPLE table:
+1. In SQL Developer Web (as SOURCE\_DATA), create the AIRLINE\_SAMPLE table:
 
 ```sql
 <copy>
