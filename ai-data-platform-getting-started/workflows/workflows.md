@@ -21,7 +21,7 @@ Workflow for Files to Bronze loading of data needs following tasks
 | Files\_to\_bronze\_job	| Constructors\_file | 07\_git\_file\_constructors.ipynb | No |
 | Files\_to\_bronze\_job | Races\_file  | 03\_git\_file\_races.ipynb | No  |
 | Files\_to\_bronze\_job | Pitstops\_file     | 01\_git\_file\_pitstops.ipynb  | No  |
-| Files\_to\_bronze\_job | Driver\_file  | 06\_git\_file\_drivers.ipynb | Parallel  |
+| Files\_to\_bronze\_job | Driver\_file  | 06\_git\_file\_drivers.ipynb | No  |
 | Files\_to\_bronze\_job | Laptimes\_file | 02\_git\_file\_laptimes.ipynb | No |
 | Files\_to\_bronze\_job | Results\_file  | 04\_git\_file\_results.ipynb  | No |
 | Files\_to\_bronze\_job | Driver\_standings\_file  | 05\_git\_file\_driver\_standings.ipynb  | No  |
