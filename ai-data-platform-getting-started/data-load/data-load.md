@@ -59,6 +59,15 @@ In the upload screen you can drag an drop the files in the bucket. No need to ad
 
 As final step of loading data is the creation of tables in the bronze catalog of AI Data Platform based on data files we have uploaded as external data volume files.
 
+> **Note:** Occasionally you may get an error when executing a notebook that starts like. 
+> [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`f1_bronze`.`bronze`.`f1_lap_times_dlt`'). The associated location ('oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1_lap_times_dlt') is not empty and also not a Delta table.]
+> or
+> [DELTA_TRUNCATED_TRANSACTION_LOG] oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1_results_dlt/_delta_log/00000000000000000000.json: Unable to reconstruct state at version 1 as the transaction log
+> In case this happens some. easy steps can be executed to work around this problem. From the error message you need to capture the associated location, which is pointing to an object storage location.
+In OCI console you navigate to the object storage buckets. Use the location from the error message and open that bucket - folder to where you see the names o fthe tables as folders.
+Right of the folder name (in this example f1_results_dlt or f1_lap_times_dlt) at the 3 ... you have the option to delete that particular folder. pelase do so and run the notebook that loads that file in the delta table again.
+You might face the same error when loading data from Bronze to Silver. Same workaround applies.
+
 1. Step 1: create workspace structure
 
     Open the workspace you created and create following folder structure (You can create your own structure but that will require changes to the notebook content).
