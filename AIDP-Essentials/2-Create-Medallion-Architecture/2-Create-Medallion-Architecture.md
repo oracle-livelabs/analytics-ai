@@ -48,94 +48,26 @@ This lab assumes you have:
 
 2. Now to import the notebook used to create the bronze tier. Select the upload file icon.
 
-3. Upload the _____ file and select **Upload**.
+3. Choose the **1_create_bronze_tier** and **2_upload_suppier_emotions** files and select **Upload**.
 
-4. Repeat the same process for the **Silver** and **Gold** folders. Upload the _______ folders into the **Silver** folder and the ____ file into the **Gold** folder.
+4. Repeat the same process for the **Silver** and **Gold** folders. Upload **3_silver_transformation**, **4_silver_transformation_continent**, and **5_silver_transformation_summary** into the **Silver** folder. Upload **6_gold_join** and **7_gold_job_into_DB** into the **Gold** folder.
 
-5. Return to the **Bronze** folder and select the _____ file to open it in the notebook interface.
+5. Return to the **Bronze** folder and select the **create_bronze_tier** file to open it in the notebook interface.
 
-6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select ______.
+6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select **Cluster** then **Attach existing cluster**. Choose the **Medallion_Compute** you created earlier.
 
-7. Scroll through the notebook and review the code you are about to run. This notebook
+7. Scroll through the notebook and review the code you are about to run. The main operation that happens in this notebook is that a **bronze_supplier** catalog and a schema for it are created, then the basic_supplier dataset is written to the catalog as a table. You will also notice that the second paragraph references parameters, this will be used to introduce logic into the job you create later using this notebook.
 
-## Task 3: Workspace and Compute Creation
+8. Once you have reviewed the code, select **Run** then **Run all**
 
-1. **Create a Workspace**
+9. When finished, continue on to the **2_upload_supplier_emotions** notebook and run it. This short notebook creates another table in the bronze catalog.
 
-   - In AIDP Workbench, select the Workspaces tab.
-   - Click the plus icon to create a new workspace.
-   - Name the workspace and select the default catalog.
+10. Continue on to the notebooks in the **Silver** folder. Go through them in numerical order, reviewing then running them. These notebooks clean and organize the bronze tier data to create the silver tier. Along the way LLMs from the OCI Gen AI Service are used to augment the data.
 
-2. **Create a Compute Cluster**
+11. Finally run the two notebooks in the **Gold** folder. These consolidate tables from the silver tier into a finalized gold table. This table is then loaded into the 26ai database using the external catalog created earlier. Saving the gold tier data to this datastore allows it to be effectively leveraged for analytics workloads.
 
-   - Within the newly created workspace, navigate to the Compute tab.
-   - Click the plus icon to create a new compute cluster.
-   - Configure the cluster by selecting runtime, driver and worker shapes, and the number of workers.
-   - Return to the base configuration and choose "Create" to provision the compute resource.
+9. Navigate to the master catalog to view the catalogs created by the code in the notebooks. Notice how the bronze, silver, and gold tier catalogs are now populated in the master catalog for future use.
 
-## Task 4: Medallion Architecture Implementation
-
-1. **Access Pre-Created Workspace**
-
-   - Use the dropdown next to the workspace name to access a pre-created workspace.
-   - Review the different folders and files to understand the pre-configured environment.
-
-2. **Access Pre-Created Compute Cluster**
-
-   - Navigate to the Compute tab and select the pre-created cluster.
-   - Explore the different tabs to understand the compute cluster's configuration and status.
-
-3. **Create Bronze Layer**
-
-   - Open the `upload_from_volume.ipynb` notebook in the `bronze` folder.
-   - Programmatically create a catalog and schema if not already present.
-   - Read data from a volume and create a Bronze table in the catalog.
-
-4. **Transform Data to Silver Layer**
-
-   - Open the `silver_transformation.ipynb` notebook in the `silver` folder.
-   - Read data from the Bronze table, add necessary columns, and write to the Silver catalog.
-   - Utilize AI functionalities to enhance the Silver table, such as adding a continent column using GenAI models.
-
-5. **Summarize Customer Feedback with AI**
-
-   - Access the `silver_transformation_summary.ipynb` notebook.
-   - Use GenAI models to summarize customer feedback and provide sentiment scores.
-   - Write the summarized data to the Silver catalog.
-
-6. **Join Silver Tables into Gold Layer**
-
-   - Open the `silver_join.ipynb` notebook.
-   - Join two Silver tables and write the combined data to the Gold tier.
-
-7. **Write Gold Data to Database**
-
-   - Access the `gold_join_into_DB.ipynb` notebook.
-   - Transfer the clean, curated, and enriched data from the Gold tier into the database for final use.
-
-## Task 5: AI Agent for Compliance
-
-1. **Verify Blacklisted Suppliers**
-
-   - Open the `GenAi_Agent.ipynb` notebook.
-   - Explain the code and use case for checking unapproved suppliers.
-   - Demonstrate how blacklisted suppliers are identified to illustrate compliance capabilities.
-
-## Task 6: Optional GenAI Access Methods
-
-1. **Explore Different GenAI Access Options**
-
-   - If time permits, open the `access_GenAI_multiple_ways.ipynb` notebook.
-   - Show various methods for calling LLMs in the notebook interface.
-   - Discuss the value of different approaches to accessing GenAI services.
-
-## Task 7: Closing
-
-1. **Recap Progress and Next Steps**
-
-   - Review the accomplishments of the demo, including the creation of the medallion architecture and the use of AI functionalities.
-   - Navigate around AIDP to highlight the data assets created during the demo.
-   - Encourage questions or discussions to clarify any points.
 
 ## Learn More
 
