@@ -89,13 +89,15 @@ This lab assumes you have:
 
 10. Paste this next statement over the previous one and run it as well. This statement defines a database table that we will write our gold tier data to once our medallion architecture is created.
 
+![Create database table](images/Create_Gold_Table.png)
+
 '''CREATE TABLE gold_supplier_feedback (
     supplier_name VARCHAR(100),
     continent VARCHAR(100),
     country VARCHAR(100),
     city VARCHAR(100),
     summary_review VARCHAR(1000),
-    rating int
+    rating VARCHAR(10)
 );'''
 
 ## Task 3: Create an External Catalog in AIDP Workbench
@@ -106,85 +108,82 @@ This lab assumes you have:
 
 2. Select the AIDP Workbench instance you created earlier. You will be asked to sign in again with the same credentials you use to login to OCI.
 
-![Select AIDP Instance](images/.png)
+![Select AIDP Instance](images/Access_AIDP_Instance.png)
 
-3. Your first step in AIDP will be to connect to your data. From the AIDP Workbench homepage, select the **Master catalog** tab from the left-hand menu.
+3. Your first step in AIDP will be to connect to your data. From the AIDP Workbench homepage, select the **Master catalog** tab from the left-hand menu. Notice the default catalog already present here. Expand it and the **oci\_ai\_models** folder to see LLMs that are available for use in AIDP Workbench.
 
-![Select Master Catalog](images/.png)
+![Select Master Catalog](images/View_GenAI_Models.png)
 
-4. Notice the default catalog already present here. Expand it and the **oci_ai_models** folder to see LLMs that are available for use in AIDP Workbench.
 
-![Select Master Catalog](images/.png)
-
-5. Create your first catalog by choosing**Create Catalog**.
+4. Create your first catalog by choosing **Create Catalog**.
 
 ![Select Master Catalog](images/Create_Catalog.png)
 
-6. Name it **supplier_external_23ai** and choose **External Catalog** for **Catalog type**
+5. Name it **supplier\_external\_23ai** and choose **External Catalog** for **Catalog type**
 
 ![Select Master Catalog](images/Name_External_Catalog.png)
 
-7. Select **Oracle Autonomous Data Warehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, input **ADMIN** for **Username**, then the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
+6. Select **Oracle Autonomous Data Warehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, input **ADMIN** for **Username**, then the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
 
 ![Select Master Catalog](images/Configure_Catalog_DB_Access.png)
 
-8. When the catalog finishes creation select the arrow next to it, then the arrow next to the **admin** to see tables that are now accessible. You will use this connection to save your gold tier data to this database for further use.
+7. When the catalog finishes creation select the arrow next to it, then the arrow next to the **admin** to see tables that are now accessible. You will use this connection to save your gold tier data to this database for further use.
 
-![View DB tables](images/.png)
+![View DB tables](images/View_External_Catalog.png)
 
 ## Task 3: Create and Populate a Standard Catalog in AIDP Workbench
 
-9. Next you will create a standard catalog. Select the breadcrumb menu to return to the master catalog if you are not already there. Select **Create catalog**.
+1. Next you will create a standard catalog. Select the breadcrumb menu to return to the master catalog if you are not already there. Select **Create catalog**.
 
 ![Create Catalog](images/Create_Catalog.png)
 
-10. Name it **Supplier**. Leave the **Catalog Type** as **Standard catalog**. Select the same compartment your other lab assets are in, then choose **Create**
+2. Name it **Supplier**. Leave the **Catalog Type** as **Standard catalog**. Select the same compartment your other lab assets are in, then choose **Create**
 
-![View DB tables](images/Create_Supplier_Catalog.png)
+![create catalog](images/Create_Supplier_Catalog.png)
 
-11. When the catalog finishes creation select its name to access it.
+3. When the catalog finishes creation select its name to access it.
 
-![View DB tables](images/.png)
+![select catalog](images/View_Standard_Catalog.png)
 
-12. Select **Create schema**.
+4. Select **Create schema**.
 
-![View DB tables](images/Create_Schema.png)
+![create schema](images/Create_Schema.png)
 
-13. Name the schema **supplier_schema** and choose **Create**.
+5. Name the schema **supplier\_schema** and choose **Create**.
 
-![View DB tables](images/Create_Supplier_Schema.png)
+![create supplier schema](images/Create_Supplier_Schema.png)
 
-14. Select the **supplier_schema**.
+6. Select the **supplier_schema**.
 
-![View DB tables](images/.png)
+![select schema](images/Select_SUpplier_Schema.png)
 
-15. Choose **Add to schema** then select **Table**.
+7. Choose **Add to schema** then select **Table**.
 
-![View DB tables](images/Create_Table_Clicks.png)
+![Create table](images/Create_Table_Clicks.png)
 
-16. Keep the **Table type** as **Managed**. drop in the **basic_supplier.csv** file. Select **Preview data** then **Create**.
+8. Keep the **Table type** as **Managed**. drop in the **basic_supplier.csv** file. Select **Preview data** then **Create**.
 
-![View DB tables](images/Create_Basic_Supplier.png)
+![create table](images/Create_Basic_Supplier.png)
 
-16. Create another managed table, this time use the **supplier_emotions.csv** file.
+9. Create another managed table, this time use the **supplier_emotions.csv** file.
 
-![View DB tables](images/Create_Supplier_Emotions.png)
+![create emotions table](images/Create_Supplier_Emotions.png)
 
-17. Now create a volume. Again select **Add to schema**, this time choose **Volume**.
+10. Now create a volume. Again select **Add to schema**, this time choose **Volume**.
 
-![View DB tables](images/Create_Volume_Clicks.png)
+![create volume](images/Create_Volume_Clicks.png)
 
-18. Name it **supplier_volume** and choose **Managed** as the volume type.
+11. Name it **supplier_volume** and choose **Managed** as the volume type.
 
-![View DB tables](images/Create_Supplier_Volume.png)
+![set as managed volume](images/Create_Supplier_Volume.png)
 
-19. Select the **Volumes** tab then select the **Supplier_Volume** you just created.
+12. Select the **Volumes** tab then select the **Supplier_Volume** you just created.
 
-![View DB tables](images/Access_Supplier_Volume.png)
+![select volume](images/Access_Supplier_Volume.png)
 
-20. Select the plus icon then **Upload file**. Select the **supplier_info.txt** file from your computer then choose **Upload**.
+13. Select the plus icon then **Upload file**. Select the **supplier_info.txt** file from your computer then choose **Upload**.
 
-![View DB tables](images/.png)
+![upload file to volume](images/Upload_To_Volume.png)
 
 You have now created your structured and unstructured data assets in AIDP Workbench that are ready to be processed into the bronze, silver, and gold tiers of your medallion architecture.
 
