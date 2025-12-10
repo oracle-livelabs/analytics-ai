@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize your catalogs for future reference in notebooks and jobs.
+This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, Creating an Autonomous Data Warehouse, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize your catalogs for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -11,6 +11,7 @@ Estimated Time: 45 minutes
 In this lab, you will:
 
 - Provision an AIDP Workbench instance.
+- Provision a 26ai Autonomous Data Warehouse
 - Access the master catalog.
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
@@ -90,75 +91,95 @@ This lab assumes you have:
 
 1. Navigate back to your AIDP Workbench instance by again using the OCI menu and choosing **Analytics and AI** then **AI Data Platform Workbench**
 
-2. Select the AIDP Workbench instance you created earlier. You will be asked to sign in again with the same credenails you use to login to OCI.
+![Navigate to AIDP Section](images/OCI_Console_Access_AIDP.png)
+
+2. Select the AIDP Workbench instance you created earlier. You will be asked to sign in again with the same credentials you use to login to OCI.
+
+![Select AIDP Instance](images/.png)
 
 3. Your first step in AIDP will be to connect to your data. From the AIDP Workbench homepage, select the **Master catalog** tab from the left-hand menu.
 
+![Select Master Catalog](images/.png)
+
 4. Notice the default catalog already present here. Expand it and the **oci_ai_models** folder to see LLMs that are available for use in AIDP Workbench.
+
+![Select Master Catalog](images/.png)
 
 5. Create your first catalog by choosing**Create Catalog**.
 
+![Select Master Catalog](images/Create_Catalog.png)
+
 6. Name it **supplier_external_23ai** and choose **External Catalog** for **Catalog type**
+
+![Select Master Catalog](images/Name_External_Catalog.png)
 
 7. Select **Oracle Autonomous Data Warehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, input **ADMIN** for **Username**, then the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
 
+![Select Master Catalog](images/Configure_Catalog_DB_Access.png)
+
 8. When the catalog finishes creation select the arrow next to it, then the arrow next to the **admin** to see tables that are now accessible. You will use this connection to save your gold tier data to this database for further use.
 
-![Select the HIGH consumer group from the pulldown menu.](images/3054194709.png)
+![View DB tables](images/.png)
 
 ## Task 3: Create and Populate a Standard Catalog in AIDP Workbench
 
-9. Next you will create a standard catalog. Select the breadrumb menu to return to the master catalog if you are not already there. Select **Create catalog**.
+9. Next you will create a standard catalog. Select the breadcrumb menu to return to the master catalog if you are not already there. Select **Create catalog**.
+
+![Create Catalog](images/Create_Catalog.png)
 
 10. Name it **Supplier**. Leave the **Catalog Type** as **Standard catalog**. Select the same compartment your other lab assets are in, then choose **Create**
 
+![View DB tables](images/Create_Supplier_Catalog.png)
+
 11. When the catalog finishes creation select its name to access it.
+
+![View DB tables](images/.png)
 
 12. Select **Create schema**.
 
+![View DB tables](images/Create_Schema.png)
+
 13. Name the schema **supplier_schema** and choose **Create**.
+
+![View DB tables](images/Create_Supplier_Schema.png)
 
 14. Select the **supplier_schema**.
 
+![View DB tables](images/.png)
+
 15. Choose **Add to schema** then select **Table**.
+
+![View DB tables](images/Create_Table_Clicks.png)
 
 16. Keep the **Table type** as **Managed**. drop in the **basic_supplier.csv** file. Select **Preview data** then **Create**.
 
+![View DB tables](images/Create_Basic_Supplier.png)
+
 16. Create another managed table, this time use the **supplier_emotions.csv** file.
+
+![View DB tables](images/Create_Supplier_Emotions.png)
 
 17. Now create a volume. Again select **Add to schema**, this time choose **Volume**.
 
+![View DB tables](images/Create_Volume_Clicks.png)
+
 18. Name it **Supplier_Volume** and choose **Managed** as the volume type.
+
+![View DB tables](images/Create_Supplier_Volume.png)
 
 19. Select the **Volumes** tab then select the **Supplier_Volume** you just created.
 
-20. Select the plus icon then **Upload file**. Select the ____ files from your computer then choose **Upload**. 
+![View DB tables](images/Access_Supplier_Volume.png)
 
+20. Select the plus icon then **Upload file**. Select the **supplier_info.txt** file from your computer then choose **Upload**.
 
+![View DB tables](images/.png)
 
-
-5. **Create a Managed Volume**:  
-   - In "supplier_schema", navigate to the **Volumes** tab and create a volume named "supplier_vol_managed".
-   - Select **Managed** for the volume type and create it.
-
-6. **Add Files to the Managed Volume**:  
-   - Select the "supplier_vol_managed" volume.
-   - Click the plus icon to add files and upload the `supplier_info.txt` file.
-
-7. **Create an External Volume**:  
-   - In "supplier_schema", create a volume named "supplier_vol_external".
-   - Choose **External** for the volume type and specify the location in Object Storage:
-     - Compartment: FAW
-     - Bucket: supplier
-     - Folder: test
-   - Create the volume.
-
-8. **View Files in the External Volume**:  
-   - Select the "supplier_vol_external" volume to view the files accessible in it.
+You have now created your structured and unstructured data assets in AIDP Workbench that are ready to be processed into the bronze, silver, and gold tiers of your medallion architecture.
 
 ## Learn More
 
-For further information and advanced topics, refer to the Oracle AI Data Platform documentation and tutorials.
+ADD DOCUMENTATION
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence

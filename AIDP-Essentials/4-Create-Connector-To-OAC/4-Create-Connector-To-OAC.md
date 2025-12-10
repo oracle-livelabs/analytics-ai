@@ -4,7 +4,7 @@
 
 This lab demonstrates how to establish a connection between Oracle AI Data Platform and Oracle Analytics Cloud (OAC) to visualize and analyze data.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 

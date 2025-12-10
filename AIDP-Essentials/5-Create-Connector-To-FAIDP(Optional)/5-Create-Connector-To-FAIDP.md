@@ -4,7 +4,7 @@
 
 This lab guides you through the process of integrating Fusion Data Intelligence (FDI) with Oracle AI Data Platform to share and analyze data across platforms.
 
-Estimated Time: 40 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 

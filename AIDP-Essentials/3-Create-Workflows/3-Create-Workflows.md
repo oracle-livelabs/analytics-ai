@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of creating and managing workflows in Oracle AI Data Platform to automate data processing tasks.
+This lab guides you through the process of creating and managing jobs from the Workflows tab in Oracle AI Data Platform to automate data processing tasks. You will configure the jobs to process your medallion architecture data on a regular basis.
 
 Estimated Time: 45 minutes
 

@@ -6,17 +6,13 @@ This lab guides you through creating a medallion architecture using the Oracle A
 
 Estimated Time: 60 minutes
 
-### About Oracle AI Data Platform
-
-Oracle AI Data Platform simplifies cataloging, ingesting, and analyzing data for data professionals in an organization. It provides a unified workspace for building, managing, and deploying AI and data-driven solutions.
-
 ### Objectives
 
 In this lab, you will:
 
 - Create and configure a workspace in AIDP Workbench.
-- Set up and manage compute resources.
-- Implement a medallion architecture with Bronze, Silver, and Gold data layers.
+- Create a compute cluster in the workspace.
+- Use the AIDP Workbench notebook interface to implement a medallion architecture with Bronze, Silver, and Gold data layers.
 - Utilize AI functionalities to enhance data processing.
 
 ### Prerequisites
@@ -24,38 +20,43 @@ In this lab, you will:
 This lab assumes you have:
 
 - An Oracle Cloud account.
-- Completed the previous lab on setting up the AIDP environment.
+- Completed the previous lab.
 
-## Task 1: Pre-Webinar Setup
+## Task 1: Create Workspace and Compute Cluster
 
-1. **Prepare the Environment**
+1. In your AIDP Workbench, select the **Workspace** tab and choose **Create**.
 
-   - Ensure your Oracle Cloud instance from the previous lab is ready.
-   - If unavailable, set up a new instance and complete the initial configurations.
+2. Name the workspace **Medallion_Arch** then select **Create**. While it provisions notice that there is a default workspace already populated in the instance whose name we specified when creating the AIDP Workbench instance.
 
-2. **Create Workspace and Upload Notebooks**
+3. Select the workspace name to enter it. We would like to create folders for the notebooks we create associated with the bronze, silver, and gold medallion tiers. Select the plus icon then **Folder**
 
-   - In AIDP Workbench, create a new workspace.
-   - Organize the workspace with folders: `bronze`, `silver`, `gold`, and `misc`.
-   - Upload the provided demo notebooks into their respective folders based on their names.
+4. Name the folder **Bronze** then select **Create**. Repeat this two more times to make folders named **Silver** and **Gold**.
 
-3. **Create Compute Cluster**
+5. Review the permissions associated with the **Bronze** folder by selecting the actions menu for the folder then choosing **Permissions**.
 
-   - Within the workspace, navigate to the Compute tab.
-   - Create a new compute cluster to run the notebooks.
-   - Configure the cluster with appropriate settings for your workload.
+6. Select the plus icon and review how permissions on a folder can be given to roles or individual users. These role-based access controls allow fine grain control over security and collaboration in AIDP Workbench.
 
-## Task 2: Introduction
+7. Next create a compute cluster in the workspace. Select **Compute** from the menu then the plus icon.
 
-1. **Review Previous Session**
+8. Name the compute cluster **Medallion__Compute**. Cluster creation defaults to a **Quickstart** setting which creates a small cluster that spins up very quickly. Deselect **Autoscale** and leave all other selections as is. Feel free browse and look at the compute shape options under the **Custom** section.
 
-   - Navigate to the master catalog to review assets created in the previous session.
-   - Discuss the types of catalog assets and their roles in the data pipeline.
+9. The cluster will become available after a few moments. Select its name to view its details. Here you can learn more about a cluster, including which notebooks it is used by. Additionally in the **Library** section you can install libraries from a **requirements.txt** file.
 
-2. **Overview of AIDP Tools**
+## Task 2: Import and Run Notebooks
 
-   - Introduce key AIDP components: Workspaces, Compute Clusters, and Notebooks.
-   - Highlight how these tools facilitate data processing and AI model development.
+1. Now you will import the notebooks used to run the Python code that processes your data into the 3 tiers of the medallion architecture. Select the **Medallion_Arch** workspace name from the menu then navigate to the **Bronze** folder.
+
+2. Now to import the notebook used to create the bronze tier. Select the upload file icon.
+
+3. Upload the _____ file and select **Upload**.
+
+4. Repeat the same process for the **Silver** and **Gold** folders. Upload the _______ folders into the **Silver** folder and the ____ file into the **Gold** folder.
+
+5. Return to the **Bronze** folder and select the _____ file to open it in the notebook interface.
+
+6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select ______.
+
+7. Scroll through the notebook and review the code you are about to run. This notebook
 
 ## Task 3: Workspace and Compute Creation
 
