@@ -40,3 +40,5 @@ Similar message like this may show up and policy creation as per instructions in
 ## Acknowledgements
 
 * **Author** - Wilbert Poeliejoe
+* **Reviewed by** - Lucian Dinescu, Senior Principal Product Manager, Analytics
+* **Last Updated By/Date** - Wilbert Poeliejoe, AI Data Platform Black Belt: December 11th, 2025

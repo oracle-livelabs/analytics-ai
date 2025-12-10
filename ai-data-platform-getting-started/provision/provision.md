@@ -53,3 +53,5 @@ The prerequisites as listed in previous lab need to be met before this can be ex
 
 * **Author** - Wilbert Poeliejoe, AI Data Platform Black Belt
 * **Contributors** -  Massimo Dalla Rovere, AI Data Platform Black Belt
+* **Reviewed by** - Lucian Dinescu, Senior Principal Product Manager, Analytics
+* **Last Updated By/Date** - Wilbert Poeliejoe, AI Data Platform Black Belt: December 11th, 2025
