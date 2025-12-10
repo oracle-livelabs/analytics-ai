@@ -20,7 +20,7 @@ This lab assumes you have:
 * An Oracle Cloud account with access to Oracle AI Data Platform.
 * Basic knowledge of data processing concepts.
 
-## Task 1: Create a workflow to run your medallion Notebooks
+## Task 1: Create a Workflows for each Tier of the Medallion Architecture
 
 1. You would like your medallion notebooks to run on a schedule so that new data added to your data sources is regularly processed. Begin by selecting **Workflow** then **Create job**
 
@@ -42,90 +42,33 @@ This lab assumes you have:
 
 10. Create a third workflow called **Gold_Workflow**. Add the notebooks from the **Gold** folder to it and run the job to test it as you did the previous ones.
 
-11. Now you will make a final workflow that ties together the 3 you just created. Again create a workflow and call it **Medallion_Workflow**.
+## Task 1: Create and Schedule a Workflow to Run the Medallion Architecture
 
-12. Name the first task **Bronze_Tier** and select **Nested task** for the **Task type**. Browse the available jobs and select the **Bronze_Workflow** job. This means that the entire workflow will run as a single task within the **Medallion_Workflow**.
+1. Now you will make a final workflow that ties together the 3 you just created. Again create a workflow and call it **Medallion_Workflow**.
 
-13. We would like to configure this workflow so that the bronze their tasks run every day, but the silver and gold ones only run on weekdays. To achieve this, create a second task called **Weekday_Condition** and for **Task type** choose **If/else condition**.
+2. Name the first task **Bronze_Tier** and select **Nested task** for the **Task type**. Browse the available jobs and select the **Bronze_Workflow** job. This means that the entire workflow will run as a single task within the **Medallion_Workflow**.
 
-14.
+3. We would like to configure this workflow so that the bronze their tasks run every day, but the silver and gold ones only run on weekdays. To achieve this, create a second task called **Weekday_Condition** and for **Task type** choose **If/else condition**.
 
-14. Under **Condition** next to **A**, paste in the below text. This references a parameter that returns true on weekdays and false on the weekend. Select **==** as the operator and type **true** into the other side of the condition expression. Leave all other options as is.
+4. Under **Condition** next to **A**, paste in the below text. This references a parameter that returns true on weekdays and false on the weekend. Select **==** as the operator and type **true** into the other side of the condition expression. Leave all other options as is.
 
 '''{{job.start_time.is_weekday}}'''
 
-14. Create a third task and name it **Silver_Tier**. Also make it a **Nested task** and choose the **Silver_Workflow** job. Under the **Depends on** section make sure that **Weekday_Condition (true)** is selected. This means that this task will only run when the condition in the if/else condition evaluates to true.
+5. Create a third task and name it **Silver_Tier**. Also make it a **Nested task** and choose the **Silver_Workflow** job. Under the **Depends on** section make sure that **Weekday_Condition (true)** is selected. This means that this task will only run when the condition in the if/else condition evaluates to true. Here you could create an alternate branching task to run if the condition returned false instead.
 
-15. Create a fourth task and name it **Gold_Tier**.
+6. Create a fourth task and name it **Gold_Tier**. Make sure that it is dependent on the **Silver_Tier** task.
 
-1. **Navigate to the Workflows Section:**
-   - Log in to your Oracle AI Data Platform instance.
-   - Access your workspace and click on the **Workflows** tab.
+7. Now your workflow is complete combining all of the data processing for the bronze, silver, and gold tier. Select **Run now** to give it a test run. Navigate to the **Runs** tab and **View** next to the run to see its details
 
-   ![Workflows Tab](images/workflows_tab.png)
+8. The **Graph** section displays the tasks you created, which you can select to view their output.
 
-   > **Note:** Workflows are tied to workspaces, allowing for organized management of data processing tasks.
+9. Select the **Timeline** tab. This shows a timeline of when the different tasks executed. Notice that if you are running this on the weekend the silver and gold tasks will not have run because of the condition we set.
 
-2. **Explore Existing Jobs:**
-   - Within the Workflows section, review any pre-existing jobs to understand their structure and components.
+10. Select **Medallion_Job** in the breadcrumb menu then select **Details** to see the details for the job itself.
 
-## Task 2: Creating and Configuring a Job
+11. On this page you can view and set a number of settings for the job, but we are interested in the **Schedule** section. Select **Add** to create a new schedule.
 
-1. **Create a New Job:**
-   - Click on **Create Job**.
-   - Provide a meaningful name and select the appropriate folder for the job assets.
-   - Click **Create**.
-
-   ![Create Job](images/create_job.png)
-
-2. **Add a Task to the Job:**
-   - Within the newly created job, click on **Add Task**.
-   - Name the task and select the task type (e.g., Notebook Task).
-   - Choose the relevant notebook (e.g., `Exit_now.ipynb`).
-   - Select the appropriate compute cluster and configure other options as needed.
-   - Click **Create**.
-
-   ![Add Task](images/add_task.png)
-
-## Task 3: Implementing Parameterization
-
-1. **Set Parameters for the Task:**
-   - Within the task configuration, navigate to the **Parameters** section.
-   - Add a new parameter with the key `TARGET_FORMAT` and value `csv1`.
-   - Save the configuration.
-
-   ![Set Parameter](images/set_parameter.png)
-
-2. **Run the Job and Observe Behavior:**
-   - Click **Run Now** to execute the job.
-   - Monitor the job run and note any failures due to incompatible parameter values.
-
-   ![Job Run](images/job_run.png)
-
-3. **Modify Parameter Value:**
-   - Change the `TARGET_FORMAT` parameter value to `csv`.
-   - Rerun the job and observe successful execution.
-
-   ![Modify Parameter](images/modify_parameter.png)
-
-   > **Note:** Parameter values directly impact job runs; ensure compatibility with the code logic.
-
-## Task 4: Scheduling and Monitoring Jobs
-
-1. **Schedule the Job:**
-   - Within the job details, navigate to the **Scheduling** tab.
-   - Set up a schedule for the job to run at specified intervals.
-   - Save the schedule.
-
-   ![Schedule Job](images/schedule_job.png)
-
-2. **Monitor Job Runs:**
-   - Access the **Runs** tab to view job execution history.
-   - Review details such as status, logs, and execution time.
-
-   ![Monitor Job Runs](images/monitor_job_runs.png)
-
-   > **Note:** Regular monitoring ensures timely identification and resolution of issues.
+12. Set the **Frequency** to daily and leave all other options as is. Select **Create**. 
 
 ## Learn More
 

@@ -87,6 +87,17 @@ This lab assumes you have:
 
 '''GRANT SELECT ANY TABLE TO ADMIN;''' (need to reformat this)
 
+10. Paste this next statement over the previous one and run it as well. This statement defines a database table that we will write our gold tier data to once our medallion architecture is created.
+
+'''CREATE TABLE gold_supplier_feedback (
+    supplier_name VARCHAR(100),
+    continent VARCHAR(100),
+    country VARCHAR(100),
+    city VARCHAR(100),
+    summary_review VARCHAR(1000),
+    rating int
+);'''
+
 ## Task 3: Create an External Catalog in AIDP Workbench
 
 1. Navigate back to your AIDP Workbench instance by again using the OCI menu and choosing **Analytics and AI** then **AI Data Platform Workbench**
@@ -163,7 +174,7 @@ This lab assumes you have:
 
 ![View DB tables](images/Create_Volume_Clicks.png)
 
-18. Name it **Supplier_Volume** and choose **Managed** as the volume type.
+18. Name it **supplier_volume** and choose **Managed** as the volume type.
 
 ![View DB tables](images/Create_Supplier_Volume.png)
 

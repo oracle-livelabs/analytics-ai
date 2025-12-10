@@ -48,21 +48,19 @@ This lab assumes you have:
 
 2. Now to import the notebook used to create the bronze tier. Select the upload file icon.
 
-3. Choose the **1_create_bronze_tier** and **2_upload_suppier_emotions** files and select **Upload**.
+3. Choose the **1_create_bronze_tier** file and select **Upload**.
 
-4. Repeat the same process for the **Silver** and **Gold** folders. Upload **3_silver_transformation**, **4_silver_transformation_continent**, and **5_silver_transformation_summary** into the **Silver** folder. Upload **6_gold_join** and **7_gold_job_into_DB** into the **Gold** folder.
+4. Repeat the same process for the **Silver** and **Gold** folders. Upload **2_silver_transformation**, **3_silver_transformation_continent**, and **4_silver_transformation_summary** into the **Silver** folder. Upload **5_gold_join** and **6_gold_job_into_DB** into the **Gold** folder.
 
 5. Return to the **Bronze** folder and select the **create_bronze_tier** file to open it in the notebook interface.
 
 6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select **Cluster** then **Attach existing cluster**. Choose the **Medallion_Compute** you created earlier.
 
-7. Scroll through the notebook and review the code you are about to run. The main operation that happens in this notebook is that a **bronze_supplier** catalog and a schema for it are created, then the basic_supplier dataset is written to the catalog as a table. You will also notice that the second paragraph references parameters, this will be used to introduce logic into the job you create later using this notebook.
+7. Scroll through the notebook and review the code you are about to run. The main operation that happens in this notebook is that a **bronze_supplier** catalog and a schema for it are created, then the **basic_supplier** and **supplier_emotions** datasets are written to the catalog as tables.
 
 8. Once you have reviewed the code, select **Run** then **Run all**
 
-9. When finished, continue on to the **2_upload_supplier_emotions** notebook and run it. This short notebook creates another table in the bronze catalog.
-
-10. Continue on to the notebooks in the **Silver** folder. Go through them in numerical order, reviewing then running them. These notebooks clean and organize the bronze tier data to create the silver tier. Along the way LLMs from the OCI Gen AI Service are used to augment the data.
+10. When finished, continue on to the notebooks in the **Silver** folder. Go through them in numerical order, reviewing then running them. These notebooks clean and organize the bronze tier data to create the silver tier. Along the way LLMs from the OCI Gen AI Service are used to augment the data.
 
 11. Finally run the two notebooks in the **Gold** folder. These consolidate tables from the silver tier into a finalized gold table. This table is then loaded into the 26ai database using the external catalog created earlier. Saving the gold tier data to this datastore allows it to be effectively leveraged for analytics workloads.
 

@@ -19,40 +19,39 @@ This lab assumes you have:
 * An Oracle Cloud account with access to both Oracle AI Data Platform and Oracle Analytics Cloud.
 * Basic understanding of data visualization concepts.
 
-## Task 1: Generating the Connection Configuration File
+## Task 1: Create Oracle Analytics Cloud Instance (Optional)
 
-1. **Access Oracle AI Data Platform:**
-   - Log in to your Oracle AI Data Platform instance.
-   - Navigate to the **Compute** section and select your compute cluster.
+1. If you already have an Oracle Analytics Cloud instance you would like to use, skip this task. Otherwise, from the oci console, select the hamburger menu then **Analytics** and **Oracle Analytics Cloud**
 
-   ![Compute Cluster](images/compute_cluster.png)
+2. Select **Create Instance**
 
-2. **Download the Configuration File:**
-   - Within the compute cluster details, go to the **Connection Details** tab.
-   - Under "Connect to BI Tool," select **OAC** and download the `config.json` file.
+3. Name the instance **LivelabOAC**. Leave all other selections as is and select **Create**.
 
-   ![Download Config File](images/download_config_file.png)
+4. When the instance is finished provisioning, access the OAC home page by selecting **Analytics Home Page**.
 
-   > **Note:** This file contains the necessary credentials and configurations for establishing the connection.
+## Task 3: Generate an API Key pair
 
-## Task 2: Creating the Connection in Oracle Analytics Cloud
+1. You will need an API key in order to create the connection between OAC and AIDP. From any page in the OCI Console, select the **Profile** icon then select your username.
 
-1. **Access OAC:**
-   - Log in to your Oracle Analytics Cloud instance.
-   - Navigate to the **Data** tab and click on **Connections**.
+2. Select the **Tokens and keys** tab then choose **Add API key**
 
-   ![OAC Connections](images/oac_connections.png)
+3. Keep **Generate api key pair** selected. Select **Download private key** then choose **Add**. 
 
-2. **Create a New Connection:**
-   - Click on **Create** and select **Oracle AI Data Platform** as the connection type.
-   - Upload the previously downloaded `config.json` file.
-   - Enter the private API key associated with your Oracle Cloud user.
-   - Specify the catalog name you wish to access (e.g., `gold_supplier`).
-   - Click **Create** to establish the connection.
+## Task 3: Generate the Connection Configuration File
 
-   ![Create OAC Connection](images/create_oac_connection.png)
+1. To create the connection between AIDP Workbench and OAC, you first need a config file from the compute cluster you will use for the connection. Return to the AIDP Workbench and select **Compute** from within your workspace. Select the **Medallion_Compute** cluster.
 
-   > **Note:** Ensure that the private API key is generated and accessible from your OCI console.
+2. Select the **Connection Details** tab. Here, choose the **Oracle Analytics Cloud** icon. When you do so a **config.json** file will be downloaded to your local machine.
+
+
+
+## Task 4: Create the Connection in Oracle Analytics Cloud
+
+1. Open up the Oracle Analytics Cloud homepage. From here, choose **Create** then **Connection**.
+
+2. Find the **Oracle AI Data Platform** icon. Use the search bar if you cannot locate it.
+
+3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Select **Save**.
 
 ## Task 3: Accessing Data from Oracle AI Data Platform in OAC
 
