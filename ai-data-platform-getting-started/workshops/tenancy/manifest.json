@@ -3,6 +3,11 @@
   "help": "livelabs-help-analytics_us@oracle.com",
   "tutorials": [
     {
+      "title": "Getting Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
       "title": "Introduction",
       "description": "This workshop is to get you started with Oracle AI Data Platform which allows you to manage your data and AI assets.",
       "filename": "../../introduction/introduction.md"

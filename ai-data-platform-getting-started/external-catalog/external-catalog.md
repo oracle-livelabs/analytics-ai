@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Create external Catalog to Autonomous AI Lakehouse
 
-4. Step 1: Start External catalog creation
+1. Step 1: Start External catalog creation
 
   Select the Master Catalog and use the '+' to create a new catalog entry. Provide all the details in the form. For 'catalog type' select 'External Catalog'. The form will change and at 'External Source Type' select 'Oracle Autonomous Data Warehouse'.
   Fill in all the details and use the wallet, test the connection and create the catalog entry.
