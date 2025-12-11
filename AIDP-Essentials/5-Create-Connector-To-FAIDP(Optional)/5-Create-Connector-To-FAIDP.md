@@ -21,41 +21,25 @@ This lab assumes you have:
 
 ## Task 1: Enabling Oracle AI Data Platform Feature in FDI
 
-1. Begin at the admin console of your FAIDP instance. **Access FDI Admin Console:**
-   - Log in to your Fusion Data Intelligence instance.
-   - Navigate to the **Admin Console**.
+1. Begin at the admin console of your FAIDP instance. Select **Enable Features**
 
-   ![FDI Admin Console](images/fdi_admin_console.png)
+   ![FDI Admin Console](images/.png)
 
-2. **Enable the Feature:**
-   - Go to the **Enable Features** page.
-   - Scroll down to find **Oracle AI Data Platform**.
-   - Toggle the feature to **Enabled**.
+2. Scroll to find the **Oracle AI Data Platform** feature and select it to enable the feature. Return to the main admin console page.
 
-   ![Enable Feature](images/enable_feature.png)
+   ![Enable Feature](images/.png)
 
    > **Note:** This step is essential to proceed with the integration.
 
-## Task 2: Creating a Connection from FDI to Oracle AI Data Platform
+## Task 2: Creating a Connection from FAIDP to Oracle AI Data Platform
 
-1. **Navigate to Data Configuration:**
-   - In the FDI Admin Console, select **Data Configuration** and then **Manage Connections**.
+1. From the admin console, select **Data Configuration**.
 
-   ![Data Configuration](images/data_configuration.png)
+2. Next choose **Manage Connections**.
 
-2. **Create a New Connection:**
-   - Click on **Create Connection**.
-   - Select **Oracle AI Data Platform** as the connection type.
-   - Enter the required credentials:
-     - **Object Storage Bucket Name**
-     - **Object Storage Namespace**
-     - **Object Storage Host Name**
-     - **AI Data Platform Instance OCID**
-     - **User OCID with API Key Access**
+3.
 
-   ![Create Connection](images/create_connection.png)
 
-   > **Note:** Ensure that all credentials are accurate and have the necessary permissions.
 
 ## Task 3: Sharing Data from FDI to Oracle AI Data Platform
 
