@@ -104,14 +104,14 @@ This lab assumes you have:
     A list of possible values is shown when adding a dependency.
     It is also possible to change the behavior of the dependencies.
     You can check the **run if** field for possible options. We will use the "all dependencies have executed and succeeded"
-    
+
     ![setting dependencies](./images/dependencies.png)
 
     In the workflow details you find the possibility to schedule the workflow
 
     ![workflow schedule details](./images/workflowdetailsschedule.png)
 
-**proceed to the next lab**
+**Thank you** You now have created yor first AI Data Platform, covered setup for data processing/pipielines ran notebooks and created workflows, in a medallion architecture .
 
 ## Acknowledgements
 
