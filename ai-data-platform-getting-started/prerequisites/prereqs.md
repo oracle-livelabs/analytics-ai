@@ -22,7 +22,7 @@ check if prerequisites are met and  if not, take the time to do the needful to m
 When you start to deploy your AI Data Platform Workbench the OCI console will perform a check if policies are in place.
 
 Similar message like this may show up and policy creation as per instructions in above link are required.
-    ![policy validation message](./images/aidppoliciesmessage.png)
+    ![policy validation message](./images/aidppoliciesmessages.png)
 
 ## Learn More
 
