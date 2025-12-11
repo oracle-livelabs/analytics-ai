@@ -111,7 +111,7 @@ This lab assumes you have:
 
     ![workflow schedule details](./images/workflowdetailsschedule.png)
 
-**Thank you** You now have created yor first AI Data Platform, covered setup for data processing/pipielines ran notebooks and created workflows, in a medallion architecture .
+**Thank you** You completed this Livelab. You now have created yor first AI Data Platform, covered setup for data processing/pipelines ran notebooks and created workflows, in a medallion architecture .
 
 ## Acknowledgements
 
