@@ -23,25 +23,43 @@ This lab assumes you have:
 
 1. If you already have an Oracle Analytics Cloud instance you would like to use, skip this task. Otherwise, from the oci console, select the hamburger menu then **Analytics** and **Oracle Analytics Cloud**
 
+![](images/navigate-to-oac.png)
+
 2. Select **Create Instance**
+
+![](images/access-oac-creation.png)
 
 3. Name the instance **LivelabOAC**. Leave all other selections as is and select **Create**.
 
-4. When the instance is finished provisioning, access the OAC home page by selecting **Analytics Home Page**.
+![](images/create-oac-instance.png)
+
+4. When the instance is finished provisioning, you can now access the OAC home page by selecting **Analytics Home Page**.
+
+![](images/access-oac-homepage.png)
 
 ## Task 3: Generate an API Key pair
 
 1. You will need an API key in order to create the connection between OAC and AIDP. From any page in the OCI Console, select the **Profile** icon then select your username.
 
+![](images/access-user-profile.png)
+
 2. Select the **Tokens and keys** tab then choose **Add API key**
 
-3. Keep **Generate api key pair** selected. Select **Download private key** then choose **Add**. 
+![](images/access-api-key.png)
+
+3. Keep **Generate api key pair** selected. Select **Download private key** then choose **Add**.
+
+![](images/add-api-key.png)
 
 ## Task 3: Generate the Connection Configuration File
 
 1. To create the connection between AIDP Workbench and OAC, you first need a config file from the compute cluster you will use for the connection. Return to the AIDP Workbench and select **Compute** from within your workspace. Select the **Medallion_Compute** cluster.
 
+![](images/access-compute.png)
+
 2. Select the **Connection Details** tab. Here, choose the **Oracle Analytics Cloud** icon. When you do so a **config.json** file will be downloaded to your local machine.
+
+![](images/get-oac-config.png)
 
 
 
@@ -49,25 +67,32 @@ This lab assumes you have:
 
 1. Open up the Oracle Analytics Cloud homepage. From here, choose **Create** then **Connection**.
 
+![](images/create-connection-from-homepage.png)
+
 2. Find the **Oracle AI Data Platform** icon. Use the search bar if you cannot locate it.
 
-3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Select **Save**.
+![](images/select-aidp-connector.png)
 
-## Task 3: Accessing Data from Oracle AI Data Platform in OAC
+3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **** for **Catalog** then Select **Save**.
 
-1. **Explore the Connection:**
-   - Within OAC, select the newly created connection.
-   - Expand the **Schemas** tab to view available data assets.
+> **Note:** Currently, the connection can only be made to a single catalog, not the master catalog.
 
-   ![Explore Connection](images/explore_connection.png)
+![](images/configure-connection.png)
 
-2. **Create a Dataset:**
-   - Drag a table from the connection into the workspace to create a new dataset.
-   - Utilize this dataset to build visualizations and analyses within OAC.
+## Task 5: Visualize AIDP Data in oac
 
-   ![Create Dataset](images/create_dataset.png)
+1. Now that the connection is configured, you can access AIDP data from OAC and create visualizaitons with it. Begin by choosing **Create** then **Dataset**.
 
-   > **Note:** Currently, the connection can only be made to a single catalog, not the master catalog.
+2. Choose the **Livelab_AIDP_Connection** that you just created.
+
+3. Select the ______ table and double-click it. Once its previw appears, select the save icon.
+
+4. Name it _____ then select **Create Workbook**
+
+5. Now the choice is yours as to how you would like to visualize the data. For example, you can select the ____ and ___ columns to together and drag them onto the canvas to create a _____ visualization.
+
+Continue to experiment with visualizing the data. You have now created a connector between Oracle Analytics Cloud and AI Data Platform Workbench.
+
 
 ## Learn More
 

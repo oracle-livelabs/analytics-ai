@@ -70,41 +70,39 @@ This lab assumes you have:
 
 ![](images/Upload_File_Workspace.png)
 
-3. Choose the **1_create_bronze_tier** file and select **Upload**.
+3. Choose the **1\_create\_bronze\_tier** file and select **Upload**.
 
 ![](images/Upload_Bronze.png)
 
-4. Repeat the same process for the **Silver** and **Gold** folders. Upload **2_silver_transformation**, **3_silver_transformation_continent**, and **4_silver_transformation_summary** into the **Silver** folder. Upload **5_gold_join** and **6_gold_job_into_DB** into the **Gold** folder.
+4. Repeat the same process for the **Silver** and **Gold** folders. Upload **2\_silver\_transformation**, **3\_silver\_transformation\_continent**, and **4\_silver\_transformation\_summary** into the **Silver** folder. Upload **5\_gold\_join** and **6\_gold\_job\_into\_DB** into the **Gold** folder.
 
-![](images/.png)
+5. Return to the **Bronze** folder and select the **create\_bronze\_tier** file to open it in the notebook interface.
 
-5. Return to the **Bronze** folder and select the **create_bronze_tier** file to open it in the notebook interface.
+![](images/Open_Notebook.png)
 
-![](images/.png)
+6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select **Cluster** then **Attach existing cluster**. Choose the **Medallion\_Compute** you created earlier.
 
-6. Once in the notebook interface you need to attach a compute cluster on which to run the code. Select **Cluster** then **Attach existing cluster**. Choose the **Medallion_Compute** you created earlier.
+![](images/Attach_Cluster.png)
 
-![](images/.png)
+7. Scroll through the notebook and review the code you are about to run. The main operation that happens in this notebook is that a **bronze\_supplier** catalog and a schema for it are created, then the **basic\_supplier** and **supplier\_emotions** datasets are written to the catalog as tables.
 
-7. Scroll through the notebook and review the code you are about to run. The main operation that happens in this notebook is that a **bronze_supplier** catalog and a schema for it are created, then the **basic_supplier** and **supplier_emotions** datasets are written to the catalog as tables.
+8. Once you have reviewed the code, select **Run all**.
 
-![](images/.png)
-
-8. Once you have reviewed the code, select **Run** then **Run all**
-
-![](images/.png)
+![](images/Run_Notebook.png)
 
 10. When finished, continue on to the notebooks in the **Silver** folder. Go through them in numerical order, reviewing then running them. These notebooks clean and organize the bronze tier data to create the silver tier. Along the way LLMs from the OCI Gen AI Service are used to augment the data.
 
-![](images/.png)
+![](images/Silver_Notebooks.png)
 
 11. Finally run the two notebooks in the **Gold** folder. These consolidate tables from the silver tier into a finalized gold table. This table is then loaded into the 26ai database using the external catalog created earlier. Saving the gold tier data to this datastore allows it to be effectively leveraged for analytics workloads.
 
-![](images/.png)
+![](images/Gold_Notebooks.png)
 
-9. Navigate to the master catalog to view the catalogs created by the code in the notebooks. Notice how the bronze, silver, and gold tier catalogs are now populated in the master catalog for future use.
+9. Navigate to the master catalog to view the catalogs created by the code in the notebooks. Notice how the bronze, silver, and gold tier catalogs are created and populated in the master catalog.
 
-![](images/.png)
+![](images/Catalogs.png)
+
+You have now run the code to create a basic medallion architecture based on the supplier data you placed in the AIDP Workbench Master Catalog.
 
 
 ## Learn More

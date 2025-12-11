@@ -1,17 +1,17 @@
-# Integrating Fusion Data Intelligence (FDI) with Oracle AI Data Platform
+# Integrating Fusion AI Data Platform with Oracle AI Data Platform
 
 ## Introduction
 
-This lab guides you through the process of integrating Fusion Data Intelligence (FDI) with Oracle AI Data Platform to share and analyze data across platforms.
+This lab guides you through the process of integrating Fusion AI Data Platform (FAIDP) with Oracle AI Data Platform to share and analyze data across platforms.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Enable the Oracle AI Data Platform feature within FDI.
-* Create a connection from FDI to Oracle AI Data Platform.
-* Share data from FDI to Oracle AI Data Platform.
+* Enable the Oracle AI Data Platform feature within FAIDP.
+* Create a connection from FAIDP to Oracle AI Data Platform.
+* Share data from FAIDP to Oracle AI Data Platform.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 
 ## Task 1: Enabling Oracle AI Data Platform Feature in FDI
 
-1. **Access FDI Admin Console:**
+1. Begin at the admin console of your FAIDP instance. **Access FDI Admin Console:**
    - Log in to your Fusion Data Intelligence instance.
    - Navigate to the **Admin Console**.
 
