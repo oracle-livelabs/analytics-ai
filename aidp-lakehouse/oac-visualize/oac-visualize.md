@@ -1,8 +1,8 @@
-# Gather Insights with Oracle Analytics Cloud (OAC)
+# Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)
 
 ## Introduction
 
-In this lab, you will use **Oracle Analytics Cloud** (OAC) to explore, visualize, and share insights from your refined airline dataset. Building on your work in **AI Data Platform**, you’ll connect OAC directly to your gold Delta table (now in **Autonomous AI Data Lakehouse**) and create impactful, interactive dashboards that unlock the story in your data.
+In this lab, you will use **Oracle Analytics Cloud** (OAC) to explore, visualize, and share insights from your refined airline dataset in the GOLD schema of Autonomous AI Lakehouse. Building on your work in Lab 2, you’ll connect OAC directly to your gold table and create impactful, interactive dashboards.
 
 > **Estimated Time:** 1 hour
 
@@ -17,7 +17,7 @@ OAC provides a powerful cloud platform for business intelligence, self-service a
 ### Objectives
 
 In this lab, you will:
-- Connect OAC to your “gold” airline dataset in Autonomous AI Data Lakehouse
+- Connect OAC to your “gold” airline dataset in Autonomous AI Lakehouse
 - Create visualizations such as bar and pie charts using key fields (delays, airline, sentiment)
 - Build and customize an interactive dashboard to answer analytic questions
 
@@ -26,7 +26,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Completed **Lab 2: Refine and Prepare Data with AI Data Platform**, with your gold airline data registered in Autonomous AI Data Lakehouse
+- Completed **Lab 2: Process and Refine Data in AI Data Platform and Lakehouse**, with your gold airline data in the GOLD schema of Autonomous AI Lakehouse
 - Access to Oracle Analytics Cloud (OAC)
 - Basic familiarity with web-based dashboards (OAC is point-and-click, no prior BI experience needed)
 
@@ -34,11 +34,13 @@ This lab assumes you have:
 
 ## Task 1: Download the Wallet to Autonomous AI Lakehouse
 
-1. Navigate to the Autonomous AI Lakehouse created in the first lab from your OCI tenancy
+1. Navigate to the Autonomous AI Lakehouse instance from Lab 2 in your OCI tenancy.
 
-2. Select **Database connection** and download the wallet for the lakehouse
+2. Select **Database connection** and download the wallet for the lakehouse.
 
 ![Download Wallet](./images/download-wallet.png)
+
+---
 
 ## Task 2: Connect OAC to Your Gold Data Table
 
@@ -58,11 +60,11 @@ This lab assumes you have:
 
 ![Select Lakehouse](./images/create-adl-conn.png)
 
-5. Provide the details for the lakehouse, and upload the wallet as client credentials from Task 1
+5. Provide the details for the lakehouse, and upload the wallet as client credentials from Task 1. Use GOLD schema credentials.
 
 ![Create ADL Connection](./images/create-adl-conn-2.png)
 
-6. Select Save
+6. Select Save.
 
 7. From the OAC home page, select Create > Dataset
 
@@ -72,7 +74,7 @@ This lab assumes you have:
 
 ![Create ADL Dataset](./images/create-dataset-adl-conn.png)
 
-9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the **AIRLINE\_SAMPLE\_GOLD** table to the white space to the right 
+9. Expand the Schemas on the left-hand side and GOLD schema. Drag and drop the **AIRLINE_SAMPLE_GOLD** table to the white space to the right 
 
 ![Create Gold Dataset](./images/create-dataset-gold.png)
 
@@ -141,7 +143,7 @@ This lab assumes you have:
 
 ## Next Steps
 
-**Congratulations!** You now have a fully functioning pipeline from raw data to analytic insight using **Autonomous AI Lakehouse**, **AI Data Platform**, and **Analytics Cloud**. Feel free to experiment with more charts, filters, or custom calculations—and use your dashboard to present your findings.
+**Congratulations!** You now have a fully functioning pipeline from raw data to analytic insight using **Autonomous Transaction Processing**, **AI Data Platform**, **Autonomous AI Lakehouse**, and **Analytics Cloud**. Feel free to experiment with more charts, filters, or custom calculations—and use your dashboard to present your findings.
 
 ---
 
