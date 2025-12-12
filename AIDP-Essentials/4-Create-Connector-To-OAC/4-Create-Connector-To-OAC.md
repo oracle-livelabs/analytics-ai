@@ -73,25 +73,14 @@ This lab assumes you have:
 
 ![](images/select-aidp-connector.png)
 
-3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **** for **Catalog** then Select **Save**.
+3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **Supplier_External_23ai** for **Catalog** then Select **Save**.
+
 
 > **Note:** Currently, the connection can only be made to a single catalog, not the master catalog.
 
 ![](images/configure-connection.png)
 
-## Task 5: Visualize AIDP Data in oac
-
-1. Now that the connection is configured, you can access AIDP data from OAC and create visualizaitons with it. Begin by choosing **Create** then **Dataset**.
-
-2. Choose the **Livelab_AIDP_Connection** that you just created.
-
-3. Select the ______ table and double-click it. Once its previw appears, select the save icon.
-
-4. Name it _____ then select **Create Workbook**
-
-5. Now the choice is yours as to how you would like to visualize the data. For example, you can select the ____ and ___ columns to together and drag them onto the canvas to create a _____ visualization.
-
-Continue to experiment with visualizing the data. You have now created a connector between Oracle Analytics Cloud and AI Data Platform Workbench.
+Congrats, you have now created a connection between the **Supplier_external_23ai** catalog and your OAC instance! You can now manage this connection to pull data from this catalog into OAC for visualization and analysis. 
 
 
 ## Learn More
