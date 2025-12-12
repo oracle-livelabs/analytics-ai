@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About prerequisites for provisioning AI Data platform Workbench
 
-The AI Data Platform Workbench ames use of various components of OCI like Object Storage and Autonomous AI Lakehouse. Next to that you may want to connect to various sources and targets that run in OCI or even outside. To be able to do so a set of policies needs to be in place. This can be done  in 2 basic forms. 1 is a more narrow scope while th other has a more OCI wide scope.
+The AI Data Platform Workbench makes use of various components of OCI like Object Storage and Autonomous AI Lakehouse. Next to that you may want to connect to various sources and targets that run in OCI or even outside. To be able to do so a set of policies needs to be in place. This can be done  in 2 basic forms. 1 is a more narrow scope while th other has a more OCI wide scope.
 Next to that, to demonstrate the integration with Autonomous AI Lakehouse it is useful to it already deployed and the credentials and wallet at hand.
 It is also very useful to have a compartment structure in place and that you have identified the compartment for AI Data Platform Workbench
 
@@ -23,6 +23,8 @@ When you start to deploy your AI Data Platform Workbench the OCI console will pe
 
 Similar message like this may show up and policy creation as per instructions in above link are required.
     ![policy validation message](./images/aidppoliciesmessages.png)
+
+Please make sure that you have an object storage bucket in the same compartment to store some data files.
 
 ## Learn More
 
