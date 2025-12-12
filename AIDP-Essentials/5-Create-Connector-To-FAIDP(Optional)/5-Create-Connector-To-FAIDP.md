@@ -54,21 +54,21 @@ This lab assumes you have:
 
 ![go to data share page](images/access-data-share.png)
 
-6. On this page you see a list of the data tables from your FAIDP instance that is available to share to external sources. Select a table that you would like to share with AIDP.
+6. On this page you see a list of the data tables from your FAIDP instance that are available to share to external sources. Find a table you would like to share with the AIDP Workbench. Select the actions menu then **Edit**
 
-![Select a table](images/.png)
+![Select a table](images/edit-target.png)
 
-7. In the popup window select **Oracle AI Data Platform** in the ___ dropdown menu then choose
+7. In the popup window select **Oracle AI Data Platform** (may appear as **Oracle Intelligent Data Lake**) in the **Target Connections** section. Select **Update**.
 
-![choose AIDP destination](images/.png)
+![choose AIDP destination](images/update-target.png)
 
-8. Select the data table again, this time select **Publish**.
+8. Select the data table whose target you just updated. Select **Publish** then choose **Publish** again in the popup window to publish the table to the AIDP Workbench.
 
-![Publish data](images/.png)
+![Publish data](images/publish-data.png)
 
 9. Return to your AIDP Workbench instance. The tables shared with AIDP will appear in the master catalog, in a catalog with the name you specified when editing the connection in the FAIDP admin console. Here you can view the shared tables. It may take some time for the data to appear in AIDP Workbench after the share has been created.
 
-![View FAIDP data](images/view-fusion-dataa-aidp.png)
+![View FAIDP data](images/view-fusion-data-aidp.png)
 
 
 ## Learn More
