@@ -24,7 +24,7 @@ This lab assumes you have:
 
 ## Task 1: Open your bucket in Oracle OCI and load datasets
 
-From the GitHub folder [Download notebook and source data files](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FSourcedataandnotebookfiles.zip)) you can download the source files and upload them into your OCI Object storage bucket.
+From the GitHub folder [Download notebook and source data files](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FSourcedataandnotebookfiles.zip) you can download the source files and upload them into your OCI Object storage bucket.
 In the upload screen you can drag an drop the files in the bucket. No need to adjust any settings
 
 1. Step 1: Upload downloaded files into AI Data Platform
@@ -51,7 +51,7 @@ In the upload screen you can drag an drop the files in the bucket. No need to ad
 
 4. Step 4: create volume and upload files
 
-    In the 'f1\_bronze' catalog in the 'bronze' schema you need to create a volume to store the data files as external catalog items. Select the 'bronze' schema in the master catalog pane, and in the main pane you select 'volume'. Once selected you click the '+' symbol to create a volume. In the example the volume name 'f1\_bronze_volume' is used. In the entry screen, create name, select 'external' and select the compartment, bucket, (and folder) where you stored you data files at steps 1. Make. sure you push the 'upload' button.
+    In the 'f1\_bronze' catalog in the 'bronze' schema you need to create a volume to store the data files as external catalog items. Select the 'bronze' schema in the master catalog pane, and in the main pane you select 'volume'. Once selected you click the '+' symbol to create a volume. In the example the volume name 'f1\_bronze_volume' is used. In the entry screen, create name, select 'external' and select the compartment, bucket, (and folder) where you stored you data files at steps 1. Ensure sure you push the 'upload' button.
 
     ![creation of external volume](./images/createcatalogexternalvolume.png)
 
@@ -62,8 +62,8 @@ As final step of loading data is the creation of tables in the bronze catalog of
 > **Note:** Occasionally you may get an error when executing a notebook that starts like. 
 > [DELTA\_CREATE\_TABLE\_WITH\_NON\_EMPTY\_LOCATION] Cannot create table ('`f1\_bronze`.`bronze`.`f1\_lap\_times\_dlt`'). The associated location ('oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1\_lap\_times\_dlt') is not empty and also not a Delta table.]
 > or
-> [DELTA\_TRUNCATED\_TRANSACTION_LOG] oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1\_results\_dlt/\_delta\_log/00000000000000000000.json: Unable to reconstruct state at version 1 as the transaction log
-> In case this happens some. easy steps can be executed to work around this problem. From the error message you need to capture the associated location, which is pointing to an object storage location.
+> [DELTA\_TRUNCATED\_TRANSACTION_LOG] oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1\_results\_dlt/\_delta\_log/00000000000000000000.json: Unable to reconstruct state at version 1 as the transaction log.
+In case this happens some. easy steps can be executed to work around this problem. From the error message you need to capture the associated location, which is pointing to an object storage location.
 In OCI console you navigate to the object storage buckets. Use the location from the error message and open that bucket - folder to where you see the names of the tables as folders.
 Right of the folder name (in this example f1\_results\_dlt or f1\_lap\_times\_dlt) at the 3 ... you have the option to delete that particular folder. please do so and run the notebook that loads that file in the delta table again.
 You might face the same error when loading data from Bronze to Silver. Same workaround applies.

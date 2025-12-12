@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we define the data processing orchestration using workflows. In workflows you can automate and schedule to execution of tasks. In this Lab w will use it to orchestrate the runs of Notebooks in subsequent phases (Bronze- Silver-Gold)
+In this lab we define the data processing orchestration using workflows. In workflows you can automate and schedule to execution of tasks. In this Lab we will use it to orchestrate the runs of Notebooks in subsequent phases (Bronze- Silver-Gold)
 
 Estimated Lab Time: 30 minutes
 

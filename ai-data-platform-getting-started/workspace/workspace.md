@@ -25,8 +25,8 @@ This lab assumes you have:
 
 ## Task 1: Creation of a workspace
 
-1. Step 1: create workspace
-    Create your workspace. The initial step is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time
+1. Step 1: Create workspace
+    The initial step when creating a workspace is to give it a name and description. The default catalog is optional. The enable private network is not required for this workshop. You have 2 places where you can start the creation of the workspace. At the + symbol or in upper right corner. The creation will take just a little time
 
     ![workspace creation step 1](./images/workspacecreate1.png)
 
