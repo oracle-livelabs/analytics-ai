@@ -36,35 +36,39 @@ This lab assumes you have:
 
 1. From the admin console, select **Data Configuration**.
 
-![Enable Feature](images/access-data-configuration.png)
+![access data configuration](images/access-data-configuration.png)
 
 2. Next choose **Manage Connections**.
 
-![](images/access-manage-connections.png)
+![access manage connection](images/access-manage-connections.png)
 
 3. Here a connection to **Oracle AI Data Platform** should now appear (may appear as **Oracle Intelligent Data Lake**). To configure this connection choose the actions menu then **Edit Connection**.
 
-![](images/access-configure-connection.png)
+![edit connection](images/access-configure-connection.png)
 
 4. In the popup window the top 3 fields are autofilled, complete the others. The OCIDS for various OCI resources can be found from the OCI console section for the given resource. Select **Update** when finished.
 
-![](images/configure-connection.png)
+![provide connection details](images/configure-connection.png)
 
 5. Back out to the **Data Configuration** page and select **Data Share**.
 
-![](images/access-data-share.png)
+![go to data share page](images/access-data-share.png)
 
 6. On this page you see a list of the data tables from your FAIDP instance that is available to share to external sources. Select a table that you would like to share with AIDP.
 
-![](images/.png)
+![Select a table](images/.png)
 
-7. Select the data table again, this time select **Publish**.
+7. In the popup window select **Oracle AI Data Platform** in the ___ dropdown menu then choose
 
-![](images/.png)
+![choose AIDP destination](images/.png)
 
-8. Return to your AIDP Workbench instance. The tables shared with AIDP will appear in the master catalog, in a catalog with the name you specified when editing the connection in the FAIDP admin console. Here you can view the shared tables. It may take some time for the data to appear in AIDP Workbench after the share has been created.
+8. Select the data table again, this time select **Publish**.
 
-![](images/view-fusion-dataa-aidp.png)
+![Publish data](images/.png)
+
+9. Return to your AIDP Workbench instance. The tables shared with AIDP will appear in the master catalog, in a catalog with the name you specified when editing the connection in the FAIDP admin console. Here you can view the shared tables. It may take some time for the data to appear in AIDP Workbench after the share has been created.
+
+![View FAIDP data](images/view-fusion-dataa-aidp.png)
 
 
 ## Learn More
