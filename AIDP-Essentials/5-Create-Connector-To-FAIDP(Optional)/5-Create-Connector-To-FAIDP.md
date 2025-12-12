@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process sharing data from Fusion AI Data Platform (FAIDP) with Oracle AI Data Platform. Creating shares from FAIDP to AIDP allows for seemless integration of the two systems for AI and data science tasks on your FAIDP data.
+In this lab you will go through the process of sharing data from Fusion AI Data Platform (FAIDP) with Oracle AI Data Platform. Creating shares from FAIDP to AIDP allows for seemless integration of the two systems for AI and data science tasks on your FAIDP data.
 
 Estimated Time: 15 minutes
 
@@ -16,7 +16,9 @@ In this lab, you will:
 ## Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account with access to both Fusion AI Data Platform and AI Data Platform Workbench.
+
+* Access to the admin console of a FAIDP instance.
+* Familiarity with the FAIDP admin console.
 
 ## Task 1: Enabling Oracle AI Data Platform Feature in FDI
 
@@ -67,6 +69,9 @@ This lab assumes you have:
 
 ## Learn More
 
+- [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
+- [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [Oracle Anlaytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
 * [Fusion Data in Oracle AI Data Platform with BICC](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/fusion-data-oracle-ai-data-platform.html)
 
 ## Acknowledgements

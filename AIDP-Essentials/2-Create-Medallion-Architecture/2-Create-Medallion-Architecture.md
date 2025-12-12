@@ -4,7 +4,7 @@
 
 This lab guides you through creating a medallion architecture using the Oracle AI Data Platform (AIDP). You'll learn how to set up workspaces, configure compute resources, and implement a multi-tier data processing pipeline.
 
-Estimated Time: 60 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -12,15 +12,14 @@ In this lab, you will:
 
 - Create and configure a workspace in AIDP Workbench.
 - Create a compute cluster in the workspace.
-- Use the AIDP Workbench notebook interface to implement a medallion architecture with Bronze, Silver, and Gold data layers.
+- Use the AIDP Workbench notebook interface to implement a medallion architecture.
 - Utilize AI functionalities to enhance data processing.
 
 ### Prerequisites
 
 This lab assumes you have:
 
-- An Oracle Cloud account.
-- Completed the previous lab.
+- Basic understanding of data science.
 
 ## Task 1: Create Workspace and Compute Cluster
 
@@ -28,7 +27,7 @@ This lab assumes you have:
 
 ![Create workspace](images/create-workspace-button.png)
 
-2. Name the workspace **Medallion_Arch** then select **Create**. While it provisions notice that there is a default workspace already populated in the instance whose name we specified when creating the AIDP Workbench instance.
+2. Name the workspace **Medallion\_Arch** then select **Create**. While it provisions notice that there is a default workspace already populated in the instance whose name we specified when creating the AIDP Workbench instance.
 
 ![input workspace details](images/create-workspace.png)
 
@@ -52,7 +51,7 @@ This lab assumes you have:
 
 ![navigate to compute](images/create-compute.png)
 
-8. Name the compute cluster **Medallion__Compute**. Cluster creation defaults to a **Quickstart** setting which creates a small cluster that spins up very quickly. Deselect **Autoscale** and leave all other selections as is. Feel free browse and look at other compute shape options under the **Custom** section.
+8. Name the compute cluster **Medallion\__Compute**. Cluster creation defaults to a **Quickstart** setting which creates a small cluster that spins up very quickly. Deselect **Autoscale** and leave all other selections as is. Feel free browse and look at other compute shape options under the **Custom** section.
 
 ![create compute](images/compute-settings.png)
 
@@ -107,8 +106,10 @@ You have now run the code to create a basic medallion architecture based on the 
 
 ## Learn More
 
+- [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
 - [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
-- [Oracle AI Data Platform Webinar Series](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
+- [Oracle Anlaytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
+- [ADIP Workbench Notebooks Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/notebooks.html)
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence

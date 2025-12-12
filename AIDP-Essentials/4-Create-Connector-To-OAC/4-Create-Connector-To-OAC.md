@@ -2,22 +2,23 @@
 
 ## Introduction
 
-This lab demonstrates how to establish a connection between Oracle AI Data Platform and Oracle Analytics Cloud (OAC) to visualize and analyze data.
+In this lab you will learn how to establish a connection between Oracle AI Data Platform Workbench and Oracle Analytics Cloud (OAC) to visualize and analyze your AIDP data in OAC.
 
-Estimated Time: 15 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Generate and download the necessary connection configuration file from Oracle AI Data Platform.
-* Create a connection in OAC using the configuration file.
-* Access and utilize data from Oracle AI Data Platform within OAC.
+* Generate and download the connection configuration file from Oracle AI Data Platform.
+* Generate an API key pair to be used when defining the connection.
+* Create a connection in OAC to AIDP Workbench using the config file and API key.
+
 
 ## Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account with access to both Oracle AI Data Platform and Oracle Analytics Cloud.
-* Basic understanding of data visualization concepts.
+* Familiarity with Oracle Analytics Cloud.
 
 ## Task 1: Create Oracle Analytics Cloud Instance (Optional)
 
@@ -73,19 +74,22 @@ This lab assumes you have:
 
 ![](images/select-aidp-connector.png)
 
-3. Name it **Livelab_AIDP_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **Supplier_External_23ai** for **Catalog** then Select **Save**.
+3. Name it **Livelab\_AIDP\_Connection**. Select **Select...** next to **Connection Details** and select the **config.json** file that you downloaded from the compute cluster. Choose **Select...** next to **Private API Key** and select the private key that you downloaded from the oci console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **Supplier\_External\_23ai** for **Catalog** then Select **Save**.
 
 
 > **Note:** Currently, the connection can only be made to a single catalog, not the master catalog.
 
 ![](images/configure-connection.png)
 
-Congrats, you have now created a connection between the **Supplier_external_23ai** catalog and your OAC instance! You can now manage this connection to pull data from this catalog into OAC for visualization and analysis. 
+Congrats, you have now created a connection between the **Supplier\_external\_23ai** catalog and your OAC instance! You can now use this connection to pull data from the catalog into OAC for visualization and analysis.
 
 
 ## Learn More
 
-* [Connecting to AI Data Platform](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsds/connect-ai-data-platform.html)
+- [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
+- [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [Oracle Anlaytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
+- [Connecting OAC to AIDP Workbench Documentation](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsds/connect-ai-data-platform.html)
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence

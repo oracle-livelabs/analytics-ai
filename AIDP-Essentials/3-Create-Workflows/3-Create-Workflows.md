@@ -2,23 +2,23 @@
 
 ## Introduction
 
-This lab guides you through the process of creating and managing jobs from the Workflows tab in Oracle AI Data Platform to automate data processing tasks. You will configure the jobs to process your medallion architecture data on a regular basis.
+This lab guides you through the process of creating and managing jobs from the Workflows tab in Oracle AI Data Platform to automate data processing tasks. You will configure jobs to process your medallion architecture data on a regular basis.
 
 Estimated Time: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Understand the core concepts of workflows in Oracle AI Data Platform.
+* Learn the core concepts of workflow creation in Oracle AI Data Platform.
 * Create and configure jobs and tasks within a workflow.
-* Implement parameterization to customize job executions.
+* Implement conditional logic to customize job execution.
 * Monitor and manage job runs.
 
 ## Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account with access to Oracle AI Data Platform.
-* Basic knowledge of data processing concepts.
+
+* Basic understanding of data pipelines concepts.
 
 ## Task 1: Create a Workflows for each Tier of the Medallion Architecture
 
@@ -62,7 +62,7 @@ This lab assumes you have:
 
 ![](images/run-bronze.png)
 
-10. Create a third workflow called **Gold_Workflow**. Add tasks to run the notebooks from the **Gold** folder to it in their numerical order. Run the job to test it as you did the previous ones.
+10. Create a third workflow called **Gold\_Workflow**. Add tasks to run the notebooks from the **Gold** folder to it in their numerical order. Run the job to test it as you did the previous ones.
 
 ![](images/gold-workflow.png)
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 
 ## Task 2: Create Unified Job to Run Medallion Architecture
 
-1. Now you will make a final workflow that ties together the 3 you just created. Again create a workflow and call it **Medallion_Workflow**.
+1. Now you will make a final workflow that ties together the 3 you just created. Again create a workflow and call it **Medallion\_Workflow**.
 
 ![](images/create-medallion-workflow.png)
 
@@ -104,9 +104,9 @@ This lab assumes you have:
 
 ![](images/run-graph.png)
 
-9. Select the **Timeline** tab. This shows a timeline of when the different tasks executed. Notice that if you are running this on the weekend the silver and gold tasks will not have run because of the condition we set.
+9. Select the **Timeline** tab. This shows a timeline of when the different tasks executed. If you are running this on the weekend the silver and gold tasks will not have run because of the if/else task you added.
 
-![](images/.png)
+![](images/timeline-tab.png)
 
 10. Select **Medallion\_Job** in the breadcrumb menu then select **Details** to see the details for the job itself.
 
@@ -124,7 +124,10 @@ You have now created and scheduled a job to process your data into the 3 tiers o
 
 ## Learn More
 
-* [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
+- [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [Oracle Anlaytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
+- [AIDP Workflows Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workflows.html)
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence

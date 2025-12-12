@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, Creating an Autonomous Data Warehouse, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize your catalogs for future use in notebooks and jobs.
+This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, Creating an Autonomous Data Warehouse, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 45 minutes
 In this lab, you will:
 
 - Provision an AIDP Workbench instance.
-- Provision a 26ai Autonomous Data Warehouse
+- Provision a 26ai Autonomous Data Warehouse.
 - Access the master catalog.
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ![Accessing AIDP Workbench area in OCI](images/oci-console-access-aidp.png)
 
-3. Click on **Create AI Data Platform Workbench**.
+3. Click on **Create AI Data Platform Workbench**. There are permissions required to be able to provision an AIDP Workbench instance, learn more about them [here](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html#GUID-C534FDF6-B678-4025-B65A-7217D9D9B3DA).
 
 ![Choose Create AIDP Workbench](images/begin-aidp-creation.png)
 
@@ -42,7 +42,7 @@ This lab assumes you have:
 5. A dialog may appear telling you that further policies are required to create the AIDP Workbench instance. If this happens review the policies and choose **Add**.
 
 
-6. Under **Optional Policies** view other suggested policies related to you AIDP Workbench instance. Add any you would like then select **Create**. It may take a few minutes for the instance to provision
+6. Under **Optional Policies** view other suggested policies related to you AIDP Workbench instance. Add any you would like then select **Create**. It may take a few minutes for the instance to provision.
 
 ![Create AIDP Instance](images/create-aidp-instance.png)
 
@@ -69,7 +69,7 @@ This lab assumes you have:
 
 ![Choose DB password](images/create-db-password.png)
 
-6. When the database is finished provisioning, select **Database Connection**
+6. When the database is finished provisioning, select **Database Connection**.
 
 ![Navigate to database connection](images/access-db-connection.png)
 
@@ -83,22 +83,31 @@ This lab assumes you have:
 
 9. In the SQL worksheet paste in the following command and run the statement. This allows the **ADMIN** user to select from any table in the DB.
 
-![Run SQL statement](images/grant-select.png)
+```
+  <copy>
+  GRANT SELECT ANY TABLE TO ADMIN;
+  </copy>
+  ```
 
-'''GRANT SELECT ANY TABLE TO ADMIN;''' (need to reformat this)
+![Run SQL statement](images/grant-select.png)
 
 10. Paste this next statement over the previous one and run it as well. This statement defines a database table that we will write our gold tier data to once our medallion architecture is created.
 
+```
+  <copy>
+  CREATE TABLE gold_supplier_feedback (
+      supplier_name VARCHAR(100),
+      continent VARCHAR(100),
+      country VARCHAR(100),
+      city VARCHAR(100),
+      summary_review VARCHAR(1000),
+      rating VARCHAR(10)
+  );
+  </copy>
+  ```
+
 ![Create database table](images/create-gold-table.png)
 
-'''CREATE TABLE gold_supplier_feedback (
-    supplier_name VARCHAR(100),
-    continent VARCHAR(100),
-    country VARCHAR(100),
-    city VARCHAR(100),
-    summary_review VARCHAR(1000),
-    rating VARCHAR(10)
-);'''
 
 ## Task 3: Create an External Catalog in AIDP Workbench
 
@@ -119,7 +128,7 @@ This lab assumes you have:
 
 ![Select Master Catalog](images/create-catalog.png)
 
-5. Name it **supplier\_external\_23ai** and choose **External Catalog** for **Catalog type**
+5. Name it **supplier\_external\_23ai** and choose **External Catalog** for **Catalog type**.
 
 ![Select Master Catalog](images/name-external-catalog.png)
 
@@ -137,7 +146,7 @@ This lab assumes you have:
 
 ![Create Catalog](images/create-catalog.png)
 
-2. Name it **Supplier**. Leave the **Catalog Type** as **Standard catalog**. Select the same compartment your other lab assets are in, then choose **Create**
+2. Name it **Supplier**. Leave the **Catalog Type** as **Standard catalog**. Select the same compartment your other lab assets are in, then choose **Create**.
 
 ![create catalog](images/create-supplier-catalog.png)
 
@@ -161,11 +170,11 @@ This lab assumes you have:
 
 ![Create table](images/create-table-clicks.png)
 
-8. Keep the **Table type** as **Managed**. drop in the **basic_supplier.csv** file. Select **Preview data** then **Create**.
+8. Keep the **Table type** as **Managed**. drop in the **basic\_supplier.csv** file. Select **Preview data** then **Create**.
 
 ![create table](images/create-basic-supplier.png)
 
-9. Create another managed table, this time use the **supplier_emotions.csv** file.
+9. Create another managed table, this time use the **supplier\_emotions.csv** file.
 
 ![create emotions table](images/create-supplier-emotions-table.png)
 
@@ -173,15 +182,15 @@ This lab assumes you have:
 
 ![create volume](images/create-volume-clicks.png)
 
-11. Name it **supplier_volume** and choose **Managed** as the volume type.
+11. Name it **supplier\_volume** and choose **Managed** as the volume type.
 
 ![set as managed volume](images/create-supplier-volume.png)
 
-12. Select the **Volumes** tab then select the **Supplier_Volume** you just created.
+12. Select the **Volumes** tab then select the **Supplier\_Volume** you just created.
 
 ![select volume](images/access-supplier-volume.png)
 
-13. Select the plus icon then **Upload file**. Select the **supplier_info.txt** file from your computer then choose **Upload**.
+13. Select the plus icon then **Upload file**. Select the **supplier\_info.txt** file from your computer then choose **Upload**.
 
 ![upload file to volume](images/upload-to-volume.png)
 
@@ -189,7 +198,12 @@ You have now created your structured and unstructured data assets in AIDP Workbe
 
 ## Learn More
 
-ADD DOCUMENTATION
+- [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
+- [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [Oracle Anlaytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
+- [AIDP Workbench Creation Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/get-started-oracle-ai-data-platform.html#GUID-487671D1-7ACB-4A56-B3CB-272B723E573C)
+- [AIDP Workbench Master Catalog Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/manage-master-catalog.html)
+- [Permissions for AIDP Workbench Creation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/iam-policies-oracle-ai-data-platform.html#GUID-C534FDF6-B678-4025-B65A-7217D9D9B3DA)
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence
