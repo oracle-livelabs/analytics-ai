@@ -1,3 +1,4 @@
+
 {
     "workshoptitle": "Accelerate Analytics on OAC with Generative AI, AIDP Data Platform, and Autonomous AI Lakehouse",
     "help": "livelabs-help-aiservices_us@oracle.com",
@@ -8,12 +9,7 @@
         "filename": "../../introduction/introduction.md"
       },
       {
-        "title": "Get Started",
-        "description": "Sign in to tenancy",
-        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
-      },
-      {
-        "title": "Lab 1: Set Up Source System and Extract Transactional Data",
+        "title": "Lab 1: Set Up OCI Resources",
         "description": "Labs that follow the introduction are numbered, starting with Lab 1",
         "filename": "../../source-setup/source-setup.md"
       },

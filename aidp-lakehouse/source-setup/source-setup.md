@@ -1,16 +1,21 @@
-# Lab 1: Set Up Source System and Extract Transactional Data
+# Lab 1: Set Up OCI Resources
 
 ## Introduction
 
-This lab guides you through setting up Oracle Autonomous Transaction Processing (ATP) as the source system for transactional airline data. You'll provision ATP, create a dedicated source schema, and load sample airline data. This establishes a realistic starting point for extracting operational data into the lakehouse pipeline.
+This lab guides you through setting up Oracle Autonomous Transaction Processing (ATP) as the Source System for transactional airline data, setting up Autonomous AI Lakehouse as the Target System, AI Data Platform instance and Object Storage bucket.
+This establishes a realistic starting point for extracting operational data into the lakehouse pipeline.
 
-> **Estimated Time:** 45 minutes
+> **Estimated Time:** 1 hour
 
 ---
 
-### About Oracle Autonomous Transaction Processing (ATP)
+### About Oracle Autonomous Transaction Processing (ATP) and Oracle AI Data Platform (AIDP) and Autonomous AI Lakehouse
 
 ATP is an autonomous database service optimized for transaction processing (OLTP) workloads, such as storing and managing operational data like flight records. In this workshop, ATP serves as the source system, simulating a real-world transactional database from which data is extracted for analytics.
+
+AI Data Platform (AIDP) unifies all types of data—structured, unstructured, batch, and real-time into an open, and connected platform, laying the foundation for trusted and AI-ready data pipelines. It's an integrated environment with built-in tools and GenAI agent frameworks to build and deploy AI-powered applications faster, without the complexity of connecting separate tools.
+
+Autonomous AI Lakehouse provides fast, secure analytics storage. Together, they form a modern lakehouse for transforming raw data into insights.
 
 ---
 
@@ -18,8 +23,24 @@ ATP is an autonomous database service optimized for transaction processing (OLTP
 
 In this lab, you will:
 - Provision an ATP instance
-- Create a SOURCE_DATA schema
-- Load sample airline transactional data into ATP
+- Create a Source_XX schema in ATP
+- Provision Autonomous AI Lakehouse 
+- Create a Gold_XX schema in AI Lakehouse
+- Provision AI Data Platform
+- Provision Object Storage buckets
+- Provision Analytics Cloud
+
+---
+
+### Important Note
+
+If multiple instances of ATP, AI Lakehouse and Analytics Cloud instances need to be created, please ensure that the instance names are unique. The instance names can then end with _01, _02, _03 etc.
+
+If multiple users are concurrently working on this workshop, then for different users _01, _02, _03 can be used, instead of using _XX.
+
+For example:
+- Use Source\_01, Source\_02, Source\_03 etc instead of Source\_XX
+- Use Gold\_01, Gold\_02, Gold\_03 etc instead of Gold\_XX
 
 ---
 
@@ -28,11 +49,35 @@ In this lab, you will:
 This lab assumes you have:
 - An Oracle Cloud account (or provided lab credentials)
 - Access to Oracle Autonomous Transaction Processing (ATP)
+- Access to Oracle Autonomous AI Lakehouse
+- Access to Oracle AI Data Platform
+- Access to Oracle Object Storage
+- Access to Oracle Analytics Cloud
 - Basic familiarity with web-based Oracle Cloud interfaces
 
 ---
 
-## Task 1: Provision ATP Instance
+## Task 1: Create Compartment
+
+1. Using the Navigation Menu, navigate to "Identity & Security" -> Compartments
+
+![Compartments](./images/comp-1.png)
+
+2. Click "Create compartment"
+
+![Compartments](./images/comp-2.png)
+
+3. Create a new Compartment (Name - "aidp-lab", Description - "AIDP Lab") under Root compartment (Change Parent comapartment to "(root)"). Click on "Create compartment"
+
+![Compartments](./images/comp-3.png)
+
+4. The "aidp-lab" compartment gets created. Ensure to create all OCI resources in this "aidp-lab" compartment.
+
+![Compartments](./images/comp-4.png)
+
+---
+
+## Task 2: Provision ATP Instance
 
 1. Log in to your cloud tenancy and navigate to **Oracle AI Database > Autonomous AI Database**
 
@@ -40,7 +85,7 @@ This lab assumes you have:
 
 2. Click **Create Autonomous Database**.
 
-3. Provide a display name (e.g., **airline-source-atp**), database name (e.g., **AIRLINESOURCE**), and select **Transaction Processing** as the workload type.
+3. Provide a display name (e.g., **airline-source-atp**), database name (e.g., **AIRLINESOURCE**), and select **Transaction Processing** as the workload type. Choose database version 26ai.
 
 ![ATP Setup](./images/atp-setup.png)
 
@@ -52,129 +97,251 @@ This lab assumes you have:
 
 ---
 
-## Task 2: Create SOURCE_DATA Schema
+## Task 3: Create Source_XX Schema
 
 1. Once provisioned, navigate to **Database Actions > SQL** in the ATP instance details.
 
 ![ATP SQL](./images/atp-sql.png)
 
-2. Sign in as the ADMIN user.
 
-3. Create the SOURCE\_DATA schema (replace "strong\_password" with a secure password):
+2. Create the Source_XX schema (replace "strong\_password" with a secure password):
 
 ```sql
 <copy>
-CREATE USER SOURCE_DATA IDENTIFIED BY "strong_password";
+CREATE USER Source_XX IDENTIFIED BY "strong_password";
 -- Data privileges
-GRANT CONNECT, RESOURCE TO SOURCE_DATA;
+GRANT CONNECT, RESOURCE TO Source_XX;
 
 -- Allow creation of tables, views, and other objects
-GRANT CREATE SESSION TO SOURCE_DATA;
-GRANT CREATE TABLE TO SOURCE_DATA;
-GRANT CREATE VIEW TO SOURCE_DATA;
-GRANT CREATE SEQUENCE TO SOURCE_DATA;
-GRANT CREATE PROCEDURE TO SOURCE_DATA;
-GRANT UNLIMITED TABLESPACE TO SOURCE_DATA;
+GRANT CREATE SESSION TO Source_XX;
+GRANT CREATE TABLE TO Source_XX;
+GRANT CREATE VIEW TO Source_XX;
+GRANT CREATE SEQUENCE TO Source_XX;
+GRANT CREATE PROCEDURE TO Source_XX;
+GRANT UNLIMITED TABLESPACE TO Source_XX;
 
 -- Enable DBMS_CLOUD 
-GRANT EXECUTE ON DBMS_CLOUD TO SOURCE_DATA;
+GRANT EXECUTE ON DBMS_CLOUD TO Source_XX;
 
 -- Grant access to data_pump_dir (used for saveAsTable operation in spark)
-GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO SOURCE_DATA;
+GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO Source_XX;
 </copy>
 ```
 
-4. Sign out of admin and navigate back to the ATP instance in the console
+3. Sign out of admin and navigate back to the ATP instance in the console
 
 ---
 
-## Task 3: Add REST capabilities to SOURCE_DATA Schema
+## Task 4: Add REST capabilities to Source_XX Schema
 
-**NOTE** If unable to sign in directly as SOURCE\_DATA schema, enable REST access
+**NOTE** If unable to sign in directly as Source_XX schema, enable REST access
 
-1. Navigate to AI DB > database actions > database users > search for 'SOURCE\_DATA' > select three dots > enable rest > log in to sql developer web as SOURCE\_DATA
+1. Navigate to AI DB > database actions > database users > search for Source\_XX > select three dots > Enable REST
 
 ![Database Users](./images/atp-db-users.png)
 
-![Enable REST](./images/enable-rest-source.png)
+![Enable REST](./images/enable-rest-source2.jpg)
 
-2. Once enabled edit the user and set Quota to Unlimited 
+![Enable REST](./images/enable-rest-source3.png)
 
-![Set Quota](./images/unlimited-quota.png)
+2. Once enabled edit the user and set Quota to Unlimited. Click “Apply Changes” to save.
 
-## Task 4: Log in to SQL Developer as SOURCE_DATA Schema 
+![Set Quota](./images/unlimited-quota2.png)
+
+![Set Quota](./images/unlimited-quota3.png)
+
+## Task 5: Log in to SQL Developer as Source_XX Schema 
+
+In this task you'll check if you can successfully sign-in as Source_XX user.
 
 1. Navigate back to AI DB > database actions > SQL > Once in SQL Developer select ADMIN (top right) > Sign Out
 
-2. Provide SOURCE_DATA as username and give password as defined in previous task. Sign in. 
+2. Provide Source_XX as username and give password as defined in previous task. Sign in. 
 
-![Sign in SOURCE_DATA Schema](./images/source-data-sign-in.png)
+![Sign in Source_XX Schema](./images/source-data-sign-in1.png)
 
 **NOTE** If still unable to log in, try navigating back to database user page and click the following link - 
 
-![Access REST SOURCE_DATA](./images/source-data-sign-in-2.png)
+![Access REST Source_XX](./images/source-data-sign-in-21.png)
 
-3. Navigate to Development > SQL 
+3. Navigate to Development > SQL.
 
-## Task 3: Load Sample Airline Data into SOURCE_DATA Schema
+Leave this open for later use once connectivity is verified.
 
-1. In SQL Developer Web (as SOURCE\_DATA), create the AIRLINE\_SAMPLE table:
+## Task 6: Provision Autonomous AI Lakehouse
 
-```sql
-<copy>
-CREATE TABLE AIRLINE_SAMPLE (
-  FLIGHT_ID   NUMBER,
-  AIRLINE     VARCHAR2(20),
-  ORIGIN      VARCHAR2(3),
-  DEST        VARCHAR2(3),
-  DEP_DELAY   NUMBER,
-  ARR_DELAY   NUMBER,
-  DISTANCE    NUMBER
-);
-</copy>
-```
+1. Log in to your cloud tenancy and navigate to Oracle AI Database > Autonomous AI Database
 
-2. Insert sample data:
+![AI Database](./images/ai-database.png)
 
-```sql
-<copy>
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1001, 'Skynet Airways', 'JFK', 'LAX', 10, 5, 2475);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1002, 'Sunwind Lines', 'ORD', 'SFO', -3, -5, 1846);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1003, 'BlueJet', 'ATL', 'SEA', 0, 15, 2182);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1004, 'Quantum Flyers', 'DFW', 'MIA', 5, 20, 1121);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1005, 'Nebula Express', 'BOS', 'DEN', 12, 8, 1754);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1006, 'Skynet Airways', 'SEA', 'ORD', -5, -2, 1721);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1007, 'Sunwind Lines', 'MIA', 'ATL', 7, 4, 595);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1008, 'BlueJet', 'SFO', 'BOS', 22, 18, 2704);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1009, 'Quantum Flyers', 'LAX', 'JFK', -1, 0, 2475);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1010, 'Nebula Express', 'DEN', 'DFW', 14, 20, 641);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1011, 'Skynet Airways', 'PHX', 'SEA', 3, -2, 1107);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1012, 'BlueJet', 'ORD', 'ATL', -7, -10, 606);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1013, 'Quantum Flyers', 'BOS', 'JFK', 9, 11, 187);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1014, 'Sunwind Lines', 'LAX', 'DFW', 13, 15, 1235);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1015, 'Nebula Express', 'SFO', 'SEA', 0, 3, 679);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1016, 'Skynet Airways', 'ATL', 'DEN', 6, 5, 1199);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1017, 'BlueJet', 'DFW', 'PHX', -2, 1, 868);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1018, 'Quantum Flyers', 'ORD', 'BOS', 8, -1, 867);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1019, 'Sunwind Lines', 'JFK', 'MIA', 10, 16, 1090);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1020, 'Nebula Express', 'DEN', 'ORD', -4, 0, 888);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1021, 'Skynet Airways', 'SEA', 'ATL', 16, 12, 2182);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1022, 'BlueJet', 'MIA', 'LAX', 5, 7, 2342);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1023, 'Quantum Flyers', 'DEN', 'BOS', 2, -2, 1754);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1024, 'Sunwind Lines', 'SFO', 'JFK', -6, -8, 2586);
-INSERT INTO AIRLINE_SAMPLE (FLIGHT_ID, AIRLINE, ORIGIN, DEST, DEP_DELAY, ARR_DELAY, DISTANCE) VALUES (1025, 'Nebula Express', 'ORD', 'MIA', 11, 13, 1197);
-</copy>
-```
+2. Select Create Autonomous AI Database 
 
-3. Verify the data:
+3. Give it a display name (e.g. **aidp-db**), and database name (e.g. **aidpdb**) and select workload type as Lakehouse. Select database version 26ai and leave other options as default. 
 
-```sql
-<copy>
-SELECT * FROM AIRLINE_SAMPLE;
-</copy>
-```
+![Create AI Database](./images/create-aidp-db.png)
+
+4. Provide a password and set Access Type to 'Secure access from everywhere' 
+
+![Create AI Database](./images/create-aidp-db-2.png)
+
+**NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
+
+5. Create the AI Database. The provisioning process will take a few minutes.
+
+6. Once provisioned, navigate to Database actions > SQL. This will open SQL Developer as admin user. 
+
+![SQL Developer](./images/sql-developer.png)
 
 ---
+
+## Task 7: Create Gold_XX Schema 
+
+1. Create a Gold_XX Schema (User) in Autonomous Data Lakehouse. Replace "strong\_password" with your own password.
+
+```sql
+<copy>
+CREATE USER gold_XX IDENTIFIED BY "strong_password";
+</copy>
+```
+
+2. Grant Required Roles/Privileges to Gold_XX Schema
+
+```sql
+<copy>
+-- Data privileges
+GRANT CONNECT, RESOURCE TO gold_XX;
+
+-- Allow creation of tables, views, and other objects
+GRANT CREATE SESSION TO gold_XX;
+GRANT CREATE TABLE TO gold_XX;
+GRANT CREATE VIEW TO gold_XX;
+GRANT CREATE SEQUENCE TO gold_XX;
+GRANT CREATE PROCEDURE TO gold_XX;
+GRANT UNLIMITED TABLESPACE TO gold_XX;
+
+-- Enable DBMS_CLOUD 
+GRANT EXECUTE ON DBMS_CLOUD TO gold_XX;
+
+-- Grant access to data_pump_dir (used for saveAsTable operation in spark)
+GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold_XX;
+</copy>
+```
+
+3. Log out of admin schema once gold_XX schema is created.
+
+## Task 8: Add REST capabilities to GOLD_XX Schema
+
+**NOTE** If unable to sign in directly as gold_XX schema, enable REST access
+
+1. On your provisioned Lakehouse, navigate to Database Actions -> Database Users
+
+![Enable REST](./images/enable-rest-gold2.png)
+
+2. Search for the user GOLD\_XX and select the 3 dots, then select Enable REST
+
+![Enable REST](./images/enable-rest-gold3.png)
+
+3. Click the REST Enable User button. 
+
+![Enable REST](./images/enable-rest-gold4.png)
+
+4. Once enabled edit the user Gold\_XX
+
+![Enable REST](./images/enable-rest-gold5.png)
+
+5. Set Quota to Unlimited. Click "Apply Changes" to save.
+
+![Enable REST](./images/enable-rest-gold6.png)
+
+## Task 9: Log in to SQL Developer as GOLD_XX Schema 
+
+1. Navigate back to AI DB > database actions > SQL
+
+![Sign in Gold_XX Schema](./images/sign-in-gold3.png)
+
+2. In SQL Developer select ADMIN (top right) > Sign Out
+
+![Sign in Gold_XX Schema](./images/sign-in-gold4.png)
+
+3. Provide gold_XX as username and give password as defined in previous task. Sign in. 
+
+![Sign in Gold_XX Schema](./images/sign-in-gold2.png)
+
+**NOTE** If still unable to log in, try navigating back to database user page and click the following link - 
+
+![Access REST Gold_XX](./images/access-rest-gold1.png)
+
+4. Navigate to Development > SQL. Once access is confirmed you can proceed to next task.
+
+## Task 10: Provision AI Data Platform Instance
+
+1. Navigate to Analytics & AI > Data Lake > AI Data Platform
+
+![AI Data Platform](./images/create-aidp.png)
+
+2. Provide a name for AIDP and workspace
+
+![Create AIDP](./images/create-aidp-2.png)
+
+3. In the "Add policies", set the access level as "Standard". If the policies aren't added it will fail to create.
+
+![Add Standard Policies](./images/aidp-standard-policies-1.png)
+
+![Add Standard Policies](./images/aidp-standard-policies-2.png)
+
+4. Once you click Add, the Standard Policies will be added
+
+![Add Standard Policies](./images/aidp-standard-policies-3.png)
+
+5. Optional policies can also be added depending on the use case. For this lab, we will need to enable object deletion - 
+
+![Add Optional Policies](./images/aidp-optional-policies-1.png)
+
+![Add Optional Policies](./images/aidp-optional-policies-2.png)
+
+6. Create the instance. This will take a few minutes to provision.
+
+## Task 11: Set Up Object Storage
+
+1. In the Navigation Menu (top left), navigate to **Storage** in the OCI Console Menu, and then click on Buckets.
+
+![Create OS Bucket](./images/os-buckets-1.png)
+
+2. Click on "Create bucket" to create a bucket.
+
+![Create OS Bucket](./images/os-buckets-2.png)
+
+3. Name the bucket **aidp-demo-bucket_xx**. Select the default "Standard" storage tier. Click on "Create Bucket".
+
+![Create OS Bucket](./images/os-buckets-3.png)
+
+4. When the bucket is created, click into the bucket. 
+
+![Create OS Bucket](./images/os-buckets-4.png)
+
+5. Note the Namespace. It would be required in next lab.
+
+![Create OS Bucket](./images/os-buckets-7.png)
+
+6. Click on Objects. Click on Actions -> Create New Folder
+
+![Create OS Bucket](./images/os-buckets-5.png)
+
+7. Create a folder 'delta' in the bucket. Click on "Create folder" to create the folder.
+
+![Create OS Bucket](./images/os-buckets-6.png)
+
+## Task 12: Provision Analytics Cloud Instance
+
+1. Navigate to Analytics Cloud in the OCI console 
+
+![Analytics Cloud](./images/oac.png)
+
+2. Create a new Analytics Cloud instance. Provide a name such as **aidpoac**. Leave the remaining options as default and create. 
+
+![Create OAC](./images/create-oac.png)
+
+3. After a few minutes the instance will create.
 
 ## Next Steps
 
@@ -186,10 +353,7 @@ With the source data loaded in ATP, proceed to Lab 2 to extract and process it i
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
-
-**Contributors**
-* **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
