@@ -20,23 +20,23 @@
         {
             "title": "Lab 1: Provision AIDP Workbench Instance and Populate the Catalog",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../1-Create-AIDP-Instance-And-Populate-Catalog/1-Create-AIDP-Instance-And-Populate-Catalog.md"
+            "filename": "../../1-create-aidp-instance-and-populate-catalog/1-create-aidp-instance-and-populate-catalog.md"
         },
         {
             "title": "Lab 2: Create Medallion Architecture",
-            "filename": "../../2-Create-Medallion-Architecture/2-Create-Medallion-Architecture.md"
+            "filename": "../../2-create-medallion-architecture/2-create-medallion-architecture.md"
         },
         {
             "title": "Lab 3: Create Workflows",
-            "filename": "../../3-Create-Workflows/3-Create-Workflows.md"
+            "filename": "../../3-create-workflows/3-create-workflows.md"
         },
         {
             "title": "Lab 4: Create Connector to OAC",
-            "filename": "../../4-Create-Connector-To-OAC/4-Create-Connector-To-OAC.md"
+            "filename": "../../4-create-connector-to-oac/4-create-connector-to-oac.md"
         },
         {
             "title": "Lab 5: Create Connector to FAIDP (Optional)",
-            "filename": "../../5-Create-Connector-To-FAIDP(Optional)/5-Create-Connector-To-FAIDP.md"
+            "filename": "../../5-create-connector-to-faidp(optional)/5-create-connector-to-faidp.md"
         },
         {
             "title": "Need Help?",

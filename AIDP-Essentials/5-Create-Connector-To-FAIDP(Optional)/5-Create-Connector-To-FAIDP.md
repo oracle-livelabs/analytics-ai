@@ -13,7 +13,7 @@ In this lab, you will:
 * Configure a connection from FAIDP to Oracle AI Data Platform.
 * Share data from FAIDP to Oracle AI Data Platform and view it in the master catalog.
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 

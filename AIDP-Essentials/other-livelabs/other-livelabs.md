@@ -1,8 +1,6 @@
 # Other LiveLabs you might like
 
 
-- [Autonomous Database Dedicated](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=677)
+- [Accelerate Analytics on OAC with Generative AI, AIDP, and Autonomous AI Lakehouse](https://livelabs.oracle.com/ords/r/dbpm/livelabs/view-workshop?wid=4278&clear=RR,180&session=112075170297623)
 
-- [Manage and Monitor Autonomous Database](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=553)
 
-- [Scaling and Performance in the Autonomous Database](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=608)

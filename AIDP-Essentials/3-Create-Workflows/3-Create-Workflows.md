@@ -14,7 +14,7 @@ In this lab, you will:
 * Implement conditional logic to customize job execution.
 * Monitor and manage job runs.
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 
@@ -118,7 +118,7 @@ This lab assumes you have:
 
 11. On this page you can view and set a number of settings for the job, but we are interested in the **Schedule** section. Select **Add** to create a new schedule.
 
-![add scheudle](images/add-schdule.png)
+![add scheudle](images/add-schedule.png)
 
 12. Set the **Frequency** to daily and leave all other options as is. Select **Create**.
 

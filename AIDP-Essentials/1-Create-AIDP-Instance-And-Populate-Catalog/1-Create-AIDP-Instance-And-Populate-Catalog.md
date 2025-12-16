@@ -16,7 +16,7 @@ In this lab, you will:
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 
@@ -170,7 +170,7 @@ This lab assumes you have:
 
 ![Create table](images/create-table-clicks.png)
 
-8. Keep the **Table type** as **Managed**. drop in the **basic\_supplier.csv** file. Select **Preview data** then **Create**.
+8. Keep the **Table type** as **Managed**. drop in the **basic\_supplier.csv** file. Select **Preview data** then **Create**. You can download the **basic\_supplier.csv** file and all other lab files at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip).
 
 ![create table](images/create-basic-supplier.png)
 

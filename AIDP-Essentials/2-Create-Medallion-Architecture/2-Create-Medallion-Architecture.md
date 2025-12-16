@@ -61,11 +61,11 @@ This lab assumes you have:
 
 ## Task 2: Import and Run Notebooks
 
-1. Now you will import the notebooks used to run the Python code that processes your data into the 3 tiers of the medallion architecture. Select the **Medallion_Arch** workspace name from the menu then navigate to the **Bronze** folder.
+1. Now you will import the notebooks used to run the Python code that processes your data into the 3 tiers of the medallion architecture. The notebooks and all other lab files can be downloaded at Select the **Medallion_Arch** workspace name from the menu then navigate to the **Bronze** folder.
 
 ![access bronze](images/access-bronze-folder.png)
 
-2. Now to import the notebook used to create the bronze tier. Select the upload file icon.
+2. Now to import the notebook used to create the bronze tier, which can be downloaded at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip). Select the upload file icon.
 
 ![upload file](images/upload-file-workspace.png)
 

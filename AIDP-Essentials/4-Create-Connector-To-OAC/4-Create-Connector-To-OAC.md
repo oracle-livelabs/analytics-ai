@@ -14,7 +14,7 @@ In this lab, you will:
 * Create a connection in OAC to AIDP Workbench using the config file and API key.
 
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Cloud account with access to both Oracle AI Data Platform and Oracle Analytics Cloud.
