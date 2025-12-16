@@ -224,7 +224,7 @@ df.write.format("delta").mode("overwrite").save(delta_path)
 
 **NOTE** Only one table can be associated with a given delta path. If a table is created on a path that already is associated with another table, it will throw an error. The associated table will have to be deleted then re-write the dataframe to the path. 
 
-3. Create bronze table for first stage of medallian architecture. Here we will create a new (standard) catalog, called "**airlines\_data\_catalog**". This is distinct from the external catalog to the ATP & AI Lakehouse created earlier. "**airlines\_data\_catalog**" will be used to store the bronze, silver, and gold layers of the medallian architecture.
+3. Create bronze table for first stage of medallion architecture. Here we will create a new (standard) catalog, called "**airlines\_data\_catalog**". This is distinct from the external catalog to the ATP & AI Lakehouse created earlier. "**airlines\_data\_catalog**" will be used to store the bronze, silver, and gold layers of the medallion architecture.
 
 ```python
 <copy>
@@ -268,9 +268,9 @@ df_v0.show()
 
 ---
 
-## Task 10: Create Silver Medallian Schema & Enrich Data with Generative AI 
+## Task 10: Create Silver medallion Schema & Enrich Data with Generative AI 
 
-1. Write to silver schema of medallian architecture 
+1. Write to silver schema of medallion architecture 
 
 ```python
 <copy>
