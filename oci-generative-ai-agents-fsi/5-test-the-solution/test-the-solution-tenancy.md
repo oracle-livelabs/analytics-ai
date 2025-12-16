@@ -53,6 +53,13 @@ This lab assumes you have:
 ## Task 2: Let's test our agent
 
 1. To start, type the following question into you message box: _How many loan applications have been denied since June 2025?_
+
+    ```text
+      <copy>
+      How many loan applications have been denied since June 2025?
+      </copy>
+      ```
+
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-first-question.png)
@@ -76,6 +83,13 @@ This lab assumes you have:
 
 1. Click the **Close** button to close the traces pane.
 1. Our next question would be: _Which loan officer has the most applications assigned?_ Let's see if the agent will be able to figure that out...
+
+    ```text
+      <copy>
+      Which loan officer has the most applications assigned?
+      </copy>
+      ```
+
 1. Click the **Submit** button.
 
     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
@@ -86,6 +100,13 @@ This lab assumes you have:
 
 1. Feel free to take a look at the **Traces** generated for this response.
 1. Next we'll ask the following: _List applications that have been in progress for more than 7 days._
+
+    ```text
+      <copy>
+      List applications that have been in progress for more than 7 days.
+      </copy>
+      ```
+
 1. Click the **Submit** button.
 
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
