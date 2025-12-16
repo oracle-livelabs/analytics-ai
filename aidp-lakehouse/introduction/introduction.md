@@ -73,6 +73,7 @@ This workshop assumes you have:
 
 **Contributors**
 * **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
+* **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025

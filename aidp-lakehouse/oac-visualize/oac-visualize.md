@@ -312,6 +312,7 @@ Finally the Generative AI service should be set as follows:
 
 **Contributors**
 * **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
+* **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
 * **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
