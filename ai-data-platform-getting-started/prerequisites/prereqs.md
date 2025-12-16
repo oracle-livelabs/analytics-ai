@@ -32,6 +32,9 @@ Please make sure that you have an object storage bucket in the same compartment 
 
 ## Acknowledgements
 
-* **Author** - Wilbert Poeliejoe
-* **Reviewed by** - Lucian Dinescu, Senior Principal Product Manager, Analytics
-* **Last Updated By/Date** - Wilbert Poeliejoe, AI Data Platform Black Belt: December 11th, 2025
+* **Author:** 
+    * Wilbert Poeliejoe, AI Data Platform Black Belt
+* **Reviewed by:** 
+    * Lucian Dinescu, Senior Principal Product Manager, Analytics
+* **Last Updated By/Date:** 
+    * Wilbert Poeliejoe, AI Data Platform Black Belt: December 16th, 2025
