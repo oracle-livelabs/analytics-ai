@@ -112,12 +112,22 @@ This lab assumes you have:
     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
 
 1. The agent returned information on the one application that has been pending review for more than 7 days.
+1. The agent returned information on the one application that has been pending review for more than 7 days.
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
 1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: _Retrieve the policy document section that defines Debt-to-Income (DTI) limits and any exceptions._
 1. Click the **Submit** button.
 1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+
+    ![test](./images/third-question-traces-1.png)
+
+1. Next we'll ask the following: _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
+1. Click the Submit button.
+
+    ![test](./images/send-fourth-question.png)
+
+1. The agent successfully detected an approved applicant whose credit score was inconsistent with the requirements outlined in the DTI and Credit Policy document.
 
     ![test](./images/third-question-traces-1.png)
 
@@ -138,6 +148,7 @@ Here are a few more prompts to try with the agent:
 
 - _What is the minimum credit score for FHA vs Conventional loans?_
 - _Show the distribution of credit scores by loan type_
+- _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
 - _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
 
 ## Summary
