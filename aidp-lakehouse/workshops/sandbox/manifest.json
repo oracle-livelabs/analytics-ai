@@ -8,25 +8,20 @@
         "filename": "../../introduction/introduction.md"
       },
       {
-        "title": "Get Started",
-        "description": "Sandbox",
-        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
-    },
-    {
-      "title": "Lab 1: Set Up Source System and Extract Transactional Data",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../source-setup/source-setup.md"
-    },
-    {
-      "title": "Lab 2: Process and Refine Data in AI Data Platform and Lakehouse",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../process-refine/process-refine.md"
-    },
-    {
-      "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../oac-visualize/oac-visualize.md"
-    },
+        "title": "Lab 1: Set Up OCI Resources",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../source-setup/source-setup.md"
+      },
+      {
+        "title": "Lab 2: Process and Refine Data in AI Data Platform and Lakehouse",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../process-refine/process-refine.md"
+      },
+      {
+        "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../oac-visualize/oac-visualize.md"
+      },
       {
         "title": "Need Help?",
         "description": "Solutions to Common Problems and Directions for Receiving Live Help",
