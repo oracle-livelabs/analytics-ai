@@ -281,6 +281,18 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold_XX;
 
 2. Provide a name for AIDP and workspace
 
+```
+<copy>
+aidp-test
+</copy>
+```
+
+```
+<copy>
+aidp-workspace
+</copy>
+```
+
 ![Create AIDP](./images/create-aidp-2.png)
 
 3. In the "Add policies", set the access level as "Standard". If the policies aren't added it will fail to create.
@@ -360,4 +372,4 @@ With the source data loaded in ATP, proceed to Lab 2 to extract and process it i
 * **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025

@@ -497,7 +497,7 @@ enhanced_df.show(10, False)
 </copy>
 ```
 
-You should see the following similar results if the code runs correctly. The output might slightly vary, based on the LLM Model used.
+Scroll down to see the results. The output might slightly vary, based on the LLM Model used.
 
 ![AIDP Notebook](./images/aidp-notebook27a.png)
 
@@ -718,6 +718,10 @@ CREATE TABLE AIRLINE_SAMPLE_GOLD (
 
 ![Refresh Catalog](./images/refresh-catalog.png)
 
+Wait for refresh to complete to see the gold table appear
+
+![Refresh Catalog](./images/refresh-catalog-2.png)
+
 3. To go back to your notebook, click airline-workspace_xx workspace link and then airline-notebook.ipynb link.
 
 ![AIDP Notebook](./images/aidp-gold-notebook1.png)
@@ -766,4 +770,4 @@ Proceed to Lab 3 to visualize the gold data in Oracle Analytics Cloud.
 * **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
