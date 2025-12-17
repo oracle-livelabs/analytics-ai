@@ -357,7 +357,7 @@ aidp-workspace
 
 ## Next Steps
 
-With the source data loaded in ATP, proceed to Lab 2 to extract and process it in the AI Data Platform and Lakehouse.
+With the infrastructure provisioned, proceed to Lab 2 to load the source data in ATP, extract it, and process it in the AI Data Platform and Lakehouse.
 
 ---
 
