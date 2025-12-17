@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, creating an Autonomous Data Warehouse, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
+This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, creating a 26ai database, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -28,6 +28,8 @@ This lab assumes you have:
 1. Log in to your Oracle Cloud Infrastructure (OCI) account and access the OCI Console.
 
 2. From the OCI Console homepage, select the Navigation Menu, navigate to **Analytics and AI**, and select **AI Data Platform Workbench**.
+
+> **Note:** If you do not see **AI Data Platform Workbench** available from the menu, change your region to **Sao Paulo**
 
 ![Accessing AIDP Workbench area in OCI](images/oci-console-access-aidp.png)
 
@@ -130,7 +132,7 @@ Now you'll navigate back to your AIDP Workbench instance to create an external c
 
 ![Select Master Catalog](images/create-catalog.png)
 
-5. Enter the Catalog Name **supplier\_external\_23ai** and select **External Catalog** for **Catalog type**.
+5. Enter the Catalog Name **supplier\_external\_26ai** and select **External Catalog** for **Catalog type**.
 
 ![Select Master Catalog](images/name-external-catalog.png)
 
