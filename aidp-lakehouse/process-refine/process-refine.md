@@ -262,6 +262,8 @@ You should see the following results if the code runs correctly.
 
 ![AIDP Notebook](./images/aidp-notebook6.png)
 
+*Note* if you get a *java.io.IOException: Unable to determine if path is a directory*, try running the code snippet again; this is usually a temporary error. If the error persists, make sure the bucket name is input correctly e.g. '-' vs '_'.
+
 The output of this code should look like this in the object storage bucket created in Lab 1. 
 
 ![OS Bucket](./images/os-bucket-2.png)
@@ -750,6 +752,10 @@ You should see the following results if the code runs correctly.
 **NOTE** We use the sql insert instead of the native spark insert, because spark causes the dataframe to be pushed with lowercase column names. This results in OAC unable to visualize the data. Using sql INSERT into avoids this issue. 
 
 **TROUBLESHOOTING NOTE:** If you encounter a CONNECTOR_0084 error ("Exception while writing data. Possible cause: Unable to determine if path is a directory") during the INSERT, restart the AIDP workspace cluster and re-run the notebook. This resolves connectivity issues with the external catalog. If this error occurs in other spark code blocks (e.g. when writing to delta lake), re-running the code block usually resolves the issue. 
+
+**TROUBLESHOOTING NOTE:** If you get the following error when trying to insert the gold layer into ADW: 
+Command ID failed with java.lang.RuntimeException: java.lang.RuntimeException: org.apache.spark.SparkException: [INTERNAL_ERROR] The Spark SQL phase analysis failed with an internal error. You hit a bug in Spark or the Spark plugins you use. Please, report this bug to the corresponding communities or vendors, and provide the full stack trace.
+Make sure the airlines_external_adb_gold_xx catalog is refreshed as mentioned in Task 8 step 2.
 
 ---
 
