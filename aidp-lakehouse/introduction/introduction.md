@@ -24,8 +24,8 @@ By completing this workshop, you will:
 - Prepare and publish analytics-ready data to **Autonomous AI Lakehouse**
 - Design data visualizations and dashboards with **Oracle Analytics Cloud** (OAC)
 
-**Logical Architecture Overview:**  
-![Lakehouse Architecture Diagram](images/aidp-ai-lakehouse-logical.jpg)
+**Architecture Overview:**  
+![Lakehouse Architecture Diagram](images/aidp-ai-lakehouse2.jpg)
 
 **Key Oracle Services Touched:**
 * **Autonomous Transaction Processing (ATP):** Transactional source for operational data
@@ -33,6 +33,7 @@ By completing this workshop, you will:
 * **Autonomous AI Lakehouse:** Fast, secure, and scalable analytics/lakehouse SQL
 * **Oracle Analytics Cloud:** Interactive dashboards and self-service analytics
 * **Object Storage:** Landing zone for raw data files
+* **OCI Generative AI:** Data improvement
 
 ---
 
@@ -48,9 +49,9 @@ This workshop assumes you have:
 
 ### Lab Sequence
 
-- **Lab 1: Set Up Source System and Extract Transactional Data** - Provision ATP, create source schema, load sample data.
+- **Lab 1: Set Up OCI Resources** - Provision ATP, create source schema, provision AI Lakehouse, provision AI Data Platform, create Object Storage bucket, provision Analytics Cloud.
 - **Lab 2: Process and Refine Data in AI Data Platform and Lakehouse** - Extract from ATP, process in AIDP, publish to AI Lakehouse gold schema.
-- **Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)** - Connect to gold schema and build visualizations.
+- **Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)** - Connect to gold schema, build visualizations, chat with Assistant in natural language.
 
 ---
 
@@ -68,10 +69,11 @@ This workshop assumes you have:
 
 **Authors**
 * **Luke Farley**, Senior Cloud Engineer, ONA Data Platform
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform
 
 **Contributors**
 * **Enjing Li**, Senior Cloud Engineer, ONA Data Platform
-* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform
+* **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
+* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
