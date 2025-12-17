@@ -113,7 +113,7 @@ You have now imported notebooks and run the code to create a basic medallion arc
 - [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
 - [Oracle AI Data Platform Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
 - [Oracle Analytics Training Form](https://community.oracle.com/products/oracleanalytics/discussion/27343/oracle-ai-data-platform-webinar-series)
-- [ADIP Workbench Notebooks Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/notebooks.html)
+- [AIDP Workbench Notebooks Documentation](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/notebooks.html)
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence

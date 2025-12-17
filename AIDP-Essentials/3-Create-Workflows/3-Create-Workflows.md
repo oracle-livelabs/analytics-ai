@@ -120,7 +120,7 @@ Now you will make a final workflow that ties together the 3 you just created.
 
 11. On this page you can view and modify settings for the job, but we are interested in the **Schedule** section. Select **Add** to create a new schedule.
 
-![add scheudle](images/add-schedule.png)
+![add schedule](images/add-schedule.png)
 
 12. Set the **Frequency** to daily, leave all other options as is and select **Create**.
 

@@ -80,14 +80,13 @@ To connect AIDP Workbench and OAC, you first need a config file from the compute
 
 ![find connector](images/select-aidp-connector.png)
 
-3. Enter the **Connection Name** **Livelab\_AIDP\_Connection**. In the **Connection Details**, **Select...** and choose the **config.json** file that you downloaded from the compute cluster. In the **Private API Key**, **Select...** and choose the private key that you downloaded from the OCI console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **Supplier\_External\_23ai** for **Catalog** and then select **Save**.
-
+3. Enter the **Connection Name** **Livelab\_AIDP\_Connection**. In the **Connection Details**, **Select...** and choose the **config.json** file that you downloaded from the compute cluster. In the **Private API Key**, **Select...** and choose the private key that you downloaded from the OCI console. Note that fields will be populated using these files, which are blocked out in the image for privacy. Select **Supplier\_External\_26ai** for **Catalog** and then select **Save**.
 
 > **Note:** Currently, the connection can only be made to a single catalog, not the master catalog.
 
 ![provide connection details](images/configure-connection.png)
 
-Congratulations! You have now created a connection between the **Supplier\_external\_23ai** catalog and your OAC instance. You can now use this connection to pull data from the catalog into OAC for visualization and analysis.
+Congratulations! You have now created a connection between the **Supplier\_external\_26ai** catalog and your OAC instance. You can now use this connection to pull data from the catalog into OAC for visualization and analysis.
 
 
 ## Learn More

@@ -1,10 +1,5 @@
 {
-    "workshoptitle": "AI Data Platform Essentials",
-    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-                "sample.json":"../../data-load/files/sample.json",
-                "step2.md":"../../data-load/files/step2.md"},
-    "variables": ["../../variables/variables.json",
-                 "../../variables/variables-in-another-file.json"],
+    "workshoptitle": "AI Data Platform Workbench Essentials",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
