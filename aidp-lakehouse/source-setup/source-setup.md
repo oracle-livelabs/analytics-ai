@@ -67,11 +67,11 @@ This lab assumes you have:
 
 ![Compartments](./images/comp-2.png)
 
-3. Create a new Compartment (Name - "aidp-lab", Description - "AIDP Lab") under Root compartment (Change Parent comapartment to "(root)"). Click on "Create compartment"
+3. Create a new Compartment (Name - "aidp-lab-xx", Description - "AIDP Lab") under compartment of your choice. Click on "Create compartment"
 
 ![Compartments](./images/comp-3.png)
 
-4. The "aidp-lab" compartment gets created. Ensure to create all OCI resources in this "aidp-lab" compartment.
+4. The "aidp-lab-xx" compartment gets created. Ensure to create all OCI resources in this "aidp-lab-xx" compartment.
 
 ![Compartments](./images/comp-4.png)
 
@@ -85,11 +85,17 @@ This lab assumes you have:
 
 2. Click **Create Autonomous Database**.
 
-3. Provide a display name (e.g., **airline-source-atp**), database name (e.g., **AIRLINESOURCE**), and select **Transaction Processing** as the workload type. Choose database version 26ai.
+3. Provide a display name (e.g., **airline-source-atp**), database name (e.g., **AIRLINESOURCEXX**), and select **Transaction Processing** as the workload type. Choose database version 26ai.
 
 ![ATP Setup](./images/atp-setup.png)
 
+If this is a demo environment, the storage can be lowered to 20 GB to save cost & resources.
+
+![ATP Storage](./images/atp-set-storage.png)
+
 4. Set an administrator password and configure network access as needed (e.g., secure access from everywhere for simplicity).
+
+![ATP Password](./images/atp-set-password.png)
 
 **NOTE** If you would like to use a private database, a DB Tools Connection will need to be created to use SQL Developer web. This is outside the scope of this lab. For details, see [Create Database Tools Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/using-oracle-cloud-infrastructure-console.html).
 
@@ -176,7 +182,7 @@ Leave this open for later use once connectivity is verified.
 
 2. Select Create Autonomous AI Database 
 
-3. Give it a display name (e.g. **aidp-db**), and database name (e.g. **aidpdb**) and select workload type as Lakehouse. Select database version 26ai and leave other options as default. 
+3. Give it a display name (e.g. **aidp-db**), and database name (e.g. **aidpdbxx**) and select workload type as Lakehouse. Select database version 26ai and leave other options as default. 
 
 ![Create AI Database](./images/create-aidp-db.png)
 
@@ -281,6 +287,18 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold_XX;
 
 2. Provide a name for AIDP and workspace
 
+```
+<copy>
+aidp-test-xx
+</copy>
+```
+
+```
+<copy>
+aidp-workspace
+</copy>
+```
+
 ![Create AIDP](./images/create-aidp-2.png)
 
 3. In the "Add policies", set the access level as "Standard". If the policies aren't added it will fail to create.
@@ -337,7 +355,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold_XX;
 
 ![Analytics Cloud](./images/oac.png)
 
-2. Create a new Analytics Cloud instance. Provide a name such as **aidpoac**. Leave the remaining options as default and create. 
+2. Create a new Analytics Cloud instance. Provide a name such as **aidpoacxx**. Leave the remaining options as default and create. 
 
 ![Create OAC](./images/create-oac.png)
 
@@ -345,7 +363,7 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO gold_XX;
 
 ## Next Steps
 
-With the source data loaded in ATP, proceed to Lab 2 to extract and process it in the AI Data Platform and Lakehouse.
+With the infrastructure provisioned, proceed to Lab 2 to load the source data in ATP, extract it, and process it in the AI Data Platform and Lakehouse.
 
 ---
 
@@ -360,4 +378,4 @@ With the source data loaded in ATP, proceed to Lab 2 to extract and process it i
 * **JB Anderson**, Senior Cloud Engineer, ONA Data Platform
 
 **Last Updated By/Date:**
-* **Kaushik Kundu**, Master Principal Cloud Architect, ONA Data Platform, December 2025
+* **Luke Farley**, Senior Cloud Engineer, ONA Data Platform, December 2025
