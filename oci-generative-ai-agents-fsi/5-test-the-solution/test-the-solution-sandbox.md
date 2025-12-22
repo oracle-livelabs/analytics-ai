@@ -160,7 +160,6 @@ Here are a few more prompts to try with the agent:
 - _What is the minimum credit score for FHA vs Conventional loans?_
 - _Show the distribution of credit scores by loan type_
 - _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
-- _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
 
 ## Summary
 
