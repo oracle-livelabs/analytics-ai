@@ -57,7 +57,7 @@ This lab assumes you have:
 
 ![Analytics Cloud](./images/oac-instance1.png)
 
-2. Click on the OAC instance 'aidpoac' name, and then 'Analytics Home Page', to open the service console. 
+2. Click on the OAC instance 'aidpoacxx' name, and then 'Analytics Home Page', to open the service console. 
 
 ![Analytics Cloud](./images/oac-instance2.png)
 
@@ -83,7 +83,7 @@ This lab assumes you have:
 
 ![Create ADL Dataset](./images/create-adl-conn-4.jpg)
 
-8. Expand the Schemas on the left-hand side and GOLD\_XX schema. Drag and drop the **AIRLINE\_SAMPLE\_GOLD** table to the white space to the right 
+8. Wait for the data to load. Expand the Schemas on the left-hand side and GOLD\_XX schema. Drag and drop the **AIRLINE\_SAMPLE\_GOLD** table to the white space to the right 
 
 ![Create Gold Dataset](./images/create-dataset-gold1.jpg)
 
