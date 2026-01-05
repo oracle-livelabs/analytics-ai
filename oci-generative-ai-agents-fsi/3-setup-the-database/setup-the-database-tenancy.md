@@ -38,7 +38,21 @@ In this task we are going to create a new ADB instance.
    ![Screenshot showing how to navigate to the create ADB page](./images/create-adb-button.png)
 
 1. For the **Display name** use: _loan-compliance_.
+   
+   ```text
+      <copy>
+      loan-compliance
+      </copy>
+      ```
+
 1. For the **Database name** use: _loancompliance_.
+
+   ```text
+      <copy>
+      loancompliance
+      </copy>
+      ```
+
 1. Under the **Compartment**, make sure that the **root** compartment is selected.
 1. Under **Workload type** make sure that **Data Warehouse** is selected.
 
@@ -302,6 +316,13 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _loan-compliance-secrets_
+
+   ```text
+      <copy>
+      loan-compliance-secrets
+      </copy>
+      ```
+
 1. Click the **Create Vault** button at the bottom of the form.
 
    ![Screenshot showing how to create the vault](./images/create-vault.png)
@@ -318,6 +339,13 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _loan-compliance-key_
+
+     ```text
+      <copy>
+      loan-compliance-key
+      </copy>
+      ```
+
 1. Click the **Create Key** button.
 
    ![Screenshot showing details for creating an encryption key](./images/create-key-details.png)
@@ -338,6 +366,13 @@ In this section we are going to create a connection to our database. This connec
    ![Screenshot showing how to navigate to the create vault page](./images/create-connection-button.png)
 
 1. For the **Name** field use: _loan-compliance_
+
+   ```text
+      <copy>
+      loan-compliance
+      </copy>
+      ```
+
 1. Under the **Compartment**, make sure that the **root** compartment is selected.
 1. Make sure that the **Select database** option is selected under the **Database details** section.
 1. In the **Database cloud service** drop-down, select **Oracle Autonomous Database**.
@@ -353,6 +388,13 @@ In this section we are going to create a connection to our database. This connec
    This step will create a secret which will be stored in the Vault created earlier and will contain the password for connecting to the database.
 
 1. For the **Name** field use: _loan-compliance-admin-password_
+
+   ```text
+      <copy>
+      loan-compliance-admin-password
+      </copy>
+      ```
+
 1. Select the **loan-compliance-secrets** in the **Valut in...** drop-down.
 1. Select the **loan-compliance-key** in the **Encryption key in...** drop-down.
 1. In the **User password** field, type the password you've used when you created the ADB instance.
@@ -370,6 +412,13 @@ In this section we are going to create a connection to our database. This connec
    ![Screenshot showing how to create the ](./images/create-connection-5.png)
 
 1. For the **Name** field use: _loan-compliance-wallet-secret_
+
+   ```text
+      <copy>
+      loan-compliance-wallet-secret
+      </copy>
+      ```
+
 1. Select the **loan-compliance-secrets** in the **Valut in...** drop-down.
 1. Select the **loan-compliance-key** in the **Encryption key in...** drop-down.
 1. Under the **Wallet** section, select the **Retrieve regional wallet from Autonomous Database** option.

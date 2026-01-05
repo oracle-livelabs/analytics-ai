@@ -1,0 +1,47 @@
+CREATE TABLE f1_drivers_ranking 
+   (	race_year NUMBER(10,0), 
+	driver_id NUMBER(10,0),
+    driver_ref_name VARCHAR2(20),
+    team_id NUMBER(10,0),
+    team_name VARCHAR2(20),
+    total_points NUMBER(7,0),
+    total_wins NUMBER(20,0),
+    rank NUMBER(10,0),
+    update_ts TIMESTAMP
+       )  
+       ;
+  
+  CREATE TABLE f1_team_ranking 
+   (	year NUMBER(10,0), 
+	team_id NUMBER(10,0),
+    team_name VARCHAR2(20),
+    total_races NUMBER(20,0),
+    total_wins NUMBER(20,0),
+    total_points NUMBER(15,0),
+    unique_drivers NUMBER(20,0),
+    rank NUMBER(10,0),
+    update_ts TIMESTAMP
+       )  
+       ;
+
+CREATE TABLE f1_drivers 
+   ( 
+	driver_id NUMBER(10,0),
+    driver_ref_name VARCHAR2(30),
+    code VARCHAR2(30),
+    dob DATE,
+    nationality VARCHAR2(30),
+    driver_full_name VARCHAR2(30),
+    update_ts TIMESTAMP
+       )  
+       ;
+
+CREATE TABLE f1_constructors 
+   ( 
+	team_id NUMBER(10,0),
+    team_ref VARCHAR2(30),
+    team_name VARCHAR2(30),
+    nationality VARCHAR2(30),
+    update_ts TIMESTAMP
+       )  
+       ;

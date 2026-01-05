@@ -81,7 +81,20 @@ In order to facilitate those permissions, we will create a Dynamic Group which w
    ![Screenshot showing how to navigate to the dynamic groups section](./images/dynamic-group-navigation.png)
 
 1. Name the dynamic group: _oci-genai-agents-service_
+
+    ```text
+      <copy>
+      oci-genai-agents-service
+      </copy>
+      ```
 1. Provide an optional description (example: `This group represents the OCI Generative AI Agents service`)
+   
+      ```text
+      <copy>
+      This group represents the OCI Generative AI Agents service
+      </copy>
+      ```
+
 1. Select the **Match any rules defined below** option in the **Matching rules** section.
 1. Enter the following expression in the **Rule 1** textbox:
 
@@ -108,7 +121,21 @@ Next, we will create the access policies:
    ![Screenshot showing how to initiate the creation of a new policy](./images/create-new-policy-navigation.png)
 
 1. Provide a name for the policy (example: _oci-generative-ai-agents-workshop_).
+
+      ```text
+      <copy>
+      oci-generative-ai-agents-workshop
+      </copy>
+      ```
+
 1. Provide a description (example: _OCI Generative AI Agents Hands-On-Lab Policy_).
+
+      ```text
+      <copy>
+      OCI Generative AI Agents Hands-On-Lab Policy
+      </copy>
+      ```
+
 1. Make sure that the root compartment is selected.
 1. Enable the **Show manual editor** option.
 1. In the **Policy Builder** textbox, enter the following policy statements:
