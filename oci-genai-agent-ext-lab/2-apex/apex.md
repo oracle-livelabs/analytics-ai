@@ -40,7 +40,7 @@ Estimated time: 10 min
     | FAX       | .tif      | Is there an invoice for Optika ?                  | 
     |           |           | What does the file invoice.tif contains ?         |
     | Video     | .mp4      | What is Oracle Analytics                          | 
-    | Audio     | .mp3      | Summarize the audio file Voice_SupportRobot.mp3   |
+    | Audio     | .mp3      | What is the issue with my headphones ?            |
 
 
 **You may now proceed to the [next lab.](#next)**
