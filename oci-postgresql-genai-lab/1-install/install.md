@@ -67,7 +67,7 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
 
 
 
-## Task 3: Run a Terraform script to create the VCN, PostgreSQL DBSystem & VM.
+## Task 3: Run Terraform script to provision the stack
 
 1. Download the Github code to your Local machine
 
@@ -130,7 +130,7 @@ Copy the public IP of the instance
               ![Resource Manager](images/get-public-ip-2.png)
 
 
-## Task 4: SSH into the VM -- Download the App & Setup VM
+## Task 4: SSH into the VM -- Setup App
 
 1. Go to your Terminal and Copy the public IP from Task 3 step 14 and use the Private Key from Task 2.
 
@@ -138,21 +138,28 @@ Copy the public IP of the instance
 
 2. Install Linux Packages
    
-   ````
-   git clone https://github.com/shadabshaukat/oracle-livelabs.git
-   ````
+````
+sudo dnf install -y curl git unzip firewalld
+````
 
 3. Add firewall rules
    
-   ````
-   git clone https://github.com/shadabshaukat/oracle-livelabs.git
-   ````
+````
+# uv installer and PATH
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
+# Firewalld rules for the app port (default 8000)
+sudo systemctl enable --now firewalld
+sudo firewall-cmd --permanent --add-port=8000/tcp
+sudo firewall-cmd --reload
+````
 
 4. Download the Code Repository
 
-   ````
+````
    git clone https://github.com/shadabshaukat/oracle-livelabs.git
-   ````
+ ````
 
 5. Configure the variables to reflect the provisioned stack and API keys
 
