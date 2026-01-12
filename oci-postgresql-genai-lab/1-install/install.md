@@ -198,7 +198,7 @@ Config written to /home/opc/.oci/config
 6. Configure the variables to reflect the provisioned stack and API keys
 
 ````
-cd oracle-livelabs\
+cd oracle-livelabs/search-app/
 ````
 
 ````
