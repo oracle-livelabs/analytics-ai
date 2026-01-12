@@ -96,18 +96,20 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
           ![Resource Manager](images/resource-manager-5-a.png)
 
 9. Paste the Public SSH key created in Task 2 and check *create compute* box
-             ![Resource Manager](images/resource-manager-5-b.png)
+    ![Resource Manager](images/resource-manager-5-b.png)
+    ![Resource Manager](images/resource-manager-5-c.png)
+  
 
-10. Enter Postgres Admin user and password
+11. Enter Postgres Admin user and password
               ![Resource Manager](images/resource-manager-6.png)
 
-11. Enter a region and click next
+12. Enter a region and click next
               ![Resource Manager](images/resource-manager-7.png)
 
-12. Select *Run apply* and create the stack
+13. Select *Run apply* and create the stack
               ![Resource Manager](images/resource-manager-8.png)
 
-13. Wait about 10-15 minutes for the stack to finish provisioning
+14. Wait about 10-15 minutes for the stack to finish provisioning
               ![Resource Manager](images/resource-manager-9.png)
               
 
