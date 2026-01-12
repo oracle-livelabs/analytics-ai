@@ -119,7 +119,7 @@ Copy the last 10 lines of the job log and save it in a notepad, it will be like 
 ````
 Outputs:
 compute_instance_id = "ocid1.instance.oc1.iad.anuw...................uq"
-compute_private_ip = "10.10.2.30"
+compute_private_ip = "10.10.2.23"
 compute_public_ip = "150.x.x.74"
 compute_state = "RUNNING"
 psql_admin_pwd = <sensitive>
@@ -207,7 +207,7 @@ vi .env.example
 
 Add DB Parameters based on the DBSystem created earlier
 ````
-DB_HOST=10.10.1.23
+DB_HOST=10.10.1.83
 DB_PORT=5432
 DB_NAME=postgres
 DB_USER=postgres
@@ -249,6 +249,20 @@ cd /home/opc/oracle-livelabs/search-app
 cp -p .env.example .env
 ````
 
+8. Run the Stack
+
+````
+bash run.sh
+````
+
+![App Build](images/app-build-1.png)
+![App Build](images/app-build-2.png)
+
+After the app has completed startup, open a browser with the public IP of the VM with tcp/8000
+
+````
+http://<public-ip>:8000/ui
+````
 
 **You may now proceed to the [next lab](#next)**
 
