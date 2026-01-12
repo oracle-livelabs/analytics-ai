@@ -45,23 +45,8 @@ Estimated time: 40 min
         </copy>        
         ```
 
-## Task 1: Prepare to save configuration settings
 
-1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
-
-    ````
-    <copy>
-    List of ##VARIABLES##
-    ---------------------
-    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
- 
-    Terraform Output
-    ----------------
-    SEARCH_URL=(SAMPLE)https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
-    </copy>
-    `````
-
-## Task 2: Create a Compartment
+## Task 1: Create a Compartment
 
 The compartment will be used to contain all the components of the lab.
 
@@ -78,55 +63,81 @@ You can
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/compartment2.png)
-4. When the compartment is created copy the compartment ocid ##COMPARTMENT_OCID## and put it in your notes
+
+## Task 2: Create OCI API Key
+
+The API key will be used to access OCI command line tool and OCI Generative AI service programatically 
+
+1. Go to OCI Console Homepage
+
+2. Click User icon on the top right and *User Settings*
+
+    ![Create API key](images/create-api-keys-1.png)
+    
+3. Go to *Tokens & Keys*, then *Add API Key*
+    ![Create API key](images/create-api-keys-2.png)
+    
+4. Generate API Key pair and Download the Private an Public Key. 
+    ![Create API key](images/create-api-keys-3.png)
+    
+***We will use the public key later in provisioning the stack and private key to connect to the VM***
 
 
-## Task 3: Run a Terraform script to create the other components.
 
-1. Go to the OCI console homepage
-2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-3. Check that the Network used is Public. (see requirements)
-4. Check that the Code Editor Architecture is well X86_64.
-    - Go to Actions / Architecture
-    - Check that the current Architecture is well X86_64.
-    - If not change it to X86_64 and confirm. It will restart.
+## Task 3: Run a Terraform script to create the Virtual Cloud Network, OCI PostgreSQL DBSystem & Virtual Machine.
 
-        ![OIC Domain](images/cloud-shell-architecture.png)
+1. Download the Github code to your Local machine
+       ````
+    git clone https://github.com/shadabshaukat/oracle-livelabs.git
+       ````
+       
+2. Go to OCI Console Home Page
 
-5. In the code editor menu, click *Terminal* then *New Terminal*
-6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png =50%x*)
-    ````
-    <copy>
-    git clone https://github.com/mgueury/oci-postgres-genai.git
-    </copy>
-    ````
-7. Edit the file *oci-postgres-genai/starter/env.sh*
-    1. Click the **Explorer** icon in the left bar of the code editor
-    1. Use Explorer to locate env.sh
-    1. Click env.sh to open it in the editor
-8. In env.sh, replace the ## with the corresponding value from your text file.
-    ````
-    <copy>
-    export TF_VAR_compartment_ocid="##COMPARTMENT_OCID##"
-    </copy>
-    ````
-9. Save your edits using File > Save
-10. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
-    ```
-    <copy>
-    cd oci-postgres-genai/starter/
-    </copy>
-    ```
-    ````
-    <copy>
-    ./build.sh
-    </copy>
-    ````
+3. Click on *Developer Services* and then *Stack*
+    ![Resource Manager](images/resource-manager-1.png)
 
-11. **Please proceed to the [next lab](#next) while Terraform is running.** 
+4. Change your compartment to the oen created in Task 1 above
+
+5. Select *My Configuration* scroll down to the *Stack Configuration* and add the newly downloaded folder
+       ![Resource Manager](images/resource-manager-2.png)
+       
+   Select the *oci_postgres_tf_stack* folder from your local machine
+       ![Resource Manager](images/resource-manager-3.png)
+       
+6. Select the compartment and click **Next**
+       ![Resource Manager](images/resource-manager-4.png)
+
+7. Select *compute_assign_public_ip*
+          ![Resource Manager](images/resource-manager-5a.png)
+
+8. Paste the Public SSH key created in Task 2 and check *create compute* box
+             ![Resource Manager](images/resource-manager-5b.png)
+
+9. Enter Postgres Admin user and password
+              ![Resource Manager](images/resource-manager-6.png)
+
+10. Enter a region and click next
+              ![Resource Manager](images/resource-manager-7.png)
+
+11. Select *Run apply* and create the stack
+              ![Resource Manager](images/resource-manager-8.png)
+
+12. Wait about 10-15 minutes for the stack to finish provisioning
+              ![Resource Manager](images/resource-manager-9.png)
+
+13. Go to OCI Console *Compute* and then *Instances*
+              ![Resource Manager](images/get-public-ip-1.png)
+
+
+
+
+
+
+   
+
+14. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-12. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+15. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     <copy>    
@@ -139,89 +150,6 @@ You can
 **You may now proceed to the [next lab](#next)**
 
 ## Known issues
-
-1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
-
-    ```
-    <copy>    
-    oci_core_instance.starter_instance: Creating..
-    - Error: 500-InternalError, Out of host capacity.
-    Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
-    </copy>
-    ```
-
-    Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
-    ```
-    <copy>    
-    OLD: variable availability_domain_number { default = 1 }
-    NEW: variable availability_domain_number { default = 2 }
-    </copy>    
-    ```
-
-    Then rerun the following command in the code editor
-
-    ```
-    <copy>
-    ./build.sh
-    </copy>
-    ```
-
-    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.
-
-2. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
-
-    ```
-    <copy>    
-    - Error: 404-NotAuthorizedOrNotFound, shape VM.Standard.x86.Generic not found
-    </copy>    
-    ```
-
-    Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *instance_shape* to one where there are still capacity in your tenancy/region
-    ```
-    <copy>    
-    OLD: variable instance_shape { default = "VM.Standard.x86.Generic" }
-    NEW: variable instance_shape { default = "VM.Standard.E4.Flex" }
-    </copy>    
-    ```
-
-    Then rerun the following command in the code editor
-
-    ```
-    <copy>
-    ./build.sh
-    </copy>
-    ```
-
-    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.    
-
-3. It happened on new tenancy that the terraform script failed with this error:
-
-    ```
-    <copy>    
-    Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
-    Suggestion: Please retry or contact support for help with service: xxxx
-    </copy>    
-    ```
-
-    In such case, just rerunning ./build.sh fixed the issue.
-
-4. During terraform:
-    ```
-    <copy>    
-    Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
-    </copy>    
-    ```
-
-    Several persons are probably trying to install this tutorial on the same tenancy.
-
-    Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
-    ```
-    <copy>    
-    OLD: export TF_VAR_prefix="search"
-    NEW: export TF_VAR_prefix="search2"
-    </copy>    
-    ```
-
 
 ## Acknowledgements
 
