@@ -5,11 +5,8 @@
 We will create a Generative AI / Hybrid Search web application, using Terraform. This application will search documents using OCI Database with PostgreSQL and the pgvector extension. pgvector will turn our OCI Database with PostgreSQL into a vector database where we can natively store and manage vector embeddings while handling unstructured data like documents, images, video, or audio.
 
 We’ll be able to search documents like:
-- PDF with text and images using OCI Document Understanding
-- Images using OCI Vision
-- Audio and Videos files using OCI Speech
-- Word, Excel, Powerpoint, ... using OCI Functions
-- Custom document: Belgian ID card images
+- PDF with text 
+- HTML files 
 
 ![Screenshot](images/when-was-jazz-created.png)
 
@@ -18,7 +15,6 @@ The website created during the workshop has several ways to search:
 - Semantic Search: Based on the *Meaning* (Vector Search)
 - Hybrid: Based on the 2 above search
 - RAG (Retrieval Augmented Generation): Answer questions based on documents
-- and a "Generate" response button
 
 The procedures in this workshop are designed for users that have obtained an Oracle Cloud free trial account with active credits. The procedures will also work for other Oracle Cloud accounts but may, in some cases, require minor adaptation.
 
@@ -29,40 +25,21 @@ Estimated Workshop Time: 90 minutes
 ![Architecture](images/postgres-logical-architecture.png)
 
 It works like this:
-1. A document is uploaded in the Object Storage by the user
-1. An event is raised and queued in Streaming (Kafka)
-1. The stream is received and processed by a Python program running on a VM.
-1. Based on the file type, it will send the file to one or more AI services to enrich them and provide searchable text
-1. Vectors are calculated for the text by Generative AI
-1. The results are uploaded to an PostgreSQL database
-1. The user may then go a to website to query the documents (static HTML pages + REST apis) 
+1. A document is uploaded in the Search App
+2. The document is converted, parsed & cleaned.
+3. Using an embedding model, vector embeddings are created and stored in OCI PostgreSQL database
+4. You can now ask natural language questions in the App to retrieve results using a combination of semantic search using pgvector and OCI Generative AI service LLM
+
 
 This picture shows the processing flow.
 
 ![Integration](images/postgres-physical-architecture.png)
 
-The file types supported by the Object storage are based on the file extensions. Here's how various file types are processed.
-- If the name has an extension **.belgian***, it is processed by OCI Vision, and then it is stored in the database
-
-- If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision, then it is stored in the database
-
-- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. The text is stored in the database.
-
-- If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech and the json output is processed as described above
-
-- If the file has the extension **.tif** or **.pdf**, it is processed by OCI Document Understanding and the json output is processed as described above
-
-- All other file types are sent to the OCI Function with a document parser.
 
 ### Objectives
 
 - Provision the services needed for the system
-    - Compartment, Object Storage Bucket, Stream, Event, PostgreSQL, AI services and a Virtual Machine
-- Create an OCI Function to identify the documents
-- Integrate the components into a working system
-- Create a search user interface
-- Process files through the system
-- Search for files through the user interface
+    - Compartment, Compute Intance, PostgreSQL, and Genarative AI services.
 
 ## Prerequisites
 ### Cloud Account
