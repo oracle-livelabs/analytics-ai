@@ -118,11 +118,12 @@ Copy the last 10 lines of the job log and save it in a notepad, it will be like 
 
 ````
 Outputs:
-compute_instance_id = "ocid1.instance.oc1.iad.anuw......................oq"
-compute_private_ip = "10.10.2.212"
-compute_public_ip = "150.x.x.174"
+compute_instance_id = "ocid1.instance.oc1.iad.anuw...................uq"
+compute_private_ip = "10.10.2.30"
+compute_public_ip = "150.x.x.74"
 compute_state = "RUNNING"
-psql_admin_pwd = <sensitive> 
+psql_admin_pwd = <sensitive>
+psql_configuration_id = "ocid1.postgresqlconfiguration.oc1.iad.amaaaaa............snq" 
 ````
 
 
