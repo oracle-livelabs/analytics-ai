@@ -261,7 +261,7 @@ bash run.sh
 After the app has completed startup, open a browser with the public IP of the VM with tcp/8000
 
 ````
-http://<public-ip>:8000/ui
+http://128.x.x.54:8000/
 ````
 
 Enter the API Auth User and Password set in the **.env.example** file earlier
