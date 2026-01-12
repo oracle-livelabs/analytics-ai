@@ -264,6 +264,8 @@ After the app has completed startup, open a browser with the public IP of the VM
 http://<public-ip>:8000/ui
 ````
 
+Enter the API Auth User and Password set in the **.env.example** file earlier
+
 **You may now proceed to the [next lab](#next)**
 
 ## Known issues
