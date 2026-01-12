@@ -26,6 +26,7 @@ In this lab, you will:
 This lab assumes you have:
 
 - All previous labs successfully completed
+- 💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
 
 ## Task 1: Overview of the chat page functionality
 
