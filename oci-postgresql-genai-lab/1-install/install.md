@@ -143,7 +143,7 @@ Copy the public IP of the instance
 2. Install Linux Packages
    
 ````
-sudo dnf install -y curl git unzip firewalld oraclelinux-developer-release-el10 python3-oci-cli
+sudo dnf install -y curl git unzip firewalld oraclelinux-developer-release-el10 python3-oci-cli postgresql16
 ````
 
 3. Add firewall rules
@@ -162,7 +162,7 @@ sudo firewall-cmd --reload
 4. Download the Code Repository
 
 ````
-   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+git clone https://github.com/shadabshaukat/oracle-livelabs.git
 ````
 
 5. Setup OCI ClI
