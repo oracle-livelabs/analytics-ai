@@ -143,7 +143,7 @@ Copy the public IP of the instance
 2. Install Linux Packages
    
 ````
-sudo dnf install -y curl git unzip firewalld
+sudo dnf install -y curl git unzip firewalld oraclelinux-developer-release-el10 python3-oci-cli
 ````
 
 3. Add firewall rules
@@ -163,9 +163,92 @@ sudo firewall-cmd --reload
 
 ````
    git clone https://github.com/shadabshaukat/oracle-livelabs.git
- ````
+````
 
-5. Configure the variables to reflect the provisioned stack and API keys
+5. Setup OCI ClI
+
+Before we proceed upload the private key downloaded in Task 2 to this host and rename it to **priv.key** the location is /home/opc/priv.key
+
+````
+chmod 600 /home/opc/priv.key
+````
+
+````
+oci setup config
+````
+
+Enter the details as per Task 2
+
+````
+Enter a location for your config [/home/opc/.oci/config]:
+Enter a user OCID: ocid1.user.oc1..aaaaaa...........................aq
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa....................ua
+Enter a region by index or name(e.g.) :  us-ashburn-1
+
+Enter the location of your API Signing private key file: /home/opc/priv.key
+
+Config written to /home/opc/.oci/config
+    If you haven't already uploaded your API Signing public key through the
+    console, follow the instructions on the page linked below in the section
+    'How to upload the public key':
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
+````
+
+6. Configure the variables to reflect the provisioned stack and API keys
+
+````
+cd oracle-livelabs\
+````
+
+````
+vi .env.example
+````
+
+Add DB Parameters based on the DBSystem created earlier
+````
+DB_HOST=10.10.1.23
+DB_PORT=5432
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=YourPWD12345##
+DB_SSLMODE=require
+DB_POOL_MIN_SIZE=1
+DB_POOL_MAX_SIZE=10
+````
+
+Add OCI cli parameters based on the API Key created earlier
+
+````
+# Set one of: none | openai | oci
+LLM_PROVIDER=oci
+OPENAI_API_KEY=
+OPENAI_MODEL=
+
+# OCI Generative AI (when LLM_PROVIDER=oci)
+OCI_REGION=us-chicago-1
+OCI_COMPARTMENT_OCID=ocid1.compartment.oc1..aaaaaaaad........................mfa
+OCI_GENAI_ENDPOINT=
+OCI_GENAI_MODEL_ID=ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7dceya3eub3uksacl5q35mrigancv6rbppihlg7ihhjofyc22q
+# Option 1: Use config file
+OCI_CONFIG_FILE=/home/opc/.oci/config
+OCI_CONFIG_PROFILE=DEFAULT
+# Option 2: API key envs
+OCI_TENANCY_OCID=
+OCI_USER_OCID=
+OCI_FINGERPRINT=
+OCI_PRIVATE_KEY_PATH=
+OCI_PRIVATE_KEY_PASSPHRASE=
+````
+
+7. Copy environment variables in example file to .env file
+
+````
+cd /home/opc/oracle-livelabs/search-app
+
+cp -p .env.example .env
+````
+
 
 **You may now proceed to the [next lab](#next)**
 
