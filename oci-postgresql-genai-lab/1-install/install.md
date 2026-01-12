@@ -24,26 +24,7 @@ Estimated time: 40 min
     ![Chicago Region](images/chicago-region.png)
 
     - For Free Trial, the home region should be Chicago (or Frankfurt)
-- The lab is using Cloud Shell with Public Network.
-
-    The lab assume that you have access to **OCI Cloud Shell with Public Network access**.
-    To check if you have it, start Cloud Shell and you should see **Network: Public** on the top. If not, try to change to **Public Network**. If it works, there is nothing to do.
-    ![Cloud Shell Public Network](images/cloud-shell-public-network.png)
-
-    OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
-    - **Solution:**
-
-        If not, please ask your Administrator to follow this document:
-        
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
-
-        He/She just need to add a Policy to your tenancy :
-
-        ```
-        <copy>
-        allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
-        </copy>        
-        ```
+- The OCI User used in this LiveLab should have OCI Administrator Priviliges in the OCI Tenancy
 
 
 ## Task 1: Create a Compartment
@@ -55,10 +36,12 @@ You can
 - Or create a new one (recommended)
 
 1. Login to your OCI account/tenancy
+
 2. Go the 3-bar/hamburger menu of the console and select
     1. Identity & Security
     1. Compartments
     ![Menu Compartment](images/compartment1.png =40%x*)
+    
 2. Click ***Create Compartment***
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
@@ -84,69 +67,76 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
 
 
 
-## Task 3: Run a Terraform script to create the Virtual Cloud Network, OCI PostgreSQL DBSystem & Virtual Machine.
+## Task 3: Run a Terraform script to create the VCN, PostgreSQL DBSystem & VM.
 
 1. Download the Github code to your Local machine
-       ````
-    git clone https://github.com/shadabshaukat/oracle-livelabs.git
-       ````
-       
-2. Go to OCI Console Home Page
 
-3. Click on *Developer Services* and then *Stack*
+    ````
+   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+     ````
+
+       
+3. Go to OCI Console Home Page
+
+4. Click on *Developer Services* and then *Stack*
     ![Resource Manager](images/resource-manager-1.png)
 
-4. Change your compartment to the oen created in Task 1 above
+5. Change your compartment to the one created in Task 1 above
 
-5. Select *My Configuration* scroll down to the *Stack Configuration* and add the newly downloaded folder
+6. Select *My Configuration* scroll down to the *Stack Configuration* and add the newly downloaded folder
        ![Resource Manager](images/resource-manager-2.png)
        
    Select the *oci_postgres_tf_stack* folder from your local machine
        ![Resource Manager](images/resource-manager-3.png)
        
-6. Select the compartment and click **Next**
+7. Select the compartment and click **Next**
        ![Resource Manager](images/resource-manager-4.png)
 
-7. Select *compute_assign_public_ip*
+8. Select **compute_assign_public_ip**
           ![Resource Manager](images/resource-manager-5a.png)
 
-8. Paste the Public SSH key created in Task 2 and check *create compute* box
+9. Paste the Public SSH key created in Task 2 and check *create compute* box
              ![Resource Manager](images/resource-manager-5b.png)
 
-9. Enter Postgres Admin user and password
+10. Enter Postgres Admin user and password
               ![Resource Manager](images/resource-manager-6.png)
 
-10. Enter a region and click next
+11. Enter a region and click next
               ![Resource Manager](images/resource-manager-7.png)
 
-11. Select *Run apply* and create the stack
+12. Select *Run apply* and create the stack
               ![Resource Manager](images/resource-manager-8.png)
 
-12. Wait about 10-15 minutes for the stack to finish provisioning
+13. Wait about 10-15 minutes for the stack to finish provisioning
               ![Resource Manager](images/resource-manager-9.png)
+              
+It takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next task.
 
-13. Go to OCI Console *Compute* and then *Instances*
+14. Go to OCI Console *Compute* and then *Instances*
               ![Resource Manager](images/get-public-ip-1.png)
 
+Copy the public IP of the instance 
+              ![Resource Manager](images/get-public-ip-2.png)
 
 
+## Task 4: SSH into the VM -- Download the App & Setup VM
 
+1. Go to your Terminal and Copy the public IP from Task 3 step 14 and use the Private Key from Task 2.
 
+      ![Resource Manager](images/ssh-to-host-1.png)
 
-   
+2. Install Linux Packages
 
-14. **Please proceed to the [next lab](#next) while Terraform is running.** 
-    Do not wait for the Terraform script to finish because it takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-15. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+3. Add firewall rules
 
-    ```
-    <copy>    
-    -- SEARCH_URL -------
-    https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
+4. Download the Code Repository
 
-    Please wait 5 mins. The server is starting.
-    </copy>    
-    ```
+       ````
+   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+     ````
+
+5. Configure the variables to reflect the provisioned stack and API keys
+
 **You may now proceed to the [next lab](#next)**
 
 ## Known issues
