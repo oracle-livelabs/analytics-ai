@@ -93,12 +93,13 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
        ![Resource Manager](images/resource-manager-4.png)
 
 8. Select **compute_assign_public_ip**
-          ![Resource Manager](images/resource-manager-5-a.png)
+          ![Resource Manager](images/resource-manager-5.png)
 
-9. Paste the Public SSH key created in Task 2 and check *create compute* box
-    ![Resource Manager](images/resource-manager-5-b.png)
-    ![Resource Manager](images/resource-manager-5-c.png)
-  
+9. Paste the Public SSH key created in Task 2 and check **create compute** | **create_psql_configurtion** box
+    ![Resource Manager](images/resource-manager-5-a.png)
+
+10. pgvector extension and user variables added
+     ![Resource Manager](images/resource-manager-5-c.png)
 
 11. Enter Postgres Admin user and password
               ![Resource Manager](images/resource-manager-6.png)
