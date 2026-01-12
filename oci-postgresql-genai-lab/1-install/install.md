@@ -110,7 +110,18 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
 13. Wait about 10-15 minutes for the stack to finish provisioning
               ![Resource Manager](images/resource-manager-9.png)
               
-It takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next task.
+
+Copy the last 10 lines of the job log and save it in a notepad, it will be like something below
+
+````
+Outputs:
+compute_instance_id = "ocid1.instance.oc1.iad.anuw......................oq"
+compute_private_ip = "10.10.2.212"
+compute_public_ip = "150.x.x.174"
+compute_state = "RUNNING"
+psql_admin_pwd = <sensitive> 
+````
+
 
 14. Go to OCI Console *Compute* and then *Instances*
               ![Resource Manager](images/get-public-ip-1.png)
@@ -123,17 +134,25 @@ Copy the public IP of the instance
 
 1. Go to your Terminal and Copy the public IP from Task 3 step 14 and use the Private Key from Task 2.
 
-      ![Resource Manager](images/ssh-to-host-1.png)
+      ![SSH Host](images/ssh-to-host-1.png)
 
 2. Install Linux Packages
+   
+   ````
+   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+   ````
 
 3. Add firewall rules
+   
+   ````
+   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+   ````
 
 4. Download the Code Repository
 
-       ````
+   ````
    git clone https://github.com/shadabshaukat/oracle-livelabs.git
-     ````
+   ````
 
 5. Configure the variables to reflect the provisioned stack and API keys
 
