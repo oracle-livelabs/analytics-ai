@@ -25,27 +25,13 @@ You will need samples files on your laptop/desktop. To download the files to you
 
 ## Task 2: Upload the sample files to the search app
 
-You will load a file into object storage which will be ingested, processed with AI, and loaded into the database. 
-
-1. In the OCI Console, select the 3-bar/hamburger menu and select
-    - Storage
-    - Buckets
-
-    ![Test Bucket](images/test-bucket1.png)
-
-1. In the *Buckets* list, select **psql-public-bucket**.
-1. On your local computer, go to the directory that you previously downloaded from GITHUB
-1. Under *Objects* click the **Upload* button. 
-1. In the *Upload Objects* dialog, upload all the files of the **sample_files** directory. Then click the **Upload** button.
-
-    ![Test Upload](images/test-upload.png)
-1. Click the **Close** button on the *Upload Objects* dialog. The file will be detected automatically and ingested.
+You will load a file into the search app which will be parsed, chunked, vector embeddings created & ingested into the OCI PostgreSQL database. 
      
-1. Go to the ##SEARCH_URL## (ex:http://123.123.123.123/)
+1. Go to the ##APP URL## (eg:http://123.123.123.123:8000/)
     
-    Type "jazz", then *Search*
+    Drag the folder into the Upload Drop zone and then *Upload*
 
-    ![Test Jazz](images/test-jazz.png)
+    ![Upload Files](images/test-jazz.png)
 
 1. Type "when was jazz created ?", then *Semantic Search*
 
