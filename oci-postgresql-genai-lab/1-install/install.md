@@ -229,7 +229,6 @@ OPENAI_MODEL=
 OCI_REGION=us-chicago-1
 OCI_COMPARTMENT_OCID=ocid1.compartment.oc1..aaaaaaaad........................mfa
 OCI_GENAI_ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
-## meta.llama-4-scout-17b-16e-instruct Model on OCI GenAI
 OCI_GENAI_MODEL_ID=ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7d.......zta
 #
 # Option 1: Use config file
