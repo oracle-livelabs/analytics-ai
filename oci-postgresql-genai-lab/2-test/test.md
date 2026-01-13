@@ -15,24 +15,15 @@ Estimated time: 20 min
 ## Task 1: Download RAG dataset
 You will need samples files on your laptop/desktop. To download the files to your laptop from the Github website, please follow these steps.
 
-1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-postgres-genai/tree/main and click *Code* and then *Download ZIP*.
-![GitHub_Download](images/github-download-zip.png)
+1. In a new tab or window of your Internet browser, go to https://github.com/shadabshaukat/oracle-livelabs and click *Code* and then *Download ZIP*.
+![GitHub_Download](images/github-shadmha-download.png)
 
-1. Extract the oci-postgres-genai-main.zip file to your computer. 
-![GitHub_Download](images/github-extract-zip.png) 
+1. Extract the oracle-livelabs-main.zip file to your computer. 
+![GitHub_Download](images/github-shadmha-extract.png) 
 
-1. Note the directory contains the program runned in previous lab in the ***starter*** folder, and samples files in the ***sample_files*** folder.
+1. Note the directory contains the program runned in previous lab in the ***search-app*** folder, and samples files in the ***dataset*** folder.
 
-## Task 2: Upload the sample files
-
-Please wait that the script from the previous lab finishes. You should see :
-
-```
-<copy>
--- SEARCH_URL -------
-https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
-</copy>
-```
+## Task 2: Upload the sample files to the search app
 
 You will load a file into object storage which will be ingested, processed with AI, and loaded into the database. 
 
