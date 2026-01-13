@@ -8,7 +8,7 @@ We’ll be able to search documents like:
 - PDF with text 
 - HTML files 
 
-![Screenshot](images/when-was-jazz-created.png)
+![Screenshot](images/search-app-1.png)
 
 The website created during the workshop has several ways to search:
 - Search: Based on *Words* in the documents
@@ -22,8 +22,6 @@ Estimated Workshop Time: 90 minutes
 
 ### Architecture
 
-![Architecture](images/postgres-logical-architecture.png)
-
 It works like this:
 1. A document is uploaded in the Search App
 2. The document is converted, parsed & cleaned.
@@ -33,7 +31,7 @@ It works like this:
 
 This picture shows the processing flow.
 
-![Integration](images/postgres-physical-architecture.png)
+![Workflow](images/ai-search-livelab.png)
 
 
 ### Objectives
@@ -53,28 +51,6 @@ You need a computer (laptop or desktop) with web browser, a text editor, and int
     - For Free Trial account, this means that the Free Trial should be created in the Chicago region
     - For Paid account, you will need to add the Chicago or Frankfurt Region to your tenancy to access the Generative AI APIs. (See lab 1) 
 
-### Cloud Shell - Public Network
-
-The lab is using Cloud Shell with Public Network
-The lab assume that you have access to OCI Cloud Shell with Public Network access.
-If that is not the case for some reasons here are the solution.
-
-If you start Cloud Shell and that you see **Network: Public** on the top or that you may change to **Public Network**, there is nothing to do.
-OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
-
-#### Solution - Add Policy
-
-If not, please ask your Administrator to follow this document:
-
-https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
-
-He/She just need to add a Policy to your tenancy :
-
-```
-<copy>
-allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
-</copy>
-```
 
 **Please proceed to the [next lab.](#next)**
 
