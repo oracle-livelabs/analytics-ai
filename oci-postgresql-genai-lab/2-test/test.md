@@ -1,5 +1,5 @@
 
-# Integrate the Components
+# Upload Files and Test the Search Application
 
 ## Introduction
 In this lab, we will test what we created in Lab 1
@@ -12,7 +12,7 @@ Estimated time: 20 min
 ### Prerequisites
 - The previous lab must have been completed.
 
-## Task 1: Download required files
+## Task 1: Download RAG dataset
 You will need samples files on your laptop/desktop. To download the files to your laptop from the Github website, please follow these steps.
 
 1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-postgres-genai/tree/main and click *Code* and then *Download ZIP*.
