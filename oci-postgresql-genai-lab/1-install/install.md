@@ -274,6 +274,8 @@ Enter the API Auth User and Password set in the **.env.example** file earlier
 
 ## Known issues
 
+None
+
 ## Acknowledgements
 
 - **Author**
