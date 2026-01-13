@@ -266,6 +266,9 @@ http://128.x.x.54:8000/
 
 Enter the API Auth User and Password set in the **.env.example** file earlier
 
+![API Auth](images/signin-api.png)
+
+
 **You may now proceed to the [next lab](#next)**
 
 ## Known issues
