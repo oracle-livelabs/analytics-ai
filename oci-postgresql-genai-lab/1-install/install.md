@@ -67,7 +67,7 @@ The API key will be used to access OCI command line tool and OCI Generative AI s
 
 
 
-## Task 3: Run Terraform script to provision the stack
+## Task 3: Run Terraform script 
 
 1. Download the Github code to your Local machine
 
@@ -134,7 +134,7 @@ Copy the public IP of the instance
               ![Resource Manager](images/get-public-ip-2.png)
 
 
-## Task 4: SSH into the VM -- Setup App
+## Task 4: Setup Application
 
 1. Go to your Terminal and Copy the public IP from Task 3 step 14 and use the Private Key from Task 2.
 
@@ -228,8 +228,10 @@ OPENAI_MODEL=
 # OCI Generative AI (when LLM_PROVIDER=oci)
 OCI_REGION=us-chicago-1
 OCI_COMPARTMENT_OCID=ocid1.compartment.oc1..aaaaaaaad........................mfa
-OCI_GENAI_ENDPOINT=
-OCI_GENAI_MODEL_ID=ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7dceya3eub3uksacl5q35mrigancv6rbppihlg7ihhjofyc22q
+OCI_GENAI_ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+## meta.llama-4-scout-17b-16e-instruct Model on OCI GenAI
+OCI_GENAI_MODEL_ID=ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7d.......zta
+#
 # Option 1: Use config file
 OCI_CONFIG_FILE=/home/opc/.oci/config
 OCI_CONFIG_PROFILE=DEFAULT
