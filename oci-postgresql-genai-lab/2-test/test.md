@@ -31,23 +31,28 @@ You will load a file into the search app which will be parsed, chunked, vector e
     
     Drag the folder into the Upload Drop zone and then *Upload*
 
-    ![Upload Files](images/test-jazz.png)
+    ![Upload Files](images/app-upload-files.png)
+    ![Upload Files](images/app-upload-files-1.png)
 
-1. Type "when was jazz created ?", then *Semantic Search*
+1. Type "Tell me about data privacy law in India ?", then *RAG Search*
 
-    ![Test Jazz](images/test-jazz-semantic.png)    
+    ![RAG](images/app-search-1.png)    
 
-1. Type "when was jazz created ?", then *RAG*
+1. Type "Tell me about data privacy law in India ?", then *Hybrid Search*
 
-    ![Test Jazz](images/test-jazz-rag.png)  
-
-1. In the previous screen click on Zoom of the jazz document. Then let's chat about that single document.
+    ![Hybrid](images/app-search-2.png)
    
-    - Type "Where was jazz created ?", then *Send*
-    - Type "traduit la réponse en Francais", then *Send*
+1. Type "Tell me about data privacy law in India ?", then *Semantic Search*
 
-    ![Test Jazz](images/test-jazz-zoom.png)          
+    ![Semantic](images/app-search-3.png)  
 
+1. Now instead of doing semantic search or RAG, we will do keywords based search in the database. select *Full Text Search*
+   
+    - Type "Data Privacy Law in India", then *Search*
+
+    ![FTS](images/app-search-4.png)
+    ![FTS](images/app-search-5.png)       
+ 
 ## Task 3: Optional - Test additional files
 This is an optional test you can run with more sample files. If you do this test, you will have more content in the database. If you're running short of time, then you can skip it or come back to it later.
 
