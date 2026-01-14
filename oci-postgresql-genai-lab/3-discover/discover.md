@@ -50,14 +50,19 @@ You can designate a subnet as either public or private when you create it. Priva
 *VCN1-PRIVATE-SL* 
   ![VCN security list details](images/discover-stack-3.png)
        1. Source CIDR: *10.0.0.0/16*, Destination Port: *22* /required for accessing SSH in the same VCN
+       
        2. Source CIDR: *10.0.0.0/16*, Destination Port: *5432* /required for accessing PostgreSQL from a compute instance in the same VCN
 
 *VCN1-Public-SL*
   ![VCN security list details](images/discover-stack-4.png)
        1. Source CIDR: *0.0.0.0/0*, Destination Port: *22* /required for accessing SSH from the internet
+       
        2. Source CIDR: *0.0.0.0/0*, Destination Port: *8000* /required for accessing application from the internet
+       
        3. Source CIDR: *0.0.0.0/0*, Destination Port: *8443* /required for accessing application from the internet
+       
        4. Source CIDR: *0.0.0.0/0*, Destination Port: *9000* /required for accessing application from the internet
+       
        5. Source CIDR: *0.0.0.0/0*, Destination Port: *443* /required for accessing https from the internet
        
 ## Task 3: PostgreSQL Database System
@@ -188,6 +193,7 @@ Foreign-key constraints:
 ````
 
 **content_tsv** is the full text search data stored in the FTS format for PostgreSQL
+
 **embedding** is the vector data type with 384 dimensions reflecting the dimensions of the embedding models. For more accuracy you can select a different embedding model and a higher dimension.
 
 **Congratulations! You have completed this workshop.**
