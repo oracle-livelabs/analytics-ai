@@ -2,7 +2,7 @@
 # Discover services that have been created by automation and that comprise the solution
 
 ## Introduction
-In this optional lab you can explore services that have been created by automation and that comprise the solution such as the AI services and PostgreSQL. 
+In this optional lab you can explore services that have been created by automation and that comprise the solution such as the AI services and PostgreSQL. We will also explore the Schema for the Database.
 
 Estimated time: 20 min
 
@@ -36,25 +36,30 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   1. Networking
   2. Virtual Cloud Network
 
-    ![Menu VCN](images/postgres-genai-vcn1.png)
+   ![Menu VCN](images/discover-stack-1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
-  4. Click on vcn name *psql-vcn*
-  5. Notice two subnets: psql-priv-subnet Private (Regional) and psql-pub-subnet Public (Regional). 
+  4. Click on vcn name *vcn1*
+  5. Notice two subnets: psql-priv-subnet Private (Regional) and pub-subnet Public (Regional). 
 You can designate a subnet as either public or private when you create it. Private means VNICs in the subnet can't have public IPv4 addresses and internet communication with IPv6 endpoints will be prohibited. Public means VNICs in the subnet can have public IPv4 addresses and internet communication is permitted with IPv6 endpoints.
+    ![VCN subnet details](images/discover-stack-2.png)
+  7. Choose *Security* and scroll down to the security lists
+  8. Then click on *VCN1-PRIVATE-SL* and *VCN1-PUBLIC-SL*
+  9. Notice Ingress Rules that were created for this lab
 
-  6. Choose *Security Lists*
-  7. Then click on *psql-security-list*
+*VCN1-PRIVATE-SL* 
+  ![VCN security list details](images/discover-stack-3.png)
+       1. Source CIDR: *10.0.0.0/16*, Destination Port: *22* /required for accessing SSH in the same VCN
+       2. Source CIDR: *10.0.0.0/16*, Destination Port: *5432* /required for accessing PostgreSQL from a compute instance in the same VCN
 
-    ![VCN subnet details](images/postgres-genai-vcn2.png)
-
-  8. Notice Ingress Rules that were created for this lab
-     1. Source CIDR: *0.0.0.0/0*, Destination Port: *80* /required for accessing search user interface from Internet
-     2. Source CIDR: *0.0.0.0/16*, Destination Port: *5432* /required for accessing PostgreSQL from a compute instance in the same VCN
-
-    ![VCV security list details](images/postgres-genai-vcn3.png)
-
-
+*VCN1-Public-SL*
+  ![VCN security list details](images/discover-stack-4.png)
+       1. Source CIDR: *0.0.0.0/0*, Destination Port: *22* /required for accessing SSH from the internet
+       2. Source CIDR: *0.0.0.0/0*, Destination Port: *8000* /required for accessing application from the internet
+       3. Source CIDR: *0.0.0.0/0*, Destination Port: *8443* /required for accessing application from the internet
+       4. Source CIDR: *0.0.0.0/0*, Destination Port: *9000* /required for accessing application from the internet
+       5. Source CIDR: *0.0.0.0/0*, Destination Port: *443* /required for accessing https from the internet
+       
 ## Task 3: PostgreSQL Database System
 
 OCI Database with PostgreSQL allows us to store extracted text from documents including their corresponding vector embeddings by using the pgvector extension so we can perform a semantic search. Database with PostgreSQL is a fully managed PostgreSQL service with intelligent sizing, tuning and high durability.
@@ -66,19 +71,20 @@ Go the Cloud console 3-bar/hamburger menu and select the following
   ![Menu PostgreSQL](images/postgres-genai-cluster1.png)
 
   3. Check that you are in the right compartment (oci-starter in this case)
-  4. Click on the PostgreSQL db system name *psqlpsql*
+  4. Click on the PostgreSQL db system name *psql_inst_1*
   5. Notice the General information:  
   Performance tier: 75K IOPS
-  Shape: VM.Standard.E4.Flex
+  Shape: VM.Standard.E5.Flex
   OCPU count: 2
   RAM(GB): 32
 
   6. Notice Network configuration
   7. Notice Connection details
-  8. Notice Database system nodes
+  8. Notic the psql configuration which has the AI extensions *livelab_flexible_configuration*
+  9. Notice Database system nodes
 A Database system is PostgreSQL database cluster running on one or more OCI VM Compute instances. A database system provides an interface enabling the management of tasks such as provisioning, backup and restore, monitoring, and so on. Each database system has one endpoint for read/write PSQL queries and can have multiple endpoints for read-only queries.
 
-  ![PostgreSQL details](images/postgres-genai-cluster2.png)
+  ![PostgreSQL details](images/psql-dbsystem-1.png)
 
 
 ## Task 4: Compute Instance
@@ -89,40 +95,18 @@ Compute instance is used to host the application logic.
     1. Go the Cloud console 3-bar/hamburger menu and select the following    
         1. Compute
         2. Instances
-  
-  ![Menu Compute](images/postgres-genai-compute1.png) 
+    ![Compute details](images/postgres-genai-compute1.png)
     
     2. Check that you are in the intended compartment. (*oci-starter* was the recommended compartment name.)
-    3. Click **psql-bastion** in the Compute instances list
+    3. Click **app-host-1** in the Compute instances list
     4. Review the information on the Compute instance details page 
 
-  ![Compute details](images/postgres-genai-compute2.png)
- 
-  2. Connect to the instance
-    1. In the OCI Console, select the Developer Tools icon and then select Cloud Shell.
-    2. In OCI Console Cloud Shell, run the following commands: 
-
-       
-     ```
-     <copy>
-     cd oci-postgres-genai/starter/bin/
-     ./ssh_bastion.sh 
-     </copy>     
-     ```
-
-  ![Compute details](images/postgres-genai-compute3.png)
-    
-    3. When succesfully connected to the bastion instance you should see the following prompt:
-    
-        [opc@psql-bastion ~]$
-
-    4. Explore the application code in the opc user home direcotory
-
-  ![Compute details](images/postgres-genai-compute4.png)
+   ![Menu Compute](images/compute-1.png) 
 
 ## Task 5: OCI GenAI Service
 
-AI services are a collection of offerings, including generative AI, with prebuilt machine learning models that make it easier for developers to apply AI to applications and business operations. The models can be custom trained for more accurate business results. Teams within an organization can reuse the models, data sets, and data labels across services. The services let developers easily add machine learning to apps without slowing application development.
+OCI Generative AI provides access to pretrained, foundational models from Cohere, OpenAI, Google, and Meta. It also provides dedicated AI clusters, where you can host foundational models on dedicated GPUs that are private to you. These clusters provide stable, high-throughput performance that’s required for production use cases and can support hosting and fine-tuning workloads. OCI Generative AI enables you to scale out your cluster with zero downtime to handle changes in volume.
+
 In this step you will explore the AI Services that are leveraged in the solution. 
 
    1. Explore the Generative AI Service used in the solution. Common use cases of the Generative AI Service include: Create text for any purpose, Extract data from text, Summarize articles, transcripts, and more. Classify intent in chat logs, support tickets, and more. Rewrite content in a different style or language.    
@@ -137,8 +121,75 @@ In this step you will explore the AI Services that are leveraged in the solution
             Generation: Generates text or extracts information from text
             Summarization: Summarizes text with specified format, length, and tone
             Embedding: Converts text to vector embeddings to use in applications for semantic searches, text classification, or text clustering
-         
-       
+The Generative AI model available in your regions can be listed from the **Playground** > **Chat** tab
+      ![OCI GenerativeAI](images/oci-genai-1.png)
+
+When you click on the model details you get the model OCID which is used the the environment variable file of the application to perform the inference in the RAG pipeline
+
+  ![OCI GenerativeAI](images/oci-genai-2.png)
+
+If you want to try a different model, you can select a model from this menu, copy its OCID and paste it in the environment file and restart the App stack.
+
+## Task 6: PostgreSQL Schema
+
+The Application stores the vctor embeddings and metadata related to the files in 2 tables **documents** **chunks**
+
+````
+postgres=> \dt
+           List of relations
+ Schema |   Name    | Type  |  Owner
+--------+-----------+-------+----------
+ public | chunks    | table | postgres
+ public | documents | table | postgres
+(2 rows)
+````
+
+````
+postgres=> \d documents
+                                       Table "public.documents"
+   Column    |           Type           | Collation | Nullable |                Default
+-------------+--------------------------+-----------+----------+---------------------------------------
+ id          | bigint                   |           | not null | nextval('documents_id_seq'::regclass)
+ source_path | text                     |           |          |
+ source_type | text                     |           | not null |
+ title       | text                     |           |          |
+ metadata    | jsonb                    |           |          | '{}'::jsonb
+ created_at  | timestamp with time zone |           |          | now()
+Indexes:
+    "documents_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "chunks" CONSTRAINT "chunks_document_id_fkey" FOREIGN KEY (document_id) REFERENCES documents(id) ON DELETE CASCADE
+````
+
+````
+postgres=> \d chunks
+                                                            Table "public.chunks"
+     Column      |           Type           | Collation | Nullable |                                 Default
+
+-----------------+--------------------------+-----------+----------+--------------------------------------------------------------------
+-----
+ id              | bigint                   |           | not null | nextval('chunks_id_seq'::regclass)
+ document_id     | bigint                   |           | not null |
+ chunk_index     | integer                  |           | not null |
+ content         | text                     |           | not null |
+ content_tsv     | tsvector                 |           |          | generated always as (to_tsvector('english'::regconfig, content)) st
+ored
+ content_chars   | integer                  |           |          |
+ embedding       | vector(384)              |           |          |
+ embedding_model | text                     |           |          |
+ created_at      | timestamp with time zone |           |          | now()
+Indexes:
+    "chunks_pkey" PRIMARY KEY, btree (id)
+    "idx_chunks_doc_chunk" UNIQUE, btree (document_id, chunk_index)
+    "idx_chunks_embedding_ivfflat" ivfflat (embedding vector_cosine_ops) WITH (lists='1000')
+    "idx_chunks_tsv" gin (content_tsv)
+Foreign-key constraints:
+    "chunks_document_id_fkey" FOREIGN KEY (document_id) REFERENCES documents(id) ON DELETE CASCADE
+````
+
+**content_tsv** is the full text search data stored in the FTS format for PostgreSQL
+**embedding** is the vector data type with 384 dimensions reflecting the dimensions of the embedding models. For more accuracy you can select a different embedding model and a higher dimension.
+
 **Congratulations! You have completed this workshop.**
 
 Here's what you accomplished. You explored multiple services in a compartment in your OCI tenancy. These included OCI VCN, Compute, OCI GenerativeAI, and OCI PostgreSQL Databae System. This lab has illustrated how different OCI services can be integrated together to make a complete cloud native AI search solution.
