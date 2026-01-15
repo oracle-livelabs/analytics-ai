@@ -2,10 +2,10 @@
 
 ## Introduction
 
-In this lab we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform it's work effectively. Tools are resources the agent can use to perform it's tasks. In our use-case, we are going to use two tools:
+In this lab, we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform its work effectively. Tools are resources the agent can use to perform its tasks. In our use case, we are going to use two tools:
 
-- **RAG Tool** - Which will scan the grid policy documents uploaded to object storage whenever the user requires such information.
-- **SQL Tool** - Which will be able to retrieve information stored in our database instance relating to the interconnection request system.
+- **RAG Tool** - Scans the grid policy documents uploaded to object storage whenever the user requires such information.
+- **SQL Tool** - Retrieves information stored in our database instance relating to the interconnection request system.
 
 **Estimated Time:** 15 minutes
 
@@ -19,7 +19,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- All previous labs successfully completed.
+- Completed all previous labs successfully.
 
 ## Task 1: Create the agent
 
@@ -155,7 +155,7 @@ This lab assumes you have:
 
 21. Back at the Add knowledge bases panel, make sure that the checkbox next to the knowledge base name is checked.
 
-> 💡 If your knowledge base does not appear ("No items found"), you can still continue to the next step. The knowledge base is already selected and provisioning in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is provisioning.
+> 💡 _If your knowledge base does not appear ("No items found"), you can still continue with adding the tool (step 22). The knowledge base is already selected and being provisioned in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is in progress._
 
 22. Click the **Add tool** button.
 
@@ -289,7 +289,7 @@ This lab assumes you have:
 
 12. In the **Database tool connection**, select your compartment, then choose the **connection-gridinterconnectXXXX** connection we previously created.
 
-> 💡 If your database tool connection does not appear in your compartment ("Option not available"), select Cancel and re-add the SQL tool by repeating Task 3: Add the SQL Tool.
+> 💡 _If your database tool connection does not appear in your compartment ("Option not available"), select Cancel and re-add the SQL tool by repeating Task 3: Add the SQL Tool._
 
 13. Click the **Test connection** button. You should see a successful connection attempt.
 

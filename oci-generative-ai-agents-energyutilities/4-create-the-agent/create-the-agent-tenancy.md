@@ -2,44 +2,48 @@
 
 ## Introduction
 
-In this lab we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform it's work effectively. Tools are resources the agent can use to perform it's tasks. In our use-case, we are going to use two tools:
+In this lab, we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform its work effectively. Tools are resources the agent can use to perform its tasks. In our use case, we are going to use two tools:
 
-- **RAG Tool** - Which will scan the grid policy documents uploaded to object storage whenever the user requires such information.
-- **SQL Tool** - Which will be able to retrieve information stored in our database instance relating to the interconnection request system.
+- **RAG Tool** - Scans the grid policy documents uploaded to object storage whenever the user requires such information.
+- **SQL Tool** - Retrieves information stored in our database instance relating to the interconnection request system.
 
 **Estimated Time:** 15 minutes
 
-## Objectives
+### Objectives
 
 In this lab, you will:
 
 - Create our agent including the RAG & SQL Tools and assign the relevant knowledge base to each.
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 
-- All previous labs successfully completed.
+- Completed all previous labs successfully.
 
 ## Task 1: Create the agent
 
-1. Click the navigation menu on the top left.
+1. In the OCI Console, click the **Region** selector in the top-right corner and switch to **US Midwest (Chicago)** for this workshop.
 
-2. Click **Analytics & AI**.
+   ![Select Region](images/region-selector.png)
 
-3. Click **Generative AI Agents**.
+2. Click the navigation menu on the top left.
+
+3. Click **Analytics & AI**.
+
+4. Click **Generative AI Agents**.
 
    ![Screenshot showing navigation to AI Agents](./images/nav-ai-agents.png)
 
-4. In the overview page, click the **Agents** link.
+5. In the overview page, click the **Agents** link.
 
-5. Under the **List scope** section, make sure that your compartment is selected.
+6. Under the **List scope** section, make sure that your compartment is selected.
 
-6. Click the **Create Agent** button at the top of the Agents table.
+7. Click the **Create Agent** button at the top of the Agents table.
 
    ![Create Agent](images/create-agent.png)
 
-7. For the **Name** field use:
+8. For the **Name** field use:
 
     ```text
     <copy>
@@ -47,9 +51,9 @@ This lab assumes you have:
     </copy>
     ```
 
-8. For the **Compartment** field, make sure that your compartment is selected.
+9. For the **Compartment** field, make sure that your compartment is selected.
 
-9. For the **Description** field, use:
+10. For the **Description** field, use:
 
     ```text
     <copy>
@@ -57,7 +61,7 @@ This lab assumes you have:
     </copy>
     ```
 
-10. For the **Welcome message** field, use:
+11. For the **Welcome message** field, use:
 
     ```text
     <copy>
@@ -65,7 +69,7 @@ This lab assumes you have:
     </copy>
     ```
 
-11. Click the **Next** button.
+12. Click the **Next** button.
 
     ![Agent Basic Info](images/agent-basic-info.png)
 
@@ -151,9 +155,9 @@ This lab assumes you have:
 
 21. Back at the Add knowledge bases panel, make sure that the checkbox next to the knowledge base name is checked.
 
-> 💡 If your knowledge base does not appear ("No items found"), you can still continue to the next step. The knowledge base is already selected and provisioning in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is provisioning.
+> 💡 _If your knowledge base does not appear ("No items found"), you can still continue with adding the tool (step 22). The knowledge base is already selected and being provisioned in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is in progress._
 
-1. Click the **Add tool** button.
+22. Click the **Add tool** button.
 
     ![Add RAG Tool](images/add-rag-tool.png)
 
@@ -285,19 +289,19 @@ This lab assumes you have:
 
 12. In the **Database tool connection**, select your compartment, then choose the **connection-gridinterconnectXXXX** connection we previously created.
 
-> 💡 If your database tool connection does not appear in your compartment ("Option not available"), select Cancel and re-add the SQL tool by repeating Task 3: Add the SQL Tool.
+> 💡 _If your database tool connection does not appear in your compartment ("Option not available"), select Cancel and re-add the SQL tool by repeating Task 3: Add the SQL Tool._
 
-1. Click the **Test connection** button. You should see a successful connection attempt.
+13. Click the **Test connection** button. You should see a successful connection attempt.
 
-2. Enable the **SQL execution** option. This option will instruct the tool to execute the SQL queries generated by the tool as a result of the user's requests. This will allow the agent to craft intelligent responses based on the data returned from the queries.
+14. Enable the **SQL execution** option. This option will instruct the tool to execute the SQL queries generated by the tool as a result of the user's requests. This will allow the agent to craft intelligent responses based on the data returned from the queries.
 
-3. Enable the **Self correction** option. Enabling this option will allow the tool to automatically detect and correct syntax errors in generated SQL queries.
+15. Enable the **Self correction** option. Enabling this option will allow the tool to automatically detect and correct syntax errors in generated SQL queries.
 
-4. Click the **Add tool** button.
+16. Click the **Add tool** button.
 
     ![SQL Tool Complete](images/sql-tool-complete.png)
 
-5. Back in the Tools section, Click **Next**.
+17. Back in the Tools section, Click **Next**.
 
     ![Tools Complete](images/tools-complete.png)
 

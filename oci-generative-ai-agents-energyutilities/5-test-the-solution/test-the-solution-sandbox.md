@@ -2,11 +2,8 @@
 
 ## Introduction
 
-Our provisioning work is now complete. It is now time to enjoy the fruits of our labor. In the previous labs we have:
+Our provisioning work is now complete. It is now time to enjoy the fruits of our labor. In the previous labs, we have:
 
-- Created the proper permissions & basic setup.
-- Uploaded the grid policy documents to a storage bucket.
-- Created our ADB instance and filled it with data.
 - Created an agent as well as the SQL and RAG tools alongside their knowledge bases.
 - Configured the agent endpoint.
 
@@ -24,9 +21,9 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- All previous labs successfully completed
+- Completed all previous labs successfully.
 
-> 💡 **Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session.
+> 💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
 
 ## Task 1: Overview of the chat page functionality
 
@@ -247,7 +244,7 @@ As you've experienced, the OCI AI Agents service allows you to ask complex quest
 
 Another interesting advantage of building solutions on top of the OCI AI Agents service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
-Although our use-case was focused on grid operations and solar PV interconnection requests, the OCI AI Agents service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
+Although our use case was focused on grid operations and solar PV interconnection requests, the OCI AI Agents service can be used to fuel many different use cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights, and more.
 
 ## Learn More
 
