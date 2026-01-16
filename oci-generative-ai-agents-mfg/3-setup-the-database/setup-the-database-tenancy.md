@@ -104,21 +104,18 @@ In this task we are going to use SQL scripts to create the database schema which
          TotalSpend           NUMBER(12,2) DEFAULT 0,
          LastReviewDate       DATE
       );
-
       -- Create Parts table
       CREATE TABLE Parts (
          PartID               NUMBER PRIMARY KEY,
          PartNumber           VARCHAR2(30) UNIQUE NOT NULL,
          PartName             VARCHAR2(100) NOT NULL,
          Category             VARCHAR2(50),
-         SupplierID           NUMBER NOT NULL,
+         SupplierID           NUMBER REFERENCES Suppliers(SupplierID),
          UnitCost             NUMBER(10,2),
          LeadTimeDays         NUMBER(3,0),
          SafetyStockQty       NUMBER(6,0),
-         LastPriceUpdate      DATE,
-         CONSTRAINT fk_part_supplier FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+         LastPriceUpdate      DATE
       );
-
       -- Create Facilities table
       CREATE TABLE Facilities (
          FacilityID           NUMBER PRIMARY KEY,
@@ -128,7 +125,6 @@ In this task we are going to use SQL scripts to create the database schema which
          Region               VARCHAR2(50),
          FacilityType         VARCHAR2(30)
       );
-
       -- Create PO_Exceptions table
       CREATE TABLE PO_Exceptions (
          ExceptionID          NUMBER PRIMARY KEY,
@@ -136,35 +132,27 @@ In this task we are going to use SQL scripts to create the database schema which
          ExceptionDescription VARCHAR2(100) NOT NULL,
          ExceptionCategory    VARCHAR2(50)
       );
-
-      -- Create Purchase_Orders table
+      -- Create Purchase_Orders table (NO SupplierID - get supplier via Parts)
       CREATE TABLE Purchase_Orders (
          POID                 NUMBER PRIMARY KEY,
          PONumber             VARCHAR2(20) UNIQUE NOT NULL,
-         PartID               NUMBER NOT NULL,
-         FacilityID           NUMBER NOT NULL,
-         SupplierID           NUMBER NOT NULL,
+         PartID               NUMBER REFERENCES Parts(PartID),
+         FacilityID           NUMBER REFERENCES Facilities(FacilityID),
          OrderDate            DATE NOT NULL,
          Quantity             NUMBER(8,0),
          UnitPrice            NUMBER(10,2),
          TotalAmount          NUMBER(12,2),
          Status               VARCHAR2(20),
          ApproverID           VARCHAR2(20),
-         ExceptionID          NUMBER,
-         ApprovalDate         DATE,
-         CONSTRAINT fk_po_part FOREIGN KEY (PartID) REFERENCES Parts(PartID),
-         CONSTRAINT fk_po_facility FOREIGN KEY (FacilityID) REFERENCES Facilities(FacilityID),
-         CONSTRAINT fk_po_supplier FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
-         CONSTRAINT fk_po_exception FOREIGN KEY (ExceptionID) REFERENCES PO_Exceptions(ExceptionID)
+         ExceptionID          NUMBER REFERENCES PO_Exceptions(ExceptionID),
+         ApprovalDate         DATE
       );
-
-      -- Create Quality_Incidents table
+      -- Create Quality_Incidents table (NO SupplierID - get supplier via Parts)
       CREATE TABLE Quality_Incidents (
          IncidentID           NUMBER PRIMARY KEY,
          IncidentNumber       VARCHAR2(20) UNIQUE NOT NULL,
-         SupplierID           NUMBER NOT NULL,
-         PartID               NUMBER NOT NULL,
-         FacilityID           NUMBER NOT NULL,
+         PartID               NUMBER REFERENCES Parts(PartID),
+         FacilityID           NUMBER REFERENCES Facilities(FacilityID),
          IncidentDate         DATE NOT NULL,
          IncidentType         VARCHAR2(50),
          Severity             VARCHAR2(20),
@@ -172,10 +160,7 @@ In this task we are going to use SQL scripts to create the database schema which
          RootCause            VARCHAR2(200),
          CorrectiveAction     VARCHAR2(200),
          Status               VARCHAR2(20),
-         ProductionImpactHours NUMBER(5,1) DEFAULT 0,
-         CONSTRAINT fk_qi_supplier FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
-         CONSTRAINT fk_qi_part FOREIGN KEY (PartID) REFERENCES Parts(PartID),
-         CONSTRAINT fk_qi_facility FOREIGN KEY (FacilityID) REFERENCES Facilities(FacilityID)
+         ProductionImpactHours NUMBER(5,1) DEFAULT 0
       );
 
       -- Create Sequences
@@ -345,66 +330,66 @@ In this task we are going to fill the database tables with data. One after the o
    ```sql
    <copy>
    -- POs with Expedite exceptions (from Southwest - pattern)
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5001, 'PO-2025-0001', 1004, 4, 101, DATE '2025-07-10', 50, 392.70, 19635.00, 'Approved', 'MGR001', 1, DATE '2025-07-10');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5002, 'PO-2025-0002', 1011, 5, 104, DATE '2025-07-12', 100, 192.40, 19240.00, 'Approved', 'MGR001', 1, DATE '2025-07-12');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5003, 'PO-2025-0003', 1009, 4, 103, DATE '2025-07-15', 10, 1312.50, 13125.00, 'Approved', 'MGR002', 1, DATE '2025-07-15');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5001, 'PO-2025-0001', 1004, 4, DATE '2025-07-10', 50, 392.70, 19635.00, 'Approved', 'MGR001', 1, DATE '2025-07-10');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5002, 'PO-2025-0002', 1011, 5, DATE '2025-07-12', 100, 192.40, 19240.00, 'Approved', 'MGR001', 1, DATE '2025-07-12');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5003, 'PO-2025-0003', 1009, 4, DATE '2025-07-15', 10, 1312.50, 13125.00, 'Approved', 'MGR002', 1, DATE '2025-07-15');
 
    -- POs with Price Variance exceptions
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5004, 'PO-2025-0004', 1001, 1, 105, DATE '2025-07-18', 200, 281.75, 56350.00, 'Approved', 'MGR002', 2, DATE '2025-07-19');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5005, 'PO-2025-0005', 1006, 6, 106, DATE '2025-07-20', 25, 598.00, 14950.00, 'Approved', 'MGR001', 2, DATE '2025-07-21');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5004, 'PO-2025-0004', 1001, 1, DATE '2025-07-18', 200, 281.75, 56350.00, 'Approved', 'MGR002', 2, DATE '2025-07-19');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5005, 'PO-2025-0005', 1006, 6, DATE '2025-07-20', 25, 598.00, 14950.00, 'Approved', 'MGR001', 2, DATE '2025-07-21');
 
    -- POs with Sole Source exceptions (high-value parts)
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5006, 'PO-2025-0006', 1014, 1, 107, DATE '2025-07-22', 15, 1450.00, 21750.00, 'Approved', 'DIR001', 3, DATE '2025-07-23');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5007, 'PO-2025-0007', 1013, 2, 107, DATE '2025-07-25', 20, 890.00, 17800.00, 'Approved', 'MGR002', 3, DATE '2025-07-26');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5006, 'PO-2025-0006', 1014, 1, DATE '2025-07-22', 15, 1450.00, 21750.00, 'Approved', 'DIR001', 3, DATE '2025-07-23');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5007, 'PO-2025-0007', 1013, 2, DATE '2025-07-25', 20, 890.00, 17800.00, 'Approved', 'MGR002', 3, DATE '2025-07-26');
 
    -- POs with Budget Override exceptions
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5008, 'PO-2025-0008', 1001, 2, 105, DATE '2025-07-28', 500, 245.00, 122500.00, 'Approved', 'DIR001', 4, DATE '2025-07-29');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5009, 'PO-2025-0009', 1009, 1, 103, DATE '2025-08-01', 30, 1250.00, 37500.00, 'Pending', 'DIR001', 4, NULL);
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5008, 'PO-2025-0008', 1001, 2, DATE '2025-07-28', 500, 245.00, 122500.00, 'Approved', 'DIR001', 4, DATE '2025-07-29');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5009, 'PO-2025-0009', 1009, 1, DATE '2025-08-01', 30, 1250.00, 37500.00, 'Pending', 'DIR001', 4, NULL);
 
    -- POs with Supplier Risk exceptions (from probation suppliers)
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5010, 'PO-2025-0010', 1007, 3, 102, DATE '2025-08-02', 2000, 12.50, 25000.00, 'Approved', 'MGR001', 5, DATE '2025-08-03');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5011, 'PO-2025-0011', 1008, 10, 102, DATE '2025-08-04', 3000, 8.75, 26250.00, 'Approved', 'MGR002', 5, DATE '2025-08-05');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5012, 'PO-2025-0012', 1006, 8, 106, DATE '2025-08-06', 15, 520.00, 7800.00, 'Denied', NULL, 5, NULL);
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5010, 'PO-2025-0010', 1007, 3, DATE '2025-08-02', 2000, 12.50, 25000.00, 'Approved', 'MGR001', 5, DATE '2025-08-03');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5011, 'PO-2025-0011', 1008, 10, DATE '2025-08-04', 3000, 8.75, 26250.00, 'Approved', 'MGR002', 5, DATE '2025-08-05');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5012, 'PO-2025-0012', 1006, 8, DATE '2025-08-06', 15, 520.00, 7800.00, 'Denied', NULL, 5, NULL);
 
    -- Normal POs (no exceptions)
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5013, 'PO-2025-0013', 1003, 1, 100, DATE '2025-07-08', 500, 45.00, 22500.00, 'Approved', 'MGR001', NULL, DATE '2025-07-08');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5014, 'PO-2025-0014', 1002, 2, 105, DATE '2025-07-11', 300, 128.50, 38550.00, 'Approved', 'MGR001', NULL, DATE '2025-07-11');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5015, 'PO-2025-0015', 1005, 6, 101, DATE '2025-07-14', 200, 78.00, 15600.00, 'Approved', 'MGR002', NULL, DATE '2025-07-14');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5016, 'PO-2025-0016', 1010, 4, 103, DATE '2025-07-17', 50, 320.00, 16000.00, 'Approved', 'MGR001', NULL, DATE '2025-07-17');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5017, 'PO-2025-0017', 1012, 5, 104, DATE '2025-07-19', 400, 42.00, 16800.00, 'Approved', 'MGR001', NULL, DATE '2025-07-19');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5018, 'PO-2025-0018', 1003, 8, 100, DATE '2025-07-23', 1000, 45.00, 45000.00, 'Approved', 'MGR002', NULL, DATE '2025-07-23');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5019, 'PO-2025-0019', 1015, 9, 106, DATE '2025-07-26', 100, 165.00, 16500.00, 'Approved', 'MGR001', NULL, DATE '2025-07-26');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5020, 'PO-2025-0020', 1004, 7, 101, DATE '2025-07-29', 25, 385.00, 9625.00, 'Approved', 'MGR002', NULL, DATE '2025-07-29');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5021, 'PO-2025-0021', 1011, 3, 104, DATE '2025-08-01', 75, 185.00, 13875.00, 'Approved', 'MGR001', NULL, DATE '2025-08-01');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5022, 'PO-2025-0022', 1002, 10, 105, DATE '2025-08-03', 150, 128.50, 19275.00, 'Approved', 'MGR002', NULL, DATE '2025-08-03');
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5023, 'PO-2025-0023', 1007, 1, 102, DATE '2025-08-05', 1000, 12.50, 12500.00, 'Pending', 'MGR001', NULL, NULL);
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5024, 'PO-2025-0024', 1005, 2, 101, DATE '2025-08-07', 300, 78.00, 23400.00, 'Pending', 'MGR002', NULL, NULL);
-   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, SupplierID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
-   (5025, 'PO-2025-0025', 1010, 6, 103, DATE '2025-08-09', 80, 320.00, 25600.00, 'Pending', 'MGR001', NULL, NULL);
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5013, 'PO-2025-0013', 1003, 1, DATE '2025-07-08', 500, 45.00, 22500.00, 'Approved', 'MGR001', NULL, DATE '2025-07-08');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5014, 'PO-2025-0014', 1002, 2, DATE '2025-07-11', 300, 128.50, 38550.00, 'Approved', 'MGR001', NULL, DATE '2025-07-11');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5015, 'PO-2025-0015', 1005, 6, DATE '2025-07-14', 200, 78.00, 15600.00, 'Approved', 'MGR002', NULL, DATE '2025-07-14');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5016, 'PO-2025-0016', 1010, 4, DATE '2025-07-17', 50, 320.00, 16000.00, 'Approved', 'MGR001', NULL, DATE '2025-07-17');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5017, 'PO-2025-0017', 1012, 5, DATE '2025-07-19', 400, 42.00, 16800.00, 'Approved', 'MGR001', NULL, DATE '2025-07-19');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5018, 'PO-2025-0018', 1003, 8, DATE '2025-07-23', 1000, 45.00, 45000.00, 'Approved', 'MGR002', NULL, DATE '2025-07-23');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5019, 'PO-2025-0019', 1015, 9, DATE '2025-07-26', 100, 165.00, 16500.00, 'Approved', 'MGR001', NULL, DATE '2025-07-26');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5020, 'PO-2025-0020', 1004, 7, DATE '2025-07-29', 25, 385.00, 9625.00, 'Approved', 'MGR002', NULL, DATE '2025-07-29');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5021, 'PO-2025-0021', 1011, 3, DATE '2025-08-01', 75, 185.00, 13875.00, 'Approved', 'MGR001', NULL, DATE '2025-08-01');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5022, 'PO-2025-0022', 1002, 10, DATE '2025-08-03', 150, 128.50, 19275.00, 'Approved', 'MGR002', NULL, DATE '2025-08-03');
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5023, 'PO-2025-0023', 1007, 1, DATE '2025-08-05', 1000, 12.50, 12500.00, 'Pending', 'MGR001', NULL, NULL);
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5024, 'PO-2025-0024', 1005, 2, DATE '2025-08-07', 300, 78.00, 23400.00, 'Pending', 'MGR002', NULL, NULL);
+   INSERT INTO Purchase_Orders (POID, PONumber, PartID, FacilityID, OrderDate, Quantity, UnitPrice, TotalAmount, Status, ApproverID, ExceptionID, ApprovalDate) VALUES
+   (5025, 'PO-2025-0025', 1010, 6, DATE '2025-08-09', 80, 320.00, 25600.00, 'Pending', 'MGR001', NULL, NULL);
 
    COMMIT;
    </copy>
@@ -415,46 +400,46 @@ In this task we are going to fill the database tables with data. One after the o
    ```sql
    <copy>
    -- Incidents from ValueMetal Manufacturing (Probation supplier - high incident pattern)
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8001, 'QI-2025-0001', 102, 1007, 1, DATE '2025-06-15', 'Dimensional Defect', 'Critical', 'Bolt threads out of spec causing assembly failures', 'Worn tooling at supplier', 'Tooling replacement and inspection protocol', 'Closed', 12.5);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8002, 'QI-2025-0002', 102, 1008, 3, DATE '2025-06-22', 'Material Defect', 'Major', 'Lock nuts failing torque requirements', 'Incorrect heat treatment', 'Process audit and certification', 'Closed', 8.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8003, 'QI-2025-0003', 102, 1007, 2, DATE '2025-07-05', 'Dimensional Defect', 'Critical', 'Batch of bolts with incorrect head dimensions', 'Calibration drift', 'Daily calibration checks implemented', 'Closed', 16.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8004, 'QI-2025-0004', 102, 1008, 10, DATE '2025-07-18', 'Documentation', 'Minor', 'Missing certification documents for fastener lot', 'Administrative error', 'Document control training', 'Closed', 2.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8005, 'QI-2025-0005', 102, 1007, 4, DATE '2025-08-02', 'Material Defect', 'Major', 'Corrosion found on bolt shipment', 'Improper storage at supplier', 'Storage protocol revision', 'Open', 6.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8001, 'QI-2025-0001', 1007, 1, DATE '2025-06-15', 'Dimensional Defect', 'Critical', 'Bolt threads out of spec causing assembly failures', 'Worn tooling at supplier', 'Tooling replacement and inspection protocol', 'Closed', 12.5);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8002, 'QI-2025-0002', 1008, 3, DATE '2025-06-22', 'Material Defect', 'Major', 'Lock nuts failing torque requirements', 'Incorrect heat treatment', 'Process audit and certification', 'Closed', 8.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8003, 'QI-2025-0003', 1007, 2, DATE '2025-07-05', 'Dimensional Defect', 'Critical', 'Batch of bolts with incorrect head dimensions', 'Calibration drift', 'Daily calibration checks implemented', 'Closed', 16.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8004, 'QI-2025-0004', 1008, 10, DATE '2025-07-18', 'Documentation', 'Minor', 'Missing certification documents for fastener lot', 'Administrative error', 'Document control training', 'Closed', 2.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8005, 'QI-2025-0005', 1007, 4, DATE '2025-08-02', 'Material Defect', 'Major', 'Corrosion found on bolt shipment', 'Improper storage at supplier', 'Storage protocol revision', 'Open', 6.0);
 
    -- Incidents from Budget Parts Direct (Probation supplier)
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8006, 'QI-2025-0006', 106, 1006, 6, DATE '2025-06-28', 'Functional Defect', 'Critical', 'PLC modules failing during burn-in test', 'Component sourcing issue', 'Supplier component audit', 'Closed', 24.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8007, 'QI-2025-0007', 106, 1015, 8, DATE '2025-07-10', 'Workmanship', 'Major', 'Wiring harness connectors poorly crimped', 'Training gap', 'Operator recertification', 'Closed', 10.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8008, 'QI-2025-0008', 106, 1006, 1, DATE '2025-07-25', 'Functional Defect', 'Critical', 'PLC communication failures in production', 'Firmware version mismatch', 'Version control procedure', 'Closed', 18.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8009, 'QI-2025-0009', 106, 1015, 9, DATE '2025-08-05', 'Workmanship', 'Major', 'Wire gauge incorrect in harness assembly', 'Drawing revision not implemented', 'Engineering change control', 'Open', 8.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8006, 'QI-2025-0006', 1006, 6, DATE '2025-06-28', 'Functional Defect', 'Critical', 'PLC modules failing during burn-in test', 'Component sourcing issue', 'Supplier component audit', 'Closed', 24.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8007, 'QI-2025-0007', 1015, 8, DATE '2025-07-10', 'Workmanship', 'Major', 'Wiring harness connectors poorly crimped', 'Training gap', 'Operator recertification', 'Closed', 10.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8008, 'QI-2025-0008', 1006, 1, DATE '2025-07-25', 'Functional Defect', 'Critical', 'PLC communication failures in production', 'Firmware version mismatch', 'Version control procedure', 'Closed', 18.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8009, 'QI-2025-0009', 1015, 9, DATE '2025-08-05', 'Workmanship', 'Major', 'Wire gauge incorrect in harness assembly', 'Drawing revision not implemented', 'Engineering change control', 'Open', 8.0);
 
    -- Incidents from QuickShip Components (Under Review supplier)
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8010, 'QI-2025-0010', 104, 1011, 5, DATE '2025-07-01', 'Delivery', 'Major', 'Pneumatic cylinders delivered 5 days late', 'Capacity constraints', 'Lead time buffer increase', 'Closed', 20.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8011, 'QI-2025-0011', 104, 1012, 4, DATE '2025-07-14', 'Packaging', 'Minor', 'Fitting kits damaged due to inadequate packaging', 'Packaging specification change', 'Packaging review and update', 'Closed', 4.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8012, 'QI-2025-0012', 104, 1011, 3, DATE '2025-07-28', 'Delivery', 'Major', 'Partial shipment received, balance delayed', 'Inventory management failure', 'Safety stock agreement', 'Open', 14.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8010, 'QI-2025-0010', 1011, 5, DATE '2025-07-01', 'Delivery', 'Major', 'Pneumatic cylinders delivered 5 days late', 'Capacity constraints', 'Lead time buffer increase', 'Closed', 20.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8011, 'QI-2025-0011', 1012, 4, DATE '2025-07-14', 'Packaging', 'Minor', 'Fitting kits damaged due to inadequate packaging', 'Packaging specification change', 'Packaging review and update', 'Closed', 4.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8012, 'QI-2025-0012', 1011, 3, DATE '2025-07-28', 'Delivery', 'Major', 'Partial shipment received, balance delayed', 'Inventory management failure', 'Safety stock agreement', 'Open', 14.0);
 
    -- Normal incidents from good suppliers
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8013, 'QI-2025-0013', 100, 1003, 1, DATE '2025-06-20', 'Dimensional Defect', 'Minor', 'Bearing tolerance at upper limit', 'Normal process variation', 'Monitoring increased', 'Closed', 1.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8014, 'QI-2025-0014', 101, 1004, 6, DATE '2025-07-08', 'Documentation', 'Minor', 'Test certificates delayed', 'Lab backlog', 'Priority processing agreed', 'Closed', 0.5);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8015, 'QI-2025-0015', 103, 1009, 4, DATE '2025-07-20', 'Functional Defect', 'Minor', 'Hydraulic pump pressure slightly below spec', 'Seal wear', 'Warranty replacement', 'Closed', 3.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8016, 'QI-2025-0016', 105, 1001, 2, DATE '2025-08-01', 'Packaging', 'Minor', 'Steel sheets with minor surface scratches', 'Handling during shipping', 'Protective film added', 'Closed', 2.0);
-   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, SupplierID, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
-   (8017, 'QI-2025-0017', 107, 1013, 1, DATE '2025-08-08', 'Documentation', 'Minor', 'Assembly instructions revision needed', 'Documentation lag', 'Concurrent engineering', 'Open', 1.5);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8013, 'QI-2025-0013', 1003, 1, DATE '2025-06-20', 'Dimensional Defect', 'Minor', 'Bearing tolerance at upper limit', 'Normal process variation', 'Monitoring increased', 'Closed', 1.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8014, 'QI-2025-0014', 1004, 6, DATE '2025-07-08', 'Documentation', 'Minor', 'Test certificates delayed', 'Lab backlog', 'Priority processing agreed', 'Closed', 0.5);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8015, 'QI-2025-0015', 1009, 4, DATE '2025-07-20', 'Functional Defect', 'Minor', 'Hydraulic pump pressure slightly below spec', 'Seal wear', 'Warranty replacement', 'Closed', 3.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8016, 'QI-2025-0016', 1001, 2, DATE '2025-08-01', 'Packaging', 'Minor', 'Steel sheets with minor surface scratches', 'Handling during shipping', 'Protective film added', 'Closed', 2.0);
+   INSERT INTO Quality_Incidents (IncidentID, IncidentNumber, PartID, FacilityID, IncidentDate, IncidentType, Severity, Description, RootCause, CorrectiveAction, Status, ProductionImpactHours) VALUES
+   (8017, 'QI-2025-0017', 1013, 1, DATE '2025-08-08', 'Documentation', 'Minor', 'Assembly instructions revision needed', 'Documentation lag', 'Concurrent engineering', 'Open', 1.5);
 
    COMMIT;
    </copy>

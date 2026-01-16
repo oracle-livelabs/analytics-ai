@@ -52,11 +52,11 @@ This lab assumes you have:
 ## Task 2: Let's test our agent
 
 1. To start, type the following question into the message box:
-   ```text
-   <copy>
-   Show me all purchase orders approved with exceptions. Group them by exception type.
-   </copy>
-   ```
+    ```text
+    <copy>
+    Show me all purchase orders approved with exceptions. Group them by exception type.
+    </copy>
+    ```
 2. Click the **Submit** button.
     ![Screenshot showing the first question for the agent](./images/q1-mfg.png)
 3. The agent generates a SQL query to find POs with exceptions. You should see results grouped by Expedite, Price Variance, Sole Source, Budget Override, and Supplier Risk exceptions. In addition, you can see that a trace was generated on the right.
@@ -71,11 +71,11 @@ This lab assumes you have:
 8. Click the **Close** button to close the traces pane.
 
 9. Our next question would be:
-   ```text
-   <copy>
-   Which suppliers have the most quality incidents? Include their current quality rating and contract status.
-   </copy>
-   ```
+    ```text
+    <copy>
+    Which suppliers have the most quality incidents? Include their current quality rating and contract status.
+    </copy>
+    ```
 10. Click the **Submit** button.
     ![Screenshot showing the second question for the agent](./images/q2-mfg.png)
 11. The agent shows that ValueMetal Manufacturing and Budget Parts Direct have the most quality incidents, and both are on Probation status. Using the power of Large Language Models (LLMs) and the configuration we've provided, the agent was able to identify the problematic suppliers and correlate them with their status.
@@ -95,7 +95,7 @@ This lab assumes you have:
 16. Next, let's look at spending. Type:
     ```text
     <copy>
-    What is the TotalSpend for suppliers on Probation status? Are we still placing orders with them?
+    Which suppliers are on probation and what is there combined TotalSpend? Are we still placing orders with them?
     </copy>
     ```
 17. Click the **Submit** button.
@@ -103,12 +103,14 @@ This lab assumes you have:
 18. The agent returns the spend for probation suppliers ($1,430,000 total - ValueMetal Manufacturing $980,000 and Budget Parts Direct $450,000) and confirms we are still placing orders with them.
     ![Screenshot showing the first question for the agent](./images/a4-mfg.png)
 19. Now let's see if we can pull up a policy document. Type the following question:
-    ```
-    What does our policy say about placing orders with suppliers on probation?
+    ```text
+    <copy>
+    Which of our policies addresses placing orders with suppliers on probation? What does it say?
+    </copy>
     ```
 20. Click the **Submit** button.
     ![Screenshot showing the first question for the agent](./images/q5-mfg.png)
-21. For this question, the agent figured out that the information required might be in the knowledge base documents. For this task it employed the RAG tool which searched for the relevant information in our procurement policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, and if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+21. For this question, the agent figured out that the information required might be in the knowledge base documents. For this task it employed the RAG tool which searched for the relevant information in our procedures policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, and if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
     ![Screenshot showing the first question for the agent](./images/a5-mfg.png)
 22. Now let's test the agent's ability to combine database queries with policy lookups. Type:
     ```text
@@ -142,7 +144,7 @@ This lab assumes you have:
 29. Click the **Submit** button.
     ![Screenshot showing the first question for the agent](./images/q7-mfg.png)
 30. The agent checks the Suppliers table for those with QualityRating below 3.0 and may reference the Supplier Quality Standards policy. You should see ValueMetal Manufacturing (2.4) and Budget Parts Direct (2.1) — both already on Probation status.
-    ![Screenshot showing the first question for the agent](./images/q7-mfg.png)
+    ![Screenshot showing the first question for the agent](./images/a7-mfg.png)
     
     This is the kind of analysis that used to take weeks of workstreams — now delivered in seconds.
 
@@ -154,20 +156,47 @@ This lab assumes you have:
 
 Here are additional prompts that demonstrate different agent capabilities:
 
-* Show me the trend of quality incidents by month.
-* Which part categories have the highest spend variance from standard cost?
-* Highlight suppliers where we have both high spend and high risk scores.
-* Are there any sole-source suppliers with quality incidents?
-* Which facilities have the most quality-related production downtime?
-* Our policy says suppliers below 3.0 rating should be reviewed. Who qualifies?
-* Are there any cases where we approved POs from probation suppliers without the required exception?
-* Based on our quality incident patterns, which suppliers should we consider for probation?
-* What would be the impact of moving away from our probation suppliers?
-* Compare quality performance between Midwest and West region suppliers.
-* How do our Assembly Plants compare to Component Plants in terms of PO exceptions?
-* Which approver handles the most high-value exception approvals?
+  ```text
+  <copy>
+  Show me the trend of quality incidents by month.
+  </copy>
+  ```
 
----
+  ```text
+  <copy>
+  Which part categories have the highest spend variance from standard cost?
+  </copy>
+  ```
+
+  ```text
+  <copy>
+  Which facilities have the most quality-related production downtime?
+  </copy>
+  ```
+
+  ```text
+  <copy>
+  Are there any cases where we approved POs from probation suppliers without the required exception?
+  </copy>
+  ```
+
+  ```text
+  <copy>
+  Compare quality performance between Midwest and West region suppliers.
+  </copy>
+  ```
+
+  ```text
+  <copy>
+  How do our Assembly Plants compare to Component Plants in terms of PO exceptions?
+  </copy>
+  ```
+
+  ```text
+  <copy>
+  Which approver handles the most high-value exception approvals?
+  </copy>
+  ```
 
 ## Summary
 

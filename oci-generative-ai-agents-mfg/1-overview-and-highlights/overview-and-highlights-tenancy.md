@@ -50,9 +50,9 @@ In this database, we are going to save information about the following entities 
 | **PO_Exceptions** | Standardized exception reason codes |
 | **Quality_Incidents** | Supplier quality issues and delivery failures |
 
-### Database Schema
+Here is the Database Schema:
 
-[IMAGE]
+![db schema](./images/database-schema.png)
 
 ### Storage Bucket
 
