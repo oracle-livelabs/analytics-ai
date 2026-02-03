@@ -34,7 +34,11 @@ This lab assumes you have:
 
 2. Once the agent is showing as **Active**, click the **merchandising insights agent** in the **Agents** list.
 
+    ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.png)
+
 3. In the agent details page, click the **Launch chat** button.
+
+      ![Screenshot showing the agent details page with the launch chat button highlighted](./images/launch-chat-button.png)
 
 4. In the chat page, on the left, make sure that both the **Agent compartment** and the **Agent endpoint compartment** are set to your compartment.
 
@@ -48,6 +52,8 @@ This lab assumes you have:
     - The **Submit** and **Reset chat session** buttons, which you'll use to send the message you've typed in the message text box and reset all communications up until that point, respectively.
     - On the right, you'll see the **Traces** pane where the agent will communicate the various steps it took while reasoning over your requests.
 
+        ![Screenshot showing the initial chat page](./images/initial-chat-page-sandbox.png)
+
 ## Task 2: Let's test our agent
 
 1. To start, type the following question into the message box:
@@ -58,15 +64,25 @@ This lab assumes you have:
 
 2. Click the **Submit** button.
 
+    ![Screenshot showing the first question for the agent](./images/send-first-question.png)
+
 3. The agent generates a SQL query to count returns by product. You should see **Espresso Maker Model A** at the top with 8 returns, followed by other products. In addition, you can see that a trace was generated on the right.
 
 4. Click the **View** button next to the first trace.
 
+    ![Screenshot showing the response for the first question](./images/first-question-response.png)
+
 5. Expand the traces to see the full output (click the **Show more** link to see the rest of the output). The traces give you a glimpse of how the agent went about addressing your request. As you can see, the first trace shows how the agent is trying to figure out what the answer should be.
+
+     ![Screenshot showing the first trace of the first question's response](./images/first-question-traces-1.png)
 
 6. In the second trace, you'll be able to see that the agent invoked the SQL tool and generated a SQL request. This request will be executed and the response will be incorporated in the final response.
 
+     ![Screenshot showing the SQL tool trace](./images/first-question-traces-2.png)
+
 7. The third trace shows how the agent composed the final response using the output of the previous steps.
+
+      ![Screenshot showing the trace for the final response](./images/first-question-traces-3.png)
 
 8. Click the **Close** button to close the traces pane.
 
@@ -80,7 +96,12 @@ This lab assumes you have:
 
 10. Click the **Submit** button.
 
+     ![Screenshot showing the first question for the agent](./images/send-second-question.png)
+
 11. The agent shows that **ValueParts Manufacturing** has the most defect-related returns (7 returns), followed by **Budget Electronics Co** (5 returns). Using the magic of Large Language Models (LLMs) and the clues we've left in the configuration of the agent and tools, the agent was able to identify the problematic suppliers.
+
+    ![Screenshot showing the response for the second question](./images/second-question-response.png)
+    
 
 12. Feel free to take a look at the **Traces** generated for this response.
 
@@ -92,7 +113,11 @@ This lab assumes you have:
 
 14. Click the **Submit** button.
 
+     ![Screenshot showing the third question for the agent](./images/send-third-question.png)
+
 15. The agent understands "their" refers to the suppliers just mentioned and retrieves their quality status: **ValueParts Manufacturing** is on Probation, **Budget Electronics Co** is on Probation, and **QuickShip Distributors** is Active (Under Review).
+
+![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
 16. Next, let's look at a specific product. Type:
 
@@ -102,7 +127,13 @@ This lab assumes you have:
 
 17. Click the **Submit** button.
 
+    ![Screenshot showing the fourth question for the agent](./images/send-fourth-question.png)
+
+
 18. The agent returns the details associated with the Espresso Maker returns: 8 total returns, primarily due to DEF001 (defective) and DEF002 (missing parts). This product has a high defect rate that warrants attention.
+
+    ![Screenshot showing response for the fourth question](./images/fourth-question-response.png)
+
 
 19. Now let's see if we can pull up a policy document which can help us understand what to do about this. Type the following question:
 
@@ -112,7 +143,11 @@ This lab assumes you have:
 
 20. Click the **Submit** button.
 
+    ![Screenshot showing fifth question for the agent](./images/send-fifth-question.png)
+
 21. As you can see, for this question, the agent figured out that the information required might be in the knowledge base documents. For this task it employed the RAG tool which searched for the relevant information in our merchandising policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+
+ ![Screenshot showing fifth question traces](./images/fifth-question-traces.png)
 
 22. Let's ask about supplier quality. Type:
 
@@ -122,7 +157,12 @@ This lab assumes you have:
 
 23. Click the **Submit** button.
 
+
+    ![test](./images/send-sixth-question.png)
+
 24. The agent retrieves the probation criteria from the Supplier Probation Procedures document, including thresholds for quality rating (below 2.5), defect return counts (25+ in 90 days), and product return rates (above 25%).
+
+  ![test](./images/sixth-question-response.png)
 
 25. Now let's test the agent's ability to combine database queries with policy lookups. Type:
 
@@ -132,7 +172,11 @@ This lab assumes you have:
 
 26. Click the **Submit** button.
 
+   ![test](./images/send-seventh-question.png)
+
 27. Watch the traces on the right — you'll see the agent queries the database to confirm ValueParts' defect count and status, searches the Supplier Quality Standards and Supplier Probation Procedures documents, and explains that with 32 defect returns (exceeding the 25 threshold) and a 2.3 quality rating (below 2.5), ValueParts correctly placed on Probation status per policy.
+
+    ![test](./images/seventh-question-response.png)
 
 28. Let's explore regional patterns. Type:
 
@@ -142,7 +186,11 @@ This lab assumes you have:
 
 29. Click the **Submit** button.
 
+    ![test](./images/send-eighth-question.png)
+
 30. The agent identifies the **Southwest** region as having the highest shipping damage (DMG001) returns.
+
+    ![test](./images/eighth-question-response.png)
 
 31. Now combine this with policy. Type:
 
@@ -152,8 +200,14 @@ This lab assumes you have:
 
 32. Click the **Submit** button.
 
+    ![test](./images/send-ninth-question.png)
+
+
 33. The agent retrieves the Regional Distribution Guidelines and explains that the Southwest region requires enhanced packaging due to higher damage rates: double-wall corrugated boxes, minimum 2 inches cushioning, and heat-resistant packaging for temperature-sensitive items.
 
+       ![test](./images/ninth-question-response.png)
+    
+    
 34. We invite you to try some prompts of your own to experiment with the agent.
 
 ## Task 3: (Optional) More prompts to try
