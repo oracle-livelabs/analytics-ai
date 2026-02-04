@@ -37,8 +37,19 @@ In this task we are going to create a new ADB instance.
 
    ![Screenshot showing how to navigate to the create ADB page](./images/create-adb-button.jpg)
 
-1. For the **Display name** use: _customer-support_.
-1. For the **Database name** use: _customersupport_.
+1. For the **Display name** use: _customer-support_
+      ```text
+      <copy>
+      customer-support
+      </copy>
+      ```
+
+1. For the **Database name** use: _customersupport_
+      ```text
+      <copy>
+      customersupport
+      </copy>
+      ```
 1. Under the **Compartment**, make sure that the **root** compartment is selected.
 1. Under **Workload type** make sure that **Data Warehouse** is selected.
 
@@ -262,6 +273,11 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _customer-support-secrets_
+      ```text
+      <copy>
+      customer-support-secrets
+      </copy>
+      ```
 1. Click the **Create Vault** button at the bottom of the form.
 
    ![Screenshot showing how to create the vault](./images/create-vault.jpg)
@@ -278,6 +294,11 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _customer-support-key_
+      ```text
+      <copy>
+      customer-support-key
+      </copy>
+      ```
 1. Click the **Create Key** button.
 
    ![Screenshot showing details for creating an encryption key](./images/create-key-details.jpg)
@@ -298,11 +319,21 @@ In this section we are going to create a connection to our database. This connec
    ![Screenshot showing how to navigate to the create vault page](./images/create-connection-button.jpg)
 
 1. For the **Name** field use: _customer-support_
+      ```text
+      <copy>
+      customer-support
+      </copy>
+      ```
 1. Under the **Compartment**, make sure that the **root** compartment is selected.
 1. Make sure that the **Select database** option is selected under the **Database details** section.
 1. In the **Database cloud service** drop-down, select **Oracle Autonomous Database**.
 1. In the **Database in...** drop down, select the **customer-support** database.
 1. In the **Username** field, type: _ADMIN_
+      ```text
+      <copy>
+      ADMIN
+      </copy>
+      ```
 
    ![Screenshot showing the first part of the connection configuration](./images/create-connection-1.jpg)
 
@@ -313,6 +344,11 @@ In this section we are going to create a connection to our database. This connec
    This step will create a secret which will be stored in the Vault created earlier and will contain the password for connecting to the database.
 
 1. For the **Name** field use: _customer-support-admin-password_
+      ```text
+      <copy>
+      customer-support-admin-password
+      </copy>
+      ```
 1. Select the **customer-support-secrets** in the **Valut in...** drop-down.
 1. Select the **customer-support-key** in the **Encryption key in...** drop-down.
 1. In the **User password** field, type the password you've used when you created the ADB instance.
@@ -333,6 +369,11 @@ In this section we are going to create a connection to our database. This connec
    ![Screenshot showing how to create the ](./images/create-connection-5.jpg)
 
 1. For the **Name** field use: _customer-support-wallet-secret_
+      ```text
+      <copy>
+      customer-support-wallet-secret
+      </copy>
+      ```
 1. Select the **customer-support-secrets** in the **Valut in...** drop-down.
 1. Select the **customer-support-key** in the **Encryption key in...** drop-down.
 1. Under the **Wallet** section, select the **Retrieve regional wallet from Autonomous Database** option.
