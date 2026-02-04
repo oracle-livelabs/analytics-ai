@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list. Note that while the agent itself is created in about 5–8 minutes, other components (e.g., Knowledge Bases, Data Source, and Endpoint) can take up to 30–32 minutes to provision. 
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table.jpg)
 
