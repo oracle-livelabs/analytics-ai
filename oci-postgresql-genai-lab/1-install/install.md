@@ -24,44 +24,10 @@ Estimated time: 40 min
     ![Chicago Region](images/chicago-region.png)
 
     - For Free Trial, the home region should be Chicago (or Frankfurt)
-- The lab is using Cloud Shell with Public Network.
+- The OCI User used in this LiveLab should have OCI Administrator Priviliges in the OCI Tenancy
 
-    The lab assume that you have access to **OCI Cloud Shell with Public Network access**.
-    To check if you have it, start Cloud Shell and you should see **Network: Public** on the top. If not, try to change to **Public Network**. If it works, there is nothing to do.
-    ![Cloud Shell Public Network](images/cloud-shell-public-network.png)
 
-    OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
-    - **Solution:**
-
-        If not, please ask your Administrator to follow this document:
-        
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
-
-        He/She just need to add a Policy to your tenancy :
-
-        ```
-        <copy>
-        allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
-        </copy>        
-        ```
-
-## Task 1: Prepare to save configuration settings
-
-1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
-
-    ````
-    <copy>
-    List of ##VARIABLES##
-    ---------------------
-    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
- 
-    Terraform Output
-    ----------------
-    SEARCH_URL=(SAMPLE)https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
-    </copy>
-    `````
-
-## Task 2: Create a Compartment
+## Task 1: Create a Compartment
 
 The compartment will be used to contain all the components of the lab.
 
@@ -70,162 +36,248 @@ You can
 - Or create a new one (recommended)
 
 1. Login to your OCI account/tenancy
+
 2. Go the 3-bar/hamburger menu of the console and select
     1. Identity & Security
     1. Compartments
     ![Menu Compartment](images/compartment1.png =40%x*)
+    
 2. Click ***Create Compartment***
     - Give a name: ***oci-starter***
     - Then again: ***Create Compartment***
     ![Create Compartment](images/compartment2.png)
-4. When the compartment is created copy the compartment ocid ##COMPARTMENT_OCID## and put it in your notes
+
+## Task 2: Create OCI API Key
+
+The API key will be used to access OCI command line tool and OCI Generative AI service programatically 
+
+1. Go to OCI Console Homepage
+
+2. Click User icon on the top right and *User Settings*
+
+    ![Create API key](images/create-api-keys-1.png)
+    
+3. Go to *Tokens & Keys*, then *Add API Key*
+    ![Create API key](images/create-api-keys-2.png)
+    
+4. Generate API Key pair and Download the Private an Public Key. 
+    ![Create API key](images/create-api-keys-3.png)
+    
+***We will use the public key later in provisioning the stack and private key to connect to the VM***
 
 
-## Task 3: Run a Terraform script to create the other components.
 
-1. Go to the OCI console homepage
-2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-3. Check that the Network used is Public. (see requirements)
-4. Check that the Code Editor Architecture is well X86_64.
-    - Go to Actions / Architecture
-    - Check that the current Architecture is well X86_64.
-    - If not change it to X86_64 and confirm. It will restart.
+## Task 3: Run Terraform script 
 
-        ![OIC Domain](images/cloud-shell-architecture.png)
+1. Download the Github code to your Local machine
 
-5. In the code editor menu, click *Terminal* then *New Terminal*
-6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png =50%x*)
     ````
-    <copy>
-    git clone https://github.com/mgueury/oci-postgres-genai.git
-    </copy>
-    ````
-7. Edit the file *oci-postgres-genai/starter/env.sh*
-    1. Click the **Explorer** icon in the left bar of the code editor
-    1. Use Explorer to locate env.sh
-    1. Click env.sh to open it in the editor
-8. In env.sh, replace the ## with the corresponding value from your text file.
-    ````
-    <copy>
-    export TF_VAR_compartment_ocid="##COMPARTMENT_OCID##"
-    </copy>
-    ````
-9. Save your edits using File > Save
-10. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
-    ```
-    <copy>
-    cd oci-postgres-genai/starter/
-    </copy>
-    ```
-    ````
-    <copy>
-    ./build.sh
-    </copy>
-    ````
+   git clone https://github.com/shadabshaukat/oracle-livelabs.git
+     ````
 
-11. **Please proceed to the [next lab](#next) while Terraform is running.** 
-    Do not wait for the Terraform script to finish because it takes about 15 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-12. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+       
+3. Go to OCI Console Home Page
 
-    ```
-    <copy>    
-    -- SEARCH_URL -------
-    https://xxxxxxxx.apigateway.us-ashburn-1.oci.customer-oci.com/app/
+4. Click on *Developer Services* and then *Stack*
+    ![Resource Manager](images/resource-manager-1.png)
 
-    Please wait 5 mins. The server is starting.
-    </copy>    
-    ```
+5. Change your compartment to the one created in Task 1 above
+
+6. Select *My Configuration* scroll down to the *Stack Configuration* and add the newly downloaded folder
+       ![Resource Manager](images/resource-manager-2.png)
+       
+   Select the *oci_postgres_tf_stack* folder from your local machine
+       ![Resource Manager](images/resource-manager-3.png)
+       
+7. Select the compartment and click **Next**
+       ![Resource Manager](images/resource-manager-4.png)
+
+8. Select the **compute assign public ip** option
+          ![Resource Manager](images/resource-manager-5.png)
+
+9. Paste the Public SSH key created in Task 2 and check **create compute** | **create_psql_configurtion** box
+    ![Resource Manager](images/resource-manager-5-a.png)
+
+10. pgvector extension and user variables added
+     ![Resource Manager](images/resource-manager-5-c.png)
+
+11. Enter Postgres Admin user and password
+              ![Resource Manager](images/resource-manager-6.png)
+
+12. Enter a region and click next
+              ![Resource Manager](images/resource-manager-7.png)
+
+13. Select *Run apply* and create the stack
+              ![Resource Manager](images/resource-manager-8.png)
+
+14. Wait about 10-15 minutes for the stack to finish provisioning
+              ![Resource Manager](images/resource-manager-9.png)
+              
+
+Copy the last 10 lines of the job log and save it in a notepad, it will be like something below
+
+````
+Outputs:
+compute_instance_id = "ocid1.instance.oc1.iad.anuw...................uq"
+compute_private_ip = "10.10.2.23"
+compute_public_ip = "150.x.x.74"
+compute_state = "RUNNING"
+psql_admin_pwd = <sensitive>
+psql_configuration_id = "ocid1.postgresqlconfiguration.oc1.iad.amaaaaa............snq" 
+````
+
+
+14. Go to OCI Console *Compute* and then *Instances*
+              ![Resource Manager](images/get-public-ip-1.png)
+
+Copy the public IP of the instance 
+              ![Resource Manager](images/get-public-ip-2.png)
+
+
+## Task 4: Setup Application
+
+1. Go to your Terminal and Copy the public IP from Task 3 step 14 and use the Private Key from Task 2.
+
+      ![SSH Host](images/ssh-to-host-1.png)
+
+2. Install Linux Packages
+   
+````
+sudo dnf install -y curl git unzip firewalld oraclelinux-developer-release-el10 python3-oci-cli postgresql16
+````
+
+3. Add firewall rules
+   
+````
+# uv installer and PATH
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
+# Firewalld rules for the app port (default 8000)
+sudo systemctl enable --now firewalld
+sudo firewall-cmd --permanent --add-port=8000/tcp
+sudo firewall-cmd --reload
+````
+
+4. Download the Code Repository
+
+````
+git clone https://github.com/shadabshaukat/oracle-livelabs.git
+````
+
+5. Setup OCI ClI
+
+Before we proceed upload the private key downloaded in Task 2 to this host and rename it to **priv.key** the location is /home/opc/priv.key
+
+````
+chmod 600 /home/opc/priv.key
+````
+
+````
+oci setup config
+````
+
+Enter the details as per Task 2
+
+````
+Enter a location for your config [/home/opc/.oci/config]:
+Enter a user OCID: ocid1.user.oc1..aaaaaa...........................aq
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa....................ua
+Enter a region by index or name(e.g.) :  us-ashburn-1
+
+Enter the location of your API Signing private key file: /home/opc/priv.key
+
+Config written to /home/opc/.oci/config
+    If you haven't already uploaded your API Signing public key through the
+    console, follow the instructions on the page linked below in the section
+    'How to upload the public key':
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
+````
+
+6. Configure the variables to reflect the provisioned stack and API keys
+
+````
+cd oracle-livelabs/search-app/
+````
+
+````
+vi .env.example
+````
+
+Add DB Parameters based on the DBSystem created earlier
+````
+DB_HOST=10.10.1.83
+DB_PORT=5432
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=YourPWD12345##
+DB_SSLMODE=require
+DB_POOL_MIN_SIZE=1
+DB_POOL_MAX_SIZE=10
+````
+
+Add OCI cli parameters based on the API Key created earlier
+
+````
+# Set one of: none | openai | oci
+LLM_PROVIDER=oci
+OPENAI_API_KEY=
+OPENAI_MODEL=
+
+# OCI Generative AI (when LLM_PROVIDER=oci)
+OCI_REGION=us-chicago-1
+OCI_COMPARTMENT_OCID=ocid1.compartment.oc1..aaaaaaaad........................mfa
+OCI_GENAI_ENDPOINT=https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+OCI_GENAI_MODEL_ID=ocid1.generativeaimodel.oc1.us-chicago-1.amaaaaaask7d.......zta
+#
+# Option 1: Use config file
+OCI_CONFIG_FILE=/home/opc/.oci/config
+OCI_CONFIG_PROFILE=DEFAULT
+# Option 2: API key envs
+OCI_TENANCY_OCID=
+OCI_USER_OCID=
+OCI_FINGERPRINT=
+OCI_PRIVATE_KEY_PATH=
+OCI_PRIVATE_KEY_PASSPHRASE=
+````
+
+7. Copy environment variables in example file to .env file
+
+````
+cd /home/opc/oracle-livelabs/search-app
+
+cp -p .env.example .env
+````
+
+8. Run the Stack
+
+````
+bash run.sh
+````
+
+![App Build](images/app-build-1.png)
+![App Build](images/app-build-2.png)
+
+After the app has completed startup, open a browser with the public IP of the VM with tcp/8000
+
+````
+http://128.x.x.54:8000/
+````
+
+Enter the API Auth User and Password set in the **.env.example** file earlier
+
+![API Auth](images/signin-api.png)
+
+
 **You may now proceed to the [next lab](#next)**
 
 ## Known issues
 
-1. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
-
-    ```
-    <copy>    
-    oci_core_instance.starter_instance: Creating..
-    - Error: 500-InternalError, Out of host capacity.
-    Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
-    </copy>
-    ```
-
-    Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
-    ```
-    <copy>    
-    OLD: variable availability_domain_number { default = 1 }
-    NEW: variable availability_domain_number { default = 2 }
-    </copy>    
-    ```
-
-    Then rerun the following command in the code editor
-
-    ```
-    <copy>
-    ./build.sh
-    </copy>
-    ```
-
-    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.
-
-2. During the terraform run, there might be an error resulting from the compute shapes supported by your tenancy:
-
-    ```
-    <copy>    
-    - Error: 404-NotAuthorizedOrNotFound, shape VM.Standard.x86.Generic not found
-    </copy>    
-    ```
-
-    Solution:  edit the file *oci-postgres-genai/starter/src/terraform/variable.tf* and replace the *instance_shape* to one where there are still capacity in your tenancy/region
-    ```
-    <copy>    
-    OLD: variable instance_shape { default = "VM.Standard.x86.Generic" }
-    NEW: variable instance_shape { default = "VM.Standard.E4.Flex" }
-    </copy>    
-    ```
-
-    Then rerun the following command in the code editor
-
-    ```
-    <copy>
-    ./build.sh
-    </copy>
-    ```
-
-    If it still does not work, to find an availability domain or shape where there are still capacity, try to create a compute manually with the OCI console.    
-
-3. It happened on new tenancy that the terraform script failed with this error:
-
-    ```
-    <copy>    
-    Error: 403-Forbidden, Permission denied: Cluster creation failed. Ensure required policies are created for your tenancy. If the error persists, contact support.
-    Suggestion: Please retry or contact support for help with service: xxxx
-    </copy>    
-    ```
-
-    In such case, just rerunning ./build.sh fixed the issue.
-
-4. During terraform:
-    ```
-    <copy>    
-    Error: 409-PolicyAlreadyExists, Policy 'search-fn-policy' already exists
-    </copy>    
-    ```
-
-    Several persons are probably trying to install this tutorial on the same tenancy.
-
-    Solution:  edit the file *env.sh* and use a unique *TF\_VAR\_prefix*
-    ```
-    <copy>    
-    OLD: export TF_VAR_prefix="search"
-    NEW: export TF_VAR_prefix="search2"
-    </copy>    
-    ```
-
+None
 
 ## Acknowledgements
 
-- **Author**
-    - Marc Gueury, Master Principal Account Cloud Engineer
-    - Marek Krátký, Cloud Storage Specialist 
+- **Created By/Date** - Shadab Mohammad, Master Principal Cloud Architect, January 2026
+- **Last Updated By** - Shadab Mohammad, January 2026
 

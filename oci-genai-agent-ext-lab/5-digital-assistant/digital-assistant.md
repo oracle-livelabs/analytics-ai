@@ -108,7 +108,7 @@ Estimated time: 30 min
 
     ```
     <copy>
-    ./starter.sh ssh bastion
+    ./starter.sh ssh compute
     sudo su -
     cd /usr/share/nginx/html/scripts
     nano settings.js

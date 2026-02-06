@@ -24,7 +24,7 @@ Note: The lab should work also with any Database 19c+ with APEX and DBMS_CLOUD. 
 
 Keep a file to keep the details:
 
-````
+```
 
 Autonomous OCID:     (sample) ocid1.autonomousdatabase.oc1.eu-frankfurt-1.abcdefghj....
 DB Password:         (sample) ##YOUR_PASSWORD##
@@ -33,7 +33,7 @@ Agent Endpoint OCID: (sample) ocid1.genaiagentendpoint.oc1.eu-frankfurt-1.abcdef
 WorkSpace Name:      (sample) agent
 WorkSpace User:      (sample) agent
 WorkSpace Password:  (sample) ##YOUR_PASSWORD##
-````
+```
 
 ## Task 1: Policies
 
@@ -68,9 +68,12 @@ WorkSpace Password:  (sample) ##YOUR_PASSWORD##
 2. Click on your database name   
 3. Click on the button **Database Actions / View All Database Actions**
 
-    ![Database Actions](./images/ai_agent_db_action_apex.png)
+    ![Database Actions](./images/ai_agent_db_actions.png)
 
 4. Choose **APEX**. Click **Open**
+
+    ![Database Actions](./images/ai_agent_db_action_apex.png)
+
 5. If you have already an existing APEX workspace, go to next step. If not, create one with APEX Administration Services.
     - Log into the Administration Service, enter you Admin ##DB_PASSWORD##.
     - In Welcome to Oracle APEX!, click **Create Workspace**

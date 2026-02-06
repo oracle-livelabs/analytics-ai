@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Customize AI Agents and Workflows with LLMs and OCI AI Agent Platform—Energy Edition",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights-tenancy.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Initial setup",
+            "filename": "../../2-setup/setup-tenancy.md"
+        },
+        {
+            "title": "Lab 2: Setup the database",
+            "filename": "../../3-setup-the-database/setup-the-database-tenancy.md"
+        },
+        {
+            "title": "Lab 3: Create the Agent",
+            "filename": "../../4-create-the-agent/create-the-agent-tenancy.md"
+        },
+        {
+            "title": "Lab 4: Test the solution",
+            "filename": "../../5-test-the-solution/test-the-solution-tenancy.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
