@@ -3,11 +3,8 @@
 ## Introduction
 
 Our provisioning work is now complete. It is now time to enjoy the fruits of our labor.
-In the previous labs we have:
+In the previous labs, we have:
 
-- Created the proper permissions & basic setup.
-- Uploaded the knowledge base articles to a storage bucket.
-- Created our ADB instance and filled it with data.
 - Created an agent as well as the SQL and RAG tools alongside their knowledge bases.
 - Configured the agent endpoint.
 
@@ -25,8 +22,9 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- All previous labs successfully completed
-- 💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
+- Completed all previous labs successfully.
+
+💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
 
 ## Task 1: Overview of the chat page functionality
 
@@ -129,7 +127,7 @@ This lab assumes you have:
 
     ![Screenshot showing the final question for the agent](./images/finalquestionresponse.png)
 
-1. Now we can see if there are any applications that violate a policy. Type into the message box:
+1. Next we can see if there are any applications that violate a policy. Type into the message box:
 
       ``` text
       <copy>
@@ -143,7 +141,14 @@ This lab assumes you have:
 
     ![test](./images/third-question-traces-1.png)
 
-1. Next we'll ask the following: _Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record._
+1. Next we'll ask the following: 
+
+    ```text
+    <copy>
+    Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record.
+    </copy>
+    ```
+
 1. Click the Submit button.
 
     ![test](./images/send-fourth-question.png)
@@ -152,23 +157,38 @@ This lab assumes you have:
 
     ![test](./images/fourth-question-response.png)
 
-1. We invite you to try some prompts of your own to experiment with agent.
+1. We invite you to try some prompts of your own to experiment with the agent.
 
 ## Task 3: (Optional) More prompts to try
 
 Here are a few more prompts to try with the agent:
 
-- _What is the minimum credit score for FHA vs Conventional loans?_
-- _Show the distribution of credit scores by loan type_
-- _Provide the policy language for VA loan eligibility and list the denied VA applications from the database_
+```text
+<copy>
+What is the minimum credit score for FHA vs Conventional loans?
+</copy>
+```
+
+```text
+<copy>
+Show the distribution of credit scores by loan type
+</copy>
+```
+
+```text
+<copy>
+Provide the policy language for VA loan eligibility and list the denied VA applications from the database
+</copy>
+```
+
 
 ## Summary
 
 As you've experienced, the OCI AI Agents service allows you to ask complex questions about data stored in multiple locations and get intelligent answers. By simply pointing the various tools towards your data sources and providing the right context, the agent was able to automatically determine which data source should be accessed, retrieve the data for you, compile a coherent and concise response and provide references to the original data when applicable.
 
-Another interesting advantage of building solutions on top the OCI AI Agents service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
+Another interesting advantage of building solutions on top of the OCI AI Agents service is that the user is no longer restricted to tasks allowed by the application user interface. With a chat interface, the user can ask questions and get answers to any question which can be answered using the data in the system even if the system engineers did not plan for that specific scenario. For example, you can ask the agent to sort the results in any way that is supported by the data even if the application was not designed to give you that option.
 
-Although our use-case was focused on loan compliance, the OCI AI Agents service can be used to fuel many different use-cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights and more.
+Although our use case was focused on loan compliance, the OCI AI Agents service can be used to fuel many different use cases which require deep understanding and retrieval of information from internal data sources, reasoning over the data, summarizing it, providing insights, and more.
 
 ## Learn More
 
