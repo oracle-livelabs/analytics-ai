@@ -30,7 +30,7 @@ This lab assumes you have:
 ## Task 1: Overview of the chat page functionality
 
 1. If the agent is still not showing as **Active**, give it a few more minutes to complete the provisioning process.
-1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list.
+1. Once the agent is showing as **Active**, click the **customer support agent** agent in the **Agents** list. Note that while the agent itself is created in about 5–8 minutes, other components (e.g., Knowledge Bases, Data Source, and Endpoint) can take up to 30–32 minutes to provision. 
 
     ![Screenshot showing the active agent in the agents list](./images/click-agent-from-table-sandbox.jpg)
 
@@ -96,6 +96,12 @@ This lab assumes you have:
     ![Screenshot showing the third question for the agent](./images/third-question-response.jpg)
 
 1. Now that we have information about the tickets, let's see if we can pull up a knowledge article which can help us resolve "Complex Network Configuration Issue" ticket. Type the following question: _Do we have a knowledge article which can help resolve the "Complex Network Configuration Issue" ticket?_
+    ```text
+      <copy>
+      Do we have a knowledge article which can help resolve the "Complex Network Configuration Issue" ticket?
+      </copy>
+    ```
+
 1. Click the **Submit** button.
 1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our knowledge base articles stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the article was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the article(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
 
@@ -108,9 +114,29 @@ This lab assumes you have:
 Here are a few more prompts to try with the agent:
 
 - _Show me how many tickets are assigned to each support agent_
+    ```text
+      <copy>
+      Show me how many tickets are assigned to each support agent
+      </copy>
+    ```
 - _Are there any support agents which do not have any tickets assigned to them?_
+    ```text
+      <copy>
+      Are there any support agents which do not have any tickets assigned to them?
+      </copy>
+    ```
 - _How many tickets have been resolved or closed in the past 2 days?_
+    ```text
+      <copy>
+      How many tickets have been resolved or closed in the past 2 days?
+      </copy>
+    ```
 - _Give me the most important stats for our customer support system_
+    ```text
+      <copy>
+      Give me the most important stats for our customer support system
+      </copy>
+    ```
 
 ## Summary
 

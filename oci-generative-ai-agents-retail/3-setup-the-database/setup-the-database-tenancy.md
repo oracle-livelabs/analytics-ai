@@ -43,13 +43,17 @@ In this task we are going to create a new Autonomous AI Database instance.
 6. For the **Display name** use:
 
     ```text
+       <copy>
     retail-merchandising
+    </copy>
     ```
 
 7. For the **Database name** use:
 
     ```text
+       <copy>
     retailmerchandising
+    </copy>
     ```
 
 8. Under the **Compartment**, make sure that the root compartment is selected.
@@ -174,6 +178,7 @@ In this task we are going to fill the database tables with data. One after the o
 1. Insert data into the **Return_Reasons** table:
 
     ```sql
+    <copy>
     INSERT INTO Return_Reasons (ReasonID, ReasonCode, ReasonDescription, ReasonCategory) VALUES
     (1, 'DEF001', 'Defective product - does not function', 'Defect');
     INSERT INTO Return_Reasons (ReasonID, ReasonCode, ReasonDescription, ReasonCategory) VALUES
@@ -188,11 +193,13 @@ In this task we are going to fill the database tables with data. One after the o
     (6, 'WRG001', 'Wrong item received', 'Wrong Item');
 
     COMMIT;
+    </copy>
     ```
 
 2. Insert data into the **Suppliers** table:
 
     ```sql
+    <copy>
     INSERT INTO Suppliers (SupplierID, SupplierName, ContactEmail, ContactPhone, Region, QualityRating, ContractStatus, DefectReturnCount, LastQualityReview, QualityStatus) VALUES
     (100, 'Premier Appliances Inc', 'quality@premierapp.com', '555-0100', 'Midwest', 4.6, 'Active', 3, DATE '2025-06-15', 'Good Standing');
     INSERT INTO Suppliers (SupplierID, SupplierName, ContactEmail, ContactPhone, Region, QualityRating, ContractStatus, DefectReturnCount, LastQualityReview, QualityStatus) VALUES
@@ -211,11 +218,13 @@ In this task we are going to fill the database tables with data. One after the o
     (107, 'Apex Furniture Group', 'vendor@apexfurn.com', '555-0107', 'Northeast', 4.0, 'Active', 5, DATE '2025-05-05', 'Good Standing');
 
     COMMIT;
+    </copy>
     ```
 
 3. Insert data into the **Stores** table:
 
     ```sql
+    <copy>
     INSERT INTO Stores (StoreID, StoreName, City, State, Region, StoreType) VALUES
     (1, 'Seer Retail Manhattan', 'New York', 'NY', 'Northeast', 'Flagship');
     INSERT INTO Stores (StoreID, StoreName, City, State, Region, StoreType) VALUES
@@ -238,11 +247,13 @@ In this task we are going to fill the database tables with data. One after the o
     (10, 'Seer Retail Seattle', 'Seattle', 'WA', 'West', 'Standard');
 
     COMMIT;
+    </copy>
     ```
 
 4. Insert data into the **Products** table:
 
     ```sql
+    <copy>
     -- Disable substitution variables (required for & in product names)
     SET DEFINE OFF;
 
@@ -278,11 +289,13 @@ In this task we are going to fill the database tables with data. One after the o
     (1015, 'ELC-CAM-005', 'SecureView Home Camera', 'Electronics', 'Security', 101, 65.00, 129.99, DATE '2024-08-01');
 
     COMMIT;
+    </copy>
     ```
 
 5. Insert data into the **Return_Transactions** table:
 
     ```sql
+    <copy>
     -- Espresso Maker returns (8 total - high return rate scenario)
     INSERT INTO Return_Transactions (ReturnID, TransactionID, ProductID, StoreID, ReasonID, ReturnDate, QuantityReturned, RefundAmount, ReturnCondition, DispositionAction, RTVClaimed) VALUES
     (5001, 'RTN-2025-0001', 1001, 7, 1, DATE '2025-07-15', 1, 179.99, 'Defective', 'RTV', 'Yes');
@@ -348,16 +361,19 @@ In this task we are going to fill the database tables with data. One after the o
     (5028, 'RTN-2025-0028', 1005, 6, 5, DATE '2025-08-14', 1, 59.99, 'New', 'Restock', 'No');
 
     COMMIT;
+    </copy>
     ```
 
 6. Run the following verification query to confirm the data was inserted correctly:
 
     ```sql
+    <copy>
     SELECT 'Return_Reasons' AS TableName, COUNT(*) AS RecordCount FROM Return_Reasons
     UNION ALL SELECT 'Suppliers', COUNT(*) FROM Suppliers
     UNION ALL SELECT 'Stores', COUNT(*) FROM Stores
     UNION ALL SELECT 'Products', COUNT(*) FROM Products
     UNION ALL SELECT 'Return_Transactions', COUNT(*) FROM Return_Transactions;
+    </copy>
     ```
 
     You should see the following counts:
@@ -389,9 +405,11 @@ In this task we are going to create a Vault and an encryption key. We are going 
 6. Under the **Create in Compartment**, make sure that the root compartment is selected.
 
 7. For the **Name** field use:
-
+ 
     ```text
+       <copy>
     retail-merchandising-secrets
+    </copy>
     ```
 
 8. Click the **Create Vault** button at the bottom of the form.
@@ -415,7 +433,9 @@ In this task we are going to create a Vault and an encryption key. We are going 
 14. For the **Name** field use:
 
     ```text
+       <copy>
     retail-merchandising-key
+    </copy>
     ```
 
 15. Click the **Create Key** button.
@@ -442,10 +462,12 @@ In this section we are going to create a connection to our database. This connec
 
 6. For the **Name** field use:
 
+    
     ```text
+       <copy>
     retail-merchandising
+    </copy>
     ```
-
 7. Under the **Compartment**, make sure that the root compartment is selected.
 
 8. Make sure that the **Select database** option is selected under the Database details section.
@@ -456,8 +478,11 @@ In this section we are going to create a connection to our database. This connec
 
 11. In the **Username** field, type:
 
+    
     ```text
+       <copy>
     ADMIN
+    </copy>
     ```
 
    ![Screenshot showing the first part of the connection configuration](./images/create-connection-1.png)
@@ -471,7 +496,9 @@ In this section we are going to create a connection to our database. This connec
 13. For the **Name** field use:
 
     ```text
+       <copy>
     retail-merchandising-admin-password
+    </copy>
     ```
 
 14. Select the **retail-merchandising-secrets** in the **Vault in...** drop-down.
@@ -502,9 +529,10 @@ In this section we are going to create a connection to our database. This connec
 21. For the **Name** field use:
 
     ```text
+       <copy>
     retail-merchandising-wallet-secret
+    </copy>
     ```
-
 22. Select the **retail-merchandising-secrets** in the **Vault in...** drop-down.
 
 23. Select the **retail-merchandising-key** in the **Encryption key in...** drop-down.

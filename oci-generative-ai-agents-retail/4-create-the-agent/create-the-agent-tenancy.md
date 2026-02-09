@@ -45,8 +45,11 @@ This lab assumes you have:
 
 8. For the **Name** field use:
 
+    
     ```text
+       <copy>
     merchandising insights agent
+    </copy>
     ```
 
 9. For the **Compartment** field, make sure that your compartment is selected.
@@ -54,16 +57,22 @@ This lab assumes you have:
 10. For the **Description** field, use:
 
     ```text
+    <copy>
     This agent assists the Chief Merchandising Officer in analyzing return trends, identifying product defects, evaluating supplier performance, and uncovering regional patterns to optimize merchandising decisions.
+    </copy>
     ```
 
 11. For the **Welcome message** field, use:
 
     ```text
+    <copy>
     Hello! I'm your Merchandising Insights Assistant. I can help you analyze return trends, evaluate supplier quality, identify product issues, and answer questions about our merchandising policies. How can I assist you today?
+    </copy>
     ```
 
 12. Click the **Next** button.
+
+![Screenshot showing the initial configuration for the RAG tool](./images/create-rag-tool.png)
 
 ## Task 2: Add the RAG Tool
 
@@ -76,18 +85,22 @@ This lab assumes you have:
 3. Under the RAG Configuration section, use the following in the **Name** field:
 
     ```text
+    <copy>
     Merchandising Policy Knowledge Base
+    </copy>
     ```
 
 4. For the **Description** field, use:
 
     ```text
+    <copy>
     Use this tool when users ask about policies, standards, thresholds, or procedures. Retrieves merchandising policies including: Supplier Quality Standards (ratings, status classifications, defect thresholds), RTV Claim Policy (eligibility, deadlines, recovery rates), Product Return Thresholds (category benchmarks, escalation triggers), Defective Merchandise Handling (classification, remediation, disposition), Regional Distribution Guidelines (packaging requirements, damage benchmarks), Supplier Probation Procedures (triggers, process, exit criteria), Inventory Disposition Policy (categories, decision tree, timelines), and Customer Return Policy (windows, conditions, refund methods).
+    </copy>
     ```
 
     It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
 
-   ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.png)
+   ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-description.png)
 
 5. Under the **Add knowledge bases** section, make sure that your compartment is selected in the **Compartment** field.
 
@@ -98,7 +111,9 @@ This lab assumes you have:
 7. In the New knowledge base form, use the following for the **Name** field:
 
     ```text
+    <copy>
     Merchandising Policy Documents
+    </copy>
     ```
 
 8. Make sure that your compartment is selected in the **Compartment** field.
@@ -114,7 +129,9 @@ This lab assumes you have:
 12. In the Specify data source form, use the following for the **Name** field:
 
     ```text
+    <copy>
     merchandising policy docs
+    </copy>
     ```
 
 13. Make sure that the **Enable multi-modal parsing** option is not checked. This option enable parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our policy documents so right now this option is not required.
@@ -156,13 +173,17 @@ This lab assumes you have:
 3. For the **Name** field, use:
 
     ```text
+    <copy>
     Retail Merchandising Database
+    </copy>
     ```
 
 4. For the **Description** field, use:
 
     ```text
+    <copy>
     Use this tool when users ask about products, suppliers, stores, returns, defects, or regional patterns. Contains database tables for: Products (SKU, name, category, supplier, pricing), Suppliers (name, quality rating, status, defect counts), Stores (name, city, region, type), Return Reasons (codes like DEF001, DEF002, DMG001, categories), and Return Transactions (product, store, reason, date, condition, disposition, RTV status).
+    </copy>
     ```
    ![Screenshot showing the initial set of the SQL tool configuration](./images/sql-tool-info-1.png)
 
@@ -171,6 +192,7 @@ This lab assumes you have:
 6. Copy the following text and paste it into the **Database schema** field:
 
     ```sql
+    <copy>
     CREATE TABLE Suppliers (
         SupplierID           NUMBER PRIMARY KEY,
         SupplierName         VARCHAR2(100) NOT NULL,
@@ -225,6 +247,7 @@ This lab assumes you have:
         DispositionAction    VARCHAR2(20),
         RTVClaimed           VARCHAR2(3)
     );
+    </copy>
     ```
 
 7. Under the **In-context learning examples**, leave the **None** option selected.
@@ -234,6 +257,7 @@ This lab assumes you have:
 9. Copy and paste the following text into the **Description of tables and columns**. This verbal description contains details about each table and column. This will allow the tool to better understand the data stored in our database:
 
     ```text
+    <copy>
     IMPORTANT JOIN PATHS:
     - To link Returns to Suppliers: Return_Transactions → Products (via ProductID) → Suppliers (via SupplierID)
     - To link Returns to Stores: Return_Transactions → Stores (via StoreID)
@@ -288,9 +312,10 @@ This lab assumes you have:
       ReturnCondition (string): New, Opened, Damaged, or Defective
       DispositionAction (string): Restock, Outlet, Refurbish, Dispose, or RTV
       RTVClaimed (string): Yes or No - whether RTV claim was filed
+      </copy>
     ```
 
-   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-info-2-sandbox.png)
+   ![Screenshot showing the second set of the SQL tool configuration](./images/sql-tool-description.png)
 
 10. For **Model customization**, select the **Small** option.
 

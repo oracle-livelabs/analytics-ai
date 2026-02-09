@@ -212,8 +212,8 @@ The supervisor has 2 tasks:
 
 ## END
 
-Congratulation ! You have finished the lab !!
-We hope that you learned something useful.
+Congratulations! You have finished the lab!!
+We hope you have learned something useful.
 
 ## Known issues
 
