@@ -1,12 +1,10 @@
-# Lab 2: Test the solution
+# Test the solution
 
 ## Introduction
 
-Our provisioning work is now complete. It is now time to enjoy the fruits of our labor. In the previous labs, we have:
+Our provisioning work is now complete. It is now time to enjoy the fruits of our labor.
+In the previous labs, we have:
 
-- Created the proper permissions and basic setup.
-- Uploaded the knowledge base articles to a storage bucket.
-- Created our Autonomous AI Database instance and filled it with data.
 - Created an agent as well as the SQL and RAG tools alongside their knowledge bases.
 - Configured the agent endpoint.
 
@@ -26,7 +24,7 @@ This lab assumes you have:
 
 - Completed all previous labs successfully.
 
-> 💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
+💡 _**Note:** Prior prompts and conversation history may influence responses and agent routing. If results are unexpected, rephrase your request or retry in a fresh session._
 
 ## Task 1: Overview of the chat page functionality
 
@@ -125,9 +123,9 @@ This lab assumes you have:
 
 1. Click the **Submit** button.
 
-1.  As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+1. We can see the agent is able to pull important information about about limits for Back-End Debt-to-Income.
 
-    ![test](./images/third-question-traces-1.png)
+    ![Screenshot showing the final question for the agent](./images/finalquestionresponse.png)
 
 1. Next we can see if there are any applications that violate a policy. Type into the message box:
 
@@ -139,6 +137,22 @@ This lab assumes you have:
 
 1. Click the **Submit** button.
 
+1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+
+    ![test](./images/third-question-traces-1.png)
+
+1. Next we'll ask the following: 
+
+    ```text
+    <copy>
+    Identify any approved applications that violate policy (DTI or credit score); cite the rule and the record.
+    </copy>
+    ```
+
+1. Click the Submit button.
+
+    ![test](./images/send-fourth-question.png)
+
 1. The agent successfully detected an approved applicant whose credit score was inconsistent with the requirements outlined in the DTI and Credit Policy document.
 
     ![test](./images/fourth-question-response.png)
@@ -149,20 +163,19 @@ This lab assumes you have:
 
 Here are a few more prompts to try with the agent:
 
-``` text
+```text
 <copy>
 What is the minimum credit score for FHA vs Conventional loans?
 </copy>
 ```
 
-``` text
+```text
 <copy>
 Show the distribution of credit scores by loan type
 </copy>
 ```
 
-
-``` text
+```text
 <copy>
 Provide the policy language for VA loan eligibility and list the denied VA applications from the database
 </copy>
