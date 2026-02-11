@@ -45,7 +45,7 @@ In this task we are going to create a new ADB instance.
    ![Screenshot showing how to configure the display & database names](./images/create-adb-1.png)
 
 1. Under the **Database configuration** section, enable the **Developer** option.
-1. Select **23ai** as the version under **Choose database version**.
+1. Select **26ai** as the version under **Choose database version**.
 
    ![Screenshot showing how to configure the developer option](./images/create-adb-2.png)
 
