@@ -5,13 +5,13 @@ OCI Generative AI Agents is a fully managed service that combines the power of l
 ## Key Features
 
 - **Simple agent setup**: A fully-managed, few-step setup process to create and deploy the agents.
-- **Tools orchestration**: Orchestrate several tools and services to address complex workflows and automate conversations.
+- **Tool orchestration**: Orchestrate several tools and services to address complex workflows and automate conversations.
 - **Multi-turn chat experience**: Engage in dynamic, multi-turn dialogues with more human-like interactions.
 - **Context retention**: Ask follow-up questions because agents remember conversation context across turns for personalized and consistent interactions.
 - **Custom instructions**: Guide the agent's behavior with added instructions.
 - **Guardrails**: Have the agent apply content moderation and protect against prompt injection (PI) and personally identifiable information (PII) at its endpoints.
 - **Human-in-the-loop**: Optional feature for real-time monitoring and human intervention.
-- **Scalability and security**: GGet the benefit of OCI's inherent secure and scalable infrastructure.
+- **Scalability and security**: Get the benefit of OCI's inherent secure and scalable infrastructure.
 
 In OCI Generative AI Agents, depending on the use case, you can empower each agent with one or more of the following tools:
 
@@ -72,8 +72,6 @@ In this workshop, you will learn how to:
 
 - Create the agent and supporting resources to make our solution come alive.
 - As a financial compliance officer, have a conversation with our agent and see how it can supercharge your productivity.
-
-Some of the resources mentioned in the solution architecture were already created for you, such as the database and storage bucket with knowledge articles, so that you could focus on the most important part of the workshop—creating your first agent.
 
 ## Learn More
 

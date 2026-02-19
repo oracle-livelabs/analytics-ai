@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "Build Your Own AI Agent to Boost Productivity and Efficiency",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Overview and Highlights",
+            "filename": "../../1-overview-and-highlights/overview-and-highlights-sandbox.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Create the Agent",
+            "filename": "../../4-create-the-agent/create-the-agent-sandbox.md"
+        },
+        {
+            "title": "Lab 2: Test the solution",
+            "filename": "../../5-test-the-solution/test-the-solution-sandbox.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
