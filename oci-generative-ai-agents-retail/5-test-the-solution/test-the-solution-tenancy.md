@@ -59,7 +59,9 @@ This lab assumes you have:
 1. To start, type the following question into the message box:
 
     ```text
+    <copy>
     What are the top 5 products by number of returns?
+    </copy>
     ```
 
 2. Click the **Submit** button.
@@ -89,7 +91,9 @@ This lab assumes you have:
 9. Our next question would be:
 
     ```text
+    <copy>
     Which suppliers have the most defect-related returns?
+    </copy>
     ```
 
     Let's see if the agent will be able to figure that out...
@@ -108,7 +112,9 @@ This lab assumes you have:
 13. The agent remembers conversation context, so let's ask a follow-up question. Type:
 
     ```text
+    <copy>
     What is their status?
+    </copy>
     ```
 
 14. Click the **Submit** button.
@@ -122,7 +128,9 @@ This lab assumes you have:
 16. Next, let's look at a specific product. Type:
 
     ```text
+    <copy>
     Show me all returns for the Espresso Maker Model A and what the return reasons are.
+    </copy>
     ```
 
 17. Click the **Submit** button.
@@ -138,7 +146,9 @@ This lab assumes you have:
 19. Now let's see if we can pull up a policy document which can help us understand what to do about this. Type the following question:
 
     ```text
+    <copy>
     What does our policy say about products that exceed the critical return rate threshold?
+    </copy>
     ```
 
 20. Click the **Submit** button.
@@ -152,7 +162,9 @@ This lab assumes you have:
 22. Let's ask about supplier quality. Type:
 
     ```text
+    <copy>
     What are the criteria for putting a supplier on probation?
+    </copy>
     ```
 
 23. Click the **Submit** button.
@@ -167,7 +179,9 @@ This lab assumes you have:
 25. Now let's test the agent's ability to combine database queries with policy lookups. Type:
 
     ```text
+    <copy>
     ValueParts Manufacturing has 32 defect returns. What does our supplier quality policy say should happen to them?
+    </copy>
     ```
 
 26. Click the **Submit** button.
@@ -181,7 +195,9 @@ This lab assumes you have:
 28. Let's explore regional patterns. Type:
 
     ```text
+    <copy>
     Which region has the most shipping damage returns?
+    </copy>
     ```
 
 29. Click the **Submit** button.
@@ -195,7 +211,9 @@ This lab assumes you have:
 31. Now combine this with policy. Type:
 
     ```text
+    <copy>
     What does our regional distribution policy say about packaging requirements for the Southwest region?
+    </copy>
     ```
 
 32. Click the **Submit** button.
