@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Briefly state what the learner will accomplish (e.g., “This lab walks you through provisioning ...”).
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Time: ## minutes
+Estimated Lab Time: -- minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
@@ -20,7 +20,7 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
 This lab assumes you have:
 * An Oracle Cloud account
@@ -31,11 +31,11 @@ This lab assumes you have:
 
 ## Task 1: Concise Task Description
 
+(optional) Task 1 opening paragraph.
+
 1. Step 1
 
     ![Image alt text](images/sample1.png)
-
-    > **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
 
 2. Step 2
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 5. Example with bold **text**.
 
-    If you add another paragraph, add 4 spaces before the line.
+    If you add another paragraph, add 3 spaces before the line.
 
 ## Task 2: Concise Task Description
 
@@ -68,9 +68,9 @@ This lab assumes you have:
 
     ```
     Adding code examples
-  	Indentation is important for the code example to appear inside the step
+    Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    <copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
