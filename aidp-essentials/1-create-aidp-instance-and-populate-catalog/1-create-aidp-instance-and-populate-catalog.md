@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, creating a 26ai database, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
+This lab guides you through the process of provisioning an Oracle AI Data Platform (AIDP) Workbench instance, creating an Oracle Autonomous AI Lakehouse (ALH), creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 45 minutes
 In this lab, you will:
 
 - Provision an AIDP Workbench instance.
-- Provision a 26ai Autonomous Data Warehouse.
+- Provision a ALH.
 - Access the master catalog.
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
@@ -49,7 +49,7 @@ This lab assumes you have:
 ![Create AIDP Instance](images/create-aidp-instance.png)
 
 
-## Task 2: Provision an Autonomous Data Warehouse
+## Task 2: Provision an Autonomous AI Lakehouse
 
 1. While waiting for the AIDP Workbench to provision, select **Oracle AI Database** and then **Autonomous AI Database** from the Navigation Menu.
 
@@ -136,7 +136,7 @@ Now you'll navigate back to your AIDP Workbench instance to create an external c
 
 ![Select Master Catalog](images/name-external-catalog.png)
 
-6. Select **Oracle Autonomous Data Warehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, enter **ADMIN** for **Username**, and then enter the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
+6. Select **Oracle Autonomous AI Lakehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, enter **ADMIN** for **Username**, and then enter the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
 
 ![Select Master Catalog](images/configure-catalog-db-access.png)
 

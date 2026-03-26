@@ -97,7 +97,7 @@ Now you'll import the notebooks used to implement the three tiers of the medalli
 
 ![run silver notebooks](images/silver-notebooks.png)
 
-11. Finally run the two notebooks in the **Gold** folder. These noteboooks consolidate tables from the silver tier into a finalized gold table. This table is then loaded into the 26ai database using the external catalog you created earlier. Saving the gold tier data to this datastore allows it to be effectively leveraged for analytics workloads.
+11. Finally run the two notebooks in the **Gold** folder. These noteboooks consolidate tables from the silver tier into a finalized gold table. This table is then loaded into the Autonomous AI Lakehouse using the external catalog you created earlier. Saving the gold tier data to this datastore allows it to be effectively leveraged for analytics workloads.
 
 ![run gold notebooks.](images/gold-notebooks.png)
 

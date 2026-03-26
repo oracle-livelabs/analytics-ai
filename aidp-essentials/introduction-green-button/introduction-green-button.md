@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop walks you through the creation of a medallion architecture using the AI Data Platform (AIDP) Workbench and 26ai database. Along the way you will learn the fundamentals of working with the AIDP Workbench including concepts like the master catalog, workspaces, compute clusters, and workflows. You will also learn how to link your data to Oracle Analytics Cloud for data visualization, and how to bring data from Fusion Data Intelligence to your AIDP Workbench.
+This workshop walks you through the creation of a medallion architecture using the AI Data Platform (AIDP) Workbench and Oracle Autonomous AI Lakehouse (ALH). Along the way you will learn the fundamentals of working with the AIDP Workbench including concepts like the master catalog, workspaces, compute clusters, and workflows. You will also learn how to link your data to Oracle Analytics Cloud for data visualization, and how to bring data from Fusion Data Intelligence to your AIDP Workbench.
 
 Estimated Workshop Time: 2 hours 40 minutes
 
