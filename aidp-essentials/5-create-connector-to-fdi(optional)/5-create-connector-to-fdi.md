@@ -1,28 +1,28 @@
-# Create Connector from FAIDP to AIDP Workbench
+# Create Connector from FDI to AIDP Workbench
 
 ## Introduction
 
-In this lab you will share data from Fusion AI Data Platform (FAIDP) with Oracle AI Data Platform. Creating shares from FAIDP to AIDP allows for seamless integration of the two systems for AI and data science tasks using your FAIDP data.
+In this lab you will share data from Fusion Data Intelligence (FDI) with Oracle AI Data Platform. Creating shares from FDI to AIDP allows for seamless integration of the two systems for AI and data science tasks using your FDI data. This optional lab requires that you have access to a the admin console of an existing FDI instance.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Enable the Oracle AI Data Platform feature within FAIDP.
-* Configure a connection from FAIDP to Oracle AI Data Platform.
-* Share data from FAIDP to Oracle AI Data Platform and view it in the master catalog.
+* Enable the Oracle AI Data Platform feature within FDI.
+* Configure a connection from FDI to Oracle AI Data Platform.
+* Share data from FDI to Oracle AI Data Platform and view it in the master catalog.
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* Access to the admin console of a FAIDP instance.
-* Familiarity with the FAIDP admin console.
+* Access to the admin console of a FDI instance (you cannot create an FDI instance in the lab tenancy).
+* Familiarity with the FDI admin console.
 
-## Task 1: Enabling Oracle AI Data Platform Feature in FAIDP
+## Task 1: Enabling Oracle AI Data Platform Feature in FDI
 
-1. Begin at the admin console of your FAIDP instance. Select **Enable Features**
+1. Begin at the admin console of your FDI instance. Select **Enable Features**
 
 ![FDI Admin Console](images/access-enable-features.png)
 
@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ![Enable Feature](images/enable-feature.png)
 
-## Task 2: Creating a Connection from FAIDP to Oracle AI Data Platform
+## Task 2: Creating a Connection from FDI to Oracle AI Data Platform
 
 1. From the admin console, under the heading **Application Administration** select **Data Configuration**.
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ![go to data share page](images/access-data-share.png)
 
-6. On this page is a list of the data tables from your FAIDP instance that are available to share to external sources. Locate a table you would like to share with the AIDP Workbench. Select the actions menu and then **Edit**.
+6. On this page is a list of the data tables from your FDI instance that are available to share to external sources. Locate a table you would like to share with the AIDP Workbench. Select the actions menu and then **Edit**.
 
 ![Select a table](images/edit-target.png)
 
@@ -64,9 +64,9 @@ This lab assumes you have:
 
 ![Publish data](images/publish-data.png)
 
-9. Return to your AIDP Workbench instance. The tables shared with AIDP will appear in the master catalog, in a catalog with the name you specified when editing the connection in the FAIDP admin console. Here you can view the shared tables. After creating a share, it may take some time for the data to appear in AIDP Workbench after the share has been created.
+9. Return to your AIDP Workbench instance. The tables shared with AIDP will appear in the master catalog, in a catalog with the name you specified when editing the connection in the FDI admin console. Here you can view the shared tables. After creating a share, it may take some time for the data to appear in AIDP Workbench after the share has been created.
 
-![View FAIDP data](images/view-fusion-data-aidp.png)
+![View FDI data](images/view-fusion-data-aidp.png)
 
 
 ## Learn More
