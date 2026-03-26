@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will learn how to establish a connection between Oracle AI Data Platform Workbench and Oracle Analytics Cloud (OAC) to visualize and analyze your AIDP data in OAC.
+In this lab you will learn how to establish a connection between Oracle AI Data Platform Workbench and Oracle Analytics Cloud (OAC) to visualize and analyze your AIDP data in OAC. This optional lab requires that you have access to an OAC account which you can create the connection to, as you cannot create on in the lab tenancy.
 
 Estimated Time: 20 minutes
 
@@ -79,4 +79,4 @@ Congratulations! You have now created a connection between the **Supplier\_exter
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence
 * **Contributors** -  Farzin Barazandeh, Senior Principal Product Manager, Oracle Analytics Service Excellence
-* **Last Updated By/Date** - Miles Novotny, December 2025
+* **Last Updated By/Date** - Miles Novotny, March 2026
