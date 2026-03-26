@@ -1,9 +1,11 @@
+# Lab 1: Create the Agent
+
 ## Introduction
 
-In this lab we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform it's work effectively. Tools are resources the agent can use to perform its tasks. In our use-case, we are going to use two tools:
+In this lab, we are going to create the intelligent agent which will drive our entire solution. We will provide the agent with the required tools and knowledge bases to perform its work effectively. Tools are resources the agent can use to perform its tasks. In our use case, we are going to use two tools:
 
-- **RAG Tool** - Which will scan the knowledge articles uploaded to object storage whenever the user requires such information.
-- **SQL Tool** - Which will be able to retrieve information stored in our ADB instance relating to the ticketing system.
+- **RAG Tool** - Scans the knowledge articles uploaded to object storage whenever the user requires such information.
+- **SQL Tool** - Retrieves information stored in our Autonomous AI Database instance relating to the ticketing system.
 
 Estimated Time: 15 minutes
 
@@ -17,7 +19,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- All previous labs successfully completed.
+- Completed all previous labs successfully.
 
 ## Task 1: Create the agent
 
@@ -136,7 +138,7 @@ This lab assumes you have:
 
 1. The knowledge base will take a few minutes to create and ingest the data. You may proceed to the next step while the knowledge base provisions.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked. 
-   >💡 _If your knowledge base does not appear (“No items found”), you can still continue to the next step. The knowledge base is already selected and provisioning in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is provisioning._
+   >💡 _If your knowledge base does not appear ("No items found"), you can still continue with adding the tool (step 22). The knowledge base is already selected and being provisioned in the background. You may open a new tab and navigate to Agents > Knowledge Bases to confirm it is in progress._
 
 22. Click the **Add tool** button.
 

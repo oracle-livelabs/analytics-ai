@@ -23,16 +23,20 @@
             "filename": "./../../3-streamlit/streamlit.md"
         },        
         {
-            "title": "Lab 4: Digital Assistant",
-            "filename": "./../../4-digital-assistant/digital-assistant.md"
+            "title": "Lab 4: LangGraph",
+            "filename": "./../../4-langgraph/langgraph.md"
         },        
         {
-            "title": "Lab 5: Customize",
-            "filename": "./../../5-customize/customize.md"
+            "title": "Lab 5: Digital Assistant",
+            "filename": "./../../5-digital-assistant/digital-assistant.md"
         },        
         {
-            "title": "Lab 6: Tools",
-            "filename": "./../../6-tools/tools.md"
+            "title": "Lab 6: Customize",
+            "filename": "./../../6-customize/customize.md"
+        },        
+        {
+            "title": "Lab 7: Tools",
+            "filename": "./../../7-tools/tools.md"
         },            
         {
             "title": "Need Help",

@@ -36,9 +36,25 @@ This lab assumes you have:
    ![Screenshot showing how to create a new agent](./images/create-new-agent.jpg)
 
 1. For the **Name** field use: _customer support agent_
+      ```text
+      <copy>
+      customer support agent
+      </copy>
+      ```
 1. For the **Compartment** field, make sure that the **root** compartment is selected.
-1. For the **Description** field, use: _This agent will help streamline the work of customer support representatives_.
+1. For the **Description** field, use: _This agent will help streamline the work of customer support representatives_
+     ```text
+      <copy>
+      This agent will help streamline the work of customer support representatives
+      </copy>
+      ```
 1. For the **Welcome message** field, use: _Hello! I’m your customer support helper, how can I help?_
+      ```text
+      <copy>
+      Hello! I’m your customer support helper, how can I help?
+      </copy>
+      ```
+
 1. Click the **Next** button.
 
    ![Screenshot showing the basic information for the agent](./images/basic-agent-info.jpg)
@@ -49,7 +65,12 @@ This lab assumes you have:
 
 1. Select the **RAG** tool option.
 1. Under the **RAG Configuration** section, use _Knowledge base articles_ in the **Name** field.
-1. For the **Description** field, use: _This tool will retrieve knowledge base support articles whenever a customer support representative requires troubleshooting information to resolve a support ticket_.
+1. For the **Description** field, use: 
+     ```text
+      <copy>
+      This tool will retrieve knowledge base support articles whenever a customer support representative requires troubleshooting information to resolve a support ticket
+      </copy>
+      ```
 
    It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
 
@@ -61,6 +82,11 @@ This lab assumes you have:
    ![Screenshot showing more configuration for the RAG tool](./images/rag-tool-info-2.jpg)
 
 1. In the **New knowledge base** form, use: _Customer support knowledge base articles_ for the **Name** field.
+     ```text
+      <copy>
+      Customer support knowledge base articles
+      </copy>
+      ```
 1. Make sure that the **root** compartment is selected in the **Compartment** field.
 1. In the **Data store type** field, we will select **Object storage** to be able to retrieve information from our storage bucket.
 1. Make sure that **Enable hybrid search** is checked. Enabling this option instructs the system to combine lexical and semantic search when scanning our documents.
@@ -68,7 +94,12 @@ This lab assumes you have:
 
    ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-1.jpg)
 
-1. In the **Specify data source** form, use: _Knowledge base articles_ for the **Name** field.
+1. In the **Specify data source** form, use: _Knowledge base articles_ for the **Name** field
+     ```text
+      <copy>
+      Knowledge base articles
+      </copy>
+      ```
 1. Make sure that the **Enable multi-modal parsing** option is **not** checked. This option enable parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our knowledge articles so right now this option is not required.
 1. Under the **Data bucket** option, select the _knowledge-base-articles_ bucket into which we've previously uploaded the knowledge articles PDF files.
 1. Check the **Select all in bucket option**. This option will automatically flag all of the file in the bucket for ingestion instead of us having to select each file individually.
@@ -84,7 +115,7 @@ This lab assumes you have:
 
 1. The knowledge base will take a few minutes to create and ingest the data.
 1. Back at the **Add knowledge bases** panel, make sure that the checkbox next to the knowledge base name is checked.
-1. Click the **Create tool** button.
+1. Click the **Create tool/Add tool** button.
 
    ![Screenshot showing the end of the RAG tool configuration](./images/rag-tool-info-3.jpg)
 
@@ -94,7 +125,19 @@ This lab assumes you have:
 
 1. Click the **SQL** option.
 1. For the **Name** field, use: _Customer support database_.
-1. For the **Description** field, use: _The tables contain information about tickets created by customers as well as the customer support agents which will handle those tickets as well as the customers who reported the issues_.
+
+
+    ```text
+      <copy>
+      Customer support database
+      </copy>
+      ```
+1. For the **Description** field, use: 
+   ```text
+      <copy>
+      The tables contain information about tickets created by customers as well as the customer support agents which will handle those tickets as well as the customers who reported the issues
+      </copy>
+      ```
 
    ![Screenshot showing the initial set of the SQL tool configuration](./images/sql-tool-info-1.jpg)
 
