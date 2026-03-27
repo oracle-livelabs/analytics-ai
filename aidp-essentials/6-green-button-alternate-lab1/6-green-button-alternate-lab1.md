@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of accessing an Oracle AI Data Platform (AIDP) Workbench instance, creating a 26ai database, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
+This lab guides you through the process of accessing an Oracle AI Data Platform (AIDP) Workbench instance, creating an Autonomous AI Lakehouse (ALH), creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 45 minutes
 In this lab, you will:
 
 - Access an AIDP Workbench instance.
-- Provision a 26ai Autonomous Data Warehouse.
+- Provision an Autonomous AI Lakehouse.
 - Access the master catalog.
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
@@ -41,7 +41,7 @@ This lab assumes you have:
 
 ![Select AIDP instance](images/select-aidp-instance.png)
 
-## Task 2: Provision an Autonomous Data Warehouse
+## Task 2: Provision an Autonomous AI Lakehouse
 
 1. Before continuing in the AIDP Data Platform Workbench, you need to create a database that you will connect to it. Return to the OCI console tab and select **Oracle AI Database** and then **Autonomous AI Database** from the Navigation Menu.
 
