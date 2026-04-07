@@ -195,7 +195,7 @@ A standard catalog in AIDP stores AI-related artifacts — volumes, tables, sche
 
 A volume stores unstructured data — files, documents, images — within a catalog. The volume for this workshop contains the internal release playbooks and strategy documents that the RAG tool will search.
 
-1. First off, [Click Here](https://github.com/enschilling/workshop-dev/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/kb_documents.zip) to download the Zip file containing all the sample docs required for this workshop.
+1. First off, [Click Here](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/kb_documents.zip) to download the Zip file containing all the sample docs required for this workshop.
 
 2. Unzip the file; you should have 3 `.docx` files pertaining to the Knowledge Base components that will be built here in Lab 1.
 
