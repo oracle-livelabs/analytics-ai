@@ -8,7 +8,7 @@
         },
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Setup",
@@ -20,7 +20,7 @@
         },
           {
             "title": "Need Help?",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
