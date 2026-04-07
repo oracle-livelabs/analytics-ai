@@ -6,7 +6,7 @@ Over the course of this workshop, you went from a blank canvas to a production-d
 
 **Estimated Time:** 5 Minutes
 
-### What You Built
+### Objectives - What You Built
 
 In four labs, you designed, configured, tested, and deployed a **Release & Performance Analyst Agent** — an AI-powered assistant that answers natural language questions about movie and TV show performance by combining two capabilities:
 

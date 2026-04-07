@@ -38,7 +38,7 @@ The Playground is a built-in testing environment where you can create sessions a
 
 3. You can widen the chat session windown by clicking on the vertical divider, holding the mouse button down and moving the cursor to the right. 
 
-    ![Widen the chat window](images/3-chat-wide.png " ")
+    ![Widen the chat window](images/03-chat-wide.png " ")
 
 ## Task 2: Test Box Office Performance — Multi-Title Query
 

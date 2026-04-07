@@ -64,7 +64,7 @@ The agent node is the core of your flow. It defines the LLM model, the system in
 
 2. Click the *Agent Name* and *Agent Description* in the drawer window to edit both. Assign more detailed values.
 
-   ![Change the agent flow name](images/2-agent-flows-change-name.png " ")
+    ![Change the agent flow name](images/02-agent-flows-change-name.png " ")
 
     **Name**
     ```
@@ -73,7 +73,7 @@ The agent node is the core of your flow. It defines the LLM model, the system in
     </copy>
     ```
 
-   ![Change the agent flow description](images/2-agent-flows-change-description.png " ")
+    ![Change the agent flow description](images/02-agent-flows-change-description.png " ")
     
     **Description**
     ```
@@ -84,15 +84,15 @@ The agent node is the core of your flow. It defines the LLM model, the system in
 
 3. In the **Configuration** tab, set the following:
 
-   **Region**
+    **Region**
 
-   For the **Region**, select the region corresponding to the **Generative AI Endpoint Region** in the **View Login Info**: 
+    For the **Region**, select the region corresponding to the **Generative AI Endpoint Region** in the **View Login Info**: 
 
-   ![Select Generative AI Endpoint Region](images/2-agent-flows-select-llm-region.png " ")
+    ![Select Generative AI Endpoint Region](images/02-agent-flows-select-llm-region.png " ")
 
-   **Model** 
+    **Model** 
 
-   Select ```xai.grok-4-fast-reasoning```
+    Select ```xai.grok-4-fast-reasoning```
 
 
 4. For the **Agent Instructions** field, you'll need the detailed instructions that define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:

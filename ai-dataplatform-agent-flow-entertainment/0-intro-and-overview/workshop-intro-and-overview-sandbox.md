@@ -58,6 +58,8 @@ Here's how the pieces come together across the labs:
 | **ROI (Return on Investment)** | In this workshop context, the ratio of attributed revenue to marketing spend for a campaign or title — a key metric the agent computes via SQL tools. |
 | **Completion Rate** | A streaming metric measuring the percentage of viewers who finish watching a title — defined in the internal playbook and queried via the agent's streaming SQL tool. |
 
+**Estimated Time:** 60 minutes
+
 ### Objectives
 
 By the end of this workshop, you will be able to:
