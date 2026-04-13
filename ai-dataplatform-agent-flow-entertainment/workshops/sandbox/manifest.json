@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "AIDP - Release & Performance Analyst Agent for the Entertainment Industry",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Workshop Introduction and Overview",
+            "filename": "../../0-intro-and-overview/workshop-intro-and-overview-sandbox.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Configure the Data environment",
+            "filename": "../../1-data-environment-setup/1-data-environment-setup.md"
+        },
+        {
+            "title": "Lab 2: Set Up the Agent Flow",
+            "filename": "../../2-agent-flow-setup/2-agent-flow-setup.md"
+        },
+        {
+            "title": "Lab 3: Validate the Agent Functionality",
+            "filename": "../../3-validate-agent-flow/3-validate-agent-flow.md"
+        },
+        {
+            "title": "Lab 4: Deploying the Agent",
+            "filename": "../../4-agent-deployment/4-deployment.md"
+        },
+        {
+            "title": "Workshop recap",
+            "filename": "../../99-workshop-recap/workshop-recap.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
