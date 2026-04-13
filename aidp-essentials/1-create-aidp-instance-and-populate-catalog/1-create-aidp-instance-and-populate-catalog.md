@@ -52,6 +52,7 @@ This lab assumes you have:
 ## Task 2: Provision an Autonomous AI Lakehouse
 
 1. While waiting for the AIDP Workbench to provision, select **Oracle AI Database** and then **Autonomous AI Database** from the Navigation Menu.
+    > **Note:** An Autonomous AI Lakehouse may be provisioned for you at the same time your AIDP Workbench is provisioned. If that is the case, you can skip steps 1-5 and use that database instead.
 
     ![Navigate to Automonous Database page](images/navigate-to-dbs.png)
 
