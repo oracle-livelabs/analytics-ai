@@ -9,8 +9,8 @@ Estimated Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Create data filters in the Semantic Modeler.
-* Create a Workbook to verify the filters.
+* Create a Data Set from a File
+* Enrich and Transform the dataset
 * Use Developer tools to analyze the queries.
 
 ### Prerequisites 
@@ -19,57 +19,36 @@ This lab assumes you have:
 * Working knowledge of the Semantic Modeler
 * Modeled a few tables to apply the Row-Level Security
 
-## Task 1:  Create a Data Filter on the Countries Table
+## Task 1:  Create a Data Set from a File
 
-In this scenario there are three tables:- Countries, Customers and Sales modeled in the Semantic Modeler. The goal is to apply data filters such that each user can only view Sales amounts applicable to their specific country/region. The regions were defined in Lab 1 in the User Responsibilities security table.
+In this step you shall load a file data set provided here **Sales Data for AI** from your local machine into the OAC.
 
-1. Review the joins of the 3 tables.
+1. Navigate to **Create** menu then **Dataset**.
 
-	![Verify Joins](images/verifyjoins.png)
+	![Create](images/builddataset1.png)
 
 	> **Note:** The **COUNTRIES** table is secured.  It is also secured with a join to the **SALES** table. The **COUNTRY ISO CODE** values are used to filter the data returned to an Oracle Analytics query.
 
-2. Navigate to **Presentation Layer** , double click **Countries** table, click **Data Filters**.
+2. Click Upward Arrow **Drop data file here or click to browse** then select the file
 
-  ![Open Countries Table](images/configsecurity1.png)
+  ![Upload File](images/builddataset2.png)
 
-3. Under **Add** search for the **CountryRole** that was created in **Lab 3**.
+3. Verify the correct tab is loaded then **Click** OK
 
- ![Search Application Role](images/configsecurity2.png)
+ ![Verify File](images/builddataset3.png)
 
-4. Click **CountryRole**, then **f(x)** and Open Expression Editor and enter below code.
+ > **Note:** The page opens to the Dataset Editor pane which shows quality insigght tile for each column, dataset table page tabs and toggle buttons at the bottom.  
 
-     ```
-      <copy>
-      Country Iso Code =VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES)
-      </copy>
-     ```
-     
-5. Click **Validate** and then **Save**. 
+       
+## Task 2:  Enrich and Transform the dataset
 
- ![Validate Expression](images/configsecurity3.png)
+In this task we will discover the powerful data enrichment and transformation capabilities such as recommendations, auto column naming and etc. You'll ensure the data is clean, well-structured and uses business friendly names so the AI can easily understand it to improve accuracy.
 
-   > **Note:** A data filter is created on the **Countries** table to restrict what rows are returned to the user.  
+1. Click **Sales Data for AI** tab to navigate to the transform editor.
 
-  ![Verify Data Filter](images/configsecurity8.png)
+ ![Dataset Editor](images/builddataset4.png)
 
-## Task 2:  Create a Data Filter on the Sales Table
-
-In case the user does not choose the **Countries** table for the analysis, the **Sales** table needs to be filtered so sales totals are displayed only for the countries the user is permitted to see. The appropriate joins to the **Countries** table are added to the filter.
-
-1. Navigate to **Presentation Layer** , double click **Sales** table, click **Data Filters**.
-
-  ![Open Sales Table](images/configsecurity4.png)
-
-2. Add the below using the expression builder:
-
-    - Click **Sales** table -> **Cust ID** then Type (=)
-    - Click **Customers** table -> **Cust ID** then Click AND
-    - Click **Customers** table -> **Country ID** then Type (=)
-    - Click **Countries** table -> **Country ID** then Click AND 
-    - Click **Countries** table -> **Country ISO CODE** then Type (=)
-
-    **Enter** VALUEOF(NQ_SESSION.USER_RESPONSIBILITIES)
+2. From the Add the below using the expression builder:
 
  ![Validate Expression Filter](images/configsecurity5.png)
 
