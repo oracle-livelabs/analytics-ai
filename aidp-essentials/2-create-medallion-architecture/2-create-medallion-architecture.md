@@ -79,7 +79,7 @@ Now you'll import the notebooks used to implement the three tiers of the medalli
 
 4. Repeat the same process for the **Silver** and **Gold** folders. Upload **2\_silver\_transformation**, **3\_silver\_transformation\_continent**, and **4\_silver\_transformation\_summary** into the **Silver** folder. Upload **5\_gold\_join** and **6\_gold\_job\_into\_DB** into the **Gold** folder.
 
-5. Open the **Bronze** folder. Select the **create\_bronze\_tier** file to open it in the notebook interface.
+5. Open the **Bronze** folder. Select the **1\_Create\_Bronze\_Tier** file to open it in the notebook interface.
 
     ![open file](images/open-notebook.png)
 
@@ -101,7 +101,7 @@ Now you'll import the notebooks used to implement the three tiers of the medalli
 
     ![run gold notebooks.](images/gold-notebooks.png)
 
-9. Navigate to the master catalog to view the catalogs created by the notebook code. Notice that the bronze, silver, and gold tier catalogs are created and populated in the master catalog.
+9. Navigate to the master catalog to view the catalogs created by the notebook code. Notice that the bronze, silver, and gold tier catalogs are created and populated in the master catalog. Additionally, the **supplier_external_26ai** Catalog is now populated with a table for the gold tier.
 
     ![view catalogs](images/catalogs.png)
 

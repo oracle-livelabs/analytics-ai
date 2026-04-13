@@ -10,7 +10,7 @@ Estimated Workshop Time: 2 hours 40 minutes
 
 In this workshop, you will learn how to:
 * Access an AI Data Platform Workbench instance.
-* Load data into and access external data from the master catalog.
+* Load data into and access external databases from the master catalog.
 * From the notebook interface create a medallion architecture using data from the master catalog.
 * Create and schedule jobs from the Workflows tab.
 * Connect the AIDP Workbench to Oracle Analytics Cloud for data visualization.
@@ -20,7 +20,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 * Intermediate knowledge of OCI preferred
-* Must have your own Fusion Data Intelligence instance for the optional 5th lab.
+* Must have your own Oracle Analytics Cloud and Fusion Data Intelligence instances for the optional 4th and 5th labs.
 
 
 ## Learn More
@@ -32,4 +32,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence
 * **Contributors** -  Farzin Barazandeh, Senior Principal Product Manager, Oracle Analytics Service Excellence
-* **Last Updated By/Date** - Miles Novotny, March 2026
+* **Last Updated By/Date** - Miles Novotny, April 2026

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab guides you through the process of accessing an Oracle AI Data Platform (AIDP) Workbench instance, creating an Autonomous AI Lakehouse (ALH), creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
+This lab guides you through the process of accessing an Oracle AI Data Platform (AIDP) Workbench instance, accessing the Autonomous AI Lakehouse (ALH) created alongside the AIDP Workbench, creating catalogs, and managing data within those catalogs. You'll learn how to set up access to your data and organize it for future use in notebooks and jobs.
 
 Estimated Time: 45 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 45 minutes
 In this lab, you will:
 
 - Access an AIDP Workbench instance.
-- Provision an Autonomous AI Lakehouse.
+- Access Autonomous AI Lakehouse.
 - Access the master catalog.
 - Create internal and external catalogs.
 - Manage data by creating schemas, tables, and volumes.
@@ -23,15 +23,13 @@ This lab assumes you have:
 - An Oracle Cloud account.
 - The necessary permissions to create and manage AIDP Workbench instances.
 
-## Task 1: Access Your AIDP Workbench Instance
+## Task 1: Access AIDP Workbench Instance and Add Yourself to the Admin Role
 
 1. Log in to your Oracle Cloud Infrastructure (OCI) account and access the OCI Console.
 
 2. From the OCI Console homepage, select the Navigation Menu, navigate to **Analytics and AI**, and select **AI Data Platform Workbench**.
 
-    > **Note:** If you do not see **AI Data Platform Workbench** available from the menu, change your region to **Sao Paulo**
-
-    ![Accessing AIDP Workbench area in OCI](images/oci-console-access-aidp.png)
+    ![Accessing AIDP Workbench area in OCI](images/navigate-aidp.png)
 
 3. Navigate to the compartment that was assignd to your reservation. Select the arrow under **Compartment**. Expand the root compartment then the **Livelabs** compartment. Select the compartment name you were assigned from the list. You can find your assigned compartment in the **Tenancy Information** section of your reservations information.
 
@@ -41,104 +39,64 @@ This lab assumes you have:
 
     ![Select AIDP instance](images/select-aidp-instance.png)
 
-## Task 2: Provision an Autonomous AI Lakehouse
+5. You are brought to the AIDP Workbench homepage. Before you can do anything, you first need to add yourself to the admin role. Select the **Roles** tab. 
 
-1. Before continuing in the AIDP Data Platform Workbench, you need to create a database that you will connect to it. Return to the OCI console tab and select **Oracle AI Database** and then **Autonomous AI Database** from the Navigation Menu.
+    ![select roles](images/access-roles.png)
 
-    ![Navigate to Automonous Database page](images/navigate-to-dbs.png)
+6. Select the **AI\_DATA\_PLATFORM\_ADMIN** role.
 
-2. Select **Create Autonomous AI Database**.
+    ![select admin role](images/choose-admin-role.png)
 
-    ![Begin Database creation](images/begin-db-creation.png)
+7. Navigate to the **Members** tab then select the plus icon. 
 
-3. Provide a Display name and Database name. Leave the **Workload type** as **Lakehouse**.
+    ![navigate to members](images/access-admin-members.png)
 
-    ![Name database and choose workload](images/name-database.png)
+8. Under **Compartment** select the root compartment, **oaccommunity3**. For **Domain** select **Default**. You will see a list of users appear. Select your user, leave all other selections as is, and select **Create**. 
 
-4. Under **Database version** select **26ai**. Deselect **Compute auto scaling**.
+    ![add user to admin role](images/add-user-as-admin.png)
 
-    ![Choose DB version](images/choose-db-version.png)
+9. You will see your username populate on the **Members** tab. You are now a part of the admin group. Select the **Home** icon to return to the homepage.
+    > **Note:** It is generally bad practice for a user to grant themselves permissons in this way, but is required for this lab setup.
 
-5. Enter a strong password for the admin credentials, leave all other fields as is, and then select **Create**.
-
-    ![Choose DB password](images/create-db-password.png)
-
-6. When the database is finished provisioning, select **Database connection**.
-
-    ![Navigate to database connection](images/access-db-connection.png)
-
-7. Select **Download Wallet**. Provide a password for the wallet, then select **Download**.
-
-    ![Download wallet](images/choose-wallet-password.png)
-
-8. The final step of this task is to configure table access for the **ADMIN** user. Under **Database actions** select **SQL**.
-
-    ![Select SQL database action](images/database-actions.png)
-
-9. In the SQL worksheet, add in the following command and run the statement. This statement allows the **ADMIN** user to select from any table in the DB.
-
-    ```
-      <copy>
-      GRANT SELECT ANY TABLE TO ADMIN;
-      </copy>
-      ```
-
-    ![Run SQL statement](images/grant-select.png)
-
-10. Replace the previous statement with the following one and run it as well. This statement defines a database table that we will write gold tier data to as part of the medallion architecture.
-
-    ```
-      <copy>
-      CREATE TABLE gold_supplier_feedback (
-          supplier_name VARCHAR(100),
-          continent VARCHAR(100),
-          country VARCHAR(100),
-          city VARCHAR(100),
-          summary_review VARCHAR(1000),
-          rating VARCHAR(10)
-      );
-      </copy>
-      ```
-
-    ![Create database table](images/create-gold-table.png)
+    ![return home](images/return-home.png)
 
 
-## Task 3: Create an External Catalog in AIDP Workbench
+## Task 2: Access Autonomous AI Lakehouse Through an External Catalog
 
-Now you'll navigate back to your AIDP Workbench instance to create an external catalog.
+1. For this lab you will need an Autonomous AI lakehouse database. Luckily, AIDP Workbench creates spins one up for you when it is created. To access it, navigate to the **Master Catalog**. 
+    > **Note:** This database is also accessible from the OCI console. From the navigator select **Oracle AI Database** then **Autonomous AI Database**.
 
-1. Select the Navigation Menu then **Analytics and AI** and **AI Data Platform Workbench**
+    ![select master catalog](images/select-master-catalog.png)
 
-    ![Navigate to AIDP Section](images/oci-console-access-aidp.png)
+2. On the Master Catalog tab, select the **vectordb26ai** catalog
 
-2. Select the AIDP Workbench instance you created earlier. Sign in with the same credentials you use to login to OCI.
+    ![select catalog](images/choose-catalog.png)
 
-    ![Select AIDP Instance](images/access-aidp-instance.png)
+3. Select the **Details** tab. This catalog connects to the Autonomous AI Lakehouse that our AIDP Workbench created for us, which you can confirm by looking at the details. Any data stored in this catalog will be stored in the underlying ALH.
 
-3. Your first step in the AIDP Workbench will be to connect to your data. From the AIDP Workbench homepage, select the **Master catalog** tab from the left-hand menu. Notice that the default catalog is already present here. Expand the default catalog and the **oci\_ai\_models** folder to see LLMs that are available for use in AIDP Workbench.
+    ![Show catalog details](images/catalog-details.png)
 
-    ![Select Master Catalog](images/view-genai-models.png)
+4. Select the **Actions** menu then **Rename Catalog**. Change its name to **supplier\_external\_26ai**.
+
+    ![rename catalog](images/rename.png)
+
+5. Select the Master Catalog breadcrumb to return to it.
+
+    ![Select SQL database action](images/breadcrumb.png)
+
+6. If you needed to connect to an already existing database, you could do so by selecting **Create Catalog** then selecting **External** for **Catalog type**. This opens the dialog to define the connection to the external database. Select **Cancel**.
+
+    ![create catalog](images/create-catalog2.png)
+
+    ![create external dialog](images/external-dialog.png)
+
+7. Large Language Models that you will use later are also accessible through the Master Catalog. You can view the available foundational models by expanding the **default** catlog and the **oci\_ai\_models** schema. 
+    ![show models](images/show-models.png)
 
 
-4. Create your first catalog by choosing **Create Catalog**.
+## Task 3: Create and Populate a Standard Catalog in AIDP Workbench
 
-    ![Select Master Catalog](images/create-catalog.png)
-
-5. Enter the Catalog Name **supplier\_external\_26ai** and select **External Catalog** for **Catalog type**.
-
-    ![Select Master Catalog](images/name-external-catalog.png)
-
-6. Select **Oracle Autonomous Data Warehouse** as the source type. Upload the wallet file you downloaded in the previous task. Select the low option for **Service Level**, enter **ADMIN** for **Username**, and then enter the password you created under **Password**. Leave all other sections as is. Select **Test connection** then **Create**.
-
-    ![Select Master Catalog](images/configure-catalog-db-access.png)
-
-7. When creation of the catalog is complete, expand the **admin** database to see the available tables. You will use this connection to save your gold tier data to this database.
-
-    ![View DB tables](images/view-external-catalog.png)
-
-## Task 4: Create and Populate a Standard Catalog in AIDP Workbench
-
-Next you will create a standard catalog
+Next you will create a standard catalog. Data in a standard catalog is stored with the AIDP Workbench in OCI, as opposed to an external database.
 
 1. Use the breadcrumb menu to return to the master catalog if you are not already there. Select **Create catalog**.
 
@@ -168,11 +126,11 @@ Next you will create a standard catalog
 
     ![Create table](images/create-table-clicks.png)
 
-8. Keep the **Table type** as **Managed**. Upload the **basic\_supplier.csv** file. Select **Preview data** and then **Create**. You can download the **basic\_supplier.csv** file and all other lab files at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip).
+8. Keep the **Table type** as **Managed**. Upload the **basic\_supplier.csv** file. Select **Preview data** and then **Create**. You can download the **basic\_supplier.csv** file and all other lab files at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip). This table is now viewable by selecting **Tables**.
 
     ![create table](images/create-basic-supplier.png)
 
-9. Create another managed table, using the **supplier\_emotions.csv** file.
+9. Create another managed table, using the **supplier\_emotions.csv** file. Be sure to select **Preview** before creating the table.
 
     ![create emotions table](images/create-supplier-emotions-table.png)
 
@@ -184,7 +142,7 @@ Next you will create a standard catalog
 
     ![set as managed volume](images/create-supplier-volume.png)
 
-12. Select the **Volumes** tab and then the **Supplier\_Volume** volume you just created.
+12. Select the **Volumes** tab and then the **supplier\_volume** volume you just created.
 
     ![select volume](images/access-supplier-volume.png)
 
