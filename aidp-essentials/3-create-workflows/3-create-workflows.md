@@ -32,7 +32,7 @@ You would like your medallion notebooks to run on a schedule so that new data ad
 
     ![name workflow](images/create-workflow.png)
 
-3. You are brought to the job editor where you can define the jobs that make up your task. The first task is already open. Enter the task name **Bronze\_1**. For **Task type** select **Notebook task**. Select **Browse** and navigate to the **Bronze** folder to select the **create\_bronze\_tier** file. For **Cluster** select **Medallion\_Compute**.
+3. You are brought to the job editor where you can define the jobs that make up your task. The first task is already open. Enter the task name **Bronze\_1**. For **Task type** select **Notebook task**. Select **Browse** and navigate to the **Bronze** folder to select the **1_Create\_Bronze\_Tier** file. For **Cluster** select **Medallion\_Compute**.
 
     ![create first task](images/bronze-task-details.png)
 
@@ -44,11 +44,11 @@ You would like your medallion notebooks to run on a schedule so that new data ad
 
     ![create silver workflow](images/create-silver-workflow.png)
 
-7. Create a first task called **Silver\_1** in the same way you did for the bronze job, this time using the **2\_silver\_transformation** notebook.
+7. Create a first task called **Silver\_1** in the same way you did for the bronze job, this time using the **2\_Silver\_Transformation** notebook.
 
     ![create silver task 1](images/silver-task-1.png)
 
-8. Create a second task by selecting **Add task**. Name this one **Silver\_2** and make it in the same way using the **3\_silver\_transformation\_continent** notebook.
+8. Create a second task by selecting **Add task**. Name this one **Silver\_2** and make it in the same way using the **3\_Silver\_Transformation\_Continent** notebook.
 
     ![create second silver task](images/silver-add-task.png)
 
@@ -56,7 +56,7 @@ You would like your medallion notebooks to run on a schedule so that new data ad
 
     ![depends on](images/silver-depends.png)
 
-8. Create a 3rd and final task for this workflow. Make it a notebook task to run the **4\_silver\_transformation\_summery** notebook. Make sure that it is dependent on the 2nd task.
+8. Create a 3rd and final task for this workflow. Make it a notebook task to run the **4\_Silver\_Transformation\_Summery** notebook. Make sure that it is dependent on the 2nd task.
 
     ![create third task](images/silver-3-details.png)
 

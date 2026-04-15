@@ -10,11 +10,11 @@ Estimated Workshop Time: 2 hours 40 minutes
 
 In this workshop, you will learn how to:
 * Provision an AI Data Platform Workbench instance.
-* Load data into and access external data from the master catalog.
+* Load data into and access external databases from the master catalog.
 * From the notebook interface create a medallion architecture using data from the master catalog.
 * Create and schedule jobs from the Workflows tab.
 * Connect the AIDP Workbench to Oracle Analytics Cloud for data visualization.
-* Connect Fusion Data Intelligence to your AI Data Platform for data sharing.
+* Connect Fusion Data Intelligence to your AI Data Platform Workbench for data sharing.
 
 ### Prerequisites (Optional)
 
