@@ -9,33 +9,61 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Create a custom role in OAC.
-* Add DV Content Author role to the custom role.
-* Add users or groups to the application role.
-* Validate User's assigned application roles.
+* Create the AI Agent with a dataset
+* Create the AI Agent with a Semantic Modeler(subject area)
+* 
 
 ### Prerequisites
 
 This lab assumes you have:
-* Users and groups already created in the IDCS.
+* Optionally a working semantic model/rpd
 * All previous labs successfully completed.
 
 
-## Task 1: Create a Custom Application Role
+## Task 1: Create the AI Agent with a dataset
+In this task we will create the Sales AI Agent using the dataset build in Lab 1. We will add Supplemental Instructions to guide the agent's default behavior, First Message to introduce the agent, set context or clarify capabilities and lastly upload a corporate document to guid the agent responses.
 
+1. Navigate to the **Homepage**, **Click** AI Agent
 
-1. Navigate to the **Console**.
+	 ![Home Page Navigation](images/createaiagent1.png) 
 
-	 ![Home Page Navigation](images/sample2.png) click **Navigation**.	
+2. Select the **Sales Data for AI**, then  **Add to Agent**.
 
-2. Click **Console**, then  **Roles and Permissions**.
+  ![Add Dataset](images/createaiagent2.png)
 
-  ![Console Menu](images/approle1.png)
+3. Under **Supplemental Instructions** Add below
 
-3. Click **Application Roles** then **Create Application Role**.
+   ```
+    <copy>
+    You are a senior sales strategy analyst advising executive leadership.
+	
+	  Focus on Orders, Sales, Discounts, Region, and Profit, and synthesize insights into clear business narratives. 
+	  Explain not just what is happening, but why it is happening, highlighting key drivers, trends, and deviations.
+	
+	  Identify risks and opportunities by calling out underperformance, margin erosion due to discounting, and high-performing regions or segments. 
+	  Always provide comparative context across time periods, regions, and product segments to frame performance.
+	
+    Deliver concise, insight-driven responses with a strong emphasis on implications and recommended actions to improve revenue growth and profitability.
 
-  ![Image alt text](images/approle3.png)
+    </copy> 
+   ```
 
+4. Under **First Message** add below
+
+   ```
+    <copy>  
+   Hello, I’m your Sales Performance Analyst. You can ask me about sales trends, regional performance, discount impact, or profitability and I’ll provide insights along with recommended actions.
+
+    </copy>
+   ``` 
+
+4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
+
+  ![Create Application Role](images/approle2.png)
+
+4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
+
+  ![Create Application Role](images/approle2.png)
 
 4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
 
