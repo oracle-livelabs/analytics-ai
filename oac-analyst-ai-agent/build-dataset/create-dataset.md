@@ -11,7 +11,7 @@ Estimated Time: 20 minutes
 In this lab, you will:
 * Create a Dataset from a File
 * Enrich and Transform the Dataset using AI Assistant
-* Make the Dataset avaialble for AI Assistant
+* Make the Dataset available for AI Assistant
 
 
 ### Prerequisites 
@@ -80,7 +80,7 @@ In this task we will discover the powerful data enrichment and transformation ca
   ![New Column Names](images/builddataset10.png)
 
 
-## Task 3:  Make the Dataset avaialble for AI Assistant
+## Task 3:  Make the Dataset available for AI Assistant
 
 In this step you shall index a dataset to make its data attributes available to Oracle Analytics AI Assistant within workbooks or from your home page. You can index all or some of the dataset's attributes and apply synonyms to make the attributes easier to search.
 

@@ -9,69 +9,79 @@ Estimated Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Create an Initialization Block.
-* Configure the Session variable.
+* Access the AI Agent UI
+* Chat with the AI Agent
 
 ### Prerequisites
 
 This lab assumes you have:
-* A working Semantic Modeler
-* Created Database connection
+* Completed all prior labs
 
 
-## Task 1: Create the Initialization Block
+## Task 1: Access the AI Agent UI
+In this task we will explore different ways to access the Sales AI Agent UI so that we can start asking business questions
 
-1. Navigate to **Semantic Models**, then click the Semantic Model to open it.
+1. **Click** Navigator from the Home page, then Catalog.
 
-	![Semantic Models](images/smodel1.png)
+	![Open Agent](images/chatwithagent1.png)
 
-2. Navigate to **Physical Layer**, click the **Database**, **Connection Pool** and verify the second connection pool exists, if not click the **+** to add.
+2. Locate the folder in which the AI Agent is Saved, then **Click** Actions menu and Open in a New Tab 
 
-  ![Connection Pool](images/smodel2.png)
+  ![Catalog](images/chatwithagent2.png)
 
-   > **Note:** For initialization blocks you need a separate connection pool. 
+3. Alternatively, on the Home Page, **Scroll** until you see the AI Agents folder, then **Click** Actions to Open the AI Agent.
 
-3. Navigate to **Variables** tab, click Create Initialization Block **+**. 
+	![Open Agent Home](images/chatwithagent3.png)
 
-  ![Init Block](images/smodel3.png)
+   > **Note:** You can customize your home page layout so that it is easier to find objects using the **Page Menu** -> **Customize Layout** 
 
-4. Enter **Name**, and under **Type** select **Session**. 
+  ![Customize Layout](images/chatwithagent4.png)
 
-  ![Add Variable](images/smodel4.png)
+4. The last/easiest method is to use the **Home Page** Search to find the AI Agent. Under **AI** Click AI Agent
 
-   > **Note:** Once you **Save**, the Initialization block opens the **Variables** tab.
+	![Open Agent Search](images/chatwithagent5.png)
+  
 
 
-## Task 2: Configure the Session Variable
+## Task 2: Chat with the AI Agent
+In this task, you will interact directly with the AI agent using natural language to explore your data. By asking business-focused questions, you’ll receive instant insights, visualizations, and explanations without building reports manually. We will test the Agent's capabilities like basic understanding of facts, critical reasoning, ability to follow business rules and solution recommendations.This demonstrates how analytics becomes conversational, enabling faster and more intuitive decision-making.
 
-1. Navigate to **Variables** tab, click **CountyDataSec** Initialization Block , then **Variables**.
+1. **Validate** Basic Understanding. "Break down orders, sales, and profit by region"
 
-  ![Session Variable](images/smodel5.png)
+  ![Validate Facts](images/chatwithagent6.png)
 
-2. Paste below query in the Select Statement pane:
+  > **Note:** At any time you can clear the Agent history by clicking the Delete icon on the right corner. Verify the response against your Dataset e.g Chicago Order 10081, Profit is $236.7 and Sales is $1846.4.
 
-    ```
-    <copy>
-    SELECT DISTINCT 'USER_RESPONSIBILITIES', COUNTRY_ISO_CODE FROM USER_RESPONSIBILITIES WHERE UPPER(USER_NAME) = UPPER(':USER')
-    </copy>
-    ```
-3. Under **Query Returns** select **Variable names and values**. 
+   ![Validate Facts](images/chatwithagent7.png)
 
-  ![Variable Values](images/smodel6.png)
+2. **Click** Additional Insights.The Agent generated insighful infor such as Top and Bottom 3 Cities. The Agent also created additional visualizations breaking down Sales Revenue by City, Sales Revenue by Order Identifier and etc.
 
-4. Select **Connection Pool** to configure. 
+  ![More Insights](images/chatwithagent8.png)
 
-  ![Verify Connection Pool](images/smodel7.png)  
+3. **Hoover** your mouse on the visualization to access options such as **Export, Add to Watchlist and Maximize Visualization**
 
-5. Click **+**, Detail View tab, enter Name **USER_RESPONSIBILITIES** , click **fx** Enter ('99') and **check** Enable any user to set the value. 
+  ![Explore Options](images/chatwithagent9.png)
 
-  ![Default Variable Value](images/smodel8.png)  
+4. **Validate** Critical reasoning and understanding of relationships across dimensions."How does order priority influence shipping choices and associated costs"
 
-6. Click **Save**.
+  ![Reasoning](images/chatwithagent11.png)
 
-7. The new session variable is listed under **Variables**.
+ > **Note:** The Agent generated a comparison of shipping methods by priority and impact on costs
 
-  ![Verify Variable Location](images/smodel9.png)  
+5. **Validate** The ability to follow business rules, RAG, docs to prove it's a trusted enterprise agent. "Highlight sales with excessive discounts"
+
+  ![Document Knowledge](images/chatwithagent12.png)
+
+> **Note:** The Agent used the sales discount document we uploaded to verify if the discount exceeds policy or not. If you don't see expected results this is where adding semantic descriptions work to help your AI Agent correctly interpret and explain discount behavior.
+
+6. **Validate** the ability to recommend solutions whilst adhering to corporate policy. "How can we improve profitability while staying within policy?"
+
+  ![Recommendations](images/chatwithagent13.png)
+
+ > **Note:** The Agent generated a response based on built-in knowledge and also tied it our sales discount policy
+
+
+
 
 You may now **proceed to the next lab.**
 

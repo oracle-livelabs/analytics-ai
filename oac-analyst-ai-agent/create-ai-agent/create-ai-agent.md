@@ -11,7 +11,7 @@ Estimated Time: 10 minutes
 In this lab, you will:
 * Create the AI Agent with a dataset
 * Create the AI Agent with a Semantic Modeler(subject area)
-* 
+
 
 ### Prerequisites
 
@@ -31,85 +31,91 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
   ![Add Dataset](images/createaiagent2.png)
 
-3. Under **Supplemental Instructions** Add below
+3. Verify the Dataset
+
+  ![Verify Dataset](images/createaiagent3.png)
+
+4. **Navigate** to Sales Data for AI tab to select or deselect which attributes to use in the Agent 
+
+  ![Verify Attributes](images/createaiagent10.png)
+
+5. **Navigate** to Configuration tab, Under **Supplemental Instructions** Add below
 
    ```
     <copy>
     You are a senior sales strategy analyst advising executive leadership.
-	
-	  Focus on Orders, Sales, Discounts, Region, and Profit, and synthesize insights into clear business narratives. 
-	  Explain not just what is happening, but why it is happening, highlighting key drivers, trends, and deviations.
-	
-	  Identify risks and opportunities by calling out underperformance, margin erosion due to discounting, and high-performing regions or segments. 
-	  Always provide comparative context across time periods, regions, and product segments to frame performance.
-	
+    Focus on Orders, Sales, Discounts, Region, and Profit, and synthesize insights into clear business narratives.
+    Explain not just what is happening, but why it is happening, highlighting key drivers, trends, and deviations.
+    Identify risks and opportunities by calling out underperformance, margin erosion due to discounting, and high-performing regions or segments.
+    Always provide comparative context across time periods, regions, and product segments to frame performance.
     Deliver concise, insight-driven responses with a strong emphasis on implications and recommended actions to improve revenue growth and profitability.
+
 
     </copy> 
    ```
 
-4. Under **First Message** add below
+6. Under **First Message** add below
 
    ```
     <copy>  
-   Hello, I’m your Sales Performance Analyst. You can ask me about sales trends, regional performance, discount impact, or profitability and I’ll provide insights along with recommended actions.
+    Hello, I’m your Sales Performance Analyst.
+    You can ask me about sales trends, regional performance, discount impact, or profitability and I’ll provide insights along with recommended actions.
 
     </copy>
    ``` 
 
-4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
+7. **Click** Save
 
-  ![Create Application Role](images/approle2.png)
+  ![Save Agent](images/createaiagent4.png)
 
-4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
+8. **Upload**  a Sales Discount Policy document, then **Click** Save
 
-  ![Create Application Role](images/approle2.png)
+  ![Upload Document](images/createaiagent5.png) 
 
-4. In the dialog box enter **Name** and **Display name** for the Application Role, then click **Create**.
+  > **Note:** You can add upto 7 documents
 
-  ![Create Application Role](images/approle2.png)
+9. **Click** Save, then **Run**
 
+  ![Save and Run Agent](images/createaiagent6.png)
 
-## Task 2: Add Application Role to the Custom Application Role
+ > **Note:** Notice the knowledge document is indexed so that its elements are used by the LLMs
 
-1. Click the **CountryRole** to edit.
+ 10. Running the Agent opens the Agent UI with the First Message you configured on **Step 6** displayed.You can start typing or speak using the mic to ask questions
 
-  ![Assign Role](images/approle4.png)
-	
-2. Under **Members** click **Application Roles**.
+  ![Inspect Agent UI](images/createaiagent12.png)
 
-  ![Open Role](images/approle5.png)
+ 
 
-3. Click **Add Application Roles**, then add **BI Content Author** and click **Add Selected**.
+## Task 2: Create the AI Agent with a Semantic Model
+In this task we will create the Sales AI Agent using the semantic model. A semantic model ensures the AI agent speaks the language of the business, not just the language of data thereby delivering insights that are accurate, consistent, and decision-ready. They give the AI agent business context—so instead of guessing what ‘revenue’ means, it knows exactly how it’s defined and how it relates to other metrics.
 
-  ![Assign DV Author](images/approle6.png)  
+1. Navigate to the **Homepage**, **Click** AI Agent
 
-## Task 3: Add Users or Groups to the Custom Application Role
+	 ![Home Page Navigation](images/createaiagent1.png) 
 
-1. Under **Members** click **Users**.
+2. **Click** the All Data icon to filter out Subject Areas.
 
-  ![Search Users](images/approle7.png)
-	
-2. Click **Add Users**, then add users you created or group and click **Add**.
+  ![Filter Subject Area](images/createaiagent7.png)
 
-  ![Add Users to Role](images/approle8.png)
+3. Select the **Subject Area**, then  **Add to Agent**. In my case it is SampleApp
 
+  ![Add Dataset](images/createaiagent8.png)
 
-## Task 4: Validate User's Application Roles
+4. Verify the Subject Area is added,  **Expand** each folder to verify attributes and measures
 
-1. Navigate to Users tab and pick the user.
+  ![Verify Dataset](images/createaiagent9.png)
 
-	![Open Users Menu](images/approle9.png)
+> **Note:** Repeat Steps 4 to 10 from Task 1 to finish configuring your AI Agent. Also, remember to configure/enable  data model search indexing for the subject area you'd use for this exercise via the console.
 
-2. Click **Application Roles**, then you should see all application roles including the CountryRole.
+  ![Configure Indexes](images/createaiagent11.png)
 
-  ![Verify Available Roles](images/approle10.png)
 
 You may now **proceed to the next lab.**
 
 ## Learn More
 
-* [About Application Roles](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/application-roles.html#GUID-3CEED4DB-F124-45AF-A115-75AF7392974C)
+* [Create an Oracle Analytics AI Agent](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/create-oracle-analytics-ai-agent.html)
+* [Configure Data Model Search Indexing ](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/configure-data-model-search-indexing.html#GUID-64DDEF84-75B8-4D0D-A625-17E9538435F0)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, ONA
