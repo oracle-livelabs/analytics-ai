@@ -21,7 +21,7 @@ This lab assumes you have:
 
 
 ## Task 1: Create the AI Agent with a dataset
-In this task we will create the Sales AI Agent using the dataset build in Lab 1. We will add Supplemental Instructions to guide the agent's default behavior, First Message to introduce the agent, set context or clarify capabilities and lastly upload a corporate document to guid the agent responses.
+In this task we will create the Sales AI Agent using the dataset build in Lab 1. We will add Supplemental Instructions to guide the agent's default behavior, First Message to introduce the agent, set context or clarify capabilities and lastly upload a corporate document to guid the agent responses.Link to the [Sales Discount Policy Document](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdsepltfrmanalyticshrd1/b/DocumentAI/o/Sales%20Discount%20Policy_AIAgentDemo.pdf)
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 

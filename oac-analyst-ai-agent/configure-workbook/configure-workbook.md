@@ -9,54 +9,103 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Configure the security table in ADB.
-* Test the security table.
+* Attach the AI Agent to a Workbook.
+* Test the AI Agent.
 
 ### Prerequisites 
 
 This lab assumes you have:
 * An Oracle Cloud account
-* You have a running ADB instance
+* You have completed prior labs
 
 
-## Task 1: Configure the security table
+## Task 1: Attach the AI Agent to a Workbook
+In this task, you will attach the AI agent to an OAC workbook, enabling users to access its capabilities directly within their dashboards. This integration allows seamless interaction between visual analytics and conversational insights, enhancing the overall decision-making experience.
 
-1. Navigate to the Database Schema.
+1. **Click** Create, then Workbook from the HomePage.
 
-	![Database Actions](images/opensqldev.png)
+	![Create Workbook](images/workbook1.png)
+	
+2. **Type** Sales Data for AI or your subject area name if using Semantic Modeler, then Add to Workbook
 
-	> **Note:** You can use any SQL interface of your choice (SQL Developer, Toad, Database Actions and etc).
+	![Add Dataset](images/workbook2.png)
 
-2. Copy and paste the SQL Code in the worksheet and execute.
- 
-   ```
-  <copy>
-      CREATE TABLE ADMIN.USER_RESPONSIBILITIES 
-  (
-  USER_NAME VARCHAR2(80) 
-  , COUNTRY_ISO_CODE VARCHAR2(20) 
-  );
+3. **Click** AutoInsights tab then Insights
 
-  INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('LOCALUSERONE', 'JP');
-  INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('CHEN.JAR', 'US');
-  INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('JUDE.WIL', 'NZ');
-  INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('JUDE.WIL', 'AU');
-  INSERT INTO "ADMIN"."USER_RESPONSIBILITIES" (USER_NAME, COUNTRY_ISO_CODE) VALUES ('ADRIE.HOW', 'US');
+	![Create Workbook](images/workbook3.png)
 
-  COMMIT;
-  </copy>
-    ```
+    > **Note:** Autoinsights uses AI to automatically analyze your data, uncover patterns, trends, and anomalies, and present them as meaningful, easy-to-understand insights without manual exploration. It is the same menu you access Watchlists and the AI Assistant.
 
-## Task 2: Test the security table
+4. **Select** a few visualizations and drop in the canvas.
 
-1. Test your table is configured by writing a **select** SQL statement.
+	![Auto Insights](images/workbook4.png)
 
- ![Write SQL](images/testsql.png) 
+    > **Note:** You can always change the default attrubutes and metrics which Insights use to generate to align with your use case. At any time you can reset to default settings
 
-You may now **proceed to the next lab.**
+    ![Update Insights](images/workbook5.png)
+
+5. **Save** Workbook.
+
+	![Save Workbook](images/workbook6.png)
+
+6. **Click** Autoinsights, then Assistant then AI Agents
+
+	![Assistant Menu](images/workbook7.png)
+
+7. **Select** The Sales Perfrmance Analyst Agent that was created in Lab 3, then OK
+
+	![Attach Agent](images/workbook8.png)
+
+    > **Note:** You can click again AI Agents it should display the agent we just attached then Save.
+
+    ![Verify Agent](images/workbook9.png)
+
+8. **Click** Present Mode to enable the Workbook Assistant. **Locate** the Insights Panel and toggle to turn it on, then Save
+
+	![Create Workbook](images/workbook10.png)
+
+    > **Note:** OAC AI Agents are available to end users when dashboards are accessed in Present Mode. Once an author enables the Workbook Assistant, the attached agent is enabled by default.
+
+
+## Task 2: Test the AI Agent
+
+1. **Click** Preview to view Workbook as an end user.
+
+	![Preview Workbook](images/workbook11.png)
+
+2. **Click** Autoinsights, then Assistant.
+
+	![Open Assistant](images/workbook12.png)
+
+    > **Note:** The Sales Peformance Anaylyst displays the greeting message that was configured in Lab 2. This is the same agent we accessed via the Agent UI.
+
+    ![Agent UI](images/workbook13.png)
+
+3. **Validate** Slicing and dicing across dimensions:- "Can you break down sales and profit by region and product category?"
+
+	![Slicing Data](images/workbook14.png)
+
+4. **Validate** Deep Dive:- "Which combinations of region and product are driving the lowest profitability?"
+
+	![Deep Dive](images/workbook15.png)
+
+5. **Validate** Ability to verify with RAG/Enetrprise Documents:- "Which transactions or regions exceed our discount policy thresholds?"
+
+	![RAG Validation](images/workbook16.png)
+
+     > **Note:** Both Austin and Sacramento have 2 orders that was given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
+
+6. **Validate** Trend Analysis:- "How have sales and profit trended over time by region?"
+
+	![Trend Validation](images/workbook17.png)
+
+
+
+You have successfully completed all the labs
 
 ## Learn More
-* [SQL Developer Web](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-database-actions.html#GUID-C32A78E5-4C5F-476F-86AB-AEEEA9CF2704)
+* [Attach AI Agent](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/make-oracle-analytics-ai-agent-available-workbook.html)
+* [Auto Insights in OAC](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-auto-insights-get-immediate-insights-your-data.html)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, ONA
