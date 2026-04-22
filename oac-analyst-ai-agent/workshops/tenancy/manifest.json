@@ -18,19 +18,19 @@
             "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
         },
         {
-           "title": "Lab 1: Create A Dataset",
+           "title": "Lab 1: Create Dataset",
           "filename": "../../build-dataset/create-dataset.md"
       },
       {
-          "title": "Lab 2: Create AI Agent",
+          "title": "Lab 2: Create Sales Agent",
           "filename": "../../create-ai-agent/create-ai-agent.md"
       },
       {
-          "title": "Lab 3: Chat With The AI Agent",
+          "title": "Lab 3: Interact with Sales Agent",
           "filename": "../../chat-with-agent/chat-with-aiagent.md"
       },
       {
-          "title": "Lab 4: Configure Workbook",
+          "title": "Lab 4: Connect Agent to Workbook",
           "filename": "../../configure-workbook/configure-workbook.md"
         },
                 {

@@ -4,18 +4,17 @@
 
 In this lab, you will integrate the AI agent directly into an OAC workbook, making its capabilities accessible within a familiar dashboard environment. This allows users to seamlessly transition from visual exploration to conversational insights without leaving the workbook.
 
-Estimated Time: 10 minutes
+Estimated Time: X
 
 ### Objectives
 
 In this lab, you will:
 * Attach the AI Agent to a Workbook.
-* Test the AI Agent.
+* Validate the AI Agent.
 
 ### Prerequisites 
 
 This lab assumes you have:
-* An Oracle Cloud account
 * You have completed prior labs
 
 
@@ -34,13 +33,13 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 	![Create Workbook](images/workbook3.png)
 
-    > **Note:** Autoinsights uses AI to automatically analyze your data, uncover patterns, trends, and anomalies, and present them as meaningful, easy-to-understand insights without manual exploration. It is the same menu you access Watchlists and the AI Assistant.
+    > **Note:** Autoinsights uses AI to automatically analyze your data, uncover patterns, trends, and anomalies, and present them as meaningful, easy-to-understand insights without manual exploration. It is the same menu you access Watchlist and the AI Assistant.
 
 4. **Select** a few visualizations and drop in the canvas.
 
 	![Auto Insights](images/workbook4.png)
 
-    > **Note:** You can always change the default attrubutes and metrics which Insights use to generate to align with your use case. At any time you can reset to default settings
+    > **Note:** You can always change the default attributes and metrics which Insights use to generate to align with your use case. At any time you can reset to default settings
 
     ![Update Insights](images/workbook5.png)
 
@@ -52,7 +51,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 	![Assistant Menu](images/workbook7.png)
 
-7. **Select** The Sales Perfrmance Analyst Agent that was created in Lab 3, then OK
+7. **Select** The Sales Performance Analyst Agent that was created in **Lab 3**, then OK
 
 	![Attach Agent](images/workbook8.png)
 
@@ -67,7 +66,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
     > **Note:** OAC AI Agents are available to end users when dashboards are accessed in Present Mode. Once an author enables the Workbook Assistant, the attached agent is enabled by default.
 
 
-## Task 2: Test the AI Agent
+## Task 2: Validate the AI Agent
 
 1. **Click** Preview to view Workbook as an end user.
 
@@ -77,7 +76,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 	![Open Assistant](images/workbook12.png)
 
-    > **Note:** The Sales Peformance Anaylyst displays the greeting message that was configured in Lab 2. This is the same agent we accessed via the Agent UI.
+    > **Note:** The Sales Performance Analyst displays the greeting message that was configured in Lab 2. This is the same agent we accessed via the Agent Interface.
 
     ![Agent UI](images/workbook13.png)
 
@@ -89,11 +88,11 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 	![Deep Dive](images/workbook15.png)
 
-5. **Validate** Ability to verify with RAG/Enetrprise Documents:- "Which transactions or regions exceed our discount policy thresholds?"
+5. **Validate** Ability to verify with RAG/Enterprise Documents:- "Which transactions or regions exceed our discount policy thresholds?"
 
 	![RAG Validation](images/workbook16.png)
 
-     > **Note:** Both Austin and Sacramento have 2 orders that was given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
+     > **Note:** Both Austin and Sacramento have 2 orders that were given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
 
 6. **Validate** Trend Analysis:- "How have sales and profit trended over time by region?"
 

@@ -4,13 +4,13 @@
 
 In this lab, you will create an AI agent in Oracle Analytics Cloud that acts as a domain-specific business analyst. By defining its purpose, attaching the dataset, and providing clear instructions, you shape how the agent interprets data and responds to questions. This transforms your data into an interactive, intelligent experience where users can ask questions and receive meaningful insights instantly.
 
-Estimated Time: 10 minutes
+Estimated Time: X
 
 ### Objectives
 
 In this lab, you will:
-* Create the AI Agent with a dataset
-* Create the AI Agent with a Semantic Modeler(subject area)
+* Create the AI Agent Using a Dataset
+* Create the AI Agent Using a Semantic Model
 
 
 ### Prerequisites
@@ -20,8 +20,8 @@ This lab assumes you have:
 * All previous labs successfully completed.
 
 
-## Task 1: Create the AI Agent with a dataset
-In this task we will create the Sales AI Agent using the dataset build in Lab 1. We will add Supplemental Instructions to guide the agent's default behavior, First Message to introduce the agent, set context or clarify capabilities and lastly upload a corporate document to guid the agent responses.Link to the [Sales Discount Policy Document](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdsepltfrmanalyticshrd1/b/DocumentAI/o/Sales%20Discount%20Policy_AIAgentDemo.pdf)
+## Task 1: Create the AI Agent Using a Dataset
+In this task we will create the Sales AI Agent using the dataset build in Lab 1. We will add Supplemental Instructions to guide the agent's default behavior, First Message to introduce the agent, set context or clarify capabilities and lastly upload a corporate document to guid the agent responses. Link to download the file [Sales Discount Policy Document](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdsepltfrmanalyticshrd1/b/DocumentAI/o/Sales%20Discount%20Policy_AIAgentDemo.pdf)
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
@@ -31,7 +31,7 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
   ![Add Dataset](images/createaiagent2.png)
 
-3. Verify the Dataset
+3. **Verify** the Dataset
 
   ![Verify Dataset](images/createaiagent3.png)
 
@@ -72,13 +72,13 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
   ![Upload Document](images/createaiagent5.png) 
 
-  > **Note:** You can add upto 7 documents
+  > **Note:** You can add up to 10 pdf and txt documents
 
 9. **Click** Save, then **Run**
 
   ![Save and Run Agent](images/createaiagent6.png)
 
- > **Note:** Notice the knowledge document is indexed so that its elements are used by the LLMs
+  > **Note:** Notice the knowledge document is indexed so that its elements are used by the LLMs
 
  10. Running the Agent opens the Agent UI with the First Message you configured on **Step 6** displayed.You can start typing or speak using the mic to ask questions
 
@@ -86,8 +86,8 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
  
 
-## Task 2: Create the AI Agent with a Semantic Model
-In this task we will create the Sales AI Agent using the semantic model. A semantic model ensures the AI agent speaks the language of the business, not just the language of data thereby delivering insights that are accurate, consistent, and decision-ready. They give the AI agent business context—so instead of guessing what ‘revenue’ means, it knows exactly how it’s defined and how it relates to other metrics.
+## Task 2: Create the AI Agent Using a Semantic Model
+In this task we will create the Sales AI Agent using the semantic subject area. A semantic model ensures the AI agent speaks the language of the business, not just the language of data thereby delivering insights that are accurate, consistent, and decision-ready. They give the AI agent business context—so instead of guessing what ‘revenue’ means, it knows exactly how it’s defined and how it relates to other metrics.
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
@@ -105,7 +105,7 @@ In this task we will create the Sales AI Agent using the semantic model. A seman
 
   ![Verify Dataset](images/createaiagent9.png)
 
-> **Note:** Repeat Steps 4 to 10 from Task 1 to finish configuring your AI Agent. Also, remember to configure/enable  data model search indexing for the subject area you'd use for this exercise via the console.
+  > **Note:** Repeat **Steps 4 to 10 from Task 1** to finish configuring your AI Agent. Also, remember to configure/enable  data model search indexing for the subject area you'd use for this exercise via the console.
 
   ![Configure Indexes](images/createaiagent11.png)
 

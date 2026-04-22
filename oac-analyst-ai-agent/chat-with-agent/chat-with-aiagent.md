@@ -4,13 +4,14 @@
 
 In this lab, you will interact with the AI agent using natural language to explore your data and uncover insights. Instead of building reports, you’ll ask questions and receive instant answers, visualizations, and explanations. This demonstrates how analytics becomes conversational, enabling faster and more intuitive decision-making.
 
-Estimated Time: 20 minutes
+Estimated Time: X
+
 
 ### Objectives
 
 In this lab, you will:
-* Access the AI Agent UI
-* Chat with the AI Agent
+* Access the AI Agent Interface
+* Interact with the AI Agent
 
 ### Prerequisites
 
@@ -18,8 +19,8 @@ This lab assumes you have:
 * Completed all prior labs
 
 
-## Task 1: Access the AI Agent UI
-In this task we will explore different ways to access the Sales AI Agent UI so that we can start asking business questions
+## Task 1: Access the AI Agent Interface
+In this task we will explore different ways to access the Sales AI Agent Interface to ask business questions.
 
 1. **Click** Navigator from the Home page, then Catalog.
 
@@ -43,7 +44,7 @@ In this task we will explore different ways to access the Sales AI Agent UI so t
   
 
 
-## Task 2: Chat with the AI Agent
+## Task 2: Interact with the AI Agent
 In this task, you will interact directly with the AI agent using natural language to explore your data. By asking business-focused questions, you’ll receive instant insights, visualizations, and explanations without building reports manually. We will test the Agent's capabilities like basic understanding of facts, critical reasoning, ability to follow business rules and solution recommendations.This demonstrates how analytics becomes conversational, enabling faster and more intuitive decision-making.
 
 1. **Validate** Basic Understanding. "Break down orders, sales, and profit by region"
@@ -54,7 +55,7 @@ In this task, you will interact directly with the AI agent using natural languag
 
    ![Validate Facts](images/chatwithagent7.png)
 
-2. **Click** Additional Insights.The Agent generated insighful infor such as Top and Bottom 3 Cities. The Agent also created additional visualizations breaking down Sales Revenue by City, Sales Revenue by Order Identifier and etc.
+2. **Click** Additional Insights.The Agent generated insightful info such as Top and Bottom 3 Cities. The Agent also created additional visualizations breaking down Sales Revenue by City, Sales Revenue by Order Identifier and etc.
 
   ![More Insights](images/chatwithagent8.png)
 
@@ -66,19 +67,19 @@ In this task, you will interact directly with the AI agent using natural languag
 
   ![Reasoning](images/chatwithagent11.png)
 
- > **Note:** The Agent generated a comparison of shipping methods by priority and impact on costs
+  > **Note:** The Agent generated a comparison of shipping methods by priority and impact on costs
 
 5. **Validate** The ability to follow business rules, RAG, docs to prove it's a trusted enterprise agent. "Highlight sales with excessive discounts"
 
   ![Document Knowledge](images/chatwithagent12.png)
 
-> **Note:** The Agent used the sales discount document we uploaded to verify if the discount exceeds policy or not. If you don't see expected results this is where adding semantic descriptions work to help your AI Agent correctly interpret and explain discount behavior.
+  > **Note:** The Agent used the sales discount document we uploaded to verify if the discount exceeds policy or not. If you don't see expected results this is where adding semantic descriptions work to help your AI Agent correctly interpret and explain discount behavior.
 
 6. **Validate** the ability to recommend solutions whilst adhering to corporate policy. "How can we improve profitability while staying within policy?"
 
   ![Recommendations](images/chatwithagent13.png)
 
- > **Note:** The Agent generated a response based on built-in knowledge and also tied it our sales discount policy
+  > **Note:** The Agent generated a response based on built-in knowledge and also tied it our sales discount policy
 
 
 
@@ -87,7 +88,7 @@ You may now **proceed to the next lab.**
 
 ## Learn More
 
-* [Create and Use Variables in a Semantic Modeler](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acmdg/create-and-use-variables-semantic-model.html)
+* [About Oracle Analytics Cloud AI Agents](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/oracle-analytics-ai-agents.html)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, ONA

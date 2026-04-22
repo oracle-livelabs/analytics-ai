@@ -14,15 +14,14 @@ Estimated Workshop Time: 60 minutes
 In this workshop, you will learn how to:
 
 * Build a Curated Dataset in Oracle Analytics Cloud(OAC)
-* Create and AI Sales Agent
-* Chat with the Agent
-* Configure the workbook to use the AI Sales Agent
+* Create the AI Sales Agent
+* Interact with the AI Sales Agent
+* Connect the AI Sales Agent to a Workbook
 
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
-* Ability to read and write SQL
 * Some understanding of cloud, database and visualization fundamentals
 
 ## Learn More
