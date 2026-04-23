@@ -1,4 +1,4 @@
-# Configure Workbook with AI Agent
+# Connect Agent to Workbook
 
 ## Introduction
 
