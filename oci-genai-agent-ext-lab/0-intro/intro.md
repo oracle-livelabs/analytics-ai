@@ -2,13 +2,13 @@
 # Introduction
 
 ## About This Workshop
-We will extend the features of Oracle Generative AI Agent RAG. The sample will allow to:
-- Search documents like Word/Excel, Images, Video, Audio or Websites (using sitemaps)
-- Build a custom User Interface (UI) with: 
-    - Oracle Digital Assistant
+We will install OCI Enterprise AI - Vector Store. The goal is to be able to search in documents.
+- First, we will install Vector Store manually and test it.
+- Then, install all other components using Terraform that we will use in later labs. 
+- Build several user interfaces using:
     - APEX
-    - A python library Streamlit  
-- Run ingestion automatically
+    - LangGraph   
+    - Oracle Digital Assistant
 
 We’ll be able to search documents like:
 - Video and Audio files using OCI Speech
@@ -19,20 +19,19 @@ We’ll be able to search documents like:
   - a Crawler (for all pages of a websites, based on Sitemap or not) 
   - or Selenium (for a fixed number of URLs)   
 
-The installation uses Terraform.
-
 ![Screenshot](images/when-was-jazz-created.png)
 
-From the lab 2/3/4, we will create 3 user interfaces for the above using the following tools:
+From the lab 3/4/5, we will create 3 user interfaces for the above using the following tools:
 - APEX
-- A Python library Streamlit  
+- LangGraph  
 - Oracle Digital Assistant
     
-Lab 5 explain how to customize the demo to your needs.
-
-Lab 6 shows how to change the Agent to have a RAG, SQL and Custom tool
+Lab 6 explain how to customize the demo to your needs.
 
 Estimated Workshop Time: 90 minutes
+
+### Vector Store
+
 
 ### Logical Architecture
 

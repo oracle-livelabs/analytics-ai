@@ -11,99 +11,25 @@ Estimated time: 45 min
 
 ### Prerequisites
 
-- An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
-- Check that your tenancy has access to the **Frankfurt or London or Chicago Region**
-    - For Paid Tenancy
-        - Click on region on top of the screen
-        - Check that the Frankfurt or London or Chicago Region is there
-        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
-        - For ex, click on the US MidWest (Chicago)
-        - Click Subscribe
+- See Prerequisites in Lab1        
+- Task 1 in Lab (List of ##VARIABLES##)
 
-    ![Chicago Region](images/chicago-region.png)
+## Task 1: Create a Project 
 
-    - For Free Trial, the HOME region should be Frankfurt or London or Chicago.
-- The lab is using Cloud Shell with Public Network.
+1. Click the hamburger menu / AI & Analytics / Generative AI
+    ![Project](images/project1.png)
+2. On the side, choose **Projects**
+3. Click **Create Project**
+    - Name: **vs-project**
+    - Click **Create**
+    ![Project](images/project2.png)
+4. Click on **vs-project**
+5. Click on the **vs-vector-store**
+6. Next to OCID, click **Copy**
+    ![Project](images/project3.png)
+5. Put it in your "List of ##VARIABLES##"
 
-    The lab assume that you have access to **OCI Cloud Shell with Public Network access**.
-    To check if you have it, start Cloud Shell and you should see **Network: Public** on the top. If not, try to change to **Public Network**. If it works, there is nothing to do.
-    ![Cloud Shell Public Network](images/cloud-shell-public-network.png)
-
-    OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
-    - **Solution:**
-
-        If not, please ask your Administrator to follow this document:
-        
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
-
-        He/She just need to add a Policy to your tenancy :
-
-        ```
-        <copy>
-        allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
-        </copy>        
-        ```
-
-## Task 1: Prepare to save configuration settings
-
-1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
-
-    ```
-    <copy>
-    List of ##VARIABLES##
-    =====================
-    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
-    TF_VAR_auth_token=(SAMPLE) ABCDEF&é!12345
-    TF_VAR_db_password=(SAMPLE) YOUR_PASSWORD
-    ODA_OCID= (SAMPLE) ocid1.odainstance.oc1.amaaaaaaaa
- 
-
-    Terraform Output
-    ================
-    
-    AGENT_ENDPOINT_OCID=$AGENT_ENDPOINT_OCID
-    
-    -----------------------------------------------------------------------
-    Streamlit:
-    http://12.45.67.89:8080/
-
-    -----------------------------------------------------------------------
-    APEX login:
-
-    APEX Workspace
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/_/landing
-    Workspace: APEX_APP
-    User: APEX_APP
-    Password: YOUR_PASSWORD
-
-    APEX APP
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
-    User: APEX_APP / YOUR_PASSWORD
-    -----------------------------------------------------------------------
-    Oracle Digital Assistant (Web Channel)
-    http://12.45.67.89/
-    </copy>
-    ```
-
-## Task 2: Create a Compartment
-
-The compartment will be used to contain all the components of the lab.
-
-You can
-- Use an existing compartment to run the lab 
-- Or create a new one (recommended)
-
-1. Login to your OCI account/tenancy
-2. Go the 3-bar/hamburger menu of the console, go to Identity & Security / Compartments
-    ![Menu Compartment](images/compartment1.png)
-2. Click ***Create Compartment***
-    - Give a name: ex: ***genai-agent***
-    - Then again: ***Create Compartment***
-    ![Create Compartment](images/compartment2.png)
-4. When the compartment is created copy the compartment ocid ##COMPARTMENT_OCID## and put it in your notes
-
-
-## Task 3: Run a Terraform script to create the other components.
+## Task 2: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
@@ -113,7 +39,7 @@ You can
     - Check that the current Architecture is well X86_64.
     - If not change it to X86_64 and confirm. It will restart.
 
-        ![OIC Domain](images/cloud-shell-architecture.png)
+        ![Architecture](images/cloud-shell-architecture.png)
 
 5. In the code editor menu, click *Terminal* then *New Terminal*
 6. Run the command below in the terminal
@@ -153,13 +79,6 @@ You can
     ```
     <copy>    
     -----------------------------------------------------------------------
-    TF_VAR_agent_endpoint_ocid=ocid1.xxxxx.xxxxx
-    
-    -----------------------------------------------------------------------
-    Streamlit:
-    http://12.45.67.89:8080/
-
-    -----------------------------------------------------------------------
     APEX login:
 
     APEX Workspace
@@ -172,9 +91,14 @@ You can
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
     User: APEX_APP / YOUR_PASSWORD
 
+
+    -----------------------------------------------------------------------
+    LangGraph Agent Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+
     -----------------------------------------------------------------------
     Oracle Digital Assistant (Web Channel)
-    http://12.45.67.89/
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/oda.html
     </copy>    
     ```
 **You may now proceed to the [next lab](#next)**

@@ -11,17 +11,17 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Install the components",
-            "filename": "./../../1-install/install.md"
+            "title": "Lab 1: Vector Store",
+            "filename": "./../../1-vector-store/vector-store.md"
         },
         {
-            "title": "Lab 2: APEX",
-            "filename": "./../../2-apex/apex.md"
+            "title": "Lab 2: Installation",
+            "filename": "./../../2-install/install.md"
         },
         {
-            "title": "Lab 3: Streamlit",
-            "filename": "./../../3-streamlit/streamlit.md"
-        },        
+            "title": "Lab 3: APEX",
+            "filename": "./../../3-apex/apex.md"
+        },
         {
             "title": "Lab 4: LangGraph",
             "filename": "./../../4-langgraph/langgraph.md"
@@ -34,10 +34,6 @@
             "title": "Lab 6: Customize",
             "filename": "./../../6-customize/customize.md"
         },        
-        {
-            "title": "Lab 7: Tools",
-            "filename": "./../../7-tools/tools.md"
-        },            
         {
             "title": "Need Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
