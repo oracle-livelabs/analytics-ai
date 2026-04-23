@@ -50,11 +50,13 @@ This lab assumes you have:
 
   ![Select bucket](./images/bucket-navigation.png)
 
-1. Under the **Objects** section of the page, click the **Upload** button.
+1. Under the **Objects** section of the page, click the **Upload objects** button.
+
+  ![Select files navigation](./images/select-files-navigation.png)
 
 1. Click the **select files** link in the **Choose Files from your Computer** section.
 
-  ![Select files navigation](./images/select-files-navigation.png)
+  ![Upload files](./images/upload.png)
 
 1. In your `File Explorer` or `Finder`, navigate to the folder containing all of the `.txt` files extracted in the previous task.
 
@@ -62,9 +64,9 @@ This lab assumes you have:
 
   ![Select all files](./images/select-all-files.png)
 
-1. Click the **Upload** button at the bottom of the panel.
+1. Click the **Upload objects** button at the bottom of the panel.
 
-  ![Upload files](./images/upload.png)
+  ![Upload done](./images/upload-review.png)
 
 1. Click the **Close** button at the bottom of the panel.
 

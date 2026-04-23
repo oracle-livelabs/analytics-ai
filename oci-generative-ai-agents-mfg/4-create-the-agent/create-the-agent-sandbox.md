@@ -148,82 +148,80 @@ Hello! I'm your Manufacturing Insights Assistant. I can help you analyze procure
 5. Under **Import database schema configuration for this tool**, select the **Inline** option which will allow us to use the same schema text we've used when we created the database.
 6. Copy the following text and paste it into the **Database schema** field:
 
-```sql
-<copy>
-CREATE TABLE Suppliers (
-    SupplierID           NUMBER PRIMARY KEY,
-    SupplierName         VARCHAR2(100) NOT NULL,
-    ContactEmail         VARCHAR2(100),
-    ContactPhone         VARCHAR2(20),
-    Region               VARCHAR2(50),
-    QualityRating        NUMBER(2,1),
-    RiskScore            NUMBER(3,0),
-    ContractStatus       VARCHAR2(20),
-    TotalSpend           NUMBER(12,2) DEFAULT 0,
-    LastReviewDate       DATE
-);
+      ```sql
+      <copy>
+      CREATE TABLE Suppliers (
+         SupplierID           NUMBER PRIMARY KEY,
+         SupplierName         VARCHAR2(100) NOT NULL,
+         ContactEmail         VARCHAR2(100),
+         ContactPhone         VARCHAR2(20),
+         Region               VARCHAR2(50),
+         QualityRating        NUMBER(2,1),
+         RiskScore            NUMBER(3,0),
+         ContractStatus       VARCHAR2(20),
+         TotalSpend           NUMBER(12,2) DEFAULT 0,
+         LastReviewDate       DATE
+      );
 
-CREATE TABLE Parts (
-    PartID               NUMBER PRIMARY KEY,
-    PartNumber           VARCHAR2(30) UNIQUE NOT NULL,
-    PartName             VARCHAR2(100) NOT NULL,
-    Category             VARCHAR2(50),
-    SupplierID           NUMBER NOT NULL,
-    UnitCost             NUMBER(10,2),
-    LeadTimeDays         NUMBER(3,0),
-    SafetyStockQty       NUMBER(6,0),
-    LastPriceUpdate      DATE
-);
+      CREATE TABLE Parts (
+         PartID               NUMBER PRIMARY KEY,
+         PartNumber           VARCHAR2(30) UNIQUE NOT NULL,
+         PartName             VARCHAR2(100) NOT NULL,
+         Category             VARCHAR2(50),
+         SupplierID           NUMBER REFERENCES Suppliers(SupplierID),
+         UnitCost             NUMBER(10,2),
+         LeadTimeDays         NUMBER(3,0),
+         SafetyStockQty       NUMBER(6,0),
+         LastPriceUpdate      DATE
+      );
 
-CREATE TABLE Facilities (
-    FacilityID           NUMBER PRIMARY KEY,
-    FacilityName         VARCHAR2(100) NOT NULL,
-    City                 VARCHAR2(50),
-    State                VARCHAR2(2),
-    Region               VARCHAR2(50),
-    FacilityType         VARCHAR2(30)
-);
+      CREATE TABLE Facilities (
+         FacilityID           NUMBER PRIMARY KEY,
+         FacilityName         VARCHAR2(100) NOT NULL,
+         City                 VARCHAR2(50),
+         State                VARCHAR2(2),
+         Region               VARCHAR2(50),
+         FacilityType         VARCHAR2(30)
+      );
 
-CREATE TABLE PO_Exceptions (
-    ExceptionID          NUMBER PRIMARY KEY,
-    ExceptionCode        VARCHAR2(20) NOT NULL,
-    ExceptionDescription VARCHAR2(100) NOT NULL,
-    ExceptionCategory    VARCHAR2(50)
-);
+      CREATE TABLE PO_Exceptions (
+         ExceptionID          NUMBER PRIMARY KEY,
+         ExceptionCode        VARCHAR2(20) NOT NULL,
+         ExceptionDescription VARCHAR2(100) NOT NULL,
+         ExceptionCategory    VARCHAR2(50)
+      );
 
-CREATE TABLE Purchase_Orders (
-    POID                 NUMBER PRIMARY KEY,
-    PONumber             VARCHAR2(20) UNIQUE NOT NULL,
-    PartID               NUMBER NOT NULL,
-    FacilityID           NUMBER NOT NULL,
-    SupplierID           NUMBER NOT NULL,
-    OrderDate            DATE NOT NULL,
-    Quantity             NUMBER(8,0),
-    UnitPrice            NUMBER(10,2),
-    TotalAmount          NUMBER(12,2),
-    Status               VARCHAR2(20),
-    ApproverID           VARCHAR2(20),
-    ExceptionID          NUMBER,
-    ApprovalDate         DATE
-);
+      CREATE TABLE Purchase_Orders (
+         POID                 NUMBER PRIMARY KEY,
+         PONumber             VARCHAR2(20) UNIQUE NOT NULL,
+         PartID               NUMBER REFERENCES Parts(PartID),
+         FacilityID           NUMBER REFERENCES Facilities(FacilityID),
+         OrderDate            DATE NOT NULL,
+         Quantity             NUMBER(8,0),
+         UnitPrice            NUMBER(10,2),
+         TotalAmount          NUMBER(12,2),
+         Status               VARCHAR2(20),
+         ApproverID           VARCHAR2(20),
+         ExceptionID          NUMBER REFERENCES PO_Exceptions(ExceptionID),
+         ApprovalDate         DATE
+      );
 
-CREATE TABLE Quality_Incidents (
-    IncidentID           NUMBER PRIMARY KEY,
-    IncidentNumber       VARCHAR2(20) UNIQUE NOT NULL,
-    SupplierID           NUMBER NOT NULL,
-    PartID               NUMBER NOT NULL,
-    FacilityID           NUMBER NOT NULL,
-    IncidentDate         DATE NOT NULL,
-    IncidentType         VARCHAR2(50),
-    Severity             VARCHAR2(20),
-    Description          VARCHAR2(500),
-    RootCause            VARCHAR2(200),
-    CorrectiveAction     VARCHAR2(200),
-    Status               VARCHAR2(20),
-    ProductionImpactHours NUMBER(5,1) DEFAULT 0
-);
-</copy>
-```
+      CREATE TABLE Quality_Incidents (
+         IncidentID           NUMBER PRIMARY KEY,
+         IncidentNumber       VARCHAR2(20) UNIQUE NOT NULL,
+         PartID               NUMBER REFERENCES Parts(PartID),
+         FacilityID           NUMBER REFERENCES Facilities(FacilityID),
+         IncidentDate         DATE NOT NULL,
+         IncidentType         VARCHAR2(50),
+         Severity             VARCHAR2(20),
+         Description          VARCHAR2(500),
+         RootCause            VARCHAR2(200),
+         CorrectiveAction     VARCHAR2(200),
+         Status               VARCHAR2(20),
+         ProductionImpactHours NUMBER(5,1) DEFAULT 0
+      );
+      </copy>
+      ```
 
 7. Under the **In-context learning examples**, leave the **None** option selected.
 8. Under the **Description of tables and columns**, select the **Inline** option.
@@ -232,88 +230,85 @@ CREATE TABLE Quality_Incidents (
       ```text
       <copy>
       IMPORTANT JOIN PATHS:
-         - To link POs to Suppliers: Purchase_Orders → Suppliers (via SupplierID)
-         - To link POs to Parts: Purchase_Orders → Parts (via PartID)
-         - To link POs to Facilities: Purchase_Orders → Facilities (via FacilityID)
-         - To link POs to Exceptions: Purchase_Orders → PO_Exceptions (via ExceptionID) - NOTE: ExceptionID can be NULL for normal POs
-         - To link Quality Incidents to Suppliers: Quality_Incidents → Suppliers (via SupplierID) - USE THIS TO GET SUPPLIER NAMES FOR INCIDENTS
-         - To link Parts to Suppliers: Parts → Suppliers (via SupplierID)
-         
-      CRITICAL: Supplier names (like 'ValueMetal Manufacturing') are in the SUPPLIERS table, NOT in Facilities. 
-         - Facilities contains plant/location names (like 'Detroit Assembly Plant')
-         - Suppliers contains vendor/company names (like 'ValueMetal Manufacturing', 'Budget Parts Direct')
-         - To get supplier name for a Quality_Incident: JOIN Quality_Incidents to Suppliers ON SupplierID
-         
-         - Exception-related POs have ExceptionID NOT NULL
-         - Expedite exceptions have ExceptionCategory = 'Expedite' (code EXP001)
-         - Price variance exceptions have ExceptionCategory = 'Pricing' (code PRC001)
-         - Sole source exceptions have ExceptionCategory = 'Sole Source' (code SOL001)
-         - Supplier risk exceptions have ExceptionCategory = 'Supplier Risk' (code SUP001)
+   - To link POs to Parts: Purchase_Orders → Parts (via PartID)
+   - To link POs to Facilities: Purchase_Orders → Facilities (via FacilityID)
+   - To link POs to Exceptions: Purchase_Orders → PO_Exceptions (via ExceptionID) - NOTE: ExceptionID can be NULL for normal POs
+   - To link Quality Incidents to Parts: Quality_Incidents → Parts (via PartID) 
+   - To link Parts to Suppliers: Parts → Suppliers (via SupplierID) - USE THIS TO GET SUPPLIER NAMES FOR INCIDENTS
+ 
+CRITICAL: Supplier names (like 'ValueMetal Manufacturing') are in the SUPPLIERS table, NOT in Facilities. 
+   - Facilities contains plant/location names (like 'Detroit Assembly Plant')
+   - Suppliers contains vendor/company names (like 'ValueMetal Manufacturing', 'Budget Parts Direct')
+   - To get supplier name for a Quality_Incident: JOIN Quality_Incidents to Parts ON PartID and then JOIN Parts to Suppliers ON SupplierID
 
-         Suppliers — Vendor directory with quality and risk tracking.
-            SupplierID (number): PK
-            SupplierName (string): Company name
-            ContactEmail, ContactPhone: Contact information
-            Region (string): Geographic region (Midwest, West, Southeast, Northeast, Southwest)
-            QualityRating (number): Quality score from 1.0 to 5.0 (higher is better)
-            RiskScore (number): Risk score from 0 to 100 (lower is better, <25 = low risk, 25-50 = medium, >50 = high risk)
-            ContractStatus (string): Active, Probation, Under Review, or Terminated
-            TotalSpend (number): USE THIS FIELD for total dollars spent with this supplier (historical spend total)
-            LastReviewDate (date): Date of most recent supplier review
+   - Exception-related POs have ExceptionID NOT NULL
+   - Expedite exceptions have ExceptionCategory = 'Expedite' (code EXP001)
+   - Price variance exceptions have ExceptionCategory = 'Pricing' (code PRC001)
+   - Sole source exceptions have ExceptionCategory = 'Sole Source' (code SOL001)
+   - Supplier risk exceptions have ExceptionCategory = 'Supplier Risk' (code SUP001)
 
-         Parts — Part catalog. Each part is sourced from one supplier.
-            PartID (number): PK
-            PartNumber (string): Part number (e.g., MTL-STL-001, CMP-BRG-001)
-            PartName (string): Part display name
-            Category (string): Raw Materials, Components, Electronics, Fasteners, Hydraulics, Pneumatics, Assemblies
-            SupplierID (number): FK → Suppliers.SupplierID (join Parts to Suppliers on this column)
-            UnitCost (number): Standard cost per unit
-            LeadTimeDays (number): Standard lead time in days
-            SafetyStockQty (number): Safety stock quantity
-            LastPriceUpdate (date): Date of last price change
+   Suppliers — Vendor directory with quality and risk tracking.
+      SupplierID (number): PK
+      SupplierName (string): Company name
+      ContactEmail, ContactPhone: Contact information
+      Region (string): Geographic region (Midwest, West, Southeast, Northeast, Southwest)
+      QualityRating (number): Quality score from 1.0 to 5.0 (higher is better)
+      RiskScore (number): Risk score from 0 to 100 (lower is better, <25 = low risk, 25-50 = medium, >50 = high risk)
+      ContractStatus (string): Active, Probation, Under Review, or Terminated
+      TotalSpend (number): USE THIS FIELD for total dollars spent with this supplier (historical spend total)
+      LastReviewDate (date): Date of most recent supplier review
 
-         Facilities — Manufacturing facilities for regional analysis.
-            FacilityID (number): PK
-            FacilityName (string): Facility display name (e.g., Detroit Assembly Plant)
-            City, State: Location
-            Region (string): Northeast, Southeast, Midwest, Southwest, West
-            FacilityType (string): Assembly Plant, Component Plant, Distribution Center, R&D Center
+   Parts — Part catalog. Each part is sourced from one supplier.
+      PartID (number): PK
+      PartNumber (string): Part number (e.g., MTL-STL-001, CMP-BRG-001)
+      PartName (string): Part display name
+      Category (string): Raw Materials, Components, Electronics, Fasteners, Hydraulics, Pneumatics, Assemblies
+      SupplierID (number): FK → Suppliers.SupplierID (join Parts to Suppliers on this column)
+      UnitCost (number): Standard cost per unit
+      LeadTimeDays (number): Standard lead time in days
+      SafetyStockQty (number): Safety stock quantity
+      LastPriceUpdate (date): Date of last price change
 
-         PO_Exceptions — Standardized exception reason codes for purchase orders.
-            ExceptionID (number): PK
-            ExceptionCode (string): EXP001 (expedite), PRC001 (price variance), SOL001 (sole source), BUD001 (budget override), SUP001 (supplier risk), SPL001 (split order)
-            ExceptionDescription (string): Human-readable description
-            ExceptionCategory (string): Expedite, Pricing, Sole Source, Budget, Supplier Risk, Compliance
+   Facilities — Manufacturing facilities for regional analysis.
+      FacilityID (number): PK
+      FacilityName (string): Facility display name (e.g., Detroit Assembly Plant)
+      City, State: Location
+      Region (string): Northeast, Southeast, Midwest, Southwest, West
+      FacilityType (string): Assembly Plant, Component Plant, Distribution Center, R&D Center
 
-         Purchase_Orders — PO records with approval status and exceptions.
-            POID (number): PK
-            PONumber (string): Unique PO number (e.g., PO-2025-0001)
-            PartID (number): FK → Parts.PartID
-            FacilityID (number): FK → Facilities.FacilityID
-            SupplierID (number): FK → Suppliers.SupplierID
-            OrderDate (date): Date PO was created
-            Quantity (number): Number of units ordered
-            UnitPrice (number): Price per unit on this PO
-            TotalAmount (number): Total PO value (Quantity * UnitPrice)
-            Status (string): Approved, Pending, Denied
-            ApproverID (string): ID of approver (MGR001, MGR002, DIR001 for director-level)
-            ExceptionID (number): FK → PO_Exceptions.ExceptionID (NULL if no exception)
-            ApprovalDate (date): Date approved (NULL if pending or denied)
+   PO_Exceptions — Standardized exception reason codes for purchase orders.
+      ExceptionID (number): PK
+      ExceptionCode (string): EXP001 (expedite), PRC001 (price variance), SOL001 (sole source), BUD001 (budget override), SUP001 (supplier risk), SPL001 (split order)
+      ExceptionDescription (string): Human-readable description
+      ExceptionCategory (string): Expedite, Pricing, Sole Source, Budget, Supplier Risk, Compliance
 
-         Quality_Incidents — Supplier quality issues and delivery failures.
-            IncidentID (number): PK
-            IncidentNumber (string): Unique incident number (e.g., QI-2025-0001)
-            SupplierID (number): FK → Suppliers.SupplierID
-            PartID (number): FK → Parts.PartID
-            FacilityID (number): FK → Facilities.FacilityID
-            IncidentDate (date): Date incident was reported
-            IncidentType (string): Dimensional Defect, Material Defect, Functional Defect, Documentation, Delivery, Packaging, Workmanship
-            Severity (string): Critical, Major, Minor
-            Description (string): Detailed description of the incident
-            RootCause (string): Identified root cause
-            CorrectiveAction (string): Corrective action taken or planned
-            Status (string): Open, Closed
-            ProductionImpactHours (number): Hours of production lost due to this incident
+   Purchase_Orders — PO records with approval status and exceptions.
+      POID (number): PK
+      PONumber (string): Unique PO number (e.g., PO-2025-0001)
+      PartID (number): FK → Parts.PartID
+      FacilityID (number): FK → Facilities.FacilityID
+      OrderDate (date): Date PO was created
+      Quantity (number): Number of units ordered
+      UnitPrice (number): Price per unit on this PO
+      TotalAmount (number): Total PO value (Quantity * UnitPrice)
+      Status (string): Approved, Pending, Denied
+      ApproverID (string): ID of approver (MGR001, MGR002, DIR001 for director-level)
+      ExceptionID (number): FK → PO_Exceptions.ExceptionID (NULL if no exception)
+      ApprovalDate (date): Date approved (NULL if pending or denied)
+
+   Quality_Incidents — Supplier quality issues and delivery failures.
+      IncidentID (number): PK
+      IncidentNumber (string): Unique incident number (e.g., QI-2025-0001)
+      PartID (number): FK → Parts.PartID
+      FacilityID (number): FK → Facilities.FacilityID
+      IncidentDate (date): Date incident was reported
+      IncidentType (string): Dimensional Defect, Material Defect, Functional Defect, Documentation, Delivery, Packaging, Workmanship
+      Severity (string): Critical, Major, Minor
+      Description (string): Detailed description of the incident
+      RootCause (string): Identified root cause
+      CorrectiveAction (string): Corrective action taken or planned
+      Status (string): Open, Closed
+      ProductionImpactHours (number): Hours of production lost due to this incident
       </copy>
       ```
 
