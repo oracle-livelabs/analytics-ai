@@ -64,9 +64,9 @@ This lab assumes you have:
       </copy>
       ```
 
-1. Click the **Next** button.
+1. Keep routing instructions blank. Leave Routing LLM Type as Default (Llama 3.3 70B). Click the **Next** button.
 
-   ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.png =50%x*)
+   ![Screenshot showing the basic information for the agent](./images/basic-agent-info-sandbox.png)
 
 ## Task 2: Add the RAG Tool
 
@@ -83,7 +83,7 @@ This lab assumes you have:
       </copy>
       ```
 
-1. For the **Description** field, use: 
+1. For the **Routing Description** field, use: 
 
       ``` text
       <copy>
@@ -94,6 +94,8 @@ This lab assumes you have:
    It is very important to provide a high-level description of the knowledge that this tool can retrieve. This allows the agent to make accurate decisions when choosing to invoke this tool.
 
    ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.png)
+
+   Leave Custom instructions blank.
 
 1. Under the **Add knowledge bases** section, make sure that your compartment is selected in the **Compartment** field.
 1. Click the **Create knowledge base** button. In this step we are going to create a knowledge base which references the storage bucket into which we've uploaded the knowledge articles.
@@ -123,15 +125,15 @@ This lab assumes you have:
       </copy>
       ```
 
-1. Make sure that the **Enable multi-modal parsing** option is **not** checked. This option enables parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our knowledge articles so right now this option is not required.
+1. Make sure that the **Enable multi-modal parsing** option is **disabled**. This option enables parsing of rich content, such as charts and graphics, to allow responses based on visual elements. However, we do not have any images in our knowledge articles so right now this option is not required.
 1. Under the **Data bucket** option, select the _loan-policy-manuals_ bucket into which we've previously uploaded the knowledge articles PDF files.
-1. Check the **Select all in bucket option**. This option will automatically flag all of the file in the bucket for ingestion instead of us having to select each file individually.
+1. Enable the **Select all in bucket option**. This option will automatically flag all of the file in the bucket for ingestion instead of us having to select each file individually.
 1. Click the **Create** button.
 
    ![Screenshot showing the data source configuration](./images/data-source-info-sandbox.png)
 
 1. Back in the **New knowledge base** panel, the **Loan policy manuals** data source was added to the **Data source** table.
-1. Make sure that the **Automatically start ingestion job for above data sources** option is checked. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
+1. Make sure that the **Automatically start ingestion job for above data sources** option is enabled. This will create an ingestion job which will scan all of our files automatically when the knowledge base is initially created. Please note that this will only run the ingestion job once. In order to re-ingest information from the bucket in the future, you will need to trigger a job manually.
 1. Click the **Create** button.
 
    ![Screenshot showing the knowledge base configuration](./images/knowledge-base-info-2.png)
@@ -153,13 +155,13 @@ This lab assumes you have:
 1. Click the **SQL** option.
 1. For the **Name** field, use
 
-       ``` text
+      ``` text
       <copy>
       Loan Applications database
       </copy>
       ```
 
-1. For the **Description** field, use:
+1. For the **Routing Description** field, use:
 
       ``` text
       <copy>
@@ -291,7 +293,7 @@ This lab assumes you have:
 
    ![Screenshot of the agent creation review page](./images/agent-info-last.png)
 
-1. In the license agreement dialog, review the agreement, check the consent checkbox and click the **Submit** button.
+1. In the license agreement dialog, review the agreement, and click **Accept** button.
 
    ![Screenshot showing how to accept the license agreement](./images/accept-license.jpg)
 
