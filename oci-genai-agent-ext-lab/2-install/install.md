@@ -46,7 +46,7 @@ Estimated time: 45 min
     ![Menu Compute](images/terraform1.png =50%x*)
     ````
     <copy>
-    git clone https://github.com/mgueury/oci-genai-agent-ext.git
+    git clone https://github.com/mgueury/oci-vector-store-ext.git
     </copy>
     ````
 7. Check if you have an Authorisation Token (associated with your profile).
@@ -58,7 +58,7 @@ Estimated time: 45 min
 7. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
-    cd oci-genai-agent-ext/starter/
+    cd oci-vector-store-ext/starter/
     </copy>
     ```
    

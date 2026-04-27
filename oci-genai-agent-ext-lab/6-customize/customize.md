@@ -74,7 +74,7 @@ What will happen internally, depending of the file type, it will be processed in
 
 ```
 In OCI Cloud Shell
-cd oci-genai-agent-ext/starter
+cd oci-vector-store-ext/starter
 
 See commands available
 ./starter.sh 

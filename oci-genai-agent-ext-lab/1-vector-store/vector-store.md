@@ -116,7 +116,7 @@ You can
 4. On your laptop, let's download some sample files
     ````
     <copy>
-    git clone https://github.com/mgueury/oci-genai-agent-ext.git
+    git clone https://github.com/mgueury/oci-vector-store-ext.git
     </copy>
     ````
 4. Back in your browser. Open the created bucket  
@@ -125,7 +125,7 @@ You can
         ![Bucket](images/object_storage3.png)
 5. In the dialog, "Upload Objects"
     - Click **Drop the files or select them** 
-    - Upload oci-genai-agent-ext/sample_files/music/* 
+    - Upload oci-vector-store-ext/sample_files/music/* 
     - Click **Next** 
     - Click **Upload Objects** 
     - Click **Close**     
