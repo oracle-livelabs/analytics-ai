@@ -87,7 +87,7 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
  
 
 ## Task 2: Create the AI Agent Using a Semantic Model
-In this task we will create the Sales AI Agent using the semantic subject area. A semantic model ensures the AI agent speaks the language of the business, not just the language of data thereby delivering insights that are accurate, consistent, and decision-ready. They give the AI agent business context—so instead of guessing what ‘revenue’ means, it knows exactly how it’s defined and how it relates to other metrics.
+If you **already have** a semantic modeler built, this task describes how to use it to build the Sales AI Agent. A semantic model ensures the AI agent speaks the language of the business, not just the language of data thereby delivering insights that are accurate, consistent, and decision-ready. They give the AI agent business context—so instead of guessing what ‘revenue’ means, it knows exactly how it’s defined and how it relates to other metrics.
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
