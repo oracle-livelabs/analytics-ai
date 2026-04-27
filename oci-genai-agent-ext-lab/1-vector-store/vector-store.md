@@ -1,4 +1,4 @@
-# Install the Components
+# Vector Store
 
 ## Introduction
 In this lab, we will install "OCI Enterprise AI - Vector Store" manually, upload documents and test it by searching into the documents.
