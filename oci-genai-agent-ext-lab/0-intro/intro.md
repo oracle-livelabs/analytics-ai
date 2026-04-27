@@ -30,13 +30,13 @@ Lab 6 explain how to customize the demo to your needs.
 
 Estimated Workshop Time: 90 minutes
 
-### Vector Store
+## Vector Store
 
 First, we will install vector-store manually, upload files to object storage, synchronize and test.
 
 ![Architecture](images/vector-store.png)
 
-### Logical Architecture
+## Logical Architecture
 
 Then from lab 2, we will install a terraform stack that pre-process files in different format to insert them in the Vector Store.
 
@@ -61,13 +61,13 @@ Here's how various file types are processed.
 - If the file has the extension **.doc**, **.docx**, **.ppt**, **.pptx**, first convert it to PDF 
 - All other file types like are sent to an OCI Function with a generic document parser.
 
-### Physical Architecture
+## Physical Architecture
 
 We will install the following architecture using Terraform.
 
 ![Integration](images/physical-architecture.png)
 
-### Objectives
+## Objectives
 
 - Provision the services needed for the system
     - Compartment, Object Storage Bucket, Stream, Event, Vector Store, Enterprise AI, and a Virtual Machine
