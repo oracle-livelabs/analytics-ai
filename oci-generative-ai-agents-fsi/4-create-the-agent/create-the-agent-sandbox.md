@@ -39,7 +39,7 @@ This lab assumes you have:
 
     ![Screenshot showing how to create a new agent](./images/create-new-agent-tenancy.png)
 
-1. For the **Name** field use: 
+1. For the **Name** field use:
 
       ``` text
       <copy>
@@ -83,7 +83,7 @@ This lab assumes you have:
       </copy>
       ```
 
-1. For the **Routing Description** field, use: 
+1. For the **Routing Description** field, use:
 
       ``` text
       <copy>
@@ -95,7 +95,7 @@ This lab assumes you have:
 
     ![Screenshot showing the initial configuration for the RAG tool](./images/rag-tool-info-1.png)
 
-   Leave Custom instructions blank.
+    Leave Custom instructions blank.
 
 1. Under the **Add knowledge bases** section, make sure that your compartment is selected in the **Compartment** field.
 1. Click the **Create knowledge base** button. In this step we are going to create a knowledge base which references the storage bucket into which we've uploaded the knowledge articles.
@@ -285,7 +285,7 @@ This lab assumes you have:
 1. We are going to leave all of the options under **Guardrails** for **Content moderation**, **Prompt injection (PI) protection** & **Personally identifiable information (PII) protection** sections as **Disabled**. Those options are important but not required for our demonstration. Please refer to the **Learn More** section below for additional information about those options.
 1. Click the **Next** button.
 
-   ![Screenshot showing how to move to the next section in the agent's creation after the endpoint configuration](./images/agent-endpoint-info-2.jpg)
+    ![Screenshot showing how to move to the next section in the agent's creation after the endpoint configuration](./images/agent-endpoint-info-2.png)
 
 ## Task 5: Review and Create
 
@@ -309,4 +309,4 @@ You may now **proceed to the next lab**
 ## Acknowledgements
 
 - **Author** - Uma Kumar, Yanir Shahak
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Deion Locklear, Anthony Marino, Wynne Yang
