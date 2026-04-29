@@ -2,81 +2,84 @@
 # Introduction
 
 ## About This Workshop
-We will install OCI Enterprise AI - Vector Store. The goal is to be able to search in documents.
-- First, we will install Vector Store manually and test it.
-- Then, install all other components using Terraform that we will use in later labs. 
-- Build several user interfaces using:
-    - APEX
-    - LangGraph   
-    - Oracle Digital Assistant
+In this workshop, you will install OCI Enterprise AI Vector Store to enable document search capabilities.
 
-We’ll be able to search documents like:
-- Video and Audio files using OCI Speech
+The workshop covers:
+- Manual installation and testing of Vector Store (Lab 1)
+- Installation of supporting components using Terraform (Lab 2)
+- Building user interfaces with:
+  - APEX (Lab 3)
+  - LangGraph (Lab 4)
+  - Oracle Digital Assistant (Lab 5)
+
+You will search documents such as:
+- Video and audio files using OCI Speech
 - Images using OCI Vision
-- TIF files (FAX) using OCI Document Understanding
-- Word, Excel, Powerpoint, ... using OCI Functions
-- Websites using 
-  - a Crawler (for all pages of a websites, based on Sitemap or not) 
-  - or Selenium (for a fixed number of URLs)   
+- TIFF files (FAX) using OCI Document Understanding
+- Word, Excel, PowerPoint, etc. using OCI Functions
+- Websites using:
+  - A crawler (for all pages of a website, based on sitemap or not)
+  - Or Selenium (for a fixed number of URLs)
 
 ![Screenshot](images/when-was-jazz-created.png)
 
-From the lab 3/4/5, we will create 3 user interfaces for the above using the following tools:
-- APEX
-- LangGraph  
-- Oracle Digital Assistant
-    
-Lab 6 explain how to customize the demo to your needs.
+Lab 6 explains how to customize the demo to your needs.
 
 Estimated Workshop Time: 90 minutes
 
 ## Vector Store
 
-First, we will install vector-store manually, upload files to object storage, synchronize and test.
+First, you will manually install the vector store, upload files to Object Storage, synchronize, and test it.
 
 ![Architecture](images/vector-store.png)
 
 ## Logical Architecture
 
-Then from lab 2, we will install a terraform stack that pre-process files in different format to insert them in the Vector Store.
+Then, from Lab 2, you will install a Terraform stack that preprocesses files in different formats before inserting them into the Vector Store.
 
-This picture shows the processing flow.
+This diagram shows the processing flow.
 
 ![Architecture](images/logical-architecture.png)
 
 It works like this:
-1. A document is uploaded to Object Storage "UPLOAD" by the user
-1. An event is raised and queued. The event is processed by a Python program running on a VM. Based on the file type, it will send the file to one or more AI services to enrich them and provide searchable text
-1. The searchable text is the result is uploaded to Object Storage "CONVERTED"
-1. The Vector Store ingests the new files
-1. The user query the Generative AI Agent
+1. A document is uploaded to the "UPLOAD" Object Storage bucket by the user.
+2. An event is raised and queued. A Python program running on a VM processes the event. Based on the file type, it sends the file to one or more AI services to extract searchable text.
+3. The searchable text is uploaded to the "CONVERTED" Object Storage bucket.
+4. The Vector Store ingests the new files.
+5. The user queries the Generative AI Agent.
 
-Here's how various file types are processed.
+Here's how various file types are processed:
 
-- If the file has the extension **.pdf**, **.txt**, **.csv**, **.md**, the file is copied to the CONVERTED Object Storage.
-- If the file has the extension **.png**, **.jpg**, **.jpeg**, or **.gif**, it is processed by OCI Vision. The output is stored in the CONVERTED Object storage 
-- If the file has the extension **.mp4**, **.avi**, **.mp3**, **.wav**, or **.m4a**, it is processed by OCI Speech.
-- If the file has the extension **.tif**, it is processed by OCI Document Understanding.
-- If the file has the extension **.json**, this is an output of the asynchronous AI services such as OCI Speech or OCI Document Understanding. 
-- If the file has the extension **.doc**, **.docx**, **.ppt**, **.pptx**, first convert it to PDF 
-- All other file types like are sent to an OCI Function with a generic document parser.
+- **.pdf**, **.txt**, **.csv**, **.md**: Copied directly to the CONVERTED Object Storage bucket.
+- **.png**, **.jpg**, **.jpeg**, **.gif**: Processed by OCI Vision. Output stored in CONVERTED Object Storage.
+- **.mp4**, **.avi**, **.mp3**, **.wav**, **.m4a**: Processed by OCI Speech.
+- **.tif**: Processed by OCI Document Understanding.
+- **.json**: Output from asynchronous AI services (e.g., OCI Speech, OCI Document Understanding).
+- **.doc**, **.docx**, **.ppt**, **.pptx**: Converted to PDF first.
+- All other types: Sent to an OCI Function with a generic document parser.
 
 ## Physical Architecture
 
-We will install the following architecture using Terraform.
+The following architecture will be installed using Terraform.
 
 ![Integration](images/physical-architecture.png)
 
 ## Objectives
 
-- Provision the services needed for the system
-    - Compartment, Object Storage Bucket, Stream, Event, Vector Store, Enterprise AI, and a Virtual Machine
+- Provision the services needed for the system:
+  - Compartment
+  - Object Storage buckets
+  - Stream
+  - Events
+  - Vector Store
+  - Enterprise AI
+  - Virtual Machine
 - Integrate the components into a working system
 - Search for files through several types of user interfaces
 
-**Please proceed to the [next lab.](#next)**
+**Please proceed to the [next lab](#next).**
 
-## Acknowledgements 
+## Acknowledgements
 
 - **Author**
     - Marc Gueury, Generative AI Specialist

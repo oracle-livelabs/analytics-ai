@@ -10,8 +10,10 @@ Estimated time: 30 min
 
 ### Prerequisites
 - The lab 1 must have been completed.
-- Download the [zip file@@](https://github.com/mgueury/oci-vector-store-ext/archive/refs/heads/main.zip).
+- Download the [zip file@@](https://github.com/mgueury/oci-genai-agent-ext/archive/refs/heads/main.zip).
     In the subdirectory "oda", you will find the files needed below.
+
+You can reuse the Bucket and Vector Store created in Lab1 or create a new/different one with Task 1 and Task 2 below:
 
 ## Task 1: Create a bucket
 
@@ -64,6 +66,7 @@ Estimated time: 30 min
         ```
         <copy>
 		allow any-user to manage genai-agent-family in compartment id ##COMPARTMENT_OCID## where request.principal.id='##ODA_OCID##'
+        allow any-user to manage generative-ai-family in compartment id ##COMPARTMENT_OCID## where request.principal.id='##ODA_OCID##'
         </copy>
         ```
         - Replace ##COMPARTMENT\_OCID## with the OCID you saved when installing the AI Agent (in Task 2, step 4)
@@ -72,6 +75,7 @@ Estimated time: 30 min
 		```
         <copy>
         allow any-user to manage genai-agent-family in compartment id ocid1.compartment.oc1..aaaaaaaafgdfsg8976sdfg79sdfggsdfg987sdfsdfgsdf9g87sdfgs98zzz where request.principal.id='ocid1.odainstance.oc1.eu-frankfurt-1.amaaaaaa8sdfjkhsdfjfg8fdg8df8gdf8g8dfg8d8fg8d8fgdf8gfxxxxxxx'
+        allow any-user to manage generative-ai-family in compartment id ocid1.compartment.oc1..aaaaaaaafgdfsg8976sdfg79sdfggsdfg987sdfsdfgsdf9g87sdfgs98zzz where request.principal.id='ocid1.odainstance.oc1.eu-frankfurt-1.amaaaaaa8sdfjkhsdfjfg8fdg8df8gdf8g8dfg8d8fg8d8fgdf8gfxxxxxxx'
         </copy>
         ```
 
@@ -105,14 +109,13 @@ Estimated time: 30 min
 2. Click 'Import skill' in the top-right and import 'import mdLabAgent(1.0).zip'
    ![Import](images/oda-import.png)
 3. Open the imported skill by clicking its tile
-4. Go to Flows (3th icon from top on left side)
-    - Select aiAgentTool flow
-   ![Skill](images/oda-flow-update1.png)
-    - Select instructAgent state and in the component request body replace ##VECTORSTORE_OCID## you save in Task 2.3
-    - Select callAIAgent state and in the component request body replace ##VECTORSTORE_OCID## you save in Task 2.3
-   ![Skill](images/oda-flow-update2.png)
-    - Select gptFormatter state and in the component prompt replace ##OBJECTSTORE_LINK## you save in Task 1.4
-   ![Skill](images/oda-flow-update3.png)
+4. Go to Settings (cogwheel icon on left side)
+    - Select Configuration tab and scroll down to 'Custom Parameters'
+    - Now edit the 3 parameters with your values:
+      - ##OBJECTSTORE_LINK## (task 1.4)
+      - ##PROJECT_OCID## (task @@)
+      - ##VECTORSTORE_OCID## (task 2.3)
+   ![Settings](images/oda-settings.png)
 5. Click 'Train' in the top-right
 
    ![Train](images/oda-flow-preview.png)
