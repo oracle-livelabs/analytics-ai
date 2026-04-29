@@ -16,8 +16,8 @@ Estimated time: 45 min
     - For Paid Tenancy
         - Click on region on top of the screen
         - Check that the Frankfurt or London or Chicago Region is there
-        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
-        - For ex, click on the US MidWest (Chicago)
+        - If not, Click on Manage Regions to add it to your regions list. You need tenancy admin rights for this.
+        - For example, click on the US Midwest (Chicago).
         - Click Subscribe
 
     ![Chicago Region](images/chicago-region.png)
@@ -25,18 +25,18 @@ Estimated time: 45 min
     - For Free Trial, the HOME region should be in one of the region where Generative AI On Demand is available.
 - The lab is using Cloud Shell with Public Network.
 
-    The lab assume that you have access to **OCI Cloud Shell with Public Network access**.
+    The lab assumes that you have access to OCI Cloud Shell with Public Network access.
     To check if you have it, start Cloud Shell and you should see **Network: Public** on the top. If not, try to change to **Public Network**. If it works, there is nothing to do.
     ![Cloud Shell Public Network](images/cloud-shell-public-network.png)
 
-    OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
+    OCI Administrators have that right automatically. Or your administrator may have already added the required policy.
     - **Solution:**
 
         If not, please ask your Administrator to follow this document:
         
         https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
 
-        He/She just need to add a Policy to your tenancy :
+        He/She just needs to add a policy to your tenancy:
 
         ```
         <copy>
@@ -94,7 +94,7 @@ You can
 
 1. Login to your OCI account/tenancy
 2. Double-check that you are in a region with GenAI available.
-3. Go the 3-bar/hamburger menu of the console, go to Identity & Security / Compartments
+3. Go to the 3-bar/hamburger menu of the console, then Identity & Security > Compartments.
     ![Menu Compartment](images/compartment1.png)
 4. Click ***Create Compartment***
     - Give a name: ex: ***genai-agent***
@@ -107,7 +107,7 @@ You can
 
 1. Click the hamburger menu / Storage / Buckets
     ![Bucket Menu](images/object_storage1.png)
-2. Double-check that you are in the compartment that you created above. 
+2. Ensure that you are in the compartment that you created above.
 3. Click **Create Bucket** 
     ![Bucket](images/object_storage2.png)
 3. In the "Create bucket" dialog:
@@ -141,7 +141,7 @@ You can
     - In the editor paste this content. And use your compartment OCID
 
 ```
-allow any-user to read object-family in compartment YOUR_COMPARMENT where ALL{request.principal.type='generativeaivectorconnector'}
+allow any-user to read object-family in compartment YOUR_COMPARTMENT where ALL{request.principal.type='generativeaivectorconnector'}
 ```
 
 ## Task 5: Create a Vector Store
@@ -155,7 +155,7 @@ allow any-user to read object-family in compartment YOUR_COMPARMENT where ALL{re
     - Type: Keep Unstructured data
     - Click **Create**
     ![Vector Store](images/vector_store3.png)
-4. Wait 1 mins. Then refresh the page.
+4. Wait 1 minute. Then refresh the page.
 5. Click on the **vs-vector-store**
 6. Then go to tab Data sync connectors
 7. Click **Create data sync connector**
@@ -172,7 +172,7 @@ allow any-user to read object-family in compartment YOUR_COMPARMENT where ALL{re
     - Name: **vs-sync1**
     - Click **Perform**
     ![Vector Store](images/vector_store5.png)    
-13. Wait 1 or 2 mins. vs-sync1 will first change to **In Progress**. Then the Total files synced will change to 5. (number of PDF uploaded) 
+13. Wait 1 or 2 minutes. vs-sync1 will first change to **In Progress**. Then the Total files synced will change to 5 (number of PDFs uploaded).
     ![Vector Store](images/vector_store6.png)    
 
 ## Task 6: Test
