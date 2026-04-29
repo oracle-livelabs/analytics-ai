@@ -1,7 +1,8 @@
 # Test with LangGraph
 
 ## Introduction
-In this lab, we will test the installation using LangGraph
+In this lab, you will test the installation using LangGraph.
+
 Estimated time: 10 min
 
 ### Objectives
@@ -13,16 +14,16 @@ Estimated time: 10 min
 
 ## Task 1: Test 
 
-1. Check the URL at the end of the terraform run
-    
-1. Go to the url of the application (ex: https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/xxxx/chat.html)
-   
-1. Type "what is Oracle Analytics Cloud", then *Enter*
+2. Check the URL at the end of the Terraform run.
+
+3. Go to the URL of the application (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/xxxx/chat.html).
+
+4. Type "what is Oracle Analytics Cloud" and press Enter.
 
     Hover on the citation. Note that you can see the page number. Click on the link.
     ![Test Invoice](images/langgraph.png)    
 
-1. Type "List the countries in the map of brazil", then *Enter*
+5. Type "List the countries in the map of Brazil" and press Enter.
 
 1. Try more questions:
 
@@ -31,11 +32,11 @@ Estimated time: 10 min
     | PDF       | .pdf      | When was jazz created ?                           |
     |           |           | What is Document Understanding                    |
     | Word      | .docx     | What is OCI ?                                     |
-    | Image     | .png      | List the countries in the map of brazil           |
+    | Image     | .png      | List the countries in the map of Brazil.          |
     | Website   | .sitemap  | What is Digital Assistant ?                       |
     | Website   | .crawler  | What can I see in France ?                        |
     | FAX       | .tif      | Is there an invoice for Optika ?                  | 
-    |           |           | What does the file invoice.tif contains ?         |
+    |           |           | What does the file invoice.tif contain?           |
     | Video     | .mp4      | What is Oracle Analytics                          | 
     | Audio     | .mp3      | What is the issue with my headphones ?            | 
 

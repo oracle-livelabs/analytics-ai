@@ -1,7 +1,8 @@
 # Test with APEX
 
 ## Introduction
-In this lab, we will test the installation using APEX
+In this lab, you will test the installation using APEX.
+
 Estimated time: 10 min
 
 ### Objectives
@@ -13,20 +14,20 @@ Estimated time: 10 min
 
 ## Task 1: Test
 
-1. Check the APEX URL and the User/Password at the end of the build log.
-    
-1. Go to the url of the application (ex: https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/)
+2. Check the APEX URL and the user/password at the end of the build log.
 
-    Login as APEX\_APP / YOUR\_PASSWORD
-    
-1. Type "when was jazz created", then *Enter*
+3. Go to the URL of the application (e.g., https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/).
+
+    Log in as APEX\_APP / YOUR\_PASSWORD.
+
+4. Type "when was jazz created" and press Enter.
 
     Hover on the citation. Note that you can see the page number. Click on the link.
-    ![Test Jazz](../0-introl/images/when-was-jazz-created.png)    
+    ![Test Jazz](../0-intro/images/when-was-jazz-created.png)
 
-1. Type "what is Oracle Analytics", then *Enter*
+5. Type "what is Oracle Analytics" and press Enter.
 
-    ![Test Video](images/test-video.png)  
+    ![Test Video](images/test-video.png)
 
 1. Try more questions:
 
@@ -35,10 +36,10 @@ Estimated time: 10 min
     | PDF       | .pdf      | When was jazz created ?                           |
     |           |           | What is Document Understanding                    |
     | Word      | .docx     | What is OCI ?                                     |
-    | Image     | .png      | List the countries in the map of brazil           |
+    | Image     | .png      | List the countries in the map of Brazil.          |
     | Website   | .selenium | What is Digital Assistant ?                       |
     | FAX       | .tif      | Is there an invoice for Optika ?                  | 
-    |           |           | What does the file invoice.tif contains ?         |
+    |           |           | What does the file invoice.tif contain?           |
     | Video     | .mp4      | What is Oracle Analytics                          | 
     | Audio     | .mp3      | What is the issue with my headphones ?            |
 
@@ -60,7 +61,7 @@ One additional step is needed to use the RAG filter. We need to add a RAG tool.
    ![Custom tool](../6-tools/images/rag-tool.png)
 - Enter:
     - **Name** = rag-tool
-    - **Description** = Use this tool for any question that are not covered by the other tools. It contains generic documentation.
+    - **Description** = Use this tool for any questions that are not covered by the other tools. It contains generic documentation.
 - Select the knowledge base - agext-agent-kb
 - Click **Create Tool**
 
@@ -78,7 +79,7 @@ One additional step is needed to use the RAG filter. We need to add a RAG tool.
     - Stay in the same conversation: 
     - Ask "what is jazz ?" with filter "/music" -> you get the answer from the RAG (with a citation) 
     - Ask "what is jazz ?" with filter "/oracle" -> you get an answer... from the conversation history... 
-    - The correct way was to reset the conversation to get another chat session.  
+    - The correct way is to reset the conversation to get another chat session.
 
 ## Acknowledgements
 

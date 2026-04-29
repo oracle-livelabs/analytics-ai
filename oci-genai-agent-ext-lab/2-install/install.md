@@ -24,32 +24,32 @@ Estimated time: 45 min
     - Click **Create**
     ![Project](images/project2.png)
 4. Click on **vs-project**
-5. Click on the **vs-vector-store**
-6. Next to OCID, click **Copy**
-    ![Project](images/project3.png)
-5. Put it in your "List of ##VARIABLES##"
+6. Click on the **vs-vector-store**.
+7. Next to OCID, click **Copy**.
+![Project](images/project3.png)
+8. Put it in your "List of ##VARIABLES##".
 
 ## Task 2: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
 3. Check that the Network used is Public. (see requirements)
-4. Check that the Code Editor Architecture is well X86_64.
+4. Check that the Code Editor architecture is x86_64.
     - Go to Actions / Architecture
-    - Check that the current Architecture is well X86_64.
-    - If not change it to X86_64 and confirm. It will restart.
+    - Check that the current architecture is x86_64.
+    - If not, change it to x86_64 and confirm. It will restart.
 
         ![Architecture](images/cloud-shell-architecture.png)
 
 5. In the code editor menu, click *Terminal* then *New Terminal*
 6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png =50%x*)
+    ![Menu Compute](images/terraform1.png=50%x*)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-vector-store-ext.git
     </copy>
     ````
-7. Check if you have an Authorisation Token (associated with your profile).
+7. Check if you have an authorization token (associated with your profile).
 
    For more info, see here: https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm
 
@@ -68,13 +68,13 @@ Estimated time: 45 min
     </copy>
     ````
 
-    Answer the question about Authorization Token and Compartment OCID.
+    Answer the questions about authorization token and compartment OCID.
 
     In case of errors, check **Known Issues** below
 
 8. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 45 minutes and you can check the steps in the next labs while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-9. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+9. When Terraform finishes, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     <copy>    
@@ -115,7 +115,7 @@ Estimated time: 45 min
     </copy>
     ```
 
-    Solution:  edit the file *starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
+    Solution:  edit the file *starter/src/terraform/variable.tf* and replace the *availability domain* with one where there is still capacity
     ```
     <copy>    
     OLD: variable availability_domain_number { default = 1 }
@@ -175,7 +175,7 @@ Estimated time: 45 min
     <copy>    
     Error: 409-PolicyAlreadyExists, Policy 'agent-fn-policy' already exists
     or
-    Error: 409-BucketAlreadyExists, Either the bucket "agext-public-bucket' in namespace "xxxxxx" already exists or you are not authorized to create it
+    Error: 409-BucketAlreadyExists, Either the bucket "agext-upload-bucket' in namespace "xxxxxx" already exists or you are not authorized to create it
     </copy>    
     ```
 
