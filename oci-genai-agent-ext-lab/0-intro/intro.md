@@ -2,7 +2,7 @@
 # Introduction
 
 ## About This Workshop
-In this workshop, you will install OCI Enterprise AI Vector Store to enable document search capabilities.
+In this workshop, you will create a OCI Enterprise AI Vector Store and enable document search capabilities.
 
 The workshop covers:
 - Manual installation and testing of Vector Store (Lab 1)
