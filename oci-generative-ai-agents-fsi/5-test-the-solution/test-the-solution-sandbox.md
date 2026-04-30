@@ -115,7 +115,7 @@ This lab assumes you have:
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
-1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: 
+1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question:
 
       ``` text
       <copy>
@@ -184,4 +184,4 @@ Although our use case was focused on loan compliance, the OCI AI Agents service 
 ## Acknowledgements
 
 - **Author** - Deion Locklear
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino, Wynne Yang
