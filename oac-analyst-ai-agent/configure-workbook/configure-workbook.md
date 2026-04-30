@@ -92,7 +92,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 	![RAG Validation](images/workbook16.png)
 
-     > **Note:** Both Austin and Sacramento have 2 orders that were given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
+    > **Note:** Both Austin and Sacramento have 2 orders that were given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
 
 6. **Validate** Trend Analysis:- "How have sales and profit trended over time by region?"
 

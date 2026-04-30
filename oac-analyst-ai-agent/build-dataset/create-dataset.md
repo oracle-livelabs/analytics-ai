@@ -25,7 +25,7 @@ In this step you shall load a file dataset provided here [Sales Data for AI](htt
 
 1. Navigate to **Create** menu then **Dataset**.
 
-	  ![Create](images/builddataset1.png)
+	![Create](images/builddataset1.png)
 
 2. Click Upward Arrow **Drop data file here or click to browse** then select the file
 
@@ -85,7 +85,7 @@ In this step you shall index a dataset to make its data attributes available to 
 
 1. Go to **Navigator** on the left side, **Click** Data
 
-	  ![Locate Dataset](images/builddataset11.png)
+	![Locate Dataset](images/builddataset11.png)
 
 2. Choose the Sales AI Data, then under **Actions** Click Inspect
 

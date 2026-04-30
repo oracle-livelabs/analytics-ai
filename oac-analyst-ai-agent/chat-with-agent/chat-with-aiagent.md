@@ -24,7 +24,7 @@ In this task we will explore different ways to access the Sales AI Agent Interfa
 
 1. **Click** Navigator from the Home page, then Catalog.
 
-	  ![Open Agent](images/chatwithagent1.png)
+	![Open Agent](images/chatwithagent1.png)
 
 2. Locate the folder in which the AI Agent is Saved, then **Click** Actions menu and Open in a New Tab 
 
@@ -32,7 +32,7 @@ In this task we will explore different ways to access the Sales AI Agent Interfa
 
 3. Alternatively, on the Home Page, **Scroll** until you see the AI Agents folder, then **Click** Actions to Open the AI Agent.
 
-	  ![Open Agent Home](images/chatwithagent3.png)
+	![Open Agent Home](images/chatwithagent3.png)
 
     > **Note:** You can customize your home page layout so that it is easier to find objects using the **Page Menu** -> **Customize Layout** 
 
