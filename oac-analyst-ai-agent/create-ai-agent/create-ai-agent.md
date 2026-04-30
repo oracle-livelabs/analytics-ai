@@ -25,23 +25,23 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
-	 ![Home Page Navigation](images/createaiagent1.png) 
+	  ![Home Page Navigation](images/createaiagent1.png) 
 
 2. Select the **Sales Data for AI**, then  **Add to Agent**.
 
-  ![Add Dataset](images/createaiagent2.png)
+    ![Add Dataset](images/createaiagent2.png)
 
 3. **Verify** the Dataset
 
-  ![Verify Dataset](images/createaiagent3.png)
+    ![Verify Dataset](images/createaiagent3.png)
 
 4. **Navigate** to Sales Data for AI tab to select or deselect which attributes to use in the Agent 
 
-  ![Verify Attributes](images/createaiagent10.png)
+    ![Verify Attributes](images/createaiagent10.png)
 
 5. **Navigate** to Configuration tab, Under **Supplemental Instructions** Add below
 
-   ```
+    ```
     <copy>
     You are a senior sales strategy analyst advising executive leadership.
     Focus on Orders, Sales, Discounts, Region, and Profit, and synthesize insights into clear business narratives.
@@ -49,40 +49,37 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
     Identify risks and opportunities by calling out underperformance, margin erosion due to discounting, and high-performing regions or segments.
     Always provide comparative context across time periods, regions, and product segments to frame performance.
     Deliver concise, insight-driven responses with a strong emphasis on implications and recommended actions to improve revenue growth and profitability.
-
-
-    </copy> 
-   ```
-
+    </copy>     
+     ```
 6. Under **First Message** add below
 
-   ```
+     ```
     <copy>  
     Hello, I’m your Sales Performance Analyst.
     You can ask me about sales trends, regional performance, discount impact, or profitability and I’ll provide insights along with recommended actions.
 
     </copy>
-   ``` 
+    ``` 
 
 7. **Click** Save
 
-  ![Save Agent](images/createaiagent4.png)
+    ![Save Agent](images/createaiagent4.png)
 
 8. **Upload**  a Sales Discount Policy document, then **Click** Save
 
-  ![Upload Document](images/createaiagent5.png) 
+    ![Upload Document](images/createaiagent5.png) 
 
-  > **Note:** You can add up to 10 pdf and txt documents
+    > **Note:** You can add up to 10 pdf and txt documents
 
 9. **Click** Save, then **Run**
 
-  ![Save and Run Agent](images/createaiagent6.png)
+    ![Save and Run Agent](images/createaiagent6.png)
 
-  > **Note:** Notice the knowledge document is indexed so that its elements are used by the LLMs
+    > **Note:** Notice the knowledge document is indexed so that its elements are used by the LLMs
 
  10. Running the Agent opens the Agent UI with the First Message you configured on **Step 6** displayed.You can start typing or speak using the mic to ask questions
 
-  ![Inspect Agent UI](images/createaiagent12.png)
+    ![Inspect Agent UI](images/createaiagent12.png)
 
  
 
@@ -91,23 +88,23 @@ If you **already have** a semantic modeler built, this task describes how to use
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
-	 ![Home Page Navigation](images/createaiagent1.png) 
+	  ![Home Page Navigation](images/createaiagent1.png) 
 
 2. **Click** the All Data icon to filter out Subject Areas.
 
-  ![Filter Subject Area](images/createaiagent7.png)
+    ![Filter Subject Area](images/createaiagent7.png)
 
 3. Select the **Subject Area**, then  **Add to Agent**. In my case it is SampleApp
 
-  ![Add Dataset](images/createaiagent8.png)
+    ![Add Dataset](images/createaiagent8.png)
 
 4. Verify the Subject Area is added,  **Expand** each folder to verify attributes and measures
 
-  ![Verify Dataset](images/createaiagent9.png)
+    ![Verify Dataset](images/createaiagent9.png)
 
-  > **Note:** Repeat **Steps 4 to 10 from Task 1** to finish configuring your AI Agent. Also, remember to configure/enable  data model search indexing for the subject area you'd use for this exercise via the console.
+    > **Note:** Repeat **Steps 4 to 10 from Task 1** to finish configuring your AI Agent. Also, remember to configure/enable  data model search indexing for the subject area you'd use for this exercise via the console.
 
-  ![Configure Indexes](images/createaiagent11.png)
+    ![Configure Indexes](images/createaiagent11.png)
 
 
 You may now **proceed to the next lab.**
