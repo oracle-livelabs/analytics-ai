@@ -112,7 +112,7 @@ You may now **proceed to the next lab.**
 ## Learn More
 
 * [Create an Oracle Analytics AI Agent](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/create-oracle-analytics-ai-agent.html)
-* [Configure Data Model Search Indexing ](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/configure-data-model-search-indexing.html#GUID-64DDEF84-75B8-4D0D-A625-17E9538435F0)
+* [Configure Data Model Search Indexing](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/search-indexing.html)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, ONA
