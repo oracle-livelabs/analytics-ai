@@ -25,7 +25,7 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
-	  ![Home Page Navigation](images/createaiagent1.png) 
+    ![Home Page Navigation](images/createaiagent1.png) 
 
 2. Select the **Sales Data for AI**, then  **Add to Agent**.
 
@@ -88,7 +88,7 @@ If you **already have** a semantic modeler built, this task describes how to use
 
 1. Navigate to the **Homepage**, **Click** AI Agent
 
-	  ![Home Page Navigation](images/createaiagent1.png) 
+    ![Home Page Navigation](images/createaiagent1.png) 
 
 2. **Click** the All Data icon to filter out Subject Areas.
 

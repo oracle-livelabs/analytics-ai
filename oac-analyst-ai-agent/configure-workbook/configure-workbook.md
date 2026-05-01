@@ -23,21 +23,21 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 1. **Click** Create, then Workbook from the HomePage.
 
-	![Create Workbook](images/workbook1.png)
-	
+    ![Create Workbook](images/workbook1.png)
+
 2. **Type** Sales Data for AI or your subject area name if using Semantic Modeler, then Add to Workbook
 
-	![Add Dataset](images/workbook2.png)
+    ![Add Dataset](images/workbook2.png)
 
 3. **Click** AutoInsights tab then Insights
 
-	![Create Workbook](images/workbook3.png)
+    ![Create Workbook](images/workbook3.png)
 
     > **Note:** Autoinsights uses AI to automatically analyze your data, uncover patterns, trends, and anomalies, and present them as meaningful, easy-to-understand insights without manual exploration. It is the same menu you access Watchlist and the AI Assistant.
 
 4. **Select** a few visualizations and drop in the canvas.
 
-	![Auto Insights](images/workbook4.png)
+    ![Auto Insights](images/workbook4.png)
 
     > **Note:** You can always change the default attributes and metrics which Insights use to generate to align with your use case. At any time you can reset to default settings
 
@@ -45,15 +45,15 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 5. **Save** Workbook.
 
-	![Save Workbook](images/workbook6.png)
+    ![Save Workbook](images/workbook6.png)
 
 6. **Click** Autoinsights, then Assistant then AI Agents
 
-	![Assistant Menu](images/workbook7.png)
+    ![Assistant Menu](images/workbook7.png)
 
 7. **Select** The Sales Performance Analyst Agent that was created in **Lab 3**, then OK
 
-	![Attach Agent](images/workbook8.png)
+    ![Attach Agent](images/workbook8.png)
 
     > **Note:** You can click again AI Agents it should display the agent we just attached then Save.
 
@@ -70,11 +70,11 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 1. **Click** Preview to view Workbook as an end user.
 
-	![Preview Workbook](images/workbook11.png)
+    ![Preview Workbook](images/workbook11.png)
 
 2. **Click** Autoinsights, then Assistant.
 
-	![Open Assistant](images/workbook12.png)
+    ![Open Assistant](images/workbook12.png)
 
     > **Note:** The Sales Performance Analyst displays the greeting message that was configured in Lab 2. This is the same agent we accessed via the Agent Interface.
 
@@ -82,15 +82,15 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 3. **Validate** Slicing and dicing across dimensions:- "Can you break down sales and profit by region and product category?"
 
-	![Slicing Data](images/workbook14.png)
+    ![Slicing Data](images/workbook14.png)
 
 4. **Validate** Deep Dive:- "Which combinations of region and product are driving the lowest profitability?"
 
-	![Deep Dive](images/workbook15.png)
+    ![Deep Dive](images/workbook15.png)
 
 5. **Validate** Ability to verify with RAG/Enterprise Documents:- "Which transactions or regions exceed our discount policy thresholds?"
 
-	![RAG Validation](images/workbook16.png)
+    ![RAG Validation](images/workbook16.png)
 
     > **Note:** Both Austin and Sacramento have 2 orders that were given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
 
