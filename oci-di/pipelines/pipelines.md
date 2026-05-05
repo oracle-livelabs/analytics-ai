@@ -4,7 +4,7 @@
 
 Learn how to create an OCI Data Integration **application**, **publish tasks** into the application and create a Data Integration **pipeline** which calls the published tasks.
 
-The Pipeline you will create will orchestrate the execution of all of the tasks you created and published in _Create a Data Loader task, two Data Flows, Integration tasks and a SQL task_. It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
+The Pipeline you will create will orchestrate the execution of all of the tasks you created and published in _Create a Data Loader task, two Data Flows, Integration tasks and a SQL task_. It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous AI Lakehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
 
 **Estimated Time**: 30 minutes
 
@@ -93,7 +93,7 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 
 The Pipeline you will create in this step will orchestrate the execution of all of the tasks you created and published in this Workshop until now. The pipeline will begin with the **parallel execution** of the `LOAD_CUSTOMERS_LAB` **Integration Task** and `LOAD_REVENUE_DATA_INTO_DATA_WAREHOUSE` **Data Loader task**. After the successful execution of these two tasks, the `LOAD_EMPLOYEES_BY_REGIONS` **Integration Task** will be executed in sequence.
 Then, an **Expression operator** will add a new field that is populated with the Pipeline name and Task run key **system parameters of the pipeline**.
-The following **SQL task** step will get success/error input configured in the pipeline and the system parameters expression as the **Input parameters**. It will load this information in the Autonomous Data Warehouse, according to the SQL stored procedure logic.
+The following **SQL task** step will get success/error input configured in the pipeline and the system parameters expression as the **Input parameters**. It will load this information in the Autonomous AI Lakehouse, according to the SQL stored procedure logic.
 
 Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking the result in the Data Integration Application from OCI Console.
 
@@ -411,4 +411,4 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
-* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Last Updated By/Date** - Alex Porcescu, November 2025

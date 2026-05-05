@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "Accelerate Analytics on OAC with Generative AI, AIDP Data Platform, and Autonomous AI Lakehouse",
+    "help": "livelabs-help-aiservices_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Introduction",
+        "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+        "filename": "../../introduction/introduction.md"
+      },
+      {
+        "title": "Lab 1: Set Up OCI Resources",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../source-setup/source-setup.md"
+      },
+      {
+        "title": "Lab 2: Process and Refine Data in AI Data Platform and Lakehouse",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../process-refine/process-refine.md"
+      },
+      {
+        "title": "Lab 3: Gather Insights with Oracle Analytics Cloud (OAC)",
+        "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+        "filename": "../../oac-visualize/oac-visualize.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
+      }
+    ]
+  }

@@ -26,20 +26,23 @@ This lab assumes you have:
 
 2. Click on "**Create MySQL DB System**"
 
-  ![create-db](images/create-db.png)
+    ![create-db](images/create-db.png)
 
-3. Select **Compartment** and Provide information and select “**HeatWave**” from options.
+3. Select **Compartment** and Provide information and provide a name for the DB System
 
 	![create-db-01](images/create-db-01.png)
 
-4. Provide **username**/**password**, **confirm password** and select Virtual Cloud Network (**VCN**)
+4. Provide **username**/**password**, **confirm password**, select the **Stanalone** DB system. Next, select Virtual Cloud Network (**VCN**)
 
    ![username](images/username.png)
 
-5. Select Availability Domain as per choice and select “**MySQL.HeatWave.VM.Standard.E3**’ Instance shape for MySQL HeatWave.
-	 If you wish to change Instance shape, please click on “**Chane Shape**” button.
+5. Select Availability Domain as per choice 
 
 	![availability](images/availability.png)
+Uncheck the **Enable HeatWave Cluster**, and select “**MySQL.8**’ Instance shape for MySQL HeatWave.
+	 If you wish to change Instance shape, please click on “**Chane Shape**” button.
+
+	![change-shape](images/change-shape.png)
 
 6. Specify Storage size and Enable Automated backups and click on “**Create**” to initiate creation process.
 

@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [aa-oml-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o1LEj7EvsS9qZmpFbU0Yy9NWC5DMmtQlcOiw1ZIiINfeFKrBwA71nQcPZQVsCL82/n/c4u02/b/hosted_workshops/o/stacks/aa-oml-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [aa-oml-mkplc-freetier.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/aa-oml-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 

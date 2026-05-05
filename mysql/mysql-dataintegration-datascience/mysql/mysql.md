@@ -1,22 +1,22 @@
-# Create MySQL Database Service
+# Create MySQL HeatWave
 
-![MySQL Database Service](images/mds-banner.png)
+![MySQL HeatWave](images/mds-banner.png)
 
 ## Introduction
 
-**MySQL Database Service** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
+**MySQL HeatWave** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
 
 [](youtube:f-fVabi1tRA)
 
-Estimated Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this section, you will:
 
-- Create an instance of MySQL in Oracle Cloud.
-- Connect and create the Database.
-- Enable HeatWave Analytics Engine.
+- Create an instance of MySQL in Oracle Cloud
+- Connect and create the Database
+- Add HeatWave cluster
 
 ### Prerequisites
 
@@ -26,9 +26,11 @@ In this section, you will:
 
 1. Go to **Menu**, **Databases** and then click **DB Systems**.
 
+   ![DB menu](images/db-navigation.png)
+
    ![DB System Dashboard](images/mysql-menu.png)
 
-2. Click **Create MySQL DB System**.
+2. Click **Create DB System**.
 
    Make sure your **root** compartment (or the one you want) is selected.
 
@@ -43,7 +45,7 @@ In this section, you will:
          <copy>MySQL instance for Analytics</copy>
          ```
 
-3. Between the three options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
+3. Between the two options, pick `Standalone` which will work for the development environments.
 
    For Username and password:
 
@@ -59,7 +61,7 @@ In this section, you will:
 4. **Network** configuration:
 
       - Virtual Cloud Network: `nature`
-      - Subnet: `Private Subnet-nature (Regional)`
+      - Subnet: `private subnet-nature (Regional)`
 
    ![MySQL vcn fields](images/mysql-vcn-fields.png)
 
@@ -67,6 +69,7 @@ In this section, you will:
 
       - Configure placement: `AD-1`
       - Configure hardware: `MySQL.HeatWave.VM.Standard.E3` or Standalone (selected above) `MySQL.VM.Standard.E3.1.8GB`
+      - Configure shape: `MySQL.2`
       - Data Storage Size (GB): `50`
          ```
          <copy>50</copy>
@@ -87,8 +90,6 @@ In this section, you will:
 
    ![MySQL private IP](images/mysql-private-ip.png)
 
----
-
 ## Task 2: Connect and Create DB
 
 1. Connect with **Cloud Shell** (if you close it or it is no longer active).
@@ -96,7 +97,7 @@ In this section, you will:
    ![Cloud Shell Dashboard](images/cloud-shell.png)
 
       - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
-      - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
+      - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value):
          ```
          <copy>curl -sL https://bit.ly/3yoHvem | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
          ```
@@ -110,13 +111,11 @@ In this section, you will:
 
    ![Create Schema Terminal](images/create-schema-mysql-terminal.png)
 
----
-
 ## Task 3: Enable HeatWave (Optional)
 
-1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
+1. If you have selected the **MySQL HeatWave** Shape to be `MySQL.2`, you should be able to **enable HeatWave cluster**.
 
-2. Go to the **Resources Menu** > **HeatWave**.
+2. Click **Add HeatWave cluster** from either of the two highlighted locations.
 
    ![MDS Heatwave menu](images/mds-heatwave-menu.png)
 
@@ -140,8 +139,8 @@ Congratulations! You are ready to go to the next Lab!
 
 ---
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
-- **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Contributors** - Priscila Iruela, Sindhuja Banka
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025

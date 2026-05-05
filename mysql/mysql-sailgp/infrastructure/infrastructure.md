@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will prepare the infrastructure that you need to run the rest of the workshop. We will create/configure the following elements: A Virtual Cloud Network, the MySQL Database, the HeatWave Lakehouse Cluster, a Bastion host, Oracle Analytics Cloud and a Private Access Channel.
+In this lab you will prepare the infrastructure that you need to run the rest of the workshop. We will create/configure the following elements: A Virtual Cloud Network, the MySQL Database, the HeatWave  Cluster, a Bastion host, Oracle Analytics Cloud and a Private Access Channel.
 
 Estimated Time: 60 minutes
 
@@ -12,7 +12,6 @@ In this lab, you will:
 
 - Create a VCN (Virtual Cloud Network) which helps you define your own data center network topology inside the Oracle Cloud.
 - Create the MySQL Database itself.
-- Add the HeatWave Lakehouse Cluster.
 - Create Bastion host. This is a small compute instance that will help us access the private network (with the MySQL Database) from the internet.
 - Create Oracle Analytics Cloud. We will use this to create visual analysis of the data.
 - Set up a Private Access Channel. This will allow OAC access to the MySQL database service.
@@ -25,53 +24,43 @@ In this lab, you will:
 
 ## Task 1: Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
 
-1. Log-in to your OCI tenancy. Once you have logged-in, select _**Networking >> Virtual Cloud Networks**_ from the _**menu icon**_ on the top left corner.
+1. Login to your OCI tenancy. From the _**Navigation menu**_, select _**Networking > Virtual cloud networks**_.
 
   ![Access Virtual Cloud Networks](./images/open-vcn.png)
 
-2. From the Compartment picker on the bottom left side, select your compartment from the list.
+2. Select your compartment from the list, and click _**Start VCN Wizard**_.
 
-    > **Note:** If you have not picked a compartment, you can pick the root compartment which was created by default when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
+    > **Note:** If you have not selected a compartment, you can select the root compartment which was created by default when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-  ![VCN Dashboard](./images/vcn-compartment.png)
-
-3. To create a virtual cloud network, click on _**Start VCN Wizard**_.
-    
   ![VCN Dashboard](./images/start-vcn-wizard.png)
 
-4. Create _**VCN with Internet Connectivity**_ and click _**Start VCN Wizard**_.
+3. Select _**Create VCN with Internet Connectivity**_ and click _**Start VCN Wizard**_.
 
   ![VCN Creation](./images/vcn-wizard-select.png)
 
-5. Now you need to complete some information and set the configuration for the VCN. In the _**VCN Name**_ field enter the value 
-  **`lakehouse_vcn`** (or any name at your convenience), and make sure that the selected compartment is the right one. Leave all the rest as per default, Click _**Next**_.
+4. In the _**VCN name**_ field enter the value, 
+  **`lakehouse-vcn`**, (or any name at your convenience), and make sure that the selected compartment is the right one. Leave the default settings, and click _**Next**_.
 
   ![VCN creation](./images/vcn-config-name.png)
 
-6. Review the information showed is correct and click _**Create**_.
+5. Review the information and click _**Create**_.
 
   ![VCN creation](./images/vcn-config-review.png)
 
-7. Once the VCN will be created click _**View Virtual Cloud Network**_.
-
-  ![VCN creation](./images/vcn-complete.png)
-
-8. Click on the _**`private subnet-lakehouse_vcn`**_. 
+6. Once the VCN is created, under _**Subnets**_, click _**`private subnet-lakehouse-vcn`**_. 
 
   ![VCN creation](./images/select-private-subnet.png)
 
-9. Earlier we set up the subnet to use the VCN's default security list, that has default rules, which are designed to make it easy to get started with Oracle Cloud Infrastructure. 
-   Now we will customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking on  _**`Security List for private subnet-lakehouse_vcn`**_.
+7. Customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking _**`security list for private subnet-lakehouse-vcn`**_.
 
-  ![scurity list](./images/edit-security-list.png)
+  ![security list](./images/edit-security-list.png)
 
-10. Click on _**Add Ingress Rules**_.
+8. Under _**Security rules**_, click _**Add Ingress Rules**_.
 
-  ![security list](./images/add-ingress-rule.png)
+  ![security rules](./images/add-security-rules.png)
 
-11. Add the necessary rule to the default security list to enable traffic through MySQL Database Service port. 
+9. Add the necessary rule to the default security list to enable traffic through MySQL HeatWave Service port, and click _**Add Ingress Rules**_.
 
-  Insert the details as below:
 	```  
 	Source CIDR:  <copy> 0.0.0.0/0 </copy>
 	```
@@ -81,33 +70,28 @@ In this lab, you will:
 	```  
 	Description:  <copy> MySQL Port </copy>
 	```
-	At the end click the blue button _**Add Ingress Rules**_.
-
+	
   ![security list](./images/confirm-ingress-changes.png)
 
 ## Task 2: Create MySQL Database
 
-1. From the console main menu on the left side select _**Databases >> DB Systems**_.
+1. From the console, click _**Navigation menu > Databases > DB Systems**_.
     
   ![OCI Console](./images/open-db-systems.png)
 
-2. Start creating the DB System. 
+2. Click _**Create DB System**_. 
 
-   Since this is for experimentation, choose "Development Testing". 
+   Since this is for experimentation, choose _**Development or testing**_. 
 
-   Check the compartment, it should be the same as the compartment you created the network (VCN) in, and assign to the DB System the name:
+   Check the compartment, it should be the same as the compartment you created the VCN, and assign a name to the DB System:
 
-   ```
-   <copy>mysql-lakehouse</copy>
-   ```
+    ```
+    <copy>mysql-lakehouse</copy>
+    ```
    
-  ![MySQL DB System](./images/mysql-db-form.png)
+    ![MySQL DB System](./images/mysql-db-form.png)
 
-3. Select the Standalone option and the HeatWave box, this will allow to create a MySQL DB System which will be HeatWave-ready. 
-    
-  ![MySQL DB System](./images/options.png)
-
-4. In the _**Create Administrator Credentials**_ section enter the username and choose a password of your own, but make sure to note it as you will be using it later through the workshop:
+3. In the _**Create administrator credentials**_ section enter the username and choose a password, but make sure to note it as you will use it later:
     
     ```
     username: <copy>admin</copy>
@@ -115,65 +99,82 @@ In this lab, you will:
   	```
     password: <copy>**PASSWORD**</copy>
     ```
-	- In the _**Configure Networking**_ section make sure you select the same VCN, _**`lakehouse_vcn`**_ you have used to create the Compute Instance but for MySQL you will use a different subnet, the private one called _**`private subnet-lakehouse_vcn (Regional)`**_.
 
-	- Leave the default availability domain and proceed to the _**Configure Hardware**_ section.
-   
-    ![Configure hardware MySQL DB System creation](./images/mysql-db-hardware.png)
+4. In the _**Setup**_, select _**Standalone**_.
 
-4. Confirm that in the _**Configure Hardware**_ section, the selected shape is **MySQL.HeatWave.VM.Standard**, CPU Core Count: **16**, Memory Size: **512 GB**, Data Storage Size: **1024**.
+5. In _**Configure networking**_, make sure you select the same VCN, _**`lakehouse-vcn`**_, and the private subnet, _**`private subnet-lakehouse-vcn (Regional)`**_.
+
+      ![MySQL DB System](./images/options.png)
+
+
+6. Confirm that in the _**Configure hardware**_ section, _**Enable HeatWave cluster**_ is enabled. Change the MySQL shape to **MySQL.16**.
 
   ![MySQL DB system creation](./images/mysql-db-form2.png)
 
-5. In the _**Configure Backup**_ section leave the default backup window of **7** days. **UNCHECK** the Enable point in time restore option.
+7. Click _**Configure HeatWave cluster**_, and then click _**Change shape**_.
+
+8. Select _**HeatWave.512GB**_, and click _**Select a shape**_.
+
+  ![MySQL HeatWave cluster](./images/heatwave-cluster-shape.png)
+ 
+ 9. Update the Nodes to **2**.
+
+  ![MySQL HeatWave cluster](./images/heatwave-cluster.png)
+
+  10. Update the _**Initial data storae size (GB)**_ to **1024**.
+
+   ![MySQL DB system storage](./images/data-storage.png)
+
+7. In the _**Configure backup plan**_ section leave the default backup window of **7** days. Disable _**Enable point-in-time recovery**_.
 
   ![MySQL DB system creation](./images/backup.png)
 
-5. Scroll down and click on _**Show Advanced Options**_. 
+8. Scroll down and click on _**Show advanced options**_. 
     
   ![Advanced option MySQL DB Syatem](./images/mysql-db-advanced-options.png)
 
-  	- Go to the Connections tab, in the Hostname field enter (same as DB System Name):
-		```
-		<copy>mysql-lakehouse</copy> 
-		```
-		Check that port configuration corresponds to the following:
-
-
-		MySQL Port: **3306**
-
-		MySQL X Protocol Port: **33060**
-
-		Once done, click the _**Create**_ button.
-
-		![MySQL DB System Networking Configuration](./images/mysql-db-networking.png)
-
-
-  	- The MySQL DB System will have _**CREATING**_ state (as per picture below). 
+9. Go to the _**Connections**_ tab, and enter the following:
     
-  	![MySQL DB Syatem Creating](./images/mysql-db-creating.png)
+  Hostname: **mysql-lakehouse**
+		
+	MySQL Port: **3306**
+
+	MySQL X Protocol Port: **33060**
+
+	Once done, click _**Create**_.
+
+	![MySQL DB System Networking Configuration](./images/mysql-db-networking.png)
+
+10. The MySQL DB System will be in _**CREATING**_ state. 
+    
+  	![MySQL DB System Creating](./images/mysql-db-creating.png)
 
 ## Task 3: Create an Oracle Analytics Cloud instance
 
 In this task we will create an Oracle Analytics Cloud instance.
 
-1. Go to main page click the _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_.
+1. From the home page, click the _**Navigation menu**_ and click _**Analytics & AI > Analytics Cloud**_.
 
   ![OCI Console](./images/open-oac.png)
 
+2. Click _**Create instance**_.
 
-2. Click _**Create instance**_ and in the new window, fill out the fields as shown in the image below. Verify that the compartment is the same as the one you select for MySQL.
-Make sure to select 2 OCPUs, the Enterprise version and the _**License Included**_ button. Finally click _**Create**_ to start the provisioning of the instance.
+  ![Analytics Creation](./images/oac-create-instance.png)
 
-  	![Analytics Creation](./images/oac-create.png)
+3. Enter/select the following details, and click _**Create**_.
 
-    - Name: SailGPMySQL
-    - License Type: License Included
-    - Edition: Enterprise Edition
+   - Name: **SailGPMySQL**
+   - Create in Compartment: Verify that the compartment is the same as the one you select for MySQL
+   - Capacity Type: **OCPU**
+   - OCPU Count: **2**
+   - License Type: **License Included**
+   - Edition: **Enterprise Edition**
+
+  ![Analytics Creation](./images/oac-create.png)
+
+4. It takes anywhere between 10-35 minutes to create the OAC instance. **Please proceed to the next task in the meantime**
 
   ![Analytics Creation](./images/oac-config-name.png)
-
-  	> **Note:** It takes anywhere between 10-35 minutes to create the OAC instance. **Please proceed to the next task in the meantime**.
 
 ## Task 4: Create a Bastion Host compute instance
 
@@ -185,73 +186,56 @@ FYI, once we have created the Bastion Host, accessing will be a two-step process
 
 Now, let's create the Bastion Host.
 
-1. From the main menu on the top left corner select _**Compute >> Instances**_.
+1. From the _**Navigation menu**_, select _**Compute > Instances**_.
     
   ![OCI Console](./images/open-instances.png)
 
-2. In the compartment selector on the bottom left corner, select the same compartment where you created the VCN. Click on the _**Create Instance**_ blue button to create the compute instance.
+2. Select the same compartment where you created the VCN. Click _**Create instance**_.
 
   ![Compute Instance Dashboard](./images/create-instance.png)
 
 3. In the **Name** field, insert _**mysql-analytics-bastion**_ (or any other name at your convenience). This name will be used also as internal FQDN. 
   	
-	The _**Placement and Hardware section**_ is the section where you can change Availability Domain, Fault Domain, Image to be used, and Shape of resources. For the scope of this workshop leave everything as default.
+	For the scope of this workshop leave _**Placement**_  as default.
 
   ![Compute Instance creation](./images/select-instance-name.png)
 
-  	As you scroll down you can see the **Networking** section, check that your previously created **VCN** is selected, and select your PUBLIC subnet _**`public subnet-lakehouse_vcn (regional)`**_ from the dropdown menu.
+4. Click _**Next**_, and then _**Next**_ again to see the _**Networking**_ section. Check that your previously created _**VCN**_ is selected, and select your public subnet _**`public subnet-lakehouse-vcn (regional)`**_ from the dropdown menu.
     
   ![Compute instance creation](./images/select-instance-networking.png)
 
-4. Scroll down and **MAKE SURE TO DOWNLOAD** the proposed private key. 
-  You will use it to connect to the compute instance later on.
-  Once done, click _**Create**_.
+5. Scroll down and under _**Add SSH keys**_, select _**Generate a key pair for me**_, and click _**Download private key**_. You will use it to connect to the compute instance later on.
+  Once done, click _**Next**_ and then _**Create**_.
 
   ![Compute instance creaion](./images/download-private-key.png)
 
-5. Once the compute instance will be up and running, you will see the square icon on the left turning green. However, you can proceed to the next **Task** until the provisioning is done.
+5. Once the compute instance is up and running, you will see the icon turning green. However, you can proceed to the next **Task** until the provisioning is done.
     
   ![compute instance creation](./images/instance-running.png)
 
   Well done, you can now proceed to the next lab!
 
-## Task 5: Enable the HeatWave cluster (with Lakehouse option)
-
-HeatWave is an in-memory query accelerator developed for Oracle MySQL Database Service. It's a massively parallel, hybrid, columnar, query-processing engine with state-of-art algorithms for distributed query processing which provide very high performance for queries.
-
-In this task, we will Enable the HeatWave option on our MySQL database.
-
-1. In the OCI Console, go back to the MySQL Database by clicking on "Databases", "DB Systems" and "mysql-lakehouse".
-
-2. On the left bottom of the screen, select HeatWave, then click "Add HeatWave cluster".
-
-  ![Add HeatWave](./images/add-heatwave.png "Add HeatWave Cluster")
-
-3. Keep the default Shape, and set Node Count to 2, **select the MySQL HeatWave Lakehouse** option and then click the button _**Add HeatWave Cluster**_.
-
-   ![HeatWave Cluster enable](./images/select-shape2.png)
-
-   Adding the HeatWave option typically takes about 10 minutes, upon which the status will become _**Active**_.
-
-   ![HeatWave Cluster enable](./images/heatwave-active.png)
-
-## Task 6: Configure Private Access Channel - OAC
+## Task 5: Configure Private Access Channel - OAC
 
 This task is necessary so that Oracle Analytics Cloud can access the data of MySQL HeatWave, that's connected to the private network.
 
-1. Back to the Analytics Cloud from _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_ by now the status of the instance should have changed to _Active_. 
+1. From the home page, click the _**Navigation menu**_ and click _**Analytics & AI > Analytics Cloud**_.
 
-   ![OCI Console](./images/open-oac.png)
+  ![OCI Console](./images/open-oac.png)
 
-   Click on the instance _**SailGPMySQL**_ to go to the details page.
+2. By now the status of the instance should have changed to _Active_. 
 
-   Click on the button _**Configure Private Access Channel**_ under the Private Access Channel section to create a private access to the MySQL Database Service Instance.
+   ![OCI Console](./images/open-oac-1.png)
+
+3. Click on the instance _**SailGPMySQL**_ to go to the _**Instance Details**_ page.
+
+   Under _**Private Access Channel**_, click _**Configure Private Access Channel**_ to create a private access to the MySQL HeatWave Service instance.
 
    ![Configuring private channel OAC](./images/select-private-access-channel.png)
 
-2. In the next window you first need to fill the name for the channel **PrivateChannel**. Then, choose the VCN created earlier **`analytics_vcn_test`**, and make sure you select the correct subnet, **`Public Subnet-analytics_vcn_test`**, otherwise you won't be able to connect!
+4. In _**Configure Private Access Channel**_, fill the name. Then, choose the VCN created earlier, _**`lakehouse-vcn`**_, and make sure you select the correct subnet, _**`Public Subnet-lakehouse-vcn`**_, otherwise you won't be able to connect!
    
-    Check _**Virtual Cloud Network's domain name as DNS zone**_, and remove the additional _**DNS Zone**_, using the X icon on the right side of the DNS Zone section, and finally click _**Configure**_.  
+5. Check _**Virtual Cloud Network's domain name as DNS zone**_, and remove the additional _**DNS Zone**_, using the X icon on the right side of the DNS Zone section, and finally click _**Configure**_.  
 
    	> **Note:** It will take up to _**50 minutes**_ to create the private channel. In the meantime you can go ahead and work on the next lab.
 
@@ -262,4 +246,4 @@ This task is necessary so that Oracle Analytics Cloud can access the data of MyS
 ## Acknowledgements
 - **Author** - Jeroen Kloosterman - Technology Product Strategy Director
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager, Rawan Aboukoura - Technology Product Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, January 2025 
+- **Last Updated By/Date** - Aijaz Fatima, Product Manager, Oct 2025 

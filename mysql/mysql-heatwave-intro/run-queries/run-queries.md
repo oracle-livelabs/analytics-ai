@@ -18,7 +18,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Completed Task 3
+- Completed Task 2
 
 ## Task 1: Run Queries in HeatWave
 
@@ -236,6 +236,16 @@ In this lab, you will be guided through the following tasks:
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
 
+16. Exit MySQL
+
+    ```bash
+    <copy>\q</copy>
+    ```
+
+17. Exit OCI cloud shell
+    ![query compare](./images/heatwave-qeury-avg.png " query compare")
+
+
 ## Learn More
 
 - [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
@@ -245,6 +255,6 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Perside Foster, MySQL Principal Solution Engineering
-- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2023
+- **Author** - Aijaz Fatima, Product Manager
+- **Contributors** - Mandy Pang, Senior Principal Product Manager
+- **Last Updated By/Date** - Aijaz Fatima, Product Manager, July 2025

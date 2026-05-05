@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Hybrid Search with PostgreSQL",
+    "workshoptitle": "Leverage Your OCI & PostgreSQL Skills to Accelerate AI outcomes",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -8,7 +8,7 @@
         },
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/event-register-free-tier-account.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/event-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Install the components",
@@ -24,7 +24,7 @@
         },        
         {
             "title": "Need Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

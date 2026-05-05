@@ -3,13 +3,14 @@
 ## Introduction
 In this session, we will help users get familiar with OCI Speech live transcribe and teach them how to use our services via the cloud console.
 
-***Estimated Lab Time***: 5 minutes
+***Estimated Lab Time***: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
 - Learn how to transcribe live audio to text from the OCI Console
 - Invoke custom vocabulary (customizations) in the OCI Console
+- Learn how to use OCI AI Speech Realtime Python SDK to create live transcription sessions
 
 ### Prerequisites:
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
@@ -17,12 +18,13 @@ In this lab, you will:
 
 ## Task 1: Navigate to Overview Page
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
+Log into OCI Console. Using the Burger Menu on the top left corner, navigate to **Analytics and AI** menu, and then select **Speech** under **AI Services**.
     ![Navigate speech service menu](./images/navigate-to-ai-speech-menu.png " ")
 
-This will navigate you to the transcription jobs overview page.
-On the left you can toggle between overview and transcription jobs listing page.
-Under documentation you can find helpful links relevant to OCI speech service
+This will navigate you to the Speech overview page.
+From the left you can navigate to various OCI Speech offerings.
+
+From the Documentation section you can find helpful links relevant to OCI Speech service
     ![Speech service overview page](./images/overview-page.png " ")
 
 
@@ -46,25 +48,34 @@ Under documentation you can find helpful links relevant to OCI speech service
 
 To change transcription parameters, look to the <strong>Configure transcription</strong> menu to the right
 
-1. Configure transcription
+### Configure transcription
 
-    Here you can change parameters such as transcription model type, audio language, punctuation, partial and final silence thresholds partial results stability and enable customizations
-        ![Configure transcription](./images/configure-transcription.png " ")
+Here you can change parameters such as transcription model type, model domain, audio language, punctuation, partial and final silence thresholds, partial results stability and enable customizations
+    ![Configure transcription](./images/configure-transcription.png " ")
 
-    <strong>Choose domain:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific medial terminology
+- <strong>Model type:</strong> Use this parameter to select a model to use for generating transcriptions. Currently supported model types are: `ORACLE` and `WHISPER`
+
+    > Note: Partial results are only supported by `ORACLE` model
     
-    <strong>Choose language:</strong> Use this parameter to configure the language of the speaker
+- <strong>Model domain:</strong> Use this parameter to configure the transcription model for specialized audio, e.g. audio that features specific media terminology. Currently supported model domains are: `GENERIC` and `MEDICAL`
 
-    <strong>Choose punctuation:</strong> Use this parameter to configure the punctuation mode for the transcription model
-
-    <strong>Partial silence threshold:</strong> Use this parameter to configure how quickly partial results should be 
-    returned
+    > Note: `MEDICAL` domain is only supported by `ORACLE` model
     
-    <strong>Final silence threshold:</strong> Use this parameter to configure how long to wait before a partial result is finalized 
+- <strong>Language:</strong> Use this parameter to configure the trancription language. `WHISPER` model supports automatic language detection.
 
-    <strong>Partial results stability:</strong> Use this parameter to configure the stability of partial results (amount of confidence required before returning a partial result)
+- <strong>Punctuation:</strong> Use this parameter to configure the punctuation mode for the transcription model. Currently supported punctuation modes are: `NONE`, `AUTO` and `SPOKEN`
 
-    <strong>Enable customizations:</strong> Check this box to choose a customization to use during your transcription session
+    > Note: Punctuation mode `SPOKEN` is only supported by `MEDICAL` domain
+
+Following parameters are only supported by `ORACLE` model:
+
+- <strong>Partial silence threshold:</strong> Use this parameter to configure how quickly partial results should be returned. Value ranges from `0` to `2000` milliseconds.
+    
+- <strong>Final silence threshold:</strong> Use this parameter to configure how long to wait before a partial result is finalized. Value ranges from `0` to `5000` milliseconds.
+
+- <strong>Partial results stability:</strong> Use this parameter to configure the stability of partial results (amount of confidence required before returning a partial result). Allowed values are `NONE`, `LOW`, `MEDIUM` and `HIGH`.
+
+- <strong>Enable customizations:</strong> Check this box to choose a customization to use during your transcription session.
 
 ## Task 4: Enabling a customization
 
@@ -99,9 +110,10 @@ Alternatively, both the required packages can be installed using the `requiremen
 pip install -r requirements.txt
 ```
 
+### Python example:
+
 OCI AI Speech live transcription uses websockets to relay audio data and receive text transcriptions in real time. This means your client must implement some key listener functions:
 
-<strong>Python example:</strong>
 ```
 on_result(result)
     // This function will be called whenever a result is returned from the 
@@ -133,7 +145,7 @@ on_close(error_code, error_message) (optional)
     // Its implementation is not required
 ```
 
-Example implementation of listener functions:
+**Example implementation of listener functions:**
 ```
 class MyRealtimeListener(RealtimeClientListener):
     result = []
@@ -189,31 +201,34 @@ class MyRealtimeListener(RealtimeClientListener):
 
 <strong>Realtime client parameters</strong> can be set and included in your realtime client to change the behavior of your transcription session.
 
-*example values:*
+### Sample values for model type `ORACLE`:
 
-`language_code` : <strong>"en-US"</strong>
+- `language_code` : <strong>"en-US"</strong>
 
-`model_domain` : <strong>"GENERIC"</strong>
+- `model_type` : <strong>"ORACLE"</strong>
 
-`partial_silence_threshold_in_ms` : <strong>0</strong>
+- `model_domain` : <strong>"GENERIC"</strong>
 
-`final_silence_threshold_in_ms` : <strong>2000</strong>
+- `partial_silence_threshold_in_ms` : <strong>0</strong>
 
-`encoding` : <strong>"audio/raw;rate=16000"</strong>
+- `final_silence_threshold_in_ms` : <strong>2000</strong>
 
-`punctuation` : <strong>AUTO</strong>
+- `encoding` : <strong>"audio/raw;rate=16000"</strong>
 
-`should_ignore_invalid_customizations` : <strong>True</strong>
+- `punctuation` : <strong>AUTO</strong>
 
-`stabilize_partial_results` : <strong>True</strong>
+- `should_ignore_invalid_customizations` : <strong>True</strong>
 
-`customizations` : <strong>[Customization1]</strong>
+- `stabilize_partial_results` : <strong>True</strong>
 
-<strong>Example of setting realtime parameters</strong>
+- `customizations` : <strong>[Customization1]</strong>
+
+<strong>Sample implementation of setting realtime parameters for model type `ORACLE`:</strong>
 
 ```
 realtime_speech_parameters: RealtimeParameters = RealtimeParameters()
 realtime_speech_parameters.language_code = "en-US"
+realtime_speech_parameters.model_type = "ORACLE"
 realtime_speech_parameters.model_domain = (
     realtime_speech_parameters.MODEL_DOMAIN_GENERIC
 )
@@ -244,7 +259,37 @@ realtime_speech_parameters.customizations = [
 ]
 ```
 
-Download a fully implemented python example [here.](./files/realtime_example.py)
+Download a fully implemented python example [here.](./files/realtime_example_oracle.py)
+
+### Sample values for model type `WHISPER`:
+
+- `language_code` : <strong>"en"</strong>
+
+- `model_type` : <strong>"WHISPER"</strong>
+
+- `model_domain` : <strong>"GENERIC"</strong>
+
+- `encoding` : <strong>"audio/raw;rate=16000"</strong>
+
+- `punctuation` : <strong>AUTO</strong>
+
+<strong>Sample implementation of setting realtime parameters for model type `WHISPER`:</strong>
+
+```
+realtime_speech_parameters: RealtimeParameters = RealtimeParameters()
+realtime_speech_parameters.language_code = "en"
+realtime_speech_parameters.model_type = "WHISPER"
+realtime_speech_parameters.model_domain = (
+    realtime_speech_parameters.MODEL_DOMAIN_GENERIC
+)
+realtime_speech_parameters.encoding="audio/raw;rate=16000"
+realtime_speech_parameters.punctuation = (
+    realtime_speech_parameters.PUNCTUATION_AUTO
+)
+```
+
+Download a fully implemented python example [here.](./files/realtime_example_whisper.py)
 ## Acknowledgements
 * **Authors**
+    * Prabhutva Agrawal - Oracle AI Services
     * Alex Ginella  - Oracle AI Services

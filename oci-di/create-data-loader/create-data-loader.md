@@ -43,7 +43,7 @@ In OCI Data Integration, a **project** is the container for design-time resource
 
 A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
 
-In this step of the Workshop, you will create a Data Loader task that will load Orders data from many **REVENUE csv** source files. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
+In this step of the Workshop, you will create a Data Loader task that will load Orders data from many **REVENUE csv** source files. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous AI Lakehouse. The Data Loader task will also create the target table on the Autonomous AI Lakehouse.
 
 1. From your home screen of OCI-DI, click on Create data loader task on Quick actions.
 
@@ -53,9 +53,9 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
   ![Create data loader source and target types](images/create-data-loader.png " ")
 
-3. Similarly, select Database as the target type as we will use ADW as a target in this example.
+3. Similarly, select Database as the target type as we will use ALK as a target in this example.
 4. Data Loader Task allows users to choose different load types, the first one is multiple data entities i.e. at one go we can migrate data in bulk; alternatively, users can also select single entity depending on their requirements. Here, you will select Multiple data entities as load type.
-5. Next, we can specify the name and Identifier of the task that we want to keep, let’s rename our task to Load Revenue Data into Data Warehouse
+5. Next, we can specify the name and Identifier of the task that we want to keep, let’s rename our task to Load Revenue Data into Lakehouse
 6. Then we are going to select the Project or folder where we want to save our task. After clicking on select, type in your Project name which you created earlier and select that folder. For example, it should be DI_ProjectXX where XX will be your user ID.
 
   ![Project selection for create data loader](images/create-data-loader-project.png " ")
@@ -152,4 +152,4 @@ b. RENAME transformation.
 ## Acknowledgements
 
 * **Contributors** -  Theodora Cristea, Priyesh Lakar
-* **Last Updated By/Date** - David Allan, June 2023
+* **Last Updated By/Date** - Alex Porcescu, November 2025

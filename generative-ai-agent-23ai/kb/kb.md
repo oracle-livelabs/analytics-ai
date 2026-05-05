@@ -42,13 +42,23 @@ This task will help you create a knowledge base using 23ai database as source.
 
 ## Task 2: Create Agent
 
-1. Locate Agents under Analytics & AI -> Generative AI Agents.
+1. Locate Agents in the left panel, select the correct Compartment.
 
-    ![Agent Navigation](images/locate_agent.png)
+    Then click on “Create agent” button
 
-2. Click on Create Agent. Provide Name, an optional welcome message - Hi I'm 23ai Vector DB RAG Agent. How can I help you? Select the Knowledge base created in previous task. Click on Create.
+    ![agent](images/agent.png)
 
-    ![Create Agent](images/create_agent.png)
+2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
+
+    Select Add tool > Choose RAG tool 
+
+    ![Create Tool](images/create-tool.png)
+
+    Specify the RAG tool name and description, select the Knowledge Base that you created in the previous task. 
+
+    Click the “Add tool” button.
+
+    Click Next, and then "Create agent" button.
 
 3. In few minutes the status of recently created Agent will change from Creating to Active. Click on "Endpoints" menu item in the left panel and then the Endpoint link in the right panel.
 
@@ -73,4 +83,4 @@ This task will help you create a knowledge base using 23ai database as source.
 * **Contributors**
     * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Last Updated By/Date**
-    * **Abhinav Jain**, Senior Cloud Engineer, NACIE, October 2024
+    * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE, September 2025

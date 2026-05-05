@@ -30,7 +30,7 @@ This lab assumes you have:
     TODO: update package url when available
     use current OS PAR format. New format throws an error
     -->
-    [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/p/OOL_2RmaYtzKH1cwpwYzo0eLGE1kIKSTywmoJdYa5YN6zVEnBAw7th9E2pa-LxSU/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.2.zip)
+    [![Deploy to Oracle Cloud](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/generative_ai_agent_oda/agent-terraform-livelabs-1.2.zip)
 
 
     Clicking this button will direct you to log in to your tenancy and then to Resource Manager's **Create Stack** page

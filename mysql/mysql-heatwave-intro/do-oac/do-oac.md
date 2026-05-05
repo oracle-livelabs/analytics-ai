@@ -21,7 +21,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Completed Lab 5
+- Completed Lab 3
 
 ## Task 1:  Create an Oracle Analytic Cloud Service
 
@@ -97,7 +97,7 @@ In this lab, you will be guided through the following tasks:
 
 3. Go to Resources and click on the Endpoinst Link and  copy the Internal FQDN and save it to notepad
 
-    ![database endpoint](./images/hw-db-endpoint.png "hw-db-endpoint ")
+    ![Heatwave endpoint](./images/heatwave-endpoint.png "Heatwave endpoint")
 
 4. Save the Hostname for use with OAC
 
@@ -136,7 +136,7 @@ In this lab, you will be guided through the following tasks:
 
 8. Add the following SQL query (find per-company average age of passengers from Switzerland, Italy and France) in the statement text box, and select “Live” in Data Access on the right, then click OK on the top
 
-    ```bash  
+    ```bash
     <copy> SELECT
         airline.airlinename,
         AVG(datediff(departure,birthdate)/365.25) as avg_age,
@@ -176,6 +176,6 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-- **Author** - Perside Foster, MySQL Principal Solution Engineering
-- **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-- **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2023
+- **Author** - Aijaz Fatima, Product Manager
+- **Contributors** - Mandy Pang, Senior Principal Product Manager
+- **Last Updated By/Date** - Aijaz Fatima, Product Manager, July 2025

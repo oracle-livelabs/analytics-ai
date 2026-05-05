@@ -6,14 +6,15 @@
 
 ## Troubleshooting
 
-### Lab Create MySQL Database Service
+### Lab Create MySQL HeatWave
+
 - Enable HeatWave
 
 Error: `attribute = {heatWaveCluster.shapeFamily}, value = {MySQL.HeatWave.VM.Standard.E3} - for this cluster shape the MySQL instance shape must be the same`
 
 ![Heatwave error shape](images/heatwave-error-shape.png)
 
-> Note: You need to use HeatWave Shape when you created MySQL Database Service.
+> Note: You need to use HeatWave Shape when you created MySQL HeatWave.
 >
 > Terminate your current MySQL Instance and create a new one with HeatWave valid shape, for example: `MySQL.HeatWave.VM.Standard.E3`.
 >
@@ -50,8 +51,8 @@ You forgot to create the policy for Data Integration to use Virtual Cloud Networ
 
 ---
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, June 2022
+- **Last Updated By/Date** - Sindhuja Banka, MySQL HeatWave Product Manager, August 2025

@@ -10,7 +10,7 @@
         {
             "title": "Get started - Cloud login",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 0: Create a bucket and upload files",
@@ -28,8 +28,8 @@
             "filename": "../../transcribe-live-audio/transcribe-live-audio.md"
         },
         {
-            "title": "Lab 3: Create and manage customizations in OCI Console and using REST API",
-            "description": "Learn how to create, manage and use customizations",
+            "title": "Lab 3: Create, enable and manage customizations using OCI Console",
+            "description": "Learn how to create, enable and manage customizations",
             "filename": "../../customizations/customizations.md"
         },
         {
@@ -70,7 +70,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
