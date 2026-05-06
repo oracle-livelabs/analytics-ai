@@ -28,13 +28,21 @@ This lab assumes you have:
 
 ## Task: Create Knowledge Base
 
-This task will help you create a knowledge base using 23ai database as source.
+This task will help you create a knowledge base using OCI Bucket as source.
 
-1. Locate Knowledge Bases under Analytics & AI -> Generative AI Agents.
+1. Create bucket in your compartment
+
+    ![KB Navigation](images/create_bucket.png)
+
+2. Download Sample Runbook and upload this in bucket.
+    [OCI_Instance_RunBook_final.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FOCI_Instance_RunBook_final.txt)
+    ![KB Navigation](images/uploaded_kb.png)
+
+3. Locate Knowledge Bases under Analytics & AI -> Generative AI Agents.
 
     ![KB Navigation](images/locate_kb.png)
 
-2. Click on your Create knowledge base. Provide Name, Data store type as Oracle AI Vector Search, Provide Database tool connection and click on Test connection. Once successful provide the vector search function created in the optional lab or your own vector search function. Lastly, click on create to create the Knowledge base.
+4. Click on your Create knowledge base. Provide Name, Data store type as Oracle AI Vector Search, Provide Database tool connection and click on Test connection. Once successful provide the vector search function created in the optional lab or your own vector search function. Lastly, click on create to create the Knowledge base.
 
     ![KB creation](images/create_kb.png)
 
@@ -42,3 +50,5 @@ This task will help you create a knowledge base using 23ai database as source.
 
 * **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026
