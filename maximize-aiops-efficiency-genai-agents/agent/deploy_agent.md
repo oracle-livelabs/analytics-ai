@@ -30,20 +30,20 @@ This lab assumes you have:
 ## Task 1: Generate SMTP Credentials
 
 1. While in the OCI Console, Click on your **Profile** which can be found in the upper-right corner of any screen in the OCI console. Select **My Profile**.
-![Open User Profile in Console](images/picture1.png)
+    ![Open User Profile in Console](images/picture1.png)
 
 2. Click on **SMTP credentials** on the left-hand side of your profile under Resources.
 
 3. Click on the **Generate SMTP Credentials** button.
-![Generate SMTP Credentials](images/picture2.png)
+    ![Generate SMTP Credentials](images/picture2.png)
 
 4. Enter a description for the credentials and then click on the **Generate credentials** button.
 
 5. Copy the Username and Password. Save them to a secure location for use in the next task. **Close** the Generate credentials window when complete.
-![Copy SMTP Credentials](images/picture3.png)
+    ![Copy SMTP Credentials](images/picture3.png)
 
 6. There is one more piece of information you need for your Postfix configuration. Before you leave the console, click the **Navigation menu** in the upper left, navigate to **Developer Services** then select **Application Integration - Email Delivery**. Once at the Email Delivery screen, click **Configuration** in the left-hand side.
-![Email Delivery Configuration Navigation](images/picture4.png)
+    ![Email Delivery Configuration Navigation](images/picture4.png)
 
 7. Copy the Relay Host Public Endpoint and SMTP Ports for use in the next task. Save for use later.
 ![Email Delivery Relay Host Configuration](images/picture5.png)
@@ -53,22 +53,22 @@ This lab assumes you have:
 We will going to provision Generative AI Agent using OCI Console. Through endpoint our Generative AI Agent receives and responds to chat or function‑calling requests.This step is about infrastructure setup and we will use OCI Console to do it.
 
 1. Log in to the OCI Console, go to **Analytics & AI**, click **AI Services** and choose **Generative AI Agents**
-![Picture 6](./images/picture6.png "Picture 6")
+    ![Picture 6](./images/picture6.png "Picture 6")
 
 2. Click on **Overview** and select **Create agent**
-![Picture 7](./images/picture7.png "Picture 7")
+    ![Picture 7](./images/picture7.png "Picture 7")
 
 3. Enter **Name** and **Welcome message**
-![Picture 8](./images/picture8.png "Picture 8")
+    ![Picture 8](./images/picture8.png "Picture 8")
 
 4. Since we are going to create Tools using OCI ADK so click on **Next**
-![Picture 9](./images/picture9.png "Picture 9")
+    ![Picture 9](./images/picture9.png "Picture 9")
 
 5. In **Setup agent endpoint** select **Automatically create an endpoint for this agent** and rest with default options
-![Picture 10](./images/picture10.png "Picture 10")
+    ![Picture 10](./images/picture10.png "Picture 10")
 
 6. Go to **Review and Create** and click **Create agent**
-![Picture 11](./images/picture11.png "Picture 11")
+    ![Picture 11](./images/picture11.png "Picture 11")
 
 7. Once the agent creation completed and go to **Endpoints** and click on **endpoint** and copy **OCID**
 ![Picture 12](./images/picture12.png "Picture 12")
@@ -79,10 +79,10 @@ We will going to provision Generative AI Agent using OCI Console. Through endpoi
 Here we are preparing virtual environment with all libraries which are required to provison OCI Generative AI Agents. I am assuming you have compute instance where Visual Studio code and Python 3.12 already installed.
 
 1. Create a **project** with a virtual environment
-![Picture 14](./images/picture14.png "Picture 14")
+    ![Picture 14](./images/picture14.png "Picture 14")
 
 2. Install the latest version **Agent Development Kit(ADK)**
-![Picture 15](./images/picture15.png "Picture 15")
+    ![Picture 15](./images/picture15.png "Picture 15")
 
 3. Install all required libraries using **requirement.txt**. Please download this file and run below command:
 [requirements.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Frequirements.txt)
@@ -111,10 +111,10 @@ The ADK provides an AgentClient class to simplify handling authentication and ma
 **API Key Authentication (Default)**: In this lab we have used this. Request you to setup your API configuration and set profile name as **CHICAGO**. To set up API key authentication, follow the [OCI API key setup guide](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
 
 1. Download the **agent-tool-creation.py**. This contains all steps to configure agent:
-[agent_tool_creation.py](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fagent_tool_creation.py)
+    [agent_tool_creation.py](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fagent_tool_creation.py)
 
 2. Let's execute this python code. It will start deploying agent tools one by one.
-![Picture 17](./images/picture17.png "Picture 17")
+    ![Picture 17](./images/picture17.png "Picture 17")
 
 3. Validate all tools deployed successfully in OCI Console.
 ![Picture 18](./images/picture18.png "Picture 18")
@@ -128,3 +128,5 @@ The ADK provides an AgentClient class to simplify handling authentication and ma
 
 * **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026

@@ -106,5 +106,7 @@ Download latest python script with Slack configuration.
 
 ## Acknowledgements
 
-- **Author**
+* **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026

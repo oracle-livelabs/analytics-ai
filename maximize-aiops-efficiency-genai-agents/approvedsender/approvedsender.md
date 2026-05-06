@@ -30,18 +30,18 @@ This lab assumes you have:
 ## Task 1: Create Approved Sender
 
 1. Navigate to Email Delivery in the OCI Console. Select **Approved Senders**.
-![Approved Sender Navigation](images/picture1.png)
+    ![Approved Sender Navigation](images/picture1.png)
 
 2. Click the **Create Approved Sender** button.
-![Create Approved Sender Email](images/picture2.png)
+    ![Create Approved Sender Email](images/picture2.png)
 
 3. Enter the sender email address you plan to use for your domain. Then click the **Create Approved Sender** button.
-![Enter Approved Sender Email Address](images/picture3.png)
+    ![Enter Approved Sender Email Address](images/picture3.png)
 
 4. While on the Approved Senders screen, click on the **vertical ellipsis** on the right side of the approved sender email address.
 
- Click on **View SPF**.
-![Retrieve SPF Information](images/picture4.png)
+    Click on **View SPF**.
+    ![Retrieve SPF Information](images/picture4.png)
 
 1. Copy the SPF information for your region and save it for use in the next task. Click the **Close** button when complete.
 ![Retrieve SPF Information](images/picture5.png)
@@ -51,29 +51,29 @@ This lab assumes you have:
 1. Return to your DNS Zone by clicking the **Navigation menu** in the upper left, navigate to **Networking** then select **DNS Management - Zones**.
 
 2. Open the zone that you created earlier and click on **Records**.
-![Click on Records to access Zone Record](images/picture6.png)
+    ![Click on Records to access Zone Record](images/picture6.png)
 
 3. Click on the **Manage Records** button.
-![Click on Manage Records Button](images/picture7.png)
+    ![Click on Manage Records Button](images/picture7.png)
 
 4. Retrieve the DKIM Record information you saved from the previous lab.
-   Update:
+    Update:
     * Name (Optional)
     * Change the **Type** to **TXT**
     * Update the RDATA/Answer Target with the SPF Information you saved earlier.
 
     When complete click the **Add Record** button.
-![Add Record Button to Add TXT Record](images/picture8.png)
+    ![Add Record Button to Add TXT Record](images/picture8.png)
 
 5. Move onto the next task when you are ready to publish your DNS Changes.
 
 ## Task 3: Publish DNS Changes and Verify Configured Correctly
 
 1. While on the Manage Records screen for DNS Management click on the **Review Changes** button.
-![Publish DNS Changes](images/picture9.png)
+    ![Publish DNS Changes](images/picture9.png)
 
 2. Next, click on the **publish changes** button to publish your DNS Records.
-![Confirm Publish of DNS Changes](images/picture10.png)
+    ![Confirm Publish of DNS Changes](images/picture10.png)
 
 3. As noted earlier, DNS updates may take time to take effect depending on your DNS Provider. The status of Email Delivery and DNS will update in your email domain when it's complete. Click the **Navigation menu** in the upper left, navigate to **Developer Services** then select **Application Integration - Email Delivery**.
 
@@ -91,3 +91,5 @@ This lab assumes you have:
 
 * **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026

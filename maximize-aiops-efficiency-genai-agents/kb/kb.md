@@ -42,3 +42,5 @@ This task will help you create a knowledge base using 23ai database as source.
 
 * **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026

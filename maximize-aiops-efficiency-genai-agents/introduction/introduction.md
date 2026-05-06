@@ -49,5 +49,7 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-- **Author**
-  - **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Author**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026
