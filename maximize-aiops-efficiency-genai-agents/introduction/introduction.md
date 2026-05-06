@@ -22,12 +22,12 @@ Objective of this workshop is to set-up the required OCI services to create a fu
 
 - OCI Generative AI Agent Service – Users can configure OCI Generative AI Agent Service (create and configure Knowledge Bases and Agents).
 Users can then ingest and perform RAG on the user’s documents in 23ai database, using OCI Generative AI Agent Service.
-- Local Client Machine – Users will use Local client machine which will orchestrate all OCI Generative AI agent tools. We will use OCI Agent Development Kit(ADK) a client-side library that simplifies building agentic application on top of OCI Generative AI Agent service.
+- Local Client Machine – Users will use Local client machine which will orchestrate all OCI Generative AI agent tools. We will use OCI Agent Development Kit(ADK) a client-side library that simplifies building aganetic application on top of OCI Genrative AI Agent service.
 - Slack Application – Users can create slack app in their workspace which will be used to connect from Slack to OCI Generative AI Agent Service.
 
 In this workshop, you will learn how to:
 
-- Create autonomous database and upload documents in the database.
+- Create object storage based RAG source and upload documents in it.
 - Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
 - Setup & configure Slack App integration with OCI ADK
 
