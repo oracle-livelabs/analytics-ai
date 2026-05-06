@@ -26,7 +26,7 @@ This lab assumes you have:
 * Permissions to manage OCI Services: Generative AI Agents
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
 
-## Task: Create Knowledge Base
+## Create Knowledge Base
 
 This task will help you create a knowledge base using OCI Bucket as source.
 
