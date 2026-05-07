@@ -12,31 +12,36 @@ This lab assumes you have:
 
 * All previous labs successfully completed
 
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
 ## Task 1: Initialize Slack App
 
 1. You have to initialize Slack App, this allows communication between Slack, Local Client functions and Remote Generative AI Agent.
-![Image1](./images/image1.png "Image 1")
+    ![Image1](./images/image1.png "Image 1")
 
 2. Create Slack Channel and Add AIOPS app in this channel.
 
 ## Task 2: Test the AIOPS Agent
 
 1. Query1 : **Hi**
-![Image2](./images/image2.png "Image 2")
+    ![Image2](./images/image2.png "Image 2")
 
 2. Query2: **can you tell me list of steps you will take to remediate OCI instances with CPU_ALARM ?**
-![Image3](./images/image3.png "Image 3")
+    ![Image3](./images/image3.png "Image 3")
 
 3. Query3: **Please remediate if any instance in CPU_ALARM state and notify **email**
-![Image4](./images/image4.png "Image 4")
-Identified test02 instance in **CPU_ALARM** state.
-![Image5](./images/image5.png "Image 5")
-Get all instance details like **instance_id** and **availability domain**
-![Image6](./images/image6.png "Image 6")
-Backup and reboot initiated
-![Image7](./images/image7.png "Image 7")
-Email Notification triggered
-![Image8](./images/image8.png "Image 8")
+    ![Image4](./images/image4.png "Image 4")
+    Identified test02 instance in **CPU_ALARM** state.
+    ![Image5](./images/image5.png "Image 5")
+    Get all instance details like **instance_id** and **availability domain**
+    ![Image6](./images/image6.png "Image 6")
+    Backup and reboot initiated
+    ![Image7](./images/image7.png "Image 7")
+    Email Notification triggered
+    ![Image8](./images/image8.png "Image 8")
 
 4. Query4: **Can you check if there is any instance still have CPU_ALARM ?**
 Identified no instance in CPU_ALARM state.
@@ -60,3 +65,5 @@ In this way you can integrate OCI Generative AI Agents with your Runbooks and ma
 
 * **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026
