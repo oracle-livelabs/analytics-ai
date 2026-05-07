@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to setup an OCI Generative AI Agent including ingesting a knowledge base from 23ai adb.
+This lab walks you through the steps to setup an OCI Generative AI Agent including ingesting a knowledge base from OCI Bucket.
 
 Estimated Time: 10 minutes
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 * Permissions to manage OCI Services: Generative AI Agents
 * Access to a Region where the Agent service is available: Chicago, Frankfurt
 
-## Task: Create Knowledge Base
+## Create Knowledge Base
 
 This task will help you create a knowledge base using OCI Bucket as source.
 
@@ -42,7 +42,7 @@ This task will help you create a knowledge base using OCI Bucket as source.
 
     ![KB Navigation](images/locate_kb.png)
 
-4. Click on your Create knowledge base. Provide Name, Data store type as Oracle AI Vector Search, Provide Database tool connection and click on Test connection. Once successful provide the vector search function created in the optional lab or your own vector search function. Lastly, click on create to create the Knowledge base.
+4. Click on your Create knowledge base. Provide Name, specify the data source as bucket and select all files and click on Create.
 
     ![KB creation](images/create_kb.png)
 
