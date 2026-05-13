@@ -47,26 +47,28 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
     ![Save Workbook](images/workbook6.png)
 
-6. **Click** Autoinsights, then Assistant then AI Agents
-
-    ![Assistant Menu](images/workbook7.png)
-
-7. **Select** The Sales Performance Analyst Agent that was created in **Lab 3**, then OK
-
-    ![Attach Agent](images/workbook8.png)
-
-    > **Note:** You can click again AI Agents it should display the agent we just attached then Save.
-
-    ![Verify Agent](images/workbook9.png)
-
-8. **Click** Present Mode to enable the Workbook Assistant. **Locate** the Insights Panel and toggle to turn it on, then Save
+6. **Click** Present Mode to enable the Workbook Assistant. **Locate** the Insights Panel and toggle to turn it on, then Save
 
 	![Create Workbook](images/workbook10.png)
 
     > **Note:** OAC AI Agents are available to end users when dashboards are accessed in Present Mode. Once an author enables the Workbook Assistant, the attached agent is enabled by default.
 
+7. **Click** Insights Panel, then Agents under Workbook Assistant
+
+    ![Assistant Menu](images/workbook7.png)
+
+8. **Select** The Sales Performance Analyst Agent that was created in **Lab 3**, then OK
+
+    ![Attach Agent](images/workbook8.png)
+
+    > **Note:** You can see the AI Agents displayed under Agents then Save.
+
+    ![Verify Agent](images/workbook9.png)
+
+
 
 ## Task 2: Validate the AI Agent
+In this task, you will interact with the AI agent within the AI Assistant to gain some useful insights. You can also pass workbook filters to the AI Agent with the help of parameter binding. For example, a workbook can have a filter for Region = EMEA, now when users interact with the Agent all responses are automatically filtered for EMEA. You can also exclude the workbook filters in the Agent responses.
 
 1. **Click** Preview to view Workbook as an end user.
 
@@ -92,7 +94,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
     ![RAG Validation](images/workbook16.png)
 
-    > **Note:** Both Austin and Sacramento have 2 orders that were given 12% and 13% discount rates which exceed the 10% max discount stated in the Sales Discount Policy
+    > **Note:** Order ID 10247 in Yaonde was given 6% discount which exceeds the 5% max discount for sales under $2 000 stated in the Sales Discount Policy
 
 6. **Validate** Trend Analysis:- "How have sales and profit trended over time by region?"
 
@@ -105,6 +107,8 @@ You have successfully completed all the labs
 ## Learn More
 * [Attach AI Agent](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/make-oracle-analytics-ai-agent-available-workbook.html)
 * [Auto Insights in OAC](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/use-auto-insights-get-immediate-insights-your-data.html)
+* [Agent Parameter Binding](https://www.youtube.com/channel/UCd9eAcFU0wnwN1w_XAZ5Knw)
+
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, ONA
