@@ -1,24 +1,24 @@
 # Introduction
 
 ## About this Workshop
-The scope of this workshop is to create a Oracle Cloud Infrastructure (OCI) Wingmate that will help monitor the security and deliver operations insights of a tenancy. This workshop uses Oracle 26ai Autonomous AI Database to store data collected from a tenancy and APEX to generate a dashboard to deliver operational insights never seen before. 
+The scope of this workshop is to create an Oracle Cloud Infrastructure (OCI) Wingmate that helps monitor security and deliver operational insights for a tenancy. This workshop uses Oracle 26ai Autonomous AI Database to store data collected from a tenancy and APEX to generate a dashboard that delivers operational insights.
 
-[**Resource Analytics**](https://www.oracle.com/manageability/resource-analytics/) is a new product on OCI that provides near real-time information to enahance the visibility across IT infrastructure. This lab will serve as a guide for new users looking to get started with Resource Analytics and start building using APEX.
+[**Resource Analytics**](https://www.oracle.com/manageability/resource-analytics/) is a new OCI product that provides near real-time information to enhance visibility across IT infrastructure. This lab serves as a guide for new users looking to get started with Resource Analytics and begin building with APEX.
 
-The lab was deisgned to enable a user to develop an app from scratch using a combination of data sources: synthetic flat files, RESTful API, and/or Resource Analytics. 
-* First, for convience, synthetic data was populated into flat files (CSVs) to simulate batch data gathered from an API or other methods. 
-* Second, RESTful API direct connection is simulated by showing the users how to connect to tenancy resources, which may or may not be supported by other means (ie. Resource Analytics).
-* Third, Resource Analytics simulates a near real-time direct connection to tenancy information to populate the app and begin asking complex Natural Language questions (using Wingmate) or visualizing scenarios using Property Graphs. 
+This lab was designed to enable users to develop an app from scratch using a combination of data sources: synthetic flat files, RESTful APIs, and/or Resource Analytics.
+* First, for convenience, synthetic data is populated into flat files (CSVs) to simulate batch data gathered from an API or other methods.
+* Second, direct RESTful API connectivity is simulated by showing users how to connect to tenancy resources, which may or may not be supported by other means (for example, Resource Analytics).
+* Third, Resource Analytics simulates a near real-time direct connection to tenancy information to populate the app and begin asking complex natural language questions (using Wingmate) or visualizing scenarios with Property Graphs.
 
->**Note:** Wingmate isn't a product branded by Oracle, but simply a new way of creating a data model and unlocking new insights about your data using APEX, which may or may not be supported by Resource Analytics. The advantage of building on APEX is that it is Free, while it allows for a more customizable experience. **This lab has optionality to build on a Always-Free Autonomous AI Database or utilize the resources provisioned by Resource Analytics to build on top of**.
+> **Note:** Wingmate is not an Oracle-branded product, but rather a new way to create a data model and unlock insights from your data using APEX, which may or may not be supported by Resource Analytics. The advantage of building on APEX is that it is free and allows for a more customizable experience. **This lab gives you the option to build on an Always Free Autonomous AI Database or use resources provisioned by Resource Analytics.**
 
 ![navigate home buttons](./images/cover-page.png "")
 
-Utilitizing natural language, querying tenancy information makes operations oversight a breaze. 
+Utilizing natural language to query tenancy information makes operations oversight a breeze.
 
 ![navigate home buttons](./images/cover-page-2.png "")
 
-Using all the features of a sophisticated data model on a converged database allows deeper insights into how resources are dependent on eachother. For example, PDBs in a multitenant architecture can be visualized with Graph to better understand noisey neighbors.
+Using all features of a sophisticated data model on a converged database allows deeper insights into how resources depend on each other. For example, PDBs in a multitenant architecture can be visualized with Graph to better understand noisy neighbors.
 
 ![navigate home buttons](./images/cover-page-3.png "")
 
@@ -51,7 +51,7 @@ In this workshop, you will learn how to:
 ### Prerequisites
 
 * An OCI cloud account
-* Subscription to US-Central Chicago, US-Ashburn-1, or US-Phoenix-1 Region
+* Subscription to the US Midwest (Chicago), US-Ashburn-1, or US-Phoenix-1 region
 * Basic database and SQL knowledge.
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful.
 * Familiarity with the role of REST services.
@@ -70,5 +70,5 @@ You may now **proceed to the next lab**.
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Architect
-	* Royce Fu - Master Principle Cloud Architect
-* **Last Updated by/Date** - Nicholas Cusato, Febuary 2026
+	* Royce Fu - Master Principal Cloud Architect
+* **Last Updated by/Date** - Nicholas Cusato, February 2026

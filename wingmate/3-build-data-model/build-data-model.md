@@ -129,7 +129,7 @@ Estimated time - 20 minutes
 
 	![Step 3](./images/prerequisits-step3.png "")
 
-23. 
+23.  
 
 Once completed, select **Create Instance**.
 
