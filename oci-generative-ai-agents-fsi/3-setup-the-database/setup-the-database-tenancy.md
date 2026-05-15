@@ -1,4 +1,4 @@
-# Setup the database
+# Setup the Database
 
 ## Introduction
 
@@ -30,16 +30,16 @@ In this task we are going to create a new ADB instance.
 1. Click **Oracle Database**.
 1. Click **Autonomous Database**.
 
-   ![Screenshot showing how to navigate to the ADB](./images/navigate-to-adb.png)
+    ![Screenshot showing how to navigate to the ADB](./images/navigate-to-adb.png)
 
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
 1. Click the **Create Autonomous Database** button at the top of the **Autonomous Databases** table.
 
-   ![Screenshot showing how to navigate to the create ADB page](./images/create-adb-button.png)
+    ![Screenshot showing how to navigate to the create ADB page](./images/create-adb-button.png)
 
 1. For the **Display name** use: _loan-compliance_.
-   
-   ```text
+
+    ```text
       <copy>
       loan-compliance
       </copy>
@@ -47,7 +47,7 @@ In this task we are going to create a new ADB instance.
 
 1. For the **Database name** use: _loancompliance_.
 
-   ```text
+    ```text
       <copy>
       loancompliance
       </copy>
@@ -56,17 +56,17 @@ In this task we are going to create a new ADB instance.
 1. Under the **Compartment**, make sure that the **root** compartment is selected.
 1. Under **Workload type** make sure that **Data Warehouse** is selected.
 
-   ![Screenshot showing how to configure the display & database names](./images/create-adb-1.png)
+    ![Screenshot showing how to configure the display & database names](./images/create-adb-1.png)
 
 1. Under the **Database configuration** section, enable the **Developer** option.
 1. Select **23ai** as the version under **Choose database version**.
 
-   ![Screenshot showing how to configure the developer option](./images/create-adb-2.png)
+    ![Screenshot showing how to configure the developer option](./images/create-adb-2.png)
 
 1. Under the **Administrator credentials creation** section, type a password (for example: _myPassword123_), in the **Password** field and confirm the password in the **Confirm password** field. Please make sure to choose a password you'd remember as we are going to need to type this password later.
 1. Under the **Network access** section, make sure that the **Secure access from everywhere** option is selected.
 
-   ![Screenshot showing how to configure admin password and network access](./images/create-adb-3.png)
+    ![Screenshot showing how to configure admin password and network access](./images/create-adb-3.png)
 
 1. Click the **Create** button at the bottom of the screen.
 
@@ -78,7 +78,7 @@ In this task we are going to use SQL scripts to create the database schema which
 
 1. Once the ADB instance is created, click the **Database actions** drop down and select the **SQL** option. This should launch a new tab in your browser with the SQL application (dismiss any messages if you see any).
 
-   ![Screenshot showing how to launch the SQL database action](./images/database-actions.png)
+    ![Screenshot showing how to launch the SQL database action](./images/database-actions.png)
 
 1. Copy the following sql statements, paste them into the **SQL worksheet** and click the green **Run Statement** button at the top.
 
@@ -307,17 +307,17 @@ In this task we are going to create a Vault and an encryption key. We are going 
 1. Click **Identity & Security**.
 1. Click **Vault** under **Key Management & Secret Management**.
 
-   ![Screenshot showing how to navigate to the vault page](./images/navigate-to-vault.jpg)
+    ![Screenshot showing how to navigate to the vault page](./images/navigate-to-vault.jpg)
 
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
 1. Click the **Create Vault** button at the top of the **Vaults** table.
 
-   ![Screenshot showing how to navigate to the create vault page](./images/create-vault-button.png)
+    ![Screenshot showing how to navigate to the create vault page](./images/create-vault-button.png)
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _loan-compliance-secrets_
 
-   ```text
+    ```text
       <copy>
       loan-compliance-secrets
       </copy>
@@ -325,17 +325,17 @@ In this task we are going to create a Vault and an encryption key. We are going 
 
 1. Click the **Create Vault** button at the bottom of the form.
 
-   ![Screenshot showing how to create the vault](./images/create-vault.png)
+    ![Screenshot showing how to create the vault](./images/create-vault.png)
 
 1. Wait for the vault to be created.
 
-   ![Screenshot showing the created vault](./images/created-vault.png)
+    ![Screenshot showing the created vault](./images/created-vault.png)
 
 1. Once the vault is created, click it's name from the **Vaults** list.
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
 1. Click the **Create Key** button at the top of the **Master Encryption Keys** table.
 
-   ![Screenshot showing the create key button](./images/create-key-button.png)
+    ![Screenshot showing the create key button](./images/create-key-button.png)
 
 1. Under the **Create in Compartment**, make sure that the **root** compartment is selected.
 1. For the **Name** field use: _loan-compliance-key_
@@ -358,16 +358,16 @@ In this section we are going to create a connection to our database. This connec
 1. Click **Developer Services**.
 1. Click **Connections** under **Database Tools**.
 
-   ![Screenshot showing how to navigate to the vault page](./images/navigate-to-connections.jpg)
+    ![Screenshot showing how to navigate to the vault page](./images/navigate-to-connections.jpg)
 
 1. Under the **List scope** section, make sure that the **root** compartment is selected.
 1. Click the **Create Connection** button at the top of the **Connections** table.
 
-   ![Screenshot showing how to navigate to the create vault page](./images/create-connection-button.png)
+    ![Screenshot showing how to navigate to the create vault page](./images/create-connection-button.png)
 
 1. For the **Name** field use: _loan-compliance_
 
-   ```text
+    ```text
       <copy>
       loan-compliance
       </copy>
@@ -379,17 +379,17 @@ In this section we are going to create a connection to our database. This connec
 1. In the **Database in...** drop down, select the **loan-compliance** database.
 1. In the **Username** field, type: _ADMIN_
 
-   ![Screenshot showing the first part of the connection configuration](./images/create-connection-1.png)
+    ![Screenshot showing the first part of the connection configuration](./images/create-connection-1.png)
 
 1. Under the **User password secret in...** drop-down, click the **Create password secret** button.
 
-   ![Screenshot showing create password secret button](./images/create-connection-2.png)
+    ![Screenshot showing create password secret button](./images/create-connection-2.png)
 
-   This step will create a secret which will be stored in the Vault created earlier and will contain the password for connecting to the database.
+    This step will create a secret which will be stored in the Vault created earlier and will contain the password for connecting to the database.
 
 1. For the **Name** field use: _loan-compliance-admin-password_
 
-   ```text
+    ```text
       <copy>
       loan-compliance-admin-password
       </copy>
@@ -401,19 +401,19 @@ In this section we are going to create a connection to our database. This connec
 1. Do the same in the **Confirm user password** field.
 1. Click the **Create** button.
 
-   ![Screenshot showing the second past of the admin password details](./images/create-connection-3.png)
+    ![Screenshot showing the second past of the admin password details](./images/create-connection-3.png)
 
 1. Back in the **Create connection** panel, the newly created password secret is automatically selected in the **User password secret in...** drop-down.
 
-   ![Screenshot showing the selected secret](./images/create-connection-4.png)
+    ![Screenshot showing the selected secret](./images/create-connection-4.png)
 
 1. Under the **SSL details** section, click the **Create wallet content secret** button. This will create a secret which will help the agent securely communicate with the database.
 
-   ![Screenshot showing how to create the ](./images/create-connection-5.png)
+    ![Screenshot showing how to create the ](./images/create-connection-5.png)
 
 1. For the **Name** field use: _loan-compliance-wallet-secret_
 
-   ```text
+    ```text
       <copy>
       loan-compliance-wallet-secret
       </copy>
@@ -424,7 +424,7 @@ In this section we are going to create a connection to our database. This connec
 1. Under the **Wallet** section, select the **Retrieve regional wallet from Autonomous Database** option.
 1. Click the **Create** button.
 
-   ![Screenshot showing how to create the wallet secret](./images/create-connection-6.png)
+    ![Screenshot showing how to create the wallet secret](./images/create-connection-6.png)
 
 1. Back in the **Create connection** panel, the newly created wallet secret is automatically selected in the **SSO wallet content secret in...** drop-down.
 1. Click the **Create** button.
@@ -437,19 +437,19 @@ In this task we are going to make sure that the connection was created successfu
 
 1. After the connection was created, click **Validate** button on the top right of the connection page.
 
-   ![Screenshot showing the location of the validate button](./images/validate-button.png)
+    ![Screenshot showing the location of the validate button](./images/validate-button.png)
 
 1. Click the **Validate** button at the bottom of the **Validate connection** dialog.
 
-   ![Screenshot showing the validate connection dialog](./images/validate-dialog.png)
+    ![Screenshot showing the validate connection dialog](./images/validate-dialog.png)
 
 1. If everything was configured correctly, you should see a result similar to the following:
 
-   ![Screenshot showing a successful connection validation](./images/validation-successful.png)
+    ![Screenshot showing a successful connection validation](./images/validation-successful.png)
 
 1. You can click the **Close** link to exit the dialog.
 
-   ![Screenshot showing how to exist the validation dialog](./images/close-validation-dialog.png)
+    ![Screenshot showing how to exist the validation dialog](./images/close-validation-dialog.png)
 
 You may now **proceed to the next lab**
 
