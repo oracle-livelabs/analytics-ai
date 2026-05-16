@@ -1,4 +1,4 @@
-# Lab 4: Leverage Resource Analytics for a Data Pipeline
+# Lab 2: Leverage Resource Analytics for a Data Pipeline
 
 ## Introduction
 
@@ -275,7 +275,11 @@ The Resource Analytics provisions an Autonomous AI Database in a private subnet.
 
 	![unmapped column](./images/unmapped-column.png "")
 
-Thank you for completing this lab.
+You may now **proceed to the next lab**.
+
+## Learn more
+
+* [Blog for Oracle Resource Analytics Materialized View for APEX](https://www.ateam-oracle.com/building-a-cloud-configuration-management-knowledge-base-with-oci-resource-analytics)
 
 ## Acknowledgements
 
