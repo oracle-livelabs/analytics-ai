@@ -1,4 +1,4 @@
-# Lab 3: Build a RAG Chatbot using Low-Code APEX
+# Lab 4: Build a RAG Chatbot using Low-Code APEX
 
 ## Introduction
 
