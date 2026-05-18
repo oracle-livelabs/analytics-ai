@@ -49,7 +49,7 @@ In this task, you will attach the AI agent to an OAC workbook, enabling users to
 
 6. **Click** Present Mode to enable the Workbook Assistant. **Locate** the Insights Panel and toggle to turn it on, then Save
 
-	![Create Workbook](images/workbook10.png)
+    ![Create Workbook](images/workbook10.png)
 
     > **Note:** OAC AI Agents are available to end users when dashboards are accessed in Present Mode. Once an author enables the Workbook Assistant, the attached agent is enabled by default.
 
