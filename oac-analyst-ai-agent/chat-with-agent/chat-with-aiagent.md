@@ -51,36 +51,31 @@ In this task, you will interact directly with the AI agent using natural languag
 
     ![Validate Facts](images/chatwithagent6.png)
 
-    > **Note:** At any time you can clear the Agent history by clicking the Delete icon on the right corner. Verify the response against your Dataset e.g Chicago Order 10081, Profit is $236.7 and Sales is $1846.4.
+    > **Note:** At any time you can clear the Agent history by clicking the Delete icon on the right corner. Change chart type to Table to Verify the response against your Dataset e.g Chicago Totals for Orders 3217, Profit is $8862.71 and Sales is $174592.01. The Agent also generated Key Insights and Actionable Recommendations.
 
     ![Validate Facts](images/chatwithagent7.png)
 
-2. **Click** Additional Insights.The Agent generated insightful info such as Top and Bottom 3 Cities. The Agent also created additional visualizations breaking down Sales Revenue by City, Sales Revenue by Order Identifier and etc.
-
-    ![More Insights](images/chatwithagent8.png)
-
-3. **Hoover** your mouse on the visualization to access options such as **Export, Add to Watchlist and Maximize Visualization**
+2. **Hoover** your mouse on the visualization to access options such as **Export, Add to Watchlist and Maximize Visualization**
 
     ![Explore Options](images/chatwithagent9.png)
 
-4. **Validate** Critical reasoning and understanding of relationships across dimensions."How does order priority influence shipping choices and associated costs"
+3. **Validate** Critical reasoning and understanding of relationships across dimensions."How does order priority influence shipping choices and associated costs"
 
     ![Reasoning](images/chatwithagent11.png)
 
     > **Note:** The Agent generated a comparison of shipping methods by priority and impact on costs
 
-5. **Validate** The ability to follow business rules, RAG, docs to prove it's a trusted enterprise agent. "Highlight sales with excessive discounts"
+4. **Validate** The ability to follow business rules, RAG, docs to prove it's a trusted enterprise agent. "Highlight sales with excessive discounts"
 
     ![Document Knowledge](images/chatwithagent12.png)
 
     > **Note:** The Agent used the sales discount document we uploaded to verify if the discount exceeds policy or not. If you don't see expected results this is where adding semantic descriptions work to help your AI Agent correctly interpret and explain discount behavior.
 
-6. **Validate** the ability to recommend solutions whilst adhering to corporate policy. "How can we improve profitability while staying within policy?"
+5. **Validate** the ability to recommend solutions whilst adhering to corporate policy. "How can we improve profitability while staying within policy?"
 
     ![Recommendations](images/chatwithagent13.png)
 
     > **Note:** The Agent generated a response based on built-in knowledge and also tied it our sales discount policy
-
 
 
 
