@@ -65,11 +65,11 @@ In this task we will create the Sales AI Agent using the dataset build in Lab 1.
 
     ![Save Agent](images/createaiagent4.png)
 
-8. **Upload**  a Sales Discount Policy document, then **Click** Save
+8. **Upload**  a Sales Discount Policy document, **Select** Priority and Language if necessary then **Click** Save
 
     ![Upload Document](images/createaiagent5.png) 
 
-    > **Note:** You can add up to 10 pdf and txt documents
+    > **Note:** You can add up to 10 pdf and txt documents. Document Priority influences how strongly the document is considered when the AI Agent retrieves knowledge to answer a question. The setting can be used to give certain documents precedence if you attached multiple documents. Language helps the agent retrieve the most appropriate document when answering questions in different languages. For international teams it makes it easier to maintain multilingual knowledge sources for a single AI agent.
 
 9. **Click** Save, then **Run**
 
