@@ -1,4 +1,4 @@
-# Lab 2: Build Security Wingmate on APEX 
+# Lab 3: Build Security Wingmate on APEX 
 
 ## Introduction
 This lab will walk you through setting up the Security Wingmate page for the APEX application. Chat with your Wingmate about policies

@@ -1,4 +1,4 @@
-# Build a Wingmate on AI Database 26ai
+# Lab 1: Build a Wingmate on AI Database 26ai
 
 ## Introduction
 
