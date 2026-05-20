@@ -1,26 +1,30 @@
-# Lab 3: Build Security Wingmate on APEX 
+# Lab 3: Build a Security Wingmate Agent
 
 ## Introduction
-This lab will walk you through setting up the Security Wingmate page for the APEX application. Chat with your Wingmate about policies
+This lab walks you through setting up the Security Wingmate Agent page for the APEX application. You will chat with your Wingmate about identity and access management policies.
 
-Estimated time - 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Build a Security Page of Wingmate App
-* Test the App's Chat Feature
+* Build a Security Wingmate Agent page
+* Connect the page to the OCI Generative AI service created in Lab 2
+* Test the app's chat feature
 
 ### Prerequisites
 
 This lab assumes you have the following:
 
-* Completed the previous lab
-* Some SQL knowledge is perfered but not necessary
+* Completed Labs 1 and 2
+* Access to the `WINGMATE` APEX application
+* `OCI_GENAI` Generative AI service object created in APEX
+* Security policy data loaded or mapped in the `WINGMATE` schema
+* Some SQL knowledge is preferred but not necessary
 
-## Task 1: Build a Security Page of Wingmate App
+## Task 1: Build a Security Wingmate Agent Page
 
-1. Navitage to the APEX app WINGMATE, and select **Create Page**.
+1. Navigate to the APEX app WINGMATE, and select **Create Page**.
 
 	![create page button](./images/create-page.png "")
 
@@ -32,7 +36,7 @@ This lab assumes you have the following:
 
 	![page naming text box](./images/name-security-wingmate.png "")
 
-4. Right click **Body** on the application tree to the left and select **Create Region**.
+4. Right-click **Body** on the application tree to the left and select **Create Region**.
 
 	![create region button](./images/create-region.png "")
 
@@ -48,7 +52,7 @@ This lab assumes you have the following:
 
 	![name the page button](./images/name-wingmate-button.png "")
 
-8. Right click the new button and select **Create Dynamic Action**.
+8. Right-click the new button and select **Create Dynamic Action**.
 
 	![left menu for button and dynamic action](./images/dynamic-startwingmate-button.png "")
 
@@ -60,7 +64,15 @@ This lab assumes you have the following:
 
 	![Select true action](./images/select-show.png "")
 	
-11. Select **Show AI Assistant** on the right panel. Select source to match the GenAI credentials from Lab 1. Pastes the following in the **System Prompt**:
+11. Select **Show AI Assistant** on the right panel. Select the source to match the `OCI_GENAI` service from Lab 2. Paste the following in the **System Prompt**:
+
+	```
+	<copy>
+	You are OCI Security Wingmate, an assistant for OCI identity and access management policy review. Answer questions using the application's loaded security policy data. Be concise, explain the policy impact, and call out missing data instead of guessing.
+	</copy>
+	```
+
+	> **SME Review Gate:** Confirm the final security source tables or views and whether the prompt should use synthetic `CIS_` data, Resource Analytics identity views, or both.
 
 	![true action description](./images/show-genai.png "")
 
@@ -72,7 +84,7 @@ This lab assumes you have the following:
 
 	![Hide Action Button](./images/hidden-action.png "")
 
-14. Save the work done and view the by clicking the **Green Run Button** on the top right of the screen.
+14. Save the work done and view the page by clicking the **Green Run Button** on the top right of the screen.
 
 	![Save and Run button](./images/save-and-run.png "")
 
@@ -96,5 +108,5 @@ You may now **proceed to the next lab**.
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Architect
-	* Royce Fu - Master Principle Cloud Architect
-* **Last Updated by/Date** - Nicholas Cusato, Febuary 2026
+	* Royce Fu - Master Principal Cloud Architect
+* **Last Updated by/Date** - Royce Fu, May 2026

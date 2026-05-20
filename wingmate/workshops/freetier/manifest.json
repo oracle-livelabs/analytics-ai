@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "",
-    "help": "livelabs-help-analytics_us@oracle.com”",
+    "workshoptitle": "Build an Agentic Operations Wingmate with OCI Resource Analytics, Oracle APEX, and OCI Generative AI",
+    "help": "livelabs-help-analytics_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -13,21 +13,25 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Build a Wingmate on APEX",
+            "title": "Lab 1: Provision OCI Resource Analytics and Prepare Wingmate Data",
             "description": "",
-            "filename": "../../2-build-apex-wingmate/build-apex-wingmate.md"
+            "filename": "../../1-provision-resource-analytics/provision-resource-analytics.md"
         },
         {
-            "title": "Lab 2: Build a Data Model to Support Wingmate",
-            "filename": "../../3-build-data-model/build-data-model.md"
+            "title": "Lab 2: Build an Agentic Operations Wingmate with Oracle APEX and OCI Generative AI",
+            "filename": "../../2-build-operations-wingmate/build-operations-wingmate.md"
         },
         {
-            "title": "Lab 3: Build a Security Wingmate",
-            "filename": "../../4-build-security-wingmate/build-security-wingmate.md"
+            "title": "Lab 3: Build a Security Wingmate Agent",
+            "filename": "../../3-build-security-wingmate/build-security-wingmate.md"
         },
-                {
-            "title": "Lab 4: Build a MultiCloud Wingmate",
-            "filename": "../../5-build-multicloud-wingmate/build-multicloud-wingmate.md"
+        {
+            "title": "Lab 4: Build a Multicloud Wingmate Agent",
+            "filename": "../../4-build-multicloud-wingmate/build-multicloud-wingmate.md"
+        },
+        {
+            "title": "Lab 5: Build a Compute Wingmate Agent",
+            "filename": "../../5-build-compute-wingmate/build-compute-wingmate.md"
         },
         {
             "title": "Need Help?",
