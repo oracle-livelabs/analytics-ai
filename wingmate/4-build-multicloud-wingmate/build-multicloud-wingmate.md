@@ -1,29 +1,32 @@
-# Lab 4: Build a RAG Chatbot using Low-Code APEX
+# Lab 4: Build a Multicloud Wingmate Agent
 
 ## Introduction
 
-This lab walks the user through the creation of a multicloud Wingmate dashboard. This is helpful for managing compute and resources across multiple cloud service providors. 
+This lab walks you through the creation of a Multicloud Wingmate Agent dashboard. This is helpful for managing compute and resources across multiple cloud service providers.
 
-Estimated time - 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
-* Build a Multicloud Page of Wingmate App
+* Build a Multicloud Wingmate Agent page
 * Generate Report Period View
 * Create Host Insights Widgets
 * Compare Insights Across CPU and Memory
 * Visualize CPU Combinations for Historical and Forecast Analysis
-* Operationalize Multicloud with Property Graph
-* Review the Multicloud's Insights
+* Operationalize MultiCloud with Property Graph
+* Review MultiCloud Insights
 
 ### Prerequisites
 
-* Completed the first lab
-* Some SQL knowledge is perfered but not necessary
+* Completed Labs 1, 2, and 3
+* Access to the `WINGMATE` APEX application
+* `OCI_GENAI` Generative AI service object created in APEX
+* Multicloud and host-insights data loaded or mapped in the `WINGMATE` schema
+* Some SQL knowledge is preferred but not necessary
 
-## Task 1: Build a Multicloud Page of Wingmate App 
+## Task 1: Build a Multicloud Wingmate Agent Page
 
-1. Use the existing template from Compute Wingmate to make the MultiCloud Wingmate by selecting the plus sign in the top right of the page and select **Copy Page**.
+1. Use the existing template from the Security Wingmate Agent to create the Multicloud Wingmate Agent by selecting the plus sign in the top right of the page and selecting **Copy Page**.
 
 	![navigate home buttons](./images/copy-page.png "")
 
@@ -43,31 +46,33 @@ Estimated time - 60 minutes
 
 	![rename value and id and copy button](./images/rename-security.png "")
 
-6. Update AI Assistant, by navigating to **Show AI Assistant** in the navigation tree under MultiCloud Wingmate Region -> StartWingmate -> Chat -> Show AI Assistant. Update System Prompt with following:
+6. Update AI Assistant by navigating to **Show AI Assistant** in the navigation tree under MultiCloud Wingmate Region -> StartWingmate -> Chat -> Show AI Assistant. Update System Prompt with the following:
 
 	```
-	<copy/>
+	<copy>
 	I want you to be an OCI compute expert who is providing guidance to the customers about resource capacity planning best practices. 
 	The following list is the oci compute host insights details we have captured, please use these compute metrics data for answering questions. 
 	--------
-	&P3_OCI_HOSTINSIGHTS_DETAILS.
+	&P4_OCI_HOSTINSIGHTS_DETAILS.
 	--------
 	The following list is the OCI documentation references for compute, please use these documentation references for answering recommendation related questions.
 	--------
-	&P3_OCI_DOC_REF_COMPUTE.
+	&P4_OCI_DOC_REF_COMPUTE.
 
 	</copy>
 	```
 
-	>**Note:** Ensure you update the refence page number if its not matching. ie. &P3_OCI_DOC_REF_COMPUTE -> &P4_OCI_DOC_REF_COMPUTE
+	> **Note:** Ensure you update the reference page number if it does not match your copied page.
 
-Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wingmate as well.
+	Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wingmate as well.
+
+	> **SME Review Gate:** Confirm the final prompt, hidden page item names, and source views before publishing this as executable content.
 
 7. Select the table previously created in the last lab that copied over named **Identity and Access Management**.
 
 	![Identity Table](./images/update-identity.png "")
 
-8. Update the name **Multicloud Insights** and change the **SQL Query** to the following:
+8. Update the name **MultiCloud Insights** and change the **SQL Query** to the following:
 
 	```
 	<copy>
@@ -81,11 +86,11 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 	</copy>
 	```
 
-	![SQL Query for Multicloud Insights](./images/multicloud-insights.png "")
+	![SQL Query for MultiCloud Insights](./images/multicloud-insights.png "")
 
-	>**Note:** This will serve as the bottom of the dashboard so any regions created will be place above this table. 
+	> **Note:** This will serve as the bottom of the dashboard so any regions created will be placed above this table.
 
-9. Navigate to the bottom of the Navigation Tree to the hidden items. Select the OCI_CLOUDGUARD and rename it to **P4_OCI_HOSTINSIGHTS_DETAILS** on the right side Indentification. 
+9. Navigate to the bottom of the Navigation Tree to the hidden items. Select the OCI_CLOUDGUARD item and rename it to **P4_OCI_DOC_REF_COMPUTE** on the right side under Identification.
 
 	![select hidden value](./images/select-hidden.png "")
 
@@ -94,39 +99,39 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 10. Update the computation as the following:
 
 	```
-	<copy/>
+	<copy>
 	Select CONTEXT_PROMPT FROM oci_doc_ref_compute_sv
 	</copy>
 	```
 
 	![update computation](./images/update-computation.png "")
 
-11. Create another **Hidden Item** by right clicking **P4_HOSTINSIGHTS_Listed**, selecting **Duplicate** and name it: **P4_OCI_HOSTINSIGHTS_DETAILS** 
+11. Create another **Hidden Item** by right-clicking **P4_HOSTINSIGHTS_Listed**, selecting **Duplicate**, and naming it **P4_OCI_HOSTINSIGHTS_DETAILS**.
 
 	![create hidden item](./images/duplicate-hidden.png "")
 
 	![host insights hidden value](./images/update-hostinsights-name.png "")
 
-12. Right Click **P4_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
+12. Right-click **P4_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
 
 	```
-	<copy/>
+	<copy>
 	Select CONTEXT_PROMPT FROM hostinsights_report_sv
 	</copy>
 	```
 
 	![host insights hidden value](./images/update-hostinsights-computation.png "")
 
-13. Repeat **Step 9** to create another hidden item named **P4_OCI_DATABASE_DETAILS**
+13. Repeat **Step 11** to create another hidden item named **P4_OCI_DATABASE_DETAILS**.
 
 	![create hidden item](./images/duplicate-hidden-details.png "")
 
 	![host insights hidden value](./images/update-hostinsights-computation.png "")
 
-14. Right Click **P4_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
+14. Right-click **P4_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
 
 	```
-	<copy/>
+	<copy>
 	SELECT CONTEXT_PROMPT FROM CIS_MULTICLOUD_DETAILS_V
 	</copy>
 	```
@@ -137,7 +142,7 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 
 ## Task 2: Generate Report Period View
 
-1. Create a table for viewing the host period by creating a region to contain it. Expand the **bottom module** (if not open) by selecting the arrow at the bttom center of the screen. Select **Regions** and pick the **Help** icon. Drop it under the Chat Region.
+1. Create a table for viewing the host period by creating a region to contain it. Expand the **bottom module** (if not open) by selecting the arrow at the bottom center of the screen. Select **Regions** and pick the **Help** icon. Drop it under the Chat Region.
 
 	![Help Region](./images/help-region.png "")
 
@@ -171,9 +176,9 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 
 	![Status Gauge](./images/cpu-gauge.png "")
 
-4. Update the style of the guage by scrolling down on the right and change the **Indicator Size** to **.5** and **Inner Radius** to **.9**. 
+4. Update the style of the gauge by scrolling down on the right and change the **Indicator Size** to **.5** and **Inner Radius** to **.9**.
 
-	![Guage style Update](./images/cpu-gauge-size.png "")
+	![Gauge style Update](./images/cpu-gauge-size.png "")
 
 5. Scroll down more change **Value** and **Format** to **Percent** with 0 decimal places.
 
@@ -193,13 +198,13 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 
 	![CPU mapping](./images/cpu-gauge-mapping.png "")
 
-8. Right-click to duplicate the **CPU Usage Over Capcity** Guage. Update the **Name** to **Memory Usage over Capacity**. Select **Atributes** and adjust the Guage size:
+8. Right-click to duplicate the **CPU Usage Over Capacity** gauge. Update the **Name** to **Memory Usage over Capacity**. Select **Attributes** and adjust the gauge size:
 	* Indicator Size: **.5**
 	* Inner Radius: **.6**
 
 	![Memory Metrics](./images/memory-gauge-size.png "")
 
-9. Select Series and rename it **Memory Metrics**. Update the SQL Query to the folowing:
+9. Select Series and rename it **Memory Metrics**. Update the SQL Query to the following:
 
 	```
 	<copy>
@@ -211,7 +216,7 @@ Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wing
 
 10. Scroll down and change the mapping with **Memory Usage** for **Label** and **Value** and **Memory Capacity** for **Maximum Value**. 
 
-	![Memory Guage Mapping](./images/memory-guage-mapping.png "")
+	![Memory Gauge Mapping](./images/memory-guage-mapping.png "")
 
 Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
@@ -233,7 +238,7 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![Pie settings](./images/cpu-usage-across-hosts-settings.png "")
 
-3. For the series, name it **Tasks**. Add the following **SQL Query**:
+5. For the series, name it **Tasks**. Add the following **SQL Query**:
 
 	```
 	<copy>
@@ -250,25 +255,25 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![SQL Query CPU Usage](./images/cpu-usage-sql.png "")
 
-4. Scroll down and Select **HOSTNAME** for Label and **USAGE** for Value.
+6. Scroll down and Select **HOSTNAME** for Label and **USAGE** for Value.
 
 	![CPU usage across hosts Column Mapping](./images/cpu-usage-across-hosts-mapping.png "")
 
-5. Drag and drop a second chart next to CPU Usage across Hosts and name it **Key Metrics Distribution**.
+7. Drag and drop a second chart next to CPU Usage across Hosts and name it **Key Metrics Distribution**.
 
 	![Key Metrics Chart](./images/key-metrics-drop.png "")
 
-6. Select **Attributes** and change chart type to **Polar**.
+8. Select **Attributes** and change chart type to **Polar**.
 
 	![Key Metrics Chart Type](./images/key-metrics-polar.png "")
 
-7. Scroll down and toggle **Stack** under Appearance to **ON**.
+9. Scroll down and toggle **Stack** under Appearance to **ON**.
 
 	![Appearance toggle](./images/key-metrics-stack.png "")
 
-8. Update the series name to **CPU Utilization** and change the type to **Line with Area**.
+10. Update the series name to **CPU Utilization** and change the type to **Line with Area**.
 
-9. Update the **CPU Utilization SQL Query** to match:
+11. Update the **CPU Utilization SQL Query** to match:
 
 	```
 	<copy>
@@ -281,21 +286,21 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![CPU Utilization SQL](./images/cpu-utilization.png "")
 
-10. Scroll down and update the mapping to the following:
+12. Scroll down and update the mapping to the following:
 	* Label: **HOSTNAME**
 	* Value: **CPU_UTIL**
 
 	![CPU utilization mapping](./images/key-metrics-cpu-mapping.png "")
 
-11. Right-click **Series** and select **Create Series**.
+13. Right-click **Series** and select **Create Series**.
 
 	![Create Series](./images/create-series.png "")
 
-12. Name the Series **Memory Utilization** and change **Type** to **Line with Area**.
+14. Name the Series **Memory Utilization** and change **Type** to **Line with Area**.
 
 	![Memory Utilization type](./images/key-metrics-memory.png "")
 
-13. Scroll down and change **Type** to **SQL Query** and paste the following into the query box:
+15. Scroll down and change **Type** to **SQL Query** and paste the following into the query box:
 
 	```
 	<copy>
@@ -308,11 +313,11 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![SQL Query Memory Utilization](./images/key-metrics-memory-query.png "")
 
-14. Right click **CPU Usage across Hosts** and select **Duplicate**. Rename the new chart: **Memory Usage across Hosts**.
+16. Right-click **CPU Usage across Hosts** and select **Duplicate**. Rename the new chart: **Memory Usage across Hosts**.
 
 	![Memory Usage Chart name](./images/memory-usage-name.png "")
 
-15. Select the **Tasks** Series and update the SQL Query to the following:
+17. Select the **Tasks** Series and update the SQL Query to the following:
 
 	```
 	<copy>
@@ -329,7 +334,7 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![Memory Usage SQL Query](./images/memory-usage-query.png "")
 
-16. Adjust the Charts to be aligned on the horizontal axis by selecting the new chart in the ceneter module and dragging it to the right of the **Key Metrics Distribution Chart**.
+18. Adjust the charts to be aligned on the horizontal axis by selecting the new chart in the center module and dragging it to the right of the **Key Metrics Distribution Chart**.
 
 	![Drag and drop Chart](./images/drag-memory.png "")
 
@@ -382,8 +387,8 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 	![CPU Historic Usage](./images/cpu-historic-usage-sql.png "")
 
 7. Scroll down and update the **Column Mapping** to the following:
-	*Label: **HISTORIC_TIMESTAMP**
-	*Value: **HISTORICAL_USAGE**
+		* Label: **HISTORIC_TIMESTAMP**
+		* Value: **HISTORICAL_USAGE**
 
 	![Column Mapping](./images/cpu-historic-mapping.png "")
 
@@ -393,7 +398,7 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 9. Name the new series **CPU Forecast Usage** and select the type as **Line with Area**
 
-	![Name CPU Forecast](./images/cpu-forecast-name.png "")
+	![Name CPU Forecast](./images/cpu-forecast-usage-name.png "")
 
 10. Scroll down and change the source to **SQL Query** and paste the following SQL Query:
 
@@ -443,7 +448,7 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![CPU Historic Usage name](./images/cpu-historic-usage-bar.png "")
 
-16. Scroll down and select **SQL Query** and paste the followign SQL:
+16. Scroll down and select **SQL Query** and paste the following SQL:
 
 	```
 	<copy>
@@ -577,9 +582,9 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![Save page button](./images/save-page.png "")
 
-## Task 7: Operationalize Multicloud with Property Graph
+## Task 6: Operationalize MultiCloud with Property Graph
 
->**Note:** This task requires downloading a **Plug-in** to install for visualizing the SQL property graphs in APEX. Learn more by reading through the [documentation.](https://docs.oracle.com/en/database/oracle/property-graph/26.1/spgdg/visualizing-sql-graph-queries-using-apex-graph-visualization-plug.html#GUID-29126F4F-FF5E-4712-9BFE-535F2451AD3A)
+> **Note:** This task requires downloading a **Plug-in** to install for visualizing the SQL property graphs in APEX. Learn more by reading through the [documentation.](https://docs.oracle.com/en/database/oracle/property-graph/26.1/spgdg/visualizing-sql-graph-queries-using-apex-graph-visualization-plug.html#GUID-29126F4F-FF5E-4712-9BFE-535F2451AD3A)
 
 1. Download the sql file from the github repo by clicking the link. Right-click in the new tab window and select **Save As**: [region_type_plugin_graphviz.sql](https://raw.githubusercontent.com/oracle/apex/3bb6d39634560035cac57743bbe232d2fb5cae2d/plugins/region/graph-visualization/region_type_plugin_graphviz.sql)
 
@@ -601,23 +606,23 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![import process confirmation](./images/install-plugin.png "")
 
-6. Verify the plug-in was installed correctly. Navigate back to the **Multicloud Overview** page of the app by selecting the **Application 100** in the breadcrubs bar and select the page.
+6. Verify the plug-in was installed correctly. Navigate back to the **MultiCloud Overview** page of the app by selecting **Application 100** in the breadcrumbs bar and selecting the page.
 
-	>**Note:**  Notice the settings of **Page size** that can be modified if needed and this is available via **Shared Components** -> **Component Settings** (via the breadcrumbs).
+	> **Note:** Notice the settings of **Page size** that can be modified if needed and this is available via **Shared Components** -> **Component Settings** (via the breadcrumbs).
 
 	![verification of plugin installation](./images/plugin-success.png "")
 
-7. Navigate back to the **Multicloud Overview** page by selecting the **Multicloud Overview** page.
+7. Navigate back to the **MultiCloud Overview** page by selecting the **MultiCloud Overview** page.
 
-	![Multicloud Overview Page Icon](./images/multicloud-page.png "")
+	![MultiCloud Overview Page Icon](./images/multicloud-page.png "")
 
 8. Drag and drop the **Graph Visualization plugin** from the regions object selector.
 
 	![Graph Visualization Region](./images/graph-region.png "")
 
-9. Name the region **Multicloud Insights**.
+9. Name the region **MultiCloud Insights**.
 
-	![Multicloud Insights name](./images/multicloud-name.png "")
+	![MultiCloud Insights name](./images/multicloud-name.png "")
 
 10. Scroll down and update the Source Type to **SQL Query** and paste the following SQL:
 
@@ -632,7 +637,9 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![SQL Query for Graph visualization](./images/multicloud-insights.png "")
 
-## Task 8: Review the Multicloud's insights
+## Task 7: Review MultiCloud Insights
+
+1. Run the MultiCloud Wingmate page and verify the reports, forecast charts, and graph visualization render with the loaded data. Use the chat prompts to confirm the assistant answers from the host insights and documentation context.
 
 You may now **proceed to the next lab**.
 
@@ -640,5 +647,5 @@ You may now **proceed to the next lab**.
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Architect
-	* Royce Fu - Master Principle Cloud Architect
-* **Last Updated by/Date** - Nicholas Cusato, Febuary 2026
+	* Royce Fu - Master Principal Cloud Architect
+* **Last Updated by/Date** - Royce Fu, May 2026

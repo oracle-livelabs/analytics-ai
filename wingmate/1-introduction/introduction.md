@@ -1,24 +1,28 @@
 # Introduction
 
 ## About this Workshop
-The scope of this workshop is to create an Oracle Cloud Infrastructure (OCI) Wingmate that helps monitor security and deliver operational insights for a tenancy. This workshop uses Oracle 26ai Autonomous AI Database to store data collected from a tenancy and APEX to generate a dashboard that delivers operational insights.
 
-[**Resource Analytics**](https://www.oracle.com/manageability/resource-analytics/) is a new OCI product that provides near real-time information to enhance visibility across IT infrastructure. This lab serves as a guide for new users looking to get started with Resource Analytics and begin building with APEX.
+The scope of this workshop is to create an Oracle Cloud Infrastructure (OCI) Operations Wingmate that helps monitor security, compute, database, storage, networking, and multicloud operational signals for a tenancy. This workshop uses OCI Resource Analytics, the Resource Analytics-provisioned Oracle Autonomous AI Database, Oracle APEX, and OCI Generative AI to build an agentic operations assistant.
 
-This lab was designed to enable users to develop an app from scratch using a combination of data sources: synthetic flat files, RESTful APIs, and/or Resource Analytics.
-* First, for convenience, synthetic data is populated into flat files (CSVs) to simulate batch data gathered from an API or other methods.
-* Second, direct RESTful API connectivity is simulated by showing users how to connect to tenancy resources, which may or may not be supported by other means (for example, Resource Analytics).
-* Third, Resource Analytics simulates a near real-time direct connection to tenancy information to populate the app and begin asking complex natural language questions (using Wingmate) or visualizing scenarios with Property Graphs.
+[**Resource Analytics**](https://www.oracle.com/manageability/resource-analytics/) provides near real-time information to enhance visibility across IT infrastructure. In this workshop, Resource Analytics becomes the primary data foundation for the Wingmate application.
 
-> **Note:** Wingmate is not an Oracle-branded product, but rather a new way to create a data model and unlock insights from your data using APEX, which may or may not be supported by Resource Analytics. The advantage of building on APEX is that it is free and allows for a more customizable experience. **This lab gives you the option to build on an Always Free Autonomous AI Database or use resources provisioned by Resource Analytics.**
+The workshop is designed to help you build an app from multiple data sources:
+
+* Resource Analytics tables and views for OCI inventory and operational context.
+* Curated materialized views for APEX-ready access patterns.
+* Synthetic flat files to support repeatable dashboard and assistant examples.
+* Optional RESTful OCI API sources, such as Operations Insights endpoints.
+* Optional ShowOCI exports after the data mapping is confirmed.
+
+> **Note:** Wingmate is not an Oracle-branded product. In this workshop, Wingmate is the application pattern you build with Oracle APEX, OCI Resource Analytics, Oracle Database 26ai capabilities, and OCI Generative AI.
 
 ![navigate home buttons](./images/cover-page.png "")
 
-Utilizing natural language to query tenancy information makes operations oversight a breeze.
+Using natural language to query tenancy information makes operations oversight easier.
 
 ![navigate home buttons](./images/cover-page-2.png "")
 
-Using all features of a sophisticated data model on a converged database allows deeper insights into how resources depend on each other. For example, PDBs in a multitenant architecture can be visualized with Graph to better understand noisy neighbors.
+Using the features of a converged database allows deeper insights into how resources depend on each other. For example, databases, compute resources, network components, and storage relationships can be explored through dashboard, assistant, and graph-style views.
 
 ![navigate home buttons](./images/cover-page-3.png "")
 
@@ -34,27 +38,28 @@ Generative AI enables users to quickly generate new content based on a variety o
 
 ### What is Natural Language?
 
-Natural language processing is the ability of a computer application to understand human language as it is spoken and written. It is a component of artificial intelligence (AI). We will leverage Natural Language Processing for our RAG Chatbot to understand user queries and provide relevant responses.
+Natural language processing is the ability of a computer application to understand human language as it is spoken and written. It is a component of artificial intelligence (AI). This workshop uses natural language interactions to query and explain OCI operational data through Wingmate agents.
 
-
-Estimated time - 1 hour
+Estimated Workshop Time: 2 hours 45 minutes
 
 ### Objectives
 
 In this workshop, you will learn how to:
 
-* Build Wingmate in APEX
-* Build a Data Model to support Wingmate
-* Build Security Wingmate
-* Build MultiCloud Wingmate
+* Provision OCI Resource Analytics and prepare Wingmate data
+* Build an Agentic Operations Wingmate with Oracle APEX and OCI Generative AI
+* Build a Security Wingmate Agent
+* Build a Multicloud Wingmate Agent
+* Prepare a Compute Wingmate Agent lab for SME-completed content
 
 ### Prerequisites
 
 * An OCI cloud account
 * Subscription to the US Midwest (Chicago), US-Ashburn-1, or US-Phoenix-1 region
-* Basic database and SQL knowledge.
-* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful.
-* Familiarity with the role of REST services.
+* Permissions to configure Resource Analytics prerequisites and provision Resource Analytics
+* Basic database and SQL knowledge
+* Familiarity with Oracle Cloud Infrastructure (OCI)
+* Familiarity with REST services is helpful for optional data-source tasks
 
 You may now **proceed to the next lab**.
 
@@ -64,11 +69,11 @@ You may now **proceed to the next lab**.
 * [Additional Autonomous Database Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
 * [Overview of Generative AI Service](https://docs.oracle.com/en-us/iaas/Content/generative-ai/overview.html)
 * [Resource Analytics Product Page](https://www.oracle.com/manageability/resource-analytics/)
-
+* [Resource Analytics Compute Data Model Reference](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/reference-compute.htm)
 
 ## Acknowledgements
 
 * **Authors:**
 	* Nicholas Cusato - Cloud Architect
 	* Royce Fu - Master Principal Cloud Architect
-* **Last Updated by/Date** - Nicholas Cusato, February 2026
+* **Last Updated by/Date** - Royce Fu, May 2026
