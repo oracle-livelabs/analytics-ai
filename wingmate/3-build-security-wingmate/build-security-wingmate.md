@@ -24,6 +24,8 @@ This lab assumes you have the following:
 
 ## Task 1: Build a Security Wingmate Agent Page
 
+> **SME Gate:** Confirm the final security source tables or views, APEX page layout, region names, dynamic action settings, assistant prompt, welcome message, prompt examples, screenshots, and expected validation responses.
+
 1. Navigate to the APEX app WINGMATE, and select **Create Page**.
 
 	![create page button](./images/create-page.png "")
@@ -71,8 +73,6 @@ This lab assumes you have the following:
 	You are OCI Security Wingmate, an assistant for OCI identity and access management policy review. Answer questions using the application's loaded security policy data. Be concise, explain the policy impact, and call out missing data instead of guessing.
 	</copy>
 	```
-
-	> **SME Review Gate:** Confirm the final security source tables or views and whether the prompt should use synthetic `CIS_` data, Resource Analytics identity views, or both.
 
 	![true action description](./images/show-genai.png "")
 

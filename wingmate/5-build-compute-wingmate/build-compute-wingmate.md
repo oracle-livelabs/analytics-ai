@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab is a placeholder for the Compute Wingmate Agent. The final lab will guide learners through creating compute-focused APEX pages and agent prompts using Resource Analytics compute data, curated materialized views, and any supporting synthetic or REST API data approved by the workshop SMEs.
+This lab is a placeholder for the Compute Wingmate Agent. The final lab will guide learners through creating compute-focused APEX pages and agent prompts using Resource Analytics compute data, curated materialized views, and any supporting synthetic or REST API data.
 
-> **SME Review Gate:** This lab is intentionally not executable yet. Provide the exact APEX steps, SQL sources, materialized views, screenshots, assistant prompt, page items, validation queries, and expected outputs before publishing this lab as learner-ready content.
+This lab is intentionally not executable yet. The final version will include the exact APEX steps, SQL sources, materialized views, screenshots, assistant prompt, page items, validation queries, and expected outputs.
 
 Estimated Time: TBD
 
@@ -23,13 +23,13 @@ In this lab, you will:
 * Access to the `WINGMATE` APEX application
 * `OCI_GENAI` Generative AI service object created in APEX
 * Resource Analytics compute materialized views reviewed and created
-* SME-approved Compute Wingmate source SQL and APEX page design
+* Compute Wingmate source SQL and APEX page design
 
 ## Task 1: Confirm Compute Wingmate Data Sources
 
-> **SME TODO:** Provide the exact source objects and SQL queries for this task.
+> **SME Gate:** Provide the exact source objects and SQL queries for Compute Wingmate.
 
-Candidate source areas for SME review:
+Candidate source areas:
 
 * Resource Analytics compute instance views
 * Resource Analytics compute facts or utilization views
@@ -55,7 +55,7 @@ ORDER BY view_name;
 
 ## Task 2: Build the Compute Wingmate APEX Page
 
-> **SME TODO:** Provide the final APEX page layout, page name, screenshots, region types, SQL source queries, and component settings.
+> **SME Gate:** Provide the final APEX page layout, page name, screenshots, region types, SQL source queries, and component settings.
 
 The final version of this task should explain how to:
 
@@ -67,7 +67,7 @@ The final version of this task should explain how to:
 
 ## Task 3: Configure the Compute Wingmate Agent Prompt
 
-> **SME TODO:** Provide the exact prompt, context item names, and expected assistant behavior.
+> **SME Gate:** Provide the exact prompt, context item names, welcome message, prompt examples, and expected assistant behavior.
 
 The final version of this task should explain how to:
 
@@ -76,7 +76,7 @@ The final version of this task should explain how to:
 3. Attach compute context from approved APEX page items or SQL queries.
 4. Set the welcome message and prompt examples.
 
-Draft prompt pattern for SME review:
+Prompt pattern:
 
 ```text
 <copy>
@@ -86,7 +86,7 @@ You are OCI Compute Wingmate, an assistant for OCI compute operations and capaci
 
 ## Task 4: Validate Compute Wingmate
 
-> **SME TODO:** Provide validation questions, expected data points, and screenshots.
+> **SME Gate:** Provide validation questions, expected data points, screenshots, and troubleshooting notes.
 
 The final version of this task should validate:
 

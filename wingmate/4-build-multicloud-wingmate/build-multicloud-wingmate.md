@@ -26,6 +26,8 @@ Estimated Time: 60 minutes
 
 ## Task 1: Build a Multicloud Wingmate Agent Page
 
+> **SME Gate:** Confirm the final multicloud data model, host-insights objects, copied page number assumptions, hidden page item names, assistant prompt, welcome message, page context, screenshots, and expected validation responses.
+
 1. Use the existing template from the Security Wingmate Agent to create the Multicloud Wingmate Agent by selecting the plus sign in the top right of the page and selecting **Copy Page**.
 
 	![navigate home buttons](./images/copy-page.png "")
@@ -65,8 +67,6 @@ Estimated Time: 60 minutes
 	> **Note:** Ensure you update the reference page number if it does not match your copied page.
 
 	Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wingmate as well.
-
-	> **SME Review Gate:** Confirm the final prompt, hidden page item names, and source views before publishing this as executable content.
 
 7. Select the table previously created in the last lab that copied over named **Identity and Access Management**.
 
@@ -141,6 +141,8 @@ Estimated Time: 60 minutes
 	![Sql for Computation](./images/multicloud-details-sql.png "")
 
 ## Task 2: Generate Report Period View
+
+> **SME Gate:** Confirm all table and view names used by the host-insights and multicloud reports, charts, hidden items, computations, and source SQL.
 
 1. Create a table for viewing the host period by creating a region to contain it. Expand the **bottom module** (if not open) by selecting the arrow at the bottom center of the screen. Select **Regions** and pick the **Help** icon. Drop it under the Chat Region.
 
@@ -585,6 +587,8 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 ## Task 6: Operationalize MultiCloud with Property Graph
 
 > **Note:** This task requires downloading a **Plug-in** to install for visualizing the SQL property graphs in APEX. Learn more by reading through the [documentation.](https://docs.oracle.com/en/database/oracle/property-graph/26.1/spgdg/visualizing-sql-graph-queries-using-apex-graph-visualization-plug.html#GUID-29126F4F-FF5E-4712-9BFE-535F2451AD3A)
+
+> **SME Gate:** Confirm whether the APEX Graph Visualization plug-in is required, the supported APEX version, the approved download source, the graph object name, graph query, and validation steps.
 
 1. Download the sql file from the github repo by clicking the link. Right-click in the new tab window and select **Save As**: [region_type_plugin_graphviz.sql](https://raw.githubusercontent.com/oracle/apex/3bb6d39634560035cac57743bbe232d2fb5cae2d/plugins/region/graph-visualization/region_type_plugin_graphviz.sql)
 

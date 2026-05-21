@@ -6,8 +6,6 @@ This lab walks you through provisioning OCI Resource Analytics and preparing the
 
 Resource Analytics creates a protected `OCIRA` schema in the provisioned Autonomous AI Database. The Wingmate application should use a separate application schema and query Resource Analytics data through the read-only role granted by Resource Analytics.
 
-> **SME Review Gate:** The database user, role grants, selected Resource Analytics views, and materialized view definitions in this lab include sample SQL for review. Confirm these values before publishing the lab as executable content.
-
 Estimated Time: 70 minutes
 
 ### Objectives
@@ -22,7 +20,7 @@ In this lab, you will:
 * Create curated materialized views for Wingmate
 * Load synthetic data
 * Optionally connect RESTful OCI API data
-* Optionally prepare ShowOCI data loading for SME validation
+* Optionally prepare ShowOCI inventory exports for later labs
 
 ### Prerequisites
 
@@ -183,8 +181,6 @@ Resource Analytics provisions an Autonomous AI Database in a private subnet. To 
 
 Create a dedicated application schema for APEX instead of building directly in the protected `OCIRA` schema.
 
-> **SME Review Gate:** Review the username, password policy, quota/tablespace approach, and privileges before publishing. The SQL below follows the Resource Analytics ADW access pattern where application users query `OCIRA` objects through `OCIRA_RO`.
-
 1. In Database Actions, open **SQL**.
 
 2. Run the following sample SQL as `ADMIN` to create the Wingmate user.
@@ -229,13 +225,23 @@ Create a dedicated application schema for APEX instead of building directly in t
 
 Create the APEX workspace against the existing `WINGMATE` database schema.
 
+> **SME Gate:** Recapture or verify the Task 5 screenshots so they match the approved existing-schema flow. Current restored images came from the previous APEX flow and may still show older values or highlight **New Schema** instead of **Existing Schema**.
+
 1. From the Autonomous AI Database details page, copy the Oracle APEX URL and open it in a new browser tab.
+
+	![Copy the Oracle APEX URL](./images/open-apex.png "")
 
 2. Sign in to APEX Administration Services as `ADMIN`.
 
+	![Sign in to APEX Administration Services](./images/access-admin.png "")
+
 3. Select **Create Workspace**.
 
+	![Create Workspace button](./images/create-workspace.png "")
+
 4. Choose the option to use an existing schema.
+
+	![Choose existing schema for workspace](./images/new-schema.png "")
 
 5. Use the following workspace values:
 
@@ -245,17 +251,25 @@ Create the APEX workspace against the existing `WINGMATE` database schema.
 	* **Workspace Administrator Email:** Use your workshop email address.
 	* **Workspace Administrator Password:** Use a secure password that follows your tenancy policy.
 
+	![Enter workspace credentials](./images/workspace-creds.png "")
+
 6. Create the workspace.
 
 7. Sign out of Administration Services.
 
-8. Return to the APEX sign-in page and sign in to the `WINGMATE` workspace as the `WINGMATE` APEX developer user.
+	![Sign out of APEX Administration Services](./images/sign-out-admin.png "")
+
+8. Select **Return to Sign In Page**.
+
+	![Return to the APEX sign-in page](./images/return-sign-in.png "")
+
+9. Sign in to the `WINGMATE` workspace as the `WINGMATE` APEX developer user.
+
+	![Sign in to the WINGMATE workspace](./images/sign-in-workspace.png "")
 
 ## Task 6: Create Curated Resource Analytics Materialized Views
 
 Create materialized views in the `WINGMATE` schema for the Resource Analytics views needed by the Compute Wingmate Agent in Lab 5. These materialized views give APEX stable, app-owned objects to query while keeping the original Resource Analytics objects in the protected `OCIRA` schema.
-
-> **SME Review Gate:** Confirm the final Resource Analytics view list, materialized view names, and refresh strategy before publishing. The PL/SQL below creates materialized views for accessible compute views and supporting tenancy, compartment, region, availability domain, tag, and volume relationship views.
 
 1. Sign in to Database Actions as the `WINGMATE` user.
 
@@ -439,7 +453,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 1. Download the lab files and unzip:
 
-	[Wingmate Data Zip](https://oraclejamescalise.objectstorage.us-phoenix-1.oci.customer-oci.com/p/72-f7TSP1o3DgeVKmh42oBuft-Q5vvRlyyGq4QPqYl2SI-p5ULJnbKDynL9v1qUO/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip)
+	[Wingmate Data Zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/A8D93L0AYtatdLXkIXEH2OaQDtX_-AL8gnQ8CWHWYFV_6XUUGNw43bsZbU5oNx-e/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip)
 
 2. Navigate to **SQL Workshop** and then **SQL Scripts**.
 
@@ -481,7 +495,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 ## Task 8: (Optional) Connect RESTful Data from OCI API Endpoints
 
-This optional task models direct REST API access for tenancy data that is not yet covered by flat files or Resource Analytics.
+This optional task models direct REST API access for tenancy data that is not yet covered by flat files or Resource Analytics. Later labs can reference this REST data source pattern when Ops Insights or other OCI API context supports the agent workflow.
 
 1. Navigate back to the application by selecting **App Builder** and then the **WINGMATE** app name.
 
@@ -553,19 +567,59 @@ This optional task models direct REST API access for tenancy data that is not ye
 
 	![Unmapped column](./images/unmapped-column.png "")
 
-## Task 9: (Optional) Prepare ShowOCI Data Loading
+## Task 9: (Optional) Export ShowOCI Inventory Data from Cloud Shell
 
-ShowOCI can be used as an additional source for tenancy inventory exports. The exact mapping into Wingmate tables or materialized views must be reviewed before this becomes an executable lab step.
+ShowOCI can be used as an additional source for tenancy inventory exports. Use this optional workflow to collect inventory data for compute, database, identity, networking, and related block-volume context. Later Wingmate labs can reference these exports after the staging tables and column mappings are validated.
 
-> **SME Review Gate:** Provide the exact ShowOCI command, export format, target tables, column mappings, and load workflow before publishing this task as executable content.
+> **SME Gate:** Approved direction: run ShowOCI from Cloud Shell with delegation-token authentication and CSV output for compute, database, identity, networking, and related block-volume context. Still open: validate generated CSV filenames, `SHOWOCI_*` staging-table DDL, column mappings, and database load commands.
 
-1. Review the ShowOCI examples in the OCI Python SDK repository.
+1. Open OCI Cloud Shell.
 
-2. Decide whether the workshop will use CSV output, JSON output, or direct load into Autonomous Database.
+2. Clone the OCI Python SDK examples repository.
 
-3. Map the selected ShowOCI fields to the Wingmate data model.
+	```bash
+	<copy>
+	git clone https://github.com/oracle/oci-python-sdk
+	ln -s oci-python-sdk/examples/showoci showoci
+	cd showoci
+	</copy>
+	```
 
-4. Add data loading steps only after the mapping is confirmed.
+3. Create an output directory for the Wingmate ShowOCI export.
+
+	```bash
+	<copy>
+	mkdir -p $HOME/wingmate-showoci-output
+	</copy>
+	```
+
+4. Run ShowOCI from Cloud Shell using delegation-token authentication and export CSV files for the approved Wingmate inventory scope.
+
+	```bash
+	<copy>
+	python3 showoci.py -dt -c -d -i -n -csv $HOME/wingmate-showoci-output
+	</copy>
+	```
+
+	The command exports inventory context for:
+
+	* Compute resources
+	* Database resources
+	* Identity, compartments, policies, and tags
+	* Networking resources
+	* Related block-volume and attachment context included in the compute inventory output
+
+5. Review the generated CSV files.
+
+	```bash
+	<copy>
+	find $HOME/wingmate-showoci-output -type f -name "*.csv" | sort
+	</copy>
+	```
+
+6. Map the generated CSV files to `SHOWOCI_*` staging tables in the `WINGMATE` schema.
+
+7. Load the approved ShowOCI staging tables only after the mapping is confirmed.
 
 You may now **proceed to the next lab**.
 

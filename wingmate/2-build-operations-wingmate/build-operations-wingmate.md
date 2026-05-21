@@ -4,8 +4,6 @@
 
 This lab walks you through creating the Wingmate APEX application on the Resource Analytics-provisioned Autonomous AI Database prepared in Lab 1. You will use the `WINGMATE` APEX workspace, generate OCI API keys, configure APEX Web Credentials, create an OCI Generative AI service object, and start the Wingmate application using Resource Analytics tables, views, and materialized views.
 
-> **SME Review Gate:** The exact APEX page sources, report regions, assistant prompts, hidden items, and Resource Analytics materialized view mappings require SME confirmation. This lab provides the implementation flow and sample SQL source patterns for review.
-
 Estimated Time: 45 minutes
 
 ### Objectives
@@ -23,7 +21,7 @@ In this lab, you will:
 * Completed Lab 1
 * `WINGMATE` database user created on the Resource Analytics-provisioned Autonomous AI Database
 * `WINGMATE` APEX workspace and developer user created
-* Resource Analytics materialized view selection reviewed by SME
+* Resource Analytics materialized views created in Lab 1
 * Subscription to US Midwest (Chicago), US East (Ashburn), or US West (Phoenix)
 
 ## Task 1: Sign in to the Wingmate APEX Workspace
@@ -99,6 +97,8 @@ In this lab, you will:
 
 ## Task 4: Create the OCI Generative AI Service Object
 
+> **SME Gate:** Confirm the approved OCI Generative AI model, region, compartment requirements, service object defaults, and workshop-safe configuration values.
+
 1. Navigate back to **Workspace Utilities** by selecting the first menu option on the breadcrumb bar.
 
 	![breadcrumb bar for workspace utilities](./images/nav-utilities.png "")
@@ -119,9 +119,9 @@ In this lab, you will:
 
 5. Click **Create**.
 
-	> **SME Review Gate:** Confirm the model choice, compartment requirements, region, and any approved workshop defaults before publishing.
-
 ## Task 5: Create the Wingmate APEX Application
+
+> **SME Gate:** Confirm the first application page list, navigation structure, page source objects, SQL queries, assistant prompt, page item names, context SQL, welcome message, prompt examples, and expected validation responses.
 
 1. Navigate back to **App Builder**.
 
@@ -160,11 +160,9 @@ In this lab, you will:
 	</copy>
 	```
 
-7. Create an initial report page or dashboard page using SME-approved Resource Analytics objects.
+7. Create an initial report page or dashboard page using the approved Resource Analytics objects.
 
-	> **SME Review Gate:** Confirm the final page list and data sources. Candidate sources include curated `MV_` Resource Analytics materialized views and loaded synthetic `CIS_` tables. Do not publish executable page-source instructions until the final mappings are approved.
-
-8. Use the following sample source-query patterns for SME review.
+8. Use the following source-query patterns as starting points.
 
 	```sql
 	<copy>
@@ -191,8 +189,6 @@ In this lab, you will:
 	```
 
 9. Add the Operations Wingmate assistant action only after the GenAI service object and page context items are confirmed.
-
-	> **SME Review Gate:** Confirm the assistant prompt, page item names, context SQL, and whether the assistant should use only Resource Analytics data, synthetic data, or both.
 
 ## Task 6: Validate the APEX Foundation
 
