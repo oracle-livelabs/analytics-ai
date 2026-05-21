@@ -50,7 +50,7 @@ In this workshop, you will learn how to:
 * Build an Agentic Operations Wingmate with Oracle APEX and OCI Generative AI
 * Build a Security Wingmate Agent
 * Build a Multicloud Wingmate Agent
-* Prepare a Compute Wingmate Agent lab for future compute-focused content
+* Build a Compute Wingmate Agent with Resource Analytics metadata and OCI compute metrics
 
 ### Prerequisites
 
