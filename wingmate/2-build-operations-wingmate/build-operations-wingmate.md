@@ -14,7 +14,7 @@ In this lab, you will:
 * Generate API keys for OCI access
 * Update APEX Web Credentials to connect to OCI resources
 * Create the OCI Generative AI service object in APEX
-* Create the Wingmate APEX application using Resource Analytics data
+* Create the Wingmate APEX application and initial Operations Wingmate page using Resource Analytics data
 
 ### Prerequisites
 
@@ -86,10 +86,14 @@ In this lab, you will:
 8. Under **Valid for URLs**, include the endpoint for the subscribed region that hosts OCI Generative AI.
 
 	```text
-	<copy>https://inference.generativeai.us-chicago-1.oci.oraclecloud.com</copy>
+	<copy>https://inference.generativeai.<region-identifier>.oci.oraclecloud.com</copy>
 	```
 
-	> **Note:** Replace the region if your OCI Generative AI service is hosted in another subscribed region.
+	Example:
+
+	```text
+	<copy>https://inference.generativeai.us-chicago-1.oci.oraclecloud.com</copy>
+	```
 
 9. Select **Create**.
 
@@ -115,7 +119,9 @@ In this lab, you will:
 
 	* **Name:** `OCI_GENAI`
 	* **Web Credential:** `api_key`
-	* **Model:** Select the approved model available in your subscribed region.
+	* **Model:** Select **Cohere Command A**.
+
+	> **Note:** Cohere Command A has a large context window that is well suited for Wingmate prompts that include Resource Analytics summaries, application page context, and supporting operational data. If Cohere Command A is not available in your subscribed region, select the closest tenancy-approved OCI Generative AI chat model.
 
 5. Click **Create**.
 
@@ -160,9 +166,11 @@ In this lab, you will:
 	</copy>
 	```
 
-7. Create an initial report page or dashboard page using the approved Resource Analytics objects.
+7. Create an initial report page or dashboard page named **Operations Wingmate** using the approved Resource Analytics objects.
 
 8. Use the following source-query patterns as starting points.
+
+	> **SME Gate:** Validate the final report/dashboard SQL and assistant context SQL after confirming the available columns in the selected Resource Analytics materialized views.
 
 	```sql
 	<copy>
@@ -182,7 +190,39 @@ In this lab, you will:
 
 	```sql
 	<copy>
-	-- Candidate identity policy source from synthetic data.
+	-- Candidate region context source.
+	SELECT *
+	FROM MV_REGION_DIM_V;
+	</copy>
+	```
+
+	```sql
+	<copy>
+	-- Candidate availability domain context source.
+	SELECT *
+	FROM MV_AD_DIM_V;
+	</copy>
+	```
+
+	```sql
+	<copy>
+	-- Candidate tagging context source.
+	SELECT *
+	FROM MV_TAGS_DIM_V;
+	</copy>
+	```
+
+	```sql
+	<copy>
+	-- Candidate compute and volume relationship source.
+	SELECT *
+	FROM MV_INSTANCE_VOLUME_DETAILS_V;
+	</copy>
+	```
+
+	```sql
+	<copy>
+	-- Supporting security context source from synthetic data.
 	SELECT *
 	FROM CIS_IAM_POLICIES;
 	</copy>
