@@ -567,9 +567,9 @@ This optional task models direct REST API access for tenancy data that is not ye
 
 	![Unmapped column](./images/unmapped-column.png "")
 
-## Task 9: (Optional) Prepare ShowOCI Data Loading
+## Task 9: (Optional) Prepare ShowOCI IAM Policy Statement Data Loading
 
-ShowOCI can be used as an additional source for tenancy inventory exports. In this task, you will run ShowOCI to generate compute and database inventory CSV files, upload the generated reports into the Autonomous AI Database, and make the resulting tables available to APEX, SQL Developer, and MCP-based workflows.
+ShowOCI can be used as an additional source for OCI IAM policy inventory. In this task, you will run ShowOCI to generate a CSV file that contains OCI IAM policies and their individual policy statements, upload that report into the Autonomous AI Database, and make the resulting table available to APEX, SQL Developer, and MCP-based workflows.
 
 > **Note:** An OCI VM is recommended for longer ShowOCI extracts because it can use instance principal authentication and avoids Cloud Shell timeout limits. Cloud Shell is still useful for quick validation runs.
 
@@ -620,53 +620,67 @@ ShowOCI can be used as an additional source for tenancy inventory exports. In th
 
 	```bash
 	<copy>
-	mkdir -p $HOME/output
+	mkdir -p $HOME/showoci-policy-export
 	</copy>
 	```
 
-7. Run ShowOCI for compute and database resources and generate CSV output.
+7. Run ShowOCI for Identity resources and generate CSV output.
 
 	For an OCI VM using instance principal authentication, run:
 
 	```bash
 	<copy>
-	python3 showoci.py -ip -dt -c -d -csv $HOME/output
+	python3 showoci.py -ip -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
 	```
 
-	For Cloud Shell or a configured local profile, run:
+	For Cloud Shell using delegation token authentication, run:
 
 	```bash
 	<copy>
-	python3 showoci.py -dt -c -d -csv $HOME/output
+	python3 showoci.py -dt -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
 	```
 
-8. Review the generated CSV files.
+	For a configured local OCI CLI profile, run:
 
 	```bash
 	<copy>
-	ls -lh $HOME/output
+	python3 showoci.py -t DEFAULT -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
 	```
+
+	> **Note:** The `-i` option extracts Identity data. The `-isc` option skips user credential extraction. For classic OCI IAM policy statements, use the generated `iam_identity_policy.csv` file. Identity Domain policy artifacts are generated as separate files and are not required for this task.
+
+8. Review the generated IAM policy statement CSV file.
+
+	```bash
+	<copy>
+	ls -lh $HOME/showoci-policy-export/iam_identity_policy.csv
+	head -5 $HOME/showoci-policy-export/iam_identity_policy.csv
+	</copy>
+	```
+
+	The `iam_identity_policy.csv` file contains one row per IAM policy statement. Key columns include `compartment`, `policy_name`, `id`, `seq`, `statement`, and `compartment_id`.
 
 9. Open the Resource Analytics-provisioned Autonomous AI Database and sign in to Database Actions as `WINGMATE`.
 
-10. Use Database Actions or SQL Developer Web to load the generated CSV files into the `WINGMATE` schema.
+10. Use Database Actions or SQL Developer Web to load only the IAM policy statement CSV file into the `WINGMATE` schema.
 
 	Recommended table naming pattern:
 
-	* Prefix ShowOCI-loaded tables with `SHOWOCI_`
-	* Use descriptive names such as `SHOWOCI_COMPUTE_INSTANCES` and `SHOWOCI_DATABASES`
-	* Preserve the source CSV file name in your workshop notes so learners can trace each table back to the generated report
+	* Load `$HOME/showoci-policy-export/iam_identity_policy.csv`
+	* Name the table `SHOWOCI_IAM_POLICY_STATEMENTS`
+	* Keep one row per policy statement during import
+	* Preserve the source CSV file name in your workshop notes so learners can trace the table back to the generated report
 
-11. Validate that the ShowOCI tables are available in the `WINGMATE` schema.
+11. Validate that the ShowOCI IAM policy statement table is available in the `WINGMATE` schema.
 
 	```sql
 	<copy>
 	SELECT table_name
 	FROM user_tables
-	WHERE table_name LIKE 'SHOWOCI\_%' ESCAPE '\'
+	WHERE table_name = 'SHOWOCI_IAM_POLICY_STATEMENTS'
 	ORDER BY table_name;
 	</copy>
 	```
@@ -675,21 +689,25 @@ ShowOCI can be used as an additional source for tenancy inventory exports. In th
 
 	```sql
 	<copy>
-	SELECT *
-	FROM SHOWOCI_COMPUTE_INSTANCES
+	SELECT compartment,
+	       policy_name,
+	       seq,
+	       statement,
+	       compartment_id
+	FROM showoci_iam_policy_statements
 	FETCH FIRST 10 ROWS ONLY;
 	</copy>
 	```
 
-	> **SME Review Gate:** Confirm the final ShowOCI table names and column mappings. The exact table names depend on the generated CSV files and the names selected during the CSV load process.
+	> **SME Review Gate:** Confirm the final ShowOCI table name and column mappings. The exact table name depends on the name selected during the CSV load process.
 
-13. Use the ShowOCI tables from APEX, SQL Developer, or MCP servers as supplemental inventory sources for Wingmate.
+13. Use the ShowOCI IAM policy statement table from APEX, SQL Developer, or MCP servers as a supplemental security and governance source for Wingmate.
 
-	For APEX, select the loaded `SHOWOCI_` tables as report, chart, or assistant context sources.
+	For APEX, select `SHOWOCI_IAM_POLICY_STATEMENTS` as a report, chart, or assistant context source.
 
-	For SQL Developer or Database Actions, query the tables directly in the `WINGMATE` schema.
+	For SQL Developer or Database Actions, query the table directly in the `WINGMATE` schema.
 
-	For MCP-based workflows, expose the `SHOWOCI_` tables through the same database connection used for the `WINGMATE` schema.
+	For MCP-based workflows, expose the `SHOWOCI_IAM_POLICY_STATEMENTS` table through the same database connection used for the `WINGMATE` schema.
 
 You may now **proceed to the next lab**.
 
