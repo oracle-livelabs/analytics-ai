@@ -19,7 +19,7 @@ This lab assumes you have the following:
 * Completed Labs 1 and 2
 * Access to the `WINGMATE` APEX application
 * `OCI_GENAI` Generative AI service object created in APEX
-* Security policy data loaded or mapped in the `WINGMATE` schema
+* `CIS_IAM_POLICIES` loaded in the `WINGMATE` schema
 * Some SQL knowledge is preferred but not necessary
 
 ## Task 1: Build a Security Wingmate Agent Page
@@ -70,7 +70,7 @@ This lab assumes you have the following:
 
 	```
 	<copy>
-	You are OCI Security Wingmate, an assistant for OCI identity and access management policy review. Answer questions using the application's loaded security policy data. Be concise, explain the policy impact, and call out missing data instead of guessing.
+	You are OCI Security Wingmate, an assistant for OCI identity and access management policy review. Answer questions using the application's loaded `CIS_IAM_POLICIES` data. Be concise, explain the policy impact, and call out missing data instead of guessing.
 	</copy>
 	```
 

@@ -22,7 +22,7 @@ Use this checklist to convert the current draft workshop into final executable L
 
 - **Approved:** Use the Lab 2 APEX workspace sign-in flow against the Resource Analytics-provisioned Autonomous AI Database with workspace `WINGMATE`, username `WINGMATE`, and the password created in Lab 1.
 - **Approved:** Use the Lab 2 Web Credential flow with OCI Native Authentication, Name `api_key`, Static ID `api_key`, and a region-aware Generative AI inference URL pattern. Keep Chicago as the concrete example.
-- **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and Cohere Command A as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If Command A is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
+- **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and `xai.grok-4.3` as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If `xai.grok-4.3` is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
 - **Approved:** Lab 2 creates the `WINGMATE` application and an initial `Operations Wingmate` foundation page. Later labs add or complete the Security, Multicloud, and Compute Wingmate pages.
 - **Approved:** Use Resource Analytics materialized views as the primary Operations Wingmate starter sources: `MV_COMPUTE_INSTANCE_DIM_V`, `MV_COMPARTMENT_DIM_V`, `MV_REGION_DIM_V`, `MV_AD_DIM_V`, `MV_TAGS_DIM_V`, and `MV_INSTANCE_VOLUME_DETAILS_V`. Keep `CIS_IAM_POLICIES` as supporting security context rather than the primary Operations source.
 - Keep exploratory `SELECT *` source-query examples in Lab 2 until Resource Analytics column names are validated. Final report/dashboard SQL and assistant context SQL remain open.
@@ -31,7 +31,7 @@ Use this checklist to convert the current draft workshop into final executable L
 
 ## Lab 3: Security Wingmate
 
-- Confirm final security source tables or views.
+- **Approved:** Use `CIS_IAM_POLICIES` as the primary Security Wingmate source for Lab 3. Resource Analytics identity views and ShowOCI identity exports can be optional future/context sources.
 - Confirm whether Security Wingmate uses synthetic `CIS_` policy data, Resource Analytics identity views, or both.
 - Confirm APEX page layout, region names, dynamic action settings, and screenshots.
 - Confirm assistant prompt wording, welcome message, prompt examples, and expected validation responses.

@@ -119,9 +119,9 @@ In this lab, you will:
 
 	* **Name:** `OCI_GENAI`
 	* **Web Credential:** `api_key`
-	* **Model:** Select **Cohere Command A**.
+	* **Model:** Select **xai.grok-4.3**.
 
-	> **Note:** Cohere Command A has a large context window that is well suited for Wingmate prompts that include Resource Analytics summaries, application page context, and supporting operational data. If Cohere Command A is not available in your subscribed region, select the closest tenancy-approved OCI Generative AI chat model.
+	> **Note:** `xai.grok-4.3` has a large context window that is well suited for Wingmate prompts that include Resource Analytics summaries, application page context, and supporting operational data. If `xai.grok-4.3` is not available in your subscribed region, select the closest tenancy-approved OCI Generative AI chat model.
 
 5. Click **Create**.
 
