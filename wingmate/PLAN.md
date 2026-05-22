@@ -27,7 +27,7 @@ The implementation must preserve the existing LiveLabs structure, resolve curren
 
 - Lab 1 moves Resource Analytics setup from the current Lab 2.
 - Lab 2 moves current APEX and GenAI app setup from the current Lab 1, but uses the Resource Analytics-provisioned Autonomous AI Database instead of provisioning a standalone ADB.
-- Lab 5 is added as a visible stub because exact Compute Wingmate content is not available yet.
+- Lab 5 builds a Compute Wingmate Agent by combining Resource Analytics compute metadata with OCI compute metrics collected into Autonomous Database.
 - Folder renaming is approved so lab numbers match content.
 - `WINGMATE` is the intended database schema, APEX workspace, and APEX developer username unless SME changes it.
 - Exact SQL and APEX configuration must be reviewed by SME before final commit.
@@ -175,9 +175,11 @@ Lab 4:
 
 Lab 5:
 
-- Add a new stub lab titled `Build a Compute Wingmate Agent`.
-- Include only overview, objectives, prerequisites, and explicit SME TODOs.
-- SME TODOs must request exact APEX steps, SQL/views/materialized views, assistant prompt, screenshots, and validation steps.
+- Build a Compute Wingmate Agent using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
+- Configure OCI Metrics Collector to write compute metrics into the `WINGMATE` Autonomous Database schema.
+- Create overlay views that combine compute metadata with CPU and memory metrics.
+- Add APEX visualization widgets and configure a Compute Wingmate AI assistant.
+- Keep SME review gates for Resource Analytics join columns, metric table mappings, and final APEX context limits.
 
 ## Validation Plan
 
@@ -208,12 +210,12 @@ APEX validation:
 Commit gate:
 
 - Do not commit until static validation passes.
-- Do not commit executable SQL/APEX instructions until SME confirms exact database user/role/grant SQL, materialized view list, APEX mappings, and Compute Wingmate content.
+- Do not commit executable SQL/APEX instructions until SME confirms exact database user/role/grant SQL, materialized view list, APEX mappings, and Compute Wingmate metric overlay mappings.
 
 ## Assumptions
 
 - `WINGMATE` is the database schema, APEX workspace, and APEX developer username.
 - Folder renaming is approved so lab numbers match content.
-- Lab 5 should be visible in the manifest as a stub.
+- Lab 5 should be visible in the manifest as an executable draft with SME gates for final metric overlay mappings.
 - Sample SQL is acceptable only as SME-review draft content.
 - Exact APEX configuration and data model details must not be invented.

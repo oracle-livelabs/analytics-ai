@@ -567,59 +567,129 @@ This optional task models direct REST API access for tenancy data that is not ye
 
 	![Unmapped column](./images/unmapped-column.png "")
 
-## Task 9: (Optional) Export ShowOCI Inventory Data from Cloud Shell
+## Task 9: (Optional) Prepare ShowOCI Data Loading
 
-ShowOCI can be used as an additional source for tenancy inventory exports. Use this optional workflow to collect inventory data for compute, database, identity, networking, and related block-volume context. Later Wingmate labs can reference these exports after the staging tables and column mappings are validated.
+ShowOCI can be used as an additional source for tenancy inventory exports. In this task, you will run ShowOCI to generate compute and database inventory CSV files, upload the generated reports into the Autonomous AI Database, and make the resulting tables available to APEX, SQL Developer, and MCP-based workflows.
 
-> **SME Gate:** Approved direction: run ShowOCI from Cloud Shell with delegation-token authentication and CSV output for compute, database, identity, networking, and related block-volume context. Still open: validate generated CSV filenames, `SHOWOCI_*` staging-table DDL, column mappings, and database load commands.
+> **Note:** An OCI VM is recommended for longer ShowOCI extracts because it can use instance principal authentication and avoids Cloud Shell timeout limits. Cloud Shell is still useful for quick validation runs.
 
-1. Open OCI Cloud Shell.
+1. Provision or select an OCI VM to run ShowOCI.
 
-2. Clone the OCI Python SDK examples repository.
+	> **Note:** You can also run ShowOCI from your local laptop if you have OCI CLI configuration and network access. For workshop consistency, use an OCI VM when possible.
+
+2. Configure instance principal authorization for the OCI VM.
+
+	Create a dynamic group for the VM instance and add a policy similar to the following:
+
+	```text
+	<copy>
+	allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
+	</copy>
+	```
+
+	> **SME Review Gate:** Confirm the least-privilege policy scope before publishing. Tenancy-wide read access is simple for a lab, but production environments might require compartment-scoped policies.
+
+3. Connect to the OCI VM and validate instance principal authentication.
+
+	```bash
+	<copy>
+	oci os ns get --auth instance_principal
+	</copy>
+	```
+
+4. Install the required tools and Python packages on the OCI VM.
+
+	```bash
+	<copy>
+	sudo yum -y install git
+	python3 -m pip install --upgrade pip
+	python3 -m pip install --upgrade oci oci-cli oracledb
+	</copy>
+	```
+
+5. Clone the OCI Python SDK repository and open the ShowOCI example directory.
 
 	```bash
 	<copy>
 	git clone https://github.com/oracle/oci-python-sdk
-	ln -s oci-python-sdk/examples/showoci showoci
-	cd showoci
+	cd oci-python-sdk/examples/showoci
 	</copy>
 	```
 
-3. Create an output directory for the Wingmate ShowOCI export.
+6. Create an output directory for generated CSV reports.
 
 	```bash
 	<copy>
-	mkdir -p $HOME/wingmate-showoci-output
+	mkdir -p $HOME/output
 	</copy>
 	```
 
-4. Run ShowOCI from Cloud Shell using delegation-token authentication and export CSV files for the approved Wingmate inventory scope.
+7. Run ShowOCI for compute and database resources and generate CSV output.
+
+	For an OCI VM using instance principal authentication, run:
 
 	```bash
 	<copy>
-	python3 showoci.py -dt -c -d -i -n -csv $HOME/wingmate-showoci-output
+	python3 showoci.py -ip -dt -c -d -csv $HOME/output
 	</copy>
 	```
 
-	The command exports inventory context for:
-
-	* Compute resources
-	* Database resources
-	* Identity, compartments, policies, and tags
-	* Networking resources
-	* Related block-volume and attachment context included in the compute inventory output
-
-5. Review the generated CSV files.
+	For Cloud Shell or a configured local profile, run:
 
 	```bash
 	<copy>
-	find $HOME/wingmate-showoci-output -type f -name "*.csv" | sort
+	python3 showoci.py -dt -c -d -csv $HOME/output
 	</copy>
 	```
 
-6. Map the generated CSV files to `SHOWOCI_*` staging tables in the `WINGMATE` schema.
+8. Review the generated CSV files.
 
-7. Load the approved ShowOCI staging tables only after the mapping is confirmed.
+	```bash
+	<copy>
+	ls -lh $HOME/output
+	</copy>
+	```
+
+9. Open the Resource Analytics-provisioned Autonomous AI Database and sign in to Database Actions as `WINGMATE`.
+
+10. Use Database Actions or SQL Developer Web to load the generated CSV files into the `WINGMATE` schema.
+
+	Recommended table naming pattern:
+
+	* Prefix ShowOCI-loaded tables with `SHOWOCI_`
+	* Use descriptive names such as `SHOWOCI_COMPUTE_INSTANCES` and `SHOWOCI_DATABASES`
+	* Preserve the source CSV file name in your workshop notes so learners can trace each table back to the generated report
+
+11. Validate that the ShowOCI tables are available in the `WINGMATE` schema.
+
+	```sql
+	<copy>
+	SELECT table_name
+	FROM user_tables
+	WHERE table_name LIKE 'SHOWOCI\_%' ESCAPE '\'
+	ORDER BY table_name;
+	</copy>
+	```
+
+12. Preview the loaded data before using it in APEX or MCP workflows.
+
+	```sql
+	<copy>
+	SELECT *
+	FROM SHOWOCI_COMPUTE_INSTANCES
+	FETCH FIRST 10 ROWS ONLY;
+	</copy>
+	```
+
+	> **SME Review Gate:** Confirm the final ShowOCI table names and column mappings. The exact table names depend on the generated CSV files and the names selected during the CSV load process.
+
+13. Use the ShowOCI tables from APEX, SQL Developer, or MCP servers as supplemental inventory sources for Wingmate.
+
+	For APEX, select the loaded `SHOWOCI_` tables as report, chart, or assistant context sources.
+
+	For SQL Developer or Database Actions, query the tables directly in the `WINGMATE` schema.
+
+	For MCP-based workflows, expose the `SHOWOCI_` tables through the same database connection used for the `WINGMATE` schema.
 
 You may now **proceed to the next lab**.
 

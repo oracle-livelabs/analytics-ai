@@ -46,7 +46,7 @@ The markdown lab files previously had stash conflict markers. Before implementin
 
 - Lab 1 moves Resource Analytics setup from the current Lab 2.
 - Lab 2 moves current APEX and GenAI setup from the current Lab 1, but must use the Resource Analytics-provisioned Autonomous AI Database instead of creating a standalone ADB.
-- Lab 5 should be added as a visible stub because exact Compute Wingmate content is not available yet.
+- Lab 5 builds a Compute Wingmate Agent by combining Resource Analytics compute metadata with OCI compute metrics collected into Autonomous Database.
 - Folder renaming is approved so lab numbers match content.
 - `WINGMATE` is the intended database schema, APEX workspace, and APEX developer username unless SME changes it.
 - Exact SQL and APEX configuration must not be invented.
@@ -186,9 +186,12 @@ Lab 4:
 
 Lab 5:
 
-- Add a new stub lab titled `Build a Compute Wingmate Agent`.
-- Include only overview, objectives, prerequisites, and explicit SME TODOs.
-- SME TODOs must request exact APEX steps, SQL/views/materialized views, assistant prompt, screenshots, and validation steps.
+- Build a Compute Wingmate Agent using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
+- Configure OCI Metrics Collector from `https://github.com/jujufugh/oci-metrics-collector-py`.
+- Write compute CPU and memory metrics into the `WINGMATE` Autonomous Database schema.
+- Create SQL overlay views that combine compute metadata with metrics.
+- Add APEX visualization widgets and configure the Compute Wingmate AI assistant.
+- Keep SME review gates for Resource Analytics join columns, metric table mappings, and final assistant context limits.
 
 ## Validation Gates
 
@@ -209,7 +212,7 @@ Before final commit:
 Commit gate:
 
 - Do not commit until static validation passes.
-- Do not commit executable SQL/APEX instructions until SME confirms exact database user/role/grant SQL, materialized view list, APEX mappings, and Compute Wingmate content.
+- Do not commit executable SQL/APEX instructions until SME confirms exact database user/role/grant SQL, materialized view list, APEX mappings, and Compute Wingmate metric overlay mappings.
 
 ## Collaboration Notes
 
