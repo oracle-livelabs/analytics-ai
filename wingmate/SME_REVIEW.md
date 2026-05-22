@@ -20,14 +20,14 @@ Use this checklist to convert the current draft workshop into final executable L
 
 ## Lab 2: Operations Wingmate Foundation
 
-- Confirm APEX workspace sign-in flow against the Resource Analytics-provisioned Autonomous AI Database.
-- Confirm Web Credential values, valid URL patterns, and regional endpoint guidance.
-- Confirm approved OCI Generative AI model, region, compartment, and service object defaults.
-- Confirm the first application page list and navigation structure.
-- Confirm source objects for Operations Wingmate pages, including Resource Analytics materialized views and synthetic `CIS_` tables.
-- Confirm SQL source queries for reports, dashboards, and assistant context.
-- Confirm assistant prompt, page item names, context SQL, welcome message, and prompt examples.
-- Confirm validation questions and expected responses.
+- **Approved:** Use the Lab 2 APEX workspace sign-in flow against the Resource Analytics-provisioned Autonomous AI Database with workspace `WINGMATE`, username `WINGMATE`, and the password created in Lab 1.
+- **Approved:** Use the Lab 2 Web Credential flow with OCI Native Authentication, Name `api_key`, Static ID `api_key`, and a region-aware Generative AI inference URL pattern. Keep Chicago as the concrete example.
+- **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and Cohere Command A as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If Command A is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
+- **Approved:** Lab 2 creates the `WINGMATE` application and an initial `Operations Wingmate` foundation page. Later labs add or complete the Security, Multicloud, and Compute Wingmate pages.
+- **Approved:** Use Resource Analytics materialized views as the primary Operations Wingmate starter sources: `MV_COMPUTE_INSTANCE_DIM_V`, `MV_COMPARTMENT_DIM_V`, `MV_REGION_DIM_V`, `MV_AD_DIM_V`, `MV_TAGS_DIM_V`, and `MV_INSTANCE_VOLUME_DETAILS_V`. Keep `CIS_IAM_POLICIES` as supporting security context rather than the primary Operations source.
+- Keep exploratory `SELECT *` source-query examples in Lab 2 until Resource Analytics column names are validated. Final report/dashboard SQL and assistant context SQL remain open.
+- Keep open: define the Operations Wingmate assistant prompt, page item names, context SQL, welcome message, prompt examples, and context-source scope.
+- **Approved:** Use the current Lab 2 foundation validation checks: app opens without authentication or authorization errors, the report/dashboard can query approved Resource Analytics materialized views, `OCI_GENAI` appears in the APEX Generative AI service list, and any test assistant action can call OCI Generative AI through `api_key`. Assistant response validation remains open until the Operations prompt and context SQL are finalized.
 
 ## Lab 3: Security Wingmate
 
