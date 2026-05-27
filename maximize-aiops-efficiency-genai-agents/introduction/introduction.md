@@ -27,7 +27,7 @@ Users can then ingest and perform RAG on the user’s documents in 23ai database
 
 In this workshop, you will learn how to:
 
-- Create autonomous database and upload documents in the database.
+- Create object storage based RAG source and upload documents in it.
 - Setup & configure Generative AI Agent Service (Knowledge Bases and Agents)
 - Setup & configure Slack App integration with OCI ADK
 
@@ -49,5 +49,7 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-- **Author**
-  - **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Author**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026

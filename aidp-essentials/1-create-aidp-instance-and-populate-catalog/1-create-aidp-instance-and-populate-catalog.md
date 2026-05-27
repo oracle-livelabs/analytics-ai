@@ -52,6 +52,7 @@ This lab assumes you have:
 ## Task 2: Provision an Autonomous AI Lakehouse
 
 1. While waiting for the AIDP Workbench to provision, select **Oracle AI Database** and then **Autonomous AI Database** from the Navigation Menu.
+    > **Note:** An Autonomous AI Lakehouse may be provisioned for you at the same time your AIDP Workbench is provisioned. If that is the case, you can skip steps 1-5 and use that database instead.
 
     ![Navigate to Automonous Database page](images/navigate-to-dbs.png)
 
@@ -176,11 +177,11 @@ Next you will create a standard catalog
 
     ![Create table](images/create-table-clicks.png)
 
-8. Keep the **Table type** as **Managed**. Upload the **basic\_supplier.csv** file. Select **Preview data** and then **Create**. You can download the **basic\_supplier.csv** file and all other lab files at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip).
+8. Keep the **Table type** as **Managed**. Upload the **basic\_supplier.csv** file. Select **Preview data** and then **Create**. You can download the **basic\_supplier.csv** file and all other lab files at [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idmqvvdwzckf/b/LiveLab-Files_Bucket/o/aidp-workbench-ll-files.zip). This table is now viewable by selecting **Tables**.
 
     ![create table](images/create-basic-supplier.png)
 
-9. Create another managed table, using the **supplier\_emotions.csv** file.
+9. Create another managed table, using the **supplier\_emotions.csv** file. Be sure to select **Preview** before creating the table.
 
     ![create emotions table](images/create-supplier-emotions-table.png)
 
@@ -192,7 +193,7 @@ Next you will create a standard catalog
 
     ![set as managed volume](images/create-supplier-volume.png)
 
-12. Select the **Volumes** tab and then the **Supplier\_Volume** volume you just created.
+12. Select the **Volumes** tab and then the **supplier\_volume** volume you just created.
 
     ![select volume](images/access-supplier-volume.png)
 

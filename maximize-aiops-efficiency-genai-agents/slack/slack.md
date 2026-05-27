@@ -13,6 +13,7 @@ In this lab, you will:
 - Get a Slack workspace.
 - Create a Slack app.
 - Add OAuth scopes for the Slack app.
+- Add Bot user events for the Slack App
 - Add the app to the Slack workspace.
 - Update Environment Variable file
 
@@ -66,7 +67,20 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
     Depending on the requirements of your bot, you may need to add other scopes.
 
-## Task 4: Add the App to the Workspace
+## Task 4: Add Bot user events for the Slack App
+
+You have to subscribe Bot Events as well, this will allow apps to receive events.
+
+1. In the left navigation of the web console for your Slack app, within the **Features** section, select **Event Subscriptions**.
+2. **Enable** Events
+3. Scroll to the **Subscribe to bot events** section of the page and add following **Add Bot User event**
+    - `app_mention`
+    - `message.channels`
+    - `message.groups`
+    - `message.im`
+    - `message.mpim`
+
+## Task 5: Add the App to the Workspace
 
 1. Scroll back to the top of the **OAuth & Permissions** page.
 2. Within the **OAuth Tokens & Redirect URLs** section, click **Install to Workspace**.
@@ -92,5 +106,7 @@ Download latest python script with Slack configuration.
 
 ## Acknowledgements
 
-- **Author**
+* **Author**
     **Nikhil Verma**, Principal Cloud Architect, NACIE
+* **Last Updated By/Date**
+    **Nikhil Verma**, Principal Cloud Architect, NACIE, May 2026
