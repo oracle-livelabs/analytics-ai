@@ -21,7 +21,7 @@ Estimated Time: 60 minutes
 * Completed Labs 1, 2, and 3
 * Access to the `WINGMATE` APEX application
 * `OCI_GENAI` Generative AI service object created in APEX
-* Multicloud and host-insights data loaded or mapped in the `WINGMATE` schema
+* Multicloud, host-insights, documentation-reference, and graph objects loaded or mapped in the `WINGMATE` schema
 * Some SQL knowledge is preferred but not necessary
 
 ## Task 1: Build a Multicloud Wingmate Agent Page

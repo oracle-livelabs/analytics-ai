@@ -5,7 +5,7 @@ Use this checklist to convert the current draft workshop into final executable L
 ## Lab 1: Resource Analytics and Data Preparation
 
 - **Approved:** Use `WINGMATE` as the database schema, APEX workspace, and APEX developer username.
-- **Approved:** Use the current `ADMIN` SQL structure to create the `WINGMATE` user and grant application privileges, pending the separate tablespace/quota decision.
+- **Approved:** Use the current `ADMIN` SQL structure to create the `WINGMATE` user, grant application privileges, and enable the `WINGMATE` schema for Database Actions with `ords_admin.enable_schema`, pending the separate tablespace/quota decision.
 - **Approved:** Use `GRANT UNLIMITED TABLESPACE TO wingmate;` for the workshop lab.
 - **Approved:** Grant `CREATE SESSION`, `CREATE TABLE`, `CREATE VIEW`, `CREATE MATERIALIZED VIEW`, `CREATE PROCEDURE`, `CREATE TRIGGER`, `CREATE SEQUENCE`, `CREATE SYNONYM`, and `CREATE JOB` to `WINGMATE`.
 - **Approved:** Grant both `OCIRA_RO` and `DWROLE` to `WINGMATE` for Resource Analytics read access and SQL Developer Web / Database Actions access.
@@ -38,7 +38,7 @@ Use this checklist to convert the current draft workshop into final executable L
 
 ## Lab 4: Multicloud Wingmate
 
-- Confirm whether the existing host-insights and multicloud tables are still the approved data foundation.
+- **Approved:** Use the existing host-insights and multicloud objects as the Lab 4 data foundation: `oci_exa_infr`, `oci_exa_vm_cluster`, `oci_cdb`, `oci_pdb`, `CIS_MULTICLOUD_DETAILS_V`, `HOSTINSIGHTS_REPORT_PERIOD`, `HOSTINSIGHTS_CPU_USAGE_SUMMARY`, `HOSTINSIGHTS_MEMORY_USAGE_SUMMARY`, `HOSTINSIGHTS_RES_STAT`, `HOSTINSIGHTS_RES_STAT_MEMORY`, `HOSTINSIGHTS_CPU_FORECAST_TREND`, `hostinsights_report_sv`, `oci_doc_ref_compute_sv`, and `MULTICLOUD_GRAPH`.
 - Confirm all table and view names used by the lab, including host insights, database, documentation-reference, and graph objects.
 - Confirm SQL source queries for every report, chart, hidden item, computation, and graph region.
 - Confirm copied page number assumptions and hidden page item names such as `P4_OCI_DOC_REF_COMPUTE`, `P4_OCI_HOSTINSIGHTS_DETAILS`, and `P4_OCI_DATABASE_DETAILS`.

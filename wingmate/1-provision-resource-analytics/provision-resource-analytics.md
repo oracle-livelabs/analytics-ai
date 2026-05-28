@@ -175,13 +175,17 @@ Resource Analytics provisions an Autonomous AI Database in a private subnet. To 
 
 	![Add client IP address](./images/update-network-access-ip.png "")
 
-4. Open **Database Actions** for the Autonomous AI Database and sign in as `ADMIN` using the password supplied during Resource Analytics provisioning.
+4. Open **Database Actions** for the Autonomous AI Database and sign in as `ADMIN` using the password supplied during Resource Analytics provisioning if requested to login.
+
+	![Access DB SQL Actions](./images/access-sql-db-actions.png "")
 
 ## Task 4: Create the Wingmate Database User
 
 Create a dedicated application schema for APEX instead of building directly in the protected `OCIRA` schema.
 
-1. In Database Actions, open **SQL**.
+1. In Database Actions, **SQL** worksheet should show logged in as `Admin`.
+
+	![Confirm admin DB SQL Actions](./images/confirm-admin.png "")
 
 2. Run the following sample SQL as `ADMIN` to create the Wingmate user.
 
@@ -202,12 +206,28 @@ Create a dedicated application schema for APEX instead of building directly in t
 	      CREATE JOB
 	TO wingmate;
 
-	GRANT OCIRA_RO TO wingmate;
-	GRANT DWROLE TO wingmate;
-	</copy>
-	```
+        GRANT OCIRA_RO TO wingmate;
+        GRANT DWROLE TO wingmate;
 
-3. Validate that the `WINGMATE` user can read Resource Analytics views through the `OCIRA_RO` role.
+        BEGIN
+            ords_admin.enable_schema(
+                p_enabled => TRUE,
+                p_schema => 'WINGMATE',
+                p_url_mapping_type => 'BASE_PATH',
+                p_url_mapping_pattern => 'wingmate',
+                p_auto_rest_auth => FALSE
+            );
+            COMMIT;
+        END;
+        /
+        </copy>
+    ```
+
+	![Run create wingmate user sql](./images/create-wingmate-user.png "")
+
+3. Sign out as `ADMIN`, and sign back in to Database Actions as the `WINGMATE` user.
+
+4. Validate that the `WINGMATE` user can read Resource Analytics views through the `OCIRA_RO` role.
 
 	```sql
 	<copy>
@@ -218,6 +238,8 @@ Create a dedicated application schema for APEX instead of building directly in t
 	FROM OCIRA.COMPARTMENT_DIM_V;
 	</copy>
 	```
+
+	![Run Query from wingmate user](./images/query-ocira.png "")
 
 	> **Note:** If either query fails, verify that `OCIRA_RO` was granted and that Resource Analytics data collection has completed for the selected regions.
 
@@ -241,15 +263,14 @@ Create the APEX workspace against the existing `WINGMATE` database schema.
 
 4. Choose the option to use an existing schema.
 
-	![Choose existing schema for workspace](./images/new-schema.png "")
+	![Choose existing schema for workspace](./images/existing-schema.png "")
 
 5. Use the following workspace values:
 
-	* **Workspace Name:** `WINGMATE`
 	* **Existing Schema:** `WINGMATE`
-	* **Workspace Administrator Username:** `WINGMATE`
-	* **Workspace Administrator Email:** Use your workshop email address.
-	* **Workspace Administrator Password:** Use a secure password that follows your tenancy policy.
+	* **Workspace Name:** `WINGMATE_LL`
+	* **Workspace Username:** `WINGMATE`
+	* **Workspace Password:** Use a secure password that follows your tenancy policy.
 
 	![Enter workspace credentials](./images/workspace-creds.png "")
 
@@ -263,7 +284,7 @@ Create the APEX workspace against the existing `WINGMATE` database schema.
 
 	![Return to the APEX sign-in page](./images/return-sign-in.png "")
 
-9. Sign in to the `WINGMATE` workspace as the `WINGMATE` APEX developer user.
+9. Sign in to the `WINGMATE_LL` workspace as the `WINGMATE` APEX developer user.
 
 	![Sign in to the WINGMATE workspace](./images/sign-in-workspace.png "")
 
@@ -283,6 +304,8 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	FROM dual;
 	</copy>
 	```
+
+	![Query the workspace](./images/sql-query-wingmate.png "")
 
 3. Preview the Resource Analytics source views that will be materialized for Compute Wingmate.
 
@@ -306,6 +329,9 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	ORDER BY view_name;
 	</copy>
 	```
+
+	![Query the workspace materialized views](./images/sql-query-wingmate-mv.png "")
+
 
 	> **Note:** If this query returns no rows, verify that Resource Analytics provisioning and data collection completed and that the `WINGMATE` user has the `OCIRA_RO` role.
 
@@ -387,7 +413,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	            ELSE
 	                l_stmt :=
 	                       'CREATE MATERIALIZED VIEW ' || qname(l_mv_name) || chr(10)
-	                    || 'BUILD IMMEDIATE' || chr(10)
+                            || 'BUILD IMMEDIATE' || chr(10)
 	                    || 'REFRESH COMPLETE ON DEMAND' || chr(10)
 	                    || 'AS SELECT * FROM ' || qname(l_source_owner) || '.' || qname(r.view_name);
 
@@ -408,6 +434,10 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	</copy>
 	```
 
+
+	![Generate the workspace materialized views](./images/sql-gen-wingmate-mv.png "")
+
+
 5. Confirm the materialized views were created.
 
 	```sql
@@ -418,6 +448,9 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	ORDER BY mview_name;
 	</copy>
 	```
+
+	![Query materialized views](./images/query-mv.png "")
+
 
 6. Spot-check the materialized views that are most likely to be used by the Compute Wingmate Agent.
 
@@ -430,6 +463,8 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	FROM MV_COMPARTMENT_DIM_V;
 	</copy>
 	```
+
+	![Query count of compute](./images/query-count-compute.png "")
 
 7. When you need to refresh the materialized views after Resource Analytics collects updated data, run the following block as `WINGMATE`.
 
@@ -448,6 +483,8 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 	/
 	</copy>
 	```
+
+	![Refresh MV](./images/refresh-mv.png "")
 
 ## Task 7: Load Synthetic Data
 
