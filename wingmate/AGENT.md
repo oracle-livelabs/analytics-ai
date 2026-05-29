@@ -168,7 +168,8 @@ It should include:
 2. Generate API keys for the APEX app.
 3. Configure APEX Web Credentials for OCI access.
 4. Create the OCI Generative AI service object in APEX.
-5. Create the Wingmate APEX application using Resource Analytics data and Lab 1 materialized views.
+5. Import the `OCI Wingmate` framework application from `oci_wingmate_framework.sql` in the Lab 1 downloaded files.
+6. Validate the imported hub and lab landing pages against Resource Analytics data and Lab 1 materialized views.
 
 Do not invent exact APEX source queries, component mappings, assistant prompts, region settings, hidden items, or page computations. Add SME TODO gates where exact details are unknown.
 
@@ -177,21 +178,23 @@ Do not invent exact APEX source queries, component mappings, assistant prompts, 
 Lab 3:
 
 - Rename and normalize as `Build a Security Wingmate Agent`.
+- Configure the imported `Security Overview` page from the Lab 2 framework application.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 4:
 
 - Rename and normalize as `Build a Multicloud Wingmate Agent`.
+- Configure the imported `Multicloud Overview` page from the Lab 2 framework application.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 5:
 
-- Build a Compute Wingmate Agent using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
+- Configure the imported `OCI Compute Wingmate` page using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
 - Configure OCI Metrics Collector from `https://github.com/jujufugh/oci-metrics-collector-py`.
 - Write compute CPU and memory metrics into the `WINGMATE` Autonomous Database schema.
 - Create SQL overlay views that combine compute metadata with metrics.
 - Add APEX visualization widgets and configure the Compute Wingmate AI assistant.
-- Keep SME review gates for Resource Analytics join columns, metric table mappings, and final assistant context limits.
+- Keep SME gates for Resource Analytics join columns, metric table mappings, and final assistant context limits.
 
 ## Validation Gates
 

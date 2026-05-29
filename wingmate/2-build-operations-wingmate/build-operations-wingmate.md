@@ -10,11 +10,10 @@ Estimated Time: 45 minutes
 
 In this lab, you will:
 
-* Sign in to the `WINGMATE` APEX workspace on the Resource Analytics Autonomous AI Database
 * Generate API keys for OCI access
 * Update APEX Web Credentials to connect to OCI resources
 * Create the OCI Generative AI service object in APEX
-* Create the Wingmate APEX application and initial Operations Wingmate page using Resource Analytics data
+* Import the Wingmate APEX framework application that provides the hub and lab landing pages
 
 ### Prerequisites
 
@@ -22,25 +21,10 @@ In this lab, you will:
 * `WINGMATE` database user created on the Resource Analytics-provisioned Autonomous AI Database
 * `WINGMATE` APEX workspace and developer user created
 * Resource Analytics materialized views created in Lab 1
+* `wingmate_data.zip` downloaded and extracted from Lab 1, including `oci_wingmate_framework.sql`
 * Subscription to US Midwest (Chicago), US East (Ashburn), or US West (Phoenix)
 
-## Task 1: Sign in to the Wingmate APEX Workspace
-
-1. Open the Oracle APEX URL for the Resource Analytics-provisioned Autonomous AI Database.
-
-	![Copy URL for APEX app](./images/open-apex.png "")
-
-2. Sign in using the workspace created in Lab 1:
-
-	* **Workspace Name:** `WINGMATE`
-	* **Workspace Username:** `WINGMATE`
-	* **Workspace Password:** Use the password created in Lab 1.
-
-	![Sign in workspace credentials](./images/sign-in-workspace.png "")
-
-3. Confirm that **App Builder**, **SQL Workshop**, and **Workspace Utilities** are available from the workspace home page.
-
-## Task 2: Generate API Keys
+## Task 1: Generate API Keys
 
 1. Navigate back to the OCI Console and click your profile icon on the upper-right side of the screen. Select **User Settings**.
 
@@ -56,7 +40,15 @@ In this lab, you will:
 
 	![Create Bucket button](./images/save-key.png "")
 
-## Task 3: Update the Credentials to Connect to OCI Resources
+5. Keep these values available for the next task:
+
+	* `user`: OCI User OCID
+	* `fingerprint`: API public key fingerprint
+	* `tenancy`: OCI Tenancy OCID
+	* `region`: OCI region identifier
+	* Downloaded private key file contents
+
+## Task 2: Update the Credentials to Connect to OCI Resources
 
 1. In APEX, click **App Builder**.
 
@@ -76,30 +68,21 @@ In this lab, you will:
 
 5. Change **Authentication Type** to **OCI Native Authentication**.
 
-6. Paste the values from the OCI configuration preview into the corresponding fields.
-
-7. Use these credential values:
+6. Enter the Web Credential values from the API key configuration preview:
 
 	* **Name:** `api_key`
 	* **Static ID:** `api_key`
+	* **OCI User ID:** Use the `user` OCID from the configuration preview.
+	* **OCI Private Key:** Paste the full downloaded private key contents, including the `BEGIN PRIVATE KEY` and `END PRIVATE KEY` lines.
+	* **OCI Tenancy ID:** Use the `tenancy` OCID from the configuration preview.
+	* **OCI Public Key Fingerprint:** Use the `fingerprint` value from the configuration preview.
+	* **Valid for URLs:** Leave this blank unless your APEX environment requires a value.
 
-8. Under **Valid for URLs**, include the endpoint for the subscribed region that hosts OCI Generative AI.
-
-	```text
-	<copy>https://inference.generativeai.<region-identifier>.oci.oraclecloud.com</copy>
-	```
-
-	Example:
-
-	```text
-	<copy>https://inference.generativeai.us-chicago-1.oci.oraclecloud.com</copy>
-	```
-
-9. Select **Create**.
+7. Select **Create**.
 
 	![api_key credentials for oci access](./images/save-api-key-creds.png "")
 
-## Task 4: Create the OCI Generative AI Service Object
+## Task 3: Create the OCI Generative AI Service Object
 
 > **SME Gate:** Confirm the approved OCI Generative AI model, region, compartment requirements, service object defaults, and workshop-safe configuration values.
 
@@ -119,128 +102,55 @@ In this lab, you will:
 
 	* **Name:** `OCI_GENAI`
 	* **Web Credential:** `api_key`
+	* **Compartment ID:** OCID look-up from OCI console
+	* **Region:** Select from the options listed that is subscribed in tenancy
+	* **Base URL:** Auto-generated Generative AI inference endpoint for your subscribed region
 	* **Model:** Select **xai.grok-4.3**.
 
 	> **Note:** `xai.grok-4.3` has a large context window that is well suited for Wingmate prompts that include Resource Analytics summaries, application page context, and supporting operational data. If `xai.grok-4.3` is not available in your subscribed region, select the closest tenancy-approved OCI Generative AI chat model.
 
+	![test connection button](./images/test-conn.png "")
+
 5. Click **Create**.
 
-## Task 5: Create the Wingmate APEX Application
+## Task 4: Import the Wingmate APEX Framework Application
 
-> **SME Gate:** Confirm the first application page list, navigation structure, page source objects, SQL queries, assistant prompt, page item names, context SQL, welcome message, prompt examples, and expected validation responses.
+> **SME Gate:** Confirm the framework export file name, imported page IDs, navigation structure, page source objects, SQL queries, assistant prompt, page item names, context SQL, welcome message, prompt examples, and expected validation responses.
 
 1. Navigate back to **App Builder**.
 
 	![App Builder Button](./images/nav-app-builder.png "")
 
-2. Select **Create**.
+2. Select **Import**.
 
-	![create button on console](./images/create-app.png "")
+	![Import framework application](./images/import-framework.png "")
 
-3. Create a new application.
+3. Drag and drop `f1000-public-small-v3.sql` from the extracted Lab 1 files. If you need the package again, download [Wingmate Data Zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/A8D93L0AYtatdLXkIXEH2OaQDtX_-AL8gnQ8CWHWYFV_6XUUGNw43bsZbU5oNx-e/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip). Confirm **File Type** is set to **Application, Page or Component Export**, then select **Next**.
 
-4. Name the application `WINGMATE` and click **Create Application**.
+	![Upload framework application export](./images/import-framework-app.png "")
 
-	![Naming of the App](./images/name-app.png "")
+4. Review the import summary, then select **Next**.
 
-5. After the application is created, open **SQL Workshop** and validate that the application schema can read the Lab 1 materialized views.
+5. On the install page, confirm the application settings:
 
-	```sql
-	<copy>
-	SELECT mview_name
-	FROM user_mviews
-	WHERE mview_name LIKE 'MV\_%' ESCAPE '\'
-	ORDER BY mview_name;
-	</copy>
-	```
+	* **Parsing Schema:** `WINGMATE`
+	* **Build Status:** `Run and Build Application`
+	* **Install As Application:** `Auto Assign New Application ID`
 
-6. Review the candidate source objects for the first Operations Wingmate pages.
+	![Install framework application](./images/install-app.png "")
 
-	```sql
-	<copy>
-	SELECT table_name
-	FROM user_tables
-	WHERE table_name LIKE 'MV\_%' ESCAPE '\'
-	   OR table_name LIKE 'CIS\_%' ESCAPE '\'
-	ORDER BY table_name;
-	</copy>
-	```
+6. Select **Install Application**.
 
-7. Create an initial report page or dashboard page named **Operations Wingmate** using the approved Resource Analytics objects.
+7. After the import completes, open the imported **OCI Wingmate** application.
 
-8. Use the following source-query patterns as starting points.
+8. Confirm the framework includes these pages:
 
-	> **SME Gate:** Validate the final report/dashboard SQL and assistant context SQL after confirming the available columns in the selected Resource Analytics materialized views.
+	* **OCI Wingmate Hub**
+	* **Security Overview**
+	* **OCI Compute Wingmate**
+	* **Multicloud Overview**
 
-	```sql
-	<copy>
-	-- Candidate compute inventory source.
-	SELECT *
-	FROM MV_COMPUTE_INSTANCE_DIM_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Candidate compartment context source.
-	SELECT *
-	FROM MV_COMPARTMENT_DIM_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Candidate region context source.
-	SELECT *
-	FROM MV_REGION_DIM_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Candidate availability domain context source.
-	SELECT *
-	FROM MV_AD_DIM_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Candidate tagging context source.
-	SELECT *
-	FROM MV_TAGS_DIM_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Candidate compute and volume relationship source.
-	SELECT *
-	FROM MV_INSTANCE_VOLUME_DETAILS_V;
-	</copy>
-	```
-
-	```sql
-	<copy>
-	-- Supporting security context source from synthetic data.
-	SELECT *
-	FROM CIS_IAM_POLICIES;
-	</copy>
-	```
-
-9. Add the Operations Wingmate assistant action only after the GenAI service object and page context items are confirmed.
-
-## Task 6: Validate the APEX Foundation
-
-1. Run the application.
-
-2. Confirm the app opens without authentication or authorization errors.
-
-3. Confirm the report or dashboard page can query the approved Resource Analytics materialized view.
-
-4. Confirm the `OCI_GENAI` service object appears in the APEX Generative AI service list.
-
-5. If a test AI assistant action has been added, confirm the action can call OCI Generative AI using the `api_key` Web Credential.
+	![sample framework application](./images/sample-app.png "")
 
 You may now **proceed to the next lab**.
 

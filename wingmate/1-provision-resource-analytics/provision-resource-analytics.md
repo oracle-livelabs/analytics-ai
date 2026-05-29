@@ -624,7 +624,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 	</copy>
 	```
 
-	> **SME Review Gate:** Confirm the least-privilege policy scope before publishing. Tenancy-wide read access is simple for a lab, but production environments might require compartment-scoped policies.
+	> **SME Gate:** Confirm the least-privilege policy scope before publishing. Tenancy-wide read access is simple for a lab, but production environments might require compartment-scoped policies.
 
 3. Connect to the OCI VM and validate instance principal authentication.
 
@@ -736,7 +736,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 	</copy>
 	```
 
-	> **SME Review Gate:** Confirm the final ShowOCI table name and column mappings. The exact table name depends on the name selected during the CSV load process.
+	> **SME Gate:** Confirm the final ShowOCI table name and column mappings. The exact table name depends on the name selected during the CSV load process.
 
 13. Use the ShowOCI IAM policy statement table from APEX, SQL Developer, or MCP servers as a supplemental security and governance source for Wingmate.
 

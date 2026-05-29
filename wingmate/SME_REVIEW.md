@@ -23,15 +23,18 @@ Use this checklist to convert the current draft workshop into final executable L
 - **Approved:** Use the Lab 2 APEX workspace sign-in flow against the Resource Analytics-provisioned Autonomous AI Database with workspace `WINGMATE`, username `WINGMATE`, and the password created in Lab 1.
 - **Approved:** Use the Lab 2 Web Credential flow with OCI Native Authentication, Name `api_key`, Static ID `api_key`, and a region-aware Generative AI inference URL pattern. Keep Chicago as the concrete example.
 - **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and `xai.grok-4.3` as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If `xai.grok-4.3` is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
-- **Approved:** Lab 2 creates the `WINGMATE` application and an initial `Operations Wingmate` foundation page. Later labs add or complete the Security, Multicloud, and Compute Wingmate pages.
+- **Approved:** Lab 2 imports the `OCI Wingmate` framework application from `oci_wingmate_framework.sql` included in the Lab 1 `wingmate_data.zip` package. The imported framework provides the hub and lab landing pages used by later labs.
+- **Approved:** Use the imported framework pages as the starting points for later labs: `OCI Wingmate Hub`, `Security Overview`, `OCI Compute Wingmate`, and `Multicloud Overview`.
 - **Approved:** Use Resource Analytics materialized views as the primary Operations Wingmate starter sources: `MV_COMPUTE_INSTANCE_DIM_V`, `MV_COMPARTMENT_DIM_V`, `MV_REGION_DIM_V`, `MV_AD_DIM_V`, `MV_TAGS_DIM_V`, and `MV_INSTANCE_VOLUME_DETAILS_V`. Keep `CIS_IAM_POLICIES` as supporting security context rather than the primary Operations source.
 - Keep exploratory `SELECT *` source-query examples in Lab 2 until Resource Analytics column names are validated. Final report/dashboard SQL and assistant context SQL remain open.
+- Confirm the final framework export file name, package location, imported application install options, and imported page IDs in the target APEX environment.
 - Keep open: define the Operations Wingmate assistant prompt, page item names, context SQL, welcome message, prompt examples, and context-source scope.
 - **Approved:** Use the current Lab 2 foundation validation checks: app opens without authentication or authorization errors, the report/dashboard can query approved Resource Analytics materialized views, `OCI_GENAI` appears in the APEX Generative AI service list, and any test assistant action can call OCI Generative AI through `api_key`. Assistant response validation remains open until the Operations prompt and context SQL are finalized.
 
 ## Lab 3: Security Wingmate
 
 - **Approved:** Use `CIS_IAM_POLICIES` as the primary Security Wingmate source for Lab 3. Resource Analytics identity views and ShowOCI identity exports can be optional future/context sources.
+- **Approved:** Configure the imported `Security Overview` page instead of creating a new Security page manually.
 - Confirm whether Security Wingmate uses synthetic `CIS_` policy data, Resource Analytics identity views, or both.
 - Confirm APEX page layout, region names, dynamic action settings, and screenshots.
 - Confirm assistant prompt wording, welcome message, prompt examples, and expected validation responses.
@@ -39,14 +42,16 @@ Use this checklist to convert the current draft workshop into final executable L
 ## Lab 4: Multicloud Wingmate
 
 - **Approved:** Use the existing host-insights and multicloud objects as the Lab 4 data foundation: `oci_exa_infr`, `oci_exa_vm_cluster`, `oci_cdb`, `oci_pdb`, `CIS_MULTICLOUD_DETAILS_V`, `HOSTINSIGHTS_REPORT_PERIOD`, `HOSTINSIGHTS_CPU_USAGE_SUMMARY`, `HOSTINSIGHTS_MEMORY_USAGE_SUMMARY`, `HOSTINSIGHTS_RES_STAT`, `HOSTINSIGHTS_RES_STAT_MEMORY`, `HOSTINSIGHTS_CPU_FORECAST_TREND`, `hostinsights_report_sv`, `oci_doc_ref_compute_sv`, and `MULTICLOUD_GRAPH`.
+- **Approved:** Configure the imported `Multicloud Overview` page instead of copying the Security page.
 - Confirm all table and view names used by the lab, including host insights, database, documentation-reference, and graph objects.
 - Confirm SQL source queries for every report, chart, hidden item, computation, and graph region.
-- Confirm copied page number assumptions and hidden page item names such as `P4_OCI_DOC_REF_COMPUTE`, `P4_OCI_HOSTINSIGHTS_DETAILS`, and `P4_OCI_DATABASE_DETAILS`.
+- Confirm imported page number assumptions and hidden page item names such as `P21_OCI_DOC_REF_COMPUTE`, `P21_OCI_HOSTINSIGHTS_DETAILS`, and `P21_OCI_DATABASE_DETAILS`.
 - Confirm assistant prompt wording, welcome message, page context, and expected validation responses.
 - Confirm whether the APEX Graph Visualization plug-in is required, where learners should download it, and how installation should be validated.
 
 ## Lab 5: Compute Wingmate
 
+- **Approved:** Configure the imported `OCI Compute Wingmate` page instead of creating a new Compute page manually.
 - Provide exact Compute Wingmate APEX page layout, screenshots, region types, and navigation placement.
 - Provide approved Resource Analytics compute source views or materialized views.
 - Provide SQL queries for compute inventory, capacity, utilization, block volume relationships, and compartment context.

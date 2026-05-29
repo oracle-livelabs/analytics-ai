@@ -8,7 +8,7 @@ Estimated Time: 60 minutes
 
 ### Objectives
 
-* Build a Multicloud Wingmate Agent page
+* Configure the imported Multicloud Overview page
 * Generate Report Period View
 * Create Host Insights Widgets
 * Compare Insights Across CPU and Memory
@@ -20,59 +20,44 @@ Estimated Time: 60 minutes
 
 * Completed Labs 1, 2, and 3
 * Access to the `WINGMATE` APEX application
+* Imported `OCI Wingmate` framework application from Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Multicloud, host-insights, documentation-reference, and graph objects loaded or mapped in the `WINGMATE` schema
 * Some SQL knowledge is preferred but not necessary
 
-## Task 1: Build a Multicloud Wingmate Agent Page
+## Task 1: Configure the Multicloud Overview Page
 
-> **SME Gate:** Confirm the final multicloud data model, host-insights objects, copied page number assumptions, hidden page item names, assistant prompt, welcome message, page context, screenshots, and expected validation responses.
+> **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, hidden page item names, assistant prompt, welcome message, page context, screenshots, and expected validation responses.
 
-1. Use the existing template from the Security Wingmate Agent to create the Multicloud Wingmate Agent by selecting the plus sign in the top right of the page and selecting **Copy Page**.
+1. In App Builder, open the imported **OCI Wingmate** application.
 
-	![navigate home buttons](./images/copy-page.png "")
+2. Open the imported **Multicloud Overview** page.
 
-2. Select **Next** to use the existing page.
-
-	![create page button](./images/copy-page-next.png "")
-
-3. Name the page **MultiCloud Wingmate** and select **Next**.
-
-	![name the page](./images/copy-security.png "")
-
-4. Select **Create a new navigation menu entry** and **Next**. Leave menu entry as _No parent selected_.
-
-	![name page and next button](./images/nav-wingmate.png "")
-
-5. Rename Security to MultiCloud in the highlighted sections for value and static-id and select **Copy**.
-
-	![rename value and id and copy button](./images/rename-security.png "")
-
-6. Update AI Assistant by navigating to **Show AI Assistant** in the navigation tree under MultiCloud Wingmate Region -> StartWingmate -> Chat -> Show AI Assistant. Update System Prompt with the following:
+3. Update AI Assistant by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**. Update System Prompt with the following:
 
 	```
 	<copy>
 	I want you to be an OCI compute expert who is providing guidance to the customers about resource capacity planning best practices. 
 	The following list is the oci compute host insights details we have captured, please use these compute metrics data for answering questions. 
 	--------
-	&P4_OCI_HOSTINSIGHTS_DETAILS.
+	&P21_OCI_HOSTINSIGHTS_DETAILS.
 	--------
 	The following list is the OCI documentation references for compute, please use these documentation references for answering recommendation related questions.
 	--------
-	&P4_OCI_DOC_REF_COMPUTE.
+	&P21_OCI_DOC_REF_COMPUTE.
 
 	</copy>
 	```
 
-	> **Note:** Ensure you update the reference page number if it does not match your copied page.
+	> **Note:** The imported framework uses the Multicloud Overview page. If your imported page ID differs, update the `P21_` item prefix to match your page.
 
-	Update the **Welcome Message** from OCI Security Wingmate to OCI MultiCloud Wingmate as well.
+	Update the **Welcome Message** to OCI MultiCloud Wingmate as well.
 
-7. Select the table previously created in the last lab that copied over named **Identity and Access Management**.
+4. Select the starter report region on the page.
 
 	![Identity Table](./images/update-identity.png "")
 
-8. Update the name **MultiCloud Insights** and change the **SQL Query** to the following:
+5. Update the name to **MultiCloud Insights** and change the **SQL Query** to the following:
 
 	```
 	<copy>
@@ -90,13 +75,13 @@ Estimated Time: 60 minutes
 
 	> **Note:** This will serve as the bottom of the dashboard so any regions created will be placed above this table.
 
-9. Navigate to the bottom of the Navigation Tree to the hidden items. Select the OCI_CLOUDGUARD item and rename it to **P4_OCI_DOC_REF_COMPUTE** on the right side under Identification.
+6. Navigate to the bottom of the Navigation Tree to the hidden items. Select the documentation-reference hidden item and name it **P21_OCI_DOC_REF_COMPUTE** on the right side under Identification.
 
 	![select hidden value](./images/select-hidden.png "")
 
 	![rename hidden](./images/update-hidden.png "")
 
-10. Update the computation as the following:
+7. Update the computation as the following:
 
 	```
 	<copy>
@@ -106,13 +91,13 @@ Estimated Time: 60 minutes
 
 	![update computation](./images/update-computation.png "")
 
-11. Create another **Hidden Item** by right-clicking **P4_HOSTINSIGHTS_Listed**, selecting **Duplicate**, and naming it **P4_OCI_HOSTINSIGHTS_DETAILS**.
+8. Create another **Hidden Item** by duplicating an existing hidden item and naming it **P21_OCI_HOSTINSIGHTS_DETAILS**.
 
 	![create hidden item](./images/duplicate-hidden.png "")
 
 	![host insights hidden value](./images/update-hostinsights-name.png "")
 
-12. Right-click **P4_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
+9. Right-click **P21_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
 
 	```
 	<copy>
@@ -122,13 +107,13 @@ Estimated Time: 60 minutes
 
 	![host insights hidden value](./images/update-hostinsights-computation.png "")
 
-13. Repeat **Step 11** to create another hidden item named **P4_OCI_DATABASE_DETAILS**.
+10. Repeat **Step 8** to create another hidden item named **P21_OCI_DATABASE_DETAILS**.
 
 	![create hidden item](./images/duplicate-hidden-details.png "")
 
 	![host insights hidden value](./images/update-hostinsights-computation.png "")
 
-14. Right-click **P4_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
+11. Right-click **P21_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
 
 	```
 	<copy>
@@ -610,7 +595,7 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![import process confirmation](./images/install-plugin.png "")
 
-6. Verify the plug-in was installed correctly. Navigate back to the **MultiCloud Overview** page of the app by selecting **Application 100** in the breadcrumbs bar and selecting the page.
+6. Verify the plug-in was installed correctly. Navigate back to the **MultiCloud Overview** page of the app by selecting the imported application in the breadcrumbs bar and selecting the page.
 
 	> **Note:** Notice the settings of **Page size** that can be modified if needed and this is available via **Shared Components** -> **Component Settings** (via the breadcrumbs).
 

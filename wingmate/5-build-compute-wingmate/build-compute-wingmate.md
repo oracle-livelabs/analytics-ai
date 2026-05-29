@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab walks you through creating a Compute Wingmate Agent in Oracle APEX. You will use Resource Analytics materialized views from Lab 1, or query the `OCIRA` schema views directly, to provide compute instance metadata. You will also configure the OCI Metrics Collector to write compute utilization metrics into Autonomous Database so the APEX app can overlay CPU and memory metrics on top of compute instance metadata.
+This lab walks you through configuring the imported Compute Wingmate Agent page in Oracle APEX. You will use Resource Analytics materialized views from Lab 1, or query the `OCIRA` schema views directly, to provide compute instance metadata. You will also configure the OCI Metrics Collector to write compute utilization metrics into Autonomous Database so the APEX app can overlay CPU and memory metrics on top of compute instance metadata.
 
 The result is a Compute Wingmate page that can answer natural language questions about compute inventory and utilization while also displaying APEX visualization widgets for operational monitoring.
 
-> **SME Review Gate:** Confirm the final Resource Analytics compute view columns before publishing. The metrics collector writes a known `OCI_COMPUTE_METRICS` table, but the join column from Resource Analytics compute metadata must be verified in the target tenancy.
+> **SME Gate:** Confirm the final Resource Analytics compute view columns before publishing. The metrics collector writes a known `OCI_COMPUTE_METRICS` table, but the join column from Resource Analytics compute metadata must be verified in the target tenancy.
 
 Estimated Time: 60 minutes
 
@@ -18,13 +18,14 @@ In this lab, you will:
 * Configure OCI Metrics Collector for compute CPU and memory metrics
 * Load compute metrics into the `WINGMATE` Autonomous Database schema
 * Create SQL views that overlay metrics on compute instance metadata
-* Build APEX visualization widgets for compute monitoring
+* Configure APEX visualization widgets on the imported Compute Wingmate page
 * Configure the Compute Wingmate Agent AI assistant
 
 ### Prerequisites
 
 * Completed Labs 1 through 4
 * Access to the `WINGMATE` APEX application
+* Imported `OCI Wingmate` framework application from Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Resource Analytics compute materialized views created in Lab 1, or direct access to the `OCIRA` schema views through `OCIRA_RO`
 * An OCI VM or local environment that can run Python and access OCI Monitoring
@@ -87,7 +88,7 @@ Compute Wingmate can use the materialized views created in Lab 1 or query the `O
 	</copy>
 	```
 
-	> **SME Review Gate:** Confirm the compute instance OCID column. Later steps use `<compute_instance_ocid_column>` as a placeholder until the target Resource Analytics column name is confirmed.
+	> **SME Gate:** Confirm the compute instance OCID column. Later steps use `<compute_instance_ocid_column>` as a placeholder until the target Resource Analytics column name is confirmed.
 
 ## Task 2: Configure OCI Metrics Collector
 
@@ -296,7 +297,7 @@ The metrics collector creates and writes to `OCI_COMPUTE_METRICS` in the `WINGMA
 
 Create APEX-friendly views that combine compute metadata with the latest metrics.
 
-> **SME Review Gate:** Replace `<compute_instance_ocid_column>` with the confirmed Resource Analytics compute instance OCID column from Task 1.
+> **SME Gate:** Replace `<compute_instance_ocid_column>` with the confirmed Resource Analytics compute instance OCID column from Task 1.
 
 1. Create a latest-metrics view.
 
@@ -361,15 +362,15 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 	</copy>
 	```
 
-## Task 5: Build the Compute Wingmate APEX Page
+## Task 5: Configure the Compute Wingmate APEX Page
 
-Use the same page-building pattern from Lab 4, but focus on compute metadata and metrics.
+Use the imported Compute Wingmate framework page from Lab 2, but focus the page content on compute metadata and metrics.
 
 1. In App Builder, open the `WINGMATE` application.
 
-2. Create a new blank page named **Compute Wingmate**.
+2. Open the imported **OCI Compute Wingmate** page.
 
-3. Create a region named **Compute Overview**.
+3. Create or select a region named **Compute Overview**.
 
 4. Add a **Classic Report** region using the source:
 
@@ -444,11 +445,11 @@ Use the same page-building pattern from Lab 4, but focus on compute metadata and
 
 ## Task 6: Configure the Compute Wingmate Agent
 
-1. Add a button named **StartComputeWingmate** to the Compute Wingmate page.
+1. Add or select a button named **StartComputeWingmate** on the OCI Compute Wingmate page.
 
-2. Create a dynamic action named **Chat** for the button.
+2. Create or update a dynamic action named **Chat** for the button.
 
-3. Add the **Show AI Assistant** true action.
+3. Add or update the **Show AI Assistant** true action.
 
 4. Select the `OCI_GENAI` service created in Lab 2.
 
@@ -470,7 +471,7 @@ Use the same page-building pattern from Lab 4, but focus on compute metadata and
 	</copy>
 	```
 
-	> **SME Review Gate:** Confirm the final context row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
+	> **SME Gate:** Confirm the final context row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
 
 7. Save and run the page.
 
