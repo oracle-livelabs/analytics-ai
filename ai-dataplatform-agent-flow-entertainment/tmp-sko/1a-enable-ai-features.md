@@ -1,15 +1,29 @@
 # Enable AI Features in AI Data Platform
 
-These instructions were created from the supplied recording. Values shown in the UI vary by LiveLabs reservation; use the values from your own LiveLabs panel and Terraform outputs. Screenshot password values have been redacted.
+## Introduction
+
+First things first, let's flip the right switches in Oracle AI Data Platform (AIDP) so the Workbench can use the Autonomous AI Lakehouse behind the scenes. Once AI features are enabled, the Workbench can create the external catalog connection that powers the agentic functionality you will build later in the workshop.
+
+Values shown in the UI vary by LiveLabs reservation; use the values from your own LiveLabs Credentials window and Terraform outputs. Screenshot password values have been redacted.
+
+Estimated Time: 5 minutes
+
+### Objectives
+
+In this section, you will:
+
+- Enable AI features in the AIDP Workbench.
+- Connect the Workbench to the Autonomous AI Lakehouse created for your reservation.
+- Verify the external catalog was created in the Master Catalog.
 
 ## Prerequisites
 
-- The AI Data Platform Workbench is open.
-- The Autonomous AI Lakehouse database has already been created by Terraform.
-- The LiveLabs panel is open to **Reservation Information** and shows the **Tenancy Information** and **Terraform Outputs** sections.
-- You have the Terraform output named **ADB Admin Password** available.
+This section assumes you have:
 
-## Steps
+- The LiveLabs Credentials window open with access to the **ADB Admin Password**.
+- A browser tab open for the AIDP Workbench.
+
+## Task 1: Enable AI Features
 
 1. On the Workbench home page, find the **Enable AI features** card and click **Enable**.
 
@@ -47,7 +61,7 @@ These instructions were created from the supplied recording. Values shown in the
 
    ![Verify the external catalog is present](screenshots-entertainment/09-verify-external-catalog.png)
 
-## Notes
+## Troubleshooting
 
 - If **Enable** remains disabled, re-check that a compartment, Autonomous AI Lakehouse instance, and password have all been supplied.
 - If the compartment or database dropdown does not populate immediately, wait a few seconds and reopen the dropdown.
