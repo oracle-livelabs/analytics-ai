@@ -68,7 +68,15 @@ Estimated time: 15 min
     </copy>
     ````
 
-    Answer the questions about authorization token and compartment OCID.
+    Answer the questions about 
+    - Prefix (ex: vibe)
+    - Compartment OCID (See your notes)
+    - Database password
+    - Public IP Filter. The setup will have an Internet gateway with port 80/443 open to the internet. What is the IP Range of the machine who can access these ports:
+        1. All the machines on the internet -> 0.0.0.0/0
+        2. Just my laptop (recommended)
+        3. Other (your own IP range)
+    - To get your laptop IP, use, by example, https://whatismyipaddress.com or https://ifconfig.me 
 
     In case of errors, check **Known Issues** below
 

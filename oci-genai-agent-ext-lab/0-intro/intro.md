@@ -18,8 +18,8 @@ You will search documents such as:
 - TIFF files (FAX) using OCI Document Understanding
 - Word, Excel, PowerPoint, etc. using OCI Functions
 - Websites using:
-  - A crawler (for all pages of a website, based on sitemap or not)
-  - Or Selenium (for a fixed number of URLs)
+    - A crawler (for all pages of a website, based on sitemap or not)
+    - Or Selenium (for a fixed number of URLs)
 
 ![Screenshot](images/when-was-jazz-created.png)
 
@@ -29,7 +29,7 @@ Estimated Workshop Time: 90 minutes
 
 ## Vector Store
 
-First, you will manually install the vector store, upload files to Object Storage, synchronize, and test it.
+First, you will manually install a vector store, upload files to Object Storage, synchronize, and test it.
 
 ![Architecture](images/vector-store.png)
 
