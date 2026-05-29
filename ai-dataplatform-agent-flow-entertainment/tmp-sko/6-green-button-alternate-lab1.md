@@ -27,41 +27,61 @@ This lab assumes you have:
 
 ## Task 1: Enable AI Features in AIDP Workbench
 
-AI features activate additional Workbench capabilities by attaching an Oracle Autonomous AI Lakehouse instance. In this workshop, the Autonomous AI Lakehouse was provisioned automatically, so you will connect the Workbench to that existing database.
+AI features activate additional Workbench capabilities by attaching an Oracle Autonomous AI Lakehouse instance. Before enabling the features, add your assigned LiveLabs user to the AIDP Workbench administrator role. In this workshop, the Autonomous AI Lakehouse was provisioned automatically, so you will connect the Workbench to that existing database.
 
-1. On the Workbench home page, find the **Enable AI features** card and click **Enable**.
+1. In the Workbench left navigation, click **Roles**. Select the **AI_DATA_PLATFORM_ADMIN** role.
+
+    ![Select the AI Data Platform admin role](screenshots/00-roles-select-admin-role.png)
+
+2. Click the **Members** tab, then click **Add member**.
+
+    ![Open the Members tab and add a member](screenshots/00-roles-open-members-tab.png)
+
+3. In the **Add member** panel, leave **Principal type** set to **User**. Open **Compartment** and select the tenancy root compartment, for example `onalabexp02`.
+
+    ![Select the tenancy root compartment](screenshots/00-roles-select-root-compartment.png)
+
+4. Open **Domain** and select **Default**.
+
+    ![Select the Default identity domain](screenshots/00-roles-select-default-domain.png)
+
+5. Locate your assigned LiveLabs user, for example `LL<reservation>-USER`. Select the checkbox for that user and click **Create**.
+
+    ![Select the assigned LiveLabs user](screenshots/00-roles-select-assigned-user.png)
+
+6. Confirm the user now appears on the **Members** tab for **AI_DATA_PLATFORM_ADMIN**.
+
+    ![Confirm the assigned user was added](screenshots/00-roles-confirm-member-added.png)
+
+7. Return to **Home**. Find the **Enable AI features** card and click **Enable**.
 
     ![Click Enable on the Enable AI features card](screenshots/01-click-enable-ai-features.png)
 
-2. In the **Enable AI features** panel, open the **Oracle Autonomous AI Lakehouse instance** dropdown and choose **Choose existing**.
+8. In the **Enable AI features** panel, open the **Oracle Autonomous AI Lakehouse instance** dropdown and choose **Choose existing**.
 
     ![Choose an existing Autonomous AI Lakehouse instance](screenshots/02-choose-existing-lakehouse.png)
 
-3. Wait for the **Compartment** dropdown to load. Open it and select the workshop compartment shown in the LiveLabs panel, for example `LL<reservation>-COMPARTMENT`.
+9. Wait for the **Compartment** dropdown to load. Open it and select the workshop compartment shown in the LiveLabs panel, for example `LL<reservation>-COMPARTMENT`.
 
     ![Select the workshop compartment](screenshots/03-select-workshop-compartment.png)
 
-4. Open the second **Oracle Autonomous AI Lakehouse instance** dropdown and select the Autonomous Database created for the workshop. Match it to the **ADB Name** Terraform output.
+10. Open the second **Oracle Autonomous AI Lakehouse instance** dropdown and select the Autonomous Database created for the workshop. Match it to the **ADB Name** Terraform output.
 
     ![Select the Autonomous AI Lakehouse database](screenshots/04-select-autonomous-lakehouse.png)
 
-5. Confirm **Username** is `ADMIN`. In the LiveLabs **Terraform Outputs** section, click **Copy** for **ADB Admin Password**, then paste it into the **Password** field in the Workbench panel.
+11. Confirm **Username** is `ADMIN`. In the LiveLabs **Terraform Outputs** section, click **Copy** for **ADB Admin Password**, then paste it into the **Password** field in the Workbench panel.
 
     ![Copy and paste the ADB admin password](screenshots/05-copy-and-paste-adb-password.png)
 
-6. In **Add Policies**, confirm the required tenancy and compartment policy status is satisfied. In this workshop, the necessary policies are already available. Click **Enable**.
+12. In **Add Policies**, confirm the required tenancy and compartment policy status is satisfied. In this workshop, the necessary policies are already available. Click **Enable**.
 
     ![Click Enable in the Enable AI features panel](screenshots/06-click-enable.png)
 
-7. Wait for the Workbench to finish enabling the features. The home page returns to the card view and the card changes to **Disable AI features**, which confirms AI features are attached.
-
-    ![Confirm the Disable AI features card appears](screenshots/07-confirm-enabled.png)
-
-8. Click **Master catalog** in the left navigation.
+13. Wait a few minutes for the Workbench to attach the lakehouse and create the catalog. Click **Master catalog** in the left navigation.
 
     ![Open Master catalog](screenshots/08-open-master-catalog.png)
 
-9. Verify the Master Catalog shows the default cluster as active and an external catalog for the database, typically named with the pattern `vector_db_<adb-name>`.
+14. Verify the Master Catalog shows the default cluster as active and an external catalog for the database, typically named with the pattern `vector_db_<adb-name>`.
 
     ![Verify the external catalog is present](screenshots/09-verify-external-catalog.png)
 
