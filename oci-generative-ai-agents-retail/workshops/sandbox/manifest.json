@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build Your Own AI Agent to Boost Productivity and Efficiency",
+    "workshoptitle": "Customize AI Agents and Workflows with LLMs and OCI AI Agent Platform — Retail Edition",
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
@@ -8,7 +8,7 @@
         },
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Lab 1: Create the Agent",
@@ -20,7 +20,7 @@
         },
         {
             "title": "Need Help?",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

@@ -115,7 +115,7 @@ This lab assumes you have:
 
     ![Screenshot showing the third question for the agent](./images/third-question-response.png)
 
-1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question: 
+1. Now that we have information about the tickets, let's see if we can pull up a loan policy document which can help us define "Debt-to-Income" limits. Type the following question:
 
       ``` text
       <copy>
@@ -125,7 +125,7 @@ This lab assumes you have:
 
 1. Click the **Submit** button.
 
-1.  As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
+1. As you can see, for this question, the agent figured out that the information required might be in the knowledge base articles. For this task it employed the RAG tool which searched for the relevant information in our loan policy docs stored in object storage. Feel free to look at the traces for this interaction which show the steps the agent took to give us the information we needed. In the response you can see that a summary of the document was provided, but, also, if you expand the **View citations** section, you'll be able to see a reference to the document(s) which were used to compose the reply with a direct link to the file(s), the page(s) from which content was extracted and more.
 
     ![test](./images/third-question-traces-1.png)
 
@@ -184,4 +184,4 @@ Although our use case was focused on loan compliance, the OCI AI Agents service 
 ## Acknowledgements
 
 - **Author** - Deion Locklear
-- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino
+- **Contributors** - Hanna Rakhsha, Daniel Hart, Uma Kumar, Anthony Marino, Wynne Yang

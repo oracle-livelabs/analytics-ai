@@ -15,12 +15,12 @@
         {
             "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Import and Prepare Your Data",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-prep/data-prep.md"
+            "filename": "https://livelabs.oracle.com/cdn/analytics-ai/common-labs/data-prep/data-prep.md"
         },
         {
             "title": "Lab 2: Create Auto Insights",
@@ -28,7 +28,7 @@
         },
         {
             "title": "Lab 3: Blend Data",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/common-labs/data-blending/data-blending.md"
+            "filename": "https://livelabs.oracle.com/cdn/analytics-ai/common-labs/data-blending/data-blending.md"
         },
         {
             "title": "Lab 4: Create Calculations",
@@ -41,7 +41,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "filename":"https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         },
         {
             "title": "Other LiveLabs you might like",
