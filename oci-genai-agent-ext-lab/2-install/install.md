@@ -13,6 +13,9 @@ Estimated time: 15 min
 
 - See Prerequisites in Lab1        
 - Task 1 in Lab (List of ##VARIABLES##)
+- In this lab, we will install this architecture. It is mostly a API Gateway, a compute and a database calling OCI Services.
+
+![Physical Architecture](../0-intro/images/physical-architecture.png)
 
 ## Task 1: Create a Project 
 
@@ -69,8 +72,9 @@ Estimated time: 15 min
     ````
 
     Answer the questions about 
-    - Prefix (ex: vibe)
+    - Prefix (ex: vector)
     - Compartment OCID (See your notes)
+    - Project OCID (See your notes)
     - Database password
     - Public IP Filter. The setup will have an Internet gateway with port 80/443 open to the internet. What is the IP Range of the machine who can access these ports:
         1. All the machines on the internet -> 0.0.0.0/0

@@ -144,7 +144,7 @@ You can
 8. In the dialog, "Upload Objects"
     - Click **Drop the files or select them** 
     - Upload oci-vector-store-ext/sample_files/music/* 
-    - Upload expensepolicy.pdf
+    - Upload oci-vector-store-ext/sample_files/expensepolicy.pdf
     - Click **Next** 
     - Click **Upload Objects** 
     - Click **Close**     
