@@ -10,45 +10,12 @@ Estimated time: 30 min
 
 ### Prerequisites
 - The lab 1 must have been completed.
-- Download the [zip file@@](https://github.com/mgueury/oci-genai-agent-ext/archive/refs/heads/main.zip).
+- Download the [zip file](https://github.com/mgueury/oci-vector-store-ext/archive/refs/heads/main.zip).
     In the subdirectory "oda", you will find the files needed below.
 
-You can reuse the Bucket and Vector Store created in Lab1 or create a new/different one with Task 1 and Task 2 below:
+You reuse the Bucket and Vector Store created in Lab 1
 
-## Task 1: Create a bucket
-
-1. Login to your OCI account/tenancy
-2. Go to Hamburger>Storage>Buckets and create Bucket with name labAgentBucket
-3. Under Actions>Edit visibility set Visibility to Public (to show links to the user)
-   ![Instance](images/oda-bucket-create.png)
-4. Select Objects tab and click Upload objects
-    - Select the expensepolicy.pdf from the download zip and click Next, Upload objects, Close
-      ![Instance](images/oda-bucket-upload.png)
-    - at the end of the expensepolicy.pdf line press ... > View object details and save the link for later (##OBJECTSTORE_LINK##) like:
-	https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/frpd9ierrwe1/b/labAgentBucket/o/
-      ![Instance](images/oda-bucket-url.png)
-
-## Task 2: Create a Vector Store
-
-1. Go to Hamburger>Analytics&AI>Generative AI and select Vector stores
-   ![Instance](images/oda-vs-create.png)
-2. Create vector store with name labVectorStore (Unstructured Data)
-    - Now wait a couple of minutes for it to appear
-   ![Instance](images/oda-vs-created.png)
-3. Select labVectorStore
-    - Copy the Vector Store ID and save it for later (##VECTORSTORE_OCID##)
-4. Select Datas sync connectors and click Create Datas sync connector
-    - with name labDataSync
-    - select bucket labAgentBucket
-    - turn on Select all in bucket
-   ![Instance](images/oda-vsds-create.png)
-    - Create
-5. Now wait a for it to appear and open it by clicking the name
-6. Select the Data Sync tab and click Perform Data Sync button
-    - give it a name (sync1) and click Perform
-7. Wait for status to be Succeeded
-
-## Task 3: Install Oracle Digital Assistant
+## Task 1: Install Oracle Digital Assistant
 
 1. Login to your OCI account/tenancy
 2. Follow the steps in 'Recipe for Quick Setup and Provisioning'
@@ -69,8 +36,8 @@ You can reuse the Bucket and Vector Store created in Lab1 or create a new/differ
         allow any-user to manage generative-ai-family in compartment id ##COMPARTMENT_OCID## where request.principal.id='##ODA_OCID##'
         </copy>
         ```
-        - Replace ##COMPARTMENT\_OCID## with the OCID you saved when installing the AI Agent (in Task 2, step 4)
-        - Replace ##ODA\_OCID## with the OCID you saved when installing ODA
+        - Replace ##COMPARTMENT\_OCID## with the OCID you saved in Lab 1 (in Task 2.5)
+        - Replace ##ODA\_OCID## with the OCID you saved when installing ODA (in Task 1.2)
 		- It will now look like:
 		```
         <copy>
@@ -112,9 +79,9 @@ You can reuse the Bucket and Vector Store created in Lab1 or create a new/differ
 4. Go to Settings (cogwheel icon on left side)
     - Select Configuration tab and scroll down to 'Custom Parameters'
     - Now edit the 3 parameters with your values:
-      - ##OBJECTSTORE_LINK## (task 1.4)
-      - ##PROJECT_OCID## (task @@)
-      - ##VECTORSTORE_OCID## (task 2.3)
+      - ##OBJECTSTORE_LINK## (Lab 1, Task 4.8)
+      - ##PROJECT_OCID## (Lab 1 Task 3.5)
+      - ##VECTORSTORE_OCID## (Lab 1 Task 6.5)
    ![Settings](images/oda-settings.png)
 5. Click 'Train' in the top-right
 
@@ -139,7 +106,7 @@ You can reuse the Bucket and Vector Store created in Lab1 or create a new/differ
 3. Complete your channel definition with:
     - Route To: your skill
     - Channel Enabled: ON
-    - Copy the Channel Id and save for later
+    - Copy the Channel Id and save for later  (##ODA_CHANNEL_ID##)
 
       ![Channel3](images/oda-channel3.png)
 4. Go back to the OCI cloud shell where you installed the previous lab and edit the settings.js as follows:

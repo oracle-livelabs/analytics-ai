@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will install all the components needed for this workshop. Oracle Digital Assistant will be provisioned manually. The rest will be provisioned automatically using a provided Terraform script.
 
-Estimated time: 45 min
+Estimated time: 15 min
 
 ### Objectives
 

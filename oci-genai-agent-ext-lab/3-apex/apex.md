@@ -49,23 +49,6 @@ Estimated time: 10 min
 ## Task 2. Filter
 
 One additional step is needed to use the RAG filter. We need to add a RAG tool.
-
-### 1. Rag Tool ###
-
-- In the hamburger menu, go to **Analytics and AI / Generative AI Agents**
-- Click on **Agents**
-- Choose your compartment
-- Open the agent created in Lab 1
-- Choose Tools / Create Tool
-- Choose **RAG** 
-   ![Custom tool](../6-tools/images/rag-tool.png)
-- Enter:
-    - **Name** = rag-tool
-    - **Description** = Use this tool for any questions that are not covered by the other tools. It contains generic documentation.
-- Select the knowledge base - agext-agent-kb
-- Click **Create Tool**
-
-### 2. Test again ###
 - Go back to the APEX app. 
 - Refresh the browser to start a new session. 
 - Set the filter to */oracle*.
