@@ -13,7 +13,7 @@
         {
             "title": "Lab 1: Access AIDP Workbench Instance and Populate the Catalog",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/6-green-button-alternate-lab1/6-green-button-alternate-lab1.md"
+            "filename": "../../tmp-sko/6-green-button-alternate-lab1.md"
         },
         {
             "title": "Lab 2: Create Medallion Architecture",
