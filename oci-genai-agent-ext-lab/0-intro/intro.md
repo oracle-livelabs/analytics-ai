@@ -8,9 +8,11 @@ The workshop covers:
 - Manual installation and testing of Vector Store (Lab 1)
 - Installation of supporting components using Terraform (Lab 2)
 - Building user interfaces with:
-  - APEX (Lab 3)
-  - LangGraph (Lab 4)
-  - Oracle Digital Assistant (Lab 5)
+    - APEX (Lab 3)
+        ![Screenshot APEX](images/apex-jazz.png =500x500)
+    - LangGraph (Lab 4)
+        ![Screenshot LangGraph](images/langgraph-jazz.png =500x500)
+    - Oracle Digital Assistant (Lab 5)
 
 You will search documents such as:
 - Video and audio files using OCI Speech
@@ -18,10 +20,8 @@ You will search documents such as:
 - TIFF files (FAX) using OCI Document Understanding
 - Word, Excel, PowerPoint, etc. using OCI Functions
 - Websites using:
-    - A crawler (for all pages of a website, based on sitemap or not)
-    - Or Selenium (for a fixed number of URLs)
-
-![Screenshot](images/when-was-jazz-created.png)
+      - A crawler (for all pages of a website, based on sitemap or not)
+      - Or Selenium (for a fixed number of URLs)
 
 Lab 6 explains how to customize the demo to your needs.
 
