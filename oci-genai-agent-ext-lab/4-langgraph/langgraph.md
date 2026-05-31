@@ -18,14 +18,18 @@ Estimated time: 10 min
 
 3. Go to the URL of the application (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/xxxx/chat.html).
 
+4. Type "what is jazz" and press Enter.
+
+    ![Jazz](../0-intro/images/langgraph-jazz.png)    
+
 4. Type "what is Oracle Analytics Cloud" and press Enter.
 
-    Hover on the citation. Note that you can see the page number. Click on the link.
-    ![Test Invoice](images/langgraph.png)    
+    Click on the link.
+    ![Analytics](images/langgraph-analytics.png)    
 
 5. Type "List the countries in the map of Brazil" and press Enter.
 
-1. Try more questions:
+6. Try more questions:
 
     | File type | Extension | Question                                          |
     | ----------| --------- | ------------------------------------------------- |
