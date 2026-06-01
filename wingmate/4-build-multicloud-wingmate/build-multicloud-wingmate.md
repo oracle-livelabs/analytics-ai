@@ -29,16 +29,273 @@ Estimated Time: 60 minutes
 
 > **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, hidden page item names, assistant prompt, welcome message, page context, screenshots, and expected validation responses.
 
-1. In App Builder, open the imported **OCI Wingmate** application.
+1. Repeat the chat setup steps from Lab 3 to create a new chat experience on the imported **Multicloud Overview** page.
 
-2. Open the imported **Multicloud Overview** page.
+	Use the same setup pattern from Lab 3, but create new components for the Multicloud page:
 
-3. Update AI Assistant by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**. Update System Prompt with the following:
+	* In App Builder, open the imported **OCI Wingmate** framework application.
+	* Open the existing **Multicloud Overview** page.
+	* Create a new region named **WingmateChat** in the page body.
+	* Set the new **WingmateChat** region **Static ID** to `wingmate-chat`.
+	* Create new hidden page items for each page context value used by the Multicloud assistant.
+	* Create a new **StartWingmate** button in the **WingmateChat** region.
+	* Create a new dynamic action named **Chat** on the **StartWingmate** button.
+	* Create a new **Show AI Assistant** true action and select the `OCI_GENAI` service from Lab 2.
+	* Create a new **Hide** action for the **StartWingmate** button.
+	* Save the page.
+
+2. Create Resource Analytics adapter views for the Multicloud page.
+
+	The Multicloud page uses the same chart and assistant patterns as the original host-insights demo, but this lab should use Resource Analytics data by default. Run the following SQL as `WINGMATE` to create app-owned views over the Resource Analytics materialized views from Lab 1.
+
+	> **Note:** In APEX SQL Commands, run each `CREATE OR REPLACE VIEW` statement below separately. If you use SQL Worksheet, SQL Developer, or SQLcl, you can also paste all statements into a script and run them together.
+
+	Create the base Resource Analytics host insights view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_base_v AS
+	SELECT i.id AS instance_id,
+	       i.display_name AS hostname,
+	       NVL(i.lifecycle_state, 'UNKNOWN') AS lifecycle_state,
+	       i.region,
+	       i.availability_domain,
+	       i.shape,
+	       c.name AS compartment_name,
+	       NVL(i.shape_config_ocpus, f.ocpu_usage) AS cpu_capacity,
+	       CASE
+	           WHEN i.lifecycle_state = 'RUNNING'
+	           THEN NVL(f.ocpu_usage, i.shape_config_ocpus)
+	           ELSE 0
+	       END AS cpu_usage,
+	       NVL(i.shape_config_memory_in_gbs, f.memory_usage_mb / 1024) AS memory_capacity,
+	       CASE
+	           WHEN i.lifecycle_state = 'RUNNING'
+	           THEN NVL(f.memory_usage_mb / 1024, i.shape_config_memory_in_gbs)
+	           ELSE 0
+	       END AS memory_usage,
+	       NVL(f.attached_volumes_count, 0) AS attached_volumes_count,
+	       i.time_created,
+	       i.ocira_update_date
+	FROM mv_compute_instance_dim_v i
+	LEFT JOIN mv_compute_fact_v f
+	    ON f.instance_id = i.id
+	LEFT JOIN mv_compartment_dim_v c
+	    ON c.id = i.compartment_id
+	WHERE NVL(i.lifecycle_state, 'UNKNOWN') <> 'TERMINATED';
+	</copy>
+	```
+
+	Create the report period view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_report_period AS
+	SELECT hostname,
+	       region,
+	       availability_domain,
+	       compartment_name,
+	       lifecycle_state,
+	       shape,
+	       'OCPU' AS usageunit,
+	       'Configured OCPU' AS resourcemetric,
+	       cpu_capacity AS capacity,
+	       cpu_usage AS usage,
+	       time_created,
+	       ocira_update_date
+	FROM ra_hostinsights_base_v
+	UNION ALL
+	SELECT hostname,
+	       region,
+	       availability_domain,
+	       compartment_name,
+	       lifecycle_state,
+	       shape,
+	       'GB' AS usageunit,
+	       'Configured Memory' AS resourcemetric,
+	       memory_capacity AS capacity,
+	       memory_usage AS usage,
+	       time_created,
+	       ocira_update_date
+	FROM ra_hostinsights_base_v;
+	</copy>
+	```
+
+	Create the CPU summary view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_cpu_usage_summary AS
+	SELECT SUM(cpu_usage) AS usage,
+	       SUM(cpu_capacity) AS capacity
+	FROM ra_hostinsights_base_v;
+	</copy>
+	```
+
+	Create the memory summary view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_memory_usage_summary AS
+	SELECT SUM(memory_usage) AS usage,
+	       SUM(memory_capacity) AS capacity
+	FROM ra_hostinsights_base_v;
+	</copy>
+	```
+
+	Create the CPU per-host statistics view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_res_stat AS
+	SELECT hostname,
+	       cpu_capacity AS capacity,
+	       cpu_usage AS usage,
+	       ROUND(AVG(cpu_usage) OVER (), 2) AS average,
+	       CASE
+	           WHEN cpu_capacity > 0 THEN ROUND(cpu_usage / cpu_capacity * 100, 2)
+	           ELSE 0
+	       END AS utilizationpercent,
+	       0 AS usagechangepercent,
+	       region,
+	       shape,
+	       compartment_name,
+	       lifecycle_state
+	FROM ra_hostinsights_base_v
+	WHERE cpu_capacity IS NOT NULL;
+	</copy>
+	```
+
+	Create the memory per-host statistics view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_res_stat_memory AS
+	SELECT hostname,
+	       memory_capacity AS capacity,
+	       memory_usage AS usage,
+	       ROUND(AVG(memory_usage) OVER (), 2) AS average,
+	       CASE
+	           WHEN memory_capacity > 0 THEN ROUND(memory_usage / memory_capacity * 100, 2)
+	           ELSE 0
+	       END AS utilizationpercent,
+	       0 AS usagechangepercent,
+	       region,
+	       shape,
+	       compartment_name,
+	       lifecycle_state
+	FROM ra_hostinsights_base_v
+	WHERE memory_capacity IS NOT NULL;
+	</copy>
+	```
+
+	Create the host insights assistant context view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_hostinsights_report_sv AS
+	WITH summary AS (
+	    SELECT 'Compute inventory summary: '
+	           || COUNT(*) || ' non-terminated instances; '
+	           || SUM(CASE WHEN lifecycle_state = 'RUNNING' THEN 1 ELSE 0 END) || ' running; running OCPUs '
+	           || ROUND(SUM(cpu_usage), 2) || ' of configured '
+	           || ROUND(SUM(cpu_capacity), 2) || '; running memory GB '
+	           || ROUND(SUM(memory_usage), 2) || ' of configured '
+	           || ROUND(SUM(memory_capacity), 2) || '.' AS summary_text
+	    FROM ra_hostinsights_base_v
+	),
+	host_lines AS (
+	    SELECT LISTAGG(
+	               '- hostname: ' || hostname
+	               || '; lifecycle_state: ' || lifecycle_state
+	               || '; configured_ocpus: ' || ROUND(cpu_capacity, 2)
+	               || '; running_ocpus: ' || ROUND(cpu_usage, 2)
+	               || '; configured_memory_gb: ' || ROUND(memory_capacity, 2)
+	               || '; running_memory_gb: ' || ROUND(memory_usage, 2)
+	               || '; region: ' || region
+	               || '; shape: ' || shape,
+	               CHR(10)
+	           ) WITHIN GROUP (
+	               ORDER BY cpu_usage ASC NULLS FIRST,
+	                        cpu_capacity DESC NULLS LAST,
+	                        hostname
+	           ) AS host_detail_text
+	    FROM (
+	        SELECT *
+	        FROM ra_hostinsights_base_v
+	        ORDER BY cpu_usage ASC NULLS FIRST,
+	                 cpu_capacity DESC NULLS LAST,
+	                 hostname
+	        FETCH FIRST 50 ROWS ONLY
+	    )
+	)
+	SELECT summary.summary_text
+	       || CHR(10) || CHR(10)
+	       || 'Host allocation details sorted by lowest running OCPU allocation first:'
+	       || CHR(10)
+	       || host_lines.host_detail_text AS context_prompt
+	FROM summary
+	CROSS JOIN host_lines;
+	</copy>
+	```
+
+	Create the multicloud assistant context view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_multicloud_details_v AS
+	SELECT 'Resource Analytics multicloud summary: '
+	       || COUNT(*) || ' non-terminated compute instances across '
+	       || COUNT(DISTINCT region) || ' region(s), '
+	       || COUNT(DISTINCT compartment_name) || ' compartment(s), and '
+	       || COUNT(DISTINCT shape) || ' shape(s). Running configured capacity is '
+	       || ROUND(SUM(cpu_usage), 2) || ' OCPUs and '
+	       || ROUND(SUM(memory_usage), 2) || ' GB memory. Total configured capacity is '
+	       || ROUND(SUM(cpu_capacity), 2) || ' OCPUs and '
+	       || ROUND(SUM(memory_capacity), 2) || ' GB memory.'
+	       AS context_prompt
+	FROM ra_hostinsights_base_v;
+	</copy>
+	```
+
+	Create the multicloud inventory report view.
+
+	```sql
+	<copy>
+	CREATE OR REPLACE VIEW ra_multicloud_inventory_v AS
+	SELECT 'Compute Instance' AS resource_type,
+	       hostname AS resource_name,
+	       region,
+	       compartment_name AS compartment,
+	       lifecycle_state,
+	       shape AS resource_shape,
+	       TO_CHAR(cpu_capacity) || ' OCPU / '
+	           || TO_CHAR(memory_capacity) || ' GB memory' AS resource_summary
+	FROM ra_hostinsights_base_v
+	UNION ALL
+	SELECT 'Attached Volume' AS resource_type,
+	       volume_display_name AS resource_name,
+	       region,
+	       instance_compartment AS compartment,
+	       volume_lifecycle_state AS lifecycle_state,
+	       volume_attachment_type AS resource_shape,
+	       TO_CHAR(volume_size_in_gbs) || ' GB volume attached to '
+	           || instance_name AS resource_summary
+	FROM mv_instance_volume_details_v
+	WHERE volume_id IS NOT NULL;
+	</copy>
+	```
+
+	Use these Resource Analytics adapter views in the page SQL. Keep the original synthetic `HOSTINSIGHTS_*`, `OCI_EXA_*`, `OCI_CDB`, and `OCI_PDB` objects as an optional backup only when Resource Analytics has no rows or when you need predictable demo forecast data.
+
+	> **Flat-file fallback:** If your environment uses the uploaded flat files instead of Resource Analytics materialized views, skip the `RA_*` adapter views and use the fallback queries called out in the remaining steps.
+
+3. Configure the new AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**. Add the following **System Prompt**:
 
 	```
 	<copy>
 	I want you to be an OCI compute expert who is providing guidance to the customers about resource capacity planning best practices. 
-	The following list is the oci compute host insights details we have captured, please use these compute metrics data for answering questions. 
+	The following list is the OCI compute host insights inventory and allocation details we have captured, please use these configured capacity and running allocation details for answering questions. Do not treat this data as live OCI Monitoring utilization metrics.
 	--------
 	&P21_OCI_HOSTINSIGHTS_DETAILS.
 	--------
@@ -49,39 +306,32 @@ Estimated Time: 60 minutes
 	</copy>
 	```
 
+	![system prompt](./images/show-ai-prompt.png "")
+
 	> **Note:** The imported framework uses the Multicloud Overview page. If your imported page ID differs, update the `P21_` item prefix to match your page.
 
-	Update the **Welcome Message** to OCI MultiCloud Wingmate as well.
-
-4. Select the starter report region on the page.
-
-	![Identity Table](./images/update-identity.png "")
-
-5. Update the name to **MultiCloud Insights** and change the **SQL Query** to the following:
+	Under **Welcome Message**, enter:
 
 	```
 	<copy>
-	select * from oci_exa_infr
-	union
-	select * from oci_exa_vm_cluster
-	union
-	select * from oci_cdb
-	union
-	select * from oci_pdb
+	Welcome! You can chat with OCI Multicloud Wingmate!
 	</copy>
 	```
 
-	![SQL Query for MultiCloud Insights](./images/multicloud-insights.png "")
+	Under **Quick Actions**, add these messages:
 
-	> **Note:** This will serve as the bottom of the dashboard so any regions created will be placed above this table.
+	* **Message 1:** `What are the allocated CPUs for the hosts with the hostname?`
+	* **Message 2:** `Which hostnames have the lowest or zero running OCPU allocation?`
 
-6. Navigate to the bottom of the Navigation Tree to the hidden items. Select the documentation-reference hidden item and name it **P21_OCI_DOC_REF_COMPUTE** on the right side under Identification.
+	![example prompts](./images/quick-prompt.png "")
+
+4. Create a hidden page item named **P21_OCI_DOC_REF_COMPUTE** for the compute documentation-reference context.
 
 	![select hidden value](./images/select-hidden.png "")
 
 	![rename hidden](./images/update-hidden.png "")
 
-7. Update the computation as the following:
+5. Create a computation for **P21_OCI_DOC_REF_COMPUTE** using the following SQL Query:
 
 	```
 	<copy>
@@ -91,39 +341,88 @@ Estimated Time: 60 minutes
 
 	![update computation](./images/update-computation.png "")
 
-8. Create another **Hidden Item** by duplicating an existing hidden item and naming it **P21_OCI_HOSTINSIGHTS_DETAILS**.
+6. Create another hidden page item named **P21_OCI_HOSTINSIGHTS_DETAILS** for the host insights context.
 
 	![create hidden item](./images/duplicate-hidden.png "")
 
 	![host insights hidden value](./images/update-hostinsights-name.png "")
 
-9. Right-click **P21_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
+7. Right-click **P21_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
 
 	```
 	<copy>
-	Select CONTEXT_PROMPT FROM hostinsights_report_sv
+	SELECT context_prompt FROM ra_hostinsights_report_sv
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT context_prompt FROM hostinsights_report_sv
 	</copy>
 	```
 
 	![host insights hidden value](./images/update-hostinsights-computation.png "")
 
-10. Repeat **Step 8** to create another hidden item named **P21_OCI_DATABASE_DETAILS**.
+8. Create another hidden page item named **P21_OCI_DATABASE_DETAILS** for the database and multicloud details context.
 
 	![create hidden item](./images/duplicate-hidden-details.png "")
 
-	![host insights hidden value](./images/update-hostinsights-computation.png "")
-
-11. Right-click **P21_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
+9. Right-click **P21_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
 
 	```
 	<copy>
-	SELECT CONTEXT_PROMPT FROM CIS_MULTICLOUD_DETAILS_V
+	SELECT context_prompt FROM ra_multicloud_details_v
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT context_prompt FROM cis_multicloud_details_v
 	</copy>
 	```
 
 	![Create Computation Button](./images/create-computation.png "")
 
 	![Sql for Computation](./images/multicloud-details-sql.png "")
+
+10. Create a **Classic Report** region for the Multicloud inventory summary.
+
+	![Identity Table](./images/update-identity.png "")
+
+11. Name the report **MultiCloud Insights** and set the **SQL Query** to the following:
+
+	```
+	<copy>
+	SELECT *
+	FROM ra_multicloud_inventory_v
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT *
+	FROM oci_exa_infr
+	UNION
+	SELECT *
+	FROM oci_exa_vm_cluster
+	UNION
+	SELECT *
+	FROM oci_cdb
+	UNION
+	SELECT *
+	FROM oci_pdb
+	</copy>
+	```
+
+	![SQL Query for MultiCloud Insights](./images/multicloud-insights.png "")
+
+	> **Note:** This report serves as the bottom of the dashboard. Place the host insights regions you create later above this table.
 
 ## Task 2: Generate Report Period View
 
@@ -141,7 +440,9 @@ Estimated Time: 60 minutes
 
 	![Classic Report in Body](./images/host-cpu-insights-report.png "")
 
-4. Name the Report **ReportPeriod** and select the table **HOSTINSIGHTS_REPORT_PERIOD**.
+4. Name the Report **ReportPeriod** and select the table **RA_HOSTINSIGHTS_REPORT_PERIOD**.
+
+	**Flat-file fallback:** Select **HOSTINSIGHTS_REPORT_PERIOD** instead.
 
 	![Host Insights Report Period Table](./images/report-period-table.png "")
 
@@ -175,7 +476,16 @@ Estimated Time: 60 minutes
 
 	```
 	<copy>
-	SELECT usage as cpu_usage, capacity as cpu_capacity FROM HOSTINSIGHTS_CPU_USAGE_SUMMARY
+	SELECT usage as cpu_usage, capacity as cpu_capacity FROM RA_HOSTINSIGHTS_CPU_USAGE_SUMMARY
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT usage AS cpu_usage, capacity AS cpu_capacity
+	FROM hostinsights_cpu_usage_summary
 	</copy>
 	```
 
@@ -195,7 +505,16 @@ Estimated Time: 60 minutes
 
 	```
 	<copy>
-	SELECT usage as mem_usage, capacity as mem_capacity FROM HOSTINSIGHTS_MEMORY_USAGE_SUMMARY
+	SELECT usage as mem_usage, capacity as mem_capacity FROM RA_HOSTINSIGHTS_MEMORY_USAGE_SUMMARY
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT usage AS mem_usage, capacity AS mem_capacity
+	FROM hostinsights_memory_usage_summary
 	</copy>
 	```
 
@@ -236,6 +555,21 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
     average,
     usagechangepercent
 	FROM
+    ra_hostinsights_res_stat
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT
+    hostname,
+    capacity,
+    usage,
+    average,
+    usagechangepercent
+	FROM
     hostinsights_res_stat
 	</copy>
 	```
@@ -267,7 +601,18 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 	select HOSTNAME, 
        UTILIZATIONPERCENT AS CPU_UTIL, 
        'CPU Utilization' as MetricType
-	from HOSTINSIGHTS_RES_STAT
+	from RA_HOSTINSIGHTS_RES_STAT
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	select HOSTNAME,
+       UTILIZATIONPERCENT AS CPU_UTIL,
+       'CPU Utilization' as MetricType
+	from hostinsights_res_stat
 	</copy>
 	```
 
@@ -294,7 +639,18 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 	select HOSTNAME, 
 		UTILIZATIONPERCENT AS MEM_UTIL, 
 		'MEMORY Utilization' as MetricType
-	from VECTOR.HOSTINSIGHTS_RES_STAT_MEMORY
+	from RA_HOSTINSIGHTS_RES_STAT_MEMORY
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	select HOSTNAME,
+		UTILIZATIONPERCENT AS MEM_UTIL,
+		'MEMORY Utilization' as MetricType
+	from hostinsights_res_stat_memory
 	</copy>
 	```
 
@@ -315,6 +671,21 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
     average,
     usagechangepercent
 	FROM
+    ra_hostinsights_res_stat_memory
+	</copy>
+	```
+
+	**Flat-file fallback:**
+
+	```sql
+	<copy>
+	SELECT
+    hostname,
+    capacity,
+    usage,
+    average,
+    usagechangepercent
+	FROM
     hostinsights_res_stat_memory
 	</copy>
 	```
@@ -326,6 +697,8 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 	![Drag and drop Chart](./images/drag-memory.png "")
 
 ## Task 5: Visualize CPU Combinations for Historical and Forecasting Analysis
+
+> **Note:** Resource Analytics provides current inventory and configured resource allocation, not a native CPU forecast series. Use the synthetic `HOSTINSIGHTS_CPU_FORECAST_TREND` object in this task as an optional backup dataset when you need predictable historical and forecast chart data.
 
 1. Drag and drop a **static region** into the body of **Host CPU Insights** and name it **CPU Combination Chart**.
 
