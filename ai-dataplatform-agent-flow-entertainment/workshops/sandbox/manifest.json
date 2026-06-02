@@ -11,6 +11,10 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
+            "title": "Lab 00: Activate AIDP AI Features",
+            "filename": "../../tmp-sko/1a-enable-ai-features.md"
+        },
+        {
             "title": "Lab 1: Configure the Data environment",
             "filename": "../../1-data-environment-setup/1-data-environment-setup.md"
         },
