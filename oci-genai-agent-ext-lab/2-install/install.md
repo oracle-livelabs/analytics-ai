@@ -29,7 +29,7 @@ Estimated time: 15 min
 4. Click on **vs-project**
 6. Click on the **vs-vector-store**.
 7. Next to OCID, click **Copy**.
-![Project](images/project3.png)
+    ![Project](images/project3.png)
 8. Put it in your "List of ##VARIABLES##".
 
 ## Task 2: Run a Terraform script to create the other components.
@@ -54,9 +54,9 @@ Estimated time: 15 min
     ````
 7. Check if you have an authorization token (associated with your profile).
 
-   For more info, see here: https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm
+    For more info, see here: https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm
 
-   If yes, note it in your notepad. If not, the script below will create it.
+    If yes, note it in your notepad. If not, the script below will create it.
 
 7. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```

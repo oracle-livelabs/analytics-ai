@@ -39,7 +39,7 @@ There are 2 buckets:
 
 The files from the agext-upload-bucket are copied or transformed to PDF or text files automatically and stored in the "converted-bucket"
 
-## Task 3 - Upload new files
+## Task 3: Upload new files
 In OCI Console, click on the Hamburger menu:
 - Storage/Buckets
 - agext-upload-bucket

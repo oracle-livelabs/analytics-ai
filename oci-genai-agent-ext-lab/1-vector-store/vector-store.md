@@ -130,7 +130,7 @@ You can
      - Bucket Name: **vs-bucket**
      - Click **Create Bucket**
 5. Under Actions>Edit visibility set Visibility to Public (to show links to the user)
-   ![Bucket](images/oda-bucket-create.png)
+    ![Bucket](images/oda-bucket-create.png)
 6. On your laptop, let's download some sample files
     ````
     <copy>
@@ -162,9 +162,9 @@ You can
     - Click **Show Manual Editor**
     - In the editor paste this content. And use your compartment OCID
 
-```
-allow any-user to read object-family in compartment YOUR_COMPARTMENT where ALL{request.principal.type='generativeaivectorconnector'}
-```
+    ```
+    allow any-user to read object-family in compartment YOUR_COMPARTMENT where ALL{request.principal.type='generativeaivectorconnector'}
+    ```
 
 ## Task 6: Create a Vector Store
 

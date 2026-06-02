@@ -46,7 +46,7 @@ Estimated time: 10 min
 
 **You may now proceed to the [next lab.](#next)**
 
-## Task 2. Filter
+## Task 2: Filter
 
 One additional step is needed to use the RAG filter. We need to add a RAG tool.
 - Go back to the APEX app. 

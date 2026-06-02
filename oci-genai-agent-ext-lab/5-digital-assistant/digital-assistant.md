@@ -46,7 +46,7 @@ You reuse the Bucket and Vector Store created in Lab 1
         </copy>
         ```
 
-## Task 4: Import & Test the API Services in ODA
+## Task 2: Import & Test the API Services in ODA
 
 1. Login to the ODA console with the Base web url you bookmarked during ODA install
 2. Go the 3-bar/hamburger menu of the console and select 'Settings' > 'API Services'
@@ -68,13 +68,13 @@ You reuse the Bucket and Vector Store created in Lab 1
     ![RestImport](images/oda-llm-test.png)
     - Press 'Save as Static Response'
 
-## Task 5: Import & Train the skill in ODA
+## Task 3: Import & Train the skill in ODA
 
 1. Go the 3-bar/hamburger menu of the console and select 'Development' > 'Skills'
 
-   ![Skills](images/oda-skills.png)
+    ![Skills](images/oda-skills.png)
 2. Click 'Import skill' in the top-right and import 'import mdLabAgent(1.0).zip'
-   ![Import](images/oda-import.png)
+    ![Import](images/oda-import.png)
 3. Open the imported skill by clicking its tile
 4. Go to Settings (cogwheel icon on left side)
     - Select Configuration tab and scroll down to 'Custom Parameters'
@@ -82,17 +82,17 @@ You reuse the Bucket and Vector Store created in Lab 1
       - ##OBJECTSTORE_LINK## (Lab 1, Task 4.8)
       - ##PROJECT_OCID## (Lab 1 Task 3.5)
       - ##VECTORSTORE_OCID## (Lab 1 Task 6.5)
-   ![Settings](images/oda-settings.png)
+    ![Settings](images/oda-settings.png)
 5. Click 'Train' in the top-right
 
-   ![Train](images/oda-flow-preview.png)
+    ![Train](images/oda-flow-preview.png)
 
     - Select 'Trainer Tm' and press 'Submit'
     - When training is finished we can click 'Preview' in the top-right
 6. In the tester we can ask a question about the content in our AI Agent
    ![odaTester](images/oda-flow-tester.png)
 
-## Task 6: Creating the web channel
+## Task 4: Creating the web channel
 
 1. Go the 3-bar/hamburger menu of the console and select 'Development' > 'Channels'
     ![Channels](images/oda-channels.png)
