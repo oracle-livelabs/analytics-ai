@@ -64,7 +64,7 @@ You would like your medallion notebooks to run on a schedule so that new data ad
 
     ![run job](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/images/run-bronze.png)
 
-11. Create a third workflow called **Gold\_Workflow**. Add tasks to run `5_Gold_join.ipynb` and `6_gold_job_into_DB.ipynb` from the **Gold** folder in numerical order. Run the job to test it as you did the previous ones. Make sure `5_Gold_join.ipynb` is the revised notebook uploaded in Lab 2; workflow runs can remain in a running state if the notebook contains empty trailing code cells.
+11. Create a third workflow called **Gold\_Workflow**. Add tasks to run `5_Gold_join.ipynb` and `6_gold_job_into_DB.ipynb` from the **Gold** folder in numerical order. Before running the workflow, open `5_Gold_join.ipynb` and confirm that it does not contain empty code cells at the end of the notebook. If blank trailing code cells are present, delete them and save the notebook. Workflow runs can remain in a running state if the notebook contains empty trailing code cells. Run the job to test it as you did the previous ones.
 
     ![create gold workflow](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/images/gold-workflow.png)
 

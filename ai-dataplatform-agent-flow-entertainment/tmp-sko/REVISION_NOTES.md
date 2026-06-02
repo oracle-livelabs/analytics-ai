@@ -56,8 +56,8 @@ Copy the contents of this bundle into the `ai-dataplatform-agent-flow-entertainm
 - Fixed Lab 2 numbering, `noteboooks`, and `fine grain`.
 - Added Lab 2 prerequisites for the lowercase `supplier` source tables and the `supplier_external_26ai` external catalog.
 - Added Lab 2 guidance to attach `Medallion_Compute` to each notebook when the notebook opens with no cluster attached.
-- Revised the Silver AI notebooks to use `cohere.command-r-08-2024`; `xai.grok-3` was not available in the validated reservation.
-- Added a revised `5_Gold_join.ipynb` with empty trailing code cells removed; the original notebook can cause Workflows to remain running after visible notebook output completes.
+- Added Lab 2 instructions for attendees to update `query_model("xai.grok-3", ...)` references to `query_model("cohere.command-r-08-2024", ...)` in Workbench when the downloaded notebooks still reference a model that is not available.
+- Added Lab 2 and Lab 3 instructions for attendees to delete empty trailing code cells from `5_Gold_join.ipynb` before creating or running workflows; the original notebook can cause Workflows to remain running after visible notebook output completes.
 - Fixed Lab 3 heading grammar, task numbering, `Summery`, missing Gold nested-task instruction, **Nested job task** UI label, Daily schedule default, and `Medallion_Job` breadcrumb mismatch.
 - Fixed Lab 4 task order from `1, 3, 2` to `1, 2, 3`, OAC prerequisite wording, and catalog casing to `supplier_external_26ai`.
 - Fixed Lab 5 wording issues: `a the admin console`, `In theEdit Connection`, and a redundant wait-time sentence.

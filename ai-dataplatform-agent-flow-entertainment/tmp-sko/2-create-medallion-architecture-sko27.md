@@ -79,7 +79,28 @@ Before running the notebooks, verify that Lab 1 created `supplier.supplier_schem
 
     ![choose file](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/images/upload-bronze.png)
 
-4. Repeat the same process for the **Silver** and **Gold** folders. Upload `2_silver_transformation.ipynb`, `3_silver_transformation_continent.ipynb`, and `4_silver_transformation_summary.ipynb` into the **Silver** folder. Upload `5_Gold_join.ipynb` and `6_gold_job_into_DB.ipynb` into the **Gold** folder. The revised Silver notebooks use `cohere.command-r-08-2024`; if you reuse a different notebook package, confirm that every `query_model(...)` call references a model listed under `default.oci_ai_models`. Use the revised `5_Gold_join.ipynb` from this workshop bundle. It removes empty trailing code cells that can cause workflow runs to remain in a running state after the visible Gold notebook output has completed.
+4. Repeat the same upload process for the **Silver** and **Gold** folders.
+
+    For the **Silver** folder, upload these notebooks:
+
+    - `2_silver_transformation.ipynb`
+    - `3_silver_transformation_continent.ipynb`
+    - `4_silver_transformation_summary.ipynb`
+
+    For the **Gold** folder, upload these notebooks:
+
+    - `5_Gold_join.ipynb`
+    - `6_gold_job_into_DB.ipynb`
+
+    Before running the Silver notebooks, verify the model name used by any `query_model(...)` calls:
+
+    - Open `3_silver_transformation_continent.ipynb` and `4_silver_transformation_summary.ipynb`.
+    - Search each notebook for `query_model(` or `xai.grok-3`.
+    - If a code cell references `query_model("xai.grok-3", ...)`, change only the model name to `query_model("cohere.command-r-08-2024", ...)`.
+    - If your reservation shows a different available model in `default.oci_ai_models`, use that available model instead.
+    - Save the notebook after updating the cell.
+
+    During validation, `cohere.command-r-08-2024` was available and `xai.grok-3` was not. Also check `5_Gold_join.ipynb` before creating workflows in Lab 3. If it contains empty code cells at the end of the notebook, delete those blank cells. Empty trailing code cells can cause workflow runs to remain in a running state after the visible Gold notebook output has completed.
 
 5. Open the **Bronze** folder. Select the `1_Create_Bronze_Tier.ipynb` file to open it in the notebook interface.
 
@@ -95,7 +116,7 @@ Before running the notebooks, verify that Lab 1 created `supplier.supplier_schem
 
     ![run code](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/images/run-notebook.png)
 
-9. When this process is complete, continue to the notebooks in the **Silver** folder. Review and run them in numerical order, attaching **Medallion\_Compute** to each notebook if it opens without a cluster. These notebooks clean and organize the bronze tier data to create the silver tier. The code leverages LLMs from the OCI Gen AI Service to augment the data.
+9. When this process is complete, continue to the notebooks in the **Silver** folder. Review and run them in numerical order, attaching **Medallion\_Compute** to each notebook if it opens without a cluster. Before running any notebook that contains `query_model(...)`, confirm that the model name matches an available model as described in Step 4. These notebooks clean and organize the bronze tier data to create the silver tier. The code leverages LLMs from the OCI Gen AI Service to augment the data.
 
     ![run silver notebooks](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/images/silver-notebooks.png)
 
