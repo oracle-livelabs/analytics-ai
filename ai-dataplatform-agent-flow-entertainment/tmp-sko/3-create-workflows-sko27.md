@@ -94,7 +94,7 @@ Now you will make a final workflow that ties together the 3 you just created.
       </copy>
       ```
 
-    ![define condition](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/images/ifelse-task.png)
+    ![define condition](images/ifelse-task-bronze-tier.png)
 
 5. Create a third task and name it **Silver\_Tier**. Make it a **Nested job task** and choose the **Silver\_Workflow** job. Under the **Depends on** section make sure that **Weekday\_Condition (true)** is selected. This means that this task will only run when the condition in the if/else condition evaluates to true. Here you could create an alternate branching task to run if the condition returned false instead.
 
