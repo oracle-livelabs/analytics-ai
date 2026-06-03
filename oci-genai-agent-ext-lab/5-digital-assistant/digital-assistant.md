@@ -10,8 +10,10 @@ Estimated time: 30 min
 
 ### Prerequisites
 - The lab 1 must have been completed.
-- Download the [zip file](https://github.com/mgueury/oci-genai-agent-ext/archive/refs/heads/main.zip).
+- Download the [zip file](https://github.com/mgueury/oci-vector-store-ext/archive/refs/heads/main.zip).
     In the subdirectory "oda", you will find the files needed below.
+
+You reuse the Bucket and Vector Store created in Lab 1
 
 ## Task 1: Install Oracle Digital Assistant
 
@@ -31,14 +33,16 @@ Estimated time: 30 min
         ```
         <copy>
 		allow any-user to manage genai-agent-family in compartment id ##COMPARTMENT_OCID## where request.principal.id='##ODA_OCID##'
+        allow any-user to manage generative-ai-family in compartment id ##COMPARTMENT_OCID## where request.principal.id='##ODA_OCID##'
         </copy>
         ```
-        - Replace ##COMPARTMENT\_OCID## with the OCID you saved when installing the AI Agent (in Task 2, step 4)
-        - Replace ##ODA\_OCID## with the OCID you saved when installing ODA
+        - Replace ##COMPARTMENT\_OCID## with the OCID you saved in Lab 1 (in Task 2.5)
+        - Replace ##ODA\_OCID## with the OCID you saved when installing ODA (in Task 1.2)
 		- It will now look like:
 		```
         <copy>
         allow any-user to manage genai-agent-family in compartment id ocid1.compartment.oc1..aaaaaaaafgdfsg8976sdfg79sdfggsdfg987sdfsdfgsdf9g87sdfgs98zzz where request.principal.id='ocid1.odainstance.oc1.eu-frankfurt-1.amaaaaaa8sdfjkhsdfjfg8fdg8df8gdf8g8dfg8d8fg8d8fgdf8gfxxxxxxx'
+        allow any-user to manage generative-ai-family in compartment id ocid1.compartment.oc1..aaaaaaaafgdfsg8976sdfg79sdfggsdfg987sdfsdfgsdf9g87sdfgs98zzz where request.principal.id='ocid1.odainstance.oc1.eu-frankfurt-1.amaaaaaa8sdfjkhsdfjfg8fdg8df8gdf8g8dfg8d8fg8d8fgdf8gfxxxxxxx'
         </copy>
         ```
 
@@ -47,47 +51,46 @@ Estimated time: 30 min
 1. Login to the ODA console with the Base web url you bookmarked during ODA install
 2. Go the 3-bar/hamburger menu of the console and select 'Settings' > 'API Services'
     ![RestImport](images/oda-rest-import.png)
-3. Import the 'RESTServices.yaml' provided in the zip-file
-4. On the left side click the 'labAgentConnect' service
-    - and edit the agentEndpointId to your Agent endpoint OCID (and not AGENT OCID !!!)
-    ![ConnectId](images/oda-connect-id.png)
-5. Press 'Test Request' to see if all is good
-
-    ![ConnectResp](images/oda-connect-resp.png)
-6. Copy the session 'id' from the response and press 'Save as Static Response'
-7. Now on the left side click the 'labAgentAsk' service
-    - Edit the agentEndpointId to your Agent endpoint OCID (@MarcGueury)
-    - Edit the sessionId to the session id you copied in step 6
-    ![odaAskId](images/oda-ask-id.png)
-8. Press 'Test Request' to see if all is good
-    ![odaAskResp](images/oda-ask-resp.png)
-9. Press 'Save as Static Response'
-
+3. Import the 'RESTService-mdLabAgentRest1.0.yaml' provided in the zip-file
+    - Set Endpoint correct region
+    - In POST test-body Replace ##VECTORSTORE_OCID## with your saved id.
+    - In Headers change OpenAI-Project to your saved ##COMPARTMENT_OCID##
+    ![RestImport](images/oda-rest-edit.png)
+    - Click Test Request button and wait for 200 Success status
+    ![RestImport](images/oda-rest-test.png)
+    - Press 'Save as Static Response'
+4. Go to LLM Services tab and click Import LLM Services button
+    ![RestImport](images/oda-llm-import.png)
+5. Import the 'LLMService-mdGptOss1.0.yaml' provided in the zip-file
+    - Set Endpoint correct region
+    - In POST test-body Replace ##COMPARTMENT_OCID## with your saved id.
+    - Click Test Request button and wait for 200 Success status
+    ![RestImport](images/oda-llm-test.png)
+    - Press 'Save as Static Response'
 
 ## Task 3: Import & Train the skill in ODA
 
 1. Go the 3-bar/hamburger menu of the console and select 'Development' > 'Skills'
-   ![Skills](images/oda-skills.png)
-2. Click 'Import skill' in the top-right and import 'agext_livelab(1.0).zip'
-   ![Import](images/oda-import.png)
+
+    ![Skills](images/oda-skills.png)
+2. Click 'Import skill' in the top-right and import 'import mdLabAgent(1.0).zip'
+    ![Import](images/oda-import.png)
 3. Open the imported skill by clicking its tile
-   ![Skill](images/oda-skill.png)
-4. Edit the settings 
-   ![Skill](images/oda-settings.png)
-5. Replace de Value with the Generative AI Agent endpoint OCID:
-   ![Skill](images/oda-agentendpoint.png)
-6. Click 'Train' in the top-right
-   ![Train](images/oda-train.png)
-7. Select 'Trainer Tm' and press 'Submit'
-   ![TrainTm](images/oda-train-tm.png)
-8. During training we can have familiarize ourselves with the flow that calls AI Agent
-   ![Flow](images/oda-flow.png)
-9. When training is finished we can click 'Preview' in the top-right
-   ![Preview](images/oda-preview.png)
-10. In the tester we can ask a question about the content in our AI Agent
-   ![odaTester](images/oda-tester.png)
-11. Beside the answer coming from AI Agent, we can also see how the flow executed on the right
-   ![TesterResp](images/oda-tester-resp.png)
+4. Go to Settings (cogwheel icon on left side)
+    - Select Configuration tab and scroll down to 'Custom Parameters'
+    - Now edit the 3 parameters with your values:
+      - ##OBJECTSTORE_LINK## (Lab 1, Task 4.8)
+      - ##PROJECT_OCID## (Lab 1 Task 3.5)
+      - ##VECTORSTORE_OCID## (Lab 1 Task 6.5)
+    ![Settings](images/oda-settings.png)
+5. Click 'Train' in the top-right
+
+    ![Train](images/oda-flow-preview.png)
+
+    - Select 'Trainer Tm' and press 'Submit'
+    - When training is finished we can click 'Preview' in the top-right
+6. In the tester we can ask a question about the content in our AI Agent
+   ![odaTester](images/oda-flow-tester.png)
 
 ## Task 4: Creating the web channel
 
@@ -98,12 +101,14 @@ Estimated time: 30 min
     - Allowed Domains: '*'
     - Client Authentication: Disabled  
     - And press 'Create'
-    ![Channel1](images/oda-channel1.png)
+
+      ![Channel1](images/oda-channel1.png)
 3. Complete your channel definition with:
     - Route To: your skill
     - Channel Enabled: ON
-    - Copy the Channel Id and save for later
-    ![Channel3](images/oda-channel3.png)
+    - Copy the Channel Id and save for later  (##ODA_CHANNEL_ID##)
+
+      ![Channel3](images/oda-channel3.png)
 4. Go back to the OCI cloud shell where you installed the previous lab and edit the settings.js as follows:
 
     ```
@@ -132,7 +137,6 @@ None
 
 - **Author**
     - Marc Gueury, Generative AI Specialist
-    - Anshuman Panda, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
 
 

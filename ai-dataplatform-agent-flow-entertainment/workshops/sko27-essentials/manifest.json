@@ -24,6 +24,14 @@
             "filename": "../../tmp-sko/3-create-workflows-sko27.md"
         },
         {
+            "title": "Lab 4: Create Connector to OAC (Optional)",
+            "filename": "../../tmp-sko/7-create-connector-to-oac-green-button-sko27.md"
+        },
+        {
+            "title": "Lab 5: Create Connector to FDI (Optional)",
+            "filename": "../../tmp-sko/5-create-connector-to-fdi-sko27.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"

@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will install all the components needed for this workshop. Oracle Digital Assistant will be provisioned manually. The rest will be provisioned automatically using a provided Terraform script.
 
-Estimated time: 45 min
+Estimated time: 15 min
 
 ### Objectives
 
@@ -11,128 +11,57 @@ Estimated time: 45 min
 
 ### Prerequisites
 
-- An OCI Account with sufficient credits where you will perform the lab. (Some of the services used in this lab are not part of the *Always Free* program.)
-- Check that your tenancy has access to the **Frankfurt or London or Chicago Region**
-    - For Paid Tenancy
-        - Click on region on top of the screen
-        - Check that the Frankfurt or London or Chicago Region is there
-        - If not, Click on Manage Regions to add it to your regions list. You need Tenancy Admin right for this.
-        - For ex, click on the US MidWest (Chicago)
-        - Click Subscribe
+- See Prerequisites in Lab1        
+- Task 1 in Lab (List of ##VARIABLES##)
+- In this lab, we will install this architecture. It is mostly a API Gateway, a compute and a database calling OCI Services.
 
-    ![Chicago Region](images/chicago-region.png)
+![Physical Architecture](../0-intro/images/physical-architecture.png)
 
-    - For Free Trial, the HOME region should be Frankfurt or London or Chicago.
-- The lab is using Cloud Shell with Public Network.
+## Task 1: Create a Project 
 
-    The lab assume that you have access to **OCI Cloud Shell with Public Network access**.
-    To check if you have it, start Cloud Shell and you should see **Network: Public** on the top. If not, try to change to **Public Network**. If it works, there is nothing to do.
-    ![Cloud Shell Public Network](images/cloud-shell-public-network.png)
+1. Click the hamburger menu / AI & Analytics / Generative AI
+    ![Project](images/project1.png)
+2. On the side, choose **Projects**
+3. Click **Create Project**
+    - Name: **vs-project**
+    - Click **Create**
+    ![Project](images/project2.png)
+4. Click on **vs-project**
+6. Click on the **vs-vector-store**.
+7. Next to OCID, click **Copy**.
+    ![Project](images/project3.png)
+8. Put it in your "List of ##VARIABLES##".
 
-    OCI Administrator have that right automatically. Or your administrator has maybe already added the required policy.
-    - **Solution:**
-
-        If not, please ask your Administrator to follow this document:
-        
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro_topic-Cloud_Shell_Networking.htm#cloudshellintro_topic-Cloud_Shell_Public_Network
-
-        He/She just need to add a Policy to your tenancy :
-
-        ```
-        <copy>
-        allow group <GROUP-NAME> to use cloud-shell-public-network in tenancy
-        </copy>        
-        ```
-
-## Task 1: Prepare to save configuration settings
-
-1. Open a text editor and copy & paste this text into a text file on your local computer. These will be the variables that will be used during the lab.
-
-    ```
-    <copy>
-    List of ##VARIABLES##
-    =====================
-    COMPARTMENT_OCID=(SAMPLE) ocid1.compartment.oc1.amaaaaaaaa
-    TF_VAR_auth_token=(SAMPLE) ABCDEF&é!12345
-    TF_VAR_db_password=(SAMPLE) YOUR_PASSWORD
-    ODA_OCID= (SAMPLE) ocid1.odainstance.oc1.amaaaaaaaa
- 
-
-    Terraform Output
-    ================
-    
-    AGENT_ENDPOINT_OCID=$AGENT_ENDPOINT_OCID
-    
-    -----------------------------------------------------------------------
-    Streamlit:
-    http://12.45.67.89:8080/
-
-    -----------------------------------------------------------------------
-    APEX login:
-
-    APEX Workspace
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/_/landing
-    Workspace: APEX_APP
-    User: APEX_APP
-    Password: YOUR_PASSWORD
-
-    APEX APP
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
-    User: APEX_APP / YOUR_PASSWORD
-    -----------------------------------------------------------------------
-    Oracle Digital Assistant (Web Channel)
-    http://12.45.67.89/
-    </copy>
-    ```
-
-## Task 2: Create a Compartment
-
-The compartment will be used to contain all the components of the lab.
-
-You can
-- Use an existing compartment to run the lab 
-- Or create a new one (recommended)
-
-1. Login to your OCI account/tenancy
-2. Go the 3-bar/hamburger menu of the console, go to Identity & Security / Compartments
-    ![Menu Compartment](images/compartment1.png)
-2. Click ***Create Compartment***
-    - Give a name: ex: ***genai-agent***
-    - Then again: ***Create Compartment***
-    ![Create Compartment](images/compartment2.png)
-4. When the compartment is created copy the compartment ocid ##COMPARTMENT_OCID## and put it in your notes
-
-
-## Task 3: Run a Terraform script to create the other components.
+## Task 2: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
 3. Check that the Network used is Public. (see requirements)
-4. Check that the Code Editor Architecture is well X86_64.
+4. Check that the Code Editor architecture is x86_64.
     - Go to Actions / Architecture
-    - Check that the current Architecture is well X86_64.
-    - If not change it to X86_64 and confirm. It will restart.
+    - Check that the current architecture is x86_64.
+    - If not, change it to x86_64 and confirm. It will restart.
 
-        ![OIC Domain](images/cloud-shell-architecture.png)
+        ![Architecture](images/cloud-shell-architecture.png)
 
 5. In the code editor menu, click *Terminal* then *New Terminal*
 6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png =50%x*)
+    ![Menu Compute](images/terraform1.png=50%x*)
     ````
     <copy>
-    git clone https://github.com/mgueury/oci-genai-agent-ext.git
+    git clone https://github.com/mgueury/oci-vector-store-ext.git
     </copy>
     ````
-7. Check if you have an Authorisation Token (associated with your profile).
+7. Check if you have an authorization token (associated with your profile).
 
-   For more info, see here: https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm
+    For more info, see here: https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm
 
-   If yes, note it in your notepad. If not, the script below will create it.
+    If yes, note it in your notepad. If not, the script below will create it.
 
 7. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
-    cd oci-genai-agent-ext/starter/
+    cd oci-vector-store-ext/starter/
     </copy>
     ```
    
@@ -142,23 +71,25 @@ You can
     </copy>
     ````
 
-    Answer the question about Authorization Token and Compartment OCID.
+    Answer the questions about 
+    - Prefix (ex: vector)
+    - Compartment OCID (See your notes)
+    - Project OCID (See your notes)
+    - Database password
+    - Public IP Filter. The setup will have an Internet gateway with port 80/443 open to the internet. What is the IP Range of the machine who can access these ports:
+        1. All the machines on the internet -> 0.0.0.0/0
+        2. Just my laptop (recommended)
+        3. Other (your own IP range)
+    - To get your laptop IP, use, by example, https://whatismyipaddress.com or https://ifconfig.me 
 
     In case of errors, check **Known Issues** below
 
 8. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 45 minutes and you can check the steps in the next labs while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-9. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+9. When Terraform finishes, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     <copy>    
-    -----------------------------------------------------------------------
-    TF_VAR_agent_endpoint_ocid=ocid1.xxxxx.xxxxx
-    
-    -----------------------------------------------------------------------
-    Streamlit:
-    http://12.45.67.89:8080/
-
     -----------------------------------------------------------------------
     APEX login:
 
@@ -172,9 +103,14 @@ You can
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
     User: APEX_APP / YOUR_PASSWORD
 
+
+    -----------------------------------------------------------------------
+    LangGraph Agent Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+
     -----------------------------------------------------------------------
     Oracle Digital Assistant (Web Channel)
-    http://12.45.67.89/
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/oda.html
     </copy>    
     ```
 **You may now proceed to the [next lab](#next)**
@@ -191,7 +127,7 @@ You can
     </copy>
     ```
 
-    Solution:  edit the file *starter/src/terraform/variable.tf* and replace the *availability domain* to one where there are still capacity
+    Solution:  edit the file *starter/src/terraform/variable.tf* and replace the *availability domain* with one where there is still capacity
     ```
     <copy>    
     OLD: variable availability_domain_number { default = 1 }
@@ -251,7 +187,7 @@ You can
     <copy>    
     Error: 409-PolicyAlreadyExists, Policy 'agent-fn-policy' already exists
     or
-    Error: 409-BucketAlreadyExists, Either the bucket "agext-public-bucket' in namespace "xxxxxx" already exists or you are not authorized to create it
+    Error: 409-BucketAlreadyExists, Either the bucket "agext-upload-bucket' in namespace "xxxxxx" already exists or you are not authorized to create it
     </copy>    
     ```
 
