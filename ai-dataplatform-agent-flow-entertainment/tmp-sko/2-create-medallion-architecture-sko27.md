@@ -101,15 +101,15 @@ Notebook execution can take longer than expected in the lab environment. Individ
 
     Before running the Silver notebooks, verify the model name used by any `query_model(...)` calls:
 
-    - Open `3_silver_transformation_continent.ipynb` and `4_silver_transformation_summary.ipynb`.
-    - Use notebook search to look for either `query_model(` or `xai.grok-3`.
+    - Open **`3_silver_transformation_continent.ipynb`** and **`4_silver_transformation_summary.ipynb`**.
+    - Use notebook search to look for either **`"query_model("`** or **`"xai.grok-3"`**.
     - In the Master Catalog, check `default` > `oci_ai_models` for the models available in your reservation.
     - If `cohere.command-r-08-2024` is listed, use it for these Silver notebook cells.
     - If `cohere.command-r-08-2024` is not listed, select another available command or chat model from `default` > `oci_ai_models` and use that same model name consistently in every `query_model(...)` cell you update.
     - If a code cell references `query_model("xai.grok-3", ...)`, replace only the model name. For example, change it to `query_model("cohere.command-r-08-2024", ...)` when Cohere Command R is available.
     - Save each notebook using **File** > **Save** after making the changes.
 
-    During validation, `cohere.command-r-08-2024` was available and `xai.grok-3` was not. Also check `5_Gold_join.ipynb` before creating workflows in Lab 3. If it contains empty code cells at the end of the notebook, delete those blank cells. Empty trailing code cells can cause workflow runs to remain in a running state after the visible Gold notebook output has completed.
+    >NOTE: Also check `5_Gold_join.ipynb` before creating workflows in Lab 3. If it contains empty code cells at the end of the notebook, delete those blank cells. Empty trailing code cells can cause workflow runs to remain in a running state after the visible Gold notebook output has completed.
 
 5. Open the **Bronze** folder. Select the `1_Create_Bronze_Tier.ipynb` file to open it in the notebook interface.
 

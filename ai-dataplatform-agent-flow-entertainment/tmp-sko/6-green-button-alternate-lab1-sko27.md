@@ -101,13 +101,15 @@ AI features activate additional Workbench capabilities by attaching an Oracle Au
 
     ![Show catalog details](images/catalog-details.png)
 
-4. Select the **Actions** menu then **Rename Catalog**. Change its name to **supplier\_external\_26ai** and press **Enter** to save the new name. The **X** icon cancels the rename.
+4. Select the **Actions** menu then **Rename Catalog**. Change its name to **supplier\_external\_26ai** and press **Enter** to save the new name.
+
+    > **Note:** The **X** icon cancels the inline rename. Do not select it after entering the new catalog name; press **Enter** to save.
 
     ![rename catalog](images/rename.png)
 
-5. Select the Master Catalog breadcrumb to return to it.
+5. Select the Master Catalog breadcrumb to return to it. Confirm that the catalog tree and breadcrumb show **supplier\_external\_26ai**. If the catalog tree still shows the old generated name, return to the Master Catalog or refresh the page.
 
-    ![Select SQL database action](images/breadcrumb.png)
+    ![confirm renamed external catalog](images/confirm-renamed-external-catalog.png)
 
     <details>
     <summary>Reference: connect another external database later</summary>
@@ -121,7 +123,7 @@ AI features activate additional Workbench capabilities by attaching an Oracle Au
 
 6. Large Language Models that you will use later are also accessible through the Master Catalog. You can view the available foundational models by expanding the **default** catalog and the **oci\_ai\_models** schema. Model availability can vary by reservation; during validation, `cohere.command-r-08-2024` was available and `xai.grok-3` was not.
 
-    ![show models](images/show-models.png)
+    ![show models](images/view-genai-models.png)
 
 
 ## Task 3: Create and Populate a Standard Catalog in AIDP Workbench
