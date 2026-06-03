@@ -4,32 +4,32 @@
     "tutorials": [
         {
             "title": "Workshop Introduction and Overview",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/introduction/introduction.md"
+            "filename": "../../tmp-sko/introduction-sko27.md"
         },
         {
             "title": "Get Started",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "../../tmp-sko/cloud-login-livelabs2-sko27.md"
         },
         {
             "title": "Lab 1: Access AIDP Workbench Instance and Populate the Catalog",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../tmp-sko/6-green-button-alternate-lab1.md"
+            "filename": "../../tmp-sko/6-green-button-alternate-lab1-sko27.md"
         },
         {
             "title": "Lab 2: Create Medallion Architecture",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/2-create-medallion-architecture.md"
+            "filename": "../../tmp-sko/2-create-medallion-architecture-sko27.md"
         },
         {
             "title": "Lab 3: Create Workflows",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/3-create-workflows.md"
+            "filename": "../../tmp-sko/3-create-workflows-sko27.md"
         },
         {
             "title": "Lab 4: Create Connector to OAC (Optional)",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/7-create-connector-to-oac-green-button/7-create-connector-to-oac-green-button.md"
+            "filename": "../../tmp-sko/7-create-connector-to-oac-green-button-sko27.md"
         },
         {
             "title": "Lab 5: Create Connector to FDI (Optional)",
-            "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/5-create-connector-to-fdi(optional)/5-create-connector-to-fdi.md"
+            "filename": "../../tmp-sko/5-create-connector-to-fdi-sko27.md"
         },
         {
             "title": "Need Help?",
@@ -40,10 +40,6 @@
             "title": "Other LiveLabs you might like",
             "description": "Other LiveLabs you might like",
             "filename": "https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/other-livelabs/other-livelabs.md"
-        },
-        {
-            "title": "Need Help?",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
