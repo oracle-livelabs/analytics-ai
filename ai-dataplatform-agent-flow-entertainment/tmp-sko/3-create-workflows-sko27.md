@@ -24,6 +24,8 @@ This lab assumes you have:
 
 You would like your medallion notebooks to run on a schedule so that new data added to your data sources is processed regularly. 
 
+Workflow runs can take longer than expected in the lab environment because each workflow starts and monitors notebook execution. Individual tier workflows may take 10 minutes or more, and the Silver workflow may take 20 to 30 minutes. Let each run finish unless the workflow reports an error.
+
 1. Begin by selecting **Workflow** and then **Create job**
 
     ![access workflows](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/images/create-job.png)
@@ -84,7 +86,7 @@ Now you will make a final workflow that ties together the 3 you just created.
 
     ![create weekday condition](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/3-create-workflows/images/ifelse-name.png)
 
-4. Under **Condition** next to **A**, paste in the below text. This text references a parameter that returns true on weekdays and false on the weekend. Select **==** as the operator and type **true** into the other side of the condition expression. Leave all other options set to the defaults. Optionally you could add additional conditions to the if/else logic, but you only need the one.
+4. Under **Depends on**, leave **Bronze_Tier** selected. Do not replace it with **Bronze_1**; **Bronze_1** is inside the nested Bronze workflow, and selecting it here breaks the four-node dependency flow in **Medallion_Workflow**. Under **Condition** next to **A**, paste in the below text. This text references a parameter that returns true on weekdays and false on the weekend. Select **==** as the operator and type **true** into the other side of the condition expression. Leave all other options set to the defaults. Optionally you could add additional conditions to the if/else logic, but you only need the one.
 
     ```
       <copy>

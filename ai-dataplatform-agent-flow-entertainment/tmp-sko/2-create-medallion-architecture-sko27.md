@@ -65,7 +65,14 @@ This lab assumes you have:
 
 Now you'll import the notebooks used to implement the three tiers of the medallion architecture.
 
-Before running the notebooks, verify that Lab 1 created `supplier.supplier_schema.basic_supplier` and `supplier.supplier_schema.supplier_emotions`, and that the external catalog is named `supplier_external_26ai`. The notebooks reference those names exactly.
+Before running the notebooks, confirm that Lab 1 created these source tables in the Master Catalog:
+
+- `supplier` > `supplier_schema` > `basic_supplier`
+- `supplier` > `supplier_schema` > `supplier_emotions`
+
+The notebooks reference these table names exactly. If either table is missing or named differently, the notebook queries will fail. Also confirm that the external catalog is named `supplier_external_26ai`.
+
+Notebook execution can take longer than expected in the lab environment. Individual notebooks may take several minutes, and AI-enabled Silver or Gold notebooks may take 10 minutes or more. Let each run finish unless the notebook reports an error.
 
 1. Open the **Medallion_Arch** workspace and select the **Bronze** folder.
 
@@ -95,10 +102,12 @@ Before running the notebooks, verify that Lab 1 created `supplier.supplier_schem
     Before running the Silver notebooks, verify the model name used by any `query_model(...)` calls:
 
     - Open `3_silver_transformation_continent.ipynb` and `4_silver_transformation_summary.ipynb`.
-    - Search each notebook for `query_model(` or `xai.grok-3`.
-    - If a code cell references `query_model("xai.grok-3", ...)`, change only the model name to `query_model("cohere.command-r-08-2024", ...)`.
-    - If your reservation shows a different available model in `default.oci_ai_models`, use that available model instead.
-    - Save the notebook after updating the cell.
+    - Use notebook search to look for either `query_model(` or `xai.grok-3`.
+    - In the Master Catalog, check `default` > `oci_ai_models` for the models available in your reservation.
+    - If `cohere.command-r-08-2024` is listed, use it for these Silver notebook cells.
+    - If `cohere.command-r-08-2024` is not listed, select another available command or chat model from `default` > `oci_ai_models` and use that same model name consistently in every `query_model(...)` cell you update.
+    - If a code cell references `query_model("xai.grok-3", ...)`, replace only the model name. For example, change it to `query_model("cohere.command-r-08-2024", ...)` when Cohere Command R is available.
+    - Save each notebook using **File** > **Save** after making the changes.
 
     During validation, `cohere.command-r-08-2024` was available and `xai.grok-3` was not. Also check `5_Gold_join.ipynb` before creating workflows in Lab 3. If it contains empty code cells at the end of the notebook, delete those blank cells. Empty trailing code cells can cause workflow runs to remain in a running state after the visible Gold notebook output has completed.
 
@@ -124,7 +133,7 @@ Before running the notebooks, verify that Lab 1 created `supplier.supplier_schem
 
     ![run gold notebooks.](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/images/gold-notebooks.png)
 
-11. Navigate to the master catalog to view the catalogs created by the notebook code. Notice that the bronze, silver, and gold tier catalogs are created and populated in the master catalog. The final Gold notebook also verifies that `supplier_external_26ai.admin.gold_supplier_feedback` was created in the Autonomous AI Lakehouse. If this external table does not immediately appear in the Master Catalog tree, rely on the successful final SQL query in `6_gold_job_into_DB.ipynb` as the verification step.
+11. Navigate to the master catalog to view the catalogs created by the notebook code. Notice that the bronze, silver, and gold tier catalogs are created and populated in the master catalog. The final Gold notebook also verifies that the external table was created in the Autonomous AI Lakehouse. In the Master Catalog tree, the expected path is `supplier_external_26ai` > `admin` > `gold_supplier_feedback`. In SQL, the same table is referenced as `supplier_external_26ai.admin.gold_supplier_feedback`. If this external table does not immediately appear in the Master Catalog tree, rely on the successful final SQL query in `6_gold_job_into_DB.ipynb` as the verification step.
 
     ![view catalogs](https://oracle-livelabs.github.io/analytics-ai/aidp-essentials/2-create-medallion-architecture/images/catalogs.png)
 
