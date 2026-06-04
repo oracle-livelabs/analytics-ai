@@ -2,7 +2,7 @@
 
 ## Introduction
 
-With the data environment in place — a Knowledge Base for RAG and Oracle AI Database tables for SQL — it's time to build the agent itself. In this lab, you'll create the AI Compute that powers the agent, design the agent flow on the visual canvas, configure the agent node with detailed instructions, and wire up all the tools: one RAG tool connected to the Knowledge Base and seven SQL tools that query box office and streaming data.
+With the data environment in place — a Knowledge Base for RAG and Oracle AI Database tables for SQL — it's time to build the agent itself. In this lab, you'll use the AI Compute from Lab 1, design the agent flow on the visual canvas, configure the agent node with detailed instructions, and wire up all the tools: one RAG tool connected to the Knowledge Base and four SQL tools that query box office and streaming data.
 
 By the end of this lab, you'll have a fully configured Entertainment Release & Performance Analyst Agent ready for testing.
 
@@ -22,7 +22,8 @@ In this lab you will:
 This lab assumes you have:
 
 * Completed Lab 1 (Data Environment Setup)
-* A Knowledge Base (`entertainment_analyst_kb`) in Active status with documents ingested
+* An AI Compute (`ent_compute`) in Active status
+* A Knowledge Base (`ent_kb`) in Active status with documents ingested
 * Access to the Oracle AI Database with entertainment performance tables
 * Extracted the `agent_instructions.txt` file from the Zip archive in Lab 1
 
@@ -37,7 +38,7 @@ With the AI Compute instance created in Lab 1 (should be **Active** now), you ca
     **Name**
     ```
     <copy>
-    entertainment_analyst
+    ent_agent_flow
     </copy>
     ```
     
@@ -52,7 +53,9 @@ With the AI Compute instance created in Lab 1 (should be **Active** now), you ca
 
 3. You will be directed to the **agent flow canvas** — a visual design environment where you'll drag and configure agent nodes and tools.
 
-4. Attach the agent flow to the AI Compute you just created. In the upper right corner, click **Compute** → **Attach to AI Compute**, then select the AI Compute you created in Task 1.
+4. Attach the agent flow to the AI Compute you created in Lab 1. In the upper right corner, click **Compute** → **Attach to AI Compute**, then select **`ent_compute`**.
+
+    > **Note:** If the create dialog includes an optional AI Compute field, you can leave it blank and attach **`ent_compute`** from the canvas after the flow opens.
 
     ![Attach AI Compute to Agent flow using the menu](images/02-agent-flows-attach-compute.png " ")
 
@@ -62,14 +65,14 @@ The agent node is the core of your flow. It defines the LLM model, the system in
 
 1. Drag an **Agent node** onto the canvas, then click on the entity frame that appears on the Canvas.
 
-2. Click the *Agent Name* and *Agent Description* in the drawer window to edit both. Assign more detailed values.
+2. Click the *Agent Name* and *Agent Description* in the drawer window to edit both. Select the generated node name before typing so your new value replaces it instead of appending to it.
 
     ![Change the agent flow name](images/02-agent-flows-change-name.png " ")
 
     **Name**
     ```
     <copy>
-    Analyst Agent
+    Analyst_Agent
     </copy>
     ```
 
@@ -103,7 +106,7 @@ The agent node is the core of your flow. It defines the LLM model, the system in
     - Response style guidelines (concise, analytical, structured)
     - What it must NOT do (no guessing metrics, no bypassing SQL tools, no fabricating data)
 
-5. Copy the following agent instructions into teh **Agent Instructions** box in the Configuration tab.
+5. Copy the following agent instructions into the **Agent Instructions** box in the Configuration tab.
 
     ```
     <copy>
@@ -211,12 +214,14 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
     internal_knowledge_sources_rag
     </copy>
     ```
+
+    > **Note:** As with the agent node, select the generated tool name before typing so the new name replaces the default value.
     
-3. In the **Configuration** tab, select the Knowledge Base you created in Lab 1 (`entertainment_analyst_kb`).
+3. In the **Configuration** tab, select the Knowledge Base you created in Lab 1 (`ent_std_catalog.default.ent_kb`).
 
     ![RAG tool configuration - select knowledge base](images/02-agent-flows-rag-select-kbase.png " ")
 
-4. Enter a description. The **`Description`** field comes pre-populated with instructions on how to use the field. You'll want to delete all contents before pasting the above description.
+4. Enter a description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     **Description**
     ```
@@ -248,6 +253,8 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
 
 Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, parameterized query against the Oracle AI Database. The agent selects which tool to call based on the user's question and populates the parameters automatically.
 
+For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use **`ent_ext_catalog`** → **`entertainment`**.
+
 ### Tool 1: Get box office weekend data
 
 This tool returns weekend theatrical performance for a title in a given market.
@@ -263,11 +270,11 @@ This tool returns weekend theatrical performance for a title in a given market.
     </copy>
     ```
     
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`aidatabase`** item and select the **`entertainment`** schema.
+3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
 
     ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
 
-4. Enter a description. The **`Description`** field comes pre-populated with instructions on how to use the field. You'll want to delete all contents before pasting the above description.
+4. Enter a description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     **Description**
     ```
@@ -344,11 +351,11 @@ This tool returns weekly streaming health metrics (starts, hours, completion rat
     </copy>
     ```
 
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`aidatabase`** item and select the **`entertainment`** schema.
+3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
 
     ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
 
-4. Enter the description. The **`Description`** field comes pre-populated with instructions on how to use the field. You'll want to delete all contents before pasting the above description.
+4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     **Description**
     ```
@@ -409,11 +416,11 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
     </copy>
     ```
 
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`aidatabase`** item and select the **`entertainment`** schema.
+3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
 
     ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
 
-4. Enter the description. The **`Description`** field comes pre-populated with instructions on how to use the field. You'll want to delete all contents before pasting the above description.
+4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     **Description**
     ```
@@ -445,11 +452,11 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
     </copy>
     ```
     
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`aidatabase`** item and select the **`entertainment`** schema.
+3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
 
     ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
 
-4. Enter the description. The **`Description`** field comes pre-populated with instructions on how to use the field. You'll want to delete all contents before pasting the above description.
+4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     **Description**
     ```
