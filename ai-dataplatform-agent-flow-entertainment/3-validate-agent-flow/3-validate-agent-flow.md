@@ -16,7 +16,9 @@ In this lab you will:
 2. Test the agent with a multi-title box office question — observing how it resolves title names and handles typos
 3. Test market-specific follow-ups to see how the agent maintains conversational context
 4. Test streaming performance with a cross-title comparison request
-5. Test the agent's ability to produce structured tabular output on demand
+5. Test a RAG-only policy and definition question
+6. Test a hybrid RAG-plus-SQL interpretation question
+7. Test the agent's ability to produce structured tabular output on demand
 
 ### Prerequisites
 
@@ -48,7 +50,7 @@ In this step, you'll ask the agent about box office performance for two movies. 
 
     ```
     <copy>
-    Can you tell me how well the movies neon knights and skyline heist did at the box office?
+    Can you tell me how well the movies neon knights and skyline hiest did at the box office?
     </copy>
     ```
 
@@ -106,7 +108,44 @@ This step shifts to streaming data and tests the agent's ability to handle a com
 
     > Observe the behavior: The agent switches data domains from box office to streaming seamlessly, retrieves multi-week trend data for both titles, and presents it in a report format.
 
-## Task 5: Test Structured Output — Custom Table Format
+## Task 5: Test RAG-Only Policy Guidance
+
+This step tests whether the agent uses the RAG tool when the question asks for an internal definition, policy, or escalation guideline rather than structured performance data.
+
+1. In the same session, enter the following prompt:
+
+    ```
+    <copy>
+    Using the internal playbooks, define 'completion rate' for streaming titles and explain the escalation guidelines if it falls below benchmarks, including any genre-specific considerations.
+    </copy>
+    ```
+
+2. Observe the agent's response. It should:
+    - Call the `internal_knowledge_sources_rag` tool
+    - Define completion rate using the internal playbooks
+    - Explain green/yellow/red or escalation guidance grounded in the retrieved documents
+    - Include genre-specific considerations if the playbooks provide them
+
+## Task 6: Test Hybrid RAG + SQL Interpretation
+
+This step tests whether the agent can combine internal playbook guidance with structured streaming performance data.
+
+1. In the same session, enter the following prompt:
+
+    ```
+    <copy>
+    Using the internal playbooks, explain the green/yellow/red signals for streaming completion rates. Then, apply this to Cosmic Kitchen's US performance over the last 4 weeks, including any escalation risks.
+    </copy>
+    ```
+
+2. Observe the agent's response. It should:
+    - Use RAG to retrieve the green/yellow/red completion-rate guidance
+    - Resolve Cosmic Kitchen to the correct title ID
+    - Call `get_streaming_trend` for the US region
+    - Interpret the last four weeks of performance against the internal benchmark guidance
+    - Call out any escalation risk clearly
+
+## Task 7: Test Structured Output — Custom Table Format
 
 This final test evaluates the agent's ability to produce formatted tabular output when explicitly requested.
 
@@ -114,7 +153,7 @@ This final test evaluates the agent's ability to produce formatted tabular outpu
 
     ```
     <copy>
-    Can you return a table for me? The columns are the two shows and the rows are the weeks. Just focus on the US market.
+    Can you return a table for Cosmic Kitchen and Maple Street? The columns are the two shows and the rows are the weeks. Just focus on the US market.
     </copy>
     ```
 
@@ -132,11 +171,11 @@ This final test evaluates the agent's ability to produce formatted tabular outpu
 
     ![Screenshot of agent flow task](images/03-agent-flow-task-details.png " ")
 
-## Task 6: Reflect on the Agent's Behavior
+## Task 8: Reflect on the Agent's Behavior
 
 Before moving on, take a moment to consider what just happened across the test session.
 
-1. **Tool selection**: The agent automatically determined which tools to call based on each question — RAG for policy questions, SQL for metrics, reference lookups for resolving names and codes.
+1. **Tool selection**: The agent automatically determined which tools to call based on each question — RAG for policy questions, SQL for metrics, reference lookups for resolving names and codes, and RAG-plus-SQL for interpretation questions.
 
 2. **Context retention**: The agent maintained conversational context across turns — understanding that "these movies" referred to Neon Knights and Skyline Heist, and that the streaming question introduced new titles.
 
@@ -154,6 +193,8 @@ In this lab, you validated the Entertainment Release & Performance Analyst agent
 - Market-specific follow-ups with conversational context retention
 - Cross-title comparative analysis
 - Streaming performance reports across a different data domain
+- RAG-only policy and definition guidance
+- Hybrid RAG-plus-SQL interpretation of streaming completion-rate risk
 - Custom structured output formatting on demand
 
 The agent successfully combined RAG (internal policy documents) and SQL (structured database queries) to serve the kinds of questions that marketing, finance, and content strategy teams ask every day. In the next lab, you'll deploy the agent to a production endpoint.

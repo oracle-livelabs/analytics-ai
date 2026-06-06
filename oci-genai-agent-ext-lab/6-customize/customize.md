@@ -34,15 +34,15 @@ In OCI Console, click on the Hamburger menu:
 - Storage/Buckets
 
 There are 2 buckets:
-- agext-public-bucket: where you upload your own files
-- agext-agent-bucket: used by the RAG agent for searching. Containing only PDF or text files.
+- agext-upload-bucket: where you upload your own files
+- agext-converted-bucket: used by the RAG agent for searching. Containing only PDF or text files after conversion.
 
-The files from the agext-public-bucket are copied or transformed to PDF or text files automatically and stored in the "agent-bucket"
+The files from the agext-upload-bucket are copied or transformed to PDF or text files automatically and stored in the "converted-bucket"
 
-## Task 3 - Upload new files
+## Task 3: Upload new files
 In OCI Console, click on the Hamburger menu:
 - Storage/Buckets
-- agext-public-bucket
+- agext-upload-bucket
 
 Upload a new file.
     ![Agent Ingestion](images/bucket-upload.png)    
@@ -74,7 +74,7 @@ What will happen internally, depending of the file type, it will be processed in
 
 ```
 In OCI Cloud Shell
-cd oci-genai-agent-ext/starter
+cd oci-vector-store-ext/starter
 
 See commands available
 ./starter.sh 
