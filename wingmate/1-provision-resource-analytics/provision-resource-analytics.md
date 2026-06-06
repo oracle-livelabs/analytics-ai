@@ -492,6 +492,8 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 	[Wingmate Data Zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/A8D93L0AYtatdLXkIXEH2OaQDtX_-AL8gnQ8CWHWYFV_6XUUGNw43bsZbU5oNx-e/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip)
 
+	The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate-ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
+
 2. Navigate to **SQL Workshop** and then **SQL Scripts**.
 
 	![SQL Workshop button](./images/sql-workshop.png "")

@@ -1,0 +1,5 @@
+﻿CDB_ID,NAME,REGION,MULTICLOUD
+1,MYDBX04,ca-toronto-1,Azure
+2,lntt6db,ca-toronto-1,Azure
+3,DBMTA,ca-toronto-1,Azure
+4,DB0209,ca-toronto-1,Azure

@@ -1,171 +1,235 @@
 # Lab 3: Build a Security Wingmate Agent
 
 ## Introduction
-This lab walks you through setting up the Security Wingmate Agent page for the APEX application. You will chat with your Wingmate about identity and access management policies.
 
-Estimated Time: 10 minutes
+This lab adds the Security Wingmate page to the Ask Oracle application imported in Lab 2. You will import one APEX page into the existing application, create a reusable Security RAG AI Configuration, and show the AI Assistant inline on the page.
+
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Configure the imported Security Overview page for OCI Security Wingmate
-* Add IAM policy context to the AI Assistant
-* Connect the page to the OCI Generative AI service created in Lab 2
-* Test the app's chat feature
+
+* Import the Security Overview page into the existing Lab 2 application
+* Create a Security RAG AI Configuration named `wingmate_security_rag`
+* Connect the page's AI Assistant action to the RAG configuration
+* Test Security Wingmate with IAM policy questions
 
 ### Prerequisites
 
 This lab assumes you have the following:
 
 * Completed Labs 1 and 2
-* Access to the `WINGMATE` APEX application
-* Imported `OCI Wingmate` framework application from Lab 2
+* Access to the Ask Oracle APEX application imported in Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
-* `CIS_IAM_POLICIES` loaded in the `WINGMATE` schema
+* `CIS_IAM_POLICIES` and `CIS_IAM_POLICIES_SV` loaded in the `WINGMATE` schema
+* `wingmate_data.zip` extracted, including `apex-pages/wingmate-page-02-security-overview.sql`
 * Some SQL knowledge is preferred but not necessary
 
 > **Note:** If you need to load or refresh the policy dataset, navigate to **Utilities**, select **Data Workshop**, and use **Load Data**.
 
 ![load data button](./images/load-data.png "")
 
-## Task 1: Build a Security Wingmate Agent Page
+## Task 1: Import the Security Overview Page
 
-> **SME Gate:** Confirm the final security source tables or views, APEX page layout, region names, dynamic action settings, assistant prompt, welcome message, prompt examples, screenshots, and expected validation responses.
+> **SME Gate:** Confirm the final page export filename, import wizard screenshots, target page number, and expected import prompts.
 
-1. In App Builder, open the imported **OCI Wingmate** framework application.
+1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
 
-2. Open the existing **Security Overview** page.
+2. Select **Import**.
 
-	![security page button](./images/nav-secure.png "")
+3. Drag and drop `wingmate_data/apex-pages/f100_page_2.sql`.
 
-3. Confirm Page Designer shows the **Security Overview** page, then use the Rendering tree for the remaining page updates.
+4. Confirm **File Type** is set to **Application, Page or Component Export**, then select **Next**.
 
-4. Right-click **Body** on the application tree to the left and select **Create Region**.
+    ![import page](./images/import-page.png "")
 
-	![create region button](./images/create-region.png "")
+5. On the import target page, select the existing Ask Oracle application from Lab 2. Keep the page number as **2**.
 
-5. On the right side panel under Identification for the region, Enter the name **WingmateChat**.
+6. Continue through the wizard and select **Import**.
 
-	![name wingmatechat region](./images/name-region-wingmate.png "")
+    > **Note:** The page export removes and recreates only Page 2. It does not change the Ask Oracle home page, shared components, or the pages imported in later labs.
 
-6. With the **WingmateChat** region selected, set the region **Static ID** to `wingmate-chat`.
+7. Nativate to the Shared Components of the App, select **Lists**, > **List Details** > **LLM Conversations - Top**.
 
-	![name wingmatechat static id](./images/static-id.png "")
+    ![List Entry for Security](./images/list-entry.png "")
 
-7. Right-click **Security Overview** in the Rendering tree and select **Create Page Item**.
+8. Edit the following at the end sequence and select **Create**.
+    * **image/class:** `fa-lock`
+    * **List Entry Label:** `Security Wingmate`
+    * **Page:** `12`
 
-	![create page item](./images/create-page-item.png "")
+    ![create list entry](./images/create-list-entry.png "")
 
-	Configure the page item:
+9. Open Page 2, **Security Overview**, in Page Designer to verify the list entry.
 
-	* **Name:** `P2_OCI_IAM_DETAILS`
-	* **Type:** `Hidden`
-	* **Value Protected:** `Off`
+    ![security page button](./images/nav-secure.png "")
 
-	![create hidden item](./images/hidden-item.png "")
+10. Select the **Show AI Assistant** and update the Configuration to `wingmate-rag`.
 
-8. Right-click `P2_OCI_IAM_DETAILS` and select **Create Computation**.
+    ![show ai assistant config](./images/update-genai-config.png "")
 
-	![create hidden item computation](./images/computation.png "")
 
-	Configure the computation:
+## Task 2: Create the Security RAG AI Configuration
 
-	* **Type:** `SQL Query (return single value)`
-	* **SQL Query:**
+APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
 
-		```sql
-		<copy>
-		SELECT CONTEXT_PROMPT FROM CIS_IAM_POLICIES_SV;
-		</copy>
-		```
+1. Navigate to **Shared Components**, then **AI Configurations**.
 
-	![sql query computation](./images/sql-query.png "")
+    ![create rag page button](./images/create-rag.png "")
 
-9. In the center of the App Builder, select the **Buttons** menu, and drag and drop the **text button** to the Region Body of WingmateChat region.
+2. Create an AI Configuration with these values:
 
-	![create page button](./images/startwingmatebutton.png "")
+    * **Name:** `Security Wingmate RAG`
+    * **Static ID:** `wingmate_security_rag`
+    * **Service:** `OCI_GENAI`
+    * **System Prompt:** `You are OCI Security Wingmate. Answer IAM policy and tenancy security questions using the configured RAG source. Be concise, explain security impact, and say when the retrieved policy context is insufficient.`
+    * **Welcome Message:** `Welcome! Begin chatting with OCI Security Wingmate about policies and tenancy security questions.`
 
-10. Name the button on the right panel **StartWingmate**.
+3. Add a SQL-based RAG Source to `wingmate_security_rag`:
 
-	![name the page button](./images/name-wingmate-button.png "")
+    ```sql
+    <copy>
+    SELECT context_prompt
+    FROM cis_iam_policies_sv
+    </copy>
+    ```
 
-11. Right-click the new button and select **Create Dynamic Action**.
+    ![Security Query](./images/security-query.png "")
 
-	![left menu for button and dynamic action](./images/dynamic-startwingmate-button.png "")
+4. Save the AI Configuration.
 
-12. Name the dynamic action **Chat**.
+5. Validate the source SQL as `WINGMATE`.
 
-	![Name dynamic action](./images/name-dynamicaction-chat.png "")
+    ```sql
+    <copy>
+    SELECT context_prompt
+    FROM cis_iam_policies_sv;
+    </copy>
+    ```
 
-13. Select the **True** Action on the left panel.
+    ![Query SQL context prompt](./images/context-prompt.png "")
 
-	![Select true action](./images/select-show.png "")
-	
-14. Select **Show AI Assistant** on the right panel. Select the source to match the `OCI_GENAI` service from Lab 2. Paste the following in the **System Prompt**:
+## Task 3: Configure the Security Wingmate Page
 
-	![Show AI Assistant action](./images/show-ai-assistant.png "")
+> **SME Gate:** Confirm the final Security page layout, dynamic action settings, welcome message, quick actions, screenshots, and expected validation responses.
 
-	```
-	<copy>
-	I want you to be an OCI Security expert who is providing guidance to the customers about their OCI tenancy IAM security best practices.
-	The following list is the policy name and corresponding policy statements, please use these details for answering questions related to OCI policy.
-	----
-	&P2_OCI_IAM_DETAILS.
-	</copy>
-	```
+1. In Page Designer, confirm Page 2 shows **Security Overview**.
 
-	Under **Welcome Message**, enter:
+2. Right-click **Body** on the Rendering tree and select **Create Region**.
 
-	```
-	<copy>
-	Welcome! You can chat with OCI Security Wingmate!
-	</copy>
-	```
+    ![create region button](./images/create-region.png "")
 
-	Under **Quick Actions**, add these messages:
+3. Name the region **WingmateChat**.
 
-	* **Message 1:** `How many policies do I have in my OCI tenancy?`
-	* **Message 2:** `Do I have any duplicate policy statements across policies?`
+    ![name wingmatechat region](./images/name-region-wingmate.png "")
 
-	![Quick Actions prompts](./images/prompts.png "")
+4. With the **WingmateChat** region selected, set the region **Static ID** to `wingmate-chat`.
 
-15. Right-click **Show AI Assistant** on the left panel and click **Create Action**.
+    ![name wingmatechat static id](./images/static-id.png "")
 
-	![Create action button](./images/create-action.png "")
+5. In the center of App Builder, select the **Buttons** menu, and drag and drop the **Text Button** to the Region Body of the **WingmateChat** region.
 
-16. Select **Hide** for the Action, and under affected elements, select **Button** and **Start Wingmate** for the object.
+    ![create page button](./images/startwingmatebutton.png "")
 
-	![Hide Action Button](./images/hidden-action.png "")
+6. Name the button **StartWingmate**.
 
-17. Save the work done and view the page by clicking the **Green Run Button** on the top right of the screen.
+    ![name the page button](./images/name-wingmate-button.png "")
 
-	![Save and Run button](./images/save-and-run.png "")
+7. Right-click the new button and select **Create Dynamic Action**.
 
-## Task 2: Test the App's Chat Feature
+    ![left menu for button and dynamic action](./images/dynamic-startwingmate-button.png "")
+
+8. Name the dynamic action **Chat**.
+
+    ![Name dynamic action](./images/name-dynamicaction-chat.png "")
+
+9. Select the **True** action.
+
+    ![Select true action](./images/select-show.png "")
+
+10. Set the action to **Show AI Assistant** and configure it:
+
+    * **Configuration:** `wingmate_security_rag`
+    * **Display As:** `Inline`
+    * **Container Selector:** `#wingmate-chat`
+
+    ![Show AI Assistant action](./images/show-ai-assistant.png "")
+
+11. Under **Welcome Message**, enter:
+
+    ```text
+    <copy>
+    Welcome! You can chat with OCI Security Wingmate.
+    </copy>
+    ```
+
+12. Under **Quick Actions**, add these messages:
+
+    * **Message 1:** `How many policies do I have in my OCI tenancy?`
+    * **Message 2:** `Do I have any duplicate policy statements across policies?`
+
+    ![Quick Actions prompts](./images/prompts.png "")
+
+13. Right-click **Show AI Assistant** on the left panel and select **Create Action**.
+
+    ![Create action button](./images/create-action.png "")
+
+14. Select **Hide** for the Action, and under affected elements, select **Button** and **StartWingmate** for the object.
+
+    ![Hide Action Button](./images/hidden-action.png "")
+
+15. Add an interactive report for the imported OCI IAM policy data.
+
+    In Page Designer, right-click **Body** on the Rendering tree and select **Create Region**. Configure the new region:
+
+    * **Name:** `IAM Policy Statements`
+    * **Type:** `Interactive Report`
+    * **Source Type:** `SQL Query`
+    * **SQL Query:**
+
+    ```sql
+    <copy>
+    SELECT *
+    FROM CIS_IAM_POLICIES_COPY
+    </copy>
+    ```
+
+    This report lets you inspect the same IAM policy records that feed the Security Wingmate context.
+
+16. Save the page and run it.
+
+    ![Save and Run button](./images/save-and-run.png "")
+
+## Task 4: Test the App's Chat Feature
 
 1. On the Security Overview page, select **Start Wingmate Chat**.
 
-	![Start Wingmate button](./images/start-wingmate-chat.png "")
+    ![Start Wingmate button](./images/start-wingmate-chat.png "")
 
 2. Select the first prompt **How many policies do I have in my OCI tenancy?**.
 
-	![Prompt button in chat](./images/use-prompt.png "")
+    ![Prompt button in chat](./images/use-prompt.png "")
 
 3. Ask a follow-up question:
 
-	```text
-	<copy>Do I have any duplicate policy statements across policies?</copy>
-	```
+    ```text
+    <copy>Do I have any duplicate policy statements across policies?</copy>
+    ```
 
-	![Example duplicate policy prompt response](./images/example-prompt-1.png "")
+    ![Example duplicate policy prompt response](./images/example-prompt-1.png "")
 
-4. If the assistant says it cannot see policy data, confirm `P2_OCI_IAM_DETAILS` has a computation that returns `CONTEXT_PROMPT` from `CIS_IAM_POLICIES_SV` and is referenced in the AI Assistant system prompt.
+4. If the assistant says it cannot see policy data, validate:
+
+    * `wingmate_security_rag` is selected in the **Show AI Assistant** action.
+    * The action is displayed **Inline** with container selector `#wingmate-chat`.
+    * The RAG Source SQL returns `CONTEXT_PROMPT` from `CIS_IAM_POLICIES_SV`.
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Authors:**
-	* Nicholas Cusato - Cloud Architect
-	* Royce Fu - Master Principal Cloud Architect
+    * Nicholas Cusato - Cloud Architect
+    * Royce Fu - Master Principal Cloud Architect
 * **Last Updated by/Date** - Royce Fu, May 2026

@@ -2,13 +2,14 @@
 
 ## Introduction
 
-This lab walks you through the creation of a Multicloud Wingmate Agent dashboard. This is helpful for managing compute and resources across multiple cloud service providers.
+This lab walks you through the creation of a Multicloud Wingmate Agent dashboard. You will import the Multicloud Overview page into the Ask Oracle application from Lab 2, create a reusable Multicloud RAG AI Configuration, and build reports and charts for cross-cloud resource analysis.
 
 Estimated Time: 60 minutes
 
 ### Objectives
 
-* Configure the imported Multicloud Overview page
+* Import the Multicloud Overview page into the existing Lab 2 application
+* Create the `wingmate_multicloud_rag` AI Configuration
 * Generate Report Period View
 * Create Host Insights Widgets
 * Compare Insights Across CPU and Memory
@@ -19,32 +20,51 @@ Estimated Time: 60 minutes
 ### Prerequisites
 
 * Completed Labs 1, 2, and 3
-* Access to the `WINGMATE` APEX application
-* Imported `OCI Wingmate` framework application from Lab 2
+* Access to the Ask Oracle APEX application imported in Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Multicloud, host-insights, documentation-reference, and graph objects loaded or mapped in the `WINGMATE` schema
+* `wingmate_data.zip` extracted, including `apex-pages/wingmate-page-21-multicloud-overview.sql`
 * Some SQL knowledge is preferred but not necessary
 
-## Task 1: Configure the Multicloud Overview Page
+## Task 1: Import and Configure the Multicloud Overview Page
 
-> **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, hidden page item names, assistant prompt, welcome message, page context, screenshots, and expected validation responses.
+> **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, AI Configuration settings, RAG Source SQL, screenshots, and expected validation responses.
 
-1. Repeat the chat setup steps from Lab 3 to create a new chat experience on the imported **Multicloud Overview** page.
+1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
 
-	Use the same setup pattern from Lab 3, but create new components for the Multicloud page:
+2. Select **Import**, then upload `wingmate_data/apex-pages/wingmate-page-21-multicloud-overview.sql`.
 
-	* In App Builder, open the imported **OCI Wingmate** framework application.
-	* Open the existing **Multicloud Overview** page.
-	* Create a new region named **WingmateChat** in the page body.
-	* Set the new **WingmateChat** region **Static ID** to `wingmate-chat`.
-	* Create new hidden page items for each page context value used by the Multicloud assistant.
-	* Create a new **StartWingmate** button in the **WingmateChat** region.
-	* Create a new dynamic action named **Chat** on the **StartWingmate** button.
-	* Create a new **Show AI Assistant** true action and select the `OCI_GENAI` service from Lab 2.
-	* Create a new **Hide** action for the **StartWingmate** button.
-	* Save the page.
+3. Confirm **File Type** is set to **Application, Page or Component Export**, select the existing Lab 2 application as the target, and keep the page number as **21**.
 
-2. Create Resource Analytics adapter views for the Multicloud page.
+4. Continue through the wizard and select **Import**.
+
+	> **Note:** The page export removes and recreates only Page 21. It does not change the Ask Oracle application pages from Lab 2 or the Security page from Lab 3.
+
+5. Open Page 21, **Multicloud Overview**, in Page Designer.
+
+6. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+
+7. Edit the following at the end sequence and select **Create**.
+
+    * **image/class:** `fa-cloud`
+    * **List Entry Label:** `Multicloud Wingmate`
+    * **Page:** `21`
+
+8. Open Page 21, **Multicloud Overview**, in Page Designer to verify the list entry.
+
+9. Create a new region named **WingmateChat** in the page body.
+
+10. Set the new **WingmateChat** region **Static ID** to `wingmate-chat`.
+
+11. Create a new **StartWingmate** button in the **WingmateChat** region.
+
+12. Create a new dynamic action named **Chat** on the **StartWingmate** button.
+
+13. Create a new **Show AI Assistant** true action. You will connect this action to `wingmate_multicloud_rag` after creating the AI Configuration.
+
+14. Create a new **Hide** action for the **StartWingmate** button, then save the page.
+
+15. Create Resource Analytics adapter views for the Multicloud page.
 
 	The Multicloud page uses the same chart and assistant patterns as the original host-insights demo, but this lab should use Resource Analytics data by default. Run the following SQL as `WINGMATE` to create app-owned views over the Resource Analytics materialized views from Lab 1.
 
@@ -290,31 +310,86 @@ Estimated Time: 60 minutes
 
 	> **Flat-file fallback:** If your environment uses the uploaded flat files instead of Resource Analytics materialized views, skip the `RA_*` adapter views and use the fallback queries called out in the remaining steps.
 
-3. Configure the new AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**. Add the following **System Prompt**:
+16. Navigate to **Shared Components**, then **AI Configurations**.
 
-	```
+	> **Note:** APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
+
+17. Create an AI Configuration with these values:
+
+	* **Name:** `Multicloud Wingmate RAG`
+	* **Static ID:** `wingmate_multicloud_rag`
+	* **Service:** `OCI_GENAI`
+	* **System Prompt** or **Role:** `You are OCI Multicloud Wingmate. Answer capacity, allocation, inventory, and documentation-reference questions using the configured RAG sources. Treat Resource Analytics host insights data as configured capacity and running allocation, not live OCI Monitoring metrics. Be concise and say when retrieved context is insufficient.`
+
+18. Add SQL-based RAG Sources to `wingmate_multicloud_rag`:
+
+	```sql
 	<copy>
-	I want you to be an OCI compute expert who is providing guidance to the customers about resource capacity planning best practices. 
-	The following list is the OCI compute host insights inventory and allocation details we have captured, please use these configured capacity and running allocation details for answering questions. Do not treat this data as live OCI Monitoring utilization metrics.
-	--------
-	&P21_OCI_HOSTINSIGHTS_DETAILS.
-	--------
-	The following list is the OCI documentation references for compute, please use these documentation references for answering recommendation related questions.
-	--------
-	&P21_OCI_DOC_REF_COMPUTE.
-
+	SELECT context_prompt
+	FROM ra_hostinsights_report_sv
 	</copy>
 	```
 
-	![system prompt](./images/show-ai-prompt.png "")
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM ra_multicloud_details_v
+	</copy>
+	```
 
-	> **Note:** The imported framework uses the Multicloud Overview page. If your imported page ID differs, update the `P21_` item prefix to match your page.
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM oci_doc_ref_compute_sv
+	</copy>
+	```
+
+	**Flat-file fallbacks:**
+
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM hostinsights_report_sv
+	</copy>
+	```
+
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM cis_multicloud_details_v
+	</copy>
+	```
+
+19. Validate the RAG source SQL as `WINGMATE`.
+
+	```sql
+	<copy>
+	SELECT 'host_insights' AS source_name, context_prompt
+	FROM ra_hostinsights_report_sv
+	UNION ALL
+	SELECT 'multicloud_summary' AS source_name, context_prompt
+	FROM ra_multicloud_details_v
+	UNION ALL
+	SELECT 'doc_ref_compute' AS source_name, context_prompt
+	FROM oci_doc_ref_compute_sv;
+	</copy>
+	```
+
+20. Configure the new AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**.
+
+	Configure the action:
+
+	* **Configuration:** `wingmate_multicloud_rag`
+	* **Display As:** `Inline`
+	* **Container Selector:** `#wingmate-chat`
+
+	![system prompt](./images/show-ai-prompt.png "")
 
 	Under **Welcome Message**, enter:
 
-	```
+	```text
 	<copy>
-	Welcome! You can chat with OCI Multicloud Wingmate!
+	Welcome! You can chat with OCI Multicloud Wingmate.
 	</copy>
 	```
 
@@ -325,75 +400,13 @@ Estimated Time: 60 minutes
 
 	![example prompts](./images/quick-prompt.png "")
 
-4. Create a hidden page item named **P21_OCI_DOC_REF_COMPUTE** for the compute documentation-reference context.
+21. Save the page.
 
-	![select hidden value](./images/select-hidden.png "")
-
-	![rename hidden](./images/update-hidden.png "")
-
-5. Create a computation for **P21_OCI_DOC_REF_COMPUTE** using the following SQL Query:
-
-	```
-	<copy>
-	Select CONTEXT_PROMPT FROM oci_doc_ref_compute_sv
-	</copy>
-	```
-
-	![update computation](./images/update-computation.png "")
-
-6. Create another hidden page item named **P21_OCI_HOSTINSIGHTS_DETAILS** for the host insights context.
-
-	![create hidden item](./images/duplicate-hidden.png "")
-
-	![host insights hidden value](./images/update-hostinsights-name.png "")
-
-7. Right-click **P21_OCI_HOSTINSIGHTS_DETAILS** and select **Create Computation**. Paste this under **SQL Query** on the right side:
-
-	```
-	<copy>
-	SELECT context_prompt FROM ra_hostinsights_report_sv
-	</copy>
-	```
-
-	**Flat-file fallback:**
-
-	```sql
-	<copy>
-	SELECT context_prompt FROM hostinsights_report_sv
-	</copy>
-	```
-
-	![host insights hidden value](./images/update-hostinsights-computation.png "")
-
-8. Create another hidden page item named **P21_OCI_DATABASE_DETAILS** for the database and multicloud details context.
-
-	![create hidden item](./images/duplicate-hidden-details.png "")
-
-9. Right-click **P21_OCI_DATABASE_DETAILS** and select **Create Computation**. Paste this under SQL Query:
-
-	```
-	<copy>
-	SELECT context_prompt FROM ra_multicloud_details_v
-	</copy>
-	```
-
-	**Flat-file fallback:**
-
-	```sql
-	<copy>
-	SELECT context_prompt FROM cis_multicloud_details_v
-	</copy>
-	```
-
-	![Create Computation Button](./images/create-computation.png "")
-
-	![Sql for Computation](./images/multicloud-details-sql.png "")
-
-10. Create a **Classic Report** region for the Multicloud inventory summary.
+22. Create a **Classic Report** region for the Multicloud inventory summary.
 
 	![Identity Table](./images/update-identity.png "")
 
-11. Name the report **MultiCloud Insights** and set the **SQL Query** to the following:
+23. Name the report **MultiCloud Insights** and set the **SQL Query** to the following:
 
 	```
 	<copy>
@@ -426,7 +439,7 @@ Estimated Time: 60 minutes
 
 ## Task 2: Generate Report Period View
 
-> **SME Gate:** Confirm all table and view names used by the host-insights and multicloud reports, charts, hidden items, computations, and source SQL.
+> **SME Gate:** Confirm all table and view names used by the host-insights and multicloud reports, charts, AI Configuration RAG sources, and source SQL.
 
 1. Create a table for viewing the host period by creating a region to contain it. Expand the **bottom module** (if not open) by selecting the arrow at the bottom center of the screen. Select **Regions** and pick the **Help** icon. Drop it under the Chat Region.
 

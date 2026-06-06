@@ -2,7 +2,13 @@
 
 ## Introduction
 
-This lab walks you through creating the Wingmate assistant foundation on the Resource Analytics-provisioned Autonomous AI Database prepared in Lab 1. You will use the `WINGMATE` APEX workspace, generate OCI API keys, configure APEX Web Credentials, create an OCI Generative AI service object, grant Select AI package access, create Select AI profiles that query Resource Analytics and supporting flat-file objects, and import the prebuilt Ask Oracle APEX application.
+This lab builds the shared AI operations foundation for the Wingmate workshop. You will connect the `WINGMATE` APEX workspace and database schema to OCI Generative AI, run the setup scripts, and import the base Ask Oracle APEX application that later labs extend with single-page imports.
+
+The Ask Oracle home page exposes three different AI patterns:
+
+* **NL2SQL:** `sql/wingmate-select-ai-profiles.sql` creates `WINGMATE_SECURITY`, `WINGMATE_MULTICLOUD`, and `WINGMATE_COMPUTE`. Learners use **Switch NL2SQL Profile** on the Ask Oracle home page to query Resource Analytics, multicloud database inventory, security data, and compute data.
+* **RAG:** `sql/wingmate-doc-research-rag.sql` creates `WINGMATE_DOC_RESEARCH_RAG`. Learners use the RAG profile selector on the Ask Oracle home page to ask documentation-grounded questions from the vector index.
+* **Agent Team:** `sql/wingmate-ai-ops-adb-agent-team.sql` creates `WINGMATE_AI_OPS_ADB_AGENT_TEAM`. Learners use the Agent Team selector on the Ask Oracle home page to turn natural language into a Resource Analytics-informed Autonomous Database provisioning or scaling plan. The team can prepare a dry-run create request and requires human confirmation before live provisioning.
 
 Estimated Time: 60 minutes
 
@@ -14,8 +20,10 @@ In this lab, you will:
 * Update APEX Web Credentials to connect to OCI resources
 * Create the OCI Generative AI service object in APEX
 * Grant Select AI package access to the `WINGMATE` schema
-* Create Select AI profiles for Security, Multicloud, and Compute questions
-* Import the prebuilt Ask Oracle APEX application
+* Run the bundled setup script for Security, Multicloud, and Compute Select AI profiles
+* Create a separate Doc Research RAG service for documentation-grounded answers
+* Create an AI Ops ADB Agent Team for Resource Analytics-informed database provisioning
+* Import the prebuilt Ask Oracle APEX application that Labs 3 through 5 extend
 
 ### Prerequisites
 
@@ -23,7 +31,7 @@ In this lab, you will:
 * `WINGMATE` database user created on the Resource Analytics-provisioned Autonomous AI Database
 * `WINGMATE` APEX workspace and developer user created
 * Resource Analytics materialized views created in Lab 1
-* `wingmate_data.zip` downloaded and extracted from Lab 1
+* `wingmate_data.zip` downloaded and extracted from Lab 1, including the `sql` and `apex-pages` folders
 * `ADB-AskOracle-Chatbot-2026-03-04.sql` downloaded from the Ask Oracle sample repository
 * Subscription to US Midwest (Chicago), US East (Ashburn), or US West (Phoenix)
 
@@ -39,11 +47,11 @@ In this lab, you will:
 
 3. Make sure **Generate API Key Pair** is selected. Download your private and public keys because you will need them later. After downloading, select **Add**.
 
-4. Save the configuration file preview in a notepad. You will use the values to create APEX Web Credentials.
+4. Save the configuration file preview in a notepad. You will use the values to create APEX Web Credentials and database credentials.
 
     ![Create Bucket button](./images/save-key.png "")
 
-5. Keep these values available for the next task:
+5. Keep these values available for the next tasks:
 
     * `user`: OCI User OCID
     * `fingerprint`: API public key fingerprint
@@ -128,11 +136,15 @@ Ask Oracle uses database-side PL/SQL packages that call Select AI. Stored PL/SQL
     <copy>
     GRANT EXECUTE ON DBMS_CLOUD TO WINGMATE;
     GRANT EXECUTE ON DBMS_CLOUD_AI TO WINGMATE;
+    GRANT EXECUTE ON DBMS_CLOUD_PIPELINE TO WINGMATE;
     GRANT EXECUTE ON DBMS_CLOUD_AI_AGENT TO WINGMATE;
+    GRANT EXECUTE ON DBMS_VECTOR TO WINGMATE;
+    GRANT CREATE MINING MODEL TO WINGMATE;
+    GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO WINGMATE;
     </copy>
     ```
 
-3. Connect as `WINGMATE` and confirm the required packages are visible to the lab schema.
+3. Connect as `WINGMATE` and confirm the required packages and model-loading privileges are visible to the lab schema.
 
     ```sql
     <copy>
@@ -141,198 +153,58 @@ Ask Oracle uses database-side PL/SQL packages that call Select AI. Stored PL/SQL
     WHERE object_name IN (
         'DBMS_CLOUD',
         'DBMS_CLOUD_AI',
-        'DBMS_CLOUD_AI_AGENT'
+        'DBMS_CLOUD_PIPELINE',
+        'DBMS_CLOUD_AI_AGENT',
+        'DBMS_VECTOR'
     )
     ORDER BY object_name, object_type;
+
+    SELECT privilege
+    FROM session_privs
+    WHERE privilege = 'CREATE MINING MODEL';
+
+    SELECT table_name, privilege
+    FROM all_tab_privs
+    WHERE table_name = 'DATA_PUMP_DIR'
+      AND privilege IN ('READ', 'WRITE')
+    ORDER BY privilege;
     </copy>
     ```
 
-4. Confirm `DBMS_CLOUD` and `DBMS_CLOUD_AI` return `VALID`. If `DBMS_CLOUD_AI_AGENT` is unavailable in your Autonomous Database version, continue with the Select AI profile steps and skip any optional agent-team features.
+4. Confirm `DBMS_CLOUD`, `DBMS_CLOUD_AI`, `DBMS_CLOUD_PIPELINE`, and `DBMS_VECTOR` return `VALID`. Confirm `CREATE MINING MODEL` appears and `DATA_PUMP_DIR` shows `READ` and `WRITE`. If `DBMS_CLOUD_AI_AGENT` is unavailable in your Autonomous Database version, continue with the Select AI profile steps and skip the Agent Team task.
 
-## Task 5: Create Select AI Profiles for Wingmate Domains
+## Task 5: Run the Select AI Profile Setup Script
 
-Create one database credential and three Select AI profiles. Each profile has a focused `object_list` so Ask Oracle can route questions to the right domain without giving every prompt the entire schema.
+The Select AI setup script creates one database credential and three domain-specific profiles. The profiles keep each domain focused: Security uses IAM policy and tenancy context, Multicloud uses multicloud and host-insights context, and Compute uses Resource Analytics compute views plus optional host-insights objects.
 
-1. In **SQL Commands**, connect as `WINGMATE`.
+1. In the extracted `wingmate_data` folder, open `sql/wingmate-select-ai-profiles.sql`.
 
-2. Create a database credential for Select AI. Use the same OCI API key values you captured in Task 1.
+    ![sql script](./images/wingmate-select-ai-profiles.png "")
 
-    ```sql
-    <copy>
-    BEGIN
-        DBMS_CLOUD.DROP_CREDENTIAL(
-            credential_name => 'WINGMATE_OCI_CRED'
-        );
-    EXCEPTION
-        WHEN OTHERS THEN
-            NULL;
-    END;
-    /
+2. Replace the placeholder values in the script:
 
-    BEGIN
-        DBMS_CLOUD.CREATE_CREDENTIAL(
-            credential_name => 'WINGMATE_OCI_CRED',
-            user_ocid       => '<oci_user_ocid>',
-            tenancy_ocid    => '<oci_tenancy_ocid>',
-            private_key     => '<full_private_key_text>',
-            fingerprint     => '<api_key_fingerprint>'
-        );
-    END;
-    /
-    </copy>
-    ```
+    * `<oci_user_ocid>`: OCI User OCID from the API key configuration preview.
+    * `<oci_tenancy_ocid>`: OCI Tenancy OCID from the API key configuration preview.
+    * `<full_private_key_text>`: Full downloaded private key contents, including the `BEGIN PRIVATE KEY` and `END PRIVATE KEY` lines.
+    * `<api_key_fingerprint>`: API public key fingerprint.
+    * `<genai_region>`: Subscribed OCI Generative AI region.
+    * `<compartment_ocid>`: Compartment OCID used by OCI Generative AI.
+    * `<oci_genai_chat_model_name_or_ocid>`: Approved chat model name or OCID.
 
-    > **Note:** Paste the full private key text, including the `BEGIN PRIVATE KEY` and `END PRIVATE KEY` lines. Keep this credential private to the lab schema.
+3. In APEX navigate to **SQL Workshop > SQL Scripts**, connect as `WINGMATE` and upload/run the updated script.
 
-3. In each profile block, replace `<genai_region>`, `<compartment_ocid>`, and `<oci_genai_chat_model_name_or_ocid>` with the subscribed OCI Generative AI region, target compartment OCID, and approved chat model for your tenancy.
+    The script creates:
 
-4. Create the Security profile. This profile focuses on IAM policy review, CIS policy findings, and supporting tenancy or compartment context from Resource Analytics materialized views.
+    * `WINGMATE_OCI_CRED`, used by Select AI to call OCI Generative AI.
+    * `WINGMATE_SECURITY`, focused on IAM policy review and supporting tenancy context.
+    * `WINGMATE_MULTICLOUD`, focused on Exadata, VM cluster, CDB, PDB, multicloud, and host-insights data.
+    * `WINGMATE_COMPUTE`, focused on Resource Analytics compute inventory, volume relationships, and optional metrics or host-insights objects.
 
-    ```sql
-    <copy>
-    BEGIN
-        DBMS_CLOUD_AI.DROP_PROFILE(
-            profile_name => 'WINGMATE_SECURITY',
-            force        => TRUE
-        );
-    EXCEPTION
-        WHEN OTHERS THEN
-            NULL;
-    END;
-    /
+    ![run sql script](./images/wingmate-select-ai-profiles-run-script.png "")
 
-    BEGIN
-        DBMS_CLOUD_AI.CREATE_PROFILE(
-            profile_name => 'WINGMATE_SECURITY',
-            description  => 'Security Wingmate profile for IAM policy review, CIS findings, tenancy, compartment, and tag context.',
-            attributes   => '{
-                "provider": "oci",
-                "credential_name": "WINGMATE_OCI_CRED",
-                "region": "<genai_region>",
-                "oci_compartment_id": "<compartment_ocid>",
-                "model": "<oci_genai_chat_model_name_or_ocid>",
-                "comments": true,
-                "temperature": 0,
-                "object_list": [
-                    {"owner":"WINGMATE","name":"CIS_IAM_POLICIES"},
-                    {"owner":"WINGMATE","name":"CIS_IAM_POLICIES_SV"},
-                    {"owner":"WINGMATE","name":"MV_TENANCY_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_COMPARTMENT_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_COMPARTMENT_HIERARCHY_V"},
-                    {"owner":"WINGMATE","name":"MV_REGION_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_TAGS_DIM_V"}
-                ]
-            }'
-        );
-    END;
-    /
-    </copy>
-    ```
+    > **Note:** Lab 1 creates `MV_` materialized views for every available `OCIRA.COMPUTE_%` view. If your Resource Analytics instance exposes additional compute materialized views, add them to `WINGMATE_COMPUTE` after the lab with `DBMS_CLOUD_AI.SET_ATTRIBUTES` or by recreating the profile with an expanded `object_list`. Lab 5 creates `OCI_COMPUTE_METRICS`; add that table to the profile after the metrics collector creates it.
 
-5. Create the Multicloud profile. This profile covers Exadata, VM clusters, CDB/PDB inventory, multicloud inventory views, documentation reference context, and host-insights fallback objects loaded from flat files.
-
-    ```sql
-    <copy>
-    BEGIN
-        DBMS_CLOUD_AI.DROP_PROFILE(
-            profile_name => 'WINGMATE_MULTICLOUD',
-            force        => TRUE
-        );
-    EXCEPTION
-        WHEN OTHERS THEN
-            NULL;
-    END;
-    /
-
-    BEGIN
-        DBMS_CLOUD_AI.CREATE_PROFILE(
-            profile_name => 'WINGMATE_MULTICLOUD',
-            description  => 'Multicloud Wingmate profile for Exadata, VM clusters, database inventory, multicloud views, and host insights.',
-            attributes   => '{
-                "provider": "oci",
-                "credential_name": "WINGMATE_OCI_CRED",
-                "region": "<genai_region>",
-                "oci_compartment_id": "<compartment_ocid>",
-                "model": "<oci_genai_chat_model_name_or_ocid>",
-                "comments": true,
-                "temperature": 0,
-                "object_list": [
-                    {"owner":"WINGMATE","name":"CIS_MULTICLOUD_DETAILS_V"},
-                    {"owner":"WINGMATE","name":"RA_MULTICLOUD_DETAILS_V"},
-                    {"owner":"WINGMATE","name":"RA_MULTICLOUD_INVENTORY_V"},
-                    {"owner":"WINGMATE","name":"OCI_EXA_INFR"},
-                    {"owner":"WINGMATE","name":"OCI_EXA_VM_CLUSTER"},
-                    {"owner":"WINGMATE","name":"OCI_CDB"},
-                    {"owner":"WINGMATE","name":"OCI_PDB"},
-                    {"owner":"WINGMATE","name":"OCI_DOC_REF"},
-                    {"owner":"WINGMATE","name":"OCI_DOC_REF_COMPUTE_SV"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_REPORT_PERIOD"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_CPU_USAGE_SUMMARY"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_MEMORY_USAGE_SUMMARY"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_RES_STAT"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_RES_STAT_MEMORY"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_CPU_FORECAST_TREND"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_REPORT_SV"}
-                ]
-            }'
-        );
-    END;
-    /
-    </copy>
-    ```
-
-6. Create the Compute profile. This profile covers Resource Analytics compute materialized views, volume relationships, compartment context, and optional metric or host-insights flat-file objects.
-
-    ```sql
-    <copy>
-    BEGIN
-        DBMS_CLOUD_AI.DROP_PROFILE(
-            profile_name => 'WINGMATE_COMPUTE',
-            force        => TRUE
-        );
-    EXCEPTION
-        WHEN OTHERS THEN
-            NULL;
-    END;
-    /
-
-    BEGIN
-        DBMS_CLOUD_AI.CREATE_PROFILE(
-            profile_name => 'WINGMATE_COMPUTE',
-            description  => 'Compute Wingmate profile for Resource Analytics compute inventory, capacity, utilization, metrics, volumes, and compartment context.',
-            attributes   => '{
-                "provider": "oci",
-                "credential_name": "WINGMATE_OCI_CRED",
-                "region": "<genai_region>",
-                "oci_compartment_id": "<compartment_ocid>",
-                "model": "<oci_genai_chat_model_name_or_ocid>",
-                "comments": true,
-                "temperature": 0,
-                "object_list": [
-                    {"owner":"WINGMATE","name":"MV_COMPUTE_INSTANCE_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_INSTANCE_VOLUME_DETAILS_V"},
-                    {"owner":"WINGMATE","name":"MV_TENANCY_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_COMPARTMENT_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_COMPARTMENT_HIERARCHY_V"},
-                    {"owner":"WINGMATE","name":"MV_REGION_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_AD_DIM_V"},
-                    {"owner":"WINGMATE","name":"MV_TAGS_DIM_V"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_CPU_USAGE_SUMMARY"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_MEMORY_USAGE_SUMMARY"},
-                    {"owner":"WINGMATE","name":"HOSTINSIGHTS_CPU_FORECAST_TREND"}
-                ]
-            }'
-        );
-    END;
-    /
-    </copy>
-    ```
-
-    > **Note:** Lab 1 creates `MV_` materialized views for every available `OCIRA.COMPUTE_%` view. If your Resource Analytics instance exposes additional compute materialized views, add them to `WINGMATE_COMPUTE` with `DBMS_CLOUD_AI.SET_ATTRIBUTES` or recreate the profile with an expanded `object_list`. Lab 5 creates `OCI_COMPUTE_METRICS`; add that table to the profile after the metrics collector has created it.
-
-    ![Compute profile creation completed successfully](./images/create-compute-profile-success.png "")
-
-7. Confirm the profiles are enabled in the `WINGMATE` schema.
+4. Confirm the profiles are enabled in the `WINGMATE` schema.
 
     ```sql
     <copy>
@@ -345,7 +217,9 @@ Create one database credential and three Select AI profiles. Each profile has a 
     )
     ORDER BY profile_name;
 
-    SELECT profile_name, attribute_name, DBMS_LOB.SUBSTR(attribute_value, 300, 1) AS attribute_value
+    SELECT profile_name,
+           attribute_name,
+           DBMS_LOB.SUBSTR(attribute_value, 300, 1) AS attribute_value
     FROM user_cloud_ai_profile_attributes
     WHERE profile_name IN (
         'WINGMATE_SECURITY',
@@ -359,9 +233,180 @@ Create one database credential and three Select AI profiles. Each profile has a 
 
     ![Wingmate Select AI profiles enabled](./images/validate-profiles-enabled.png "")
 
-## Task 6: Import the Ask Oracle APEX Application
+## Task 6: Create the Doc Research RAG Service
 
-> **SME Gate:** Confirm the Ask Oracle export file name, imported application ID, supporting object install prompts, page source objects, profile dropdown item names, assistant prompt behavior, and expected validation responses.
+The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Select AI profile and vector index. It uses OCI Generative AI for chat responses and the in-database `ALL_MINILM_L12_V2` ONNX transformer for RAG embeddings, avoiding a separate OCI Generative AI embedding endpoint. This is the documentation-research use case in the Ask Oracle app.
+
+1. Upload the documentation reference file from the extracted Lab 1 bundle to an Object Storage bucket. Use `wingmate_data/oci_doc_ref.xlsx`.
+
+    ![RAG Object Storage bucket](./images/rag-bucket.png "")
+
+2. Create an Object Storage URI for the uploaded object or bucket prefix. Use the authenticated URI format, not a pre-authenticated request URL:
+
+    ![RAG Object Storage bucket details](./images/par-rag.png "")
+
+    ```text
+    <copy>
+    https://objectstorage.<object_storage_region>.oraclecloud.com/n/<namespace>/b/<bucket_name>/o/<object_name_or_prefix>
+    </copy>
+    ```
+
+3. In the extracted `wingmate_data` folder, open `sql/wingmate-doc-research-rag.sql`.
+
+4. Replace the placeholders:
+
+    * `<genai_region>`: Subscribed OCI Generative AI region.
+    * `<compartment_ocid>`: Compartment OCID used by OCI Generative AI.
+    * `<oci_genai_chat_model_name_or_ocid>`: Approved chat model name or OCID (xai.grok-4.3).
+    * `<object_storage_doc_uri>`: Object Storage URI copied in the previous step.
+
+    > **Note:** The script uses `ALL_MINILM_L12_V2` with vector dimension `384`. If you choose a different imported ONNX embedding model, edit `c_db_embedding_model` and `c_embedding_vector_dimension` together in the script.
+
+5. In **SQL Workshop > SQL Scripts**, connect as `WINGMATE` and run the script. The script creates `WINGMATE_DOC_RESEARCH_RAG`, `WINGMATE_DOC_RESEARCH_VECIDX`, and `WINGMATE_DOC_RESEARCH_VECTAB`.
+
+    ![RAG script load](./images/doc-research-rag.png "")
+
+    > **Note:** If the script stops with a placeholder message, replace the named value and rerun the script. If SQL Workshop output still mentions `/actions/embedText`, upload and run the current script version; that endpoint belongs to the older OCI Generative AI embedding setup.
+
+6. Confirm the RAG profile and vector index are ready. In **SQL Commands**, run each query one at a time. In **SQL Scripts**, you can run the full block.
+
+    ```sql
+    <copy>
+    SELECT u.profile_name d,
+           u.profile_name r
+    FROM user_cloud_ai_profiles u
+    LEFT JOIN user_cloud_ai_profile_attributes p
+           ON p.profile_name = u.profile_name
+          AND p.attribute_name = 'vector_index_name'
+    WHERE u.profile_name NOT LIKE 'AGENT$%'
+      AND p.profile_name IS NOT NULL
+    ORDER BY u.profile_name;
+
+    SELECT index_name, status
+    FROM user_cloud_vector_indexes
+    WHERE index_name = 'WINGMATE_DOC_RESEARCH_VECIDX';
+
+    SELECT table_name
+    FROM user_tables
+    WHERE table_name = 'WINGMATE_DOC_RESEARCH_VECTAB';
+
+    SELECT COUNT(*) AS indexed_chunks
+    FROM WINGMATE_DOC_RESEARCH_VECTAB;
+    </copy>
+    ```
+
+    > **Note:** If the vector table is empty, confirm that the Object Storage URI and `WINGMATE_OCI_CRED` credential can read the uploaded file.
+
+7. Use the RAG profile to ask a documentation question.
+
+    ```sql
+    <copy>
+    SELECT DBMS_CLOUD_AI.GENERATE(
+        prompt       => 'Which OCI Compute documentation should I review for capacity planning?',
+        profile_name => 'WINGMATE_DOC_RESEARCH_RAG',
+        action       => 'chat'
+    ) AS answer
+    FROM dual;
+    </copy>
+    ```
+    ![RAG Doc Query](./images/query-doc-research-rag.png "")
+
+    > **Troubleshooting:** `ORA-20001: Unable to load in-database embedding model` means the model import failed. Confirm Task 4 granted `EXECUTE` on `DBMS_VECTOR`, `CREATE MINING MODEL`, and `READ`/`WRITE` on `DATA_PUMP_DIR`. If you also see `WINGMATE_DOC_RESEARCH_VECTAB does not exist`, fix the vector index error first; that table is created only after the vector index is created.
+
+## Task 7: Create the AI Ops ADB Agent Team
+
+The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WINGMATE_AI_OPS_ADB_AGENT_TEAM`. The team follows the Select AI Agent pattern of combining custom PL/SQL tools and a human confirmation step. It uses the `WINGMATE_MULTICLOUD` NL2SQL profile to inspect Resource Analytics and multicloud database inventory before it prepares a provisioning, scaling, or self-replication plan for Autonomous Database.
+
+1. Confirm that Task 5 completed and `WINGMATE_MULTICLOUD` exists. The AI Ops team uses that profile to query multicloud database inventory.
+
+2. If you plan to test live provisioning, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous Databases in the target compartment.
+
+    ```text
+    <copy>
+    Allow group <group-name> to manage autonomous-database-family in compartment <compartment-name>
+    </copy>
+    ```
+
+    > **Note:** You can complete this lab task in dry-run mode without creating a new policy. Live provisioning requires the IAM policy and a temporary admin password supplied by the human operator.
+
+3. In the extracted `wingmate_data` folder, open `sql/wingmate-ai-ops-adb-agent-team.sql`.
+
+4. Replace the placeholders:
+
+    * `<genai_region>`: Subscribed OCI Generative AI region.
+    * `<compartment_ocid>`: Compartment OCID used by OCI Generative AI.
+    * `<oci_genai_chat_model_name_or_ocid>`: Approved chat model name or OCID (xai.grok-4.3).
+    * `<oci_tenancy_ocid>`: Tenancy OCID used to list subscribed regions.
+    * `<identity_home_region>`: Home region for OCI Identity, such as `us-ashburn-1`.
+    * `<adb_target_compartment_ocid>`: Compartment where the Agent Team should prepare ADB create requests.
+
+5. Connect as `WINGMATE` and run the script. The script creates:
+
+    * `WINGMATE_AI_OPS`
+    * `WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL`
+    * `WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL`
+    * `WINGMATE_PROVISION_ADB_TOOL`
+    * `WINGMATE_AI_OPS_ADB_AGENT_TEAM`
+
+6. Confirm the AI Ops profile and Agent Team are available.
+
+    ```sql
+    <copy>
+    SELECT profile_name
+    FROM user_cloud_ai_profiles
+    WHERE profile_name = 'WINGMATE_AI_OPS';
+
+    DECLARE
+        l_agent_team_count NUMBER;
+    BEGIN
+        EXECUTE IMMEDIATE q'~
+            SELECT COUNT(*)
+            FROM user_ai_agent_teams
+            WHERE agent_team_name = 'WINGMATE_AI_OPS_ADB_AGENT_TEAM'
+        ~'
+        INTO l_agent_team_count;
+
+        DBMS_OUTPUT.PUT_LINE('WINGMATE_AI_OPS_ADB_AGENT_TEAM rows: ' || l_agent_team_count);
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Agent Team validation skipped or unavailable: ' || SQLERRM);
+    END;
+    /
+    </copy>
+    ```
+
+7. Test the multicloud database advisor function. This confirms the AI Ops tool can use `WINGMATE_MULTICLOUD` to reason from Resource Analytics database data.
+
+    ```sql
+    <copy>
+    SELECT wingmate_multicloud_db_advisor(
+        'Based on the Exadata, VM cluster, CDB, and PDB inventory, recommend whether to provision or scale an Autonomous Database.'
+    ) AS database_advice
+    FROM dual;
+    </copy>
+    ```
+
+8. Test the provisioning function in dry-run mode.
+
+    ```sql
+    <copy>
+    SELECT wingmate_provision_adb_tool(
+        p_compartment_ocid => '<adb_target_compartment_ocid>',
+        p_region           => '<adb_region>',
+        p_db_name          => 'WINGLAB01',
+        p_display_name     => 'Wingmate Lab ADB Dry Run',
+        p_admin_password   => '<temporary_admin_password_for_live_execute>',
+        p_execute          => 'N'
+    ) AS dry_run
+    FROM dual;
+    </copy>
+    ```
+
+    > **Note:** The dry-run output redacts the password and returns the create request that would be submitted. Keep `p_execute` set to `N` unless you intentionally want to test live provisioning and have the required IAM policy.
+
+## Task 8: Import the Ask Oracle APEX Application
+
+> **SME Gate:** Confirm the Ask Oracle export file name, imported application ID, supporting object install prompts, profile dropdown item names, assistant prompt behavior, and expected validation responses.
 
 1. Navigate back to **App Builder**.
 
@@ -399,11 +444,13 @@ Create one database credential and three Select AI profiles. Each profile has a 
 
 10. Confirm the application opens and shows the Ask Oracle chat interface.
 
-## Task 7: Validate Ask Oracle Profile Selection
+    > **Note:** This application is the target app for later labs. Keep track of the application name and ID assigned by APEX; Labs 3, 4, and 5 import one additional page into this same application.
+
+## Task 9: Validate Ask Oracle Profiles, Doc Research RAG, and AI Ops
 
 1. Run the Ask Oracle application.
 
-2. Open a new chat and select **Switch NL2SQL Profile**.
+2. Use the Ask Oracle home page selectors to validate each AI pattern. Start with **Switch NL2SQL Profile**.
 
     ![run app](./images/run-app.png "")
 
@@ -439,7 +486,84 @@ Create one database credential and three Select AI profiles. Each profile has a 
 
     ![summarize multicloud](./images/summarize-multicloud.png "")
 
-7. If the profile dropdown is empty, confirm the profiles exist in `USER_CLOUD_AI_PROFILES` while connected as `WINGMATE`.
+7. Open the RAG profile selector and confirm the profile list includes `WINGMATE_DOC_RESEARCH_RAG`.
+
+8. Select `WINGMATE_DOC_RESEARCH_RAG` and ask:
+
+    ```text
+    <copy>
+    Which OCI Compute documentation should I review for capacity planning, and what are the key features?
+    </copy>
+    ```
+
+9. Ask a second RAG question:
+
+    ```text
+    <copy>
+    Summarize the OCI documentation references for Compute operations and include any documentation URLs you used.
+    </copy>
+    ```
+
+10. Open the Agent Team selector and confirm the team list includes `WINGMATE_AI_OPS_ADB_AGENT_TEAM`.
+
+11. Select `WINGMATE_AI_OPS_ADB_AGENT_TEAM` and ask for a Resource Analytics-informed dry-run ADB provisioning plan:
+
+    ```text
+    <copy>
+    Use Resource Analytics and multicloud database inventory to recommend a source pattern, list subscribed regions, and prepare a dry-run request to self-replicate a small OLTP Autonomous Database named WINGLAB01 in <adb_region>. Do not provision anything.
+    </copy>
+    ```
+
+12. Ask the Agent Team to prepare the human confirmation step:
+
+    ```text
+    <copy>
+    Prepare the live provisioning plan for WINGLAB01 and ask me for confirmation before creating anything.
+    </copy>
+    ```
+
+    > **Note:** Stop at the confirmation step unless you intentionally want to test live provisioning and have the required IAM policy and temporary ADB admin password.
+
+13. If the NL2SQL profile dropdown is empty, confirm the profiles exist in `USER_CLOUD_AI_PROFILES` while connected as `WINGMATE`.
+
+14. If the RAG profile dropdown is empty, confirm the RAG profile appears in the application list of values.
+
+    ```sql
+    <copy>
+    SELECT u.profile_name d,
+           u.profile_name r
+    FROM user_cloud_ai_profiles u
+    LEFT JOIN user_cloud_ai_profile_attributes p
+           ON p.profile_name = u.profile_name
+          AND p.attribute_name = 'vector_index_name'
+    WHERE u.profile_name NOT LIKE 'AGENT$%'
+      AND p.profile_name IS NOT NULL
+    ORDER BY u.profile_name;
+    </copy>
+    ```
+
+15. If the Agent Team dropdown is empty, confirm the Agent Team appears in the application list of values.
+
+    ```sql
+    <copy>
+    DECLARE
+        l_agent_team_count NUMBER;
+    BEGIN
+        EXECUTE IMMEDIATE q'~
+            SELECT COUNT(*)
+            FROM user_ai_agent_teams
+            WHERE agent_team_name = 'WINGMATE_AI_OPS_ADB_AGENT_TEAM'
+        ~'
+        INTO l_agent_team_count;
+
+        DBMS_OUTPUT.PUT_LINE('WINGMATE_AI_OPS_ADB_AGENT_TEAM rows: ' || l_agent_team_count);
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Agent Team validation skipped or unavailable: ' || SQLERRM);
+    END;
+    /
+    </copy>
+    ```
 
 You may now **proceed to the next lab**.
 
@@ -448,6 +572,8 @@ You may now **proceed to the next lab**.
 * [Creating Generative AI Service Objects in APEX](https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/creating-generative-ai-service-objects.html)
 * [Ask Oracle APEX Sample App](https://github.com/oracle-devrel/oracle-autonomous-database-samples/blob/main/apex/Ask-Oracle/ADB-AskOracle-Chatbot-2026-03-04.sql)
 * [DBMS_CLOUD_AI Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-ai-package.html)
+* [DBMS_CLOUD_AI_AGENT Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/dbms-cloud-ai-agent-package.html)
+* [Build your agentic solution using Oracle ADB Select AI Agent](https://blogs.oracle.com/machinelearning/build-your-agentic-solution-using-oracle-adb-select-ai-agent)
 * [Manage User Access to Resource Analytics ADW](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/manage-user-access-adw.htm)
 * [Resource Analytics Compute Data Model Reference](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/reference-compute.htm)
 

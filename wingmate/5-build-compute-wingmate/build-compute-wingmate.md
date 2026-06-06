@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through configuring the imported Compute Wingmate Agent page in Oracle APEX. You will use Resource Analytics materialized views from Lab 1, or query the `OCIRA` schema views directly, to provide compute instance metadata. You will also configure the OCI Metrics Collector to write compute utilization metrics into Autonomous Database so the APEX app can overlay CPU and memory metrics on top of compute instance metadata.
+This lab walks you through adding and configuring the Compute Wingmate Agent page in Oracle APEX. You will import one APEX page into the Ask Oracle application from Lab 2, use Resource Analytics materialized views from Lab 1, or query the `OCIRA` schema views directly, to provide compute instance metadata. You will also configure the OCI Metrics Collector to write compute utilization metrics into Autonomous Database so the APEX app can overlay CPU and memory metrics on top of compute instance metadata.
 
 The result is a Compute Wingmate page that can answer natural language questions about compute inventory and utilization while also displaying APEX visualization widgets for operational monitoring.
 
@@ -15,24 +15,53 @@ Estimated Time: 60 minutes
 In this lab, you will:
 
 * Confirm Resource Analytics compute metadata sources
+* Import the Compute Wingmate page into the existing Lab 2 application
 * Configure OCI Metrics Collector for compute CPU and memory metrics
 * Load compute metrics into the `WINGMATE` Autonomous Database schema
 * Create SQL views that overlay metrics on compute instance metadata
-* Configure APEX visualization widgets on the imported Compute Wingmate page
-* Configure the Compute Wingmate Agent AI assistant
+* Configure APEX visualization widgets on the Compute Wingmate page
+* Configure the `wingmate_compute_rag` AI Configuration and AI assistant
 
 ### Prerequisites
 
 * Completed Labs 1 through 4
-* Access to the `WINGMATE` APEX application
-* Imported `OCI Wingmate` framework application from Lab 2
+* Access to the Ask Oracle APEX application imported in Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Resource Analytics compute materialized views created in Lab 1, or direct access to the `OCIRA` schema views through `OCIRA_RO`
+* `wingmate_data.zip` extracted, including `apex-pages/wingmate-page-05-oci-compute-wingmate.sql`
 * An OCI VM or local environment that can run Python and access OCI Monitoring
 * Autonomous Database wallet downloaded for the Resource Analytics-provisioned Autonomous AI Database
 * `WINGMATE` database user with privileges to create and insert into tables
 
-## Task 1: Confirm Compute Metadata Sources
+## Task 1: Import the Compute Wingmate Page
+
+> **SME Gate:** Confirm the final page export filename, import wizard screenshots, target page number, and expected import prompts.
+
+1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
+
+2. Select **Import**, then upload `wingmate_data/apex-pages/wingmate-page-05-oci-compute-wingmate.sql`.
+
+3. Confirm **File Type** is set to **Application, Page or Component Export**, select the existing Lab 2 application as the target, and keep the page number as **5**.
+
+4. Continue through the wizard and select **Import**.
+
+	> **Note:** The page export removes and recreates only Page 5. It does not change the Ask Oracle application pages from Lab 2, the Security page from Lab 3, or the Multicloud page from Lab 4.
+
+5. Open Page 5, **OCI Compute Wingmate**, in Page Designer.
+
+6. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+
+7. Edit the following at the end sequence and select **Create**.
+
+    * **image/class:** `fa-server`
+    * **List Entry Label:** `Compute Wingmate`
+    * **Page:** `5`
+
+8. Open Page 5, **OCI Compute Wingmate**, in Page Designer to verify the list entry.
+
+9. You will connect the page's **Show AI Assistant** action to `wingmate_compute_rag` in Task 7.
+
+## Task 2: Confirm Compute Metadata Sources
 
 Compute Wingmate can use the materialized views created in Lab 1 or query the `OCIRA` schema views directly. The materialized view option is recommended for APEX because the app owns stable objects in the `WINGMATE` schema.
 
@@ -90,7 +119,7 @@ Compute Wingmate can use the materialized views created in Lab 1 or query the `O
 
 	> **SME Gate:** Confirm the compute instance OCID column. Later steps use `<compute_instance_ocid_column>` as a placeholder until the target Resource Analytics column name is confirmed.
 
-## Task 2: Configure OCI Metrics Collector
+## Task 3: Configure OCI Metrics Collector
 
 The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches the data with compute instance metadata, and writes the results to Autonomous Database.
 
@@ -248,7 +277,7 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 
 	> **Note:** Do not also schedule the collector with `cron` if you enable the `systemd` service. Continuous mode already performs recurring collection cycles.
 
-## Task 3: Validate the Metrics Table in Autonomous Database
+## Task 4: Validate the Metrics Table in Autonomous Database
 
 The metrics collector creates and writes to `OCI_COMPUTE_METRICS` in the `WINGMATE` schema.
 
@@ -293,11 +322,11 @@ The metrics collector creates and writes to `OCI_COMPUTE_METRICS` in the `WINGMA
 	</copy>
 	```
 
-## Task 4: Create Compute Overlay Views
+## Task 5: Create Compute Overlay Views
 
 Create APEX-friendly views that combine compute metadata with the latest metrics.
 
-> **SME Gate:** Replace `<compute_instance_ocid_column>` with the confirmed Resource Analytics compute instance OCID column from Task 1.
+> **SME Gate:** Replace `<compute_instance_ocid_column>` with the confirmed Resource Analytics compute instance OCID column from Task 2.
 
 1. Create a latest-metrics view.
 
@@ -362,13 +391,13 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 	</copy>
 	```
 
-## Task 5: Configure the Compute Wingmate APEX Page
+## Task 6: Configure the Compute Wingmate APEX Page
 
-Use the imported Compute Wingmate framework page from Lab 2, but focus the page content on compute metadata and metrics.
+Use the Compute Wingmate page imported at the start of this lab, but focus the page content on compute metadata and metrics.
 
 1. In App Builder, open the `WINGMATE` application.
 
-2. Open the imported **OCI Compute Wingmate** page.
+2. Open the **OCI Compute Wingmate** page.
 
 3. Create or select a region named **Compute Overview**.
 
@@ -443,25 +472,20 @@ Use the imported Compute Wingmate framework page from Lab 2, but focus the page 
 	* **Label:** `COLLECTION_TIME`
 	* **Series:** one series for CPU utilization and one series for memory utilization
 
-## Task 6: Configure the Compute Wingmate Agent
+## Task 7: Configure the Compute Wingmate Agent
 
-1. Add or select a button named **StartComputeWingmate** on the OCI Compute Wingmate page.
+1. Navigate to **Shared Components**, then **AI Configurations**.
 
-2. Create or update a dynamic action named **Chat** for the button.
+	> **Note:** APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
 
-3. Add or update the **Show AI Assistant** true action.
+2. Create an AI Configuration with these values:
 
-4. Select the `OCI_GENAI` service created in Lab 2.
+	* **Name:** `Compute Wingmate RAG`
+	* **Static ID:** `wingmate_compute_rag`
+	* **Service:** `OCI_GENAI`
+	* **System Prompt** or **Role:** `You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the configured RAG source for Resource Analytics compute metadata and OCI compute metrics data. Answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.`
 
-5. Add this system prompt:
-
-	```text
-	<copy>
-	You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the application's Resource Analytics compute metadata and OCI compute metrics data to answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.
-	</copy>
-	```
-
-6. Configure the assistant context with this SQL query:
+3. Add a SQL-based RAG Source to `wingmate_compute_rag`:
 
 	```sql
 	<copy>
@@ -471,11 +495,37 @@ Use the imported Compute Wingmate framework page from Lab 2, but focus the page 
 	</copy>
 	```
 
-	> **SME Gate:** Confirm the final context row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
+	> **SME Gate:** Confirm the final RAG source row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
 
-7. Save and run the page.
+4. Validate the RAG source SQL as `WINGMATE`.
 
-## Task 7: Validate Compute Wingmate
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM compute_wingmate_context_v
+	FETCH FIRST 100 ROWS ONLY
+	</copy>
+	```
+
+5. Return to Page 5, **OCI Compute Wingmate**.
+
+6. Create or select a region named **WingmateChat** and set its **Static ID** to `wingmate-chat`.
+
+7. Add or select a button named **StartComputeWingmate** in the **WingmateChat** region.
+
+8. Create or update a dynamic action named **Chat** for the button.
+
+9. Add or update the **Show AI Assistant** true action.
+
+10. Configure the action:
+
+	* **Configuration:** `wingmate_compute_rag`
+	* **Display As:** `Inline`
+	* **Container Selector:** `#wingmate-chat`
+
+11. Save and run the page.
+
+## Task 8: Validate Compute Wingmate
 
 1. Confirm the **Compute Overview** report renders metadata and metric fields.
 
@@ -501,7 +551,8 @@ Use the imported Compute Wingmate framework page from Lab 2, but focus the page 
 
 	* `OCI_COMPUTE_METRICS` contains recent rows
 	* `compute_metrics_latest_v` returns one row per instance
-	* The assistant context query returns rows
+	* The `wingmate_compute_rag` RAG Source SQL returns rows
+	* The **Show AI Assistant** action uses `wingmate_compute_rag`, displays inline, and targets `#wingmate-chat`
 	* The `OCI_GENAI` service object and `api_key` web credential still work
 
 You have completed the workshop.
