@@ -8,7 +8,7 @@ The Ask Oracle home page exposes three different AI patterns:
 
 * **NL2SQL:** `sql/wingmate-select-ai-profiles.sql` creates `WINGMATE_SECURITY`, `WINGMATE_MULTICLOUD`, and `WINGMATE_COMPUTE`. Learners use **Switch NL2SQL Profile** on the Ask Oracle home page to query Resource Analytics, multicloud database inventory, security data, and compute data.
 * **RAG:** `sql/wingmate-doc-research-rag.sql` creates `WINGMATE_DOC_RESEARCH_RAG`. Learners use the RAG profile selector on the Ask Oracle home page to ask documentation-grounded questions from the vector index.
-* **Agent Team:** `sql/wingmate-ai-ops-adb-agent-team.sql` creates `WINGMATE_AI_OPS_ADB_AGENT_TEAM`. Learners use the Agent Team selector on the Ask Oracle home page to turn natural language into a Resource Analytics-informed Autonomous Database provisioning or scaling plan. The team can prepare a dry-run create request and requires human confirmation before live provisioning.
+* **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` from three Oracle pre-built Select AI agents: OCI Autonomous Database, Database Inspect, and DBMS Scheduler Monitoring. Learners use the Agent Team selector on the Ask Oracle home page to inspect the schema, review scheduler health, and prepare Autonomous Database actions with human confirmation.
 
 Estimated Time: 60 minutes
 
@@ -22,7 +22,7 @@ In this lab, you will:
 * Grant Select AI package access to the `WINGMATE` schema
 * Run the bundled setup script for Security, Multicloud, and Compute Select AI profiles
 * Create a separate Doc Research RAG service for documentation-grounded answers
-* Create an AI Ops ADB Agent Team for Resource Analytics-informed database provisioning
+* Create a pre-built Select AI Agent Team for Autonomous Database operations, database inspection, and DBMS Scheduler monitoring
 * Import the prebuilt Ask Oracle APEX application that Labs 3 through 5 extend
 
 ### Prerequisites
@@ -313,13 +313,19 @@ The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Selec
 
     > **Troubleshooting:** `ORA-20001: Unable to load in-database embedding model` means the model import failed. Confirm Task 4 granted `EXECUTE` on `DBMS_VECTOR`, `CREATE MINING MODEL`, and `READ`/`WRITE` on `DATA_PUMP_DIR`. If you also see `WINGMATE_DOC_RESEARCH_VECTAB does not exist`, fix the vector index error first; that table is created only after the vector index is created.
 
-## Task 7: Create the AI Ops ADB Agent Team
+## Task 7: Create the Pre-built Select AI Agent Team
 
-The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WINGMATE_AI_OPS_ADB_AGENT_TEAM`. The team follows the Select AI Agent pattern of combining custom PL/SQL tools and a human confirmation step. It uses the `WINGMATE_MULTICLOUD` NL2SQL profile to inspect Resource Analytics and multicloud database inventory before it prepares a provisioning, scaling, or self-replication plan for Autonomous Database.
+This task installs Oracle pre-built Select AI Agent tool layers and creates a composite Wingmate Agent Team based on the practical Select AI Agent pattern. The team includes:
 
-1. Confirm that Task 5 completed and `WINGMATE_MULTICLOUD` exists. The AI Ops team uses that profile to query multicloud database inventory.
+* **OCI Autonomous Database AI Agent and Tools:** provisions, lists, starts, stops, restarts, scales, updates, and inspects Autonomous Database resources.
+* **Select AI Inspect - Database Inspection Tool:** inspects database objects, metadata, dependencies, PL/SQL code, and generated documentation for the `WINGMATE` schema.
+* **Select AI - DBMS Scheduler Monitoring Agent:** monitors local `USER_SCHEDULER_*` jobs, job history, failures, runtime, CPU/load correlation, and scheduler health.
 
-2. If you plan to test live provisioning, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous Databases in the target compartment.
+The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standalone sample teams, and the composite `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
+
+1. Confirm Tasks 5 and 6 completed. The pre-built team uses `WINGMATE_OCI_CRED` and the in-database embedding model `ALL_MINILM_L12_V2`.
+
+2. If you plan to test live Autonomous Database operations, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous Databases in the target compartment.
 
     ```text
     <copy>
@@ -327,82 +333,83 @@ The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WI
     </copy>
     ```
 
-    > **Note:** You can complete this lab task in dry-run mode without creating a new policy. Live provisioning requires the IAM policy and a temporary admin password supplied by the human operator.
+    > **Note:** You can complete this lab task without changing OCI resources. Live operations require the IAM policy and explicit human confirmation.
 
-3. In the extracted `wingmate_data` folder, open `sql/wingmate-ai-ops-adb-agent-team.sql`.
+3. In the extracted `wingmate_data/sql` folder, open `wingmate-prebuilt-select-ai-agent-tools.sql`.
 
-4. Replace the placeholders:
+4. Review `CONFIG_JSON`. The default uses `WINGMATE_OCI_CRED`; optionally add `"compartment_ocid":"<target_compartment_ocid>"` if you want the OCI Autonomous Database tools to persist a default compartment.
+
+5. Connect as `ADMIN` with SQLcl from the `wingmate_data/sql` folder and run the tool-layer installer.
+
+    ```sql
+    <copy>
+    @wingmate-prebuilt-select-ai-agent-tools.sql
+    </copy>
+    ```
+
+    The wrapper runs the three vendored Oracle sample tool scripts:
+
+    * `prebuilt-select-ai-agents/oci_autonomous_database_tools.sql`
+    * `prebuilt-select-ai-agents/database_inspect_tool.sql`
+    * `prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql`
+
+    > **SQL Workshop option:** If your SQL environment does not support `@@` relative includes, upload and run the three vendored tool scripts individually as `ADMIN`. Provide `SCHEMA_NAME` as `WINGMATE`. For `oci_autonomous_database_tools.sql`, use `CONFIG_JSON` similar to `{"credential_name":"WINGMATE_OCI_CRED","use_resource_principal":false}`.
+
+6. Connect as `WINGMATE` and open `sql/wingmate-prebuilt-select-ai-agent-team.sql`.
+
+7. Replace the placeholders:
 
     * `<genai_region>`: Subscribed OCI Generative AI region.
     * `<compartment_ocid>`: Compartment OCID used by OCI Generative AI.
     * `<oci_genai_chat_model_name_or_ocid>`: Approved chat model name or OCID (xai.grok-4.3).
-    * `<oci_tenancy_ocid>`: Tenancy OCID used to list subscribed regions.
-    * `<identity_home_region>`: Home region for OCI Identity, such as `us-ashburn-1`.
-    * `<adb_target_compartment_ocid>`: Compartment where the Agent Team should prepare ADB create requests.
 
-5. Connect as `WINGMATE` and run the script. The script creates:
+8. Run the script. The script creates:
 
-    * `WINGMATE_AI_OPS`
-    * `WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL`
-    * `WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL`
-    * `WINGMATE_PROVISION_ADB_TOOL`
-    * `WINGMATE_AI_OPS_ADB_AGENT_TEAM`
+    * `WINGMATE_PREBUILT_AGENT_PROFILE`
+    * `OCI_AUTONOMOUS_DATABASE_ADVISOR`, `OCI_AUTONOMOUS_DATABASE_TASKS`, and `OCI_AUTONOMOUS_DATABASE_TEAM`
+    * `INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM`, `INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM`, and `WINGMATE_DATABASE_INSPECT_TEAM`
+    * `SCHEDULER_MONITOR_ADVISOR`, `SCHEDULER_MONITOR_TASKS`, and `DBMS_SCHEDULER_MONITOR_TEAM`
+    * `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`
 
-6. Confirm the AI Ops profile and Agent Team are available.
+    > **Compatibility note:** `sql/wingmate-ai-ops-adb-agent-team.sql` is kept as a backward-compatible copy of this pre-built Agent Team script.
+
+9. Confirm the profile, agents, tasks, and teams are available.
 
     ```sql
     <copy>
     SELECT profile_name
     FROM user_cloud_ai_profiles
-    WHERE profile_name = 'WINGMATE_AI_OPS';
+    WHERE profile_name = 'WINGMATE_PREBUILT_AGENT_PROFILE';
 
-    DECLARE
-        l_agent_team_count NUMBER;
-    BEGIN
-        EXECUTE IMMEDIATE q'~
-            SELECT COUNT(*)
-            FROM user_ai_agent_teams
-            WHERE agent_team_name = 'WINGMATE_AI_OPS_ADB_AGENT_TEAM'
-        ~'
-        INTO l_agent_team_count;
+    SELECT agent_name, status
+    FROM user_ai_agents
+    WHERE agent_name IN (
+        'OCI_AUTONOMOUS_DATABASE_ADVISOR',
+        'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM',
+        'SCHEDULER_MONITOR_ADVISOR'
+    )
+    ORDER BY agent_name;
 
-        DBMS_OUTPUT.PUT_LINE('WINGMATE_AI_OPS_ADB_AGENT_TEAM rows: ' || l_agent_team_count);
-    EXCEPTION
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Agent Team validation skipped or unavailable: ' || SQLERRM);
-    END;
-    /
+    SELECT task_name, status
+    FROM user_ai_agent_task
+    WHERE task_name IN (
+        'OCI_AUTONOMOUS_DATABASE_TASKS',
+        'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM',
+        'SCHEDULER_MONITOR_TASKS'
+    )
+    ORDER BY task_name;
+
+    SELECT team_name, status
+    FROM user_ai_agent_teams
+    WHERE team_name IN (
+        'OCI_AUTONOMOUS_DATABASE_TEAM',
+        'WINGMATE_DATABASE_INSPECT_TEAM',
+        'DBMS_SCHEDULER_MONITOR_TEAM',
+        'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
+    )
+    ORDER BY team_name;
     </copy>
     ```
-
-7. Test the multicloud database advisor function. This confirms the AI Ops tool can use `WINGMATE_MULTICLOUD` to reason from Resource Analytics database data.
-
-    ```sql
-    <copy>
-    SELECT wingmate_multicloud_db_advisor(
-        'Based on the Exadata, VM cluster, CDB, and PDB inventory, recommend whether to provision or scale an Autonomous Database.'
-    ) AS database_advice
-    FROM dual;
-    </copy>
-    ```
-
-8. Test the provisioning function in dry-run mode.
-
-    ```sql
-    <copy>
-    SELECT wingmate_provision_adb_tool(
-        p_compartment_ocid => '<adb_target_compartment_ocid>',
-        p_region           => '<adb_region>',
-        p_db_name          => 'WINGLAB01',
-        p_display_name     => 'Wingmate Lab ADB Dry Run',
-        p_admin_password   => '<temporary_admin_password_for_live_execute>',
-        p_execute          => 'N'
-    ) AS dry_run
-    FROM dual;
-    </copy>
-    ```
-
-    > **Note:** The dry-run output redacts the password and returns the create request that would be submitted. Keep `p_execute` set to `N` unless you intentionally want to test live provisioning and have the required IAM policy.
 
 ## Task 8: Import the Ask Oracle APEX Application
 
@@ -446,7 +453,7 @@ The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WI
 
     > **Note:** This application is the target app for later labs. Keep track of the application name and ID assigned by APEX; Labs 3, 4, and 5 import one additional page into this same application.
 
-## Task 9: Validate Ask Oracle Profiles, Doc Research RAG, and AI Ops
+## Task 9: Validate Ask Oracle Profiles, Doc Research RAG, and Pre-built Agent Team
 
 1. Run the Ask Oracle application.
 
@@ -504,25 +511,31 @@ The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WI
     </copy>
     ```
 
-10. Open the Agent Team selector and confirm the team list includes `WINGMATE_AI_OPS_ADB_AGENT_TEAM`.
+10. Open the Agent Team selector and confirm the team list includes `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
 
-11. Select `WINGMATE_AI_OPS_ADB_AGENT_TEAM` and ask for a Resource Analytics-informed dry-run ADB provisioning plan:
+    You may also see the three standalone teams created by the script:
 
-    ```text
-    <copy>
-    Use Resource Analytics and multicloud database inventory to recommend a source pattern, list subscribed regions, and prepare a dry-run request to self-replicate a small OLTP Autonomous Database named WINGLAB01 in <adb_region>. Do not provision anything.
-    </copy>
-    ```
+    * `OCI_AUTONOMOUS_DATABASE_TEAM`
+    * `WINGMATE_DATABASE_INSPECT_TEAM`
+    * `DBMS_SCHEDULER_MONITOR_TEAM`
 
-12. Ask the Agent Team to prepare the human confirmation step:
+11. Select `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` and ask for a read-only inspection and monitoring summary:
 
     ```text
     <copy>
-    Prepare the live provisioning plan for WINGLAB01 and ask me for confirmation before creating anything.
+    Inspect the WINGMATE schema, summarize available DBMS Scheduler jobs, and recommend whether any Autonomous Database operation is needed. Do not change anything.
     </copy>
     ```
 
-    > **Note:** Stop at the confirmation step unless you intentionally want to test live provisioning and have the required IAM policy and temporary ADB admin password.
+12. Ask the Agent Team to prepare an Autonomous Database workflow without executing it:
+
+    ```text
+    <copy>
+    Help me provision a small OLTP Autonomous Database named WINGLAB01 in <adb_region>. Ask for any missing inputs and do not execute without explicit confirmation.
+    </copy>
+    ```
+
+    > **Note:** Stop at the confirmation step unless you intentionally want to test live operations and have the required IAM policy and temporary ADB admin password.
 
 13. If the NL2SQL profile dropdown is empty, confirm the profiles exist in `USER_CLOUD_AI_PROFILES` while connected as `WINGMATE`.
 
@@ -546,22 +559,15 @@ The AI Ops script creates a separate `WINGMATE_AI_OPS` Select AI profile and `WI
 
     ```sql
     <copy>
-    DECLARE
-        l_agent_team_count NUMBER;
-    BEGIN
-        EXECUTE IMMEDIATE q'~
-            SELECT COUNT(*)
-            FROM user_ai_agent_teams
-            WHERE agent_team_name = 'WINGMATE_AI_OPS_ADB_AGENT_TEAM'
-        ~'
-        INTO l_agent_team_count;
-
-        DBMS_OUTPUT.PUT_LINE('WINGMATE_AI_OPS_ADB_AGENT_TEAM rows: ' || l_agent_team_count);
-    EXCEPTION
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Agent Team validation skipped or unavailable: ' || SQLERRM);
-    END;
-    /
+    SELECT team_name, status
+    FROM user_ai_agent_teams
+    WHERE team_name IN (
+        'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM',
+        'OCI_AUTONOMOUS_DATABASE_TEAM',
+        'WINGMATE_DATABASE_INSPECT_TEAM',
+        'DBMS_SCHEDULER_MONITOR_TEAM'
+    )
+    ORDER BY team_name;
     </copy>
     ```
 
@@ -574,6 +580,7 @@ You may now **proceed to the next lab**.
 * [DBMS_CLOUD_AI Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-ai-package.html)
 * [DBMS_CLOUD_AI_AGENT Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/dbms-cloud-ai-agent-package.html)
 * [Build your agentic solution using Oracle ADB Select AI Agent](https://blogs.oracle.com/machinelearning/build-your-agentic-solution-using-oracle-adb-select-ai-agent)
+* [Oracle pre-built Select AI Agent samples](https://github.com/oracle-devrel/oracle-autonomous-database-samples/tree/main/autonomous-ai-agents)
 * [Manage User Access to Resource Analytics ADW](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/manage-user-access-adw.htm)
 * [Resource Analytics Compute Data Model Reference](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/reference-compute.htm)
 
