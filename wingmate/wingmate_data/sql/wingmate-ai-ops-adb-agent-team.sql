@@ -1,300 +1,75 @@
-set define off verify off feedback on serveroutput on
-prompt Wingmate AI Ops ADB Agent Team setup v2026-06-05
-prompt Creates an AI Ops tool that uses Resource Analytics multicloud data for dry-run-first ADB provisioning.
-prompt Run sql/wingmate-select-ai-profiles.sql first so WINGMATE_MULTICLOUD exists.
+rem ============================================================================
+rem NAME
+rem   wingmate-prebuilt-select-ai-agent-team.sql
+rem
+rem DESCRIPTION
+rem   Creates the Wingmate pre-built Select AI Agent Team using the Oracle sample
+rem   agents from:
+rem
+rem   https://github.com/oracle-devrel/oracle-autonomous-database-samples/tree/main/autonomous-ai-agents
+rem
+rem   The team is based on the practical note:
+rem   https://blogs.oracle.com/machinelearning/build-your-agentic-solution-using-oracle-adb-select-ai-agent
+rem
+rem AGENTS INCLUDED
+rem   Agent 1: OCI Autonomous Database AI Agent and Tools
+rem     Agent: OCI_AUTONOMOUS_DATABASE_ADVISOR
+rem     Task:  OCI_AUTONOMOUS_DATABASE_TASKS
+rem
+rem   Agent 2: Select AI Inspect - Database Inspection Tool
+rem     Agent: INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM
+rem     Task:  INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM
+rem
+rem   Agent 3: Select AI - DBMS Scheduler Monitoring Agent
+rem     Agent: SCHEDULER_MONITOR_ADVISOR
+rem     Task:  SCHEDULER_MONITOR_TASKS
+rem
+rem   Composite team:
+rem     WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM
+rem
+rem RUN ORDER
+rem   1. Run wingmate-select-ai-profiles.sql.
+rem   2. Run wingmate-doc-research-rag.sql so ALL_MINILM_L12_V2 is available.
+rem   3. Run wingmate-prebuilt-select-ai-agent-tools.sql as ADMIN, or run the
+rem      three vendored tool scripts manually as ADMIN with SCHEMA_NAME=WINGMATE.
+rem   4. Connect as WINGMATE and run this script.
+rem
+rem PARAMETERS TO EDIT
+rem   <genai_region>
+rem   <compartment_ocid>
+rem   <oci_genai_chat_model_name_or_ocid>
+rem ============================================================================
 
-CREATE OR REPLACE FUNCTION wingmate_list_subscribed_regions(
-    p_tenancy_ocid IN VARCHAR2 DEFAULT '<oci_tenancy_ocid>',
-    p_home_region  IN VARCHAR2 DEFAULT '<identity_home_region>'
-) RETURN CLOB
-AUTHID CURRENT_USER
-IS
-    l_result CLOB;
-BEGIN
-    IF p_tenancy_ocid IS NULL OR REGEXP_LIKE(p_tenancy_ocid, '^<[^>]+>$') THEN
-        RETURN JSON_OBJECT(
-            'status' VALUE 'missing_input',
-            'message' VALUE 'Provide the tenancy OCID before listing subscribed regions.'
-            RETURNING CLOB
-        );
-    END IF;
+SET DEFINE OFF
+SET VERIFY OFF
+SET SERVEROUTPUT ON
+WHENEVER SQLERROR EXIT SQL.SQLCODE ROLLBACK
 
-    IF p_home_region IS NULL OR REGEXP_LIKE(p_home_region, '^<[^>]+>$') THEN
-        RETURN JSON_OBJECT(
-            'status' VALUE 'missing_input',
-            'message' VALUE 'Provide an identity home region such as us-ashburn-1.'
-            RETURNING CLOB
-        );
-    END IF;
-
-    EXECUTE IMMEDIATE q'~
-        DECLARE
-            l_response dbms_cloud_oci_id_identity_list_region_subscriptions_response_t;
-            l_result   CLOB := '[';
-        BEGIN
-            l_response := dbms_cloud_oci_id_identity.list_region_subscriptions(
-                tenancy_id      => :b_tenancy_ocid,
-                region          => :b_home_region,
-                credential_name => 'WINGMATE_OCI_CRED'
-            );
-
-            IF l_response.response_body IS NOT NULL THEN
-                FOR i IN 1 .. l_response.response_body.COUNT LOOP
-                    IF i > 1 THEN
-                        l_result := l_result || ',';
-                    END IF;
-
-                    l_result := l_result || JSON_OBJECT(
-                        'region_key' VALUE l_response.response_body(i).region_key,
-                        'region_name' VALUE l_response.response_body(i).region_name,
-                        'status' VALUE l_response.response_body(i).status,
-                        'is_home_region' VALUE l_response.response_body(i).is_home_region
-                        RETURNING CLOB
-                    );
-                END LOOP;
-            END IF;
-
-            l_result := l_result || ']';
-            :b_result := l_result;
-        END;
-    ~'
-    USING IN p_tenancy_ocid, IN p_home_region, OUT l_result;
-
-    RETURN JSON_OBJECT(
-        'status' VALUE 'success',
-        'regions' VALUE l_result FORMAT JSON
-        RETURNING CLOB
-    );
-EXCEPTION
-    WHEN OTHERS THEN
-        RETURN JSON_OBJECT(
-            'status' VALUE 'error',
-            'message' VALUE SQLERRM,
-            'hint' VALUE 'Confirm WINGMATE_OCI_CRED, OCI PL/SQL SDK availability, and IAM permission to inspect region subscriptions.'
-            RETURNING CLOB
-        );
-END wingmate_list_subscribed_regions;
-/
-
-CREATE OR REPLACE FUNCTION wingmate_multicloud_db_advisor(
-    p_question IN VARCHAR2 DEFAULT 'Summarize the multicloud database inventory and recommend whether to provision or scale an Autonomous Database.'
-) RETURN CLOB
-AUTHID CURRENT_USER
-IS
-    l_prompt VARCHAR2(32767);
-    l_answer CLOB;
-BEGIN
-    l_prompt :=
-        NVL(
-            p_question,
-            'Summarize the multicloud database inventory and recommend whether to provision or scale an Autonomous Database.'
-        ) ||
-        CHR(10) ||
-        'Use the Resource Analytics and multicloud database objects available to the WINGMATE_MULTICLOUD profile. ' ||
-        'Focus on Exadata infrastructure, VM clusters, CDBs, PDBs, regions, multicloud placement, host insights, ' ||
-        'capacity signals, and a practical recommendation for provisioning, scaling, or replicating an Autonomous Database footprint.';
-
-    l_answer := DBMS_CLOUD_AI.GENERATE(
-        prompt       => l_prompt,
-        profile_name => 'WINGMATE_MULTICLOUD',
-        action       => 'narrate'
-    );
-
-    RETURN JSON_OBJECT(
-        'status' VALUE 'success',
-        'source_profile' VALUE 'WINGMATE_MULTICLOUD',
-        'question' VALUE SUBSTR(l_prompt, 1, 4000),
-        'answer' VALUE DBMS_LOB.SUBSTR(l_answer, 32000, 1)
-        RETURNING CLOB
-    );
-EXCEPTION
-    WHEN OTHERS THEN
-        RETURN JSON_OBJECT(
-            'status' VALUE 'error',
-            'source_profile' VALUE 'WINGMATE_MULTICLOUD',
-            'message' VALUE SQLERRM,
-            'hint' VALUE 'Confirm sql/wingmate-select-ai-profiles.sql ran successfully and WINGMATE_MULTICLOUD can query the database inventory objects.'
-            RETURNING CLOB
-        );
-END wingmate_multicloud_db_advisor;
-/
-
-CREATE OR REPLACE FUNCTION wingmate_provision_adb_tool(
-    p_compartment_ocid IN VARCHAR2 DEFAULT '<adb_target_compartment_ocid>',
-    p_region           IN VARCHAR2,
-    p_db_name          IN VARCHAR2,
-    p_display_name     IN VARCHAR2,
-    p_admin_password   IN VARCHAR2,
-    p_db_workload      IN VARCHAR2 DEFAULT 'OLTP',
-    p_compute_model    IN VARCHAR2 DEFAULT 'ECPU',
-    p_compute_count    IN NUMBER   DEFAULT 2,
-    p_cpu_core_count   IN NUMBER   DEFAULT NULL,
-    p_storage_tbs      IN NUMBER   DEFAULT 1,
-    p_license_model    IN VARCHAR2 DEFAULT 'LICENSE_INCLUDED',
-    p_free_tier        IN VARCHAR2 DEFAULT 'N',
-    p_auto_scaling     IN VARCHAR2 DEFAULT 'Y',
-    p_execute          IN VARCHAR2 DEFAULT 'N'
-) RETURN CLOB
-AUTHID CURRENT_USER
-IS
-    l_execute           BOOLEAN := UPPER(NVL(p_execute, 'N')) IN ('Y', 'YES', 'TRUE');
-    l_db_workload       VARCHAR2(32) := UPPER(NVL(p_db_workload, 'OLTP'));
-    l_compute_model     VARCHAR2(32) := UPPER(NVL(p_compute_model, 'ECPU'));
-    l_license_model     VARCHAR2(64) := UPPER(NVL(p_license_model, 'LICENSE_INCLUDED'));
-    l_free_tier_flag    NUMBER := CASE WHEN UPPER(NVL(p_free_tier, 'N')) IN ('Y', 'YES', 'TRUE') THEN 1 ELSE 0 END;
-    l_auto_scaling_flag NUMBER := CASE WHEN UPPER(NVL(p_auto_scaling, 'Y')) IN ('Y', 'YES', 'TRUE') THEN 1 ELSE 0 END;
-    l_compute_count     NUMBER := NVL(p_compute_count, 2);
-    l_storage_tbs       NUMBER := NVL(p_storage_tbs, 1);
-    l_result            CLOB;
-
-    PROCEDURE assert_value(
-        p_condition IN BOOLEAN,
-        p_message   IN VARCHAR2
-    ) IS
-    BEGIN
-        IF NOT p_condition THEN
-            RAISE_APPLICATION_ERROR(-20000, p_message);
-        END IF;
-    END assert_value;
-BEGIN
-    assert_value(p_compartment_ocid IS NOT NULL AND NOT REGEXP_LIKE(p_compartment_ocid, '^<[^>]+>$'), 'Provide the target compartment OCID.');
-    assert_value(p_region IS NOT NULL, 'Provide the OCI region name.');
-    assert_value(p_db_name IS NOT NULL, 'Provide an ADB database name.');
-    assert_value(REGEXP_LIKE(UPPER(p_db_name), '^[A-Z][A-Z0-9]{1,13}$'), 'Use an ADB database name that starts with a letter and is 2-14 alphanumeric characters.');
-    assert_value(p_display_name IS NOT NULL, 'Provide a display name.');
-    assert_value(p_admin_password IS NOT NULL, 'Provide an admin password. The tool never returns it.');
-    assert_value(l_db_workload IN ('OLTP', 'DW', 'AJD', 'APEX'), 'Use db workload OLTP, DW, AJD, or APEX.');
-    assert_value(l_compute_model IN ('ECPU', 'OCPU'), 'Use compute model ECPU or OCPU.');
-    assert_value(l_compute_count >= 1, 'Compute count must be at least 1.');
-    assert_value(l_storage_tbs >= 1, 'Storage must be at least 1 TB.');
-    assert_value(l_license_model IN ('LICENSE_INCLUDED', 'BRING_YOUR_OWN_LICENSE'), 'Use LICENSE_INCLUDED or BRING_YOUR_OWN_LICENSE.');
-
-    IF NOT l_execute THEN
-        RETURN JSON_OBJECT(
-            'mode' VALUE 'dry-run',
-            'message' VALUE 'No Autonomous Database was created. Review the request and call again with p_execute = Y only after explicit human confirmation.',
-            'request' VALUE JSON_OBJECT(
-                'compartment_ocid' VALUE p_compartment_ocid,
-                'region' VALUE p_region,
-                'db_name' VALUE UPPER(p_db_name),
-                'display_name' VALUE p_display_name,
-                'admin_password' VALUE '[redacted]',
-                'db_workload' VALUE l_db_workload,
-                'compute_model' VALUE l_compute_model,
-                'compute_count' VALUE l_compute_count,
-                'cpu_core_count' VALUE p_cpu_core_count,
-                'storage_tbs' VALUE l_storage_tbs,
-                'license_model' VALUE l_license_model,
-                'free_tier' VALUE l_free_tier_flag,
-                'auto_scaling' VALUE l_auto_scaling_flag
-            )
-            RETURNING CLOB
-        );
-    END IF;
-
-    EXECUTE IMMEDIATE q'~
-        DECLARE
-            l_details          dbms_cloud_oci_database_create_autonomous_database_base_t;
-            l_response         dbms_cloud_oci_db_database_create_autonomous_database_response_t;
-            l_compute_model    VARCHAR2(32);
-            l_compute_count    NUMBER;
-            l_cpu_core_count   NUMBER;
-        BEGIN
-            l_compute_model := :b_compute_model;
-            l_compute_count := :b_compute_count;
-            l_cpu_core_count := :b_cpu_core_count;
-
-            l_details := dbms_cloud_oci_database_create_autonomous_database_base_t();
-            l_details.compartment_id := :b_compartment_ocid;
-            l_details.db_name := :b_db_name;
-            l_details.display_name := :b_display_name;
-            l_details.admin_password := :b_admin_password;
-            l_details.db_workload := :b_db_workload;
-            l_details.data_storage_size_in_t_bs := :b_storage_tbs;
-            l_details.license_model := :b_license_model;
-            l_details.is_free_tier := :b_free_tier_flag;
-            l_details.is_auto_scaling_enabled := :b_auto_scaling_flag;
-
-            IF l_compute_model = 'ECPU' THEN
-                l_details.compute_model := 'ECPU';
-                l_details.compute_count := l_compute_count;
-            ELSE
-                l_details.cpu_core_count := NVL(l_cpu_core_count, l_compute_count);
-            END IF;
-
-            l_response := dbms_cloud_oci_db_database.create_autonomous_database(
-                create_autonomous_database_details => l_details,
-                opc_retry_token                    => RAWTOHEX(SYS_GUID()),
-                region                             => :b_region,
-                credential_name                    => 'WINGMATE_OCI_CRED'
-            );
-
-            IF l_response.response_body IS NULL THEN
-                :b_result := JSON_OBJECT(
-                    'status' VALUE 'submitted',
-                    'http_status' VALUE l_response.status_code,
-                    'message' VALUE 'Create request submitted. No response body was returned.'
-                    RETURNING CLOB
-                );
-            ELSE
-                :b_result := JSON_OBJECT(
-                    'status' VALUE 'submitted',
-                    'http_status' VALUE l_response.status_code,
-                    'id' VALUE l_response.response_body.id,
-                    'db_name' VALUE l_response.response_body.db_name,
-                    'display_name' VALUE l_response.response_body.display_name,
-                    'lifecycle_state' VALUE l_response.response_body.lifecycle_state
-                    RETURNING CLOB
-                );
-            END IF;
-        END;
-    ~'
-    USING
-        IN l_compute_model,
-        IN l_compute_count,
-        IN p_cpu_core_count,
-        IN p_compartment_ocid,
-        IN UPPER(p_db_name),
-        IN p_display_name,
-        IN p_admin_password,
-        IN l_db_workload,
-        IN l_storage_tbs,
-        IN l_license_model,
-        IN l_free_tier_flag,
-        IN l_auto_scaling_flag,
-        IN p_region,
-        OUT l_result;
-
-    RETURN l_result;
-EXCEPTION
-    WHEN OTHERS THEN
-        RETURN JSON_OBJECT(
-            'status' VALUE 'error',
-            'message' VALUE SQLERRM,
-            'hint' VALUE 'Dry-run mode requires only the function. Live provisioning also requires OCI PL/SQL SDK availability and IAM permission to manage autonomous-database-family in the target compartment.'
-            RETURNING CLOB
-        );
-END wingmate_provision_adb_tool;
-/
+PROMPT Creating Wingmate pre-built Select AI Agent Team.
 
 DECLARE
-    c_ai_ops_profile_name         CONSTANT VARCHAR2(128)  := 'WINGMATE_AI_OPS';
-    c_multicloud_profile_name     CONSTANT VARCHAR2(128)  := 'WINGMATE_MULTICLOUD';
-    c_inventory_tool_name         CONSTANT VARCHAR2(128)  := 'WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL';
-    c_region_tool_name            CONSTANT VARCHAR2(128)  := 'WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL';
-    c_provision_tool_name         CONSTANT VARCHAR2(128)  := 'WINGMATE_PROVISION_ADB_TOOL';
-    c_agent_name                  CONSTANT VARCHAR2(128)  := 'WINGMATE_AI_OPS_ADB_AGENT';
-    c_task_name                   CONSTANT VARCHAR2(128)  := 'WINGMATE_AI_OPS_ADB_TASK';
-    c_team_name                   CONSTANT VARCHAR2(128)  := 'WINGMATE_AI_OPS_ADB_AGENT_TEAM';
-    c_genai_region                CONSTANT VARCHAR2(256)  := '<genai_region>';
-    c_compartment_ocid            CONSTANT VARCHAR2(1024) := '<compartment_ocid>';
-    c_chat_model                  CONSTANT VARCHAR2(1024) := '<oci_genai_chat_model_name_or_ocid>';
-    c_tenancy_ocid                CONSTANT VARCHAR2(1024) := '<oci_tenancy_ocid>';
-    c_identity_home_region        CONSTANT VARCHAR2(256)  := '<identity_home_region>';
-    c_adb_target_compartment_ocid CONSTANT VARCHAR2(1024) := '<adb_target_compartment_ocid>';
+    c_schema_name                  CONSTANT VARCHAR2(128)  := 'WINGMATE';
+    c_profile_name                 CONSTANT VARCHAR2(128)  := 'WINGMATE_PREBUILT_AGENT_PROFILE';
+    c_genai_region                 CONSTANT VARCHAR2(256)  := '<genai_region>';
+    c_compartment_ocid             CONSTANT VARCHAR2(1024) := '<compartment_ocid>';
+    c_chat_model                   CONSTANT VARCHAR2(1024) := '<oci_genai_chat_model_name_or_ocid>';
+    c_embedding_model              CONSTANT VARCHAR2(128)  := 'ALL_MINILM_L12_V2';
+    c_inspect_team_name            CONSTANT VARCHAR2(128)  := 'WINGMATE_DATABASE_INSPECT_TEAM';
+    c_scheduler_target_owner       CONSTANT VARCHAR2(128)  := 'WINGMATE';
+    c_composite_team_name          CONSTANT VARCHAR2(128)  := 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM';
+    c_oci_agent_name               CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_ADVISOR';
+    c_oci_task_name                CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_TASKS';
+    c_oci_team_name                CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_TEAM';
+    c_inspect_agent_name           CONSTANT VARCHAR2(128)  := 'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM';
+    c_inspect_task_name            CONSTANT VARCHAR2(128)  := 'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM';
+    c_scheduler_agent_name         CONSTANT VARCHAR2(128)  := 'SCHEDULER_MONITOR_ADVISOR';
+    c_scheduler_task_name          CONSTANT VARCHAR2(128)  := 'SCHEDULER_MONITOR_TASKS';
+    c_scheduler_team_name          CONSTANT VARCHAR2(128)  := 'DBMS_SCHEDULER_MONITOR_TEAM';
 
-    l_profile_attributes          CLOB;
-    l_count                       NUMBER;
+    l_profile_attributes           CLOB;
+    l_inspect_attributes           CLOB;
+    l_scheduler_target_owner       VARCHAR2(128);
+    l_count                        NUMBER;
 
     PROCEDURE assert_replaced(
         p_value IN VARCHAR2,
@@ -306,36 +81,268 @@ DECLARE
         END IF;
     END assert_replaced;
 
-    PROCEDURE run_agent_ddl(
-        p_block IN CLOB
+    PROCEDURE assert_package_valid(
+        p_package_name IN VARCHAR2,
+        p_script_name  IN VARCHAR2
     ) IS
     BEGIN
-        EXECUTE IMMEDIATE p_block;
+        SELECT COUNT(*)
+        INTO l_count
+        FROM user_objects
+        WHERE object_name = UPPER(p_package_name)
+          AND object_type IN ('PACKAGE', 'PACKAGE BODY')
+          AND status = 'VALID';
+
+        IF l_count < 2 THEN
+            RAISE_APPLICATION_ERROR(
+                -20001,
+                'Missing or invalid package ' || p_package_name ||
+                '. Run ' || p_script_name || ' first.'
+            );
+        END IF;
+    END assert_package_valid;
+
+    PROCEDURE assert_tool_exists(
+        p_tool_name IN VARCHAR2,
+        p_script_name IN VARCHAR2
+    ) IS
+    BEGIN
+        SELECT COUNT(*)
+        INTO l_count
+        FROM user_ai_agent_tools
+        WHERE tool_name = UPPER(p_tool_name);
+
+        IF l_count = 0 THEN
+            RAISE_APPLICATION_ERROR(
+                -20002,
+                'Missing Select AI Agent tool ' || p_tool_name ||
+                '. Run ' || p_script_name || ' first.'
+            );
+        END IF;
+    END assert_tool_exists;
+
+    PROCEDURE drop_team_if_exists(
+        p_team_name IN VARCHAR2
+    ) IS
+    BEGIN
+        DBMS_CLOUD_AI_AGENT.DROP_TEAM(p_team_name, TRUE);
     EXCEPTION
         WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Agent DDL skipped or failed: ' || SQLERRM);
-            RAISE;
-    END run_agent_ddl;
+            NULL;
+    END drop_team_if_exists;
+
+    PROCEDURE drop_agent_if_exists(
+        p_agent_name IN VARCHAR2
+    ) IS
+    BEGIN
+        DBMS_CLOUD_AI_AGENT.DROP_AGENT(p_agent_name, TRUE);
+    EXCEPTION
+        WHEN OTHERS THEN
+            NULL;
+    END drop_agent_if_exists;
+
+    PROCEDURE drop_task_if_exists(
+        p_task_name IN VARCHAR2
+    ) IS
+    BEGIN
+        DBMS_CLOUD_AI_AGENT.DROP_TASK(p_task_name, TRUE);
+    EXCEPTION
+        WHEN OTHERS THEN
+            NULL;
+    END drop_task_if_exists;
+
+    PROCEDURE create_oci_autonomous_database_agent IS
+    BEGIN
+        drop_team_if_exists(c_oci_team_name);
+        drop_agent_if_exists(c_oci_agent_name);
+        drop_task_if_exists(c_oci_task_name);
+
+        DBMS_CLOUD_AI_AGENT.CREATE_TASK(
+            task_name   => c_oci_task_name,
+            description => 'Task for provisioning and managing OCI Autonomous Databases.',
+            attributes  => q'~{
+              "instruction": "Identify the intent of the user request and determine the correct Autonomous Database operation. Prompt the user only for necessary missing details. Ask clarifying questions if intent is ambiguous. When presenting any list, object, or JSON structure to the user, format it in a human-readable way. Confirm destructive actions before execution. User request: {query}",
+              "tools": [
+                "LIST_SUBSCRIBED_REGIONS_TOOL",
+                "LIST_COMPARTMENTS_TOOL",
+                "GET_COMPARTMENT_OCID_BY_NAME_TOOL",
+                "LIST_AUTONOMOUS_DATABASES_TOOL",
+                "GET_AUTONOMOUS_DATABASE_DETAILS_TOOL",
+                "ADBS_PROVISIONING_TOOL",
+                "ADBS_UNPROVISION_TOOL",
+                "START_AUTONOMOUS_DATABASE_TOOL",
+                "STOP_AUTONOMOUS_DATABASE_TOOL",
+                "DATABASE_RESTART_TOOL",
+                "MANAGE_AUTONOMOUS_DB_POWER_TOOL",
+                "UPDATE_AUTONOMOUS_DB_RESOURCES_TOOL",
+                "GET_MAINTENANCE_RUN_HISTORY_TOOL",
+                "UPDATE_AUTONOMOUS_DATABASE_TOOL",
+                "LIST_KEY_STORES_TOOL",
+                "LIST_DB_HOMES_TOOL",
+                "SHRINK_AUTONOMOUS_DATABASE_TOOL",
+                "DELETE_KEY_STORE_TOOL",
+                "LIST_ACDS_TOOL",
+                "LIST_ADB_BACKUPS_TOOL"
+              ],
+              "enable_human_tool": "true"
+            }~'
+        );
+
+        DBMS_CLOUD_AI_AGENT.CREATE_AGENT(
+            agent_name  => c_oci_agent_name,
+            attributes  =>
+                '{"profile_name":"' || c_profile_name || '",' ||
+                '"role":"You are an OCI Autonomous Database Advisor. You help users provision, list, start/stop/restart, resize, update configuration, and inspect ADB-related resources safely. You confirm destructive actions and present results clearly."' ||
+                '}',
+            description => 'AI agent for advising and automating OCI Autonomous Database operations'
+        );
+
+        DBMS_CLOUD_AI_AGENT.CREATE_TEAM(
+            team_name   => c_oci_team_name,
+            description => 'Oracle sample OCI Autonomous Database AI Agent team.',
+            attributes  => '{"agents":[{"name":"' || c_oci_agent_name || '","task":"' || c_oci_task_name || '"}],"process":"sequential"}'
+        );
+    END create_oci_autonomous_database_agent;
+
+    PROCEDURE create_database_inspect_agent IS
+    BEGIN
+        BEGIN
+            DATABASE_INSPECT.DROP_INSPECT_AGENT_TEAM(
+                agent_team_name => c_inspect_team_name,
+                force           => TRUE
+            );
+        EXCEPTION
+            WHEN OTHERS THEN
+                NULL;
+        END;
+
+        l_inspect_attributes :=
+            '{"profile_name":"' || c_profile_name ||
+            '","object_list":[{"owner":"' || c_schema_name ||
+            '","type":"schema"}],"match_limit":10}';
+
+        DATABASE_INSPECT.CREATE_INSPECT_AGENT_TEAM(
+            agent_team_name => c_inspect_team_name,
+            attributes      => l_inspect_attributes
+        );
+    END create_database_inspect_agent;
+
+    PROCEDURE create_scheduler_monitor_agent IS
+        l_task_attributes CLOB;
+    BEGIN
+        drop_team_if_exists(c_scheduler_team_name);
+        drop_agent_if_exists(c_scheduler_agent_name);
+        drop_task_if_exists(c_scheduler_task_name);
+
+        l_scheduler_target_owner := UPPER(TRIM(NVL(c_scheduler_target_owner, c_schema_name)));
+        l_task_attributes :=
+            '{"instruction": "You are an Oracle DBMS_SCHEDULER monitoring expert. ' ||
+            'Default owner label is ' || l_scheduler_target_owner || ' when owner is omitted. ' ||
+            'This agent monitors USER_SCHEDULER_* objects in the install schema (local schema scope). ' ||
+            'For schema-wide requests, auto-discover local jobs from USER_SCHEDULER metadata and do not ask users to provide object lists. ' ||
+            'When user asks how many jobs or all job details, call LIST_ALL_JOBS_TOOL first and answer with count plus detailed rows. ' ||
+            'If user asks for full list of jobs, return the complete job-name list from LIST_ALL_JOBS_TOOL rows (not a sample). ' ||
+            'Do not show sample tables unless user explicitly asks for sample/top-N. ' ||
+            'Never use ellipsis like dot-dot-dot (N more jobs) for full-list requests. ' ||
+            'For full-list table requests, output every row from LIST_ALL_JOBS_TOOL rows. ' ||
+            'If output is too large for one response, paginate deterministically as Page 1, Page 2, ... with fixed row ranges until all rows are shown. ' ||
+            'Do not infer total jobs from job history or running jobs when LIST_ALL_JOBS_TOOL is available. ' ||
+            'If user mentions another schema name, explain this agent is local-schema scoped (USER_SCHEDULER_*), then continue using current schema data unless cross-schema support is explicitly added. ' ||
+            'Always return: executive summary, detailed tables, chart section, diagnostics, and recommendations. ' ||
+            'For any relative date/time request (today, yesterday, last day, previous day, last week), call GET_DATABASE_CURRENT_TIME_TOOL first and derive interval boundaries from database time, not model time. ' ||
+            'Use LIST_RUNNING_JOBS_TOOL for running jobs. ' ||
+            'Use LIST_JOB_HISTORY_TOOL for historical interval analysis with success/failure and p95 metrics. ' ||
+            'Use GET_JOB_DETAILS_TOOL for selected job metadata, args, schedule/program details, and recent run diagnostics. ' ||
+            'Use ANALYZE_CPU_BY_JOB_TOOL and ANALYZE_LOAD_BY_JOB_TOOL for CPU and load correlation. ' ||
+            'Use COMPARE_JOBS_TOOL when user asks comparison. ' ||
+            'Use IDENTIFY_HOTSPOTS_TOOL for contention and overlap hotspots. ' ||
+            'Use DETECT_FAILURES_TOOL for recurring failures and error patterns. ' ||
+            'Use SUMMARIZE_SCHEDULER_HEALTH_TOOL for fleet overview. ' ||
+            'Use GENERATE_CHARTS_TOOL for chart-ready output. ' ||
+            'Use EXPORT_TABLES_TOOL for exportable table payloads. ' ||
+            'Clearly label correlations as exact or inferred and include confidence level; do not overstate weak attribution. ' ||
+            'If performance views are unavailable, say so and provide nearest proxy metrics. ' ||
+            'User request: {query}",' ||
+            '"tools": [' ||
+            '"GET_DATABASE_CURRENT_TIME_TOOL",' ||
+            '"LIST_ALL_JOBS_TOOL",' ||
+            '"LIST_RUNNING_JOBS_TOOL",' ||
+            '"LIST_JOB_HISTORY_TOOL",' ||
+            '"GET_JOB_DETAILS_TOOL",' ||
+            '"ANALYZE_CPU_BY_JOB_TOOL",' ||
+            '"ANALYZE_LOAD_BY_JOB_TOOL",' ||
+            '"COMPARE_JOBS_TOOL",' ||
+            '"IDENTIFY_HOTSPOTS_TOOL",' ||
+            '"DETECT_FAILURES_TOOL",' ||
+            '"SUMMARIZE_SCHEDULER_HEALTH_TOOL",' ||
+            '"GENERATE_CHARTS_TOOL",' ||
+            '"EXPORT_TABLES_TOOL"],' ||
+            '"enable_human_tool": "true"}';
+
+        DBMS_CLOUD_AI_AGENT.CREATE_TASK(
+            task_name   => c_scheduler_task_name,
+            description => 'Task for Oracle DBMS_SCHEDULER monitoring, history, and CPU/load analysis',
+            attributes  => l_task_attributes
+        );
+
+        DBMS_CLOUD_AI_AGENT.CREATE_AGENT(
+            agent_name  => c_scheduler_agent_name,
+            attributes  =>
+                '{"profile_name":"' || c_profile_name || '",' ||
+                '"role":"You are a senior Oracle scheduler operations and performance advisor. You diagnose running and historical scheduler behavior, correlate workload with CPU/load, and provide actionable operational recommendations."' ||
+                '}',
+            description => 'AI agent for DBMS_SCHEDULER monitoring and performance diagnostics'
+        );
+
+        DBMS_CLOUD_AI_AGENT.CREATE_TEAM(
+            team_name   => c_scheduler_team_name,
+            description => 'Oracle sample DBMS Scheduler Monitoring Agent team.',
+            attributes  => '{"agents":[{"name":"' || c_scheduler_agent_name || '","task":"' || c_scheduler_task_name || '"}],"process":"sequential"}'
+        );
+    END create_scheduler_monitor_agent;
+
+    PROCEDURE create_composite_team IS
+    BEGIN
+        drop_team_if_exists(c_composite_team_name);
+
+        DBMS_CLOUD_AI_AGENT.CREATE_TEAM(
+            team_name   => c_composite_team_name,
+            description => 'Wingmate composite team for OCI ADB operations, database inspection, and scheduler monitoring.',
+            attributes  =>
+                '{"agents":[' ||
+                '{"name":"' || c_oci_agent_name || '","task":"' || c_oci_task_name || '"},' ||
+                '{"name":"' || c_inspect_agent_name || '","task":"' || c_inspect_task_name || '"},' ||
+                '{"name":"' || c_scheduler_agent_name || '","task":"' || c_scheduler_task_name || '"}' ||
+                '],"process":"sequential"}'
+        );
+    END create_composite_team;
 BEGIN
     assert_replaced(c_genai_region, '<genai_region>');
     assert_replaced(c_compartment_ocid, '<compartment_ocid>');
     assert_replaced(c_chat_model, '<oci_genai_chat_model_name_or_ocid>');
-    assert_replaced(c_tenancy_ocid, '<oci_tenancy_ocid>');
-    assert_replaced(c_identity_home_region, '<identity_home_region>');
-    assert_replaced(c_adb_target_compartment_ocid, '<adb_target_compartment_ocid>');
 
     SELECT COUNT(*)
     INTO l_count
-    FROM user_cloud_ai_profiles
-    WHERE profile_name = c_multicloud_profile_name;
+    FROM user_mining_models
+    WHERE model_name = c_embedding_model;
 
     IF l_count = 0 THEN
         RAISE_APPLICATION_ERROR(
-            -20002,
-            'Run wingmate-select-ai-profiles.sql first. Missing profile ' ||
-            c_multicloud_profile_name || '.'
+            -20003,
+            'Missing embedding model ' || c_embedding_model ||
+            '. Run wingmate-doc-research-rag.sql first or load the model before creating the Database Inspect agent.'
         );
     END IF;
+
+    assert_package_valid('OCI_AUTONOMOUS_DATABASE_AGENTS', 'prebuilt-select-ai-agents/oci_autonomous_database_tools.sql');
+    assert_package_valid('DATABASE_INSPECT', 'prebuilt-select-ai-agents/database_inspect_tool.sql');
+    assert_package_valid('SCHEDULER_MONITORING', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
+    assert_package_valid('SELECT_AI_SCHEDULER_MONITOR', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
+
+    assert_tool_exists('LIST_SUBSCRIBED_REGIONS_TOOL', 'prebuilt-select-ai-agents/oci_autonomous_database_tools.sql');
+    assert_tool_exists('ADBS_PROVISIONING_TOOL', 'prebuilt-select-ai-agents/oci_autonomous_database_tools.sql');
+    assert_tool_exists('LIST_ALL_JOBS_TOOL', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
+    assert_tool_exists('GET_DATABASE_CURRENT_TIME_TOOL', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
 
     l_profile_attributes := JSON_OBJECT(
         'provider' VALUE 'oci',
@@ -343,25 +350,15 @@ BEGIN
         'region' VALUE c_genai_region,
         'oci_compartment_id' VALUE c_compartment_ocid,
         'model' VALUE c_chat_model,
+        'embedding_model' VALUE 'database: ' || c_embedding_model,
         'temperature' VALUE 0,
         'comments' VALUE 'true' FORMAT JSON
+        RETURNING CLOB
     );
 
     BEGIN
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_TEAM(team_name => 'WINGMATE_AI_OPS_ADB_AGENT_TEAM', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_TASK(task_name => 'WINGMATE_AI_OPS_ADB_TASK', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_AGENT(agent_name => 'WINGMATE_AI_OPS_ADB_AGENT', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_TOOL(tool_name => 'WINGMATE_PROVISION_ADB_TOOL', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_TOOL(tool_name => 'WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-        EXECUTE IMMEDIATE q'~BEGIN DBMS_CLOUD_AI_AGENT.DROP_TOOL(tool_name => 'WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL', force => TRUE); EXCEPTION WHEN OTHERS THEN NULL; END;~';
-    EXCEPTION
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Agent cleanup skipped or partially completed: ' || SQLERRM);
-    END;
-
-    BEGIN
         DBMS_CLOUD_AI.DROP_PROFILE(
-            profile_name => c_ai_ops_profile_name,
+            profile_name => c_profile_name,
             force        => TRUE
         );
     EXCEPTION
@@ -370,92 +367,61 @@ BEGIN
     END;
 
     DBMS_CLOUD_AI.CREATE_PROFILE(
-        profile_name => c_ai_ops_profile_name,
-        description  => 'AI Ops profile for Wingmate Autonomous Database provisioning agents.',
+        profile_name => c_profile_name,
+        description  => 'Wingmate profile for pre-built Select AI Agent teams.',
         attributes   => l_profile_attributes
     );
 
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_TOOL(
-                tool_name   => 'WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL',
-                description => 'Uses the WINGMATE_MULTICLOUD NL2SQL profile to summarize Resource Analytics database inventory for provisioning and scaling decisions.',
-                attributes  => '{"instruction":"Use Resource Analytics and multicloud database inventory to make an informed provisioning, scaling, or replication recommendation before preparing an ADB request.","function":"WINGMATE_MULTICLOUD_DB_ADVISOR"}'
-            );
-        END;
-    ~');
+    create_oci_autonomous_database_agent;
+    create_database_inspect_agent;
+    create_scheduler_monitor_agent;
+    create_composite_team;
 
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_TOOL(
-                tool_name   => 'WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL',
-                description => 'Lists OCI regions subscribed by the tenancy.',
-                attributes  => '{"instruction":"List OCI subscribed regions before recommending where to create an Autonomous Database. Use the default tenancy and home region values unless the user supplies different values.","function":"WINGMATE_LIST_SUBSCRIBED_REGIONS"}'
-            );
-        END;
-    ~');
-
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_TOOL(
-                tool_name   => 'WINGMATE_PROVISION_ADB_TOOL',
-                description => 'Prepares or submits Autonomous Database create requests. Dry-run is the default.',
-                attributes  => '{"instruction":"Prepare an Autonomous Database provisioning request. Always call this tool first with p_execute set to N for dry-run. Call it with p_execute set to Y only after the human explicitly confirms the summarized request.","function":"WINGMATE_PROVISION_ADB_TOOL"}'
-            );
-        END;
-    ~');
-
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_AGENT(
-                agent_name  => 'WINGMATE_AI_OPS_ADB_AGENT',
-                description => 'AI Ops agent for Resource Analytics-informed Autonomous Database provisioning workflows.',
-                attributes  => '{"profile_name":"WINGMATE_AI_OPS","role":"You are the Wingmate AI Ops Autonomous Database provisioning agent. Use the multicloud database advisor tool to inspect Resource Analytics database inventory before recommending provisioning, scaling, or replication. List subscribed regions before choosing a target region. Build a dry-run request first, summarize it, and require explicit human confirmation before any live provisioning. Never invent or reveal admin passwords; ask the user for a temporary password only when live provisioning is requested.","enable_human_tool":true}'
-            );
-        END;
-    ~');
-
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_TASK(
-                task_name   => 'WINGMATE_AI_OPS_ADB_TASK',
-                description => 'Inspect Resource Analytics database inventory, plan ADB provisioning or scaling, and provision only after human confirmation.',
-                attributes  => '{"instruction":"Handle the user request: {query}. Use WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL to inspect Resource Analytics and multicloud database inventory. Use WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL to confirm available OCI regions. Use WINGMATE_PROVISION_ADB_TOOL with p_execute=N to produce a dry-run request for provisioning or self-replicating an Autonomous Database footprint from natural language. If the user requests live provisioning, summarize every setting and use HUMAN for explicit confirmation before calling WINGMATE_PROVISION_ADB_TOOL with p_execute=Y.","tools":["WINGMATE_MULTICLOUD_DB_ADVISOR_TOOL","WINGMATE_LIST_SUBSCRIBED_REGIONS_TOOL","WINGMATE_PROVISION_ADB_TOOL","HUMAN"]}'
-            );
-        END;
-    ~');
-
-    run_agent_ddl(q'~
-        BEGIN
-            DBMS_CLOUD_AI_AGENT.CREATE_TEAM(
-                team_name   => 'WINGMATE_AI_OPS_ADB_AGENT_TEAM',
-                description => 'Wingmate AI Ops Agent Team for Resource Analytics-informed Autonomous Database provisioning.',
-                attributes  => '{"agents":[{"name":"WINGMATE_AI_OPS_ADB_AGENT","task":"WINGMATE_AI_OPS_ADB_TASK"}],"process":"sequential"}'
-            );
-        END;
-    ~');
-
-    DBMS_OUTPUT.PUT_LINE('Created profile ' || c_ai_ops_profile_name || '.');
-    DBMS_OUTPUT.PUT_LINE('Created Agent Team ' || c_team_name || '.');
-    DBMS_OUTPUT.PUT_LINE('Default tenancy OCID for region tool: ' || c_tenancy_ocid);
-    DBMS_OUTPUT.PUT_LINE('Default identity home region for region tool: ' || c_identity_home_region);
-    DBMS_OUTPUT.PUT_LINE('Default ADB target compartment: ' || c_adb_target_compartment_ocid);
+    DBMS_OUTPUT.PUT_LINE('Created profile ' || c_profile_name || '.');
+    DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_oci_team_name || '.');
+    DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_inspect_team_name || '.');
+    DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_scheduler_team_name || '.');
+    DBMS_OUTPUT.PUT_LINE('Created composite team ' || c_composite_team_name || '.');
 END;
 /
 
-DECLARE
-    l_agent_team_count NUMBER;
-BEGIN
-    EXECUTE IMMEDIATE q'~
-        SELECT COUNT(*)
-        FROM user_ai_agent_teams
-        WHERE agent_team_name = 'WINGMATE_AI_OPS_ADB_AGENT_TEAM'
-    ~'
-    INTO l_agent_team_count;
+PROMPT Verifying pre-built Select AI agents, tasks, and teams.
 
-    DBMS_OUTPUT.PUT_LINE('WINGMATE_AI_OPS_ADB_AGENT_TEAM rows: ' || l_agent_team_count);
-EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Agent Team validation skipped or unavailable: ' || SQLERRM);
-END;
-/
+COLUMN agent_name FORMAT A48
+COLUMN task_name FORMAT A48
+COLUMN team_name FORMAT A48
+COLUMN status FORMAT A12
+
+SELECT agent_name, status
+FROM user_ai_agents
+WHERE agent_name IN (
+    'OCI_AUTONOMOUS_DATABASE_ADVISOR',
+    'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM',
+    'SCHEDULER_MONITOR_ADVISOR'
+)
+ORDER BY agent_name;
+
+SELECT task_name, status
+FROM user_ai_agent_task
+WHERE task_name IN (
+    'OCI_AUTONOMOUS_DATABASE_TASKS',
+    'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM',
+    'SCHEDULER_MONITOR_TASKS'
+)
+ORDER BY task_name;
+
+SELECT team_name, status
+FROM user_ai_agent_teams
+WHERE team_name IN (
+    'OCI_AUTONOMOUS_DATABASE_TEAM',
+    'WINGMATE_DATABASE_INSPECT_TEAM',
+    'DBMS_SCHEDULER_MONITOR_TEAM',
+    'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
+)
+ORDER BY team_name;
+
+PROMPT
+PROMPT To use the composite team:
+PROMPT EXEC DBMS_CLOUD_AI_AGENT.SET_TEAM(team_name => 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM');
+PROMPT SELECT AI AGENT inspect the WINGMATE schema and summarize scheduler jobs before recommending an Autonomous Database action
+PROMPT
