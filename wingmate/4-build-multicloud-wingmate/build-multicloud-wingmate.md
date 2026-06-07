@@ -13,7 +13,7 @@ Estimated Time: 60 minutes
 * Generate Report Period View
 * Create Host Insights Widgets
 * Compare Insights Across CPU and Memory
-* Visualize CPU Combinations for Historical and Forecast Analysis
+* Optionally visualize CPU combinations for historical and forecast analysis with collected metric history
 * Operationalize MultiCloud with Property Graph
 * Review MultiCloud Insights
 
@@ -709,9 +709,22 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![Drag and drop Chart](./images/drag-memory.png "")
 
-## Task 5: Visualize CPU Combinations for Historical and Forecasting Analysis
+## Task 5: Optionally Visualize CPU Combinations for Historical and Forecasting Analysis
 
-> **Note:** Resource Analytics provides current inventory and configured resource allocation, not a native CPU forecast series. Use the synthetic `HOSTINSIGHTS_CPU_FORECAST_TREND` object in this task as an optional backup dataset when you need predictable historical and forecast chart data.
+> **Optional forecast data:** The Resource Analytics adapter views created earlier in this lab use current inventory, configured capacity, and current allocation measures. They do not provide the historical CPU metric samples or projected forecast JSON used by the charts in this task. Use this task only when you have loaded forecast-ready host metric data.
+
+This task is simplified with bundled flat-file data so every learner can build the same historical and forecast chart without first configuring metric collection. Keep the simplified lab path separate from the optional real-data path:
+
+* **Simplified lab path:** Use the synthetic `HOSTINSIGHTS_CPU_FORECAST_TREND` flat-file data loaded from `wingmate_data.zip`. This data already includes historical and projected values in the table shape used by the chart SQL below.
+* **Resource Analytics path:** Use Resource Analytics for inventory, compartments, shapes, configured capacity, and current allocation measures. Resource Analytics helps identify which compute resources exist, but the adapter views in this lab are not a historical CPU metric feed.
+* **Optional real-history path:** Use OCI Monitoring or Operations Insights when you want real CPU history. These services provide the timestamped metric samples that can be loaded, modeled, and transformed into the chart table used below. Resource Analytics can help identify the target resources, but it does not replace Monitoring or Operations Insights for historical samples.
+
+To use real metric history instead of the bundled demo data:
+
+* Load rows with at least `HOSTNAME`, `SAMPLE_TS`, and `CPU_USAGE_PERCENT`.
+* If you want an in-database forecast, run an Oracle Machine Learning for SQL time-series model, such as Exponential Smoothing, against those ordered historical samples. OML can forecast from history, but it cannot create a forecast from a single Resource Analytics inventory snapshot.
+* Transform the historical and projected rows into the `HOSTINSIGHTS_CPU_FORECAST_TREND` shape used below, with `HISTORICALDATA` and `PROJECTEDDATA` JSON arrays.
+* Keep the chart SQL in this task unchanged after your real data is mapped into that table shape.
 
 1. Drag and drop a **static region** into the body of **Host CPU Insights** and name it **CPU Combination Chart**.
 
