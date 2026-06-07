@@ -16,23 +16,22 @@ rem   Agent 1: OCI Autonomous Database AI Agent and Tools
 rem     Agent: OCI_AUTONOMOUS_DATABASE_ADVISOR
 rem     Task:  OCI_AUTONOMOUS_DATABASE_TASKS
 rem
-rem   Agent 2: Select AI Inspect - Database Inspection Tool
-rem     Agent: INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM
-rem     Task:  INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM
-rem
-rem   Agent 3: Select AI - DBMS Scheduler Monitoring Agent
+rem   Agent 2: Select AI - DBMS Scheduler Monitoring Agent
 rem     Agent: SCHEDULER_MONITOR_ADVISOR
 rem     Task:  SCHEDULER_MONITOR_TASKS
+rem     Team:  DBMS_SCHEDULER_MONITOR_TEAM
 rem
-rem   Composite team:
+rem   Primary Wingmate AI Ops team:
 rem     WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM
+rem     Uses the OCI Autonomous Database agent only. Select
+rem     DBMS_SCHEDULER_MONITOR_TEAM separately for scheduler diagnostics.
 rem
 rem RUN ORDER
 rem   1. Run wingmate-select-ai-profiles.sql.
-rem   2. Run wingmate-doc-research-rag.sql so ALL_MINILM_L12_V2 is available.
-rem   3. Run wingmate-prebuilt-select-ai-agent-tools.sql as ADMIN, or run the
-rem      three vendored tool scripts manually as ADMIN with SCHEMA_NAME=WINGMATE.
-rem   4. Connect as WINGMATE and run this script.
+rem   2. Run wingmate-prebuilt-select-ai-agent-tools.sql as ADMIN, or run the
+rem      OCI Autonomous Database and DBMS Scheduler tool scripts manually as
+rem      ADMIN with SCHEMA_NAME=WINGMATE.
+rem   3. Connect as WINGMATE and run this script.
 rem
 rem PARAMETERS TO EDIT
 rem   <genai_region>
@@ -43,7 +42,6 @@ rem ============================================================================
 SET DEFINE OFF
 SET VERIFY OFF
 SET SERVEROUTPUT ON
-WHENEVER SQLERROR EXIT SQL.SQLCODE ROLLBACK
 
 PROMPT Creating Wingmate pre-built Select AI Agent Team.
 
@@ -53,21 +51,16 @@ DECLARE
     c_genai_region                 CONSTANT VARCHAR2(256)  := '<genai_region>';
     c_compartment_ocid             CONSTANT VARCHAR2(1024) := '<compartment_ocid>';
     c_chat_model                   CONSTANT VARCHAR2(1024) := '<oci_genai_chat_model_name_or_ocid>';
-    c_embedding_model              CONSTANT VARCHAR2(128)  := 'ALL_MINILM_L12_V2';
-    c_inspect_team_name            CONSTANT VARCHAR2(128)  := 'WINGMATE_DATABASE_INSPECT_TEAM';
     c_scheduler_target_owner       CONSTANT VARCHAR2(128)  := 'WINGMATE';
     c_composite_team_name          CONSTANT VARCHAR2(128)  := 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM';
     c_oci_agent_name               CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_ADVISOR';
     c_oci_task_name                CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_TASKS';
     c_oci_team_name                CONSTANT VARCHAR2(128)  := 'OCI_AUTONOMOUS_DATABASE_TEAM';
-    c_inspect_agent_name           CONSTANT VARCHAR2(128)  := 'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM';
-    c_inspect_task_name            CONSTANT VARCHAR2(128)  := 'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM';
     c_scheduler_agent_name         CONSTANT VARCHAR2(128)  := 'SCHEDULER_MONITOR_ADVISOR';
     c_scheduler_task_name          CONSTANT VARCHAR2(128)  := 'SCHEDULER_MONITOR_TASKS';
     c_scheduler_team_name          CONSTANT VARCHAR2(128)  := 'DBMS_SCHEDULER_MONITOR_TEAM';
 
     l_profile_attributes           CLOB;
-    l_inspect_attributes           CLOB;
     l_scheduler_target_owner       VARCHAR2(128);
     l_count                        NUMBER;
 
@@ -204,29 +197,6 @@ DECLARE
         );
     END create_oci_autonomous_database_agent;
 
-    PROCEDURE create_database_inspect_agent IS
-    BEGIN
-        BEGIN
-            DATABASE_INSPECT.DROP_INSPECT_AGENT_TEAM(
-                agent_team_name => c_inspect_team_name,
-                force           => TRUE
-            );
-        EXCEPTION
-            WHEN OTHERS THEN
-                NULL;
-        END;
-
-        l_inspect_attributes :=
-            '{"profile_name":"' || c_profile_name ||
-            '","object_list":[{"owner":"' || c_schema_name ||
-            '","type":"schema"}],"match_limit":10}';
-
-        DATABASE_INSPECT.CREATE_INSPECT_AGENT_TEAM(
-            agent_team_name => c_inspect_team_name,
-            attributes      => l_inspect_attributes
-        );
-    END create_database_inspect_agent;
-
     PROCEDURE create_scheduler_monitor_agent IS
         l_task_attributes CLOB;
     BEGIN
@@ -307,12 +277,10 @@ DECLARE
 
         DBMS_CLOUD_AI_AGENT.CREATE_TEAM(
             team_name   => c_composite_team_name,
-            description => 'Wingmate composite team for OCI ADB operations, database inspection, and scheduler monitoring.',
+            description => 'Wingmate AI Ops team for OCI Autonomous Database provisioning and lifecycle operations.',
             attributes  =>
                 '{"agents":[' ||
-                '{"name":"' || c_oci_agent_name || '","task":"' || c_oci_task_name || '"},' ||
-                '{"name":"' || c_inspect_agent_name || '","task":"' || c_inspect_task_name || '"},' ||
-                '{"name":"' || c_scheduler_agent_name || '","task":"' || c_scheduler_task_name || '"}' ||
+                '{"name":"' || c_oci_agent_name || '","task":"' || c_oci_task_name || '"}' ||
                 '],"process":"sequential"}'
         );
     END create_composite_team;
@@ -321,21 +289,7 @@ BEGIN
     assert_replaced(c_compartment_ocid, '<compartment_ocid>');
     assert_replaced(c_chat_model, '<oci_genai_chat_model_name_or_ocid>');
 
-    SELECT COUNT(*)
-    INTO l_count
-    FROM user_mining_models
-    WHERE model_name = c_embedding_model;
-
-    IF l_count = 0 THEN
-        RAISE_APPLICATION_ERROR(
-            -20003,
-            'Missing embedding model ' || c_embedding_model ||
-            '. Run wingmate-doc-research-rag.sql first or load the model before creating the Database Inspect agent.'
-        );
-    END IF;
-
     assert_package_valid('OCI_AUTONOMOUS_DATABASE_AGENTS', 'prebuilt-select-ai-agents/oci_autonomous_database_tools.sql');
-    assert_package_valid('DATABASE_INSPECT', 'prebuilt-select-ai-agents/database_inspect_tool.sql');
     assert_package_valid('SCHEDULER_MONITORING', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
     assert_package_valid('SELECT_AI_SCHEDULER_MONITOR', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
 
@@ -344,17 +298,14 @@ BEGIN
     assert_tool_exists('LIST_ALL_JOBS_TOOL', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
     assert_tool_exists('GET_DATABASE_CURRENT_TIME_TOOL', 'prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql');
 
-    l_profile_attributes := JSON_OBJECT(
-        'provider' VALUE 'oci',
-        'credential_name' VALUE 'WINGMATE_OCI_CRED',
-        'region' VALUE c_genai_region,
-        'oci_compartment_id' VALUE c_compartment_ocid,
-        'model' VALUE c_chat_model,
-        'embedding_model' VALUE 'database: ' || c_embedding_model,
-        'temperature' VALUE 0,
-        'comments' VALUE 'true' FORMAT JSON
-        RETURNING CLOB
-    );
+    l_profile_attributes :=
+        '{"provider":"oci",' ||
+        '"credential_name":"WINGMATE_OCI_CRED",' ||
+        '"region":"' || c_genai_region || '",' ||
+        '"oci_compartment_id":"' || c_compartment_ocid || '",' ||
+        '"model":"' || c_chat_model || '",' ||
+        '"temperature":0,' ||
+        '"comments":true}';
 
     BEGIN
         DBMS_CLOUD_AI.DROP_PROFILE(
@@ -373,55 +324,52 @@ BEGIN
     );
 
     create_oci_autonomous_database_agent;
-    create_database_inspect_agent;
     create_scheduler_monitor_agent;
     create_composite_team;
 
     DBMS_OUTPUT.PUT_LINE('Created profile ' || c_profile_name || '.');
     DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_oci_team_name || '.');
-    DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_inspect_team_name || '.');
     DBMS_OUTPUT.PUT_LINE('Created standalone team ' || c_scheduler_team_name || '.');
     DBMS_OUTPUT.PUT_LINE('Created composite team ' || c_composite_team_name || '.');
 END;
 /
 
-PROMPT Verifying pre-built Select AI agents, tasks, and teams.
+PROMPT Verifying pre-built Select AI Agent Team.
 
-COLUMN agent_name FORMAT A48
-COLUMN task_name FORMAT A48
-COLUMN team_name FORMAT A48
-COLUMN status FORMAT A12
+DECLARE
+    l_count NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO l_count
+    FROM user_cloud_ai_profiles
+    WHERE profile_name = 'WINGMATE_PREBUILT_AGENT_PROFILE';
 
-SELECT agent_name, status
-FROM user_ai_agents
-WHERE agent_name IN (
-    'OCI_AUTONOMOUS_DATABASE_ADVISOR',
-    'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM',
-    'SCHEDULER_MONITOR_ADVISOR'
-)
-ORDER BY agent_name;
+    DBMS_OUTPUT.PUT_LINE('Profile found: ' || l_count);
 
-SELECT task_name, status
-FROM user_ai_agent_task
-WHERE task_name IN (
-    'OCI_AUTONOMOUS_DATABASE_TASKS',
-    'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM',
-    'SCHEDULER_MONITOR_TASKS'
-)
-ORDER BY task_name;
+    SELECT COUNT(*)
+    INTO l_count
+    FROM user_ai_agents
+    WHERE agent_name IN (
+        'OCI_AUTONOMOUS_DATABASE_ADVISOR',
+        'SCHEDULER_MONITOR_ADVISOR'
+    );
 
-SELECT team_name, status
-FROM user_ai_agent_teams
-WHERE team_name IN (
-    'OCI_AUTONOMOUS_DATABASE_TEAM',
-    'WINGMATE_DATABASE_INSPECT_TEAM',
-    'DBMS_SCHEDULER_MONITOR_TEAM',
-    'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
-)
-ORDER BY team_name;
+    DBMS_OUTPUT.PUT_LINE('Expected agents found: ' || l_count || ' of 2');
+
+    BEGIN
+        DBMS_CLOUD_AI_AGENT.SET_TEAM(
+            team_name => 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
+        );
+        DBMS_OUTPUT.PUT_LINE('Primary Wingmate AI Ops team can be selected in this session.');
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Primary Wingmate AI Ops team selection failed: ' || SQLERRM);
+    END;
+END;
+/
 
 PROMPT
 PROMPT To use the composite team:
 PROMPT EXEC DBMS_CLOUD_AI_AGENT.SET_TEAM(team_name => 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM');
-PROMPT SELECT AI AGENT inspect the WINGMATE schema and summarize scheduler jobs before recommending an Autonomous Database action
+PROMPT SELECT AI AGENT help me provision a small OLTP Autonomous Database named WINGLAB01
 PROMPT

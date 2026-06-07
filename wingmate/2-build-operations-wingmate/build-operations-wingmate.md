@@ -8,7 +8,7 @@ The Ask Oracle home page exposes three different AI patterns:
 
 * **NL2SQL:** `sql/wingmate-select-ai-profiles.sql` creates `WINGMATE_SECURITY`, `WINGMATE_MULTICLOUD`, and `WINGMATE_COMPUTE`. Learners use **Switch NL2SQL Profile** on the Ask Oracle home page to query Resource Analytics, multicloud database inventory, security data, and compute data.
 * **RAG:** `sql/wingmate-doc-research-rag.sql` creates `WINGMATE_DOC_RESEARCH_RAG`. Learners use the RAG profile selector on the Ask Oracle home page to ask documentation-grounded questions from the vector index.
-* **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` from three Oracle pre-built Select AI agents: OCI Autonomous Database, Database Inspect, and DBMS Scheduler Monitoring. Learners use the Agent Team selector on the Ask Oracle home page to inspect the schema, review scheduler health, and prepare Autonomous Database actions with human confirmation.
+* **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` for OCI Autonomous Database provisioning and lifecycle actions. The same setup also creates `DBMS_SCHEDULER_MONITOR_TEAM` for read-only scheduler diagnostics.
 
 Estimated Time: 60 minutes
 
@@ -22,7 +22,7 @@ In this lab, you will:
 * Grant Select AI package access to the `WINGMATE` schema
 * Run the bundled setup script for Security, Multicloud, and Compute Select AI profiles
 * Create a separate Doc Research RAG service for documentation-grounded answers
-* Create a pre-built Select AI Agent Team for Autonomous Database operations, database inspection, and DBMS Scheduler monitoring
+* Create a pre-built Select AI Agent Team for Autonomous Database operations and DBMS Scheduler monitoring
 * Import the prebuilt Ask Oracle APEX application that Labs 3 through 5 extend
 
 ### Prerequisites
@@ -315,15 +315,13 @@ The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Selec
 
 ## Task 7: Create the Pre-built Select AI Agent Team
 
-This task installs Oracle pre-built Select AI Agent tool layers and creates a composite Wingmate Agent Team based on the practical Select AI Agent pattern. The team includes:
+This task installs Oracle pre-built Select AI Agent tool layers and creates the Wingmate AI Ops Agent Team based on the practical Select AI Agent pattern. This is separate from the NL2SQL profiles and the Doc Research RAG profile.
 
-* **OCI Autonomous Database AI Agent and Tools:** provisions, lists, starts, stops, restarts, scales, updates, and inspects Autonomous Database resources.
-* **Select AI Inspect - Database Inspection Tool:** inspects database objects, metadata, dependencies, PL/SQL code, and generated documentation for the `WINGMATE` schema.
-* **Select AI - DBMS Scheduler Monitoring Agent:** monitors local `USER_SCHEDULER_*` jobs, job history, failures, runtime, CPU/load correlation, and scheduler health.
+The primary team, `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`, uses the **OCI Autonomous Database AI Agent and Tools** to provision, list, start, stop, restart, scale, update, and inspect Autonomous Database resources. The script also creates the standalone `DBMS_SCHEDULER_MONITOR_TEAM`, which monitors local `USER_SCHEDULER_*` jobs, job history, failures, runtime, CPU/load correlation, and scheduler health.
 
-The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standalone sample teams, and the composite `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
+The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `OCI_AUTONOMOUS_DATABASE_TEAM`, the standalone `DBMS_SCHEDULER_MONITOR_TEAM`, and the primary `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
 
-1. Confirm Tasks 5 and 6 completed. The pre-built team uses `WINGMATE_OCI_CRED` and the in-database embedding model `ALL_MINILM_L12_V2`.
+1. Confirm Task 5 completed. The pre-built team uses `WINGMATE_OCI_CRED` for OCI API calls and the configured chat model for agent reasoning.
 
 2. If you plan to test live Autonomous Database operations, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous Databases in the target compartment.
 
@@ -335,27 +333,35 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standa
 
     > **Note:** You can complete this lab task without changing OCI resources. Live operations require the IAM policy and explicit human confirmation.
 
-3. In the extracted `wingmate_data/sql` folder, open `wingmate-prebuilt-select-ai-agent-tools.sql`.
+3. Sign in to SQL Developer Web as `ADMIN`.
 
-4. Review `CONFIG_JSON`. The default uses `WINGMATE_OCI_CRED`; optionally add `"compartment_ocid":"<target_compartment_ocid>"` if you want the OCI Autonomous Database tools to persist a default compartment.
+4. Open SQL Worksheet and run the two vendored Oracle sample tool scripts individually, in this order:
 
-5. Connect as `ADMIN` with SQLcl from the `wingmate_data/sql` folder and run the tool-layer installer.
+    * `sql/prebuilt-select-ai-agents/oci_autonomous_database_tools.sql`
+    * `sql/prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql`
 
-    ```sql
+    ![SQL Tools](./images/sql-tools.png "")
+
+    Use the Run Script option for each full file. When prompted, provide:
+
+    ```text
     <copy>
-    @wingmate-prebuilt-select-ai-agent-tools.sql
+    SCHEMA_NAME = WINGMATE
+    CONFIG_JSON = {"credential_name":"WINGMATE_OCI_CRED","use_resource_principal":false}
     </copy>
     ```
 
-    The wrapper runs the three vendored Oracle sample tool scripts:
+    ![substitute variables](./images/sub-var.png "")
 
-    * `prebuilt-select-ai-agents/oci_autonomous_database_tools.sql`
-    * `prebuilt-select-ai-agents/database_inspect_tool.sql`
-    * `prebuilt-select-ai-agents/dbms_scheduler_monitor_tools.sql`
+    `CONFIG_JSON` is required only by `oci_autonomous_database_tools.sql`. Optionally add `"compartment_ocid":"<target_compartment_ocid>"` if you want the OCI Autonomous Database tools to persist a default compartment.
 
-    > **SQL Workshop option:** If your SQL environment does not support `@@` relative includes, upload and run the three vendored tool scripts individually as `ADMIN`. Provide `SCHEMA_NAME` as `WINGMATE`. For `oci_autonomous_database_tools.sql`, use `CONFIG_JSON` similar to `{"credential_name":"WINGMATE_OCI_CRED","use_resource_principal":false}`.
+    > **Note:** The helper file `sql/wingmate-prebuilt-select-ai-agent-tools.sql` is a SQLcl/SQL*Plus convenience wrapper that uses `@@` relative includes. For SQL Developer Web, run the two tool scripts directly as shown above.
 
-6. Connect as `WINGMATE` and open `sql/wingmate-prebuilt-select-ai-agent-team.sql`.
+5. Sign out of the `ADMIN` SQL Developer Web session and sign back in as `WINGMATE`.
+
+    > **Important:** Do not run the team creation script as `ADMIN`. `ADMIN` installs the reusable tool layer, but the Agent Team, profile, agents, and tasks must be owned by the `WINGMATE` schema used by the Ask Oracle application.
+
+6. Open `sql/wingmate-prebuilt-select-ai-agent-team.sql`.
 
 7. Replace the placeholders:
 
@@ -363,53 +369,52 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standa
     * `<compartment_ocid>`: Compartment OCID used by OCI Generative AI.
     * `<oci_genai_chat_model_name_or_ocid>`: Approved chat model name or OCID (xai.grok-4.3).
 
-8. Run the script. The script creates:
+8. Run the script with the Run Script option. The script creates:
 
     * `WINGMATE_PREBUILT_AGENT_PROFILE`
     * `OCI_AUTONOMOUS_DATABASE_ADVISOR`, `OCI_AUTONOMOUS_DATABASE_TASKS`, and `OCI_AUTONOMOUS_DATABASE_TEAM`
-    * `INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM`, `INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM`, and `WINGMATE_DATABASE_INSPECT_TEAM`
     * `SCHEDULER_MONITOR_ADVISOR`, `SCHEDULER_MONITOR_TASKS`, and `DBMS_SCHEDULER_MONITOR_TEAM`
     * `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`
 
     > **Compatibility note:** `sql/wingmate-ai-ops-adb-agent-team.sql` is kept as a backward-compatible copy of this pre-built Agent Team script.
 
-9. Confirm the profile, agents, tasks, and teams are available.
+    ![agent team](./images/agent-team.png "")
+
+9. Confirm the profile, agents, and composite team are available.
 
     ```sql
     <copy>
-    SELECT profile_name
-    FROM user_cloud_ai_profiles
-    WHERE profile_name = 'WINGMATE_PREBUILT_AGENT_PROFILE';
+    DECLARE
+        l_count NUMBER;
+    BEGIN
+        SELECT COUNT(*)
+        INTO l_count
+        FROM user_cloud_ai_profiles
+        WHERE profile_name = 'WINGMATE_PREBUILT_AGENT_PROFILE';
 
-    SELECT agent_name, status
-    FROM user_ai_agents
-    WHERE agent_name IN (
-        'OCI_AUTONOMOUS_DATABASE_ADVISOR',
-        'INSPECT_AGENT_WINGMATE_DATABASE_INSPECT_TEAM',
-        'SCHEDULER_MONITOR_ADVISOR'
-    )
-    ORDER BY agent_name;
+        DBMS_OUTPUT.PUT_LINE('Profile found: ' || l_count);
 
-    SELECT task_name, status
-    FROM user_ai_agent_task
-    WHERE task_name IN (
-        'OCI_AUTONOMOUS_DATABASE_TASKS',
-        'INSPECT_TASK_WINGMATE_DATABASE_INSPECT_TEAM',
-        'SCHEDULER_MONITOR_TASKS'
-    )
-    ORDER BY task_name;
+        SELECT COUNT(*)
+        INTO l_count
+        FROM user_ai_agents
+        WHERE agent_name IN (
+            'OCI_AUTONOMOUS_DATABASE_ADVISOR',
+            'SCHEDULER_MONITOR_ADVISOR'
+        );
 
-    SELECT team_name, status
-    FROM user_ai_agent_teams
-    WHERE team_name IN (
-        'OCI_AUTONOMOUS_DATABASE_TEAM',
-        'WINGMATE_DATABASE_INSPECT_TEAM',
-        'DBMS_SCHEDULER_MONITOR_TEAM',
-        'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
-    )
-    ORDER BY team_name;
+        DBMS_OUTPUT.PUT_LINE('Expected agents found: ' || l_count || ' of 2');
+
+        DBMS_CLOUD_AI_AGENT.SET_TEAM(
+            team_name => 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM'
+        );
+
+        DBMS_OUTPUT.PUT_LINE('Primary Wingmate AI Ops team can be selected in this session.');
+    END;
+    /
     </copy>
     ```
+
+    ![agent team check](./images/agent-team-check.png "")
 
 ## Task 8: Import the Ask Oracle APEX Application
 
@@ -513,27 +518,30 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standa
 
 10. Open the Agent Team selector and confirm the team list includes `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
 
-    You may also see the three standalone teams created by the script:
+    You may also see the two standalone teams created by the script:
 
     * `OCI_AUTONOMOUS_DATABASE_TEAM`
-    * `WINGMATE_DATABASE_INSPECT_TEAM`
     * `DBMS_SCHEDULER_MONITOR_TEAM`
 
-11. Select `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` and ask for a read-only inspection and monitoring summary:
+11. To test scheduler monitoring, select `DBMS_SCHEDULER_MONITOR_TEAM` and ask for a read-only monitoring summary:
 
     ```text
     <copy>
-    Inspect the WINGMATE schema, summarize available DBMS Scheduler jobs, and recommend whether any Autonomous Database operation is needed. Do not change anything.
+    Summarize available DBMS Scheduler jobs and identify any recent failures or long-running jobs. Do not change anything.
     </copy>
     ```
 
-12. Ask the Agent Team to prepare an Autonomous Database workflow without executing it:
+    ![scheduler services](./images/scheduler.png "")
+
+12. Select `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` and ask the Agent Team to prepare an Autonomous Database workflow without executing it:
 
     ```text
     <copy>
     Help me provision a small OLTP Autonomous Database named WINGLAB01 in <adb_region>. Ask for any missing inputs and do not execute without explicit confirmation.
     </copy>
     ```
+
+    ![scheduler question](./images/scheduler-question.png "")
 
     > **Note:** Stop at the confirmation step unless you intentionally want to test live operations and have the required IAM policy and temporary ADB admin password.
 
@@ -555,19 +563,11 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the three standa
     </copy>
     ```
 
-15. If the Agent Team dropdown is empty, confirm the Agent Team appears in the application list of values.
+15. If the Agent Team dropdown is empty, rerun the validation block from Task 7 and confirm the output says `Primary Wingmate AI Ops team can be selected in this session`.
 
     ```sql
     <copy>
-    SELECT team_name, status
-    FROM user_ai_agent_teams
-    WHERE team_name IN (
-        'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM',
-        'OCI_AUTONOMOUS_DATABASE_TEAM',
-        'WINGMATE_DATABASE_INSPECT_TEAM',
-        'DBMS_SCHEDULER_MONITOR_TEAM'
-    )
-    ORDER BY team_name;
+    EXEC DBMS_CLOUD_AI_AGENT.SET_TEAM(team_name => 'WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM');
     </copy>
     ```
 
