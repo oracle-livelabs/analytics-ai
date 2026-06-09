@@ -123,11 +123,13 @@ Compute Wingmate can use the materialized views created in Lab 1 or query the `O
 
 The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches the data with compute instance metadata, and writes the results to Autonomous Database.
 
-1. Provision or select an OCI VM to run the collector.
+1. Provision or select an OCI VM to run the collector. Use default configuration and select the appropriate compartment. Provide the console a public key or download a key pair.
 
 	> **Note:** An OCI VM is recommended because the collector can use instance principal authentication and run continuously with `systemd`.
 
-2. Create a dynamic group for the collector VM.
+    ![create vm](./images/oci-compute.png "")
+
+2. Create a dynamic group for the collector VM. Copy the OCID from the VM details. Use lab 1 steps to help create the dynamic group.
 
 	Example matching rule:
 
@@ -137,21 +139,35 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
+	For a workshop environment where you may rebuild the collector VM, use a compartment-based matching rule instead.
+
+	```text
+	<copy>
+	instance.compartment.id = 'ocid1.compartment.oc1..YOUR_COLLECTOR_COMPARTMENT_OCID'
+	</copy>
+	```
+
+    ![create vm](./images/oci-compute-ocid.png "")
+
 3. Add IAM policies for the dynamic group.
 
 	```text
 	<copy>
-	Allow dynamic-group <dg-name> to read metrics in compartment <compartment-name>
-	Allow dynamic-group <dg-name> to read instances in compartment <compartment-name>
+	Allow dynamic-group <dg-name> to read metrics in tenancy
+	Allow dynamic-group <dg-name> to read instances in tenancy
+	Allow dynamic-group <dg-name> to inspect compartments in tenancy
 	</copy>
 	```
 
-	> **Note:** Add Log Analytics permissions only if you also enable the Log Analytics destination.
+  ![oci policy](./images/oci-policy.png "")
+
+	> **Note:** The collector configuration in this lab uses `compartment_strategy: "tenancy_subtree"`, so the dynamic group needs tenancy-level read access for metrics and instances. Add Log Analytics permissions only if you also enable the Log Analytics destination.
 
 4. Connect to the collector VM and clone the metrics collector repository.
 
 	```bash
 	<copy>
+	sudo dnf install git
 	git clone https://github.com/jujufugh/oci-metrics-collector-py /home/opc/oci-metrics-collector-py
 	cd /home/opc/oci-metrics-collector-py
 	</copy>
@@ -174,18 +190,63 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	cp config.yaml.example config.yaml
 	</copy>
 	```
+7. Download the Autonomous Database wallet to your local machine, then copy it to the collector VM.
 
-7. Edit `config.yaml`.
+    ![database connection](./images/db-connect.png "")
+    ![download wallet](./images/wallet.png "")
 
-	Use the following values as the starting point:
+	```bash
+	<copy>
+	scp -i <private_key_file> <path_to_wallet_zip> opc@<collector_public_ip>:/home/opc/
+	</copy>
+	```
+
+	On the collector VM, unzip the wallet into a dedicated wallet directory.
+
+	```bash
+	<copy>
+	mkdir -p /home/opc/wallet_<adb_name>
+	unzip /home/opc/<wallet_zip_file>.zip -d /home/opc/wallet_<adb_name>
+	chmod 700 /home/opc/wallet_<adb_name>
+	ls -l /home/opc/wallet_<adb_name>/tnsnames.ora
+	</copy>
+	```
+8. If the Autonomous Database uses a private endpoint, add the wallet hostname to `/etc/hosts` on the collector VM.
+
+	Find the **Private endpoint IP** on the Autonomous Database details page. Then find the ADB hostname from the wallet.
+
+	```bash
+	<copy>
+	grep -o "host=[^)]*" /home/opc/wallet_<adb_name>/tnsnames.ora | head -1
+	</copy>
+	```
+
+	Add the mapping using the ADB private endpoint IP and the hostname from the wallet. The entry must use `IP address` first, then `hostname`.
+
+	```bash
+	<copy>
+	sudo sh -c 'echo "<adb_private_endpoint_ip> <adb_hostname_from_wallet>" >> /etc/hosts'
+	getent hosts <adb_hostname_from_wallet>
+	</copy>
+	```
+
+	> **Note:** Use the Autonomous Database private endpoint IP, not the collector VM private IP or public IP. If the hostname already exists in `/etc/hosts`, remove the old line before adding the corrected mapping.
+
+9. Collect the tenancy OCID, target region, and wallet location and edit `config.yaml`.
+
+	Use the following values as the starting point. The collector queries each listed region under the configured tenancy source.
 
 	```yaml
 	<copy>
 	oci:
 	  auth_method: "instance_principal"
 
-	scope:
-	  compartment_id: "<target_compartment_ocid>"
+	tenancies:
+	  - name: "parent"
+	    tenancy_id: "<tenancy_ocid>"
+	    regions:
+	      - "<target_region>"
+	    compartment_strategy: "tenancy_subtree"
 
 	metrics:
 	  namespace: "oci_computeagent"
@@ -204,23 +265,30 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
-	> **Note:** Use `<adb_name>_public_high` if you connect through the public Autonomous Database endpoint. Use the private endpoint alias if the VM is in a VCN that can resolve the private Autonomous Database hostname.
+	> **Note:** The collector sample file defaults to `auth_method: "config_file"`. Change it to `auth_method: "instance_principal"` for this lab so the VM authenticates through the dynamic group policies created earlier. Use an absolute wallet path such as `/home/opc/wallet_<adb_name>`. Do not use `~/wallet_<adb_name>` because the collector passes that value to the database driver without shell expansion. Use a `dsn` value that exactly matches an alias in `tnsnames.ora`; for example, use `<adb_name>_high` only if that alias exists in the wallet. The collector VM must also be able to resolve and reach the Autonomous Database endpoint from its VCN.
 
-8. Store database secrets in `/home/opc/.env`.
+	Confirm the authentication method before running the collector.
+
+	```bash
+	<copy>
+	grep -n "auth_method" config.yaml
+	</copy>
+	```
+
+10. Store database secrets in `/home/opc/.env`.
 
 	```bash
 	<copy>
 	cat > /home/opc/.env <<'EOF'
 	OCI_METRICS_ADB_PASSWORD=<wingmate_database_password>
 	OCI_METRICS_ADB_WALLET_PASSWORD=<wallet_password>
-	OCI_METRICS_COMPARTMENT_ID=<target_compartment_ocid>
 	EOF
 
 	chmod 600 /home/opc/.env
 	</copy>
 	```
 
-9. Load the environment variables and test connectivity.
+11. Load the environment variables and test connectivity.
 
 	```bash
 	<copy>
@@ -230,7 +298,7 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
-10. Run one collection cycle.
+12. Run one collection cycle.
 
 	```bash
 	<copy>
@@ -238,7 +306,7 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
-11. Optional: run the collector continuously.
+13. Optional: run the collector continuously.
 
 	```bash
 	<copy>
@@ -246,7 +314,7 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
-12. Optional: install the collector as a `systemd` service for continuous collection.
+14. Optional: install the collector as a `systemd` service for continuous collection.
 
 	```bash
 	<copy>
@@ -565,5 +633,6 @@ You have completed the workshop.
 ## Acknowledgements
 
 * **Authors:**
-	* Royce Fu - Master Principal Cloud Architect
-* **Last Updated by/Date** - Royce Fu, May 2026
+  * Royce Fu - Master Principal Cloud Architect
+  * Nicholas Cusato - Senior Cloud Engineer
+* **Last Updated by/Date** - Nicholas Cusato, June 2026

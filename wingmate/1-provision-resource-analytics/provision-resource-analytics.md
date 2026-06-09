@@ -492,45 +492,93 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 	[Wingmate Data Zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/A8D93L0AYtatdLXkIXEH2OaQDtX_-AL8gnQ8CWHWYFV_6XUUGNw43bsZbU5oNx-e/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip)
 
-	The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate-ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
+    The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate_ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
 
-2. Navigate to **SQL Workshop** and then **SQL Scripts**.
+2. Open **Database Actions** for the Autonomous AI Database and sign in as the `WINGMATE` database user.
 
-	![SQL Workshop button](./images/sql-workshop.png "")
+    ![Database Actions signed in as WINGMATE](./images/access-sql-db-actions.png "")
 
-3. Select **Upload** and upload `wingmate-ddl.sql` in the popup.
+3. Open **SQL** and run the `wingmate_data/sql/wingmate_ddl.sql` script.
 
-	![Upload DDL script and run button](./images/execute-ddl-script.png "")
+    You can paste the script into the worksheet or open the file from your local machine. Run the script before loading any CSV files so the target tables already exist.
 
-	![Load DDL script and upload button](./images/upload-script.png "")
+    ![Run wingmate DDL script in Database Actions SQL](./images/data-load-run-ddl-script.png "")
 
-4. Click **Run** to execute the script.
+4. Verify the DDL script completed successfully.
 
-	![Run button](./images/run-sql.png "")
+    If you see errors, validate whether the tables or views already exist before rerunning the script.
 
-5. Confirm the run script by clicking **Run Now** on the popup at the bottom.
+    ![Wingmate DDL script completed successfully](./images/data-load-run-ddl-script.png "")
 
-	![Confirm button](./images/confirm-run.png "")
+5. In Database Actions, select **Data Load**.
 
-6. Verify the script ran to completion.
+    ![Open Data Load from Database Actions](./images/data-load-open-data-load.png "")
 
-	![Successful DDL](./images/ddl-complete.png "")
+6. Select **Load Data**, then select **Local File**.
 
-	> **Note:** If you see errors, validate whether any tables or views already exist before rerunning the script.
+    ![Select Load Data local file](./images/data-load-local-file.png "")
 
-7. Navigate to Object Browser by clicking **SQL Workshop** and select **Object Browser**.
+7. Drag the CSV files from the unzipped `wingmate_data/data` folder into the local-file cart.
 
-	![Load csv navigation](./images/data-workshop.png "")
+    SQL Developer Web can stage multiple file loads together and map columns by matching the CSV headers to the existing table columns created by `wingmate_ddl.sql`.
 
-8. Observe the new tables created. Select the first one, **CIS_IAM_POLICIES**, and select **Data** and **Load Data** in the center module.
+    ![CSV files staged in the local file cart](./images/sql-data-load.png "")
 
-	![Load data in tables](./images/data-loading.png "")
+8. For each file card, select **Review Settings** or the edit icon.
 
-9. Verify that the columns are automatically mapped and click **Load Data**.
+    The local-file cart may default each card to **Create Table**, even when the target table already exists. This is expected.
 
-	![Confirm data load](./images/load-data.png "")
+    ![Review settings for a local file load card](./images/sql-data-load.png "")
 
-10. Repeat for each table with each dataset located in the unzipped directory.
+9. In the **Table** settings, change **Option** to **Insert into Table**.
+
+    Do not use **Create Table**, **Replace Data**, **Drop Table and Create New Table**, or **Merge into Table** for the first workshop load. **Merge into Table** is useful only when reloading data into a table that already has rows and the merge key is mapped to the table's primary key, such as `VM_CLUSTER_ID` for `OCI_EXA_VM_CLUSTER`.
+
+    ![Change load option to Insert into Table](./images/sql-data-load-insert.png "")
+
+10. Select the existing target table for the CSV file.
+
+    The CSV file names in the bundle match the target table names, so Database Actions should select most target tables automatically. If a target table is not selected, choose it manually.
+
+    ![Select the existing target table for the CSV](./images/sql-data-load-insert.png "")
+
+11. Review the column mapping and confirm that the CSV headers are mapped to the correct target columns.
+
+    Keep **Column header row** enabled when the CSV includes headers. If a column is unmapped, use the target column selector to map it before continuing.
+
+    ![Review CSV column mapping](./images/sql-data-load-insert.png "")
+
+12. Return to the local-file cart and repeat the settings review for each CSV file.
+
+    All cards should show **Insert into Table** and the intended existing table before you start the load.
+
+    ![All local file cards configured for insert](./images/sql-data-load-start.png "")
+
+13. Select **Start** to run the configured data loads.
+
+    ![Start local file data loads](./images/sql-data-load-start.png "")
+
+14. Verify that each file load completed successfully.
+
+    Use the Data Load job details or log output to review any load errors. Most mapping issues are caused by a file name that does not match the table name or by a CSV header that does not match an existing column name.
+
+    ![Completed local file data load jobs](./images/data-load-jobs-complete.png "")
+
+15. Open **SQL** and validate that the key tables contain rows.
+
+    ```sql
+    <copy>
+    SELECT 'CIS_IAM_POLICIES' table_name, COUNT(*) row_count FROM cis_iam_policies
+    UNION ALL
+    SELECT 'CLOUDGUARD02_LISTPROBLEMS', COUNT(*) FROM cloudguard02_listproblems
+    UNION ALL
+    SELECT 'LISTHOSTINSIGHTS', COUNT(*) FROM listhostinsights
+    UNION ALL
+    SELECT 'OCI_DOC_REF', COUNT(*) FROM oci_doc_ref;
+    </copy>
+    ```
+
+    ![Validate loaded table row counts](./images/data-load-jobs-complete.png "")
 
 ## Task 8: (Optional) Connect RESTful Data from OCI API Endpoints
 
