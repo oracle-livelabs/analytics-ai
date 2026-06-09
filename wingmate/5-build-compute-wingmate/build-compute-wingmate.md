@@ -106,18 +106,20 @@ Compute Wingmate can use the materialized views created in Lab 1 or query the `O
 
 	> **Note:** If you did not create the materialized view in Lab 1, replace `MV_COMPUTE_INSTANCE_DIM_V` with `OCIRA.COMPUTE_INSTANCE_DIM_V`.
 
-5. Identify the Resource Analytics column that contains the compute instance OCID.
+5. Validate the Resource Analytics compute instance OCID column.
+
+	The metrics collector writes the OCI Monitoring `resourceId` value into `OCI_COMPUTE_METRICS.INSTANCE_ID`. Resource Analytics stores the same compute instance OCID in `MV_COMPUTE_INSTANCE_DIM_V.ID`, so later views join metrics to metadata on this value.
 
 	```sql
 	<copy>
-	SELECT column_name, data_type
-	FROM user_tab_columns
-	WHERE table_name = 'MV_COMPUTE_INSTANCE_DIM_V'
-	ORDER BY column_id;
+	SELECT id,
+	       display_name,
+	       lifecycle_state
+	FROM mv_compute_instance_dim_v
+	WHERE id LIKE 'ocid1.instance.%'
+	FETCH FIRST 10 ROWS ONLY;
 	</copy>
 	```
-
-	> **SME Gate:** Confirm the compute instance OCID column. Later steps use `<compute_instance_ocid_column>` as a placeholder until the target Resource Analytics column name is confirmed.
 
 ## Task 3: Configure OCI Metrics Collector
 
@@ -306,6 +308,8 @@ The OCI Metrics Collector collects compute metrics from OCI Monitoring, enriches
 	</copy>
 	```
 
+	![Metrics collector running one collection cycle](./images/oci-metrics-success.png "")
+
 13. Optional: run the collector continuously.
 
 	```bash
@@ -390,11 +394,11 @@ The metrics collector creates and writes to `OCI_COMPUTE_METRICS` in the `WINGMA
 	</copy>
 	```
 
+	![Metrics collector rows written successfully](./images/collect-metrics-success.png "")
+
 ## Task 5: Create Compute Overlay Views
 
 Create APEX-friendly views that combine compute metadata with the latest metrics.
-
-> **SME Gate:** Replace `<compute_instance_ocid_column>` with the confirmed Resource Analytics compute instance OCID column from Task 2.
 
 1. Create a latest-metrics view.
 
@@ -433,7 +437,7 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 	       ml.memory_used_gbs
 	FROM mv_compute_instance_dim_v ci
 	LEFT JOIN compute_metrics_latest_v ml
-	    ON ml.instance_id = ci.<compute_instance_ocid_column>;
+	    ON ml.instance_id = ci.id;
 	</copy>
 	```
 
@@ -478,6 +482,8 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	</copy>
 	```
 
+	![Compute Overview region](./images/classic-report.png "")
+
 5. Add a **Chart** region named **CPU Utilization by Instance**.
 
 	Use this source query:
@@ -491,6 +497,8 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	ORDER BY cpu_utilization_pct DESC
 	</copy>
 	```
+
+	![CPU Utilization by Instance region](./images/chart-cpu-utilization.png "")
 
 	Recommended chart settings:
 
@@ -537,8 +545,16 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	Recommended chart settings:
 
 	* **Type:** Line
+
+	![CPU and Memory Usage Trend region](./images/line-chart.png "")
+	
 	* **Label:** `COLLECTION_TIME`
+
 	* **Series:** one series for CPU utilization and one series for memory utilization
+
+	![Series Create Button](./images/line-chart-series-label-1.png "")
+
+	![Series Create Button](./images/line-chart-series-label-2.png "")
 
 ## Task 7: Configure the Compute Wingmate Agent
 
@@ -550,8 +566,10 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 
 	* **Name:** `Compute Wingmate RAG`
 	* **Static ID:** `wingmate_compute_rag`
-	* **Service:** `OCI_GENAI`
-	* **System Prompt** or **Role:** `You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the configured RAG source for Resource Analytics compute metadata and OCI compute metrics data. Answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.`
+	* **System Prompt:** `You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the configured RAG source for Resource Analytics compute metadata and OCI compute metrics data. Answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.`
+	* **Welcome Message:** `Welcome! Begin chatting with OCI Compute Wingmate about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends.`
+
+	![rag compute config](./images/compute-rag.png "")
 
 3. Add a SQL-based RAG Source to `wingmate_compute_rag`:
 
@@ -562,6 +580,8 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	FETCH FIRST 100 ROWS ONLY
 	</copy>
 	```
+
+	![rag compute context](./images/compute-context.png "")
 
 	> **SME Gate:** Confirm the final RAG source row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
 
@@ -574,6 +594,8 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	FETCH FIRST 100 ROWS ONLY
 	</copy>
 	```
+
+	![rag compute context validation](./images/compute-context-validate.png "")
 
 5. Return to Page 5, **OCI Compute Wingmate**.
 

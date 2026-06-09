@@ -318,8 +318,10 @@ Estimated Time: 60 minutes
 
 	* **Name:** `Multicloud Wingmate RAG`
 	* **Static ID:** `wingmate_multicloud_rag`
-	* **Service:** `OCI_GENAI`
-	* **System Prompt** or **Role:** `You are OCI Multicloud Wingmate. Answer capacity, allocation, inventory, and documentation-reference questions using the configured RAG sources. Treat Resource Analytics host insights data as configured capacity and running allocation, not live OCI Monitoring metrics. Be concise and say when retrieved context is insufficient.`
+	* **System Prompt:** `You are OCI Multicloud Wingmate. Answer capacity, allocation, inventory, and documentation-reference questions using the configured RAG sources. Treat Resource Analytics host insights data as configured capacity and running allocation, not live OCI Monitoring metrics. Be concise and say when retrieved context is insufficient.`
+	* **Welcome Message:** `Welcome! Begin chatting with OCI Multicloud Wingmate about capacity, allocation, inventory, and documentation-reference questions.`
+
+    ![configuration for genai](./images/genai-config.png "")
 
 18. Add SQL-based RAG Sources to `wingmate_multicloud_rag`:
 
@@ -330,6 +332,8 @@ Estimated Time: 60 minutes
 	</copy>
 	```
 
+    ![configuration for Host Insights](./images/host-insights.png "")
+
 	```sql
 	<copy>
 	SELECT context_prompt
@@ -337,12 +341,16 @@ Estimated Time: 60 minutes
 	</copy>
 	```
 
+    ![configuration for Multicloud](./images/multicloud-details.png "")
+
 	```sql
 	<copy>
 	SELECT context_prompt
 	FROM oci_doc_ref_compute_sv
 	</copy>
 	```
+
+    ![configuration for doc ref](./images/doc-ref.png "")
 
 	**Flat-file fallbacks:**
 
@@ -360,9 +368,9 @@ Estimated Time: 60 minutes
 	</copy>
 	```
 
-19. Validate the RAG source SQL as `WINGMATE`.
+19. Navigate to SQL Commands in the SQL Workshop and validate the RAG source SQL as `WINGMATE`.
 
-	```sql
+	```
 	<copy>
 	SELECT 'host_insights' AS source_name, context_prompt
 	FROM ra_hostinsights_report_sv
@@ -375,6 +383,8 @@ Estimated Time: 60 minutes
 	</copy>
 	```
 
+    ![validate rag](./images/validate.png "")
+
 20. Configure the new AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**.
 
 	Configure the action:
@@ -384,14 +394,6 @@ Estimated Time: 60 minutes
 	* **Container Selector:** `#wingmate-chat`
 
 	![system prompt](./images/show-ai-prompt.png "")
-
-	Under **Welcome Message**, enter:
-
-	```text
-	<copy>
-	Welcome! You can chat with OCI Multicloud Wingmate.
-	</copy>
-	```
 
 	Under **Quick Actions**, add these messages:
 

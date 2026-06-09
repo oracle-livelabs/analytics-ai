@@ -237,7 +237,7 @@ The Select AI setup script creates one database credential and three domain-spec
 
 The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Select AI profile and vector index. It uses OCI Generative AI for chat responses and the in-database `ALL_MINILM_L12_V2` ONNX transformer for RAG embeddings, avoiding a separate OCI Generative AI embedding endpoint. This is the documentation-research use case in the Ask Oracle app.
 
-1. Upload the documentation reference file from the extracted Lab 1 bundle to an Object Storage bucket. Use `wingmate_data/oci_doc_ref.xlsx`.
+1. Upload the documentation reference CSV from the extracted Lab 1 bundle to an Object Storage bucket. Use `wingmate_data/data/oci_doc_ref.csv`.
 
     ![RAG Object Storage bucket](./images/rag-bucket.png "")
 

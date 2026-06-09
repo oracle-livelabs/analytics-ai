@@ -82,7 +82,6 @@ APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same
 
     * **Name:** `Security Wingmate RAG`
     * **Static ID:** `wingmate_security_rag`
-    * **Service:** `OCI_GENAI`
     * **System Prompt:** `You are OCI Security Wingmate. Answer IAM policy and tenancy security questions using the configured RAG source. Be concise, explain security impact, and say when the retrieved policy context is insufficient.`
     * **Welcome Message:** `Welcome! Begin chatting with OCI Security Wingmate about policies and tenancy security questions.`
 
