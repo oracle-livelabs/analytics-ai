@@ -10,7 +10,7 @@ Estimated time: 10 min
 - Test the program
 
 ### Prerequisites
-- The lab 1 must have been completed.
+- The lab 2 must have been completed.
 
 ## Task 1: Test
 
@@ -68,6 +68,6 @@ One additional step is needed to use the RAG filter. We need to add a RAG tool.
 
 - **Author**
     - Marc Gueury, Generative AI Specialist
-    - Anshuman Panda, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
-
+    - Ras Alungei, Generative AI Specialist
+    

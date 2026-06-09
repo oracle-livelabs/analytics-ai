@@ -51,15 +51,16 @@ Upload a new file.
 
 In the meanwhile,
 - Bucket:
-    - After 1/2 mins check that it is copied in the Agent Bucket.
-- AI Agent Ingestion
+    - After 1/2 mins check that it is copied in the Converted Bucket.
+- Vector Store
     - In OCI Console, click on the Hamburger menu
-    - Analytics & AI/ Generative AI Agents
-    - Knowledge Base - agent-agent-kb
-    - In datasources - agent-agent-ds
-    - Check the ingestion jobs.
+    - Analytics & AI/ Generative AI
+    - On the side, choose *Vector Stores* 
+    - Choose the vector store with your prefix, something like *agext-vs-2026-06-06"
+    - Go to the tab *Files*
+    - See if your file was indexed. It can take some minutes depending of the size, format, ...
   
-      ![Agent Ingestion](images/agent-ingestion.png)    
+      ![Agent Ingestion](images/vector-store-files.png)    
 
 What will happen internally, depending of the file type, it will be processed in different ways:
 - If the file has the extension **.pdf**, **.txt**, **.csv**, **.md**, the file is copied to the AGENT Object Storage.
@@ -68,9 +69,9 @@ What will happen internally, depending of the file type, it will be processed in
 - If the file has the extension **.tif**, it is processed by OCI Document Understanding.
 ....
 
-## Known issues
+## Task 4: (Optional) Virtual Machine
 
-- For debugging purpose if you want to login on the VM and see why it could fail
+- For debugging purpose if you want to login on the Virtual Machine and see why it could fail
 
 ```
 In OCI Cloud Shell
@@ -86,8 +87,12 @@ cat target/ssh_key_starter
 SSH to Bastion
 ./starter.sh ssh bastion
 
-# Check the log
+# Here you will see the list of apps installed
 cd app
+ls
+
+# Let's check the "ingest" that does file conversion.
+cd ingest
 cat ingest.log
 
 # Check the choice of the program by extension

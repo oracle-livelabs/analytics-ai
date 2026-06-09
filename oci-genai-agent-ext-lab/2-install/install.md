@@ -82,7 +82,25 @@ Estimated time: 15 min
         3. Other (your own IP range)
     - To get your laptop IP, use, by example, https://whatismyipaddress.com or https://ifconfig.me 
 
-    In case of errors, check **Known Issues** below
+    In case of errors, check **Known Issues** below.
+
+9. If after the setup, you want to add more IP addresses to access the installaiton. For ex, 
+    - a colleague who want to access the setup,
+    - Your laptop that is in another place, ...
+    
+    Please do this:
+    - Open the OCI Console
+    - Go to Networking / Virtual Cloud Networks
+    - Choose the *YOUR_PREFIX-vcn* Network
+    - Open the tab *Security*
+    - Open the Security List *YOUR_PREFIX-security-list*
+    - Open the tab *Security Rules*
+    - Click *Add Ingress Rule*
+    - Fill the following field
+        - Source CIDR: 12.34.56.78/32 (=the ip that you want to add/32)
+        - Destination Port: 443
+        - Click *Add Ingress Rule*     
+    - Retry
 
 8. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 45 minutes and you can check the steps in the next labs while it's running. However, you will need to come back to this lab when it is done and complete the next step.
@@ -103,10 +121,13 @@ Estimated time: 15 min
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
     User: APEX_APP / YOUR_PASSWORD
 
-
     -----------------------------------------------------------------------
     LangGraph Agent Chat:
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/chat.html
+
+    -----------------------------------------------------------------------
+    ReactJS Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/
 
     -----------------------------------------------------------------------
     Oracle Digital Assistant (Web Channel)
@@ -259,6 +280,5 @@ Estimated time: 15 min
 
 - **Author**
     - Marc Gueury, Generative AI Specialist
-    - Anshuman Panda, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
-
+    - Ras Alungei, Generative AI Specialist

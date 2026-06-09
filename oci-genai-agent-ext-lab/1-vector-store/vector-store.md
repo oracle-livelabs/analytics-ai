@@ -79,7 +79,11 @@ Estimated time: 45 min
 
     -----------------------------------------------------------------------
     LangGraph Agent Chat:
-    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/chat.html
+
+    -----------------------------------------------------------------------
+    ReactJS Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/
 
     -----------------------------------------------------------------------
     Oracle Digital Assistant (Web Channel)
@@ -212,4 +216,4 @@ You can
 - **Author**
     - Marc Gueury, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
-
+    - Ras Alungei, Generative AI Specialist
