@@ -23,18 +23,26 @@ Use this checklist to convert the current draft workshop into final executable L
 - **Approved:** Use the Lab 2 APEX workspace sign-in flow against the Resource Analytics-provisioned Autonomous AI Database with workspace `WINGMATE`, username `WINGMATE`, and the password created in Lab 1.
 - **Approved:** Use the Lab 2 Web Credential flow with OCI Native Authentication, Name `api_key`, Static ID `api_key`, and a region-aware Generative AI inference URL pattern. Keep Chicago as the concrete example.
 - **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and `xai.grok-4.3` as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If `xai.grok-4.3` is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
-- **Approved:** Lab 2 imports the `OCI Wingmate` framework application from `oci_wingmate_framework.sql` included in the Lab 1 `wingmate_data.zip` package. The imported framework provides the hub and lab landing pages used by later labs.
-- **Approved:** Use the imported framework pages as the starting points for later labs: `OCI Wingmate Hub`, `Security Overview`, `OCI Compute Wingmate`, and `Multicloud Overview`.
+- **Approved:** Lab 2 imports the prebuilt Ask Oracle APEX application from `ADB-AskOracle-Chatbot-2026-03-04.sql` in the Oracle Autonomous Database samples repository.
+- **Approved:** Lab 2 uses bundled setup scripts under `wingmate_data/sql` for the Select AI profiles and optional RAG Agent Team setup instead of embedding all PL/SQL in the lab text.
+- **Approved:** Labs 3, 4, and 5 import one page each into the Lab 2 Ask Oracle application from `wingmate_data/apex-pages`.
+- Confirm the Ask Oracle import flow, supporting object prompts, parsing schema selection, and target application ID in the workshop environment.
 - **Approved:** Use Resource Analytics materialized views as the primary Operations Wingmate starter sources: `MV_COMPUTE_INSTANCE_DIM_V`, `MV_COMPARTMENT_DIM_V`, `MV_REGION_DIM_V`, `MV_AD_DIM_V`, `MV_TAGS_DIM_V`, and `MV_INSTANCE_VOLUME_DETAILS_V`. Keep `CIS_IAM_POLICIES` as supporting security context rather than the primary Operations source.
+- Confirm the final Select AI credential pattern for the lab environment: `DBMS_CLOUD.CREATE_CREDENTIAL` with API-key values, resource principal, or a lab-provided credential.
+- Confirm the final OCI Generative AI Select AI profile attributes, including `provider`, `region`, `oci_compartment_id`, `model`, and `credential_name`.
+- Confirm the three Lab 2 profile scopes:
+  - `WINGMATE_SECURITY`: `CIS_IAM_POLICIES`, `CIS_IAM_POLICIES_SV`, and tenancy/compartment/tag materialized views.
+  - `WINGMATE_MULTICLOUD`: multicloud inventory views, Exadata/VM cluster/CDB/PDB objects, documentation-reference objects, and host-insights fallback objects.
+  - `WINGMATE_COMPUTE`: Resource Analytics compute materialized views, volume relationships, tenancy/compartment/region/AD/tag context, and host-insights fallback objects. Add `OCI_COMPUTE_METRICS` after the Lab 5 metrics collector creates it.
 - Keep exploratory `SELECT *` source-query examples in Lab 2 until Resource Analytics column names are validated. Final report/dashboard SQL and assistant context SQL remain open.
-- Confirm the final framework export file name, package location, imported application install options, and imported page IDs in the target APEX environment.
-- Keep open: define the Operations Wingmate assistant prompt, page item names, context SQL, welcome message, prompt examples, and context-source scope.
-- **Approved:** Use the current Lab 2 foundation validation checks: app opens without authentication or authorization errors, the report/dashboard can query approved Resource Analytics materialized views, `OCI_GENAI` appears in the APEX Generative AI service list, and any test assistant action can call OCI Generative AI through `api_key`. Assistant response validation remains open until the Operations prompt and context SQL are finalized.
+- Keep open: define Ask Oracle default profile behavior, profile dropdown labels, prompt examples, and expected validation responses.
+- **Approved:** Use the current Lab 2 foundation validation checks: app opens without authentication or authorization errors, Ask Oracle supporting objects compile as `VALID`, the three Wingmate Select AI profiles appear in `USER_CLOUD_AI_PROFILES`, and test questions can use the correct profile to generate SQL against the intended object scope.
 
 ## Lab 3: Security Wingmate
 
 - **Approved:** Use `CIS_IAM_POLICIES` as the primary Security Wingmate source for Lab 3. Resource Analytics identity views and ShowOCI identity exports can be optional future/context sources.
-- **Approved:** Configure the imported `Security Overview` page instead of creating a new Security page manually.
+- **Approved:** Import `wingmate-page-02-security-overview.sql` as Page 2 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Use the `wingmate_security_rag` AI Configuration with a RAG Source over `CIS_IAM_POLICIES_SV` instead of hidden page-item context injection.
 - Confirm whether Security Wingmate uses synthetic `CIS_` policy data, Resource Analytics identity views, or both.
 - Confirm APEX page layout, region names, dynamic action settings, and screenshots.
 - Confirm assistant prompt wording, welcome message, prompt examples, and expected validation responses.
@@ -42,18 +50,20 @@ Use this checklist to convert the current draft workshop into final executable L
 ## Lab 4: Multicloud Wingmate
 
 - **Approved:** Use the existing host-insights and multicloud objects as the Lab 4 data foundation: `oci_exa_infr`, `oci_exa_vm_cluster`, `oci_cdb`, `oci_pdb`, `CIS_MULTICLOUD_DETAILS_V`, `HOSTINSIGHTS_REPORT_PERIOD`, `HOSTINSIGHTS_CPU_USAGE_SUMMARY`, `HOSTINSIGHTS_MEMORY_USAGE_SUMMARY`, `HOSTINSIGHTS_RES_STAT`, `HOSTINSIGHTS_RES_STAT_MEMORY`, `HOSTINSIGHTS_CPU_FORECAST_TREND`, `hostinsights_report_sv`, `oci_doc_ref_compute_sv`, and `MULTICLOUD_GRAPH`.
-- **Approved:** Configure the imported `Multicloud Overview` page instead of copying the Security page.
+- **Approved:** Import `wingmate-page-21-multicloud-overview.sql` as Page 21 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Use the `wingmate_multicloud_rag` AI Configuration with RAG Sources for host insights, multicloud summary, and compute documentation reference context instead of hidden page-item context injection.
 - Confirm all table and view names used by the lab, including host insights, database, documentation-reference, and graph objects.
-- Confirm SQL source queries for every report, chart, hidden item, computation, and graph region.
-- Confirm imported page number assumptions and hidden page item names such as `P21_OCI_DOC_REF_COMPUTE`, `P21_OCI_HOSTINSIGHTS_DETAILS`, and `P21_OCI_DATABASE_DETAILS`.
-- Confirm assistant prompt wording, welcome message, page context, and expected validation responses.
+- Confirm SQL source queries for every report, chart, RAG Source, and graph region.
+- Confirm imported page number assumptions and AI Configuration static IDs.
+- Confirm assistant role wording, welcome message, RAG context, and expected validation responses.
 - Confirm whether the APEX Graph Visualization plug-in is required, where learners should download it, and how installation should be validated.
 
 ## Lab 5: Compute Wingmate
 
-- **Approved:** Configure the imported `OCI Compute Wingmate` page instead of creating a new Compute page manually.
+- **Approved:** Import `wingmate-page-05-oci-compute-wingmate.sql` as Page 5 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Use the `wingmate_compute_rag` AI Configuration with a RAG Source over `compute_wingmate_context_v` instead of direct assistant context SQL.
 - Provide exact Compute Wingmate APEX page layout, screenshots, region types, and navigation placement.
 - Provide approved Resource Analytics compute source views or materialized views.
 - Provide SQL queries for compute inventory, capacity, utilization, block volume relationships, and compartment context.
-- Provide assistant prompt, context item names, welcome message, and prompt examples.
+- Provide assistant role wording, RAG Source SQL, welcome message, and prompt examples.
 - Provide validation questions, expected data points, screenshots, and troubleshooting notes.

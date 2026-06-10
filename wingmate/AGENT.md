@@ -168,33 +168,37 @@ It should include:
 2. Generate API keys for the APEX app.
 3. Configure APEX Web Credentials for OCI access.
 4. Create the OCI Generative AI service object in APEX.
-5. Import the `OCI Wingmate` framework application from `oci_wingmate_framework.sql` in the Lab 1 downloaded files.
-6. Validate the imported hub and lab landing pages against Resource Analytics data and Lab 1 materialized views.
+5. Run the bundled Select AI profile setup script and optional RAG Agent Team setup script from `wingmate_data/sql`.
+6. Import the prebuilt Ask Oracle APEX application from the Oracle sample repository.
+7. Validate the imported Ask Oracle application and Select AI profiles against Resource Analytics data and Lab 1 materialized views.
 
-Do not invent exact APEX source queries, component mappings, assistant prompts, region settings, hidden items, or page computations. Add SME TODO gates where exact details are unknown.
+Do not invent exact APEX source queries, component mappings, assistant roles, region settings, RAG Source SQL, or AI Configuration behavior. Add SME TODO gates where exact details are unknown.
 
 ## Labs 3-5 Direction
 
 Lab 3:
 
 - Rename and normalize as `Build a Security Wingmate Agent`.
-- Configure the imported `Security Overview` page from the Lab 2 framework application.
+- Import `wingmate-page-02-security-overview.sql` into the Lab 2 Ask Oracle application as Page 2.
+- Configure `wingmate_security_rag` with a RAG Source over `CIS_IAM_POLICIES_SV`.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 4:
 
 - Rename and normalize as `Build a Multicloud Wingmate Agent`.
-- Configure the imported `Multicloud Overview` page from the Lab 2 framework application.
+- Import `wingmate-page-21-multicloud-overview.sql` into the Lab 2 Ask Oracle application as Page 21.
+- Configure `wingmate_multicloud_rag` with host-insights, multicloud summary, and compute documentation RAG Sources.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 5:
 
-- Configure the imported `OCI Compute Wingmate` page using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
+- Import `wingmate-page-05-oci-compute-wingmate.sql` into the Lab 2 Ask Oracle application as Page 5.
+- Configure the Compute page using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
 - Configure OCI Metrics Collector from `https://github.com/jujufugh/oci-metrics-collector-py`.
 - Write compute CPU and memory metrics into the `WINGMATE` Autonomous Database schema.
 - Create SQL overlay views that combine compute metadata with metrics.
-- Add APEX visualization widgets and configure the Compute Wingmate AI assistant.
-- Keep SME gates for Resource Analytics join columns, metric table mappings, and final assistant context limits.
+- Add APEX visualization widgets and configure `wingmate_compute_rag` over `compute_wingmate_context_v`.
+- Keep SME gates for Resource Analytics join columns, metric table mappings, and final RAG Source limits.
 
 ## Validation Gates
 
