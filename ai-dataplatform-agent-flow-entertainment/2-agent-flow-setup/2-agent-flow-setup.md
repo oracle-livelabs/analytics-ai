@@ -95,7 +95,9 @@ The agent node is the core of your flow. It defines the LLM model, the system in
 
     **Model** 
 
-    Select ```xai.grok-4-fast-reasoning```
+    Select ```xai.grok-4.20-reasoning```.
+
+    > **Note:** Model availability can vary by reservation. If `xai.grok-4.20-reasoning` is not available, select another available Grok 4 reasoning model.
 
 
 4. For the **Agent Instructions** field, you'll need the detailed instructions that define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:
@@ -481,7 +483,7 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
 In this lab, you built the complete agent flow for the Entertainment Release & Performance Analyst:
 
 - You created the **agent flow** on the visual canvas and attached it to the AI Compute.
-- You configured the **agent node** with the xai.grok-4-fast-reasoning model and detailed instructions that define the agent's reasoning flow, response style, and behavioral guardrails.
+- You configured the **agent node** with the `xai.grok-4.20-reasoning` model, or another available Grok 4 reasoning model, and detailed instructions that define the agent's reasoning flow, response style, and behavioral guardrails.
 - You added a **RAG tool** connected to the Knowledge Base containing release playbooks and strategy documents.
 - You added **four SQL tools** covering box office performance, streaming health, and reference lookups for titles and markets.
 

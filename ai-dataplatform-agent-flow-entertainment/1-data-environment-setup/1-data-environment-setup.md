@@ -311,7 +311,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
     ![Screenshot of the AI database console page](images/01-database-console.png " ")
 
-4. You should see two database instances here. Click the name of the autonomous database that starts with **hol-entertainment-** to view details. 
+4. You should see the Autonomous AI Database for your reservation. Click the database name that starts with **hol-entertainment-** to view details. 
 
 5. When the page loads, click **[Database actions]** and select **SQL**.  This will open the SQL Workbench in a new browser tab.
 
