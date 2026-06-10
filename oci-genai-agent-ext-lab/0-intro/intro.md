@@ -12,8 +12,8 @@ The workshop covers:
         ![Screenshot APEX](images/apex-jazz.png =500x500)
     - LangGraph (Lab 4)
         ![Screenshot LangGraph](images/langgraph-jazz.png =500x500)
-    - ReactJS (Lab 5)
-        ![Screenshot ReactJS](../5-reactjs/images/reactjs-headphones.png =500x500)
+    - Next.js (ReactJS)+ Open AI Response Backend (Lab 5)
+        ![Screenshot Next.js](../5-nextjs/images/nextjs-headphones.png =500x500)
     - Oracle Digital Assistant (Lab 6)
         ![Screenshot Digital Assistant](../6-digital-assistant/images/oda-webchat.png =500x500)    
 

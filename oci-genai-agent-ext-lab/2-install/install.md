@@ -126,7 +126,7 @@ Estimated time: 15 min
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/chat.html
 
     -----------------------------------------------------------------------
-    ReactJS Chat:
+    Next.js Chat:
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/
 
     -----------------------------------------------------------------------
