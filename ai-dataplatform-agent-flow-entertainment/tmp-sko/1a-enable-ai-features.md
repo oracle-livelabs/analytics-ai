@@ -51,6 +51,10 @@ This section assumes you have:
 
     ![Click Enable in the Enable AI features panel](screenshots-entertainment/06-click-enable.png)
 
+    > **Note:** You may briefly see a message that says **Failed to enable AI features for the instance**. In this LiveLabs sandbox flow, this is an erroneous error message and should be ignored. Continue waiting for the enablement process to finish.
+
+    ![Ignore the erroneous failed enablement message](screenshots-entertainment/06a-failed-enable-ai-features.png)
+
 7. Wait for the Workbench to finish enabling the features. The home page returns to the card view and the card changes to **Disable AI features**, which confirms AI features are attached.
 
     ![Confirm the Disable AI features card appears](screenshots-entertainment/07-confirm-enabled.png)
