@@ -194,6 +194,7 @@ Create a dedicated application schema for APEX instead of building directly in t
 	CREATE USER wingmate IDENTIFIED BY "<replace_with_strong_password>";
 
 	GRANT UNLIMITED TABLESPACE TO wingmate;
+	GRANT CREATE PROPERTY GRAPH TO wingmate;
 
 	GRANT CREATE SESSION,
 	      CREATE TABLE,
@@ -222,6 +223,8 @@ Create a dedicated application schema for APEX instead of building directly in t
         /
         </copy>
     ```
+
+	> **Note:** If you already created the `WINGMATE` user before this grant was added, sign in as `ADMIN` and run `GRANT CREATE PROPERTY GRAPH TO wingmate;` before running the Multicloud graph setup script in Lab 4.
 
 	![Run create wingmate user sql](./images/create-wingmate-user.png "")
 
