@@ -1,7 +1,7 @@
-# Test with Next.js (ReactJS)
+# Test with Enterprise AI Chat (Next.js + Responses API)
 
 ## Introduction
-In this lab, you will test the installation using Next.js (ReactJS) and OpenAI Response API backend.
+In this lab, you will test the installation using Enterprise AI Chat: Next.js + Responses API.
 
 Estimated time: 10 min
 
@@ -14,11 +14,11 @@ Estimated time: 10 min
 
 ## Task 1: Test 
 
-2. Check the URL at the end of the Terraform run.
+1. Check the URL at the end of the Terraform run.
 
-3. Go to the Next.js URL (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/).
+2. Go to the Next.js URL (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/).
 
-4. Do some setup
+3. Let's do some setup:
     - Click on the tools icon
         ![Settings 1](images/nextjs-tools.png)    
     - In the Tools menu, enable the *File Search* tool 
@@ -28,16 +28,16 @@ Estimated time: 10 min
     - Enable the *Widgets* 
         ![Settings 3](images/nextjs-widgets.png)    
 
-5. Back to the chat. Type "what is jazz" and press Enter.
+4. Back to the chat. Type "what is jazz" and press Enter.
 
     ![Jazz](images/nextjs-jazz.png)    
 
-4. Type "what is the issue with my headphones" and press Enter.
+5. Type "what is the issue with my headphones" and press Enter.
 
     Click on the link.
     ![Analytics](images/nextjs-headphones.png)    
 
-5. Try more questions:
+6. Try more questions:
 
     | File type | Extension | Question                                          |
     | ----------| --------- | ------------------------------------------------- |
