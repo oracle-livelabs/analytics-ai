@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Before building the AI agent, we need to ensure the data environment is in place. In this lab, you'll explore the pre-configured catalog and volume that have been set up for the workshop, then create a Knowledge Base that turns those documents into vector representations for RAG retrieval. You'll also verify the Oracle AI Database tables that will power the agent's SQL tools.
+Before building the AI agent, we need to ensure the data environment is in place. In this lab, you'll create the AI compute instance, external catalog, standard catalog, managed volume, and Knowledge Base used by the workshop. You'll also verify the Oracle AI Database tables that will power the agent's SQL tools.
 
 By the end of this lab, all the data assets — structured (database tables) and unstructured (knowledge base documents) — will be ready for the agent flow you'll build in Lab 2.
 
@@ -12,11 +12,12 @@ By the end of this lab, all the data assets — structured (database tables) and
 
 In this lab you will:
 
-1. Create the AI Compute instance used by the Agent (created in Lab 2)
-2. Create a new standard catalog (`entertainment_analyst`) and managed volume (`entertainment_analyst`) where you'll upload release playbooks and strategy documents
-3. Create a Knowledge Base and an associated data source that consumes the documents from the managed volume
-4. Verify the Oracle AI Database tables that contain box office, streaming, and marketing data
-5. Understand how the structured (SQL) and unstructured (RAG) data assets connect to the agent you'll build
+1. Create the AI Compute instance used by the agent
+2. Create a new external database catalog (`ent_ext_catalog`)
+3. Create a new standard catalog (`ent_std_catalog`) and managed volume (`ent_volume`) where you'll upload release playbooks and strategy documents
+4. Create a Knowledge Base (`ent_kb`) and an associated data source that consumes the documents from the managed volume
+5. Verify the Oracle AI Database tables that contain box office, streaming, and marketing data
+6. Understand how the structured (SQL) and unstructured (RAG) data assets connect to the agent you'll build
 
 ### Prerequisites
 
@@ -24,6 +25,7 @@ This lab assumes you have:
 
 * Reviewed the Workshop Introduction and Overview
 * Access to the AIDP Workbench instance provisioned for this workshop
+* Enabled AI features in the AIDP Workbench. In the LiveLabs sandbox, this commonly takes 5-7 minutes and may require a hard browser refresh before the home page changes from **Enable AI features** to **Disable AI features**.
 
 ## Task 1: Create the AI Compute Instance
 
@@ -66,7 +68,7 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
     **Name**
     ```
     <copy>
-    entertainment_analyst_compute
+    ent_compute
     </copy>
     ```
 
@@ -85,11 +87,11 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
     
     > **Note**: It may take 3-5 minutes to provision this resource. The AI Compute instance is where your agent flow executes. Once attached, any changes you make to the agent flow are automatically propagated to the AI Compute instance — meaning you can edit and test quasi-simultaneously.
 
-12. There's no need wait for the **`entertainment_analyst_compute`** resource to finish provisioning right now. You can move to the next task. The instance should be ready to go by the time it's needed in Lab 2.
+12. There's no need wait for the **`ent_compute`** resource to finish provisioning right now. You can move to the next task. The instance should be ready to go by the time it's needed in Lab 2.
 
 ## Task 2: Create the (External) Database Catalog
 
-An external catalog in AIDP enables you to connect to an Autonomous Lakehouse (ALH) database. In a production setting, that means you aren't moving data around to facilicate your AI solutions. Rather, you're bringing AI right to your data.
+An external catalog in AIDP enables you to connect to an Autonomous Lakehouse (ALH) database. In a production setting, that means you aren't moving data around to facilitate your AI solutions. Rather, you're bringing AI right to your data.
 
 For this workshop, an ALH instance has been provisioned and loaded with sample data already. You'll be creating a new external catalog to leverage that dataset.
 
@@ -99,9 +101,9 @@ For this workshop, an ALH instance has been provisioned and loaded with sample d
 
     ![Screenshot of AIDP workbench home page](images/01-aidp-master-catalog.png " ")
 
-    >Note: You will see that two catalogs already exist **`vectordb26ai`** and **`default`**. Pay no mind to these, we'll cover the steps of creating all requisite catalogs  here in this lab.
+    > **Note:** You will see pre-provisioned catalogs such as **`default`** and a generated **`vector_db_...`** catalog. Do not delete these catalogs. The generated vector catalog is created when AI features are enabled and is required by the Workbench.
 
-2. Click **[Create catalog]** in the upper right coner. 
+2. Click **[Create catalog]** in the upper right corner.
 
     ![Screenshot of Create Catalog button](images/01-aidp-create-catalog.png " ")
 
@@ -110,7 +112,7 @@ For this workshop, an ALH instance has been provisioned and loaded with sample d
     **Catalog name:**
     ```
     <copy>
-    aidatabase
+    ent_ext_catalog
     </copy>
     ```
 
@@ -131,9 +133,9 @@ For this workshop, an ALH instance has been provisioned and loaded with sample d
 
 6. For **External source method** select **Choose ALH instance**.
 
-7. Several fields should auto-populate. If the **Compartment** drop-down does not show your assigned workshop compartment, go ahead and locate / select your designated compartment.
+7. Several fields should auto-populate. Leave the **Tenant OCID** and **Region** fields as-is. If the **Compartment** drop-down does not show your assigned workshop compartment, open the compartment tree and select your designated `LL<reservation>-COMPARTMENT` row.
 
-8. Move to the **ALH instance** drop down and locate the **hol-entertainment-dev-zzz** instance. The last 8 characters will be a random string.
+8. Move to the **ALH instance** drop down and locate the **hol-entertainment-<reservation>-<suffix>** instance. Match this to the **ADB Name** value in the LiveLabs **View Login Info** panel.
 
     >NOTE: You might see a second resource with a shorter name listed in the drop-down. This is the database instance created by AI Data Platform for storing its vector embeddings. No need to pay it any mind.
 
@@ -143,7 +145,7 @@ For this workshop, an ALH instance has been provisioned and loaded with sample d
 
     - **Wallet password (optional)**: You may choose your own password, or leave this field blank and allow AIDP to manage the wallet password.
     - **Username**: ENTERTAINMENT
-    - **ADM Admin Password**: Retrieved from the LiveLabs instructions page -> View Login Info -> Terraform Outputs -> ADB Admin Password.
+    - **ADB Admin Password**: Retrieved from the LiveLabs instructions page -> View Login Info -> Terraform Outputs -> ADB Admin Password.
 
     > **Important** You'll need the **`ADB Admin Password`** found in the **`View Login Info`** on the LiveLabs workshop page (covered in the **Getting Started** section). Scroll down under **Reservation Information** and you should see a **Terraform Outputs** section.
 
@@ -168,7 +170,7 @@ A standard catalog in AIDP stores AI-related artifacts — volumes, tables, sche
     **Catalog name**
     ```
     <copy>
-    entertainment_analyst
+    ent_std_catalog
     </copy>
     ```
 
@@ -183,13 +185,13 @@ A standard catalog in AIDP stores AI-related artifacts — volumes, tables, sche
 
     ![Master Catalog interface - create new standard catalog](images/01-catalog-create.png)
 
-4. It will take just a moment to create the new catalog. When ready, click **entertainment_analyst** to open the new catalog.
+4. It will take just a moment to create the new catalog. When ready, click **ent_std_catalog** to open the new catalog.
 
     > **Note**: a **Standard Catalog** means it stores data directly within AIDP (backed by OCI Object Storage and [Delta Lake](https://delta.io/) open source file format), as opposed to an External Catalog which connects to data outside the platform.
 
 5. Click on the **default** schema within the catalog. This is where the volume and knowledge base assets are organized.
 
-    ![Catalog interface - resource types inside entertainment_analyst](images/01-catalog-view-components.png)
+    ![Catalog interface - resource types inside ent_std_catalog](images/01-catalog-view-components.png)
 
 ## Task 4: Create the Managed Volume
 
@@ -203,7 +205,7 @@ A volume stores unstructured data — files, documents, images — within a cata
     - **Marketing Measurement & Attribution Guidelines** — Defines metric definitions (e.g., completion rate, ROI), attribution logic, and interpretation rules
     - **Distribution Window & Territory Rules** — Defines territorial constraints, windowing strategies, and market codes
 
-3. Back in the AIDP Workbench browser window, return to the **`entertainment_analyst`** catalog, locate the **default** schema, click on **Volumes**.
+3. Back in the AIDP Workbench browser window, return to the **`ent_std_catalog`** catalog, locate the **default** schema, click on **Volumes**.
 
 4. Click the **+** next to the filter field to start creating a new volume.
 
@@ -214,7 +216,7 @@ A volume stores unstructured data — files, documents, images — within a cata
     **Name**
     ```
     <copy>
-    entertainment_analyst
+    ent_volume
     </copy>
     ```
 
@@ -227,7 +229,7 @@ A volume stores unstructured data — files, documents, images — within a cata
 
     ![Create new volume](images/01-catalog-create-volume.png " ")
 
-6. Click the volume name **`entertainment_analyst`** then click the **+** button to the right of the Filter field then click **`Upload file`**.
+6. Click the volume name **`ent_volume`** then click the **+** button to the right of the Filter field then click **`Upload file`**.
 
 7. Click to browse or drag-and-drop the three `.docx` files from the Zip archive you downloaded earlier.
 
@@ -243,7 +245,7 @@ A volume stores unstructured data — files, documents, images — within a cata
 
 Now we'll create the key asset that enables RAG. A Knowledge Base creates vector representations (embeddings) of the documents in the volume. When the agent receives a question, it performs a semantic search against these vectors to find the most relevant passages — even if the user's wording doesn't exactly match the document text.
 
-1. Navigate back to the **`entertainment_analyst`** catalog. Click on the **default** schema.
+1. Navigate back to the **`ent_std_catalog`** catalog. Click on the **default** schema.
 
 2. Click on **Knowledge Bases**.
 
@@ -254,7 +256,7 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
     **Name**
     ```
     <copy>
-    entertainment_analyst_kb
+    ent_kb
     </copy>
     ```
 
@@ -277,13 +279,13 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
 
 8. Under the **Data Source** tab, click the **+** button to add a data source.
 
-    ![Add data source to entertainment_analyst_kb](images/01-catalog-kbase-add-datasource.png " ")
+    ![Add data source to ent_kb](images/01-catalog-kbase-add-datasource.png " ")
 
-9. In the data source selection window, select the **`entertainment_analyst`** volume from your catalog. This is the volume containing the release strategy and playbook documents. Leave all advanced settings as-is.
+9. In the data source selection window, select the **`ent_volume`** volume from your catalog. This is the volume containing the release strategy and playbook documents. Leave all advanced settings as-is.
 
 10. Click **Add**.
 
-    ![Select and add the entertainment_analyst data source](images/01-catalog-kbase-add-select-datasource.png " ")
+    ![Select and add the ent_volume data source](images/01-catalog-kbase-add-select-datasource.png " ")
 
 11. Navigate to the **History** tab of your Knowledge Base. You should see a line entry with the operation name **"Update Knowledge Base"**. This step ingests the documents — chunking them, generating embeddings, and indexing the vectors.
 
@@ -309,9 +311,9 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
     ![Screenshot of the AI database console page](images/01-database-console.png " ")
 
-4. You should see two database instances here. Click the name of the autonomous database that starts with **hol-entertainment-** to view details. 
+4. You should see the Autonomous AI Database for your reservation. Click the database name that starts with **hol-entertainment-** to view details. 
 
-5. When the page loads, click **[Database actions]** and select **SQL**.  This will open the SQL Workbench in a new brower tab.
+5. When the page loads, click **[Database actions]** and select **SQL**.  This will open the SQL Workbench in a new browser tab.
 
 6. In the *Navigator* on the left, click the first drop-down menu and locate the **Entertainment** schema. 
 
@@ -342,7 +344,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
     ![Image of multi-table query](images/01-sql-workbench-note.png " ")
 
-    >Note: Selecting the table in the left nave bar will only show the columns in the table, not the data.  To review the data you must query with a SQL statement as shown.
+    >Note: Selecting the table in the left nav bar will only show the columns in the table, not the data.  To review the data you must query with a SQL statement as shown.
 
 7. These tables represent the **gold layer** of the medallion architecture — curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer performance and ROI questions.
 
@@ -358,9 +360,9 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 In this lab, you set up the complete data environment for the Entertainment Analyst agent:
 
 - You created an **AI Compute** to host and execute the agent flow.
-- You created a new **`AiDatabase`** external catalog connecting to the Autnomous Lakehouse AI Database instance.
-- You created a new **`entertainment_analyst`** standard catalog and a **`entertainment_analyst`** volume, then uploaded internal release playbooks and strategy documents.
-- You created a **Knowledge Base** (`entertainment_analyst_kb`), populated it with documents from the volume, and verified that the ingestion succeeded. This enables RAG — the agent can now search your internal documents by semantic meaning.
+- You created a new **`ent_ext_catalog`** external catalog connecting to the Autonomous Lakehouse AI Database instance.
+- You created a new **`ent_std_catalog`** standard catalog and a **`ent_volume`** volume, then uploaded internal release playbooks and strategy documents.
+- You created a **Knowledge Base** (`ent_kb`), populated it with documents from the volume, and verified that the ingestion succeeded. This enables RAG — the agent can now search your internal documents by semantic meaning.
 - You verified the **Oracle AI Database tables** containing box office, streaming, and marketing campaign data. These power the agent's SQL tools.
 
 In the next lab, you'll create the agent flow itself — building the agent node and wiring up the RAG and SQL tools.

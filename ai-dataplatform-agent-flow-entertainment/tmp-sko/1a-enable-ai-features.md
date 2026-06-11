@@ -33,7 +33,9 @@ This section assumes you have:
 
     ![Choose an existing Autonomous AI Lakehouse instance](screenshots-entertainment/02-choose-existing-lakehouse.png)
 
-3. Wait for the **Compartment** dropdown to load. Open it and select the workshop compartment shown in the LiveLabs panel, for example `LL<reservation>-COMPARTMENT`.
+    Leave the auto-populated **Tenant OCID** and **Region** fields as-is.
+
+3. Wait for the **Compartment** dropdown to load. Open it and select the workshop compartment shown in the LiveLabs panel, for example `LL<reservation>-COMPARTMENT`. Expand the compartment tree and click the exact compartment row. If you type the compartment name into the field, confirm the dropdown actually selects the row; typed text alone may not commit the selection.
 
     ![Select the workshop compartment](screenshots-entertainment/03-select-workshop-compartment.png)
 
@@ -49,9 +51,15 @@ This section assumes you have:
 
     ![Click Enable in the Enable AI features panel](screenshots-entertainment/06-click-enable.png)
 
+    > **Note:** You may briefly see a message that says **Failed to enable AI features for the instance**. In this LiveLabs sandbox flow, this is an erroneous error message and should be ignored. Continue waiting for the enablement process to finish.
+
+    ![Ignore the erroneous failed enablement message](screenshots-entertainment/06a-failed-enable-ai-features.png)
+
 7. Wait for the Workbench to finish enabling the features. The home page returns to the card view and the card changes to **Disable AI features**, which confirms AI features are attached.
 
     ![Confirm the Disable AI features card appears](screenshots-entertainment/07-confirm-enabled.png)
+
+    > **Note:** Enabling AI features usually takes **5-7 minutes** in the LiveLabs sandbox. The async operations may show success before the home page refreshes its status. If the card still says **Enabling...** after the operations complete, perform a hard browser refresh and confirm the card now says **Disable AI features** before continuing.
 
 8. Click **Master catalog** in the left navigation.
 

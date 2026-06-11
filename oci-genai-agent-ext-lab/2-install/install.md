@@ -121,6 +121,11 @@ Estimated time: 15 min
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/ords/r/apex_app/apex_app/
     User: APEX_APP / YOUR_PASSWORD
 
+
+    -----------------------------------------------------------------------
+    LangGraph Agent Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+
     -----------------------------------------------------------------------
     LangGraph Agent Chat:
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/chat.html
