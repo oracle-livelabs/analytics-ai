@@ -4,7 +4,7 @@
 
 This lab adds the Security Wingmate page to the Ask Oracle application imported in Lab 2. You will import one APEX page into the existing application, create a reusable Security RAG AI Configuration, and show the AI Assistant inline on the page.
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -31,8 +31,6 @@ This lab assumes you have the following:
 ![load data button](./images/load-data.png "")
 
 ## Task 1: Import the Security Overview Page
-
-> **SME Gate:** Confirm the final page export filename, import wizard screenshots, target page number, and expected import prompts.
 
 1. Return to **App Builder** and select **Import**.
 
@@ -133,8 +131,6 @@ APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same
     ![Query SQL context prompt](./images/context-prompt.png "")
 
 ## Task 3: Configure the Security Wingmate Page
-
-> **SME Gate:** Confirm the final Security page layout, dynamic action settings, welcome message, quick actions, screenshots, and expected validation responses.
 
 1. In Page Designer, confirm Page 12 shows **Security Overview**.
 

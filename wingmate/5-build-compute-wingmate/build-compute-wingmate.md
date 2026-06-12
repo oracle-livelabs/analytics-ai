@@ -6,9 +6,7 @@ This lab walks you through adding and configuring the Compute Wingmate Agent pag
 
 The result is a Compute Wingmate page that can answer natural language questions about compute inventory and utilization while also displaying APEX visualization widgets for operational monitoring.
 
-> **SME Gate:** Confirm the final Resource Analytics compute view columns before publishing. The metrics collector writes a known `OCI_COMPUTE_METRICS` table, but the join column from Resource Analytics compute metadata must be verified in the target tenancy.
-
-Estimated Time: 60 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -34,8 +32,6 @@ In this lab, you will:
 * `WINGMATE` database user with privileges to create and insert into tables
 
 ## Task 1: Import the Compute Wingmate Page
-
-> **SME Gate:** Confirm the final page export filename, import wizard screenshots, target page number, and expected import prompts.
 
 1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
 
@@ -562,8 +558,6 @@ This task joins two data boundaries. Resource Analytics compute metadata already
 	```
 
 	![rag compute context](./images/compute-context.png "")
-
-	> **SME Gate:** Confirm the final RAG source row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
 
 12. Save the AI Configuration.
 

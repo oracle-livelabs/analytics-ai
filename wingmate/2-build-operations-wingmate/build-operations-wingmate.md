@@ -10,7 +10,7 @@ The Ask Oracle home page exposes three different AI patterns:
 * **RAG:** `sql/wingmate-doc-research-rag.sql` creates `WINGMATE_DOC_RESEARCH_RAG`. Learners use the RAG profile selector on the Ask Oracle home page to ask documentation-grounded questions from the vector index.
 * **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` for OCI Autonomous Database provisioning and lifecycle actions. The same setup also creates `DBMS_SCHEDULER_MONITOR_TEAM` for read-only scheduler diagnostics.
 
-Estimated Time: 60 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -94,8 +94,6 @@ In this lab, you will:
     ![api_key credentials for oci access](./images/save-api-key-creds.png "")
 
 ## Task 3: Create the OCI Generative AI Service Object
-
-> **SME Gate:** Confirm the approved OCI Generative AI model, region, compartment requirements, service object defaults, and workshop-safe configuration values.
 
 1. Navigate back to **Workspace Utilities** by selecting the first menu option on the breadcrumb bar.
 
@@ -376,8 +374,6 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
     * `SCHEDULER_MONITOR_ADVISOR`, `SCHEDULER_MONITOR_TASKS`, and `DBMS_SCHEDULER_MONITOR_TEAM`
     * `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`
 
-    > **Compatibility note:** `sql/wingmate-ai-ops-adb-agent-team.sql` is kept as a backward-compatible copy of this pre-built Agent Team script.
-
     ![agent team](./images/agent-team.png "")
 
 9. Confirm the profile, agents, and composite team are available.
@@ -417,8 +413,6 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
     ![agent team check](./images/agent-team-check.png "")
 
 ## Task 8: Import the Ask Oracle APEX Application
-
-> **SME Gate:** Confirm the Ask Oracle export file name, imported application ID, supporting object install prompts, profile dropdown item names, assistant prompt behavior, and expected validation responses.
 
 1. Navigate back to **App Builder**.
 

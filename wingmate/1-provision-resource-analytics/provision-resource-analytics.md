@@ -6,7 +6,7 @@ This lab walks you through provisioning OCI Resource Analytics and preparing the
 
 Resource Analytics creates a protected `OCIRA` schema in the provisioned Autonomous AI Database. The Wingmate application should use a separate application schema and query Resource Analytics data through the read-only role granted by Resource Analytics.
 
-Estimated Time: 70 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -250,8 +250,6 @@ Create a dedicated application schema for APEX instead of building directly in t
 
 Create the APEX workspace against the existing `WINGMATE` database schema.
 
-> **SME Gate:** Recapture or verify the Task 5 screenshots so they match the approved existing-schema flow. Current restored images came from the previous APEX flow and may still show older values or highlight **New Schema** instead of **Existing Schema**.
-
 1. From the Autonomous AI Database details page, copy the Oracle APEX URL and open it in a new browser tab.
 
 	![Copy the Oracle APEX URL](./images/open-apex.png "")
@@ -493,7 +491,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 1. Download the lab files and unzip:
 
-	[Wingmate Data Zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/A8D93L0AYtatdLXkIXEH2OaQDtX_-AL8gnQ8CWHWYFV_6XUUGNw43bsZbU5oNx-e/n/oraclejamescalise/b/Wingmate-LL/o/wingmate_data.zip)
+	[Wingmate Data Zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/9DEArLjsgbKXuJgQtSG95E8hMXRFtxgHR8jiHbqz4HgyVYXVnSo0SC_s-zq5CJA3/n/c4u02/b/hosted-files/o/wingmate_data.zip)
 
     The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate_ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
 
@@ -677,8 +675,6 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 	</copy>
 	```
 
-	> **SME Gate:** Confirm the least-privilege policy scope before publishing. Tenancy-wide read access is simple for a lab, but production environments might require compartment-scoped policies.
-
 3. Connect to the OCI VM and validate instance principal authentication.
 
 	```bash
@@ -788,8 +784,6 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 	FETCH FIRST 10 ROWS ONLY;
 	</copy>
 	```
-
-	> **SME Gate:** Confirm the final ShowOCI table name and column mappings. The exact table name depends on the name selected during the CSV load process.
 
 13. Use the ShowOCI IAM policy statement table from APEX, SQL Developer, or MCP servers as a supplemental security and governance source for Wingmate.
 

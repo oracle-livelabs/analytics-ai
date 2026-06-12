@@ -4,7 +4,7 @@
 
 This lab walks you through the creation of a Multicloud Wingmate Agent dashboard. You will import the Multicloud Overview page into the Ask Oracle application from Lab 2, create a reusable Multicloud RAG AI Configuration, build reports and charts for cross-cloud resource analysis, and create the synthetic SQL property graph used by the graph visualization.
 
-Estimated Time: 60 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -28,8 +28,6 @@ Estimated Time: 60 minutes
 * Some SQL knowledge is preferred but not necessary
 
 ## Task 1: Install the Graph Visualization Plug-in and Import the Multicloud Overview Page
-
-> **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, AI Configuration settings, RAG Source SQL, screenshots, and expected validation responses.
 
 The Multicloud page export includes a Graph Visualization region. Install the Graph Visualization helper objects and APEX plug-in before importing the page so APEX can resolve the plug-in region during page import.
 
@@ -581,8 +579,6 @@ The Multicloud page export includes a Graph Visualization region. Install the Gr
 	> **Note:** This report serves as the bottom of the dashboard. Place the host insights regions you create later above this table.
 
 ## Task 2: Generate Report Period View
-
-> **SME Gate:** Confirm all table and view names used by the host-insights and multicloud reports, charts, AI Configuration RAG sources, and source SQL.
 
 1. Create a table for viewing the host period by creating a region to contain it. Expand the **bottom module** (if not open) by selecting the arrow at the bottom center of the screen. Select **Regions** and pick the **Help** icon. Drop it under the Chat Region.
 
