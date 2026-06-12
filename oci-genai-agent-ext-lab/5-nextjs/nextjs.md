@@ -23,7 +23,7 @@ Estimated time: 10 min
         ![Settings 1](images/nextjs-tools.png)    
     - In the Tools menu, enable the *File Search* tool 
     - Then select the Vector Store that you have created
-        ![Settings 2](images/nextjs-file-search.png)    
+        ![Settings 2](images/nextjs-tools.png)    
     - Go to the *Prompts* menu, go to the *Widgets* tab. 
     - Enable the *Widgets* 
         ![Settings 3](images/nextjs-widgets.png)    

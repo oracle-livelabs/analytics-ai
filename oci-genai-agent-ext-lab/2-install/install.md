@@ -29,7 +29,6 @@ Estimated time: 15 min
 4. Click on **vs-project**
 6. Click on the **vs-vector-store**.
 7. Next to OCID, click **Copy**.
-    ![Project](images/project3.png)
 8. Put it in your "List of ##VARIABLES##".
 
 ## Task 2: Run a Terraform script to create the other components.
@@ -46,7 +45,7 @@ Estimated time: 15 min
 
 5. In the code editor menu, click *Terminal* then *New Terminal*
 6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png=50%x*)
+    ![Menu Compute](images/terraform1.png =50%x50%)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-vector-store-ext.git
@@ -280,6 +279,19 @@ Estimated time: 15 min
     - look for the Domain URL. It will look like this: https://idcs-xxxxxx.identity.oraclecloud.com:443
   - Rerun ./starter.sh build
 
+8. DUring the installation, it fails in terraform with error like this:
+
+    ```
+    null_resource.build_deploy (local-exec): Oracle Software for OCI users on Oracle Linux 8 6.5  B/s |  10  B     00:01
+    null_resource.build_deploy (local-exec): Errors during downloading metadata for repository 'ol8_oci_included':
+    null_resource.build_deploy (local-exec):   - Status code: 404 for https://yum.oracle.com/repo/OracleLinux/OL8/oci/included/x86_64/repodata/repomd.xml (IP: 23.219.139.240)
+    null_resource.build_deploy (local-exec): Error: Failed to download metadata for repo 'ol8_oci_included': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+    null_resource.build_deploy (local-exec): Oracle Software for OCI users on Oracle Linux 8 663  B/s |  10  B     00:00
+    null_resource.build_deploy (local-exec): Errors during downloading metadata for repository 'ol8_oci_included':
+    null_resource.build_deploy (local-exec):   - Status code: 404 for https://yum.oracle.com/repo/OracleLinux/OL8/oci/included/x86_64/repodata/repomd.xml (IP: 23.219.139.240)
+    null_resource.build_deploy (local-exec): Error: Failed to download metadata for repo 'ol8_oci_included': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+    null_resource.build_deploy (local-exec): chat/install.sh: line 11: npm: command not found
+    ```
 
 ## Acknowledgements
 
