@@ -21,18 +21,18 @@ wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2024.11.30'
 ,p_release=>'24.2.16'
 ,p_default_workspace_id=>17845167991262488
-,p_default_application_id=>1000
-,p_default_id_offset=>17946563308379859
+,p_default_application_id=>107
+,p_default_id_offset=>18490018078026509
 ,p_default_owner=>'WINGMATE'
 );
 end;
 /
 
-prompt APPLICATION 1000 - OCI Wingmate
+prompt APPLICATION 107 - Ask Oracle
 --
 -- Application Export:
---   Application:     1000
---   Name:            OCI Wingmate
+--   Application:     107
+--   Name:            Ask Oracle
 --   Exported By:     WINGMATE
 --   Flashback:       0
 --   Export Type:     Page Export
@@ -69,7 +69,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'WingmateChat'
 ,p_region_name=>'wingmate-chat'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(36100791615263634)
+,p_plug_template=>wwv_flow_imp.id(189979725895435051)
 ,p_plug_display_sequence=>20
 ,p_location=>null
 ,p_ai_enabled=>false
@@ -82,7 +82,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'Identity and Access Management'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(36090917581263609)
+,p_plug_template=>wwv_flow_imp.id(189979725895435051)
 ,p_plug_display_sequence=>30
 ,p_query_type=>'TABLE'
 ,p_query_table=>'CIS_IAM_POLICIES_COPY'
@@ -227,7 +227,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'Security Overview'
 ,p_icon_css_classes=>'fa-padlock'
 ,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(36077464572263574)
+,p_plug_template=>wwv_flow_imp.id(189904809670434985)
 ,p_plug_display_sequence=>10
 ,p_location=>null
 ,p_plug_source=>'Security Wingmate framework page. Use this page for OCI IAM posture, policy analysis, Cloud Guard findings, CIS checks, and security recommendations.'
@@ -245,7 +245,7 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_name=>'StartWingmate'
 ,p_button_action=>'DEFINED_BY_DA'
 ,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_imp.id(36174336092263855)
+,p_button_template_id=>wwv_flow_imp.id(190172219428435218)
 ,p_button_image_alt=>'Start Wingmate'
 ,p_warn_on_unsaved_changes=>null
 ,p_grid_new_row=>'Y'

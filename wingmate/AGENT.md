@@ -179,20 +179,20 @@ Do not invent exact APEX source queries, component mappings, assistant roles, re
 Lab 3:
 
 - Rename and normalize as `Build a Security Wingmate Agent`.
-- Import `wingmate-page-02-security-overview.sql` into the Lab 2 Ask Oracle application as Page 2.
+- Import `security-page.sql` into the Lab 2 Ask Oracle application as Page 12. Use the APEX App Builder import wizard and select the existing Lab 2 application as the target.
 - Configure `wingmate_security_rag` with a RAG Source over `CIS_IAM_POLICIES_SV`.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 4:
 
 - Rename and normalize as `Build a Multicloud Wingmate Agent`.
-- Import `wingmate-page-21-multicloud-overview.sql` into the Lab 2 Ask Oracle application as Page 21.
+- Import `multicloud-page.sql` into the Lab 2 Ask Oracle application as Page 13. Use the APEX App Builder import wizard and select the existing Lab 2 application as the target.
 - Configure `wingmate_multicloud_rag` with host-insights, multicloud summary, and compute documentation RAG Sources.
 - Update prerequisites and references so it depends on Lab 1 data preparation and Lab 2 APEX/GenAI setup.
 
 Lab 5:
 
-- Import `wingmate-page-05-oci-compute-wingmate.sql` into the Lab 2 Ask Oracle application as Page 5.
+- Import `compute-page.sql` into the Lab 2 Ask Oracle application as Page 14. Use the APEX App Builder import wizard and select the existing Lab 2 application as the target.
 - Configure the Compute page using Resource Analytics materialized views or direct `OCIRA` schema views for compute metadata.
 - Configure OCI Metrics Collector from `https://github.com/jujufugh/oci-metrics-collector-py`.
 - Write compute CPU and memory metrics into the `WINGMATE` Autonomous Database schema.

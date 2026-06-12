@@ -14,13 +14,13 @@ Estimated Time: 60 minutes
 
 In this lab, you will:
 
-* Confirm Resource Analytics compute metadata sources
 * Import the Compute Wingmate page into the existing Lab 2 application
+* Configure the `wingmate_compute_rag` AI Configuration and AI assistant
 * Configure OCI Metrics Collector for compute CPU and memory metrics
 * Load compute metrics into the `WINGMATE` Autonomous Database schema
+* Confirm Resource Analytics compute metadata sources
 * Create SQL views that overlay metrics on compute instance metadata
-* Configure APEX visualization widgets on the Compute Wingmate page
-* Configure the `wingmate_compute_rag` AI Configuration and AI assistant
+* Review how the imported APEX visualization widgets are built
 
 ### Prerequisites
 
@@ -28,7 +28,7 @@ In this lab, you will:
 * Access to the Ask Oracle APEX application imported in Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Resource Analytics compute materialized views created in Lab 1, or direct access to the `OCIRA` schema views through `OCIRA_RO`
-* `wingmate_data.zip` extracted, including `apex-pages/wingmate-page-05-oci-compute-wingmate.sql`
+* `wingmate_data.zip` extracted, including `apex-pages/compute-page.sql`
 * An OCI VM or local environment that can run Python and access OCI Monitoring
 * Autonomous Database wallet downloaded for the Resource Analytics-provisioned Autonomous AI Database
 * `WINGMATE` database user with privileges to create and insert into tables
@@ -39,87 +39,100 @@ In this lab, you will:
 
 1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
 
-2. Select **Import**, then upload `wingmate_data/apex-pages/wingmate-page-05-oci-compute-wingmate.sql`.
+2. Select **Import**, then upload `wingmate_data/apex-pages/compute-page.sql`.
 
-3. Confirm **File Type** is set to **Application, Page or Component Export**, select the existing Lab 2 application as the target, and keep the page number as **5**.
+  ![Import Compute Wingmate Page](./images/import-compute-page.png "")
 
-4. Continue through the wizard and select **Import**.
+3. Confirm details and select **Install Page**.
 
-	> **Note:** The page export removes and recreates only Page 5. It does not change the Ask Oracle application pages from Lab 2, the Security page from Lab 3, or the Multicloud page from Lab 4.
+  ![Import Compute Wingmate Page](./images/install-page.png "")
 
-5. Open Page 5, **OCI Compute Wingmate**, in Page Designer.
+4. On the confirmation page, select **Edit Application**.
 
-6. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+  ![Edit Application Page](./images/edit-application.png "")
 
-7. Edit the following at the end sequence and select **Create**.
+5. Modify the **Templates** to match the expected layout and save the page. Select the **OCI Compute Wingmate** Region. Modify the template to **Hero**.
+
+  ![Hero Template](./images/modify-template-title.png "")
+
+6. Select the **WingmateChat** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-chat.png "")
+
+7. Select the **ComputeOverview** Region and modify the template to **Interactive Report**.
+
+  ![Interactive Report Template](./images/modify-template-overview.png "")
+
+8. Select the **Attributes** tab of the **ComputeOverview** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-overview-attributes.png "")
+
+9. Select the **CPU Utilization by Instance** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-cpu-utilization.png "")
+
+10. Select the **Memory Utilization by Instance** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-memory-utilization.png "")
+
+11. Select the **CPU Usage Trend** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-cpu-memory-usage-trend.png "")
+
+12. Select the **Memory Usage Trend** Region and modify the template to **Standard**.
+
+  ![Standard Template](./images/modify-template-cpu-memory-usage-trend.png "")
+
+13. Select the button **StartWingmate** to modify the template to **Text** and save.
+
+  ![Text Template](./images/modify-template-button.png "")
+
+14. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+
+  ![Navigate to LLM Conversations - Top](./images/shared-components.png "")
+
+15. Edit the following at the end sequence and select **Create**.
 
     * **image/class:** `fa-server`
     * **List Entry Label:** `Compute Wingmate`
-    * **Page:** `5`
+    * **Page:** `14`
 
-8. Open Page 5, **OCI Compute Wingmate**, in Page Designer to verify the list entry.
+16. Open Page 14, **Compute Wingmate**, in Page Designer to verify the list entry.
 
-9. You will connect the page's **Show AI Assistant** action to `wingmate_compute_rag` in Task 7.
+17. You will connect the page's **Show AI Assistant** action to `wingmate_compute_rag` in Task 2.
 
-## Task 2: Confirm Compute Metadata Sources
+## Task 2: Configure the Compute Wingmate RAG Assistant
 
-Compute Wingmate can use the materialized views created in Lab 1 or query the `OCIRA` schema views directly. The materialized view option is recommended for APEX because the app owns stable objects in the `WINGMATE` schema.
+Create the APEX AI Configuration and connect the imported assistant action early, the same pattern used in the Security Wingmate lab. The SQL RAG source uses `compute_wingmate_context_v`, which you create after collecting metrics in Task 5.
 
-1. Sign in to Database Actions as `WINGMATE`.
+1. Navigate to **Shared Components**, then **AI Configurations**.
 
-2. Confirm which Resource Analytics compute materialized views are available.
+	> **Note:** APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
 
-	```sql
-	<copy>
-	SELECT mview_name
-	FROM user_mviews
-	WHERE mview_name LIKE 'MV_COMPUTE\_%' ESCAPE '\'
-	   OR mview_name = 'MV_INSTANCE_VOLUME_DETAILS_V'
-	ORDER BY mview_name;
-	</copy>
-	```
+2. Create an AI Configuration with these values:
 
-3. If the materialized views are not available, confirm direct `OCIRA` view access.
+	* **Name:** `Compute Wingmate RAG`
+	* **Static ID:** `wingmate_compute_rag`
+	* **Service:** `OCI_GENAI`
+	* **System Prompt:** `You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the configured RAG source for Resource Analytics compute metadata and OCI compute metrics data. Answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.`
+	* **Welcome Message:** `Welcome! Begin chatting with OCI Compute Wingmate about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends.`
 
-	```sql
-	<copy>
-	SELECT view_name
-	FROM all_views
-	WHERE owner = 'OCIRA'
-	AND (
-	       view_name LIKE 'COMPUTE\_%' ESCAPE '\'
-	    OR view_name = 'INSTANCE_VOLUME_DETAILS_V'
-	)
-	ORDER BY view_name;
-	</copy>
-	```
+	![rag compute config](./images/compute-rag.png "")
 
-4. Preview the compute instance metadata source.
+3. Save the AI Configuration.
 
-	```sql
-	<copy>
-	SELECT *
-	FROM MV_COMPUTE_INSTANCE_DIM_V
-	FETCH FIRST 10 ROWS ONLY;
-	</copy>
-	```
+	> **Note:** Add the SQL RAG Source after Task 5 creates `compute_wingmate_context_v`. If you add it now before the view exists, APEX may reject the source SQL.
 
-	> **Note:** If you did not create the materialized view in Lab 1, replace `MV_COMPUTE_INSTANCE_DIM_V` with `OCIRA.COMPUTE_INSTANCE_DIM_V`.
+4. Return to Page 14, **Compute Wingmate**.
 
-5. Validate the Resource Analytics compute instance OCID column.
 
-	The metrics collector writes the OCI Monitoring `resourceId` value into `OCI_COMPUTE_METRICS.INSTANCE_ID`. Resource Analytics stores the same compute instance OCID in `MV_COMPUTE_INSTANCE_DIM_V.ID`, so later views join metrics to metadata on this value.
+9. Configure the action for the **Show AI Assistant**:
 
-	```sql
-	<copy>
-	SELECT id,
-	       display_name,
-	       lifecycle_state
-	FROM mv_compute_instance_dim_v
-	WHERE id LIKE 'ocid1.instance.%'
-	FETCH FIRST 10 ROWS ONLY;
-	</copy>
-	```
+	* **Configuration:** `wingmate_compute_rag`
+
+10. Save the page.
+
+	> **Note:** Do not validate assistant answers yet. The assistant will have useful context after Task 5 creates the overlay and context views and adds the RAG Source.
 
 ## Task 3: Configure OCI Metrics Collector
 
@@ -396,11 +409,82 @@ The metrics collector creates and writes to `OCI_COMPUTE_METRICS` in the `WINGMA
 
 	![Metrics collector rows written successfully](./images/collect-metrics-success.png "")
 
-## Task 5: Create Compute Overlay Views
+## Task 5: Confirm Compute Metadata Sources and Create Overlay Views
 
-Create APEX-friendly views that combine compute metadata with the latest metrics.
+This task joins two data boundaries. Resource Analytics compute metadata already exists from Lab 1 as `MV_` materialized views in the `WINGMATE` schema, or as direct `OCIRA` views if you skipped the materialized-view option. The OCI metrics collector created `OCI_COMPUTE_METRICS` in this lab with CPU and memory utilization collected from OCI Monitoring.
 
-1. Create a latest-metrics view.
+1. Sign in to Database Actions as `WINGMATE`.
+
+2. Confirm which Resource Analytics compute materialized views are available.
+
+	```sql
+	<copy>
+	SELECT mview_name
+	FROM user_mviews
+	WHERE mview_name LIKE 'MV_COMPUTE\_%' ESCAPE '\'
+	   OR mview_name = 'MV_INSTANCE_VOLUME_DETAILS_V'
+	ORDER BY mview_name;
+	</copy>
+	```
+
+3. If the materialized views are not available, confirm direct `OCIRA` view access.
+
+	```sql
+	<copy>
+	SELECT view_name
+	FROM all_views
+	WHERE owner = 'OCIRA'
+	AND (
+	       view_name LIKE 'COMPUTE\_%' ESCAPE '\'
+	    OR view_name = 'INSTANCE_VOLUME_DETAILS_V'
+	)
+	ORDER BY view_name;
+	</copy>
+	```
+
+4. Preview the compute instance metadata source.
+
+	```sql
+	<copy>
+	SELECT *
+	FROM MV_COMPUTE_INSTANCE_DIM_V
+	FETCH FIRST 10 ROWS ONLY;
+	</copy>
+	```
+
+	> **Note:** If you did not create the materialized view in Lab 1, replace `MV_COMPUTE_INSTANCE_DIM_V` with `OCIRA.COMPUTE_INSTANCE_DIM_V`.
+
+5. Validate the Resource Analytics compute instance OCID column.
+
+	The metrics collector writes the OCI Monitoring `resourceId` value into `OCI_COMPUTE_METRICS.INSTANCE_ID`. Resource Analytics stores the same compute instance OCID in `MV_COMPUTE_INSTANCE_DIM_V.ID`, so later views join metrics to metadata on this value.
+
+	```sql
+	<copy>
+	SELECT id,
+	       display_name,
+	       lifecycle_state
+	FROM mv_compute_instance_dim_v
+	WHERE id LIKE 'ocid1.instance.%'
+	FETCH FIRST 10 ROWS ONLY;
+	</copy>
+	```
+
+6. Confirm the collected metrics table has rows.
+
+	```sql
+	<copy>
+	SELECT collection_time,
+	       instance_id,
+	       instance_name,
+	       cpu_utilization_pct,
+	       memory_utilization_pct
+	FROM oci_compute_metrics
+	ORDER BY collection_time DESC
+	FETCH FIRST 10 ROWS ONLY;
+	</copy>
+	```
+
+7. Create a latest-metrics view.
 
 	```sql
 	<copy>
@@ -418,12 +502,14 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 	</copy>
 	```
 
-2. Create a metadata and metrics overlay view.
+8. Create a metadata and metrics overlay view.
 
 	```sql
 	<copy>
 	CREATE OR REPLACE VIEW compute_wingmate_overlay_v AS
-	SELECT ci.*,
+	SELECT ci.id AS instance_id,
+	       ci.display_name AS instance_name,
+	       ci.*,
 	       ml.collection_time,
 	       ml.cpu_allocated_ocpus,
 	       ml.memory_allocated_gbs,
@@ -443,7 +529,7 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 
 	> **Note:** If you are querying Resource Analytics directly instead of using materialized views, replace `mv_compute_instance_dim_v` with `OCIRA.COMPUTE_INSTANCE_DIM_V`.
 
-3. Create an assistant context view.
+9. Create an assistant context view for the Compute RAG source.
 
 	```sql
 	<copy>
@@ -459,13 +545,43 @@ Create APEX-friendly views that combine compute metadata with the latest metrics
 	           'memory_used_gbs' VALUE memory_used_gbs,
 	           'collection_time' VALUE to_char(collection_time, 'YYYY-MM-DD HH24:MI:SS')
 	       RETURNING CLOB) AS context_prompt
-	FROM compute_metrics_latest_v;
+	FROM compute_wingmate_overlay_v;
 	</copy>
 	```
 
-## Task 6: Configure the Compute Wingmate APEX Page
+10. Return to **Shared Components**, then **AI Configurations**, and open `Compute Wingmate RAG`.
 
-Use the Compute Wingmate page imported at the start of this lab, but focus the page content on compute metadata and metrics.
+11. Add a SQL-based RAG Source to `wingmate_compute_rag`:
+
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM compute_wingmate_context_v
+	FETCH FIRST 100 ROWS ONLY
+	</copy>
+	```
+
+	![rag compute context](./images/compute-context.png "")
+
+	> **SME Gate:** Confirm the final RAG source row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
+
+12. Save the AI Configuration.
+
+13. Validate the RAG source SQL as `WINGMATE`.
+
+	```sql
+	<copy>
+	SELECT context_prompt
+	FROM compute_wingmate_context_v
+	FETCH FIRST 100 ROWS ONLY
+	</copy>
+	```
+
+	![rag compute context validation](./images/compute-context-validate.png "")
+
+## Task 6: Learn How to Build the Compute Wingmate Page
+
+The page import in Task 1 should already create these regions, charts, and assistant controls. Use this task as a reference to understand how the Compute Wingmate page is assembled, or to rebuild individual widgets if you are repairing a page manually.
 
 1. In App Builder, open the `WINGMATE` application.
 
@@ -506,9 +622,9 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	* **Label:** `INSTANCE_NAME`
 	* **Value:** `CPU_UTILIZATION_PCT`
 
-6. Add a **Chart** region named **Memory Utilization by Instance**.
+6. Duplicate the **CPU Utilization by Instance** chart region and relabel the duplicate **Memory Utilization by Instance**.
 
-	Use this source query:
+	Update the duplicate chart source query:
 
 	```sql
 	<copy>
@@ -526,7 +642,7 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	* **Label:** `INSTANCE_NAME`
 	* **Value:** `MEMORY_UTILIZATION_PCT`
 
-7. Add a **Chart** region named **CPU and Memory Usage Trend**.
+7. Add a **Chart** region named **CPU Usage Trend**.
 
 	Use this source query:
 
@@ -537,7 +653,10 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	       cpu_utilization_pct,
 	       memory_utilization_pct
 	FROM oci_compute_metrics
-	WHERE collection_time >= systimestamp - INTERVAL '24' HOUR
+	WHERE collection_time >= (
+	    SELECT MAX(collection_time) - INTERVAL '24' HOUR
+	    FROM oci_compute_metrics
+	)
 	ORDER BY collection_time
 	</copy>
 	```
@@ -545,77 +664,22 @@ Use the Compute Wingmate page imported at the start of this lab, but focus the p
 	Recommended chart settings:
 
 	* **Type:** Line
-
-	![CPU and Memory Usage Trend region](./images/line-chart.png "")
-	
+	* **Series Name:** `INSTANCE_NAME`
 	* **Label:** `COLLECTION_TIME`
+	* **Value:** `CPU_UTILIZATION_PCT`
+	* **Custom Tooltip:** `INSTANCE_NAME`
 
-	* **Series:** one series for CPU utilization and one series for memory utilization
+	![CPU Usage Trend region](./images/line-chart.png "")
 
 	![Series Create Button](./images/line-chart-series-label-1.png "")
 
+8. Duplicate the **CPU Usage Trend** chart region and relabel the duplicate **Memory Usage Trend**.
+
+	In the duplicated chart series, keep **Series Name** as `INSTANCE_NAME` and **Label** as `COLLECTION_TIME`. Change **Value** to `MEMORY_UTILIZATION_PCT`.
+
 	![Series Create Button](./images/line-chart-series-label-2.png "")
 
-## Task 7: Configure the Compute Wingmate Agent
-
-1. Navigate to **Shared Components**, then **AI Configurations**.
-
-	> **Note:** APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
-
-2. Create an AI Configuration with these values:
-
-	* **Name:** `Compute Wingmate RAG`
-	* **Static ID:** `wingmate_compute_rag`
-	* **System Prompt:** `You are OCI Compute Wingmate, an assistant for OCI compute operations. Use the configured RAG source for Resource Analytics compute metadata and OCI compute metrics data. Answer questions about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends. Be concise, explain operational impact, and call out missing data instead of guessing.`
-	* **Welcome Message:** `Welcome! Begin chatting with OCI Compute Wingmate about inventory, CPU utilization, memory utilization, allocated OCPUs, allocated memory, and usage trends.`
-
-	![rag compute config](./images/compute-rag.png "")
-
-3. Add a SQL-based RAG Source to `wingmate_compute_rag`:
-
-	```sql
-	<copy>
-	SELECT context_prompt
-	FROM compute_wingmate_context_v
-	FETCH FIRST 100 ROWS ONLY
-	</copy>
-	```
-
-	![rag compute context](./images/compute-context.png "")
-
-	> **SME Gate:** Confirm the final RAG source row limit and whether the assistant should include only latest metrics or a time window of historical metrics.
-
-4. Validate the RAG source SQL as `WINGMATE`.
-
-	```sql
-	<copy>
-	SELECT context_prompt
-	FROM compute_wingmate_context_v
-	FETCH FIRST 100 ROWS ONLY
-	</copy>
-	```
-
-	![rag compute context validation](./images/compute-context-validate.png "")
-
-5. Return to Page 5, **OCI Compute Wingmate**.
-
-6. Create or select a region named **WingmateChat** and set its **Static ID** to `wingmate-chat`.
-
-7. Add or select a button named **StartComputeWingmate** in the **WingmateChat** region.
-
-8. Create or update a dynamic action named **Chat** for the button.
-
-9. Add or update the **Show AI Assistant** true action.
-
-10. Configure the action:
-
-	* **Configuration:** `wingmate_compute_rag`
-	* **Display As:** `Inline`
-	* **Container Selector:** `#wingmate-chat`
-
-11. Save and run the page.
-
-## Task 8: Validate Compute Wingmate
+## Task 7: Validate Compute Wingmate
 
 1. Confirm the **Compute Overview** report renders metadata and metric fields.
 

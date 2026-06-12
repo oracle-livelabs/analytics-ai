@@ -25,7 +25,7 @@ Use this checklist to convert the current draft workshop into final executable L
 - **Approved:** Use `OCI_GENAI` as the Generative AI service object name, `api_key` as the Web Credential, and `xai.grok-4.3` as the recommended default model. Add a note that the model's large context window is appropriate for richer Resource Analytics and application context. If `xai.grok-4.3` is not available in the subscribed region, use the closest tenancy-approved OCI Generative AI chat model.
 - **Approved:** Lab 2 imports the prebuilt Ask Oracle APEX application from `ADB-AskOracle-Chatbot-2026-03-04.sql` in the Oracle Autonomous Database samples repository.
 - **Approved:** Lab 2 uses bundled setup scripts under `wingmate_data/sql` for the Select AI profiles and optional RAG Agent Team setup instead of embedding all PL/SQL in the lab text.
-- **Approved:** Labs 3, 4, and 5 import one page each into the Lab 2 Ask Oracle application from `wingmate_data/apex-pages`.
+- **Approved:** Labs 3, 4, and 5 import one page each into the existing Lab 2 Ask Oracle application from `wingmate_data/apex-pages`. Learners must use the APEX App Builder import wizard and select the Lab 2 application as the target.
 - Confirm the Ask Oracle import flow, supporting object prompts, parsing schema selection, and target application ID in the workshop environment.
 - **Approved:** Use Resource Analytics materialized views as the primary Operations Wingmate starter sources: `MV_COMPUTE_INSTANCE_DIM_V`, `MV_COMPARTMENT_DIM_V`, `MV_REGION_DIM_V`, `MV_AD_DIM_V`, `MV_TAGS_DIM_V`, and `MV_INSTANCE_VOLUME_DETAILS_V`. Keep `CIS_IAM_POLICIES` as supporting security context rather than the primary Operations source.
 - Confirm the final Select AI credential pattern for the lab environment: `DBMS_CLOUD.CREATE_CREDENTIAL` with API-key values, resource principal, or a lab-provided credential.
@@ -41,7 +41,7 @@ Use this checklist to convert the current draft workshop into final executable L
 ## Lab 3: Security Wingmate
 
 - **Approved:** Use `CIS_IAM_POLICIES` as the primary Security Wingmate source for Lab 3. Resource Analytics identity views and ShowOCI identity exports can be optional future/context sources.
-- **Approved:** Import `wingmate-page-02-security-overview.sql` as Page 2 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Import `security-page.sql` as Page 12 into the existing Lab 2 Ask Oracle application. Do not run the page export directly as a SQL script.
 - **Approved:** Use the `wingmate_security_rag` AI Configuration with a RAG Source over `CIS_IAM_POLICIES_SV` instead of hidden page-item context injection.
 - Confirm whether Security Wingmate uses synthetic `CIS_` policy data, Resource Analytics identity views, or both.
 - Confirm APEX page layout, region names, dynamic action settings, and screenshots.
@@ -50,7 +50,7 @@ Use this checklist to convert the current draft workshop into final executable L
 ## Lab 4: Multicloud Wingmate
 
 - **Approved:** Use the existing host-insights and multicloud objects as the Lab 4 data foundation: `oci_exa_infr`, `oci_exa_vm_cluster`, `oci_cdb`, `oci_pdb`, `CIS_MULTICLOUD_DETAILS_V`, `HOSTINSIGHTS_REPORT_PERIOD`, `HOSTINSIGHTS_CPU_USAGE_SUMMARY`, `HOSTINSIGHTS_MEMORY_USAGE_SUMMARY`, `HOSTINSIGHTS_RES_STAT`, `HOSTINSIGHTS_RES_STAT_MEMORY`, `HOSTINSIGHTS_CPU_FORECAST_TREND`, `hostinsights_report_sv`, `oci_doc_ref_compute_sv`, and `MULTICLOUD_GRAPH`.
-- **Approved:** Import `wingmate-page-21-multicloud-overview.sql` as Page 21 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Import `multicloud-page.sql` as Page 13 into the existing Lab 2 Ask Oracle application. Do not run the page export directly as a SQL script.
 - **Approved:** Use the `wingmate_multicloud_rag` AI Configuration with RAG Sources for host insights, multicloud summary, and compute documentation reference context instead of hidden page-item context injection.
 - Confirm all table and view names used by the lab, including host insights, database, documentation-reference, and graph objects.
 - Confirm SQL source queries for every report, chart, RAG Source, and graph region.
@@ -60,7 +60,7 @@ Use this checklist to convert the current draft workshop into final executable L
 
 ## Lab 5: Compute Wingmate
 
-- **Approved:** Import `wingmate-page-05-oci-compute-wingmate.sql` as Page 5 into the existing Lab 2 Ask Oracle application.
+- **Approved:** Import `compute-page.sql` as Page 14 into the existing Lab 2 Ask Oracle application. Do not run the page export directly as a SQL script.
 - **Approved:** Use the `wingmate_compute_rag` AI Configuration with a RAG Source over `compute_wingmate_context_v` instead of direct assistant context SQL.
 - Provide exact Compute Wingmate APEX page layout, screenshots, region types, and navigation placement.
 - Provide approved Resource Analytics compute source views or materialized views.

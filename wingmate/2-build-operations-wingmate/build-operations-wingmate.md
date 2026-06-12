@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab builds the shared AI operations foundation for the Wingmate workshop. You will connect the `WINGMATE` APEX workspace and database schema to OCI Generative AI, run the setup scripts, and import the base Ask Oracle APEX application that later labs extend with single-page imports.
+This lab builds the shared AI operations foundation for the Wingmate workshop. You will connect the `WINGMATE` APEX workspace and database schema to OCI Generative AI, run the setup scripts, and import the base Ask Oracle APEX application that later labs extend by importing single page exports into this same application.
 
 The Ask Oracle home page exposes three different AI patterns:
 
@@ -456,7 +456,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
 10. Confirm the application opens and shows the Ask Oracle chat interface.
 
-    > **Note:** This application is the target app for later labs. Keep track of the application name and ID assigned by APEX; Labs 3, 4, and 5 import one additional page into this same application.
+    > **Note:** This application is the target app for later labs. Keep track of the application name and ID assigned by APEX; Labs 3, 4, and 5 import one additional page into this same application. When importing those pages, always select this existing application as the target rather than installing a new application.
 
 ## Task 9: Validate Ask Oracle Profiles, Doc Research RAG, and Pre-built Agent Team
 

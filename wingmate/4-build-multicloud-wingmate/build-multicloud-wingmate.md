@@ -8,7 +8,7 @@ Estimated Time: 60 minutes
 
 ### Objectives
 
-* Import the Multicloud Overview page into the existing Lab 2 application
+* Install the Graph Visualization plug-in and import the Multicloud Overview page into the existing Lab 2 application
 * Create the `wingmate_multicloud_rag` AI Configuration
 * Create and validate the `MULTICLOUD_GRAPH` SQL property graph
 * Generate Report Period View
@@ -24,48 +24,162 @@ Estimated Time: 60 minutes
 * Access to the Ask Oracle APEX application imported in Lab 2
 * `OCI_GENAI` Generative AI service object created in APEX
 * Multicloud, host-insights, and documentation-reference objects loaded or mapped in the `WINGMATE` schema
-* `wingmate_data.zip` extracted, including `apex-pages/wingmate-page-21-multicloud-overview.sql`
+* `wingmate_data.zip` extracted, including `apex-pages/multicloud-page.sql`
 * Some SQL knowledge is preferred but not necessary
 
-## Task 1: Import and Configure the Multicloud Overview Page
+## Task 1: Install the Graph Visualization Plug-in and Import the Multicloud Overview Page
 
 > **SME Gate:** Confirm the final multicloud data model, host-insights objects, imported page ID, AI Configuration settings, RAG Source SQL, screenshots, and expected validation responses.
 
-1. In App Builder, open the **Ask Oracle** application imported in Lab 2.
+The Multicloud page export includes a Graph Visualization region. Install the Graph Visualization helper objects and APEX plug-in before importing the page so APEX can resolve the plug-in region during page import.
 
-2. Select **Import**, then upload `wingmate_data/apex-pages/wingmate-page-21-multicloud-overview.sql`.
+1. Download the Graph Visualization helper scripts and plug-in SQL files from the Oracle APEX GitHub repository.
 
-3. Confirm **File Type** is set to **Application, Page or Component Export**, select the existing Lab 2 application as the target, and keep the page number as **21**.
+	Right-click each link in a new tab and select **Save As**:
 
-4. Continue through the wizard and select **Import**.
+	* [gvt_sqlgraph_to_json.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/required-for-26ai/gvt_sqlgraph_to_json.sql)
+	* [required_helper_functions.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/required-for-26ai/required_helper_functions.sql)
+	* [region_type_plugin_graphviz.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/region_type_plugin_graphviz.sql)
 
-	> **Note:** The page export removes and recreates only Page 21. It does not change the Ask Oracle application pages from Lab 2 or the Security page from Lab 3.
+	![Graph Viz SQL file](./images/graph-viz-sql-file.png "")
 
-5. Open Page 21, **Multicloud Overview**, in Page Designer.
+  > **Note:** Make sure to save each file as SQL rather than a text file, as SQL files are the standard for importing plugins into Oracle APEX.
 
-6. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+2. Open **SQL Workshop**, then **SQL Scripts**.
 
-7. Edit the following at the end sequence and select **Create**.
+	![Open SQL Scripts](./images/sql-scripts.png "")
 
-    * **image/class:** `fa-cloud`
+3. Upload and run `gvt_sqlgraph_to_json.sql` as the `WINGMATE` parsing schema.
+
+	This script creates the full `DBMS_GVT` package and the SQL graph JSON conversion function required by the Graph Visualization plug-in.
+
+	![Run GraphViz SQL graph helper script](./images/upload-gvt-script.png "")
+
+4. Upload and run `required_helper_functions.sql` as the `WINGMATE` parsing schema.
+
+	This script creates the APEX helper functions that call the SQL graph JSON converter at runtime.
+
+	![Run GraphViz required helper functions](./images/helper.png "")
+
+5. Navigate to SQL Commands and validate that the Graph Visualization support objects are valid.
+
+	```
+	<copy>
+	SELECT object_name, object_type, status
+	FROM user_objects
+	WHERE object_name IN (
+	    'DBMS_GVT',
+	    'ORA_SQLGRAPH_TO_JSON',
+	    'ORA_GRAPH_BUILD_JSON_USING_JSON_ARRAY',
+	    'APEX_SQLGRAPH_JSON',
+	    'GET_GRAPH_METADATA_PROC'
+	)
+	ORDER BY object_name, object_type;
+	</copy>
+	```
+
+	Confirm that `DBMS_GVT` has both a valid `PACKAGE` and a valid `PACKAGE BODY`.
+
+  ![Validate Graph Visualization support objects](./images/validate-gvt.png "")
+
+6. Navigate to **App Builder** and open the **Ask Oracle** application from Lab 2.
+
+7. Select **Import/Export**.
+
+	![Import and Export Button](./images/import-export-app-builder.png "")
+
+8. Drag and drop `region_type_plugin_graphviz.sql`, select **Plugin**, and select **Next**.
+
+	![import plugin](./images/import-plugin.png "")
+
+9. Select **Next** to proceed with the plug-in import.
+
+	![import confirmation](./images/confirm-import.png "")
+
+10. Select **Import** to install the plug-in.
+
+	![import process confirmation](./images/install-plugin.png "")
+
+11. Verify the plug-in was installed correctly.
+
+	> **Note:** The Graph Visualization plug-in settings can be reviewed later from **Shared Components**, then **Component Settings**.
+
+	![verification of plugin installation](./images/plugin-success.png "")
+
+12. Return to **App Builder** and select **Import**.
+
+13. Upload `wingmate_data/apex-pages/multicloud-page.sql`.
+
+14. Confirm **File Type** is set to **Application, Page or Component Export**, then select **Next**.
+
+	![Import Multicloud Page](./images/import-multicloud.png "")
+
+15. Confirm details and select **Install**.
+
+	![Install Multicloud Page](./images/install-multicloud.png "")
+
+16. Select **Edit Page**, and confirm the page layout before continuing.
+
+17. Select **Multicloud Overview** from the rendering tree on the left and modify the template to **Hero**.
+
+	![Edit Multicloud Overview](./images/modify-template-title.png "")
+
+18. Select WingmateChat from the rendering tree on the left. Modify the template to **Standard**.
+
+  ![Edit Wingmate Chat](./images/modify-template-chat.png "")
+
+19. Select startWingmate** from the rendering tree on the left. Modify the template to **Standard**.
+
+![Edit startWingmate button](./images/modify-template-button.png "")
+
+20. Repeat the process of editing the templates for the following regions in the rending tree:
+
+* **Report Period**
+* **Host CPU Insights**
+* **CPU Usage Over Capacity**
+* **Memory Usage Over Capacity**
+* **Host Insights CPU and Memory**
+* **CPU Usage Across Hosts**
+* **Key Metrics Distribution**
+* **CPU Combination Chart**
+* **CPU Usage Historic and Forecast**
+* **CPU Usage Historic and Forecast - Mixed Frequency**
+* **MultiCloud Insights** graph
+* **MultiCloud Insight** table
+
+  ![Report Period](./images/modify-template-report.png "")
+
+22. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+
+  ![Shared Components](./images/shared-components.png "")
+
+  ![Lists](./images/lists.png "")
+
+  ![LLM Conversations - Top](./images/llm-top.png "")
+
+21. Edit the following at the end sequence and select **Create**.
+
+    * **image/class:** `fa-ai-innovation-lightbulb`
     * **List Entry Label:** `Multicloud Wingmate`
-    * **Page:** `21`
+    * **Page:** `13`
 
-8. Open Page 21, **Multicloud Overview**, in Page Designer to verify the list entry.
+  ![Edit list entry](./images/list-entry.png "")
 
-9. Create a new region named **WingmateChat** in the page body.
+20. Open Page 13, **Multicloud Overview**, in Page Designer to verify the list entry.
 
-10. Set the new **WingmateChat** region **Static ID** to `wingmate-chat`.
+21. Confirm the imported page includes a region named **WingmateChat** in the page body.
 
-11. Create a new **StartWingmate** button in the **WingmateChat** region.
+22. Select the **WingmateChat** region and confirm the region **Static ID** is `wingmate-chat`.
 
-12. Create a new dynamic action named **Chat** on the **StartWingmate** button.
+23. Confirm the **startWingmate** button exists in the **WingmateChat** region.
 
-13. Create a new **Show AI Assistant** true action. You will connect this action to `wingmate_multicloud_rag` after creating the AI Configuration.
+24. Confirm the imported **Chat** dynamic action is attached to the **startWingmate** button.
 
-14. Create a new **Hide** action for the **StartWingmate** button, then save the page.
+25. Confirm the **Show AI Assistant** true action exists. You will connect this action to `wingmate_multicloud_rag` after creating the AI Configuration.
 
-15. Create Resource Analytics adapter views for the Multicloud page.
+26. Confirm the **Hide** action targets the **startWingmate** button, then save the page.
+
+27. Create Resource Analytics adapter views for the Multicloud page.
 
 	The Multicloud page uses the same chart and assistant patterns as the original host-insights demo, but this lab should use Resource Analytics data by default. Run the following SQL as `WINGMATE` to create app-owned views over the Resource Analytics materialized views from Lab 1.
 
@@ -73,7 +187,7 @@ Estimated Time: 60 minutes
 
 	Create the base Resource Analytics host insights view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_base_v AS
 	SELECT i.id AS instance_id,
@@ -109,7 +223,7 @@ Estimated Time: 60 minutes
 
 	Create the report period view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_report_period AS
 	SELECT hostname,
@@ -144,7 +258,7 @@ Estimated Time: 60 minutes
 
 	Create the CPU summary view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_cpu_usage_summary AS
 	SELECT SUM(cpu_usage) AS usage,
@@ -155,7 +269,7 @@ Estimated Time: 60 minutes
 
 	Create the memory summary view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_memory_usage_summary AS
 	SELECT SUM(memory_usage) AS usage,
@@ -166,7 +280,7 @@ Estimated Time: 60 minutes
 
 	Create the CPU per-host statistics view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_res_stat AS
 	SELECT hostname,
@@ -189,7 +303,7 @@ Estimated Time: 60 minutes
 
 	Create the memory per-host statistics view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_res_stat_memory AS
 	SELECT hostname,
@@ -212,7 +326,7 @@ Estimated Time: 60 minutes
 
 	Create the host insights assistant context view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_hostinsights_report_sv AS
 	WITH summary AS (
@@ -262,7 +376,7 @@ Estimated Time: 60 minutes
 
 	Create the multicloud assistant context view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_multicloud_details_v AS
 	SELECT 'Resource Analytics multicloud summary: '
@@ -281,7 +395,7 @@ Estimated Time: 60 minutes
 
 	Create the multicloud inventory report view.
 
-	```sql
+	```
 	<copy>
 	CREATE OR REPLACE VIEW ra_multicloud_inventory_v AS
 	SELECT 'Compute Instance' AS resource_type,
@@ -311,7 +425,7 @@ Estimated Time: 60 minutes
 
 	> **Flat-file fallback:** If your environment uses the uploaded flat files instead of Resource Analytics materialized views, skip the `RA_*` adapter views and use the fallback queries called out in the remaining steps.
 
-16. Create and validate the synthetic multicloud graph.
+28. Create and validate the synthetic multicloud graph.
 
     The APEX Graph Visualization region queries `GRAPH_TABLE(MULTICLOUD_GRAPH ...)`. The graph is not loaded from the empty `cdb_pdb_graph_*.xlsx` metadata exports, and it is not generated by `ORA_SQLGRAPH_TO_JSON`. `ORA_SQLGRAPH_TO_JSON` is a rendering helper used by the graph plug-in after a SQL property graph already exists.
 
@@ -319,7 +433,7 @@ Estimated Time: 60 minutes
 
     At the end of the script, confirm that the graph query returns rows:
 
-    ```sql
+    ```
     <copy>
     SELECT *
     FROM GRAPH_TABLE(MULTICLOUD_GRAPH
@@ -337,11 +451,11 @@ Estimated Time: 60 minutes
     </copy>
     ```
 
-17. Navigate to **Shared Components**, then **AI Configurations**.
+29. Navigate to **Shared Components**, then **AI Configurations**.
 
 	> **Note:** APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same capability appears under AI Agent tooling. Use the labels shown in your APEX environment, but keep the static ID values in this lab unchanged.
 
-18. Create an AI Configuration with these values:
+30. Create an AI Configuration with these values:
 
 	* **Name:** `Multicloud Wingmate RAG`
 	* **Static ID:** `wingmate_multicloud_rag`
@@ -350,9 +464,9 @@ Estimated Time: 60 minutes
 
     ![configuration for genai](./images/genai-config.png "")
 
-19. Add SQL-based RAG Sources to `wingmate_multicloud_rag`:
+31. Add SQL-based RAG Sources to `wingmate_multicloud_rag`:
 
-	```sql
+	```
 	<copy>
 	SELECT context_prompt
 	FROM ra_hostinsights_report_sv
@@ -361,7 +475,7 @@ Estimated Time: 60 minutes
 
     ![configuration for Host Insights](./images/host-insights.png "")
 
-	```sql
+	```
 	<copy>
 	SELECT context_prompt
 	FROM ra_multicloud_details_v
@@ -370,7 +484,7 @@ Estimated Time: 60 minutes
 
     ![configuration for Multicloud](./images/multicloud-details.png "")
 
-	```sql
+	```
 	<copy>
 	SELECT context_prompt
 	FROM oci_doc_ref_compute_sv
@@ -381,21 +495,21 @@ Estimated Time: 60 minutes
 
 	**Flat-file fallbacks:**
 
-	```sql
+	```
 	<copy>
 	SELECT context_prompt
 	FROM hostinsights_report_sv
 	</copy>
 	```
 
-	```sql
+	```
 	<copy>
 	SELECT context_prompt
 	FROM cis_multicloud_details_v
 	</copy>
 	```
 
-20. Navigate to SQL Commands in the SQL Workshop and validate the RAG source SQL as `WINGMATE`.
+32. Navigate to SQL Commands in the SQL Workshop and validate the RAG source SQL as `WINGMATE`.
 
 	```
 	<copy>
@@ -412,7 +526,7 @@ Estimated Time: 60 minutes
 
     ![validate rag](./images/validate.png "")
 
-21. Configure the new AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **StartWingmate** -> **Chat** -> **Show AI Assistant**.
+33. Configure the imported AI Assistant action by navigating to **Show AI Assistant** in the navigation tree under the Multicloud chat region: **startWingmate** -> **Chat** -> **Show AI Assistant**.
 
 	Configure the action:
 
@@ -429,13 +543,13 @@ Estimated Time: 60 minutes
 
 	![example prompts](./images/quick-prompt.png "")
 
-22. Save the page.
+34. Save the page.
 
-23. Create a **Classic Report** region for the Multicloud inventory summary.
+35. Create a **Classic Report** region for the Multicloud inventory summary.
 
 	![Identity Table](./images/update-identity.png "")
 
-24. Name the report **MultiCloud Insights** and set the **SQL Query** to the following:
+36. Name the report **MultiCloud Insights** and set the **SQL Query** to the following:
 
 	```
 	<copy>
@@ -492,7 +606,9 @@ Estimated Time: 60 minutes
 
 	![metrics commented out](./images/metrics-hostinsights.png "")
 
-## Task 3: Create Host Insights Widgets
+## Task 3: Learn how to create Host Insights Widgets
+
+> **Note:** This task is for only educational purposes. The Page import creates all of this content for you.
 
 1. Drag and drop **Static Content** into the sub-region. Name the region **HOST INSIGHTS Metrics**.
 
@@ -1007,39 +1123,13 @@ To use real metric history instead of the bundled demo data:
 
 ## Task 6: Operationalize MultiCloud with Property Graph
 
-> **Note:** This task requires downloading a **Plug-in** to install for visualizing the SQL property graphs in APEX. Learn more by reading through the [documentation.](https://docs.oracle.com/en/database/oracle/property-graph/26.1/spgdg/visualizing-sql-graph-queries-using-apex-graph-visualization-plug.html#GUID-29126F4F-FF5E-4712-9BFE-535F2451AD3A)
+> **Note:** The Graph Visualization helper scripts and APEX plug-in were installed in Task 1 before importing the Multicloud page. This task reviews the imported graph region configuration and validates that the SQL property graph renders correctly.
 
 > **Graph data note:** The graph visualization depends on the `MULTICLOUD_GRAPH` SQL property graph created earlier with `wingmate_data/sql/wingmate-multicloud-graph.sql`. The APEX plug-in and `ORA_SQLGRAPH_TO_JSON` render graph query results; they do not create the graph data.
 
 > **Graph helper note:** The Graph Visualization plug-in also requires the `DBMS_GVT` package and helper functions from the Oracle APEX Graph Visualization `required-for-26ai` scripts. A package specification alone is not enough; the `DBMS_GVT` package body must be valid or the graph region can remain stuck at loading.
 
-1. Download the Graph Visualization helper scripts and plug-in SQL files from the Oracle APEX GitHub repository.
-
-	Right-click each link in a new tab and select **Save As**:
-
-	* [gvt_sqlgraph_to_json.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/required-for-26ai/gvt_sqlgraph_to_json.sql)
-	* [required_helper_functions.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/required-for-26ai/required_helper_functions.sql)
-	* [region_type_plugin_graphviz.sql](https://raw.githubusercontent.com/oracle/apex/24.2/plugins/region/graph-visualization/region_type_plugin_graphviz.sql)
-
-	![Graph Viz SQL file](./images/graph-viz-sql-file.png "")
-
-2. Open **SQL Workshop**, then **SQL Scripts**.
-
-	![Open SQL Scripts](./images/graph-viz-sql-file.png "")
-
-3. Upload and run `gvt_sqlgraph_to_json.sql` as the `WINGMATE` parsing schema.
-
-	This script creates the full `DBMS_GVT` package and the SQL graph JSON conversion function required by the Graph Visualization plug-in.
-
-	![Run GraphViz SQL graph helper script](./images/graph-viz-sql-file.png "")
-
-4. Upload and run `required_helper_functions.sql` as the `WINGMATE` parsing schema.
-
-	This script creates the APEX helper functions that call the SQL graph JSON converter at runtime.
-
-	![Run GraphViz required helper functions](./images/graph-viz-sql-file.png "")
-
-5. Validate that the Graph Visualization support objects are valid.
+1. Validate that the Graph Visualization support objects are valid.
 
 	```sql
 	<copy>
@@ -1058,7 +1148,7 @@ To use real metric history instead of the bundled demo data:
 
 	Confirm that `DBMS_GVT` has both a valid `PACKAGE` and a valid `PACKAGE BODY`.
 
-6. Test that the helper function can convert the `MULTICLOUD_GRAPH` query to graph JSON.
+2. Test that the helper function can convert the `MULTICLOUD_GRAPH` query to graph JSON.
 
 	```sql
 	<copy>
@@ -1086,41 +1176,21 @@ To use real metric history instead of the bundled demo data:
 
 	The query should return `MULTICLOUD_GRAPH`. If it errors, fix the helper script installation before continuing.
 
-7. Navigate to **App Builder** and the **Wingmate App**. Select **Import/Export**.
-
-	![Import and Export Button](./images/import-export-app-builder.png "")
-
-8. Drag and drop the **region_type_plugin_graphviz.sql file**, select **Plugin** and **Next**.
-
-	![import plugin](./images/import-plugin.png "")
-
-9. Select **Next** to proceed with the import.
-
-	![import confirmation](./images/confirm-import.png "")
-
-10. Select **Import** to begin the import of the plug-in.
-
-	![import process confirmation](./images/install-plugin.png "")
-
-11. Verify the plug-in was installed correctly. Navigate back to the **MultiCloud Overview** page of the app by selecting the imported application in the breadcrumbs bar and selecting the page.
-
-	> **Note:** Notice the settings of **Page size** that can be modified if needed and this is available via **Shared Components** -> **Component Settings** (via the breadcrumbs).
-
-	![verification of plugin installation](./images/plugin-success.png "")
-
-12. Navigate back to the **MultiCloud Overview** page by selecting the **MultiCloud Overview** page.
+3. Navigate back to the **MultiCloud Overview** page.
 
 	![MultiCloud Overview Page Icon](./images/multicloud-page.png "")
 
-13. Drag and drop the **Graph Visualization plugin** from the regions object selector.
+4. Select the imported **MultiCloud Insights** Graph Visualization region.
+
+	If you are rebuilding the page manually and the region is missing, drag and drop the **Graph Visualization** plug-in from the regions object selector.
 
 	![Graph Visualization Region](./images/graph-region.png "")
 
-14. Name the region **MultiCloud Insights**.
+5. Confirm the region name is **MultiCloud Insights**.
 
 	![MultiCloud Insights name](./images/graph-config.png "")
 
-15. Scroll down and update the Source Type to **SQL Query** and paste the following SQL:
+6. Confirm the Source Type is **SQL Query** and the SQL is:
 
 	```
 	<copy>
@@ -1142,13 +1212,35 @@ To use real metric history instead of the bundled demo data:
 
 	![SQL Query for Graph visualization](./images/multicloud-insights.png "")
 
-16. Run the page and confirm the graph renders.
+7. Run the page and confirm the graph renders.
 
 	If the graph toolbar appears but the graph keeps loading, open the browser developer tools and inspect the APEX AJAX response for the graph region. The most common cause is a missing or invalid `DBMS_GVT` package body or helper function.
 
 ## Task 7: Review MultiCloud Insights
 
 1. Run the MultiCloud Wingmate page and verify the reports, forecast charts, and graph visualization render with the loaded data. Use the chat prompts to confirm the assistant answers from the host insights and documentation context.
+
+2. Compare your completed page with the reference screenshots.
+
+    The top of the page should show the Multicloud overview, assistant entry point, and the first summary regions.
+
+    ![Completed Multicloud page top section](./images/multicloud-top.png "")
+
+    The middle of the page should show the imported Multicloud analysis regions and supporting visual widgets.
+
+    ![Completed Multicloud page middle section](./images/multicloud-middle.png "")
+
+    Continue reviewing the middle section to confirm the remaining Multicloud widgets render with the loaded data.
+
+    ![Completed Multicloud page additional middle section](./images/multicloud-middle-2.png "")
+
+    Review the final middle section to confirm the remaining capacity and forecast widgets render correctly.
+
+    ![Completed Multicloud page final middle section](./images/multicloud-middle-3.png "")
+
+    The graph region should render the synthetic Exadata Infrastructure, VM Cluster, CDB, and PDB relationships created earlier in this lab.
+
+    ![Completed Multicloud graph visualization](./images/multicloud-graph.png "")
 
 You may now **proceed to the next lab**.
 
