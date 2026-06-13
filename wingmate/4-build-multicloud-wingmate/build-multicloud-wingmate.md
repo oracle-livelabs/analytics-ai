@@ -1204,8 +1204,6 @@ To use real metric history instead of the bundled demo data:
 	</copy>
 	```
 
-	![SQL Query for Graph visualization](./images/multicloud-insights.png "")
-
 7. Run the page and confirm the graph renders.
 
 	If the graph toolbar appears but the graph keeps loading, open the browser developer tools and inspect the APEX AJAX response for the graph region. The most common cause is a missing or invalid `DBMS_GVT` package body or helper function.

@@ -1,4 +1,0 @@
-﻿VM_CLUSTER_ID,NAME,REGION,MULTICLOUD
-1,syn-exa-vmc-3-canada-central-v19,ca-toronto-1,Azure
-2,syn-exa-vmc-4-canada-central-v23,ca-toronto-1,Azure
-3,DemoAzureExaVMCluster01,ap-sydney-1,Azure

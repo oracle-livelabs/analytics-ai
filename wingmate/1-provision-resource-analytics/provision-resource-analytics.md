@@ -6,6 +6,10 @@ This lab walks you through provisioning OCI Resource Analytics and preparing the
 
 Resource Analytics creates a protected `OCIRA` schema in the provisioned Autonomous AI Database. The Wingmate application should use a separate application schema and query Resource Analytics data through the read-only role granted by Resource Analytics.
 
+The lab files are provided in the [Wingmate Data Zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/9DEArLjsgbKXuJgQtSG95E8hMXRFtxgHR8jiHbqz4HgyVYXVnSo0SC_s-zq5CJA3/n/c4u02/b/hosted-files/o/wingmate_data.zip). The bundle includes APEX page imports, SQL setup scripts, and synthetic CSV data used to make the later labs repeatable. The security data supports IAM policy and Cloud Guard examples in Lab 3, the documentation reference data supports the Doc Research RAG setup in Lab 2, and the multicloud and host-insights data supports the Lab 4 dashboards, forecast examples, and property graph. Lab 5 uses Resource Analytics compute metadata plus OCI Monitoring metrics collected by the OCI Metrics Collector.
+
+Resource Analytics is the primary source for OCI inventory, configuration, and capacity context. The synthetic files provide predictable lab examples and fallback rows where a learner tenancy may not yet have enough Resource Analytics data. ShowOCI can overlap with Resource Analytics for identity and inventory-style extracts, especially IAM policy statements, and can supplement the security dataset when more policy detail is needed. REST API data sources or custom pipelines can close gaps for OCI signals that are not currently exposed through Resource Analytics by landing API results in the `WINGMATE` schema or exposing them to APEX as REST Data Sources.
+
 Estimated Time: 20 minutes
 
 ### Objectives
@@ -338,7 +342,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 4. Run the following PL/SQL block as `WINGMATE` to create materialized views in the `WINGMATE` schema. Each materialized view is named `MV_<Resource Analytics view name>`.
 
-	```sql
+	```
 	<copy>
 	DECLARE
 	    l_source_owner    VARCHAR2(128) := 'OCIRA';
@@ -441,7 +445,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 5. Confirm the materialized views were created.
 
-	```sql
+	```
 	<copy>
 	SELECT mview_name, staleness, refresh_mode, refresh_method
 	FROM user_mviews
@@ -455,7 +459,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 6. Spot-check the materialized views that are most likely to be used by the Compute Wingmate Agent.
 
-	```sql
+	```
 	<copy>
 	SELECT COUNT(*) AS compute_instances
 	FROM MV_COMPUTE_INSTANCE_DIM_V;
@@ -469,7 +473,7 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 7. When you need to refresh the materialized views after Resource Analytics collects updated data, run the following block as `WINGMATE`.
 
-	```sql
+	```
 	<copy>
 	BEGIN
 	    FOR r IN (
@@ -493,93 +497,87 @@ Create materialized views in the `WINGMATE` schema for the Resource Analytics vi
 
 	[Wingmate Data Zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/9DEArLjsgbKXuJgQtSG95E8hMXRFtxgHR8jiHbqz4HgyVYXVnSo0SC_s-zq5CJA3/n/c4u02/b/hosted-files/o/wingmate_data.zip)
 
-    The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate_ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
+  >**Note:** The unzipped `wingmate_data` folder includes the supporting datasets, `wingmate_ddl.sql`, APEX single-page imports under `apex-pages`, and setup scripts under `sql`, including Select AI profiles, Doc Research RAG, and the AI Ops ADB Agent Team. Keep the folder available because Labs 2 through 5 reuse those files.
 
 2. Open **Database Actions** for the Autonomous AI Database and sign in as the `WINGMATE` database user.
 
-    ![Database Actions signed in as WINGMATE](./images/access-sql-db-actions.png "")
+  ![Database Actions signed in as WINGMATE](./images/access-sql-db-actions.png "")
 
 3. Open **SQL** and run the `wingmate_data/sql/wingmate_ddl.sql` script.
 
-    You can paste the script into the worksheet or open the file from your local machine. Run the script before loading any CSV files so the target tables already exist.
+  >**Note:** You can paste the script into the worksheet or open the file from your local machine. Run the script before loading any CSV files so the target tables already exist.
 
-    ![Run wingmate DDL script in Database Actions SQL](./images/data-load-run-ddl-script.png "")
+  ![Run wingmate DDL script in Database Actions SQL](./images/data-load-run-ddl-script.png "")
 
 4. Verify the DDL script completed successfully.
 
-    If you see errors, validate whether the tables or views already exist before rerunning the script.
+  >**Note:** If you see errors, validate whether the tables or views already exist before rerunning the script.
 
-    ![Wingmate DDL script completed successfully](./images/data-load-run-ddl-script.png "")
+  ![Wingmate DDL script completed successfully](./images/data-load-run-ddl-script-error.png "")
 
 5. In Database Actions, select **Data Load**.
 
-    ![Open Data Load from Database Actions](./images/data-load-open-data-load.png "")
+  ![Open Data Load from Database Actions](./images/data-load-open-data-load.png "")
 
 6. Select **Load Data**, then select **Local File**.
 
-    ![Select Load Data local file](./images/data-load-local-file.png "")
+  ![Select Load Data local file](./images/data-load-local-file.png "")
 
 7. Drag the CSV files from the unzipped `wingmate_data/data` folder into the local-file cart.
 
-    SQL Developer Web can stage multiple file loads together and map columns by matching the CSV headers to the existing table columns created by `wingmate_ddl.sql`.
+  >**Note:** SQL Developer Web can stage multiple file loads together and map columns by matching the CSV headers to the existing table columns created by `wingmate_ddl.sql`.
 
-    ![CSV files staged in the local file cart](./images/sql-data-load.png "")
+  ![CSV files staged in the local file cart](./images/drag-and-drop.png "")
 
 8. For each file card, select **Review Settings** or the edit icon.
 
-    The local-file cart may default each card to **Create Table**, even when the target table already exists. This is expected.
+  >**Note:** The local-file cart may default each card to **Create Table**, even when the target table already exists. This is expected.
 
-    ![Review settings for a local file load card](./images/sql-data-load.png "")
+  ![Review settings for a local file load card](./images/sql-data-load.png "")
 
 9. In the **Table** settings, change **Option** to **Insert into Table**.
 
-    Do not use **Create Table**, **Replace Data**, **Drop Table and Create New Table**, or **Merge into Table** for the first workshop load. **Merge into Table** is useful only when reloading data into a table that already has rows and the merge key is mapped to the table's primary key, such as `VM_CLUSTER_ID` for `OCI_EXA_VM_CLUSTER`.
+  >**Note:** Do not use **Create Table**, **Replace Data**, **Drop Table and Create New Table**, or **Merge into Table** for the first workshop load. **Merge into Table** is useful only when reloading data into a table that already has rows and the merge key is mapped to the table's primary key, such as `VM_CLUSTER_ID` for `OCI_EXA_VM_CLUSTER`.
 
-    ![Change load option to Insert into Table](./images/sql-data-load-insert.png "")
+  ![Change load option to Insert into Table](./images/sql-data-load-insert.png "")
 
-10. Select the existing target table for the CSV file.
-
-    The CSV file names in the bundle match the target table names, so Database Actions should select most target tables automatically. If a target table is not selected, choose it manually.
-
-    ![Select the existing target table for the CSV](./images/sql-data-load-insert.png "")
+10. Select the existing target table for the CSV file if not automatically detected.
 
 11. Review the column mapping and confirm that the CSV headers are mapped to the correct target columns.
 
-    Keep **Column header row** enabled when the CSV includes headers. If a column is unmapped, use the target column selector to map it before continuing.
-
-    ![Review CSV column mapping](./images/sql-data-load-insert.png "")
-
 12. Return to the local-file cart and repeat the settings review for each CSV file.
 
-    All cards should show **Insert into Table** and the intended existing table before you start the load.
-
-    ![All local file cards configured for insert](./images/sql-data-load-start.png "")
+  >**Note:** All cards should show **Insert into Table** and the intended existing table before you start the load.
 
 13. Select **Start** to run the configured data loads.
 
-    ![Start local file data loads](./images/sql-data-load-start.png "")
+  ![Start local file data loads](./images/sql-data-load-start.png "")
 
 14. Verify that each file load completed successfully.
 
-    Use the Data Load job details or log output to review any load errors. Most mapping issues are caused by a file name that does not match the table name or by a CSV header that does not match an existing column name.
+  >**Note:** Use the Data Load job details or log output to review any load errors. Most mapping issues are caused by a file name that does not match the table name or by a CSV header that does not match an existing column name.
 
-    ![Completed local file data load jobs](./images/data-load-jobs-complete.png "")
+  ![Completed local file data load jobs](./images/data-load-jobs-complete.png "")
 
 15. Open **SQL** and validate that the key tables contain rows.
 
-    ```sql
-    <copy>
-    SELECT 'CIS_IAM_POLICIES' table_name, COUNT(*) row_count FROM cis_iam_policies
-    UNION ALL
-    SELECT 'CLOUDGUARD02_LISTPROBLEMS', COUNT(*) FROM cloudguard02_listproblems
-    UNION ALL
-    SELECT 'LISTHOSTINSIGHTS', COUNT(*) FROM listhostinsights
-    UNION ALL
-    SELECT 'OCI_DOC_REF', COUNT(*) FROM oci_doc_ref;
-    </copy>
-    ```
+  ```sql
+  <copy>
+  SELECT 'CIS_IAM_POLICIES' table_name, COUNT(*) row_count FROM cis_iam_policies
+  UNION ALL
+  SELECT 'CLOUDGUARD02_LISTPROBLEMS', COUNT(*) FROM cloudguard02_listproblems
+  UNION ALL
+  SELECT 'LISTHOSTINSIGHTS', COUNT(*) FROM listhostinsights
+  UNION ALL
+  SELECT 'OCI_DOC_REF', COUNT(*) FROM oci_doc_ref;
+  </copy>
+  ```
 
-    ![Validate loaded table row counts](./images/data-load-jobs-complete.png "")
+  ![Validate loaded table row counts](./images/validate-data-load.png "")
+
+>**Note:** If batch file loading give trouble, proceed with manual loading on each table via APEX SQL Commands.
+
+  ![Data Loading](./images/data-loading.png "")
 
 ## Task 8: (Optional) Connect RESTful Data from OCI API Endpoints
 
@@ -609,7 +607,7 @@ This optional task models direct REST API access for tenancy data that is not ye
 
 	Example endpoint:
 
-	```text
+	```
 	<copy>https://operationsinsights.us-ashburn-1.oci.oraclecloud.com/20200630/hostInsights/resourceStatistics</copy>
 	```
 
@@ -665,11 +663,9 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 	> **Note:** You can also run ShowOCI from your local laptop if you have OCI CLI configuration and network access. For workshop consistency, use an OCI VM when possible.
 
-2. Configure instance principal authorization for the OCI VM.
+2. Configure instance principal authorization for the OCI VM. Navigate to the OCI Domains and create a dynamic group for the VM instance and add a policy similar to the following:
 
-	Create a dynamic group for the VM instance and add a policy similar to the following:
-
-	```text
+	```
 	<copy>
 	allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
 	</copy>
@@ -677,7 +673,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 3. Connect to the OCI VM and validate instance principal authentication.
 
-	```bash
+	```
 	<copy>
 	oci os ns get --auth instance_principal
 	</copy>
@@ -685,7 +681,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 4. Install the required tools and Python packages on the OCI VM.
 
-	```bash
+	```
 	<copy>
 	sudo yum -y install git
 	python3 -m pip install --upgrade pip
@@ -695,7 +691,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 5. Clone the OCI Python SDK repository and open the ShowOCI example directory.
 
-	```bash
+	```
 	<copy>
 	git clone https://github.com/oracle/oci-python-sdk
 	cd oci-python-sdk/examples/showoci
@@ -704,7 +700,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 6. Create an output directory for generated CSV reports.
 
-	```bash
+	```
 	<copy>
 	mkdir -p $HOME/showoci-policy-export
 	</copy>
@@ -712,25 +708,25 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 7. Run ShowOCI for Identity resources and generate CSV output.
 
-	For an OCI VM using instance principal authentication, run:
+	* For an OCI VM using instance principal authentication, run:
 
-	```bash
+	```
 	<copy>
 	python3 showoci.py -ip -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
 	```
 
-	For Cloud Shell using delegation token authentication, run:
+	* For Cloud Shell using delegation token authentication, run:
 
-	```bash
+	```
 	<copy>
 	python3 showoci.py -dt -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
 	```
 
-	For a configured local OCI CLI profile, run:
+	* For a configured local OCI CLI profile, run:
 
-	```bash
+	```
 	<copy>
 	python3 showoci.py -t DEFAULT -i -isc -csv $HOME/showoci-policy-export/iam
 	</copy>
@@ -740,7 +736,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 8. Review the generated IAM policy statement CSV file.
 
-	```bash
+	```
 	<copy>
 	ls -lh $HOME/showoci-policy-export/iam_identity_policy.csv
 	head -5 $HOME/showoci-policy-export/iam_identity_policy.csv
@@ -762,7 +758,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 11. Validate that the ShowOCI IAM policy statement table is available in the `WINGMATE` schema.
 
-	```sql
+	```
 	<copy>
 	SELECT table_name
 	FROM user_tables
@@ -773,7 +769,7 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 12. Preview the loaded data before using it in APEX or MCP workflows.
 
-	```sql
+	```
 	<copy>
 	SELECT compartment,
 	       policy_name,
@@ -787,11 +783,11 @@ ShowOCI can be used as an additional source for OCI IAM policy inventory. In thi
 
 13. Use the ShowOCI IAM policy statement table from APEX, SQL Developer, or MCP servers as a supplemental security and governance source for Wingmate.
 
-	For APEX, select `SHOWOCI_IAM_POLICY_STATEMENTS` as a report, chart, or assistant context source.
+	* For APEX, select `SHOWOCI_IAM_POLICY_STATEMENTS` as a report, chart, or assistant context source.
 
-	For SQL Developer or Database Actions, query the table directly in the `WINGMATE` schema.
+	* For SQL Developer or Database Actions, query the table directly in the `WINGMATE` schema.
 
-	For MCP-based workflows, expose the `SHOWOCI_IAM_POLICY_STATEMENTS` table through the same database connection used for the `WINGMATE` schema.
+	* For MCP-based workflows, expose the `SHOWOCI_IAM_POLICY_STATEMENTS` table through the same database connection used for the `WINGMATE` schema.
 
 You may now **proceed to the next lab**.
 

@@ -73,11 +73,11 @@ In this lab, you will:
 
 11. Select the **CPU Usage Trend** Region and modify the template to **Standard**.
 
-  ![Standard Template](./images/modify-template-cpu-memory-usage-trend.png "")
+  ![Standard Template](./images/modify-template-cpu-memory-usage-trend-1.png "")
 
 12. Select the **Memory Usage Trend** Region and modify the template to **Standard**.
 
-  ![Standard Template](./images/modify-template-cpu-memory-usage-trend.png "")
+  ![Standard Template](./images/modify-template-cpu-memory-usage-trend-2.png "")
 
 13. Select the button **StartWingmate** to modify the template to **Text** and save.
 

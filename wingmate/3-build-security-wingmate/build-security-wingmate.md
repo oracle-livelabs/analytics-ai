@@ -48,7 +48,7 @@ This lab assumes you have the following:
 
 4. On the confirmation page, select **Edit Application**.
 
-  ![Edit Application Page](./images/edit-application.png "")
+  ![Edit Application Page](./images/edit-page.png "")
 
 5. Modify the **Templates** to match the expected layout and save the page. Select the **OCI Security Wingmate** Region. Modify the template to **Hero**.
 
