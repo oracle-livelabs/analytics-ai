@@ -1245,4 +1245,4 @@ You may now **proceed to the next lab**.
 * **Authors:**
 	* Nicholas Cusato - Cloud Architect
 	* Royce Fu - Master Principal Cloud Architect
-* **Last Updated by/Date** - Royce Fu, May 2026
+* **Last Updated by/Date** - Nicholas Cusato, June 2026
