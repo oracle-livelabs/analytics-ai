@@ -16,14 +16,15 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Generate API keys for OCI access
-* Update APEX Web Credentials to connect to OCI resources
-* Create the OCI Generative AI service object in APEX
-* Grant Select AI package access to the `WINGMATE` schema
-* Run the bundled setup script for Security, Multicloud, and Compute Select AI profiles
-* Create a separate Doc Research RAG service for documentation-grounded answers
-* Create a pre-built Select AI Agent Team for Autonomous Database operations and DBMS Scheduler monitoring
-* Import the prebuilt Ask Oracle APEX application that Labs 3 through 5 extend
+* Generate API Keys
+* Update the Credentials to Connect to OCI Resources
+* Create the OCI Generative AI Service Object
+* Grant Select AI Package Access to the WINGMATE Schema
+* Run the Select AI Profile Setup Script
+* Create the Doc Research RAG Service
+* Create the Pre-built Select AI Agent Team
+* Import the Ask Oracle APEX Application
+* Validate Ask Oracle Profiles, Doc Research RAG, and Pre-built Agent Team
 
 ### Prerequisites
 

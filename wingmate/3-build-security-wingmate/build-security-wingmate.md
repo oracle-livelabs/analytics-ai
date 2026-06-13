@@ -1,4 +1,4 @@
-# Lab 3: Build a Security Wingmate Agent
+# Lab 3: Import and Configure Security Wingmate with RAG
 
 ## Introduction
 
@@ -10,10 +10,10 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-* Import the Security Overview page into the existing Lab 2 application
-* Create a Security RAG AI Configuration named `wingmate_security_rag`
-* Connect the page's AI Assistant action to the RAG configuration
-* Test Security Wingmate with IAM policy questions
+* Import the Security Overview Page
+* Create the Security RAG AI Configuration
+* Configure the Security Wingmate Page
+* Test the App's Chat Feature
 
 ### Prerequisites
 

@@ -22,15 +22,15 @@
             "filename": "../../2-build-operations-wingmate/build-operations-wingmate.md"
         },
         {
-            "title": "Lab 3: Build a Security Wingmate Agent",
+            "title": "Lab 3: Import and Configure Security Wingmate with RAG",
             "filename": "../../3-build-security-wingmate/build-security-wingmate.md"
         },
         {
-            "title": "Lab 4: Build a Multicloud Wingmate Agent",
+            "title": "Lab 4: Import and Configure Multicloud Wingmate with RAG and Graph Insights",
             "filename": "../../4-build-multicloud-wingmate/build-multicloud-wingmate.md"
         },
         {
-            "title": "Lab 5: Build a Compute Wingmate Agent",
+            "title": "Lab 5: Import and Configure Compute Wingmate with OCI Metrics",
             "filename": "../../5-build-compute-wingmate/build-compute-wingmate.md"
         },
         {

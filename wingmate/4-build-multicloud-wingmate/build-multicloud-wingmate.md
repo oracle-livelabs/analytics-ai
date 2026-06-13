@@ -1,20 +1,18 @@
-# Lab 4: Build a Multicloud Wingmate Agent
+# Lab 4: Import and Configure Multicloud Wingmate with RAG and Graph Insights
 
 ## Introduction
 
-This lab walks you through the creation of a Multicloud Wingmate Agent dashboard. You will import the Multicloud Overview page into the Ask Oracle application from Lab 2, create a reusable Multicloud RAG AI Configuration, build reports and charts for cross-cloud resource analysis, and create the synthetic SQL property graph used by the graph visualization.
+This lab walks you through importing and configuring a Multicloud Wingmate dashboard. You will import the Multicloud Overview page into the Ask Oracle application from Lab 2, create a reusable Multicloud RAG AI Configuration, build reports and charts for cross-cloud resource analysis, and create the synthetic SQL property graph used by the graph visualization.
 
 Estimated Time: 20 minutes
 
 ### Objectives
 
-* Install the Graph Visualization plug-in and import the Multicloud Overview page into the existing Lab 2 application
-* Create the `wingmate_multicloud_rag` AI Configuration
-* Create and validate the `MULTICLOUD_GRAPH` SQL property graph
+* Install the Graph Visualization Plug-in, Import the Multicloud Overview Page, and Configure Multicloud RAG
 * Generate Report Period View
-* Create Host Insights Widgets
+* Learn How to Create Host Insights Widgets
 * Compare Insights Across CPU and Memory
-* Optionally visualize CPU combinations for historical and forecast analysis with collected metric history
+* Optionally Visualize CPU Combinations for Historical and Forecasting Analysis
 * Operationalize MultiCloud with Property Graph
 * Review MultiCloud Insights
 
@@ -27,7 +25,7 @@ Estimated Time: 20 minutes
 * `wingmate_data.zip` extracted, including `apex-pages/multicloud-page.sql`
 * Some SQL knowledge is preferred but not necessary
 
-## Task 1: Install the Graph Visualization Plug-in and Import the Multicloud Overview Page
+## Task 1: Install the Graph Visualization Plug-in, Import the Multicloud Overview Page, and Configure Multicloud RAG
 
 The Multicloud page export includes a Graph Visualization region. Install the Graph Visualization helper objects and APEX plug-in before importing the page so APEX can resolve the plug-in region during page import.
 
@@ -602,7 +600,7 @@ The Multicloud page export includes a Graph Visualization region. Install the Gr
 
 	![metrics commented out](./images/metrics-hostinsights.png "")
 
-## Task 3: Learn how to create Host Insights Widgets
+## Task 3: Learn How to Create Host Insights Widgets
 
 > **Note:** This task is for only educational purposes. The Page import creates all of this content for you.
 

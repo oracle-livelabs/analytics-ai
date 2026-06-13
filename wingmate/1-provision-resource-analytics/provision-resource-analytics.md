@@ -12,15 +12,15 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Configure Resource Analytics prerequisites
-* Provision a Resource Analytics instance
-* Prepare access to the Resource Analytics-provisioned Autonomous AI Database
-* Create the `WINGMATE` database user for the APEX application
-* Create the `WINGMATE` APEX workspace and APEX developer user
-* Create curated materialized views for Wingmate
-* Load synthetic data
-* Optionally connect RESTful OCI API data
-* Optionally prepare ShowOCI inventory exports for later labs
+* Configure Resource Analytics Prerequisites
+* Provision Resource Analytics Instance
+* Open the Resource Analytics Autonomous AI Database
+* Create the Wingmate Database User
+* Create the Wingmate APEX Workspace and Developer User
+* Create Curated Resource Analytics Materialized Views
+* Load Synthetic Data
+* (Optional) Connect RESTful Data from OCI API Endpoints
+* (Optional) Prepare ShowOCI IAM Policy Statement Data Loading
 
 ### Prerequisites
 

@@ -1,4 +1,4 @@
-# Lab 5: Build a Compute Wingmate Agent
+# Lab 5: Import and Configure Compute Wingmate with OCI Metrics
 
 ## Introduction
 
@@ -12,13 +12,13 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Import the Compute Wingmate page into the existing Lab 2 application
-* Configure the `wingmate_compute_rag` AI Configuration and AI assistant
-* Configure OCI Metrics Collector for compute CPU and memory metrics
-* Load compute metrics into the `WINGMATE` Autonomous Database schema
-* Confirm Resource Analytics compute metadata sources
-* Create SQL views that overlay metrics on compute instance metadata
-* Review how the imported APEX visualization widgets are built
+* Import the Compute Wingmate Page
+* Configure the Compute Wingmate RAG Assistant
+* Configure OCI Metrics Collector
+* Validate the Metrics Table in Autonomous Database
+* Confirm Compute Metadata Sources and Create Overlay Views
+* Learn How to Build the Compute Wingmate Page
+* Validate Compute Wingmate
 
 ### Prerequisites
 

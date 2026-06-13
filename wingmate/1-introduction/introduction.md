@@ -61,11 +61,11 @@ Estimated Workshop Time: 90 minutes
 
 In this workshop, you will learn how to:
 
-* Provision OCI Resource Analytics and prepare Wingmate data
-* Build an Agentic Operations Wingmate with Oracle APEX, Select AI, and OCI Generative AI
-* Import and configure Security, Multicloud, and Compute Wingmate pages in the Ask Oracle app
-* Configure RAG-backed APEX AI Assistants for each Wingmate page
-* Use OCI Metrics Collector data with Resource Analytics metadata for compute analysis
+* Provision OCI Resource Analytics and Prepare Wingmate Data
+* Build an Agentic Operations Wingmate with Oracle APEX and OCI Generative AI
+* Import and Configure Security Wingmate with RAG
+* Import and Configure Multicloud Wingmate with RAG and Graph Insights
+* Import and Configure Compute Wingmate with OCI Metrics
 
 ### Prerequisites
 
