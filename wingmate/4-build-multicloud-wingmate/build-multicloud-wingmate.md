@@ -11,8 +11,8 @@ Estimated Time: 20 minutes
 * Install the Graph Visualization Plug-in, Import the Multicloud Overview Page, and Configure Multicloud RAG
 * Generate Report Period View
 * Learn How to Create Host Insights Widgets
-* Compare Insights Across CPU and Memory
-* Optionally Visualize CPU Combinations for Historical and Forecasting Analysis
+* Learn How to Compare Insights Across CPU and Memory
+* Learn How to Visualize CPU Combinations for Historical and Forecasting Analysis
 * Operationalize MultiCloud with Property Graph
 * Review MultiCloud Insights
 
@@ -674,11 +674,13 @@ The Multicloud page export includes a Graph Visualization region. Install the Gr
 
 10. Scroll down and change the mapping with **Memory Usage** for **Label** and **Value** and **Memory Capacity** for **Maximum Value**. 
 
-	![Memory Gauge Mapping](./images/memory-guage-mapping.png "")
+	![Memory Gauge Mapping](./images/memory-gauge-mapping.png "")
 
 Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
-## Task 4: Compare Insights Across CPU and Memory
+## Task 4: Learn How to Compare Insights Across CPU and Memory
+
+> **Note:** These steps are for review if you build the page from scratch. The page import in Task 1 should have already created these chart regions and widget patterns.
 
 1. Drag and drop another **Static Region** into the same region **Host CPU Insights**. Name this Sub Region **HOST INSIGHTS CPU and MEMORY**. 
 
@@ -848,7 +850,9 @@ Next, Visuals for Host Insights across both CPU and Memory will be generated.
 
 	![Drag and drop Chart](./images/drag-memory.png "")
 
-## Task 5: Optionally Visualize CPU Combinations for Historical and Forecasting Analysis
+## Task 5: Learn How to Visualize CPU Combinations for Historical and Forecasting Analysis
+
+> **Note:** These steps are for review if you build the page from scratch. The page import in Task 1 should have already created these optional historical and forecast visualization regions.
 
 > **Optional forecast data:** The Resource Analytics adapter views created earlier in this lab use current inventory, configured capacity, and current allocation measures. They do not provide the historical CPU metric samples or projected forecast JSON used by the charts in this task. Use this task only when you have loaded forecast-ready host metric data.
 

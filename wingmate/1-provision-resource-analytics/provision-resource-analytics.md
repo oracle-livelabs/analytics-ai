@@ -43,11 +43,11 @@ In this lab, you will:
 
 2. Notice the warning at the top, which requires the tenancy admin to perform the prerequisites listed in the documentation. Click **View Details** to perform those actions.
 
-	![Prerequisites for Resource Analytics](./images/prerequisits.png "")
+	![Prerequisites for Resource Analytics](./images/prerequisites.png "")
 
 3. Read through the details of step 1. The next steps cover VCN creation using the VCN Wizard.
 
-	![Prerequisites step 1 details](./images/prerequisits-step1.png "")
+	![Prerequisites step 1 details](./images/prerequisites-step1.png "")
 
 4. Click the **hamburger menu** in the top left of the OCI Console. Under **Networking**, select **Virtual Cloud Networks**.
 
@@ -87,7 +87,7 @@ In this lab, you will:
 
 13. Return to the **Resource Analytics Prerequisites setup** page, read Step 2, and click **Domains** to create the Resource Analytics administrator group.
 
-	![Step 2](./images/prerequisits-step2.png "")
+	![Step 2](./images/prerequisites-step2.png "")
 
 14. Click the identity domain where the group should reside. If the domain is at the root level, change the compartment to match the location.
 
@@ -131,7 +131,7 @@ In this lab, you will:
 
 22. Return to the **Prerequisites** page, read Step 3, and click **Policy Builder**.
 
-	![Step 3](./images/prerequisits-step3.png "")
+	![Step 3](./images/prerequisites-step3.png "")
 
 23. Use the Policy Builder to create the Resource Analytics policies:
 

@@ -12,7 +12,7 @@ In this lab, you will:
 
 * Import the Security Overview Page
 * Create the Security RAG AI Configuration
-* Configure the Security Wingmate Page
+* Learn How to Configure the Security Wingmate Page
 * Test the App's Chat Feature
 
 ### Prerequisites
@@ -130,7 +130,9 @@ APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same
 
     ![Query SQL context prompt](./images/context-prompt.png "")
 
-## Task 3: Configure the Security Wingmate Page
+## Task 3: Learn How to Configure the Security Wingmate Page
+
+> **Note:** These steps are for review if you build the page from scratch. The page import in Task 1 should have already created the region, button, dynamic action, and inline AI Assistant wiring.
 
 1. In Page Designer, confirm Page 12 shows **Security Overview**.
 
