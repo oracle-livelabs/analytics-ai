@@ -8,11 +8,11 @@ The workshop covers:
 - Manual installation and testing of Vector Store (Lab 1)
 - Installation of supporting components using Terraform (Lab 2)
 - Building user interfaces with:
-    - APEX (Lab 3)
-        ![Screenshot APEX](images/apex-jazz.png =500x500)
-    - LangGraph (Lab 4)
-        ![Screenshot LangGraph](images/langgraph-jazz.png =500x500)
-    - Oracle Digital Assistant (Lab 5)
+
+| User Interfaces |    |
+| ----------------| ---|
+| APEX (Lab 3) ![Screenshot APEX](images/apex-jazz.png) | LangGraph (Lab 4) ![Screenshot LangGraph](images/langgraph-jazz.png) |
+| Enterprise AI Chat - Next.js + Responses API (Lab 5) ![Screenshot Next.js](../5-nextjs/images/nextjs-headphones.png) |Oracle Digital Assistant (Lab 6) ![Screenshot Digital Assistant](../6-digital-assistant/images/oda-webchat.png =250x500) |
 
 You will search documents such as:
 - Video and audio files using OCI Speech
@@ -83,5 +83,5 @@ The following architecture will be installed using Terraform.
 
 - **Author**
     - Marc Gueury, Generative AI Specialist
-    - Anshuman Panda, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
+    - Ras Alungei, Generative AI Specialist

@@ -25,14 +25,18 @@
         {
             "title": "Lab 4: LangGraph",
             "filename": "./../../4-langgraph/langgraph.md"
+        },  
+        {
+            "title": "Lab 5: Enterprise AI Chat - Next.js + Responses API",
+            "filename": "./../../5-nextjs/nextjs.md"
+        },               
+        {
+            "title": "Lab 6: Digital Assistant",
+            "filename": "./../../6-digital-assistant/digital-assistant.md"
         },        
         {
-            "title": "Lab 5: Digital Assistant",
-            "filename": "./../../5-digital-assistant/digital-assistant.md"
-        },        
-        {
-            "title": "Lab 6: Customize",
-            "filename": "./../../6-customize/customize.md"
+            "title": "Lab 7: Customize",
+            "filename": "./../../7-customize/customize.md"
         },        
         {
             "title": "Need Help",
