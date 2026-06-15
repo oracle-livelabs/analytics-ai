@@ -566,7 +566,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
     </copy>
     ```
 
-You may now **proceed to the next lab**.
+    You may now **proceed to the next lab**.
 
 ## Learn more
 

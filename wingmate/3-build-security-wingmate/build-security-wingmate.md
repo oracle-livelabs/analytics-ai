@@ -42,48 +42,48 @@ This lab assumes you have the following:
 
     ![import page](./images/import-page.png "")
 
-3. Confirm details and select **Install Page**.
+4. Confirm details and select **Install Page**.
 
-  ![Import Compute Wingmate Page](./images/install-page.png "")
+    ![Import Compute Wingmate Page](./images/install-page.png "")
 
-4. On the confirmation page, select **Edit Application**.
+5. On the confirmation page, select **Edit Application**.
 
-  ![Edit Application Page](./images/edit-page.png "")
+    ![Edit Application Page](./images/edit-page.png "")
 
-5. Modify the **Templates** to match the expected layout and save the page. Select the **OCI Security Wingmate** Region. Modify the template to **Hero**.
+6. Modify the **Templates** to match the expected layout and save the page. Select the **OCI Security Wingmate** Region. Modify the template to **Hero**.
 
-  ![Hero Template](./images/modify-template-title.png "")
+    ![Hero Template](./images/modify-template-title.png "")
 
-6. Select the **WingmateChat** Region and modify the template to **Standard**.
+7. Select the **WingmateChat** Region and modify the template to **Standard**.
 
-  ![Standard Template](./images/modify-template-chat.png "")
+    ![Standard Template](./images/modify-template-chat.png "")
 
-7. Select the button **StartWingmate** to modify the template to **Text** and save.
+8. Select the button **StartWingmate** to modify the template to **Text** and save.
 
-  ![Text Template](./images/modify-template-button.png "")
+    ![Text Template](./images/modify-template-button.png "")
 
-8. Select the region **Identity and Access Management** and modify the template to **Interactive Report**.
+9. Select the region **Identity and Access Management** and modify the template to **Interactive Report**.
 
-  ![Interactive Report Template](./images/modify-template-identity.png "")
+    ![Interactive Report Template](./images/modify-template-identity.png "")
 
-9. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
+10. Navigate to the Shared Components of the app, select **Lists**, then open **LLM Conversations - Top**.
 
-  ![Navigate to LLM Conversations - Top](./images/shared-components.png "")
+    ![Navigate to LLM Conversations - Top](./images/shared-components.png "")
 
-  ![List Entry for Security](./images/list-entry.png "")
+    ![List Entry for Security](./images/list-entry.png "")
 
-10. Edit the following at the end sequence and select **Create**.
+11. Edit the following at the end sequence and select **Create**.
     * **image/class:** `fa-lock`
     * **List Entry Label:** `Security Wingmate`
     * **Page:** `12`
 
     ![create list entry](./images/create-list-entry.png "")
 
-11. Open Page 12, **Security Overview**, in Page Designer to verify the list entry.
+12. Open Page 12, **Security Overview**, in Page Designer to verify the list entry.
 
     ![security page button](./images/nav-secure.png "")
 
-12. Confirm the imported **Show AI Assistant** action exists. You will connect it to `wingmate_security_rag` after creating the AI Configuration in Task 2.
+13. Confirm the imported **Show AI Assistant** action exists. You will connect it to `wingmate_security_rag` after creating the AI Configuration in Task 2.
 
     ![show ai assistant config](./images/update-genai-config.png "")
 
@@ -104,7 +104,7 @@ APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same
     * **System Prompt:** `You are OCI Security Wingmate. Answer IAM policy and tenancy security questions using the configured RAG source. Be concise, explain security impact, and say when the retrieved policy context is insufficient.`
     * **Welcome Message:** `Welcome! Begin chatting with OCI Security Wingmate about policies and tenancy security questions.`
 
-  ![Security Wingmate RAG](./images/security-rag.png "")
+    ![Security Wingmate RAG](./images/security-rag.png "")
 
 3. Add a SQL-based RAG Source to `wingmate_security_rag`:
 
@@ -245,7 +245,7 @@ APEX 24.2 uses **AI Configurations** and **RAG Sources**. In APEX 26.1, the same
     * The action is displayed **Inline** with container selector `#wingmate-chat`.
     * The RAG Source SQL returns `CONTEXT_PROMPT` from `CIS_IAM_POLICIES_SV`.
 
-You may now **proceed to the next lab**.
+    You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
