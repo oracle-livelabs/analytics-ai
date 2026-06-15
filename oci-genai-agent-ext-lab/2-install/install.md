@@ -29,7 +29,6 @@ Estimated time: 15 min
 4. Click on **vs-project**
 6. Click on the **vs-vector-store**.
 7. Next to OCID, click **Copy**.
-    ![Project](images/project3.png)
 8. Put it in your "List of ##VARIABLES##".
 
 ## Task 2: Run a Terraform script to create the other components.
@@ -46,7 +45,7 @@ Estimated time: 15 min
 
 5. In the code editor menu, click *Terminal* then *New Terminal*
 6. Run the command below in the terminal
-    ![Menu Compute](images/terraform1.png=50%x*)
+    ![Menu Compute](images/terraform1.png =50%x50%)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-vector-store-ext.git
@@ -82,7 +81,25 @@ Estimated time: 15 min
         3. Other (your own IP range)
     - To get your laptop IP, use, by example, https://whatismyipaddress.com or https://ifconfig.me 
 
-    In case of errors, check **Known Issues** below
+    In case of errors, check **Known Issues** below.
+
+9. If after the setup, you want to add more IP addresses to access the installaiton. For ex, 
+    - a colleague who want to access the setup,
+    - Your laptop that is in another place, ...
+    
+    Please do this:
+    - Open the OCI Console
+    - Go to Networking / Virtual Cloud Networks
+    - Choose the *YOUR_PREFIX-vcn* Network
+    - Open the tab *Security*
+    - Open the Security List *YOUR_PREFIX-security-list*
+    - Open the tab *Security Rules*
+    - Click *Add Ingress Rule*
+    - Fill the following field
+        - Source CIDR: 12.34.56.78/32 (=the ip that you want to add/32)
+        - Destination Port: 443
+        - Click *Add Ingress Rule*     
+    - Retry
 
 8. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 45 minutes and you can check the steps in the next labs while it's running. However, you will need to come back to this lab when it is done and complete the next step.
@@ -107,6 +124,14 @@ Estimated time: 15 min
     -----------------------------------------------------------------------
     LangGraph Agent Chat:
     https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/index.html
+
+    -----------------------------------------------------------------------
+    LangGraph Agent Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/prefix/chat.html
+
+    -----------------------------------------------------------------------
+    Next.js Chat:
+    https://abcdefghijklmnop.apigateway.eu-frankfurt-1.oci.customer-oci.com/
 
     -----------------------------------------------------------------------
     Oracle Digital Assistant (Web Channel)
@@ -254,11 +279,23 @@ Estimated time: 15 min
     - look for the Domain URL. It will look like this: https://idcs-xxxxxx.identity.oraclecloud.com:443
   - Rerun ./starter.sh build
 
+8. DUring the installation, it fails in terraform with error like this:
+
+    ```
+    null_resource.build_deploy (local-exec): Oracle Software for OCI users on Oracle Linux 8 6.5  B/s |  10  B     00:01
+    null_resource.build_deploy (local-exec): Errors during downloading metadata for repository 'ol8_oci_included':
+    null_resource.build_deploy (local-exec):   - Status code: 404 for https://yum.oracle.com/repo/OracleLinux/OL8/oci/included/x86_64/repodata/repomd.xml (IP: 23.219.139.240)
+    null_resource.build_deploy (local-exec): Error: Failed to download metadata for repo 'ol8_oci_included': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+    null_resource.build_deploy (local-exec): Oracle Software for OCI users on Oracle Linux 8 663  B/s |  10  B     00:00
+    null_resource.build_deploy (local-exec): Errors during downloading metadata for repository 'ol8_oci_included':
+    null_resource.build_deploy (local-exec):   - Status code: 404 for https://yum.oracle.com/repo/OracleLinux/OL8/oci/included/x86_64/repodata/repomd.xml (IP: 23.219.139.240)
+    null_resource.build_deploy (local-exec): Error: Failed to download metadata for repo 'ol8_oci_included': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+    null_resource.build_deploy (local-exec): chat/install.sh: line 11: npm: command not found
+    ```
 
 ## Acknowledgements
 
 - **Author**
     - Marc Gueury, Generative AI Specialist
-    - Anshuman Panda, Generative AI Specialist
     - Maurits Dijkens, Generative AI Specialist
-
+    - Ras Alungei, Generative AI Specialist

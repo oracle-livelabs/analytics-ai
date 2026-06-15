@@ -1,33 +1,41 @@
-# Test with LangGraph
+# Test with Enterprise AI Chat (Next.js + Responses API)
 
 ## Introduction
-In this lab, you will test the installation using LangGraph.
+In this lab, you will test the installation using Enterprise AI Chat: Next.js + Responses API.
 
 Estimated time: 10 min
 
 ### Objectives
 
-- Test the program using a LangGraph user interface.
+- Test the program using a Next.js (ReactJS) user interface and OpenAI Responses API backend.
 
 ### Prerequisites
 - The lab 2 must have been completed.
 
 ## Task 1: Test 
 
-2. Check the URL at the end of the Terraform run.
+1. Check the URL at the end of the Terraform run.
 
-3. Go to the URL of the application (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/xxxx/chat.html).
+2. Go to the Next.js URL (e.g., https://xxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/).
 
-4. Type "what is jazz" and press Enter.
+3. Let's do some setup:
+    - Click on the tools icon
+        ![Settings 1](images/nextjs-tools.png)    
+    - In the Tools menu, enable the *File Search* tool 
+    - Then select the Vector Store that you have created
+        ![Settings 2](images/nextjs-tools.png)    
+    - Go to the *Prompts* menu, go to the *Widgets* tab. 
+    - Enable the *Widgets* 
+        ![Settings 3](images/nextjs-widgets.png)    
 
-    ![Jazz](../0-intro/images/langgraph-jazz.png)    
+4. Back to the chat. Type "what is jazz" and press Enter.
 
-4. Type "what is Oracle Analytics Cloud" and press Enter.
+    ![Jazz](images/nextjs-jazz.png)    
+
+5. Type "what is the issue with my headphones" and press Enter.
 
     Click on the link.
-    ![Analytics](images/langgraph-analytics.png)    
-
-5. Type "List the countries in the map of Brazil" and press Enter.
+    ![Analytics](images/nextjs-headphones.png)    
 
 6. Try more questions:
 
@@ -45,6 +53,12 @@ Estimated time: 10 min
     | Audio     | .mp3      | What is the issue with my headphones ?            | 
 
 **You may now proceed to the [next lab.](#next)**
+
+## Task 2: More information
+
+For more information about the application. See https://github.com/oracle-devrel/technology-engineering/tree/main/ai/gen-ai-agents/oci-enterprise-ai-chat
+
+To login on the Virtual Machine to check on the Next.js application is installed, check the Lab: Customize - Task : Virtual Machine. The directory is $HOME/app/chat.
 
 ## Known issues
 
