@@ -1,14 +1,14 @@
-# Lab 2: Build an Agentic Operations Wingmate with Oracle APEX and OCI Generative AI
+# Lab 2: Build an Agentic Operations Wingmate Application with Oracle APEX, the Select AI Ask Oracle Chatbot, and OCI Generative AI
 
 ## Introduction
 
-This lab builds the shared AI operations foundation for the Wingmate workshop. You will connect the `WINGMATE` APEX workspace and database schema to OCI Generative AI, run the setup scripts, and import the base Ask Oracle APEX application that later labs extend by importing single page exports into this same application.
+This lab builds the shared AI operations foundation for the Wingmate workshop. You will connect the `WINGMATE` APEX workspace and database schema to OCI Generative AI, run the setup scripts, and import the base Select AI Ask Oracle chatbot application that later labs extend by importing single page exports into this same application.
 
-The Ask Oracle home page exposes three different AI patterns:
+The Select AI Ask Oracle chatbot provides three AI capabilities:
 
 * **NL2SQL:** `sql/wingmate-select-ai-profiles.sql` creates `WINGMATE_SECURITY`, `WINGMATE_MULTICLOUD`, and `WINGMATE_COMPUTE`. Learners use **Switch NL2SQL Profile** on the Ask Oracle home page to query Resource Analytics, multicloud database inventory, security data, and compute data.
 * **RAG:** `sql/wingmate-doc-research-rag.sql` creates `WINGMATE_DOC_RESEARCH_RAG`. Learners use the RAG profile selector on the Ask Oracle home page to ask documentation-grounded questions from the vector index.
-* **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` for OCI Autonomous Database provisioning and lifecycle actions. The same setup also creates `DBMS_SCHEDULER_MONITOR_TEAM` for read-only scheduler diagnostics.
+* **Agent Team:** `sql/wingmate-prebuilt-select-ai-agent-team.sql` creates `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` for OCI Autonomous AI Database provisioning and lifecycle actions. The same setup also creates `DBMS_SCHEDULER_MONITOR_TEAM` for read-only scheduler diagnostics.
 
 Estimated Time: 20 minutes
 
@@ -22,9 +22,9 @@ In this lab, you will:
 * Grant Select AI Package Access to the WINGMATE Schema
 * Run the Select AI Profile Setup Script
 * Create the Doc Research RAG Service
-* Create the Pre-built Select AI Agent Team
-* Import the Ask Oracle APEX Application
-* Validate Ask Oracle Profiles, Doc Research RAG, and Pre-built Agent Team
+* Create Pre-built Select AI Agents and the Wingmate Agent Team
+* Import the Select AI Ask Oracle Chatbot Application
+* Validate Select AI Ask Oracle Profiles, Doc Research RAG, and the Pre-built Agent Team
 
 ### Prerequisites
 
@@ -61,6 +61,8 @@ In this lab, you will:
     * Downloaded private key file contents
 
 ## Task 2: Update the Credentials to Connect to OCI Resources
+
+> **Why this task is required:** Tasks 2 and 3 configure the workspace-level `api_key` Web Credential and `OCI_GENAI` service object for APEX-native AI configurations used by later Wingmate pages. Task 5 separately creates `WINGMATE_OCI_CRED` for database-side `DBMS_CLOUD_AI` profiles. The APEX and database credentials serve different runtimes and are not interchangeable.
 
 1. In APEX, click **App Builder**.
 
@@ -170,11 +172,11 @@ Ask Oracle uses database-side PL/SQL packages that call Select AI. Stored PL/SQL
     </copy>
     ```
 
-4. Confirm `DBMS_CLOUD`, `DBMS_CLOUD_AI`, `DBMS_CLOUD_PIPELINE`, and `DBMS_VECTOR` return `VALID`. Confirm `CREATE MINING MODEL` appears and `DATA_PUMP_DIR` shows `READ` and `WRITE`. If `DBMS_CLOUD_AI_AGENT` is unavailable in your Autonomous Database version, continue with the Select AI profile steps and skip the Agent Team task.
+4. Confirm `DBMS_CLOUD`, `DBMS_CLOUD_AI`, `DBMS_CLOUD_PIPELINE`, `DBMS_CLOUD_AI_AGENT`, and `DBMS_VECTOR` return `VALID`. Confirm `CREATE MINING MODEL` appears and `DATA_PUMP_DIR` shows `READ` and `WRITE`. If `DBMS_CLOUD_AI_AGENT` is missing or invalid, stop before Task 7 and verify that the database release supports Select AI Agent in the [Select AI and Select AI Agent Capability Matrix](https://docs.oracle.com/en/database/oracle/oracle-database/26/saicm/index.html).
 
 ## Task 5: Run the Select AI Profile Setup Script
 
-The Select AI setup script creates one database credential and three domain-specific profiles. The profiles keep each domain focused: Security uses IAM policy and tenancy context, Multicloud uses multicloud and host-insights context, and Compute uses Resource Analytics compute views plus optional host-insights objects.
+The Select AI profile setup script creates one database credential and three domain-specific profiles. The profiles keep each domain focused: Security uses IAM policy and tenancy context, Multicloud uses multicloud and host-insights context, and Compute uses Resource Analytics compute views plus optional host-insights objects.
 
 1. In the extracted `wingmate_data` folder, open `sql/wingmate-select-ai-profiles.sql`.
 
@@ -234,7 +236,7 @@ The Select AI setup script creates one database credential and three domain-spec
 
 ## Task 6: Create the Doc Research RAG Service
 
-The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Select AI profile and vector index. It uses OCI Generative AI for chat responses and the in-database `ALL_MINILM_L12_V2` ONNX transformer for RAG embeddings, avoiding a separate OCI Generative AI embedding endpoint. This is the documentation-research use case in the Ask Oracle app.
+The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Select AI profile and vector index. It uses OCI Generative AI for chat responses and the in-database `ALL_MINILM_L12_V2` ONNX transformer for RAG embeddings, avoiding a separate OCI Generative AI embedding endpoint. This is the documentation-research use case in the Select AI Ask Oracle chatbot application.
 
 1. Upload the documentation reference CSV from the extracted Lab 1 bundle to an Object Storage bucket. Use `wingmate_data/data/oci_doc_ref.csv`.
 
@@ -312,17 +314,17 @@ The Doc Research RAG script creates a separate `WINGMATE_DOC_RESEARCH_RAG` Selec
 
     > **Troubleshooting:** `ORA-20001: Unable to load in-database embedding model` means the model import failed. Confirm Task 4 granted `EXECUTE` on `DBMS_VECTOR`, `CREATE MINING MODEL`, and `READ`/`WRITE` on `DATA_PUMP_DIR`. If you also see `WINGMATE_DOC_RESEARCH_VECTAB does not exist`, fix the vector index error first; that table is created only after the vector index is created.
 
-## Task 7: Create the Pre-built Select AI Agent Team
+## Task 7: Create Pre-built Select AI Agents and the Wingmate Agent Team
 
-This task installs Oracle pre-built Select AI Agent tool layers and creates the Wingmate AI Ops Agent Team based on the practical Select AI Agent pattern. This is separate from the NL2SQL profiles and the Doc Research RAG profile.
+This task installs Oracle pre-built Select AI Agent tools and agents, then creates the Wingmate AI Ops Agent Team with the Select AI Agent framework. This is separate from the NL2SQL profiles and the Doc Research RAG profile.
 
-The primary team, `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`, uses the **OCI Autonomous Database AI Agent and Tools** to provision, list, start, stop, restart, scale, update, and inspect Autonomous Database resources. The script also creates the standalone `DBMS_SCHEDULER_MONITOR_TEAM`, which monitors local `USER_SCHEDULER_*` jobs, job history, failures, runtime, CPU/load correlation, and scheduler health.
+The primary team, `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`, uses the **OCI Autonomous Database AI Agent and Tools** to provision, list, start, stop, restart, scale, update, and inspect Autonomous AI Database resources. The script also creates the standalone `DBMS_SCHEDULER_MONITOR_TEAM`, which monitors local `USER_SCHEDULER_*` jobs, job history, failures, runtime, CPU/load correlation, and scheduler health.
 
 The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `OCI_AUTONOMOUS_DATABASE_TEAM`, the standalone `DBMS_SCHEDULER_MONITOR_TEAM`, and the primary `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM`.
 
 1. Confirm Task 5 completed. The pre-built team uses `WINGMATE_OCI_CRED` for OCI API calls and the configured chat model for agent reasoning.
 
-2. If you plan to test live Autonomous Database operations, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous Databases in the target compartment.
+2. If you plan to test live Autonomous AI Database operations, confirm that the principal behind `WINGMATE_OCI_CRED` can manage Autonomous AI Databases in the target compartment.
 
     ```text
     <copy>
@@ -358,7 +360,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
 5. Sign out of the `ADMIN` SQL Developer Web session and sign back in as `WINGMATE`.
 
-    > **Important:** Do not run the team creation script as `ADMIN`. `ADMIN` installs the reusable tool layer, but the Agent Team, profile, agents, and tasks must be owned by the `WINGMATE` schema used by the Ask Oracle application.
+    > **Important:** Do not run the team creation script as `ADMIN`. `ADMIN` installs the reusable tool layer, but the Agent Team, profile, agents, and tasks must be owned by the `WINGMATE` schema used by the Select AI Ask Oracle chatbot application.
 
 6. Open `sql/wingmate-prebuilt-select-ai-agent-team.sql`.
 
@@ -413,7 +415,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
     ![agent team check](./images/agent-team-check.png "")
 
-## Task 8: Import the Ask Oracle APEX Application
+## Task 8: Import the Select AI Ask Oracle Chatbot Application
 
 1. Navigate back to **App Builder**.
 
@@ -423,7 +425,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
     ![Import framework application](./images/import-framework.png "")
 
-3. Download the Ask Oracle application export from the Oracle sample repository:
+3. Download the Select AI Ask Oracle chatbot application export from the Oracle sample repository:
 
     [ADB-AskOracle-Chatbot-2026-03-04.sql](https://github.com/oracle-devrel/oracle-autonomous-database-samples/blob/main/apex/Ask-Oracle/ADB-AskOracle-Chatbot-2026-03-04.sql)
 
@@ -453,9 +455,9 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
     > **Note:** This application is the target app for later labs. Keep track of the application name and ID assigned by APEX; Labs 3, 4, and 5 import one additional page into this same application. When importing those pages, always select this existing application as the target rather than installing a new application.
 
-## Task 9: Validate Ask Oracle Profiles, Doc Research RAG, and Pre-built Agent Team
+## Task 9: Validate Select AI Ask Oracle Profiles, Doc Research RAG, and the Pre-built Agent Team
 
-1. Run the Ask Oracle application.
+1. Run the Select AI Ask Oracle chatbot application.
 
 2. Use the Ask Oracle home page selectors to validate each AI pattern. Start with **Switch NL2SQL Profile**.
 
@@ -528,11 +530,11 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
     ![scheduler services](./images/scheduler.png "")
 
-12. Select `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` and ask the Agent Team to prepare an Autonomous Database workflow without executing it:
+12. Select `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` and ask the Agent Team to prepare an Autonomous AI Database workflow without executing it:
 
     ```text
     <copy>
-    Help me provision a small OLTP Autonomous Database named WINGLAB01 in <adb_region>. Ask for any missing inputs and do not execute without explicit confirmation.
+    Help me provision a small OLTP Autonomous AI Database named WINGLAB01 in <adb_region>. Ask for any missing inputs and do not execute without explicit confirmation.
     </copy>
     ```
 
@@ -540,9 +542,9 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 
     > **Note:** Stop at the confirmation step unless you intentionally want to test live operations and have the required IAM policy and temporary ADB admin password.
 
-13. If the NL2SQL profile dropdown is empty, confirm the profiles exist in `USER_CLOUD_AI_PROFILES` while connected as `WINGMATE`.
+13. If one or more expected NL2SQL profiles do not appear in the selector, confirm that the profiles exist and are enabled in `USER_CLOUD_AI_PROFILES` while connected as `WINGMATE`.
 
-14. If the RAG profile dropdown is empty, confirm the RAG profile appears in the application list of values.
+14. If `WINGMATE_DOC_RESEARCH_RAG` does not appear in the RAG selector, confirm that the profile exists, then verify the application list-of-values query.
 
     ```sql
     <copy>
@@ -558,7 +560,7 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
     </copy>
     ```
 
-15. If the Agent Team dropdown is empty, rerun the validation block from Task 7 and confirm the output says `Primary Wingmate AI Ops team can be selected in this session`.
+15. If `WINGMATE_PREBUILT_SELECT_AI_AGENT_TEAM` does not appear in the Agent Team selector, rerun the validation block from Task 7, confirm the team can be selected in the current session, and verify that the selector list of values includes the enabled team.
 
     ```sql
     <copy>
@@ -571,9 +573,10 @@ The setup creates the shared `WINGMATE_PREBUILT_AGENT_PROFILE`, the standalone `
 ## Learn more
 
 * [Creating Generative AI Service Objects in APEX](https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/creating-generative-ai-service-objects.html)
-* [Ask Oracle APEX Sample App](https://github.com/oracle-devrel/oracle-autonomous-database-samples/blob/main/apex/Ask-Oracle/ADB-AskOracle-Chatbot-2026-03-04.sql)
+* [Select AI Ask Oracle Chatbot Sample App](https://github.com/oracle-devrel/oracle-autonomous-database-samples/blob/main/apex/Ask-Oracle/ADB-AskOracle-Chatbot-2026-03-04.sql)
 * [DBMS_CLOUD_AI Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-ai-package.html)
 * [DBMS_CLOUD_AI_AGENT Package](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/dbms-cloud-ai-agent-package.html)
+* [Select AI and Select AI Agent Capability Matrix](https://docs.oracle.com/en/database/oracle/oracle-database/26/saicm/index.html)
 * [Build your agentic solution using Oracle ADB Select AI Agent](https://blogs.oracle.com/machinelearning/build-your-agentic-solution-using-oracle-adb-select-ai-agent)
 * [Oracle pre-built Select AI Agent samples](https://github.com/oracle-devrel/oracle-autonomous-database-samples/tree/main/autonomous-ai-agents)
 * [Manage User Access to Resource Analytics ADW](https://docs.oracle.com/en-us/iaas/Content/resource-analytics/manage-user-access-adw.htm)
