@@ -25,7 +25,7 @@ This lab assumes you have:
 
 * Reviewed the Workshop Introduction and Overview.
 * Access to the AIDP Workbench instance provisioned for this workshop.
-* Enabled AI features in the AIDP Workbench. In the LiveLabs sandbox, this commonly takes 5-7 minutes and may require a hard browser refresh before the home page changes from **Enable AI features** to **Disable AI features**.
+* The Terraform stack has completed successfully. The stack provisions the AIDP Workbench and automatically starts AI feature enablement against the workshop Autonomous AI Lakehouse database. If the Workbench still shows **Enable AI features**, wait a few minutes and refresh the browser before continuing.
 
 ## Task 1: Create the AI Compute Instance
 
