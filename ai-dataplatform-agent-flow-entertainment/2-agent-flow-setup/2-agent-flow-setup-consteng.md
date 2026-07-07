@@ -16,6 +16,7 @@ In this lab you will:
 2. Configure the agent node with a model and detailed agent instructions.
 3. Add a RAG tool connected to the Knowledge Base you created in Lab 1.
 4. Add five SQL tools for project requirements, supplier recommendations, supplier profiles, missing information, and decision context.
+5. Connect all tools to the agent node.
 
 ### Prerequisites
 
@@ -207,282 +208,333 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
 
 ## Task 4: Add SQL Tools for Project and Supplier Analysis
 
-For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use **`ce_ext_catalog`** -> **`CONSTRUCTION_ENGINEERING`**.
+For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use the generated **`vector_db_...`** external catalog from Lab 1 -> **`CONSTRUCTION_ENGINEERING`**.
+
+> **Important:** The agent flow canvas does not automatically attach a new tool to the agent. After you add each SQL tool, hover near the **Tools (#)** label below the agent node until a small circular connector appears. Click the circle, drag the line to the new SQL tool, and release the line on the tool node. The tool count increments when the connection succeeds.
 
 ### Tool 1: Get project requirements
 
 This tool returns project requirements for a project name or partial project name.
 
-**Name**
-```
-<copy>
-get_project_requirements
-</copy>
-```
+1. Drag a **SQL tool** onto the canvas.
 
-**Description**
-```
-<copy>
-Returns construction project requirements including trade category, material need, technical specification, required certification, delivery window, budget range, urgency, and risk level.
-</copy>
-```
+    ![SQL tool added to the agent flow canvas](images/02-agent-flows-sql-test-tool.png " ")
 
-**SQL query**
-```sql
-<copy>
-SELECT
-  p.project_id,
-  p.project_name,
-  p.location,
-  p.project_type,
-  p.project_phase,
-  p.evaluation_status,
-  r.trade_category,
-  r.material_need,
-  r.technical_spec,
-  r.required_certification,
-  r.delivery_window,
-  r.procurement_urgency,
-  r.budget_range,
-  r.risk_level
-FROM ce_projects p
-JOIN ce_project_requirements r
-  ON r.project_id = p.project_id
-WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-ORDER BY p.project_id, r.requirement_id
-</copy>
-```
+2. Connect the SQL tool to the agent. Hover near **Tools (#)**, drag from the circular connector to the SQL tool, and release the line on the tool node.
 
-**Parameter description**
+    ![Animated example showing how to connect tools to the agent](images/02-agent-flows-connect-tools-consteng.gif " ")
 
-`{{project_name}}`
-```
-<copy>
-Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-</copy>
-```
+3. Enter the tool name and description.
+
+    **Name**
+    ```
+    <copy>
+    get_project_requirements
+    </copy>
+    ```
+
+    **Description**
+    ```
+    <copy>
+    Returns construction project requirements including trade category, material need, technical specification, required certification, delivery window, budget range, urgency, and risk level.
+    </copy>
+    ```
+
+4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
+
+5. Add the SQL query.
+
+    ```sql
+    <copy>
+    SELECT
+      p.project_id,
+      p.project_name,
+      p.location,
+      p.project_type,
+      p.project_phase,
+      p.evaluation_status,
+      r.trade_category,
+      r.material_need,
+      DBMS_LOB.SUBSTR(r.technical_spec, 1000, 1) AS technical_spec,
+      r.required_certification,
+      r.delivery_window,
+      r.procurement_urgency,
+      r.budget_range,
+      r.risk_level
+    FROM ce_projects p
+    JOIN ce_project_requirements r
+      ON r.project_id = p.project_id
+    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
+    ORDER BY p.project_id, r.requirement_id
+    </copy>
+    ```
+
+6. Add the parameter description.
+
+    `{{project_name}}`
+    ```
+    <copy>
+    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
+    </copy>
+    ```
 
 ### Tool 2: Get supplier recommendations
 
 This tool returns recommended suppliers and their fit/risk explanations for a project.
 
-**Name**
-```
-<copy>
-get_supplier_recommendations
-</copy>
-```
+1. Drag a **SQL tool** onto the canvas.
 
-**Description**
-```
-<copy>
-Returns supplier recommendations for a project, including recommendation status, fit score, risk level, explanation, strengths, missing information, capacity, and performance metrics.
-</copy>
-```
+2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
-**SQL query**
-```sql
-<copy>
-SELECT
-  p.project_name,
-  s.supplier_name,
-  s.category,
-  s.region,
-  s.capacity_status,
-  rec.recommendation,
-  rec.fit_score,
-  rec.risk_level,
-  rec.explanation,
-  rec.strengths,
-  rec.missing_information,
-  perf.similar_project_count,
-  perf.on_time_delivery_rate,
-  perf.cost_variance_pct,
-  perf.unresolved_ncr_count,
-  perf.safety_score
-FROM ce_supplier_recommendation rec
-JOIN ce_projects p
-  ON p.project_id = rec.project_id
-JOIN ce_suppliers s
-  ON s.supplier_id = rec.supplier_id
-LEFT JOIN ce_supplier_performance perf
-  ON perf.supplier_id = s.supplier_id
-WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-ORDER BY rec.fit_score DESC
-</copy>
-```
+3. Enter the tool name and description.
 
-**Parameter description**
+    **Name**
+    ```
+    <copy>
+    get_supplier_recommendations
+    </copy>
+    ```
 
-`{{project_name}}`
-```
-<copy>
-Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-</copy>
-```
+    **Description**
+    ```
+    <copy>
+    Returns supplier recommendations for a project, including recommendation status, fit score, risk level, explanation, strengths, missing information, capacity, and performance metrics.
+    </copy>
+    ```
+
+4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
+
+5. Add the SQL query.
+
+    ```sql
+    <copy>
+    SELECT
+      p.project_name,
+      s.supplier_name,
+      s.category,
+      s.region,
+      s.capacity_status,
+      rec.recommendation,
+      rec.fit_score,
+      rec.risk_level,
+      DBMS_LOB.SUBSTR(rec.explanation, 1000, 1) AS explanation,
+      DBMS_LOB.SUBSTR(rec.strengths, 1000, 1) AS strengths,
+      DBMS_LOB.SUBSTR(rec.missing_information, 1000, 1) AS missing_information,
+      perf.similar_project_count,
+      perf.on_time_delivery_rate,
+      perf.cost_variance_pct,
+      perf.unresolved_ncr_count,
+      perf.safety_score
+    FROM ce_supplier_recommendation rec
+    JOIN ce_projects p
+      ON p.project_id = rec.project_id
+    JOIN ce_suppliers s
+      ON s.supplier_id = rec.supplier_id
+    LEFT JOIN ce_supplier_performance perf
+      ON perf.supplier_id = s.supplier_id
+    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
+    ORDER BY rec.fit_score DESC
+    </copy>
+    ```
+
+6. Add the parameter description.
+
+    `{{project_name}}`
+    ```
+    <copy>
+    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
+    </copy>
+    ```
 
 ### Tool 3: Get supplier profile
 
 This tool returns supplier profile, certifications, and performance history for a supplier name or partial name.
 
-**Name**
-```
-<copy>
-get_supplier_profile
-</copy>
-```
+1. Drag a **SQL tool** onto the canvas.
 
-**Description**
-```
-<copy>
-Returns supplier profile details, certifications, certification status, and performance metrics for a supplier.
-</copy>
-```
+2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
-**SQL query**
-```sql
-<copy>
-SELECT
-  s.supplier_id,
-  s.supplier_name,
-  s.category,
-  s.region,
-  s.active,
-  s.capacity_status,
-  s.capability_summary,
-  c.certification_name,
-  c.issued_by,
-  c.expires_on,
-  c.status AS certification_status,
-  perf.project_type,
-  perf.similar_project_count,
-  perf.on_time_delivery_rate,
-  perf.cost_variance_pct,
-  perf.unresolved_ncr_count,
-  perf.safety_score,
-  perf.last_evaluated
-FROM ce_suppliers s
-LEFT JOIN ce_supplier_certifications c
-  ON c.supplier_id = s.supplier_id
-LEFT JOIN ce_supplier_performance perf
-  ON perf.supplier_id = s.supplier_id
-WHERE UPPER(s.supplier_name) LIKE '%' || UPPER({{supplier_name}}) || '%'
-ORDER BY s.supplier_name, c.certification_name
-</copy>
-```
+3. Enter the tool name and description.
 
-**Parameter description**
+    **Name**
+    ```
+    <copy>
+    get_supplier_profile
+    </copy>
+    ```
 
-`{{supplier_name}}`
-```
-<copy>
-Supplier name or partial supplier name. Examples: Atlas, WestBridge, Coastal, Precision Air.
-</copy>
-```
+    **Description**
+    ```
+    <copy>
+    Returns supplier profile details, certifications, certification status, and performance metrics for a supplier.
+    </copy>
+    ```
+
+4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
+
+5. Add the SQL query.
+
+    ```sql
+    <copy>
+    SELECT
+      s.supplier_id,
+      s.supplier_name,
+      s.category,
+      s.region,
+      s.active,
+      s.capacity_status,
+      DBMS_LOB.SUBSTR(s.capability_summary, 1000, 1) AS capability_summary,
+      c.certification_name,
+      c.issued_by,
+      c.expires_on,
+      c.status AS certification_status,
+      perf.project_type,
+      perf.similar_project_count,
+      perf.on_time_delivery_rate,
+      perf.cost_variance_pct,
+      perf.unresolved_ncr_count,
+      perf.safety_score,
+      perf.last_evaluated
+    FROM ce_suppliers s
+    LEFT JOIN ce_supplier_certifications c
+      ON c.supplier_id = s.supplier_id
+    LEFT JOIN ce_supplier_performance perf
+      ON perf.supplier_id = s.supplier_id
+    WHERE UPPER(s.supplier_name) LIKE '%' || UPPER({{supplier_name}}) || '%'
+    ORDER BY s.supplier_name, c.certification_name
+    </copy>
+    ```
+
+6. Add the parameter description.
+
+    `{{supplier_name}}`
+    ```
+    <copy>
+    Supplier name or partial supplier name. Examples: Atlas, WestBridge, Coastal, Precision Air.
+    </copy>
+    ```
 
 ### Tool 4: Get missing supplier information
 
 This tool returns missing information and blockers for suppliers on a project.
 
-**Name**
-```
-<copy>
-get_missing_supplier_information
-</copy>
-```
+1. Drag a **SQL tool** onto the canvas.
 
-**Description**
-```
-<copy>
-Returns request-info and denial details for suppliers on a project, including missing documentation and risk explanation.
-</copy>
-```
+2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
-**SQL query**
-```sql
-<copy>
-SELECT
-  p.project_name,
-  s.supplier_name,
-  rec.recommendation,
-  rec.fit_score,
-  rec.risk_level,
-  rec.explanation,
-  rec.missing_information
-FROM ce_supplier_recommendation rec
-JOIN ce_projects p
-  ON p.project_id = rec.project_id
-JOIN ce_suppliers s
-  ON s.supplier_id = rec.supplier_id
-WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-  AND rec.recommendation IN ('Request Info', 'Denied')
-ORDER BY rec.recommendation, rec.fit_score DESC
-</copy>
-```
+3. Enter the tool name and description.
 
-**Parameter description**
+    **Name**
+    ```
+    <copy>
+    get_missing_supplier_information
+    </copy>
+    ```
 
-`{{project_name}}`
-```
-<copy>
-Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-</copy>
-```
+    **Description**
+    ```
+    <copy>
+    Returns request-info and denial details for suppliers on a project, including missing documentation and risk explanation.
+    </copy>
+    ```
+
+4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
+
+5. Add the SQL query.
+
+    ```sql
+    <copy>
+    SELECT
+      p.project_name,
+      s.supplier_name,
+      rec.recommendation,
+      rec.fit_score,
+      rec.risk_level,
+      DBMS_LOB.SUBSTR(rec.explanation, 1000, 1) AS explanation,
+      DBMS_LOB.SUBSTR(rec.missing_information, 1000, 1) AS missing_information
+    FROM ce_supplier_recommendation rec
+    JOIN ce_projects p
+      ON p.project_id = rec.project_id
+    JOIN ce_suppliers s
+      ON s.supplier_id = rec.supplier_id
+    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
+      AND rec.recommendation IN ('Request Info', 'Denied')
+    ORDER BY rec.recommendation, rec.fit_score DESC
+    </copy>
+    ```
+
+6. Add the parameter description.
+
+    `{{project_name}}`
+    ```
+    <copy>
+    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
+    </copy>
+    ```
 
 ### Tool 5: Get project decision context
 
 This tool returns the current evaluation and decision context for a project.
 
-**Name**
-```
-<copy>
-get_project_decision_context
-</copy>
-```
+1. Drag a **SQL tool** onto the canvas.
 
-**Description**
-```
-<copy>
-Returns project evaluation status, recommended supplier, recommendation status, decision type, and generated decision text.
-</copy>
-```
+2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
-**SQL query**
-```sql
-<copy>
-SELECT
-  p.project_name,
-  p.project_summary,
-  e.evaluation_status,
-  e.final_decision,
-  s.supplier_name,
-  rec.recommendation,
-  rec.fit_score,
-  rec.risk_level,
-  d.decision_type,
-  d.letter_text
-FROM ce_projects p
-LEFT JOIN ce_supplier_evaluation e
-  ON e.project_id = p.project_id
-LEFT JOIN ce_supplier_recommendation rec
-  ON rec.recommend_id = e.recommend_id
-LEFT JOIN ce_suppliers s
-  ON s.supplier_id = rec.supplier_id
-LEFT JOIN ce_decision d
-  ON d.evaluation_id = e.evaluation_id
-WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-ORDER BY e.evaluation_id
-</copy>
-```
+3. Enter the tool name and description.
 
-**Parameter description**
+    **Name**
+    ```
+    <copy>
+    get_project_decision_context
+    </copy>
+    ```
 
-`{{project_name}}`
-```
-<copy>
-Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-</copy>
-```
+    **Description**
+    ```
+    <copy>
+    Returns project evaluation status, recommended supplier, recommendation status, decision type, and generated decision text.
+    </copy>
+    ```
+
+4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
+
+5. Add the SQL query.
+
+    ```sql
+    <copy>
+    SELECT
+      p.project_name,
+      DBMS_LOB.SUBSTR(p.project_summary, 1000, 1) AS project_summary,
+      e.evaluation_status,
+      e.final_decision,
+      s.supplier_name,
+      rec.recommendation,
+      rec.fit_score,
+      rec.risk_level,
+      d.decision_type,
+      DBMS_LOB.SUBSTR(d.letter_text, 1000, 1) AS letter_text
+    FROM ce_projects p
+    LEFT JOIN ce_supplier_evaluation e
+      ON e.project_id = p.project_id
+    LEFT JOIN ce_supplier_recommendation rec
+      ON rec.recommend_id = e.recommend_id
+    LEFT JOIN ce_suppliers s
+      ON s.supplier_id = rec.supplier_id
+    LEFT JOIN ce_decision d
+      ON d.evaluation_id = e.evaluation_id
+    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
+    ORDER BY e.evaluation_id
+    </copy>
+    ```
+
+6. Add the parameter description.
+
+    `{{project_name}}`
+    ```
+    <copy>
+    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
+    </copy>
+    ```
 
 ## Lab 2 Recap
 
@@ -492,5 +544,6 @@ In this lab, you built the complete agent flow for the Construction Engineering 
 - You configured the **agent node** with a reasoning model and construction-specific instructions.
 - You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance.
 - You added **five SQL tools** covering project requirements, supplier recommendations, supplier profiles, missing information, and decision context.
+- You connected the RAG and SQL tools to the agent so the Playground can invoke them.
 
 In the next lab, you'll test the agent in the Playground.

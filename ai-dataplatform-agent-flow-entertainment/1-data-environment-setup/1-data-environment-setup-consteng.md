@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Before building the AI agent, we need to ensure the data environment is in place. In this lab, you'll create the AI Compute instance, external catalog, standard catalog, managed volume, and Knowledge Base used by the construction engineering workshop. You'll also verify the Oracle AI Database tables that power the agent's SQL tools.
+Before building the AI agent, we need to ensure the data environment is in place. In this lab, you'll create the AI Compute instance, verify the generated external catalog, create a standard catalog, create a managed volume, and create the Knowledge Base used by the construction engineering workshop. You'll also verify the Oracle AI Database tables that power the agent's SQL tools.
 
 By the end of this lab, all the data assets - structured project and supplier tables plus unstructured knowledge base documents - will be ready for the agent flow you'll build in Lab 2.
 
@@ -13,7 +13,7 @@ By the end of this lab, all the data assets - structured project and supplier ta
 In this lab you will:
 
 1. Create the AI Compute instance used by the agent.
-2. Create a new external database catalog (`ce_ext_catalog`).
+2. Verify the generated external database catalog (`vector_db_...`) created by AI feature enablement.
 3. Create a new standard catalog (`ce_std_catalog`) and managed volume (`ce_volume`) where you'll upload construction procurement and compliance documents.
 4. Create a Knowledge Base (`ce_kb`) and an associated data source that consumes the documents from the managed volume.
 5. Verify the Oracle AI Database tables that contain construction projects, supplier records, certifications, recommendations, and decision data.
@@ -51,15 +51,15 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 6. From the AIDP Workbench Home Page, select your workspace from the workspace drop-down.
 
-    ![Use the drop-down menu to select your workspace](images/01-dashboard-select-workspace.gif " ")
+    ![Use the drop-down menu to select your workspace](images/01-dashboard-select-workspace-consteng.png " ")
 
 7. Click **Compute** under the selected workspace.
 
-    ![Screenshot depicting the Compute section of workspace](images/01-aidp-navigate-compute.png " ")
+    ![Screenshot depicting the Compute section of workspace](images/01-aidp-navigate-compute-consteng.png " ")
 
 8. In the Compute page, click the **AI Compute** tab, then click the **+** button.
 
-    ![Screenshot of the AI compute tab and plus button](images/01-aidp-create-compute.png " ")
+    ![Screenshot of the AI compute tab and plus button](images/01-aidp-create-compute-consteng.png " ")
 
 9. Enter a name and description:
 
@@ -81,61 +81,26 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 11. Click **Create**.
 
-    ![Create new AI compute dialog window](images/01-compute-create-instance.png " ")
+    ![Create new AI compute dialog window](images/01-compute-create-instance-consteng.png " ")
 
     > **Note**: It may take 3-5 minutes to provision this resource. You can continue to the next task while it provisions.
 
-## Task 2: Create the External Database Catalog
+## Task 2: Verify the Generated External Database Catalog
 
-An external catalog in AIDP enables you to connect to an Autonomous AI Lakehouse database. For this workshop, an ALH instance has been provisioned and loaded with construction engineering sample data.
+An external catalog in AIDP enables the agent SQL tools to query the Autonomous AI Lakehouse database. For this workshop, Terraform enables AI features on the Workbench, attaches the provisioned ALH instance, and creates an external catalog whose name starts with **`vector_db_`**.
 
 1. From the AIDP Workbench Home Page, click **Master Catalog**.
 
-    ![Screenshot of AIDP workbench home page](images/01-aidp-master-catalog.png " ")
+    ![Screenshot of AIDP workbench home page](images/01-aidp-master-catalog-consteng.png " ")
 
-    > **Note:** You may see pre-provisioned catalogs such as **`default`** and a generated **`vector_db_...`** catalog. Do not delete these catalogs.
+2. Confirm that the catalog list contains:
 
-2. Click **Create catalog** in the upper right corner.
+    - **`default`** - a standard catalog created by the Workbench.
+    - **`vector_db_...`** - an external catalog connected to the workshop Autonomous AI Lakehouse database.
 
-    ![Screenshot of Create Catalog button](images/01-aidp-create-catalog.png " ")
+    > **Note:** The generated external catalog name includes the ALH database name and a unique suffix. Do not delete this catalog. You'll select this **`vector_db_...`** catalog when you configure SQL tools in Lab 2.
 
-3. Enter the following details:
-
-    **Catalog name**
-    ```
-    <copy>
-    ce_ext_catalog
-    </copy>
-    ```
-
-    **Description**
-    ```
-    <copy>
-    A catalog that connects to the Autonomous AI Lakehouse database containing construction engineering project and supplier data.
-    </copy>
-    ```
-
-4. Select **Catalog type** -> **External catalog**.
-
-5. For **External source method**, select **Choose ALH instance**.
-
-6. Leave the Tenant OCID and Region fields as-is. If the Compartment drop-down does not show your assigned workshop compartment, open the compartment tree and select your designated `LL<reservation>-COMPARTMENT` row.
-
-7. Move to the **ALH instance** drop-down and locate the database instance that starts with **hol-consteng-**. Match this to the **ADB Name** value in the LiveLabs **View Login Info** panel.
-
-8. From the **Service** dropdown, select the label that ends with **_high**.
-
-9. Enter authentication details:
-
-    - **Wallet password (optional)**: You may choose your own password, or leave this field blank and allow AIDP to manage it.
-    - **Username**: `CONSTRUCTION_ENGINEERING`
-    - **ADB Admin Password**: Retrieved from the LiveLabs instructions page -> View Login Info -> Terraform Outputs -> ADB Admin Password.
-
-10. Click **Test connection** and confirm that the connection is successful.
-
-11. Click **Create**.
-
-    ![Screenshot of the create catalog dialog](images/01-catalog-add-external.png " ")
+3. Confirm that the generated **`vector_db_...`** catalog shows **Active** status.
 
 ## Task 3: Create the Standard Construction Engineering Catalog
 
@@ -159,13 +124,13 @@ An external catalog in AIDP enables you to connect to an Autonomous AI Lakehouse
 
 3. Click **Create**.
 
-    ![Master Catalog interface - create new standard catalog](images/01-catalog-create.png)
+    ![Master Catalog interface - create new standard catalog](images/01-catalog-create-consteng.png)
 
 4. When ready, click **ce_std_catalog** to open the new catalog.
 
 5. Click the **default** schema within the catalog.
 
-    ![Catalog interface - resource types inside catalog](images/01-catalog-view-components.png)
+    ![Catalog interface - resource types inside catalog](images/01-catalog-view-components-consteng.png)
 
 ## Task 4: Create the Managed Volume
 
@@ -183,7 +148,7 @@ A volume stores unstructured files within a catalog. The volume for this worksho
 
 4. Click the **+** next to the filter field to create a new volume.
 
-    ![Volumes interface - add new volume button](images/01-catalog-add-volume.png " ")
+    ![Volumes interface - add new volume button](images/01-catalog-add-volume-consteng.png " ")
 
 5. Provide a name and description:
 
@@ -201,15 +166,15 @@ A volume stores unstructured files within a catalog. The volume for this worksho
     </copy>
     ```
 
-6. Click the volume name **`ce_volume`**, click the **+** button, then click **Upload file**.
+6. Click the volume name **`ce_volume`**, click the **+** button, then click **Upload**.
 
 7. Upload the three `.docx` files from the zip archive.
 
-    ![Upload files interface](images/01-catalog-volume-upload-files.png " ")
+    ![Upload files interface](images/01-catalog-volume-upload-files-consteng.png " ")
 
 8. Click **Upload**, then confirm the files appear in the volume.
 
-    ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete.png " ")
+    ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete-consteng.png " ")
 
 ## Task 5: Create a Knowledge Base
 
@@ -237,7 +202,7 @@ Now create the asset that enables RAG. A Knowledge Base creates vector represent
     </copy>
     ```
 
-    ![Create a new knowledgebase in the catalog](images/01-catalog-create-kbase.png " ")
+    ![Create a new knowledgebase in the catalog](images/01-catalog-create-kbase-consteng.png " ")
 
 5. Leave the **Advanced Settings** as-is.
 
@@ -245,13 +210,15 @@ Now create the asset that enables RAG. A Knowledge Base creates vector represent
 
 7. Open the Knowledge Base details, click the **Data Source** tab, and click the **+** button.
 
-    ![Add data source to knowledge base](images/01-catalog-kbase-add-datasource.png " ")
+    ![Add data source to knowledge base](images/01-catalog-kbase-add-datasource-consteng.png " ")
 
 8. Select the **`ce_volume`** volume and leave advanced settings as-is.
 
 9. Click **Add**.
 
-10. Navigate to the **History** tab and wait for the operation to show **Succeeded**.
+10. Navigate to the **History** tab and wait for the **Update Knowledge Base** operation to show **Succeeded**.
+
+    ![Knowledge base ingestion succeeded](images/01-catalog-kbase-history-succeeded-consteng.png " ")
 
 ## Task 6: Optional - Verify the Oracle AI Database Tables
 
@@ -298,7 +265,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 In this lab, you set up the complete data environment for the Construction Engineering Supplier Evaluation Agent:
 
 - You created an **AI Compute** to host and execute the agent flow.
-- You created **`ce_ext_catalog`** to connect to the Autonomous AI Lakehouse database.
+- You verified the generated **`vector_db_...`** external catalog connected to the Autonomous AI Lakehouse database.
 - You created **`ce_std_catalog`** and **`ce_volume`**, then uploaded internal construction guidance documents.
 - You created **`ce_kb`** and ingested the documents for RAG.
 - You verified the structured construction engineering database tables that power the SQL tools.
