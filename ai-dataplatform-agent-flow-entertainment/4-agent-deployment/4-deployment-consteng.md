@@ -30,17 +30,17 @@ This lab assumes you have:
 
 2. In the deployment dialog, select the same AI Compute you created in Lab 1: **`ce_compute`**. If the dialog already defaults to **`ce_compute`** and **AIDP workbench** authorization, leave those values as-is.
 
-3. Click **Deploy** and wait for the deployment to complete.
+3. Click **Deploy** and wait for the deployment to complete. When deployment succeeds, the upper-right button changes from **Deploy** to **Undeploy**.
 
-    ![Screenshot of agent deployment](images/04-agent-deployment.png " ")
+    ![Screenshot of agent deployment](images/04-agent-deployment-consteng.png " ")
 
 ## Task 2: Retrieve the Endpoint URL
 
 1. Navigate to the **Details** tab of your agent flow.
 
-2. Locate the **Endpoint URL** and copy it.
+2. Confirm the status is **DEPLOYED**, then locate the **Endpoint URL** and copy it.
 
-    ![Screenshot of details tab](images/04-agent-details-endpoint.png " ")
+    ![Screenshot of details tab](images/04-agent-details-endpoint-consteng.png " ")
 
 3. Note that the deployed agent is now a live REST endpoint that uses the same tools and knowledge you validated in the Playground.
 

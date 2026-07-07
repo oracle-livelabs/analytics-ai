@@ -10,6 +10,13 @@ Oracle AI Data Platform addresses this by unifying data lakehouse, AI/ML, analyt
 
 In this workshop, you will build a construction engineering analyst agent that combines RAG and SQL. The agent will retrieve internal procurement and compliance guidance, query supplier and project data, and produce grounded recommendations for supplier approval, request-info follow-up, denial, or RFP escalation.
 
+
+### Reference Architecture
+
+The diagram below shows the high-level flow this workshop implements: users ask a natural language question, the agent uses OCI Generative AI for response generation and embeddings, Oracle AI Database stores recommendations and vector embeddings, and RAG retrieves the most relevant context before the final answer is produced.
+
+![RAG and vector search reference architecture](images/00-rag-vector-flow-consteng.png " ")
+
 ### What You'll Build
 
 Over the course of this workshop, you will design, configure, test, and deploy a **Construction Engineering Supplier Evaluation Agent**. The agent answers natural language questions about project requirements, supplier fit, compliance blockers, missing documentation, and recommended next actions by combining two capabilities:

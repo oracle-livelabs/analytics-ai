@@ -32,7 +32,7 @@ This lab assumes you have:
 
 1. From the agent flow canvas, click **Playground** above the canvas.
 
-2. The session is now active. You can type natural language questions and watch tool call indicators as the agent reasons, calls tools, and responds.
+2. The session is now active. Type natural language questions in the **Test your system** input. Submit the prompt with **Shift+Enter** and watch the tool call indicators as the agent reasons, calls tools, and responds.
 
 3. You can widen the chat session window by dragging the vertical divider.
 
@@ -55,6 +55,8 @@ The agent should:
 - Mention fit score **97**, low risk, current AISC/AWS documentation, strong delivery history, zero unresolved NCRs, and confirmed capacity.
 - Avoid inventing any supplier evidence that is not returned by the SQL tool.
 
+    ![Supplier approval response for Downtown Mixed-Use Tower](images/03-chat-downtown-approval-consteng.png " ")
+
 ## Task 3: Test Missing Information Follow-Up
 
 Now ask about candidates that are not ready for approval.
@@ -72,6 +74,8 @@ The agent should:
 - List missing inspection logs, mill certificates, nonconformance closeout evidence, delivery schedule confirmation, corrective action evidence, or updated inspection records as applicable.
 - Keep the recommendation at request-info rather than approval.
 
+    ![Missing information response for Downtown Mixed-Use Tower](images/03-chat-missing-info-consteng.png " ")
+
 ## Task 4: Test RAG-Only Compliance Guidance
 
 Ask a policy question that should be answered from the knowledge base rather than the database.
@@ -87,6 +91,8 @@ The agent should:
 - Call `construction_policy_rag`.
 - Explain denial triggers such as expired required certification, missing DBE participation for public works, unresolved NCRs, overloaded capacity on a critical schedule, or unacceptable delivery risk.
 - Avoid calling SQL unless it needs project-specific facts.
+
+    ![RAG-only policy guidance response](images/03-chat-rag-policy-consteng.png " ")
 
 ## Task 5: Test Hybrid RAG + SQL Decision Support
 
@@ -105,6 +111,8 @@ The agent should:
 - Explain that current seismic steel suppliers should be denied and a new RFP should be submitted.
 - Cite the specific blockers: missing DBE documentation, expired AISC certification, unresolved weld NCRs, no verified night-work plan, and high or very high risk.
 
+    ![Hybrid decision support response for Harbor Seismic Retrofit](images/03-chat-harbor-decision-consteng.png " ")
+
 ## Task 6: Test Technical Addendum Scenario
 
 Test whether the agent recognizes a pending document scenario.
@@ -122,6 +130,8 @@ The agent should:
 - Explain that the updated technical addendum is required before final approval.
 - Mention expected addendum evidence such as TAB plan, seismic anchorage package, factory startup letter, and updated delivery confirmation.
 
+    ![Technical addendum response for North Campus Lab Expansion](images/03-chat-north-campus-addendum-consteng.png " ")
+
 ## Task 7: Test Structured Output
 
 Ask for a table so the agent must restructure SQL results.
@@ -137,6 +147,8 @@ The agent should:
 - Call `get_supplier_recommendations` for Harbor Seismic Retrofit.
 - Return a clean table for **Coastal Retrofit Metals**, **Pacific Brace Works**, and **Civic Steel Partners**.
 - Preserve the denial status and missing-information details.
+
+    ![Structured supplier comparison response for Harbor Seismic Retrofit](images/03-chat-harbor-table-consteng.png " ")
 
 ## Task 8: Reflect on the Agent's Behavior
 
