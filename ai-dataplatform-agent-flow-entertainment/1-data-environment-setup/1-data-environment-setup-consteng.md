@@ -126,7 +126,7 @@ An external catalog in AIDP enables the agent SQL tools to query the Autonomous 
 
     ![Master Catalog interface - create new standard catalog](images/01-catalog-create-consteng.png)
 
-4. When ready, click **ce_std_catalog** to open the new catalog.
+4. When ready, click **`ce_std_catalog`** to open the new catalog.
 
 5. Click the **default** schema within the catalog.
 
@@ -136,7 +136,7 @@ An external catalog in AIDP enables the agent SQL tools to query the Autonomous 
 
 A volume stores unstructured files within a catalog. The volume for this workshop contains internal construction supplier evaluation, compliance, and technical addendum guidance.
 
-1. [Click here](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/kb_documents.zip) to download the zip file containing the sample knowledge base documents.
+1. Download **[kb_documents.zip](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/kb_documents.zip)**, which contains the sample knowledge base documents. If the file opens in GitHub instead of downloading automatically, click **Download raw file**.
 
 2. Unzip the file. You should have 3 `.docx` files:
 

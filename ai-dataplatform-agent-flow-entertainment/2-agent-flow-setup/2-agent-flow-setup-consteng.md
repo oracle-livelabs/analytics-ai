@@ -52,7 +52,7 @@ This lab assumes you have:
 
 3. Attach the agent flow to **`ce_compute`**. In the upper right corner, click **Compute** -> **Attach to AI Compute**, then select **`ce_compute`**.
 
-    ![Agent flow with ce_compute attached](images/02-agent-flows-compute-attached-consteng.png " ")
+    ![Blank agent flow canvas with ce_compute attached](images/02-agent-flows-attach-compute-blank-consteng.png " ")
 
 ## Task 2: Configure the Agent Node
 
@@ -167,13 +167,17 @@ What you must not do:
 
 6. Leave **Model Parameters** and **Safety Guardrails** as-is.
 
+    ![Configured Construction Evaluation Agent node](images/02-agent-flows-agent-configured-consteng.png " ")
+
 ## Task 3: Add the RAG Tool
 
 The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
 
 1. Drag a **RAG tool** onto the canvas.
 
-    ![RAG and SQL tools connected to Construction Evaluation Agent](images/02-agent-flows-rag-on-canvas-consteng.png " ")
+    ![Agent canvas with unnamed RAG tool added](images/02-agent-flows-rag-added-consteng.png " ")
+
+    ![Animated example showing how to connect tools to the agent](images/02-agent-flows-connect-tools-consteng.gif " ")
 
 2. Enter a name:
 
@@ -218,7 +222,7 @@ This tool returns project requirements for a project name or partial project nam
 
 1. Drag a **SQL tool** onto the canvas.
 
-    ![SQL tools connected to the agent flow canvas](images/02-agent-flows-sql-tools-canvas-consteng.png " ")
+    ![Agent canvas with one SQL tool added](images/02-agent-flows-first-sql-added-consteng.png " ")
 
 2. Connect the SQL tool to the agent. Hover near **Tools (#)**, drag from the circular connector to the SQL tool, and release the line on the tool node.
 
@@ -536,6 +540,10 @@ This tool returns the current evaluation and decision context for a project.
     </copy>
     ```
 
+7. The completed canvas should show the agent connected to one RAG tool and five SQL tools.
+
+    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flow-final-canvas-consteng.png " ")
+
 ## Lab 2 Recap
 
 In this lab, you built the complete agent flow for the Construction Engineering Supplier Evaluation Agent:
@@ -545,7 +553,5 @@ In this lab, you built the complete agent flow for the Construction Engineering 
 - You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance.
 - You added **five SQL tools** covering project requirements, supplier recommendations, supplier profiles, missing information, and decision context.
 - You connected the RAG and SQL tools to the agent so the Playground can invoke them.
-
-    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flow-final-canvas-consteng.png " ")
 
 In the next lab, you'll test the agent in the Playground.
