@@ -35,7 +35,7 @@ You built the agent on the visual canvas:
 
 - Created the agent flow and configured the agent node.
 - Added a RAG tool connected to the Knowledge Base.
-- Added five SQL tools for requirements, recommendations, supplier profile, missing information, and decision context.
+- Added three SQL tools for project context, supplier recommendations, and supplier profile.
 
 ### Lab 3: Validate the Agent Flow
 

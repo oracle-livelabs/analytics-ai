@@ -26,7 +26,7 @@ This lab assumes you have:
 
 * Completed Lab 2.
 * The agent flow attached to an active AI Compute.
-* One RAG tool and five SQL tools configured and connected to the agent node.
+* One RAG tool and three SQL tools configured and connected to the agent node.
 
 ## Task 1: Open the Playground
 
@@ -69,7 +69,7 @@ What information is missing for the other Downtown Mixed-Use Tower suppliers bef
 
 The agent should:
 
-- Use project context from the previous question or call `get_missing_supplier_information`.
+- Use project context from the previous question or call `get_supplier_recommendations`.
 - Identify **WestBridge Steel Supply** and **Northline Industrial Metals** as request-info candidates.
 - List missing inspection logs, mill certificates, nonconformance closeout evidence, delivery schedule confirmation, corrective action evidence, or updated inspection records as applicable.
 - Keep the recommendation at request-info rather than approval.
@@ -107,7 +107,7 @@ Use the internal guidance and the project data to recommend the next action for 
 The agent should:
 
 - Call `construction_policy_rag` for decision criteria.
-- Call `get_supplier_recommendations` and/or `get_project_decision_context` for Harbor Seismic Retrofit.
+- Call `get_project_context` and/or `get_supplier_recommendations` for Harbor Seismic Retrofit.
 - Explain that current seismic steel suppliers should be denied and a new RFP should be submitted.
 - Cite the specific blockers: missing DBE documentation, expired AISC certification, unresolved weld NCRs, no verified night-work plan, and high or very high risk.
 
@@ -125,7 +125,7 @@ What should we do next for North Campus Lab Expansion and Precision Air Systems?
 
 The agent should:
 
-- Call `get_supplier_recommendations` or `get_project_decision_context` for North Campus Lab Expansion.
+- Call `get_project_context` and/or `get_supplier_recommendations` for North Campus Lab Expansion.
 - Recognize **Precision Air Systems** as the leading request-info candidate with fit score **82** and medium risk.
 - Explain that the updated technical addendum is required before final approval.
 - Mention expected addendum evidence such as TAB plan, seismic anchorage package, factory startup letter, and updated delivery confirmation.

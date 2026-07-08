@@ -2,7 +2,7 @@
 
 ## Introduction
 
-With the data environment in place - a Knowledge Base for RAG and Oracle AI Database tables for SQL - it's time to build the construction engineering analyst agent. In this lab, you'll use the AI Compute from Lab 1, design the agent flow on the visual canvas, configure the agent node with detailed instructions, and wire up the tools: one RAG tool connected to the Knowledge Base and five SQL tools that query project and supplier data.
+With the data environment in place - a Knowledge Base for RAG and Oracle AI Database tables for SQL - it's time to build the construction engineering analyst agent. In this lab, you'll use the AI Compute from Lab 1, design the agent flow on the visual canvas, configure the agent node with detailed instructions, and wire up the tools: one RAG tool connected to the Knowledge Base and three SQL tools that query project and supplier data.
 
 By the end of this lab, you'll have a fully configured Construction Engineering Supplier Evaluation Agent ready for testing.
 
@@ -15,7 +15,7 @@ In this lab you will:
 1. Create an agent flow and attach it to the AI Compute instance.
 2. Configure the agent node with a model and detailed agent instructions.
 3. Add a RAG tool connected to the Knowledge Base you created in Lab 1.
-4. Add five SQL tools for project requirements, supplier recommendations, supplier profiles, missing information, and decision context.
+4. Add three SQL tools for project context, supplier recommendations, and supplier profiles.
 5. Connect all tools to the agent node.
 
 ### Prerequisites
@@ -216,9 +216,9 @@ For each SQL tool below, select the generated tool name before typing the new na
 
 > **Important:** The agent flow canvas does not automatically attach a new tool to the agent. After you add each SQL tool, hover near the **Tools (#)** label below the agent node until a small circular connector appears. Click the circle, drag the line to the new SQL tool, and release the line on the tool node. The tool count increments when the connection succeeds.
 
-### Tool 1: Get project requirements
+### Tool 1: Get project context
 
-This tool returns project requirements for a project name or partial project name.
+This tool returns project requirements, project summary, evaluation status, supplier recommendation context, and decision text for a project name or partial project name.
 
 1. Drag a **SQL tool** onto the canvas.
 
@@ -233,14 +233,14 @@ This tool returns project requirements for a project name or partial project nam
     **Name**
     ```
     <copy>
-    get_project_requirements
+    get_project_context
     </copy>
     ```
 
     **Description**
     ```
     <copy>
-    Returns construction project requirements including trade category, material need, technical specification, required certification, delivery window, budget range, urgency, and risk level.
+    Returns construction project context including project summary, requirements, evaluation status, final decision, recommended supplier, recommendation status, and generated decision text.
     </copy>
     ```
 
@@ -256,7 +256,8 @@ This tool returns project requirements for a project name or partial project nam
       p.location,
       p.project_type,
       p.project_phase,
-      p.evaluation_status,
+      DBMS_LOB.SUBSTR(p.project_summary, 1000, 1) AS project_summary,
+      p.evaluation_status AS project_evaluation_status,
       r.trade_category,
       r.material_need,
       DBMS_LOB.SUBSTR(r.technical_spec, 1000, 1) AS technical_spec,
@@ -264,12 +265,28 @@ This tool returns project requirements for a project name or partial project nam
       r.delivery_window,
       r.procurement_urgency,
       r.budget_range,
-      r.risk_level
+      r.risk_level AS requirement_risk_level,
+      e.evaluation_status AS supplier_evaluation_status,
+      e.final_decision,
+      s.supplier_name,
+      rec.recommendation,
+      rec.fit_score,
+      rec.risk_level AS recommendation_risk_level,
+      d.decision_type,
+      DBMS_LOB.SUBSTR(d.letter_text, 1000, 1) AS letter_text
     FROM ce_projects p
-    JOIN ce_project_requirements r
+    LEFT JOIN ce_project_requirements r
       ON r.project_id = p.project_id
+    LEFT JOIN ce_supplier_evaluation e
+      ON e.project_id = p.project_id
+    LEFT JOIN ce_supplier_recommendation rec
+      ON rec.recommend_id = e.recommend_id
+    LEFT JOIN ce_suppliers s
+      ON s.supplier_id = rec.supplier_id
+    LEFT JOIN ce_decision d
+      ON d.evaluation_id = e.evaluation_id
     WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-    ORDER BY p.project_id, r.requirement_id
+    ORDER BY p.project_id, r.requirement_id, e.evaluation_id
     </copy>
     ```
 
@@ -418,131 +435,9 @@ This tool returns supplier profile, certifications, and performance history for 
     </copy>
     ```
 
-### Tool 4: Get missing supplier information
+7. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
 
-This tool returns missing information and blockers for suppliers on a project.
-
-1. Drag a **SQL tool** onto the canvas.
-
-2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
-
-3. Enter the tool name and description.
-
-    **Name**
-    ```
-    <copy>
-    get_missing_supplier_information
-    </copy>
-    ```
-
-    **Description**
-    ```
-    <copy>
-    Returns request-info and denial details for suppliers on a project, including missing documentation and risk explanation.
-    </copy>
-    ```
-
-4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
-
-5. Add the SQL query.
-
-    ```sql
-    <copy>
-    SELECT
-      p.project_name,
-      s.supplier_name,
-      rec.recommendation,
-      rec.fit_score,
-      rec.risk_level,
-      DBMS_LOB.SUBSTR(rec.explanation, 1000, 1) AS explanation,
-      DBMS_LOB.SUBSTR(rec.missing_information, 1000, 1) AS missing_information
-    FROM ce_supplier_recommendation rec
-    JOIN ce_projects p
-      ON p.project_id = rec.project_id
-    JOIN ce_suppliers s
-      ON s.supplier_id = rec.supplier_id
-    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-      AND rec.recommendation IN ('Request Info', 'Denied')
-    ORDER BY rec.recommendation, rec.fit_score DESC
-    </copy>
-    ```
-
-6. Add the parameter description.
-
-    `{{project_name}}`
-    ```
-    <copy>
-    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-    </copy>
-    ```
-
-### Tool 5: Get project decision context
-
-This tool returns the current evaluation and decision context for a project.
-
-1. Drag a **SQL tool** onto the canvas.
-
-2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
-
-3. Enter the tool name and description.
-
-    **Name**
-    ```
-    <copy>
-    get_project_decision_context
-    </copy>
-    ```
-
-    **Description**
-    ```
-    <copy>
-    Returns project evaluation status, recommended supplier, recommendation status, decision type, and generated decision text.
-    </copy>
-    ```
-
-4. Under **Catalog and Schema**, select the generated `vector_db_...` catalog and the `CONSTRUCTION_ENGINEERING` schema.
-
-5. Add the SQL query.
-
-    ```sql
-    <copy>
-    SELECT
-      p.project_name,
-      DBMS_LOB.SUBSTR(p.project_summary, 1000, 1) AS project_summary,
-      e.evaluation_status,
-      e.final_decision,
-      s.supplier_name,
-      rec.recommendation,
-      rec.fit_score,
-      rec.risk_level,
-      d.decision_type,
-      DBMS_LOB.SUBSTR(d.letter_text, 1000, 1) AS letter_text
-    FROM ce_projects p
-    LEFT JOIN ce_supplier_evaluation e
-      ON e.project_id = p.project_id
-    LEFT JOIN ce_supplier_recommendation rec
-      ON rec.recommend_id = e.recommend_id
-    LEFT JOIN ce_suppliers s
-      ON s.supplier_id = rec.supplier_id
-    LEFT JOIN ce_decision d
-      ON d.evaluation_id = e.evaluation_id
-    WHERE UPPER(p.project_name) LIKE '%' || UPPER({{project_name}}) || '%'
-    ORDER BY e.evaluation_id
-    </copy>
-    ```
-
-6. Add the parameter description.
-
-    `{{project_name}}`
-    ```
-    <copy>
-    Project name or partial project name. Examples: Downtown, Harbor, North Campus.
-    </copy>
-    ```
-
-7. The completed canvas should show the agent connected to one RAG tool and five SQL tools.
-
-    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flow-final-canvas-consteng.png " ")
+    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flow-final-canvas-3sql-consteng.png " ")
 
 ## Lab 2 Recap
 
@@ -551,7 +446,7 @@ In this lab, you built the complete agent flow for the Construction Engineering 
 - You created the **agent flow** and attached it to `ce_compute`.
 - You configured the **agent node** with a reasoning model and construction-specific instructions.
 - You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance.
-- You added **five SQL tools** covering project requirements, supplier recommendations, supplier profiles, missing information, and decision context.
+- You added **three SQL tools** covering project context, supplier recommendations, and supplier profiles.
 - You connected the RAG and SQL tools to the agent so the Playground can invoke them.
 
 In the next lab, you'll test the agent in the Playground.
