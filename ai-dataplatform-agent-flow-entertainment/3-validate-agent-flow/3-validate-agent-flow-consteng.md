@@ -127,3 +127,8 @@ In this lab, you validated the Construction Engineering Supplier Evaluation Agen
 * Decision support that separates facts, interpretation, and recommended next action
 
 The agent successfully combined RAG, using internal procurement and compliance documents, with SQL, using structured supplier and project data, to support the kinds of supplier evaluation, risk review, and documentation follow-up questions construction engineering teams handle every day. In the next lab, you will deploy the agent to a production endpoint.
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

@@ -1,3 +1,13 @@
+# TODO: Title
+
+### Objectives
+
+In this lab, you will:
+* TODO: Add objectives
+
+
+
+Estimated Time: TODO - x minutes
 
 ## 2026-07-07 UI Validation Progress
 - Opened fresh Workbench `hol-workshop-dev-xsGdA4wd` after user completed MFA.
@@ -40,3 +50,8 @@
 - Attempted to connect `get_supplier_profile` from the agent **Tools (3)** label, but the hidden connector still cannot be reliably exposed through automation. The tool remains unconnected until the manual hover-and-drag gesture is completed.
 - Created SQL Tool 4 and renamed it to `get_missing_supplier_information`; description was entered. Catalog/schema and SQL query still need to be finished because the schema picker did not latch during automation.
 - Next validation action: finish Tool 4 (`get_missing_supplier_information`), create Tool 5 (`get_project_decision_context`), manually connect Tools 3-5 so the agent shows **Tools (6)**, then run Playground validation.
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

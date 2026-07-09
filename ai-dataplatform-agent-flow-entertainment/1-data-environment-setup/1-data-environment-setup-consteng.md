@@ -33,8 +33,6 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 1. Log into the OCI Console if you've not already done so.
 
-    ![Animated gif showing log in and password reset](images/01-tenancy-login-reset-password.gif)
-
 2. Click the navigation menu in the top left corner.
 
     ![Screenshot of main navigation menu](images/01-navigate-nav-menu.png " ")
@@ -262,8 +260,6 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
 1. When you opened AIDP Workbench earlier, it opened in a new browser tab. Locate and select the browser tab or window that still contains the OCI Console.
 
-    ![Change browser tabs](images/01-switch-browser-tabs.png " ")
-
 2. Use the navigation menu to open the Autonomous AI Database Console.
 
     ![OCI Nav menu - Autonomous AI Database console](images/01-navigate-autonomous-ai-database.png " ")
@@ -319,3 +315,8 @@ In this lab, you set up the complete data environment for the Construction Engin
 - You verified the **Oracle AI Database tables** containing construction engineering project, supplier, certification, performance, recommendation, and decision data. These power the agent's SQL tools.
 
 In the next lab, you'll create the agent flow itself - building the agent node and wiring up the RAG and SQL tools.
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year

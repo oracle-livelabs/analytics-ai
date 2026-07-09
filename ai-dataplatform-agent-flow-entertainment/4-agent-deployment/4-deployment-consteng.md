@@ -75,3 +75,8 @@ In this lab, you completed the final step of the end-to-end agent development li
 - You **understand the REST API model** for consuming the agent, including authentication, message format, conversational context, and integration options.
 
 The Construction Engineering Supplier Evaluation Agent is now a production-ready service that can support governed project and supplier decisions across your organization.
+
+## Acknowledgements
+
+* **Author** - TODO: Your Name, Your Title, Your Organization
+* **Last Updated By/Date** - TODO: Your Name, Month Year
