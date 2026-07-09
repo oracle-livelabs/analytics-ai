@@ -45,9 +45,9 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 4. From the *List scope* menu, select the compartment assigned by the LiveLabs environment.
 
-    ![Animated gif illustrating how to locate and select assigned compartment](images/01-tenancy-select-compartment.gif " ")
-
 5. Click the name of the AIDP instance to open the Workbench. The workbench opens in a new tab.
+
+    ![Assigned compartment and AIDP Workbench name](images/01-aidp-console-compartment-consteng.png " ")
 
 6. From the AIDP Workbench Home Page, select your workspace from the workspace drop-down.
 
@@ -87,7 +87,7 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 ## Task 2: Verify the Generated External Database Catalog
 
-An external catalog in AIDP enables the agent SQL tools to query the Autonomous AI Lakehouse database. For this workshop, Terraform enables AI features on the Workbench, attaches the provisioned ALH instance, and creates an external catalog whose name starts with **`vector_db_`**.
+An external catalog in AIDP enables the agent SQL tools to query the Autonomous AI Lakehouse database. For this workshop, these setup steps have already been completed for you: AI features have been enabled on the Workbench, the ALH instance has been provisioned, and an external catalog named with the **`vector_db_`** prefix has been created so the Workbench can discover and query the ALH data through agent SQL tools.
 
 1. From the AIDP Workbench Home Page, click **Master Catalog**.
 
@@ -95,18 +95,22 @@ An external catalog in AIDP enables the agent SQL tools to query the Autonomous 
 
 2. Confirm that the catalog list contains:
 
-    - **`default`** - a standard catalog created by the Workbench.
+    - **`default` standard catalog** - the standard catalog created by the Workbench.
     - **`vector_db_...`** - an external catalog connected to the workshop Autonomous AI Lakehouse database.
 
     > **Note:** The generated external catalog name includes the ALH database name and a unique suffix. Do not delete this catalog. You'll select this **`vector_db_...`** catalog when you configure SQL tools in Lab 2.
 
 3. Confirm that the generated **`vector_db_...`** catalog shows **Active** status.
 
-## Task 3: Create the Standard Construction Engineering Catalog
+## Task 3: Create the Standard Catalog
+
+A standard catalog in AIDP stores AI-related artifacts - volumes, tables, schemas, and knowledge bases. For this workshop, you'll be creating a new standard catalog.
 
 1. From the AIDP Workbench Home Page, click **Master Catalog**.
 
 2. Click **Create catalog** and provide the following:
+
+    ![Master Catalog and Create catalog controls](images/01-catalog-create-button-consteng.png " ")
 
     **Catalog name**
     ```
@@ -124,17 +128,23 @@ An external catalog in AIDP enables the agent SQL tools to query the Autonomous 
 
 3. Click **Create**.
 
-    ![Master Catalog interface - create new standard catalog](images/01-catalog-create-consteng.png)
+    ![Create standard catalog dialog](images/01-catalog-create-dialog-consteng.png " ")
 
 4. When ready, click **`ce_std_catalog`** to open the new catalog.
 
+    ![Open the new standard catalog](images/01-catalog-open-standard-catalog-consteng.png " ")
+
+    > **Note:** A **Standard Catalog** stores data directly within AIDP, backed by OCI Object Storage and the Delta Lake open source file format. An **External Catalog** connects to data outside the platform.
+
 5. Click the **default** schema within the catalog.
 
-    ![Catalog interface - resource types inside catalog](images/01-catalog-view-components-consteng.png)
+    ![Select the default schema](images/01-catalog-default-schema-consteng.png " ")
 
 ## Task 4: Create the Managed Volume
 
 A volume stores unstructured files within a catalog. The volume for this workshop contains internal construction supplier evaluation, compliance, and technical addendum guidance.
+
+These are the documents that the AI agent will search via RAG when users ask questions about definitions, policies, thresholds, or interpretation rules. For example, when a user asks *"When should a construction supplier be denied instead of marked request info?"*, the agent will retrieve relevant passages from these documents.
 
 1. Download **[kb_documents.zip](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/kb_documents.zip)**, which contains the sample knowledge base documents. If the file opens in GitHub instead of downloading automatically, click **Download raw file**.
 
@@ -145,6 +155,8 @@ A volume stores unstructured files within a catalog. The volume for this worksho
     - **Technical Addendum and Risk Triage Procedure** - Defines how to handle missing technical packages and re-analysis scenarios.
 
 3. Back in AIDP Workbench, return to the **`ce_std_catalog`** catalog, locate the **default** schema, and click **Volumes**.
+
+    ![Select Volumes in the default schema](images/01-catalog-schema-volumes-consteng.png " ")
 
 4. Click the **+** next to the filter field to create a new volume.
 
@@ -166,25 +178,41 @@ A volume stores unstructured files within a catalog. The volume for this worksho
     </copy>
     ```
 
-6. Click the volume name **`ce_volume`**, click the **+** button, then click **Upload**.
+6. Click **Create**.
 
-7. Upload the three `.docx` files from the zip archive.
+    ![Create volume dialog](images/01-catalog-create-volume-consteng.png " ")
+
+7. Click the volume name **`ce_volume`**.
+
+    ![Open the ce_volume volume](images/01-catalog-volume-open-consteng.png " ")
+
+8. Click the **+** button, then click **Upload**.
+
+    ![Volume add file button](images/01-catalog-volume-plus-consteng.png " ")
+
+9. Upload the three `.docx` files from the zip archive.
 
     ![Upload files interface](images/01-catalog-volume-upload-files-consteng.png " ")
 
-8. Click **Upload**, then confirm the files appear in the volume.
+10. Click **Upload**, then confirm the files appear in the volume.
 
     ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete-consteng.png " ")
 
 ## Task 5: Create a Knowledge Base
 
-Now create the asset that enables RAG. A Knowledge Base creates vector representations of the documents in the volume.
+Now we'll create the key asset that enables RAG. A Knowledge Base creates vector representations (embeddings) of the documents in the volume. When the agent receives a question, it performs a semantic search against these vectors to find the most relevant passages - even if the user's wording doesn't exactly match the document text.
 
 1. Navigate back to **`ce_std_catalog`** and click the **default** schema.
 
+    ![Select the default schema](images/01-catalog-default-schema-consteng.png " ")
+
 2. Click **Knowledge Bases**.
 
+    ![Select Knowledge Bases in the default schema](images/01-catalog-schema-knowledge-bases-consteng.png " ")
+
 3. Click the **+** button to create a new Knowledge Base.
+
+    ![Knowledge Base add button](images/01-catalog-kbase-plus-consteng.png " ")
 
 4. Enter the following values:
 
@@ -202,41 +230,53 @@ Now create the asset that enables RAG. A Knowledge Base creates vector represent
     </copy>
     ```
 
-    ![Create a new knowledgebase in the catalog](images/01-catalog-create-kbase-consteng.png " ")
-
 5. Leave the **Advanced Settings** as-is.
 
 6. Click **Create** and wait for the Knowledge Base to become **Active**.
 
+    ![Create a new knowledgebase in the catalog](images/01-catalog-create-kbase-consteng.png " ")
+
 7. Open the Knowledge Base details, click the **Data Source** tab, and click the **+** button.
 
-    ![Add data source to knowledge base](images/01-catalog-kbase-add-datasource-consteng.png " ")
+    ![Open ce_kb details](images/01-catalog-kbase-active-consteng.png " ")
+
+    ![Data Source add button](images/01-catalog-kbase-datasource-plus-consteng.png " ")
 
 8. Select the **`ce_volume`** volume and leave advanced settings as-is.
 
 9. Click **Add**.
 
-10. Navigate to the **History** tab and wait for the **Update Knowledge Base** operation to show **Succeeded**.
+    ![Add data source to knowledge base](images/01-catalog-kbase-add-datasource-consteng.png " ")
+
+10. Navigate to the **History** tab of your Knowledge Base. You should see a line entry with the operation name **"Update Knowledge Base"**. This step ingests the documents - chunking them, generating embeddings, and indexing the vectors.
 
     ![Knowledge base ingestion succeeded](images/01-catalog-kbase-history-succeeded-consteng.png " ")
 
+11. Wait for the status to show **Succeeded** before moving on. This typically takes less than one minute since we're ingesting a small set of documents.
+
+    > **What just happened?** The Knowledge Base chunked each document into smaller passages, generated vector embeddings for each chunk using an embedding model, and stored those vectors in an index. When the RAG tool receives a query, it converts the query into a vector, finds the most semantically similar chunks, and returns them as context for the LLM. This is how the agent can answer policy and definition questions grounded in your actual internal documents.
+
 ## Task 6: Optional - Verify the Oracle AI Database Tables
 
-The agent's SQL tools query structured data from an Oracle AI Database. For this workshop, the following tables have been pre-ingested with construction engineering project and supplier data.
+The agent's SQL tools query structured data from an Oracle AI Database. For this workshop, the database has already been provisioned and loaded with construction engineering project and supplier data.
 
-1. Return to the OCI Console browser tab.
+1. When you opened AIDP Workbench earlier, it opened in a new browser tab. Locate and select the browser tab or window that still contains the OCI Console.
+
+    ![Change browser tabs](images/01-switch-browser-tabs.png " ")
 
 2. Use the navigation menu to open the Autonomous AI Database Console.
 
     ![OCI Nav menu - Autonomous AI Database console](images/01-navigate-autonomous-ai-database.png " ")
 
-3. Make sure the applied filters match your assigned compartment.
+3. Make sure the **Applied filters** match your assigned compartment.
 
-4. Click the database name that starts with **hol-consteng-**.
+4. You should see the Autonomous AI Database for your reservation. Click the database name that starts with **hol-consteng-** to view details.
 
-5. Click **Database actions** and select **SQL**.
+5. When the page loads, click **Database actions** and select **SQL**. This opens SQL Worksheet in a new browser tab.
 
-6. In the Navigator, locate the **CONSTRUCTION_ENGINEERING** schema.
+6. In the Navigator on the left, click the schema drop-down and locate the **CONSTRUCTION_ENGINEERING** schema.
+
+    You should see the following tables populate below.
 
     | Table Name | Description | Key Columns |
     |---|---|---|
@@ -249,7 +289,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
     | `CE_SUPPORTING_DOCS` | Supporting document references and extracted text | `PROJECT_ID`, `SUPPLIER_ID`, `DOC_TYPE`, `DOC_TEXT` |
     | `CE_DECISION` | Generated decision text and decision type | `EVALUATION_ID`, `DECISION_TYPE`, `LETTER_TEXT` |
 
-7. Run a simple query:
+7. To check the data in the tables, enter this query in SQL Worksheet and click the green play button to **Run Statement**.
 
     ```sql
     <copy>
@@ -258,7 +298,15 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
     </copy>
     ```
 
-8. You should see projects such as **Downtown Mixed-Use Tower**, **Harbor Seismic Retrofit**, and **North Campus Lab Expansion**.
+8. The query result should show projects such as **Downtown Mixed-Use Tower**, **Harbor Seismic Retrofit**, and **North Campus Lab Expansion**.
+
+9. These tables represent the **gold layer** of the medallion architecture - curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer questions about project requirements, supplier fit, missing documentation, evaluation status, and decision recommendations.
+
+    > **Key takeaway:** You now have two categories of data assets ready for the agent:
+    > - **Unstructured (RAG):** The Knowledge Base with vector-indexed construction procurement and compliance documents - for answering questions about definitions, policies, thresholds, and interpretation rules.
+    > - **Structured (SQL):** The Oracle AI Database tables with project, supplier, certification, performance, recommendation, and decision data - for answering questions about specific project and supplier facts.
+
+10. You may close the SQL Worksheet browser tab and return to the AI Data Platform tab for the remainder of the workshop.
 
 ## Lab 1 Recap
 
@@ -267,7 +315,7 @@ In this lab, you set up the complete data environment for the Construction Engin
 - You created an **AI Compute** to host and execute the agent flow.
 - You verified the generated **`vector_db_...`** external catalog connected to the Autonomous AI Lakehouse database.
 - You created **`ce_std_catalog`** and **`ce_volume`**, then uploaded internal construction guidance documents.
-- You created **`ce_kb`** and ingested the documents for RAG.
-- You verified the structured construction engineering database tables that power the SQL tools.
+- You created a **Knowledge Base** (`ce_kb`), populated it with files from the volume, and verified that the ingestion succeeded. This enables RAG - the agent can now search your internal documents by semantic meaning.
+- You verified the **Oracle AI Database tables** containing construction engineering project, supplier, certification, performance, recommendation, and decision data. These power the agent's SQL tools.
 
-In the next lab, you'll create the agent flow itself.
+In the next lab, you'll create the agent flow itself - building the agent node and wiring up the RAG and SQL tools.

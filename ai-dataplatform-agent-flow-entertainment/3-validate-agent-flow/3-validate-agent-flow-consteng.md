@@ -2,9 +2,11 @@
 
 ## Introduction
 
-The agent is built. Now it's time to test it in the Agent Flow Playground. The tests in this lab exercise SQL-only lookup, missing information analysis, RAG-only policy guidance, hybrid RAG-plus-SQL decision support, and structured tabular output.
+The agent is built - now it is time to see it in action. In this lab, you will use the Agent Flow Playground to test the Construction Engineering Supplier Evaluation Agent with realistic questions that span project context, supplier profile evidence, procurement guidance, compliance requirements, and supplier recommendation decisions.
 
-Pay close attention to how the agent decides which tools to call and how it separates facts from interpretation.
+Each test is designed to exercise a different combination of the agent's tools: SQL for governed project and supplier facts, RAG for internal policy guidance, and both together when the agent needs to turn evidence into a recommendation.
+
+Pay close attention to how the agent decides which tools to call, how it identifies the right supplier and project records, and how it separates facts from interpretation before synthesizing results into clear, actionable construction engineering guidance.
 
 **Estimated Time:** 15 Minutes
 
@@ -13,12 +15,10 @@ Pay close attention to how the agent decides which tools to call and how it sepa
 In this lab you will:
 
 1. Open the Agent Flow Playground.
-2. Test an approval scenario for Downtown Mixed-Use Tower.
-3. Test missing-information analysis for supplier follow-up.
-4. Test a RAG-only compliance policy question.
-5. Test a hybrid RAG-plus-SQL decision for Harbor Seismic Retrofit.
-6. Test a technical addendum scenario for North Campus Lab Expansion.
-7. Test structured table output.
+2. Test a project recommendation scenario using SQL-backed project and supplier data.
+3. Test a supplier profile scenario using certification and performance data.
+4. Test a policy guidance scenario using the construction knowledge base.
+5. Reflect on the agent's tool selection, grounding, and decision discipline.
 
 ### Prerequisites
 
@@ -26,150 +26,104 @@ This lab assumes you have:
 
 * Completed Lab 2.
 * The agent flow attached to an active AI Compute.
-* One RAG tool and three SQL tools configured and connected to the agent node.
+* A Chat Trigger, one RAG tool, and three SQL tools configured and connected to the agent node.
 
 ## Task 1: Open the Playground
 
-1. From the agent flow canvas, click **Playground** above the canvas.
+The Playground is a built-in testing environment where you can create sessions and have conversations with your agent flow before deploying it to production.
 
-2. The session is now active. Type natural language questions in the **Test your system** input. Submit the prompt with **Shift+Enter** and watch the tool call indicators as the agent reasons, calls tools, and responds.
+1. From the agent flow canvas, click **Playground** located just above the canvas. This reveals the Playground panel.
 
-3. You can widen the chat session window by dragging the vertical divider.
+2. Confirm that a session is selected. You can use the generated session or click **Create New Session**.
 
-    ![Widen the chat window](images/03-chat-wide.png " ")
+    ![Agent Flow Playground session ready](images/03-playground-session-ready-live.png " ")
 
-## Task 2: Test Supplier Approval
+3. Type natural language questions in the chat input. Press **Ctrl+Enter** to submit the prompt. The agent will reason, call tools, and respond just as it would after deployment.
 
-Ask the agent to evaluate the recommended supplier for a project with a clean approval path.
+    > **Tip:** As you test, watch the task details panel. The Playground shows which tools the agent invokes, what parameters it passes, and what data comes back. This transparency is invaluable for understanding and debugging the agent's reasoning.
+
+## Task 2: Test Project Recommendation
+
+Ask the agent to recommend the best supplier for a project and explain its reasoning.
 
 ```
 <copy>
-For the Downtown Mixed-Use Tower project, which supplier is recommended and why?
+For the Downtown Tower project, recommend the best supplier and explain the key risks, missing information, and next action.
 </copy>
 ```
 
 The agent should:
 
-- Call `get_supplier_recommendations` with `Downtown Mixed-Use Tower` or a similar project-name parameter.
-- Identify **Atlas Structural Fabrication** as approved.
-- Mention fit score **97**, low risk, current AISC/AWS documentation, strong delivery history, zero unresolved NCRs, and confirmed capacity.
-- Avoid inventing any supplier evidence that is not returned by the SQL tool.
+- Use SQL tools for project context and supplier recommendations.
+- Identify Atlas Structural Fabrication or the closest matching Atlas supplier as the best fit for the Downtown project.
+- Mention evidence such as fit score, risk level, current certifications, delivery history, unresolved NCRs, capacity, and missing information.
+- Separate factual evidence from its recommended next action.
 
-    ![Supplier approval response for Downtown Mixed-Use Tower](images/03-chat-downtown-approval-consteng.png " ")
+![Project recommendation response in the Playground](images/03-playground-test-project-recommendation-live.png " ")
 
-## Task 3: Test Missing Information Follow-Up
+> Observe the behavior: The agent uses structured SQL data to identify the recommended supplier, then explains the approval rationale with concrete evidence such as fit score, risk level, certifications, NCR history, and capacity. It does not invent supplier evidence that is not returned by the tools.
 
-Now ask about candidates that are not ready for approval.
+## Task 3: Test Supplier Profile Evidence
+
+Now ask for a supplier profile. This test checks whether the agent can retrieve supplier-level certification and performance details without requiring a project recommendation question.
 
 ```
 <copy>
-What information is missing for the other Downtown Mixed-Use Tower suppliers before we could consider them?
+Summarize Atlas Structural Systems, including certifications, capacity status, performance metrics, and whether any documentation follow-up is needed.
 </copy>
 ```
 
 The agent should:
 
-- Use project context from the previous question or call `get_supplier_recommendations`.
-- Identify **WestBridge Steel Supply** and **Northline Industrial Metals** as request-info candidates.
-- List missing inspection logs, mill certificates, nonconformance closeout evidence, delivery schedule confirmation, corrective action evidence, or updated inspection records as applicable.
-- Keep the recommendation at request-info rather than approval.
+- Call `get_supplier_profile` with an Atlas supplier-name parameter.
+- Summarize the supplier category, region, capacity status, certifications, and performance metrics.
+- Mention whether any documentation follow-up is needed.
+- Clearly note if it uses a closest match when the exact supplier name does not appear in the data.
 
-    ![Missing information response for Downtown Mixed-Use Tower](images/03-chat-missing-info-consteng.png " ")
+![Supplier profile response in the Playground](images/03-playground-test-supplier-profile-live.png " ")
 
-## Task 4: Test RAG-Only Compliance Guidance
+> Observe the behavior: The agent resolves a supplier-name question into structured supplier data, then explains profile evidence in business language. It preserves uncertainty when the exact user-entered name is not an exact database match.
 
-Ask a policy question that should be answered from the knowledge base rather than the database.
+## Task 4: Test Policy Guidance
+
+Ask a policy question that should use the knowledge base rather than only project tables.
 
 ```
 <copy>
-Using the internal construction guidance, when should a supplier be denied instead of marked request info?
+What internal construction procurement guidance should I follow when a supplier is missing required inspection reports or certification documentation?
 </copy>
 ```
 
 The agent should:
 
-- Call `construction_policy_rag`.
-- Explain denial triggers such as expired required certification, missing DBE participation for public works, unresolved NCRs, overloaded capacity on a critical schedule, or unacceptable delivery risk.
-- Avoid calling SQL unless it needs project-specific facts.
+- Call `construction_policy_rag` for internal guidance.
+- Explain decision criteria for missing inspection reports, certifications, corrective action evidence, or other required documents.
+- Discuss when request-info, denial, or RFP escalation may be appropriate.
+- Avoid treating policy guidance as a specific supplier approval unless project or supplier facts are also provided.
 
-    ![RAG-only policy guidance response](images/03-chat-rag-policy-consteng.png " ")
+![Policy guidance response in the Playground](images/03-playground-test-policy-guidance-live.png " ")
 
-## Task 5: Test Hybrid RAG + SQL Decision Support
+> Observe the behavior: The agent answers from internal construction guidance because the question asks about procurement policy and decision criteria. It may connect the guidance to supplier evaluation concepts, but it should not fabricate project-specific facts.
 
-Now combine internal guidance with structured supplier data.
+## Task 5: Reflect on the Agent's Behavior
 
-```
-<copy>
-Use the internal guidance and the project data to recommend the next action for Harbor Seismic Retrofit.
-</copy>
-```
+Before moving on, take a moment to consider what the agent demonstrated across the test session.
 
-The agent should:
+1. **Tool selection**: The agent automatically determined which tools to call based on each question - SQL for project and supplier facts, RAG for procurement and compliance guidance, and RAG-plus-SQL for decision-support questions.
+2. **Context grounding**: The agent connected structured supplier and project data with internal construction engineering guidance to produce recommendations grounded in both database facts and authoritative documents.
+3. **Missing-data discipline**: The agent identified gaps in required documentation and avoided approving suppliers when critical information was missing or unresolved.
+4. **Output flexibility**: The agent adapted its response format from evidence summaries to policy guidance based on the user's question.
+5. **Decision support**: The agent synthesized evidence into clear, actionable recommendations such as approve, request more information, deny, or escalate to RFP review.
 
-- Call `construction_policy_rag` for decision criteria.
-- Call `get_project_context` and/or `get_supplier_recommendations` for Harbor Seismic Retrofit.
-- Explain that current seismic steel suppliers should be denied and a new RFP should be submitted.
-- Cite the specific blockers: missing DBE documentation, expired AISC certification, unresolved weld NCRs, no verified night-work plan, and high or very high risk.
-
-    ![Hybrid decision support response for Harbor Seismic Retrofit](images/03-chat-harbor-decision-consteng.png " ")
-
-## Task 6: Test Technical Addendum Scenario
-
-Test whether the agent recognizes a pending document scenario.
-
-```
-<copy>
-What should we do next for North Campus Lab Expansion and Precision Air Systems?
-</copy>
-```
-
-The agent should:
-
-- Call `get_project_context` and/or `get_supplier_recommendations` for North Campus Lab Expansion.
-- Recognize **Precision Air Systems** as the leading request-info candidate with fit score **82** and medium risk.
-- Explain that the updated technical addendum is required before final approval.
-- Mention expected addendum evidence such as TAB plan, seismic anchorage package, factory startup letter, and updated delivery confirmation.
-
-    ![Technical addendum response for North Campus Lab Expansion](images/03-chat-north-campus-addendum-consteng.png " ")
-
-## Task 7: Test Structured Output
-
-Ask for a table so the agent must restructure SQL results.
-
-```
-<copy>
-Return a table comparing the Harbor Seismic Retrofit suppliers. Include supplier, recommendation, fit score, risk level, and missing information.
-</copy>
-```
-
-The agent should:
-
-- Call `get_supplier_recommendations` for Harbor Seismic Retrofit.
-- Return a clean table for **Coastal Retrofit Metals**, **Pacific Brace Works**, and **Civic Steel Partners**.
-- Preserve the denial status and missing-information details.
-
-    ![Structured supplier comparison response for Harbor Seismic Retrofit](images/03-chat-harbor-table-consteng.png " ")
-
-## Task 8: Reflect on the Agent's Behavior
-
-Consider what the agent demonstrated:
-
-1. **Tool selection**: It used SQL for project and supplier facts, RAG for policy, and both for decision support.
-2. **Grounding**: It tied recommendations to structured evidence and internal guidance.
-3. **Missing-data discipline**: It did not approve suppliers when critical documents were missing.
-4. **Output flexibility**: It adapted from narrative explanation to table format.
-
-> **Discussion prompt**: "If this agent were available to your construction engineering team today, which supplier decision or project risk review would you automate first?"
+> **Discussion prompt**: "If this agent were available to your team today, what would be the first question you would ask? What additional data sources or tools would make it more useful?"
 
 ## Lab 3 Recap
 
-In this lab, you validated the Construction Engineering Supplier Evaluation Agent across realistic scenarios:
+In this lab, you validated the Construction Engineering Supplier Evaluation Agent across realistic supplier and project scenarios:
 
-- Supplier approval with evidence.
-- Missing information follow-up.
-- RAG-only compliance guidance.
-- Hybrid RAG-plus-SQL decision support.
-- Technical addendum triage.
-- Structured supplier comparison output.
+* Supplier approval recommendations supported by structured evidence
+* Supplier certification and performance profile lookup
+* RAG-based procurement and compliance guidance from internal construction engineering documents
+* Decision support that separates facts, interpretation, and recommended next action
 
-In the next lab, you'll deploy the agent to a production endpoint.
+The agent successfully combined RAG, using internal procurement and compliance documents, with SQL, using structured supplier and project data, to support the kinds of supplier evaluation, risk review, and documentation follow-up questions construction engineering teams handle every day. In the next lab, you will deploy the agent to a production endpoint.

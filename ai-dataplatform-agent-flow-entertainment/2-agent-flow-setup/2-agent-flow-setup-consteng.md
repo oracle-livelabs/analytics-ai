@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Task 1: Create the Agent Flow
 
-1. Navigate to your workspace and click **Agent Flows**. Click the **+** button to create a new agent flow.
+1. Navigate to your workspace and click **Agent Flows**. Click **Create** to create a new agent flow.
 
 2. Enter a name and description:
 
@@ -48,17 +48,24 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Create dialogue for new Agent Flow](images/02-agent-flows-create-consteng.png " ")
+3. If the dialog includes an **AI Compute** field, select **`ce_compute`**. If the field is not shown, you can attach compute from the agent flow page after creation.
 
-3. Attach the agent flow to **`ce_compute`**. In the upper right corner, click **Compute** -> **Attach to AI Compute**, then select **`ce_compute`**.
+    ![Create dialog for new Agent Flow](images/02-agent-flows-create-dialog-filled-consteng-live.png " ")
 
-    ![Blank agent flow canvas with ce_compute attached](images/02-agent-flows-attach-compute-blank-consteng.png " ")
+4. Click **Create**. The agent flow canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right.
 
-## Task 2: Configure the Agent Node
+    ![Blank agent flow canvas with ce_compute attached](images/02-agent-flows-blank-canvas-consteng-live.png " ")
 
-1. Drag an **Agent node** onto the canvas, then click the entity frame.
+## Task 2: Add the Chat Trigger and Configure the Agent Node
 
-2. Edit the agent name and description.
+The Chat Trigger is the entry point for Playground and deployed conversations. The agent node is the core of your flow. It defines the LLM model, the system instructions that govern the agent's behavior, and the reasoning approach.
+
+1. Drag a **Chat Trigger** onto the canvas. Place it to the left of where the agent node will sit.
+
+2. Drag an **Agent node** onto the canvas, then connect the Chat Trigger to the agent. Drag from the Chat Trigger connector to the agent node and release the line on the agent.
+
+3. Click the agent entity frame and edit the agent name and description.
+
 
     **Name**
     ```
@@ -74,13 +81,21 @@ This lab assumes you have:
     </copy>
     ```
 
-3. In the **Configuration** tab, select the region corresponding to the **Generative AI Endpoint Region** in **View Login Info**.
+4. In the **Configuration** tab, select the region corresponding to the **Generative AI Endpoint Region** in **View Login Info**.
 
-4. Select `xai.grok-4.20-reasoning`.
+    > **Note:** The screenshots in this workshop use **US East (Ashburn) (`us-ashburn-1`)**. If your reservation shows a different Generative AI Endpoint Region, use the region assigned to your environment.
+
+5. Select `xai.grok-4.20-reasoning`.
 
     > **Note:** Model availability can vary by reservation. If `xai.grok-4.20-reasoning` is not available, select another available Grok 4 reasoning model.
 
-5. Copy the following instructions into the **Agent Instructions** box. You can also download them from [agent_instructions.txt](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/agent_instructions.txt).
+6. For the **Agent Instructions** field, copy the following instructions. You can also download them from [agent_instructions.txt](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/agent_instructions.txt). These detailed instructions define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:
+
+    * Its role as an internal analytics and decision-support agent for construction engineering procurement teams.
+    * When to use RAG vs. SQL tools.
+    * The reasoning sequence: classify the question -> retrieve knowledge -> query data -> synthesize -> respond.
+    * Response style guidelines: concise, analytical, structured, and grounded in retrieved evidence.
+    * What it must not do: no guessing metrics, no bypassing SQL tools, and no fabricating supplier, project, certification, or decision data.
 
     ```
     <copy>
@@ -165,17 +180,19 @@ What you must not do:
     </copy>
     ```
 
-6. Leave **Model Parameters** and **Safety Guardrails** as-is.
+7. Leave **Model Parameters** and **Safety Guardrails** as-is.
 
-    ![Configured Construction Evaluation Agent node](images/02-agent-flows-agent-configured-consteng.png " ")
+    ![Configured Construction Evaluation Agent node](images/02-agent-flows-agent-configured-live.png " ")
+
+8. The **Agent flows** canvas auto-saves your input as you work. Now you're ready to move to the next task.
 
 ## Task 3: Add the RAG Tool
 
-The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
+The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When users ask about supplier qualification requirements, procurement policies, compliance thresholds, documentation rules, or risk interpretation guidance, the agent uses this tool to retrieve relevant passages from the internal construction engineering documents.
 
 1. Drag a **RAG tool** onto the canvas.
 
-    ![Agent canvas with unnamed RAG tool added](images/02-agent-flows-rag-added-consteng.png " ")
+    ![Agent canvas with unnamed RAG tool added](images/02-agent-flows-rag-added-live.png " ")
 
     ![Animated example showing how to connect tools to the agent](images/02-agent-flows-connect-tools-consteng.gif " ")
 
@@ -188,11 +205,13 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
     </copy>
     ```
 
-3. In the **Configuration** tab, select the Knowledge Base you created in Lab 1: `ce_std_catalog.default.ce_kb`.
+3. In the **Configuration** tab, set **Region** to the same Generative AI Endpoint Region you selected for the agent node. For **Model**, select the available retrieval or embedding model shown for your reservation. If AIDP has already populated Region and Model after you select the Knowledge Base, leave those defaults in place.
 
-    ![RAG tool configuration showing ce_kb](images/02-agent-flows-rag-select-kbase-consteng.png " ")
+4. Select the Knowledge Base you created in Lab 1: `ce_std_catalog.default.ce_kb`.
 
-4. Enter this description:
+    ![RAG tool configuration showing ce_kb](images/02-agent-flows-rag-select-kbase-live.png " ")
+
+5. Enter a description. The **Description** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
     ```
     <copy>
@@ -200,9 +219,9 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
     </copy>
     ```
 
-5. Set the document retrieval limit to **5** and leave the **Query** field intact.
+6. Set **Limit - number of documents to retrieve** to **3**. This is the number of chunks returned by the Knowledge Base for each query. Leave the **Query** field intact as `{{query}}`.
 
-6. Optionally, test the RAG tool with this query:
+7. Optionally, click the **Test** tab to verify the RAG tool. Enter the following test query and click **Submit**. If the individual tool test does not display a response, continue with the lab; you will validate the RAG tool from the Playground in Lab 3.
 
     ```
     <copy>
@@ -211,6 +230,8 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1.
     ```
 
 ## Task 4: Add SQL Tools for Project and Supplier Analysis
+
+Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, parameterized query against the Oracle AI Database. The agent selects which tool to call based on the user's question and populates the parameters automatically.
 
 For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use the generated **`vector_db_...`** external catalog from Lab 1 -> **`CONSTRUCTION_ENGINEERING`**.
 
@@ -222,7 +243,7 @@ This tool returns project requirements, project summary, evaluation status, supp
 
 1. Drag a **SQL tool** onto the canvas.
 
-    ![Agent canvas with one SQL tool added](images/02-agent-flows-first-sql-added-consteng.png " ")
+    ![Agent canvas with one SQL tool added](images/02-agent-flows-first-sql-added-live.png " ")
 
 2. Connect the SQL tool to the agent. Hover near **Tools (#)**, drag from the circular connector to the SQL tool, and release the line on the tool node.
 
@@ -437,16 +458,19 @@ This tool returns supplier profile, certifications, and performance history for 
 
 7. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
 
-    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flow-final-canvas-3sql-consteng.png " ")
+    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flows-completed-canvas-with-trigger-live.png " ")
 
 ## Lab 2 Recap
 
 In this lab, you built the complete agent flow for the Construction Engineering Supplier Evaluation Agent:
 
-- You created the **agent flow** and attached it to `ce_compute`.
-- You configured the **agent node** with a reasoning model and construction-specific instructions.
-- You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance.
+- You created the **agent flow** on the visual canvas and attached it to the AI Compute `ce_compute`.
+- You added a **Chat Trigger** and connected it to the agent so conversations can start from Playground or the deployed endpoint.
+- You configured the **agent node** with the `xai.grok-4.20-reasoning` model, or another available reasoning model, and detailed instructions that define the agent's reasoning flow, response style, and behavioral guardrails.
+- You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance files, and set the retrieval limit to 3 documents.
 - You added **three SQL tools** covering project context, supplier recommendations, and supplier profiles.
 - You connected the RAG and SQL tools to the agent so the Playground can invoke them.
+
+The agent now has everything it needs: a brain (the LLM), internal knowledge documents (RAG), and structured data access (SQL).
 
 In the next lab, you'll test the agent in the Playground.
