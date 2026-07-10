@@ -318,5 +318,6 @@ In the next lab, you'll create the agent flow itself - building the agent node a
 
 ## Acknowledgements
 
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year
+* **Author** - Eli Schilling, Cloud Architect || Evangelist
+* **Contributors** - ONA Lab Engineering team
+* **Last Updated By/Date** - Eli Schilling, July 2026

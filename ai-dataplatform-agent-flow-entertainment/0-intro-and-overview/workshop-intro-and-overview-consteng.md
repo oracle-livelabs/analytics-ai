@@ -74,6 +74,6 @@ By the end of this workshop, you will be able to:
 
 ## Acknowledgements
 
-* **Author(s)** - Jean-Rene Gauthier [AIDP]
-* **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Construction engineering variant created July 2026
+* **Author** - Eli Schilling, Cloud Architect || Evangelist
+* **Contributors** - ONA Lab Engineering team
+* **Last Updated By/Date** - Eli Schilling, July 2026

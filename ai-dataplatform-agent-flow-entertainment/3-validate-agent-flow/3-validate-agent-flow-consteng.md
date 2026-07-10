@@ -48,7 +48,7 @@ Ask the agent to recommend the best supplier for a project and explain its reaso
 
 ```
 <copy>
-For the Downtown Tower project, recommend the best supplier and explain the key risks, missing information, and next action.
+For project name Downtown, recommend the best supplier and explain the key risks, missing information, and next action.
 </copy>
 ```
 
@@ -58,6 +58,8 @@ The agent should:
 - Identify Atlas Structural Fabrication or the closest matching Atlas supplier as the best fit for the Downtown project.
 - Mention evidence such as fit score, risk level, current certifications, delivery history, unresolved NCRs, capacity, and missing information.
 - Separate factual evidence from its recommended next action.
+
+![Project recommendation prompt in the Playground](images/03-playground-prompt-project-recommendation-live.png " ")
 
 ![Project recommendation response in the Playground](images/03-playground-test-project-recommendation-live.png " ")
 
@@ -69,7 +71,7 @@ Now ask for a supplier profile. This test checks whether the agent can retrieve 
 
 ```
 <copy>
-Summarize Atlas Structural Systems, including certifications, capacity status, performance metrics, and whether any documentation follow-up is needed.
+Summarize Atlas Structural Fabrication, including certifications, capacity status, performance metrics, and whether any documentation follow-up is needed.
 </copy>
 ```
 
@@ -79,6 +81,8 @@ The agent should:
 - Summarize the supplier category, region, capacity status, certifications, and performance metrics.
 - Mention whether any documentation follow-up is needed.
 - Clearly note if it uses a closest match when the exact supplier name does not appear in the data.
+
+![Supplier profile prompt in the Playground](images/03-playground-prompt-supplier-profile-live.png " ")
 
 ![Supplier profile response in the Playground](images/03-playground-test-supplier-profile-live.png " ")
 
@@ -100,6 +104,8 @@ The agent should:
 - Explain decision criteria for missing inspection reports, certifications, corrective action evidence, or other required documents.
 - Discuss when request-info, denial, or RFP escalation may be appropriate.
 - Avoid treating policy guidance as a specific supplier approval unless project or supplier facts are also provided.
+
+![Policy guidance prompt in the Playground](images/03-playground-prompt-policy-guidance-live.png " ")
 
 ![Policy guidance response in the Playground](images/03-playground-test-policy-guidance-live.png " ")
 
@@ -130,5 +136,6 @@ The agent successfully combined RAG, using internal procurement and compliance d
 
 ## Acknowledgements
 
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year
+* **Author** - Eli Schilling, Cloud Architect || Evangelist
+* **Contributors** - ONA Lab Engineering team
+* **Last Updated By/Date** - Eli Schilling, July 2026

@@ -32,6 +32,8 @@ This lab assumes you have:
 
 1. Navigate to your workspace and click **Agent Flows**. Click **Create** to create a new agent flow.
 
+    ![Agent Flows landing page with Create action](images/02-agent-flows-landing-create-live.png " ")
+
 2. Enter a name and description:
 
     **Name**
@@ -63,6 +65,8 @@ The Chat Trigger is the entry point for Playground and deployed conversations. T
 1. Drag a **Chat Trigger** onto the canvas. Place it to the left of where the agent node will sit.
 
 2. Drag an **Agent node** onto the canvas, then connect the Chat Trigger to the agent. Drag from the Chat Trigger connector to the agent node and release the line on the agent.
+
+    ![Chat Trigger connected to the Agent node](images/02-agent-flows-chat-trigger-agent-connected-live.png " ")
 
 3. Click the agent entity frame and edit the agent name and description.
 
@@ -229,6 +233,8 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
     </copy>
     ```
 
+    ![Configured RAG tool panel](images/02-agent-flows-rag-select-kbase-live.png " ")
+
 ## Task 4: Add SQL Tools for Project and Supplier Analysis
 
 Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, parameterized query against the Oracle AI Database. The agent selects which tool to call based on the user's question and populates the parameters automatically.
@@ -320,6 +326,8 @@ This tool returns project requirements, project summary, evaluation status, supp
     </copy>
     ```
 
+    ![Configured Get project context SQL tool](images/02-agent-flows-sql1-configured-live.png " ")
+
 ### Tool 2: Get supplier recommendations
 
 This tool returns recommended suppliers and their fit/risk explanations for a project.
@@ -387,6 +395,8 @@ This tool returns recommended suppliers and their fit/risk explanations for a pr
     Project name or partial project name. Examples: Downtown, Harbor, North Campus.
     </copy>
     ```
+
+    ![Configured Get supplier recommendations SQL tool](images/02-agent-flows-sql2-configured-live.png " ")
 
 ### Tool 3: Get supplier profile
 
@@ -456,6 +466,8 @@ This tool returns supplier profile, certifications, and performance history for 
     </copy>
     ```
 
+    ![Configured Get supplier profile SQL tool](images/02-agent-flows-sql3-configured-live.png " ")
+
 7. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
 
     ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flows-completed-canvas-with-trigger-live.png " ")
@@ -477,5 +489,6 @@ In the next lab, you'll test the agent in the Playground.
 
 ## Acknowledgements
 
-* **Author** - TODO: Your Name, Your Title, Your Organization
-* **Last Updated By/Date** - TODO: Your Name, Month Year
+* **Author** - Eli Schilling, Cloud Architect || Evangelist
+* **Contributors** - ONA Lab Engineering team
+* **Last Updated By/Date** - Eli Schilling, July 2026
