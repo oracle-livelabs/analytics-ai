@@ -224,7 +224,7 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
     **Description**
     ```
     <copy>
-    Contains internal construction supplier evaluation, compliance, and technical addendum guidance.
+    Knowledge base for construction engineering supplier evaluation policy, compliance, and technical addendum guidance.
     </copy>
     ```
 

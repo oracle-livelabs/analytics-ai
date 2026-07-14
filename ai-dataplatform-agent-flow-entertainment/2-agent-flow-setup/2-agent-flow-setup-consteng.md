@@ -28,11 +28,11 @@ This lab assumes you have:
 * Access to the Oracle AI Database with construction engineering tables.
 * Downloaded the [agent instructions file](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/agent_instructions.txt), or you can copy the instructions directly from this lab.
 
-## Task 1: Create the Agent Flow
+## Task 1: Create the Agent Project
 
-1. Navigate to your workspace and click **Agent Flows**. Click **Create** to create a new agent flow.
+1. Navigate to your workspace and click **Agents**. Click **Create** to create a new agent project.
 
-    ![Agent Flows landing page with Create action](images/02-agent-flows-landing-create-live.png " ")
+    ![Agents landing page with Create action](images/02-agent-flows-landing-create-live.png " ")
 
 2. Enter a name and description:
 
@@ -52,11 +52,11 @@ This lab assumes you have:
 
 3. If the dialog includes an **AI Compute** field, select **`ce_compute`**. If the field is not shown, you can attach compute from the agent flow page after creation.
 
-    ![Create dialog for new Agent Flow](images/02-agent-flows-create-dialog-filled-consteng-live.png " ")
+    ![Create dialog for new Agent project](images/02-agent-flows-create-dialog-filled-consteng-live.png " ")
 
-4. Click **Create**. The agent flow canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right.
+4. Click **Create**. The agent project canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right.
 
-    ![Blank agent flow canvas with ce_compute attached](images/02-agent-flows-blank-canvas-consteng-live.png " ")
+    ![Blank agent project canvas with ce_compute attached](images/02-agent-flows-blank-canvas-consteng-live.png " ")
 
 ## Task 2: Add the Chat Trigger and Configure the Agent Node
 

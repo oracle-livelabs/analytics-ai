@@ -32,7 +32,7 @@ The agent is designed for project managers, procurement leads, construction qual
 |---|---|---|---|
 | **Lab 1** | Data Environment Setup | Create compute, catalogs, a managed volume, and a Knowledge Base; verify construction engineering database tables | 15 min |
 | **Lab 2** | Agent Flow Setup | Configure the agent, attach the RAG tool, and add SQL tools for project and supplier analysis | 25 min |
-| **Lab 3** | Validate the Agent Flow | Test approval, missing-info, RAG-only, hybrid RAG-plus-SQL, and tabular comparison scenarios | 15 min |
+| **Lab 3** | Validate the Agent Flow | Test project recommendation, supplier profile, and policy guidance scenarios across SQL and RAG tools | 15 min |
 | **Lab 4** | Deploy the Agent Flow | Deploy to a production endpoint and review REST API consumption | 5 min |
 | **Workshop Recap** | Recap and Value Proposition | Review what you built and how the pattern applies to enterprise construction engineering decisions | 5 min |
 

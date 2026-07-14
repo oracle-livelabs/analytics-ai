@@ -41,19 +41,17 @@ You built the agent on the visual canvas:
 
 You tested the agent across realistic scenarios:
 
-- Approval evidence for Downtown Mixed-Use Tower.
-- Missing information for alternate suppliers.
-- Compliance guidance from RAG.
-- RFP recommendation for Harbor Seismic Retrofit.
-- Technical addendum triage for North Campus Lab Expansion.
-- Structured supplier comparison output.
+- Project recommendation evidence for Downtown Mixed-Use Tower.
+- Supplier profile evidence for Atlas Structural Fabrication.
+- Procurement and compliance guidance from the construction knowledge base.
+- SQL-backed project and supplier facts combined with RAG-based policy context.
 
 ### Lab 4: Deploy the Agent Flow
 
 You deployed the agent to production:
 
 - Deployed the flow to AI Compute.
-- Retrieved the endpoint URL.
+- Retrieved the Chat endpoint URL.
 - Reviewed the REST API consumption model.
 
 ## The Value Proposition
