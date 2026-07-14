@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Task 1: Create the Agent Project
 
-1. Navigate to your workspace and click **Agents**. Click **Create** to create a new agent project.
+1. Navigate to your workspace and click **Agents**. Click the **+** icon to create a new agent project.
 
     ![Agents landing page with Create action](images/02-agent-flows-landing-create-live.png " ")
 
@@ -233,7 +233,7 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
     </copy>
     ```
 
-    ![Configured RAG tool panel](images/02-agent-flows-rag-select-kbase-live.png " ")
+    ![Configured RAG tool panel](images/02-agent-flows-rag-configured-live.png " ")
 
 ## Task 4: Add SQL Tools for Project and Supplier Analysis
 
@@ -317,6 +317,8 @@ This tool returns project requirements, project summary, evaluation status, supp
     </copy>
     ```
 
+    ![Configured Get project context SQL query](images/02-agent-flows-sql1-configured-live.png " ")
+
 6. Add the parameter description.
 
     `{{project_name}}`
@@ -326,7 +328,7 @@ This tool returns project requirements, project summary, evaluation status, supp
     </copy>
     ```
 
-    ![Configured Get project context SQL tool](images/02-agent-flows-sql1-configured-live.png " ")
+    ![AI Tool Definition fields for Get project context](images/02-agent-flows-sql1-tool-definition-live.png " ")
 
 ### Tool 2: Get supplier recommendations
 
@@ -387,6 +389,8 @@ This tool returns recommended suppliers and their fit/risk explanations for a pr
     </copy>
     ```
 
+    ![Configured Get supplier recommendations SQL query](images/02-agent-flows-sql2-configured-live.png " ")
+
 6. Add the parameter description.
 
     `{{project_name}}`
@@ -396,7 +400,7 @@ This tool returns recommended suppliers and their fit/risk explanations for a pr
     </copy>
     ```
 
-    ![Configured Get supplier recommendations SQL tool](images/02-agent-flows-sql2-configured-live.png " ")
+    ![AI Tool Definition fields for Get supplier recommendations](images/02-agent-flows-sql2-tool-definition-live.png " ")
 
 ### Tool 3: Get supplier profile
 
@@ -457,6 +461,8 @@ This tool returns supplier profile, certifications, and performance history for 
     </copy>
     ```
 
+    ![Configured Get supplier profile SQL query](images/02-agent-flows-sql3-configured-live.png " ")
+
 6. Add the parameter description.
 
     `{{supplier_name}}`
@@ -466,7 +472,7 @@ This tool returns supplier profile, certifications, and performance history for 
     </copy>
     ```
 
-    ![Configured Get supplier profile SQL tool](images/02-agent-flows-sql3-configured-live.png " ")
+    ![AI Tool Definition fields for Get supplier profile](images/02-agent-flows-sql3-tool-definition-live.png " ")
 
 7. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
 

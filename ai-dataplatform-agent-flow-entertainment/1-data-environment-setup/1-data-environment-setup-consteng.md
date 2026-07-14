@@ -242,9 +242,11 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
 
 8. Select the **`ce_volume`** volume and leave advanced settings as-is.
 
+    ![Select ce_volume as the knowledge base data source](images/01-catalog-kbase-add-datasource-consteng.png " ")
+
 9. Click **Add**.
 
-    ![Add data source to knowledge base](images/01-catalog-kbase-add-datasource-consteng.png " ")
+    ![Add data source to knowledge base](images/01-catalog-kbase-add-button-consteng.png " ")
 
 10. Navigate to the **History** tab of your Knowledge Base. You should see a line entry with the operation name **"Update Knowledge Base"**. This step ingests the documents - chunking them, generating embeddings, and indexing the vectors.
 
