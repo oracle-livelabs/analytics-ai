@@ -1,0 +1,35 @@
+{
+  "workshoptitle": "Unify the Data Layer with Oracle Autonomous AI Lakehouse",
+  "description": "Explore how Oracle Autonomous AI Lakehouse unifies relational data, source-system extracts, and unstructured project documents in a governed medallion architecture. Link an Object Storage CSV as a Bronze external table, use Data Studio Catalog to explore and trace the medallion layers, transform Bronze data into a Silver demonstration view, retrieve engineering context with vector search, and prepare trusted data products for applications and AI agents.",
+  "help": "livelabs-help-analytics_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Workshop Introduction and Overview",
+      "filename": "../../0-intro-and-overview/workshop-intro-and-overview.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Lab 1: Explore the Unified Lakehouse Foundation",
+      "filename": "../../1-unified-lakehouse-foundation/1-unified-lakehouse-foundation.md"
+    },
+    {
+      "title": "Lab 2: Unify Data for AI Applications",
+      "filename": "../../2-unify-data-for-ai/2-unify-data-for-ai.md"
+    },
+    {
+      "title": "Lab 3: Deliver Trusted Data Products",
+      "filename": "../../3-trusted-data-products/3-trusted-data-products.md"
+    },
+    {
+      "title": "Workshop Recap",
+      "filename": "../../99-workshop-recap/workshop-recap.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
