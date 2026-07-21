@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The agent is built - now it is time to see it in action. In this lab, you will use the Agent Flow Playground to test the Construction Engineering Supplier Evaluation Agent with realistic questions that span project context, supplier profile evidence, procurement guidance, compliance requirements, and supplier recommendation decisions.
+The agent is built - now it is time to see it in action. In this lab, you will use the Agent Flow Playground to test the Construction Procurement Evaluation Agent with realistic questions that span project context, supplier profile evidence, procurement guidance, compliance requirements, and supplier recommendation decisions.
 
 Each test is designed to exercise a different combination of the agent's tools: SQL for governed project and supplier facts, RAG for internal policy guidance, and both together when the agent needs to turn evidence into a recommendation.
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 
 * Completed Lab 2.
 * The agent flow attached to an active AI Compute.
-* A Chat Trigger, one RAG tool, and three SQL tools configured and connected to the agent node.
+* A Chat Trigger, one RAG tool, and three SQL tools configured and connected to the Executor Agent node.
 
 ## Task 1: Open the Playground
 
@@ -125,7 +125,7 @@ Before moving on, take a moment to consider what the agent demonstrated across t
 
 ## Lab 3 Recap
 
-In this lab, you validated the Construction Engineering Supplier Evaluation Agent across realistic supplier and project scenarios:
+In this lab, you validated the Construction Procurement Evaluation Agent across realistic supplier and project scenarios:
 
 * Supplier approval recommendations supported by structured evidence
 * Supplier certification and performance profile lookup

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-With the data environment in place - a Knowledge Base for RAG and Oracle AI Database tables for SQL - it's time to build the construction engineering analyst agent. In this lab, you'll use the AI Compute from Lab 1, design the agent flow on the visual canvas, configure the agent node with detailed instructions, and wire up the tools: one RAG tool connected to the Knowledge Base and three SQL tools that query project and supplier data.
+With the data environment in place - a Knowledge Base for RAG and Oracle AI Database tables for SQL - it's time to build the construction procurement evaluation agent. In this lab, you'll use the AI Compute from Lab 1, design the agent flow on the visual canvas, configure the Executor Agent node with detailed instructions, and wire up the tools: one RAG tool connected to the Knowledge Base and three SQL tools that query project and supplier data.
 
-By the end of this lab, you'll have a fully configured Construction Engineering Supplier Evaluation Agent ready for testing.
+By the end of this lab, you'll have a fully configured Construction Procurement Evaluation Agent ready for testing.
 
 **Estimated Time:** 25 Minutes
 
@@ -13,10 +13,10 @@ By the end of this lab, you'll have a fully configured Construction Engineering 
 In this lab you will:
 
 1. Create an agent flow and attach it to the AI Compute instance.
-2. Configure the agent node with a model and detailed agent instructions.
+2. Configure the Executor Agent node with a model and detailed agent instructions.
 3. Add a RAG tool connected to the Knowledge Base you created in Lab 1.
 4. Add three SQL tools for project context, supplier recommendations, and supplier profiles.
-5. Connect all tools to the agent node.
+5. Connect all tools to the Executor Agent node.
 
 ### Prerequisites
 
@@ -30,11 +30,15 @@ This lab assumes you have:
 
 ## Task 1: Create the Agent Project
 
-1. Navigate to your workspace and click **Agents**. Click the **+** icon to create a new agent project.
+1. Navigate to your workspace and click **Agent flows**. In some Workbench views, this area may be labeled **Agents**.
+
+    ![Agent flows navigation item](images/02-agent-flows-nav-agent-flows-consteng.png " ")
+
+2. Click the **+** icon to create a new agent project.
 
     ![Agents landing page with Create action](images/02-agent-flows-landing-create-live.png " ")
 
-2. Enter a name and description:
+3. Enter a name and description:
 
     **Name**
     ```
@@ -46,29 +50,33 @@ This lab assumes you have:
     **Description**
     ```
     <copy>
-    Internal analytics and decision-support agent for construction engineering supplier evaluation.
+    Internal analytics and decision-support agent for construction procurement evaluation.
     </copy>
     ```
 
-3. If the dialog includes an **AI Compute** field, select **`ce_compute`**. If the field is not shown, you can attach compute from the agent flow page after creation.
+4. If the dialog includes an **AI Compute** field, open the drop-down and select **`ce_compute`**. If the field is not shown, you can attach compute from the agent flow page after creation.
 
     ![Create dialog for new Agent project](images/02-agent-flows-create-dialog-filled-consteng-live.png " ")
 
-4. Click **Create**. The agent project canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right.
+5. Click **Create**. The agent project canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right. If compute was not attached during creation, use the **Compute** menu in the upper right, select **Attach to AI Compute**, and choose **`ce_compute`**.
 
     ![Blank agent project canvas with ce_compute attached](images/02-agent-flows-blank-canvas-consteng-live.png " ")
 
-## Task 2: Add the Chat Trigger and Configure the Agent Node
+    ![Select ce_compute from the Compute menu](images/02-agent-flows-attach-compute-blank-consteng.png " ")
 
-The Chat Trigger is the entry point for Playground and deployed conversations. The agent node is the core of your flow. It defines the LLM model, the system instructions that govern the agent's behavior, and the reasoning approach.
+## Task 2: Add the Chat Trigger and Configure the Executor Agent Node
 
-1. Drag a **Chat Trigger** onto the canvas. Place it to the left of where the agent node will sit.
+The Chat Trigger is the entry point for Playground and deployed conversations. The Executor Agent node is the core of your flow. It defines the LLM model, the system instructions that govern the agent's behavior, and the reasoning approach.
 
-2. Drag an **Agent node** onto the canvas, then connect the Chat Trigger to the agent. Drag from the Chat Trigger connector to the agent node and release the line on the agent.
+1. Drag a **Chat Trigger** onto the canvas. Place it to the left of where the Executor Agent node will sit.
 
-    ![Chat Trigger connected to the Agent node](images/02-agent-flows-chat-trigger-agent-connected-live.png " ")
+2. Drag an **Executor Agent** node onto the canvas, then connect the Chat Trigger to the agent. Drag from the Chat Trigger connector to the Executor Agent node and release the line on the agent.
 
-3. Click the agent entity frame and edit the agent name and description.
+    ![Chat Trigger connected to the Executor Agent node](images/02-agent-flows-chat-trigger-agent-connected-live.png " ")
+
+    ![Animated example showing how to connect nodes and tools](images/02-agent-flows-connect-tools-consteng.gif " ")
+
+3. Click the Executor Agent entity frame and edit the agent name and description.
 
 
     **Name**
@@ -81,21 +89,21 @@ The Chat Trigger is the entry point for Playground and deployed conversations. T
     **Description**
     ```
     <copy>
-    Internal analytics and decision-support agent for construction engineering supplier evaluation.
+    Internal analytics and decision-support agent for construction procurement evaluation.
     </copy>
     ```
 
 4. In the **Configuration** tab, select the region corresponding to the **Generative AI Endpoint Region** in **View Login Info**.
 
-    > **Note:** The screenshots in this workshop use **US East (Ashburn) (`us-ashburn-1`)**. If your reservation shows a different Generative AI Endpoint Region, use the region assigned to your environment.
+    > **Note:** The screenshots in this workshop use **US East (Ashburn) (`us-ashburn-1`)**. If your reservation shows a different Generative AI Endpoint Region, use the region assigned to your environment. If your assigned region shows no available models, switch to another available North American region such as **US East (Ashburn)** and select an available reasoning model.
 
 5. Select `xai.grok-4.20-reasoning`.
 
-    > **Note:** Model availability can vary by reservation. If `xai.grok-4.20-reasoning` is not available, select another available Grok 4 reasoning model.
+    > **Note:** Model availability can vary by reservation. If `xai.grok-4.20-reasoning` is not available, select another available Grok 4 reasoning model in the selected region. Some reservations, including Montreal-based reservations, may temporarily show no models in the configured Generative AI Endpoint Region; use Ashburn or another available North American region as the workaround.
 
 6. For the **Agent Instructions** field, copy the following instructions. You can also download them from [agent_instructions.txt](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/agent_instructions.txt). These detailed instructions define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:
 
-    * Its role as an internal analytics and decision-support agent for construction engineering procurement teams.
+    * Its role as an internal analytics and decision-support agent for construction procurement teams.
     * When to use RAG vs. SQL tools.
     * The reasoning sequence: classify the question -> retrieve knowledge -> query data -> synthesize -> respond.
     * Response style guidelines: concise, analytical, structured, and grounded in retrieved evidence.
@@ -184,7 +192,7 @@ The Chat Trigger is the entry point for Playground and deployed conversations. T
     </copy>
     ```
 
-7. Leave **Model Parameters** and **Safety Guardrails** as-is.
+7. Leave **Model Parameters**, **Safety Guardrails**, and **Memory** as-is.
 
     ![Configured Construction Evaluation Agent node](images/02-agent-flows-agent-configured-live.png " ")
 
@@ -198,8 +206,6 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
 
     ![Agent canvas with unnamed RAG tool added](images/02-agent-flows-rag-added-live.png " ")
 
-    ![Animated example showing how to connect tools to the agent](images/02-agent-flows-connect-tools-consteng.gif " ")
-
 2. Enter a name:
 
     **Name**
@@ -209,7 +215,7 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
     </copy>
     ```
 
-3. In the **Configuration** tab, set **Region** to the same Generative AI Endpoint Region you selected for the agent node. For **Model**, select the available retrieval or embedding model shown for your reservation. If AIDP has already populated Region and Model after you select the Knowledge Base, leave those defaults in place.
+3. In the **Configuration** tab, set **Region** to the same region you selected for the Executor Agent node. For **Model**, select `xai.grok-4.20-reasoning` if it is available. If AIDP has already populated Region and Model after you select the Knowledge Base, leave those defaults in place.
 
 4. Select the Knowledge Base you created in Lab 1: `ce_std_catalog.default.ce_kb`.
 
@@ -241,7 +247,9 @@ Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, param
 
 For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use the generated **`vector_db_...`** external catalog from Lab 1 -> **`CONSTRUCTION_ENGINEERING`**.
 
-> **Important:** The agent flow canvas does not automatically attach a new tool to the agent. After you add each SQL tool, hover near the **Tools (#)** label below the agent node until a small circular connector appears. Click the circle, drag the line to the new SQL tool, and release the line on the tool node. The tool count increments when the connection succeeds.
+> **Important:** The agent flow canvas does not automatically attach a new tool to the agent. After you add each SQL tool, hover near the **Tools (#)** label below the Executor Agent node until a small circular connector appears. Click the circle, drag the line to the new SQL tool, and release the line on the tool node. The tool count increments when the connection succeeds.
+
+> **Note:** Leave **Oracle SQL** selected as the tool type for every SQL tool in this task.
 
 ### Tool 1: Get project context
 
@@ -330,11 +338,13 @@ This tool returns project requirements, project summary, evaluation status, supp
 
     ![AI Tool Definition fields for Get project context](images/02-agent-flows-sql1-tool-definition-live.png " ")
 
+7. Close the current SQL tool configuration window before adding the next SQL tool.
+
 ### Tool 2: Get supplier recommendations
 
 This tool returns recommended suppliers and their fit/risk explanations for a project.
 
-1. Drag a **SQL tool** onto the canvas.
+1. Drag a **SQL tool** onto the canvas. Leave **Oracle SQL** selected as the tool type.
 
 2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
@@ -402,11 +412,13 @@ This tool returns recommended suppliers and their fit/risk explanations for a pr
 
     ![AI Tool Definition fields for Get supplier recommendations](images/02-agent-flows-sql2-tool-definition-live.png " ")
 
+7. Close the current SQL tool configuration window before adding the next SQL tool.
+
 ### Tool 3: Get supplier profile
 
 This tool returns supplier profile, certifications, and performance history for a supplier name or partial name.
 
-1. Drag a **SQL tool** onto the canvas.
+1. Drag a **SQL tool** onto the canvas. Leave **Oracle SQL** selected as the tool type.
 
 2. Connect the SQL tool to the agent using the same **Tools (#)** connector gesture.
 
@@ -474,17 +486,19 @@ This tool returns supplier profile, certifications, and performance history for 
 
     ![AI Tool Definition fields for Get supplier profile](images/02-agent-flows-sql3-tool-definition-live.png " ")
 
-7. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
+7. Close the SQL tool configuration window.
 
-    ![Completed Construction Engineering Supplier Evaluation Agent flow](images/02-agent-flows-completed-canvas-with-trigger-live.png " ")
+8. The completed canvas should show the agent connected to one RAG tool and three SQL tools.
+
+    ![Completed Construction Procurement Evaluation Agent flow](images/02-agent-flows-completed-canvas-with-trigger-live.png " ")
 
 ## Lab 2 Recap
 
-In this lab, you built the complete agent flow for the Construction Engineering Supplier Evaluation Agent:
+In this lab, you built the complete agent flow for the Construction Procurement Evaluation Agent:
 
 - You created the **agent flow** on the visual canvas and attached it to the AI Compute `ce_compute`.
 - You added a **Chat Trigger** and connected it to the agent so conversations can start from Playground or the deployed endpoint.
-- You configured the **agent node** with the `xai.grok-4.20-reasoning` model, or another available reasoning model, and detailed instructions that define the agent's reasoning flow, response style, and behavioral guardrails.
+- You configured the **Executor Agent node** with the `xai.grok-4.20-reasoning` model, or another available reasoning model, and detailed instructions that define the agent's reasoning flow, response style, and behavioral guardrails.
 - You added a **RAG tool** connected to the Knowledge Base containing construction evaluation guidance files, and set the retrieval limit to 3 documents.
 - You added **three SQL tools** covering project context, supplier recommendations, and supplier profiles.
 - You connected the RAG and SQL tools to the agent so the Playground can invoke them.

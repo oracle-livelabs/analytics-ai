@@ -8,18 +8,18 @@ The typical response is to move between spreadsheets, document repositories, sup
 
 Oracle AI Data Platform addresses this by unifying data lakehouse, AI/ML, analytics, generative AI, and governance into a single environment on Oracle Cloud Infrastructure. The platform gives teams governed access to structured data and unstructured documents, then lets them build AI agents that can retrieve policy guidance and query database facts in the same natural language flow.
 
-In this workshop, you will build a construction engineering analyst agent that combines RAG and SQL. The agent will retrieve internal procurement and compliance guidance, query supplier and project data, and produce grounded recommendations for supplier approval, request-info follow-up, denial, or RFP escalation.
+In this workshop, you will build a construction procurement evaluation agent that combines RAG and SQL. The agent will retrieve internal procurement and compliance guidance, query supplier and project data, and produce grounded recommendations for supplier approval, request-info follow-up, denial, or RFP escalation.
 
 
 ### Reference Architecture
 
-The diagram below shows the high-level flow this workshop implements: users ask a natural language question, the agent uses OCI Generative AI for response generation and embeddings, Oracle AI Database stores recommendations and vector embeddings, and RAG retrieves the most relevant context before the final answer is produced.
+The diagram below shows the high-level flow this workshop implements. Users ask a natural language question in the agent interface. The agent uses Oracle AI Data Platform to decide whether the question needs policy context from the Knowledge Base, structured facts from Oracle AI Database, or both. OCI Generative AI provides the chat model and embedding model used for response generation and semantic search. Oracle AI Database stores the construction project and supplier tables, while the Knowledge Base indexes internal procurement, compliance, and technical addendum documents for RAG. The final response combines retrieved document context and SQL results into a grounded supplier evaluation recommendation.
 
 ![RAG and vector search reference architecture](images/00-rag-vector-flow-consteng.png " ")
 
 ### What You'll Build
 
-Over the course of this workshop, you will design, configure, test, and deploy a **Construction Engineering Supplier Evaluation Agent**. The agent answers natural language questions about project requirements, supplier fit, compliance blockers, missing documentation, and recommended next actions by combining two capabilities:
+Over the course of this workshop, you will design, configure, test, and deploy a **Construction Procurement Evaluation Agent**. The agent answers natural language questions about project requirements, supplier fit, compliance blockers, missing documentation, and recommended next actions by combining two capabilities:
 
 - **RAG (Retrieval-Augmented Generation)** over internal supplier evaluation playbooks, compliance guidelines, and technical addendum procedures.
 - **SQL tools** that execute parameterized queries against an Oracle AI Database containing construction projects, requirements, suppliers, certifications, performance history, recommendations, supporting documents, and decision records.
@@ -63,7 +63,7 @@ By the end of this workshop, you will be able to:
 3. Build an agent flow with a foundation model, detailed agent instructions, one RAG tool, and SQL tools.
 4. Test an AI agent that combines internal policy guidance with structured supplier and project data.
 5. Deploy an agent flow to a production REST endpoint.
-6. Articulate how this pattern improves construction engineering supplier evaluation, risk triage, and documentation follow-up.
+6. Articulate how this pattern improves construction procurement evaluation, risk triage, and documentation follow-up.
 
 ## Learn More
 
