@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You have built and validated the Construction Engineering Supplier Evaluation Agent. The final step is to deploy it to a production endpoint so it can be accessed by applications, integrations, and users beyond the Playground.
+You have built and validated the Construction Procurement Evaluation Agent. The final step is to deploy it to a production endpoint so it can be accessed by applications, integrations, and users beyond the Playground.
 
 Deployment transforms the agent from a development artifact into a live service that project management, procurement, quality, and executive teams can access through internal tools, dashboards, or custom applications.
 
@@ -74,7 +74,7 @@ In this lab, you completed the final step of the end-to-end agent development li
 - You **retrieved the endpoint URL** that applications and integrations use to communicate with the agent.
 - You **understand the REST API model** for consuming the agent, including authentication, message format, conversational context, and integration options.
 
-The Construction Engineering Supplier Evaluation Agent is now a production-ready service that can support governed project and supplier decisions across your organization.
+The Construction Procurement Evaluation Agent is now a production-ready service that can support governed project and supplier decisions across your organization.
 
 ## Acknowledgements
 

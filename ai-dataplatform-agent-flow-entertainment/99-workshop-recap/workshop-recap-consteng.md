@@ -8,7 +8,7 @@ Over the course of this workshop, you went from a blank canvas to a production-d
 
 ### Objectives - What You Built
 
-In four labs, you designed, configured, tested, and deployed a **Construction Engineering Supplier Evaluation Agent**. The agent answers natural language questions about supplier fit, project requirements, missing documentation, compliance blockers, and recommended next actions by combining:
+In four labs, you designed, configured, tested, and deployed a **Construction Procurement Evaluation Agent**. The agent answers natural language questions about supplier fit, project requirements, missing documentation, compliance blockers, and recommended next actions by combining:
 
 - **RAG** over construction supplier evaluation, compliance, certification, and technical addendum guidance.
 - **SQL tools** over governed Oracle AI Database tables containing projects, requirements, suppliers, certifications, performance history, recommendations, supporting documents, and decision records.
@@ -33,7 +33,7 @@ You prepared the data assets that power the agent:
 
 You built the agent on the visual canvas:
 
-- Created the agent flow and configured the agent node.
+- Created the agent flow and configured the Executor Agent node.
 - Added a RAG tool connected to the Knowledge Base.
 - Added three SQL tools for project context, supplier recommendations, and supplier profile.
 

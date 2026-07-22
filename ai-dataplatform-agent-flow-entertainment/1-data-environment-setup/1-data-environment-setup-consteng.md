@@ -71,7 +71,7 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
     **Description**
     ```
     <copy>
-    AI Compute for the Construction Engineering Supplier Evaluation Agent
+    AI Compute for the Construction Procurement Evaluation Agent
     </copy>
     ```
 
@@ -120,9 +120,11 @@ A standard catalog in AIDP stores AI-related artifacts - volumes, tables, schema
     **Description**
     ```
     <copy>
-    A catalog that stores assets needed by the construction engineering supplier evaluation agent.
+    A catalog that stores assets needed by the construction procurement evaluation agent.
     </copy>
     ```
+
+    Leave the **Compartment** field blank unless your instructor directs you to choose a specific compartment. The catalog will be created in the current AIDP Workbench context.
 
 3. Click **Create**.
 
@@ -162,7 +164,7 @@ These are the documents that the AI agent will search via RAG when users ask que
 
 5. Provide a name and description:
 
-    **Name**
+    **Volume name**
     ```
     <copy>
     ce_volume
@@ -190,9 +192,15 @@ These are the documents that the AI agent will search via RAG when users ask que
 
 9. Upload the three `.docx` files from the zip archive.
 
+    > **Important:** Do not upload `kb_documents.zip` directly. Extract the ZIP file first, then upload the three individual `.docx` files. Uploading the ZIP file prevents the Knowledge Base from indexing the documents correctly and can cause RAG responses to fail later in the workshop.
+
     ![Upload files interface](images/01-catalog-volume-upload-files-consteng.png " ")
 
-10. Click **Upload**, then confirm the files appear in the volume.
+10. After the three `.docx` files appear in the upload dialog, click **Upload**.
+
+    ![Selected files ready to upload](images/01-catalog-volume-upload-files-selected-consteng.png " ")
+
+11. Confirm the files appear in the volume.
 
     ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete-consteng.png " ")
 
@@ -224,7 +232,7 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
     **Description**
     ```
     <copy>
-    Knowledge base for construction engineering supplier evaluation policy, compliance, and technical addendum guidance.
+    Knowledge base for construction procurement evaluation policy, compliance, and technical addendum guidance.
     </copy>
     ```
 
@@ -260,6 +268,8 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
 
 The agent's SQL tools query structured data from an Oracle AI Database. For this workshop, the database has already been provisioned and loaded with construction engineering project and supplier data.
 
+This task is optional and is primarily a data-validation checkpoint. Screenshots are intentionally minimal because the exact Autonomous AI Database console layout can vary by tenancy, region, and browser session.
+
 1. When you opened AIDP Workbench earlier, it opened in a new browser tab. Locate and select the browser tab or window that still contains the OCI Console.
 
 2. Use the navigation menu to open the Autonomous AI Database Console.
@@ -272,7 +282,11 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
 5. When the page loads, click **Database actions** and select **SQL**. This opens SQL Worksheet in a new browser tab.
 
+    ![ADB Database Actions Menu](images/01-adb-db-actions.png " ")
+
 6. In the Navigator on the left, click the schema drop-down and locate the **CONSTRUCTION_ENGINEERING** schema.
+
+    ![ADB SQL Workbench - select schema](images/01-adb-select-schema.png " ")
 
     You should see the following tables populate below.
 
@@ -296,7 +310,12 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
     </copy>
     ```
 
+
+    ![ADB SQL Workbench - paste & run query](images/01-adb-paste-query.png " ")
+
 8. The query result should show projects such as **Downtown Mixed-Use Tower**, **Harbor Seismic Retrofit**, and **North Campus Lab Expansion**.
+
+    ![ADB SQL Workbench - query output](images/01-adb-query-output.png " ")
 
 9. These tables represent the **gold layer** of the medallion architecture - curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer questions about project requirements, supplier fit, missing documentation, evaluation status, and decision recommendations.
 
@@ -308,7 +327,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
 ## Lab 1 Recap
 
-In this lab, you set up the complete data environment for the Construction Engineering Supplier Evaluation Agent:
+In this lab, you set up the complete data environment for the Construction Procurement Evaluation Agent:
 
 - You created an **AI Compute** to host and execute the agent flow.
 - You verified the generated **`vector_db_...`** external catalog connected to the Autonomous AI Lakehouse database.
@@ -316,7 +335,7 @@ In this lab, you set up the complete data environment for the Construction Engin
 - You created a **Knowledge Base** (`ce_kb`), populated it with files from the volume, and verified that the ingestion succeeded. This enables RAG - the agent can now search your internal documents by semantic meaning.
 - You verified the **Oracle AI Database tables** containing construction engineering project, supplier, certification, performance, recommendation, and decision data. These power the agent's SQL tools.
 
-In the next lab, you'll create the agent flow itself - building the agent node and wiring up the RAG and SQL tools.
+In the next lab, you'll create the agent flow itself - building the Executor Agent node and wiring up the RAG and SQL tools.
 
 ## Acknowledgements
 
