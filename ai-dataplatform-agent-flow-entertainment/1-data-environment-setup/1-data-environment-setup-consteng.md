@@ -61,7 +61,7 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
 9. Enter a name and description:
 
-    **Cluster name**
+    **Name**
     ```
     <copy>
     ce_compute
@@ -282,7 +282,11 @@ This task is optional and is primarily a data-validation checkpoint. Screenshots
 
 5. When the page loads, click **Database actions** and select **SQL**. This opens SQL Worksheet in a new browser tab.
 
+    ![ADB Database Actions Menu](images/01-adb-db-actions.png " ")
+
 6. In the Navigator on the left, click the schema drop-down and locate the **CONSTRUCTION_ENGINEERING** schema.
+
+    ![ADB SQL Workbench - select schema](images/01-adb-select-schema.png " ")
 
     You should see the following tables populate below.
 
@@ -306,7 +310,12 @@ This task is optional and is primarily a data-validation checkpoint. Screenshots
     </copy>
     ```
 
+
+    ![ADB SQL Workbench - paste & run query](images/01-adb-paste-query.png " ")
+
 8. The query result should show projects such as **Downtown Mixed-Use Tower**, **Harbor Seismic Retrofit**, and **North Campus Lab Expansion**.
+
+    ![ADB SQL Workbench - query output](images/01-adb-query-output.png " ")
 
 9. These tables represent the **gold layer** of the medallion architecture - curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer questions about project requirements, supplier fit, missing documentation, evaluation status, and decision recommendations.
 

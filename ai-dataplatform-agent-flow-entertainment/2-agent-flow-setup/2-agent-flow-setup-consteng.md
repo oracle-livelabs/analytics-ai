@@ -30,7 +30,7 @@ This lab assumes you have:
 
 ## Task 1: Create the Agent Project
 
-1. Navigate to your workspace and click **Agent flows**. In some Workbench views, this area may be labeled **Agents**.
+1. Navigate to your workspace and click **Agents**. 
 
     ![Agent flows navigation item](images/02-agent-flows-nav-agent-flows-consteng.png " ")
 
@@ -56,11 +56,16 @@ This lab assumes you have:
 
 4. If the dialog includes an **AI Compute** field, open the drop-down and select **`ce_compute`**. If the field is not shown, you can attach compute from the agent flow page after creation.
 
+    ![Create dialog for new Agent project - animated gif](images/02-agent-flows-create-dialog-filled-consteng-animated.gif " ")
+
     ![Create dialog for new Agent project](images/02-agent-flows-create-dialog-filled-consteng-live.png " ")
 
-5. Click **Create**. The agent project canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right. If compute was not attached during creation, use the **Compute** menu in the upper right, select **Attach to AI Compute**, and choose **`ce_compute`**.
+5. Click **Create**. The agent project canvas opens with **AI Compute: ce_compute (ACTIVE)** shown in the upper right.
 
-    ![Blank agent project canvas with ce_compute attached](images/02-agent-flows-blank-canvas-consteng-live.png " ")
+    ![Agent canvas with AI Compute active](images/02-agent-flow-agent-added-compute-active.png " ")
+
+
+6. If compute was not attached during creation, use the **Compute** menu in the upper right, select **Attach to AI Compute**, and choose **`ce_compute`**.
 
     ![Select ce_compute from the Compute menu](images/02-agent-flows-attach-compute-blank-consteng.png " ")
 
@@ -95,7 +100,7 @@ The Chat Trigger is the entry point for Playground and deployed conversations. T
 
 4. In the **Configuration** tab, select the region corresponding to the **Generative AI Endpoint Region** in **View Login Info**.
 
-    > **Note:** The screenshots in this workshop use **US East (Ashburn) (`us-ashburn-1`)**. If your reservation shows a different Generative AI Endpoint Region, use the region assigned to your environment. If your assigned region shows no available models, switch to another available North American region such as **US East (Ashburn)** and select an available reasoning model.
+    > **Note:** The screenshots in this workshop use **US East (Ashburn) (`us-ashburn-1`)**. If your reservation shows a different Generative AI Endpoint Region, use the region assigned to your environment. If your assigned region shows no available models, switch to another available North American region such as **US East (Ashburn)** or **US Central (Chicago)** and select an available reasoning model.
 
 5. Select `xai.grok-4.20-reasoning`.
 
@@ -248,6 +253,7 @@ Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, param
 For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use the generated **`vector_db_...`** external catalog from Lab 1 -> **`CONSTRUCTION_ENGINEERING`**.
 
 > **Important:** The agent flow canvas does not automatically attach a new tool to the agent. After you add each SQL tool, hover near the **Tools (#)** label below the Executor Agent node until a small circular connector appears. Click the circle, drag the line to the new SQL tool, and release the line on the tool node. The tool count increments when the connection succeeds.
+
 
 > **Note:** Leave **Oracle SQL** selected as the tool type for every SQL tool in this task.
 
