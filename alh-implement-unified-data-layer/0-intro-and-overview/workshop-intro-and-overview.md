@@ -45,25 +45,7 @@ The enterprise-system feeds in this workshop are realistic source extracts, not 
 
 ## Reference architecture
 
-The workshop follows this data journey:
-
-```text
-<copy>
-Representative enterprise extracts       Contracts and engineering documents
-                  \                         /
-                   Catalog, metadata, and governed ingestion
-                                   |
-                  Bronze: faithful source capture
-                                   |
-               Silver: standardize and reconcile
-                                   |
-             Gold: trusted, consumer-ready products
-                                   |
- SQL | JSON | Relationship projection | Vector | RAG consumers
-                                   |
-           Applications and Construction Evaluation Agent
-</copy>
-```
+![Reference architecture for the Unified Data Layer workshop](images/reference-architecture.png "Enterprise sources flow through OCI Object Storage, the Bronze-Silver-Gold medallion layers, and governed AI context in Oracle Autonomous AI Lakehouse.")
 
 A shared business vocabulary provides consistent meaning across the source estate. The medallion architecture turns that meaning into a governed data implementation that applications and AI systems can reliably consume.
 
