@@ -13,7 +13,7 @@ The relationship projection, chunks, embeddings, and vector index were built ins
 In this lab, you will:
 
 - Use Data Studio Catalog to inspect the Gold products intended for applications and agents.
-- Compare relational, JSON, relationship, and vector representations.
+- Compare relational, JSON, relationship-projection, and vector representations.
 - Review how project documents were prepared for semantic retrieval.
 - Run a vector search for Austin structural specifications.
 - Combine retrieved evidence with structured project context and provenance.
@@ -90,7 +90,7 @@ Oracle Database can project the same governed entities through several data mode
     </copy>
     ```
 
-4. These relationships can be projected as a property graph for application queries. This workshop uses a prepared relationship view so the focus remains on data-engineering intent rather than graph-definition syntax.
+4. This workshop uses a prepared relationship projection so the focus remains on data-engineering intent rather than graph-definition syntax. The projection exposes connected business context without requiring a property-graph definition activity.
 
 ## Task 3: Inspect the document preparation pipeline
 
@@ -239,7 +239,7 @@ Oracle Database can project the same governed entities through several data mode
 In this lab, you:
 
 - Used Data Studio Catalog to explore application-ready products and document metadata.
-- Compared relational, JSON, relationship, and vector representations.
+- Compared relational, JSON, relationship-projection, and vector representations.
 - Reviewed the prebuilt document-processing pipeline.
 - Retrieved Austin engineering evidence by semantic meaning.
 - Combined the evidence with structured project context and provenance.

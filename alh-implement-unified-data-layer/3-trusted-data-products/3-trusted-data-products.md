@@ -4,7 +4,7 @@
 
 Reliable applications need more than a successful query. They need named products with clear owners, stable contracts, quality expectations, refresh schedules, lineage, and access controls. In this lab, Alex performs a final readiness review before Seer's data is handed to application developers and the team building the Construction Evaluation Agent.
 
-You will inspect ALH transformation options and prebuilt pipeline evidence, then run short validation queries. You will not start a long ingestion or medallion rebuild. The workshop setup records selected SQL, Data Transforms, and database-job outcomes in `SEER_GOLD` audit tables so you can review the complete pipeline consistently; those audit tables are workshop assets, not built-in Oracle dictionary views.
+You will inspect ALH transformation options and prepared workshop pipeline evidence, then run short validation queries. You will not start a long ingestion or medallion rebuild. The workshop setup records selected SQL, Data Transforms, and database-job outcomes in `SEER_GOLD` audit tables so you can review the complete pipeline consistently; `PIPELINE_RUN_SUMMARY`, `PIPELINE_RUN_EVENTS`, and `AI_READINESS_ASSESSMENT` are workshop assets, not built-in Oracle dictionary views.
 
 **Estimated Time:** 20 minutes
 
@@ -30,11 +30,11 @@ ALH can implement transformation logic with SQL, visual Data Transforms data flo
 
 1. In Database Actions, select **Data Studio**, and review the available **Data Transforms** capability. Data Transforms is the visual option for building reusable data flows and workflows in ALH.
 
-2. Do not create or run a project in this workshop. The environment intentionally seeds the resulting pipeline evidence so the activity remains predictable and fast. In the next steps, you will inspect that evidence in SQL.
+2. Do not create or run a Data Transforms project in this workshop. The environment intentionally seeds the resulting workshop pipeline evidence so the activity remains predictable and fast. In the next steps, you will inspect that evidence in SQL.
 
-3. Locate the prepared Bronze-to-Silver and Silver-to-Gold flows. Identify where the design performs mappings, filters, joins, expressions, and target writes.
+3. Inspect the prepared Bronze-to-Silver and Silver-to-Gold flow evidence. Identify where the design performs mappings, filters, joins, expressions, and target writes. You only inspect the prepared flows and their recorded outcomes; you do not create, edit, or run a Data Transforms flow in this workshop.
 
-4. Return to the SQL worksheet and review the latest ALH pipeline executions recorded by the workshop setup:
+4. Return to the SQL worksheet and review the latest pipeline executions recorded in the workshop-created `SEER_GOLD.PIPELINE_RUN_SUMMARY` audit table:
 
     ```sql
     <copy>
@@ -60,7 +60,7 @@ ALH can implement transformation logic with SQL, visual Data Transforms data flo
     - Publishing Gold products
     - Refreshing chunks, embeddings, and vector indexes
 
-6. Inspect failures or warnings without rerunning the pipeline:
+6. Inspect failures or warnings in the workshop-created `SEER_GOLD.PIPELINE_RUN_EVENTS` audit table without rerunning the pipeline:
 
     ```sql
     <copy>
@@ -179,7 +179,7 @@ The next workshops begin where this one ends.
 | `SEER_GOLD.SUPPLIER_PROFILE` | SQL tool `get_supplier_profile` |
 | Governed contracts and policy documents | Construction-policy RAG knowledge base |
 | `DOCUMENT_CHUNKS` and vector index | Semantic and hybrid retrieval |
-| Asset and supplier relationships | Graph or relationship-aware application queries |
+| Asset and supplier relationships | Relationship-aware application queries |
 | Quality, lineage, and classifications | Trust, audit, and access enforcement |
 
 1. Review the consumer mapping stored in the environment:
@@ -222,7 +222,7 @@ Use the following checklist for each product intended for an AI application or a
 | Can consumers tolerate contract changes? | Contract version and change policy |
 | Is an accountable owner named? | Product catalog ownership |
 
-1. Review the environment's consolidated assessment:
+1. Review the environment's consolidated assessment in the workshop-created `SEER_GOLD.AI_READINESS_ASSESSMENT` table:
 
     ```sql
     <copy>
