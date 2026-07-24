@@ -19,7 +19,7 @@ In this workshop, you will:
 - Link an Object Storage CSV as a Bronze external table through the Data Studio interface.
 - Standardize the linked supplier data into a Silver demonstration view while retaining source-system and ingestion-batch context and verifying Object Storage lineage.
 - Trace a shared construction business object across simulated source feeds.
-- Explore relational, JSON, graph, document, and vector representations of project data.
+- Explore relational, JSON, relationship-projection, document, and vector representations of project data.
 - Retrieve an engineering specification by meaning and combine it with structured context.
 - Evaluate whether governed data products are ready for developers and AI agents.
 
@@ -45,25 +45,7 @@ The enterprise-system feeds in this workshop are realistic source extracts, not 
 
 ## Reference architecture
 
-The workshop follows this data journey:
-
-```text
-<copy>
-Representative enterprise extracts       Contracts and engineering documents
-                  \                         /
-                   Catalog, metadata, and governed ingestion
-                                   |
-                  Bronze: faithful source capture
-                                   |
-               Silver: standardize and reconcile
-                                   |
-             Gold: trusted, consumer-ready products
-                                   |
-           SQL | JSON | Graph | Vector | RAG consumers
-                                   |
-           Applications and Construction Evaluation Agent
-</copy>
-```
+![Reference architecture for the Unified Data Layer workshop](images/reference-architecture.png "Enterprise sources flow through OCI Object Storage, the Bronze-Silver-Gold medallion layers, and governed AI context in Oracle Autonomous AI Lakehouse.")
 
 A shared business vocabulary provides consistent meaning across the source estate. The medallion architecture turns that meaning into a governed data implementation that applications and AI systems can reliably consume.
 
@@ -103,9 +85,9 @@ The ALH workshop setup process has already:
 - Created Gold project and supplier products inside ALH.
 - Parsed and chunked selected documents inside the database environment.
 - Generated embeddings and created a vector index in ALH.
-- Created sample lineage, quality, and ALH pipeline-execution records.
+- Created workshop audit tables for lineage, quality, and pipeline-execution evidence; these are workshop assets, not built-in Oracle dictionary views.
 
-You will inspect and validate these assets. You will not run the long medallion build notebooks during the workshop.
+You will inspect and validate these assets. You will not run the complete seeded medallion pipelines during the workshop.
 
 ## Workshop flow
 
