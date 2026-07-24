@@ -254,6 +254,8 @@ This task has three parts:
 
 2. Review the results. Notice differences such as extra spaces, abbreviations, inconsistent capitalization, multiple status codes, different location formats, and missing certifications. Bronze preserves these values as they arrived from the source systems.
 
+    ![Raw Bronze supplier records](images/raw-supplier-records.png "Raw Bronze supplier records")
+
 3. Run the following SQL to create `SUPPLIER_STANDARDIZED_DEMO`, a view in your connected schema:
 
     ```sql
@@ -304,6 +306,8 @@ This task has three parts:
 
     This query applies the transformation rules in the view and displays the standardized Silver-style result. Confirm that the eight records now use consistent supplier names, statuses, certifications, and location formats.
 
+    ![Standardized Silver-style supplier result](images/standardized-supplier-result.png "Standardized Silver-style supplier result")
+
 5. Compare your standardized result with the workshop's seeded Silver reference mapping:
 
     ```sql
@@ -328,9 +332,11 @@ This task has three parts:
 
 6. Confirm that all eight rows return `MATCH`. `SEER_SILVER.SUPPLIER_SOURCE_MAPPINGS` is the workshop's expected Silver reference result. A `MATCH` confirms that your transformation produced the expected standardized values for each supplier record.
 
+    ![Supplier transformation validation](images/supplier-match-validation.png "Supplier transformation validation")
+
 7. This exercise standardizes individual source records, which is one part of creating Silver data. A production Silver pipeline also performs cross-source entity matching, survivorship, validation, and quarantine of problem records. Catalog lineage provides the connection back to the source file and Object Storage path.
 
-> **ALH Data Transforms alternative:** This lab uses SQL because the rules are concise and easy to validate. ALH Data Transforms can represent the same pattern visually using source, expression, mapping, validation, and target components. It also supports reusable connections, workflows, scheduling, and job monitoring. Production pipelines can use SQL, Data Transforms, or both, depending on the transformation. Participants only inspect the prepared Data Transforms flow evidence in Lab 3; they do not create or run a Data Transforms flow in this workshop.
+> **ALH Data Transforms alternative:** This lab uses SQL because the rules are concise and easy to validate. ALH Data Transforms can represent the same pattern visually using source, expression, mapping, validation, and target components. It also supports reusable connections, workflows, scheduling, and job monitoring. Production pipelines can use SQL, Data Transforms, or both, depending on the transformation.
 
 ## Task 5: Trace the Austin steel-delivery event
 
@@ -366,6 +372,8 @@ No data is changed in this task.
 
 2. Review the results. The query returns one mapping row for each source record associated with this event, including financial, schedule, supplier, and inspection context. Although the source records have different IDs and descriptions, they share the same `CANONICAL_EVENT_ID`. `MATCH_METHOD` identifies how the pipeline associated a source record with the canonical event, and `MATCH_CONFIDENCE` indicates the confidence of that association. These mappings preserve the technical evidence needed to explain how the event was assembled.
 
+    ![Austin steel-delivery source mappings](images/steel-delivery-source-mappings.png "Austin steel-delivery source mappings")
+
 3. Run the following query to open the canonical Silver event:
 
     ```sql
@@ -392,6 +400,8 @@ No data is changed in this task.
 
 4. This query uses the shared `CANONICAL_EVENT_ID` from the mappings to retrieve one standardized event record. Review the project, asset, event type, planned and actual dates, supplier, financial status, and inspection status. At the Silver layer, the delivery is represented as one reconciled business event rather than separate CRM, ERP, schedule, and inspection records.
 
+    ![Canonical Silver event](images/silver-event-result.png "Canonical Silver event")
+
 5. Run the following query to review the corresponding Gold record:
 
     ```sql
@@ -410,6 +420,8 @@ No data is changed in this task.
     ```
 
 6. Review the results. This Gold record presents the project context that a business user needs: the supplier, milestone status, purchase-order status, inspection status, and overall decision readiness.
+
+    ![Gold project-context result](images/gold-project-context-result.png "Gold project-context result")
 
 7. Compare the three results:
 
@@ -432,7 +444,7 @@ You will:
 
 No data is changed in this task.
 
-1. Review the latest quality-rule results in the workshop-created `SEER_GOLD.DATA_QUALITY_RESULTS` table:
+1. Review the latest quality-rule results in the workshop-created `SEER_GOLD.DATA_QUALITY_RESULTS` table. In the SQL worksheet, run:
 
     ```sql
     <copy>
@@ -448,7 +460,11 @@ No data is changed in this task.
     </copy>
     ```
 
-2. Review quarantined records without changing them:
+    Review the results. Each row records a quality rule evaluated against a lakehouse layer, including the number of records evaluated, the number that failed, its status, and when it ran. A `PASS` means the applicable rule was satisfied. A `WARNING` identifies an issue for follow-up; whether it blocks promotion depends on the organization's data-quality policy.
+
+    ![Data-quality rule results](images/data-quality-results.png "Data-quality rule results")
+
+2. Review quarantined records without changing them. Run the following read-only query:
 
     ```sql
     <copy>
@@ -462,13 +478,21 @@ No data is changed in this task.
     </copy>
     ```
 
-3. Return to the **Catalog** item in the Data Studio left pane. Select the `LOCAL` schema selector, choose the schema shown by `SELECT USER` in Task 1, and select **Apply**.
+    Review the results. These records did not satisfy a required rule and were placed in quarantine rather than silently deleted or presented as trusted data. The table retains the source system and record ID, the failed rule, the reason, and the follow-up status. Quarantine makes exceptions visible and actionable while preserving the evidence needed to correct them at the source or through an approved remediation process.
 
-4. In **Entity type**, include **View**. Search for `SUPPLIER_STANDARDIZED_DEMO`, open the view, and select **Lineage**. Confirm the visual chain from the Object Storage URI and cloud-store link to `SUPPLIER_TRANSFORM_EXT`, and then to `SUPPLIER_STANDARDIZED_DEMO`.
+    ![Quarantined-record evidence](images/quarantined-records.png "Quarantined-record evidence")
+
+3. Return to the **Catalog** item in the Data Studio left pane. Select the `LOCAL` schema selector, choose the schema shown by `SELECT USER` in Task 1—`ADMIN` in this workshop session—and select **Apply**.
+
+4. In **Entity type**, include **View**. Search for `SUPPLIER_STANDARDIZED_DEMO`, open the view, and select **Lineage**. Confirm the visual chain:
+
+    `Object Storage URI` → cloud-store link → `SUPPLIER_TRANSFORM_EXT` → `SUPPLIER_STANDARDIZED_DEMO`
+
+    This proves that the view created in Task 4 is not an isolated result: it can be traced through the Bronze external table to the original Object Storage file. This lineage supports impact analysis and helps users explain where a standardized supplier value came from.
 
     ![Supplier view lineage](images/supplier-view-lineage.png "Supplier view lineage")
 
-5. Return to the SQL worksheet and inspect the workshop-created `SEER_GOLD.LINEAGE_SUMMARY` audit table for the seeded Gold project-context product:
+5. Close the view, return to the SQL worksheet, and inspect the workshop-created `SEER_GOLD.LINEAGE_SUMMARY` audit table for the seeded Gold project-context product:
 
     ```sql
     <copy>
@@ -483,21 +507,31 @@ No data is changed in this task.
     </copy>
     ```
 
-6. Confirm that the Gold product can be traced to its Silver entities, Bronze records, and original documents or files. Catalog provides interactive lineage for supported database objects, while the workshop-created `SEER_GOLD.LINEAGE_SUMMARY` audit table preserves the complete seeded pipeline lineage.
+    Review the results. `SEER_GOLD.PROJECT_CONTEXT` is the target Gold product. Each row identifies an upstream source object, the transformation that contributed to the product, the pipeline run, and its completion time. The lineage summary complements Catalog lineage by preserving the complete seeded workshop pipeline history.
+
+    ![Gold project-context lineage summary](images/lineage-summary-results.png "Gold project-context lineage summary")
+
+6. Summarize the evidence:
+
+    - Quality results show whether data met the rules expected at each layer.
+    - Quarantine preserves and manages records that need follow-up.
+    - Lineage traces a standardized view and a Gold product through transformations to upstream source data.
+
+    Together, these controls help a business user trust the Gold product while allowing technical teams to investigate its quality and origin when needed.
 
 ## Lab 1 Recap
 
 In this lab, you:
 
-- Verified the pre-provisioned lakehouse environment.
-- Used Data Studio to link an Object Storage CSV as the attendee-created Bronze external table `SUPPLIER_TRANSFORM_EXT`.
-- Used Data Studio Catalog to compare Bronze, Silver, and Gold entities and inspect lineage.
-- Created the Silver demonstration view `SUPPLIER_STANDARDIZED_DEMO` directly in ALH.
-- Compared the responsibilities of Bronze, Silver, and Gold.
-- Traced the Austin steel-delivery event across source systems.
-- Reviewed quality, quarantine, reconciliation, and lineage evidence.
+- Verified the pre-provisioned Autonomous AI Lakehouse environment.
+- Linked a CSV in OCI Object Storage as `SUPPLIER_TRANSFORM_EXT`, a Bronze external table that ALH can query without copying the raw file into a managed database table.
+- Inspected how Bronze, Silver, and Gold preserve source evidence, standardize enterprise entities, and deliver consumer-ready data products.
+- Created `SUPPLIER_STANDARDIZED_DEMO`, a SQL view that standardizes raw supplier records into a Silver-style result while retaining source and ingestion details for traceability.
+- Validated the standardized result against the workshop's seeded Silver reference mapping.
+- Traced the Austin steel-delivery event across CRM, Fusion ERP, Primavera, and on-premises inspection records to a single canonical Silver event and Gold project-context product.
+- Reviewed quality-rule results, quarantined records, and lineage evidence for both the attendee-created view and the seeded Gold product.
 
-The key takeaway is that connecting sources is only the beginning. Trusted AI context requires explicit contracts, reconciliation, and provenance.
+The key takeaway is that connecting sources is only the beginning. A trusted lakehouse preserves raw-source evidence, standardizes and reconciles it into shared business entities, applies quality controls, and maintains lineage so data products—and the AI applications that use them—are explainable and trustworthy.
 
 ## Learn More
 
