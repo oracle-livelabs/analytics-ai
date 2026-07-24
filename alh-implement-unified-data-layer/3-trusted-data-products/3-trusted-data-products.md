@@ -28,11 +28,11 @@ In this lab, you will:
 
 ALH can implement transformation logic with SQL, visual Data Transforms data flows, or a combination of both. Data Transforms workflows sequence data loads, data flows, variables, and other steps. Database jobs are useful when the transformation is most naturally expressed as SQL or PL/SQL.
 
-1. In Database Actions, select **Data Studio**, and review the available **Data Transforms** capability. Data Transforms is the visual option for building reusable data flows and workflows in ALH.
+1. ALH supports both SQL and visual **Data Transforms** for reusable data flows and workflows. This workshop uses SQL and prepared audit evidence rather than asking you to enter a separate Data Transforms workspace. That keeps the lab self-contained and avoids requiring an additional first-time sign-in.
 
 2. Do not create or run a Data Transforms project in this workshop. The environment intentionally seeds the resulting workshop pipeline evidence so the activity remains predictable and fast. In the next steps, you will inspect that evidence in SQL.
 
-3. Inspect the prepared Bronze-to-Silver and Silver-to-Gold flow evidence. Identify where the design performs mappings, filters, joins, expressions, and target writes. You only inspect the prepared flows and their recorded outcomes; you do not create, edit, or run a Data Transforms flow in this workshop.
+3. Inspect the prepared Bronze-to-Silver and Silver-to-Gold **pipeline audit evidence** in the following SQL results. Identify where the design performs mappings, filters, joins, expressions, and target writes from the pipeline purpose, execution engine, record counts, and run events. You do not create, edit, or run a Data Transforms flow in this workshop.
 
 4. Return to the SQL worksheet and review the latest pipeline executions recorded in the workshop-created `SEER_GOLD.PIPELINE_RUN_SUMMARY` audit table:
 
@@ -136,7 +136,7 @@ ALH can implement transformation logic with SQL, visual Data Transforms data flo
 
 ## Task 3: Review the published contracts
 
-1. In **Data Studio > Catalog**, select the `LOCAL` schema selector, choose `SEER_GOLD`, select **Apply**, and open `DATA_PRODUCT_CATALOG`.
+1. In the Data Studio left pane, select **Catalog**. Select the `LOCAL` schema selector, choose `SEER_GOLD`, select **Apply**, and open `DATA_PRODUCT_CATALOG`.
 
 2. Select **Preview** and review each product's business purpose, accountable owner, classification, refresh frequency, quality status, and contract version.
 

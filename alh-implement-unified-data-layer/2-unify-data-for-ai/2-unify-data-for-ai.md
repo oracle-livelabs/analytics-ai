@@ -27,7 +27,7 @@ In this lab, you will:
 
 ## Task 1: Inspect the consumer-ready Gold products
 
-1. From the Database Actions Launchpad, select **Data Studio**, and then select **Catalog**.
+1. From the Database Actions Launchpad, select **Data Load**. In the Data Studio left pane, select **Catalog**.
 
 2. Confirm that `LOCAL` is selected. Select the `LOCAL` schema selector, replace the current schema with `SEER_GOLD`, and select **Apply**. Search for `DATA_PRODUCT_CATALOG`.
 
@@ -94,7 +94,7 @@ Oracle Database can project the same governed entities through several data mode
 
 ## Task 3: Inspect the document preparation pipeline
 
-1. Return to **Data Studio > Catalog**. Select the `LOCAL` schema selector, choose `SEER_GOLD`, and select **Apply**. Search for `DOCUMENT_CATALOG`.
+1. Return to the **Catalog** item in the Data Studio left pane. Select the `LOCAL` schema selector, choose `SEER_GOLD`, and select **Apply**. Search for `DOCUMENT_CATALOG`.
 
 2. Open `SEER_GOLD.DOCUMENT_CATALOG` and select **Preview**. Locate each document's name, type, project, asset, version, Object Storage URI, and classification. Use **Columns** to inspect the registered metadata contract.
 

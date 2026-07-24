@@ -158,7 +158,7 @@ The workshop setup uploaded representative source extracts to a private Object S
 
     ![Confirm the Link Data run](images/confirm-link-run.png "Confirm the Link Data run")
 
-14. Wait for Data Studio to return to the Data Load home page. Confirm that `SUPPLIER_TRANSFORM_EXT` shows **8 rows linked**.
+14. Wait for Data Studio to return to the Data Load home page. Confirm that `SUPPLIER_TRANSFORM_EXT` shows **8 rows loaded**.
 
     ![External table link succeeded](images/external-table-link-success.png "External table link succeeded")
 
@@ -166,7 +166,7 @@ The workshop setup uploaded representative source extracts to a private Object S
 
     ![External table job report](images/external-table-job-report.png "External table job report")
 
-16. On the completed external-table card, select **Query**. Data Studio opens **Analysis** with a query for `SUPPLIER_TRANSFORM_EXT` already populated. Select **Run**, then confirm that the results show the seven external-table columns and eight rows. `SUPPLIER_TRANSFORM_EXT` contains the actual supplier records from the CSV you linked. This verifies that ALH can query that raw supplier file directly from Object Storage through a Bronze external table. If the **Selected Schema** tour prompt appears, select **X** to close it.
+16. On the completed external-table card, select **Query**. Data Studio opens **Analysis** with a query for `SUPPLIER_TRANSFORM_EXT` already populated. In the current interface, the query may run automatically; if results are not already displayed, select **Run**. Confirm that the results show the seven external-table columns and eight rows. `SUPPLIER_TRANSFORM_EXT` contains the actual supplier records from the CSV you linked. This verifies that ALH can query that raw supplier file directly from Object Storage through a Bronze external table. If the **Selected Schema** tour prompt appears, select **X** to close it.
 
 17. The next query serves a different purpose. It does not read `SUPPLIER_TRANSFORM_EXT` or the eight supplier records. Instead, it reads `SEER_BRONZE.SOURCE_RECORD_INVENTORY`, a separate workshop table that acts as an inventory of the staged source files. Each row describes a source file—for example, its originating system, file name, format, record count, extraction time, and ingestion batch. This places the one supplier-file example you just queried in the context of the wider Bronze layer. Return to the Database Actions Launchpad, open **SQL**, paste the following read-only query, and select **Run Statement**:
 
@@ -462,7 +462,7 @@ No data is changed in this task.
     </copy>
     ```
 
-3. Return to **Data Studio > Catalog**. Select the `LOCAL` schema selector, choose the schema shown by `SELECT USER` in Task 1, and select **Apply**.
+3. Return to the **Catalog** item in the Data Studio left pane. Select the `LOCAL` schema selector, choose the schema shown by `SELECT USER` in Task 1, and select **Apply**.
 
 4. In **Entity type**, include **View**. Search for `SUPPLIER_STANDARDIZED_DEMO`, open the view, and select **Lineage**. Confirm the visual chain from the Object Storage URI and cloud-store link to `SUPPLIER_TRANSFORM_EXT`, and then to `SUPPLIER_STANDARDIZED_DEMO`.
 
