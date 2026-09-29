@@ -22,18 +22,18 @@ By the end of this workshop, you will be able to:
 
 ### Prerequisites
 
-* An OCI tenancy with access to the US Midwest (Chicago) region.
-* Either the IAM permissions listed in **Preparing Your Tenancy** below, or access to the [Customer Support Representative Assistant LiveLab sandbox](https://livelabs.oracle.com/ords/r/dbpm/livelabs/run-workshop?p210_wid=4269).
+* An OCI tenancy with access to the US Midwest (Chicago) region, or a LiveLabs sandbox assigned to this workshop.
+* The IAM permissions listed in **Preparing Your Tenancy** below when using your own tenancy. They are already configured in the LiveLabs sandbox.
 
-### Using the Customer Support Representative Assistant Sandbox
+### Using the LiveLabs Sandbox
 
-This workshop can use the sandbox from the Customer Support Representative Assistant LiveLab. That sandbox already provides IAM policies, a Vault, an Autonomous Database, a Database Tools connection, and an Object Storage bucket containing customer-support knowledge articles.
+The LiveLabs sandbox for this workshop already provides IAM policies, a Vault, an Autonomous Database, and a Database Tools connection.
 
-The customer-support bucket, documents, and database tables are optional for this workshop and are not used by its employee and design-considerations examples. In the sandbox, create a separate bucket for the workshop PDF in Lab 1 and create the `Employees` table in Lab 2. Do not modify or delete the pre-provisioned customer-support resources.
+The sandbox also contains optional sample documents, an Object Storage bucket, and database tables that are not used by this workshop's employee and design-considerations examples. In the sandbox, create a separate bucket for the workshop PDF in Lab 1 and create the `Employees` table in Lab 2. Do not modify or delete the pre-provisioned resources.
 
 ## Preparing Your Tenancy
 
-This section applies only when you are building the workshop in your own OCI tenancy. If you are using the Customer Support Representative Assistant LiveLab sandbox, the required policies are already in place; skip this section and use the sandbox compartment.
+This section applies only when you are building the workshop in your own OCI tenancy. If you are using the LiveLabs sandbox, the required policies are already in place; skip this section and use the sandbox compartment.
 
 For your own tenancy, ask a tenancy administrator to configure the following access. Replace the placeholders with your group and workshop compartment. Scope policies more narrowly when your tenancy standards require it.
 

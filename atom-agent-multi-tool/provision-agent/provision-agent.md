@@ -18,9 +18,9 @@ In this lab, you will:
 This lab assumes you have:
 
 * Access to the Chicago region
-* The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction when using your own tenancy. The Customer Support Representative Assistant LiveLab sandbox already has the required policies.
+* The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction when using your own tenancy. The LiveLabs sandbox already has the required policies.
 
-> **Sandbox note:** The Customer Support Representative Assistant sandbox includes a bucket of customer-support knowledge articles. Those documents are optional and are not used by this workshop. Create a separate bucket and upload the design-considerations document in Tasks 2 and 3; do not change the pre-provisioned bucket or its contents.
+> **Sandbox note:** The LiveLabs sandbox includes optional sample documents in a pre-provisioned bucket. They are not used by this workshop. Create a separate bucket and upload the design-considerations document in Tasks 2 and 3; do not change the pre-provisioned bucket or its contents.
 
 ## Task 1: Ensure Chicago Region is Accessible
 

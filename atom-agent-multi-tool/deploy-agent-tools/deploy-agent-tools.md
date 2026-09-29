@@ -27,7 +27,7 @@ This lab assumes you have:
 
 > **Important:** Review **Preparing Your Tenancy** in the workshop introduction before enabling SQL execution or self-correction.
 
-> **Sandbox option:** The Customer Support Representative Assistant LiveLab sandbox already provides a Vault, Autonomous Database, and Database Tools connection. For that sandbox, skip the creation steps in Tasks 2 through 4 and use the existing connection in Task 6. You must still create the `Employees` table in Task 5 because the pre-provisioned customer-support tables are optional and are not used by this workshop. Do not modify or delete the customer-support resources.
+> **Sandbox option:** The LiveLabs sandbox already provides a Vault, Autonomous Database, and Database Tools connection. For the sandbox, skip the creation steps in Tasks 2 through 4 and use the existing connection in Task 6. You must still create the `Employees` table in Task 5 because the pre-provisioned sample tables are optional and are not used by this workshop. Do not modify or delete the pre-provisioned resources.
 
 ## Task 1: Add Agent Routing Instructions and Confirm RAG Tool Configuration
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 
 ## Task 2: Use a Vault to Store Database Secrets
 
-If you are using the Customer Support Representative Assistant LiveLab sandbox, its Vault and secrets are already configured for the pre-provisioned Database Tools connection. No action is required in this task; proceed to Task 3.
+If you are using the LiveLabs sandbox, its Vault and secrets are already configured for the pre-provisioned Database Tools connection. No action is required in this task; proceed to Task 3.
 
 If you are using your own tenancy, create a Vault and key to store the database secrets used by the Database Tools connection:
 
@@ -75,7 +75,7 @@ If you are using your own tenancy, create a Vault and key to store the database 
 
 ## Task 3: Use an Autonomous Database
 
-If you are using the Customer Support Representative Assistant LiveLab sandbox, use its pre-provisioned Autonomous Database. Do not create or delete a database; proceed to Task 4.
+If you are using the LiveLabs sandbox, use its pre-provisioned Autonomous Database. Do not create or delete a database; proceed to Task 4.
 
 If you are using your own tenancy, create an Autonomous Database 26ai:
 
@@ -93,7 +93,7 @@ If you are using your own tenancy, create an Autonomous Database 26ai:
 
 ## Task 4: Use a Database Tools Connection
 
-If you are using the Customer Support Representative Assistant LiveLab sandbox, use its pre-provisioned Database Tools connection. It is the connection created for the customer-support database (its name begins with `connection-customersupport`). You can use it in SQL Worksheet to create the `Employees` table in Task 5 and select it for the SQL tool in Task 6. Do not create a new secret, wallet, or connection.
+If you are using the LiveLabs sandbox, use its pre-provisioned Database Tools connection. You can use it in SQL Worksheet to create the `Employees` table in Task 5 and select it for the SQL tool in Task 6. Do not create a new secret, wallet, or connection.
 
 If you are using your own tenancy, create and validate a Database Tools connection to use with SQL Worksheet:
 
@@ -133,9 +133,9 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
 ## Task 5: Create and Populate Employee Table
 
-1. Navigate to the SQL Worksheet for the database you will use with the SQL tool and run the following statements. In the Customer Support Representative Assistant sandbox, open SQL Worksheet through the pre-provisioned Database Tools connection.
+1. Navigate to the SQL Worksheet for the database you will use with the SQL tool and run the following statements. In the LiveLabs sandbox, open SQL Worksheet through the pre-provisioned Database Tools connection.
 
-    > **Note:** The sandbox's customer-support tables are not required for this workshop. Create the separate `Employees` table below (or use your own equivalent table) and leave the customer-support tables unchanged.
+    > **Note:** The sandbox's pre-provisioned sample tables are not required for this workshop. Create the separate `Employees` table below (or use your own equivalent table) and leave the pre-provisioned tables unchanged.
 
     ```text
     <copy>
@@ -193,7 +193,7 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
     in the SQL Worksheet.
 
-3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the Customer Support Representative Assistant sandbox, select the pre-provisioned connection whose name begins with `connection-customersupport`. Enable SQL Execution and self correction.
+3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the LiveLabs sandbox, select the pre-provisioned connection. Enable SQL Execution and self correction.
 4. Select **Test connection** and confirm that the test succeeds.
 
 5. Create the tool.
@@ -252,7 +252,7 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
 ## Task 9: Clean Up Workshop Resources
 
-If you are using the Customer Support Representative Assistant LiveLab sandbox, remove only the resources you created for this workshop: the multi-tool agent and endpoint, Knowledge Base, the separate workshop bucket, and optionally the `Employees` table. Do not delete the sandbox's Vault, Autonomous Database, Database Tools connection, customer-support bucket, documents, or tables.
+If you are using the LiveLabs sandbox, no cleanup is required. The sandbox and all resources created in it are deleted automatically when the sandbox expires.
 
 If you are using your own tenancy:
 
