@@ -23,11 +23,19 @@ By the end of this workshop, you will be able to:
 ### Prerequisites
 
 * An OCI tenancy with access to the US Midwest (Chicago) region.
-* The IAM permissions listed in **Preparing Your Tenancy** below.
+* Either the IAM permissions listed in **Preparing Your Tenancy** below, or access to the [Customer Support Representative Assistant LiveLab sandbox](https://livelabs.oracle.com/ords/r/dbpm/livelabs/run-workshop?p210_wid=4269).
+
+### Using the Customer Support Representative Assistant Sandbox
+
+This workshop can use the sandbox from the Customer Support Representative Assistant LiveLab. That sandbox already provides IAM policies, a Vault, an Autonomous Database, a Database Tools connection, and an Object Storage bucket containing customer-support knowledge articles.
+
+The customer-support bucket, documents, and database tables are optional for this workshop and are not used by its employee and design-considerations examples. In the sandbox, create a separate bucket for the workshop PDF in Lab 1 and create the `Employees` table in Lab 2. Do not modify or delete the pre-provisioned customer-support resources.
 
 ## Preparing Your Tenancy
 
-Before beginning the workshop, ask a tenancy administrator to configure the following access. Replace the placeholders with your group and workshop compartment. Scope policies more narrowly when your tenancy standards require it.
+This section applies only when you are building the workshop in your own OCI tenancy. If you are using the Customer Support Representative Assistant LiveLab sandbox, the required policies are already in place; skip this section and use the sandbox compartment.
+
+For your own tenancy, ask a tenancy administrator to configure the following access. Replace the placeholders with your group and workshop compartment. Scope policies more narrowly when your tenancy standards require it.
 
 1. Give the workshop user group permission to create and manage the workshop resources:
 
@@ -89,5 +97,6 @@ Before beginning the workshop, ask a tenancy administrator to configure the foll
 
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Yanir Shahak**, Senior Principal Software Engineer
 
-**Last Updated By/Date:** Luke Farley, August 2026
+**Last Updated By/Date:** Luke Farley, September 2026

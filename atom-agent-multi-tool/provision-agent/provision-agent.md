@@ -18,7 +18,9 @@ In this lab, you will:
 This lab assumes you have:
 
 * Access to the Chicago region
-* The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction.
+* The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction when using your own tenancy. The Customer Support Representative Assistant LiveLab sandbox already has the required policies.
+
+> **Sandbox note:** The Customer Support Representative Assistant sandbox includes a bucket of customer-support knowledge articles. Those documents are optional and are not used by this workshop. Create a separate bucket and upload the design-considerations document in Tasks 2 and 3; do not change the pre-provisioned bucket or its contents.
 
 ## Task 1: Ensure Chicago Region is Accessible
 
@@ -160,4 +162,4 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, August 2026
+* **Luke Farley**, Senior Cloud Engineer, NACIE, September 2026
