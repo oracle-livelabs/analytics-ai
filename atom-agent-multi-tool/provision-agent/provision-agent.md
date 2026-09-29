@@ -85,7 +85,9 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
 4. Specify the name of the data source and Description (Optional)
 
-    Select the bucket that you have created in the previous lab, and for Object prefix choose “Select all in bucket”
+    Select the private bucket that you created in Task 2, and for Object prefix choose “Select all in bucket”.
+
+    > **Important:** Select only the bucket you created for this workshop and uploaded the **Design Considerations for GenAI Apps** PDF to in Task 3. Do not select the pre-provisioned sandbox bucket or its documents. Before continuing, verify that the bucket contents show your workshop PDF. Selecting the wrong bucket can require another ingestion run, which might not finish during the event.
 
     Click the “Create” button
 
@@ -100,6 +102,8 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
     ![knowledge base active](images/kb/kb_active.png)
 
 7. Open the data source and start or review its ingestion job. Processing can take up to 30 minutes. Wait until ingestion completes successfully and the uploaded document is listed as ingested before creating or testing the RAG tool. If ingestion fails, review the policy reference in the workshop introduction or contact your tenancy administrator.
+
+    > **If you selected the wrong bucket:** Open the data source, select **Edit**, select the workshop bucket from Task 2, and save the change. Saving the updated data source starts a new ingestion job. Do not create a second knowledge base unless directed by an instructor.
 
 ## Task 5: Provision GenAI Agent
 
