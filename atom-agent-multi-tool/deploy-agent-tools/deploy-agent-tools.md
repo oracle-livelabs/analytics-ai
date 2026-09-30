@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab configures the OCI Generative AI Agent tools. You will confirm the RAG tool created in Lab 1, configure an Autonomous AI Database and Database Tools connection for SQL, add a Weather tool, and test the multi-tool agent.
+This lab configures the OCI Generative AI Agent tools. You will confirm the RAG tool created in Lab 1, use or configure an Autonomous AI Database and Database Tools connection for SQL, add a Weather tool, and test the multi-tool agent.
 
 The following agent tools will be configured:
 * General LLM Chat (Built-in)
@@ -15,10 +15,8 @@ Estimated Time: 45 minutes
 ### Objectives
 
 In this lab, you will:
-* Create Vault to store DB secret
+* Use a Vault, Autonomous Database, and Database Tools connection for the SQL tool
 * Define agent tools in the OCI console
-* Provision an Oracle Autonomous AI Database
-* Create DB Tools Connection
 
 ### Prerequisites
 
@@ -28,6 +26,8 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 > **Important:** Review **Preparing Your Tenancy** in the workshop introduction before enabling SQL execution or self-correction.
+
+> **Sandbox option:** The LiveLabs sandbox already provides a Vault, Autonomous Database, and Database Tools connection. For the sandbox, skip the creation steps in Tasks 2 through 4 and use the existing connection in Task 6. You must still create the `Employees` table in Task 5 because the pre-provisioned sample tables are optional and are not used by this workshop. Do not modify or delete the pre-provisioned resources.
 
 ## Task 1: Add Agent Routing Instructions and Confirm RAG Tool Configuration
 
@@ -57,9 +57,11 @@ This lab assumes you have:
 
     ![Test RAG Tool](./images/rag/test-rag.png)
 
-## Task 2: Create Vault to store database secrets
+## Task 2: Use a Vault to Store Database Secrets
 
-This task will help you to create vault which would be used to save secrets for the database. The secrets are used for the agent to connect to your database with the db tool connection.
+If you are using the LiveLabs sandbox, its Vault and secrets are already configured for the pre-provisioned Database Tools connection. No action is required in this task; proceed to Task 3.
+
+If you are using your own tenancy, create a Vault and key to store the database secrets used by the Database Tools connection:
 
 1. Locate Vault under Key Management & Secret Management. Provide Name and click on Create Vault.
 
@@ -71,9 +73,11 @@ This task will help you to create vault which would be used to save secrets for 
 
     ![Create Key](images/adb/create_key.png)
 
-## Task 3: Create Autonomous Database
+## Task 3: Use an Autonomous Database
 
-This task involves creating Autonomous Database 26ai.
+If you are using the LiveLabs sandbox, use its pre-provisioned Autonomous Database. Do not create or delete a database; proceed to Task 4.
+
+If you are using your own tenancy, create an Autonomous Database 26ai:
 
 1. Locate Autonomous Databases under Oracle Databases. Click on Create Autonomous Database.
 
@@ -87,9 +91,11 @@ This task involves creating Autonomous Database 26ai.
 
 4. Finally click on Create Autonomous Database.
 
-## Task 4: Create Database Tools Connection
+## Task 4: Use a Database Tools Connection
 
-This task involves creating a Database Tools Connection which will be used to query the database using SQL Worksheet.
+If you are using the LiveLabs sandbox, use its pre-provisioned Database Tools connection. You can use it in SQL Worksheet to create the `Employees` table in Task 5 and select it for the SQL tool in Task 6. Do not create a new secret, wallet, or connection.
+
+If you are using your own tenancy, create and validate a Database Tools connection to use with SQL Worksheet:
 
 1. Locate Database Tools Connections under Developer Services. Click on Create connection.
 
@@ -127,9 +133,9 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 ## Task 5: Create and Populate Employee Table
 
-1. Navigate to the SQL Worksheet of your newly created ADB and run the following statements:
+1. Navigate to the SQL Worksheet for the database you will use with the SQL tool and run the following statements. In the LiveLabs sandbox, open SQL Worksheet through the pre-provisioned Database Tools connection.
 
-    > **Note** You can create or use your own tables here; we provided the table below for illustration purposes.
+    > **Note:** The sandbox's pre-provisioned sample tables are not required for this workshop. Create the separate `Employees` table below (or use your own equivalent table) and leave the pre-provisioned tables unchanged.
 
     ```text
     <copy>
@@ -187,8 +193,8 @@ This task involves creating a Database Tools Connection which will be used to qu
 
     in the SQL Worksheet.
 
-3. Select Oracle SQL as the dialect and select the database tool connection configured in the previous task. Enable SQL Execution and self correction.
-4. Select the Database Tools connection you validated in Task 4, then select **Test connection** and confirm that the test succeeds.
+3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the LiveLabs sandbox, select the pre-provisioned connection. Enable SQL Execution and self correction.
+4. Select **Test connection** and confirm that the test succeeds.
 
 5. Create the tool.
 
@@ -246,6 +252,10 @@ This task involves creating a Database Tools Connection which will be used to qu
 
 ## Task 9: Clean Up Workshop Resources
 
+If you are using the LiveLabs sandbox, no cleanup is required. The sandbox and all resources created in it are deleted automatically when the sandbox expires.
+
+If you are using your own tenancy:
+
 1. When you finish the workshop and no longer need the environment, remove the SQL tool from the agent, then delete the Database Tools connection and the Autonomous Database.
 
 2. After the database and connection are deleted, delete the password secret and wallet-content secret. Delete the Vault key and Vault only when they are not used by another resource.
@@ -268,8 +278,9 @@ This task involves creating a Database Tools Connection which will be used to qu
 **Contributors**
   * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
   * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+  * **Yanir Shahak**, Senior Principal Software Engineer
   * **Ale Casas**, Senior Principal Product Marketing
   * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, August 2026
+* **Luke Farley**, Senior Cloud Engineer, NACIE, September 2026

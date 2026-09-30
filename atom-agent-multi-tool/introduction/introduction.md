@@ -22,12 +22,20 @@ By the end of this workshop, you will be able to:
 
 ### Prerequisites
 
-* An OCI tenancy with access to the US Midwest (Chicago) region.
-* The IAM permissions listed in **Preparing Your Tenancy** below.
+* An OCI tenancy with access to the US Midwest (Chicago) region, or a LiveLabs sandbox assigned to this workshop.
+* The IAM permissions listed in **Preparing Your Tenancy** below when using your own tenancy. They are already configured in the LiveLabs sandbox.
+
+### Using the LiveLabs Sandbox
+
+The LiveLabs sandbox for this workshop already provides IAM policies, a Vault, an Autonomous Database, and a Database Tools connection.
+
+The sandbox also contains optional sample documents, an Object Storage bucket, and database tables that are not used by this workshop's employee and design-considerations examples. In the sandbox, create a separate bucket for the workshop PDF in Lab 1 and create the `Employees` table in Lab 2. Do not modify or delete the pre-provisioned resources.
 
 ## Preparing Your Tenancy
 
-Before beginning the workshop, ask a tenancy administrator to configure the following access. Replace the placeholders with your group and workshop compartment. Scope policies more narrowly when your tenancy standards require it.
+This section applies only when you are building the workshop in your own OCI tenancy. If you are using the LiveLabs sandbox, the required policies are already in place; skip this section and use the sandbox compartment.
+
+For your own tenancy, ask a tenancy administrator to configure the following access. Replace the placeholders with your group and workshop compartment. Scope policies more narrowly when your tenancy standards require it.
 
 1. Give the workshop user group permission to create and manage the workshop resources:
 
@@ -89,5 +97,6 @@ Before beginning the workshop, ask a tenancy administrator to configure the foll
 
 * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
 * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Yanir Shahak**, Senior Principal Software Engineer
 
-**Last Updated By/Date:** Luke Farley, August 2026
+**Last Updated By/Date:** Luke Farley, September 2026
