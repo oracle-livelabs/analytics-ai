@@ -2,43 +2,54 @@
 
 ## Introduction
 
-In this lab you will navigate the OCI console to locate your AIDP instance. From there, you will download the lab files and continue from this point using the lab guide.
+This area provides instructions on how to access your own AIDP instance for the event. You will also download and follow the provided demo data and instructions.
 
 Estimated Time: 10 minutes
 
 ### Objectives
 
-In this lab, you will:
+You will:
 
+- Download the files to your desktop that you will use for the event.
 - Access your AIDP instance.
-- Continue from here with the lab guide
 
 ### Prerequisites
 
-This lab assumes you have:
+This event assumes you have:
 
 - An Oracle Cloud account.
 
-## Task 1: Login to OCI and Access your AIDP Instance
+Click expand all tasks to continue.
 
-1. Using the credentials supplied with your reservation, login to the OCI console, you will be prompted to reset the password.
+## Task 1: Access Lab Files
+
+1. You can access the lab files by [clicking this hyperlink](https://axqurh31kd2o.objectstorage.us-ashburn-1.oci.customer-oci.com/n/axqurh31kd2o/b/Green-Button-Lab-Instructions/o/lab-files.zip). Unzip the files and open the lab-guide.pdf file. Follow the instructions in that document and use the other supplied files to complete the lab.
+
+## Task 2: Login to OCI and Access your AIDP Instance
+
+1. Click **View Login Info** at the top left of this page in the yellow bar. This will launch your **Reservation Information** on the right side of the screen.
+
+    ![access login info](images/view-login-info.png)
+
+2. Click the **Launch OCI** button. This will launch OCI in a new tab.
+
+    ![launch oci](images/launch-oci.png)
+
+3. Using the username and password supplied, login to the OCI console. Note that you will be prompted to reset the password. Do not forget your password as you will likely need to login again later after a period of inactivity.
 
     ![login to instance](images/oci-login.png)
 
-2. From the OCI Console homepage, select the Navigation Menu, navigate to **Analytics and AI**, and select **AI Data Platform Workbench**.
+4. From the OCI Console homepage, select the Navigation Menu at the top left corner, Navigate to **Analytics and AI**, and select **AI Data Platform**.
 
-    ![Accessing AIDP Workbench area in OCI](images/navigate-aidp.png)
+    ![Accessing AIDP Workbench area in OCI](images/access-aidp.png)
 
-3. Use the compartment dropdown on the left to choose the compartment associated with your reservation. Expand the root compartment (oaccommunity3), the **Livelabs** compartment, then select your compartment.
+5. Use the compartment dropdown on the left and expand the root compartment **oaccomunity3**, the **Livelabs** compartment, and then select your compartment based on your username as shown in your Login Info. 
 
     ![select instance](images/select-aidp-instance.png)
 
-4. You should see a single AIDP instance appear on the page. Select its name to access the AIDP homepage.
+6. You should see a single AIDP Instance appear on the page. Select its name to access the AIDP homepage, which will open in a new tab and should look like the image below. Please keep the current LiveLabs tab open for reference if you get logged out of the AIDP environment. 
 
-
-## Task 2: Access Lab Files
-
-1. Now that you are set up in your AIDP instance, [click this hyperlink to download the lab files](https://axqurh31kd2o.objectstorage.us-ashburn-1.oci.customer-oci.com/n/axqurh31kd2o/b/Green-Button-Lab-Instructions/o/lab-files.zip). Unzip the files and open the lab-guide.pdf file. Follow the instructions in that document to complete the lab.
+    ![aidp homepage](images/aidp-homepage.png)
 
 ## Learn More
 
