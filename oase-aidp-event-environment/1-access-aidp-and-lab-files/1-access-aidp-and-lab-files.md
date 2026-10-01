@@ -1,8 +1,8 @@
-# Access AIDP Instance and Lab Files
+# Access AIDP Instance
 
 ## Introduction
 
-This area provides instructions on how to access your own AIDP instance for the event. You will also download and follow the provided demo data and instructions.
+This area provides instructions on how to access your own AIDP instance for the event. For Hackathon attendees, you are also directed to access the Zoom meeting for the event, where lab files and other information will be distributed. If you are a hands-on lab or bootcamp attendee, your instructor will distribute lab files to you.
 
 Estimated Time: 10 minutes
 
@@ -10,7 +10,7 @@ Estimated Time: 10 minutes
 
 You will:
 
-- Download the files to your desktop that you will use for the event.
+- Access the Zoom meeting if attending the Hackathon.
 - Access your AIDP instance.
 
 ### Prerequisites
@@ -21,9 +21,9 @@ This event assumes you have:
 
 Click expand all tasks to continue.
 
-## Task 1: Access Lab Files
+## Task 1: Access Zoom Meeting (Only for Hackathon attendees)
 
-1. You can access the lab files by [clicking this hyperlink](https://axqurh31kd2o.objectstorage.us-ashburn-1.oci.customer-oci.com/n/axqurh31kd2o/b/Green-Button-Lab-Instructions/o/lab-files.zip). Unzip the files and open the lab-guide.pdf file. Follow the instructions in that document and use the other supplied files to complete the lab.
+1. You can access the Zoom meeting by [clicking this hyperlink](https://oracle.zoom.us/webinar/register/WN_XnmKUqR1R82xnG_HX93MWQ). Lab files and other information will be distributed from this zoom meeting.
 
 ## Task 2: Login to OCI and Access your AIDP Instance
 
@@ -51,6 +51,8 @@ Click expand all tasks to continue.
 
     ![aidp homepage](images/aidp-homepage.png)
 
+7. You have successfully accessed your instance! Hackathon attendees continue from this point using the lab files distributed via Zoom. Hands-on lab and bootcamp attendees continue with the lab documents supplied by your instructor.
+
 ## Learn More
 
 - [Oracle AI Data Platform Community Site](https://community.oracle.com/products/oracleaidp/)
@@ -62,4 +64,4 @@ Click expand all tasks to continue.
 
 ## Acknowledgements
 * **Author** - Miles Novotny, Senior Product Manager, Oracle Analytics Service Excellence
-* **Last Updated By/Date** - Miles Novotny, August 2026
+* **Last Updated By/Date** - Miles Novotny, October 2026
