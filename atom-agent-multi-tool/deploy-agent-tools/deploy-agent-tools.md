@@ -2,25 +2,21 @@
 
 ## Introduction
 
-This lab will go through the steps on configuring the GenAI Agent tools. First we'll go through the steps needed to provision the RAG tool, then we'll set up the Oracle Autonomous Database 23ai and Database Tools Connection. Once the DB is provisioned, we'll define the tools through the console. After the tools are configured we will deploy a function that invokes the agent service. The function we deploy will be used in the next lab.
+This lab configures the OCI Generative AI Agent tools. You will confirm the RAG tool created in Lab 1, use or configure an Autonomous AI Database and Database Tools connection for SQL, add a Weather tool, and test the multi-tool agent.
 
-The following agent tools will be configured: 
+The following agent tools will be configured:
 * General LLM Chat (Built-in)
 * Weather
-* RAG 
+* RAG
 * SQL
 
-Estimated Time: 120 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Deploy VCN and subnet for ADB
-* Create Vault to store DB secret
+* Use a Vault, Autonomous Database, and Database Tools connection for the SQL tool
 * Define agent tools in the OCI console
-* Deploy agent functions to function application
-* Provision an Oracle ADB 23ai
-* Create DB Tools Connection
 
 ### Prerequisites
 
@@ -28,101 +24,44 @@ This lab assumes you have:
 
 * An Oracle account
 * All previous labs successfully completed
-* Must have an Administrator Account or Permissions to manage several OCI Services: Oracle Databases, Networking, Policies.
 
-  > **Note** Tasks 2-8 are for the sql tool. If you don't plan on using the sql tool, you can skip these steps. 
+> **Important:** Review **Preparing Your Tenancy** in the workshop introduction before enabling SQL execution or self-correction.
+
+> **Sandbox option:** The LiveLabs sandbox already provides a Vault, Autonomous Database, and Database Tools connection. For the sandbox, skip the creation steps in Tasks 2 through 4 and use the existing connection in Task 6. You must still create the `Employees` table in Task 5 because the pre-provisioned sample tables are optional and are not used by this workshop. Do not modify or delete the pre-provisioned resources.
 
 ## Task 1: Add Agent Routing Instructions and Confirm RAG Tool Configuration
 
-1. Navigate to your GenAI Agent created in the previous lab 
+1. Navigate to your GenAI Agent created in the previous lab
 
-![Screenshot showing how to navigate to the Agents service from the main menu](./images/console/agents-service-navigation.png)
+    ![Screenshot showing how to navigate to the Agents service from the main menu](./images/console/agents-service-navigation.png)
 
-2. Edit your agent and add the following routing instructions: 
+2. Edit your agent and add the following routing instructions:
 
     ```text
      <copy>
-      You are a helpful assistant. If user asks about <info on your dataset>, use the rag tool. If user asks about employees, use atomlivelab-sql tool. If user asks about the weather, use the weather tool. If user asks a general question, use your general knowledge, no tools.
+      You are a helpful assistant. If a user asks about design considerations for generative AI applications, use the RAG tool. If a user asks about employees, use the employee-sql tool. If a user asks about the weather, use the get_weather tool. If a user asks a general question, use your general knowledge, no tools.
      </copy>
     ```
 
-    > **Note** Be sure to replace "info on your dataset" above with a relevant term to your knowledge base to help the agent route to the correct tool. In our example, our dataset relates to wines.
+    > **Note** The RAG tool is grounded in *Design Considerations for GenAI Apps.pdf*. The routing instruction uses this document's subject so the agent selects the RAG tool for relevant questions.
 
 3. Select your agent and confirm it has a RAG tool as configured in the previous lab. If not, create a new tool.
 
-![Create RAG Tool](./images/rag/create-rag-tool.png)
+    ![Create RAG Tool](./images/rag/create-rag-tool.png)
 
-4. Confirm the description of the tool and the knowledge base you created in the previous lab 
+4. Confirm the description of the tool and the knowledge base you created in the previous lab
 
-![Configure RAG Tool](./images/rag/config-rag.png)
+    ![Configure RAG Tool](./images/rag/config-rag.png)
 
-5. Navigate to the agent endpoint and launch the chat. You should now be able to ask questions about your dataset - 
+5. Navigate to the agent endpoint and launch the chat. You should now be able to ask questions about design considerations for generative AI applications.
 
-![Test RAG Tool](./images/rag/test-rag.png)
+    ![Test RAG Tool](./images/rag/test-rag.png)
 
-## Task 2: Dynamic Group and Policy Definition for ADB and DB Tools Connection
+## Task 2: Use a Vault to Store Database Secrets
 
-This task will help you ensure that the Dynamic Group and Policy are correctly defined.
+If you are using the LiveLabs sandbox, its Vault and secrets are already configured for the pre-provisioned Database Tools connection. No action is required in this task; proceed to Task 3.
 
-1. Locate Domains under Identity & Security
-
-    ![Domain Navigation](images/adb/locate_domain.png)
-
-2. Click on your current domain name
-
-    ![Click Domain](images/adb/click_domain.png)
-
-3. Click on Dynamic Groups, and then your Dynamic Group name
-
-    ![Click DG](images/adb/click_dg.png)
-
-    > **Note** The name of your dynamic group can be different.
-
-4. Ensure that your Dynamic Group is properly defined - as follows. Then click on Identity
-
-    ![DG Details](images/adb/dg_details.png)
-
-    ```text
-     <copy>
-      ALL {resource.type='genaiagent'}
-     </copy>
-    ```
-
-5. Click on Policies, ensure that you are in your "root" compartment, then click on your Policy name
-
-    ![Click Policy](images/adb/click_policy.png)
-
-    > **Note** The name of your policy can be different.
-
-6. Ensure that your Policy is properly defined - as follows. Make sure to change the compartment to your own compartment name where the respective services are hosted. 
-
-    ![Policy Details](images/adb/policy-details.png)
-
-    ```text
-     <copy>
-      Allow dynamic-group <your-dynamic-group> to read database-tools-family in compartment <comp-with-database-connection>
-      Allow dynamic-group <your-dynamic-group> to read secret-bundle in compartment <comp-with-vault-secret>
-      allow any-user to read database-tools-family in compartment <database-connection-comp> where any {request.principal.type='genaiagent'}
-      allow any-user to read secret-bundle in compartment <vault-comp> where any {request.principal.type='genaiagent'}
-      Allow any-user to use database-tools-connections in compartment <database-connection-comp> where any {request.principal.type='genaiagent'}
-     </copy>
-    ```
-
-    **Note** If you are using a non-default identity domain - then instead of of just supplying the dynamic group name, you need to provide domain-name/group-name in the policy statements.
-
-## Task 3: Create VCN and Private Subnet
-
-This task will help you to create a VCN and private subnet in your compartment. This will be used for the ADB for the SQL Tool.
-
-1. Go to Networking -> Virtual cloud networks and select the VCN created in Lab 1.
-
-2. Click on the private subnet and go to the Security List. Add following ingress rules in the security list. Make sure to have the ingress rule to access database port 1521-1522
-
-    ![Ingress Rules](images/adb/ingress_rules.png)
-
-## Task 4: Create Vault to store database secrets
-
-This task will help you to create vault which would be used to save secrets for the database. The secrets are used for the agent to connect to your database with the db tool connection.
+If you are using your own tenancy, create a Vault and key to store the database secrets used by the Database Tools connection:
 
 1. Locate Vault under Key Management & Secret Management. Provide Name and click on Create Vault.
 
@@ -134,153 +73,142 @@ This task will help you to create vault which would be used to save secrets for 
 
     ![Create Key](images/adb/create_key.png)
 
-## Task 5: Create Autonomous Database
+## Task 3: Use an Autonomous Database
 
-This task involves creating Autonomous Database 23ai.
+If you are using the LiveLabs sandbox, use its pre-provisioned Autonomous Database. Do not create or delete a database; proceed to Task 4.
+
+If you are using your own tenancy, create an Autonomous Database 26ai:
 
 1. Locate Autonomous Databases under Oracle Databases. Click on Create Autonomous Database.
 
     ![Create ADB](images/adb/create_adb.png)
 
-2. Provide information for Compartment, Display name, Database name. Choose workload type as Transaction Processing. Choose deployment type as Serverless. Choose database version as 23ai and give it a password of your preference. 
+2. Provide information for Compartment, Display name, Database name. Choose workload type as Transaction Processing. Choose deployment type as Serverless. Choose database version as 26ai and give it a password of your preference.
 
     ![Create ATP](images/atp/create-atp-1.png)
 
-3. Make sure to select the Network Access: Private Endpoint access only, and select the VCN and subnet mentioned in above section. Also, do not check Require mutual TLS (mTLS) authentication.
+3. For **Network access**, select **Secure access from everywhere** to create a public endpoint. Keep **Require mutual TLS (mTLS) authentication** enabled. This workshop uses only sample data; do not use this public-endpoint configuration for production data.
 
-    ![ADB creation](images/adb/adb.png)
+4. Finally click on Create Autonomous Database.
 
-4. Finally provide a valid email ID and click on Create Autonomous Database.
+## Task 4: Use a Database Tools Connection
 
-## Task 6: Create Database Tools Connection
+If you are using the LiveLabs sandbox, use its pre-provisioned Database Tools connection. You can use it in SQL Worksheet to create the `Employees` table in Task 5 and select it for the SQL tool in Task 6. Do not create a new secret, wallet, or connection.
 
-This task involves creating a Database Tools Connection which will be used to query the database using SQL Worksheet.
+If you are using your own tenancy, create and validate a Database Tools connection to use with SQL Worksheet:
 
 1. Locate Database Tools Connections under Developer Services. Click on Create connection.
 
     ![Create conn](images/adb/dbconn.png)
 
-2. Provide Name and Compartment information. Choose Oracle Autonomous Database as Database cloud service. Provide Username as admin.
+2. Provide Name and Compartment information. Choose **Oracle Autonomous Database** as the Database cloud service, select the Autonomous Database you created in Task 3, and provide the username `ADMIN`.
 
-3. Click on Create password secret. Provide Name, Vault and Key created in Task 3. Provide same password used at the time of ADB creation in previous task.
+3. Click **Create password secret**. Provide a name, the Vault and key created in Task 2, and the same password used when you created the Autonomous Database.
 
     ![Create Password](images/adb/dbconn_pass.png)
 
-4. Use the newly created password secret as User password secret.
+4. Use the newly created password secret as **User password secret**.
 
-5. Copy the connection string from your autonomous database. Go to ADB and click on database connection and copy any of the low, medium or high connection strings as shown below,
+5. Under **SSL details**, set **Wallet format** to **Oracle auto-login wallet (for example, `cwallet.sso`)**, then select **Create wallet content secret**.
 
-    ![Create Conn String](images/adb/conn_string.png)
+    ![Select the auto-login wallet format and create a wallet content secret](images/adb/dbconn-wallet-format-sanitized.png)
 
-6. Modify the connection string with the following: Reduce retry_count form 20 to 3; Replace host with private ip address. You can get Private IP address from the autonomous database as shown below.
+    If you have not already done so, open the Autonomous Database **Database connection** page and download its mTLS wallet. Unzip the download so that you can select `cwallet.sso`. In the dialog, choose the compartment, Vault, and encryption key created in Task 2. Under **Wallet**, select **Upload wallet** (do not select **Retrieve regional wallet from Autonomous AI Database**), then upload `cwallet.sso`. Create the secret and select it as the **SSO wallet content secret**.
 
-    ![Private IP](images/adb/pvt_ip.png)
+    ![Create the wallet content secret and select Upload wallet](images/adb/dbconn-wallet-upload-sanitized.png)
 
-7. Click on Create private endpoint. Provide Name and private subnet created in Task 1.
+6. On your Autonomous Database details page, select **Database connection**. Copy the connection string for the **low** service using **Mutual TLS (mTLS)** authentication. Return to the Database Tools connection and paste that value into **Connection string**. Do not replace it with a private-IP address.
 
-    ![Private Endpoint](images/adb/dbconn_pvt_endp.png)
+    ![Open Database connection from the Autonomous AI Database details page](images/adb/adb-database-connection-sanitized.png)
 
-8. Choose newly created private endpoint as Private Endpoint.
+    ![Paste the mTLS low-service connection string into the Database Tools connection](images/adb/dbconn-connection-string-sanitized.png)
 
-9. Choose Wallet format as None in SSL details.
+7. Do not select **Access database via a private network** or a Database Tools private endpoint.
 
-10. Click on Create to create a database tools connection.
+8. Click **Create** to create the Database Tools connection.
 
-    ![Create DBTools](images/adb/dbconn_create_conn.png)
+9. Open the newly created Database Tools connection and select **Validate**.
 
-11. Go to newly create Database Tools connection. Click on Validate.
+    > **Production note:** A production database should use private endpoint access, a Database Tools private endpoint, least-privilege network rules, and production data controls. This public-endpoint configuration is intentionally limited to the disposable workshop database and sample data.
 
-    ![Validate DBTools](images/adb/dbconn_validate.png)
+## Task 5: Create and Populate Employee Table
 
-## Task 7: Create and Populate Employee Table
+1. Navigate to the SQL Worksheet for the database you will use with the SQL tool and run the following statements. In the LiveLabs sandbox, open SQL Worksheet through the pre-provisioned Database Tools connection.
 
-1. Navigate to the SQL Worksheet of your newly created ADB and run the following statements: 
+    > **Note:** The sandbox's pre-provisioned sample tables are not required for this workshop. Create the separate `Employees` table below (or use your own equivalent table) and leave the pre-provisioned tables unchanged.
 
-> **Note** You can create or use your own tables here; we provided the table below for illustration purposes. 
+    ```text
+    <copy>
+    CREATE TABLE Employees (
+        EmployeeID INT PRIMARY KEY,
+        Name VARCHAR(100) NOT NULL,
+        DepartmentID INT,
+        HireDate DATE NOT NULL
+    );
+    </copy>
+    ```
 
-```text
-<copy>
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    DepartmentID INT,
-    HireDate DATE NOT NULL
-);
-</copy>
-```
+    - Populate your table with the following data
 
-- Populate your table with the following data 
+    ```text
+    <copy>
+    INSERT ALL
+    INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (1, 'John Doe', 1, TO_DATE('2020-01-01', 'YYYY-MM-DD'))
+    INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (2, 'Jane Smith', 2, TO_DATE('2020-02-01', 'YYYY-MM-DD'))
+    INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (3, 'Bob Johnson', 1, TO_DATE('2020-03-01', 'YYYY-MM-DD'))
+    INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (4, 'Alice Brown', 3, TO_DATE('2020-04-01', 'YYYY-MM-DD'))
+    INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (5, 'Mike Davis', 2, TO_DATE('2020-05-01', 'YYYY-MM-DD'))
+    SELECT * FROM dual;
+    COMMIT;
+    </copy>
+    ```
 
-```text
-<copy>
-INSERT ALL
-INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (1, 'John Doe', 1, TO_DATE('2020-01-01', 'YYYY-MM-DD'))
-INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (2, 'Jane Smith', 2, TO_DATE('2020-02-01', 'YYYY-MM-DD'))
-INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (3, 'Bob Johnson', 1, TO_DATE('2020-03-01', 'YYYY-MM-DD'))
-INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (4, 'Alice Brown', 3, TO_DATE('2020-04-01', 'YYYY-MM-DD'))
-INTO Employees (EmployeeID, Name, DepartmentID, HireDate) VALUES (5, 'Mike Davis', 2, TO_DATE('2020-05-01', 'YYYY-MM-DD'))
-SELECT * FROM dual;
-</copy>
-```
+    > **Note** If you use your own table, large queries can cause timeouts in the agent service. Try filtering your results to avoid timeouts.
 
-  > **Note** If you use your own table, large queries can cause timeouts in the agent service & ODA. Try filtering your results to avoid timeouts.
-
-## Task 8: Create SQL Tool
+## Task 6: Create SQL Tool
 1. In the console navigate to your agent and create a new SQL Tool
 
-  ![Navigate to Agent](./images/console/agents-service-navigation.png)
+    ![Navigate to Agent](./images/console/agents-service-navigation.png)
 
-2. Enter name e.g. atomlivelab-sql and description, along with the database schema 
+2. Set the tool name to `employee-sql`, add a description such as `Retrieve employee information from the Employees table`, and paste the database schema.
 
-> **Note** Make sure to use the same schema defined from the previous task.
+    > **Note** Make sure to use the same schema defined in the previous task.
 
-```text
-<copy>
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    DepartmentID INT,
-    HireDate DATE NOT NULL
-);
-</copy>
-```
+    ```text
+    <copy>
+    CREATE TABLE Employees (
+        EmployeeID INT PRIMARY KEY,
+        Name VARCHAR(100) NOT NULL,
+        DepartmentID INT,
+        HireDate DATE NOT NULL
+    );
+    </copy>
+    ```
 
-> **Note** If using your own table, to get a better idea of the schema run
+    > **Note** If using your own table, run the following to inspect its schema:
 
-```sql
-DESC table_name;
-```
- 
-in SQL Developer. 
+    ```sql
+    DESC table_name;
+    ```
 
-![Create SQL Tool](images/sqltool/create-tool.png)
+    in the SQL Worksheet.
 
-3. Select Oracle SQL as the dialect and select the database tool connection configured in the previous task. Enable SQL Execution and self correction. 
-4. Test the connection 
+3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the LiveLabs sandbox, select the pre-provisioned connection. Enable SQL Execution and self correction.
+4. Select **Test connection** and confirm that the test succeeds.
 
-![Test Connection](images/sqltool/tool-connection.png)
+5. Create the tool.
 
-5. Create the tool 
+6. Navigate to your endpoint and launch the chat. Ask a question such as `List all employees`. The agent should invoke the SQL tool, generate Oracle SQL, and return the result.
 
-6. Navigate to your endpoint and launch the chat. Ask a question such as "Give me list of employees". The agent should invoke the SQL Tool and convert the query to Oracle SQL, then return the result - 
+    > * **Note** If the SQL tool isn't returning the correct response, it can be helpful to provide an inline example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
 
-  ![Test SQL Tool](./images/sql/test-sql-tool.png)
+    > * **Note** Also make sure the agent is using the correct tool for the job. If the agent is using the wrong tool, add a more detailed description or routing instructions.
 
-  ![Test SQL Tool](./images/sql/test-sql-tool-2.png)
+## Task 7: Create a Weather Tool
 
-  > * **Note** If the sql tool is not returning the correct response, it can be helpful to provide an in-line example to the tool. Also see [SQL Tool Guidelines](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm#sqltool-iclexamples)
+1. Navigate to the agent tools and select **Create tool** > **Custom tool**. Under Tool configuration, select **Function calling**, then create a function named `get_weather`.
 
-  > * **Note** Also make sure the agent is using the correct tool for the job. If the agent is using the wrong tool, make sure to add a more detailed description and/or routing instructions.
-
-  > * **Note** If returning 404 errors, there is likely a missing policy. Refer back to [Task 2 step 6](./deploy-agent-tools.md#task-2-dynamic-group-and-policy-definition-for-adb-and-db-tools-connection). 
-
-  > * **Note** If querying a large table and getting 100+ rows of results, the query will fail. Try adding more filters to the query to reduce size of response. 
-
-## Task 9: Create a Weather Tool
-
-  1. Navigate to the agent tools and create a new custom function tool called "get_weather" 
-
-  - Give the following description - 
+2. Give the function the following description:
 
     ```text
     <copy>
@@ -288,115 +216,71 @@ in SQL Developer.
     </copy>
     ```
 
-  - Paste the following function parameters - 
-    ```text
+3. Paste the following valid JSON schema as the function parameters:
+
+    ```json
     <copy>
-    {"type":"object","properties":{"location":{"type":"string"}},"required":"['location']"}
+    {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "City and country or region for the weather request"
+        }
+      },
+      "required": ["location"],
+      "additionalProperties": false
+    }
     </copy>
     ```
 
-  2. Create the tool 
+4. Create the tool and wait for it to become active.
 
-## Task 10: Deploy Function to Function Application
-
-The function to be deployed will invoke the agent from the ODA application.
-
-In this section, we will delve into the process of creating and deploying an Oracle Function. OCI Functions provide a serverless environment, allowing you to focus on your code without worrying about server management. We will guide you through the steps of developing and deploying an OCI Function, which can be a powerful tool for extending your application's capabilities. You will learn how to create a function, configure its settings, and deploy it using the Oracle Cloud Infrastructure console or command-line interface. By the end of this section, you will be ready to connect the function to the ODA skill.
-
-1. Download the following file: 
-
-    [Agent ADK Fn](https://objectstorage.us-chicago-1.oraclecloud.com/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab%2Fgenai-fn-livelab.zip)
-
-2. Navigate back to your function application created in the previous lab.
-
-3. Select Application > Cloud shell setup > View guide and take note of the steps to login and deploy the functions.
-
-    ![Fn Cloud Setup](images/fn-deploy/cloud-shell.png)
-
-    - This will give you your specific instructions for: 
-        - Setting the context
-        - Logging in to the container registry 
-        - Deploying the function to your application
-
-   > **Note:** The init command doesn't need to be run since the fn is already provided. The last invoke command also doesn't need to be ran. We will be invoking the function later from ODA. 
-
-4. At the top right of the oci console, open a new cloud shell
-
-    ![Open Cloud Shell](images/fn-deploy/open-cloud-shell.png)
+    > **Note:** This workshop configures the function contract only; it doesn't deploy a weather-service implementation. A weather prompt verifies that the agent selects `get_weather` and passes a `location` argument. A production application must execute the function and return its result to the agent.
 
 
-5. Select the gear icon at the top right of the shell and upload the zip file from step 1 
+## Task 8: Chat with your Agent
 
-    ![upload-zip-cloudshell.png](images/fn-deploy/upload-zip-cloudshell.png)
+1. From the agent endpoint, launch chat and test the following prompts:
 
-6. Create a new directory for your agent multi tool function and move the zip to the directory
+    * Ask a question about design considerations for generative AI applications to verify RAG routing.
+    * Ask `List all employees` to verify the `employee-sql` tool and the committed sample data.
+    * Ask about the weather in a location to verify that the agent selects `get_weather` and supplies a location argument.
+    * Ask a general question, such as `What is an autonomous agent?`, to verify general chat without a tool.
 
-``` text 
-<copy>
-    mkdir genai-fn-livelab
-    mv genai-fn-livelab.zip /genai-fn-livelab
-    cd /genai-fn-livelab
-    unzip genai-fn-livelab.zip
-</copy>
-```
+2. If a prompt selects the wrong tool, refine the tool description or the routing instructions in Task 1, then test again.
 
-7. open the func.yaml and enter your agentEndpointId
+## Task 9: Clean Up Workshop Resources
 
-``` text 
-<copy>
-    vi func.yaml 
-</copy>
-```
+If you are using the LiveLabs sandbox, no cleanup is required. The sandbox and all resources created in it are deleted automatically when the sandbox expires.
 
-  - Press 'i' to insert your changes then press escape then ':wq' to save your changes. 
+If you are using your own tenancy:
 
-  > **Note** Your agentEndpointId is *not* the same as your AgentId. Please make sure you use the endpoint id.
+1. When you finish the workshop and no longer need the environment, remove the SQL tool from the agent, then delete the Database Tools connection and the Autonomous Database.
 
-8. Deploy the function 
+2. After the database and connection are deleted, delete the password secret and wallet-content secret. Delete the Vault key and Vault only when they are not used by another resource.
 
-  ``` text 
-  <copy>
-      fn -v deploy --app <your-function-app>
-  </copy>
-  ```
+3. If you do not plan to continue experimenting, delete the agent endpoint, agent, knowledge base, and Object Storage bucket created for the workshop. Do not delete shared or organization-managed resources.
 
-  - Take note of the function invoke endpoint once created.
-
-![Deployed Function](images/fn-deploy/deploy_function.png)
-
-> **Note** If there is an error with the architecture, the architecture can be changed from the cloud shell. 
-
-> **Note** If you run into space issues, you can delete any unused containers with 
-
-```bash
-$ docker image prune 
-or 
-$ docker image prune -a 
-```
-
-![Change Architecture](images/fn-deploy/change-architecture-cs.png)
-
-> **Note** Functions can sometimes time out when invoked for the first time (cold start). To avoid this, enable provisioned concurrency on the function to enable hot starts. 
-
-![Provisioned Concurrency](images/fn-deploy/provisioned-concurrency.png)
-
-9. You may now **proceed to the next lab**
+4. Verify that the public workshop database no longer appears on the Autonomous Databases page.
 
 ## Learn More
 
 * [SQL Tool Guidelines for Generative AI Agents](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/sqltool-guidelines.htm)
-* [ADB Shared with Private Endpoint Access](https://docs.oracle.com/en-us/iaas/database-tools/doc/oracle-database-use-cases.html#OCDBT-GUID-C2C8BC15-EDB1-47D6-BDFC-852558C8D650)
 * [Database Tools - ADB Shared with Public IP](https://docs.oracle.com/en-us/iaas/database-tools/doc/oracle-database-use-cases.html#OCDBT-GUID-87796740-BAE4-4805-BF6D-C75A02A3D1D4)
 * [RAG Tool Oracle Database Guidelines for Generative AI Agents](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/oracle-db-guidelines.htm)
 
 ## Acknowledgements
 
-**Author** 
+**Author**
   * **Luke Farley**, Senior Cloud Engineer, NACIE
 
 **Contributors**
   * **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
   * **Abhinav Jain**, Senior Cloud Engineer, NACIE
+  * **Yanir Shahak**, Senior Principal Software Engineer
+  * **Ale Casas**, Senior Principal Product Marketing
+  * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date**
-  * **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025
+* **Luke Farley**, Senior Cloud Engineer, NACIE, September 2026
