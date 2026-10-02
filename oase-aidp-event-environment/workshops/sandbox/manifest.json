@@ -1,12 +1,7 @@
 {
-    "workshoptitle": "AI Data Platform Workbench Essentials",
+    "workshoptitle": "AI Data Platform Environment",
     "help": "livelabs-help-analytics_us@oracle.com",
     "tutorials": [
-        {
-            "title": "Introduction",
-            "description": "Access the reserved AI Data Platform Workbench instance and download the event lab guide.",
-            "filename": "../../introduction/introduction.md"
-        },
         {
             "title": "Access AIDP Instance and Lab Files",
             "description": "Use the OCI Console to access your reserved AIDP instance and download the lab files.",
