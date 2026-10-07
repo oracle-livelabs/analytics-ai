@@ -22,12 +22,12 @@ By the end of this workshop, you will be able to:
 
 ### Prerequisites
 
-* An OCI tenancy with access to the US Midwest (Chicago) region, or a LiveLabs sandbox assigned to this workshop.
+* An OCI tenancy with access to the US Midwest (Chicago) region, or a LiveLabs sandbox assigned to this workshop. In LiveLabs, use the region where the green button pre-provisioned your resources, which is often US East (Ashburn).
 * The IAM permissions listed in **Preparing Your Tenancy** below when using your own tenancy. They are already configured in the LiveLabs sandbox.
 
 ### Using the LiveLabs Sandbox
 
-The LiveLabs sandbox for this workshop already provides IAM policies, a Vault, an Autonomous Database, and a Database Tools connection.
+The LiveLabs sandbox for this workshop already provides IAM policies, a Vault, an Autonomous Database, and a Database Tools connection. Use the region containing these pre-provisioned resources for both labs, even if it differs from Chicago.
 
 The sandbox also contains optional sample documents, an Object Storage bucket, and database tables that are not used by this workshop's employee and design-considerations examples. In the sandbox, create a separate bucket for the workshop PDF in Lab 1 and create the `Employees` table in Lab 2. Do not modify or delete the pre-provisioned resources.
 

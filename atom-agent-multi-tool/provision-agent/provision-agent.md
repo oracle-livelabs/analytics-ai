@@ -9,7 +9,7 @@ Estimated Time: 45 minutes
 ### Objectives
 
 In this lab, you will:
-* Make sure that your tenancy is subscribed to the Chicago region.
+* Confirm the region to use for this workshop.
 * Provision GenAI Agent
 * Configure RAG Tool for Agent in console UI
 
@@ -17,35 +17,38 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Access to the Chicago region
+* Access to the region used for this workshop
 * The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction when using your own tenancy. The LiveLabs sandbox already has the required policies.
 
 > **Sandbox note:** The LiveLabs sandbox includes optional sample documents in a pre-provisioned bucket. They are not used by this workshop. Create a separate bucket and upload the design-considerations document in Tasks 2 and 3; do not change the pre-provisioned bucket or its contents.
 
-## Task 1: Ensure Chicago Region is Accessible
+## Task 1: Confirm Your Workshop Region
 
-If your tenancy is already subscribed to the Chicago region, please skip to the next task.
+If you are using the LiveLabs green button environment, use the region where the green button pre-provisioned your workshop resources. This is often **US East (Ashburn)**, but use the region assigned to your environment even if it is different. Create the bucket, knowledge base, and agent in that same region so they can work with the pre-provisioned resources used in Lab 2.
 
-1. On the top right, click the Regions drop down menu.
+1. In the OCI Console, open the **Regions** menu at the top right.
 
     ![Screenshot showing the tenancy regions list](./images/policies/regions-list.png)
 
-1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, switch to it and proceed to the next task.
+1. If you are using LiveLabs, select the region containing the pre-provisioned Autonomous Database, Vault, and Database Tools connection. Check the workshop environment details if you are unsure which region was assigned. Keep this region selected throughout both labs.
 
-    If Chicago isn't listed, ask your tenancy administrator to subscribe to the region before continuing.
+    If you are using your own tenancy, select **US Midwest (Chicago)**. If Chicago is not listed, ask your tenancy administrator to subscribe to it before continuing.
 
 ## Task 2: Provision Oracle Object Storage Bucket
 
-This task will help you to create Oracle Object Storage Bucket under your chosen compartment. This will be used for the RAG tool.
+Create your own Object Storage bucket in the workshop compartment and region for the RAG tool. In the LiveLabs environment, the green button also pre-provisions a `knowledge-base-articles` bucket. Leave that bucket and its contents unchanged; use the new bucket you create in this task for the rest of Lab 1.
 
 1. Locate Buckets under Object Storage & Archive Storage
 
     ![object storage navigation](images/kb/os_nav.png)
 
-2. Provide the information for **Compartment** and **Bucket Name**. Click Create.
-    The Object Storage Bucket will be created. Keep the visibility of bucket as Private.
+2. Select **Create bucket**. Provide the **Compartment** and a **Bucket Name** for your own bucket, keep its visibility **Private**, and click **Create**.
 
     ![object storage bucket creation](images/kb/os_bucket_create.png)
+
+    The example below shows the green button's pre-provisioned `knowledge-base-articles-239045` bucket alongside a separate `multi-tool-bucket` created for this workshop. Your bucket names may differ. Use the bucket you created in the next tasks.
+
+    ![Buckets list showing the pre-provisioned articles bucket and a separate workshop bucket](images/kb/workshop-buckets.png)
 
 ## Task 3: Upload PDF Document(s) to the Object Storage Bucket
 
@@ -59,7 +62,7 @@ This task will help you to create Oracle Object Storage Bucket under your chosen
 
     ![object storage select files](images/kb/os_file_select.png)
 
-2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
+2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket. Before creating the knowledge base, confirm that the uploaded PDF appears on the **Objects** page of the bucket you created in Task 2.
 
     ![object storage upload files](images/kb/os_upload.png)
 
@@ -83,25 +86,25 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     ![knowledge base creation wizard](images/kb/kb_wizard.png)
 
-4. Specify the name of the data source and Description (Optional)
+4. Specify the name of the data source and Description (optional).
 
-    Select the private bucket that you created in Task 2, and for Object prefix choose “Select all in bucket”.
+    Select the workshop compartment and the private bucket you created in Task 2. Turn on **Select all in bucket**.
 
-    > **Important:** Select only the bucket you created for this workshop and uploaded the **Design Considerations for GenAI Apps** PDF to in Task 3. Do not select the pre-provisioned sandbox bucket or its documents. Before continuing, verify that the bucket contents show your workshop PDF. Selecting the wrong bucket can require another ingestion run, which might not finish during the event.
+    ![Data source dialog with the workshop bucket selected and Select all in bucket enabled while the object list loads](images/kb/kb-select-workshop-bucket.png)
 
-    Click the “Create” button
+    > **Important:** Select only the bucket you created for this workshop and uploaded the **Design Considerations for GenAI Apps** PDF to in Task 3. Do not select the pre-provisioned sandbox bucket or its documents. Selecting the wrong bucket can require another ingestion run, which might not finish during the event.
 
-    ![knowledge base data source](images/kb/kb_data_source.png)
+    The object list may continue loading after you select the bucket. Once the correct bucket name is shown and **Select all in bucket** is on, click **Create** without waiting for the list to finish loading.
 
 5. Click the “Create” button to create the knowledge base
 
     ![knowledge base creation](images/kb/kb_create.png)
 
-6. In few minutes the status of recently created Knowledge Base will change from Creating to Active.
+6. The new Knowledge Base may initially show **Creating**. You can continue to Task 5 and attach it to the RAG tool while it is still provisioning.
 
     ![knowledge base active](images/kb/kb_active.png)
 
-7. Open the data source and start or review its ingestion job. Processing can take up to 30 minutes. Wait until ingestion completes successfully and the uploaded document is listed as ingested before creating or testing the RAG tool. If ingestion fails, review the policy reference in the workshop introduction or contact your tenancy administrator.
+7. Open the data source and start or review its ingestion job. Processing can take up to 30 minutes. Wait until the Knowledge Base is **Active**, ingestion completes successfully, and the uploaded document is listed as ingested before testing the RAG tool. If ingestion fails, review the policy reference in the workshop introduction or contact your tenancy administrator.
 
     > **If you selected the wrong bucket:** Open the data source, select **Edit**, select the workshop bucket from Task 2, and save the change. Saving the updated data source starts a new ingestion job. Do not create a second knowledge base unless directed by an instructor.
 
@@ -121,7 +124,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![Create Tool](images/agent/create-tool.png)
 
-    Select the Knowledge Base that you created in the previous task. Providing the Welcome message is optional.
+    Select the Knowledge Base that you created in the previous task. You can attach it even if it is still provisioning. For the RAG tool description, use: **Tool to answer questions about design considerations for GenAI apps.** Providing the Welcome message is optional.
 
     Click the “Create” button.
 
@@ -139,7 +142,7 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![agent endpoint](images/agent/agent_endpoint.png)
 
-5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
+5. Once the Knowledge Base is **Active** and its document ingestion has completed, open the Chat Playground to ask questions in natural language and get responses from your PDF document.
 
     ![Agent Chat Playground](images/agent/agent_launch_chat.png)
 
