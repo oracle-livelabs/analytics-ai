@@ -157,16 +157,16 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer
 
 **Contributors**
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Kaushik Kundu**, Master Principal Cloud Architect
+* **JB Anderson**, Senior Cloud Engineer
+* **Abhinav Jain**, Senior Cloud Engineer
 * **Lyudmil Pelov**, Lyudmil Pelov, Senior Principal Product Manager
 * **Yanir Shahak**, Senior Principal Software Engineer
 * **Ale Casas**, Senior Principal Product Marketing
 * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, September 2026
+* **Luke Farley**, Senior Cloud Engineer, October 2026

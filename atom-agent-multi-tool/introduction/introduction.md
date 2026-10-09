@@ -91,12 +91,12 @@ For your own tenancy, ask a tenancy administrator to configure the following acc
 
 **Author**
 
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer
 
 **Contributors**
 
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Kaushik Kundu**, Master Principal Cloud Architect
+* **Abhinav Jain**, Senior Cloud Engineer
 * **Yanir Shahak**, Senior Principal Software Engineer
 
-**Last Updated By/Date:** Luke Farley, September 2026
+**Last Updated By/Date:** Luke Farley, Senior Cloud Engineer, October 2026
