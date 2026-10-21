@@ -1,0 +1,5 @@
+source_record_id,inspection_number,project_reference,asset_reference,supplier_reference,inspection_type,inspection_date,result_status,finding_code,finding_description,inspector,extracted_at,ingestion_batch_id
+INSP-55091,INS-55091,AUS-BANK-01,FIELD-AST-STL-01,CRM-SUP-1001,RECEIVING,2026-07-09,PASS,,Mill certificates and member markings verified,Maya Chen,2026-07-14T00:05:00Z,BATCH-20260714-01
+INSP-55103,INS-55103,AUS-BANK-01,FIELD-AST-STL-01,CRM-SUP-1001,BOLT_INSTALLATION,2026-07-11,PASS,,Bolt lot and tensioning records accepted,Maya Chen,2026-07-14T00:05:00Z,BATCH-20260714-01
+INSP-44190,INS-44190,HOU-MIXED-02,FIELD-AST-POD-02,CRM-SUP-1002,SUPPLIER_DOCUMENT,2026-07-10,REQUEST_INFO,DOC-17,Updated AISC certificate required before release,Luis Romero,2026-07-14T00:05:00Z,BATCH-20260714-01
+INSP-33210,INS-33210,HAR-SEISMIC-03,FIELD-AST-BRC-03,CRM-SUP-1004,WELD_PROCEDURE,2026-07-12,FAIL,NCR-204,Weld procedure qualification does not address seismic demand critical welds,Priya Nair,2026-07-14T00:05:00Z,BATCH-20260714-01

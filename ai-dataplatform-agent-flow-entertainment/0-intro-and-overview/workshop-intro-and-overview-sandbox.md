@@ -23,9 +23,9 @@ Here's how the pieces come together across the labs:
 
 - **Data layer**: You'll explore a pre-configured standard catalog and managed volume in the AIDP Workbench, then create a Knowledge Base that converts your internal documents into vector embeddings for semantic search. You'll also verify the Oracle AI Database tables that contain your structured performance and marketing data.
 
-- **Agent layer**: You'll build the agent flow on a visual canvas — configuring a foundation model with detailed behavioral instructions, wiring up a RAG tool connected to the Knowledge Base, and adding seven SQL tools that cover box office performance, streaming health, campaign summaries, channel breakdowns, and reference lookups.
+- **Agent layer**: You'll build the agent flow on a visual canvas — configuring a foundation model with detailed behavioral instructions, wiring up a RAG tool connected to the Knowledge Base, and adding four SQL tools that cover box office performance, streaming health, and reference lookups.
 
-- **Validation layer**: You'll test the agent in the Playground with real-world scenarios — multi-title box office comparisons, market-specific follow-ups, marketing ROI with channel breakdowns, streaming trend analysis, and custom tabular output — observing how the agent reasons, selects tools, and synthesizes answers.
+- **Validation layer**: You'll test the agent in the Playground with real-world scenarios — multi-title box office comparisons, market-specific follow-ups, streaming trend analysis, RAG-only policy questions, hybrid RAG-plus-SQL interpretation, and custom tabular output — observing how the agent reasons, selects tools, and synthesizes answers.
 
 - **Deployment layer**: You'll deploy the agent to a production REST endpoint that applications, dashboards, and integrations can consume.
 
@@ -34,8 +34,8 @@ Here's how the pieces come together across the labs:
 | Lab | Title | Focus | Est. Time |
 |---|---|---|---|
 | **Lab 1** | Data Environment Setup | Explore the pre-configured catalog and volume; create a Knowledge Base for RAG; verify Oracle AI Database tables for SQL | 15 min |
-| **Lab 2** | Agent Flow Setup | Create AI Compute; build the agent flow on the visual canvas; configure the agent node with a model and instructions; add RAG tool and seven SQL tools | 25 min |
-| **Lab 3** | Validate the Agent Flow | Test the agent in the Playground across box office, streaming, marketing ROI, and cross-title comparison scenarios | 15 min |
+| **Lab 2** | Agent Flow Setup | Create AI Compute; build the agent flow on the visual canvas; configure the agent node with a model and instructions; add a RAG tool and four SQL tools | 25 min |
+| **Lab 3** | Validate the Agent Flow | Test the agent in the Playground across box office, streaming, RAG-only, hybrid RAG-plus-SQL, and cross-title comparison scenarios | 15 min |
 | **Lab 4** | Deploy the Agent Flow | Deploy to a production endpoint; retrieve the URL; understand REST API consumption | 5 min |
 | **Workshop Recap** | Recap and Value Proposition | Review what you built; understand the value for marketing, finance, and content strategy; explore ROI acceleration and next steps | 5 min |
 
@@ -68,7 +68,7 @@ By the end of this workshop, you will be able to:
 2. **Describe** the medallion architecture and how raw entertainment data (box office, streaming, marketing, internal documents) flows from bronze through silver to gold
 3. **Create** a Knowledge Base in AIDP that converts internal documents into vector embeddings for semantic retrieval
 4. **Build** an agent flow on the AIDP visual canvas — configuring a foundation model, behavioral instructions, and multiple tools (RAG + SQL)
-5. **Test** an AI agent that combines RAG and SQL to answer cross-functional business questions about title performance, marketing ROI, and release strategy
+5. **Test** an AI agent that combines RAG and SQL to answer cross-functional business questions about title performance, streaming health, and release strategy
 6. **Deploy** an agent flow to a production REST endpoint for consumption by applications and integrations
 7. **Articulate** the value proposition of an AI-powered analytics agent for entertainment teams — including time-to-insight compression, governance without friction, and self-service analytics for business users
 

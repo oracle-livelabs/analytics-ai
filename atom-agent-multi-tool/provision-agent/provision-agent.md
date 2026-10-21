@@ -2,183 +2,71 @@
 
 ## Introduction
 
-This lab will walk through the steps of writing access policies to the agent service, deploying and configuring a Generative AI Agent, and deploying a function application. 
+This lab will walk through the steps of deploying and configuring a Generative AI Agent with an associated knowledge base.
 
-Estimated Time: 120 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Make sure that our tenancy is subscribed to the Chicago region.
-* Create the required permissions for us to be able to use the service in our tenancy.
+* Confirm the region to use for this workshop.
 * Provision GenAI Agent
-* Configure Tools for Agent in console UI
-* Provision Functions Application
+* Configure RAG Tool for Agent in console UI
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
-* Access to the Chicago Region
-* Administrator permissions or permissions to use the Generative AI Agents, Digital Assistant, Functions, Visual Builder and Identity Domains
+* Access to the region used for this workshop
+* The IAM permissions listed in **Preparing Your Tenancy** in the workshop introduction when using your own tenancy. The LiveLabs sandbox already has the required policies.
 
-## Task 1: Ensure Chicago region subscription
+> **Sandbox note:** The LiveLabs sandbox includes optional sample documents in a pre-provisioned bucket. They are not used by this workshop. Create a separate bucket and upload the design-considerations document in Tasks 2 and 3; do not change the pre-provisioned bucket or its contents.
 
-The OCI Generative AI Agents service is currently only available in the Chicago region.
-If your tenancy is already subscribed to the Chicago region, please skip to the next task.
+## Task 1: Confirm Your Workshop Region
 
-1. On the top right, click the Regions drop down menu.
+If you are using the LiveLabs green button environment, use the region where the green button pre-provisioned your workshop resources. This is often **US East (Ashburn)**, but use the region assigned to your environment even if it is different. Create the bucket, knowledge base, and agent in that same region so they can work with the pre-provisioned resources used in Lab 2.
 
-  ![Screenshot showing the tenancy regions list](./images/policies/regions-list.png)
+1. In the OCI Console, open the **Regions** menu at the top right.
 
-1. Review the list of regions your tenancy is subscribed in. If you find the **US Midwest (Chicago)** region in the list, please skip to the next task.
+    ![Screenshot showing the tenancy regions list](./images/policies/regions-list.png)
 
-1. Click the Manage Regions link at the bottom of the list.
+1. If you are using LiveLabs, select the region containing the pre-provisioned Autonomous Database, Vault, and Database Tools connection. Check the workshop environment details if you are unsure which region was assigned. Keep this region selected throughout both labs.
 
-1. In the **Infrastructure Regions** list, locate the **US Midwest (Chicago)** region and click the subscribe button to it's right.
+    If you are using your own tenancy, select **US Midwest (Chicago)**. If Chicago is not listed, ask your tenancy administrator to subscribe to it before continuing.
 
-  > **Note:** When you subscribe to a region, you cannot unsubscribe from it.
+## Task 2: Provision Oracle Object Storage Bucket
 
-  ![Screenshot showing the region subscription page](./images/policies/infrastructure-regions.png)
-
-1. Click the **Subscribe** button at the bottom of the **Subscribe to New Region** dialog.
-
-  ![Screenshot showing the new region subscription approval dialog](./images/policies/subscribe-new-region-dialog.png)
-
-The operation might take a few minutes to complete. When complete, the new region will appear on the **US Midwest (Chicago)** will appear in the **Regions** drop down menu on the main screen.
-
-## Task 2: Create access policies
-
-In this task, we are going to create policies which will grant us access to the OCI Generative AI Agents service as well as the Object Storage service.
-We will use Object Storage to store the dataset required for this workshop.
-
-First, we are going to create a dynamic group which will allow us to grant access to the OCI Generative AI Agent service to the dataset uploaded to Object Storage.
-
-1. Click the navigation menu on the top left.
-
-1. Click **Identity & Security**.
-
-1. Click **Domains**.
-
-  ![Screenshot showing how to navigate to the domains section of the console](./images/policies/domains-navigation.png)
-
-1. Under the **List scope**, make sure that the **root** compartment is selected.
-
-1. Click the **Default** domain from the **Domains** table.
-
-  ![Screenshot showing how to navigate to the default domain section](./images/policies/default-domain-navigation.png)
-
-1. On the left click **Dynamic Groups**.
-
-1. Click the **Create dynamic group** button at the top of the **Dynamic groups** table.
-
-  ![Screenshot showing how to navigate to the dynamic groups section](./images/policies/dynamic-group.png)
-
-1. Name the dynamic group (example: oci-generative-ai-agents-service)
-
-1. Provide an optional description (example: This group represents the OCI Generative AI Agents service)
-
-1. Select the **Match all rules defined below** option in the **Matching rules** section.
-
-1. Enter the following expression in the **Rule 1** textbox:
-
-    ```text
-    <copy>
-    all {resource.type='genaiagent'}
-    </copy>
-    ```
-
-  ![Screenshot showing how to configure the dynamic group](./images/policies/create-dynamic-group.png)
-
-Next, we will create the access policies:
-
-1. Click **Identity & Security**.
-
-1. Click **Policies**.
-
-  ![Screenshot showing how to navigate to the policies section](./images/policies/policies-navigation.png)
-
-1. On the left under **List scope**, select the root compartment. The root compartment should appear first in the list, have the same name as the tenancy itself and have the text **(root)** next to it's name.
-
-1. Click the **Create Policy** button on the top left of the **Policies** table.
-
-  ![Screenshot showing how to initiate the creation of a new policy](./images/policies/create-new-policy-navigation.png)
-
-1. Provide a name for the policy (example: oci-generative-ai-agents-service).
-
-1. Provide a description (example: OCI Generative AI Agents CloudWorld 2024 Hands-On-Lab Policy).
-
-1. Make sure that the root compartment is selected.
-
-1. Enable the **Show manual editor** option.
-
-1. In the policy editor, enter the following policy statements:
-
-  ```text
-  <copy>
-  allow group <your-user-group-name> to manage genai-agent-family in tenancy
-  allow group <your-user-group-name> to manage object-family in tenancy
-  allow dynamic-group <dynamic-group-name-created-above> to manage all-resources in tenancy
-  </copy>
-  ```
-
-  Make sure to replace `<your-user-group-name>` with the user group your user is associated with (for example: `Administrators`).
-  Also, please replace `<dynamic-group-name-created-above>` with the name you've provided for the dynamic group created above.
-
-  ![Screenshot showing the steps to create a new policy](./images/policies/create-new-policy.png)
-
-## Task 3: Verify access to the service
-
-1. On the top right, click the Regions drop down menu.
-
-1. Click the **US Midwest (Chicago)**.
-
-1. Verify that the appears in bold to indicate it is the active region.
-
-  ![Screenshot showing how to select the Chicago region from the regions list](./images/policies/select-chicago-region.png)
-
-1. Click the navigation menu on the top left.
-
-1. Click **Analytics & AI**.
-
-1. Click **Generative AI Agents** under **AI Services**.
-
-  If the **Generative AI Agents** service does not appear under **AI Services**, please review previous tasks.
-
-  ![Screenshot showing how to navigate to the Agents service from the main menu](./images/policies/agents-service-navigation.png)
-
-## Task 4: Provision Oracle Object Storage Bucket
-
-This task will help you to create Oracle Object Storage Bucket under your chosen compartment. This will be used for the RAG tool.
+Create your own Object Storage bucket in the workshop compartment and region for the RAG tool. In the LiveLabs environment, the green button also pre-provisions a `knowledge-base-articles` bucket. Leave that bucket and its contents unchanged; use the new bucket you create in this task for the rest of Lab 1.
 
 1. Locate Buckets under Object Storage & Archive Storage
 
     ![object storage navigation](images/kb/os_nav.png)
 
-2. Provide the information for **Compartment** and **Bucket Name**. Click Create.
-    The Object Storage Bucket will be created. Keep the visibility of bucket as Private.
+2. Select **Create bucket**. Provide the **Compartment** and a **Bucket Name** for your own bucket, keep its visibility **Private**, and click **Create**.
 
     ![object storage bucket creation](images/kb/os_bucket_create.png)
 
-    <!--TODO: may need object events and may want object versioning -->
+    The example below shows the green button's pre-provisioned `knowledge-base-articles-239045` bucket alongside a separate `multi-tool-bucket` created for this workshop. Your bucket names may differ. Use the bucket you created in the next tasks.
 
-## Task 5: Upload PDF Document(s) to the Object Storage Bucket
+    ![Buckets list showing the pre-provisioned articles bucket and a separate workshop bucket](images/kb/workshop-buckets.png)
+
+## Task 3: Upload PDF Document(s) to the Object Storage Bucket
 
 1. Click on the Bucket name, then Objects -> Upload button
 
     Click on “select files” link to select files from your machine. This step can be repeated to select multiple files to upload to the bucket.
 
-    **Note:** The Gen AI Agents service currently supports .pdf and .txt file formats
+    **Note:** For this workshop, upload a PDF or text document that you are permitted to use as a RAG source.
 
-    If you would like to use a sample pdf, click [here](https://objectstorage.us-chicago-1.oraclecloud.com/p/FGxCnVLMgA-0O62bDnhbQCc-0dHHE8nbUaWpCGITsYtkeX3LA8dXp7NYeL_F609R/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab/Design%20Considerations%20for%20GenAI%20Apps.pdf)
+    You can use the sample PDF, [Design Considerations for GenAI Apps](https://objectstorage.us-chicago-1.oraclecloud.com/p/D5X4v88ZpEJ82ui8OrlrRQDkuLU0775OpiXl8tYOALLw6v9imMssIc0KovdN_qKB/n/idb6enfdcxbl/b/Livelabs/o/atom-multi-tool-livelab/Design%20Considerations%20for%20GenAI%20Apps.pdf). If that link is unavailable, upload a PDF or text document you are authorized to use instead.
 
     ![object storage select files](images/kb/os_file_select.png)
 
-2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket.
+2. Click Upload -> Close to upload the PDF file in the Object Storage Bucket. Before creating the knowledge base, confirm that the uploaded PDF appears on the **Objects** page of the bucket you created in Task 2.
 
     ![object storage upload files](images/kb/os_upload.png)
 
-## Task 6: Provision Knowledge Base
+## Task 4: Provision Knowledge Base
 
 This task will help you to create Oracle Generative AI Agent’s Knowledge Base under your chosen compartment.
 
@@ -198,23 +86,29 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
     ![knowledge base creation wizard](images/kb/kb_wizard.png)
 
-4. Specify the name of the data source and Description (Optional)
+4. Specify the name of the data source and Description (optional).
 
-    Select the bucket that you have created in the previous lab, and for Object prefix choose “Select all in bucket”
+    Select the workshop compartment and the private bucket you created in Task 2. Turn on **Select all in bucket**.
 
-    Click the “Create” button
+    ![Data source dialog with the workshop bucket selected and Select all in bucket enabled while the object list loads](images/kb/kb-select-workshop-bucket.png)
 
-    ![knowledge base data source](images/kb/kb_data_source.png)
+    > **Important:** Select only the bucket you created for this workshop and uploaded the **Design Considerations for GenAI Apps** PDF to in Task 3. Do not select the pre-provisioned sandbox bucket or its documents. Selecting the wrong bucket can require another ingestion run, which might not finish during the event.
+
+    The object list may continue loading after you select the bucket. Once the correct bucket name is shown and **Select all in bucket** is on, click **Create** without waiting for the list to finish loading.
 
 5. Click the “Create” button to create the knowledge base
 
     ![knowledge base creation](images/kb/kb_create.png)
 
-6. In few minutes the status of recently created Knowledge Base will change from Creating to Active
+6. The new Knowledge Base may initially show **Creating**. You can continue to Task 5 and attach it to the RAG tool while it is still provisioning.
 
     ![knowledge base active](images/kb/kb_active.png)
 
-## Task 7: Provision GenAI Agent
+7. Open the data source and start or review its ingestion job. Processing can take up to 30 minutes. Wait until the Knowledge Base is **Active**, ingestion completes successfully, and the uploaded document is listed as ingested before testing the RAG tool. If ingestion fails, review the policy reference in the workshop introduction or contact your tenancy administrator.
+
+    > **If you selected the wrong bucket:** Open the data source, select **Edit**, select the workshop bucket from Task 2, and save the change. Saving the updated data source starts a new ingestion job. Do not create a second knowledge base unless directed by an instructor.
+
+## Task 5: Provision GenAI Agent
 
 This task will help you to create Oracle Generative AI Agent under your chosen compartment.
 
@@ -226,11 +120,11 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
 2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
 
-    Select Add tool > Choose RAG tool 
+    Select Add tool > Choose RAG tool
 
     ![Create Tool](images/agent/create-tool.png)
 
-    Select the Knowledge Base that you created in the previous task. Providing the Welcome message is optional.
+    Select the Knowledge Base that you created in the previous task. You can attach it even if it is still provisioning. For the RAG tool description, use: **Tool to answer questions about design considerations for GenAI apps.** Providing the Welcome message is optional.
 
     Click the “Create” button.
 
@@ -244,50 +138,15 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 
     ![agent active](images/agent/agent_active_endpoint.png)
 
-4. It’ll open up the Endpoint Screen. Copy and keep the OCID of the Endpoint. It’ll be used later.
+4. It’ll open up the Endpoint Screen. Click on “Launch chat” button.
 
-   Click on “Launch chat” button
+    ![agent endpoint](images/agent/agent_endpoint.png)
 
-   ![agent endpoint](images/agent/agent_endpoint.png)
-
-5. It’ll open up the Chat Playground, where you can ask questions in natural language, and get the responses from your PDF documents
+5. Once the Knowledge Base is **Active** and its document ingestion has completed, open the Chat Playground to ask questions in natural language and get responses from your PDF document.
 
     ![Agent Chat Playground](images/agent/agent_launch_chat.png)
 
-
-## Task 8: Deploy Function Application
-In this section, we will deploy a VCN, OCI Function application, and a serverless Function for invoking the agent service.
-
-1. Create VCN
-    - In the cloud console, go to Networking > Virtual Cloud Networks
-
-    ![Create VCN](images/functions/networking-vcn.png)
-
-    - Select Actions > 'Start VCN Wizard' 
-
-    ![Start VCN Wizard](images/functions/vcn-wizard.png)
-
-    - Choose 'Create VCN with Internet Connectivity' 
-
-    ![Select Internet Connectivity](images/functions/vcn-with-internet.png)
-
-    - Give your VCN a name and keep the default options 
-
-    ![Default VCN](images/functions/vcn-default-options.png)
-
-    - Navigate to Review and Create and select 'Create'
-
-3. Create function application using the public subnet in previous step
-
-    - From the Cloud Console, navigate to Developer Services > Functions > Applications 
-
-    ![Create Fn Application](images/functions/fn-create-app.png)
-
-    - Give your application a name and select the VCN + Subnet you created in the previous step. Also select GENERIC_X86 for shape.
-
-    ![Fn App Config](images/functions/fn-app-config.png)
-
-4. You may now **proceed to the next lab**
+6. You may now **proceed to the next lab**
 
 ## Learn More
 
@@ -298,14 +157,16 @@ In this section, we will deploy a VCN, OCI Function application, and a serverles
 ## Acknowledgements
 
 **Authors**
-* **Luke Farley**, Senior Cloud Engineer, NACIE
+* **Luke Farley**, Senior Cloud Engineer
 
 **Contributors**
-* **Kaushik Kundu**, Master Principal Cloud Architect, NACIE
-* **JB Anderson**, Senior Cloud Engineer, NACIE
-* **Abhinav Jain**, Senior Cloud Engineer, NACIE
+* **Kaushik Kundu**, Master Principal Cloud Architect
+* **JB Anderson**, Senior Cloud Engineer
+* **Abhinav Jain**, Senior Cloud Engineer
 * **Lyudmil Pelov**, Lyudmil Pelov, Senior Principal Product Manager
 * **Yanir Shahak**, Senior Principal Software Engineer
+* **Ale Casas**, Senior Principal Product Marketing
+* **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, NACIE, Sept 2025
+* **Luke Farley**, Senior Cloud Engineer, October 2026

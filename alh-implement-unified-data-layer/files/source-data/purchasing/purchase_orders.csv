@@ -1,0 +1,5 @@
+source_record_id,po_number,project_reference,supplier_reference,asset_reference,description,amount,currency_code,po_status,extracted_at,ingestion_batch_id
+ERP-PO-88142,PO-88142,AUS-BANK-01,ERP-VEN-2044,ERP-AST-7781,Reinforced structural steel frame delivery,1487500.00,USD,RECEIVED,2026-07-13T22:15:00Z,BATCH-20260714-01
+ERP-PO-88157,PO-88157,AUS-BANK-01,ERP-VEN-2044,ERP-AST-7781,High strength bolts and connection plates,186400.00,USD,OPEN,2026-07-13T22:15:00Z,BATCH-20260714-01
+ERP-PO-77402,PO-77402,HOU-MIXED-02,ERP-VEN-2071,ERP-AST-6610,Structural steel package for podium levels,2125000.00,USD,APPROVED,2026-07-13T22:15:00Z,BATCH-20260714-01
+ERP-PO-66321,PO-66321,HAR-SEISMIC-03,ERP-VEN-2105,ERP-AST-5504,Seismic brace fabrication and delivery,932000.00,USD,HOLD,2026-07-13T22:15:00Z,BATCH-20260714-01

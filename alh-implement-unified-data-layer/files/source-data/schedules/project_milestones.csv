@@ -1,0 +1,5 @@
+source_record_id,project_reference,project_name,activity_id,activity_name,asset_reference,planned_date,actual_date,milestone_status,extracted_at,ingestion_batch_id
+P6-ACT-44018,AUS-BANK-01,Austin Regional Bank Structure,A44018,Steel delivery complete,P6-WBS-STR-220,2026-07-08,2026-07-09,COMPLETE,2026-07-13T23:00:00Z,BATCH-20260714-01
+P6-ACT-44022,AUS-BANK-01,Austin Regional Bank Structure,A44022,Frame erection complete,P6-WBS-STR-220,2026-07-24,,IN_PROGRESS,2026-07-13T23:00:00Z,BATCH-20260714-01
+P6-ACT-33011,HOU-MIXED-02,Downtown Mixed-Use Tower,A33011,Podium steel release,P6-WBS-POD-110,2026-08-03,,NOT_STARTED,2026-07-13T23:00:00Z,BATCH-20260714-01
+P6-ACT-22007,HAR-SEISMIC-03,Harbor Seismic Retrofit,A22007,Brace package approval,P6-WBS-BRC-050,2026-07-18,,AT_RISK,2026-07-13T23:00:00Z,BATCH-20260714-01

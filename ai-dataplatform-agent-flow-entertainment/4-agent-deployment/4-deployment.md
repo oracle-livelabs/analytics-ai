@@ -28,7 +28,7 @@ This lab assumes you have:
 
 1. From the agent flow canvas, click the **Deploy** button in the upper right corner.
 
-2. In the deployment dialog, select the **AI Compute** that will host the deployed agent flow. You can use the same AI Compute you created in Lab 2, or provision another one (reminder 3-5 minutes provisioning time) to use specifically for this exercise.
+2. In the deployment dialog, select the **AI Compute** that will host the deployed agent flow. Use the same AI Compute you created in Lab 1: **`ent_compute`**. If the dialog already defaults to **`ent_compute`** and **AIDP workbench** authorization, leave those values as-is.
 
 3. Click **Deploy** and wait for the deployment to complete. The status will update to indicate a successful deployment.
 

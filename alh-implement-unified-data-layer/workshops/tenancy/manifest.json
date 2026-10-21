@@ -1,0 +1,63 @@
+{
+  "workshoptitle": "Unify the Data Layer with Oracle Autonomous AI Lakehouse",
+  "description": "Build an Oracle Autonomous AI Lakehouse environment in your OCI tenancy, implement a governed medallion architecture, unify structured and unstructured project context, and extend the data layer to Microsoft Excel, AWS Glue, Apache Iceberg, remote Oracle data, and Delta Sharing.",
+  "help": "livelabs-help-analytics_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Workshop Introduction and Overview",
+      "filename": "../../0-intro-and-overview/workshop-intro-and-overview-tenancy.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Lab 1: Build the Unified Lakehouse Landing Zone",
+      "filename": "../../1-prepare-lakehouse-environment/1-prepare-lakehouse-environment.md"
+    },
+    {
+      "title": "Lab 2: Explore the Unified Lakehouse Foundation",
+      "filename": "../../1-unified-lakehouse-foundation/2-unified-lakehouse-foundation-tenancy.md"
+    },
+    {
+      "title": "Lab 3: Unify Data for AI Applications",
+      "filename": "../../2-unify-data-for-ai/3-unify-data-for-ai-tenancy.md"
+    },
+    {
+      "title": "Lab 4: Deliver Trusted Data Products",
+      "filename": "../../3-trusted-data-products/4-trusted-data-products-tenancy.md"
+    },
+    {
+      "title": "Lab 5: Analyze Trusted Data with Oracle Database for Excel",
+      "filename": "../../5-analyze-data-with-excel/5-analyze-data-with-excel.md"
+    },
+    {
+      "title": "Lab 6: Connect ALH to AWS Glue Data Catalog",
+      "filename": "../../6-connect-aws-glue/6-connect-aws-glue.md"
+    },
+    {
+      "title": "Lab 7: Query Apache Iceberg through AWS Glue",
+      "filename": "../../7-query-iceberg-aws-glue/7-query-iceberg-aws-glue.md"
+    },
+    {
+      "title": "Lab 8: Link a Remote Relational Source",
+      "filename": "../../8-link-remote-relational-source/8-link-remote-relational-source.md"
+    },
+    {
+      "title": "Lab 9: Consume Partner Data through Delta Sharing (Optional)",
+      "filename": "../../9-consume-delta-sharing/9-consume-delta-sharing.md"
+    },
+    {
+      "title": "Workshop Recap",
+      "filename": "../../99-workshop-recap/workshop-recap-tenancy.md"
+    },
+    {
+      "title": "Clean Up the Tenancy Environment",
+      "filename": "../../100-cleanup-tenancy/cleanup-tenancy.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2026 Oracle and/or its affiliates.
+ * Licensed under the Universal Permissive License v 1.0 as shown at
+ * https://oss.oracle.com/licenses/upl/.
+ */
+
+.sample-code-license-gate {
+  border: 1px solid #b8b8b8;
+  border-left: 4px solid #c74634;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.license-gate-review,
+.license-gate-button {
+  background: #c74634;
+  border: 1px solid #a93a2c;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  margin: .5rem .5rem .5rem 0;
+  padding: .65rem 1rem;
+}
+
+.license-gate-button--secondary {
+  background: #fff;
+  color: #333;
+}
+
+.license-gate-button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.license-gate-status { margin-bottom: 0; }
+.sample-code-clone.license-gate-is-hidden { display: none !important; }
+
+.license-gate-modal {
+  align-items: center;
+  background: rgba(0, 0, 0, .55);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10000;
+}
+
+.license-gate-dialog {
+  background: #fff;
+  box-sizing: border-box;
+  max-height: calc(100vh - 2rem);
+  max-width: 850px;
+  overflow: auto;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.license-gate-terms {
+  border: 1px solid #d9d9d9;
+  height: 45vh;
+  margin: 1rem 0;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.license-gate-confirmation { display: block; margin: 1rem 0; }

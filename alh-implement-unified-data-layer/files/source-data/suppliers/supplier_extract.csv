@@ -1,0 +1,9 @@
+source_record_id,supplier_name,source_status,certification,location,source_system,ingestion_batch_id
+CRM-SUP-1001,"  atlas structural fab.  ",A,AISC 207-20,"Austin, Texas",CRM,BATCH-20260714-01
+ERP-VEN-2044,ATLAS STRUCTURAL FABRICATION,APPROVED,AISC,"Austin, TX",FUSION_ERP,BATCH-20260714-01
+CRM-SUP-1002,westbridge steel supply,PENDING_INFO,,"Dallas, Texas",CRM,BATCH-20260714-01
+ERP-VEN-2071," WestBridge Steel Supply ",A,AISC,"Dallas, TX",FUSION_ERP,BATCH-20260714-01
+CRM-SUP-1003,NORTHLINE INDUSTRIAL METALS,REVIEW,AWS D1.1,"San Antonio, Texas",CRM,BATCH-20260714-01
+ERP-VEN-2099,Precision Air Systems,APPROVED,ISO 9001,"Round Rock, Texas",FUSION_ERP,BATCH-20260714-01
+CRM-SUP-1004,coastal retrofit metals,PENDING_INFO,,"Galveston, Texas",CRM,BATCH-20260714-01
+CRM-SUP-1005,Civic Steel Partners,A,AISC,"Houston, Texas",CRM,BATCH-20260714-01

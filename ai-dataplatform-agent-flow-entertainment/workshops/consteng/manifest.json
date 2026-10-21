@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "Assemble and Deploy an AI Agent using RAG and SQL",
+    "description": "Learn how to build and deploy an AI agent using retrieval-augmented generation (RAG) and SQL integration on Oracle AI Data Platform. You'll interact with large language models, enterprise documents, and relational databases to answer natural language queries with contextual accuracy. The session covers document ingestion, vector search, SQL querying, and deployment best practices, providing a hands-on experience creating intelligent, enterprise-ready AI applications.",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Workshop Introduction and Overview",
+            "filename": "../../0-intro-and-overview/workshop-intro-and-overview-consteng.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Configure the Data Environment",
+            "filename": "../../1-data-environment-setup/1-data-environment-setup-consteng.md"
+        },
+        {
+            "title": "Lab 2: Set Up the Agent Flow",
+            "filename": "../../2-agent-flow-setup/2-agent-flow-setup-consteng.md"
+        },
+        {
+            "title": "Lab 3: Validate the Agent Functionality",
+            "filename": "../../3-validate-agent-flow/3-validate-agent-flow-consteng.md"
+        },
+        {
+            "title": "Lab 4: Deploy the Agent",
+            "filename": "../../4-agent-deployment/4-deployment-consteng.md"
+        },
+        {
+            "title": "Workshop Recap",
+            "filename": "../../99-workshop-recap/workshop-recap-consteng.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

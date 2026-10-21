@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "AI Data Platform Environment",
+    "help": "livelabs-help-analytics_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Access AIDP Instance and Lab Files",
+            "description": "Use the OCI Console to access your reserved AIDP instance and download the lab files.",
+            "filename": "../../1-access-aidp-and-lab-files/1-access-aidp-and-lab-files.md"
+        }
+    ]
+}
