@@ -21,7 +21,7 @@ This lab assumes you have:
 
 ## Task 1:  Create a Dataset from a File
 
-In this step you shall load a file dataset provided here [Sales Data for AI](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdsepltfrmanalyticshrd1/b/DocumentAI/o/Sales%20Data%20for%20AI.xlsx) from your local machine into the OAC.
+In this step you shall load a file dataset provided here [Sales Data for AI](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/9DEArLjsgbKXuJgQtSG95E8hMXRFtxgHR8jiHbqz4HgyVYXVnSo0SC_s-zq5CJA3/n/c4u02/b/hosted-files/o/Sales%20Data%20for%20AI.xlsx) from your local machine into the OAC.
 
 1. Navigate to **Create** menu then **Dataset**.
 
