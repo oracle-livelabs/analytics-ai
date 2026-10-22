@@ -31,9 +31,9 @@ This lab assumes you have:
 
 With the AI Compute instance created in Lab 1 (should be **Active** now), you can now create the agent flow — the visual canvas where you design the agent's behavior, tools, and configuration.
 
-1. Navigate to your workspace and click on **Agent Flows**. Click the **+** button to create a new agent flow.
+1. Navigate to your workspace and click **Agents**. Click **Create** or the **+** button to open **Create Agent project**.
 
-2. Enter a name and description:
+2. Keep **Visual builder** selected as the **Agent authoring mode**, then enter a name and description:
 
     **Name**
     ```
@@ -51,7 +51,7 @@ With the AI Compute instance created in Lab 1 (should be **Active** now), you ca
 
     ![Create dialogue for new Agent Flow](images/02-agent-flows-create.png " ")
 
-3. You will be directed to the **agent flow canvas** — a visual design environment where you'll drag and configure Executor Agent nodes and tools.
+3. Click **Create**. You will be directed to the **agent flow canvas** — a visual design environment where you'll drag and configure Executor Agent nodes and tools.
 
 4. Attach the agent flow to the AI Compute you created in Lab 1. In the upper right corner, click **Compute** → **Attach to AI Compute**, then select **`ent_compute`**.
 

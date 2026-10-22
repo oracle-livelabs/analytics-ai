@@ -39,11 +39,13 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
     ![Screenshot of main navigation menu](images/01-navigate-nav-menu.png " ")
 
-3. Navigate **Analytics & AI** --> **AI Data Platform Workbench**.
+3. Navigate **Analytics & AI** --> **AI Data Platform**.
 
     ![Screenshot of link to AI Data Platform menu item](images/01-navigate-ai-data-platform.png " ")
 
-4. From the *List scope* menu on the left side of the page, click the drop-down and locate the *Compartment* assigned by the LiveLabs environment.
+4. Under **Applied filters**, click the **Compartment** filter and select the `LL<reservation>-COMPARTMENT` assigned by LiveLabs. You can search for your reservation number to locate it.
+
+    > **Note:** The tenancy root may show an access warning or fail to list instances for a workshop user. Select your assigned compartment before troubleshooting permissions.
 
     ![Animated gif illustrating how to locate and select assigned compartment](images/01-tenancy-select-compartment.gif " ")
 
@@ -195,9 +197,9 @@ A standard catalog in AIDP stores AI-related artifacts — volumes, tables, sche
 
 A volume stores unstructured data — files, documents, images — within a catalog. The volume for this workshop contains the internal release playbooks and strategy documents that the RAG tool will search.
 
-1. First off, [Click Here](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/kb_documents.zip) to download the Zip file containing all the sample docs required for this workshop.
+1. [Download the Knowledge Base PDF documents](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/kb_documents_pdf.zip). This ZIP archive contains the three sample documents required for this workshop.
 
-2. Unzip the file; you should have 3 `.docx` files pertaining to the Knowledge Base components that will be built here in Lab 1.
+2. Unzip the file; you should have three `.pdf` files for the Knowledge Base that you will build in this lab. Use these PDFs rather than the older DOCX package; PDF ingestion was validated for this workshop.
 
     - **Content Strategy & Release Operations Playbook** — Defines release windows, territory prioritization, green/yellow/red performance signals, and decision frameworks
     - **Marketing Measurement & Attribution Guidelines** — Defines metric definitions (e.g., completion rate, ROI), attribution logic, and interpretation rules
@@ -229,7 +231,7 @@ A volume stores unstructured data — files, documents, images — within a cata
 
 6. Click the volume name **`ent_volume`** then click the **+** button to the right of the Filter field then click **`Upload file`**.
 
-7. Click to browse or drag-and-drop the three `.docx` files from the Zip archive you downloaded earlier.
+7. Click to browse or drag-and-drop the three `.pdf` files from the ZIP archive you downloaded earlier. Upload only the PDFs, not both PDF and DOCX copies of the same documents.
 
     ![Upload files interface](images/01-catalog-volume-upload-files.png " ")
 
