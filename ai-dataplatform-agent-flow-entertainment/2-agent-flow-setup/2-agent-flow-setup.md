@@ -53,11 +53,10 @@ With the AI Compute instance created in Lab 1 (should be **Active** now), you ca
 
 3. Click **Create**. You will be directed to the **agent flow canvas** — a visual design environment where you'll drag and configure Executor Agent nodes and tools.
 
-4. Attach the agent flow to the AI Compute you created in Lab 1. In the upper right corner, click **Compute** → **Attach to AI Compute**, then select **`ent_compute`**.
+4. Above the canvas, open **Select Playground AI Compute** using the dropdown at the right of the Development/Playground toolbar. Under **Active AI compute**, select **`ent_compute`**, then click **Select**. Confirm the toolbar shows **ent_compute (ACTIVE)**.
 
-    > **Note:** If the create dialog includes an optional AI Compute field, you can leave it blank and attach **`ent_compute`** from the canvas after the flow opens.
+    > **Note:** The optional AI Compute field in the create dialog may be disabled for Visual builder. Select the Playground compute after the flow opens. Production deployment selects its compute separately in Lab 4.
 
-    ![Attach AI Compute to Agent flow using the menu](images/02-agent-flows-attach-compute.png " ")
 
 ## Task 2: Add the Chat Trigger and Configure the Executor Agent
 
@@ -65,7 +64,7 @@ The Executor Agent node is the core of your flow. It defines the LLM model, the 
 
 1. Drag a **Chat Trigger** onto the blank canvas and place it on the left. Drag an **Executor Agent** to its right, leaving space between the nodes. Drag from the Chat Trigger connector to the Executor Agent and release to connect them. Click the agent frame to configure it. The Chat Trigger starts Playground and deployed conversations.
 
-2. Click the *Agent Name* and *Agent Description* in the drawer window to edit both. Select the generated node name before typing so your new value replaces it instead of appending to it.
+2. Click the *Agent Name* and *Agent Description* in the drawer window to edit both. Select the generated node name before typing so your new value replaces it instead of appending to it. Press **Enter** to save each inline edit; the adjacent cancel icon discards it.
 
     ![Change the agent flow name](images/02-agent-flows-change-name.png " ")
 
@@ -100,7 +99,7 @@ The Executor Agent node is the core of your flow. It defines the LLM model, the 
     > **Note:** Model availability can vary by reservation. If that example is unavailable, select the reasoning model confirmed by your facilitator for this event. Do not change regions arbitrarily; model access and allowed regions depend on the event environment.
 
 
-4. For the **Agent Instructions** field, you'll need the detailed instructions that define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:
+4. Open the **Agent instructions** tab. Click the instructional placeholder text to activate the editable field. You'll need the detailed instructions that define the agent's behavior, reasoning flow, and response style. These instructions tell the agent:
 
     - Its role (internal analytics and decision-support for entertainment teams)
     - When to use RAG vs. SQL tools
@@ -108,7 +107,7 @@ The Executor Agent node is the core of your flow. It defines the LLM model, the 
     - Response style guidelines (concise, analytical, structured)
     - What it must NOT do (no guessing metrics, no bypassing SQL tools, no fabricating data)
 
-5. Copy the following agent instructions into the **Agent Instructions** box in the Configuration tab.
+5. Copy the following agent instructions into the **Agent instructions** field, replacing the placeholder content. Click another tab when finished to leave the editor.
 
     ```
     <copy>
@@ -206,7 +205,7 @@ The Executor Agent node is the core of your flow. It defines the LLM model, the 
 
     ![Agent configuration dialog with all parameters entered](images/02-agent-flows-create-agent-details.png " ")
 
-6. Leave the **Model Parameters** and **Safety Guardrails** settings as-is for now.
+6. Leave **Model parameters** in the **Configuration** tab at their defaults. Leave **Context** and **Skills** unchanged for this workshop.
 
 7. The **Agent flows** canvas auto-saves your input as you work. Now you're ready to move to the next task.
 
@@ -265,7 +264,7 @@ The RAG tool connects the agent to the Knowledge Base you created in Lab 1. When
 
 Now we'll add the SQL tools. Each SQL tool executes a single, pre-defined, parameterized query against the Oracle AI Database. The agent selects which tool to call based on the user's question and populates the parameters automatically.
 
-For each SQL tool below, select the generated tool name before typing the new name. For **Catalog and Schema**, use **`ent_ext_catalog`** → **`entertainment`**.
+For each SQL tool below, select the generated tool name before typing the new name and press **Enter** to save. Select **`ent_ext_catalog`** in **External catalog**, then **`entertainment`** in **Schema**.
 
 ### Tool 1: Get box office weekend data
 
@@ -282,9 +281,9 @@ This tool returns weekend theatrical performance for a title in a given market.
     </copy>
     ```
     
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
+3. In **External catalog**, select **`ent_ext_catalog`**. Then select **`entertainment`** in the **Schema** dropdown.
 
-    ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
+    ![External catalog and Schema dropdowns](images/02-sql-catalog-schema-live.png " ")
 
 4. Enter a description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
@@ -331,7 +330,7 @@ This tool returns weekend theatrical performance for a title in a given market.
     </copy>
     ```
 
-    ![Screenshot depicting AI Tool definition description input](images/02-agent-flows-sql-ai-tool-definition.png " ")
+    ![AI Tool definition Name, Type and Description fields](images/02-sql-parameters-live.png " ")
 
 7. Optionally, click the **Test** tab and assign values to validate:
 
@@ -364,9 +363,9 @@ This tool returns weekly streaming health metrics (starts, hours, completion rat
     </copy>
     ```
 
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
+3. In **External catalog**, select **`ent_ext_catalog`**. Then select **`entertainment`** in the **Schema** dropdown.
 
-    ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
+    ![External catalog and Schema dropdowns](images/02-sql-catalog-schema-live.png " ")
 
 4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
@@ -429,9 +428,9 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
     </copy>
     ```
 
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
+3. In **External catalog**, select **`ent_ext_catalog`**. Then select **`entertainment`** in the **Schema** dropdown.
 
-    ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
+    ![External catalog and Schema dropdowns](images/02-sql-catalog-schema-live.png " ")
 
 4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
@@ -465,9 +464,9 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
     </copy>
     ```
     
-3. Under **Catalog and Schema**, click the **Search** drop-down. Expand the **`ent_ext_catalog`** item and select the **`entertainment`** schema.
+3. In **External catalog**, select **`ent_ext_catalog`**. Then select **`entertainment`** in the **Schema** dropdown.
 
-    ![Screenshot depicting the catalog and schema drop-down](images/02-agent-flows-sql-select-schema.png " ")
+    ![External catalog and Schema dropdowns](images/02-sql-catalog-schema-live.png " ")
 
 4. Enter the description. The **`Description`** field may come pre-populated with instructions on how to use the field. Delete the placeholder contents before pasting the description below.
 
@@ -492,6 +491,8 @@ These tools provide reference data that helps the agent resolve IDs and codes wh
 Before leaving the canvas, confirm **Chat Trigger -> Analyst_Agent**, five connected tools (one RAG plus four SQL), and **ent_compute** attached. Check every connector; an unconnected node is not available to the agent.
 
 ## Lab 2 Recap
+
+![Completed agent with Chat Trigger, one RAG tool and four connected SQL tools](images/02-agent-complete-live.png " ")
 
 In this lab, you built the complete agent flow for the Entertainment Release & Performance Analyst:
 

@@ -28,11 +28,13 @@ This lab assumes you have:
 
 1. From the agent flow canvas, click the **Deploy** button in the upper right corner.
 
-2. In the deployment dialog, select the **AI Compute** that will host the deployed agent flow. Use the same AI Compute you created in Lab 1: **`ent_compute`**. If the dialog already defaults to **`ent_compute`** and **AIDP workbench** authorization, leave those values as-is.
+2. In **Deploy Agent**, select **`ent_compute`** under **Active AI compute**. Keep **Authorize using: AIDP** and **Run as: Yourself**. Do not select OAuth or a service account for this workshop.
 
 3. Click **Deploy** and wait for the deployment to complete. The status will update to indicate a successful deployment.
 
-    ![Screenshot of agent deployment](images/04-agent-deployment.png " ")
+    ![Deploy Agent dialog with existing compute and Deploy button](images/04-deployment-dialog-live.png " ")
+
+    > **Note:** Deployment runs asynchronously. Check **Async operations** for **Deploy Agent: Succeeded**. If Details still shows DRAFT immediately afterward, switch to Flow and back to Details to refresh it.
 
 ## Task 2: Retrieve the Chat Endpoint URL
 
@@ -42,7 +44,7 @@ Once the deployment is successful, you need to retrieve the production URL that 
 
 2. Confirm status **DEPLOYED** and locate the **Chat endpoint URL** (or **Endpoint URL** in an earlier interface). This is the production URL of your deployed agent flow. Copy this URL — it is the address that external applications, scripts, or integration tools will use to send messages to the agent.
 
-    ![Screenshot of details tab](images/04-agent-details-endpoint.png " ")
+    ![Deployed status and Chat endpoint URL location; reservation-specific URLs obscured](images/04-deployment-details-live.png " ")
 
 3. Note that the deployed agent is now a live REST endpoint. It accepts messages and returns responses using the same reasoning, tools, and knowledge that you validated in the Playground.
 
