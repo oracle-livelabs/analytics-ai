@@ -34,13 +34,13 @@ This lab assumes you have:
 
     ![Screenshot of agent deployment](images/04-agent-deployment.png " ")
 
-## Task 2: Retrieve the Endpoint URL
+## Task 2: Retrieve the Chat Endpoint URL
 
 Once the deployment is successful, you need to retrieve the production URL that applications will use to communicate with the agent.
 
 1. Navigate to the **Details** tab of your agent flow.
 
-2. Locate the **Endpoint URL**. This is the production URL of your deployed agent flow. Copy this URL — it is the address that external applications, scripts, or integration tools will use to send messages to the agent.
+2. Confirm status **DEPLOYED** and locate the **Chat endpoint URL** (or **Endpoint URL** in an earlier interface). This is the production URL of your deployed agent flow. Copy this URL — it is the address that external applications, scripts, or integration tools will use to send messages to the agent.
 
     ![Screenshot of details tab](images/04-agent-details-endpoint.png " ")
 
@@ -48,9 +48,9 @@ Once the deployment is successful, you need to retrieve the production URL that 
 
 ## Task 3: Understand REST API Consumption
 
-Once deployed, the agent flow endpoint can be called programmatically via `curl`, Python, or any HTTP client. While executing REST API calls is beyond the scope of this workshop, here's how the integration model works:
+Once deployed, the agent flow endpoint can be called programmatically via `curl`, Python, or any HTTP client. While executing REST API calls is beyond the scope of this workshop, review the integration model below. Confirm the supported request format and authentication for the deployment before writing a client; the JSON shown is illustrative, not a validated standalone API invocation:
 
-1. **Authentication**: Callers authenticate via OCI request signing or session cookies. The endpoint uses OCI IAM policies to determine who can access the agent.
+1. **Authentication**: Use the authentication mechanism supported by the deployed endpoint and the event environment. A signed-in Playground session does not prove an external client is authorized. Do not copy browser cookies into scripts.
 
 2. **Sending messages**: Callers send a POST request to the endpoint URL with a JSON body containing the user's message. For example:
 
@@ -60,11 +60,11 @@ Once deployed, the agent flow endpoint can be called programmatically via `curl`
     }
     ```
 
-3. **Conversational context**: After the first message, the API returns a `roomID`. Subsequent requests can include this `roomID` to maintain conversational context across turns — just like the multi-turn session you tested in the Playground.
+3. **Conversational context**: The supported API can return a conversation identifier. Use the field documented for that endpoint version on subsequent requests to maintain conversational context across turns — just like the multi-turn session you tested in the Playground.
 
 4. **Integration options**: The endpoint can be integrated with internal dashboards, Slack bots, custom web apps, Oracle Digital Assistant, or any tool that can make HTTP requests. This means marketing, finance, and content strategy teams can access the agent from the tools they already use.
 
-    > **Key takeaway**: Deployment turns your agent from a prototype into a production service. The REST endpoint makes it accessible to any application or integration, while OCI IAM ensures only authorized users and systems can access it. The same governance, RBAC, and lineage controls that protect the data in the Workbench carry through to the deployed agent.
+    > **Key takeaway**: Deployment turns your agent from a prototype into a production service. The REST endpoint makes it accessible to any application or integration, while OCI IAM ensures only authorized users and systems can access it. The deployment still needs endpoint access checks, monitoring, and retrieval evaluation before production use.
 
 ## Lab 4 Recap
 
@@ -74,7 +74,7 @@ In this lab, you completed the final step of the end-to-end agent development li
 - You **retrieved the endpoint URL** that applications and integrations use to communicate with the agent.
 - You **understand the REST API model** for consuming the agent — including authentication, message format, conversational context, and integration options.
 
-The Entertainment Release & Performance Analyst agent is now a production-ready service that can serve marketing, finance, and content strategy teams across your organization.
+The Entertainment Release & Performance Analyst agent is now a deployed demonstration service that can serve marketing, finance, and content strategy teams across your organization.
 
 ## Learn More
 
@@ -86,4 +86,4 @@ The Entertainment Release & Performance Analyst agent is now a production-ready 
 
 * **Author(s)** - Jean-Rene Gauthier [AIDP]
 * **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Published March 2026
+* **Last Updated By/Date** - Eli Schilling, October 2026

@@ -25,7 +25,7 @@ This lab assumes you have:
 
 * Reviewed the Workshop Introduction and Overview
 * Access to the AIDP Workbench instance provisioned for this workshop
-* Enabled AI features in the AIDP Workbench. In the LiveLabs sandbox, this commonly takes 5-7 minutes and may require a hard browser refresh before the home page changes from **Enable AI features** to **Disable AI features**.
+* AI features enabled by the updated Entertainment Terraform stack. Confirm enablement completed before starting. If the Workbench still offers **Enable AI features**, stop and ask the facilitator to check the stack activation work request. Do not create another database.
 
 ## Task 1: Create the AI Compute Instance
 
@@ -39,31 +39,31 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
 
     ![Screenshot of main navigation menu](images/01-navigate-nav-menu.png " ")
 
-2. Navigate **Analytics & AI** --> **AI Data Platform Workbench**.
+3. Navigate **Analytics & AI** --> **AI Data Platform Workbench**.
 
     ![Screenshot of link to AI Data Platform menu item](images/01-navigate-ai-data-platform.png " ")
 
-3. From the *List scope* menu on the left side of the page, click the drop-down and locate the *Compartment* assigned by the LiveLabs environment.
+4. From the *List scope* menu on the left side of the page, click the drop-down and locate the *Compartment* assigned by the LiveLabs environment.
 
     ![Animated gif illustrating how to locate and select assigned compartment](images/01-tenancy-select-compartment.gif " ")
 
-4. Click the name of the AIDP Instance to open the Workbench. The workbench will open in a new tab.
+5. Click the name of the AIDP Instance to open the Workbench. The workbench will open in a new tab.
 
-5. From the AIDP Workbench Home Page, select your workspace from the drop-down menu listing all workspaces.
+6. From the AIDP Workbench Home Page, select your workspace from the drop-down menu listing all workspaces.
 
     ![Use the drop-down menu to select your workspace](images/01-dashboard-select-workspace.gif " ")
 
-6. Click on **Compute** under the selected workspace.
+7. Click on **Compute** under the selected workspace.
 
     ![Screenshot depicting the Compute section of workspace](images/01-aidp-navigate-compute.png " ")
 
-7. In the Compute page, click on the **AI Compute** tab.
+8. In the Compute page, click on the **AI Compute** tab.
 
-8. Click the **+** button to add an AI Compute.
+9. Click the **+** button to add an AI Compute.
 
     ![Screenshot of the AI compute tab and plus button](images/01-aidp-create-compute.png " ")
 
-9. Enter a name and description:
+10. Enter a name and description:
 
     **Name**
     ```
@@ -79,15 +79,15 @@ An AI Compute hosts your agent flows. You need an active AI Compute to test agen
     </copy>
     ```
 
-10. Use the default size of **1 OCPU** and **16 GB of RAM**.
+11. Use the default size of **1 OCPU** and **16 GB of RAM**.
 
-11. Click **Create**..
+12. Click **Create**.
 
     ![Create new AI compute dialog window](images/01-compute-create-instance.png " ")
     
     > **Note**: It may take 3-5 minutes to provision this resource. The AI Compute instance is where your agent flow executes. Once attached, any changes you make to the agent flow are automatically propagated to the AI Compute instance — meaning you can edit and test quasi-simultaneously.
 
-12. There's no need wait for the **`ent_compute`** resource to finish provisioning right now. You can move to the next task. The instance should be ready to go by the time it's needed in Lab 2.
+13. There's no need wait for the **`ent_compute`** resource to finish provisioning right now. You can move to the next task. Check that the instance is Active before using the Playground in Lab 2; provisioning time varies.
 
 ## Task 2: Create the (External) Database Catalog
 
@@ -145,11 +145,9 @@ For this workshop, an ALH instance has been provisioned and loaded with sample d
 
     - **Wallet password (optional)**: You may choose your own password, or leave this field blank and allow AIDP to manage the wallet password.
     - **Username**: ENTERTAINMENT
-    - **ADB Admin Password**: Retrieved from the LiveLabs instructions page -> View Login Info -> Terraform Outputs -> ADB Admin Password.
+    - **Password**: Use **Schema User Password** (`schema_user_password`) from **View Login Info** -> **Terraform Outputs**. This is the `ENTERTAINMENT` schema password, not the ADB Admin Password.
 
-    > **Important** You'll need the **`ADB Admin Password`** found in the **`View Login Info`** on the LiveLabs workshop page (covered in the **Getting Started** section). Scroll down under **Reservation Information** and you should see a **Terraform Outputs** section.
-
-    ![Screenshot of ADB admin password location](images/01-database-retrieve-password.png " ")
+    > **Important:** The updated stack generates separate ADMIN and ENTERTAINMENT passwords. Use **Schema User Password** for this catalog. **ADB Admin Password** is reserved for database administration and automated AI-feature attachment. If the schema password output is missing, check that the updated Entertainment package was deployed.
 
 11. Click **[Test connection]** - confirm that the connection is successful.
 
@@ -239,7 +237,7 @@ A volume stores unstructured data — files, documents, images — within a cata
 
     ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete.png " ")
 
-8. These are the documents that the AI agent will search via RAG when users ask questions about definitions, policies, thresholds, or interpretation rules. For example, when a user asks *"What does our playbook say about territory priorities for releases?"*, the agent will retrieve relevant passages from these documents.
+9. These are the documents that the AI agent will search via RAG when users ask questions about definitions, policies, thresholds, or interpretation rules. For example, when a user asks *"What does our playbook say about territory priorities for releases?"*, the agent will retrieve relevant passages from these documents.
 
 ## Task 5: Create a Knowledge Base
 
@@ -287,11 +285,11 @@ Now we'll create the key asset that enables RAG. A Knowledge Base creates vector
 
     ![Select and add the ent_volume data source](images/01-catalog-kbase-add-select-datasource.png " ")
 
-11. Navigate to the **History** tab of your Knowledge Base. You should see a line entry with the operation name **"Update Knowledge Base"**. This step ingests the documents — chunking them, generating embeddings, and indexing the vectors.
+11. Open the Knowledge Base ingestion history or jobs view. Adding the source starts a background ingestion job; an accepted request or an **Active** Knowledge Base does not mean ingestion has succeeded. Open the latest job run and inspect its status and file counts. If no run was started, select **Ingest now** for this source.
 
     ![Knowledgebase is ingesting documents from the data source](images/01-catalog-kbase-ingest-docs.png " ")
 
-12. Wait for the status to show **Succeeded** before moving on. This typically takes less than one minute since we're ingesting a small set of documents.
+12. Wait for the job run to show **Succeeded** and confirm the three documents were processed. Timing varies by service load. If the run fails, record its run key, failure details, and timestamp and contact the facilitator. Do not continue to RAG tests with a failed ingestion job. Knowledge Base ingestion is a catalog capability; AI Compute hosts the agent flow.
 
     > **What just happened?** The Knowledge Base chunked each document into smaller passages, generated vector embeddings for each chunk using an embedding model, and stored those vectors in an index. When the RAG tool receives a query, it converts the query into a vector, finds the most semantically similar chunks, and returns them as context for the LLM. This is how the agent can answer policy and definition questions grounded in your actual internal documents.
 
@@ -328,7 +326,7 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
     | `marketing_campaigns` | Campaign metadata linking campaigns to titles | `campaign_id`, `campaign_name`, `title_id`, `start_date`, `end_date` |
     | `marketing_daily_spend` | Daily spend and attributed revenue by campaign and channel | `campaign_id`, `channel`, `spend_usd`, `attributed_revenue_usd` |
 
-5. To check the data in the tables, you will need to enter a query in the worksheet screen as shown below. Click the green play button to **`Run Statement`**. 
+7. To check the data in the tables, you will need to enter a query in the worksheet screen as shown below. Click the green play button to **`Run Statement`**.
 
     ```sql
     <copy>
@@ -340,20 +338,20 @@ The agent's SQL tools query structured data from an Oracle AI Database. For this
 
     ![SQL query output](images/01-sql-test-query-output.png " ")
 
-6. If you want to query multiple tables at the same time, just separate them with a **"/"** like this, and click the **`Run Script`** icon which is just to the right of Run Statement (Play button):
+8. If you want to query multiple tables at the same time, just separate them with a **"/"** like this, and click the **`Run Script`** icon which is just to the right of Run Statement (Play button):
 
     ![Image of multi-table query](images/01-sql-workbench-note.png " ")
 
     >Note: Selecting the table in the left nav bar will only show the columns in the table, not the data.  To review the data you must query with a SQL statement as shown.
 
-7. These tables represent the **gold layer** of the medallion architecture — curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer performance and ROI questions.
+9. These seeded sample tables represent a **gold-style serving layer** of the medallion architecture — curated, query-optimized data ready for business consumption. The agent's SQL tools will execute parameterized, read-only queries against these tables to answer performance and ROI questions.
 
 
     > **Key takeaway**: You now have two categories of data assets ready for the agent:
     > - **Unstructured (RAG)**: The Knowledge Base with vector-indexed release playbooks and strategy documents — for answering questions about definitions, policies, and interpretation rules
     > - **Structured (SQL)**: The Oracle AI Database tables with box office, streaming, and marketing data — for answering questions about specific metrics, trends, and ROI numbers
 
-8. You may close the SQL Workbench browser tab and return to the AI Data Platform tab for the remainder of the workshop.
+10. You may close the SQL Workbench browser tab and return to the AI Data Platform tab for the remainder of the workshop.
 
 ## Lab 1 Recap
 
@@ -378,4 +376,6 @@ In the next lab, you'll create the agent flow itself — building the agent node
 
 * **Author(s)** - Jean-Rene Gauthier [AIDP]
 * **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Published March 2026
+* **Last Updated By/Date** - Eli Schilling, October 2026
+
+> **Sample-data note:** The US streaming examples use seven consecutive weeks from October 6 through November 17, 2025. The data is fictional and historical. Four SQL tools in Lab 2 query titles, markets, box office, and streaming; the marketing tables are seeded for future exercises.
