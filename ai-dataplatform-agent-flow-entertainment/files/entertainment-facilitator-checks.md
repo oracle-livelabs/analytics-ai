@@ -2,6 +2,16 @@
 
 Use these checks with the updated Entertainment Terraform package and sandbox guide. These are deterministic fixture expectations, not a record of a completed live agent test. Response wording and tool-call order can vary, but returned values and policy interpretation should agree.
 
+**Estimated Time:** 15 Minutes to review these checks; full live validation requires a separate workshop run.
+
+### Objectives
+
+Use this checklist to:
+
+* Verify the environment prerequisites for the Entertainment workshop.
+* Compare agent results with deterministic SQL fixtures and documented policy.
+* Triage failures and distinguish expected results from completed live validation.
+
 ## Environment Gates
 
 - Fresh Entertainment stack; database display name begins `hol-entertainment-`.
@@ -50,3 +60,9 @@ The structured-output test should return four date rows and two show columns wit
 ## Pending Live Validation
 
 Run the complete attendee journey, select the event's available model, capture accurate Entertainment screenshots, validate ingestion and all prompts, and verify deployment. Record actual timing and facilitator interventions before marking the package event-ready.
+
+## Acknowledgements
+
+* **Author(s)** - Eli Schilling, Cloud Architect
+* **Contributors** - ONA Lab Engineering team
+* **Last Updated By/Date** - Eli Schilling, October 2026

@@ -6,6 +6,14 @@ You built a Release & Performance Analyst Agent for entertainment teams. The age
 
 **Estimated Time:** 5 Minutes
 
+### Objectives
+
+In this recap, you will:
+
+* Review the components of the Entertainment Release & Performance Analyst Agent.
+* Explain how SQL evidence and retrieved policy support the workshop scenarios.
+* Identify extensions and production-readiness checks for this pattern.
+
 ## What You Built
 
 | Component | Purpose |
