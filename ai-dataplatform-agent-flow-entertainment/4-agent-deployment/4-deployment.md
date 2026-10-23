@@ -28,29 +28,31 @@ This lab assumes you have:
 
 1. From the agent flow canvas, click the **Deploy** button in the upper right corner.
 
-2. In the deployment dialog, select the **AI Compute** that will host the deployed agent flow. Use the same AI Compute you created in Lab 1: **`ent_compute`**. If the dialog already defaults to **`ent_compute`** and **AIDP workbench** authorization, leave those values as-is.
+2. In **Deploy Agent**, select **`ent_compute`** under **Active AI compute**. Keep **Authorize using: AIDP** and **Run as: Yourself**. Do not select OAuth or a service account for this workshop.
 
 3. Click **Deploy** and wait for the deployment to complete. The status will update to indicate a successful deployment.
 
-    ![Screenshot of agent deployment](images/04-agent-deployment.png " ")
+    ![Deploy Agent dialog with existing compute and Deploy button](images/04-deployment-dialog-live.png " ")
 
-## Task 2: Retrieve the Endpoint URL
+    > **Note:** Deployment runs asynchronously. Check **Async operations** for **Deploy Agent: Succeeded**. If Details still shows DRAFT immediately afterward, switch to Flow and back to Details to refresh it.
+
+## Task 2: Retrieve the Chat Endpoint URL
 
 Once the deployment is successful, you need to retrieve the production URL that applications will use to communicate with the agent.
 
 1. Navigate to the **Details** tab of your agent flow.
 
-2. Locate the **Endpoint URL**. This is the production URL of your deployed agent flow. Copy this URL — it is the address that external applications, scripts, or integration tools will use to send messages to the agent.
+2. Confirm status **DEPLOYED** and locate the **Chat endpoint URL** (or **Endpoint URL** in an earlier interface). This is the production URL of your deployed agent flow. Copy this URL — it is the address that external applications, scripts, or integration tools will use to send messages to the agent.
 
-    ![Screenshot of details tab](images/04-agent-details-endpoint.png " ")
+    ![Deployed status and Chat endpoint URL location; reservation-specific URLs obscured](images/04-deployment-details-live.png " ")
 
 3. Note that the deployed agent is now a live REST endpoint. It accepts messages and returns responses using the same reasoning, tools, and knowledge that you validated in the Playground.
 
 ## Task 3: Understand REST API Consumption
 
-Once deployed, the agent flow endpoint can be called programmatically via `curl`, Python, or any HTTP client. While executing REST API calls is beyond the scope of this workshop, here's how the integration model works:
+Once deployed, the agent flow endpoint can be called programmatically via `curl`, Python, or any HTTP client. While executing REST API calls is beyond the scope of this workshop, review the integration model below. Confirm the supported request format and authentication for the deployment before writing a client; the JSON shown is illustrative, not a validated standalone API invocation:
 
-1. **Authentication**: Callers authenticate via OCI request signing or session cookies. The endpoint uses OCI IAM policies to determine who can access the agent.
+1. **Authentication**: Use the authentication mechanism supported by the deployed endpoint and the event environment. A signed-in Playground session does not prove an external client is authorized. Do not copy browser cookies into scripts.
 
 2. **Sending messages**: Callers send a POST request to the endpoint URL with a JSON body containing the user's message. For example:
 
@@ -60,11 +62,11 @@ Once deployed, the agent flow endpoint can be called programmatically via `curl`
     }
     ```
 
-3. **Conversational context**: After the first message, the API returns a `roomID`. Subsequent requests can include this `roomID` to maintain conversational context across turns — just like the multi-turn session you tested in the Playground.
+3. **Conversational context**: The supported API can return a conversation identifier. Use the field documented for that endpoint version on subsequent requests to maintain conversational context across turns — just like the multi-turn session you tested in the Playground.
 
 4. **Integration options**: The endpoint can be integrated with internal dashboards, Slack bots, custom web apps, Oracle Digital Assistant, or any tool that can make HTTP requests. This means marketing, finance, and content strategy teams can access the agent from the tools they already use.
 
-    > **Key takeaway**: Deployment turns your agent from a prototype into a production service. The REST endpoint makes it accessible to any application or integration, while OCI IAM ensures only authorized users and systems can access it. The same governance, RBAC, and lineage controls that protect the data in the Workbench carry through to the deployed agent.
+    > **Key takeaway**: Deployment turns your agent from a prototype into a production service. The REST endpoint makes it accessible to any application or integration, while OCI IAM ensures only authorized users and systems can access it. The deployment still needs endpoint access checks, monitoring, and retrieval evaluation before production use.
 
 ## Lab 4 Recap
 
@@ -74,7 +76,7 @@ In this lab, you completed the final step of the end-to-end agent development li
 - You **retrieved the endpoint URL** that applications and integrations use to communicate with the agent.
 - You **understand the REST API model** for consuming the agent — including authentication, message format, conversational context, and integration options.
 
-The Entertainment Release & Performance Analyst agent is now a production-ready service that can serve marketing, finance, and content strategy teams across your organization.
+The Entertainment Release & Performance Analyst agent is now a deployed demonstration service that can serve marketing, finance, and content strategy teams across your organization.
 
 ## Learn More
 
@@ -86,4 +88,4 @@ The Entertainment Release & Performance Analyst agent is now a production-ready 
 
 * **Author(s)** - Jean-Rene Gauthier [AIDP]
 * **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Published March 2026
+* **Last Updated By/Date** - Eli Schilling, October 2026
