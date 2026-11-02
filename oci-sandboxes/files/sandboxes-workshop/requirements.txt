@@ -1,0 +1,4 @@
+oci
+openai==2.54.0
+httpx==0.28.1
+oci-genai-auth==1.1.1
