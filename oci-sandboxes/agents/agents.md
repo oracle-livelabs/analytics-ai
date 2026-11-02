@@ -163,9 +163,17 @@ With the agent connected, you can ask it to analyze the CSV uploaded in Task 2. 
     </copy>
     ```
 
-    The script reuses the session saved in `agent-state.json`. It sends this question, along with the CSV path and the profit calculation:
+    The script reuses the session saved in `agent-state.json` and sends the following prompt:
 
-    > Which products have the largest profit shortfall, and what is the total shortfall?
+    ```text
+    Read /workspace/monthly-financials.csv and calculate profit and shortfall.
+    Profit = revenue - cogs - freight. Shortfall = budget_profit - actual_profit.
+    Print budget profit, actual profit and shortfall by product and in total, in USD.
+    Return only the results table and a brief conclusion identifying the largest
+    product shortfall (including ties) and the total shortfall.
+    Use Python's standard library. Read only the supplied CSV; do not access credentials,
+    use the network or install packages.
+    ```
 
     Profit is revenue minus cost of goods sold (`cogs`) and freight. Shortfall is budgeted profit minus actual profit.
 
