@@ -4,10 +4,6 @@
 
 In this lab, you will compare budgeted and actual profit using sample financial data. You will use the OCI Responses API with `openai.gpt-oss-120b` to generate Python code for the analysis. An OCI Sandbox will read the CSV from a private Object Storage bucket and execute the code. You will return the execution results to the model so it can interpret them and answer the original request.
 
-<style>
-#module-content img[src$="responses-information-flow.svg"] { width: 900px; max-width: 100%; }
-</style>
-
 ![Cloud Shell sends a prompt to Enterprise AI and its model, receives code, executes it in an OCI Sandbox, and returns the results to the model for the final response.](images/responses-information-flow.svg)
 
 ### Objectives
@@ -32,7 +28,7 @@ The sample CSV contains budgeted and actual revenue, cost of goods sold (COGS), 
 
 2. In the OCI Console, open the navigation menu and select **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
 
-    ![Storage navigation and Buckets](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png)
+    ![Storage navigation and Buckets](https://livelabs.oracle.com/cdn/common/images/console/storage-buckets.png)
 
     Use the **Compartment** filter to select your workshop compartment, then click **Create bucket**.
 
@@ -88,7 +84,7 @@ Code inside a sandbox uses its resource principal to authenticate to OCI service
 
 2. In the OCI Console, open **Identity & Security → Policies**.
 
-    ![Policies in the Identity & Security menu](https://oracle-livelabs.github.io/common/images/console/id-policies.png)
+    ![Policies in the Identity & Security menu](https://livelabs.oracle.com/cdn/common/images/console/id-policies.png)
 
     Select your workshop compartment in the compartment filter and click **Create Policy**.
 

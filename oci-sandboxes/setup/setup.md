@@ -30,7 +30,7 @@ Estimated Time: 30 minutes.
 
 2. Open the navigation menu and select **Identity & Security → Compartments**. A compartment groups the OCI resources you will create during the workshop.
 
-    ![Compartments in the Identity & Security menu](https://oracle-livelabs.github.io/common/images/console/id-compartment.png)
+    ![Compartments in the Identity & Security menu](https://livelabs.oracle.com/cdn/common/images/console/id-compartment.png)
 
     If you already have a compartment you want to use, note its name and skip the remaining steps in this task.
 
@@ -78,7 +78,7 @@ Estimated Time: 30 minutes.
 
 3. To grant access to other users, open **Identity & Security → Domains**.
 
-    ![Domains in the Identity & Security menu](https://oracle-livelabs.github.io/common/images/console/id-domains.png)
+    ![Domains in the Identity & Security menu](https://livelabs.oracle.com/cdn/common/images/console/id-domains.png)
 
     Click the identity domain containing the workshop users.
 
@@ -110,7 +110,7 @@ Estimated Time: 30 minutes.
 
 4. Open **Identity & Security → Compartments** and click your workshop compartment.
 
-    ![Compartments in the Identity & Security menu](https://oracle-livelabs.github.io/common/images/console/id-compartment.png)
+    ![Compartments in the Identity & Security menu](https://livelabs.oracle.com/cdn/common/images/console/id-compartment.png)
 
     ![Workshop compartment in the Compartments list](images/select-compartment.png)
 
@@ -127,7 +127,7 @@ Estimated Time: 30 minutes.
 
 5. Open **Identity & Security → Policies**, select the tenancy's **root compartment** in the compartment selector, and click **Create Policy**.
 
-    ![Policies in the Identity & Security menu](https://oracle-livelabs.github.io/common/images/console/id-policies.png)
+    ![Policies in the Identity & Security menu](https://livelabs.oracle.com/cdn/common/images/console/id-policies.png)
 
     ![Policies page with the root compartment selected and Create Policy button](images/policies-navigation.png)
 
@@ -171,7 +171,7 @@ Estimated Time: 30 minutes.
 
 1. In the OCI Console header, click **Developer tools** (the terminal icon), then click **Cloud Shell**. If prompted to run the Cloud Shell tutorial, enter `N`. Wait for the command prompt. Cloud Shell runs the workshop's Python code and authenticates OCI requests as your signed-in user.
 
-    ![Cloud Shell in the Developer tools menu](https://oracle-livelabs.github.io/common/images/console/cloud-shell.png)
+    ![Cloud Shell in the Developer tools menu](https://livelabs.oracle.com/cdn/common/images/console/cloud-shell.png)
 
 2. In Cloud Shell, open the **Network** menu and select **Public network**. If it already shows **Public**, continue. This provides the internet access needed to download Python packages and call OpenAI in the agent exercise.
 

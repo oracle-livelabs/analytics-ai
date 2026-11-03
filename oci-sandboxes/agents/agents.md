@@ -4,10 +4,6 @@
 
 In this lab, you will connect an OpenAI agent to an OCI Sandbox and ask it to compare budgeted and actual profit using the sample financial data from Lab 2. The agent will generate code, execute it in the sandbox and use the results to answer your request. You will inspect its commands, execution output and final response to understand how an agent uses a sandbox to complete a task.
 
-<style>
-#module-content img[src$="agent-information-flow.svg"] { width: 900px; max-width: 100%; }
-</style>
-
 ![Cloud Shell sends a prompt to an OpenAI agent and model. The agent exchanges commands and results with an OCI Sandbox, then returns the final response to Cloud Shell.](images/agent-information-flow.svg)
 
 ### Objectives
