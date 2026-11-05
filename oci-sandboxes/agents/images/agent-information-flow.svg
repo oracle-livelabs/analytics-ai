@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="635" viewBox="0 0 900 635" role="img" aria-labelledby="title description">
+  <title id="title">OpenAI agent information flow</title>
+  <desc id="description">Cloud Shell sends a prompt to an OpenAI agent and model. The agent sends commands and code to an OCI Sandbox, receives execution results, and repeats as needed before returning the final response to Cloud Shell.</desc>
+  <defs>
+    <marker id="request" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#a8442f" />
+    </marker>
+    <marker id="result" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#35695e" />
+    </marker>
+  </defs>
+  <rect width="900" height="635" rx="12" fill="white" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="420" y="256" width="410" height="198" rx="10" fill="#f7f9f8" stroke="#b7c9c3" stroke-dasharray="5 5" />
+    <text x="625" y="284" text-anchor="middle" font-size="18" font-weight="500" fill="#312d2a">Repeat as needed</text>
+    <path d="M150 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <path d="M450 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <path d="M750 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <rect x="20" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="150" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">Cloud Shell</text>
+    <text x="150" y="89" text-anchor="middle" font-size="18" font-weight="400" fill="#312d2a">Workshop application</text>
+    <rect x="320" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="450" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">OpenAI</text>
+    <text x="450" y="89" text-anchor="middle" font-size="18" font-weight="400" fill="#312d2a">Agents API</text>
+    <rect x="336" y="104" width="228" height="36" rx="7" fill="#ffffff" stroke="#c4bdb5" />
+    <text x="450" y="128" text-anchor="middle" font-size="18" font-weight="500" fill="#312d2a">Agent + LLM</text>
+    <rect x="620" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="750" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">OCI Sandbox</text>
+    <rect x="636" y="79" width="228" height="61" rx="7" fill="#ffffff" stroke="#c4bdb5" />
+    <text x="750" y="104" text-anchor="middle" font-size="20" font-weight="500" fill="#312d2a">Executor</text>
+    <text x="750" y="127" text-anchor="middle" font-size="16" fill="#312d2a">Uses session's environment ID</text>
+    <path d="M 150 215 H 450" fill="none" stroke="#a8442f" stroke-width="2.5" marker-end="url(#request)" />
+    <text x="300.0" y="201" text-anchor="middle" font-size="21" fill="#a8442f" stroke="white" stroke-width="7" paint-order="stroke">1. Prompt</text>
+    <path d="M 450 335 H 750" fill="none" stroke="#a8442f" stroke-width="2.5" marker-end="url(#request)" />
+    <text x="600.0" y="321" text-anchor="middle" font-size="21" fill="#a8442f" stroke="white" stroke-width="7" paint-order="stroke">2. Commands and code</text>
+    <path d="M 750 410 H 450" fill="none" stroke="#35695e" stroke-width="2.5" marker-end="url(#result)" />
+    <text x="600.0" y="396" text-anchor="middle" font-size="21" fill="#35695e" stroke="white" stroke-width="7" paint-order="stroke">3. Execution results</text>
+    <path d="M 450 525 H 150" fill="none" stroke="#35695e" stroke-width="2.5" marker-end="url(#result)" />
+    <text x="300.0" y="511" text-anchor="middle" font-size="21" fill="#35695e" stroke="white" stroke-width="7" paint-order="stroke">4. Final response</text>
+    <text x="450" y="582" text-anchor="middle" font-size="17" font-weight="400" fill="#312d2a">Executor opens an outbound connection using the environment key.</text>
+    <text x="450" y="610" text-anchor="middle" font-size="17" fill="#312d2a">Environment ID links the executor to its OpenAI agent session.</text>
+  </g>
+</svg>

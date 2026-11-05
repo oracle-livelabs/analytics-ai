@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-labelledby="title description">
+  <title id="title">OCI Responses API information flow</title>
+  <desc id="description">Cloud Shell sends a prompt to Enterprise AI and its model, receives generated code, sends code to an OCI Sandbox, receives results, sends results to Enterprise AI, and receives a final response.</desc>
+  <defs>
+    <marker id="request" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#a8442f" />
+    </marker>
+    <marker id="result" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#35695e" />
+    </marker>
+  </defs>
+  <rect width="900" height="600" rx="12" fill="white" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M150 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <path d="M450 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <path d="M750 156 V555" stroke="#dedad5" stroke-width="1.5" stroke-dasharray="5 6" />
+    <rect x="20" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="150" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">Cloud Shell</text>
+    <text x="150" y="89" text-anchor="middle" font-size="18" font-weight="400" fill="#312d2a">Workshop application</text>
+    <rect x="320" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="450" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">Enterprise AI</text>
+    <text x="450" y="89" text-anchor="middle" font-size="18" font-weight="400" fill="#312d2a">OCI Responses API</text>
+    <rect x="336" y="104" width="228" height="36" rx="7" fill="#ffffff" stroke="#c4bdb5" />
+    <text x="450" y="128" text-anchor="middle" font-size="18" font-weight="500" fill="#312d2a">LLM: gpt-oss-120b</text>
+    <rect x="620" y="24" width="260" height="132" rx="12" fill="#f7f5f2" stroke="#c4bdb5" stroke-width="1.5" />
+    <text x="750" y="61" text-anchor="middle" font-size="23" font-weight="600" fill="#312d2a">OCI Sandbox</text>
+    <text x="750" y="89" text-anchor="middle" font-size="18" font-weight="400" fill="#312d2a">Runs Python code</text>
+    <path d="M 150 215 H 450" fill="none" stroke="#a8442f" stroke-width="2.5" marker-end="url(#request)" />
+    <text x="300.0" y="201" text-anchor="middle" font-size="21" fill="#a8442f" stroke="white" stroke-width="7" paint-order="stroke">1. Prompt</text>
+    <path d="M 450 280 H 150" fill="none" stroke="#35695e" stroke-width="2.5" marker-end="url(#result)" />
+    <text x="300.0" y="266" text-anchor="middle" font-size="21" fill="#35695e" stroke="white" stroke-width="7" paint-order="stroke">2. Generated code</text>
+    <path d="M 150 345 H 750" fill="none" stroke="#a8442f" stroke-width="2.5" marker-end="url(#request)" />
+    <text x="450.0" y="331" text-anchor="middle" font-size="21" fill="#a8442f" stroke="white" stroke-width="7" paint-order="stroke">3. Code to execute</text>
+    <path d="M 750 410 H 150" fill="none" stroke="#35695e" stroke-width="2.5" marker-end="url(#result)" />
+    <text x="450.0" y="396" text-anchor="middle" font-size="21" fill="#35695e" stroke="white" stroke-width="7" paint-order="stroke">4. Execution results</text>
+    <path d="M 150 475 H 450" fill="none" stroke="#a8442f" stroke-width="2.5" marker-end="url(#request)" />
+    <text x="300.0" y="461" text-anchor="middle" font-size="21" fill="#a8442f" stroke="white" stroke-width="7" paint-order="stroke">5. Execution results</text>
+    <path d="M 450 540 H 150" fill="none" stroke="#35695e" stroke-width="2.5" marker-end="url(#result)" />
+    <text x="300.0" y="526" text-anchor="middle" font-size="21" fill="#35695e" stroke="white" stroke-width="7" paint-order="stroke">6. Final response</text>
+  </g>
+</svg>
