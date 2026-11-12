@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Estimated time - 20 minutes
+Estimated Time: 20 minutes
 
 In pervious steps we configured a Twitter developer account and a Compute Instance to run our demo.
 In the following steps, we will copy and configure the demo code on the Compute Instance.
@@ -20,11 +20,11 @@ Watch the video below for a quick walk through of the lab.
 
 ## Task 1: Download and copy the source code to the Compute Instance
 
-1. Using this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
+1. Using this [sentiment demo source code archive](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
 
 2. As we did with the `API Key` file, we are going to copy the source code zip file to the Compute Instance.
-If you have the two terminal windows active, please switch to the terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files thus far).
-If you need to start a new terminal window, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
+    If you have the two terminal windows active, please switch to the terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files thus far).
+    If you need to start a new terminal window, please refer to the [previous lab](?lab=create-and-connect-to-an-oci-compute-instance#Task2:ConnecttotheComputeInstanceusingSSH).
 
 3. If you have started a new terminal window,  use the `cd` command to switch to the folder where the downloaded source code zip file was saved (`Downloads` in our example).
 
@@ -103,9 +103,9 @@ Soon our demo will to be ready to run. In this step we will install the software
     ![NPM install result](images/npm-install-result.png "NPM install results")
 
 3. The demo uses a file called `.env` stored at the root of the source code to keep important parameters which control the demo's behavior.  
-   The source code includes a file called `.env.example` which contains defaults to many of those parameters, but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly (covered in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)).  
-   After updating `.env.example` we will rename it to `.env` for it to be picked up by the demo.  
-   As we've done before with the authentication configuration file, we are going to use the `nano` text editor to edit this file:
+    The source code includes a file called `.env.example` which contains defaults to many of those parameters, but we would need to at least update the Twitter `Bearer Token` in this file for the demo to work properly (covered in a [previous lab](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp)).  
+    After updating `.env.example` we will rename it to `.env` for it to be picked up by the demo.  
+    As we've done before with the authentication configuration file, we are going to use the `nano` text editor to edit this file:
 
     ```bash
     [opc@senti-meter-server senti-meter-demo]$ <copy>nano .env.example</copy>
@@ -117,21 +117,21 @@ Soon our demo will to be ready to run. In this step we will install the software
 
     Here is a rundown of the various parameters in the file (optional information):
 
-    | Parameter Name                 | Used For                                                                                                                                                                        |
-    | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | `TWITTER_BEARER_TOKEN`         | Authenticating with the Twitter API. This value was generated when we created our Twitter application [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp) |
-    | `FILTERED_STREAM_FILTER_TAG`   | Naming the filter rule by which we will filter the stream of tweets flowing from Twitter                                                                                        |
-    | `FILTERED_STREAM_FILTER_VALUE` | The filter expression used to tell the Twitter API which tweets we care about. The default value asks for tweets mentioning `@redbullracing` and written in English             |
-    | `TWEET_GENERATION_TYPE`        | Controlling the sentiment of tweets generated by the tweet generator. 0 = Negative, 1 = Trending Negative, 2 = Balanced, 3 = Trending Positive, 4 = Positive                    |
-    | `TWEETS_PER_SECOND`            | Controlling the pace of tweets generated by the tweets generator                                                                                                                |
-    | `IMAGE_QUERY`                  | Controlling the query filter used in the Vision AI demo to download images attached to tweets                                                                                   |
-    | `PROCESSOR_SERVER_PORT`        | This is the TCP port our server will be listening on                                                                                                                            |
-    | `LISTEN_ADDRESS`               | Specifying the IPv4 address our server will bind to                                                                                                                             |
-    | `OCI_AUTH_DIR`                 | Specifying where the OCI API authentication information is kept                                                                                                                 |
-    | `CERT_FILE`                    | Naming the TLS certificate file used to secure the connection to the server                                                                                                     |
-    | `KEY_FILE`                     | Naming the TLS key file used to secure the connection to the server                                                                                                             |
+    | Parameter Name                 | Used For                                                                                                                                                                                                          |
+    | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `TWITTER_BEARER_TOKEN`         | Authenticating with the Twitter API. This value was generated when we created our Twitter application [Twitter application setup instructions](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp) |
+    | `FILTERED_STREAM_FILTER_TAG`   | Naming the filter rule by which we will filter the stream of tweets flowing from Twitter                                                                                                                          |
+    | `FILTERED_STREAM_FILTER_VALUE` | The filter expression used to tell the Twitter API which tweets we care about. The default value asks for tweets mentioning `@redbullracing` and written in English                                               |
+    | `TWEET_GENERATION_TYPE`        | Controlling the sentiment of tweets generated by the tweet generator. 0 = Negative, 1 = Trending Negative, 2 = Balanced, 3 = Trending Positive, 4 = Positive                                                      |
+    | `TWEETS_PER_SECOND`            | Controlling the pace of tweets generated by the tweets generator                                                                                                                                                  |
+    | `IMAGE_QUERY`                  | Controlling the query filter used in the Vision AI demo to download images attached to tweets                                                                                                                     |
+    | `PROCESSOR_SERVER_PORT`        | This is the TCP port our server will be listening on                                                                                                                                                              |
+    | `LISTEN_ADDRESS`               | Specifying the IPv4 address our server will bind to                                                                                                                                                               |
+    | `OCI_AUTH_DIR`                 | Specifying where the OCI API authentication information is kept                                                                                                                                                   |
+    | `CERT_FILE`                    | Naming the TLS certificate file used to secure the connection to the server                                                                                                                                       |
+    | `KEY_FILE`                     | Naming the TLS key file used to secure the connection to the server                                                                                                                                               |
 
-    On the first line of the file, replace `[BEARER TOKEN VALUE]` (keeping the double quotes) with the `Bearer Token` value  we saved when we created the Twitter App [here](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp).
+    On the first line of the file, replace `[BEARER TOKEN VALUE]` (keeping the double quotes) with the `Bearer Token` value  we saved when we created the Twitter App [Twitter application setup instructions](?lab=create-a-twitter-developer-account#Task3:CreatingaTwitterapp).
 
     The end result should look similar to this:
 
@@ -193,7 +193,7 @@ In this step we will create the TLS certificate and key files required to establ
 In this section we will make sure that all of our configuration steps created the necessary environment for the demo to run in.
 
 1. First we will setup the Twitter filter rule which lets Twitter know which tweets we are interested in. Executing this step will test the `Bearer Token` configuration and our access to the Twitter API.  
-In the connected terminal, execute the following command:
+    In the connected terminal, execute the following command:
 
     ```bash
     [opc@senti-meter-server senti-meter-demo]$ <copy>npm run setup</copy>
@@ -215,9 +215,9 @@ In the connected terminal, execute the following command:
     * If after validating the above steps the command still fails to execute, please re-generate the `Bearer Token` for your Twitter Application on the [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard) and repeat the steps to update the new `Bearer Token` in `.env`.
 
 2. As our second validation step, we will test the OCI API authentication configuration.  
-To do this we will use `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`.  
-This program is a tiny example of how to call the Oracle Language & Vision AI API using JavaScript (we have an equivalent program written in Python in the same folder `~/senti-meter-demo/src/senti-meter-demo/test-oci.py`).  
-Take a look at the `Learn More` section for links to API references and samples in other languages.  
+    To do this we will use `~/senti-meter-demo/src/senti-meter-demo/test-oci.ts`.  
+    This program is a tiny example of how to call the Oracle Language & Vision AI API using JavaScript (we have an equivalent program written in Python in the same folder `~/senti-meter-demo/src/senti-meter-demo/test-oci.py`).  
+    Take a look at the `Learn More` section for links to API references and samples in other languages.  
 
     To run the program, in the connected terminal, execute the following command:
 
@@ -327,4 +327,4 @@ Vision AI
 ## Acknowledgements
 
 * **Authors:**
-	* Yanir Shahak - Senior Principal Software Engineer, Health & AI
+   	* Yanir Shahak - Senior Principal Software Engineer, Health & AI

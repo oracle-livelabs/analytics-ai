@@ -8,9 +8,9 @@ Estimated Time: ## minutes
 
 ### Objectives
 
-- Create Markdown tables that render well in LiveLabs.
-- Add custom titles/captions when needed.
-- Reference the LiveLabs Markdown cheatsheet for formatting tips.
+* Create Markdown tables that render well in LiveLabs.
+* Add custom titles/captions when needed.
+* Reference the LiveLabs Markdown cheatsheet for formatting tips.
 
 
 ## Task 1: Create a table
@@ -24,6 +24,7 @@ Estimated Time: ## minutes
     | col 2 is      |  *centered*   |   $12 |
     | zebra stripes | ~~are neat~~  |    $1 |
     ```
+
     The result looks like this:
 
     | Tables        |      Are      |  Cool |
@@ -58,7 +59,8 @@ Estimated Time: ## minutes
     | **col 3 is**  | right-aligned | $1600 |
     | col 2 is      |  *centered*   |   $12 |
     | zebra stripes | ~~are neat~~  |    $1 |
-    {: title="My table title"}
+
+    *My table title*
 
     As you can see, the numbering is added automatically.
 
@@ -67,5 +69,6 @@ Estimated Time: ## minutes
     You can also refer to the [LiveLabs Markdown Cheatsheet](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/LiveLabs_MD_Cheat_Sheet.pdf)
 
 ## Acknowledgements
+
 * **Author** - LiveLabs Team
 * **Last Updated By/Date** - LiveLabs Team, 2026

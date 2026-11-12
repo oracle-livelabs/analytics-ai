@@ -8,23 +8,23 @@ Estimated Time: 45 minutes
 
 ### Objectives
 
-- Create connection to ADW  
-- Upload DVA file and refresh the data flowing through the connection
-- View analysis.
+* Create connection to ADW  
+* Upload DVA file and refresh the data flowing through the connection
+* View analysis.
 
 ### Prerequisites
 
-- Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC) instances.
-- Access to the files needed to recreate the dashboard. 
-    - [attritionprediction.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/AttritionPrediction.csv)
-    - [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/HumanResource.dva)
-    - [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/hr.sql)
+* Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC) instances.
+* Access to the files needed to recreate the dashboard.
+    * [attritionprediction.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/AttritionPrediction.csv)
+    * [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/HumanResource.dva)
+    * [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/hr.sql)
 
 **Note:** Please download the files above before continuing.
 
 ## Task 1: Installing HR Schema on Autonomous Database
 
-1. Use SQL Developer to connect to your database as the ADMIN user. The steps to do so can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
+1. Use SQL Developer to connect to your database as the ADMIN user. The steps to do so can be found [SQL Developer connection instructions](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 
 2. Run the following code to create the HR user. You should replace MYpassword12 in the statement below with a password of your choosing.
 
@@ -38,12 +38,12 @@ Estimated Time: 45 minutes
     </copy>
     ```
 
-3. Now go ahead and log in as the HR user, then run the hr.sql script to install the HR schema. 
+3. Now go ahead and log in as the HR user, then run the hr.sql script to install the HR schema.
 
 4. The following tables should be visible: EMPLOYEES, LOCATIONS, JOBS, COUNTRIES, DEPARTMENTS, REGIONS, JOB_HISTORY
 
     ![List of Created Tables](./images/created-tables.png "List of Created Tables")
-    
+
 ## Task 2: Setting up the Human Resource Analytics Project in OAC
 
 1. Login to your analytics cloud instance. The URL can be found on the page of the instance. Refer to the previous lab for instructions on how to get to your analytics cloud instance.
@@ -53,18 +53,18 @@ Estimated Time: 45 minutes
 2. Click on the ellipses menu in the top right corner, select **Import Workbook/Flow**. Then click on **Select File** and choose the HumanResources.dva file.
 
     ![OAC Home Page](./images/oac-home-page.png "OAC Home Page")
-    
+
     ![Import Workbook](./images/import-workbook.png "Import Workbook")
 
     ![Select File](./images/select-file.png "Select File")
 
-3.  Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog. 
+3. Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog.
 
     ![Import](./images/import-dva.png "Import")
 
     ![Import Successful](./images/dva-import-successful.png "Import Successful")
 
-4. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named **adw_hr**. 
+4. Click on the navigation menu icon in the top left. Go to **Data** and open the **Connections** tab. You should see a connection named **adw_hr**.
 
     ![Go to Data](./images/go-to-data-page.png "Go to Data")
 
@@ -100,7 +100,7 @@ Estimated Time: 45 minutes
 
     ![Create Data Set](./images/confirm-data-set-creation.png "Create Data Set")
 
-**Note:** You may drag and drop the file instead.
+    **Note:** You may drag and drop the file instead.
 
 3. Click on the save icon, enter a name for the data set and click on **OK**.
     ![Provide Name and Save](./images/save-data-set.png "Provide Name and Save")
@@ -113,15 +113,15 @@ Estimated Time: 45 minutes
 
     ![Select AttritionPrediction](./images/select-attrition-prediction.png "Select AttritionPrediction")
 
-6. Next, drag the **Save Data Set** option from the **Data Flow Steps** on the left, and move it right next to the Attrition Prediction data set in the panel at the top. Provide a name to the Data Set. In the **Save Data To** drop down, select **Database Connection**. 
+6. Next, drag the **Save Data Set** option from the **Data Flow Steps** on the left, and move it right next to the Attrition Prediction data set in the panel at the top. Provide a name to the Data Set. In the **Save Data To** drop down, select **Database Connection**.
 
     ![Save Data Set to Database](./images/save-to-database.png "Save Data Set to Database")
 
-5. Click on **Select connection** and choose the **adw_hr** connection. Thereafter, also give a name that would be used for the table in the database.
+7. Click on **Select connection** and choose the **adw_hr** connection. Thereafter, also give a name that would be used for the table in the database.
 
     ![Choose Connection](./images/choose-connection.png "Choose Connection")
 
-6. Hit the **Run Data Flow** button at the top. You will be prompted to save the data flow. Give it a name and click on **OK**.
+8. Hit the **Run Data Flow** button at the top. You will be prompted to save the data flow. Give it a name and click on **OK**.
 
     ![Save and Run Data Flow](./images/run-data-flow.png "Save and Run Data Flow")
 
@@ -134,14 +134,14 @@ The data flow should run and upon successful execution you should be able to see
 1. Open the Human Resource workflow. Click on the edit button to enter the edit mode. From the data panel, click on the encircled **+** sign and select **Add Data Set**.
 
     ![Edit Dashboards](./images/edit-dashboard.png "Edit Dashboards")
-    
+
     ![Add Data](./images/add-data-to-canvas.png "Add Data")
 
-2. Select the **AttritionPredictions** data set that is stored in the database and click on **Add to Workbook**.    
-    
+2. Select the **AttritionPredictions** data set that is stored in the database and click on **Add to Workbook**.
+
     ![Select AttritionPrediction Data Set from Database](./images/select-data-set-from-database.png "Select AttritionPrediction Data Set from Database")
 
-3. Click on the **+** sign next to the canvas names at the bottom of the screen to add a new canvas. 
+3. Click on the **+** sign next to the canvas names at the bottom of the screen to add a new canvas.
 
     ![Create New Canvas](./images/create-canvas.png "Create New Canvas")
 
@@ -149,7 +149,7 @@ The data flow should run and upon successful execution you should be able to see
 
     ![Rename Canvas](./images/rename-canvas.png "Rename Canvas")
 
-5. Now drag the **Employee Count** data item under Attrition Prediction to this canvas to get you first visualisation. 
+5. Now drag the **Employee Count** data item under Attrition Prediction to this canvas to get you first visualisation.
 
     ![Create Visualisation](./images/create-visualisation.png "Create Visualisation")
 
@@ -158,7 +158,8 @@ We will now leave it to your imagination to analyse the data sets that have been
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
- - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
- - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar Sharma, Shikhar Mishra
- - **Last Updated By/Date** - Yash Lamba, April 2024
+
+* **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
+* **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar Sharma, Shikhar Mishra
+* **Last Updated By/Date** - Yash Lamba, April 2024
 

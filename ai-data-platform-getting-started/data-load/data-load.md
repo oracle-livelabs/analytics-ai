@@ -59,7 +59,7 @@ In the upload screen you can drag an drop the files in the bucket. No need to ad
 
 As final step of loading data is the creation of tables in the bronze catalog of AI Data Platform based on data files we have uploaded as external data volume files.
 
-> **Note:** Occasionally you may get an error when executing a notebook that starts like. 
+> **Note:** Occasionally you may get an error when executing a notebook that starts like.
 > [DELTA\_CREATE\_TABLE\_WITH\_NON\_EMPTY\_LOCATION] Cannot create table ('`f1\_bronze`.`bronze`.`f1\_lap\_times\_dlt`'). The associated location ('oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1\_lap\_times\_dlt') is not empty and also not a Delta table.]
 > or
 > [DELTA\_TRUNCATED\_TRANSACTION_LOG] oci://IDL-458725532-1692497c19be4c739c68aec2e436a825@fro8fl9kuqli/1692497c19be4c739c68aec2e436a825.cat/bronze.db/f1\_results\_dlt/\_delta\_log/00000000000000000000.json: Unable to reconstruct state at version 1 as the transaction log.
@@ -114,13 +114,13 @@ You might face the same error when loading data from Bronze to Silver. Same work
 
 ## Acknowledgements
 
-* **Author:** 
+* **Author:**
     * Wilbert Poeliejoe, AI Data Platform Black Belt
-* **Contributors:** 
+* **Contributors:**
     * Massimo Dalla Rovere, AI Data Platform Black Belt
     * Lital Shnaiderman, AI Data Platform Black Belt
     * Khaled Mostafa, Analytics Data Platform Specialist Lead
-* **Reviewed by:** 
+* **Reviewed by:**
     * Lucian Dinescu, Senior Principal Product Manager, Analytics
-* **Last Updated By/Date:** 
+* **Last Updated By/Date:**
     * Wilbert Poeliejoe, AI Data Platform Black Belt: December 16th, 2025

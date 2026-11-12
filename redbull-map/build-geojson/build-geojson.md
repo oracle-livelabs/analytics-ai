@@ -1,10 +1,10 @@
 # Build your GeoJSON LineStrings and Points
 
-## Introduction 
+## Introduction
 
-In this exercise, you will generate GeoJSON code and see how easy it is create map layers in OAC with it. There are many ways to generate GeoJSON code and https://geojson.io/ is just one open-source option.
+In this exercise, you will generate GeoJSON code and see how easy it is create map layers in OAC with it. There are many ways to generate GeoJSON code and <https://geojson.io/> is just one open-source option.
 
-_Estimated time:_ 20 minutes
+*Estimated time:* 20 minutes
 
 ![Image showing LineString map layer created using GeoJSON](./images/racing-track2.png)
 
@@ -12,15 +12,15 @@ _Estimated time:_ 20 minutes
 
 In this lab, you will:
 
-- Build LineString and Points using GeoJSON
+* Build LineString and Points using GeoJSON
 
-- Modify the GeoJSON with properties needed in OAC
+* Modify the GeoJSON with properties needed in OAC
 
 ### Prerequisites
 
 This lab assumes you have:
 
-- Use of a GeoJSON code generation tool or can browse to https://geojson.io/
+* Use of a GeoJSON code generation tool or can browse to <https://geojson.io/>
 
 ## Task 1: Create LineStrings that represent sectors of Circuit Zandvoort
 
@@ -32,7 +32,7 @@ This lab assumes you have:
 
      >**Note:** Use the [Circuit Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find your three sectors, colored red (sector 1), blue (sector 2), and yellow (sector 3).
 
-     You will use the line tool to draw each sector     
+     You will use the line tool to draw each sector
      ![Image showing the the sectors of the race circuit](./images/circuit-schema.png)
 
 3. Start drawing your first LineString of sector 1, the red sector, by choosing the polyline option
@@ -43,6 +43,7 @@ This lab assumes you have:
 
     **CODE SNIPPIT:**  
      **Before**
+
     ```
     <copy>
      {
@@ -66,6 +67,7 @@ This lab assumes you have:
     ```
 
     **After**
+
      ```
      <copy>
     {
@@ -101,7 +103,7 @@ This lab assumes you have:
 
     ![Save the LineString layer to export the file](./images/save-geojson.png)
 
-6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors.geojson_
+6. Rename the file to the map layer name. example: *Circuit Zandvoort Sectors.geojson*
 
 ## Task 2: Create Points that represent turns on Circuit Zandvoort
 
@@ -127,15 +129,16 @@ This lab assumes you have:
 6. **Rename** the file to the map layer name.
 
 7. Please find an example of the geojson files:
-- [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
-- [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
+
+* [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
+* [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
 Congratulations on completing this lab!
 
 You may now *proceed to the next lab*.
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
-- **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023
+* **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
+* **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
+* **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023

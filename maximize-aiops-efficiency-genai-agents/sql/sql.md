@@ -47,8 +47,8 @@ A function with the following requirements:
 
 * Return Type: 'SYS_REFCURSOR'
 * Input Parameters:
-  * 'p_query' (query string)
-  * 'top_k' (number of top results)The embedding model used for the query string should be the same as the one used for embedding the 'body' field. The return fields should match the table's required (DOCID, BODY and SCORE) and optional fields (CHUNKID, TITLE, and URL)
+    * 'p_query' (query string)
+    * 'top_k' (number of top results)The embedding model used for the query string should be the same as the one used for embedding the 'body' field. The return fields should match the table's required (DOCID, BODY and SCORE) and optional fields (CHUNKID, TITLE, and URL)
 
 Note: Names can vary but must be aliased as follows in the function.
 

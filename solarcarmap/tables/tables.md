@@ -1,6 +1,17 @@
 # Tables in LiveLabs
 
-## Tables are cool!
+## Introduction
+
+This lab shows how to format Markdown tables and customize their captions.
+
+Estimated Time: Varies by environment and experience.
+
+### Objectives
+
+* Define a Markdown table with left, center, and right column alignment.
+* Add a custom table title and inspect the rendered caption.
+
+## Tables are cool
 
 You can define a table in Markdown just like so:
 
@@ -11,6 +22,7 @@ You can define a table in Markdown just like so:
 | col 2 is      |  *centered*   |   $12 |
 | zebra stripes | ~~are neat~~  |    $1 |
 ```
+
 The result looks like this:
 
 | Tables        |      Are      |  Cool |
@@ -45,10 +57,15 @@ Now our table looks like this:
 | **col 3 is**  | right-aligned | $1600 |
 | col 2 is      |  *centered*   |   $12 |
 | zebra stripes | ~~are neat~~  |    $1 |
-{: title="My table title"}
+
+*My table title*
 
 As you can see, the numbering is added automatically.
 
 Isn't that cool?
 
 You can also refer to the [LiveLabs Markdown Cheatsheet](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/LiveLabs_MD_Cheat_Sheet.pdf)
+
+## Acknowledgements
+
+See the [workshop credits](../introduction/introduction.md#acknowledgements).

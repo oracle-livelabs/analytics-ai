@@ -8,19 +8,19 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-- Import analytics workbook.
-- Connect to ADW and create data sets.
-- Analyse data.
+* Import analytics workbook.
+* Connect to ADW and create data sets.
+* Analyse data.
 
 ### Prerequisites
 
-- The source and destination Autonomous Data Warehouses (ADW) and Analytics Cloud (OAC) instance.
-- Access to the ModernDW file needed to recreate an analytics project.
-    - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/modern-data-warehouse/ModernDW.dva)
+* The source and destination Autonomous Data Warehouses (ADW) and Analytics Cloud (OAC) instance.
+* Access to the ModernDW file needed to recreate an analytics project.
+    * [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/modern-data-warehouse/ModernDW.dva)
 
 **Note:** Please download the file above before continuing.
 
-## Task 1: Set up the Analytics Project in OAC 
+## Task 1: Set up the Analytics Project in OAC
 
 While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Analytics instance. Directly open that URL in the browser and proceed to step 3. In case the URL wasn't present then follow steps 1 and 2.
 
@@ -28,7 +28,7 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
 1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
 
-	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
+    ![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
 2. Choose the right compartment and then select your analytics instance. In the page that opens, click on **Analytics Home Page** to login to the analytics cloud instance.
 
@@ -44,7 +44,7 @@ While creating the ODI-ADW-OAC stack, you were asked to note the URL of the Anal
 
     ![Select File](./images/select-file.png "Select File")
 
-4.  Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog.
+4. Import the file into OAC by clicking on **Import**. The password is **Admin123**. Hit **OK** to close the dialog.
 
     ![Import](./images/import-dva.png "Import")
 
@@ -86,7 +86,7 @@ As you might remember, you loaded the data from the EBS instance into the **ADMI
 
     ![Choose Autonomous Data Warehouse](./images/choose-connection-type.png "Choose Autonomous Data Warehouse")
 
-3. Provide a name to the connection. Click on the **Select** button in front of Client Credentials and select the wallet to your destination ADW instance. Let the username be **ADMIN** and provide the schema password. Select the high service from the **Service Name** dropdown and click on **Save** to establish the connection.
+2. Provide a name to the connection. Click on the **Select** button in front of Client Credentials and select the wallet to your destination ADW instance. Let the username be **ADMIN** and provide the schema password. Select the high service from the **Service Name** dropdown and click on **Save** to establish the connection.
 
     ![Enter Connection Details](./images/enter-connection-details.png "Enter Connection Details")
 
@@ -94,7 +94,7 @@ As you might remember, you loaded the data from the EBS instance into the **ADMI
 
 ## Task 3: Create Data Sets in OAC
 
-1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**. 
+1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**.
 
     ![Create Data Set](./images/create-data-set.png "Create Data Set")
 
@@ -113,5 +113,6 @@ We will now leave it up to your imagination to analyse the data sets that have b
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
-- **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. January 2021
-- **Last Updated By/Date** - Yash Lamba, March 2023
+
+* **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. January 2021
+* **Last Updated By/Date** - Yash Lamba, March 2023
