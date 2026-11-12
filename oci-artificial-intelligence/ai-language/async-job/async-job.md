@@ -69,7 +69,7 @@ Follow these steps to configure required policies.
 Follow below steps to create a job.
 
 1. **Upload the training data to Object Storage**:
-    1. Download and extract the hotel dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
+    1. Download and extract the hotel dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
 
     2. Upload training data to object storage:
         - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
@@ -118,7 +118,7 @@ Follow below steps to create a job.
 ## Task 2: Create an async job for analysing text using  custom model
 
 1. **Upload the training data to Object Storage**:
-    1. Download Custom NER offerletter dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
+    1. Download Custom NER offerletter dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
         - Extract the zip file contents into a directory.
     2. Upload the training dataset files to object storage:
         - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
@@ -171,7 +171,7 @@ Follow below steps to create a job.
 ## Task 3: Create an async job for translating documents
 
 1. **Upload the training data to Object Storage**:
-    1. Download the translation dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-documents-for-translation.zip).
+    1. Download the translation dataset from this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/sample-documents-for-translation.zip).
         - Extract the zip file contents into a directory.
     2. Upload the files to object storage:
         - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.

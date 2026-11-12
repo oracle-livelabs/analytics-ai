@@ -68,7 +68,7 @@ You can use an existing compartment to run the lab but we recommend you create a
 ## Task 3: Download sample files
 Some sample files have been provided that you can use when testing OCI Document Understanding on the cloud console.
 
-1. Download the zip file at this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample_images.zip) and save it to your local computer.
+1. Download the zip file at this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/sample_images.zip) and save it to your local computer.
 
 1. Unzip the file to a folder on your local computer. You will use these files in the next task.
 

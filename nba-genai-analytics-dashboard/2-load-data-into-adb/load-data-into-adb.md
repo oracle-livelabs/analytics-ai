@@ -16,7 +16,7 @@ In this lab, you will:
 ### Prerequisites
 
 * An OCI cloud account
-* Download the lab files [Here.](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
+* Download the lab files [Here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
 
 ## Task 1: Provision Autonomous Data Warehouse
 
@@ -83,7 +83,7 @@ In this lab, you will:
 
 ![Sign out from admin](images/sign-out-admin.png "Sign Out")
 
-4. Download the files for the next task [Here.](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
+4. Download the files for the next task [Here.](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/NBA_LL.zip)
 
 ## Task 2: Load Datasets into Database
 

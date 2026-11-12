@@ -20,7 +20,7 @@ Watch the video below for a quick walk through of the lab.
 
 ## Task 1: Download and copy the source code to the Compute Instance
 
-1. Using this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
+1. Using this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/senti-meter-demo.zip?download=1), download the zip file containing the source code and save it on your computer. As before, the default location for saving downloaded files is the `Downloads` folder.
 
 2. As we did with the `API Key` file, we are going to copy the source code zip file to the Compute Instance.
 If you have the two terminal windows active, please switch to the terminal window showing your local `Downloads` folder (or the location where you have saved the downloaded files thus far).

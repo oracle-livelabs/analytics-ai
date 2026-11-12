@@ -154,7 +154,7 @@ Note: Names can vary but must be aliased as follows in the function.
 7. Create a table from a **Runbook** file. Please upload the **txt** file to a storage bucket and get the Pre-Authenticated Request link to access the PDF file.
 
     * Download Sample Runbook
-    [OCI_Instance_RunBook_final.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FOCI_Instance_RunBook_final.txt)
+    [OCI_Instance_RunBook_final.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2FOCI_Instance_RunBook_final.txt)
 
     * Upload the txt file to a storage bucket.
     * Get the Pre-Authenticated Request link to access the txt file.

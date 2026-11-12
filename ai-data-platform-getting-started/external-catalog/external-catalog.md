@@ -67,7 +67,7 @@ This lab assumes you have:
 1. Step 1: Create table structures in Autonomous AI Lakehouse
 
 
-**show result picture  Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in task 1, using SQL , making use of prebuilt table definitions from file [f1\_DDL\_ADW\_Tables.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Ff1_DDL_ADW_tables.txt) which is available in Github.
+**show result picture  Create tables in Autonomous AI Lakehouse in the schema that is same as the connection user in task 1, using SQL , making use of prebuilt table definitions from file [f1\_DDL\_ADW\_Tables.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Ff1_DDL_ADW_tables.txt) which is available in Github.
   The tables can be created using SQL Developer or Cloud SQL as part of the Autonomous Database toolkit. Make sure that you use the user/schema created in Task 1.
 
   ![create tables in sql ](./images/createtablessql.png)

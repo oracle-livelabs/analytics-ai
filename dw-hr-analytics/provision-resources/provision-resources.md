@@ -21,7 +21,7 @@ Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 
 ## **METHOD 1:** Using a Resource Manager Stack
 
-In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using **Identity Domains** then follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) to download the token and proceed to Task 2.
+In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using **Identity Domains** then follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) to download the token and proceed to Task 2.
 
 ### Task 1: Obtain Access Token
 

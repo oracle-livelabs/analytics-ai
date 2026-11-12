@@ -141,7 +141,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Picture100-16b.png " ")
 
-6. Click on the link [User-Seed-SQL.ZIP](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/ODI_User-Seed-SQL.zip) to download a ZIP file containing:
+6. Click on the link [User-Seed-SQL.ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/ODI_User-Seed-SQL.zip) to download a ZIP file containing:
   * User_setup.sql
   * Seed_data.sql   
 
