@@ -1,6 +1,7 @@
 # Lab 2: Create and train custom models
 
 ## Introduction
+
 In this session, you will learn how to create projects, train a custom model and analyze text through endpoints.
 
 > ***Estimated Lab Time***: 45 minutes
@@ -8,13 +9,15 @@ In this session, you will learn how to create projects, train a custom model and
 ### Objectives
 
 In this lab, you will:
-- Learn how to create project.
-- Learn how to train a custom NER and custom Text Classification model.
-- Learn how to create endpoint and analyze text using OCI console and Python SDK
+
+* Learn how to create project.
+* Learn how to train a custom NER and custom Text Classification model.
+* Learn how to create endpoint and analyze text using OCI console and Python SDK
 
 ### Prerequisites
-- A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Familiar with OCI object storage to upload data.
+
+* A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
+* Familiar with OCI object storage to upload data.
 
 ## **Policy Setup**
 
@@ -22,40 +25,42 @@ Follow these steps to configure required policies.
 
 ### 1. Setup policies required in [Lab 1](?lab=pre-trained#PolicySetup) for using Language Service API
 
-### 2. Setup policies to allow model training jobs to access OCI Object Storage:
+### 2. Setup policies to allow model training jobs to access OCI Object Storage
 
--   #### 1. Navigate to Dynamic Groups
+* #### 1. Navigate to Dynamic Groups
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Dynamic Groups item under Identity.
-    
+
     ![OCI Hamburger menu](./images/dynamicgroup1.png " ")
 
--   #### 2. Create Dynamic Group
+* #### 2. Create Dynamic Group
 
     Click Create Dynamic Group
 
     ![OCI Create policy](./images/dynamicgroup2.png " ")
+
     ```
     <copy>all {resource.type='ailanguagemodel'}</copy>
     ```
 
 
--   #### 3. Navigate to Policies
+* #### 3. Navigate to Policies
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
     ![OCI Hamburger menu](./images/policy1.png " ")
 
 
--   #### 4. Create Policy
+* #### 4. Create Policy
 
     Click Create Policy
         ![OCI Create policy](./images/policy2.png " ")
 
 
--   #### 5. Create a new policy with the following statements:
+* #### 5. Create a new policy with the following statements
 
 
     To allow dynamic group created above to access object storage in your tenancy, create a new policy with the below statement:
+
     ```
     <copy>Allow dynamic-group language-service-dyn-grp-for-custom-models to manage objects in tenancy</copy>
     ```
@@ -90,12 +95,12 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 1. **Create and Train Custom NER Model**
 
     1. Upload the training data to Object Storage:
-        - Download Custom NER offerletter dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
-        - Extract the zip file contents into a directory
-        - Upload the training dataset files to object storage:
-            - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+        * Download Custom NER offerletter dataset from this [Custom NER offer letter dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
+        * Extract the zip file contents into a directory
+        * Upload the training dataset files to object storage:
+            * Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                  ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-            - Create bucket and upload Custom NER offerletter data extracted above.
+            * Create bucket and upload Custom NER offerletter data extracted above.
                  ![Upload Objects](./images/upload-data.png " ")
 
             For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
@@ -113,10 +118,10 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     7. **Create Model**: Click "Create and train" and this will kick of the process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 15 minutes.
 
         ![Active model](./images/active-model.png " ")
-    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages. 
+    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and and navigate to Log messages.
         ![Work request list](./images/work-request-navigation.png " ")
         ![Create model work request](./images/work-requests.png " ")
-    9.  **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
+    9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
          ![Model metrics](./images/ner-metrics.png " ")
 
 2. **Create an Endpoint**
@@ -138,12 +143,12 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
 1. **Create and Train Custom Classification Model**
 
     1. **Upload the training data to Object Storage**:
-        1. Download and extract the ticket dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/TicketData_train.csv.zip).
+        1. Download and extract the ticket dataset from this [ticket classification dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/TicketData_train.csv.zip).
 
         2. Upload training data to object storage:
-            - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+            * Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                  ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-            - Create bucket and upload the extracted data.
+            * Create bucket and upload the extracted data.
                  ![Upload Objects](./images/upload-data.png " ")
 
             For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
@@ -161,7 +166,7 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
     7. **Create Model**: Click *Create and train* and this will kick of the model training process. Wait until training is complete and Model is in *ACTIVE* state. Time taken to complete model training is dependent on the data set size. For this dataset, it takes approximately 30 minutes.
 
         ![Active model](./images/active-model.png " ")
-    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and navigate to Log messages. 
+    8. **Check Work request Logs**: Optionally, you can check the model training progress. Navigate to Work requests under Resources on left navigation menu and click on Create model Work request and navigate to Log messages.
         ![Work request list](./images/work-request-navigation.png " ")
         ![Create model work request](./images/work-requests.png " ")
     9. **Review Model Metrics**: Navigate to Metrics under Resources in left navigation menu to review model metrics.
@@ -181,12 +186,13 @@ A Project is a way to organize multiple models in the same workspace. Follow bel
         ![Analyze screen](./images/analyze.png " ")
 
 ## Task 4: Using Python SDK to Create Custom Models
+
 All the above tasks performed to create custom models and analyzing text can be done through Python code.
 **Pre-requisites**:
 <br/>
 For using Python SDK, please follow setup steps described in [Lab 1: Task 2](?lab=pre-trained#Task2:AnalyzeTextwithPythonSDK)
 
-#### **Python code to create custom NER model and analyze text**
+### **Python code to create custom NER model and analyze text**
 
 ```Python
 <copy>
@@ -391,6 +397,7 @@ print(txtc_inference_result.data)
 Download [code](./files/custom_classification_python_sdk.py) file and save it your directory.
 
 ### Learn More
+
 To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
 
 ## **Summary**
@@ -403,8 +410,10 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 **Authors**
-  * Raja Pratap Kondamari - Product Manager, OCI Language Service
-  * Sahil Kalra - Oracle AI OCI Language Services
+
+* Raja Pratap Kondamari - Product Manager, OCI Language Service
+* Sahil Kalra - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
+
 * Sahil Kalra - Oracle AI OCI Language Services, March 2023

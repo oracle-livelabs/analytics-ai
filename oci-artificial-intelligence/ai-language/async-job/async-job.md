@@ -10,13 +10,13 @@ In this session, you will learn how to create async jobs for analysing text and 
 
 In this lab, you will:
 
-- Learn how to create an async jobs for analysing text and document translation.
+* Learn how to create an async jobs for analysing text and document translation.
 
 ### Prerequisites
 
-- A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Completed [Lab 2](?lab=custom-model#Task2:CreateCustomNERModel) to create a custom Named Entity Recognition model.
-- Familiar with OCI object storage to upload data.
+* A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
+* Completed [Lab 2](?lab=custom-model#Task2:CreateCustomNERModel) to create a custom Named Entity Recognition model.
+* Familiar with OCI object storage to upload data.
 
 ## **Policy Setup**
 
@@ -26,13 +26,13 @@ Follow these steps to configure required policies.
 
 ### 2. Setup policies to allow async jobs to access OCI Object Storage
 
-- #### 1. Navigate to Dynamic Groups
+* #### 1. Navigate to Dynamic Groups
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Dynamic Groups item under Identity.
 
     ![OCI Hamburger menu](./images/dynamicgroup1.png " ")
 
-- #### 2. Create Dynamic Group
+* #### 2. Create Dynamic Group
 
     Click Create Dynamic Group
 
@@ -42,17 +42,17 @@ Follow these steps to configure required policies.
     <copy>all {resource.type='ailanguagejob'}</copy>
     ```
 
-- #### 3. Navigate to Policies
+* #### 3. Navigate to Policies
 
     Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
     ![OCI Hamburger menu](./images/policy1.png " ")
 
-- #### 4. Create Policy
+* #### 4. Create Policy
 
     Click Create Policy
         ![OCI Create policy](./images/policy2.png " ")
 
-- #### 5. Create a new policy with the following statements
+* #### 5. Create a new policy with the following statements
 
     To allow dynamic group created above to access object storage in your tenancy, create a new policy with the below statement:
 
@@ -69,12 +69,12 @@ Follow these steps to configure required policies.
 Follow below steps to create a job.
 
 1. **Upload the training data to Object Storage**:
-    1. Download and extract the hotel dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
+    1. Download and extract the hotel dataset from this [hotel dataset archive](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip).
 
     2. Upload training data to object storage:
-        - Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+        * Log into OCI Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-        - Create bucket and upload the extracted data.
+        * Create bucket and upload the extracted data.
                 ![Upload Objects](./images/upload-data.png " ")
 
         For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
@@ -114,16 +114,15 @@ Follow below steps to create a job.
     ![job-output-result](./images/succeeded-job-result.png " ")
 
 
-
 ## Task 2: Create an async job for analysing text using  custom model
 
 1. **Upload the training data to Object Storage**:
-    1. Download Custom NER offerletter dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
-        - Extract the zip file contents into a directory.
+    1. Download Custom NER offerletter dataset from this [Custom NER offer letter dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/ai-ml-library/CNER.zip).
+        * Extract the zip file contents into a directory.
     2. Upload the training dataset files to object storage:
-        - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+        * Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-        - Create bucket and upload Custom NER offerletter data extracted above.
+        * Create bucket and upload Custom NER offerletter data extracted above.
                 ![Upload Objects](./images/upload-data.png " ")
 
         For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
@@ -167,16 +166,15 @@ Follow below steps to create a job.
     ![job-output-result](./images/succeeded-job-result.png " ")
 
 
-
 ## Task 3: Create an async job for translating documents
 
 1. **Upload the training data to Object Storage**:
-    1. Download the translation dataset from this [link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-documents-for-translation.zip).
-        - Extract the zip file contents into a directory.
+    1. Download the translation dataset from this [document translation dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/sample-documents-for-translation.zip).
+        * Extract the zip file contents into a directory.
     2. Upload the files to object storage:
-        - Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
+        * Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Storage and click it, and then select Buckets item under Object Storage and Archive Storage.
                 ![OCI Hamburger menu](./images/object-storage-navigation.png " ")
-        - Create bucket and upload extracted files OCW AI Presentation.pptx and Oracle Cloud Infrastructure Overview.docx to object storage.
+        * Create bucket and upload extracted files OCW AI Presentation.pptx and Oracle Cloud Infrastructure Overview.docx to object storage.
                 ![Upload Objects](./images/upload-data.png " ")
 
         For more details on uploading data to Object Storage, refer [Putting Data into Object Storage](https://oracle-livelabs.github.io/oci-core/object-storage/workshops/freetier/index.html?lab=object-storage)
@@ -216,10 +214,9 @@ Follow below steps to create a job.
     ![job-output-result](./images/succeeded-job-result.png " ")
 
 
-
 ## Task 4: Using Python SDK to create async job and document translation
 
-#### **Python code to create async job**
+### **Python code to create async job**
 
 ```Python
 <copy>
@@ -374,8 +371,9 @@ In this lab you have learnt how to create async jobs for analysing text and docu
 
 **Authors**
 
-- Raja Pratap Kondamari - Product Manager, OCI Language Service
-- Nitish Kumar Rai - Oracle AI OCI Language Services
+* Raja Pratap Kondamari - Product Manager, OCI Language Service
+* Nitish Kumar Rai - Oracle AI OCI Language Services
 
 **Last Updated By/Date**
-- Nitish Kumar Rai - Oracle AI OCI Language Services, March 2024
+
+* Nitish Kumar Rai - Oracle AI OCI Language Services, March 2024

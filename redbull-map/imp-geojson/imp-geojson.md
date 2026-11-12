@@ -1,26 +1,27 @@
-# Import your GeoJSON code into OAC 
+# Import your GeoJSON code into OAC
 
 ## Introduction
 
 In this lab you will **import the GeoJSON files** you generated into the OAC Console as a Map Layer.
 
-_Estimated Time:_ 10 minutes
+*Estimated Time:* 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-- Import your GeoJSON files you have built in the previous lab
-###  Prerequisites
+* Import your GeoJSON files you have built in the previous lab
+
+### Prerequisites
 
 This lab assumes you have:
 
-- An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
-- Provisioned Oracle Analytics Cloud
-- All previous labs successfully completed
-- Access to the console of OAC ("_BI Service Administrator Role_" Application Role)
+* An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
+* Provisioned Oracle Analytics Cloud
+* All previous labs successfully completed
+* Access to the console of OAC ("*BI Service Administrator Role*" Application Role)
 
-## Task 1: Import your geoJSON files into OAC 
+## Task 1: Import your geoJSON files into OAC
 
 1. Select the triple bar icon (**Navigator**)
 
@@ -43,9 +44,9 @@ This lab assumes you have:
 
     ![Add a custom map layer](./images/custom-map-layers.png)
 
-6. Browse to your geoJSON file you created. If successful, you will see  a window asking for your layer name and which field you will use to map to your data. 
+6. Browse to your geoJSON file you created. If successful, you will see  a window asking for your layer name and which field you will use to map to your data.
 
-    In case you haven't created your own geoJSON, you can download [Zandvoort Sector LineString.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
+    In case you haven't created your own geoJSON, you can download [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)
     > **Note:** if your file does not upload successfully, ensure you entered in a unique id for each property.  
 
     ![Upload your geoJSON LineString file](./images/zandvoort-sector-linestring2.png)
@@ -54,7 +55,7 @@ This lab assumes you have:
 
 8. Browse to your second geoJSON file you created. If successful, you  will see a window asking for your layer name and which field you  will use to map to your data.
 
-    In case you haven't created your own geoJSON, you can download [Zandvoort Sector Point.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
+    In case you haven't created your own geoJSON, you can download [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
     ![Upload your geoJSON point file](./images/zandvoort-sector-point2.png)
 
@@ -73,8 +74,8 @@ Congratulations on completing this lab!
 
 You may now *proceed to the next lab*.
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
-- **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023
+* **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
+* **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
+* **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023

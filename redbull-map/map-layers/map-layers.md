@@ -5,22 +5,23 @@
 In this lab you will assign values from your Dataset to properties in your Map Layers.  
 This process allows for maps to be automatically rendered in OAC for your GeoJSON LineString and Points with color, size, and more.
 
-_Estimated Time:_ 20 minutes
+*Estimated Time:* 20 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-- Create Sector, Point Datasets and assign it to the Map Layer
-###  Prerequisites
+* Create Sector, Point Datasets and assign it to the Map Layer
+
+### Prerequisites
 
 This lab assumes you have:
 
-- An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
-- Provisioned Oracle Analytics Cloud
-- All previous labs successfully completed
-- Permission to create Datasets in OAC
-- Created a file or use the data file provided
+* An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
+* Provisioned Oracle Analytics Cloud
+* All previous labs successfully completed
+* Permission to create Datasets in OAC
+* Created a file or use the data file provided
 
 ## Task 1: Create the Sector Dataset and assign it to the Map Layer
 
@@ -31,7 +32,7 @@ Now that you have your two map layers created and imported, we need to associate
     ![Create a file for the map turns](./images/turns.png)
 
     ![Create a file for the map segments](./images/segments.png)  
-    > **Note:** you can use [Netherlands GrandPrix.xlsx](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)
+    > **Note:** you can use [Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)
 
 2. On the top right of the **Oracle Analytics Home Page**, choose **Create** and then **Data Set**
 
@@ -49,11 +50,11 @@ Now that you have your two map layers created and imported, we need to associate
 
     ![Use the stacked dots to open the options menu](./images/dataset-name-options.png)
 
-6.  Choose **Location Details**…  
+6. Choose **Location Details**…  
 
     ![Choose Location Details](./images/dataset-name-location.png)
 
-7.  Choose **Zandvoort Sector LineString** Map Layer name and confirm your match quality is sufficient. Click **OK**  
+7. Choose **Zandvoort Sector LineString** Map Layer name and confirm your match quality is sufficient. Click **OK**  
 
     ![Select Zandvoort Sector LineString](./images/dataset-name-location2.png)
 
@@ -76,12 +77,12 @@ Now that you have your two map layers created and imported, we need to associate
     ![Add the Name value to Color](./images/name-to-color2.png)  
 
 12. Your Map visualization should look like this.
-    
+
     ![Image showing how your map will look](./images/map-viz2.png)  
 
     You can extend your Dataset with additional values such as speed to provide additional values to display. You can use all of the powers of OAC now to blend additional DataSets to make your visualization more interactive.
 
-13. Click **Data** tab on your center-top header and within the Dataset icon, click the  _pencil_ and then choose **Edit Definition**.  
+13. Click **Data** tab on your center-top header and within the Dataset icon, click the  *pencil* and then choose **Edit Definition**.  
     >**Note:** This will open a new browser page
 
     ![Edit definition in the data](./images/data-edit-definition2.png)
@@ -90,13 +91,13 @@ Now that you have your two map layers created and imported, we need to associate
 
     ![Reload the file and click OK](./images/segments-two2.png)
 
-    Click **Save** 
+    Click **Save**
 
     ![Save the dataset](./images/data-save.png)
 
 15. Return to your **Visualize** tab and add your new Max Speed Measure to size to see the fastest part of the track.  
 
-    Click **New Workbook** browser page 
+    Click **New Workbook** browser page
 
     ![Return to the workbook](./images/return-to-workbook.png)
 
@@ -108,21 +109,21 @@ Now that you have your two map layers created and imported, we need to associate
 
     ![Drag Max Speed to size](./images/max-speed-to-size2.png)
 
-    > **Note:** Min and Max speed values are not real and were created for the use in this exercise 
+    > **Note:** Min and Max speed values are not real and were created for the use in this exercise
 
 18. Your visualization should look like this.
 
-    ![Image showing how your visualization will look](./images/map-max-speed-to-size2.png) 
+    ![Image showing how your visualization will look](./images/map-max-speed-to-size2.png)
 
 
 19. Click on the **Color** option and choose **Manage Assignments** to set your color for each sector.  
 
-    ![Select Manage Assignments to change the color settings](./images/color-manage-assignments2.png) 
+    ![Select Manage Assignments to change the color settings](./images/color-manage-assignments2.png)
 
 20. Set the **Sector** colors  as follows, click Sector1 (colored square), change it with Red, click **OK**, repeat the steps for Sector2, Sector3 and click **Done** once finished.  
-Sector1 = Red: #ed6647  
-Sector2 = Blue: #47bdef  
-Sector3 = Dark Blue: #00192f  
+    Sector1 = Red: #ed6647  
+    Sector2 = Blue: #47bdef  
+    Sector3 = Dark Blue: #00192f  
     ![Set color assignments for the sectors](./images/color-sector2.png)
 
 21. **Rename** your Map Layer to "**LineString**"  
@@ -136,7 +137,7 @@ Sector3 = Dark Blue: #00192f
 
 23. **Save** the Workbook.  
 Go to Save icon from top right, enter your workbook **Name** and click **Save**
-    ![Click to save the workbook](./images/save-workbook2.png) 
+    ![Click to save the workbook](./images/save-workbook2.png)
 
 
 ## Task 2: Create the Points Dataset and assign it to the Map Layer
@@ -149,7 +150,7 @@ Go to Save icon from top right, enter your workbook **Name** and click **Save**
 
     ![Click Create Dataset](./images/add-dataset-create2.png)
 
-3. Browse for **[Netherlands GrandPrix.xlsx](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)** file and click **Open**
+3. Browse for **[Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Netherlands%20GrandPrix.xlsx)** file and click **Open**
 
     ![Navigate to the Netherlands GrandPrix file](./images/add-dataset-create-turns2.png)
 
@@ -174,20 +175,20 @@ Go to Save icon from top right, enter your workbook **Name** and click **Save**
     ![Save the dataset](./images/save-dataset2.png)
 
 
-8. Return to the previous browser page, select  **Netherlands GrandPrix Turns** Dataset and click **Add to Workbook** 
+8. Return to the previous browser page, select  **Netherlands GrandPrix Turns** Dataset and click **Add to Workbook**
 
     ![Add Netherland GrandPrix Turns data to workbook](./images/add-to-workbook2.png)
 
-9. **Save** and return to the OAC visualization page. 
+9. **Save** and return to the OAC visualization page.
 
     ![Save and return to OAC visualization page](./images/new-workbook-viz4.png)
 
 10. Go to your **Data** tab and right click on your join between the two Datasets.  
-Select **Delete All Matches**, click **OK**, confirm that you want to disconnect these datasets by selecting yes.
+    Select **Delete All Matches**, click **OK**, confirm that you want to disconnect these datasets by selecting yes.
     ![Disconnect the two datasets](./images/delete-all-matches2.png)
 
 11. **Return** to your **Visualize** tab and **add** your second **Map Layer** to represent the points on your Map.  
-Click the layer options icon and select **Add Layer** 
+    Click the layer options icon and select **Add Layer**
     ![Add a second map layer](./images/map-add-layer2.png)
 
 12. Using the "**Netherlands GrandPrix Turns**" Dataset, use your **Name** column for the Category (Location) and **Val** for the Size option.
@@ -201,15 +202,15 @@ Click the layer options icon and select **Add Layer**
 
 14. Click on the **color option** from the **Size** option  and choose **Manage Assignments**.  
 
-    ![Manage color assignments from the Size option](./images/color-manage-assignments-size2.png) 
+    ![Manage color assignments from the Size option](./images/color-manage-assignments-size2.png)
 
 15. Set the Size **Val** color as follows, click **Val** (colored square), change it with Yellow, click **OK** and click **Done**.  
-Val = Yellow: #fad55c
-    ![Change the Val color to yellow](./images/color-manage-assignments-yellow2.png) 
+    Val = Yellow: #fad55c
+    ![Change the Val color to yellow](./images/color-manage-assignments-yellow2.png)
 
-16. Your visualization should look like this. 
+16. Your visualization should look like this.
 
-    ![Image showing how your visualization will look](./images/map-viz-colors4.png) 
+    ![Image showing how your visualization will look](./images/map-viz-colors4.png)
 
 17. **Save** the Workbook.  
 Click **Save** icon from top right.
@@ -217,14 +218,15 @@ Click **Save** icon from top right.
 
 
 ## Task 3: Review the workshop  
+
 If you were able to successfully complete the workshop, you can ignore this task.  
 Otherwise, please find the dva for this project for use of troubleshooting or reviewing the implementation.  
 
 1. Follow the steps from **Lab 3: Import your GeoJSON code into OAC** and import the following files:  
-    [Zandvoort Sector LineString.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)  
-    [Zandvoort Sector Point.geojson](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
+    [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20LineString.geojson)  
+    [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Zandvoort%20Sector%20Point.geojson)
 
-2. Download the OAC dva project file. (link to the file [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/Red%20Bull%20Racing%20Honda.dva))  
+2. Download the OAC dva project file. (link to the file [Red Bull Racing Honda project file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/Red%20Bull%20Racing%20Honda.dva))  
 
 3. On the top right of the **Oracle Analytics Home Page**, choose the stacked icons and select **Import Workbook/Flow**
 
@@ -251,8 +253,8 @@ Congratulations on completing this lab!
 
 You may now *proceed to the next lab*
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
-- **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023
+* **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
+* **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
+* **Last Updated By/Date** - Andres Quintana (Oracle Analytics Product Strategy), March 2023

@@ -85,7 +85,7 @@ Here we are preparing virtual environment with all libraries which are required 
     ![Picture 15](./images/picture15.png "Picture 15")
 
 3. Install all required libraries using **requirement.txt**. Please download this file and run below command:
-[requirements.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Frequirements.txt)
+[requirements.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Frequirements.txt)
 
     ``` bash
     <copy>
@@ -100,7 +100,7 @@ Here you have fill variables as per your environment except **"SLACK_BOT_TOKEN"*
 ![Picture 16](./images/picture16.png "Picture 16")
 
 **Download .env file**
-[.env](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fenv)
+[.env](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Fenv)
 
 ## Task 5: Deploy OCI Generative AI Agents using python Agent Development Kit(ADK)
 
@@ -111,7 +111,7 @@ The ADK provides an AgentClient class to simplify handling authentication and ma
 **API Key Authentication (Default)**: In this lab we have used this. Request you to setup your API configuration and set profile name as **CHICAGO**. To set up API key authentication, follow the [OCI API key setup guide](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
 
 1. Download the **agent-tool-creation.py**. This contains all steps to configure agent:
-    [agent_tool_creation.py](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fagent_tool_creation.py)
+    [agent_tool_creation.py](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Fagent_tool_creation.py)
 
 2. Let's execute this python code. It will start deploying agent tools one by one.
     ![Picture 17](./images/picture17.png "Picture 17")
