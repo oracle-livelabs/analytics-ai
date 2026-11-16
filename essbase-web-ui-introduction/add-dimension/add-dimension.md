@@ -25,7 +25,7 @@ This lab assumes you have:
 
 ## Task 1: Download required files for this workshop
 
-1. Click [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/add-products-with-aliases-and-load-sales-cogs-files.zip) to download required files for this workshop.
+1. Click [dimension and sales data files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/add-products-with-aliases-and-load-sales-cogs-files.zip) to download required files for this workshop.
 
 2. Save the zip file to your computer, in a location where you can find it easily.
 

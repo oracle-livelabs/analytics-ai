@@ -11,10 +11,6 @@
             "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 00: Activate AIDP AI Features",
-            "filename": "../../tmp-sko/1a-enable-ai-features.md"
-        },
-        {
             "title": "Lab 1: Configure the Data environment",
             "filename": "../../1-data-environment-setup/1-data-environment-setup.md"
         },
@@ -38,5 +34,6 @@
             "title": "Need Help?",
             "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
         }
-    ]
+    ],
+    "description": "Build and test an Entertainment Release & Performance Analyst Agent using RAG, four SQL tools, historical box office and streaming data, and a deployed chat endpoint."
 }

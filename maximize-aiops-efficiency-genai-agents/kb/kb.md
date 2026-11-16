@@ -35,7 +35,7 @@ This task will help you create a knowledge base using OCI Bucket as source.
     ![KB Navigation](images/create_bucket.png)
 
 2. Download Sample Runbook and upload this in bucket.
-    [OCI_Instance_RunBook_final.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FOCI_Instance_RunBook_final.txt)
+    [OCI_Instance_RunBook_final.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2FOCI_Instance_RunBook_final.txt)
     ![KB Navigation](images/uploaded_kb.png)
 
 3. Locate Knowledge Bases under Analytics & AI -> Generative AI Agents.

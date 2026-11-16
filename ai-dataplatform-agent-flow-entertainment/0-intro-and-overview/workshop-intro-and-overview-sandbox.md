@@ -17,11 +17,11 @@ But the real unlock isn't just clean data. It's what you can build on top of it:
 Over the course of this workshop, you will design, configure, test, and deploy a **Release & Performance Analyst Agent** — an AI-powered assistant purpose-built for entertainment teams. The agent answers natural language questions about movie and TV show performance by combining two capabilities:
 
 - **RAG (Retrieval-Augmented Generation)** over internal release playbooks, marketing measurement guidelines, and distribution rules — so the agent can answer questions about definitions, policies, thresholds, and interpretation grounded in your actual internal documents
-- **SQL tools** that execute parameterized queries against an Oracle AI Database containing box office, streaming, and marketing campaign data — so the agent can return specific metrics, trends, and ROI numbers in real time
+- **SQL tools** that execute parameterized queries against an Oracle AI Database containing historical box office and streaming data, plus reference lookups, so the agent can return reported metrics and explain trends. Marketing tables are available for future extensions; campaign ROI querying is outside the four-tool core workshop
 
 Here's how the pieces come together across the labs:
 
-- **Data layer**: You'll explore a pre-configured standard catalog and managed volume in the AIDP Workbench, then create a Knowledge Base that converts your internal documents into vector embeddings for semantic search. You'll also verify the Oracle AI Database tables that contain your structured performance and marketing data.
+- **Data layer**: You'll create an Entertainment standard catalog and managed volume in the AIDP Workbench, then create a Knowledge Base that converts your internal documents into vector embeddings for semantic search. You'll also verify the Oracle AI Database tables that contain your structured performance and marketing data.
 
 - **Agent layer**: You'll build the agent flow on a visual canvas — configuring a foundation model with detailed behavioral instructions, wiring up a RAG tool connected to the Knowledge Base, and adding four SQL tools that cover box office performance, streaming health, and reference lookups.
 
@@ -33,8 +33,8 @@ Here's how the pieces come together across the labs:
 
 | Lab | Title | Focus | Est. Time |
 |---|---|---|---|
-| **Lab 1** | Data Environment Setup | Explore the pre-configured catalog and volume; create a Knowledge Base for RAG; verify Oracle AI Database tables for SQL | 15 min |
-| **Lab 2** | Agent Flow Setup | Create AI Compute; build the agent flow on the visual canvas; configure the agent node with a model and instructions; add a RAG tool and four SQL tools | 25 min |
+| **Lab 1** | Data Environment Setup | Use the AI-enabled environment; create compute, catalogs, a volume, and a Knowledge Base for RAG; verify Oracle AI Database tables for SQL | 15 min |
+| **Lab 2** | Agent Flow Setup | Use AI Compute from Lab 1; connect a Chat Trigger and Executor Agent; configure the agent with a model and instructions; add a RAG tool and four SQL tools | 25 min |
 | **Lab 3** | Validate the Agent Flow | Test the agent in the Playground across box office, streaming, RAG-only, hybrid RAG-plus-SQL, and cross-title comparison scenarios | 15 min |
 | **Lab 4** | Deploy the Agent Flow | Deploy to a production endpoint; retrieve the URL; understand REST API consumption | 5 min |
 | **Workshop Recap** | Recap and Value Proposition | Review what you built; understand the value for marketing, finance, and content strategy; explore ROI acceleration and next steps | 5 min |
@@ -54,11 +54,13 @@ Here's how the pieces come together across the labs:
 | **AI Compute** | A managed compute resource that hosts and executes agent flows. Required for testing in the Playground and for production deployment. |
 | **RAG (Retrieval-Augmented Generation)** | A technique where the agent retrieves relevant passages from internal documents before generating an answer — grounding its response in real company knowledge rather than general training data. |
 | **SQL Tool** | A pre-defined, parameterized, read-only query that the agent can execute against the Oracle AI Database. The agent selects which tool to call and populates the parameters based on the user's natural language question. |
-| **MCP (Model Context Protocol)** | A standard that lets AI agents securely access database data while respecting role-based access controls at the database level. |
-| **ROI (Return on Investment)** | In this workshop context, the ratio of attributed revenue to marketing spend for a campaign or title — a key metric the agent computes via SQL tools. |
+| **MCP (Model Context Protocol)** | A protocol for exposing tools and context to AI applications. This workshop uses AIDP RAG and SQL tool nodes; it does not configure an MCP server. |
+| **ROI (Return on Investment)** | The playbook defines ROI as (attributed revenue - spend) / spend. It is a policy concept covered by the knowledge documents; a campaign SQL tool would be needed to calculate it from data. |
 | **Completion Rate** | A streaming metric measuring the percentage of viewers who finish watching a title — defined in the internal playbook and queried via the agent's streaming SQL tool. |
 
-**Estimated Time:** 60 minutes
+**Estimated Time:** 60 minutes for Labs 1-4, plus recap and any provisioning or service waits.
+
+> **Environment:** The updated Entertainment Terraform stack enables AI features against its existing database before attendees begin. The fictional sample dates are historical. The core flow uses one RAG tool and four SQL tools; it does not query marketing campaigns.
 
 ### Objectives
 
@@ -85,4 +87,4 @@ By the end of this workshop, you will be able to:
 
 * **Author(s)** - Jean-Rene Gauthier [AIDP]
 * **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Published March 2026
+* **Last Updated By/Date** - Eli Schilling, October 2026

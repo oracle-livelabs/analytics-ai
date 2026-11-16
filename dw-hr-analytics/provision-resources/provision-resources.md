@@ -12,16 +12,16 @@ Provision an Autonomous Data Warehouse instance and an Analytics Cloud instance.
 
 ### Prerequisites
 
-- Method 1
-    - Access Token to provision an analytics instance as part of the stack.
-    - Necessary permissions to provision the stack in a compartment.
+* Method 1
+    * Access Token to provision an analytics instance as part of the stack.
+    * Necessary permissions to provision the stack in a compartment.
 
-- Method 2
-    - Necessary permissions to provision an analytics instance and an autonomous database.
+* Method 2
+    * Necessary permissions to provision an analytics instance and an autonomous database.
 
 ## **METHOD 1:** Using a Resource Manager Stack
 
-In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using **Identity Domains** then follow the video [here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) to download the token and proceed to Task 2.
+In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an access token is required. If you don't have the necessary privileges, then proceed to Method 2. Moreover, if your tenant is not using **Identity Domains** then follow the video [IDCS access token walkthrough](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4) to download the token and proceed to Task 2.
 
 ### Task 1: Obtain Access Token
 
@@ -29,7 +29,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 	![OCI Console My Profile](./images/access-my-profile.png "OCI Console My Profile")
 
-2. Scroll down and select **My access tokens** from the **Resources** panel on the left. Select the **Invokes Identity Domain APIs** radio button. If you have access to any of the relevant app roles, you should be able to select one of them from the dropdown. 
+2. Scroll down and select **My access tokens** from the **Resources** panel on the left. Select the **Invokes Identity Domain APIs** radio button. If you have access to any of the relevant app roles, you should be able to select one of them from the dropdown.
 
     ![Select App Role](./images/select-app-role.png "Select App Role")
 
@@ -91,26 +91,26 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 **Note:**  If you have followed the steps above, the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed. To do so, click on **Stack Details** at the top of the page. Then, click on the **Edit** dropdown and select **Edit Stack** to get to the stack configuration page. Thereafter, you need to fix the errors and save the changes.
 
 ![View Stack Details](./images/see-stack-details.png "View Stack Details")
-    
+
 ![Edit Stack Details](./images/edit-stack.png "Edit Stack Details")
 
-11. If everything goes to plan, the status of the job will change to **SUCCEEDED**.
+ 1. If everything goes to plan, the status of the job will change to **SUCCEEDED**.
 
     ![Success Message](./images/successful-resource-creation.png "Success Message")
 
-12. On the same page, you will find the **Job resources** under the **Resources** menu. Click on it to get the links to the provisioned resources.
+ 2. On the same page, you will find the **Job resources** under the **Resources** menu. Click on it to get the links to the provisioned resources.
 
     ![Links to Associated Resources](./images/links-to-provisioned-resources.png "Links to Associated Resources")
 
-13. Clicking on the links to the resources should take you to their pages.
+ 3. Clicking on the links to the resources should take you to their pages.
 
 **Note:** In case there is no link to get to analytics instance, follow the two steps given below, else proceed to the next lab.
 
-14. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
-	
+ 1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+
 	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
-15. Click on the analytics instance to get to its page. Thereafter, click on the **Analytics Home Page** button to access the instance.
+ 2. Click on the analytics instance to get to its page. Thereafter, click on the **Analytics Home Page** button to access the instance.
 
     ![Access Analytics Instance](./images/access-analytics-instance.png "Access Analytics Instance")
 
@@ -121,7 +121,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 ### Task 1: Provision the Autonomous Data Warehouse
 
 1. Click on the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![OCI Console Autonomous Data Warehouse](https://oracle-livelabs.github.io/common/images/console/database-adw.png "OCI Console Autonomous Data Warehouse")
 
 2. Click on the **Create Autonomous Database** button.
@@ -150,8 +150,8 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 ### Task 2: Provision the Analytics Cloud Instance
 
-1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
-	
+1. Click on the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+
 	![OCI Console Analytics Cloud](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png "OCI Console Analytics Cloud")
 
 2. On the next page, click on the **Create Instance** button.
@@ -169,7 +169,8 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
- - **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
- - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
- - **Last Updated By/Date** - Yash Lamba, April 2024
+
+* **Authors** - Yash Lamba, Senior Cloud Engineer; Massimo Castelli, Senior Director Product Management. September 2020
+* **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra
+* **Last Updated By/Date** - Yash Lamba, April 2024
 

@@ -1,0 +1,34 @@
+{
+  "workshoptitle": "OCI Sandboxes",
+  "help": "livelabs-help-aisolutions_us_grp@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Setup",
+      "filename": "../../setup/setup.md"
+    },
+    {
+      "title": "Lab 2: Run AI-generated code",
+      "filename": "../../responses/responses.md"
+    },
+    {
+      "title": "Lab 3: Connect an OpenAI agent to an OCI Sandbox",
+      "filename": "../../agents/agents.md"
+    },
+    {
+      "title": "Lab 4: Publish a sandbox application and access it from your browser (optional)",
+      "filename": "../../publish/publish.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

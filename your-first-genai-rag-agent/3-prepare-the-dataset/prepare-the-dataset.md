@@ -25,21 +25,21 @@ This lab assumes you have:
 
 ## Task 1: Download and unzip the sample dataset
 
-1. Click [this link](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Foci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
+1. Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Foci-generative-ai-agents-cw24-hol-dataset.zip) to download the `zip` archive containing the dataset text files.
 
-  The `zip` archive will be downloaded to your configured `Downloads` folder.
-  On `Windows` computers, downloaded files would be saved in `C:\Users\[user name]\Downloads` by default.
-  For `Mac` computers, downloaded files would be saved in `/Users/[user name]/Downloads` by default.
+    The `zip` archive will be downloaded to your configured `Downloads` folder.
+    On `Windows` computers, downloaded files would be saved in `C:\Users\[user name]\Downloads` by default.
+    For `Mac` computers, downloaded files would be saved in `/Users/[user name]/Downloads` by default.
 
 1. Locate the downloaded `zip` archive in your download folder using `File Explorer` on `Windows` or `Finder` on `Mac`.
 
-  ![Screenshot showing the downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
+    ![Screenshot showing the downloaded dataset on a Mac](./images/downloaded-dataset-mac.png)
 
-  ![Screenshot showing the downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
+    ![Screenshot showing the downloaded dataset on Windows](./images/downloaded-dataset-windows.png)
 
 1. To extract the text files from the `zip` archive:
 
-   On `Windows`:
+    On `Windows`:
 
     1. Right click the `zip` file.
 
@@ -49,19 +49,19 @@ This lab assumes you have:
 
     1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
 
-  ![Right click dataset on Windows](./images/right-click-dataset-windows.png)
+    ![Right click dataset on Windows](./images/right-click-dataset-windows.png)
 
-  ![Extract dataset on Windows](./images/extract-dataset-windows.png)
+    ![Extract dataset on Windows](./images/extract-dataset-windows.png)
 
-  ![Extracted dataset on Windows](./images/extracted-dataset-windows.png)
+    ![Extracted dataset on Windows](./images/extracted-dataset-windows.png)
 
-   On `Mac`:
+    On `Mac`:
 
     1. Double click the `zip` file.
 
     1. The text files will usually be extracted into a folder with the exact name as the `zip` file.
 
-  ![Extracted dataset on Mac](./images/extracted-dataset-mac.png)
+    ![Extracted dataset on Mac](./images/extracted-dataset-mac.png)
 
 ## Task 2: Create a storage bucket & upload the dataset
 
@@ -71,41 +71,41 @@ This lab assumes you have:
 
 1. Click **Buckets** on the right, under **Object Storage & Archive Storage**.
 
-  ![Screenshot showing how to navigate to the storage bucket section](./images/buckets-navigation.png)
+    ![Screenshot showing how to navigate to the storage bucket section](./images/buckets-navigation.png)
 
 1. Under **List scope**, make sure that the **root** compartment is selected.
 
 1. Click the **Create Bucket** button on the top of the **Buckets** table.
 
-  ![Screenshot of the storage bucket list](./images/buckets-list.png)
+    ![Screenshot of the storage bucket list](./images/buckets-list.png)
 
 1. Provide a name for the bucket (example: oci-generative-ai-agents-service-cw24-hol-dataset).
 
 1. For the purpose of this workshop, we are going to accepts the default values for the rest of the form.
 
-  Click the **Create** button on the bottom of the panel.
+    Click the **Create** button on the bottom of the panel.
 
-  ![Screenshot showing the new bucket configuration](./images/create-bucket.png)
+    ![Screenshot showing the new bucket configuration](./images/create-bucket.png)
 
 1. Click the new bucket's name in the **Buckets** table.
 
-  ![Screenshot showing navigating to the newly created bucket](./images/bucket-navigation.png)
+    ![Screenshot showing navigating to the newly created bucket](./images/bucket-navigation.png)
 
 1. Under the **Objects** section of the page, click the **Upload** button.
 
 1. Click the **select files** link in the **Choose Files from your Computer** section.
 
-  ![Screenshot showing how to start uploading files to the storage bucket](./images/select-files-navigation.png)
+    ![Screenshot showing how to start uploading files to the storage bucket](./images/select-files-navigation.png)
 
 1. In your `File Explorer` or `Finder`, navigate to the folder containing all of the `.txt` files extracted in the previous task.
 
 1. Select all of the files from the folder and click `Open`.
 
-  ![Screenshot showing all files in the folder selected for uploading](./images/select-all-files.png)
+    ![Screenshot showing all files in the folder selected for uploading](./images/select-all-files.png)
 
 1. Click the **Upload** button at the bottom of the panel.
 
-  ![Screenshot showing all of the selected files ready to be uploaded](./images/upload.png)
+    ![Screenshot showing all of the selected files ready to be uploaded](./images/upload.png)
 
 1. Click the **Close** button at the bottom of the panel.
 

@@ -8,6 +8,8 @@ Pay close attention to how the agent decides which tools to call, how it resolve
 
 **Estimated Time:** 15 Minutes
 
+> **Sample data:** This workshop uses fictional historical data. Ask for the latest available sample weeks, not the current calendar period. Completion values are fractions: `0.44` means 44%. Compare the same dates and markets, and do not assume every supplied record is a consecutive week. Marketing tables are seeded for future extensions; this agent has no marketing SQL tool.
+
 ### Objectives
 
 In this lab you will:
@@ -26,7 +28,7 @@ This lab assumes you have:
 
 * Completed Lab 2 (Agent Flow Setup)
 * The agent flow attached to an active AI Compute
-* All tools (1 RAG + 4 SQL) configured and connected to the agent node
+* A Chat Trigger connected to the Executor Agent, with all tools (1 RAG + 4 SQL) configured and connected.
 
 ## Task 1: Open the Playground
 
@@ -34,11 +36,11 @@ The Playground is a built-in testing environment where you can create sessions a
 
 1. From the agent flow canvas, click the **Playground** located just above the canvas. This reveals the Playground panel.
 
-2. The session is now active. You can type natural language questions in the chat input and the agent will reason, call tools, and respond — just as it would in production.
+2. Confirm a session is selected, or select **Create New Session**. Keep this session for the follow-up tests. You can type natural language questions in the chat input and the agent will reason, call tools, and respond — just as it would in production.
 
     > **Tip**: As you test, watch the tool call indicators. The Playground shows which tools the agent invokes, what parameters it passes, and what data comes back. This transparency is invaluable for understanding and debugging the agent's reasoning.
 
-3. You can widen the chat session windown by clicking on the vertical divider, holding the mouse button down and moving the cursor to the right. 
+3. You can widen the chat session window by clicking on the vertical divider, holding the mouse button down and moving the cursor to the right.
 
     ![Widen the chat window](images/03-chat-wide.png " ")
 
@@ -50,7 +52,7 @@ In this step, you'll ask the agent about box office performance for two movies. 
 
     ```
     <copy>
-    Can you tell me how well the movies neon knights and skyline hiest did at the box office?
+    Using the available historical sample weekends, compare neon knights and skyline hiest at the US box office. Show the dates, gross, screens, and rank. Compare their first two recorded weekends, and label the two-week totals rather than calling them lifetime grosses.
     </copy>
     ```
 
@@ -65,6 +67,8 @@ In this step, you'll ask the agent about box office performance for two movies. 
 
     > Observe the behavior: The agent identifies both titles, resolves the typo, retrieves box office data, and presents a comparative summary.
 
+> **Check the evidence:** Skyline Heist has two US weekends, September 14 and 21, 2025, totaling $60.7M. Neon Knights has December 7 and 14, 2025, totaling $70.2M. These are different release windows, not a same-week head-to-head comparison.
+
 ## Task 3: Test Market-Specific Follow-Up
 
 Now test the agent's ability to handle a follow-up question that narrows the scope to a specific market. The agent should maintain context from the previous question.
@@ -73,7 +77,7 @@ Now test the agent's ability to handle a follow-up question that narrows the sco
 
     ```
     <copy>
-    Can you look at the Canadian market?
+    Can you look at the Canadian market for those same two movies? Keep the first-two-recorded-weekends comparison and show the local ranks as well as gross.
     </copy>
     ```
 
@@ -86,6 +90,8 @@ Now test the agent's ability to handle a follow-up question that narrows the sco
     ![Screenshot of agent response](images/03-chat-market-follow-up.png " ")
     > Observe the behavior: The agent maintains conversational context, resolves the market name to a code, and returns Canada-specific box office data for both titles.
 
+> **Check the evidence:** Canada totals are $7.5M for Skyline Heist and $8.8M for Neon Knights. Skyline ranks 1 in each recorded Canadian weekend; Neon ranks 3. Higher gross across different windows does not imply a better local weekly rank.
+
 ## Task 4: Test Streaming Performance — Multi-Title Comparison
 
 This step shifts to streaming data and tests the agent's ability to handle a completely different data domain within the same session.
@@ -94,7 +100,7 @@ This step shifts to streaming data and tests the agent's ability to handle a com
 
     ```
     <copy>
-    Can you give me a report on streaming for cosmic kitchen and maple street?
+    Compare cosmic kitchen and maple street in the US over their latest four available sample weeks. Show weekly starts and completion percentages for matching dates. Which title has stronger reach, and which has healthier completion?
     </copy>
     ```
 
@@ -108,6 +114,8 @@ This step shifts to streaming data and tests the agent's ability to handle a com
 
     > Observe the behavior: The agent switches data domains from box office to streaming seamlessly, retrieves multi-week trend data for both titles, and presents it in a report format.
 
+> **Observe the behavior:** Cosmic Kitchen has more starts but declining completion; Maple Street has fewer starts and improving completion. The comparison should cover October 27, November 3, November 10, and November 17, 2025.
+
 ## Task 5: Test RAG-Only Policy Guidance
 
 This step tests whether the agent uses the RAG tool when the question asks for an internal definition, policy, or escalation guideline rather than structured performance data.
@@ -116,14 +124,14 @@ This step tests whether the agent uses the RAG tool when the question asks for a
 
     ```
     <copy>
-    Using the internal playbooks, define 'completion rate' for streaming titles and explain the escalation guidelines if it falls below benchmarks, including any genre-specific considerations.
+    Using the internal playbooks, define completion rate and explain the exact escalation condition for low completion. State whether the documents specify green/yellow/red bands or numerical genre-specific benchmarks; do not invent them.
     </copy>
     ```
 
 2. Observe the agent's response. It should:
     - Call the `internal_knowledge_sources_rag` tool
     - Define completion rate using the internal playbooks
-    - Explain green/yellow/red or escalation guidance grounded in the retrieved documents
+    - Explain the documented below-45%-for-two-consecutive-weeks rule and its top-three-region condition; disclose any missing color-band definitions
     - Include genre-specific considerations if the playbooks provide them
 
 ## Task 6: Test Hybrid RAG + SQL Interpretation
@@ -134,16 +142,18 @@ This step tests whether the agent can combine internal playbook guidance with st
 
     ```
     <copy>
-    Using the internal playbooks, explain the green/yellow/red signals for streaming completion rates. Then, apply this to Cosmic Kitchen's US performance over the last 4 weeks, including any escalation risks.
+    For this scenario, treat the US as a top-three region. Retrieve the internal completion-rate escalation rule, then apply it to Cosmic Kitchen's latest four available US sample weeks. Cite the dates and completion percentages that do or do not satisfy the rule. Separate the observed trend from any proposed action, and do not infer that marketing caused it.
     </copy>
     ```
 
 2. Observe the agent's response. It should:
-    - Use RAG to retrieve the green/yellow/red completion-rate guidance
+    - Use RAG to retrieve the completion-rate escalation rule
     - Resolve Cosmic Kitchen to the correct title ID
     - Call `get_streaming_trend` for the US region
-    - Interpret the last four weeks of performance against the internal benchmark guidance
+    - Interpret the latest four available sample weeks against the documented escalation condition; distinguish two consecutive weeks from two arbitrary records
     - Call out any escalation risk clearly
+
+> **Observe the behavior:** Cosmic Kitchen completion is 55%, 50%, 44%, and 40%. November 10 and 17 are consecutive weeks below 45%; with the scenario's top-three-region assumption, they meet the documented escalation condition. The tool results do not establish the cause of the decline.
 
 ## Task 7: Test Structured Output — Custom Table Format
 
@@ -153,7 +163,7 @@ This final test evaluates the agent's ability to produce formatted tabular outpu
 
     ```
     <copy>
-    Can you return a table for Cosmic Kitchen and Maple Street? The columns are the two shows and the rows are the weeks. Just focus on the US market.
+    Return a completion-rate table for Cosmic Kitchen and Maple Street for the latest four available US sample weeks. Put shows in columns and week-start dates in rows, and format completion as percentages.
     </copy>
     ```
 
@@ -165,7 +175,7 @@ This final test evaluates the agent's ability to produce formatted tabular outpu
 
     ![Screenshot of agent response](images/03-chat-structured-output.png " ")
 
-    > Observe the behavior behavior: The agent restructures the data into the requested pivot-style table format, with weeks as rows and the two show titles as column headers, filtered to US market only.
+    > Observe the behavior: The agent restructures the data into the requested pivot-style table format, with weeks as rows and the two show titles as column headers, filtered to US market only.
 
 3. Before wrapping things up, you might consider exploring the **Agent flow task** list to the right of the chat window. You can expand each task to see the workflow, agent tasks, tool tasks, etc.
 
@@ -208,4 +218,4 @@ The agent successfully combined RAG (internal policy documents) and SQL (structu
 
 * **Author(s)** - Jean-Rene Gauthier [AIDP]
 * **Contributors** - Eli Schilling - Cloud Architect, Gareth Nathan - SDE, GenAI
-* **Last Updated By/Date** - Published March 2026
+* **Last Updated By/Date** - Eli Schilling, October 2026

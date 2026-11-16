@@ -148,11 +148,11 @@ These are the documents that the AI agent will search via RAG when users ask que
 
 1. Download **[kb_documents.zip](https://github.com/oracle-livelabs/analytics-ai/raw/refs/heads/main/ai-dataplatform-agent-flow-entertainment/files/consteng/kb_documents.zip)**, which contains the sample knowledge base documents. If the file opens in GitHub instead of downloading automatically, click **Download raw file**.
 
-2. Unzip the file. You should have 3 `.docx` files:
+2. Unzip the file. You should have 3 text-searchable `.pdf` files:
 
-    - **Construction Supplier Evaluation Playbook** - Defines approve, request-info, deny, and RFP-trigger decision criteria.
-    - **Construction Compliance and Certification Guidelines** - Defines certification, NCR, safety, delivery, and capacity thresholds.
-    - **Technical Addendum and Risk Triage Procedure** - Defines how to handle missing technical packages and re-analysis scenarios.
+    - **Construction Supplier Evaluation Playbook** (`CE_Supplier_Evaluation_Playbook.pdf`) - Defines approve, request-info, deny, and RFP-trigger decision criteria.
+    - **Construction Compliance and Certification Guidelines** (`CE_Compliance_Certification_Guidelines.pdf`) - Defines certification, NCR, safety, delivery, and capacity thresholds.
+    - **Technical Addendum and Risk Triage Procedure** (`CE_Technical_Addendum_Risk_Triage.pdf`) - Defines how to handle missing technical packages and re-analysis scenarios.
 
 3. Back in AIDP Workbench, return to the **`ce_std_catalog`** catalog, locate the **default** schema, and click **Volumes**.
 
@@ -190,19 +190,15 @@ These are the documents that the AI agent will search via RAG when users ask que
 
     ![Volume add file button](images/01-catalog-volume-plus-consteng.png " ")
 
-9. Upload the three `.docx` files from the zip archive.
+9. Upload the three `.pdf` files from the zip archive.
 
-    > **Important:** Do not upload `kb_documents.zip` directly. Extract the ZIP file first, then upload the three individual `.docx` files. Uploading the ZIP file prevents the Knowledge Base from indexing the documents correctly and can cause RAG responses to fail later in the workshop.
+    > **Important:** Do not upload `kb_documents.zip` directly. Extract the ZIP file first, then upload the three individual `.pdf` files. Use the PDF documents from this download, not DOCX copies from an earlier workshop package. Uploading the ZIP file prevents the Knowledge Base from indexing the documents correctly and can cause RAG responses to fail later in the workshop.
 
     ![Upload files interface](images/01-catalog-volume-upload-files-consteng.png " ")
 
-10. After the three `.docx` files appear in the upload dialog, click **Upload**.
+10. Confirm that **Files to be uploaded** lists exactly the three PDF filenames from step 2, then click **Upload**.
 
-    ![Selected files ready to upload](images/01-catalog-volume-upload-files-selected-consteng.png " ")
-
-11. Confirm the files appear in the volume.
-
-    ![Verify files uploaded successful](images/01-catalog-volume-upload-files-complete-consteng.png " ")
+11. Confirm that all three PDF files appear in **ce_volume** before creating the Knowledge Base. These are the source documents that the ingestion job will process in the next task.
 
 ## Task 5: Create a Knowledge Base
 
