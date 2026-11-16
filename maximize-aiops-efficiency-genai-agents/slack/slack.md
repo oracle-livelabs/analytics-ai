@@ -10,18 +10,18 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-- Get a Slack workspace.
-- Create a Slack app.
-- Add OAuth scopes for the Slack app.
-- Add Bot user events for the Slack App
-- Add the app to the Slack workspace.
-- Update Environment Variable file
+* Get a Slack workspace.
+* Create a Slack app.
+* Add OAuth scopes for the Slack app.
+* Add Bot user events for the Slack App
+* Add the app to the Slack workspace.
+* Update Environment Variable file
 
 ### Prerequisites
 
 This lab assumes you have:
 
-- Access to a Slack workspace with permissions to create a Slack app.
+* Access to a Slack workspace with permissions to create a Slack app.
 
 ## Task 1: Get a Slack Workspace
 
@@ -45,25 +45,25 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 1. In the left navigation of the web console for your Slack app, within the **Features** section, select **OAuth and Permissions**.
 2. Scroll to the **Scopes** section of the page.
 3. The scopes fall into these categories:
-    - **Bot Token Scopes**
-    - **User Token Scopes**
+    * **Bot Token Scopes**
+    * **User Token Scopes**
 4. In the **Bot Token Scopes** section, add the scopes that correspond to the bot-level permissions you want to allow. At minimum, the following bot token scopes are required:
-    - `app_mentions:read`
-    - `channels:history`
-    - `channels:read`
-    - `chat:write`
-    - `groups:history`
-    - `im:history`
-    - `mpim:history`
-    - `users:read`
+    * `app_mentions:read`
+    * `channels:history`
+    * `channels:read`
+    * `chat:write`
+    * `groups:history`
+    * `im:history`
+    * `mpim:history`
+    * `users:read`
 
     Depending on the skill's features, other scopes might be required. For example, the following scopes are required for working with attachments:
-    - `files:read`
-    - `files:write`
+    * `files:read`
+    * `files:write`
 
 5. In the **User Token Scopes** section, add the scopes that correspond to the user-level permissions you want to allow. The following user token scopes are required:
-    - `files:read`
-    - `files:write`
+    * `files:read`
+    * `files:write`
 
     Depending on the requirements of your bot, you may need to add other scopes.
 
@@ -74,11 +74,11 @@ You have to subscribe Bot Events as well, this will allow apps to receive events
 1. In the left navigation of the web console for your Slack app, within the **Features** section, select **Event Subscriptions**.
 2. **Enable** Events
 3. Scroll to the **Subscribe to bot events** section of the page and add following **Add Bot User event**
-    - `app_mention`
-    - `message.channels`
-    - `message.groups`
-    - `message.im`
-    - `message.mpim`
+    * `app_mention`
+    * `message.channels`
+    * `message.groups`
+    * `message.im`
+    * `message.mpim`
 
 ## Task 5: Add the App to the Workspace
 
@@ -98,11 +98,11 @@ You have to subscribe Bot Events as well, this will allow apps to receive events
 
 In Lab 6, we have created Envrionment Variable file. Update this file with **SLACK_APP_TOKEN** and **SLACK_BOT_TOKEN**.
 Download latest python script with Slack configuration.
-[slack_app.py](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fslack_app.py)
+[slack_app.py](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles%2Fslack_app.py)
 
 ## Learn More
 
-- [Slack API Documentation](https://api.slack.com/start)
+* [Slack API Documentation](https://api.slack.com/start)
 
 ## Acknowledgements
 

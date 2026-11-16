@@ -29,30 +29,30 @@ A Cloud Administrator can create a compartment in your tenancy. As a Cloud Admin
 
 1. **Log in to the Oracle Cloud Console** as a user with administrator privileges. On the Sign In page, select your tenancy, enter your username and password, and then click **Sign In**. The Oracle Cloud Console Home page is displayed.
 
-  ![](./images/oci-console.png " ")
+    ![Oracle Cloud Console Home page](./images/oci-console.png " ")
 
 2. From the OCI console menu, select **Identity & Security**. Under Identity section, click on **Compartments**.
 
-  ![](./images/di-compartments-menu.png " ")
+    ![Compartments in the Identity and Security menu](./images/di-compartments-menu.png " ")
 
 3. In the Compartments page, we have the list of our existing compartments (if any). Click on the **Create Compartment** button to create a sub-compartment.
 
-  ![](./images/create-comp-button.png " ")
+    ![Create Compartment button](./images/create-comp-button.png " ")
 
 4. In the **Create Compartment** dialog box:
 
-    - Enter a **Name** for the compartment: `DI-compartment`.
-    - Enter a meaningful **Description**: `Compartment for Data Integration resources`.
-    - In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment).
-    - Then click **Create Compartment**.
+    * Enter a **Name** for the compartment: `DI-compartment`.
+    * Enter a meaningful **Description**: `Compartment for Data Integration resources`.
+    * In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment).
+    * Then click **Create Compartment**.
 
-    ![](./images/create-compartment.png " ")
+    ![Enter the Data Integration compartment details](./images/create-compartment.png " ")
 
 5. The Compartments page is displayed. If the newly created compartment  was created under root parent compartment, it is shown now in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
 
    *Note*: If the compartment was created under another parent compartment (not root), click on the parent compartment in the list of Compartments and you should be able to see your new compartment in Child Compartments section.
 
-   ![](./images/new-comp.png " ")
+   ![New Data Integration compartment in the compartment list](./images/new-comp.png " ")
 
 ## Task 2: Create a VCN and Subnet using VCN Wizard
 
@@ -60,39 +60,39 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
 1. From the OCI console menu, click **Networking** and then select **Virtual Cloud Networks**.
 
-  ![](./images/oci-menu-vcn.png " ")
+    ![Virtual Cloud Networks in the Networking menu](./images/oci-menu-vcn.png " ")
 
 2. On the Virtual Cloud Networks page, make sure that you are in the Data Integration compartment you have are using for data integration (`DI-compartment`). Then click **Start VCN Wizard**.
 
-  ![](./images/vcns.png " ")
+    ![Virtual Cloud Networks page and Start VCN Wizard button](./images/vcns.png " ")
 
 3. Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-  ![](./images/start-vcn-wizard.png " ")
+    ![Select VCN with Internet Connectivity](./images/start-vcn-wizard.png " ")
 
 4. The Configuration page of the wizard is displayed.
-   In the **Basic Information** section, provide:
+    In the **Basic Information** section, provide:
 
-    - **VCN Name**: `OCI-VCN-WORKSHOP`.
-    - **Compartment**: Select `DI-compartment` or the compartment you are using for data integration.
+    * **VCN Name**: `OCI-VCN-WORKSHOP`.
+    * **Compartment**: Select `DI-compartment` or the compartment you are using for data integration.
 
-    ![](./images/vcn-config.png " ")
+    ![VCN name and compartment settings](./images/vcn-config.png " ")
 
 5. In the **Configure VCN and Subnets** section, leave all the default values and selections. Click **Next**.
 
-  ![](./images/vcn-config-subnets.png " ")
+    ![Default VCN and subnet configuration](./images/vcn-config-subnets.png " ")
 
 6. Review your settings to be sure they are correct and then click **Create** button.
 
-  ![](./images/create-vcn-button.png " ")
+    ![Review and create the VCN](./images/create-vcn-button.png " ")
 
 7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
 
-  ![](./images/vcn-successful.png " ")
+    ![VCN creation completed successfully](./images/vcn-successful.png " ")
 
 8. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
 
-  ![](./images/vcn-detail.png " ")
+  ![VCN details with public and private subnets](./images/vcn-detail.png " ")
 
 ## Task 3: Provision an Autonomous AI Lakehouse and download Wallet
 
@@ -100,67 +100,67 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
 1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Database**.
 
-  ![](./images/oci-menu-alk.png " ")
+    ![Autonomous AI Database in the OCI navigation menu](./images/oci-menu-alk.png " ")
 
 2. The console shows the Autonomous AI Lakehouse databases that exist, if any. Make sure that you are in the compartment that you have created for the data integration resources (`DI-compartment`). Click on **Create Autonomous AI Database**.
 
-  ![](./images/create-alk-button.png " ")
+    ![Create Autonomous AI Database button](./images/create-alk-button.png " ")
 
 3. Provide basic information for the Autonomous AI Database:
 
-    - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`).
-    - **Display Name** - Enter a meaningful name for the database for display purposes. Use `ALK Workshop`.
-    - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. Use `ALKWORKSHOP`.
+    * Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`).
+    * **Display Name** - Enter a meaningful name for the database for display purposes. Use `ALK Workshop`.
+    * **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. Use `ALKWORKSHOP`.
 
-   *Note*: The same database name cannot be used for multiple Autonomous AI Databases in your tenancy, in the same region.
+    *Note*: The same database name cannot be used for multiple Autonomous AI Databases in your tenancy, in the same region.
 
-   ![](./images/create-alk-info.png " ")
+    ![Autonomous AI Lakehouse name and compartment settings](./images/create-alk-info.png " ")
 
 4. Select **Lakehouse** as the workload type.
 
-  ![](./images/alk-worload.png " ")
+    ![Select Lakehouse as the database workload](./images/alk-worload.png " ")
 
 5. Configure the database:
 
-    - **Always Free** - Leave this option unchecked.
-    - **Choose database version** - Select a database version from the available versions. Leave the default version 19c.
-    - **OCPU count** - Number of ECPUs for your service. Specify 2 CPU.
-    - **Storage (TB)** - Select your storage capacity in terabytes. Specify 1 TB of storage.
-    - **Auto Scaling** - Keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand if needed.
+    * **Always Free** - Leave this option unchecked.
+    * **Choose database version** - Select a database version from the available versions. Leave the default version 19c.
+    * **OCPU count** - Number of ECPUs for your service. Specify 2 CPU.
+    * **Storage (TB)** - Select your storage capacity in terabytes. Specify 1 TB of storage.
+    * **Auto Scaling** - Keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand if needed.
 
-  ![](./images/alk-configure.png " ")
+    ![Autonomous AI Lakehouse compute and storage configuration](./images/alk-configure.png " ")
 
-7. Create **Administrator credentials**:
+6. Create **Administrator credentials**:
 
-    - Password and Confirm Password - Specify the password for `ADMIN` user of the service instance.
+    * Password and Confirm Password - Specify the password for `ADMIN` user of the service instance.
 
-    ![](./images/alk-admin.png " ")
+    ![Set the database ADMIN credentials](./images/alk-admin.png " ")
 
-8. Choose **Network access**:
+7. Choose **Network access**:
 
-    - Accept the default **Secure access from everywhere**.
+    * Accept the default **Secure access from everywhere**.
 
-    ![](./images/alk-network.png " ")
+    ![Configure secure database network access](./images/alk-network.png " ")
 
-9. Click **Create**.
+8. Click **Create**.
 
-  ![](./images/create-alk-final.png " ")
+    ![Create the Autonomous AI Lakehouse database](./images/create-alk-final.png " ")
 
-10. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to **Available**. *At this point, your Autonomous AI Lakehouse database is ready to use!*
+9. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to **Available**. *At this point, your Autonomous AI Lakehouse database is ready to use!*
 
-  ![](./images/alk-available.png " ")
+    ![Autonomous AI Lakehouse in the Available state](./images/alk-available.png " ")
 
-11. Download the **Client Credentials (Wallet file)** for your Autonomous AI Lakehouse.  This will be used to connect OCI Data Integration to the Autonomous AI Lakehouse. From the alk details page you are currently in, click on **Database connection** button.
+10. Download the **Client Credentials (Wallet file)** for your Autonomous AI Lakehouse.  This will be used to connect OCI Data Integration to the Autonomous AI Lakehouse. From the alk details page you are currently in, click on **Database connection** button.
 
-  ![](./images/alk-db-conn.png " ")
+    ![Open the database connection settings](./images/alk-db-conn.png " ")
 
-12. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
+11. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
 
-  ![](./images/download-wallet-click.png " ")
+    ![Download Wallet on the Database Connection page](./images/download-wallet-click.png " ")
 
-13. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
+12. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
 
-  ![](./images/download-wallet.png " ")
+  ![Set a password and download the database wallet](./images/download-wallet.png " ")
 
 ## Task 4: Prepare the Autonomous AI Lakehouse
 
@@ -170,15 +170,15 @@ You will create a new user on the Autonomous AI Lakehouse and will run a SQL scr
 
 1. From the OCI console menu, click **Oracle AI Database** and then select **Autonomous AI Database**.
 
-  ![](./images/oci-menu-alk.png " ")
+    ![Autonomous AI Database in the OCI navigation menu](./images/oci-menu-alk.png " ")
 
 2. The console shows the Autonomous AI Lakehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your Autonomous AI Lakehouse**, the one you created in the previous step (`ALK Workshop`).
 
-  ![](./images/select-alk.png " ")
+    ![Select the Autonomous AI Lakehouse database](./images/select-alk.png " ")
 
 3. On your Autonomous AI Lakehouse Details page, click on **Database actions** and the to **SQL**.
 
-  ![](./images/click-sql.png " ")
+    ![Open SQL from Database Actions](./images/click-sql.png " ")
 
 4. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
 
@@ -189,21 +189,21 @@ You will create a new user on the Autonomous AI Lakehouse and will run a SQL scr
     alter user BETA quota 200M on data;</copy>
     ```
 
-   *Note*: Ensure that you enter a password in place of password. Also, make sure that the script output shows the success of the commands.
+    *Note*: Ensure that you enter a password in place of password. Also, make sure that the script output shows the success of the commands.
 
-  ![](./images/create-user-sql.png " ")
+    ![Run the SQL script to create the database user](./images/create-user-sql.png " ")
 
-5. **Download** the zip file [OCI DI Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
+5. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/oci-library/oci-di-workshop-files.zip) to your local directories. Unzip this file.
 
 6. In the same SQL worksheet, run the **ALK\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
 
-   This SQL script will create tables CUSTOMERS\_TARGET, EMPLOYEES\_WEST\_MIDWEST and EMPLOYEES\_NORTHEAST\_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
+    This SQL script will create tables CUSTOMERS\_TARGET, EMPLOYEES\_WEST\_MIDWEST and EMPLOYEES\_NORTHEAST\_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
 
-   ![](./images/alk-run-sql-script.png " ")
+    ![Run the SQL script to create the target tables](./images/alk-run-sql-script.png " ")
 
 7. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your tables were created successfully.
 
-  ![](./images/beta-schema.png " ")
+  ![Verify the target tables in the BETA schema](./images/beta-schema.png " ")
 
 ## Task 5: Create an Object Storage bucket and upload the sample data
 
@@ -211,40 +211,40 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 1. From the OCI console menu, click **Storage** and then select **Buckets** under Object Storage & Archive section.
 
-  ![](./images/oci-menu-buckets.png " ")
+    ![Buckets in the OCI Storage menu](./images/oci-menu-buckets.png " ")
 
 2. From the Buckets page, make sure that you are in the Data Integration compartment you have created (`DI-compartment`) and then click on **Create Bucket**.
 
-  ![](./images/create-bucket-button.png " ")
+    ![Create Bucket button in Object Storage](./images/create-bucket-button.png " ")
 
 3. Fill out the Create Bucket dialog box:
-    - **Bucket Name**: `DI-bucket`
-    - **Default Storage Tier**: `Standard`
-    - Leave the rest of the defaults and then click **Create**.
+    * **Bucket Name**: `DI-bucket`
+    * **Default Storage Tier**: `Standard`
+    * Leave the rest of the defaults and then click **Create**.
 
-   *Note*: The Bucket Name should be unique within your tenancy's Object Storage namespace.
+    *Note*: The Bucket Name should be unique within your tenancy's Object Storage namespace.
 
-   ![](./images/create-bucket.png " ")
+    ![Enter the Data Integration bucket settings](./images/create-bucket.png " ")
 
 4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`DI-bucket`).
 
-  ![](./images/buckets-list.png " ")
+    ![Data Integration bucket in the Buckets list](./images/buckets-list.png " ")
 
 5. You will upload the source files for the workshop data integration jobs in this bucket. Click on **Upload** button under Objects.
 
-  ![](./images/upload-button.png " ")
+    ![Upload objects to the Data Integration bucket](./images/upload-button.png " ")
 
 6. Drop or select the files **CUSTOMERS.json**, **REVENUE.csv**, **EMPLOYEES_1.csv**, **EMPLOYEES_2.csv**, **EMPLOYEES_3.csv** from your local directory where you unzipped the **OCI DI Workshop files.zip** file. Click **Upload**.
 
-  ![](./images/upload-objects.png " ")
+    ![Select the customer, revenue, and employee source files](./images/upload-objects.png " ")
 
 7. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.
 
-  ![](./images/finished-upload.png " ")
+    ![Source file uploads in the Finished state](./images/finished-upload.png " ")
 
 8. The files are **uploaded and displayed** in the list of objects in your bucket.
 
-  ![](./images/files-in-bucket.png " ")
+  ![Uploaded source files in the bucket object list](./images/files-in-bucket.png " ")
 
 
    **Congratulations!**
