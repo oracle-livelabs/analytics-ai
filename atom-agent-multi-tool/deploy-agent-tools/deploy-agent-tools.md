@@ -35,7 +35,7 @@ This lab assumes you have:
 
     ![Screenshot showing how to navigate to the Agents service from the main menu](./images/console/agents-service-navigation.png)
 
-2. Edit your agent and add the following routing instructions:
+2. Edit your agent and add the following routing instruction if not added already:
 
     ```text
      <copy>
@@ -135,6 +135,16 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
 1. Navigate to the SQL Worksheet for the database you will use with the SQL tool and run the following statements. In the LiveLabs sandbox, open SQL Worksheet through the pre-provisioned Database Tools connection.
 
+    ![DB Connection](images/console/db-conn.png)
+
+    Select the existing db connection 
+
+    ![DB Connection](images/console/db-conn-2.png)
+
+    Select SQL Worksheet
+
+    ![SQL Worksheet](images/sqltool/sql-worksheet.png)
+
     > **Note:** The sandbox's pre-provisioned sample tables are not required for this workshop. Create the separate `Employees` table below (or use your own equivalent table) and leave the pre-provisioned tables unchanged.
 
     ```text
@@ -147,6 +157,10 @@ If you are using your own tenancy, create and validate a Database Tools connecti
     );
     </copy>
     ```
+
+    Highlight and run the SQL block 
+
+    ![Run SQL](images/sqltool/run-sql.png)
 
     - Populate your table with the following data
 
@@ -163,6 +177,8 @@ If you are using your own tenancy, create and validate a Database Tools connecti
     </copy>
     ```
 
+    Highlight and run the DDL to insert the sample records. 
+
     > **Note** If you use your own table, large queries can cause timeouts in the agent service. Try filtering your results to avoid timeouts.
 
 ## Task 6: Create SQL Tool
@@ -170,7 +186,16 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
     ![Navigate to Agent](./images/console/agents-service-navigation.png)
 
-2. Set the tool name to `employee-sql`, add a description such as `Retrieve employee information from the Employees table`, and paste the database schema.
+2. Set the tool name to `employee-sql`, add a description such as 
+
+
+    ```text
+    <copy>
+    Retrieve employee information from the Employees table
+    </copy>
+    ```
+
+    and paste the database schema.
 
     > **Note** Make sure to use the same schema defined in the previous task.
 
@@ -185,6 +210,8 @@ If you are using your own tenancy, create and validate a Database Tools connecti
     </copy>
     ```
 
+    ![Create SQL Tool](images/sqltool/create-sql-tool.png)
+
     > **Note** If using your own table, run the following to inspect its schema:
 
     ```sql
@@ -193,8 +220,15 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
     in the SQL Worksheet.
 
-3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the LiveLabs sandbox, select the pre-provisioned connection. Enable SQL Execution and self correction.
+3. Select Oracle SQL as the dialect and select the Database Tools connection from Task 4. In the LiveLabs sandbox, select the pre-provisioned connection. 
+
 4. Select **Test connection** and confirm that the test succeeds.
+
+    ![Create SQL Tool](images/sqltool/create-sql-tool-2.png)
+
+    Enable SQL Execution and self correction.
+
+    ![Create SQL Tool](images/sqltool/create-sql-tool-3.png)
 
 5. Create the tool.
 
@@ -206,7 +240,13 @@ If you are using your own tenancy, create and validate a Database Tools connecti
 
 ## Task 7: Create a Weather Tool
 
-1. Navigate to the agent tools and select **Create tool** > **Custom tool**. Under Tool configuration, select **Function calling**, then create a function named `get_weather`.
+1. Navigate to the agent tools and select **Create tool** > **Custom tool**. 
+
+    ![Create Weather Tool](images/weather/create-weather-tool.png)
+
+    ![Create Weather Tool](images/weather/create-weather-2.png)
+
+    Under Tool configuration, select **Function calling**, then create a function named `get_weather`.
 
 2. Give the function the following description:
 
@@ -234,6 +274,8 @@ If you are using your own tenancy, create and validate a Database Tools connecti
     </copy>
     ```
 
+    ![Create Weather Tool](images/weather/create-weather-3.png)
+
 4. Create the tool and wait for it to become active.
 
     > **Note:** This workshop configures the function contract only; it doesn't deploy a weather-service implementation. A weather prompt verifies that the agent selects `get_weather` and passes a `location` argument. A production application must execute the function and return its result to the agent.
@@ -247,6 +289,8 @@ If you are using your own tenancy, create and validate a Database Tools connecti
     * Ask `List all employees` to verify the `employee-sql` tool and the committed sample data.
     * Ask about the weather in a location to verify that the agent selects `get_weather` and supplies a location argument.
     * Ask a general question, such as `What is an autonomous agent?`, to verify general chat without a tool.
+
+    ![Chat with your agent](images/general-chat/general-chat.png)
 
 2. If a prompt selects the wrong tool, refine the tool description or the routing instructions in Task 1, then test again.
 
@@ -283,4 +327,4 @@ If you are using your own tenancy:
   * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date**
-* **Luke Farley**, Senior Cloud Engineer, October 2026
+* **Luke Farley**, Senior Cloud Engineer, November 2026
