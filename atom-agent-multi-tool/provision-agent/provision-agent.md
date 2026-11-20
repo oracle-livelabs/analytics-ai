@@ -112,25 +112,67 @@ This task will help you to create Oracle Generative AI Agent’s Knowledge Base 
 
 This task will help you to create Oracle Generative AI Agent under your chosen compartment.
 
-1. Locate Agents in the left panel, select the correct Compartment.
+1. Locate Agents in the left panel
 
-    Then click on “Create agent” button
+    ![GenAI Agent](images/agent/agent_nav.png)
+
+    Then click on “Create agent” button, while in the correct Compartment.
 
     ![agent](images/agent/agent.png)
 
-2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message
+2. Specify the agent name, ensure the correct compartment is selected and indicate a suitable welcome message & routing instructions: 
 
-    Select Add tool > Choose RAG tool
+    ** Welcome Message ** 
+    ```text
+     <copy>
+      Hello, how may I help?
+     </copy>
+    ```
+
+    ** Routing Instructions ** 
+
+    ```text
+     <copy>
+      You are a helpful assistant. If a user asks about design considerations for generative AI applications, use the RAG tool. If a user asks about employees, use the employee-sql tool. If a user asks about the weather, use the get_weather tool. If a user asks a general question, use your general knowledge, no tools.
+     </copy>
+    ```
+
+    ![Create Agent](images/agent/create_agent.png)
+
+    Select Next > Add tool > Choose RAG tool
+
+    ![Create Tool](images/agent/create-tool-0.png)
+
+    Select the Knowledge Base that you created in the previous task. You can attach it even if it is still provisioning. For the RAG tool description, use: 
+    
+    ```text
+     <copy>
+    Tool to answer questions about design considerations for GenAI apps.
+    </copy>
+    ```
+
+    The custom instructions can be left blank. 
 
     ![Create Tool](images/agent/create-tool.png)
 
-    Select the Knowledge Base that you created in the previous task. You can attach it even if it is still provisioning. For the RAG tool description, use: **Tool to answer questions about design considerations for GenAI apps.** Providing the Welcome message is optional.
 
-    Click the “Create” button.
+    Click the "Add tool" button.
 
     ![agent creation wizard](images/agent/agent_wizard.png)
 
     > **Note** The other agent tools will be configured in the next lab.
+
+    ![Add Tool](images/agent/add-tool.png)
+
+    Click Next and keep the default guard rails: 
+
+    ![Guard Rails](images/agent/guard-rails-1.png)
+
+    ![Guard Rails](images/agent/guard-rails-2.png)
+
+    Click Next, review the config and select "Create Agent". Click accept on the license agreement popup if using the llama model.
+
+    ![Create Agent](images/agent/create-agent-2.png)
 
 3. In few minutes the status of recently created Agent will change from Creating to Active
 
@@ -169,4 +211,4 @@ This task will help you to create Oracle Generative AI Agent under your chosen c
 * **Raj Arora**, Master Principal Analytics Cloud Architect
 
 **Last Updated By/Date:**
-* **Luke Farley**, Senior Cloud Engineer, October 2026
+* **Luke Farley**, Senior Cloud Engineer, November 2026
